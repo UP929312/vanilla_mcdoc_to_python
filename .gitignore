@@ -1,0 +1,6 @@
+generated_symbols/
+**.pyc
+__pycache__/**.pyc
+*.*.pyc
+**__pycache__**
+.vscode/settings.json
