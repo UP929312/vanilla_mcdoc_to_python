@@ -1,4 +1,4 @@
-generated_symbols/
+# generated_symbols/
 **.pyc
 __pycache__/**.pyc
 *.*.pyc
