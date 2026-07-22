@@ -2,8 +2,8 @@ import json
 from pathlib import Path
 from typing import Any
 
-from typed_models import KIND_TO_MODEL, TemplateSchema, StructSchema, RenderContext, Import, UnionSchema, BaseSchema
-from utils import symbol_path_to_object_name
+from typed_models import KIND_TO_MODEL, TemplateSchema, RenderContext, Import
+from utils import symbol_path_to_object_name, extract_child
 
 
 def make_python_file_content(resource_type: str, resource_data: dict[str, Any], class_name: str) -> str:
@@ -26,7 +26,7 @@ def make_python_file_content(resource_type: str, resource_data: dict[str, Any], 
     if ctx.local_type_params:
         ctx.required_imports.add(Import('typing', 'TypeVar', False, True))
         declared_paths = set(type_param.path for type_param in current_model.type_params) if isinstance(current_model, TemplateSchema) else set()
-        declared_names = [symbol_path_to_object_name(path) for path in declared_paths]
+        declared_names = sorted(symbol_path_to_object_name(path) for path in declared_paths)
         discovered_names = sorted(path.split("::")[-1] for path in ctx.local_type_params if path not in declared_paths)
         for type_name in declared_names + discovered_names:
             signature_lines.append(f"{type_name} = TypeVar('{type_name}')")
@@ -64,13 +64,3 @@ def make_python_file_of_model(resource_type: str, resource_data: dict[str, Any],
     if file_contents != old_contents:
         print(output_path)
         output_path.write_text(file_contents, encoding="utf-8")
-
-
-def extract_child(model: BaseSchema) -> BaseSchema:
-    """For TemplateSchema, get it's child, for everything else, return the input as is"""
-    if not isinstance(model, TemplateSchema):
-        return model
-    if not isinstance(model.child, UnionSchema):
-        return model.child
-    # There will always be at least one and only one StructSchema in the union, so we just get it and return.
-    return next(member for member in model.child.members if isinstance(member, StructSchema))

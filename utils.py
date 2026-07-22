@@ -19,13 +19,13 @@ if REFETCH_SYMBOLS:
     print("Fetching latest symbols.json from https://raw.githubusercontent.com/SpyglassMC/vanilla-mcdoc/refs/heads/generated/symbols.json")
     response = requests.get("https://raw.githubusercontent.com/SpyglassMC/vanilla-mcdoc/refs/heads/generated/symbols.json")
     response.raise_for_status()
-    SYMBOLS_MAP: dict[str, Any] = response.json()["mcdoc"]
+    SYMBOLS_MAP: dict[str, dict[str, Any]] = response.json()
 
     with open('symbols.json', 'w', encoding='utf-8') as file:
-        json.dump(response.json(), file, indent=4)
+        json.dump(SYMBOLS_MAP, file, indent=4)
 else:
     with open('symbols.json', 'r', encoding='utf-8') as file:
-        SYMBOLS_MAP = json.load(file)["mcdoc"]
+        SYMBOLS_MAP = json.load(file)
 
 if REFETCH_VERSIONS:
     import requests
@@ -100,3 +100,14 @@ def iter_child_schemas(value: object) -> Generator[BaseSchema]:
     elif isinstance(value, list):
         for item in value:
             yield from iter_child_schemas(item)
+
+
+def extract_child(model: BaseSchema) -> BaseSchema:
+    """For TemplateSchema, get it's child, for everything else, return the input as is"""
+    from typed_models import TemplateSchema, UnionSchema, StructSchema
+    if not isinstance(model, TemplateSchema):
+        return model
+    if not isinstance(model.child, UnionSchema):
+        return model.child
+    # There will always be at least one and only one StructSchema in the union, so we just get it and return.
+    return next(member for member in model.child.members if isinstance(member, StructSchema))

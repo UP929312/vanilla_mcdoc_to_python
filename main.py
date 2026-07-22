@@ -4,7 +4,11 @@ from tests.assertions import run_assertions
 
 ROOT_PACKAGE.mkdir(parents=True, exist_ok=True)
 
-SYMBOLS_MAP_NO_ANONYMOUS = {key: value for key, value in SYMBOLS_MAP.items() if "anonymous" not in key}  # TODO: Figure what is going on here?
+SYMBOLS_MAP_NO_ANONYMOUS = {key: value for key, value in SYMBOLS_MAP["mcdoc"].items() if "anonymous" not in key}  # TODO: Figure what is going on here?
+
+# for resource_type, parent_data in SYMBOLS_MAP["mcdoc/dispatcher"].items():
+#     print(resource_type, parent_data)
+#     make_python_file_of_model(resource_type, {**parent_data, "kind": "struct", }, ROOT_PACKAGE)
 
 for resource_type, resource_data in SYMBOLS_MAP_NO_ANONYMOUS.items():
     make_python_file_of_model(resource_type, resource_data, ROOT_PACKAGE)
@@ -40,6 +44,27 @@ HANDY_LINKS = [
     r"generated_symbols\data\advancement\predicate\BlockPredicate.py",  # str | Dispatcher (resolves to Any)
     r"",  # 
 ]
+
+# Would be nice to have a wrapper type for the registry references
+# ResourceLocation[WolfVariant] for example
+
+# The registries exist! We just have to point to them.
+# "name": "id",
+    # "value": {
+    # 	"kind": "literal",
+    # 	"value": {
+    # 		"kind": "string",
+    # 		"value": "data_component_predicate_type"
+    # 	}
+    # }
+# "minecraft:data_component_predicate": {
+# 			"%unknown": {
+# 				"kind": "union",
+# 				"members": []
+# 			},
+
+
+
 
 # print(f"Handy links:\n{'\n- '.join(HANDY_LINKS)}")
 

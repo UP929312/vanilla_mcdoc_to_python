@@ -4,7 +4,7 @@ from typing import Any
 from typed_models import KIND_TO_MODEL
 from code_generation import make_python_file_content
 
-RESOURCE_PATH = "::java::world::entity::mob::AttributeModifier"
+RESOURCE_PATH = "::java::assets::item_definition::ItemModel"
 
 with open('symbols.json', 'r', encoding='utf-8') as f:
     data: dict[str, Any] = json.load(f)['mcdoc'][RESOURCE_PATH]

@@ -36,7 +36,7 @@ class RenderContext:
             return name
         if path in self.local_type_params:
             return name
-        if path not in SYMBOLS_MAP:
+        if path not in SYMBOLS_MAP["mcdoc"]:
             # This is a weird edgecase for tag::E
             # I might figure out a better solution later, but for now, it's fine.
             self.local_type_params.add(path)
@@ -469,9 +469,14 @@ class ReferenceSchema(BaseSchema):
 
     def to_python_code(self, class_name: str, ctx: RenderContext) -> list[str]:
         path, name = symbol_path_to_import_string_and_name(self.path)
-        assert class_name == name, "class_name didn't match name for some reason?"  # This is always True,
-        ctx.required_imports.add(Import(path, f"{name} as {name}_alias", type_checking_only=False, is_builtin=False))
-        return [f"type {class_name} = {name}_alias"]
+        if class_name == name:
+            assert class_name == name, "class_name didn't match name for some reason?"  # This is always True for mcdoc
+            ctx.required_imports.add(Import(path, f"{name} as {name}_alias", type_checking_only=False, is_builtin=False))
+            return [f"type {class_name} = {name}_alias"]
+
+        # Normally true for mcdoc/dispatcher
+        ctx.required_imports.add(Import(path, name, type_checking_only=False, is_builtin=False))
+        return [f"type {class_name} = {name}"]
 
     def to_annotation(self, ctx: RenderContext) -> str:
         return ctx.require_symbol(self.path)

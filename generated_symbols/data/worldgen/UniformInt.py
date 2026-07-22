@@ -3,8 +3,8 @@ from dataclasses import dataclass
 from typing import Generic, TypeVar
 
 
-Spread = TypeVar('Spread')
 Base = TypeVar('Base')
+Spread = TypeVar('Spread')
 
 @dataclass(kw_only=True)
 class UniformInt(Generic[Base, Spread]):
