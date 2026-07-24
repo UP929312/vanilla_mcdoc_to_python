@@ -1,17 +1,16 @@
 from code_generation import make_python_file_of_model
-from utils import SYMBOLS_MAP, ROOT_PACKAGE
+from utils import SYMBOLS_MAP
 from tests.assertions import run_assertions
-
-ROOT_PACKAGE.mkdir(parents=True, exist_ok=True)
 
 SYMBOLS_MAP_NO_ANONYMOUS = {key: value for key, value in SYMBOLS_MAP["mcdoc"].items() if "anonymous" not in key}  # TODO: Figure what is going on here?
 
-# for resource_type, parent_data in SYMBOLS_MAP["mcdoc/dispatcher"].items():
-#     print(resource_type, parent_data)
-#     make_python_file_of_model(resource_type, {**parent_data, "kind": "struct", }, ROOT_PACKAGE)
+# for resource_type, resource_data in SYMBOLS_MAP["mcdoc/dispatcher"].items():
+#     make_python_file_of_model(resource_type, {"kind": "mcdocdispatcher", **resource_data})
 
 for resource_type, resource_data in SYMBOLS_MAP_NO_ANONYMOUS.items():
-    make_python_file_of_model(resource_type, resource_data, ROOT_PACKAGE)
+    make_python_file_of_model(resource_type, resource_data)
+
+run_assertions()
 
 # TODO: For string's with an equal value, e.g. dimension, figure something out, the annotation system is ugly...
 
@@ -48,24 +47,4 @@ HANDY_LINKS = [
 # Would be nice to have a wrapper type for the registry references
 # ResourceLocation[WolfVariant] for example
 
-# The registries exist! We just have to point to them.
-# "name": "id",
-    # "value": {
-    # 	"kind": "literal",
-    # 	"value": {
-    # 		"kind": "string",
-    # 		"value": "data_component_predicate_type"
-    # 	}
-    # }
-# "minecraft:data_component_predicate": {
-# 			"%unknown": {
-# 				"kind": "union",
-# 				"members": []
-# 			},
-
-
-
-
 # print(f"Handy links:\n{'\n- '.join(HANDY_LINKS)}")
-
-run_assertions()

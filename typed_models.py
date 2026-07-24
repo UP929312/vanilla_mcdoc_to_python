@@ -3,7 +3,7 @@ from typing import Annotated, Literal, Self
 
 from pydantic import BaseModel, Field, RootModel, model_validator
 
-from utils import SYMBOLS_MAP, symbol_path_to_import_string_and_name, symbol_path_to_object_name, is_valid_with_attributes, iter_child_schemas
+from utils import GENERATED_SYMBOLS_DIRECTORY, SYMBOLS_MAP, symbol_path_to_import_string_and_name, symbol_path_to_object_name, is_valid_with_attributes, iter_child_schemas
 
 
 # ==================================================================================================================================
@@ -391,8 +391,9 @@ class EnumSchema(BaseSchema):
 
 
 type ConcreteSchemaTypeArgTypes = (
-    IntSchema | StringSchema | FloatSchema | ByteSchema | ReferenceSchema | ListSchema
-    | UnionSchema | ConcreteSchema | IndexedSchema | DispatcherSchema
+    AnySchema | BooleanSchema | ByteSchema | ConcreteSchema | DispatcherSchema | FloatSchema | IndexedSchema
+    | IntArraySchema | IntSchema | ListSchema | LiteralSchema | LongSchema | ReferenceSchema | ShortSchema
+    | StringSchema | TupleSchema | UnionSchema
 )
 
 class ConcreteSchema(BaseSchema):
@@ -509,6 +510,25 @@ class UnionSchema(BaseSchema):
         return " | ".join(dict.fromkeys(member.to_annotation(ctx) for member in self.members))
 
     def to_python_code(self, class_name: str, ctx: RenderContext) -> list[str]:
+        """   # TEMP
+        type_param_names = sorted(symbol_path_to_object_name(path) for path in ctx.local_type_params)
+        type_params = f"[{', '.join(type_param_names)}]" if type_param_names else ""
+
+        # Preserve old-style template wrapper output for shapes like:
+        # template child = T | struct{...pairs...}
+        # These are better rendered as a single generic dataclass than as Struct1 + alias.
+        # Keep union aliases for richer provider wrappers that include spread fields.
+        if len(self.members) == 2 and type_param_names:
+            struct_members = [member for member in self.members if isinstance(member, StructSchema)]
+            reference_members = [member for member in self.members if isinstance(member, ReferenceSchema)]
+            if len(struct_members) == 1 and len(reference_members) == 1:
+                struct_member = struct_members[0]
+                reference_member = reference_members[0]
+                if reference_member.path in ctx.local_type_params and all(isinstance(field, PairSchema) for field in struct_member.fields):
+                    return struct_member.to_python_code(class_name, ctx)
+        """
+        type_params = ""
+
         if len(self.members) == 1:
             member = self.members[0]
             return member.to_python_code(class_name, ctx) if isinstance(member, StructSchema) else [f"type {class_name} = {member.to_annotation(ctx)}"]
@@ -525,12 +545,12 @@ class UnionSchema(BaseSchema):
                 struct_index += 1
                 member_name = f"{class_name}Struct{struct_index}"
                 rendered_struct_members.extend(member.to_python_code(member_name, ctx))
-                union_member_annotations.append(member_name)
+                union_member_annotations.append(f"{member_name}{type_params}")
             else:
                 union_member_annotations.append(member.to_annotation(ctx))
 
         deduped_annotations = list(dict.fromkeys(union_member_annotations)) or ["None"]
-        alias_line = f"type {class_name} = {' | '.join(deduped_annotations)}"
+        alias_line = f"type {class_name}{type_params} = {' | '.join(deduped_annotations)}"
 
         if not rendered_struct_members:
             return [alias_line]
@@ -597,6 +617,8 @@ class SpreadFieldSchema(BaseSchema):
                 if reference and reference.path not in ctx.local_type_params
                 else None
             )
+            # if runtime_import is None and isinstance(spread_field_schema.type, ConcreteSchema) and isinstance(spread_field_schema.type.child, DispatcherSchema):
+            #     runtime_import = Import(*symbol_path_to_import_string_and_name(spread_field_schema.type.child.registry), False, False)
             if runtime_import is not None:
                 ctx.required_imports.add(runtime_import)
             if isinstance(spread_field_schema.type, StructSchema):
@@ -610,6 +632,11 @@ class SpreadFieldSchema(BaseSchema):
             # Keep concrete spread type arguments in inheritance, e.g. UniformIntProvider[T].
             strict_ctx = ctx.nested(allow_type_args_kind_shortcut=False)  # Don't allow inherited | float, for example.
             reference = spread_field_schema._unravel_reference_path()
+            # base_name = None
+            # if reference and reference.path not in ctx.local_type_params:
+            #     base_name = spread_field_schema.type.to_annotation(strict_ctx)
+            # elif isinstance(spread_field_schema.type, ConcreteSchema) and isinstance(spread_field_schema.type.child, DispatcherSchema):
+            #     base_name = spread_field_schema.type.to_annotation(strict_ctx)
             base_name = (
                 spread_field_schema.type.to_annotation(strict_ctx)
                 if reference and reference.path not in ctx.local_type_params
@@ -643,6 +670,12 @@ class TemplateTypeParam(BaseModel):
         return self.path.split("::")[-1]
 
 
+type TemplateChildTypes = (
+    AnySchema | BooleanSchema | ByteSchema | ConcreteSchema | DispatcherSchema | FloatSchema | IndexedSchema
+    | IntArraySchema | IntSchema | ListSchema | LiteralSchema | LongSchema | ReferenceSchema | ShortSchema
+    | StringSchema | StructSchema | TupleSchema | UnionSchema
+)
+
 class TemplateSchema(BaseSchema):
     """"
     Built-in types, e.g. `::java::data::worldgen::UniformInt`
@@ -650,8 +683,23 @@ class TemplateSchema(BaseSchema):
     Essentially, these are Generics of type (normally T)
     """
     kind: Literal["template"] = Field(repr=False)
-    child: Annotated[StructSchema | ListSchema | UnionSchema, Field(discriminator="kind")]
+    child: Annotated[TemplateChildTypes, Field(discriminator="kind")]
     type_params: list[TemplateTypeParam] = Field(default_factory=list, alias="typeParams")
+
+    def add_local_type_params_to_context(self, ctx: RenderContext) -> None:
+        ctx.local_type_params.update(type_param.path for type_param in self.type_params)
+
+    def to_annotation(self, ctx: RenderContext) -> str:
+        self.add_local_type_params_to_context(ctx)
+        return self.child.to_annotation(ctx)
+
+    def to_python_code(self, class_name: str, ctx: RenderContext) -> list[str]:
+        self.add_local_type_params_to_context(ctx)
+        if isinstance(self.child, UnionSchema):
+            struct_member = next((member for member in self.child.members if isinstance(member, StructSchema)), None)
+            if struct_member is not None:
+                return struct_member.to_python_code(class_name, ctx)
+        return self.child.to_python_code(class_name, ctx)
 
 
 class StructSchema(BaseSchema):
@@ -662,8 +710,7 @@ class StructSchema(BaseSchema):
     def prune_fields_on_version(self) -> Self:
         # All the PairSchema and SpreadFieldSchema fields have attributes, so we can filter them based on the current version.
         filtered_fields: list[PairSchema | SpreadFieldSchema | UnionSchema] = [
-            field
-            for field in self.fields
+            field for field in self.fields
             if isinstance(field, (PairSchema, SpreadFieldSchema)) and is_valid_with_attributes(field.attributes)
         ]
         self.fields = filtered_fields
@@ -673,14 +720,14 @@ class StructSchema(BaseSchema):
         """Returns the mapping alias dict (i.e. dict[<x>, <x>]) for a struct, or None if it's not that kind of struct."""
         plain_pairs =      [field for field in self.fields if isinstance(field, PairSchema) and isinstance(field.key, str)]  # fmt: skip
         schema_key_pairs = [field for field in self.fields if isinstance(field, PairSchema) and not isinstance(field.key, str)]
-        if len(schema_key_pairs) != 1 or plain_pairs:  # Triggers often.
+        if len(schema_key_pairs) != 1 or plain_pairs:  # If it's not a single pair, it's just a simple dict.
             # rint(len(schema_key_pairs), plain_pairs)
             # TODO: Because a mapping can't be typed inline yet in Python, we don't generate a TypedDict, instead just put the first here.
             # I don't know if they specify more than one, perhaps we can chain them together, i.e. ` | `?
             return None
 
         field = schema_key_pairs[0]
-        assert isinstance(field.key, BaseSchema)
+        assert not isinstance(field.key, str)
         return f"dict[{field.key.to_annotation(ctx)}, {field.type.to_annotation(ctx)}]"
 
     def _calculate_inherited_names(self, template_type_names: list[str], ctx: RenderContext) -> list[str]:
@@ -759,7 +806,6 @@ class StructSchema(BaseSchema):
         ctx.required_imports.add(Import("typing", "Any", type_checking_only=False, is_builtin=True))
         # TODO: We need to return our customly implemented Struct here, then the alias should just reference it.
         # from code_generation import render_dataclass_from_model
-        # print(render_dataclass_from_model(self, "abc", [], ctx))
         return "Any"  # TODO: Obviously we need to do this.
 
 
@@ -790,10 +836,15 @@ class DispatcherSchema(BaseSchema):
     registry: str
 
     def to_annotation(self, ctx: RenderContext) -> str:
-        ctx.required_imports.add(Import("typing", "Any", type_checking_only=False, is_builtin=True))
-        # parallel_indices=[DynamicIndexSchema(accessor=[DynamicIndexAccessorItem(keyword='parent'), 'id'])] registry='mcdoc:block_item_states'
-        # parallel_indices=[StaticIndexSchema(value='suspicious_stew_effects')] registry='minecraft:data_component'
-        return "Any"  # TODO: Figure this out
+        import_target = symbol_path_to_import_string_and_name(self.registry)
+        import_target = None
+        if import_target is None or True:  # TODO: Remove OR TRUE to return functionality.
+            ctx.required_imports.add(Import("typing", "Any", type_checking_only=False, is_builtin=True))
+            return "Any"
+
+        module, identifier = import_target  # type: ignore[unreachable]
+        ctx.required_imports.add(Import(module, identifier, type_checking_only=True, is_builtin=False))
+        return identifier
 
 
 class TreeSchema(BaseSchema):
@@ -808,6 +859,56 @@ class TreeValueSchema(RootModel[dict[str, TreeSchema | LiteralSchema]]):
     root: dict[str, TreeSchema | LiteralSchema]  # pyright: ignore[reportIncompatibleVariableOverride]
 
 
+type MCDocDispatcherSchemaTypes = (
+    AnySchema | BooleanSchema | ByteSchema | ConcreteSchema | DispatcherSchema | DynamicIndexSchema | EnumSchema
+    | FloatSchema | IndexedSchema | IntArraySchema | IntSchema | ListSchema | LiteralSchema | LongSchema
+    | PairSchema | ReferenceSchema | ShortSchema | SpreadFieldSchema | StaticIndexSchema | StringSchema
+    | StructSchema | TemplateSchema | TreeSchema | TupleSchema | UnionSchema
+)
+
+type MCDocDispatcherBranchMap = dict[str, Annotated[MCDocDispatcherSchemaTypes, Field(discriminator="kind")]]
+
+
+class MCDocDispatcher(RootModel[MCDocDispatcherBranchMap]):
+    """Represents one registry entry from SYMBOLS_MAP["mcdoc/dispatcher"].
+
+    Shape:
+    {
+        "%none": {"kind": "struct", ...},
+        "custom_case": {"kind": "union", ...},
+    }
+    """
+    root: MCDocDispatcherBranchMap  # pyright: ignore[reportIncompatibleVariableOverride]
+
+    def to_python_code(self, class_name: str, ctx: RenderContext) -> list[str]:
+        # Dispatcher registries map keys (e.g. %none, close) to schema variants.
+        # Emit them as a single alias union, materializing struct members as sibling classes.
+        if not self.root:
+            return [f"type {class_name} = None"]
+
+        rendered_struct_members: list[str] = []
+        union_member_annotations: list[str] = []
+        struct_index = 0
+
+        for member in self.root.values():
+            if isinstance(member, StructSchema):
+                struct_index += 1
+                member_name = f"{class_name}Struct{struct_index}"
+                rendered_struct_members.extend(member.to_python_code(member_name, ctx))
+                union_member_annotations.append(member_name)
+            else:
+                union_member_annotations.append(member.to_annotation(ctx))
+
+        deduped_annotations = list(dict.fromkeys(union_member_annotations)) or ["None"]
+        alias_line = f"type {class_name} = {' | '.join(deduped_annotations)}"
+        return rendered_struct_members + [alias_line]
+
+    def remove_version_data(self) -> Self:
+        for schema in self.root.values():
+            schema.remove_version_data()
+        return self
+
+
 # ==================================================================================================================================
 # ==================================================================================================================================
 # ==================================================================================================================================
@@ -816,7 +917,7 @@ type KindOption = Literal[
     "int", "string", "float", "double", "boolean", "short", "long", "byte", "literal", "any", 
     "list", "tuple", "int_array", "enum",
     "concrete", "indexed", "reference",  "union", "pair", "spread", 
-    "template", "struct", "dynamic", "static", "dispatcher",  "tree",
+    "template", "struct", "dynamic", "static", "dispatcher",  "tree", "mcdocdispatcher",
 ]
 
 KIND_TO_MODEL: dict[KindOption, type[BaseSchema]] = {
@@ -830,4 +931,5 @@ KIND_TO_MODEL: dict[KindOption, type[BaseSchema]] = {
     "tree": TreeSchema,
     "spread": SpreadFieldSchema,
     "static": StaticIndexSchema, "double": FloatSchema,
+    "mcdocdispatcher": MCDocDispatcher,  # type: ignore[dict-item]
 }

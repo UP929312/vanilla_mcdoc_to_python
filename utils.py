@@ -8,7 +8,7 @@ if TYPE_CHECKING:
     from typed_models import Attribute, BaseSchema
 
 INDENT = 4
-ROOT_PACKAGE = Path("generated_symbols")
+GENERATED_SYMBOLS_DIRECTORY = Path("generated_symbols")
 
 REFETCH_SYMBOLS = False
 REFETCH_VERSIONS = False
@@ -61,12 +61,12 @@ def symbol_path_to_import_string_and_name(path: str) -> tuple[str, str]:
        e.g. ::java::data::worldgen::IntProvider -> data.worldgen.IntProvider & IntProvider
        So we can do things like imports: from generated_symbolds.data.worldgen.IntProvider import IntProvider
     """
-    assert path.startswith("::java::")  # Always true.
-    segments = path.removeprefix('::java::').split('::')
-    assert len(segments) >= 2  # Always true
-    # Import from the module file for the referenced symbol (module includes the final name)
-    module = f"{ROOT_PACKAGE.name}." + '.'.join(segments)
-    return module, segments[-1]
+    if path.startswith("::java::"):  # For regular mcdoc stuff
+        *segments, identifier = path.removeprefix('::java::').split('::')
+    else:  # For mcdoc/dispatcher
+        *segments, identifier = path.split(":")
+    module = f"{GENERATED_SYMBOLS_DIRECTORY.name}.{'.'.join(segments)}.{identifier}"
+    return module, identifier
 
 
 def is_valid_with_attributes(attributes: list[Attribute], current_version: str = LATEST_VERSION) -> bool:
@@ -102,12 +102,13 @@ def iter_child_schemas(value: object) -> Generator[BaseSchema]:
             yield from iter_child_schemas(item)
 
 
-def extract_child(model: BaseSchema) -> BaseSchema:
-    """For TemplateSchema, get it's child, for everything else, return the input as is"""
-    from typed_models import TemplateSchema, UnionSchema, StructSchema
-    if not isinstance(model, TemplateSchema):
-        return model
-    if not isinstance(model.child, UnionSchema):
-        return model.child
-    # There will always be at least one and only one StructSchema in the union, so we just get it and return.
-    return next(member for member in model.child.members if isinstance(member, StructSchema))
+def manage_directory_and_inits(path: Path) -> None:
+    """Creates the subfolders required, plus the __init__ files too"""
+    path.mkdir(parents=True, exist_ok=True)
+    current = path
+    while current != GENERATED_SYMBOLS_DIRECTORY.parent and current != current.parent:
+        init_file = current / "__init__.py"
+        if not init_file.exists():
+            init_file.parent.mkdir(parents=True, exist_ok=True)
+            init_file.write_text("\n", encoding="utf-8")
+        current = current.parent
