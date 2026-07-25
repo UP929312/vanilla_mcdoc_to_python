@@ -667,6 +667,7 @@ class TemplateTypeParam(BaseModel):
     path: str
 
     def to_python_code(self) -> str:
+        """Converts `::java::world::item::T` -> `T` """
         return self.path.split("::")[-1]
 
 
@@ -686,18 +687,18 @@ class TemplateSchema(BaseSchema):
     child: Annotated[TemplateChildTypes, Field(discriminator="kind")]
     type_params: list[TemplateTypeParam] = Field(default_factory=list, alias="typeParams")
 
-    def add_local_type_params_to_context(self, ctx: RenderContext) -> None:
+    def _add_local_type_params_to_context(self, ctx: RenderContext) -> None:
         ctx.local_type_params.update(type_param.path for type_param in self.type_params)
 
     def to_annotation(self, ctx: RenderContext) -> str:
-        self.add_local_type_params_to_context(ctx)
+        self._add_local_type_params_to_context(ctx)
         return self.child.to_annotation(ctx)
 
     def to_python_code(self, class_name: str, ctx: RenderContext) -> list[str]:
-        self.add_local_type_params_to_context(ctx)
+        self._add_local_type_params_to_context(ctx)
         if isinstance(self.child, UnionSchema):
             struct_member = next((member for member in self.child.members if isinstance(member, StructSchema)), None)
-            if struct_member is not None:
+            if struct_member is not None:  # TODO: Think we can remove thism think we always have at least one Struct?
                 return struct_member.to_python_code(class_name, ctx)
         return self.child.to_python_code(class_name, ctx)
 
@@ -721,7 +722,6 @@ class StructSchema(BaseSchema):
         plain_pairs =      [field for field in self.fields if isinstance(field, PairSchema) and isinstance(field.key, str)]  # fmt: skip
         schema_key_pairs = [field for field in self.fields if isinstance(field, PairSchema) and not isinstance(field.key, str)]
         if len(schema_key_pairs) != 1 or plain_pairs:  # If it's not a single pair, it's just a simple dict.
-            # rint(len(schema_key_pairs), plain_pairs)
             # TODO: Because a mapping can't be typed inline yet in Python, we don't generate a TypedDict, instead just put the first here.
             # I don't know if they specify more than one, perhaps we can chain them together, i.e. ` | `?
             return None
@@ -731,16 +731,15 @@ class StructSchema(BaseSchema):
         return f"dict[{field.key.to_annotation(ctx)}, {field.type.to_annotation(ctx)}]"
 
     def _calculate_inherited_names(self, template_type_names: list[str], ctx: RenderContext) -> list[str]:
-        # Collects Structs' inherrited children, e.g. Class(PredicateOffset)
-        base_names = SpreadFieldSchema.collect_inherited_base_names(self.fields, ctx)
-
         if template_type_names:
             ctx.required_imports.add(Import("typing", "Generic", False, True))
-            base_names.append(f"Generic[{', '.join(template_type_names)}]")
-        return base_names
+            return [f"Generic[{', '.join(template_type_names)}]"]
+        return []
 
     def _render_dataclass_from_struct(self, class_name: str, template_type_names: list[str], ctx: RenderContext) -> list[str]:
-        inherited_names = self._calculate_inherited_names(template_type_names, ctx)
+        # Collects Structs' inherrited children, e.g. Class(PredicateOffset)
+        inherited_names = SpreadFieldSchema.collect_inherited_base_names(self.fields, ctx)
+        inherited_names += self._calculate_inherited_names(template_type_names, ctx)
         lines: list[str] = ["@dataclass(kw_only=True)"]
         ctx.required_imports.add(Import("dataclasses", "dataclass", False, True))
         lines.append(
@@ -869,28 +868,42 @@ type MCDocDispatcherSchemaTypes = (
 type MCDocDispatcherBranchMap = dict[str, Annotated[MCDocDispatcherSchemaTypes, Field(discriminator="kind")]]
 
 
-class MCDocDispatcher(RootModel[MCDocDispatcherBranchMap]):
+class MCDocDispatcher(BaseSchema):
     """Represents one registry entry from SYMBOLS_MAP["mcdoc/dispatcher"].
 
-    Shape:
+    Shape after kind injection:
     {
+        "kind": "mcdocdispatcher",
         "%none": {"kind": "struct", ...},
         "custom_case": {"kind": "union", ...},
     }
     """
-    root: MCDocDispatcherBranchMap  # pyright: ignore[reportIncompatibleVariableOverride]
+    kind: Literal["mcdocdispatcher"] = Field(repr=False)
+    branches: MCDocDispatcherBranchMap = Field(default_factory=dict)
+
+    @model_validator(mode="before")
+    @classmethod
+    def collect_branches(cls, data: object) -> object:
+        if isinstance(data, dict):
+            # "kind" is always reserved; "attributes" is only reserved when it's a list (schema metadata),
+            # not when it's a dispatcher branch that happens to be named "attributes".
+            reserved = {"kind"} | ({"attributes"} if isinstance(data.get("attributes"), list) else set())
+            branches = {k: v for k, v in data.items() if k not in reserved}
+            return {k: v for k, v in data.items() if k in reserved} | {"branches": branches}
+        return data
+
+    def to_annotation(self, ctx: RenderContext) -> str:
+        raise NotImplementedError
 
     def to_python_code(self, class_name: str, ctx: RenderContext) -> list[str]:
-        # Dispatcher registries map keys (e.g. %none, close) to schema variants.
-        # Emit them as a single alias union, materializing struct members as sibling classes.
-        if not self.root:
+        if not self.branches:
             return [f"type {class_name} = None"]
 
         rendered_struct_members: list[str] = []
         union_member_annotations: list[str] = []
         struct_index = 0
 
-        for member in self.root.values():
+        for member in self.branches.values():
             if isinstance(member, StructSchema):
                 struct_index += 1
                 member_name = f"{class_name}Struct{struct_index}"
@@ -899,12 +912,11 @@ class MCDocDispatcher(RootModel[MCDocDispatcherBranchMap]):
             else:
                 union_member_annotations.append(member.to_annotation(ctx))
 
-        deduped_annotations = list(dict.fromkeys(union_member_annotations)) or ["None"]
-        alias_line = f"type {class_name} = {' | '.join(deduped_annotations)}"
+        alias_line = f"type {class_name} = {' | '.join(list(dict.fromkeys(union_member_annotations)))}"
         return rendered_struct_members + [alias_line]
 
     def remove_version_data(self) -> Self:
-        for schema in self.root.values():
+        for schema in self.branches.values():
             schema.remove_version_data()
         return self
 
