@@ -888,9 +888,6 @@ class MCDocDispatcher(BaseSchema):
             return {k: v for k, v in data.items() if k in reserved} | {"branches": branches}
         return data
 
-    def to_annotation(self, ctx: RenderContext) -> str:
-        raise NotImplementedError
-
     def to_python_code(self, class_name: str, ctx: RenderContext) -> list[str]:
         if not self.branches:
             return [f"type {class_name} = None"]
