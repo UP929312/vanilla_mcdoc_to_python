@@ -3,7 +3,7 @@ from typing import Annotated, Literal, Self
 
 from pydantic import BaseModel, Field, RootModel, model_validator
 
-from utils import GENERATED_SYMBOLS_DIRECTORY, SYMBOLS_MAP, symbol_path_to_import_string_and_name, symbol_path_to_object_name, is_valid_with_attributes, iter_child_schemas
+from utils import ROOT_SYMBOLS_KEYS, symbol_path_to_import_string_and_name, symbol_path_to_object_name, is_valid_with_attributes, iter_child_schemas
 
 
 # ==================================================================================================================================
@@ -36,7 +36,7 @@ class RenderContext:
             return name
         if path in self.local_type_params:
             return name
-        if path not in SYMBOLS_MAP["mcdoc"]:
+        if path not in ROOT_SYMBOLS_KEYS["mcdoc"]:
             # This is a weird edgecase for tag::E
             # I might figure out a better solution later, but for now, it's fine.
             self.local_type_params.add(path)
@@ -869,7 +869,7 @@ type MCDocDispatcherBranchMap = dict[str, Annotated[MCDocDispatcherSchemaTypes, 
 
 
 class MCDocDispatcher(BaseSchema):
-    """Represents one registry entry from SYMBOLS_MAP["mcdoc/dispatcher"].
+    """Represents one registry entry from "mcdoc/dispatcher".
 
     Shape after kind injection:
     {
@@ -885,9 +885,7 @@ class MCDocDispatcher(BaseSchema):
     @classmethod
     def collect_branches(cls, data: object) -> object:
         if isinstance(data, dict):
-            # "kind" is always reserved; "attributes" is only reserved when it's a list (schema metadata),
-            # not when it's a dispatcher branch that happens to be named "attributes".
-            reserved = {"kind"} | ({"attributes"} if isinstance(data.get("attributes"), list) else set())
+            reserved = {"kind", "attributes"}
             branches = {k: v for k, v in data.items() if k not in reserved}
             return {k: v for k, v in data.items() if k in reserved} | {"branches": branches}
         return data

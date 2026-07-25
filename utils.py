@@ -42,6 +42,7 @@ else:
         VERSION_IDS = json.load(file)
 
 LATEST_VERSION = VERSION_IDS[0]
+ROOT_SYMBOLS_KEYS = dict({object_type: set(keys) for object_type, keys in SYMBOLS_MAP.items()})
 
 
 def get_version_index(version: str) -> int:
