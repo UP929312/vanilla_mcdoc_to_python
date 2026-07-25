@@ -865,8 +865,6 @@ type MCDocDispatcherSchemaTypes = (
     | StructSchema | TemplateSchema | TreeSchema | TupleSchema | UnionSchema
 )
 
-type MCDocDispatcherBranchMap = dict[str, Annotated[MCDocDispatcherSchemaTypes, Field(discriminator="kind")]]
-
 
 class MCDocDispatcher(BaseSchema):
     """Represents one registry entry from "mcdoc/dispatcher".
@@ -879,7 +877,7 @@ class MCDocDispatcher(BaseSchema):
     }
     """
     kind: Literal["mcdocdispatcher"] = Field(repr=False)
-    branches: MCDocDispatcherBranchMap = Field(default_factory=dict)
+    branches: dict[str, Annotated[MCDocDispatcherSchemaTypes, Field(discriminator="kind")]] = Field(default_factory=dict)
 
     @model_validator(mode="before")
     @classmethod
