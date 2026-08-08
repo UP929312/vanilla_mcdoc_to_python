@@ -4,7 +4,7 @@ from typing import TYPE_CHECKING
 from generated_symbols.assets.model.ModelElementRotationBase import ModelElementRotationBase
 
 if TYPE_CHECKING:
-    from generated_symbols.assets.model.Axis import Axis
+    from generated_symbols.util.direction.Axis import Axis
 
 
 @dataclass(kw_only=True)
@@ -30,7 +30,7 @@ _ = {
                 "key": "axis",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::assets::model::Axis"
+                    "path": "::java::util::direction::Axis"
                 }
             },
             {

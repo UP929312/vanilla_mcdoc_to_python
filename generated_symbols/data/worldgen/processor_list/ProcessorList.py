@@ -7,10 +7,10 @@ if TYPE_CHECKING:
 
 
 @dataclass(kw_only=True)
-class ProcessorListStruct1:
+class ProcessorListStruct:
     processors: list[Processor]
 
-type ProcessorList = list[Processor] | ProcessorListStruct1
+type ProcessorList = list[Processor] | ProcessorListStruct
 
 
 # ~~~ MODEL DUMP ~~~

@@ -12,6 +12,7 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class Villager(Breedable, VillagerBase):
     VillagerData: VillagerData | None = None
+    VillagerDataFinalized: bool | None = None
     FoodLevel: Annotated[int, 'Range | `0`-`12` | both inclusive'] | None = None  # Determines whether the villager will be available to reproduce.  When the value is `12` the villager can reproduce.  After reproducing, the value is reset to `0`.  To increase this value villagers will pick up food that is in range.  Foods: Potatoes, Carrots, & Beetroots increase the level by `1`. Bread increases the level by `4`.
     Gossips: list[PlayerReputationPart] | None = None  # Affects per-player reputation which affects trade offer pricing and iron golem behavior.  Reputation is assembled through events the villager has witnessed (within 16 blocks) or heard about from other villagers through gossip.  All reputation parts decay over time except `major_positive` which is only ever increased (when the villager is cured).  Decay occurs every 24k ticks (20 minutes), tracked by `LastGossipDecay`.  Once a reputation part decays to zero it is removed from the list.
     LastGossipDecay: int | None = None  # Last game-tick every gossip significance `Value` could have decayed.  Once this reaches 24k (20 minutes) less than the current game tick a decay occurs again.
@@ -45,6 +46,26 @@ _ = {
                 "type": {
                     "kind": "reference",
                     "path": "::java::world::entity::mob::breedable::villager::VillagerData"
+                },
+                "optional": True
+            },
+            {
+                "kind": "pair",
+                "attributes": [
+                    {
+                        "name": "since",
+                        "value": {
+                            "kind": "literal",
+                            "value": {
+                                "kind": "string",
+                                "value": "26.1"
+                            }
+                        }
+                    }
+                ],
+                "key": "VillagerDataFinalized",
+                "type": {
+                    "kind": "boolean"
                 },
                 "optional": True
             },

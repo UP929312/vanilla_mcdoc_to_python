@@ -7,11 +7,11 @@ if TYPE_CHECKING:
 
 
 @dataclass(kw_only=True)
-class IntRangeStruct1:
+class IntRangeStruct:
     min: NumberProviderRef | None = None  # Clamps to an integer.
     max: NumberProviderRef | None = None  # Clamps to an integer.
 
-type IntRange = int | IntRangeStruct1
+type IntRange = int | IntRangeStruct
 
 
 # ~~~ MODEL DUMP ~~~

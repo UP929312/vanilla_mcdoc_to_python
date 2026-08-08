@@ -3,12 +3,13 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+    from generated_symbols.data.worldgen.feature.placement.PlacedFeatureRef import PlacedFeatureRef
     from generated_symbols.util.WeightedList import WeightedList
 
 
 @dataclass(kw_only=True)
 class WeightedRandomFeatureConfig:
-    features: WeightedList[str]
+    features: WeightedList[PlacedFeatureRef]
 
 
 # ~~~ MODEL DUMP ~~~
@@ -27,19 +28,8 @@ _ = {
                     },
                     "typeArgs": [
                         {
-                            "kind": "string",
-                            "attributes": [
-                                {
-                                    "name": "id",
-                                    "value": {
-                                        "kind": "literal",
-                                        "value": {
-                                            "kind": "string",
-                                            "value": "worldgen/placed_feature"
-                                        }
-                                    }
-                                }
-                            ]
+                            "kind": "reference",
+                            "path": "::java::data::worldgen::feature::placement::PlacedFeatureRef"
                         }
                     ]
                 }

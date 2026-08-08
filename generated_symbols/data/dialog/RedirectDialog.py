@@ -4,12 +4,12 @@ from typing import TYPE_CHECKING
 from generated_symbols.data.dialog.ButtonListDialogBase import ButtonListDialogBase
 
 if TYPE_CHECKING:
-    from generated_symbols.data.dialog.Dialog import Dialog
+    from generated_symbols.data.dialog.DialogListRef import DialogListRef
 
 
 @dataclass(kw_only=True)
 class RedirectDialog(ButtonListDialogBase):
-    dialogs: list[str | Dialog] | str | Dialog
+    dialogs: DialogListRef
 
 
 # ~~~ MODEL DUMP ~~~
@@ -28,67 +28,8 @@ _ = {
                 "kind": "pair",
                 "key": "dialogs",
                 "type": {
-                    "kind": "union",
-                    "members": [
-                        {
-                            "kind": "list",
-                            "item": {
-                                "kind": "union",
-                                "members": [
-                                    {
-                                        "kind": "string",
-                                        "attributes": [
-                                            {
-                                                "name": "id",
-                                                "value": {
-                                                    "kind": "literal",
-                                                    "value": {
-                                                        "kind": "string",
-                                                        "value": "dialog"
-                                                    }
-                                                }
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "kind": "reference",
-                                        "path": "::java::data::dialog::Dialog"
-                                    }
-                                ]
-                            }
-                        },
-                        {
-                            "kind": "string",
-                            "attributes": [
-                                {
-                                    "name": "id",
-                                    "value": {
-                                        "kind": "tree",
-                                        "values": {
-                                            "registry": {
-                                                "kind": "literal",
-                                                "value": {
-                                                    "kind": "string",
-                                                    "value": "dialog"
-                                                }
-                                            },
-                                            "tags": {
-                                                "kind": "literal",
-                                                "value": {
-                                                    "kind": "string",
-                                                    "value": "allowed"
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "kind": "reference",
-                            "path": "::java::data::dialog::Dialog"
-                        }
-                    ]
+                    "kind": "reference",
+                    "path": "::java::data::dialog::DialogListRef"
                 }
             }
         ]

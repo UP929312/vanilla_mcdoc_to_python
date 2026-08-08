@@ -10,7 +10,7 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class LootTablePoolEntry(SingletonPoolEntry):
     value: LootTableListRef
-    expand: bool  # If `true`, select a random loot table from the tag.  If `false`, drops all loot tables.
+    expand: bool | None = None  # If `true`, randomly selects a loot table to drop.  If `false`, drops all loot tables.  Defaults to `false`.
 
 
 # ~~~ MODEL DUMP ~~~
@@ -141,11 +141,12 @@ _ = {
                         }
                     }
                 ],
-                "desc": "If `True`, select a random loot table from the tag. \\\nIf `False`, drops all loot tables.",
+                "desc": "If `True`, randomly selects a loot table to drop. \\\nIf `False`, drops all loot tables. \\\nDefaults to `False`.",
                 "key": "expand",
                 "type": {
                     "kind": "boolean"
-                }
+                },
+                "optional": True
             },
             {
                 "kind": "spread",

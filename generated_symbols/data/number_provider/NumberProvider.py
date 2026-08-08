@@ -3,10 +3,10 @@ from dataclasses import dataclass
 
 
 @dataclass(kw_only=True)
-class NumberProviderStruct1:
+class NumberProviderStruct:
     type: str
 
-type NumberProvider = float | NumberProviderStruct1
+type NumberProvider = float | NumberProviderStruct
 
 
 # ~~~ MODEL DUMP ~~~

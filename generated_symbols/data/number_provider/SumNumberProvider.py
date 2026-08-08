@@ -3,12 +3,12 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from generated_symbols.data.number_provider.NumberProviderRef import NumberProviderRef
+    from generated_symbols.data.number_provider.NumberProviderListRef import NumberProviderListRef
 
 
 @dataclass(kw_only=True)
 class SumNumberProvider:
-    summands: list[NumberProviderRef]
+    summands: NumberProviderListRef
 
 
 # ~~~ MODEL DUMP ~~~
@@ -20,11 +20,8 @@ _ = {
                 "kind": "pair",
                 "key": "summands",
                 "type": {
-                    "kind": "list",
-                    "item": {
-                        "kind": "reference",
-                        "path": "::java::data::number_provider::NumberProviderRef"
-                    }
+                    "kind": "reference",
+                    "path": "::java::data::number_provider::NumberProviderListRef"
                 }
             }
         ]

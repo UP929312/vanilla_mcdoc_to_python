@@ -1,10 +1,14 @@
 # Generated from symbols.json for ::java::data::worldgen::density_function::Shift
 from dataclasses import dataclass
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from generated_symbols.data.worldgen.density_function.NoiseParametersRef import NoiseParametersRef
 
 
 @dataclass(kw_only=True)
 class Shift:
-    noise: str
+    noise: NoiseParametersRef
 
 
 # ~~~ MODEL DUMP ~~~
@@ -28,19 +32,8 @@ _ = {
                 ],
                 "key": "argument",
                 "type": {
-                    "kind": "string",
-                    "attributes": [
-                        {
-                            "name": "id",
-                            "value": {
-                                "kind": "literal",
-                                "value": {
-                                    "kind": "string",
-                                    "value": "worldgen/noise"
-                                }
-                            }
-                        }
-                    ]
+                    "kind": "reference",
+                    "path": "::java::data::worldgen::density_function::NoiseParametersRef"
                 }
             },
             {
@@ -59,19 +52,8 @@ _ = {
                 ],
                 "key": "noise",
                 "type": {
-                    "kind": "string",
-                    "attributes": [
-                        {
-                            "name": "id",
-                            "value": {
-                                "kind": "literal",
-                                "value": {
-                                    "kind": "string",
-                                    "value": "worldgen/noise"
-                                }
-                            }
-                        }
-                    ]
+                    "kind": "reference",
+                    "path": "::java::data::worldgen::density_function::NoiseParametersRef"
                 }
             }
         ]

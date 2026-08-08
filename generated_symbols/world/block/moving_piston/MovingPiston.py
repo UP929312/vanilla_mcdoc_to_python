@@ -5,13 +5,13 @@ from generated_symbols.world.block.BlockEntity import BlockEntity
 
 if TYPE_CHECKING:
     from generated_symbols.util.block_state.BlockState import BlockState
-    from generated_symbols.world.block.moving_piston.Facing import Facing
+    from generated_symbols.util.direction.DirectionByte import DirectionByte
 
 
 @dataclass(kw_only=True)
 class MovingPiston(BlockEntity):
     blockState: BlockState | None = None  # Moving block represented by the moving piston.
-    facing: Facing | None = None  # The direction it is moving.
+    facing: DirectionByte | None = None  # The direction it is moving.
     progress: float | None = None  # How far it has moved.
     extending: bool | None = None
     source: bool | None = None  # Whether the moving piston is the piston head.
@@ -44,8 +44,41 @@ _ = {
                 "desc": "The direction it is moving.",
                 "key": "facing",
                 "type": {
-                    "kind": "reference",
-                    "path": "::java::world::block::moving_piston::Facing"
+                    "kind": "union",
+                    "members": [
+                        {
+                            "kind": "reference",
+                            "path": "::java::util::direction::DirectionInt",
+                            "attributes": [
+                                {
+                                    "name": "until",
+                                    "value": {
+                                        "kind": "literal",
+                                        "value": {
+                                            "kind": "string",
+                                            "value": "1.21.5"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "kind": "reference",
+                            "path": "::java::util::direction::DirectionByte",
+                            "attributes": [
+                                {
+                                    "name": "since",
+                                    "value": {
+                                        "kind": "literal",
+                                        "value": {
+                                            "kind": "string",
+                                            "value": "1.21.5"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
                 },
                 "optional": True
             },

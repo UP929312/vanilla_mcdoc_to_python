@@ -7,10 +7,10 @@ if TYPE_CHECKING:
 
 
 @dataclass(kw_only=True)
-class HeightProviderStruct1:
+class HeightProviderStruct:
     type: str
 
-type HeightProvider = HeightProviderStruct1 | VerticalAnchor
+type HeightProvider = HeightProviderStruct | VerticalAnchor
 
 
 # ~~~ MODEL DUMP ~~~

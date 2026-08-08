@@ -8,11 +8,11 @@ if TYPE_CHECKING:
 
 
 @dataclass(kw_only=True)
-class CubicSplineStruct1:
+class CubicSplineStruct:
     coordinate: DensityFunctionRef
     points: list[SplinePoint]
 
-type CubicSpline = float | CubicSplineStruct1
+type CubicSpline = float | CubicSplineStruct
 
 
 # ~~~ MODEL DUMP ~~~

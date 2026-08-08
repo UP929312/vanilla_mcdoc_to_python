@@ -40,6 +40,18 @@ _ = {
                 "value": "grass"
             },
             {
+                "attributes": [
+                    {
+                        "name": "until",
+                        "value": {
+                            "kind": "literal",
+                            "value": {
+                                "kind": "string",
+                                "value": "26.3"
+                            }
+                        }
+                    }
+                ],
                 "identifier": "MapColor",
                 "value": "map_color"
             },

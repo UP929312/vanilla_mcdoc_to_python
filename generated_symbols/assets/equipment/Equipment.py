@@ -3,14 +3,14 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from generated_symbols.assets.atlas.PaletteRef import PaletteRef
     from generated_symbols.assets.equipment.Layers import Layers
+    from generated_symbols.assets.equipment.TrimOverride import TrimOverride
 
 
 @dataclass(kw_only=True)
 class Equipment:
     layers: Layers  # List of layers for each model layer type.
-    trim_palette_replacements: dict[PaletteRef, PaletteRef] | None = None  # Replaces palette textures provided by trim materials.
+    trim_overrides: list[TrimOverride] | None = None  # Replaces trim texture based on armor trim.  Only the first entry that matches is applied.
 
 
 # ~~~ MODEL DUMP ~~~
@@ -41,23 +41,14 @@ _ = {
                         }
                     }
                 ],
-                "desc": "Replaces palette textures provided by trim materials.",
-                "key": "trim_palette_replacements",
+                "desc": "Replaces trim texture based on armor trim. \\\nOnly the first entry that matches is applied.",
+                "key": "trim_overrides",
                 "type": {
-                    "kind": "struct",
-                    "fields": [
-                        {
-                            "kind": "pair",
-                            "key": {
-                                "kind": "reference",
-                                "path": "::java::assets::atlas::PaletteRef"
-                            },
-                            "type": {
-                                "kind": "reference",
-                                "path": "::java::assets::atlas::PaletteRef"
-                            }
-                        }
-                    ]
+                    "kind": "list",
+                    "item": {
+                        "kind": "reference",
+                        "path": "::java::assets::equipment::TrimOverride"
+                    }
                 },
                 "optional": True
             }

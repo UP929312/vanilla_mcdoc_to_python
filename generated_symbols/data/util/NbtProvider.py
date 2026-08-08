@@ -7,10 +7,10 @@ if TYPE_CHECKING:
 
 
 @dataclass(kw_only=True)
-class NbtProviderStruct1:
+class NbtProviderStruct:
     type: str
 
-type NbtProvider = NbtContextTarget | NbtProviderStruct1
+type NbtProvider = NbtContextTarget | NbtProviderStruct
 
 
 # ~~~ MODEL DUMP ~~~

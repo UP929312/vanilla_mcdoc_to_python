@@ -4,7 +4,7 @@ from typing import TYPE_CHECKING
 from generated_symbols.world.item.ItemBase import ItemBase
 
 if TYPE_CHECKING:
-    from generated_symbols.world.item.head.SkullOwner import SkullOwner
+    from generated_symbols.world.block.head.SkullOwner import SkullOwner
 
 
 @dataclass(kw_only=True)
@@ -32,7 +32,7 @@ _ = {
                     "members": [
                         {
                             "kind": "reference",
-                            "path": "::java::world::item::head::SkullOwner"
+                            "path": "::java::world::block::head::SkullOwner"
                         },
                         {
                             "kind": "string"

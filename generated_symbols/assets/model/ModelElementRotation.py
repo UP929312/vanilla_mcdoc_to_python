@@ -2,7 +2,7 @@
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from generated_symbols.assets.model.Axis import Axis
+    from generated_symbols.util.direction.Axis import Axis
 
 
 type ModelElementRotation = dict[Axis, float]
@@ -28,7 +28,7 @@ _ = {
                         "key": "axis",
                         "type": {
                             "kind": "reference",
-                            "path": "::java::assets::model::Axis"
+                            "path": "::java::util::direction::Axis"
                         }
                     },
                     {
@@ -165,7 +165,7 @@ _ = {
                         "kind": "pair",
                         "key": {
                             "kind": "reference",
-                            "path": "::java::assets::model::Axis"
+                            "path": "::java::util::direction::Axis"
                         },
                         "type": {
                             "kind": "float"

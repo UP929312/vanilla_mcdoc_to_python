@@ -4,7 +4,7 @@ from typing import TYPE_CHECKING
 from generated_symbols.world.block.BlockEntity import BlockEntity
 
 if TYPE_CHECKING:
-    from generated_symbols.util.direction.DirectionInt import DirectionInt
+    from generated_symbols.util.direction.DirectionByte import DirectionByte
     from generated_symbols.world.item.ItemStack import ItemStack
 
 
@@ -13,7 +13,7 @@ class BrushableBlock(BlockEntity):
     LootTable: str | None = None  # Loot table that will decide the brushed loot.
     LootTableSeed: int | None = None  # Seed of the loot table.
     item: ItemStack | None = None  # Item that was rolled from the loot table, which is currently peeking out.
-    hit_direction: DirectionInt | None = None  # Direction of the block that was interacted with. Write-only, is not saved by the game.
+    hit_direction: DirectionByte | None = None  # Direction of the block that was interacted with. Write-only, is not saved by the game.
 
 
 # ~~~ MODEL DUMP ~~~
@@ -90,8 +90,41 @@ _ = {
                 "desc": "Direction of the block that was interacted with.\nWrite-only, is not saved by the game.",
                 "key": "hit_direction",
                 "type": {
-                    "kind": "reference",
-                    "path": "::java::util::direction::DirectionInt"
+                    "kind": "union",
+                    "members": [
+                        {
+                            "kind": "reference",
+                            "path": "::java::util::direction::DirectionInt",
+                            "attributes": [
+                                {
+                                    "name": "until",
+                                    "value": {
+                                        "kind": "literal",
+                                        "value": {
+                                            "kind": "string",
+                                            "value": "1.21.5"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "kind": "reference",
+                            "path": "::java::util::direction::DirectionByte",
+                            "attributes": [
+                                {
+                                    "name": "since",
+                                    "value": {
+                                        "kind": "literal",
+                                        "value": {
+                                            "kind": "string",
+                                            "value": "1.21.5"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
                 },
                 "optional": True
             }

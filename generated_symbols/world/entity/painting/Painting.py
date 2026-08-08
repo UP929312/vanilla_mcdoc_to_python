@@ -4,12 +4,12 @@ from typing import TYPE_CHECKING
 from generated_symbols.world.entity.BlockAttachedEntity import BlockAttachedEntity
 
 if TYPE_CHECKING:
-    from generated_symbols.world.entity.painting.Facing import Facing
+    from generated_symbols.util.direction.HorizontalDirectionByte import HorizontalDirectionByte
 
 
 @dataclass(kw_only=True)
 class Painting(BlockAttachedEntity):
-    facing: Facing | None = None  # Direction it is facing.
+    facing: HorizontalDirectionByte | None = None  # Direction it is facing.
     variant: str | None = None  # Type of painting.
 
 
@@ -43,7 +43,7 @@ _ = {
                 "key": "Facing",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::world::entity::painting::Facing"
+                    "path": "::java::util::direction::HorizontalDirectionByte"
                 },
                 "optional": True
             },
@@ -65,7 +65,7 @@ _ = {
                 "key": "facing",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::world::entity::painting::Facing"
+                    "path": "::java::util::direction::HorizontalDirectionByte"
                 },
                 "optional": True
             },

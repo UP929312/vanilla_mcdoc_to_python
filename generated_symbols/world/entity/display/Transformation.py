@@ -7,13 +7,13 @@ if TYPE_CHECKING:
 
 
 @dataclass(kw_only=True)
-class TransformationStruct1:
+class TransformationStruct:
     translation: tuple[float, float, float]  # Translation in [x, y, z].
     left_rotation: Rotation  # Using this rotation is enough for most transformations.
     right_rotation: Rotation  # For more complex transformations. Applied **before** scaling.
     scale: tuple[float, float, float]  # Scale in [x, y, z].
 
-type Transformation = TransformationStruct1 | tuple[float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float]
+type Transformation = TransformationStruct | tuple[float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float]
 
 
 # ~~~ MODEL DUMP ~~~

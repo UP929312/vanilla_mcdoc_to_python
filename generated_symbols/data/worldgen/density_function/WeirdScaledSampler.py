@@ -4,13 +4,14 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.density_function.DensityFunctionRef import DensityFunctionRef
+    from generated_symbols.data.worldgen.density_function.NoiseParametersRef import NoiseParametersRef
     from generated_symbols.data.worldgen.density_function.RarityType import RarityType
 
 
 @dataclass(kw_only=True)
 class WeirdScaledSampler:
     rarity_value_mapper: RarityType
-    noise: str
+    noise: NoiseParametersRef
     input: DensityFunctionRef
 
 
@@ -31,19 +32,8 @@ _ = {
                 "kind": "pair",
                 "key": "noise",
                 "type": {
-                    "kind": "string",
-                    "attributes": [
-                        {
-                            "name": "id",
-                            "value": {
-                                "kind": "literal",
-                                "value": {
-                                    "kind": "string",
-                                    "value": "worldgen/noise"
-                                }
-                            }
-                        }
-                    ]
+                    "kind": "reference",
+                    "path": "::java::data::worldgen::density_function::NoiseParametersRef"
                 }
             },
             {

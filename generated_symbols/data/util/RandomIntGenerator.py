@@ -7,10 +7,10 @@ if TYPE_CHECKING:
 
 
 @dataclass(kw_only=True)
-class RandomIntGeneratorStruct1:
+class RandomIntGeneratorStruct:
     type: RandomIntGeneratorType | None = None
 
-type RandomIntGenerator = int | RandomIntGeneratorStruct1
+type RandomIntGenerator = int | RandomIntGeneratorStruct
 
 
 # ~~~ MODEL DUMP ~~~

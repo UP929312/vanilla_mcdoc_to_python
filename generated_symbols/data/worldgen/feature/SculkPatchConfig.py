@@ -1,9 +1,6 @@
 # Generated from symbols.json for ::java::data::worldgen::feature::SculkPatchConfig
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
-
-if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.IntProvider import IntProvider
+from typing import Annotated
 
 
 @dataclass(kw_only=True)
@@ -13,8 +10,6 @@ class SculkPatchConfig:
     spread_attempts: Annotated[int, 'Range | `1`-`64` | both inclusive']
     growth_rounds: Annotated[int, 'Range | `0`-`8` | both inclusive']
     spread_rounds: Annotated[int, 'Range | `0`-`8` | both inclusive']
-    extra_rare_growths: IntProvider[int] | int
-    catalyst_chance: Annotated[float, 'Range | `0`-`1` | both inclusive']
 
 
 # ~~~ MODEL DUMP ~~~
@@ -84,6 +79,18 @@ _ = {
             },
             {
                 "kind": "pair",
+                "attributes": [
+                    {
+                        "name": "until",
+                        "value": {
+                            "kind": "literal",
+                            "value": {
+                                "kind": "string",
+                                "value": "26.3"
+                            }
+                        }
+                    }
+                ],
                 "key": "extra_rare_growths",
                 "type": {
                     "kind": "concrete",
@@ -100,6 +107,18 @@ _ = {
             },
             {
                 "kind": "pair",
+                "attributes": [
+                    {
+                        "name": "until",
+                        "value": {
+                            "kind": "literal",
+                            "value": {
+                                "kind": "string",
+                                "value": "26.3"
+                            }
+                        }
+                    }
+                ],
                 "key": "catalyst_chance",
                 "type": {
                     "kind": "float",

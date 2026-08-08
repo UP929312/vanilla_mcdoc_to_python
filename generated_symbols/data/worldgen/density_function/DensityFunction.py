@@ -7,10 +7,10 @@ if TYPE_CHECKING:
 
 
 @dataclass(kw_only=True)
-class DensityFunctionStruct1:
+class DensityFunctionStruct:
     type: str
 
-type DensityFunction = NoiseRange | DensityFunctionStruct1
+type DensityFunction = NoiseRange | DensityFunctionStruct
 
 
 # ~~~ MODEL DUMP ~~~

@@ -15,6 +15,18 @@ _ = {
         "enumKind": "string",
         "values": [
             {
+                "attributes": [
+                    {
+                        "name": "until",
+                        "value": {
+                            "kind": "literal",
+                            "value": {
+                                "kind": "string",
+                                "value": "26.3"
+                            }
+                        }
+                    }
+                ],
                 "identifier": "None",
                 "value": "none"
             },

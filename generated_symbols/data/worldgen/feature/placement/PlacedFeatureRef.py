@@ -5,7 +5,7 @@ if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.placement.PlacedFeature import PlacedFeature
 
 
-type PlacedFeatureRef = str | PlacedFeature
+type PlacedFeatureRef = PlacedFeature | str
 
 
 # ~~~ MODEL DUMP ~~~
@@ -13,6 +13,10 @@ _ = {
     "::java::data::worldgen::feature::placement::PlacedFeatureRef": {
         "kind": "union",
         "members": [
+            {
+                "kind": "reference",
+                "path": "::java::data::worldgen::feature::placement::PlacedFeature"
+            },
             {
                 "kind": "string",
                 "attributes": [
@@ -27,10 +31,6 @@ _ = {
                         }
                     }
                 ]
-            },
-            {
-                "kind": "reference",
-                "path": "::java::data::worldgen::feature::placement::PlacedFeature"
             }
         ]
     }

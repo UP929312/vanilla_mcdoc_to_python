@@ -5,7 +5,7 @@ if TYPE_CHECKING:
     from generated_symbols.data.worldgen.carver.ConfiguredCarver import ConfiguredCarver
 
 
-type CarverRef = str | ConfiguredCarver
+type CarverRef = ConfiguredCarver | str
 
 
 # ~~~ MODEL DUMP ~~~
@@ -13,6 +13,10 @@ _ = {
     "::java::data::worldgen::carver::CarverRef": {
         "kind": "union",
         "members": [
+            {
+                "kind": "reference",
+                "path": "::java::data::worldgen::carver::ConfiguredCarver"
+            },
             {
                 "kind": "string",
                 "attributes": [
@@ -62,10 +66,6 @@ _ = {
                         }
                     }
                 ]
-            },
-            {
-                "kind": "reference",
-                "path": "::java::data::worldgen::carver::ConfiguredCarver"
             }
         ]
     }

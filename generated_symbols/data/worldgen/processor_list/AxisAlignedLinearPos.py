@@ -4,7 +4,7 @@ from typing import TYPE_CHECKING
 from generated_symbols.data.worldgen.processor_list.LinearPos import LinearPos
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.processor_list.Axis import Axis
+    from generated_symbols.util.direction.Axis import Axis
 
 
 @dataclass(kw_only=True)
@@ -22,7 +22,7 @@ _ = {
                 "key": "axis",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::worldgen::processor_list::Axis"
+                    "path": "::java::util::direction::Axis"
                 }
             },
             {

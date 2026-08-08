@@ -3,11 +3,11 @@ from dataclasses import dataclass
 
 
 @dataclass(kw_only=True)
-class RandomValueBoundsStruct1:
+class RandomValueBoundsStruct:
     min: float
     max: float
 
-type RandomValueBounds = float | RandomValueBoundsStruct1
+type RandomValueBounds = float | RandomValueBoundsStruct
 
 
 # ~~~ MODEL DUMP ~~~

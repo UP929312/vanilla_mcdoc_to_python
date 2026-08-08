@@ -21,7 +21,7 @@ _ = {
                                     "kind": "literal",
                                     "value": {
                                         "kind": "string",
-                                        "value": "block"
+                                        "value": "item"
                                     }
                                 },
                                 "tags": {

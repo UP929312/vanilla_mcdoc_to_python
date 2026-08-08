@@ -3,10 +3,10 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.CarveStep import CarveStep
-    from generated_symbols.data.worldgen.carver.CarverRef import CarverRef
+    from generated_symbols.data.worldgen.carver.CarverListRef import CarverListRef
 
 
-type CarversPerStep = dict[CarveStep, list[CarverRef] | str]
+type CarversPerStep = dict[CarveStep, CarverListRef]
 
 
 # ~~~ MODEL DUMP ~~~
@@ -28,10 +28,23 @@ _ = {
                             "item": {
                                 "kind": "reference",
                                 "path": "::java::data::worldgen::carver::CarverRef"
-                            }
+                            },
+                            "attributes": [
+                                {
+                                    "name": "until",
+                                    "value": {
+                                        "kind": "literal",
+                                        "value": {
+                                            "kind": "string",
+                                            "value": "1.18.2"
+                                        }
+                                    }
+                                }
+                            ]
                         },
                         {
-                            "kind": "string",
+                            "kind": "reference",
+                            "path": "::java::data::worldgen::carver::CarverListRef",
                             "attributes": [
                                 {
                                     "name": "since",
@@ -40,28 +53,6 @@ _ = {
                                         "value": {
                                             "kind": "string",
                                             "value": "1.18.2"
-                                        }
-                                    }
-                                },
-                                {
-                                    "name": "id",
-                                    "value": {
-                                        "kind": "tree",
-                                        "values": {
-                                            "registry": {
-                                                "kind": "literal",
-                                                "value": {
-                                                    "kind": "string",
-                                                    "value": "worldgen/configured_carver"
-                                                }
-                                            },
-                                            "tags": {
-                                                "kind": "literal",
-                                                "value": {
-                                                    "kind": "string",
-                                                    "value": "allowed"
-                                                }
-                                            }
                                         }
                                     }
                                 }

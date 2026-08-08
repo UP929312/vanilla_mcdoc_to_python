@@ -12,7 +12,7 @@ class Sign(BlockEntity):
     back_text: SignText | None = None
     front_text: SignText | None = None
     is_waxed: bool | None = None  # Whether the sign has been made uneditable by applying wax.
-    allow_op_features: bool | None = None  # Whether placed signs resolve text components. Defaults to `false`.
+    allow_op_features: bool | None = None  # Whether the sign allows following features: 1. Resolving text components 2. Executing click events  Defaults to `false`.
 
 
 # ~~~ MODEL DUMP ~~~
@@ -56,7 +56,19 @@ _ = {
             },
             {
                 "kind": "pair",
-                "desc": "Whether placed signs resolve text components.\nDefaults to `False`.",
+                "attributes": [
+                    {
+                        "name": "since",
+                        "value": {
+                            "kind": "literal",
+                            "value": {
+                                "kind": "string",
+                                "value": "26.3"
+                            }
+                        }
+                    }
+                ],
+                "desc": "Whether the sign allows following features:\n1. Resolving text components\n2. Executing click events\n\nDefaults to `False`.",
                 "key": "allow_op_features",
                 "type": {
                     "kind": "boolean"

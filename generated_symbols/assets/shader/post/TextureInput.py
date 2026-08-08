@@ -21,7 +21,31 @@ _ = {
                 "kind": "pair",
                 "key": "location",
                 "type": {
-                    "kind": "string"
+                    "kind": "string",
+                    "attributes": [
+                        {
+                            "name": "id",
+                            "value": {
+                                "kind": "tree",
+                                "values": {
+                                    "registry": {
+                                        "kind": "literal",
+                                        "value": {
+                                            "kind": "string",
+                                            "value": "texture"
+                                        }
+                                    },
+                                    "path": {
+                                        "kind": "literal",
+                                        "value": {
+                                            "kind": "string",
+                                            "value": "effect/"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    ]
                 }
             },
             {

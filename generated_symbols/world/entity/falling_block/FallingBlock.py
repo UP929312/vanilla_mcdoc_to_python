@@ -36,17 +36,88 @@ _ = {
                 "desc": "NBT data for the placed block.",
                 "key": "TileEntityData",
                 "type": {
-                    "kind": "dispatcher",
-                    "parallelIndices": [
+                    "kind": "union",
+                    "members": [
                         {
-                            "kind": "dynamic",
-                            "accessor": [
-                                "BlockState",
-                                "Name"
+                            "kind": "dispatcher",
+                            "parallelIndices": [
+                                {
+                                    "kind": "dynamic",
+                                    "accessor": [
+                                        "BlockState",
+                                        "Name"
+                                    ]
+                                }
+                            ],
+                            "registry": "minecraft:block",
+                            "attributes": [
+                                {
+                                    "name": "until",
+                                    "value": {
+                                        "kind": "literal",
+                                        "value": {
+                                            "kind": "string",
+                                            "value": "26.3"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "kind": "struct",
+                            "fields": [
+                                {
+                                    "kind": "spread",
+                                    "type": {
+                                        "kind": "dispatcher",
+                                        "parallelIndices": [
+                                            {
+                                                "kind": "dynamic",
+                                                "accessor": [
+                                                    {
+                                                        "keyword": "parent"
+                                                    },
+                                                    "BlockState"
+                                                ]
+                                            }
+                                        ],
+                                        "registry": "minecraft:block"
+                                    }
+                                },
+                                {
+                                    "kind": "spread",
+                                    "type": {
+                                        "kind": "dispatcher",
+                                        "parallelIndices": [
+                                            {
+                                                "kind": "dynamic",
+                                                "accessor": [
+                                                    {
+                                                        "keyword": "parent"
+                                                    },
+                                                    "BlockState",
+                                                    "id"
+                                                ]
+                                            }
+                                        ],
+                                        "registry": "minecraft:block"
+                                    }
+                                }
+                            ],
+                            "attributes": [
+                                {
+                                    "name": "since",
+                                    "value": {
+                                        "kind": "literal",
+                                        "value": {
+                                            "kind": "string",
+                                            "value": "26.3"
+                                        }
+                                    }
+                                }
                             ]
                         }
-                    ],
-                    "registry": "minecraft:block"
+                    ]
                 },
                 "optional": True
             },

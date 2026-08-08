@@ -9,7 +9,7 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class SkullOwner:
     Id: tuple[int, int, int, int] | None = None  # Optional.
-    Name: str | None = None  # If missing appears as a steve head.
+    Name: str | None = None  # Name of the owner, if missing appears as a steve head.
     Properties: Properties | None = None
 
 
@@ -72,7 +72,7 @@ _ = {
             },
             {
                 "kind": "pair",
-                "desc": "If missing appears as a steve head.",
+                "desc": "Name of the owner, if missing appears as a steve head.",
                 "key": "Name",
                 "type": {
                     "kind": "string"

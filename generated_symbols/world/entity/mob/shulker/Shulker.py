@@ -5,14 +5,14 @@ from generated_symbols.world.entity.mob.MobBase import MobBase
 
 if TYPE_CHECKING:
     from generated_symbols.util.color.DyeColorByte import DyeColorByte
-    from generated_symbols.world.entity.mob.shulker.AttachFace import AttachFace
+    from generated_symbols.util.direction.DirectionByte import DirectionByte
     from generated_symbols.world.entity.mob.shulker.ShulkerColor import ShulkerColor
 
 
 @dataclass(kw_only=True)
 class Shulker(MobBase):
     Peek: bool | None = None  # Whether it is peeking.
-    AttachFace: AttachFace | None = None  # Which face it is attached to.
+    AttachFace: DirectionByte | None = None  # Which face it is attached to.
     Color: DyeColorByte | ShulkerColor | None = None
 
 
@@ -43,7 +43,7 @@ _ = {
                 "key": "AttachFace",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::world::entity::mob::shulker::AttachFace"
+                    "path": "::java::util::direction::DirectionByte"
                 },
                 "optional": True
             },

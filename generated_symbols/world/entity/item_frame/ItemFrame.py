@@ -4,13 +4,13 @@ from typing import TYPE_CHECKING, Annotated
 from generated_symbols.world.entity.BlockAttachedEntity import BlockAttachedEntity
 
 if TYPE_CHECKING:
-    from generated_symbols.world.entity.item_frame.Facing import Facing
+    from generated_symbols.util.direction.DirectionByte import DirectionByte
     from generated_symbols.world.item.ItemStack import ItemStack
 
 
 @dataclass(kw_only=True)
 class ItemFrame(BlockAttachedEntity):
-    Facing: Facing | None = None  # Direction it is facing.
+    Facing: DirectionByte | None = None  # Direction it is facing.
     Item: ItemStack | None = None
     ItemDropChance: float | None = None  # Chance the item has to drop.
     ItemRotation: Annotated[int, 'Range | `0`-`7` | both inclusive'] | None = None  # Rotation of the item.
@@ -36,7 +36,7 @@ _ = {
                 "key": "Facing",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::world::entity::item_frame::Facing"
+                    "path": "::java::util::direction::DirectionByte"
                 },
                 "optional": True
             },

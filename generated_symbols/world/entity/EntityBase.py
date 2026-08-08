@@ -1,6 +1,6 @@
 # Generated from symbols.json for ::java::world::entity::EntityBase
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
 
 if TYPE_CHECKING:
     from generated_symbols.util.text.Text import Text
@@ -19,7 +19,8 @@ class EntityBase:
     HasVisualFire: bool | None = None  # Whether the entity has visual fire.
     OnGround: bool | None = None  # Whether the entity is on the ground.
     NoGravity: bool | None = None  # Whether the entity should be effected by gravity.
-    Invulnerable: bool | None = None  # Whether the entity should take damage.
+    Invulnerable: bool | None = None  # Whether the entity is immune to damage.
+    invulnerable_time: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # Temporary immunity duration of the entity, in ticks.  The entity is immune to damage if `invulnerable_time` > 0 **or** `Invulnerable` is `true`.
     PortalCooldown: int | None = None  # How long until the entity can go through a nether portal.
     UUID: tuple[int, int, int, int] | None = None
     CustomName: Text | None = None
@@ -188,10 +189,35 @@ _ = {
             },
             {
                 "kind": "pair",
-                "desc": "Whether the entity should take damage.",
+                "desc": "Whether the entity is immune to damage.",
                 "key": "Invulnerable",
                 "type": {
                     "kind": "boolean"
+                },
+                "optional": True
+            },
+            {
+                "kind": "pair",
+                "attributes": [
+                    {
+                        "name": "since",
+                        "value": {
+                            "kind": "literal",
+                            "value": {
+                                "kind": "string",
+                                "value": "26.3"
+                            }
+                        }
+                    }
+                ],
+                "desc": "Temporary immunity duration of the entity, in ticks. \\\nThe entity is immune to damage if `invulnerable_time` > 0 **or** `Invulnerable` is `True`.",
+                "key": "invulnerable_time",
+                "type": {
+                    "kind": "int",
+                    "valueRange": {
+                        "kind": 0,
+                        "min": 0
+                    }
                 },
                 "optional": True
             },

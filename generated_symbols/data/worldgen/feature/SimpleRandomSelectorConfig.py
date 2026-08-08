@@ -3,12 +3,12 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.feature.FeatureRef import FeatureRef
+    from generated_symbols.data.worldgen.feature.placement.PlacedFeatureListRef import PlacedFeatureListRef
 
 
 @dataclass(kw_only=True)
 class SimpleRandomSelectorConfig:
-    features: list[FeatureRef] | str
+    features: PlacedFeatureListRef
 
 
 # ~~~ MODEL DUMP ~~~
@@ -27,10 +27,23 @@ _ = {
                             "item": {
                                 "kind": "reference",
                                 "path": "::java::data::worldgen::feature::FeatureRef"
-                            }
+                            },
+                            "attributes": [
+                                {
+                                    "name": "until",
+                                    "value": {
+                                        "kind": "literal",
+                                        "value": {
+                                            "kind": "string",
+                                            "value": "1.18.2"
+                                        }
+                                    }
+                                }
+                            ]
                         },
                         {
-                            "kind": "string",
+                            "kind": "reference",
+                            "path": "::java::data::worldgen::feature::placement::PlacedFeatureListRef",
                             "attributes": [
                                 {
                                     "name": "since",
@@ -39,28 +52,6 @@ _ = {
                                         "value": {
                                             "kind": "string",
                                             "value": "1.18.2"
-                                        }
-                                    }
-                                },
-                                {
-                                    "name": "id",
-                                    "value": {
-                                        "kind": "tree",
-                                        "values": {
-                                            "registry": {
-                                                "kind": "literal",
-                                                "value": {
-                                                    "kind": "string",
-                                                    "value": "worldgen/placed_feature"
-                                                }
-                                            },
-                                            "tags": {
-                                                "kind": "literal",
-                                                "value": {
-                                                    "kind": "string",
-                                                    "value": "allowed"
-                                                }
-                                            }
                                         }
                                     }
                                 }

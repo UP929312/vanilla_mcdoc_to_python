@@ -3,13 +3,13 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.density_function.DensityFunction import DensityFunction
+    from generated_symbols.data.worldgen.density_function.DensityFunctionRef import DensityFunctionRef
     from generated_symbols.data.worldgen.density_function.NoiseRange import NoiseRange
 
 
 @dataclass(kw_only=True)
 class Clamp:
-    input: DensityFunction
+    input: DensityFunctionRef
     min: NoiseRange
     max: NoiseRange
 
@@ -23,8 +23,41 @@ _ = {
                 "kind": "pair",
                 "key": "input",
                 "type": {
-                    "kind": "reference",
-                    "path": "::java::data::worldgen::density_function::DensityFunction"
+                    "kind": "union",
+                    "members": [
+                        {
+                            "kind": "reference",
+                            "path": "::java::data::worldgen::density_function::DensityFunction",
+                            "attributes": [
+                                {
+                                    "name": "until",
+                                    "value": {
+                                        "kind": "literal",
+                                        "value": {
+                                            "kind": "string",
+                                            "value": "26.2"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "kind": "reference",
+                            "path": "::java::data::worldgen::density_function::DensityFunctionRef",
+                            "attributes": [
+                                {
+                                    "name": "since",
+                                    "value": {
+                                        "kind": "literal",
+                                        "value": {
+                                            "kind": "string",
+                                            "value": "26.2"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
                 }
             },
             {

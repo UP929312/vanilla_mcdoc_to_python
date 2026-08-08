@@ -7,10 +7,10 @@ if TYPE_CHECKING:
 
 
 @dataclass(kw_only=True)
-class ScoreProviderStruct1:
+class ScoreProviderStruct:
     type: str
 
-type ScoreProvider = EntityTarget | ScoreProviderStruct1
+type ScoreProvider = EntityTarget | ScoreProviderStruct
 
 
 # ~~~ MODEL DUMP ~~~

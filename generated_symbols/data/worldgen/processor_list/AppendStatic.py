@@ -17,20 +17,97 @@ _ = {
                 "kind": "pair",
                 "key": "data",
                 "type": {
-                    "kind": "dispatcher",
-                    "parallelIndices": [
+                    "kind": "union",
+                    "members": [
                         {
-                            "kind": "dynamic",
-                            "accessor": [
+                            "kind": "dispatcher",
+                            "parallelIndices": [
                                 {
-                                    "keyword": "parent"
+                                    "kind": "dynamic",
+                                    "accessor": [
+                                        {
+                                            "keyword": "parent"
+                                        },
+                                        "output_state",
+                                        "Name"
+                                    ]
+                                }
+                            ],
+                            "registry": "minecraft:block",
+                            "attributes": [
+                                {
+                                    "name": "until",
+                                    "value": {
+                                        "kind": "literal",
+                                        "value": {
+                                            "kind": "string",
+                                            "value": "26.3"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "kind": "struct",
+                            "fields": [
+                                {
+                                    "kind": "spread",
+                                    "type": {
+                                        "kind": "dispatcher",
+                                        "parallelIndices": [
+                                            {
+                                                "kind": "dynamic",
+                                                "accessor": [
+                                                    {
+                                                        "keyword": "parent"
+                                                    },
+                                                    {
+                                                        "keyword": "parent"
+                                                    },
+                                                    "output_state"
+                                                ]
+                                            }
+                                        ],
+                                        "registry": "minecraft:block"
+                                    }
                                 },
-                                "output_state",
-                                "Name"
+                                {
+                                    "kind": "spread",
+                                    "type": {
+                                        "kind": "dispatcher",
+                                        "parallelIndices": [
+                                            {
+                                                "kind": "dynamic",
+                                                "accessor": [
+                                                    {
+                                                        "keyword": "parent"
+                                                    },
+                                                    {
+                                                        "keyword": "parent"
+                                                    },
+                                                    "output_state",
+                                                    "id"
+                                                ]
+                                            }
+                                        ],
+                                        "registry": "minecraft:block"
+                                    }
+                                }
+                            ],
+                            "attributes": [
+                                {
+                                    "name": "since",
+                                    "value": {
+                                        "kind": "literal",
+                                        "value": {
+                                            "kind": "string",
+                                            "value": "26.3"
+                                        }
+                                    }
+                                }
                             ]
                         }
-                    ],
-                    "registry": "minecraft:block"
+                    ]
                 }
             }
         ]

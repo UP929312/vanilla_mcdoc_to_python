@@ -33,8 +33,55 @@ _ = {
                 "desc": "Loot tables to give.",
                 "key": "loot",
                 "type": {
-                    "kind": "reference",
-                    "path": "::java::data::loot::LootTableListRef"
+                    "kind": "union",
+                    "members": [
+                        {
+                            "kind": "list",
+                            "item": {
+                                "kind": "string",
+                                "attributes": [
+                                    {
+                                        "name": "id",
+                                        "value": {
+                                            "kind": "literal",
+                                            "value": {
+                                                "kind": "string",
+                                                "value": "loot_table"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            "attributes": [
+                                {
+                                    "name": "until",
+                                    "value": {
+                                        "kind": "literal",
+                                        "value": {
+                                            "kind": "string",
+                                            "value": "26.3"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "kind": "reference",
+                            "path": "::java::data::loot::LootTableListRef",
+                            "attributes": [
+                                {
+                                    "name": "since",
+                                    "value": {
+                                        "kind": "literal",
+                                        "value": {
+                                            "kind": "string",
+                                            "value": "26.3"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
                 },
                 "optional": True
             },

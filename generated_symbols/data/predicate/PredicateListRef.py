@@ -5,7 +5,7 @@ if TYPE_CHECKING:
     from generated_symbols.data.loot.LootCondition import LootCondition
 
 
-type PredicateListRef = LootCondition | list[LootCondition] | str | list[str]
+type PredicateListRef = LootCondition | str | list[str | LootCondition]
 
 
 # ~~~ MODEL DUMP ~~~
@@ -13,6 +13,25 @@ _ = {
     "::java::data::predicate::PredicateListRef": {
         "kind": "union",
         "members": [
+            {
+                "kind": "list",
+                "item": {
+                    "kind": "reference",
+                    "path": "::java::data::loot::LootCondition"
+                },
+                "attributes": [
+                    {
+                        "name": "until",
+                        "value": {
+                            "kind": "literal",
+                            "value": {
+                                "kind": "string",
+                                "value": "26.3"
+                            }
+                        }
+                    }
+                ]
+            },
             {
                 "kind": "reference",
                 "path": "::java::data::loot::LootCondition",
@@ -28,13 +47,6 @@ _ = {
                         }
                     }
                 ]
-            },
-            {
-                "kind": "list",
-                "item": {
-                    "kind": "reference",
-                    "path": "::java::data::loot::LootCondition"
-                }
             },
             {
                 "kind": "string",
@@ -76,17 +88,26 @@ _ = {
             {
                 "kind": "list",
                 "item": {
-                    "kind": "string",
-                    "attributes": [
+                    "kind": "union",
+                    "members": [
                         {
-                            "name": "id",
-                            "value": {
-                                "kind": "literal",
-                                "value": {
-                                    "kind": "string",
-                                    "value": "predicate"
+                            "kind": "string",
+                            "attributes": [
+                                {
+                                    "name": "id",
+                                    "value": {
+                                        "kind": "literal",
+                                        "value": {
+                                            "kind": "string",
+                                            "value": "predicate"
+                                        }
+                                    }
                                 }
-                            }
+                            ]
+                        },
+                        {
+                            "kind": "reference",
+                            "path": "::java::data::loot::LootCondition"
                         }
                     ]
                 },

@@ -12,6 +12,7 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class ZombieVillager(Zombie):
     VillagerData: VillagerData | None = None  # Villager's skin data
+    VillagerDataFinalized: bool | None = None
     Gossips: list[PlayerReputationPart] | None = None  # Villager's gossips
     Offers: Offers | None = None  # Villager's offers
     ConversionTime: int | None = None  # Ticks until the it is converted.
@@ -37,6 +38,26 @@ _ = {
                 "type": {
                     "kind": "reference",
                     "path": "::java::world::entity::mob::breedable::villager::VillagerData"
+                },
+                "optional": True
+            },
+            {
+                "kind": "pair",
+                "attributes": [
+                    {
+                        "name": "since",
+                        "value": {
+                            "kind": "literal",
+                            "value": {
+                                "kind": "string",
+                                "value": "26.1"
+                            }
+                        }
+                    }
+                ],
+                "key": "VillagerDataFinalized",
+                "type": {
+                    "kind": "boolean"
                 },
                 "optional": True
             },

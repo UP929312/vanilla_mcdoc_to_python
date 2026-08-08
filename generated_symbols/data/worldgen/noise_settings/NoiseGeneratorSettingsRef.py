@@ -4,10 +4,10 @@ from generated_symbols.data.worldgen.noise_settings.NoiseGeneratorSettings impor
 
 
 @dataclass(kw_only=True)
-class NoiseGeneratorSettingsRefStruct1(NoiseGeneratorSettings):
+class NoiseGeneratorSettingsRefStruct(NoiseGeneratorSettings):
     name: str
 
-type NoiseGeneratorSettingsRef = str | NoiseGeneratorSettingsRefStruct1
+type NoiseGeneratorSettingsRef = str | NoiseGeneratorSettingsRefStruct
 
 
 # ~~~ MODEL DUMP ~~~

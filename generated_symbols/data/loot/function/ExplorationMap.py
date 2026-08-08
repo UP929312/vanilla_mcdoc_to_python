@@ -6,7 +6,7 @@ from generated_symbols.data.loot.function.Conditions import Conditions
 @dataclass(kw_only=True)
 class ExplorationMap(Conditions):
     destination: str | list[str]  # Generated structure to locate. Accepts any of the structure types used by the `/locate` command.
-    decoration: str | None = None  # The icon used to mark the destination on the map. Accepts any of the map icon text IDs (case insensitive). If `mansion` or `monument` is used, the color of the lines on the item texture changes to match the corresponding explorer map.
+    decoration: str | None = None  # The icon used to mark the destination on the map.
     zoom: int | None = None  # Defaults to 2.
     search_radius: int | None = None  # The size, in chunks, of the area to search for structures. The area checked is square, not circular. Radius `0` causes only the current chunk to be searched, radius `1` causes the current chunk and eight adjacent chunks to be searched, and so on. Defaults to `50`.
     skip_existing_chunks: bool | None = None  # Whether to not search in chunks that have already been generated. Defaults to `true`.
@@ -224,56 +224,117 @@ _ = {
                 }
             },
             {
-                "kind": "pair",
-                "desc": "The icon used to mark the destination on the map. Accepts any of the map icon text IDs (case insensitive).\nIf `mansion` or `monument` is used, the color of the lines on the item texture changes to match the corresponding explorer map.",
-                "key": "decoration",
+                "kind": "spread",
+                "attributes": [
+                    {
+                        "name": "until",
+                        "value": {
+                            "kind": "literal",
+                            "value": {
+                                "kind": "string",
+                                "value": "26.3"
+                            }
+                        }
+                    }
+                ],
                 "type": {
-                    "kind": "union",
-                    "members": [
+                    "kind": "struct",
+                    "fields": [
                         {
-                            "kind": "reference",
-                            "path": "::java::data::loot::function::MapDecoration",
-                            "attributes": [
-                                {
-                                    "name": "until",
-                                    "value": {
-                                        "kind": "literal",
-                                        "value": {
-                                            "kind": "string",
-                                            "value": "1.20.5"
-                                        }
+                            "kind": "pair",
+                            "desc": "The icon used to mark the destination on the map. \\\nSome decoration types have corresponding map colors. The color of the lines on the item texture is changed to match the color.",
+                            "key": "decoration",
+                            "type": {
+                                "kind": "union",
+                                "members": [
+                                    {
+                                        "kind": "reference",
+                                        "path": "::java::data::loot::function::MapDecoration",
+                                        "attributes": [
+                                            {
+                                                "name": "until",
+                                                "value": {
+                                                    "kind": "literal",
+                                                    "value": {
+                                                        "kind": "string",
+                                                        "value": "1.20.5"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "kind": "string",
+                                        "attributes": [
+                                            {
+                                                "name": "since",
+                                                "value": {
+                                                    "kind": "literal",
+                                                    "value": {
+                                                        "kind": "string",
+                                                        "value": "1.20.5"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "name": "id",
+                                                "value": {
+                                                    "kind": "literal",
+                                                    "value": {
+                                                        "kind": "string",
+                                                        "value": "map_decoration_type"
+                                                    }
+                                                }
+                                            }
+                                        ]
                                     }
-                                }
-                            ]
-                        },
-                        {
-                            "kind": "string",
-                            "attributes": [
-                                {
-                                    "name": "since",
-                                    "value": {
-                                        "kind": "literal",
-                                        "value": {
-                                            "kind": "string",
-                                            "value": "1.20.5"
-                                        }
-                                    }
-                                },
-                                {
-                                    "name": "id",
-                                    "value": {
-                                        "kind": "literal",
-                                        "value": {
-                                            "kind": "string",
-                                            "value": "map_decoration_type"
-                                        }
-                                    }
-                                }
-                            ]
+                                ]
+                            },
+                            "optional": True
                         }
                     ]
-                },
-                "optional": True
+                }
+            },
+            {
+                "kind": "spread",
+                "attributes": [
+                    {
+                        "name": "since",
+                        "value": {
+                            "kind": "literal",
+                            "value": {
+                                "kind": "string",
+                                "value": "26.3"
+                            }
+                        }
+                    }
+                ],
+                "type": {
+                    "kind": "struct",
+                    "fields": [
+                        {
+                            "kind": "pair",
+                            "desc": "The icon used to mark the destination on the map.",
+                            "key": "decoration",
+                            "type": {
+                                "kind": "string",
+                                "attributes": [
+                                    {
+                                        "name": "id",
+                                        "value": {
+                                            "kind": "literal",
+                                            "value": {
+                                                "kind": "string",
+                                                "value": "map_decoration_type"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            "optional": True
+                        }
+                    ]
+                }
             },
             {
                 "kind": "pair",

@@ -9,7 +9,7 @@ if TYPE_CHECKING:
 
 
 @dataclass(kw_only=True)
-class ProfileStruct1:
+class ProfileStruct:
     name: str | None = None  # Username of a player profile. If `id` doesn't exist, this field is used to fetch the current skin of the profile.
     id: tuple[int, int, int, int] | None = None  # UUID of the player profile. If `name` doesn't exist, this field is used to fetch the current skin of the profile.
     properties: Annotated[list[ProfileProperty], 'Length = 0-16 (both inclusive)'] | ProfilePropertyMap | None = None  # Resolved textures hosted on the minecraft CDN.
@@ -18,7 +18,7 @@ class ProfileStruct1:
     elytra: str | None = None  # Elytra texture override. If this texture is not present either as override or in player profile, the cape texture is used. If the cape texture is also not present, the default elytra texture is used.
     model: PlayerModelType | None = None  # Model type override.
 
-type Profile = ProfileStruct1 | str
+type Profile = ProfileStruct | str
 
 
 # ~~~ MODEL DUMP ~~~

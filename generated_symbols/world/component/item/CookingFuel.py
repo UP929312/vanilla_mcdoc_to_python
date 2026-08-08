@@ -1,11 +1,15 @@
 # Generated from symbols.json for ::java::world::component::item::CookingFuel
 from dataclasses import dataclass
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from generated_symbols.data.number_provider.ResolvableNumber import ResolvableNumber
 
 
 @dataclass(kw_only=True)
 class CookingFuel:
-    burn_time: str
-    speed_multiplier: str
+    burn_time: ResolvableNumber
+    speed_multiplier: ResolvableNumber
 
 
 # ~~~ MODEL DUMP ~~~
@@ -17,38 +21,16 @@ _ = {
                 "kind": "pair",
                 "key": "burn_time",
                 "type": {
-                    "kind": "string",
-                    "attributes": [
-                        {
-                            "name": "id",
-                            "value": {
-                                "kind": "literal",
-                                "value": {
-                                    "kind": "string",
-                                    "value": "number_provider"
-                                }
-                            }
-                        }
-                    ]
+                    "kind": "reference",
+                    "path": "::java::data::number_provider::ResolvableNumber"
                 }
             },
             {
                 "kind": "pair",
                 "key": "speed_multiplier",
                 "type": {
-                    "kind": "string",
-                    "attributes": [
-                        {
-                            "name": "id",
-                            "value": {
-                                "kind": "literal",
-                                "value": {
-                                    "kind": "string",
-                                    "value": "number_provider"
-                                }
-                            }
-                        }
-                    ]
+                    "kind": "reference",
+                    "path": "::java::data::number_provider::ResolvableNumber"
                 }
             }
         ]

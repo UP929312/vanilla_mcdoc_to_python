@@ -6,7 +6,7 @@ if TYPE_CHECKING:
     from generated_symbols.data.worldgen.attribute.PositionalEnvironmentAttributeMap import PositionalEnvironmentAttributeMap
     from generated_symbols.data.worldgen.biome.BiomeEffects import BiomeEffects
     from generated_symbols.data.worldgen.biome.TemperatureModifier import TemperatureModifier
-    from generated_symbols.data.worldgen.carver.CarverRef import CarverRef
+    from generated_symbols.data.worldgen.carver.CarverListRef import CarverListRef
     from generated_symbols.data.worldgen.feature.placement.PlacedFeatureRef import PlacedFeatureRef
 
 
@@ -16,7 +16,7 @@ class Biome:
     downfall: float
     has_precipitation: bool
     effects: BiomeEffects
-    carvers: list[CarverRef] | str
+    carvers: CarverListRef
     features: Annotated[list[list[PlacedFeatureRef] | str], 'Length = up to 11 (inclusive)']
     attributes: PositionalEnvironmentAttributeMap | None = None
     temperature_modifier: TemperatureModifier | None = None
@@ -193,31 +193,6 @@ _ = {
             },
             {
                 "kind": "pair",
-                "attributes": [
-                    {
-                        "name": "until",
-                        "value": {
-                            "kind": "literal",
-                            "value": {
-                                "kind": "string",
-                                "value": "26.3"
-                            }
-                        }
-                    }
-                ],
-                "key": "creature_spawn_probability",
-                "type": {
-                    "kind": "float",
-                    "valueRange": {
-                        "kind": 0,
-                        "min": 0,
-                        "max": 0.9999999
-                    }
-                },
-                "optional": True
-            },
-            {
-                "kind": "pair",
                 "key": "effects",
                 "type": {
                     "kind": "reference",
@@ -309,10 +284,23 @@ _ = {
                                                 "item": {
                                                     "kind": "reference",
                                                     "path": "::java::data::worldgen::carver::CarverRef"
-                                                }
+                                                },
+                                                "attributes": [
+                                                    {
+                                                        "name": "until",
+                                                        "value": {
+                                                            "kind": "literal",
+                                                            "value": {
+                                                                "kind": "string",
+                                                                "value": "1.18.2"
+                                                            }
+                                                        }
+                                                    }
+                                                ]
                                             },
                                             {
-                                                "kind": "string",
+                                                "kind": "reference",
+                                                "path": "::java::data::worldgen::carver::CarverListRef",
                                                 "attributes": [
                                                     {
                                                         "name": "since",
@@ -321,28 +309,6 @@ _ = {
                                                             "value": {
                                                                 "kind": "string",
                                                                 "value": "1.18.2"
-                                                            }
-                                                        }
-                                                    },
-                                                    {
-                                                        "name": "id",
-                                                        "value": {
-                                                            "kind": "tree",
-                                                            "values": {
-                                                                "registry": {
-                                                                    "kind": "literal",
-                                                                    "value": {
-                                                                        "kind": "string",
-                                                                        "value": "worldgen/configured_carver"
-                                                                    }
-                                                                },
-                                                                "tags": {
-                                                                    "kind": "literal",
-                                                                    "value": {
-                                                                        "kind": "string",
-                                                                        "value": "allowed"
-                                                                    }
-                                                                }
                                                             }
                                                         }
                                                     }
@@ -366,90 +332,8 @@ _ = {
                             ]
                         },
                         {
-                            "kind": "union",
-                            "members": [
-                                {
-                                    "kind": "list",
-                                    "item": {
-                                        "kind": "reference",
-                                        "path": "::java::data::worldgen::carver::CarverRef"
-                                    }
-                                },
-                                {
-                                    "kind": "string",
-                                    "attributes": [
-                                        {
-                                            "name": "until",
-                                            "value": {
-                                                "kind": "literal",
-                                                "value": {
-                                                    "kind": "string",
-                                                    "value": "26.3"
-                                                }
-                                            }
-                                        },
-                                        {
-                                            "name": "id",
-                                            "value": {
-                                                "kind": "tree",
-                                                "values": {
-                                                    "registry": {
-                                                        "kind": "literal",
-                                                        "value": {
-                                                            "kind": "string",
-                                                            "value": "worldgen/configured_carver"
-                                                        }
-                                                    },
-                                                    "tags": {
-                                                        "kind": "literal",
-                                                        "value": {
-                                                            "kind": "string",
-                                                            "value": "allowed"
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "kind": "string",
-                                    "attributes": [
-                                        {
-                                            "name": "since",
-                                            "value": {
-                                                "kind": "literal",
-                                                "value": {
-                                                    "kind": "string",
-                                                    "value": "26.3"
-                                                }
-                                            }
-                                        },
-                                        {
-                                            "name": "id",
-                                            "value": {
-                                                "kind": "tree",
-                                                "values": {
-                                                    "registry": {
-                                                        "kind": "literal",
-                                                        "value": {
-                                                            "kind": "string",
-                                                            "value": "worldgen/carver"
-                                                        }
-                                                    },
-                                                    "tags": {
-                                                        "kind": "literal",
-                                                        "value": {
-                                                            "kind": "string",
-                                                            "value": "allowed"
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    ]
-                                }
-                            ],
+                            "kind": "reference",
+                            "path": "::java::data::worldgen::carver::CarverListRef",
                             "attributes": [
                                 {
                                     "name": "since",

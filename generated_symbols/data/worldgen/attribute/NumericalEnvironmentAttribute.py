@@ -17,6 +17,7 @@ class NumericalEnvironmentAttribute(Enum):
     STARBRIGHTNESS = "visual/star_brightness"
     MUSICVOLUME = "audio/music_volume"
     CATWAKINGUPGIFTCHANCE = "gameplay/cat_waking_up_gift_chance"
+    CREATUREWORLDGENSPAWNPROBABILITY = "gameplay/creature_world_gen_spawn_probability"
     SURFACESLIMESPAWNCHANCE = "gameplay/surface_slime_spawn_chance"
     TURTLEEGGHATCHCHANCE = "gameplay/turtle_egg_hatch_chance"
     SKYLIGHTLEVEL = "gameplay/sky_light_level"
@@ -83,6 +84,22 @@ _ = {
             {
                 "identifier": "CatWakingUpGiftChance",
                 "value": "gameplay/cat_waking_up_gift_chance"
+            },
+            {
+                "attributes": [
+                    {
+                        "name": "since",
+                        "value": {
+                            "kind": "literal",
+                            "value": {
+                                "kind": "string",
+                                "value": "26.3"
+                            }
+                        }
+                    }
+                ],
+                "identifier": "CreatureWorldgenSpawnProbability",
+                "value": "gameplay/creature_world_gen_spawn_probability"
             },
             {
                 "identifier": "SurfaceSlimeSpawnChance",

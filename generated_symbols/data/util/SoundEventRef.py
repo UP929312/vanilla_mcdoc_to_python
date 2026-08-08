@@ -3,11 +3,11 @@ from dataclasses import dataclass
 
 
 @dataclass(kw_only=True)
-class SoundEventRefStruct1:
+class SoundEventRefStruct:
     sound_id: str
     range: float | None = None  # Range in blocks. If the player is further than this range from the source of the sound, the sound will be inaudible. If omitted, the sound will have a variable range.
 
-type SoundEventRef = str | SoundEventRefStruct1
+type SoundEventRef = str | SoundEventRefStruct
 
 
 # ~~~ MODEL DUMP ~~~

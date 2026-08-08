@@ -8,7 +8,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class TrimPattern:
-    asset_id: str  # ID of the pattern that will be used in the resource pack as an overlay on the armor.
+    asset_id: str  # ID of the pattern that will be used in the resource pack as an overlay on the armor.  The texture is located under `trims/entity/<layer>/`.
     description: Text  # Text displayed in the item tooltip.
     decal: bool | None = None  # Whether the pattern texture will be masked based on the underlying armor. Defaults to `false`.
 
@@ -19,32 +19,85 @@ _ = {
         "kind": "struct",
         "fields": [
             {
-                "kind": "pair",
-                "desc": "ID of the pattern that will be used in the resource pack as an overlay on the armor.",
-                "key": "asset_id",
-                "type": {
-                    "kind": "string",
-                    "attributes": [
-                        {
-                            "name": "id",
+                "kind": "spread",
+                "attributes": [
+                    {
+                        "name": "until",
+                        "value": {
+                            "kind": "literal",
                             "value": {
-                                "kind": "tree",
-                                "values": {
-                                    "registry": {
-                                        "kind": "literal",
+                                "kind": "string",
+                                "value": "1.21.2"
+                            }
+                        }
+                    }
+                ],
+                "type": {
+                    "kind": "struct",
+                    "fields": [
+                        {
+                            "kind": "pair",
+                            "desc": "ID of the pattern that will be used in the resource pack as an overlay on the armor. \\\nLeggings layer adds `_leggings` suffix automatically.",
+                            "key": "asset_id",
+                            "type": {
+                                "kind": "string",
+                                "attributes": [
+                                    {
+                                        "name": "id",
                                         "value": {
-                                            "kind": "string",
-                                            "value": "texture"
-                                        }
-                                    },
-                                    "path": {
-                                        "kind": "literal",
-                                        "value": {
-                                            "kind": "string",
-                                            "value": "trims/models/armor/"
+                                            "kind": "tree",
+                                            "values": {
+                                                "registry": {
+                                                    "kind": "literal",
+                                                    "value": {
+                                                        "kind": "string",
+                                                        "value": "texture"
+                                                    }
+                                                },
+                                                "path": {
+                                                    "kind": "literal",
+                                                    "value": {
+                                                        "kind": "string",
+                                                        "value": "trims/models/armor/"
+                                                    }
+                                                }
+                                            }
                                         }
                                     }
-                                }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "kind": "spread",
+                "attributes": [
+                    {
+                        "name": "since",
+                        "value": {
+                            "kind": "literal",
+                            "value": {
+                                "kind": "string",
+                                "value": "1.21.2"
+                            }
+                        }
+                    }
+                ],
+                "type": {
+                    "kind": "struct",
+                    "fields": [
+                        {
+                            "kind": "pair",
+                            "desc": "ID of the pattern that will be used in the resource pack as an overlay on the armor. \\\nThe texture is located under `trims/entity/<layer>/`.",
+                            "key": "asset_id",
+                            "type": {
+                                "kind": "string",
+                                "attributes": [
+                                    {
+                                        "name": "id"
+                                    }
+                                ]
                             }
                         }
                     ]

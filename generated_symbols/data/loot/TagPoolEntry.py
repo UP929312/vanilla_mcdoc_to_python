@@ -10,7 +10,7 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class TagPoolEntry(SingletonPoolEntry):
     items: ItemListRef
-    expand: bool  # If `true`, drops a random item from the tag.  If `false`, drops all items in the tag.
+    expand: bool | None = None  # If `true`, randomly selects an item to drop.  If `false`, drops all items.  Defaults to `false`.
 
 
 # ~~~ MODEL DUMP ~~~
@@ -82,11 +82,60 @@ _ = {
                 }
             },
             {
-                "kind": "pair",
-                "desc": "If `True`, drops a random item from the tag. \\\nIf `False`, drops all items in the tag.",
-                "key": "expand",
+                "kind": "spread",
+                "attributes": [
+                    {
+                        "name": "until",
+                        "value": {
+                            "kind": "literal",
+                            "value": {
+                                "kind": "string",
+                                "value": "26.3"
+                            }
+                        }
+                    }
+                ],
                 "type": {
-                    "kind": "boolean"
+                    "kind": "struct",
+                    "fields": [
+                        {
+                            "kind": "pair",
+                            "desc": "If `True`, drops a random item from the tag. \\\nIf `False`, drops all items in the tag.",
+                            "key": "expand",
+                            "type": {
+                                "kind": "boolean"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "kind": "spread",
+                "attributes": [
+                    {
+                        "name": "since",
+                        "value": {
+                            "kind": "literal",
+                            "value": {
+                                "kind": "string",
+                                "value": "26.3"
+                            }
+                        }
+                    }
+                ],
+                "type": {
+                    "kind": "struct",
+                    "fields": [
+                        {
+                            "kind": "pair",
+                            "desc": "If `True`, randomly selects an item to drop. \\\nIf `False`, drops all items. \\\nDefaults to `False`.",
+                            "key": "expand",
+                            "type": {
+                                "kind": "boolean"
+                            },
+                            "optional": True
+                        }
+                    ]
                 }
             },
             {
