@@ -1,5 +1,6 @@
 # Generated from symbols.json for ::java::data::loot::function::SetInstrument
 from dataclasses import dataclass
+
 from generated_symbols.data.loot.function.Conditions import Conditions
 
 

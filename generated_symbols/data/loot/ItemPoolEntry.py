@@ -1,5 +1,6 @@
 # Generated from symbols.json for ::java::data::loot::ItemPoolEntry
 from dataclasses import dataclass
+
 from generated_symbols.data.loot.SingletonPoolEntry import SingletonPoolEntry
 
 

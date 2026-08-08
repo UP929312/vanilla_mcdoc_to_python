@@ -1,12 +1,17 @@
 # Generated from symbols.json for ::java::util::memory::BreezeShoot
 from dataclasses import dataclass
-from typing import Any
+
 from generated_symbols.util.memory.ExpirableValue import ExpirableValue
 
 
 @dataclass(kw_only=True)
+class ValueStruct:
+    pass
+
+
+@dataclass(kw_only=True)
 class BreezeShoot(ExpirableValue):
-    value: Any  # If present, the breeze is able to shoot a wind charge, and will not long jump or slide.
+    value: ValueStruct  # If present, the breeze is able to shoot a wind charge, and will not long jump or slide.
 
 
 # ~~~ MODEL DUMP ~~~

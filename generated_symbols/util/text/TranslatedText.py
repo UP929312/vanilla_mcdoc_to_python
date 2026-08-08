@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::util::text::TranslatedText
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
 from generated_symbols.util.text.TextBase import TextBase
 
 if TYPE_CHECKING:

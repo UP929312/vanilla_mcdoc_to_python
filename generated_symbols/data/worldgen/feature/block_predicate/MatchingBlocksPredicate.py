@@ -1,5 +1,6 @@
 # Generated from symbols.json for ::java::data::worldgen::feature::block_predicate::MatchingBlocksPredicate
 from dataclasses import dataclass
+
 from generated_symbols.data.worldgen.feature.block_predicate.PredicateOffset import PredicateOffset
 
 

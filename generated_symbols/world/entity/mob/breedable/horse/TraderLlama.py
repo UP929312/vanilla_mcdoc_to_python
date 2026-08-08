@@ -1,5 +1,6 @@
 # Generated from symbols.json for ::java::world::entity::mob::breedable::horse::TraderLlama
 from dataclasses import dataclass
+
 from generated_symbols.world.entity.mob.breedable.horse.Llama import Llama
 
 

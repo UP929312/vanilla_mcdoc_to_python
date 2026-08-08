@@ -1,5 +1,6 @@
 # Generated from symbols.json for ::java::world::entity::mob::iron_golem::IronGolem
 from dataclasses import dataclass
+
 from generated_symbols.world.entity.mob.MobBase import MobBase
 from generated_symbols.world.entity.mob.NeutralMob import NeutralMob
 

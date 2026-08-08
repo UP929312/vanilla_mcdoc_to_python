@@ -1,13 +1,20 @@
 # Generated from symbols.json for ::java::data::loot::function::SetFireworks
 from dataclasses import dataclass
 from typing import Annotated, Any
+
 from generated_symbols.data.loot.function.Conditions import Conditions
+from generated_symbols.data.loot.function.ListOperation import ListOperation
+
+
+@dataclass(kw_only=True)
+class ExplosionsStruct(ListOperation):
+    values: list[Any]
 
 
 @dataclass(kw_only=True)
 class SetFireworks(Conditions):
     flight_duration: Annotated[int, 'Range | `0`-`255` | both inclusive'] | None = None  # If omitted, the flight duration of the item is left untouched - or set to 0 if the component did not exist before.
-    explosions: Any | None = None
+    explosions: ExplosionsStruct | None = None
 
 
 # ~~~ MODEL DUMP ~~~

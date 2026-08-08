@@ -1,12 +1,17 @@
 # Generated from symbols.json for ::java::util::memory::BreezeJumpCooldown
 from dataclasses import dataclass
-from typing import Any
+
 from generated_symbols.util.memory.ExpirableValue import ExpirableValue
 
 
 @dataclass(kw_only=True)
+class ValueStruct:
+    pass
+
+
+@dataclass(kw_only=True)
 class BreezeJumpCooldown(ExpirableValue):
-    value: Any  # If present, the breeze will not long jump or slide. Set after performing a long jump.
+    value: ValueStruct  # If present, the breeze will not long jump or slide. Set after performing a long jump.
 
 
 # ~~~ MODEL DUMP ~~~

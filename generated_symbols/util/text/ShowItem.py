@@ -1,5 +1,6 @@
 # Generated from symbols.json for ::java::util::text::ShowItem
 from dataclasses import dataclass
+
 from generated_symbols.world.item.ItemStack import ItemStack
 
 

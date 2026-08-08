@@ -1,5 +1,6 @@
 # Generated from symbols.json for ::java::world::block::command_block::CommandBlock
 from dataclasses import dataclass
+
 from generated_symbols.world.block.BlockEntity import BlockEntity
 from generated_symbols.world.block.Nameable import Nameable
 from generated_symbols.world.block.command_block.BaseCommandBlock import BaseCommandBlock

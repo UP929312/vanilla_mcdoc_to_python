@@ -1,12 +1,17 @@
 # Generated from symbols.json for ::java::util::memory::TouchCooldown
 from dataclasses import dataclass
-from typing import Any
+
 from generated_symbols.util.memory.ExpirableValue import ExpirableValue
 
 
 @dataclass(kw_only=True)
+class ValueStruct:
+    pass
+
+
+@dataclass(kw_only=True)
 class TouchCooldown(ExpirableValue):
-    value: Any  # If present, the warden will not react to being pushed by another mob. Set to 20 when touched.
+    value: ValueStruct  # If present, the warden will not react to being pushed by another mob. Set to 20 when touched.
 
 
 # ~~~ MODEL DUMP ~~~

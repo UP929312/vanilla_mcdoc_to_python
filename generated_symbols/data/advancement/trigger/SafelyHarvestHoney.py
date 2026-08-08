@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::data::advancement::trigger::SafelyHarvestHoney
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING
+
 from generated_symbols.data.advancement.trigger.TriggerBase import TriggerBase
 
 if TYPE_CHECKING:
@@ -8,8 +9,14 @@ if TYPE_CHECKING:
 
 
 @dataclass(kw_only=True)
+class BlockStruct:
+    block: str | None = None
+    tag: str | None = None
+
+
+@dataclass(kw_only=True)
 class SafelyHarvestHoney(TriggerBase):
-    block: Any | None = None
+    block: BlockStruct | None = None
     item: ItemPredicate | None = None
 
 

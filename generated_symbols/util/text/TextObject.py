@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::util::text::TextObject
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Any
+from typing import TYPE_CHECKING, Annotated
+
 from generated_symbols.util.text.ObjectTextConfig import ObjectTextConfig
 from generated_symbols.util.text.TextBase import TextBase
 from generated_symbols.util.text.TextNbtBase import TextNbtBase
@@ -24,8 +25,14 @@ class TextObjectStruct2(TextBase):
     type: str | None = None
 
 @dataclass(kw_only=True)
+class ScoreStruct:
+    objective: str
+    name: str
+
+
+@dataclass(kw_only=True)
 class TextObjectStruct3(TextBase):
-    score: Any
+    score: ScoreStruct
     type: str | None = None
 
 @dataclass(kw_only=True)

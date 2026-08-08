@@ -1,5 +1,6 @@
 # Generated from symbols.json for ::java::world::item::knowledge_book::KnowledgeBook
 from dataclasses import dataclass
+
 from generated_symbols.world.item.ItemBase import ItemBase
 
 

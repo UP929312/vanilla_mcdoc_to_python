@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::data::worldgen::template_pool::SingleElement
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
 from generated_symbols.data.worldgen.template_pool.ElementBase import ElementBase
 
 if TYPE_CHECKING:

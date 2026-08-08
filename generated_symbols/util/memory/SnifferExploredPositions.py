@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::util::memory::SnifferExploredPositions
 from dataclasses import dataclass
 from typing import Annotated
+
 from generated_symbols.util.memory.ExpirableValue import ExpirableValue
 
 

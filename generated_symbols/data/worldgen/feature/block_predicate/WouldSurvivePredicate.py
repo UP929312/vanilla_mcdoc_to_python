@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::data::worldgen::feature::block_predicate::WouldSurvivePredicate
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
 from generated_symbols.data.worldgen.feature.block_predicate.PredicateOffset import PredicateOffset
 
 if TYPE_CHECKING:

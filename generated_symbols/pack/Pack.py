@@ -1,16 +1,28 @@
 # Generated from symbols.json for ::java::pack::Pack
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from generated_symbols.pack.PackFeatures import PackFeatures
     from generated_symbols.pack.PackFilter import PackFilter
+    from generated_symbols.pack.PackFormat import PackFormat
     from generated_symbols.pack.PackOverlays import PackOverlays
+    from generated_symbols.util.InclusiveRange import InclusiveRange
+    from generated_symbols.util.text.Text import Text
+
+
+@dataclass(kw_only=True)
+class PackStruct:
+    description: Text
+    pack_format: int | None = None
+    supported_formats: InclusiveRange[int] | int | None = None
+    min_format: PackFormat | None = None
+    max_format: PackFormat | None = None
 
 
 @dataclass(kw_only=True)
 class Pack:
-    pack: Any
+    pack: PackStruct
     filter: PackFilter | None = None
     features: PackFeatures | None = None
     overlays: PackOverlays | None = None

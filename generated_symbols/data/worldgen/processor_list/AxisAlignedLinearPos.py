@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::data::worldgen::processor_list::AxisAlignedLinearPos
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
 from generated_symbols.data.worldgen.processor_list.LinearPos import LinearPos
 
 if TYPE_CHECKING:

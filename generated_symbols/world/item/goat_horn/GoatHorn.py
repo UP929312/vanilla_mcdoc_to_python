@@ -1,5 +1,6 @@
 # Generated from symbols.json for ::java::world::item::goat_horn::GoatHorn
 from dataclasses import dataclass
+
 from generated_symbols.world.item.ItemBase import ItemBase
 
 

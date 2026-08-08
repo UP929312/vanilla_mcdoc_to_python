@@ -1,5 +1,6 @@
 # Generated from symbols.json for ::java::data::loot::function::CustomModelDataFlags
 from dataclasses import dataclass
+
 from generated_symbols.data.loot.function.ListOperation import ListOperation
 
 

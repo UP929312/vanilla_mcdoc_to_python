@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::data::structure::StructureNBT
 from dataclasses import dataclass
 from typing import Annotated, Any
+
 from generated_symbols.data.structure.BlockPalette import BlockPalette
 
 

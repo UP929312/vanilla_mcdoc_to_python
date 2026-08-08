@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::data::recipe::Stonecutting
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
 from generated_symbols.data.recipe.NotificationInfo import NotificationInfo
 
 if TYPE_CHECKING:

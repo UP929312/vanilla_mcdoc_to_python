@@ -1,12 +1,23 @@
 # Generated from symbols.json for ::java::world::item::shield::Shield
 from dataclasses import dataclass
-from typing import Any
+from typing import TYPE_CHECKING
+
 from generated_symbols.world.item.ItemBase import ItemBase
+
+if TYPE_CHECKING:
+    from generated_symbols.util.color.DyeColorInt import DyeColorInt
+    from generated_symbols.world.block.banner.BannerPatternLayer import BannerPatternLayer
+
+
+@dataclass(kw_only=True)
+class BlockEntityTagStruct:
+    Base: DyeColorInt | None = None  # Base color.
+    Patterns: list[BannerPatternLayer] | None = None
 
 
 @dataclass(kw_only=True)
 class Shield(ItemBase):
-    BlockEntityTag: Any | None = None  # Banner Data.
+    BlockEntityTag: BlockEntityTagStruct | None = None  # Banner Data.
 
 
 # ~~~ MODEL DUMP ~~~

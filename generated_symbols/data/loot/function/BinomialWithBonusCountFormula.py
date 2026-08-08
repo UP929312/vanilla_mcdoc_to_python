@@ -1,11 +1,17 @@
 # Generated from symbols.json for ::java::data::loot::function::BinomialWithBonusCountFormula
 from dataclasses import dataclass
-from typing import Any
+from typing import Annotated
+
+
+@dataclass(kw_only=True)
+class ParametersStruct:
+    extra: int
+    probability: Annotated[float, 'Range | `0`-`1` | both inclusive']
 
 
 @dataclass(kw_only=True)
 class BinomialWithBonusCountFormula:
-    parameters: Any
+    parameters: ParametersStruct
 
 
 # ~~~ MODEL DUMP ~~~

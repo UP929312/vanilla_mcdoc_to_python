@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::world::item::ItemStackOfComponent
 from dataclasses import dataclass
 from typing import Annotated, Generic, TypeVar
+
 from generated_symbols.world.item.SingleItemOfComponent import SingleItemOfComponent
 
 

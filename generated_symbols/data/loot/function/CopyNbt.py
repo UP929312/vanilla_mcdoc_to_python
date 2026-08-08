@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::data::loot::function::CopyNbt
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Any
+
 from generated_symbols.data.loot.function.Conditions import Conditions
 
 if TYPE_CHECKING:

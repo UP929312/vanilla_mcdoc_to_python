@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::world::item::crossbow::Crossbow
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
 from generated_symbols.world.item.ItemBase import ItemBase
 
 if TYPE_CHECKING:

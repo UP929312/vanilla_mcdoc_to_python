@@ -1,14 +1,19 @@
 # Generated from symbols.json for ::java::data::enchantment::effect_component::DamageImmunityEnchantmentEffect
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from generated_symbols.data.predicate.Predicate import Predicate
 
 
 @dataclass(kw_only=True)
+class EffectStruct:
+    pass
+
+
+@dataclass(kw_only=True)
 class DamageImmunityEnchantmentEffect:
-    effect: Any  # Dummy value; this is a boolean effect.
+    effect: EffectStruct  # Dummy value; this is a boolean effect.
     requirements: Predicate | None = None  # Predicate context: Damage Parameters.
 
 

@@ -1,5 +1,6 @@
 # Generated from symbols.json for ::java::world::entity::mob::fish::TropicalFish
 from dataclasses import dataclass
+
 from generated_symbols.world.entity.mob.fish.Fish import Fish
 
 

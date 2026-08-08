@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::data::worldgen::carver::CanyonConfig
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
 from generated_symbols.data.worldgen.carver.CarverConfigBase import CarverConfigBase
 
 if TYPE_CHECKING:

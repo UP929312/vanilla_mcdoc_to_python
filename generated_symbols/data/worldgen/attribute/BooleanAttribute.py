@@ -1,16 +1,25 @@
 # Generated from symbols.json for ::java::data::worldgen::attribute::BooleanAttribute
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING, Annotated, Any
+
+from generated_symbols.data.timeline.AttributeTrackBase import AttributeTrackBase
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.attribute.modifier.BooleanAttributeModifier import BooleanAttributeModifier
+    from generated_symbols.data.worldgen.attribute.modifier.BooleanModifierType import BooleanModifierType
+
+
+@dataclass(kw_only=True)
+class AttributeTrackStruct(AttributeTrackBase):
+    keyframes: Annotated[list[Any], 'Length = 1 (inclusive) and above']
+    modifier: BooleanModifierType | None = None
 
 
 @dataclass(kw_only=True)
 class BooleanAttribute:
     value: bool
     modifier: BooleanAttributeModifier
-    attribute_track: Any
+    attribute_track: AttributeTrackStruct
 
 
 # ~~~ MODEL DUMP ~~~

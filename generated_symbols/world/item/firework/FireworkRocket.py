@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::world::item::firework::FireworkRocket
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
 from generated_symbols.world.item.ItemBase import ItemBase
 
 if TYPE_CHECKING:

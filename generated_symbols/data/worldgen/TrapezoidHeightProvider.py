@@ -1,5 +1,6 @@
 # Generated from symbols.json for ::java::data::worldgen::TrapezoidHeightProvider
 from dataclasses import dataclass
+
 from generated_symbols.data.worldgen.UniformHeightProvider import UniformHeightProvider
 
 

@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::assets::block_state_definition::WeightedModelVariant
 from dataclasses import dataclass
 from typing import Annotated
+
 from generated_symbols.assets.block_state_definition.ModelVariantBase import ModelVariantBase
 
 

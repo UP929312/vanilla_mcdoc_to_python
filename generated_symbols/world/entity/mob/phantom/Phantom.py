@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::world::entity::mob::phantom::Phantom
 from dataclasses import dataclass
 from typing import Annotated
+
 from generated_symbols.world.entity.mob.MobBase import MobBase
 
 

@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::world::entity::mob::raider::Pillager
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
 from generated_symbols.world.entity.mob.raider.RaiderBase import RaiderBase
 
 if TYPE_CHECKING:

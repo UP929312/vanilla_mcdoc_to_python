@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::data::advancement::trigger::SpearMobs
 from dataclasses import dataclass
 from typing import Annotated
+
 from generated_symbols.data.advancement.trigger.TriggerBase import TriggerBase
 
 

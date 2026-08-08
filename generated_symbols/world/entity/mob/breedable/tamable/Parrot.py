@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::world::entity::mob::breedable::tamable::Parrot
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
 from generated_symbols.world.entity.mob.breedable.tamable.Tamable import Tamable
 
 if TYPE_CHECKING:

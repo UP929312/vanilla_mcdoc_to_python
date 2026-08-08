@@ -1,14 +1,20 @@
 # Generated from symbols.json for ::java::assets::equipment::TrimOverride
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from generated_symbols.assets.atlas.PaletteRef import PaletteRef
 
 
 @dataclass(kw_only=True)
+class WhenStruct:
+    pattern: str | None = None
+    material: str | None = None
+
+
+@dataclass(kw_only=True)
 class TrimOverride:
-    when: Any
+    when: WhenStruct
     texture: str | None = None  # When present, overrides the base texture provided by trim pattern.  The texture is located under `trims/entity/<layer>/`.
     palette: PaletteRef | None = None  # When present, overrides the palette texture provided by trim material.
 

@@ -1,5 +1,6 @@
 # Generated from symbols.json for ::java::world::entity::minecart::CommandBlockMinecart
 from dataclasses import dataclass
+
 from generated_symbols.world.block.command_block.BaseCommandBlock import BaseCommandBlock
 from generated_symbols.world.entity.minecart.Minecart import Minecart
 

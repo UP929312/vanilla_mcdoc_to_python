@@ -1,5 +1,6 @@
 # Generated from symbols.json for ::java::world::block::comparator::Comparator
 from dataclasses import dataclass
+
 from generated_symbols.world.block.BlockEntity import BlockEntity
 
 

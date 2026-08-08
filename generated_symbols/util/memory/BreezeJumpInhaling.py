@@ -1,12 +1,17 @@
 # Generated from symbols.json for ::java::util::memory::BreezeJumpInhaling
 from dataclasses import dataclass
-from typing import Any
+
 from generated_symbols.util.memory.ExpirableValue import ExpirableValue
 
 
 @dataclass(kw_only=True)
+class ValueStruct:
+    pass
+
+
+@dataclass(kw_only=True)
 class BreezeJumpInhaling(ExpirableValue):
-    value: Any  # If present, the breeze will not long jump or shoot a wind charge when stuck.
+    value: ValueStruct  # If present, the breeze will not long jump or shoot a wind charge when stuck.
 
 
 # ~~~ MODEL DUMP ~~~

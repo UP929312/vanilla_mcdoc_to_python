@@ -1,5 +1,6 @@
 # Generated from symbols.json for ::java::world::entity::projectile::arrow::Trident
 from dataclasses import dataclass
+
 from generated_symbols.world.entity.projectile.arrow.ArrowBase import ArrowBase
 
 

@@ -1,12 +1,28 @@
 # Generated from symbols.json for ::java::world::block::test_instance_block::TestInstanceBlock
 from dataclasses import dataclass
-from typing import Any
+from typing import TYPE_CHECKING, Any
+
 from generated_symbols.world.block.BlockEntity import BlockEntity
+
+if TYPE_CHECKING:
+    from generated_symbols.util.Rotation import Rotation
+    from generated_symbols.util.text.Text import Text
+    from generated_symbols.world.block.test_instance_block.TestInstanceBlockStatus import TestInstanceBlockStatus
+
+
+@dataclass(kw_only=True)
+class DataStruct:
+    size: tuple[int, int, int]
+    rotation: Rotation
+    ignore_entities: bool
+    status: TestInstanceBlockStatus
+    test: str | None = None
+    error_message: Text | None = None
 
 
 @dataclass(kw_only=True)
 class TestInstanceBlock(BlockEntity):
-    data: Any | None = None
+    data: DataStruct | None = None
     errors: list[Any] | None = None
 
 

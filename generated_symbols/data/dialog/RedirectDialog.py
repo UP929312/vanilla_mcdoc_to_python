@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::data::dialog::RedirectDialog
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
 from generated_symbols.data.dialog.ButtonListDialogBase import ButtonListDialogBase
 
 if TYPE_CHECKING:

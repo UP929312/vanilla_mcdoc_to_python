@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::data::loot::LootTablePoolEntry
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
 from generated_symbols.data.loot.SingletonPoolEntry import SingletonPoolEntry
 
 if TYPE_CHECKING:

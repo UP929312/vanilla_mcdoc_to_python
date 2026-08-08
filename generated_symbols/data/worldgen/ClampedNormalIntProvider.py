@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::data::worldgen::ClampedNormalIntProvider
 from dataclasses import dataclass
 from typing import Generic, TypeVar
+
 from generated_symbols.data.worldgen.UniformIntProvider import UniformIntProvider
 
 

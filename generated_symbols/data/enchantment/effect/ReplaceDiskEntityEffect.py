@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::data::enchantment::effect::ReplaceDiskEntityEffect
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
 from generated_symbols.data.enchantment.effect.ReplaceBlockEntityEffect import ReplaceBlockEntityEffect
 
 if TYPE_CHECKING:

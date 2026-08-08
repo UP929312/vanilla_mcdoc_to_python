@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::data::recipe::Smelting
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
 from generated_symbols.data.recipe.CookingBookInfo import CookingBookInfo
 from generated_symbols.data.recipe.NotificationInfo import NotificationInfo
 

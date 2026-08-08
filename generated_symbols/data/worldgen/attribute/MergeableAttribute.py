@@ -1,18 +1,27 @@
 # Generated from symbols.json for ::java::data::worldgen::attribute::MergeableAttribute
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Any, Generic, TypeVar
+from typing import TYPE_CHECKING, Annotated, Any, Generic, TypeVar
+
+from generated_symbols.data.timeline.AttributeTrackBase import AttributeTrackBase
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.attribute.modifier.MergeableModifier import MergeableModifier
+    from generated_symbols.data.worldgen.attribute.modifier.MergeableModifierType import MergeableModifierType
 
 
 T = TypeVar('T')
 
 @dataclass(kw_only=True)
+class AttributeTrackStruct(AttributeTrackBase, Generic[T]):
+    keyframes: Annotated[list[Any], 'Length = 1 (inclusive) and above']
+    modifier: MergeableModifierType | None = None
+
+
+@dataclass(kw_only=True)
 class MergeableAttribute(Generic[T]):
     value: T
     modifier: MergeableModifier[T]
-    attribute_track: Any
+    attribute_track: AttributeTrackStruct[T]
 
 
 # ~~~ MODEL DUMP ~~~

@@ -1,5 +1,6 @@
 # Generated from symbols.json for ::java::world::entity::end_crystal::EndCrystal
 from dataclasses import dataclass
+
 from generated_symbols.world.entity.EntityBase import EntityBase
 
 

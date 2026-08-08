@@ -1,5 +1,6 @@
 # Generated from symbols.json for ::java::util::text::StorageNbtText
 from dataclasses import dataclass
+
 from generated_symbols.util.text.TextNbtBase import TextNbtBase
 
 

@@ -1,5 +1,6 @@
 # Generated from symbols.json for ::java::data::worldgen::noise_settings::NoiseGeneratorSettingsRef
 from dataclasses import dataclass
+
 from generated_symbols.data.worldgen.noise_settings.NoiseGeneratorSettings import NoiseGeneratorSettings
 
 

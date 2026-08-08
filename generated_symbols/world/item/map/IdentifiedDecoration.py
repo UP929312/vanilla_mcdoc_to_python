@@ -1,5 +1,6 @@
 # Generated from symbols.json for ::java::world::item::map::IdentifiedDecoration
 from dataclasses import dataclass
+
 from generated_symbols.world.item.map.Decoration import Decoration
 
 

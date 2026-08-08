@@ -1,12 +1,17 @@
 # Generated from symbols.json for ::java::util::memory::RoarSoundDelay
 from dataclasses import dataclass
-from typing import Any
+
 from generated_symbols.util.memory.ExpirableValue import ExpirableValue
 
 
 @dataclass(kw_only=True)
+class ValueStruct:
+    pass
+
+
+@dataclass(kw_only=True)
 class RoarSoundDelay(ExpirableValue):
-    value: Any  # If present, the warden doesn't roar.
+    value: ValueStruct  # If present, the warden doesn't roar.
 
 
 # ~~~ MODEL DUMP ~~~

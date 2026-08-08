@@ -1,5 +1,6 @@
 # Generated from symbols.json for ::java::world::item::book::WritableBook
 from dataclasses import dataclass
+
 from generated_symbols.world.item.ItemBase import ItemBase
 
 

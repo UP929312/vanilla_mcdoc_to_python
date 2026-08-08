@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::world::entity::mob::breedable::villager::Villager
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
 from generated_symbols.world.entity.mob.breedable.Breedable import Breedable
 from generated_symbols.world.entity.mob.breedable.villager.VillagerBase import VillagerBase
 

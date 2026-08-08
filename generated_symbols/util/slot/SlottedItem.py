@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::util::slot::SlottedItem
 from dataclasses import dataclass
 from typing import Generic, TypeVar
+
 from generated_symbols.world.item.ItemStack import ItemStack
 
 

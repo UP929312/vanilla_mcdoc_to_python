@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::data::recipe::CraftingDye
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
 from generated_symbols.data.recipe.CraftingBookInfo import CraftingBookInfo
 from generated_symbols.data.recipe.NotificationInfo import NotificationInfo
 

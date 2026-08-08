@@ -1,12 +1,17 @@
 # Generated from symbols.json for ::java::util::memory::VibrationCooldown
 from dataclasses import dataclass
-from typing import Any
+
 from generated_symbols.util.memory.ExpirableValue import ExpirableValue
 
 
 @dataclass(kw_only=True)
+class ValueStruct:
+    pass
+
+
+@dataclass(kw_only=True)
 class VibrationCooldown(ExpirableValue):
-    value: Any  # If present, the warden will not react to vibrations. Set to 40 when receiving a vibration.
+    value: ValueStruct  # If present, the warden will not react to vibrations. Set to 40 when receiving a vibration.
 
 
 # ~~~ MODEL DUMP ~~~

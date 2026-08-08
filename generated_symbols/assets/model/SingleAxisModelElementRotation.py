@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::assets::model::SingleAxisModelElementRotation
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
 from generated_symbols.assets.model.ModelElementRotationBase import ModelElementRotationBase
 
 if TYPE_CHECKING:

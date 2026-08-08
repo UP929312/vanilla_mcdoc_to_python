@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::world::item::BlockItem
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Any
+
 from generated_symbols.world.item.ItemBase import ItemBase
 
 if TYPE_CHECKING:

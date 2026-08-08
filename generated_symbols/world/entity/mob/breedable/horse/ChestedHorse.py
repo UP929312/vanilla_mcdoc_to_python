@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::world::entity::mob::breedable::horse::ChestedHorse
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Any
+
 from generated_symbols.world.entity.mob.breedable.horse.HorseBase import HorseBase
 
 if TYPE_CHECKING:

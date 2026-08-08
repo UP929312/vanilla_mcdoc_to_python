@@ -4,9 +4,14 @@ from typing import Any
 
 
 @dataclass(kw_only=True)
+class KeyNameStruct:
+    pass
+
+
+@dataclass(kw_only=True)
 class DataComponentPatch:
     PersistentDataComponent: Any
-    key_name: Any
+    key_name: KeyNameStruct
 
 
 # ~~~ MODEL DUMP ~~~

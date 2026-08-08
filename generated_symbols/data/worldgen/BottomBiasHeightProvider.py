@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::data::worldgen::BottomBiasHeightProvider
 from dataclasses import dataclass
 from typing import Annotated
+
 from generated_symbols.data.worldgen.UniformHeightProvider import UniformHeightProvider
 
 

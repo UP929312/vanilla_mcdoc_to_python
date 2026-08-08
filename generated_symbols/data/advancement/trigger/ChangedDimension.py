@@ -1,5 +1,6 @@
 # Generated from symbols.json for ::java::data::advancement::trigger::ChangedDimension
 from dataclasses import dataclass
+
 from generated_symbols.data.advancement.trigger.TriggerBase import TriggerBase
 
 

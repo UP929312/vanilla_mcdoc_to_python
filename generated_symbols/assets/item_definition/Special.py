@@ -1,15 +1,21 @@
 # Generated from symbols.json for ::java::assets::item_definition::Special
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+    from generated_symbols.assets.item_definition.SpecialModelType import SpecialModelType
     from generated_symbols.assets.model.ModelRef import ModelRef
     from generated_symbols.world.entity.display.Transformation import Transformation
 
 
 @dataclass(kw_only=True)
+class ModelStruct:
+    type: SpecialModelType
+
+
+@dataclass(kw_only=True)
 class Special:
-    model: Any  # Renders a special hardcoded model.
+    model: ModelStruct  # Renders a special hardcoded model.
     base: ModelRef  # Base model, providing transformations, particle texture and GUI light.
     transformation: Transformation | None = None
 

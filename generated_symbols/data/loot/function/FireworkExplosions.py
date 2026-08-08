@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::data::loot::function::FireworkExplosions
 from dataclasses import dataclass
 from typing import Any
+
 from generated_symbols.data.loot.function.ListOperation import ListOperation
 
 

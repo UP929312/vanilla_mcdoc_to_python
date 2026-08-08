@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::world::entity::item_frame::ItemFrame
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
 from generated_symbols.world.entity.BlockAttachedEntity import BlockAttachedEntity
 
 if TYPE_CHECKING:

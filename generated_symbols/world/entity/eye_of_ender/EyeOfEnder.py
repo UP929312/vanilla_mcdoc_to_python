@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::world::entity::eye_of_ender::EyeOfEnder
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
 from generated_symbols.world.entity.EntityBase import EntityBase
 
 if TYPE_CHECKING:

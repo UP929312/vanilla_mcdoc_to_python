@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::world::block::brewing_stand::BrewingStand
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
 from generated_symbols.world.block.BlockEntity import BlockEntity
 from generated_symbols.world.block.Lockable import Lockable
 from generated_symbols.world.block.Nameable import Nameable

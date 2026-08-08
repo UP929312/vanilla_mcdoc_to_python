@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::data::dialog::ButtonListDialogBase
 from dataclasses import dataclass
 from typing import Annotated
+
 from generated_symbols.data.dialog.ListDialogBase import ListDialogBase
 
 

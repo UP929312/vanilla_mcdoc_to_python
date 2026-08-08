@@ -1,12 +1,17 @@
 # Generated from symbols.json for ::java::util::memory::IsEmerging
 from dataclasses import dataclass
-from typing import Any
+
 from generated_symbols.util.memory.ExpirableValue import ExpirableValue
 
 
 @dataclass(kw_only=True)
+class ValueStruct:
+    pass
+
+
+@dataclass(kw_only=True)
 class IsEmerging(ExpirableValue):
-    value: Any  # Whether the warden is currently emerging from the ground.
+    value: ValueStruct  # Whether the warden is currently emerging from the ground.
 
 
 # ~~~ MODEL DUMP ~~~

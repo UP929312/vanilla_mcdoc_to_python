@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::world::block::crafter::Crafter
 from dataclasses import dataclass
 from typing import Annotated
+
 from generated_symbols.world.block.container.Container9 import Container9
 
 

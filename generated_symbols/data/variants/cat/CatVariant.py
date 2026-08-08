@@ -1,5 +1,6 @@
 # Generated from symbols.json for ::java::data::variants::cat::CatVariant
 from dataclasses import dataclass
+
 from generated_symbols.data.variants.SpawnPrioritySelectors import SpawnPrioritySelectors
 
 

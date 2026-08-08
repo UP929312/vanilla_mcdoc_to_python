@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::world::entity::mob::enderman::Enderman
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
 from generated_symbols.world.entity.mob.MobBase import MobBase
 from generated_symbols.world.entity.mob.NeutralMob import NeutralMob
 

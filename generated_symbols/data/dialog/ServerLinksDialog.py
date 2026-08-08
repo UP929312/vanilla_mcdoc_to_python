@@ -1,5 +1,6 @@
 # Generated from symbols.json for ::java::data::dialog::ServerLinksDialog
 from dataclasses import dataclass
+
 from generated_symbols.data.dialog.ButtonListDialogBase import ButtonListDialogBase
 
 

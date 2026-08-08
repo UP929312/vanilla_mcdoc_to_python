@@ -1,18 +1,27 @@
 # Generated from symbols.json for ::java::data::worldgen::attribute::ListAttribute
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Any, Generic, TypeVar
+from typing import TYPE_CHECKING, Annotated, Any, Generic, TypeVar
+
+from generated_symbols.data.timeline.AttributeTrackBase import AttributeTrackBase
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.attribute.modifier.ListModifier import ListModifier
+    from generated_symbols.data.worldgen.attribute.modifier.ListModifierType import ListModifierType
 
 
 E = TypeVar('E')
 
 @dataclass(kw_only=True)
+class AttributeTrackStruct(AttributeTrackBase, Generic[E]):
+    keyframes: Annotated[list[Any], 'Length = 1 (inclusive) and above']
+    modifier: ListModifierType | None = None
+
+
+@dataclass(kw_only=True)
 class ListAttribute(Generic[E]):
     value: list[E]
     modifier: ListModifier[E]
-    attribute_track: Any
+    attribute_track: AttributeTrackStruct[E]
 
 
 # ~~~ MODEL DUMP ~~~

@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::world::block::container::Container27
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
 from generated_symbols.world.block.container.ContainerBase import ContainerBase
 
 if TYPE_CHECKING:

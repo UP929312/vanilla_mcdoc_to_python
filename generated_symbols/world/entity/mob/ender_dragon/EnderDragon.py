@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::world::entity::mob::ender_dragon::EnderDragon
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
 from generated_symbols.world.entity.mob.MobBase import MobBase
 
 if TYPE_CHECKING:

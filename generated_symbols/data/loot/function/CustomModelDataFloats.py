@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::data::loot::function::CustomModelDataFloats
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
 from generated_symbols.data.loot.function.ListOperation import ListOperation
 
 if TYPE_CHECKING:

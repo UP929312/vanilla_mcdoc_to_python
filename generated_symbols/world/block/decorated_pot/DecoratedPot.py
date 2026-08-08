@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::world::block::decorated_pot::DecoratedPot
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
 from generated_symbols.world.block.BlockEntity import BlockEntity
 
 if TYPE_CHECKING:

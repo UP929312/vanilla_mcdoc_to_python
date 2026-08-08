@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::util::memory::Home
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
 from generated_symbols.util.memory.ExpirableValue import ExpirableValue
 
 if TYPE_CHECKING:

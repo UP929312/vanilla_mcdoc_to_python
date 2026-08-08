@@ -1,12 +1,17 @@
 # Generated from symbols.json for ::java::util::memory::IsInWater
 from dataclasses import dataclass
-from typing import Any
+
 from generated_symbols.util.memory.ExpirableValue import ExpirableValue
 
 
 @dataclass(kw_only=True)
+class ValueStruct:
+    pass
+
+
+@dataclass(kw_only=True)
 class IsInWater(ExpirableValue):
-    value: Any  # Whether the frog is currently in water.
+    value: ValueStruct  # Whether the frog is currently in water.
 
 
 # ~~~ MODEL DUMP ~~~

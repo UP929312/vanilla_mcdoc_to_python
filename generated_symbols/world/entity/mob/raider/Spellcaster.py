@@ -1,5 +1,6 @@
 # Generated from symbols.json for ::java::world::entity::mob::raider::Spellcaster
 from dataclasses import dataclass
+
 from generated_symbols.world.entity.mob.raider.RaiderBase import RaiderBase
 
 

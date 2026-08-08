@@ -1,5 +1,6 @@
 # Generated from symbols.json for ::java::world::entity::minecart::FurnaceMinecart
 from dataclasses import dataclass
+
 from generated_symbols.world.entity.minecart.Minecart import Minecart
 
 

@@ -1,19 +1,32 @@
 # Generated from symbols.json for ::java::data::advancement::predicate::LocationPredicate
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING, Annotated
 
 if TYPE_CHECKING:
     from generated_symbols.data.advancement.predicate.BlockPredicate import BlockPredicate
     from generated_symbols.data.advancement.predicate.FluidPredicate import FluidPredicate
+    from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
+
+
+@dataclass(kw_only=True)
+class PositionStruct:
+    x: MinMaxBounds[float] | float | None = None
+    y: MinMaxBounds[float] | float | None = None
+    z: MinMaxBounds[float] | float | None = None
+
+
+@dataclass(kw_only=True)
+class LightStruct:
+    light: MinMaxBounds[Annotated[int, 'Range | `0`-`15` | both inclusive']] | Annotated[int, 'Range | `0`-`15` | both inclusive'] | None = None
 
 
 @dataclass(kw_only=True)
 class LocationPredicate:
-    position: Any | None = None
+    position: PositionStruct | None = None
     biomes: str | list[str] | None = None
     structures: str | list[str] | None = None
     dimension: str | None = None
-    light: Any | None = None  # Calculated using: `max(sky-darkening, block)`.
+    light: LightStruct | None = None  # Calculated using: `max(sky-darkening, block)`.
     block: BlockPredicate | None = None
     fluid: FluidPredicate | None = None
     smokey: bool | None = None  # Whether the block is above (5 blocks or less) a campfire or soul campfire.

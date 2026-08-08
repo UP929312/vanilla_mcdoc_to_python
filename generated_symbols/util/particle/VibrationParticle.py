@@ -1,5 +1,6 @@
 # Generated from symbols.json for ::java::util::particle::VibrationParticle
 from dataclasses import dataclass
+
 from generated_symbols.util.particle.VibrationParticleData import VibrationParticleData
 
 

@@ -1,5 +1,6 @@
 # Generated from symbols.json for ::java::world::entity::mob::endermite::Endermite
 from dataclasses import dataclass
+
 from generated_symbols.world.entity.mob.MobBase import MobBase
 
 

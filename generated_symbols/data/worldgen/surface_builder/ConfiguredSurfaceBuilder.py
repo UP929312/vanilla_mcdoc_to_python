@@ -1,12 +1,22 @@
 # Generated from symbols.json for ::java::data::worldgen::surface_builder::ConfiguredSurfaceBuilder
 from dataclasses import dataclass
-from typing import Any
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from generated_symbols.util.block_state.BlockState import BlockState
+
+
+@dataclass(kw_only=True)
+class ConfigStruct:
+    top_material: BlockState
+    under_material: BlockState
+    underwater_material: BlockState
 
 
 @dataclass(kw_only=True)
 class ConfiguredSurfaceBuilder:
     type: str
-    config: Any
+    config: ConfigStruct
 
 
 # ~~~ MODEL DUMP ~~~

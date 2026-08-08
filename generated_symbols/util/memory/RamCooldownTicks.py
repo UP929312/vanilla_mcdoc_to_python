@@ -1,5 +1,6 @@
 # Generated from symbols.json for ::java::util::memory::RamCooldownTicks
 from dataclasses import dataclass
+
 from generated_symbols.util.memory.ExpirableValue import ExpirableValue
 
 

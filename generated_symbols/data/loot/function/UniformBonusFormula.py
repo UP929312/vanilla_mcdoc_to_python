@@ -1,11 +1,15 @@
 # Generated from symbols.json for ::java::data::loot::function::UniformBonusFormula
 from dataclasses import dataclass
-from typing import Any
+
+
+@dataclass(kw_only=True)
+class ParametersStruct:
+    bonusMultiplier: int
 
 
 @dataclass(kw_only=True)
 class UniformBonusFormula:
-    parameters: Any
+    parameters: ParametersStruct
 
 
 # ~~~ MODEL DUMP ~~~

@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::assets::equipment::WingsLayer
 from dataclasses import dataclass
 from typing import Generic, TypeVar
+
 from generated_symbols.assets.equipment.Layer import Layer
 
 

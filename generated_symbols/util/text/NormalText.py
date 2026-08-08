@@ -1,5 +1,6 @@
 # Generated from symbols.json for ::java::util::text::NormalText
 from dataclasses import dataclass
+
 from generated_symbols.util.text.TextBase import TextBase
 
 

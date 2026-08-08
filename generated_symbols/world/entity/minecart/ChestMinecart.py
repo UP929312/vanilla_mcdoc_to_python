@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::world::entity::minecart::ChestMinecart
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
 from generated_symbols.world.entity.minecart.ContainerMinecart import ContainerMinecart
 from generated_symbols.world.entity.minecart.Minecart import Minecart
 

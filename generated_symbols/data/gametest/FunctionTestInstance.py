@@ -1,5 +1,6 @@
 # Generated from symbols.json for ::java::data::gametest::FunctionTestInstance
 from dataclasses import dataclass
+
 from generated_symbols.data.gametest.TestData import TestData
 
 

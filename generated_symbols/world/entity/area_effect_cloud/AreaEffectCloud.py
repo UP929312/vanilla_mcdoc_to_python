@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::world::entity::area_effect_cloud::AreaEffectCloud
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Any
+
 from generated_symbols.world.entity.EntityBase import EntityBase
 
 if TYPE_CHECKING:

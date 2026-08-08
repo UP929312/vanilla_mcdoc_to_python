@@ -1,5 +1,6 @@
 # Generated from symbols.json for ::java::world::entity::mob::breedable::saddled::Pig
 from dataclasses import dataclass
+
 from generated_symbols.world.entity.mob.breedable.saddled.Saddled import Saddled
 
 

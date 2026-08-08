@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::world::entity::painting::Painting
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
 from generated_symbols.world.entity.BlockAttachedEntity import BlockAttachedEntity
 
 if TYPE_CHECKING:

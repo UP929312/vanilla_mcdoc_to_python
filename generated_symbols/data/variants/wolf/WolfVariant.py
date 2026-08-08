@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::data::variants::wolf::WolfVariant
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
 from generated_symbols.data.variants.SpawnPrioritySelectors import SpawnPrioritySelectors
 
 if TYPE_CHECKING:

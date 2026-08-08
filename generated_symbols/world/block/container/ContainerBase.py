@@ -1,5 +1,6 @@
 # Generated from symbols.json for ::java::world::block::container::ContainerBase
 from dataclasses import dataclass
+
 from generated_symbols.world.block.BlockEntity import BlockEntity
 from generated_symbols.world.block.Lockable import Lockable
 from generated_symbols.world.block.Nameable import Nameable

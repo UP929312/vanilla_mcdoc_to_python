@@ -1,5 +1,6 @@
 # Generated from symbols.json for ::java::world::entity::projectile::fireball::AcceleratingProjectileBase
 from dataclasses import dataclass
+
 from generated_symbols.world.entity.projectile.ProjectileBase import ProjectileBase
 
 

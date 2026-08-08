@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::world::entity::mob::fish::Pufferfish
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
 from generated_symbols.world.entity.mob.fish.Fish import Fish
 
 if TYPE_CHECKING:

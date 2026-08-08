@@ -1,15 +1,24 @@
 # Generated from symbols.json for ::java::data::advancement::trigger::InventoryChanged
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING
+
 from generated_symbols.data.advancement.trigger.TriggerBase import TriggerBase
 
 if TYPE_CHECKING:
     from generated_symbols.data.advancement.predicate.ItemPredicate import ItemPredicate
+    from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
+
+
+@dataclass(kw_only=True)
+class SlotsStruct:
+    empty: MinMaxBounds[int] | int | None = None  # Amount of empty slots.
+    occupied: MinMaxBounds[int] | int | None = None  # Amount of occupied slots.
+    full: MinMaxBounds[int] | int | None = None  # Amount of slots that are a full stack.
 
 
 @dataclass(kw_only=True)
 class InventoryChanged(TriggerBase):
-    slots: Any | None = None
+    slots: SlotsStruct | None = None
     items: list[ItemPredicate] | None = None
 
 

@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::data::advancement::trigger::PlayerInteract
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
 from generated_symbols.data.advancement.trigger.TriggerBase import TriggerBase
 
 if TYPE_CHECKING:

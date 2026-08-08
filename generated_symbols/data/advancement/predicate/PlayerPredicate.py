@@ -1,12 +1,29 @@
 # Generated from symbols.json for ::java::data::advancement::predicate::PlayerPredicate
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from generated_symbols.data.advancement.predicate.EntityPredicate import EntityPredicate
     from generated_symbols.data.advancement.predicate.GameMode import GameMode
     from generated_symbols.data.advancement.predicate.StatisticPredicate import StatisticPredicate
     from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
+
+
+@dataclass(kw_only=True)
+class InputStruct:
+    forward: bool | None = None
+    backward: bool | None = None
+    left: bool | None = None
+    right: bool | None = None
+    jump: bool | None = None
+    sneak: bool | None = None
+    sprint: bool | None = None
+
+
+@dataclass(kw_only=True)
+class FoodStruct:
+    level: MinMaxBounds[int] | int | None = None
+    saturation: MinMaxBounds[float] | float | None = None
 
 
 @dataclass(kw_only=True)
@@ -17,8 +34,8 @@ class PlayerPredicate:
     recipes: dict[str, bool] | None = None
     stats: list[StatisticPredicate] | None = None
     looking_at: EntityPredicate | None = None
-    input: Any | None = None  # Checks the movement keys of the player.
-    food: Any | None = None
+    input: InputStruct | None = None  # Checks the movement keys of the player.
+    food: FoodStruct | None = None
 
 
 # ~~~ MODEL DUMP ~~~

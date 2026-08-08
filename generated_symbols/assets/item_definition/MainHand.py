@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::assets::item_definition::MainHand
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
 from generated_symbols.assets.item_definition.SelectCases import SelectCases
 
 if TYPE_CHECKING:

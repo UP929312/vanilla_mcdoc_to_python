@@ -1,12 +1,18 @@
 # Generated from symbols.json for ::java::util::text::ScoreText
 from dataclasses import dataclass
-from typing import Any
+
 from generated_symbols.util.text.TextBase import TextBase
 
 
 @dataclass(kw_only=True)
+class ScoreStruct:
+    objective: str
+    name: str
+
+
+@dataclass(kw_only=True)
 class ScoreText(TextBase):
-    score: Any
+    score: ScoreStruct
     type: str | None = None
 
 

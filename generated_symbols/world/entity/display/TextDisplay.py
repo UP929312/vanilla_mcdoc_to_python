@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::world::entity::display::TextDisplay
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
 from generated_symbols.world.entity.display.DisplayBase import DisplayBase
 
 if TYPE_CHECKING:

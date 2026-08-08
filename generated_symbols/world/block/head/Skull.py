@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::world::block::head::Skull
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Any
+
 from generated_symbols.world.block.BlockEntity import BlockEntity
 
 if TYPE_CHECKING:

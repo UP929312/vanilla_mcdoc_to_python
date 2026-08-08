@@ -1,15 +1,41 @@
 # Generated from symbols.json for ::java::data::loot::function::SetCustomModelData
 from dataclasses import dataclass
-from typing import Any
+from typing import TYPE_CHECKING
+
 from generated_symbols.data.loot.function.Conditions import Conditions
+from generated_symbols.data.loot.function.ListOperation import ListOperation
+
+if TYPE_CHECKING:
+    from generated_symbols.data.number_provider.NumberProviderRef import NumberProviderRef
+    from generated_symbols.util.color.RGB import RGB
+
+
+@dataclass(kw_only=True)
+class FloatsStruct(ListOperation):
+    values: list[NumberProviderRef]
+
+
+@dataclass(kw_only=True)
+class FlagsStruct(ListOperation):
+    values: list[bool]
+
+
+@dataclass(kw_only=True)
+class StringsStruct(ListOperation):
+    values: list[str]
+
+
+@dataclass(kw_only=True)
+class ColorsStruct(ListOperation):
+    values: list[NumberProviderRef | RGB]
 
 
 @dataclass(kw_only=True)
 class SetCustomModelData(Conditions):
-    floats: Any | None = None
-    flags: Any | None = None
-    strings: Any | None = None
-    colors: Any | None = None
+    floats: FloatsStruct | None = None
+    flags: FlagsStruct | None = None
+    strings: StringsStruct | None = None
+    colors: ColorsStruct | None = None
 
 
 # ~~~ MODEL DUMP ~~~

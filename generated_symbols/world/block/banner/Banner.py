@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::world::block::banner::Banner
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
 from generated_symbols.world.block.BlockEntity import BlockEntity
 from generated_symbols.world.block.Nameable import Nameable
 

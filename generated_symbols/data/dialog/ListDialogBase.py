@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::data::dialog::ListDialogBase
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
 from generated_symbols.data.dialog.DialogBase import DialogBase
 
 if TYPE_CHECKING:

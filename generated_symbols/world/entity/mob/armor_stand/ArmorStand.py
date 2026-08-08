@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::world::entity::mob::armor_stand::ArmorStand
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
 from generated_symbols.world.entity.mob.LivingEntity import LivingEntity
 
 if TYPE_CHECKING:

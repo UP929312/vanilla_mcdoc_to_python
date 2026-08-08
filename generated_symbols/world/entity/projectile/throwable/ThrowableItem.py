@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::world::entity::projectile::throwable::ThrowableItem
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
 from generated_symbols.world.entity.projectile.throwable.Throwable import Throwable
 
 if TYPE_CHECKING:

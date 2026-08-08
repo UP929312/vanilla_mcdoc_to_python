@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::world::entity::mob::breedable::armadillo::Armadillo
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
 from generated_symbols.world.entity.mob.breedable.Breedable import Breedable
 
 if TYPE_CHECKING:

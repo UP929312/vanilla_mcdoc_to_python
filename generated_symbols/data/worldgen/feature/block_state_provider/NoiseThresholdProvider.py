@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::data::worldgen::feature::block_state_provider::NoiseThresholdProvider
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
 from generated_symbols.data.worldgen.feature.block_state_provider.BaseNoiseProvider import BaseNoiseProvider
 
 if TYPE_CHECKING:

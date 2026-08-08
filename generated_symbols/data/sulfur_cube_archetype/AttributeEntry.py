@@ -1,5 +1,6 @@
 # Generated from symbols.json for ::java::data::sulfur_cube_archetype::AttributeEntry
 from dataclasses import dataclass
+
 from generated_symbols.world.entity.mob.ModernAttributeModifier import ModernAttributeModifier
 
 

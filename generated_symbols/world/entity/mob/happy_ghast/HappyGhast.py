@@ -1,5 +1,6 @@
 # Generated from symbols.json for ::java::world::entity::mob::happy_ghast::HappyGhast
 from dataclasses import dataclass
+
 from generated_symbols.world.entity.mob.AgeableMob import AgeableMob
 from generated_symbols.world.entity.mob.MobBase import MobBase
 

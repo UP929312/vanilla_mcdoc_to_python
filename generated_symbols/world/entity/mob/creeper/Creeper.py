@@ -1,5 +1,6 @@
 # Generated from symbols.json for ::java::world::entity::mob::creeper::Creeper
 from dataclasses import dataclass
+
 from generated_symbols.world.entity.mob.MobBase import MobBase
 
 

@@ -1,6 +1,7 @@
 # Generated from symbols.json for ::java::util::text::TextBase
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
 from generated_symbols.util.text.TextStyle import TextStyle
 
 if TYPE_CHECKING:

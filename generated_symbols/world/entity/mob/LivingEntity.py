@@ -1,13 +1,20 @@
 # Generated from symbols.json for ::java::world::entity::mob::LivingEntity
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Any
+from typing import TYPE_CHECKING, Annotated
+
 from generated_symbols.world.entity.EntityBase import EntityBase
 from generated_symbols.world.entity.mob.FallDamageLogicData import FallDamageLogicData
 
 if TYPE_CHECKING:
     from generated_symbols.util.effect.MobEffectInstance import MobEffectInstance
+    from generated_symbols.util.memory.Memories import Memories
     from generated_symbols.world.entity.mob.Attribute import Attribute
     from generated_symbols.world.entity.mob.WaypointIcon import WaypointIcon
+
+
+@dataclass(kw_only=True)
+class BrainStruct:
+    memories: Memories | None = None
 
 
 @dataclass(kw_only=True)
@@ -18,7 +25,7 @@ class LivingEntity(EntityBase, FallDamageLogicData):
     DeathTime: int | None = None  # Timer since it was marked as dead. Counts down to zero.
     FallFlying: bool | None = None  # Whether it will glide when it falls.
     sleeping_pos: tuple[int, int, int] | None = None
-    Brain: Any | None = None
+    Brain: BrainStruct | None = None
     attributes: list[Attribute] | None = None
     active_effects: list[MobEffectInstance] | None = None
     last_hurt_by_player: tuple[int, int, int, int] | None = None  # The UUID of the player that last hurt this entity. Stored for 100 ticks.
