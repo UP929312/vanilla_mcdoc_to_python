@@ -30,7 +30,8 @@ class RenderContext:
     def require_annotated(self) -> None:
         self.required_imports.add(Import("typing", "Annotated", type_checking_only=False, is_builtin=True))
 
-    def require_symbol(self, path: str) -> str:
+    def add_import_by_symbol_path(self, path: str) -> str:
+        """For child references, take the path and add it as an import"""
         module, name = symbol_path_to_import_string_and_name(path)
         if path == self.current_symbol_path:
             return name
@@ -138,18 +139,17 @@ class Attribute(BaseModel):
 class ValueRange(BaseModel):
     """Represents a numeric range, used in `int`, `float`, and array lengths."""
     kind: Literal[0, 2] = Field(default = 0, repr=False)
-    min: float | int
+    min: float | int  # Min is *always* set
     max: float | int | None = None
 
     def to_annotation(self, ctx: RenderContext, value_range_type: Literal["int", "float"], attributes: list[Attribute]) -> str:
-        # Remove these attributes for now, we only care about divisible_by, color, random
-        ctx.require_annotated()
         if self.min is not None and self.max is not None:
             parts = ["Range", f"`{self.min or '0'}`-`{self.max or '0'}`", "both inclusive"]
         else:
             parts = ["Range", f"Min `{self.min or '0'}` and above", "inclusive"]
         if self.extract_divisible_by_value(attributes):
             parts.append(f"divisible by {self.extract_divisible_by_value(attributes)}")
+        ctx.require_annotated()
         return f"Annotated[{value_range_type}, '{' | '.join(parts)}']"
 
     def extract_divisible_by_value(self, attributes: list[Attribute]) -> str | None:
@@ -161,7 +161,7 @@ class ValueRange(BaseModel):
 
 
 class LengthRange(BaseModel):
-    kind: Literal[0] = Field(default = 0, repr=False)  # Not sure what other values this can be?
+    kind: Literal[0] = Field(default=0, repr=False)  # Not sure what other values this can be?
     min: int | None = None  # Only like one of these has a max but no min...
     max: int | None = None
 
@@ -174,7 +174,7 @@ class LengthRange(BaseModel):
             return f"Length = {self.min} (inclusive) and above"
         if self.max is not None:
             return f"Length = up to {self.max} (inclusive)"
-        raise TypeError("Min and Max None! LengthRange.to_annotation_suffix error")
+        raise TypeError("Min and Max are None! LengthRange.to_annotation_suffix error")
 
 
 class EnumValue(BaseModel):
@@ -212,7 +212,7 @@ class LiteralSchema(BaseSchema):
 class IntSchema(BaseSchema):
     kind: Literal["int"] = Field(repr=False)
     value_range: ValueRange | None = Field(default=None, alias="valueRange")
-    value: int | None = None
+    value: Literal[-1, 0, 1, 3, 16, 20, 90, 180, 270, 32500] | None = None  # This is for speed, but should probably go back to int.
 
     def to_annotation(self, ctx: RenderContext) -> str:
         return self.value_range.to_annotation(ctx, "int", self.attributes) if self.value_range else "int"
@@ -221,7 +221,14 @@ class IntSchema(BaseSchema):
 class StringSchema(BaseSchema):
     kind: Literal["string"] = Field(repr=False)
     length_range: LengthRange | None = Field(default=None, alias="lengthRange")
-    value: str | None = None
+    value: str | None = None  # For literal strings
+
+    # Value options (only these ones)
+    # [
+    #     'atlas', 'attacker', 'block', 'block_entity', 'ceiling', 'container', 'default', 'entity', 'entity_position',
+    #     'floor', 'front', 'in_bounding_box', 'keybind', 'nbt', 'object', 'override', 'player', 'score', 'selector',
+    #     'side', 'storage', 'text', 'tool', 'translatable', 'victim'
+    # ]
 
     # Returning soon:
     # def _escaped_id_attribute(self) -> str | None:
@@ -245,7 +252,7 @@ class StringSchema(BaseSchema):
                 # https://github.com/misode/mcmeta/blob/assets/assets/minecraft/texts/credits.json#L1998
                 # Literally only one thing - ::java::assets::credits::CreditsDiscipline
                 ctx.required_imports.add(Import("typing", "Literal", False, True))
-                return "Literal[\"\"]"
+                return 'Literal[""]'
             ctx.require_annotated()
             # If we get to here, there is never an id attribute, so we can just do normal str stuff.
             return f"Annotated[str, '{self.length_range.to_annotation_suffix()}']" if self.length_range else "str"
@@ -264,7 +271,7 @@ class StringSchema(BaseSchema):
 class FloatSchema(BaseSchema):
     kind: Literal["float", "double"] = Field(repr=False)
     value_range: ValueRange | None = Field(default=None, alias="valueRange")
-    value: float | None = None
+    # value: float | None = None  # For literal floats (not used in the symbols yet)
 
     def to_annotation(self, ctx: RenderContext) -> str:
         return self.value_range.to_annotation(ctx, "float", self.attributes) if self.value_range else "float"
@@ -272,7 +279,7 @@ class FloatSchema(BaseSchema):
 
 class BooleanSchema(BaseSchema):
     kind: Literal["boolean"] = Field(repr=False)
-    value: bool | None = None
+    # value: bool | None = None  # For literal booleans (not used in the symbols yet)
 
     def to_annotation(self, ctx: RenderContext) -> str:
         return "bool"
@@ -281,7 +288,7 @@ class BooleanSchema(BaseSchema):
 class ShortSchema(BaseSchema):
     kind: Literal["short"] = Field(repr=False)
     value_range: ValueRange | None = Field(default=None, alias="valueRange")
-    value: int | None = None
+    # value: int | None = None  # For literal shorts (not used in the symbols yet)
 
     def to_annotation(self, ctx: RenderContext) -> str:
         return self.value_range.to_annotation(ctx, "int", self.attributes) if self.value_range else "int"
@@ -290,7 +297,7 @@ class ShortSchema(BaseSchema):
 class LongSchema(BaseSchema):
     kind: Literal["long"] = Field(repr=False)
     value_range: ValueRange | None = Field(default=None, alias="valueRange")
-    value: int | None = None
+    # value: int | None = None  # For literal longs (not used in the symbols yet)
 
     def to_annotation(self, ctx: RenderContext) -> str:
         return self.value_range.to_annotation(ctx, "int", self.attributes) if self.value_range else "int"
@@ -299,7 +306,7 @@ class LongSchema(BaseSchema):
 class ByteSchema(BaseSchema):
     kind: Literal["byte"] = Field(repr=False)
     value_range: ValueRange | None = Field(default=None, alias="valueRange")
-    value: bool | int | None = None
+    # value: bool | int | None = None  # For literal bytes (not used in the symbols yet)
     # Also has "attributes": [{"name": "canonical"}] + Version stuff
 
     def to_annotation(self, ctx: RenderContext) -> str:
@@ -345,8 +352,13 @@ class ListSchema(BaseSchema):
 
 
 class TupleSchema(BaseSchema):
+    """Tuples aren't used that much, there's only 2 cases of them:
+    - ::java::data::timeline::CubicBezierEase
+    - ::java::pack::PackFormat
+    Length is either 2 or 4.
+    """
     kind: Literal["tuple"] = Field(repr=False)
-    items: list[IntSchema] | list[FloatSchema] | list[StructSchema]
+    items: list[IntSchema] | list[FloatSchema]
     attributes: list[Attribute] = Field(default_factory=list, repr=False)
 
     def to_annotation(self, ctx: RenderContext) -> str:
@@ -360,13 +372,13 @@ class IntArraySchema(BaseSchema):
 
     def to_annotation(self, ctx: RenderContext) -> str:
         if self.length_range is None:
+            # Only ever used by "::java::world::item::firework::Explosion"
             return "list[int]"
         if self.length_range.min != self.length_range.max:  # There's one item, no min, up to 9 max (world/block/crafter/Crafter)
-            ctx.require_annotated()
             # ::java::world::block::crafter::Crafter
-            int_annotation = IntSchema(kind="int", valueRange=self.value_range, value=None).to_annotation(ctx)
+            int_annotation = IntSchema(kind="int", valueRange=self.value_range).to_annotation(ctx)
+            ctx.require_annotated()
             return f"Annotated[list[{int_annotation}], '{self.length_range.to_annotation_suffix()}']"
-        assert self.value_range is None
         if self.length_range.min is not None:
             return f"tuple[{', '.join("int" for _ in range(self.length_range.min))}]"
         raise TypeError("Invalid IntArray input", self)
@@ -402,7 +414,8 @@ class ConcreteSchema(BaseSchema):
     {
         "kind": "concrete",
         "child": {
-            "kind": "reference", "path": "::java::data::worldgen::IntProvider"
+            "kind": "reference",
+            "path": "::java::data::worldgen::IntProvider"
         },
         "typeArgs": [
             {
@@ -431,12 +444,20 @@ class ConcreteSchema(BaseSchema):
             return concrete_annotation
 
         # Optionally allow passing numeric primitive kind(s) directly alongside the concrete wrapper.
+        # There's also some weird other stuff, like this:
+        # "kind": "concrete",
+        # "child": {
+        #     "kind": "reference",
+        #     "path": "::java::util::Filterable"
+        # },
+        # "typeArgs": [{"kind": "string"}]
         shortcut_annotations = [
             type_arg.to_annotation(ctx) for type_arg in self.type_args if isinstance(type_arg, (IntSchema, FloatSchema))
         ]
         if not shortcut_annotations:
             return concrete_annotation
 
+        # This allows you to omit "MinMaxBounds" and such, which generates `MinMaxBounds[int] | int`, QoL
         return " | ".join(dict.fromkeys([concrete_annotation] + shortcut_annotations))
 
 
@@ -444,15 +465,16 @@ class IndexedSchema(BaseSchema):
     """Not even particularly sure, always has a child Dispatcher, and the weird parallelIndices?
     "mcdoc:block_state_keys": {
         "%none": {
-                "kind": "string"
-            },
-            "%unknown": {
-                "kind": "string"
-            }
+            "kind": "string"
+        },
+        "%unknown": {
+            "kind": "string"
+        }
     }
     This is like a custom implementation?
     "registry": "mcdoc:block_state_keys"
     It seems like it just indexes somewhere else?
+    Anyway, there's only 7 instances of it in the symbols, so we can "meh" for now.
     """
     kind: Literal["indexed"] = Field(repr=False)
     child: DispatcherSchema
@@ -470,8 +492,9 @@ class ReferenceSchema(BaseSchema):
 
     def to_python_code(self, class_name: str, ctx: RenderContext) -> list[str]:
         path, name = symbol_path_to_import_string_and_name(self.path)
-        if class_name == name:
-            assert class_name == name, "class_name didn't match name for some reason?"  # This is always True for mcdoc
+
+        # For regular Minecraft/Java mcdocs, we go this route
+        if class_name == name:  # This is always True for `mcdoc`
             ctx.required_imports.add(Import(path, f"{name} as {name}_alias", type_checking_only=False, is_builtin=False))
             return [f"type {class_name} = {name}_alias"]
 
@@ -480,7 +503,8 @@ class ReferenceSchema(BaseSchema):
         return [f"type {class_name} = {name}"]
 
     def to_annotation(self, ctx: RenderContext) -> str:
-        return ctx.require_symbol(self.path)
+        # Make sure we import the refereenced symbol
+        return ctx.add_import_by_symbol_path(self.path)
 
 
 type UnionSchemaMemberTypes = (
@@ -540,10 +564,11 @@ class UnionSchema(BaseSchema):
         union_member_annotations: list[str] = []
         struct_index = 0
 
+        member_struct_count = len([x for x in self.members if isinstance(x, StructSchema)])  # Used to number the structs
         for member in self.members:
             if isinstance(member, StructSchema):
                 struct_index += 1
-                member_name = f"{class_name}Struct{struct_index}"
+                member_name = f"{class_name}Struct{'' if member_struct_count == 1 else struct_index}"
                 rendered_struct_members.extend(member.to_python_code(member_name, ctx))
                 union_member_annotations.append(f"{member_name}{type_params}")
             else:
@@ -566,7 +591,7 @@ type PairSchemaTypes = (
 
 
 class PairSchema(BaseSchema):
-    """Encapsulates a key value pair, essentially a basic attribute with description and such."""
+    """Encapsulates a key-value pair, essentially a basic attribute with description and such."""
     kind: Literal["pair"] = Field(repr=False)
     key: str | StringSchema | ReferenceSchema | DispatcherSchema | UnionSchema
     type: Annotated[PairSchemaTypes, Field(discriminator="kind")]
@@ -587,11 +612,11 @@ class PairSchema(BaseSchema):
 
 
 class SpreadFieldSchema(BaseSchema):
-    """An inliner, for spread.
+    """An inliner, for spread (inheritence).
     E.g. Suspicious stew has attributes {
         "kind": "spread", "type": {"kind": "reference", "path": "::java::world::item::ItemBase"}
     }
-    So they get inlined.
+    So they get inlined (suspicious stew now gets all the attributes from ItemBase).
     """
     kind: Literal["spread"] = Field(repr=False)
     type: Annotated[
@@ -603,8 +628,12 @@ class SpreadFieldSchema(BaseSchema):
         """Returns a reference, or a concrete schema's reference, or None"""
         if isinstance(self.type, ReferenceSchema):
             return self.type
-        if isinstance(self.type, ConcreteSchema) and isinstance(self.type.child, ReferenceSchema):
-            return self.type.child
+        if isinstance(self.type, ConcreteSchema):
+            if isinstance(self.type.child, ReferenceSchema):
+                return self.type.child
+            if isinstance(self.type.child, DispatcherSchema):  # TODO: Eventually inherit from these
+                return None
+            raise TypeError("Invalid SpreadField + ConcreteSchema")
         return None
 
     @classmethod
@@ -666,9 +695,9 @@ class TemplateTypeParam(BaseModel):
     """Represents a template type parameter path (e.g. ::java::world::item::T)."""
     path: str
 
-    def to_python_code(self) -> str:
-        """Converts `::java::world::item::T` -> `T` """
-        return self.path.split("::")[-1]
+    # def to_python_code(self) -> str:
+    #     """Converts `::java::world::item::T` -> `T` """
+    #     return self.path.split("::")[-1]
 
 
 type TemplateChildTypes = (
@@ -829,7 +858,7 @@ class StaticIndexSchema(BaseSchema):
 
 
 class DispatcherSchema(BaseSchema):
-    """No idea, this is weird..."""
+    """No idea, this is weird... Seems like it's a bit like spread but from the custom registry?"""
     kind: Literal["dispatcher"] = Field(repr=False)
     parallel_indices: list[StaticIndexSchema | DynamicIndexSchema] = Field(alias="parallelIndices")
     registry: str
@@ -854,7 +883,7 @@ class TreeSchema(BaseSchema):
 
 class TreeValueSchema(RootModel[dict[str, TreeSchema | LiteralSchema]]):
     """Represents the 'values' part of a TreeSchema. It's a flexible dictionary."""
-    root: dict[str, TreeSchema | LiteralSchema]  # pyright: ignore[reportIncompatibleVariableOverride]
+    root: dict[str, TreeSchema | LiteralSchema]
 
 
 type MCDocDispatcherSchemaTypes = (
@@ -882,9 +911,9 @@ class MCDocDispatcher(BaseSchema):
     @classmethod
     def collect_branches(cls, data: object) -> object:
         if isinstance(data, dict):
-            reserved = {"kind", "attributes"}
-            branches = {k: v for k, v in data.items() if k not in reserved}
-            return {k: v for k, v in data.items() if k in reserved} | {"branches": branches}
+            branches = {k: v for k, v in data.items() if k not in ["kind", "attribute"]}
+            regular = {k: v for k, v in data.items() if k in ["kind", "attribute"]}
+            return regular | {"branches": branches}
         return data
 
     def to_python_code(self, class_name: str, ctx: RenderContext) -> list[str]:
