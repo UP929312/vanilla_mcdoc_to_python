@@ -25,7 +25,7 @@ def make_python_file_content(resource_type: str, resource_data: dict[str, Any], 
 
     # Build top-of-file imports from the final rendered import set.
     file_comment = [f"# Generated from symbols.json for {resource_type}"]
-    file_contents = "\n".join(file_comment + ctx.imports_to_python_code() + signature_lines + body_lines).rstrip() + "\n"
+    file_contents = "\n".join(file_comment + ctx.imports_to_python_code() + signature_lines + ctx.additional_dataclasses + body_lines).rstrip() + "\n"
 
     # Add the raw model at the bottom, for reference:
     stringified_output = json.dumps({resource_type: resource_data}, indent=4).replace("true", "True").replace("false", "False")

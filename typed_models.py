@@ -23,12 +23,16 @@ class Import:
 class RenderContext:
     required_imports: set[Import] = field(default_factory=set)
     local_type_params: set[str] = field(default_factory=set)
+    additional_dataclasses: list[str] = field(default_factory=list)
     current_symbol_path: str | None = None
     indent: int = 0
     allow_type_args_kind_shortcut: bool = True
 
     def require_annotated(self) -> None:
         self.required_imports.add(Import("typing", "Annotated", type_checking_only=False, is_builtin=True))
+
+    def add_dataclass(self, lines: list[str]) -> None:
+        self.additional_dataclasses.extend(lines + [""])
 
     def add_import_by_symbol_path(self, path: str) -> str:
         """For child references, take the path and add it as an import"""
@@ -50,6 +54,7 @@ class RenderContext:
         return RenderContext(
             required_imports=self.required_imports,
             local_type_params=self.local_type_params,
+            additional_dataclasses=self.additional_dataclasses,
             current_symbol_path=self.current_symbol_path,
             indent=self.indent + extra_indent,
             allow_type_args_kind_shortcut=allow_type_args_kind_shortcut,
@@ -339,18 +344,31 @@ class ListSchema(BaseSchema):
     item: Annotated[ListSchemaItemTypes, Field(discriminator="kind")]
     length_range: LengthRange | None = Field(default=None, alias="lengthRange")
 
-    def to_annotation(self, ctx: RenderContext) -> str:
+    def contains_inline_struct(self) -> bool:
+        return isinstance(self.item, StructSchema) or isinstance(self.item, ListSchema) and self.item.contains_inline_struct()
+
+    def _calculated_item_annotation(self, ctx: RenderContext, nested_struct_name: str | None = None) -> str:
+        """Either points directly to the normal annotation (e.g. list[>>>`int`<<<])
+        Or, for locally generated structs, points to them (and creates their code)"""
+        if isinstance(self.item, StructSchema) and nested_struct_name is not None:
+            return self.item.to_materialized_annotation(nested_struct_name, ctx)
+        elif isinstance(self.item, ListSchema):  # TODO: Figure out when we have lists of lists?
+            return self.item.to_annotation(ctx, nested_struct_name)
+        return self.item.to_annotation(ctx)
+        
+    def to_annotation(self, ctx: RenderContext, nested_struct_name: str | None = None) -> str:
+        item_annotation = self._calculated_item_annotation(ctx, nested_struct_name)
         if self.length_range is None:
-            return f"list[{self.item.to_annotation(ctx)}]"
+            return f"list[{item_annotation}]"
         if self.length_range.min is not None and self.length_range.min == self.length_range.max:
-            return f"tuple[{', '.join(self.item.to_annotation(ctx) for _ in range(self.length_range.min))}]"
+            return f"tuple[{', '.join(item_annotation for _ in range(self.length_range.min))}]"
         ctx.require_annotated()
-        return f"Annotated[list[{self.item.to_annotation(ctx)}], '{self.length_range.to_annotation_suffix()}']"
+        return f"Annotated[list[{item_annotation}], '{self.length_range.to_annotation_suffix()}']"
 
     def to_python_code(self, class_name: str, ctx: RenderContext) -> list[str]:
         type_param_names = sorted(symbol_path_to_object_name(path) for path in ctx.local_type_params)
         type_params = f"[{', '.join(type_param_names)}]" if type_param_names else ""
-        return [f"type {class_name}{type_params} = {self.to_annotation(ctx)}"]
+        return [f"type {class_name}{type_params} = {self.to_annotation(ctx, PairSchema.nested_struct_name(class_name))}"]
 
 
 class TupleSchema(BaseSchema):
@@ -557,22 +575,33 @@ class UnionSchema(BaseSchema):
 
         if len(self.members) == 1:
             member = self.members[0]
-            return member.to_python_code(class_name, ctx) if isinstance(member, StructSchema) else [f"type {class_name} = {member.to_annotation(ctx)}"]
+            if isinstance(member, StructSchema):
+                return member.to_python_code(class_name, ctx)
+            if isinstance(member, ListSchema) and member.contains_inline_struct():
+                return [f"type {class_name} = {member.to_annotation(ctx, PairSchema.nested_struct_name(class_name))}"]
+            return [f"type {class_name} = {member.to_annotation(ctx)}"]
 
         # Materialize struct members as concrete sibling symbols so the union alias can reference them.
         # This is normally when a type is of kind: Struct | Struct, we can't use either, so we make both,
         # then kind of glue them together here, using our already existing code.
         rendered_struct_members: list[str] = []
         union_member_annotations: list[str] = []
-        struct_index = 0
+        materialized_index = 0
 
-        member_struct_count = len([x for x in self.members if isinstance(x, StructSchema)])  # Used to number the structs
+        materialized_member_count = len([
+            member for member in self.members
+            if isinstance(member, StructSchema) or isinstance(member, ListSchema) and member.contains_inline_struct()
+        ])
         for member in self.members:
             if isinstance(member, StructSchema):
-                struct_index += 1
-                member_name = f"{class_name}Struct{'' if member_struct_count == 1 else struct_index}"
-                rendered_struct_members.extend(member.to_python_code(member_name, ctx))
+                materialized_index += 1
+                member_name = f"{class_name}Struct{'' if materialized_member_count == 1 else materialized_index}"
+                rendered_struct_members.extend(member.to_python_code(member_name, ctx) + [""])
                 union_member_annotations.append(f"{member_name}{type_params}")
+            elif isinstance(member, ListSchema) and member.contains_inline_struct():
+                materialized_index += 1
+                member_name = f"{class_name}Struct{'' if materialized_member_count == 1 else materialized_index}"
+                union_member_annotations.append(member.to_annotation(ctx, member_name))
             else:
                 union_member_annotations.append(member.to_annotation(ctx))
 
@@ -774,11 +803,17 @@ class StructSchema(BaseSchema):
             return [f"Generic[{', '.join(template_type_names)}]"]
         return []
 
+    def to_materialized_annotation(self, class_name: str, ctx: RenderContext) -> str:
+        """Both adds itself to the list of created dataclasses, plus returns the annotation materialized."""
+        ctx.add_dataclass(self.to_python_code(class_name, ctx))
+        type_param_names = sorted(symbol_path_to_object_name(path) for path in ctx.local_type_params)
+        type_args = f"[{', '.join(type_param_names)}]" if type_param_names else ""
+        return f"{class_name}{type_args}"
+
     def _render_dataclass_from_struct(self, class_name: str, template_type_names: list[str], ctx: RenderContext) -> list[str]:
         # Collects Structs' inherrited children, e.g. Class(PredicateOffset)
         inherited_names = SpreadFieldSchema.collect_inherited_base_names(self.fields, ctx)
         inherited_names += self._calculate_inherited_names(template_type_names, ctx)
-        nested_struct_lines: list[str] = []
         lines: list[str] = ["@dataclass(kw_only=True)"]
         ctx.required_imports.add(Import("dataclasses", "dataclass", False, True))
         lines.append(
@@ -801,9 +836,9 @@ class StructSchema(BaseSchema):
             key = PairSchema.clean_key(pair_field.key)  # type: ignore[arg-type]
             if isinstance(pair_field.type, StructSchema) and pair_field.type._mapping_alias_annotation(ctx) is None:
                 nested_struct_name = PairSchema.nested_struct_name(key)
-                nested_type_args = f"[{', '.join(template_type_names)}]" if template_type_names else ""
-                annotation = f"{nested_struct_name}{nested_type_args}"
-                nested_struct_lines.extend(pair_field.type.to_python_code(nested_struct_name, ctx)+[""])
+                annotation = pair_field.type.to_materialized_annotation(nested_struct_name, ctx)
+            elif isinstance(pair_field.type, ListSchema):
+                annotation = pair_field.type.to_annotation(ctx, PairSchema.nested_struct_name(key))
             else:
                 annotation = pair_field.type.to_annotation(ctx)
             description = pair_field.description_text()
@@ -820,7 +855,7 @@ class StructSchema(BaseSchema):
         # Write required fields first, then optional fields (to allow Pydantic's BaseModel to not complain about defaults before required fields)
         lines.extend(required_field_lines)
         lines.extend(optional_field_lines)
-        return nested_struct_lines + lines + [""]
+        return lines + [""]
 
     def to_python_code(self, class_name: str, ctx: RenderContext) -> list[str]:
         mapping_alias = self._mapping_alias_annotation(ctx)
@@ -839,6 +874,7 @@ class StructSchema(BaseSchema):
             field.type.to_annotation(ctx)
             for field in SpreadFieldSchema.collect_inlined_pair_fields(self.fields)
             if not isinstance(field.type, StructSchema)
+            and not (isinstance(field.type, ListSchema) and field.type.contains_inline_struct())
         ]
 
         # Keep Generic parameter order stable across runs (local_type_params is a set).

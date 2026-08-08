@@ -192,6 +192,7 @@ if TYPE_CHECKING:
 class HeightProviderStruct:
     type: str
 
+
 type HeightProvider = HeightProviderStruct | VerticalAnchor
 """,
 
@@ -295,13 +296,14 @@ class ProfileStruct:
     elytra: str | None = None  # Elytra texture override. If this texture is not present either as override or in player profile, the cape texture is used. If the cape texture is also not present, the default elytra texture is used.
     model: PlayerModelType | None = None  # Model type override.
 
+
 type Profile = ProfileStruct | str
 """,
 
     # Nested structs generated inside templates must retain their type arguments at use sites.
     r"generated_symbols\data\worldgen\attribute\MergeableAttribute.py": """# Generated from symbols.json for ::java::data::worldgen::attribute::MergeableAttribute
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Any, Generic, TypeVar
+from typing import TYPE_CHECKING, Annotated, Generic, TypeVar
 
 from generated_symbols.data.timeline.AttributeTrackBase import AttributeTrackBase
 
@@ -313,8 +315,14 @@ if TYPE_CHECKING:
 T = TypeVar('T')
 
 @dataclass(kw_only=True)
+class KeyframesStruct(Generic[T]):
+    ticks: Annotated[int, 'Range | Min `0` and above | inclusive']
+    value: T
+
+
+@dataclass(kw_only=True)
 class AttributeTrackStruct(AttributeTrackBase, Generic[T]):
-    keyframes: Annotated[list[Any], 'Length = 1 (inclusive) and above']
+    keyframes: Annotated[list[KeyframesStruct[T]], 'Length = 1 (inclusive) and above']
     modifier: MergeableModifierType | None = None
 
 
@@ -323,6 +331,78 @@ class MergeableAttribute(Generic[T]):
     value: T
     modifier: MergeableModifier[T]
     attribute_track: AttributeTrackStruct[T]
+""",
+
+    # Structs nested in lists are materialized recursively before the list alias.
+    r"generated_symbols\assets\credits\Credits.py": """# Generated from symbols.json for ::java::assets::credits::Credits
+from dataclasses import dataclass
+from typing import Annotated, Literal
+
+
+@dataclass(kw_only=True)
+class TitlesStruct:
+    title: str
+    names: list[str]  # Employees with the title.
+
+
+@dataclass(kw_only=True)
+class DisciplinesStruct:
+    discipline: Annotated[str, 'Length = 1 (inclusive) and above'] | Literal[""]
+    titles: list[TitlesStruct]
+
+
+@dataclass(kw_only=True)
+class CreditsStruct:
+    section: str  # Company segment.
+    disciplines: list[DisciplinesStruct]
+
+
+type Credits = list[CreditsStruct]
+""",
+
+    # Union members that are lists of structs need a named item class.
+    r"generated_symbols\assets\block_state_definition\ModelVariant.py": """# Generated from symbols.json for ::java::assets::block_state_definition::ModelVariant
+from dataclasses import dataclass
+from typing import Annotated
+
+from generated_symbols.assets.block_state_definition.ModelVariantBase import ModelVariantBase
+
+
+@dataclass(kw_only=True)
+class ModelVariantStruct(ModelVariantBase):
+    weight: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None
+
+
+type ModelVariant = ModelVariantBase | list[ModelVariantStruct]
+""",
+
+    # Top-level dataclasses emitted by unions retain two blank lines between declarations.
+    r"generated_symbols\assets\block_state_definition\BlockStateDefinition.py": """# Generated from symbols.json for ::java::assets::block_state_definition::BlockStateDefinition
+from dataclasses import dataclass
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from generated_symbols.assets.block_state_definition.ModelVariant import ModelVariant
+    from generated_symbols.assets.block_state_definition.MultiPartCondition import MultiPartCondition
+
+
+@dataclass(kw_only=True)
+class MultipartStruct:
+    apply: ModelVariant
+    when: MultiPartCondition | None = None  # One condition or an array where at least one condition must apply.
+
+
+@dataclass(kw_only=True)
+class BlockStateDefinitionStruct1:
+    variants: dict[str, ModelVariant]
+
+
+@dataclass(kw_only=True)
+class BlockStateDefinitionStruct2:
+    multipart: list[MultipartStruct]
+
+
+type BlockStateDefinition = BlockStateDefinitionStruct1 | BlockStateDefinitionStruct2
 """,
 
 }
