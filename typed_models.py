@@ -21,6 +21,7 @@ class Import:
 
 @dataclass
 class RenderContext:
+    """Stores a single object / Python file, including indent, imports, main code body, etc."""
     required_imports: set[Import] = field(default_factory=set)
     local_type_params: set[str] = field(default_factory=set)
     additional_dataclasses: list[str] = field(default_factory=list)
@@ -61,6 +62,7 @@ class RenderContext:
         )
 
     def imports_to_python_code(self) -> list[str]:
+        """Converts the internally stored imports into a list of Python lines"""
         runtime_import_keys = {
             (import_statement.relative_module, import_statement.identifier)
             for import_statement in self.required_imports
@@ -118,7 +120,7 @@ class BaseSchema(BaseModel):
         return [f"type {class_name} = {self.to_annotation(ctx)}"]
 
     def to_annotation(self, ctx: RenderContext) -> str:
-        raise NotImplementedError("This should never get called directly.")
+        raise NotImplementedError(f"This should never get called directly on a {self.__class__.__name__}")
 
     def remove_version_data(self) -> BaseSchema:
         self.attributes = [x for x in self.attributes if not x.is_undesirable_attribute]
@@ -352,10 +354,10 @@ class ListSchema(BaseSchema):
         Or, for locally generated structs, points to them (and creates their code)"""
         if isinstance(self.item, StructSchema) and nested_struct_name is not None:
             return self.item.to_materialized_annotation(nested_struct_name, ctx)
-        elif isinstance(self.item, ListSchema):  # TODO: Figure out when we have lists of lists?
+        elif isinstance(self.item, (ListSchema, UnionSchema)):  # TODO: Figure out when we have lists of lists?
             return self.item.to_annotation(ctx, nested_struct_name)
         return self.item.to_annotation(ctx)
-        
+
     def to_annotation(self, ctx: RenderContext, nested_struct_name: str | None = None) -> str:
         item_annotation = self._calculated_item_annotation(ctx, nested_struct_name)
         if self.length_range is None:
@@ -548,10 +550,32 @@ class UnionSchema(BaseSchema):
         ]
         return self
 
-    def to_annotation(self, ctx: RenderContext) -> str:
-        if not self.members:  # For things like Player, who has weird fields...
+    def to_annotation(self, ctx: RenderContext, nested_struct_name: str | None = None) -> str:
+        if not self.members:
+            # For things like generated_symbols\world\entity\mob\player\Player.py
+            # (Pair) -> CustomNameVisible -> "type": {"kind": "union", "members": []}
+            # Empty union members. It's done because Player inherits from LivingEntity, but isn't
+            # allowed those fields, so we just do "None" here.
             return "None"
-        return " | ".join(dict.fromkeys(member.to_annotation(ctx) for member in self.members))
+
+        annotations: list[str] = []
+        materialized_members = [
+            member for member in self.members
+            if isinstance(member, StructSchema) or isinstance(member, ListSchema) and member.contains_inline_struct()
+        ]
+        materialized_index = 0
+        for member in self.members:
+            if nested_struct_name is not None and isinstance(member, StructSchema):
+                materialized_index += 1
+                member_name = f"{nested_struct_name}{'' if len(materialized_members) == 1 else materialized_index}"
+                annotations.append(member.to_materialized_annotation(member_name, ctx))
+            elif nested_struct_name is not None and isinstance(member, ListSchema) and member.contains_inline_struct():
+                materialized_index += 1
+                member_name = f"{nested_struct_name}{'' if len(materialized_members) == 1 else materialized_index}"
+                annotations.append(member.to_annotation(ctx, member_name))
+            else:
+                annotations.append(member.to_annotation(ctx))
+        return " | ".join(dict.fromkeys(annotations))
 
     def to_python_code(self, class_name: str, ctx: RenderContext) -> list[str]:
         """   # TEMP
@@ -649,6 +673,9 @@ class PairSchema(BaseSchema):
             key = "".join(part[:1].upper() + part[1:] for part in key.split("_") if part)
         return f"{key}Struct"
 
+    def to_annotation(self, ctx: RenderContext) -> str:
+        return self.key.to_annotation(ctx) if not isinstance(self.key, str) else self.key
+
 
 class SpreadFieldSchema(BaseSchema):
     """An inliner, for spread (inheritence).
@@ -718,7 +745,7 @@ class SpreadFieldSchema(BaseSchema):
         return base_names
 
     @classmethod
-    def collect_inlined_pair_fields(cls, fields: list[PairSchema | SpreadFieldSchema | UnionSchema]) -> list[PairSchema]:
+    def filter_fields_to_pair_schemas_only(cls, fields: list[PairSchema | SpreadFieldSchema | UnionSchema]) -> list[PairSchema]:
         """For all the fields, return only those that are `PairSchema`. \n
         If it's a struct, return **ITS** `PairSchema`s"""
         inlined_fields: list[PairSchema] = []
@@ -726,8 +753,14 @@ class SpreadFieldSchema(BaseSchema):
             if isinstance(pair_field, PairSchema):
                 inlined_fields.append(pair_field)
             if isinstance(pair_field, cls) and isinstance(pair_field.type, StructSchema):
-                inlined_fields.extend(SpreadFieldSchema.collect_inlined_pair_fields(pair_field.type.fields))
+                inlined_fields.extend(SpreadFieldSchema.filter_fields_to_pair_schemas_only(pair_field.type.fields))
         return inlined_fields
+
+    def to_annotation(self, ctx: RenderContext) -> str:
+        # This isn't called traditionally, since it's normally removed in the inheritence of a dataclass
+        # But sometimes (e.g. in nested structs), it is, so we just do Any for now.
+        ctx.required_imports.add(Import("typing", "Any", type_checking_only=False, is_builtin=True))
+        return "Any"
 
 
 class TemplateTypeParam(BaseModel):
@@ -755,15 +788,13 @@ class TemplateSchema(BaseSchema):
     child: Annotated[TemplateChildTypes, Field(discriminator="kind")]
     type_params: list[TemplateTypeParam] = Field(default_factory=list, alias="typeParams")
 
-    def _add_local_type_params_to_context(self, ctx: RenderContext) -> None:
-        ctx.local_type_params.update(type_param.path for type_param in self.type_params)
-
     def to_annotation(self, ctx: RenderContext) -> str:
-        self._add_local_type_params_to_context(ctx)
+        # Add the local params to context
+        ctx.local_type_params.update(type_param.path for type_param in self.type_params)
         return self.child.to_annotation(ctx)
 
     def to_python_code(self, class_name: str, ctx: RenderContext) -> list[str]:
-        self._add_local_type_params_to_context(ctx)
+        ctx.local_type_params.update(type_param.path for type_param in self.type_params)
         if isinstance(self.child, UnionSchema):
             struct_members = [member for member in self.child.members if isinstance(member, StructSchema)]
             return struct_members[0].to_python_code(class_name, ctx)  # Always have at least one struct
@@ -784,18 +815,27 @@ class StructSchema(BaseSchema):
         self.fields = filtered_fields
         return self
 
-    def _mapping_alias_annotation(self, ctx: RenderContext) -> str | None:
-        """Returns the mapping alias dict (i.e. dict[<x>, <x>]) for a struct, or None if it's not that kind of struct."""
+    def _mapping_pair(self) -> PairSchema | None:
         plain_pairs =      [field for field in self.fields if isinstance(field, PairSchema) and isinstance(field.key, str)]  # fmt: skip
         schema_key_pairs = [field for field in self.fields if isinstance(field, PairSchema) and not isinstance(field.key, str)]
-        if len(schema_key_pairs) != 1 or plain_pairs:  # If it's not a single pair, it's just a simple dict.
+        return schema_key_pairs[0] if len(schema_key_pairs) == 1 and not plain_pairs else None
+
+    def _mapping_alias_annotation(self, ctx: RenderContext, value_struct_name: str | None = None) -> str | None:
+        """Returns the mapping alias dict (i.e. dict[<x>, <x>]) for a struct, or None if it's not that kind of struct."""
+        field = self._mapping_pair()
+        if field is None:
             # TODO: Because a mapping can't be typed inline yet in Python, we don't generate a TypedDict, instead just put the first here.
             # I don't know if they specify more than one, perhaps we can chain them together, i.e. ` | `?
             return None
 
-        field = schema_key_pairs[0]
         assert not isinstance(field.key, str)
-        return f"dict[{field.key.to_annotation(ctx)}, {field.type.to_annotation(ctx)}]"
+        if value_struct_name is not None and isinstance(field.type, StructSchema):
+            value_annotation = field.type.to_materialized_annotation(value_struct_name, ctx)
+        elif isinstance(field.type, (ListSchema, UnionSchema)):
+            value_annotation = field.type.to_annotation(ctx, value_struct_name)
+        else:
+            value_annotation = field.type.to_annotation(ctx)
+        return f"dict[{field.key.to_annotation(ctx)}, {value_annotation}]"
 
     def _calculate_inherited_names(self, template_type_names: list[str], ctx: RenderContext) -> list[str]:
         if template_type_names:
@@ -813,9 +853,12 @@ class StructSchema(BaseSchema):
     def _render_dataclass_from_struct(self, class_name: str, template_type_names: list[str], ctx: RenderContext) -> list[str]:
         # Collects Structs' inherrited children, e.g. Class(PredicateOffset)
         inherited_names = SpreadFieldSchema.collect_inherited_base_names(self.fields, ctx)
-        inherited_names += self._calculate_inherited_names(template_type_names, ctx)
-        lines: list[str] = ["@dataclass(kw_only=True)"]
+        if template_type_names:
+            ctx.required_imports.add(Import("typing", "Generic", False, True))
+            inherited_names.append(f"Generic[{', '.join(template_type_names)}]")
+    
         ctx.required_imports.add(Import("dataclasses", "dataclass", False, True))
+        lines: list[str] = ["@dataclass(kw_only=True)"]
         lines.append(
             f"class {class_name}:"
             if not inherited_names else
@@ -826,18 +869,17 @@ class StructSchema(BaseSchema):
         required_field_lines: list[str] = []
         optional_field_lines: list[str] = []
 
-        # PairSchema is basically key_name, key_value, the only other possible type is SpreadFields, which we handle differently.
-        assert all(isinstance(field, (PairSchema, SpreadFieldSchema)) for field in self.fields)
-        pair_fields = SpreadFieldSchema.collect_inlined_pair_fields(self.fields)
+        assert all(isinstance(field, (PairSchema, SpreadFieldSchema)) for field in self.fields)  # It's never UnionSchema here
+        pair_fields = SpreadFieldSchema.filter_fields_to_pair_schemas_only(self.fields)
         if not pair_fields:
             lines.append("    pass")
 
         for pair_field in pair_fields:
             key = PairSchema.clean_key(pair_field.key)  # type: ignore[arg-type]
-            if isinstance(pair_field.type, StructSchema) and pair_field.type._mapping_alias_annotation(ctx) is None:
+            if isinstance(pair_field.type, StructSchema) and pair_field.type._mapping_pair() is None:
                 nested_struct_name = PairSchema.nested_struct_name(key)
                 annotation = pair_field.type.to_materialized_annotation(nested_struct_name, ctx)
-            elif isinstance(pair_field.type, ListSchema):
+            elif isinstance(pair_field.type, (ListSchema, UnionSchema, StructSchema)):
                 annotation = pair_field.type.to_annotation(ctx, PairSchema.nested_struct_name(key))
             else:
                 annotation = pair_field.type.to_annotation(ctx)
@@ -858,21 +900,21 @@ class StructSchema(BaseSchema):
         return lines + [""]
 
     def to_python_code(self, class_name: str, ctx: RenderContext) -> list[str]:
-        mapping_alias = self._mapping_alias_annotation(ctx)
+        mapping_alias = self._mapping_alias_annotation(ctx, f"{class_name}ValueStruct")
         if mapping_alias is not None:
             # This is exclusively type <x>[type?] = dict[<key>, <value>]
             template_type_names = sorted(symbol_path_to_object_name(path) for path in ctx.local_type_params)
             template_type_names_string = f"[{', '.join(template_type_names)}]" if template_type_names else ""
             return [f"type {class_name}{template_type_names_string} = {mapping_alias}\n"]
 
-        SpreadFieldSchema.collect_runtime_symbol_imports(self.fields, ctx)  # Attaches them to ctx
+        SpreadFieldSchema.collect_runtime_symbol_imports(self.fields, ctx)  # Attaches inherited classes to ctx
 
         # Discover unresolved symbolic refs (e.g. ::java::...::T) before building Generic[...] bases.
         # These become local type params instead of invalid import targets.
         # Because ctx is being passed in, it can actually mutate and change the imports - intentionally.
         [
             field.type.to_annotation(ctx)
-            for field in SpreadFieldSchema.collect_inlined_pair_fields(self.fields)
+            for field in SpreadFieldSchema.filter_fields_to_pair_schemas_only(self.fields)
             if not isinstance(field.type, StructSchema)
             and not (isinstance(field.type, ListSchema) and field.type.contains_inline_struct())
         ]
@@ -882,19 +924,18 @@ class StructSchema(BaseSchema):
 
         return self._render_dataclass_from_struct(class_name=class_name, template_type_names=template_type_names, ctx=ctx)
 
-    def to_annotation(self, ctx: RenderContext) -> str:
-        mapping_alias = self._mapping_alias_annotation(ctx)
+    def to_annotation(self, ctx: RenderContext, nested_struct_name: str | None = None) -> str:
+        value_struct_name = f"{nested_struct_name}ValueStruct" if nested_struct_name is not None else None
+        mapping_alias = self._mapping_alias_annotation(ctx, value_struct_name)
         if mapping_alias is not None:
             return mapping_alias
 
-        from itertools import chain
+        if not self.fields:
+            # https://github.com/SpyglassMC/vanilla-mcdoc/blob/main/java/world/entity/mob/breedable/horse.mcdoc#L78
+            # Horses with chests can have items like [{}, {}, {"item": "minecraft:apple"}], which sets its slots to air.
+            return "dict[Never, Never]"
 
-        pair_schemas = [x for x in self.fields if isinstance(x, PairSchema)]
-        union_schemas = [x for x in self.fields if isinstance(x, UnionSchema)]
-        spread_schemas = [x for x in self.fields if isinstance(x, SpreadFieldSchema)]
-        annotations = ["Any" for x in chain(pair_schemas, union_schemas, spread_schemas)] or ["Any"]  # TODO: Obviously we need to do this.
-        ctx.required_imports.add(Import("typing", "Any", type_checking_only=False, is_builtin=True))
-        return " | ".join(set(dict.fromkeys(annotations)))
+        return " | ".join(dict.fromkeys(x.to_annotation(ctx) for x in self.fields))
 
 
 # ==================================================================================================================================

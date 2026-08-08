@@ -405,6 +405,48 @@ class BlockStateDefinitionStruct2:
 type BlockStateDefinition = BlockStateDefinitionStruct1 | BlockStateDefinitionStruct2
 """,
 
+    # Pair unions materialize nested structs in source order instead of emitting their keys as types.
+    r"generated_symbols\data\worldgen\structure\TrickyTrialsStructureConfig.py": """# Generated from symbols.json for ::java::data::worldgen::structure::TrickyTrialsStructureConfig
+from dataclasses import dataclass
+from typing import TYPE_CHECKING, Annotated
+
+if TYPE_CHECKING:
+    from generated_symbols.data.worldgen.structure.LiquidSettings import LiquidSettings
+
+
+@dataclass(kw_only=True)
+class DimensionPaddingStruct:
+    bottom: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None
+    top: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None
+
+
+@dataclass(kw_only=True)
+class TrickyTrialsStructureConfig:
+    dimension_padding: Annotated[int, 'Range | Min `0` and above | inclusive'] | DimensionPaddingStruct | None = None
+    liquid_settings: LiquidSettings | None = None
+""",
+
+    # Mapping values that are structs become named dataclasses rather than unions of their field keys.
+    r"generated_symbols\assets\model\ModelElementFaceMap.py": """# Generated from symbols.json for ::java::assets::model::ModelElementFaceMap
+from dataclasses import dataclass
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from generated_symbols.util.direction.Direction import Direction
+
+
+@dataclass(kw_only=True)
+class ModelElementFaceMapValueStruct:
+    texture: str
+    uv: tuple[float, float, float, float] | None = None
+    cullface: Direction | None = None
+    rotation: int | None = None
+    tintindex: int | None = None
+
+
+type ModelElementFaceMap = dict[Direction, ModelElementFaceMapValueStruct]
+""",
+
 }
 
 def run_assertions() -> None:
