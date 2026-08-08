@@ -13,6 +13,7 @@ class TransformationStruct:
     right_rotation: Rotation  # For more complex transformations. Applied **before** scaling.
     scale: tuple[float, float, float]  # Scale in [x, y, z].
 
+
 type Transformation = TransformationStruct | tuple[float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float]
 
 

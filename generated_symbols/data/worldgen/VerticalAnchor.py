@@ -6,17 +6,21 @@ from dataclasses import dataclass
 class VerticalAnchorStruct1:
     absolute: int
 
+
 @dataclass(kw_only=True)
 class VerticalAnchorStruct2:
     above_bottom: int
+
 
 @dataclass(kw_only=True)
 class VerticalAnchorStruct3:
     below_top: int
 
+
 @dataclass(kw_only=True)
 class VerticalAnchorStruct4:
     relative_to_sea_level: int
+
 
 type VerticalAnchor = VerticalAnchorStruct1 | VerticalAnchorStruct2 | VerticalAnchorStruct3 | VerticalAnchorStruct4
 

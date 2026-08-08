@@ -12,6 +12,7 @@ class CubicSplineStruct:
     coordinate: DensityFunctionRef
     points: list[SplinePoint]
 
+
 type CubicSpline = float | CubicSplineStruct
 
 

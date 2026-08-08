@@ -8,6 +8,7 @@ class FluidStateStruct:
     id: str
     properties: Any | None = None
 
+
 type FluidState = str | FluidStateStruct
 
 

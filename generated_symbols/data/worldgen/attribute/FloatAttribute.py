@@ -12,8 +12,14 @@ if TYPE_CHECKING:
 T = TypeVar('T')
 
 @dataclass(kw_only=True)
+class KeyframesStruct(Generic[T]):
+    ticks: Annotated[int, 'Range | Min `0` and above | inclusive']
+    value: Any[T]
+
+
+@dataclass(kw_only=True)
 class AttributeTrackStruct(AttributeTrackBase, Generic[T]):
-    keyframes: Annotated[list[Any], 'Length = 1 (inclusive) and above']
+    keyframes: Annotated[list[KeyframesStruct[T]], 'Length = 1 (inclusive) and above']
     modifier: FloatModifierType | None = None
 
 

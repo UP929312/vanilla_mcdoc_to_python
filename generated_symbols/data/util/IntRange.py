@@ -11,6 +11,7 @@ class IntRangeStruct:
     min: NumberProviderRef | None = None  # Clamps to an integer.
     max: NumberProviderRef | None = None  # Clamps to an integer.
 
+
 type IntRange = int | IntRangeStruct
 
 

@@ -8,6 +8,7 @@ class BlockStateStruct:
     id: str
     properties: Any | None = None
 
+
 type BlockState = str | BlockStateStruct
 
 

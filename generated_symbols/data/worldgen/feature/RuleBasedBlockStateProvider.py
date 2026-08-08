@@ -1,14 +1,21 @@
 # Generated from symbols.json for ::java::data::worldgen::feature::RuleBasedBlockStateProvider
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+    from generated_symbols.data.worldgen.feature.block_predicate.BlockPredicate import BlockPredicate
     from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
 
 
 @dataclass(kw_only=True)
+class RulesStruct:
+    if_true: BlockPredicate
+    then: BlockStateProvider
+
+
+@dataclass(kw_only=True)
 class RuleBasedBlockStateProvider:
-    rules: list[Any]
+    rules: list[RulesStruct]
     fallback: BlockStateProvider | None = None
 
 

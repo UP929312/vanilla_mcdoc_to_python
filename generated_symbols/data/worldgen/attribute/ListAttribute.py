@@ -1,6 +1,6 @@
 # Generated from symbols.json for ::java::data::worldgen::attribute::ListAttribute
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Any, Generic, TypeVar
+from typing import TYPE_CHECKING, Annotated, Generic, TypeVar
 
 from generated_symbols.data.timeline.AttributeTrackBase import AttributeTrackBase
 
@@ -12,8 +12,14 @@ if TYPE_CHECKING:
 E = TypeVar('E')
 
 @dataclass(kw_only=True)
+class KeyframesStruct(Generic[E]):
+    ticks: Annotated[int, 'Range | Min `0` and above | inclusive']
+    value: list[E]
+
+
+@dataclass(kw_only=True)
 class AttributeTrackStruct(AttributeTrackBase, Generic[E]):
-    keyframes: Annotated[list[Any], 'Length = 1 (inclusive) and above']
+    keyframes: Annotated[list[KeyframesStruct[E]], 'Length = 1 (inclusive) and above']
     modifier: ListModifierType | None = None
 
 

@@ -1,14 +1,20 @@
 # Generated from symbols.json for ::java::data::worldgen::feature::RandomSelector
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING, Annotated
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.FeatureRef import FeatureRef
 
 
 @dataclass(kw_only=True)
+class FeaturesStruct:
+    chance: Annotated[float, 'Range | `0`-`1` | both inclusive']
+    feature: FeatureRef
+
+
+@dataclass(kw_only=True)
 class RandomSelector:
-    features: list[Any]
+    features: list[FeaturesStruct]
     default: FeatureRef
 
 

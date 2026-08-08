@@ -10,6 +10,7 @@ if TYPE_CHECKING:
 class ScoreProviderStruct:
     type: str
 
+
 type ScoreProvider = EntityTarget | ScoreProviderStruct
 
 

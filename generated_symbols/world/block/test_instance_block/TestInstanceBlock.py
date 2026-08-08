@@ -1,6 +1,6 @@
 # Generated from symbols.json for ::java::world::block::test_instance_block::TestInstanceBlock
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING
 
 from generated_symbols.world.block.BlockEntity import BlockEntity
 
@@ -21,9 +21,15 @@ class DataStruct:
 
 
 @dataclass(kw_only=True)
+class ErrorsStruct:
+    pos: tuple[int, int, int]
+    text: Text
+
+
+@dataclass(kw_only=True)
 class TestInstanceBlock(BlockEntity):
     data: DataStruct | None = None
-    errors: list[Any] | None = None
+    errors: list[ErrorsStruct] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

@@ -1,6 +1,6 @@
 # Generated from symbols.json for ::java::data::worldgen::attribute::BooleanAttribute
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Any
+from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.data.timeline.AttributeTrackBase import AttributeTrackBase
 
@@ -10,8 +10,14 @@ if TYPE_CHECKING:
 
 
 @dataclass(kw_only=True)
+class KeyframesStruct:
+    ticks: Annotated[int, 'Range | Min `0` and above | inclusive']
+    value: bool
+
+
+@dataclass(kw_only=True)
 class AttributeTrackStruct(AttributeTrackBase):
-    keyframes: Annotated[list[Any], 'Length = 1 (inclusive) and above']
+    keyframes: Annotated[list[KeyframesStruct], 'Length = 1 (inclusive) and above']
     modifier: BooleanModifierType | None = None
 
 

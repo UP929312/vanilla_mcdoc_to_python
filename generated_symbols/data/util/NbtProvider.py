@@ -10,6 +10,7 @@ if TYPE_CHECKING:
 class NbtProviderStruct:
     type: str
 
+
 type NbtProvider = NbtContextTarget | NbtProviderStruct
 
 

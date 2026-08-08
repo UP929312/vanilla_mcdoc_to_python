@@ -10,9 +10,11 @@ if TYPE_CHECKING:
 class BlockPaletteStruct1:
     palette: list[BlockState]
 
+
 @dataclass(kw_only=True)
 class BlockPaletteStruct2:
     palettes: list[list[BlockState]]  # Sets of different block states used in the structure, a random palette gets selected based on coordinates.
+
 
 type BlockPalette = BlockPaletteStruct1 | BlockPaletteStruct2
 

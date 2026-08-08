@@ -10,6 +10,7 @@ if TYPE_CHECKING:
 class HeightProviderStruct:
     type: str
 
+
 type HeightProvider = HeightProviderStruct | VerticalAnchor
 
 

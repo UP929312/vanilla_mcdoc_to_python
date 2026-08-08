@@ -1,16 +1,33 @@
 # Generated from symbols.json for ::java::data::structure::StructureNBT
 from dataclasses import dataclass
-from typing import Annotated, Any
+from typing import TYPE_CHECKING, Annotated, Any
 
 from generated_symbols.data.structure.BlockPalette import BlockPalette
+
+if TYPE_CHECKING:
+    from generated_symbols.world.entity.AnyEntity import AnyEntity
+
+
+@dataclass(kw_only=True)
+class BlocksStruct:
+    state: Annotated[int, 'Range | Min `0` and above | inclusive']
+    pos: tuple[Annotated[int, 'Range | Min `0` and above | inclusive'], Annotated[int, 'Range | Min `0` and above | inclusive'], Annotated[int, 'Range | Min `0` and above | inclusive']]
+    nbt: Any | None = None
+
+
+@dataclass(kw_only=True)
+class EntitiesStruct:
+    pos: tuple[Annotated[float, 'Range | Min `0` and above | inclusive'], Annotated[float, 'Range | Min `0` and above | inclusive'], Annotated[float, 'Range | Min `0` and above | inclusive']]
+    blockPos: tuple[Annotated[int, 'Range | Min `0` and above | inclusive'], Annotated[int, 'Range | Min `0` and above | inclusive'], Annotated[int, 'Range | Min `0` and above | inclusive']]
+    nbt: AnyEntity
 
 
 @dataclass(kw_only=True)
 class StructureNBT(BlockPalette):
     DataVersion: Annotated[int, 'Range | Min `0` and above | inclusive']  # [Data version](https://minecraft.wiki/w/Data_version).
     size: tuple[Annotated[int, 'Range | Min `0` and above | inclusive'], Annotated[int, 'Range | Min `0` and above | inclusive'], Annotated[int, 'Range | Min `0` and above | inclusive']]
-    blocks: list[Any]
-    entities: list[Any]
+    blocks: list[BlocksStruct]
+    entities: list[EntitiesStruct]
 
 
 # ~~~ MODEL DUMP ~~~

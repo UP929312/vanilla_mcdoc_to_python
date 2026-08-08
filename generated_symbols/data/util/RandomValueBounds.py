@@ -7,6 +7,7 @@ class RandomValueBoundsStruct:
     min: float
     max: float
 
+
 type RandomValueBounds = float | RandomValueBoundsStruct
 
 

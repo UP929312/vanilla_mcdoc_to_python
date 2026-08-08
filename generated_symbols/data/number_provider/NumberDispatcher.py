@@ -1,14 +1,21 @@
 # Generated from symbols.json for ::java::data::number_provider::NumberDispatcher
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from generated_symbols.data.number_provider.NumberProviderRef import NumberProviderRef
+    from generated_symbols.data.predicate.PredicateRef import PredicateRef
+
+
+@dataclass(kw_only=True)
+class CasesStruct:
+    condition: PredicateRef
+    number_provider: NumberProviderRef
 
 
 @dataclass(kw_only=True)
 class NumberDispatcher:
-    cases: list[Any]
+    cases: list[CasesStruct]
     default: NumberProviderRef | None = None  # Defaults to constant 0.
 
 

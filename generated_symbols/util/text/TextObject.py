@@ -13,9 +13,16 @@ if TYPE_CHECKING:
 
 
 @dataclass(kw_only=True)
+class ScoreStruct:
+    objective: str
+    name: str
+
+
+@dataclass(kw_only=True)
 class TextObjectStruct1(TextBase):
     text: str
     type: str | None = None
+
 
 @dataclass(kw_only=True)
 class TextObjectStruct2(TextBase):
@@ -24,16 +31,12 @@ class TextObjectStruct2(TextBase):
     with_: Annotated[list[Text], 'Length = 1 (inclusive) and above'] | None = None
     type: str | None = None
 
-@dataclass(kw_only=True)
-class ScoreStruct:
-    objective: str
-    name: str
-
 
 @dataclass(kw_only=True)
 class TextObjectStruct3(TextBase):
     score: ScoreStruct
     type: str | None = None
+
 
 @dataclass(kw_only=True)
 class TextObjectStruct4(TextBase):
@@ -41,10 +44,12 @@ class TextObjectStruct4(TextBase):
     separator: Text | None = None
     type: str | None = None
 
+
 @dataclass(kw_only=True)
 class TextObjectStruct5(TextBase):
     keybind: Keybind
     type: str | None = None
+
 
 @dataclass(kw_only=True)
 class TextObjectStruct6(TextNbtBase):
@@ -53,12 +58,14 @@ class TextObjectStruct6(TextNbtBase):
     source: str | None = None
     type: str | None = None
 
+
 @dataclass(kw_only=True)
 class TextObjectStruct7(TextNbtBase):
     entity: str
     nbt: str
     source: str | None = None
     type: str | None = None
+
 
 @dataclass(kw_only=True)
 class TextObjectStruct8(TextNbtBase):
@@ -67,6 +74,7 @@ class TextObjectStruct8(TextNbtBase):
     source: str | None = None
     type: str | None = None
 
+
 @dataclass(kw_only=True)
 class TextObjectStruct9(ObjectTextConfig, TextBase):
     sprite: str
@@ -74,12 +82,14 @@ class TextObjectStruct9(ObjectTextConfig, TextBase):
     object: str | None = None
     type: str | None = None
 
+
 @dataclass(kw_only=True)
 class TextObjectStruct10(ObjectTextConfig, TextBase):
     player: Profile
     hat: bool | None = None  # Whether the head layer is rendered. Defaults to `true`.
     object: str | None = None
     type: str | None = None
+
 
 type TextObject = TextObjectStruct1 | TextObjectStruct2 | TextObjectStruct3 | TextObjectStruct4 | TextObjectStruct5 | TextObjectStruct6 | TextObjectStruct7 | TextObjectStruct8 | TextObjectStruct9 | TextObjectStruct10
 

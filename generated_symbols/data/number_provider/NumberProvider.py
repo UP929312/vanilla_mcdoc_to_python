@@ -6,6 +6,7 @@ from dataclasses import dataclass
 class NumberProviderStruct:
     type: str
 
+
 type NumberProvider = float | NumberProviderStruct
 
 

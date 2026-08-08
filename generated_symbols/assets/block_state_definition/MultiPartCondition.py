@@ -6,7 +6,9 @@ from dataclasses import dataclass
 class MultiPartConditionStruct1:
     OR: list[MultiPartCondition]
 
+
 type MultiPartConditionStruct2 = dict[str, str]
+
 
 type MultiPartCondition = MultiPartConditionStruct1 | MultiPartConditionStruct2
 

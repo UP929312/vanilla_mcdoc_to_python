@@ -11,8 +11,14 @@ if TYPE_CHECKING:
 
 
 @dataclass(kw_only=True)
+class KeyframesStruct:
+    ticks: Annotated[int, 'Range | Min `0` and above | inclusive']
+    value: Any
+
+
+@dataclass(kw_only=True)
 class AttributeTrackStruct(AttributeTrackBase):
-    keyframes: Annotated[list[Any], 'Length = 1 (inclusive) and above']
+    keyframes: Annotated[list[KeyframesStruct], 'Length = 1 (inclusive) and above']
     modifier: ColorModifierType | None = None
 
 

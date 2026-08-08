@@ -10,6 +10,7 @@ if TYPE_CHECKING:
 class DensityFunctionStruct:
     type: str
 
+
 type DensityFunction = NoiseRange | DensityFunctionStruct
 
 

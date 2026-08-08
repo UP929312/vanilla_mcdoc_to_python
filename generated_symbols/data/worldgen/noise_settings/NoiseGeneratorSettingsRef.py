@@ -8,6 +8,7 @@ from generated_symbols.data.worldgen.noise_settings.NoiseGeneratorSettings impor
 class NoiseGeneratorSettingsRefStruct(NoiseGeneratorSettings):
     name: str
 
+
 type NoiseGeneratorSettingsRef = str | NoiseGeneratorSettingsRefStruct
 
 

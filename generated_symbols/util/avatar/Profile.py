@@ -18,6 +18,7 @@ class ProfileStruct:
     elytra: str | None = None  # Elytra texture override. If this texture is not present either as override or in player profile, the cape texture is used. If the cape texture is also not present, the default elytra texture is used.
     model: PlayerModelType | None = None  # Model type override.
 
+
 type Profile = ProfileStruct | str
 
 

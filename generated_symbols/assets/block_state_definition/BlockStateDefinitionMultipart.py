@@ -1,11 +1,21 @@
 # Generated from symbols.json for ::java::assets::block_state_definition::BlockStateDefinitionMultipart
 from dataclasses import dataclass
-from typing import Any
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from generated_symbols.assets.block_state_definition.ModelVariant import ModelVariant
+    from generated_symbols.assets.block_state_definition.MultiPartCondition import MultiPartCondition
+
+
+@dataclass(kw_only=True)
+class MultipartStruct:
+    apply: ModelVariant
+    when: MultiPartCondition | None = None  # One condition or an array where at least one condition must apply.
 
 
 @dataclass(kw_only=True)
 class BlockStateDefinitionMultipart:
-    multipart: list[Any]
+    multipart: list[MultipartStruct]
 
 
 # ~~~ MODEL DUMP ~~~

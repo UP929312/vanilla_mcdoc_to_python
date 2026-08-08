@@ -6,9 +6,11 @@ from dataclasses import dataclass
 class IngredientValueStruct1:
     item: str
 
+
 @dataclass(kw_only=True)
 class IngredientValueStruct2:
     tag: str
+
 
 type IngredientValue = IngredientValueStruct1 | IngredientValueStruct2
 

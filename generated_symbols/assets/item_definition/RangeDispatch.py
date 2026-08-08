@@ -1,6 +1,6 @@
 # Generated from symbols.json for ::java::assets::item_definition::RangeDispatch
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from generated_symbols.assets.item_definition.ItemModel import ItemModel
@@ -9,9 +9,15 @@ if TYPE_CHECKING:
 
 
 @dataclass(kw_only=True)
+class EntriesStruct:
+    threshold: float
+    model: ItemModel
+
+
+@dataclass(kw_only=True)
 class RangeDispatch:
     property: NumericPropertyType
-    entries: list[Any]  # List of ranges. Will select last entry with threshold less or equal to value. Order does not matter, list will be sorted by threshold in ascending order.
+    entries: list[EntriesStruct]  # List of ranges. Will select last entry with threshold less or equal to value. Order does not matter, list will be sorted by threshold in ascending order.
     scale: float | None = None  # Factor to multiply the property value with. Defaults to 1.
     fallback: ItemModel | None = None  # Item model to render if no entries were less or equal to the value.
     transformation: Transformation | None = None

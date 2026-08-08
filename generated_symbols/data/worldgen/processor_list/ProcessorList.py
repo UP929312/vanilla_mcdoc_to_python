@@ -10,6 +10,7 @@ if TYPE_CHECKING:
 class ProcessorListStruct:
     processors: list[Processor]
 
+
 type ProcessorList = list[Processor] | ProcessorListStruct
 
 

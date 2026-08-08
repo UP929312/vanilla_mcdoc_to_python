@@ -1,11 +1,20 @@
 # Generated from symbols.json for ::java::data::worldgen::dimension::biome_source::DirectMultiNoise
 from dataclasses import dataclass
-from typing import Any
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from generated_symbols.data.worldgen.dimension.biome_source.ClimateParameters import ClimateParameters
+
+
+@dataclass(kw_only=True)
+class BiomesStruct:
+    biome: str
+    parameters: ClimateParameters
 
 
 @dataclass(kw_only=True)
 class DirectMultiNoise:
-    biomes: list[Any]
+    biomes: list[BiomesStruct]
 
 
 # ~~~ MODEL DUMP ~~~

@@ -1,8 +1,27 @@
 # Generated from symbols.json for ::java::assets::credits::Credits
-from typing import Any
+from dataclasses import dataclass
+from typing import Annotated, Literal
 
 
-type Credits = list[Any]
+@dataclass(kw_only=True)
+class TitlesStruct:
+    title: str
+    names: list[str]  # Employees with the title.
+
+
+@dataclass(kw_only=True)
+class DisciplinesStruct:
+    discipline: Annotated[str, 'Length = 1 (inclusive) and above'] | Literal[""]
+    titles: list[TitlesStruct]
+
+
+@dataclass(kw_only=True)
+class CreditsStruct:
+    section: str  # Company segment.
+    disciplines: list[DisciplinesStruct]
+
+
+type Credits = list[CreditsStruct]
 
 
 # ~~~ MODEL DUMP ~~~

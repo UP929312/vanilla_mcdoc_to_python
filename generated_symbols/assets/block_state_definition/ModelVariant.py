@@ -1,11 +1,16 @@
 # Generated from symbols.json for ::java::assets::block_state_definition::ModelVariant
-from typing import TYPE_CHECKING, Any
+from dataclasses import dataclass
+from typing import Annotated
 
-if TYPE_CHECKING:
-    from generated_symbols.assets.block_state_definition.ModelVariantBase import ModelVariantBase
+from generated_symbols.assets.block_state_definition.ModelVariantBase import ModelVariantBase
 
 
-type ModelVariant = ModelVariantBase | list[Any]
+@dataclass(kw_only=True)
+class ModelVariantStruct(ModelVariantBase):
+    weight: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None
+
+
+type ModelVariant = ModelVariantBase | list[ModelVariantStruct]
 
 
 # ~~~ MODEL DUMP ~~~
