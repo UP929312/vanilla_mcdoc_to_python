@@ -85,10 +85,12 @@ class RenderContext:
         if type_checking:
             built_ins.add(Import("typing", "TYPE_CHECKING", False, True))
 
-        lines: list[str] = [
-            *build_lines(built_ins),
-            *build_lines(regular),
-        ]
+        built_in_lines = build_lines(built_ins)
+        regular_lines = build_lines(regular)
+        lines: list[str] = built_in_lines
+        if built_in_lines and regular_lines:
+            lines.append("")
+        lines.extend(regular_lines)
 
         if type_checking:
             lines.append("\nif TYPE_CHECKING:")
@@ -503,7 +505,7 @@ class ReferenceSchema(BaseSchema):
         return [f"type {class_name} = {name}"]
 
     def to_annotation(self, ctx: RenderContext) -> str:
-        # Make sure we import the refereenced symbol
+        # Make sure we import the referenced symbol
         return ctx.add_import_by_symbol_path(self.path)
 
 
@@ -609,6 +611,14 @@ class PairSchema(BaseSchema):
         if isinstance(key, StringSchema):
             return "key_name"
         return key if key not in {"from", "with"} else f"{key}_"
+
+    @staticmethod
+    def nested_struct_name(key: str) -> str:
+        """For structs attributes that are also structs, we need to figure out the name of the new struct.
+        For now, we append Struct, but if it's snake_case, we make it camel case and then add Struct."""
+        if "_" in key or key.islower():
+            key = "".join(part[:1].upper() + part[1:] for part in key.split("_") if part)
+        return f"{key}Struct"
 
 
 class SpreadFieldSchema(BaseSchema):
@@ -768,6 +778,7 @@ class StructSchema(BaseSchema):
         # Collects Structs' inherrited children, e.g. Class(PredicateOffset)
         inherited_names = SpreadFieldSchema.collect_inherited_base_names(self.fields, ctx)
         inherited_names += self._calculate_inherited_names(template_type_names, ctx)
+        nested_struct_lines: list[str] = []
         lines: list[str] = ["@dataclass(kw_only=True)"]
         ctx.required_imports.add(Import("dataclasses", "dataclass", False, True))
         lines.append(
@@ -788,7 +799,13 @@ class StructSchema(BaseSchema):
 
         for pair_field in pair_fields:
             key = PairSchema.clean_key(pair_field.key)  # type: ignore[arg-type]
-            annotation = pair_field.type.to_annotation(ctx)
+            if isinstance(pair_field.type, StructSchema) and pair_field.type._mapping_alias_annotation(ctx) is None:
+                nested_struct_name = PairSchema.nested_struct_name(key)
+                nested_type_args = f"[{', '.join(template_type_names)}]" if template_type_names else ""
+                annotation = f"{nested_struct_name}{nested_type_args}"
+                nested_struct_lines.extend(pair_field.type.to_python_code(nested_struct_name, ctx)+[""])
+            else:
+                annotation = pair_field.type.to_annotation(ctx)
             description = pair_field.description_text()
             comment = f"  # {description}" if description else ""
             if not annotation.strip() or annotation == "None":
@@ -803,7 +820,7 @@ class StructSchema(BaseSchema):
         # Write required fields first, then optional fields (to allow Pydantic's BaseModel to not complain about defaults before required fields)
         lines.extend(required_field_lines)
         lines.extend(optional_field_lines)
-        return lines + [""]
+        return nested_struct_lines + lines + [""]
 
     def to_python_code(self, class_name: str, ctx: RenderContext) -> list[str]:
         mapping_alias = self._mapping_alias_annotation(ctx)
@@ -818,7 +835,11 @@ class StructSchema(BaseSchema):
         # Discover unresolved symbolic refs (e.g. ::java::...::T) before building Generic[...] bases.
         # These become local type params instead of invalid import targets.
         # Because ctx is being passed in, it can actually mutate and change the imports - intentionally.
-        [field.type.to_annotation(ctx) for field in SpreadFieldSchema.collect_inlined_pair_fields(self.fields)]
+        [
+            field.type.to_annotation(ctx)
+            for field in SpreadFieldSchema.collect_inlined_pair_fields(self.fields)
+            if not isinstance(field.type, StructSchema)
+        ]
 
         # Keep Generic parameter order stable across runs (local_type_params is a set).
         template_type_names = sorted(symbol_path_to_object_name(path) for path in ctx.local_type_params)
@@ -830,10 +851,14 @@ class StructSchema(BaseSchema):
         if mapping_alias is not None:
             return mapping_alias
 
+        from itertools import chain
+
+        pair_schemas = [x for x in self.fields if isinstance(x, PairSchema)]
+        union_schemas = [x for x in self.fields if isinstance(x, UnionSchema)]
+        spread_schemas = [x for x in self.fields if isinstance(x, SpreadFieldSchema)]
+        annotations = ["Any" for x in chain(pair_schemas, union_schemas, spread_schemas)] or ["Any"]  # TODO: Obviously we need to do this.
         ctx.required_imports.add(Import("typing", "Any", type_checking_only=False, is_builtin=True))
-        # TODO: We need to return our customly implemented Struct here, then the alias should just reference it.
-        # from code_generation import render_dataclass_from_model
-        return "Any"  # TODO: Obviously we need to do this.
+        return " | ".join(set(dict.fromkeys(annotations)))
 
 
 # ==================================================================================================================================

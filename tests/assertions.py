@@ -83,6 +83,51 @@ class SkullOwner:
     Properties: Properties | None = None
 """,
 
+    # Inline pair structs are materialized as sibling dataclasses instead of degrading to Any.
+    r"generated_symbols\world\item\shield\Shield.py": """# Generated from symbols.json for ::java::world::item::shield::Shield
+from dataclasses import dataclass
+from typing import TYPE_CHECKING
+
+from generated_symbols.world.item.ItemBase import ItemBase
+
+if TYPE_CHECKING:
+    from generated_symbols.util.color.DyeColorInt import DyeColorInt
+    from generated_symbols.world.block.banner.BannerPatternLayer import BannerPatternLayer
+
+
+@dataclass(kw_only=True)
+class BlockEntityTagStruct:
+    Base: DyeColorInt | None = None  # Base color.
+    Patterns: list[BannerPatternLayer] | None = None
+
+
+@dataclass(kw_only=True)
+class Shield(ItemBase):
+    BlockEntityTag: BlockEntityTagStruct | None = None  # Banner Data.
+""",
+
+    # Lowercase pair keys are converted to PascalCase when naming nested structs.
+    r"generated_symbols\assets\equipment\TrimOverride.py": """# Generated from symbols.json for ::java::assets::equipment::TrimOverride
+from dataclasses import dataclass
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from generated_symbols.assets.atlas.PaletteRef import PaletteRef
+
+
+@dataclass(kw_only=True)
+class WhenStruct:
+    pattern: str | None = None
+    material: str | None = None
+
+
+@dataclass(kw_only=True)
+class TrimOverride:
+    when: WhenStruct
+    texture: str | None = None  # When present, overrides the base texture provided by trim pattern.  The texture is located under `trims/entity/<layer>/`.
+    palette: PaletteRef | None = None  # When present, overrides the palette texture provided by trim material.
+""",
+
     # This has the weird `...::tag::E` thing, ensure it's working properly.
     r"generated_symbols\data\tag\ExplicitTagEntry.py": """# Generated from symbols.json for ::java::data::tag::ExplicitTagEntry
 from dataclasses import dataclass
@@ -99,6 +144,7 @@ class ExplicitTagEntry(Generic[E]):
     # This has an override of it's parent (inherited), but because it's the same type, we're fine.
     r"generated_symbols\world\entity\mob\creaking\Creaking.py": """# Generated from symbols.json for ::java::world::entity::mob::creaking::Creaking
 from dataclasses import dataclass
+
 from generated_symbols.world.entity.mob.MobBase import MobBase
 
 
@@ -228,6 +274,7 @@ if TYPE_CHECKING:
 type ModelElementRotation = dict[Axis, float]
 """,
 
+    # Make sure that if there's only 1 struct, don't number it.
     r"generated_symbols\util\avatar\Profile.py": """# Generated from symbols.json for ::java::util::avatar::Profile
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
@@ -249,6 +296,33 @@ class ProfileStruct:
     model: PlayerModelType | None = None  # Model type override.
 
 type Profile = ProfileStruct | str
+""",
+
+    # Nested structs generated inside templates must retain their type arguments at use sites.
+    r"generated_symbols\data\worldgen\attribute\MergeableAttribute.py": """# Generated from symbols.json for ::java::data::worldgen::attribute::MergeableAttribute
+from dataclasses import dataclass
+from typing import TYPE_CHECKING, Annotated, Any, Generic, TypeVar
+
+from generated_symbols.data.timeline.AttributeTrackBase import AttributeTrackBase
+
+if TYPE_CHECKING:
+    from generated_symbols.data.worldgen.attribute.modifier.MergeableModifier import MergeableModifier
+    from generated_symbols.data.worldgen.attribute.modifier.MergeableModifierType import MergeableModifierType
+
+
+T = TypeVar('T')
+
+@dataclass(kw_only=True)
+class AttributeTrackStruct(AttributeTrackBase, Generic[T]):
+    keyframes: Annotated[list[Any], 'Length = 1 (inclusive) and above']
+    modifier: MergeableModifierType | None = None
+
+
+@dataclass(kw_only=True)
+class MergeableAttribute(Generic[T]):
+    value: T
+    modifier: MergeableModifier[T]
+    attribute_track: AttributeTrackStruct[T]
 """,
 
 }
