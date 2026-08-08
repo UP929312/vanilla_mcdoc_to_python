@@ -569,10 +569,6 @@ class UnionSchema(BaseSchema):
                 materialized_index += 1
                 member_name = f"{nested_struct_name}{'' if len(materialized_members) == 1 else materialized_index}"
                 annotations.append(member.to_materialized_annotation(member_name, ctx))
-            elif nested_struct_name is not None and isinstance(member, ListSchema) and member.contains_inline_struct():
-                materialized_index += 1
-                member_name = f"{nested_struct_name}{'' if len(materialized_members) == 1 else materialized_index}"
-                annotations.append(member.to_annotation(ctx, member_name))
             else:
                 annotations.append(member.to_annotation(ctx))
         return " | ".join(dict.fromkeys(annotations))
@@ -601,8 +597,6 @@ class UnionSchema(BaseSchema):
             member = self.members[0]
             if isinstance(member, StructSchema):
                 return member.to_python_code(class_name, ctx)
-            if isinstance(member, ListSchema) and member.contains_inline_struct():
-                return [f"type {class_name} = {member.to_annotation(ctx, PairSchema.nested_struct_name(class_name))}"]
             return [f"type {class_name} = {member.to_annotation(ctx)}"]
 
         # Materialize struct members as concrete sibling symbols so the union alias can reference them.
@@ -789,6 +783,7 @@ class TemplateSchema(BaseSchema):
     type_params: list[TemplateTypeParam] = Field(default_factory=list, alias="typeParams")
 
     def to_annotation(self, ctx: RenderContext) -> str:
+        # This only runs for mcdoc/dispatcher.
         # Add the local params to context
         ctx.local_type_params.update(type_param.path for type_param in self.type_params)
         return self.child.to_annotation(ctx)
@@ -836,12 +831,6 @@ class StructSchema(BaseSchema):
         else:
             value_annotation = field.type.to_annotation(ctx)
         return f"dict[{field.key.to_annotation(ctx)}, {value_annotation}]"
-
-    def _calculate_inherited_names(self, template_type_names: list[str], ctx: RenderContext) -> list[str]:
-        if template_type_names:
-            ctx.required_imports.add(Import("typing", "Generic", False, True))
-            return [f"Generic[{', '.join(template_type_names)}]"]
-        return []
 
     def to_materialized_annotation(self, class_name: str, ctx: RenderContext) -> str:
         """Both adds itself to the list of created dataclasses, plus returns the annotation materialized."""

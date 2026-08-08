@@ -447,6 +447,24 @@ class ModelElementFaceMapValueStruct:
 type ModelElementFaceMap = dict[Direction, ModelElementFaceMapValueStruct]
 """,
 
+# Disabled because it's a lot of code for a single object which will probably never be used.
+#     # An empty struct should allow {}
+#     r"generated_symbols\world\entity\mob\breedable\horse\ChestedHorse.py": """# Generated from symbols.json for ::java::world::entity::mob::breedable::horse::ChestedHorse
+# from dataclasses import dataclass
+# from typing import TYPE_CHECKING, Annotated, Never
+
+# from generated_symbols.world.entity.mob.breedable.horse.HorseBase import HorseBase
+
+# if TYPE_CHECKING:
+#     from generated_symbols.util.slot.SlottedItem import SlottedItem
+
+
+# @dataclass(kw_only=True)
+# class ChestedHorse(HorseBase):
+#     ChestedHorse: bool | None = None  # Whether it has a chest.
+#     Items: Annotated[list[SlottedItem[Annotated[int, 'Range | `0`-`14` | both inclusive']] | dict[Never, Never]], 'Length = 0-15 (both inclusive)'] | None = None  # Slots from 0 to 14.
+# """,
+
 }
 
 def run_assertions() -> None:
