@@ -4,8 +4,13 @@ from typing import Any
 
 
 @dataclass(kw_only=True)
+class DataStruct:
+    pass
+
+
+@dataclass(kw_only=True)
 class AppendStatic:
-    data: Any
+    data: DataStruct
 
 
 # ~~~ MODEL DUMP ~~~

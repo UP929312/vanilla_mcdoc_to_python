@@ -1,11 +1,18 @@
 # Generated from symbols.json for ::java::assets::model::Model
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING, Annotated
 
 if TYPE_CHECKING:
     from generated_symbols.assets.model.CustomizableItemDisplayContext import CustomizableItemDisplayContext
     from generated_symbols.assets.model.ModelElement import ModelElement
     from generated_symbols.assets.model.TextureMaterial import TextureMaterial
+
+
+@dataclass(kw_only=True)
+class DisplayStructValueStruct:
+    rotation: tuple[float, float, float] | None = None
+    translation: tuple[Annotated[float, 'Range | `-80`-`80` | both inclusive'], Annotated[float, 'Range | `-80`-`80` | both inclusive'], Annotated[float, 'Range | `-80`-`80` | both inclusive']] | None = None
+    scale: tuple[Annotated[float, 'Range | `-4`-`4` | both inclusive'], Annotated[float, 'Range | `-4`-`4` | both inclusive'], Annotated[float, 'Range | `-4`-`4` | both inclusive']] | None = None
 
 
 @dataclass(kw_only=True)
@@ -15,7 +22,7 @@ class Model:
     gui_light: str | None = None
     textures: dict[str, str | TextureMaterial] | None = None
     elements: list[ModelElement] | None = None
-    display: dict[CustomizableItemDisplayContext, Any] | None = None
+    display: dict[CustomizableItemDisplayContext, DisplayStructValueStruct] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

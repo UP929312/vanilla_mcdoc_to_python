@@ -10,6 +10,12 @@ if TYPE_CHECKING:
 
 
 @dataclass(kw_only=True)
+class DimensionPaddingStruct:
+    bottom: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None
+    top: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None
+
+
+@dataclass(kw_only=True)
 class Jigsaw:
     start_pool: str
     size: Annotated[int, 'Range | `1`-`20` | both inclusive']
@@ -19,7 +25,7 @@ class Jigsaw:
     start_jigsaw_name: str | None = None
     project_start_to_heightmap: HeightmapType | None = None
     pool_aliases: list[PoolAlias] | None = None
-    dimension_padding: Annotated[int, 'Range | Min `0` and above | inclusive'] | Any | None = None
+    dimension_padding: Annotated[int, 'Range | Min `0` and above | inclusive'] | DimensionPaddingStruct | None = None
     liquid_settings: LiquidSettings | None = None
 
 

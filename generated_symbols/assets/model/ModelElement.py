@@ -1,6 +1,6 @@
 # Generated from symbols.json for ::java::assets::model::ModelElement
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Any
+from typing import TYPE_CHECKING, Annotated
 
 if TYPE_CHECKING:
     from generated_symbols.assets.model.ModelElementRotation import ModelElementRotation
@@ -8,10 +8,19 @@ if TYPE_CHECKING:
 
 
 @dataclass(kw_only=True)
+class FacesStructValueStruct:
+    texture: str
+    uv: tuple[float, float, float, float] | None = None
+    cullface: Direction | None = None
+    rotation: int | None = None
+    tintindex: int | None = None
+
+
+@dataclass(kw_only=True)
 class ModelElement:
     from_: tuple[Annotated[float, 'Range | `-16`-`32` | both inclusive'], Annotated[float, 'Range | `-16`-`32` | both inclusive'], Annotated[float, 'Range | `-16`-`32` | both inclusive']]
     to: tuple[Annotated[float, 'Range | `-16`-`32` | both inclusive'], Annotated[float, 'Range | `-16`-`32` | both inclusive'], Annotated[float, 'Range | `-16`-`32` | both inclusive']]
-    faces: dict[Direction, Any]
+    faces: dict[Direction, FacesStructValueStruct]
     rotation: ModelElementRotation | None = None
     shade_direction_override: Direction | None = None
     light_emission: Annotated[int, 'Range | `0`-`15` | both inclusive'] | None = None

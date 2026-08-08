@@ -1,6 +1,6 @@
 # Generated from symbols.json for ::java::world::entity::mob::breedable::horse::ChestedHorse
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Any
+from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.world.entity.mob.breedable.horse.HorseBase import HorseBase
 
@@ -9,9 +9,14 @@ if TYPE_CHECKING:
 
 
 @dataclass(kw_only=True)
+class ItemsStruct:
+    pass
+
+
+@dataclass(kw_only=True)
 class ChestedHorse(HorseBase):
     ChestedHorse: bool | None = None  # Whether it has a chest.
-    Items: Annotated[list[SlottedItem[Annotated[int, 'Range | `0`-`14` | both inclusive']] | Any], 'Length = 0-15 (both inclusive)'] | None = None  # Slots from 0 to 14.
+    Items: Annotated[list[SlottedItem[Annotated[int, 'Range | `0`-`14` | both inclusive']] | ItemsStruct], 'Length = 0-15 (both inclusive)'] | None = None  # Slots from 0 to 14.
 
 
 # ~~~ MODEL DUMP ~~~

@@ -1,11 +1,19 @@
 # Generated from symbols.json for ::java::assets::model::ModelDisplay
-from typing import TYPE_CHECKING, Any
+from dataclasses import dataclass
+from typing import TYPE_CHECKING, Annotated
 
 if TYPE_CHECKING:
     from generated_symbols.assets.model.CustomizableItemDisplayContext import CustomizableItemDisplayContext
 
 
-type ModelDisplay = dict[CustomizableItemDisplayContext, Any]
+@dataclass(kw_only=True)
+class ModelDisplayValueStruct:
+    rotation: tuple[float, float, float] | None = None
+    translation: tuple[Annotated[float, 'Range | `-80`-`80` | both inclusive'], Annotated[float, 'Range | `-80`-`80` | both inclusive'], Annotated[float, 'Range | `-80`-`80` | both inclusive']] | None = None
+    scale: tuple[Annotated[float, 'Range | `-4`-`4` | both inclusive'], Annotated[float, 'Range | `-4`-`4` | both inclusive'], Annotated[float, 'Range | `-4`-`4` | both inclusive']] | None = None
+
+
+type ModelDisplay = dict[CustomizableItemDisplayContext, ModelDisplayValueStruct]
 
 
 # ~~~ MODEL DUMP ~~~

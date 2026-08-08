@@ -9,6 +9,9 @@ if TYPE_CHECKING:
     from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
 
 
+type AdvancementsStructValueStruct = dict[str, bool]
+
+
 @dataclass(kw_only=True)
 class InputStruct:
     forward: bool | None = None
@@ -28,7 +31,7 @@ class FoodStruct:
 
 @dataclass(kw_only=True)
 class PlayerPredicate:
-    advancements: dict[str, bool | dict[str, bool]] | None = None
+    advancements: dict[str, bool | AdvancementsStructValueStruct] | None = None
     gamemode: list[GameMode] | None = None
     level: MinMaxBounds[int] | int | None = None  # Experience/XP level.
     recipes: dict[str, bool] | None = None

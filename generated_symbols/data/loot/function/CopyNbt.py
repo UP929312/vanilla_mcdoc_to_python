@@ -1,17 +1,25 @@
 # Generated from symbols.json for ::java::data::loot::function::CopyNbt
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING
 
 from generated_symbols.data.loot.function.Conditions import Conditions
 
 if TYPE_CHECKING:
+    from generated_symbols.data.loot.function.CopyNbtStrategy import CopyNbtStrategy
     from generated_symbols.data.util.NbtProvider import NbtProvider
+
+
+@dataclass(kw_only=True)
+class OpsStruct:
+    source: str
+    target: str
+    op: CopyNbtStrategy
 
 
 @dataclass(kw_only=True)
 class CopyNbt(Conditions):
     source: NbtProvider
-    ops: list[Any]
+    ops: list[OpsStruct]
 
 
 # ~~~ MODEL DUMP ~~~

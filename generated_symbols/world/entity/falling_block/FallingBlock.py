@@ -9,8 +9,13 @@ if TYPE_CHECKING:
 
 
 @dataclass(kw_only=True)
+class TileEntityDataStruct:
+    pass
+
+
+@dataclass(kw_only=True)
 class FallingBlock(EntityBase):
-    TileEntityData: Any | None = None  # NBT data for the placed block.
+    TileEntityData: TileEntityDataStruct | None = None  # NBT data for the placed block.
     BlockState: BlockState | None = None  # Block state for the placed block. Defaults to sand.
     Time: int | None = None  # Ticks it has existed.
     DropItem: bool | None = None  # Whether it should drop as a block when destroyed.

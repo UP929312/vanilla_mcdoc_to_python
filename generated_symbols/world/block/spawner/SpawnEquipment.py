@@ -6,10 +6,13 @@ if TYPE_CHECKING:
     from generated_symbols.util.slot.EquipmentSlot import EquipmentSlot
 
 
+type SlotDropChancesStruct = dict[EquipmentSlot, Annotated[float, 'Range | `0`-`1` | both inclusive']]
+
+
 @dataclass(kw_only=True)
 class SpawnEquipment:
     loot_table: str  # Generates the equipment.
-    slot_drop_chances: Annotated[float, 'Range | `0`-`1` | both inclusive'] | dict[EquipmentSlot, Annotated[float, 'Range | `0`-`1` | both inclusive']]  # Chance the mob will drop the equipment on death.
+    slot_drop_chances: Annotated[float, 'Range | `0`-`1` | both inclusive'] | SlotDropChancesStruct  # Chance the mob will drop the equipment on death.
 
 
 # ~~~ MODEL DUMP ~~~

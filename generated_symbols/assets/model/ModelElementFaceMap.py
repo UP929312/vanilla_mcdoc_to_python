@@ -1,11 +1,21 @@
 # Generated from symbols.json for ::java::assets::model::ModelElementFaceMap
-from typing import TYPE_CHECKING, Any
+from dataclasses import dataclass
+from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from generated_symbols.util.direction.Direction import Direction
 
 
-type ModelElementFaceMap = dict[Direction, Any]
+@dataclass(kw_only=True)
+class ModelElementFaceMapValueStruct:
+    texture: str
+    uv: tuple[float, float, float, float] | None = None
+    cullface: Direction | None = None
+    rotation: int | None = None
+    tintindex: int | None = None
+
+
+type ModelElementFaceMap = dict[Direction, ModelElementFaceMapValueStruct]
 
 
 # ~~~ MODEL DUMP ~~~

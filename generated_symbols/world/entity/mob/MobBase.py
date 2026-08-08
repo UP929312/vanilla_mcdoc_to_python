@@ -1,12 +1,17 @@
 # Generated from symbols.json for ::java::world::entity::mob::MobBase
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING
 
 from generated_symbols.world.entity.mob.LivingEntity import LivingEntity
 
 if TYPE_CHECKING:
     from generated_symbols.world.entity.mob.DropChances import DropChances
     from generated_symbols.world.entity.mob.EntityEquipment import EntityEquipment
+
+
+@dataclass(kw_only=True)
+class LeashStruct:
+    UUID: tuple[int, int, int, int] | None = None
 
 
 @dataclass(kw_only=True)
@@ -19,7 +24,7 @@ class MobBase(LivingEntity):
     PersistenceRequired: bool | None = None  # Whether it should not despawn naturally.
     LeftHanded: bool | None = None  # Whether it is left handed.
     NoAI: bool | None = None  # Whether it should have an AI.
-    leash: tuple[int, int, int] | Any | None = None  # What the leash is attached to.
+    leash: tuple[int, int, int] | LeashStruct | None = None  # What the leash is attached to.
     home_radius: int | None = None  # Defaults to -1, which represents "no home".
     home_pos: tuple[int, int, int] | None = None  # This field will be discarded if `home_radius` is less than 0.
 

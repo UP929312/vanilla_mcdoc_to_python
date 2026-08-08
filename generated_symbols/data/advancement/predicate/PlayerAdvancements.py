@@ -1,7 +1,10 @@
 # Generated from symbols.json for ::java::data::advancement::predicate::PlayerAdvancements
 
 
-type PlayerAdvancements = dict[str, bool | dict[str, bool]]
+type PlayerAdvancementsValueStruct = dict[str, bool]
+
+
+type PlayerAdvancements = dict[str, bool | PlayerAdvancementsValueStruct]
 
 
 # ~~~ MODEL DUMP ~~~
