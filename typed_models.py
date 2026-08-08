@@ -726,9 +726,8 @@ class TemplateSchema(BaseSchema):
     def to_python_code(self, class_name: str, ctx: RenderContext) -> list[str]:
         self._add_local_type_params_to_context(ctx)
         if isinstance(self.child, UnionSchema):
-            struct_member = next((member for member in self.child.members if isinstance(member, StructSchema)), None)
-            if struct_member is not None:  # TODO: Think we can remove thism think we always have at least one Struct?
-                return struct_member.to_python_code(class_name, ctx)
+            struct_members = [member for member in self.child.members if isinstance(member, StructSchema)]
+            return struct_members[0].to_python_code(class_name, ctx)  # Always have at least one struct
         return self.child.to_python_code(class_name, ctx)
 
 
