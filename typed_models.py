@@ -836,7 +836,6 @@ class DispatcherSchema(BaseSchema):
 
     def to_annotation(self, ctx: RenderContext) -> str:
         import_target = symbol_path_to_import_string_and_name(self.registry)
-        import_target = None
         if import_target is None or True:  # TODO: Remove OR TRUE to return functionality.
             ctx.required_imports.add(Import("typing", "Any", type_checking_only=False, is_builtin=True))
             return "Any"
@@ -936,5 +935,5 @@ KIND_TO_MODEL: dict[KindOption, type[BaseSchema]] = {
     "tree": TreeSchema,
     "spread": SpreadFieldSchema,
     "static": StaticIndexSchema, "double": FloatSchema,
-    "mcdocdispatcher": MCDocDispatcher,  # type: ignore[dict-item]
+    "mcdocdispatcher": MCDocDispatcher,
 }
