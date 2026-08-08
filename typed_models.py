@@ -918,10 +918,10 @@ class MCDocDispatcher(BaseSchema):
 # ==================================================================================================================================
 
 type KindOption = Literal[
-    "int", "string", "float", "double", "boolean", "short", "long", "byte", "literal", "any", 
+    "int", "string", "float", "double", "boolean", "short", "long", "byte", "literal", "any",
     "list", "tuple", "int_array", "enum",
-    "concrete", "indexed", "reference",  "union", "pair", "spread", 
-    "template", "struct", "dynamic", "static", "dispatcher",  "tree", "mcdocdispatcher",
+    "concrete", "indexed", "reference", "union", "pair", "spread",
+    "template", "struct", "dynamic", "static", "dispatcher", "tree", "mcdocdispatcher",
 ]
 
 KIND_TO_MODEL: dict[KindOption, type[BaseSchema]] = {
