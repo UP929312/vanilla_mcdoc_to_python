@@ -9,6 +9,7 @@ if TYPE_CHECKING:
 
 INDENT = 4
 GENERATED_SYMBOLS_DIRECTORY = Path("generated_symbols")
+SAFE_GUARD_JAVA_NUMBERS = False  # Do we annotate, say, ints to have bounds (e.g. <=2147483647), or just mark them as "int" 
 
 REFETCH_SYMBOLS = False
 REFETCH_VERSIONS = False

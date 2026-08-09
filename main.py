@@ -13,7 +13,6 @@ for resource_type, resource_data in SYMBOLS_MAP_NO_ANONYMOUS.items():
 run_assertions()
 
 # TODO: For string's with an equal value, e.g. dimension, figure something out, the annotation system is ugly...
-# TODO: For shorts and longs and such, put it in the annotation or whatever that they've got to be in Java's bounds.
 
 # mypy . --strict --exclude generated_symbols
 # coverage run --branch main.py

@@ -1,9 +1,9 @@
 ﻿from dataclasses import dataclass, field
-from typing import Annotated, Literal, Self
+from typing import Annotated, ClassVar, Literal, Self
 
 from pydantic import BaseModel, Field, RootModel, model_validator
 
-from utils import ROOT_SYMBOLS_KEYS, symbol_path_to_import_string_and_name, symbol_path_to_object_name, is_valid_with_attributes, iter_child_schemas
+from utils import ROOT_SYMBOLS_KEYS, SAFE_GUARD_JAVA_NUMBERS, symbol_path_to_import_string_and_name, symbol_path_to_object_name, is_valid_with_attributes, iter_child_schemas
 
 
 # ==================================================================================================================================
@@ -219,12 +219,30 @@ class LiteralSchema(BaseSchema):
 
 
 class IntSchema(BaseSchema):
+    """A signed 32-bit integer, ranging from -2,147,483,648 to 2,147,483,647 (inclusive)"""
     kind: Literal["int"] = Field(repr=False)
     value_range: ValueRange | None = Field(default=None, alias="valueRange")
     value: Literal[-1, 0, 1, 3, 16, 20, 90, 180, 270, 32500] | None = None  # This is for speed, but should probably go back to int.
 
+    min_value_internally: int = -2_147_483_648
+    max_value_internally: int = 2_147_483_647
+
     def to_annotation(self, ctx: RenderContext) -> str:
-        return self.value_range.to_annotation(ctx, "int", self.attributes) if self.value_range else "int"
+        if self.value_range:
+            return self.value_range.to_annotation(ctx, "int", self.attributes)
+        if SAFE_GUARD_JAVA_NUMBERS:
+            fake_value_range = ValueRange(min=self.min_value_internally, max=self.max_value_internally)
+            return IntSchema(kind=self.kind, attributes=self.attributes, valueRange=fake_value_range, value=self.value).to_annotation(ctx)
+        return "int"
+
+    @classmethod
+    def _to_annotation_with_bounds(
+        cls, ctx: RenderContext, attributes: list[Attribute], value_range: ValueRange | None,
+        value: int | None, min_value: int, max_value: int  
+    ) -> str:
+        int_schema = IntSchema(kind="int", attributes=attributes, valueRange=value_range, value=value)  # type: ignore[type-literal]
+        int_schema.min_value_internally, int_schema.max_value_internally = min_value, max_value
+        return int_schema.to_annotation(ctx)
 
 
 class StringSchema(BaseSchema):
@@ -278,12 +296,27 @@ class StringSchema(BaseSchema):
 
 
 class FloatSchema(BaseSchema):
+    """
+    Float - A 32-bit, single-precision floating-point number, ranging from -3.4E38 to +3.4E38.
+    Double - A 64-bit, double-precision floating-point, ranging from -1.79E308 to +1.79E308.
+    """
     kind: Literal["float", "double"] = Field(repr=False)
     value_range: ValueRange | None = Field(default=None, alias="valueRange")
     # value: float | None = None  # For literal floats (not used in the symbols yet)
 
+    min_value_internally: ClassVar[tuple[float, float]] = (-3.4E38, -1.79E308)
+    max_value_internally: ClassVar[tuple[float, float]] = (3.4E38, 1.79E308)
+
     def to_annotation(self, ctx: RenderContext) -> str:
-        return self.value_range.to_annotation(ctx, "float", self.attributes) if self.value_range else "float"
+        if self.value_range:
+            return self.value_range.to_annotation(ctx, "float", self.attributes)
+        if SAFE_GUARD_JAVA_NUMBERS:
+            fake_value_range = ValueRange(
+                min=self.min_value_internally[0 if self.kind == "float" else 1],
+                max=self.max_value_internally[0 if self.kind == "float" else 1],
+            )
+            return FloatSchema(kind=self.kind, attributes=self.attributes, valueRange=fake_value_range).to_annotation(ctx)
+        return "float"
 
 
 class BooleanSchema(BaseSchema):
@@ -295,31 +328,41 @@ class BooleanSchema(BaseSchema):
 
 
 class ShortSchema(BaseSchema):
+    """A signed 16-bit integer, ranging from -32,768 to 32,767 (inclusive)."""
     kind: Literal["short"] = Field(repr=False)
     value_range: ValueRange | None = Field(default=None, alias="valueRange")
     # value: int | None = None  # For literal shorts (not used in the symbols yet)
 
+    min_value_internally: ClassVar[int] = -32_768
+    max_value_internally: ClassVar[int] = 32_767
+
     def to_annotation(self, ctx: RenderContext) -> str:
-        return self.value_range.to_annotation(ctx, "int", self.attributes) if self.value_range else "int"
+        return IntSchema._to_annotation_with_bounds(ctx, self.attributes, self.value_range, None, self.min_value_internally, self.max_value_internally)
 
 
 class LongSchema(BaseSchema):
+    """A signed 64-bit integer, ranging from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 (inclusive)."""
     kind: Literal["long"] = Field(repr=False)
     value_range: ValueRange | None = Field(default=None, alias="valueRange")
     # value: int | None = None  # For literal longs (not used in the symbols yet)
+    min_value_internally: ClassVar[int] = -9_223_372_036_854_775_808
+    max_value_internally: ClassVar[int] = 9_223_372_036_854_775_807
 
     def to_annotation(self, ctx: RenderContext) -> str:
-        return self.value_range.to_annotation(ctx, "int", self.attributes) if self.value_range else "int"
+        return IntSchema._to_annotation_with_bounds(ctx, self.attributes, self.value_range, None, self.min_value_internally, self.max_value_internally)
 
 
 class ByteSchema(BaseSchema):
+    """A signed 8-bit integer, ranging from -128 to 127 (inclusive)."""
     kind: Literal["byte"] = Field(repr=False)
     value_range: ValueRange | None = Field(default=None, alias="valueRange")
     # value: bool | int | None = None  # For literal bytes (not used in the symbols yet)
     # Also has "attributes": [{"name": "canonical"}] + Version stuff
+    min_value_internally: ClassVar[int] = -128
+    max_value_internally: ClassVar[int] = 127
 
     def to_annotation(self, ctx: RenderContext) -> str:
-        return self.value_range.to_annotation(ctx, "int", self.attributes) if self.value_range else "int"
+        return IntSchema._to_annotation_with_bounds(ctx, self.attributes, self.value_range, None, self.min_value_internally, self.max_value_internally)
 
 
 class AnySchema(BaseSchema):
@@ -388,22 +431,17 @@ class TupleSchema(BaseSchema):
 
 
 class IntArraySchema(BaseSchema):
+    """An ordered list of 32-bit integers. Note that [I;1,2,3] and [1,2,3] are considered different types: the second one is a [NBT List / JSON Array] list."""
     kind: Literal["int_array"] = Field(repr=False)
     length_range: LengthRange | None = Field(default=None, alias="lengthRange")
     value_range: ValueRange | None = Field(default=None, alias="valueRange")
 
+    array_marker: ClassVar[str] = "I"  # For other array types, like Longs, it's "L"
+
     def to_annotation(self, ctx: RenderContext) -> str:
-        if self.length_range is None:
-            # Only ever used by "::java::world::item::firework::Explosion"
-            return "list[int]"
-        if self.length_range.min != self.length_range.max:  # There's one item, no min, up to 9 max (world/block/crafter/Crafter)
-            # ::java::world::block::crafter::Crafter
-            int_annotation = IntSchema(kind="int", valueRange=self.value_range).to_annotation(ctx)
-            ctx.require_annotated()
-            return f"Annotated[list[{int_annotation}], '{self.length_range.to_annotation_suffix()}']"
-        if self.length_range.min is not None:
-            return f"tuple[{', '.join("int" for _ in range(self.length_range.min))}]"
-        raise TypeError("Invalid IntArray input", self)
+        array_type_annotation = IntSchema(kind="int", attributes=self.attributes, valueRange=self.value_range)
+        list_schema_proxy = ListSchema(kind="list", attributes=self.attributes, item=array_type_annotation, lengthRange=self.length_range)
+        return list_schema_proxy.to_annotation(ctx)
 
 
 class EnumSchema(BaseSchema):
@@ -417,7 +455,6 @@ class EnumSchema(BaseSchema):
             f"    {value.identifier.upper()} = \"{value.value}\"" + (f"  # {value.description_text()}" if value.description else "")
             for value in self.values
         ]
-
 
 
 # ==================================================================================================================================
@@ -819,8 +856,6 @@ class StructSchema(BaseSchema):
         """Returns the mapping alias dict (i.e. dict[<x>, <x>]) for a struct, or None if it's not that kind of struct."""
         field = self._mapping_pair()
         if field is None:
-            # TODO: Because a mapping can't be typed inline yet in Python, we don't generate a TypedDict, instead just put the first here.
-            # I don't know if they specify more than one, perhaps we can chain them together, i.e. ` | `?
             return None
 
         assert not isinstance(field.key, str)
