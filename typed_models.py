@@ -244,7 +244,7 @@ class IntSchema(BaseSchema):
         cls, ctx: RenderContext, attributes: list[Attribute], value_range: ValueRange | None,
         value: int | None, min_value: int, max_value: int  
     ) -> str:
-        int_schema = IntSchema(kind="int", attributes=attributes, valueRange=value_range, value=value)  # type: ignore[type-literal]
+        int_schema = IntSchema(kind="int", attributes=attributes, valueRange=value_range, value=value)  # type: ignore[arg-type]
         int_schema.min_value_internally, int_schema.max_value_internally = min_value, max_value
         return int_schema.to_annotation(ctx)
 

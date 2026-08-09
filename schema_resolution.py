@@ -75,7 +75,7 @@ class SchemaGraph:
                     fields = (
                         [field for field in resolved.fields if isinstance(field, PairSchema)]
                         if isinstance(index, DynamicIndexSchema)
-                        else [self._find_struct_field(resolved, self._normalize_key(index.value))]
+                        else [self._find_struct_field(resolved, self._normalize_key(index.value))]  # type: ignore[list-item]
                     )
                     candidates.extend(field.type for field in fields if field is not None)
         return self._deduplicate(candidates)
