@@ -1,12 +1,14 @@
 # Generated from symbols.json for ::java::world::entity::mob::breedable::frog::Frog
 from dataclasses import dataclass
+from typing import Annotated
 
 from generated_symbols.world.entity.mob.breedable.Breedable import Breedable
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class Frog(Breedable):
-    variant: str | None = None
+    variant: Annotated[str, IdSpec(registry='frog_variant')] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

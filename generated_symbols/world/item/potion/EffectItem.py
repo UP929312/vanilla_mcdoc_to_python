@@ -1,8 +1,9 @@
 # Generated from symbols.json for ::java::world::item::potion::EffectItem
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.world.item.ItemBase import ItemBase
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.util.effect.MobEffectInstance import MobEffectInstance
@@ -11,7 +12,7 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class EffectItem(ItemBase):
     custom_potion_effects: list[MobEffectInstance] | None = None  # List of the effects that will be applied with this item.
-    Potion: str | None = None  # Default potion effect
+    Potion: Annotated[str, IdSpec(registry='potion')] | None = None  # Default potion effect
     CustomPotionColor: int | None = None  # Calculated as `RED << 16 | GREEN << 8 | BLUE`. Each of these fields must be between 0 and 255, inclusive.
 
 

@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::data::enchantment::effect::ReplaceBlockEntityEffect
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.block_predicate.BlockPredicate import BlockPredicate
@@ -12,7 +14,7 @@ class ReplaceBlockEntityEffect:
     block_state: BlockStateProvider
     offset: tuple[int, int, int] | None = None  # Relative coordinates to offset the placed block by. Defaults to `[0, 0, 0]`.
     predicate: BlockPredicate | None = None  # If omitted, all block types are replaced.
-    trigger_game_event: str | None = None  # Defaults to no game event dispatched.
+    trigger_game_event: Annotated[str, IdSpec(registry='game_event')] | None = None  # Defaults to no game event dispatched.
 
 
 # ~~~ MODEL DUMP ~~~

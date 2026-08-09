@@ -1,11 +1,13 @@
 # Generated from symbols.json for ::java::data::number_provider::NumberProviderRef
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.number_provider.NumberProvider import NumberProvider
 
 
-type NumberProviderRef = NumberProvider | str
+type NumberProviderRef = NumberProvider | Annotated[str, IdSpec(registry='number_provider')]
 
 
 # ~~~ MODEL DUMP ~~~

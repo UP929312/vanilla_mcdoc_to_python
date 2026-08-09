@@ -1,25 +1,27 @@
 # Generated from symbols.json for ::java::data::worldgen::attribute::FloatAttribute
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Any, Generic, TypeVar
+from typing import TYPE_CHECKING, Annotated, Generic, TypeVar
 
 from generated_symbols.data.timeline.AttributeTrackBase import AttributeTrackBase
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.attribute.modifier.FloatAttributeModifier import FloatAttributeModifier
     from generated_symbols.data.worldgen.attribute.modifier.FloatModifierType import FloatModifierType
+    from generated_symbols.data.worldgen.attribute.modifier.FloatWithAlpha import FloatWithAlpha
 
 
 T = TypeVar('T')
+T = TypeVar('T')
 
 @dataclass(kw_only=True)
-class KeyframesStruct(Generic[T]):
+class KeyframesStruct(Generic[T, T]):
     ticks: Annotated[int, 'Range | Min `0` and above | inclusive']
-    value: Any[T]
+    value: T | float | FloatWithAlpha[T]
 
 
 @dataclass(kw_only=True)
 class AttributeTrackStruct(AttributeTrackBase, Generic[T]):
-    keyframes: Annotated[list[KeyframesStruct[T]], 'Length = 1 (inclusive) and above']
+    keyframes: Annotated[list[KeyframesStruct[T, T]], 'Length = 1 (inclusive) and above']
     modifier: FloatModifierType | None = None
 
 
@@ -27,7 +29,7 @@ class AttributeTrackStruct(AttributeTrackBase, Generic[T]):
 class FloatAttribute(Generic[T]):
     value: T
     modifier: FloatAttributeModifier[T]
-    attribute_track: AttributeTrackStruct[T]
+    attribute_track: AttributeTrackStruct[T, T]
 
 
 # ~~~ MODEL DUMP ~~~

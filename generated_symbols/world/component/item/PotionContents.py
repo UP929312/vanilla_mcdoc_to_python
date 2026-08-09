@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::world::component::item::PotionContents
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.util.effect.MobEffectInstance import MobEffectInstance
@@ -8,7 +10,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class PotionContents:
-    potion: str | None = None
+    potion: Annotated[str, IdSpec(registry='potion')] | None = None
     custom_color: int | None = None  # Calculated as `RED << 16 | GREEN << 8 | BLUE`. Each of these fields must be between 0 and 255, inclusive.
     custom_name: str | None = None  # If present, is used to generate the item name using the translation key `item.minecraft.<potion_type>.effect.<custom_name>`.
     custom_effects: list[MobEffectInstance] | None = None

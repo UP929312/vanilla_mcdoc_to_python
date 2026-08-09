@@ -1,7 +1,10 @@
 # Generated from symbols.json for ::java::assets::model::ModelRef
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
-type ModelRef = str
+type ModelRef = Annotated[str, IdSpec(registry='model', exclude=('builtin/generated', 'builtin/entity'))]
 
 
 # ~~~ MODEL DUMP ~~~

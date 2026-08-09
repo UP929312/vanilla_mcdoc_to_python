@@ -1,6 +1,6 @@
 # Generated from symbols.json for ::java::data::slot_source::RangeSlotSource
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Literal
 
 if TYPE_CHECKING:
     from generated_symbols.data.loot.BlockEntityTarget import BlockEntityTarget
@@ -10,7 +10,7 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class RangeSlotSource:
     slots: str
-    source: EntityTarget | BlockEntityTarget | str | None = None  # Defaults to `container`.
+    source: EntityTarget | BlockEntityTarget | Literal['container'] | None = None  # Defaults to `container`.
 
 
 # ~~~ MODEL DUMP ~~~

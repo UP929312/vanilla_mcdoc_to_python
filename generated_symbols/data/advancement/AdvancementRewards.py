@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::data::advancement::AdvancementRewards
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.loot.LootTableListRef import LootTableListRef
@@ -10,8 +12,8 @@ if TYPE_CHECKING:
 class AdvancementRewards:
     experience: int | None = None  # XP to add.
     loot: LootTableListRef | None = None  # Loot tables to give.
-    recipes: list[str] | None = None  # Recipes to unlock.
-    function: str | None = None  # Function to run as and at the player. Function tags are not allowed.
+    recipes: list[Annotated[str, IdSpec(registry='recipe')]] | None = None  # Recipes to unlock.
+    function: Annotated[str, IdSpec(registry='function')] | None = None  # Function to run as and at the player. Function tags are not allowed.
 
 
 # ~~~ MODEL DUMP ~~~

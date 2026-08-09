@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::data::loot::condition::TimeCheck
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.IntRange import IntRange
@@ -8,7 +10,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class TimeCheck:
-    clock: str  # The world clock to check.
+    clock: Annotated[str, IdSpec(registry='world_clock')]  # The world clock to check.
     value: IntRange  # Check the current game tick.
     period: int | None = None  # Game tick supplied to `value` check gets modulo-divided by this. For example, if set to 24000, `value` operates on a time period of days.
 

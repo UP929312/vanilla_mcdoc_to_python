@@ -1,12 +1,14 @@
 # Generated from symbols.json for ::java::data::gametest::FunctionTestInstance
 from dataclasses import dataclass
+from typing import Annotated
 
 from generated_symbols.data.gametest.TestData import TestData
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class FunctionTestInstance(TestData):
-    function: str  # Test function (Java code) to run.
+    function: Annotated[str, IdSpec(registry='test_function')]  # Test function (Java code) to run.
 
 
 # ~~~ MODEL DUMP ~~~

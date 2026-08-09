@@ -1,7 +1,10 @@
 # Generated from symbols.json for ::java::data::number_provider::ResolvableNumber
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
-type ResolvableNumber = float | str
+type ResolvableNumber = float | Annotated[str, IdSpec(registry='number_provider')]
 
 
 # ~~~ MODEL DUMP ~~~

@@ -1,10 +1,11 @@
 # Generated from symbols.json for ::java::util::particle::SafePositionSource
 from dataclasses import dataclass
+from typing import Literal
 
 
 @dataclass(kw_only=True)
 class SafePositionSource:
-    type: str
+    type: Literal['block']
     pos: tuple[int, int, int]
 
 

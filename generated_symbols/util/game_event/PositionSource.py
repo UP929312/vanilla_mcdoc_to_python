@@ -1,10 +1,22 @@
 # Generated from symbols.json for ::java::util::game_event::PositionSource
 from dataclasses import dataclass
+from typing import Literal
 
 
 @dataclass(kw_only=True)
-class PositionSource:
-    type: str
+class PositionSourceBlock:
+    type: Literal['minecraft:block']
+    pos: tuple[int, int, int]  # Block position
+
+
+@dataclass(kw_only=True)
+class PositionSourceEntity:
+    type: Literal['minecraft:entity']
+    source_entity: tuple[int, int, int, int]
+    y_offset: float | None = None  # offset from the entity's feet to the source position
+
+
+type PositionSource = PositionSourceBlock | PositionSourceEntity
 
 
 # ~~~ MODEL DUMP ~~~

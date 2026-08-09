@@ -1,8 +1,9 @@
 # Generated from symbols.json for ::java::data::recipe::SmithingTrim
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.data.recipe.NotificationInfo import NotificationInfo
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.recipe.Ingredient import Ingredient
@@ -13,7 +14,7 @@ class SmithingTrim(NotificationInfo):
     base: Ingredient  # Ingredient specifying an item to be trimmed.
     addition: Ingredient  # Material that will be used.
     template: Ingredient  # Template item that will be used for the pattern.
-    pattern: str  # The trim pattern to apply to the result item.
+    pattern: Annotated[str, IdSpec(registry='trim_pattern')]  # The trim pattern to apply to the result item.
 
 
 # ~~~ MODEL DUMP ~~~

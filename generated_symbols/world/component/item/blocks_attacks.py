@@ -2,6 +2,8 @@
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from runtime_metadata import IdSpec
+
 if TYPE_CHECKING:
     from generated_symbols.data.util.SoundEventRef import SoundEventRef
     from generated_symbols.world.component.item.DamageReduction import DamageReduction
@@ -16,7 +18,7 @@ class blocks_attacks:
     item_damage: ItemDamageFunction | None = None  # Controls how much damage should be applied to the item from a given attack. If not specified, a point of durability is removed for every point of damage dealt. The final damage applied to the item is determined by `floor(base + factor * dealt_damage)`. The final value may be negative, causing the item to be repaired.
     block_sound: SoundEventRef | None = None  # Sound played when an attack is successfully blocked.
     disabled_sound: SoundEventRef | None = None  # Sound played when the item goes on its disabled cooldown due to an attack.
-    bypassed_by: str | list[str] | None = None  # Damage types in this tag are bypassing the blocking
+    bypassed_by: Annotated[str, IdSpec(registry='damage_type', tags='allowed')] | list[Annotated[str, IdSpec(registry='damage_type')]] | None = None  # Damage types in this tag are bypassing the blocking
 
 
 # ~~~ MODEL DUMP ~~~

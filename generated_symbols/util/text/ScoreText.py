@@ -1,5 +1,6 @@
 # Generated from symbols.json for ::java::util::text::ScoreText
 from dataclasses import dataclass
+from typing import Literal
 
 from generated_symbols.util.text.TextBase import TextBase
 
@@ -13,7 +14,7 @@ class ScoreStruct:
 @dataclass(kw_only=True)
 class ScoreText(TextBase):
     score: ScoreStruct
-    type: str | None = None
+    type: Literal['score'] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

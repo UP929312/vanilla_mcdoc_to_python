@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::data::enchantment::effect::SummonEntityEffect
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class SummonEntityEffect:
-    entity: str | list[str]  # If multiple entity types are specified, a random entity type is selected.
+    entity: Annotated[str, IdSpec(registry='entity_type', tags='allowed')] | list[Annotated[str, IdSpec(registry='entity_type')]]  # If multiple entity types are specified, a random entity type is selected.
     join_team: bool | None = None  # Whether the summoned entity should join the team of the owner of the Enchanted Item.
 
 

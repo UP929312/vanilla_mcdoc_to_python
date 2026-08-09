@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::assets::atlas::UnstitchRegion
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class UnstitchRegion:
-    sprite: str
+    sprite: Annotated[str, IdSpec(registry='texture', definition=True)]
     x: float
     y: float
     width: float

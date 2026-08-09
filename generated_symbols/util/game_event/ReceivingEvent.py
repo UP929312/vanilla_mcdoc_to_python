@@ -2,10 +2,12 @@
 from dataclasses import dataclass
 from typing import Annotated
 
+from runtime_metadata import IdSpec
+
 
 @dataclass(kw_only=True)
 class ReceivingEvent:
-    game_event: str
+    game_event: Annotated[str, IdSpec(registry='game_event')]
     distance: Annotated[float, 'Range | Min `0` and above | inclusive']  # Distance in blocks to the source
     pos: tuple[float, float, float]  # Origin of the event
     source: tuple[int, int, int, int] | None = None  # UUID of the source entity of the event, if one exists

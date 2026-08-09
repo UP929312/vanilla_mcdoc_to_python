@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::data::advancement::predicate::CatPredicate
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class CatPredicate:
-    variant: str | list[str]
+    variant: Annotated[str, IdSpec(registry='cat_variant', tags='allowed')] | list[Annotated[str, IdSpec(registry='cat_variant')]]
 
 
 # ~~~ MODEL DUMP ~~~

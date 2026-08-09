@@ -1,11 +1,14 @@
 # Generated from symbols.json for ::java::util::GlobalPos
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class GlobalPos:
     pos: tuple[int, int, int]  # Coordinates of the location in [x, y, z]
-    dimension: str  # Dimension of the location
+    dimension: Annotated[str, IdSpec(registry='dimension')]  # Dimension of the location
 
 
 # ~~~ MODEL DUMP ~~~

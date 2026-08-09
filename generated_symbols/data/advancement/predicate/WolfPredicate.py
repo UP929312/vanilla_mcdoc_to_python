@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::data::advancement::predicate::WolfPredicate
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class WolfPredicate:
-    variant: str | list[str]
+    variant: Annotated[str, IdSpec(registry='wolf_variant', tags='allowed')] | list[Annotated[str, IdSpec(registry='wolf_variant')]]
 
 
 # ~~~ MODEL DUMP ~~~

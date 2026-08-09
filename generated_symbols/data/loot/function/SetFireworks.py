@@ -1,14 +1,17 @@
 # Generated from symbols.json for ::java::data::loot::function::SetFireworks
 from dataclasses import dataclass
-from typing import Annotated, Any
+from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.data.loot.function.Conditions import Conditions
 from generated_symbols.data.loot.function.ListOperation import ListOperation
 
+if TYPE_CHECKING:
+    from generated_symbols.world.component.item.Explosion import Explosion
+
 
 @dataclass(kw_only=True)
 class ExplosionsStruct(ListOperation):
-    values: list[Any]
+    values: list[Explosion]
 
 
 @dataclass(kw_only=True)

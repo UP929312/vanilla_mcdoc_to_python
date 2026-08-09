@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::data::worldgen::biome::SpawnerData
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.IntProvider import IntProvider
@@ -8,7 +10,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class SpawnerData:
-    type: str
+    type: Annotated[str, IdSpec(registry='entity_type')]
     count: IntProvider[int] | int
 
 

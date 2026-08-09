@@ -1,11 +1,14 @@
 # Generated from symbols.json for ::java::assets::atlas::Single
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class Single:
-    resource: str  # A single texture location of the source.
-    sprite: str | None = None  # The identifier of the sprite that can referenced. If not specified, matches `resource`.
+    resource: Annotated[str, IdSpec(registry='texture')]  # A single texture location of the source.
+    sprite: Annotated[str, IdSpec(registry='texture', definition=True)] | None = None  # The identifier of the sprite that can referenced. If not specified, matches `resource`.
 
 
 # ~~~ MODEL DUMP ~~~

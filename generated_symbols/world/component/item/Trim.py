@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::world::component::item::Trim
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.trim.TrimMaterial import TrimMaterial
@@ -9,8 +11,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class Trim:
-    material: str | TrimMaterial  # The trim material of this item..
-    pattern: str | TrimPattern  # The trim pattern of this item.
+    material: Annotated[str, IdSpec(registry='trim_material')] | TrimMaterial  # The trim material of this item..
+    pattern: Annotated[str, IdSpec(registry='trim_pattern')] | TrimPattern  # The trim pattern of this item.
 
 
 # ~~~ MODEL DUMP ~~~

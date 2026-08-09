@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::data::villager_trade::VillagerTrade
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.item_modifier.ItemModifier import ItemModifier
@@ -20,7 +22,7 @@ class VillagerTrade:
     reputation_discount: NumberProvider | None = None  # How much demand & reputation each affect the price, is serialized as `priceMultiplier`. Defaults to `0.0`.  Clamps to a non-negative float.
     xp: NumberProvider | None = None  # Amount to increase the merchant's XP score by that determines their trade tier. Defaults to `1`.  Clamps to a non-negative integer.
     merchant_predicate: Predicate | None = None  # Check whether the trade should be offered by the merchant.  Does **not** support the `reference` predicate.
-    double_trade_price_enchantments: str | list[str] | None = None  # If the offered enchanted book has the specified enchantments, the price will be affected by doubling the `additional_trade_cost` transient component.
+    double_trade_price_enchantments: Annotated[str, IdSpec(registry='enchantment', tags='allowed')] | list[Annotated[str, IdSpec(registry='enchantment')]] | None = None  # If the offered enchanted book has the specified enchantments, the price will be affected by doubling the `additional_trade_cost` transient component.
 
 
 # ~~~ MODEL DUMP ~~~

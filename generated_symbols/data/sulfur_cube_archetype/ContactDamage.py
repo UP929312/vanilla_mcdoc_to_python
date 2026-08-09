@@ -2,13 +2,15 @@
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from runtime_metadata import IdSpec
+
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.FloatProvider import FloatProvider
 
 
 @dataclass(kw_only=True)
 class ContactDamage:
-    damage_type: str
+    damage_type: Annotated[str, IdSpec(registry='damage_type')]
     amount: FloatProvider[Annotated[float, 'Range | Min `0` and above | inclusive']] | Annotated[float, 'Range | Min `0` and above | inclusive']
     attribute_to_source: bool  # Whether the damage is attributed to the sulfur cube.
 

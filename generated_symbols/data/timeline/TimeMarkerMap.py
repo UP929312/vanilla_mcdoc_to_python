@@ -1,11 +1,13 @@
 # Generated from symbols.json for ::java::data::timeline::TimeMarkerMap
 from typing import TYPE_CHECKING, Annotated
 
+from runtime_metadata import IdSpec
+
 if TYPE_CHECKING:
     from generated_symbols.data.timeline.TimeMarker import TimeMarker
 
 
-type TimeMarkerMap = dict[str, Annotated[int, 'Range | Min `0` and above | inclusive'] | TimeMarker]
+type TimeMarkerMap = dict[Annotated[str, IdSpec()], Annotated[int, 'Range | Min `0` and above | inclusive'] | TimeMarker]
 
 
 # ~~~ MODEL DUMP ~~~

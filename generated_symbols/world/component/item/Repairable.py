@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::world::component::item::Repairable
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class Repairable:
-    items: str | list[str]
+    items: Annotated[str, IdSpec(registry='item', tags='allowed')] | list[Annotated[str, IdSpec(registry='item')]]
 
 
 # ~~~ MODEL DUMP ~~~

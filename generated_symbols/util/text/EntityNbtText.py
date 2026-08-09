@@ -1,5 +1,6 @@
 # Generated from symbols.json for ::java::util::text::EntityNbtText
 from dataclasses import dataclass
+from typing import Literal
 
 from generated_symbols.util.text.TextNbtBase import TextNbtBase
 
@@ -8,8 +9,8 @@ from generated_symbols.util.text.TextNbtBase import TextNbtBase
 class EntityNbtText(TextNbtBase):
     entity: str
     nbt: str
-    source: str | None = None
-    type: str | None = None
+    source: Literal['entity'] | None = None
+    type: Literal['nbt'] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

@@ -2,6 +2,8 @@
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from runtime_metadata import IdSpec
+
 if TYPE_CHECKING:
     from generated_symbols.util.slot.EquipmentSlot import EquipmentSlot
 
@@ -11,7 +13,7 @@ type SlotDropChancesStruct = dict[EquipmentSlot, Annotated[float, 'Range | `0`-`
 
 @dataclass(kw_only=True)
 class SpawnEquipment:
-    loot_table: str  # Generates the equipment.
+    loot_table: Annotated[str, IdSpec(registry='loot_table')]  # Generates the equipment.
     slot_drop_chances: Annotated[float, 'Range | `0`-`1` | both inclusive'] | SlotDropChancesStruct  # Chance the mob will drop the equipment on death.
 
 

@@ -2,10 +2,12 @@
 from dataclasses import dataclass
 from typing import Annotated
 
+from runtime_metadata import IdSpec
+
 
 @dataclass(kw_only=True)
 class SuspiciousStewEffect:
-    id: str
+    id: Annotated[str, IdSpec(registry='mob_effect')]
     duration: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # Duration of the effect in ticks. Defaults to `160`; 8 seconds.
 
 

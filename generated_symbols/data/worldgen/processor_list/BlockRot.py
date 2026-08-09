@@ -2,11 +2,13 @@
 from dataclasses import dataclass
 from typing import Annotated
 
+from runtime_metadata import IdSpec
+
 
 @dataclass(kw_only=True)
 class BlockRot:
     integrity: Annotated[float, 'Range | `0`-`1` | both inclusive']
-    rottable_blocks: list[str] | str | None = None
+    rottable_blocks: list[Annotated[str, IdSpec(registry='block')]] | Annotated[str, IdSpec(registry='block', tags='allowed')] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

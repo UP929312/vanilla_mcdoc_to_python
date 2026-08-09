@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::data::worldgen::material_condition::BiomeCondition
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class BiomeCondition:
-    biome_is: list[str] | str
+    biome_is: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
 
 
 # ~~~ MODEL DUMP ~~~

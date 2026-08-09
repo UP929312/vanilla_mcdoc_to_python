@@ -1,11 +1,13 @@
 # Generated from symbols.json for ::java::assets::item_definition::TrimMaterial
 from dataclasses import dataclass
+from typing import Annotated
 
 from generated_symbols.assets.item_definition.SelectCases import SelectCases
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
-class TrimMaterial(SelectCases[str]):
+class TrimMaterial(SelectCases[Annotated[str, IdSpec(registry='trim_material')]]):
     pass
 
 

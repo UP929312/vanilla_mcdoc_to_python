@@ -2,10 +2,12 @@
 from dataclasses import dataclass
 from typing import Annotated
 
+from runtime_metadata import IdSpec
+
 
 @dataclass(kw_only=True)
 class TextureInput:
-    location: str
+    location: Annotated[str, IdSpec(registry='texture', path='effect/')]
     sampler_name: str
     width: Annotated[int, 'Range | Min `1` and above | inclusive']
     height: Annotated[int, 'Range | Min `1` and above | inclusive']

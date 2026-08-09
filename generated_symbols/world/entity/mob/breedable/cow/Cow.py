@@ -1,13 +1,15 @@
 # Generated from symbols.json for ::java::world::entity::mob::breedable::cow::Cow
 from dataclasses import dataclass
+from typing import Annotated
 
 from generated_symbols.world.entity.mob.breedable.Breedable import Breedable
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class Cow(Breedable):
-    variant: str | None = None
-    sound_variant: str | None = None
+    variant: Annotated[str, IdSpec(registry='cow_variant')] | None = None
+    sound_variant: Annotated[str, IdSpec(registry='cow_sound_variant')] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

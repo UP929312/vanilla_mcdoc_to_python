@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::assets::equipment::TrimOverride
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.assets.atlas.PaletteRef import PaletteRef
@@ -8,14 +10,14 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class WhenStruct:
-    pattern: str | None = None
-    material: str | None = None
+    pattern: Annotated[str, IdSpec(registry='trim_pattern')] | None = None
+    material: Annotated[str, IdSpec(registry='trim_material')] | None = None
 
 
 @dataclass(kw_only=True)
 class TrimOverride:
     when: WhenStruct
-    texture: str | None = None  # When present, overrides the base texture provided by trim pattern.  The texture is located under `trims/entity/<layer>/`.
+    texture: Annotated[str, IdSpec()] | None = None  # When present, overrides the base texture provided by trim pattern.  The texture is located under `trims/entity/<layer>/`.
     palette: PaletteRef | None = None  # When present, overrides the palette texture provided by trim material.
 
 

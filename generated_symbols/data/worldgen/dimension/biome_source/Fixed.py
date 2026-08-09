@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::data::worldgen::dimension::biome_source::Fixed
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class Fixed:
-    biome: str
+    biome: Annotated[str, IdSpec(registry='worldgen/biome')]
 
 
 # ~~~ MODEL DUMP ~~~

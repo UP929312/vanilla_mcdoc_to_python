@@ -1,16 +1,18 @@
 # Generated from symbols.json for ::java::util::text::SpriteText
 from dataclasses import dataclass
+from typing import Annotated, Literal
 
 from generated_symbols.util.text.ObjectTextConfig import ObjectTextConfig
 from generated_symbols.util.text.TextBase import TextBase
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class SpriteText(ObjectTextConfig, TextBase):
-    sprite: str
-    atlas: str | None = None  # Defaults to `minecraft:blocks`.
-    object: str | None = None
-    type: str | None = None
+    sprite: Annotated[str, IdSpec(registry='texture')]
+    atlas: Annotated[str, IdSpec(registry='atlas')] | None = None  # Defaults to `minecraft:blocks`.
+    object: Literal['atlas'] | None = None
+    type: Literal['object'] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

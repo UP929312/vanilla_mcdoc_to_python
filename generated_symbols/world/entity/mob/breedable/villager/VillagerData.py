@@ -1,12 +1,15 @@
 # Generated from symbols.json for ::java::world::entity::mob::breedable::villager::VillagerData
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class VillagerData:
     level: int | None = None  # Used for trading and badge rendering.
-    profession: str | None = None
-    type: str | None = None
+    profession: Annotated[str, IdSpec(registry='villager_profession')] | None = None
+    type: Annotated[str, IdSpec(registry='villager_type')] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

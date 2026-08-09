@@ -1,8 +1,9 @@
 # Generated from symbols.json for ::java::data::worldgen::template_pool::SingleElement
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.data.worldgen.template_pool.ElementBase import ElementBase
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.processor_list.ProcessorListRef import ProcessorListRef
@@ -11,7 +12,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class SingleElement(ElementBase):
-    location: str
+    location: Annotated[str, IdSpec(registry='structure')]
     processors: ProcessorListRef
     override_liquid_settings: LiquidSettings | None = None
 

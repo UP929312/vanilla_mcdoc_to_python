@@ -3,6 +3,7 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.world.entity.boat.Boat import Boat
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.util.slot.SlottedItem import SlottedItem
@@ -10,7 +11,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class ChestBoat(Boat):
-    LootTable: str | None = None  # Loot table that will populate this chest boat.
+    LootTable: Annotated[str, IdSpec(registry='loot_table', empty='allowed')] | None = None  # Loot table that will populate this chest boat.
     LootTableSeed: int | None = None  # Seed of the loot table.
     Items: Annotated[list[SlottedItem[Annotated[int, 'Range | `0`-`26` | both inclusive']]], 'Length = 0-27 (both inclusive)'] | None = None  # Slots from 0 to 26.
 

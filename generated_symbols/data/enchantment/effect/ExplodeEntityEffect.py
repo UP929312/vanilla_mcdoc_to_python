@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::data::enchantment::effect::ExplodeEntityEffect
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.enchantment.LevelBasedValue import LevelBasedValue
@@ -18,8 +20,8 @@ class ExplodeEntityEffect:
     large_particle: Particle
     sound: SoundEventRef
     attribute_to_user: bool | None = None  # Whether the explosion should be attributed to the user of the enchanted tool.
-    damage_type: str | None = None  # If omitted, no damage is dealt by the explosion.
-    immune_blocks: str | list[str] | None = None  # List of Blocks or hash-prefixed Block Tag specifying which blocks fully block the explosion.
+    damage_type: Annotated[str, IdSpec(registry='damage_type')] | None = None  # If omitted, no damage is dealt by the explosion.
+    immune_blocks: Annotated[str, IdSpec(registry='block', tags='allowed')] | list[Annotated[str, IdSpec(registry='block')]] | None = None  # List of Blocks or hash-prefixed Block Tag specifying which blocks fully block the explosion.
     knockback_multiplier: LevelBasedValue | None = None  # If omitted, constant value `1` is applied.
     offset: tuple[float, float, float] | None = None  # Relative coordinates to offset the explosion by. Defaults to `[0, 0, 0]`.
     create_fire: bool | None = None  # Whether fire is placed within the explosion radius.

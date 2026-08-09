@@ -1,10 +1,23 @@
 # Generated from symbols.json for ::java::data::gametest::TestInstance
 from dataclasses import dataclass
+from typing import Annotated, Literal
+
+from generated_symbols.data.gametest.TestData import TestData
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
-class TestInstance:
-    type: str
+class TestInstanceBlockBased(TestData):
+    type: Literal['minecraft:block_based']
+
+
+@dataclass(kw_only=True)
+class TestInstanceFunction(TestData):
+    type: Literal['minecraft:function']
+    function: Annotated[str, IdSpec(registry='test_function')]  # Test function (Java code) to run.
+
+
+type TestInstance = TestInstanceBlockBased | TestInstanceFunction
 
 
 # ~~~ MODEL DUMP ~~~

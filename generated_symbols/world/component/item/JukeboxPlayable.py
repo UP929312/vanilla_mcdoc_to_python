@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::world::component::item::JukeboxPlayable
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class JukeboxPlayable:
-    song: str
+    song: Annotated[str, IdSpec(registry='jukebox_song')]
     show_in_tooltip: bool | None = None
 
 

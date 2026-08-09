@@ -1,6 +1,6 @@
 # Generated from symbols.json for ::java::data::advancement::trigger::EnterBlock
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING
 
 from generated_symbols.data.advancement.trigger.TriggerBase import TriggerBase
 
@@ -8,10 +8,13 @@ if TYPE_CHECKING:
     from generated_symbols.util.registry_ref.BlockListRef import BlockListRef
 
 
+type StateStructBlockStatesNone = dict[str, str]
+
+
 @dataclass(kw_only=True)
 class EnterBlock(TriggerBase):
     blocks: BlockListRef | None = None
-    state: Any | None = None
+    state: StateStructBlockStatesNone | None = None
 
 
 # ~~~ MODEL DUMP ~~~

@@ -1,17 +1,43 @@
 # Generated from symbols.json for ::java::data::loot::function::ApplyBonus
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import Annotated, Literal
 
 from generated_symbols.data.loot.function.Conditions import Conditions
-
-if TYPE_CHECKING:
-    from generated_symbols.data.loot.function.ApplyBonusFormula import ApplyBonusFormula
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
-class ApplyBonus(Conditions):
-    enchantment: str
-    formula: ApplyBonusFormula
+class ParametersStruct:
+    extra: int
+    probability: Annotated[float, 'Range | `0`-`1` | both inclusive']
+
+
+@dataclass(kw_only=True)
+class ParametersStruct:
+    bonusMultiplier: int
+
+
+@dataclass(kw_only=True)
+class ApplyBonusBinomialWithBonusCount(Conditions):
+    enchantment: Annotated[str, IdSpec(registry='enchantment')]
+    formula: Literal['minecraft:binomial_with_bonus_count']
+    parameters: ParametersStruct
+
+
+@dataclass(kw_only=True)
+class ApplyBonusOreDrops(Conditions):
+    enchantment: Annotated[str, IdSpec(registry='enchantment')]
+    formula: Literal['minecraft:ore_drops']
+
+
+@dataclass(kw_only=True)
+class ApplyBonusUniformBonusCount(Conditions):
+    enchantment: Annotated[str, IdSpec(registry='enchantment')]
+    formula: Literal['minecraft:uniform_bonus_count']
+    parameters: ParametersStruct
+
+
+type ApplyBonus = ApplyBonusBinomialWithBonusCount | ApplyBonusOreDrops | ApplyBonusUniformBonusCount
 
 
 # ~~~ MODEL DUMP ~~~

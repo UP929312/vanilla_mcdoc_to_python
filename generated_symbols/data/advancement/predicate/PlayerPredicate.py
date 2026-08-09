@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::data::advancement::predicate::PlayerPredicate
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.advancement.predicate.EntityPredicate import EntityPredicate
@@ -31,10 +33,10 @@ class FoodStruct:
 
 @dataclass(kw_only=True)
 class PlayerPredicate:
-    advancements: dict[str, bool | AdvancementsStructValueStruct] | None = None
+    advancements: dict[Annotated[str, IdSpec(registry='advancement')], bool | AdvancementsStructValueStruct] | None = None
     gamemode: list[GameMode] | None = None
     level: MinMaxBounds[int] | int | None = None  # Experience/XP level.
-    recipes: dict[str, bool] | None = None
+    recipes: dict[Annotated[str, IdSpec(registry='recipe')], bool] | None = None
     stats: list[StatisticPredicate] | None = None
     looking_at: EntityPredicate | None = None
     input: InputStruct | None = None  # Checks the movement keys of the player.

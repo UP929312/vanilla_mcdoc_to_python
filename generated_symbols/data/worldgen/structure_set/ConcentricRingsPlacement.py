@@ -2,13 +2,15 @@
 from dataclasses import dataclass
 from typing import Annotated
 
+from runtime_metadata import IdSpec
+
 
 @dataclass(kw_only=True)
 class ConcentricRingsPlacement:
     distance: Annotated[int, 'Range | `0`-`1023` | both inclusive']
     spread: Annotated[int, 'Range | `0`-`1023` | both inclusive']
     count: Annotated[int, 'Range | `1`-`4095` | both inclusive']
-    preferred_biomes: list[str] | str
+    preferred_biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
 
 
 # ~~~ MODEL DUMP ~~~

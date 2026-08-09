@@ -1,12 +1,14 @@
 # Generated from symbols.json for ::java::data::loot::ItemPoolEntry
 from dataclasses import dataclass
+from typing import Annotated
 
 from generated_symbols.data.loot.SingletonPoolEntry import SingletonPoolEntry
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class ItemPoolEntry(SingletonPoolEntry):
-    name: str
+    name: Annotated[str, IdSpec(registry='item', exclude=('air',))]
 
 
 # ~~~ MODEL DUMP ~~~

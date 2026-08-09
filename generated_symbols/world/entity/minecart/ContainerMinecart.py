@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::world::entity::minecart::ContainerMinecart
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class ContainerMinecart:
-    LootTable: str | None = None  # Loot table that will populate this minecart.
+    LootTable: Annotated[str, IdSpec(registry='loot_table', empty='allowed')] | None = None  # Loot table that will populate this minecart.
     LootTableSeed: int | None = None  # Seed of the loot table.
 
 

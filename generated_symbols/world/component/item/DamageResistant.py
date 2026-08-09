@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::world::component::item::DamageResistant
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class DamageResistant:
-    types: str | list[str]  # The damage types which the item is resistant to when in entity form. Additionally, this also affects whether the equipped item will be damaged when the wearer is hurt by a specified damage type.
+    types: Annotated[str, IdSpec(registry='damage_type', tags='allowed')] | list[Annotated[str, IdSpec(registry='damage_type')]]  # The damage types which the item is resistant to when in entity form. Additionally, this also affects whether the equipped item will be damaged when the wearer is hurt by a specified damage type.
 
 
 # ~~~ MODEL DUMP ~~~

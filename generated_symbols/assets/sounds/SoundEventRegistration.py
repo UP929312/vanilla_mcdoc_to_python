@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::assets::sounds::SoundEventRegistration
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.assets.sounds.Sound import Sound
@@ -8,7 +10,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class SoundEventRegistration:
-    sounds: list[str | Sound] | None = None  # The sound files this sound event uses. One sound is randomly selected to play when the event is triggered. Defaults to assumed path.
+    sounds: list[Annotated[str, IdSpec(registry='sound')] | Sound] | None = None  # The sound files this sound event uses. One sound is randomly selected to play when the event is triggered. Defaults to assumed path.
     replace: bool | None = None  # If true the sounds listed should replace the ones listed in the minecraft sounds.json for this sound event. False if the sounds listed should be added. If undefined. Defaults to false.
     subtitle: str | None = None  # Translated as the subtitle when Show Subtitles is enabled. Section sign formatting codes are supported.
 

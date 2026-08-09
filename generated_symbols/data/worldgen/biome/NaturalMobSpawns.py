@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::data::worldgen::biome::NaturalMobSpawns
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.biome.MobSpawnCost import MobSpawnCost
@@ -10,7 +12,7 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class NaturalMobSpawns:
     spawns_by_category: SpawnerDataMap
-    spawn_costs: dict[str, MobSpawnCost]
+    spawn_costs: dict[Annotated[str, IdSpec(registry='entity')], MobSpawnCost]
 
 
 # ~~~ MODEL DUMP ~~~

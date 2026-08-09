@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::world::item::AttributeModifier
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.util.attribute.LegacyOperation import LegacyOperation
@@ -9,7 +11,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class AttributeModifier:
-    AttributeName: str | None = None
+    AttributeName: Annotated[str, IdSpec(registry='attribute')] | None = None
     Name: str | None = None  # Identifying name of the modifier, has no real effect.
     Slot: EquipmentSlotGroup | None = None  # Slot that the modifier is active in.
     Operation: LegacyOperation | None = None

@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::data::worldgen::noise_settings::StructureSettings
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.structure_set.ConcentricRingsPlacement import ConcentricRingsPlacement
@@ -9,7 +11,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class StructureSettings:
-    structures: dict[str, RandomSpreadPlacement]
+    structures: dict[Annotated[str, IdSpec(registry='worldgen/structure_feature')], RandomSpreadPlacement]
     stronghold: ConcentricRingsPlacement | None = None
 
 

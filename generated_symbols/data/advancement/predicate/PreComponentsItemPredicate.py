@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::data::advancement::predicate::PreComponentsItemPredicate
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.advancement.predicate.EnchantmentPredicate import EnchantmentPredicate
@@ -9,10 +11,10 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class PreComponentsItemPredicate:
-    items: list[str] | None = None
-    tag: str | None = None
+    items: list[Annotated[str, IdSpec(registry='item')]] | None = None
+    tag: Annotated[str, IdSpec(registry='item', tags='implicit')] | None = None
     durability: MinMaxBounds[int] | int | None = None
-    potion: str | None = None
+    potion: Annotated[str, IdSpec(registry='potion')] | None = None
     enchantments: list[EnchantmentPredicate] | None = None
     stored_enchantments: list[EnchantmentPredicate] | None = None
     nbt: str | None = None

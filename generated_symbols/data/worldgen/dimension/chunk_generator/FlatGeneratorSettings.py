@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::data::worldgen::dimension::chunk_generator::FlatGeneratorSettings
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.dimension.chunk_generator.FlatGeneratorLayer import FlatGeneratorLayer
@@ -9,10 +11,10 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class FlatGeneratorSettings:
     layers: list[FlatGeneratorLayer]
-    biome: str | None = None
+    biome: Annotated[str, IdSpec(registry='worldgen/biome')] | None = None
     lakes: bool | None = None
     features: bool | None = None
-    structure_overrides: list[str] | str | None = None
+    structure_overrides: list[Annotated[str, IdSpec(registry='worldgen/structure_set')]] | Annotated[str, IdSpec(registry='worldgen/structure_set', tags='allowed')] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

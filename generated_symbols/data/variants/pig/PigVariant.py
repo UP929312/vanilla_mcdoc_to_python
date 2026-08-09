@@ -1,8 +1,9 @@
 # Generated from symbols.json for ::java::data::variants::pig::PigVariant
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.data.variants.SpawnPrioritySelectors import SpawnPrioritySelectors
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.variants.pig.PigModelType import PigModelType
@@ -10,8 +11,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class PigVariant(SpawnPrioritySelectors):
-    asset_id: str  # The pig texture to use for this variant.
-    baby_asset_id: str  # The baby pig texture to use for this variant.
+    asset_id: Annotated[str, IdSpec(registry='texture')]  # The pig texture to use for this variant.
+    baby_asset_id: Annotated[str, IdSpec(registry='texture')]  # The baby pig texture to use for this variant.
     model: PigModelType | None = None
 
 

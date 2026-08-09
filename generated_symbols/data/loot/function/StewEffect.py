@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::data::loot::function::StewEffect
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.number_provider.NumberProviderRef import NumberProviderRef
@@ -8,7 +10,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class StewEffect:
-    type: str  # The status effect of this stew effect.
+    type: Annotated[str, IdSpec(registry='mob_effect')]  # The status effect of this stew effect.
     duration: NumberProviderRef  # The duration of this stew effect, in seconds.
 
 

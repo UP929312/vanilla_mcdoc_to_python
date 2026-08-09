@@ -2,6 +2,8 @@
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from runtime_metadata import IdSpec
+
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.IntProvider import IntProvider
     from generated_symbols.data.worldgen.feature.block_predicate.BlockPredicate import BlockPredicate
@@ -13,7 +15,7 @@ class ColumnsConfig:
     block: BlockStateProvider
     can_replace: BlockPredicate
     continue_through: BlockPredicate
-    cannot_place_on: str | list[str]
+    cannot_place_on: Annotated[str, IdSpec(registry='block', tags='allowed')] | list[Annotated[str, IdSpec(registry='block')]]
     column_reach: IntProvider[Annotated[int, 'Range | `0`-`3` | both inclusive']] | Annotated[int, 'Range | `0`-`3` | both inclusive']
     column_count: IntProvider[Annotated[int, 'Range | `1`-`150` | both inclusive']] | Annotated[int, 'Range | `1`-`150` | both inclusive']
     height: IntProvider[Annotated[int, 'Range | `1`-`10` | both inclusive']] | Annotated[int, 'Range | `1`-`10` | both inclusive']

@@ -2,6 +2,8 @@
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from runtime_metadata import IdSpec
+
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
 
@@ -11,8 +13,8 @@ class MangroveRootPlacement:
     max_root_width: Annotated[int, 'Range | `1`-`12` | both inclusive']
     max_root_length: Annotated[int, 'Range | `1`-`64` | both inclusive']
     random_skew_chance: Annotated[float, 'Range | `0`-`1` | both inclusive']
-    can_grow_through: list[str] | str
-    muddy_roots_in: list[str] | str
+    can_grow_through: list[Annotated[str, IdSpec(registry='block')]] | Annotated[str, IdSpec(registry='block', tags='allowed')]
+    muddy_roots_in: list[Annotated[str, IdSpec(registry='block')]] | Annotated[str, IdSpec(registry='block', tags='allowed')]
     muddy_roots_provider: BlockStateProvider
 
 

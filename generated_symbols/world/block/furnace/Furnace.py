@@ -5,6 +5,7 @@ from typing import TYPE_CHECKING, Annotated
 from generated_symbols.world.block.BlockEntity import BlockEntity
 from generated_symbols.world.block.Lockable import Lockable
 from generated_symbols.world.block.Nameable import Nameable
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.util.slot.SlottedItem import SlottedItem
@@ -18,7 +19,7 @@ class Furnace(BlockEntity, Nameable, Lockable):
     lit_time_remaining: int | None = None  # The amount of burn time remaining. Defaults to `0`.
     lit_total_time: int | None = None  # The total amount of burn time that was added in the last refuel. Defaults to `0`.
     speed_multiplier: float | None = None  # Used to speed up or slow down the next cooking process. Defaults to `1`.
-    RecipesUsed: dict[str, int] | None = None  # Recipes that have been used since the last time a result item was removed from the GUI. Used to calculate the experience to give to the player.
+    RecipesUsed: dict[Annotated[str, IdSpec(registry='recipe')], int] | None = None  # Recipes that have been used since the last time a result item was removed from the GUI. Used to calculate the experience to give to the player.
 
 
 # ~~~ MODEL DUMP ~~~

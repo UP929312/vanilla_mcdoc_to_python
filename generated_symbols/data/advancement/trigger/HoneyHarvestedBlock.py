@@ -1,11 +1,14 @@
 # Generated from symbols.json for ::java::data::advancement::trigger::HoneyHarvestedBlock
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class HoneyHarvestedBlock:
-    block: str | None = None
-    tag: str | None = None
+    block: Annotated[str, IdSpec(registry='block')] | None = None
+    tag: Annotated[str, IdSpec(registry='block', tags='implicit')] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

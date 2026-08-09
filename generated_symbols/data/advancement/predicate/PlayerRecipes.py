@@ -1,7 +1,10 @@
 # Generated from symbols.json for ::java::data::advancement::predicate::PlayerRecipes
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
-type PlayerRecipes = dict[str, bool]
+type PlayerRecipes = dict[Annotated[str, IdSpec(registry='recipe')], bool]
 
 
 # ~~~ MODEL DUMP ~~~

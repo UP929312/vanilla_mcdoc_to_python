@@ -1,12 +1,32 @@
 # Generated from symbols.json for ::java::data::worldgen::dimension::biome_source::MultiNoise
 from dataclasses import dataclass
+from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.data.worldgen.dimension.biome_source.MultiNoiseBase import MultiNoiseBase
+from runtime_metadata import IdSpec
+
+if TYPE_CHECKING:
+    from generated_symbols.data.worldgen.dimension.biome_source.ClimateParameters import ClimateParameters
 
 
 @dataclass(kw_only=True)
-class MultiNoise(MultiNoiseBase):
-    preset: str | None = None
+class BiomesStruct:
+    biome: Annotated[str, IdSpec(registry='worldgen/biome')]
+    parameters: ClimateParameters
+
+
+@dataclass(kw_only=True)
+class MultiNoiseNone(MultiNoiseBase):
+    biomes: list[BiomesStruct]
+    preset: Annotated[str, IdSpec(registry='worldgen/multi_noise_biome_source_parameter_list')] | None = None
+
+
+@dataclass(kw_only=True)
+class MultiNoiseUnknown(MultiNoiseBase):
+    preset: Annotated[str, IdSpec(registry='worldgen/multi_noise_biome_source_parameter_list')] | None = None
+
+
+type MultiNoise = MultiNoiseNone | MultiNoiseUnknown
 
 
 # ~~~ MODEL DUMP ~~~

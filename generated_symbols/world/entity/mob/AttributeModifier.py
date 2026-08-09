@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::world::entity::mob::AttributeModifier
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.util.attribute.AttributeOperation import AttributeOperation
@@ -8,7 +10,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class AttributeModifier:
-    id: str  # The unique identifier of this attribute modifier.
+    id: Annotated[str, IdSpec(registry='attribute_modifier')]  # The unique identifier of this attribute modifier.
     amount: float  # Change in the attribute.
     operation: AttributeOperation  # The operation used for this modifier.
 

@@ -1,6 +1,6 @@
 # Generated from symbols.json for ::java::util::text::TranslatedText
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, Literal
 
 from generated_symbols.util.text.TextBase import TextBase
 
@@ -13,7 +13,7 @@ class TranslatedText(TextBase):
     translate: str
     fallback: str | None = None
     with_: Annotated[list[Text], 'Length = 1 (inclusive) and above'] | None = None
-    type: str | None = None
+    type: Literal['translatable'] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

@@ -1,8 +1,31 @@
 # Generated from symbols.json for ::java::world::component::DataComponentPredicate
-from typing import Any
+from dataclasses import dataclass
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
+
+if TYPE_CHECKING:
+    from generated_symbols.data.advancement.predicate.EnchantmentPredicate import EnchantmentPredicate
+    from generated_symbols.world.component.CustomData import CustomData
+    from generated_symbols.world.component.predicate.AttributeModifiersPredicate import AttributeModifiersPredicate
+    from generated_symbols.world.component.predicate.BundleContentsPredicate import BundleContentsPredicate
+    from generated_symbols.world.component.predicate.ContainerPredicate import ContainerPredicate
+    from generated_symbols.world.component.predicate.FireworkExplosionPredicate import FireworkExplosionPredicate
+    from generated_symbols.world.component.predicate.FireworksPredicate import FireworksPredicate
+    from generated_symbols.world.component.predicate.ItemDamagePredicate import ItemDamagePredicate
+    from generated_symbols.world.component.predicate.JukeboxPlayablePredicate import JukeboxPlayablePredicate
+    from generated_symbols.world.component.predicate.PotionsPredicate import PotionsPredicate
+    from generated_symbols.world.component.predicate.TrimPredicate import TrimPredicate
+    from generated_symbols.world.component.predicate.WritableBookPredicate import WritableBookPredicate
+    from generated_symbols.world.component.predicate.WrittenBookPredicate import WrittenBookPredicate
 
 
-type DataComponentPredicate = dict[str, Any]
+@dataclass(kw_only=True)
+class DataComponentPredicateValueStructDataComponentExistencePredicateUnknown:
+    pass
+
+
+type DataComponentPredicate = dict[Annotated[str, IdSpec(registry='data_component_type')], None | AttributeModifiersPredicate | BundleContentsPredicate | ContainerPredicate | CustomData | ItemDamagePredicate | list[EnchantmentPredicate] | FireworkExplosionPredicate | FireworksPredicate | JukeboxPlayablePredicate | PotionsPredicate | TrimPredicate | Annotated[str, IdSpec(registry='villager_type', tags='allowed')] | list[Annotated[str, IdSpec(registry='villager_type')]] | WritableBookPredicate | WrittenBookPredicate | DataComponentPredicateValueStructDataComponentExistencePredicateUnknown | None]
 
 
 # ~~~ MODEL DUMP ~~~

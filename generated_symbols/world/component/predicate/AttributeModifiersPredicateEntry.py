@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::world::component::predicate::AttributeModifiersPredicateEntry
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
@@ -10,8 +12,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class AttributeModifiersPredicateEntry:
-    attribute: str | list[str] | None = None
-    id: str | None = None
+    attribute: Annotated[str, IdSpec(registry='attribute', tags='allowed')] | list[Annotated[str, IdSpec(registry='attribute')]] | None = None
+    id: Annotated[str, IdSpec(registry='attribute_modifier')] | None = None
     amount: MinMaxBounds[float] | float | None = None
     operation: AttributeOperation | None = None
     slot: EquipmentSlotGroup | None = None

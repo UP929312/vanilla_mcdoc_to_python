@@ -1,8 +1,9 @@
 # Generated from symbols.json for ::java::world::block::brushable_block::BrushableBlock
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.world.block.BlockEntity import BlockEntity
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.util.direction.DirectionByte import DirectionByte
@@ -11,7 +12,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class BrushableBlock(BlockEntity):
-    LootTable: str | None = None  # Loot table that will decide the brushed loot.
+    LootTable: Annotated[str, IdSpec(registry='loot_table', empty='allowed')] | None = None  # Loot table that will decide the brushed loot.
     LootTableSeed: int | None = None  # Seed of the loot table.
     item: ItemStack | None = None  # Item that was rolled from the loot table, which is currently peeking out.
     hit_direction: DirectionByte | None = None  # Direction of the block that was interacted with. Write-only, is not saved by the game.

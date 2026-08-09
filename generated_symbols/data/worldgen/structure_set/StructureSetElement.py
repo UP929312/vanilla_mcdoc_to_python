@@ -2,10 +2,12 @@
 from dataclasses import dataclass
 from typing import Annotated
 
+from runtime_metadata import IdSpec
+
 
 @dataclass(kw_only=True)
 class StructureSetElement:
-    structure: str
+    structure: Annotated[str, IdSpec(registry='worldgen/structure')]
     weight: Annotated[int, 'Range | Min `1` and above | inclusive']
 
 

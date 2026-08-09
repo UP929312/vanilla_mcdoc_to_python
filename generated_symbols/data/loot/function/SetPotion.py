@@ -1,12 +1,14 @@
 # Generated from symbols.json for ::java::data::loot::function::SetPotion
 from dataclasses import dataclass
+from typing import Annotated
 
 from generated_symbols.data.loot.function.Conditions import Conditions
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class SetPotion(Conditions):
-    id: str  # The potion identifier.
+    id: Annotated[str, IdSpec(registry='potion')]  # The potion identifier.
 
 
 # ~~~ MODEL DUMP ~~~

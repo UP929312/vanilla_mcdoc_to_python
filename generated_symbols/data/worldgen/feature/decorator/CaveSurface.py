@@ -1,10 +1,11 @@
 # Generated from symbols.json for ::java::data::worldgen::feature::decorator::CaveSurface
 from dataclasses import dataclass
+from typing import Literal
 
 
 @dataclass(kw_only=True)
 class CaveSurface:
-    surface: str
+    surface: Literal['floor'] | Literal['ceiling']
     floor_to_ceiling_search_range: int
 
 

@@ -1,7 +1,10 @@
 # Generated from symbols.json for ::java::data::worldgen::dimension::DimensionTypeRef
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
-type DimensionTypeRef = str
+type DimensionTypeRef = Annotated[str, IdSpec(registry='dimension_type')]
 
 
 # ~~~ MODEL DUMP ~~~

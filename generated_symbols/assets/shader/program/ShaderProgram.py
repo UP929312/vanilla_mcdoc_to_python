@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::assets::shader::program::ShaderProgram
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.assets.shader.program.Defines import Defines
@@ -10,8 +12,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class ShaderProgram:
-    vertex: str
-    fragment: str
+    vertex: Annotated[str, IdSpec(registry='shader/vertex')]
+    fragment: Annotated[str, IdSpec(registry='shader/fragment')]
     uniforms: list[Uniform]
     samplers: list[Sampler] | None = None
     defines: Defines | None = None  # Defines GLSL directives to be injected into the shader source.

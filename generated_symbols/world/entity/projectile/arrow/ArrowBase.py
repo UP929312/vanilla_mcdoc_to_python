@@ -1,8 +1,9 @@
 # Generated from symbols.json for ::java::world::entity::projectile::arrow::ArrowBase
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.world.entity.projectile.ProjectileBase import ProjectileBase
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.util.block_state.BlockState import BlockState
@@ -21,7 +22,7 @@ class ArrowBase(ProjectileBase):
     crit: bool | None = None  # Whether it should do critical damage.
     weapon: ItemStack | None = None  # The item which has shot this arrow.
     PierceLevel: int | None = None  # Number of entities it can pass through.
-    SoundEvent: str | None = None  # Sound event to play when it hits something.  Can only be vanilla sound events
+    SoundEvent: Annotated[str, IdSpec(registry='sound_event')] | None = None  # Sound event to play when it hits something.  Can only be vanilla sound events
     item: ItemStack | None = None
 
 

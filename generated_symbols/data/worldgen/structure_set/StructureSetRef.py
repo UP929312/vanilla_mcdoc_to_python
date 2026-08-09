@@ -1,11 +1,13 @@
 # Generated from symbols.json for ::java::data::worldgen::structure_set::StructureSetRef
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.structure_set.StructureSet import StructureSet
 
 
-type StructureSetRef = str | StructureSet
+type StructureSetRef = Annotated[str, IdSpec(registry='worldgen/structure_set')] | StructureSet
 
 
 # ~~~ MODEL DUMP ~~~

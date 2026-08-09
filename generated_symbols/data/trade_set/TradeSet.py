@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::data::trade_set::TradeSet
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.number_provider.NumberProvider import NumberProvider
@@ -8,10 +10,10 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class TradeSet:
-    trades: str | list[str]  # Possible trade generators.
+    trades: Annotated[str, IdSpec(registry='villager_trade', tags='allowed')] | list[Annotated[str, IdSpec(registry='villager_trade')]]  # Possible trade generators.
     amount: NumberProvider  # Amount of trades to be generated.  Clamps to an integer of at least `1`.
     allow_duplicates: bool | None = None  # Whether the trade set can use the same generator multiple times and generate duplicate trades. Defaults to `false`.
-    random_sequence: str | None = None
+    random_sequence: Annotated[str, IdSpec(registry='random_sequence', definition=True)] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

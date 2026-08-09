@@ -1,12 +1,14 @@
 # Generated from symbols.json for ::java::data::loot::function::SetRandomPotion
 from dataclasses import dataclass
+from typing import Annotated
 
 from generated_symbols.data.loot.function.Conditions import Conditions
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class SetRandomPotion(Conditions):
-    options: str | None = None  # Possible potions to select from. Defaults to all potions.
+    options: Annotated[str, IdSpec(registry='potion', tags='allowed')] | Annotated[str, IdSpec(registry='potion')] | None = None  # Possible potions to select from. Defaults to all potions.
 
 
 # ~~~ MODEL DUMP ~~~

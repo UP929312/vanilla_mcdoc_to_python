@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::data::recipe::IngredientTag
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class IngredientTag:
-    tag: str
+    tag: Annotated[str, IdSpec(registry='item', tags='implicit')]
 
 
 # ~~~ MODEL DUMP ~~~

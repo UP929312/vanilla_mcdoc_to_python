@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::assets::shader::post::TargetInput
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class TargetInput:
-    target: str
+    target: Annotated[str, IdSpec(registry='shader_target')]
     sampler_name: str
     use_depth_buffer: bool | None = None
     bilinear: bool | None = None

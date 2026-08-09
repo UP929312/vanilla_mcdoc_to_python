@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::assets::model::TextureMaterial
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class TextureMaterial:
-    sprite: str
+    sprite: Annotated[str, IdSpec(registry='texture')]
     force_translucent: bool | None = None  # Whether the texture should be forced into the translucent render pass.  Textures without any translucent pixels are not assigned to the translucent pass by default.  Defaults to `false`.
 
 

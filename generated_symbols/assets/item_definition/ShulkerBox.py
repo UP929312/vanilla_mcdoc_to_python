@@ -2,10 +2,12 @@
 from dataclasses import dataclass
 from typing import Annotated
 
+from runtime_metadata import IdSpec
+
 
 @dataclass(kw_only=True)
 class ShulkerBox:
-    texture: str
+    texture: Annotated[str, IdSpec(registry='texture', path='entity/shulker/')]
     openness: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
 
 

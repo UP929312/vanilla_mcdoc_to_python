@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::data::trim::TrimPattern
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.util.text.Text import Text
@@ -8,7 +10,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class TrimPattern:
-    asset_id: str  # ID of the pattern that will be used in the resource pack as an overlay on the armor.  The texture is located under `trims/entity/<layer>/`.
+    asset_id: Annotated[str, IdSpec()]  # ID of the pattern that will be used in the resource pack as an overlay on the armor.  The texture is located under `trims/entity/<layer>/`.
     description: Text  # Text displayed in the item tooltip.
     decal: bool | None = None  # Whether the pattern texture will be masked based on the underlying armor. Defaults to `false`.
 

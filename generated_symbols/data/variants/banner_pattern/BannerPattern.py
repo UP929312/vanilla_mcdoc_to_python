@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::data::variants::banner_pattern::BannerPattern
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class BannerPattern:
-    asset_id: str  # Also resolves to `assets/<namespace>/textures/entity/shield/<name>.png`.
+    asset_id: Annotated[str, IdSpec(registry='texture', path='entity/banner/')]  # Also resolves to `assets/<namespace>/textures/entity/shield/<name>.png`.
     translation_key: str  # Translation key prefix per dye color (e.g. `block.minecraft.banner.custom.pattern` resolves to `block.minecraft.banner.custom.pattern.<dye color>`).
 
 

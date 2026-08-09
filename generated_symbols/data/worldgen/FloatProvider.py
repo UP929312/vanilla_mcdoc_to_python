@@ -1,13 +1,15 @@
 # Generated from symbols.json for ::java::data::worldgen::FloatProvider
 from dataclasses import dataclass
-from typing import Generic, TypeVar
+from typing import Annotated, Generic, TypeVar
+
+from runtime_metadata import IdSpec
 
 
 T = TypeVar('T')
 
 @dataclass(kw_only=True)
 class FloatProvider(Generic[T]):
-    type: str
+    type: Annotated[str, IdSpec(registry='float_provider_type')]
 
 
 # ~~~ MODEL DUMP ~~~

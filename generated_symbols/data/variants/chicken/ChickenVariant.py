@@ -1,8 +1,9 @@
 # Generated from symbols.json for ::java::data::variants::chicken::ChickenVariant
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.data.variants.SpawnPrioritySelectors import SpawnPrioritySelectors
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.variants.chicken.ChickenModelType import ChickenModelType
@@ -10,8 +11,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class ChickenVariant(SpawnPrioritySelectors):
-    asset_id: str  # The chicken texture to use for this variant.
-    baby_asset_id: str  # The baby chicken texture to use for this variant.
+    asset_id: Annotated[str, IdSpec(registry='texture')]  # The chicken texture to use for this variant.
+    baby_asset_id: Annotated[str, IdSpec(registry='texture')]  # The baby chicken texture to use for this variant.
     model: ChickenModelType | None = None
 
 

@@ -1,7 +1,10 @@
 # Generated from symbols.json for ::java::data::recipe::RecipeListRef
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
-type RecipeListRef = str | list[str]
+type RecipeListRef = Annotated[str, IdSpec(registry='recipe', tags='allowed')] | list[Annotated[str, IdSpec(registry='recipe')]]
 
 
 # ~~~ MODEL DUMP ~~~

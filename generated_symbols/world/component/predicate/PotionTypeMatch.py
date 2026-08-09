@@ -1,7 +1,10 @@
 # Generated from symbols.json for ::java::world::component::predicate::PotionTypeMatch
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
-type PotionTypeMatch = str | list[str]
+type PotionTypeMatch = Annotated[str, IdSpec(registry='potion', tags='allowed')] | list[Annotated[str, IdSpec(registry='potion')]]
 
 
 # ~~~ MODEL DUMP ~~~

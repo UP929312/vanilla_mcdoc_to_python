@@ -2,6 +2,8 @@
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from runtime_metadata import IdSpec
+
 if TYPE_CHECKING:
     from generated_symbols.data.advancement.predicate.BlockPredicate import BlockPredicate
     from generated_symbols.data.advancement.predicate.FluidPredicate import FluidPredicate
@@ -23,9 +25,9 @@ class LightStruct:
 @dataclass(kw_only=True)
 class LocationPredicate:
     position: PositionStruct | None = None
-    biomes: str | list[str] | None = None
-    structures: str | list[str] | None = None
-    dimension: str | None = None
+    biomes: Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')] | list[Annotated[str, IdSpec(registry='worldgen/biome')]] | None = None
+    structures: Annotated[str, IdSpec(registry='worldgen/structure', tags='allowed')] | list[Annotated[str, IdSpec(registry='worldgen/structure')]] | None = None
+    dimension: Annotated[str, IdSpec(registry='dimension')] | None = None
     light: LightStruct | None = None  # Calculated using: `max(sky-darkening, block)`.
     block: BlockPredicate | None = None
     fluid: FluidPredicate | None = None

@@ -1,11 +1,13 @@
 # Generated from symbols.json for ::java::data::worldgen::material_rule::MaterialRuleRef
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.material_rule.MaterialRule import MaterialRule
 
 
-type MaterialRuleRef = str | MaterialRule
+type MaterialRuleRef = Annotated[str, IdSpec(registry='material_rule')] | MaterialRule
 
 
 # ~~~ MODEL DUMP ~~~

@@ -2,6 +2,8 @@
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from runtime_metadata import IdSpec
+
 if TYPE_CHECKING:
     from generated_symbols.data.timeline.EnvironmentAttributeTrackMap import EnvironmentAttributeTrackMap
     from generated_symbols.data.timeline.TimeMarkerMap import TimeMarkerMap
@@ -9,7 +11,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class Timeline:
-    clock: str  # The world clock this timeline is tied to.
+    clock: Annotated[str, IdSpec(registry='world_clock')]  # The world clock this timeline is tied to.
     period_ticks: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # When not present, the timeline will not repeat.
     time_markers: TimeMarkerMap | None = None
     tracks: EnvironmentAttributeTrackMap | None = None

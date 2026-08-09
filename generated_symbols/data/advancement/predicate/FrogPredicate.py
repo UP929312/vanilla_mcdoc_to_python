@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::data::advancement::predicate::FrogPredicate
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class FrogPredicate:
-    variant: str | list[str]
+    variant: Annotated[str, IdSpec(registry='frog_variant', tags='allowed')] | list[Annotated[str, IdSpec(registry='frog_variant')]]
 
 
 # ~~~ MODEL DUMP ~~~

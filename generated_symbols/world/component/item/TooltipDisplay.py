@@ -1,11 +1,14 @@
 # Generated from symbols.json for ::java::world::component::item::TooltipDisplay
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class TooltipDisplay:
     hide_tooltip: bool | None = None  # If `true`, the item will have no tooltip when hovered. Defaults to `false`.
-    hidden_components: list[str] | None = None  # List of components that should be hidden in the item tooltip.
+    hidden_components: list[Annotated[str, IdSpec(registry='data_component_type')]] | None = None  # List of components that should be hidden in the item tooltip.
 
 
 # ~~~ MODEL DUMP ~~~

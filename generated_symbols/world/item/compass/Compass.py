@@ -1,8 +1,9 @@
 # Generated from symbols.json for ::java::world::item::compass::Compass
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.world.item.ItemBase import ItemBase
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.world.item.compass.LodestonePos import LodestonePos
@@ -10,7 +11,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class Compass(ItemBase):
-    LodestoneDimension: str | None = None
+    LodestoneDimension: Annotated[str, IdSpec(registry='dimension')] | None = None
     LodestonePos: LodestonePos | None = None
     LodestoneTracked: bool | None = None  # Whether the compass should be linked to a lodestone. When true, the compass will reset if the lodestone at the position is removed.
 

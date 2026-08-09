@@ -1,11 +1,13 @@
 # Generated from symbols.json for ::java::world::entity::area_effect_cloud::AreaEffectCloud
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.world.entity.EntityBase import EntityBase
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.util.particle.Particle import Particle
+    from generated_symbols.world.component.item.PotionContents import PotionContents
 
 
 @dataclass(kw_only=True)
@@ -21,7 +23,7 @@ class AreaEffectCloud(EntityBase):
     RadiusOnUse: float | None = None  # Change in the radius when it is used.
     RadiusPerTick: float | None = None  # Change in the radius per tick.
     custom_particle: Particle | None = None  # If present, the particle that the area effect cloud displays instead of the default `entity_effect` particle based on the potion contents.
-    potion_contents: Any | None = None
+    potion_contents: PotionContents | Annotated[str, IdSpec(registry='potion')] | None = None
     potion_duration_scale: float | None = None  # The duration of the potion effect applied is scaled by this factor. Defaults to `1`. Will be `0.25` when throwing lingering potions.
 
 

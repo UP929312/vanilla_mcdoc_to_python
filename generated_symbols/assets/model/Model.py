@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::assets::model::Model
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, Literal
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.assets.model.CustomizableItemDisplayContext import CustomizableItemDisplayContext
@@ -17,9 +19,9 @@ class DisplayStructValueStruct:
 
 @dataclass(kw_only=True)
 class Model:
-    parent: str | None = None
+    parent: Annotated[str, IdSpec(registry='model')] | None = None
     ambientocclusion: bool | None = None
-    gui_light: str | None = None
+    gui_light: Literal['front'] | Literal['side'] | None = None
     textures: dict[str, str | TextureMaterial] | None = None
     elements: list[ModelElement] | None = None
     display: dict[CustomizableItemDisplayContext, DisplayStructValueStruct] | None = None

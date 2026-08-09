@@ -3,6 +3,7 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.world.entity.mob.LivingEntity import LivingEntity
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.util.GlobalPos import GlobalPos
@@ -22,7 +23,7 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class Player(LivingEntity):
     DataVersion: int | None = None  # Version of the player NBT structure
-    Dimension: str | None = None
+    Dimension: Annotated[str, IdSpec(registry='dimension')] | None = None
     LastDeathLocation: GlobalPos | None = None  # Location of the player's last death.
     playerGameType: Gamemode | None = None  # Game mode that the player is in.
     previousPlayerGameType: Gamemode | None = None  # Previous game mode that the player was in.
@@ -52,7 +53,7 @@ class Player(LivingEntity):
     recipeBook: RecipeBook | None = None  # Recipes that the player has.
     warden_spawn_tracker: WardenSpawnTracker | None = None  # Tracking the warden spawning process for this player.
     ender_pearls: list[EnderPearl] | None = None  # Ender pearls thrown by this player.
-    post_effects: list[str] | None = None
+    post_effects: list[Annotated[str, IdSpec(registry='post_effect')]] | None = None
     last_explosion_impact_pos: tuple[float, float, float] | None = None
     spawn_extra_particles_on_fall: bool | None = None
 

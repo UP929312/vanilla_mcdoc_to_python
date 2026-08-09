@@ -1,12 +1,14 @@
 # Generated from symbols.json for ::java::world::item::knowledge_book::KnowledgeBook
 from dataclasses import dataclass
+from typing import Annotated
 
 from generated_symbols.world.item.ItemBase import ItemBase
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class KnowledgeBook(ItemBase):
-    Recipes: list[str] | None = None
+    Recipes: list[Annotated[str, IdSpec(registry='recipe')]] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

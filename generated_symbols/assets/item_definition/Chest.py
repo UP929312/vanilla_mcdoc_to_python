@@ -2,13 +2,15 @@
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from runtime_metadata import IdSpec
+
 if TYPE_CHECKING:
     from generated_symbols.assets.item_definition.ChestType import ChestType
 
 
 @dataclass(kw_only=True)
 class Chest:
-    texture: str
+    texture: Annotated[str, IdSpec(registry='texture', path='entity/chest/')]
     openness: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None  # Defaults to `0`.
     chest_type: ChestType | None = None  # Defaults to `single`.
 

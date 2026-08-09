@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::world::block::BlockEntity
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.world.component.DataComponentPatch import DataComponentPatch
@@ -8,7 +10,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class BlockEntity:
-    id: str | None = None
+    id: Annotated[str, IdSpec(registry='block_entity_type')] | None = None
     x: int | None = None
     y: int | None = None
     z: int | None = None

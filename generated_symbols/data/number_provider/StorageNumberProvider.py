@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::data::number_provider::StorageNumberProvider
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class StorageNumberProvider:
-    storage: str
+    storage: Annotated[str, IdSpec(registry='storage')]
     path: str
 
 

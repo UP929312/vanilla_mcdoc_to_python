@@ -1,11 +1,14 @@
 # Generated from symbols.json for ::java::assets::equipment::TrimPredicate
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class TrimPredicate:
-    pattern: str | None = None
-    material: str | None = None
+    pattern: Annotated[str, IdSpec(registry='trim_pattern')] | None = None
+    material: Annotated[str, IdSpec(registry='trim_material')] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

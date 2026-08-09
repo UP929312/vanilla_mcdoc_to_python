@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::assets::shader::post::Pass
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.assets.shader.post.TargetInput import TargetInput
@@ -10,9 +12,9 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class Pass:
-    vertex_shader: str
-    fragment_shader: str
-    output: str
+    vertex_shader: Annotated[str, IdSpec(registry='shader/vertex')]
+    fragment_shader: Annotated[str, IdSpec(registry='shader/fragment')]
+    output: Annotated[str, IdSpec(registry='shader_target')]
     inputs: list[TargetInput | TextureInput] | None = None
     uniforms: UniformBlocks | None = None
 

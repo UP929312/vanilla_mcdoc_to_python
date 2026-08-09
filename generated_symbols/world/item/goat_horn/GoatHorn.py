@@ -1,12 +1,14 @@
 # Generated from symbols.json for ::java::world::item::goat_horn::GoatHorn
 from dataclasses import dataclass
+from typing import Annotated
 
 from generated_symbols.world.item.ItemBase import ItemBase
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class GoatHorn(ItemBase):
-    instrument: str | None = None
+    instrument: Annotated[str, IdSpec(registry='instrument')] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

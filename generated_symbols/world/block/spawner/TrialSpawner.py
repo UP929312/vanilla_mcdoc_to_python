@@ -2,6 +2,8 @@
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from runtime_metadata import IdSpec
+
 if TYPE_CHECKING:
     from generated_symbols.data.trial_spawner.TrialSpawnerConfig import TrialSpawnerConfig
     from generated_symbols.world.block.spawner.SpawnerEntry import SpawnerEntry
@@ -9,8 +11,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class TrialSpawner:
-    normal_config: TrialSpawnerConfig | str | None = None  # Spawning behavior when the player does not have the Bad Omen effect.
-    ominous_config: TrialSpawnerConfig | str | None = None  # Spawning behavior when the player has the Bad Omen effect.
+    normal_config: TrialSpawnerConfig | Annotated[str, IdSpec(registry='trial_spawner')] | None = None  # Spawning behavior when the player does not have the Bad Omen effect.
+    ominous_config: TrialSpawnerConfig | Annotated[str, IdSpec(registry='trial_spawner')] | None = None  # Spawning behavior when the player has the Bad Omen effect.
     required_player_range: Annotated[int, 'Range | `1`-`128` | both inclusive'] | None = None  # Maximum distance for players to activate the trial spawner, or join a battle
     target_cooldown_length: int | None = None  # Time in ticks for the cooldown period. Included the time spend dispensing the reward.
     registered_players: list[tuple[int, int, int, int]] | None = None  # Players that are have been nearby during the current battle
@@ -19,7 +21,7 @@ class TrialSpawner:
     next_mob_spawns_at: int | None = None  # Gametime in ticks when the next spawning attempt happens
     total_mobs_spawned: int | None = None
     spawn_data: SpawnerEntry | None = None  # The next entity to spawn, also controlls the entity displayed in the trial spawner
-    ejecting_loot_table: str | None = None  # The loot table selected to be used to determine the reward
+    ejecting_loot_table: Annotated[str, IdSpec(registry='loot_table')] | None = None  # The loot table selected to be used to determine the reward
 
 
 # ~~~ MODEL DUMP ~~~

@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::data::variants::BiomeCheck
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class BiomeCheck:
-    biomes: str | list[str]  # Checks if the entity is spawning in specific biomes.
+    biomes: Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')] | list[Annotated[str, IdSpec(registry='worldgen/biome')]]  # Checks if the entity is spawning in specific biomes.
 
 
 # ~~~ MODEL DUMP ~~~

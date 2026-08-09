@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::data::worldgen::template_pool::TemplatePool
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.template_pool.WeightedElement import WeightedElement
@@ -8,7 +10,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class TemplatePool:
-    fallback: str
+    fallback: Annotated[str, IdSpec(registry='worldgen/template_pool')]
     elements: list[WeightedElement]
     name: str | None = None
 

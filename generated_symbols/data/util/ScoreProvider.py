@@ -1,15 +1,24 @@
 # Generated from symbols.json for ::java::data::util::ScoreProvider
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Literal
 
 if TYPE_CHECKING:
     from generated_symbols.data.loot.EntityTarget import EntityTarget
 
 
 @dataclass(kw_only=True)
-class ScoreProviderStruct:
-    type: str
+class ScoreProviderStructContext:
+    type: Literal['minecraft:context']
+    target: EntityTarget
 
+
+@dataclass(kw_only=True)
+class ScoreProviderStructFixed:
+    type: Literal['minecraft:fixed']
+    name: str
+
+
+type ScoreProviderStruct = ScoreProviderStructContext | ScoreProviderStructFixed
 
 type ScoreProvider = EntityTarget | ScoreProviderStruct
 

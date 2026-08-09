@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::data::enchantment::effect::ApplyMobEffectEntityEffect
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.enchantment.LevelBasedValue import LevelBasedValue
@@ -8,7 +10,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class ApplyMobEffectEntityEffect:
-    to_apply: str | list[str]  # If multiple mob effects are specified, a random effect is selected.
+    to_apply: Annotated[str, IdSpec(registry='mob_effect', tags='allowed')] | list[Annotated[str, IdSpec(registry='mob_effect')]]  # If multiple mob effects are specified, a random effect is selected.
     min_duration: LevelBasedValue
     max_duration: LevelBasedValue
     min_amplifier: LevelBasedValue

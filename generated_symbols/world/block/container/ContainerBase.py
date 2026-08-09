@@ -1,14 +1,16 @@
 # Generated from symbols.json for ::java::world::block::container::ContainerBase
 from dataclasses import dataclass
+from typing import Annotated
 
 from generated_symbols.world.block.BlockEntity import BlockEntity
 from generated_symbols.world.block.Lockable import Lockable
 from generated_symbols.world.block.Nameable import Nameable
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class ContainerBase(BlockEntity, Nameable, Lockable):
-    LootTable: str | None = None  # Loot table that will populate this container.
+    LootTable: Annotated[str, IdSpec(registry='loot_table', empty='allowed')] | None = None  # Loot table that will populate this container.
     LootTableSeed: int | None = None  # Seed of the loot table.
 
 

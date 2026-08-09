@@ -1,6 +1,6 @@
 # Generated from symbols.json for ::java::data::dialog::DialogBase
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Literal
 
 if TYPE_CHECKING:
     from generated_symbols.data.dialog.AfterAction import AfterAction
@@ -10,13 +10,50 @@ if TYPE_CHECKING:
 
 
 @dataclass(kw_only=True)
-class DialogBase:
+class DialogBaseNone:
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None
     inputs: list[InputControl] | None = None
     can_close_with_escape: bool | None = None  # Whether the dialog can be closed with ESC key. Defaults to `true`.
     after_action: AfterAction | None = None  # An additional operation performed on dialog after click or submit actions. Defaults to `close`.  Value `none` requires `pause` set to `false`.
+    pause: bool | None = None  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.
+
+
+@dataclass(kw_only=True)
+class DialogBaseClose:
+    title: Text
+    external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
+    body: DialogBody | list[DialogBody] | None = None
+    inputs: list[InputControl] | None = None
+    can_close_with_escape: bool | None = None  # Whether the dialog can be closed with ESC key. Defaults to `true`.
+    after_action: Literal['minecraft:close'] | None = None  # An additional operation performed on dialog after click or submit actions. Defaults to `close`.  Value `none` requires `pause` set to `false`.
+    pause: bool | None = None  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.
+
+
+@dataclass(kw_only=True)
+class DialogBaseNone:
+    title: Text
+    pause: Literal[False]  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.  The currently selected `after_action` only supports the value `false`
+    external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
+    body: DialogBody | list[DialogBody] | None = None
+    inputs: list[InputControl] | None = None
+    can_close_with_escape: bool | None = None  # Whether the dialog can be closed with ESC key. Defaults to `true`.
+    after_action: Literal['minecraft:none'] | None = None  # An additional operation performed on dialog after click or submit actions. Defaults to `close`.  Value `none` requires `pause` set to `false`.
+
+
+@dataclass(kw_only=True)
+class DialogBaseWaitForResponse:
+    title: Text
+    external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
+    body: DialogBody | list[DialogBody] | None = None
+    inputs: list[InputControl] | None = None
+    can_close_with_escape: bool | None = None  # Whether the dialog can be closed with ESC key. Defaults to `true`.
+    after_action: Literal['minecraft:wait_for_response'] | None = None  # An additional operation performed on dialog after click or submit actions. Defaults to `close`.  Value `none` requires `pause` set to `false`.
+    pause: bool | None = None  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.
+
+
+type DialogBase = DialogBaseNone | DialogBaseClose | DialogBaseNone | DialogBaseWaitForResponse
 
 
 # ~~~ MODEL DUMP ~~~

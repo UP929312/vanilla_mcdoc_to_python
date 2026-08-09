@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::assets::item_definition::Head
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.assets.item_definition.HeadType import HeadType
@@ -9,7 +11,7 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class Head:
     kind: HeadType
-    texture: str | None = None  # Texture to use instead of the texture from `kind`.
+    texture: Annotated[str, IdSpec(registry='texture', path='entity/')] | None = None  # Texture to use instead of the texture from `kind`.
     animation: float | None = None  # Controls the animation time for piglin and dragon heads. Defaults to `0`.
 
 

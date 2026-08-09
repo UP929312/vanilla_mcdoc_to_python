@@ -1,11 +1,13 @@
 # Generated from symbols.json for ::java::data::worldgen::feature::placement::PlacedFeatureRef
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.placement.PlacedFeature import PlacedFeature
 
 
-type PlacedFeatureRef = PlacedFeature | str
+type PlacedFeatureRef = PlacedFeature | Annotated[str, IdSpec(registry='worldgen/placed_feature')]
 
 
 # ~~~ MODEL DUMP ~~~

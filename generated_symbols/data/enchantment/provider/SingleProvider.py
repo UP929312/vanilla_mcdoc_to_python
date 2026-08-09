@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::data::enchantment::provider::SingleProvider
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.IntProvider import IntProvider
@@ -8,7 +10,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class SingleProvider:
-    enchantment: str
+    enchantment: Annotated[str, IdSpec(registry='enchantment')]
     level: IntProvider[int] | int
 
 

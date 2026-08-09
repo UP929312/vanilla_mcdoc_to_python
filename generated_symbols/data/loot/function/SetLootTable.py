@@ -1,13 +1,15 @@
 # Generated from symbols.json for ::java::data::loot::function::SetLootTable
 from dataclasses import dataclass
+from typing import Annotated
 
 from generated_symbols.data.loot.function.Conditions import Conditions
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class SetLootTable(Conditions):
-    type: str  # The block entity type of the container.
-    tag: str  # The loot table to set to the container block item.
+    type: Annotated[str, IdSpec(registry='block_entity_type')]  # The block entity type of the container.
+    tag: Annotated[str, IdSpec(registry='loot_table')]  # The loot table to set to the container block item.
     seed: int | None = None  # The container seed to use. Defaults to a random seed.
 
 

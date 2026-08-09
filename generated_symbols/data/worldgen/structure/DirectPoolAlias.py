@@ -1,11 +1,14 @@
 # Generated from symbols.json for ::java::data::worldgen::structure::DirectPoolAlias
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class DirectPoolAlias:
-    alias: str
-    target: str
+    alias: Annotated[str, IdSpec()]
+    target: Annotated[str, IdSpec(registry='worldgen/template_pool')]
 
 
 # ~~~ MODEL DUMP ~~~

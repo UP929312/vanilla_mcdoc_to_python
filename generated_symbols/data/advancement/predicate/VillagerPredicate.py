@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::data::advancement::predicate::VillagerPredicate
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class VillagerPredicate:
-    variant: str
+    variant: Annotated[str, IdSpec(registry='villager_type')]
 
 
 # ~~~ MODEL DUMP ~~~

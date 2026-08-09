@@ -1,9 +1,10 @@
 # Generated from symbols.json for ::java::data::worldgen::attribute::modifier::FloatAttributeModifier
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Any, Generic, TypeVar
+from typing import TYPE_CHECKING, Generic, TypeVar
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.attribute.modifier.FloatModifierType import FloatModifierType
+    from generated_symbols.data.worldgen.attribute.modifier.FloatWithAlpha import FloatWithAlpha
 
 
 T = TypeVar('T')
@@ -11,7 +12,7 @@ T = TypeVar('T')
 @dataclass(kw_only=True)
 class FloatAttributeModifier(Generic[T]):
     modifier: FloatModifierType
-    argument: Any[T]
+    argument: T | float | FloatWithAlpha[T]
 
 
 # ~~~ MODEL DUMP ~~~

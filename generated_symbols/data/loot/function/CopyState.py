@@ -1,14 +1,15 @@
 # Generated from symbols.json for ::java::data::loot::function::CopyState
 from dataclasses import dataclass
-from typing import Any
+from typing import Annotated
 
 from generated_symbols.data.loot.function.Conditions import Conditions
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class CopyState(Conditions):
-    block: str
-    properties: list[Any]
+    block: Annotated[str, IdSpec(registry='block')]
+    properties: list[str]
 
 
 # ~~~ MODEL DUMP ~~~

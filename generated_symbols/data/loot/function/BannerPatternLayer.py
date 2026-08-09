@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::data::loot::function::BannerPatternLayer
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.util.color.DyeColor import DyeColor
@@ -8,7 +10,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class BannerPatternLayer:
-    pattern: str
+    pattern: Annotated[str, IdSpec(registry='banner_pattern')]
     color: DyeColor
 
 

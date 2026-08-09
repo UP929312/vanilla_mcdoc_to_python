@@ -1,6 +1,6 @@
 # Generated from symbols.json for ::java::data::worldgen::attribute::DiscreteAttribute
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Generic, TypeVar
+from typing import TYPE_CHECKING, Annotated, Generic, Literal, TypeVar
 
 from generated_symbols.data.timeline.AttributeTrackBase import AttributeTrackBase
 
@@ -19,7 +19,7 @@ class KeyframesStruct(Generic[T]):
 @dataclass(kw_only=True)
 class AttributeTrackStruct(AttributeTrackBase, Generic[T]):
     keyframes: Annotated[list[KeyframesStruct[T]], 'Length = 1 (inclusive) and above']
-    modifier: str | None = None
+    modifier: Literal['override'] | None = None
 
 
 @dataclass(kw_only=True)

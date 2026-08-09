@@ -1,13 +1,13 @@
 # Generated from symbols.json for ::java::data::worldgen::attribute::modifier::OverrideModifier
 from dataclasses import dataclass
-from typing import Generic, TypeVar
+from typing import Generic, Literal, TypeVar
 
 
 T = TypeVar('T')
 
 @dataclass(kw_only=True)
 class OverrideModifier(Generic[T]):
-    modifier: str
+    modifier: Literal['override']
     argument: T
 
 

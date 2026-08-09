@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::world::component::block::ContainerLoot
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class ContainerLoot:
-    loot_table: str
+    loot_table: Annotated[str, IdSpec(registry='loot_table')]
     seed: int | None = None
 
 

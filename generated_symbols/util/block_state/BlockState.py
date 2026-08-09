@@ -1,15 +1,20 @@
 # Generated from symbols.json for ::java::util::block_state::BlockState
 from dataclasses import dataclass
-from typing import Any
+from typing import Annotated
+
+from runtime_metadata import IdSpec
+
+
+type PropertiesStructBlockStatesNone = dict[str, str]
 
 
 @dataclass(kw_only=True)
 class BlockStateStruct:
-    id: str
-    properties: Any | None = None
+    id: Annotated[str, IdSpec(registry='block')]
+    properties: PropertiesStructBlockStatesNone | None = None
 
 
-type BlockState = str | BlockStateStruct
+type BlockState = Annotated[str, IdSpec(registry='block')] | BlockStateStruct
 
 
 # ~~~ MODEL DUMP ~~~

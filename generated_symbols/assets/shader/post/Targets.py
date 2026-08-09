@@ -1,11 +1,13 @@
 # Generated from symbols.json for ::java::assets::shader::post::Targets
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.assets.shader.post.InternalTarget import InternalTarget
 
 
-type Targets = dict[str, InternalTarget]
+type Targets = dict[Annotated[str, IdSpec(registry='shader_target')], InternalTarget]
 
 
 # ~~~ MODEL DUMP ~~~

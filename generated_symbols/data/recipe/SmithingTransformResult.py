@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::data::recipe::SmithingTransformResult
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class SmithingTransformResult:
-    item: str
+    item: Annotated[str, IdSpec(registry='item')]
 
 
 # ~~~ MODEL DUMP ~~~

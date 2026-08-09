@@ -1,9 +1,10 @@
 # Generated from symbols.json for ::java::world::entity::mob::breedable::tamable::Wolf
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.world.entity.mob.NeutralMob import NeutralMob
 from generated_symbols.world.entity.mob.breedable.tamable.Tamable import Tamable
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.util.DyeColorByte import DyeColorByte
@@ -12,8 +13,8 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class Wolf(Tamable, NeutralMob):
     CollarColor: DyeColorByte | None = None  # Collar color, present for wild wolfs. Defaults to 14 (red).
-    variant: str | None = None
-    sound_variant: str | None = None
+    variant: Annotated[str, IdSpec(registry='wolf_variant')] | None = None
+    sound_variant: Annotated[str, IdSpec(registry='wolf_sound_variant')] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

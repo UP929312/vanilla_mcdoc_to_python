@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::data::worldgen::dimension::biome_source::BiomeNoiseEntry
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.dimension.biome_source.ClimateParameters import ClimateParameters
@@ -8,7 +10,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class BiomeNoiseEntry:
-    biome: str
+    biome: Annotated[str, IdSpec(registry='worldgen/biome')]
     parameters: ClimateParameters
 
 

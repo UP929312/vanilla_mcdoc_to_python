@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::world::component::item::AttributeModifier
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.util.attribute.AttributeOperation import AttributeOperation
@@ -10,8 +12,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class AttributeModifier:
-    type: str
-    id: str  # Used when equipping and unequipping the item to identify which modifier to add or remove from the entity.
+    type: Annotated[str, IdSpec(registry='attribute')]
+    id: Annotated[str, IdSpec(registry='attribute_modifier')]  # Used when equipping and unequipping the item to identify which modifier to add or remove from the entity.
     amount: float  # Change in the attribute.
     operation: AttributeOperation
     slot: EquipmentSlotGroup | None = None  # Slot or slot type the item must be in for the modifier to take effect. Defaults to `any`.

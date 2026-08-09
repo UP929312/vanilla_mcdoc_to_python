@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::data::worldgen::feature::block_predicate::MatchingBiomesPredicate
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class MatchingBiomesPredicate:
-    biomes: str | list[str]
+    biomes: Annotated[str, IdSpec(registry='biome', tags='allowed')] | list[Annotated[str, IdSpec(registry='biome')]]
 
 
 # ~~~ MODEL DUMP ~~~

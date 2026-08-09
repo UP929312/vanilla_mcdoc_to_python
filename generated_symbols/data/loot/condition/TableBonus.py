@@ -2,10 +2,12 @@
 from dataclasses import dataclass
 from typing import Annotated
 
+from runtime_metadata import IdSpec
+
 
 @dataclass(kw_only=True)
 class TableBonus:
-    enchantment: str
+    enchantment: Annotated[str, IdSpec(registry='enchantment')]
     chances: list[Annotated[float, 'Range | `0`-`1` | both inclusive']]  # Probabilities for each enchantment level
 
 

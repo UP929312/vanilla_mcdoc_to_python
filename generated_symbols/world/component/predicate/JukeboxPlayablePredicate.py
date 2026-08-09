@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::world::component::predicate::JukeboxPlayablePredicate
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class JukeboxPlayablePredicate:
-    song: str | list[str] | None = None
+    song: Annotated[str, IdSpec(registry='jukebox_song', tags='allowed')] | list[Annotated[str, IdSpec(registry='jukebox_song')]] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

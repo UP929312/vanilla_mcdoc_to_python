@@ -1,8 +1,10 @@
 # Generated from symbols.json for ::java::world::component::item::DebugStickState
-from typing import Any
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
-type DebugStickState = dict[str, Any]
+type DebugStickState = dict[Annotated[str, IdSpec(registry='block')], str]
 
 
 # ~~~ MODEL DUMP ~~~

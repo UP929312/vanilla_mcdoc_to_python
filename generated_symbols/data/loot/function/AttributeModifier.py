@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::data::loot::function::AttributeModifier
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.number_provider.NumberProviderRef import NumberProviderRef
@@ -10,8 +12,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class AttributeModifier:
-    attribute: str  # Attribute type to modify.
-    id: str  # The unique identifier of this attribute modifier.
+    attribute: Annotated[str, IdSpec(registry='attribute')]  # Attribute type to modify.
+    id: Annotated[str, IdSpec(registry='attribute_modifier')]  # The unique identifier of this attribute modifier.
     amount: NumberProviderRef
     operation: AttributeOperation  # The operation used for this modifier.
     slot: EquipmentSlotGroup | list[EquipmentSlotGroup]  # If a list, one of the listed slots will be chosen randomly.

@@ -1,8 +1,9 @@
 # Generated from symbols.json for ::java::world::entity::painting::Painting
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.world.entity.BlockAttachedEntity import BlockAttachedEntity
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.util.direction.HorizontalDirectionByte import HorizontalDirectionByte
@@ -11,7 +12,7 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class Painting(BlockAttachedEntity):
     facing: HorizontalDirectionByte | None = None  # Direction it is facing.
-    variant: str | None = None  # Type of painting.
+    variant: Annotated[str, IdSpec(registry='painting_variant')] | None = None  # Type of painting.
 
 
 # ~~~ MODEL DUMP ~~~

@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::world::block::banner::BannerPatternLayer
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.variants.banner_pattern.BannerPattern import BannerPattern
@@ -10,7 +12,7 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class BannerPatternLayer:
     color: DyeColor  # The dye color of the pattern.
-    pattern: str | BannerPattern  # The banner pattern.
+    pattern: Annotated[str, IdSpec(registry='banner_pattern')] | BannerPattern  # The banner pattern.
 
 
 # ~~~ MODEL DUMP ~~~

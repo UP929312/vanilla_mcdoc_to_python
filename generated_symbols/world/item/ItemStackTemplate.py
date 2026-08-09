@@ -1,11 +1,13 @@
 # Generated from symbols.json for ::java::world::item::ItemStackTemplate
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.world.item.ItemStack import ItemStack
 
 
-type ItemStackTemplate = ItemStack | str
+type ItemStackTemplate = ItemStack | Annotated[str, IdSpec(registry='item', exclude=('air',))]
 
 
 # ~~~ MODEL DUMP ~~~

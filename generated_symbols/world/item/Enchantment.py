@@ -2,10 +2,12 @@
 from dataclasses import dataclass
 from typing import Annotated
 
+from runtime_metadata import IdSpec
+
 
 @dataclass(kw_only=True)
 class Enchantment:
-    id: str | None = None  # Which enchantment is being described.
+    id: Annotated[str, IdSpec(registry='enchantment')] | None = None  # Which enchantment is being described.
     lvl: Annotated[int, 'Range | `0`-`255` | both inclusive'] | None = None  # Which level the enchantment is.
 
 

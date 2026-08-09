@@ -1,8 +1,9 @@
 # Generated from symbols.json for ::java::data::loot::function::EnchantWithLevels
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.data.loot.function.Conditions import Conditions
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.number_provider.NumberProviderRef import NumberProviderRef
@@ -11,7 +12,7 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class EnchantWithLevels(Conditions):
     levels: NumberProviderRef  # The levels to enchant this item with.
-    options: str | list[str] | None = None  # The allowed enchantments. If omitted, all enchantments applicable to the item are possible.
+    options: Annotated[str, IdSpec(registry='enchantment', tags='allowed')] | list[Annotated[str, IdSpec(registry='enchantment')]] | None = None  # The allowed enchantments. If omitted, all enchantments applicable to the item are possible.
     include_additional_cost_component: bool | None = None  # Whether to add `additional_trade_cost` component to the enchanted item. Additional cost value is equal to the level cost determined by `levels`. Defaults to `false`.
 
 

@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::world::entity::mob::WaypointIcon
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.util.color.RGB import RGB
@@ -8,7 +10,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class WaypointIcon:
-    style: str
+    style: Annotated[str, IdSpec(registry='waypoint_style')]
     color: RGB | None = None
 
 

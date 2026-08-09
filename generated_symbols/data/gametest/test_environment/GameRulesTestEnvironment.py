@@ -1,11 +1,13 @@
 # Generated from symbols.json for ::java::data::gametest::test_environment::GameRulesTestEnvironment
 from dataclasses import dataclass
-from typing import Any
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class GameRulesTestEnvironment:
-    rules: dict[str, Any]
+    rules: dict[Annotated[str, IdSpec(registry='game_rule')], bool | Annotated[int, 'Range | Min `-1` and above | inclusive'] | Annotated[int, 'Range | Min `1` and above | inclusive'] | Annotated[int, 'Range | Min `0` and above | inclusive'] | Annotated[int, 'Range | `1`-`1000` | both inclusive'] | Annotated[int, 'Range | `0`-`8` | both inclusive']]
 
 
 # ~~~ MODEL DUMP ~~~

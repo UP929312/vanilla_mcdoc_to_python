@@ -2,6 +2,8 @@
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from runtime_metadata import IdSpec
+
 if TYPE_CHECKING:
     from generated_symbols.data.gametest.test_environment.TestEnvironment import TestEnvironment
     from generated_symbols.util.Rotation import Rotation
@@ -9,8 +11,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class TestData:
-    environment: str | TestEnvironment  # The test environment to run this test as part of.
-    structure: str  # Structure NBT file to use for the test.
+    environment: Annotated[str, IdSpec(registry='test_environment')] | TestEnvironment  # The test environment to run this test as part of.
+    structure: Annotated[str, IdSpec(registry='structure')]  # Structure NBT file to use for the test.
     max_ticks: Annotated[int, 'Range | Min `1` and above | inclusive']  # Maximum number of ticks allowed to pass before the test is considered timed out.
     setup_ticks: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # Ticks to wait after placing the structure before starting the test. Defaults to `0`.
     required: bool | None = None  # Whether the test is considered required to pass for the full test suite to pass. Defaults to `true`.

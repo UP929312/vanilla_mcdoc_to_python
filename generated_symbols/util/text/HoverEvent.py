@@ -1,14 +1,34 @@
 # Generated from symbols.json for ::java::util::text::HoverEvent
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated, Literal
+
+from generated_symbols.world.item.ItemStack import ItemStack
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.util.text.HoverEventAction import HoverEventAction
+    from generated_symbols.util.text.Text import Text
 
 
 @dataclass(kw_only=True)
-class HoverEvent:
-    action: HoverEventAction
+class HoverEventShowEntity:
+    action: Literal['minecraft:show_entity']
+    id: Annotated[str, IdSpec(registry='entity_type')]
+    uuid: tuple[int, int, int, int] | str
+    name: Text | None = None
+
+
+@dataclass(kw_only=True)
+class HoverEventShowItem(ItemStack):
+    action: Literal['minecraft:show_item']
+
+
+@dataclass(kw_only=True)
+class HoverEventShowText:
+    action: Literal['minecraft:show_text']
+    value: Text
+
+
+type HoverEvent = HoverEventShowEntity | HoverEventShowItem | HoverEventShowText
 
 
 # ~~~ MODEL DUMP ~~~

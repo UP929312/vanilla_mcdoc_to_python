@@ -1,7 +1,8 @@
 # Generated from symbols.json for ::java::data::loot::ItemStackTarget
+from typing import Literal
 
 
-type ItemStackTarget = str
+type ItemStackTarget = Literal['tool']
 
 
 # ~~~ MODEL DUMP ~~~

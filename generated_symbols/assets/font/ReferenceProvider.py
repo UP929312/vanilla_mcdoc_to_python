@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::assets::font::ReferenceProvider
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class ReferenceProvider:
-    id: str
+    id: Annotated[str, IdSpec(registry='font')]
 
 
 # ~~~ MODEL DUMP ~~~

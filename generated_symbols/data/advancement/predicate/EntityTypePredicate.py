@@ -1,7 +1,10 @@
 # Generated from symbols.json for ::java::data::advancement::predicate::EntityTypePredicate
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
-type EntityTypePredicate = str | list[str]
+type EntityTypePredicate = Annotated[str, IdSpec(registry='entity_type', tags='allowed')] | list[Annotated[str, IdSpec(registry='entity_type')]]
 
 
 # ~~~ MODEL DUMP ~~~

@@ -1,7 +1,10 @@
 # Generated from symbols.json for ::java::world::block::furnace::RecipesUsed
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
-type RecipesUsed = dict[str, int]
+type RecipesUsed = dict[Annotated[str, IdSpec(registry='recipe')], int]
 
 
 # ~~~ MODEL DUMP ~~~

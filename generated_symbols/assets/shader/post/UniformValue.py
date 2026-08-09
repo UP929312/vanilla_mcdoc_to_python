@@ -1,6 +1,6 @@
 # Generated from symbols.json for ::java::assets::shader::post::UniformValue
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from generated_symbols.assets.shader.post.UniformValueType import UniformValueType
@@ -9,7 +9,7 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class UniformValue:
     type: UniformValueType
-    value: Any
+    value: float | int | tuple[int, int, int] | tuple[float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float] | tuple[float, float] | tuple[float, float, float] | tuple[float, float, float, float]
     name: str | None = None  # Unused by the game, but good to set in practice.
 
 

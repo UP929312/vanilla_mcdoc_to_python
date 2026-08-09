@@ -1,8 +1,9 @@
 # Generated from symbols.json for ::java::data::variants::zombie_nautilus::ZombieNautilusVariant
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.data.variants.SpawnPrioritySelectors import SpawnPrioritySelectors
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.variants.zombie_nautilus.ZombieNautilusModelType import ZombieNautilusModelType
@@ -10,7 +11,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class ZombieNautilusVariant(SpawnPrioritySelectors):
-    asset_id: str  # The zombie nautilus texture to use for this variant.
+    asset_id: Annotated[str, IdSpec(registry='texture')]  # The zombie nautilus texture to use for this variant.
     model: ZombieNautilusModelType | None = None
 
 

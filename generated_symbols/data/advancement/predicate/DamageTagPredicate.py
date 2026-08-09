@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::data::advancement::predicate::DamageTagPredicate
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class DamageTagPredicate:
-    id: str | list[str]
+    id: Annotated[str, IdSpec(registry='damage_type', tags='allowed')] | list[Annotated[str, IdSpec(registry='damage_type')]]
     expected: bool  # Whether the damage is expected to have or not have the tag.
 
 

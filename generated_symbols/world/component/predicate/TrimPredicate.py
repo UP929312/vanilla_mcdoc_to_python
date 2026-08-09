@@ -1,11 +1,14 @@
 # Generated from symbols.json for ::java::world::component::predicate::TrimPredicate
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class TrimPredicate:
-    material: str | list[str] | None = None
-    pattern: str | list[str] | None = None
+    material: Annotated[str, IdSpec(registry='trim_material', tags='allowed')] | list[Annotated[str, IdSpec(registry='trim_material')]] | None = None
+    pattern: Annotated[str, IdSpec(registry='trim_pattern', tags='allowed')] | list[Annotated[str, IdSpec(registry='trim_pattern')]] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

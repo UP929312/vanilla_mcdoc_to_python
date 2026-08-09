@@ -1,12 +1,17 @@
 # Generated from symbols.json for ::java::data::loot::condition::BlockStateProperty
 from dataclasses import dataclass
-from typing import Any
+from typing import Annotated
+
+from runtime_metadata import IdSpec
+
+
+type PropertiesStructBlockStatesNone = dict[str, str]
 
 
 @dataclass(kw_only=True)
 class BlockStateProperty:
-    block: str
-    properties: Any | None = None
+    block: Annotated[str, IdSpec(registry='block')]
+    properties: PropertiesStructBlockStatesNone | None = None
 
 
 # ~~~ MODEL DUMP ~~~

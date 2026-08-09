@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::data::loot::LootTable
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.item_modifier.ItemModifier import ItemModifier
@@ -13,7 +15,7 @@ class LootTable:
     type: LootContextParamSets | None = None
     pools: list[LootPool] | None = None
     modifier: ItemModifier | None = None
-    random_sequence: str | None = None
+    random_sequence: Annotated[str, IdSpec(registry='random_sequence', definition=True)] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

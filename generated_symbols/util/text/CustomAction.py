@@ -1,11 +1,13 @@
 # Generated from symbols.json for ::java::util::text::CustomAction
 from dataclasses import dataclass
-from typing import Any
+from typing import Annotated, Any
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class CustomAction:
-    id: str  # ID of a custom action. Has no functionality on vanilla servers.
+    id: Annotated[str, IdSpec()]  # ID of a custom action. Has no functionality on vanilla servers.
     payload: Any | None = None
 
 

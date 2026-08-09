@@ -1,13 +1,15 @@
 # Generated from symbols.json for ::java::data::loot::function::EnchantedCountIncrease
 from dataclasses import dataclass
+from typing import Annotated
 
 from generated_symbols.data.loot.function.Conditions import Conditions
 from generated_symbols.data.loot.function.EnchantedCountBase import EnchantedCountBase
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class EnchantedCountIncrease(EnchantedCountBase, Conditions):
-    enchantment: str  # Enchantment that increases yields.
+    enchantment: Annotated[str, IdSpec(registry='enchantment')]  # Enchantment that increases yields.
 
 
 # ~~~ MODEL DUMP ~~~

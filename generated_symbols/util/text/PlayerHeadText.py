@@ -1,6 +1,6 @@
 # Generated from symbols.json for ::java::util::text::PlayerHeadText
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Literal
 
 from generated_symbols.util.text.ObjectTextConfig import ObjectTextConfig
 from generated_symbols.util.text.TextBase import TextBase
@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 class PlayerHeadText(ObjectTextConfig, TextBase):
     player: Profile
     hat: bool | None = None  # Whether the head layer is rendered. Defaults to `true`.
-    object: str | None = None
-    type: str | None = None
+    object: Literal['player'] | None = None
+    type: Literal['object'] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

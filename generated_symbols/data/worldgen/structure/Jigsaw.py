@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::data::worldgen::structure::Jigsaw
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Any
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.HeightProvider import HeightProvider
     from generated_symbols.data.worldgen.HeightmapType import HeightmapType
+    from generated_symbols.data.worldgen.structure.JigsawDistanceLimits import JigsawDistanceLimits
     from generated_symbols.data.worldgen.structure.LiquidSettings import LiquidSettings
     from generated_symbols.data.worldgen.structure.PoolAlias import PoolAlias
 
@@ -17,12 +20,12 @@ class DimensionPaddingStruct:
 
 @dataclass(kw_only=True)
 class Jigsaw:
-    start_pool: str
+    start_pool: Annotated[str, IdSpec(registry='worldgen/template_pool')]
     size: Annotated[int, 'Range | `1`-`20` | both inclusive']
     start_height: HeightProvider
-    max_distance_from_center: Any
+    max_distance_from_center: Annotated[int, 'Range | `1`-`128` | both inclusive'] | JigsawDistanceLimits[Annotated[int, 'Range | `1`-`128` | both inclusive']] | Annotated[int, 'Range | `1`-`128` | both inclusive'] | Annotated[int, 'Range | `1`-`116` | both inclusive'] | JigsawDistanceLimits[Annotated[int, 'Range | `1`-`116` | both inclusive']] | Annotated[int, 'Range | `1`-`116` | both inclusive']
     use_expansion_hack: bool
-    start_jigsaw_name: str | None = None
+    start_jigsaw_name: Annotated[str, IdSpec()] | None = None
     project_start_to_heightmap: HeightmapType | None = None
     pool_aliases: list[PoolAlias] | None = None
     dimension_padding: Annotated[int, 'Range | Min `0` and above | inclusive'] | DimensionPaddingStruct | None = None

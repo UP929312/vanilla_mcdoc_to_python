@@ -2,6 +2,8 @@
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from runtime_metadata import IdSpec
+
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.FloatProvider import FloatProvider
     from generated_symbols.data.worldgen.IntProvider import IntProvider
@@ -12,7 +14,7 @@ if TYPE_CHECKING:
 class SpeleothemClusterConfig:
     base_block: BlockState
     pointed_block: BlockState
-    replaceable_blocks: list[str] | str
+    replaceable_blocks: list[Annotated[str, IdSpec(registry='block')]] | Annotated[str, IdSpec(registry='block', tags='allowed')]
     floor_to_ceiling_search_range: Annotated[int, 'Range | `1`-`512` | both inclusive']
     height: IntProvider[Annotated[int, 'Range | `0`-`128` | both inclusive']] | Annotated[int, 'Range | `0`-`128` | both inclusive']
     radius: IntProvider[Annotated[int, 'Range | `0`-`128` | both inclusive']] | Annotated[int, 'Range | `0`-`128` | both inclusive']

@@ -1,11 +1,13 @@
 # Generated from symbols.json for ::java::data::slot_source::SlotSource
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.slot_source.TypedSlotSource import TypedSlotSource
 
 
-type SlotSource = TypedSlotSource | list[SlotSource] | str
+type SlotSource = TypedSlotSource | list[SlotSource] | Annotated[str, IdSpec(registry='slot_source', tags='allowed')]
 
 
 # ~~~ MODEL DUMP ~~~

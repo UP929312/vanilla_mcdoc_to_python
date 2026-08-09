@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::data::worldgen::processor_list::AppendLoot
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class AppendLoot:
-    loot_table: str
+    loot_table: Annotated[str, IdSpec(registry='loot_table')]
 
 
 # ~~~ MODEL DUMP ~~~

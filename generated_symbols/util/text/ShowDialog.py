@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::util::text::ShowDialog
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.dialog.Dialog import Dialog
@@ -8,7 +10,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class ShowDialog:
-    dialog: str | Dialog
+    dialog: Annotated[str, IdSpec(registry='dialog')] | Dialog
 
 
 # ~~~ MODEL DUMP ~~~

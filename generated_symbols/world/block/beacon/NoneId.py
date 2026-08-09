@@ -1,7 +1,8 @@
 # Generated from symbols.json for ::java::world::block::beacon::NoneId
+from typing import Literal
 
 
-type NoneId = int
+type NoneId = Literal[-1]
 
 
 # ~~~ MODEL DUMP ~~~

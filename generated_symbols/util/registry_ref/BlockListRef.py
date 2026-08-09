@@ -1,7 +1,10 @@
 # Generated from symbols.json for ::java::util::registry_ref::BlockListRef
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
-type BlockListRef = str | list[str]
+type BlockListRef = Annotated[str, IdSpec(registry='block', tags='allowed')] | list[Annotated[str, IdSpec(registry='block')]]
 
 
 # ~~~ MODEL DUMP ~~~

@@ -1,10 +1,29 @@
 # Generated from symbols.json for ::java::data::worldgen::feature::tree::FeatureSize
 from dataclasses import dataclass
+from typing import Annotated, Literal
 
 
 @dataclass(kw_only=True)
-class FeatureSize:
-    type: str
+class FeatureSizeThreeLayersFeatureSize:
+    type: Literal['minecraft:three_layers_feature_size']
+    min_clipped_height: Annotated[float, 'Range | `0`-`80` | both inclusive'] | None = None
+    limit: Annotated[int, 'Range | `0`-`80` | both inclusive'] | None = None
+    upper_limit: Annotated[int, 'Range | `0`-`80` | both inclusive'] | None = None
+    lower_size: Annotated[int, 'Range | `0`-`16` | both inclusive'] | None = None
+    middle_size: Annotated[int, 'Range | `0`-`16` | both inclusive'] | None = None
+    upper_size: Annotated[int, 'Range | `0`-`16` | both inclusive'] | None = None
+
+
+@dataclass(kw_only=True)
+class FeatureSizeTwoLayersFeatureSize:
+    type: Literal['minecraft:two_layers_feature_size']
+    min_clipped_height: Annotated[float, 'Range | `0`-`80` | both inclusive'] | None = None
+    limit: Annotated[int, 'Range | `0`-`81` | both inclusive'] | None = None
+    lower_size: Annotated[int, 'Range | `0`-`16` | both inclusive'] | None = None
+    upper_size: Annotated[int, 'Range | `0`-`16` | both inclusive'] | None = None
+
+
+type FeatureSize = FeatureSizeThreeLayersFeatureSize | FeatureSizeTwoLayersFeatureSize
 
 
 # ~~~ MODEL DUMP ~~~

@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::data::enchantment::effect::AttributeEffect
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.enchantment.LevelBasedValue import LevelBasedValue
@@ -9,8 +11,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class AttributeEffect:
-    attribute: str
-    id: str  # Used when equipping and unequipping the item to identify which modifier to add or remove from the entity.  Postfixed with the slot name when the enchanted item is equipped.
+    attribute: Annotated[str, IdSpec(registry='attribute')]
+    id: Annotated[str, IdSpec(registry='attribute_modifier')]  # Used when equipping and unequipping the item to identify which modifier to add or remove from the entity.  Postfixed with the slot name when the enchanted item is equipped.
     amount: LevelBasedValue  # Change in the attribute.
     operation: AttributeOperation  # The attribute operation to use.
 

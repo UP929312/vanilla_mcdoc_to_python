@@ -1,11 +1,13 @@
 # Generated from symbols.json for ::java::assets::item_definition::ContextDimension
 from dataclasses import dataclass
+from typing import Annotated
 
 from generated_symbols.assets.item_definition.SelectCases import SelectCases
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
-class ContextDimension(SelectCases[str]):
+class ContextDimension(SelectCases[Annotated[str, IdSpec(registry='dimension')]]):
     pass
 
 

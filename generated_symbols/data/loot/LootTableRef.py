@@ -1,11 +1,13 @@
 # Generated from symbols.json for ::java::data::loot::LootTableRef
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.loot.LootTable import LootTable
 
 
-type LootTableRef = LootTable | str
+type LootTableRef = LootTable | Annotated[str, IdSpec(registry='loot_table')]
 
 
 # ~~~ MODEL DUMP ~~~

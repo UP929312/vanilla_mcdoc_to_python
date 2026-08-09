@@ -1,11 +1,13 @@
 # Generated from symbols.json for ::java::data::worldgen::carver::CarverRef
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.carver.ConfiguredCarver import ConfiguredCarver
 
 
-type CarverRef = ConfiguredCarver | str
+type CarverRef = ConfiguredCarver | Annotated[str, IdSpec(registry='worldgen/carver')]
 
 
 # ~~~ MODEL DUMP ~~~

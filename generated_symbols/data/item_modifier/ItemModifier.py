@@ -1,11 +1,13 @@
 # Generated from symbols.json for ::java::data::item_modifier::ItemModifier
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.loot.LootFunction import LootFunction
 
 
-type ItemModifier = LootFunction | list[ItemModifier] | str
+type ItemModifier = LootFunction | list[ItemModifier] | Annotated[str, IdSpec(registry='item_modifier', tags='allowed')]
 
 
 # ~~~ MODEL DUMP ~~~

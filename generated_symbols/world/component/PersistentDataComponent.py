@@ -1,7 +1,10 @@
 # Generated from symbols.json for ::java::world::component::PersistentDataComponent
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
-type PersistentDataComponent = str
+type PersistentDataComponent = Annotated[str, IdSpec(registry='data_component_type', exclude=('additional_trade_cost', 'creative_slot_lock', 'map_post_processing'))]
 
 
 # ~~~ MODEL DUMP ~~~

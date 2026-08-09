@@ -1,8 +1,10 @@
 # Generated from symbols.json for ::java::world::component::item::EnchantmentLevels
 from typing import Annotated
 
+from runtime_metadata import IdSpec
 
-type EnchantmentLevels = dict[str, Annotated[int, 'Range | `1`-`255` | both inclusive']]
+
+type EnchantmentLevels = dict[Annotated[str, IdSpec(registry='enchantment')], Annotated[int, 'Range | `1`-`255` | both inclusive']]
 
 
 # ~~~ MODEL DUMP ~~~

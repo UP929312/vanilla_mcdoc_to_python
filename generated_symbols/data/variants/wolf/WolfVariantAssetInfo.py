@@ -1,12 +1,15 @@
 # Generated from symbols.json for ::java::data::variants::wolf::WolfVariantAssetInfo
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class WolfVariantAssetInfo:
-    wild: str
-    tame: str
-    angry: str
+    wild: Annotated[str, IdSpec(registry='texture')]
+    tame: Annotated[str, IdSpec(registry='texture')]
+    angry: Annotated[str, IdSpec(registry='texture')]
 
 
 # ~~~ MODEL DUMP ~~~

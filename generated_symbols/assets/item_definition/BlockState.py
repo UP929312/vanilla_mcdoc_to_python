@@ -1,13 +1,12 @@
 # Generated from symbols.json for ::java::assets::item_definition::BlockState
 from dataclasses import dataclass
-from typing import Any
 
 from generated_symbols.assets.item_definition.SelectCases import SelectCases
 
 
 @dataclass(kw_only=True)
 class BlockState(SelectCases[str]):
-    block_state_property: Any
+    block_state_property: str
 
 
 # ~~~ MODEL DUMP ~~~

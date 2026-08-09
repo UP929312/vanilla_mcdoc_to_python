@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::data::enchantment::effect::RunFunctionEntityEffect
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class RunFunctionEntityEffect:
-    function: str
+    function: Annotated[str, IdSpec(registry='function')]
 
 
 # ~~~ MODEL DUMP ~~~

@@ -1,7 +1,10 @@
 # Generated from symbols.json for ::java::assets::atlas::PaletteRef
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
-type PaletteRef = str
+type PaletteRef = Annotated[str, IdSpec(registry='texture', path='palettes/')]
 
 
 # ~~~ MODEL DUMP ~~~

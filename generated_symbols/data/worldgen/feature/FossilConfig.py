@@ -2,6 +2,8 @@
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from runtime_metadata import IdSpec
+
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.processor_list.ProcessorListRef import ProcessorListRef
 
@@ -9,8 +11,8 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class FossilConfig:
     max_empty_corners_allowed: Annotated[int, 'Range | `0`-`7` | both inclusive']  # If more corners are exposed to air, feature placement is cancelled.
-    fossil_structures: list[str]
-    overlay_structures: list[str]
+    fossil_structures: list[Annotated[str, IdSpec(registry='structure')]]
+    overlay_structures: list[Annotated[str, IdSpec(registry='structure')]]
     fossil_processors: ProcessorListRef
     overlay_processors: ProcessorListRef
 

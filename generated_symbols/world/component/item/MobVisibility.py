@@ -2,10 +2,12 @@
 from dataclasses import dataclass
 from typing import Annotated
 
+from runtime_metadata import IdSpec
+
 
 @dataclass(kw_only=True)
 class MobVisibility:
-    targeting_entity_types: str | list[str]  # Entities to match.
+    targeting_entity_types: Annotated[str, IdSpec(registry='entity_type', tags='allowed')] | list[Annotated[str, IdSpec(registry='entity_type')]]  # Entities to match.
     visibility: Annotated[float, 'Range | `0`-`10` | both inclusive']  # Visibility factor, with `0.0` reducing the range at which mobs detects the entity to `2`, while `10.0` increases the detection range tenfold. While multiple items with this component stack, the maximum vision will still never exceed `10.0`.
 
 

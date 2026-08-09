@@ -1,7 +1,10 @@
 # Generated from symbols.json for ::java::data::worldgen::attribute::PositionalEnvironmentAttribute
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
-type PositionalEnvironmentAttribute = str
+type PositionalEnvironmentAttribute = Annotated[str, IdSpec(registry='environment_attribute', exclude=('gameplay/fast_lava', 'gameplay/sky_light_level'))]
 
 
 # ~~~ MODEL DUMP ~~~

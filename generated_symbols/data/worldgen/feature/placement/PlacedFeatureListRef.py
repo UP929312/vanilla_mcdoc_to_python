@@ -1,11 +1,13 @@
 # Generated from symbols.json for ::java::data::worldgen::feature::placement::PlacedFeatureListRef
 from typing import TYPE_CHECKING, Annotated
 
+from runtime_metadata import IdSpec
+
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.placement.PlacedFeature import PlacedFeature
 
 
-type PlacedFeatureListRef = PlacedFeature | str | Annotated[list[str | PlacedFeature], 'Length = 1 (inclusive) and above']
+type PlacedFeatureListRef = PlacedFeature | Annotated[str, IdSpec(registry='worldgen/placed_feature', tags='allowed')] | Annotated[list[Annotated[str, IdSpec(registry='worldgen/placed_feature')] | PlacedFeature], 'Length = 1 (inclusive) and above']
 
 
 # ~~~ MODEL DUMP ~~~

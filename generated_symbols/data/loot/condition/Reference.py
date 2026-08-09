@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::data::loot::condition::Reference
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class Reference:
-    name: str  # A cyclic reference causes a parsing failure.
+    name: Annotated[str, IdSpec(registry='predicate')]  # A cyclic reference causes a parsing failure.
 
 
 # ~~~ MODEL DUMP ~~~

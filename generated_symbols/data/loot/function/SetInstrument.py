@@ -1,12 +1,14 @@
 # Generated from symbols.json for ::java::data::loot::function::SetInstrument
 from dataclasses import dataclass
+from typing import Annotated
 
 from generated_symbols.data.loot.function.Conditions import Conditions
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class SetInstrument(Conditions):
-    options: str | list[str]  # Sets the instrument tag for a goat horn.
+    options: Annotated[str, IdSpec(registry='instrument', tags='allowed')] | list[Annotated[str, IdSpec(registry='instrument')]]  # Sets the instrument tag for a goat horn.
 
 
 # ~~~ MODEL DUMP ~~~

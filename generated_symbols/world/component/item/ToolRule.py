@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::world::component::item::ToolRule
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class ToolRule:
-    blocks: str | list[str]
+    blocks: Annotated[str, IdSpec(registry='block', tags='allowed')] | list[Annotated[str, IdSpec(registry='block')]]
     speed: float | None = None  # Overrides the default mining speed.
     correct_for_drops: bool | None = None  # Overrides whether or not this tool is considered correct to mine at its most efficient speed, and to drop items if the block's loot table requires it.
 

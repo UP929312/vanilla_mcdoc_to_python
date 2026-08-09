@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::assets::particle::Particle
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class Particle:
-    textures: list[str]
+    textures: list[Annotated[str, IdSpec(registry='texture', path='particle/')]]
 
 
 # ~~~ MODEL DUMP ~~~

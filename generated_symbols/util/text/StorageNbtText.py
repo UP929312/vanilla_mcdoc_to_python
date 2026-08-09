@@ -1,15 +1,17 @@
 # Generated from symbols.json for ::java::util::text::StorageNbtText
 from dataclasses import dataclass
+from typing import Annotated, Literal
 
 from generated_symbols.util.text.TextNbtBase import TextNbtBase
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class StorageNbtText(TextNbtBase):
-    storage: str
+    storage: Annotated[str, IdSpec(registry='storage')]
     nbt: str
-    source: str | None = None
-    type: str | None = None
+    source: Literal['storage'] | None = None
+    type: Literal['nbt'] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

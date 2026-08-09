@@ -1,8 +1,9 @@
 # Generated from symbols.json for ::java::data::advancement::trigger::SafelyHarvestHoney
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.data.advancement.trigger.TriggerBase import TriggerBase
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.advancement.predicate.ItemPredicate import ItemPredicate
@@ -10,8 +11,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class BlockStruct:
-    block: str | None = None
-    tag: str | None = None
+    block: Annotated[str, IdSpec(registry='block')] | None = None
+    tag: Annotated[str, IdSpec(registry='block', tags='implicit')] | None = None
 
 
 @dataclass(kw_only=True)

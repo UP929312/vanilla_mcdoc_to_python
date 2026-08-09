@@ -2,10 +2,12 @@
 from dataclasses import dataclass
 from typing import Annotated
 
+from runtime_metadata import IdSpec
+
 
 @dataclass(kw_only=True)
 class ClockTimeTestEnvironment:
-    clock: str
+    clock: Annotated[str, IdSpec(registry='world_clock')]
     time: Annotated[int, 'Range | Min `0` and above | inclusive']
 
 

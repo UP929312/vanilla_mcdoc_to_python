@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::world::component::item::Equippable
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.SoundEventRef import SoundEventRef
@@ -11,9 +13,9 @@ if TYPE_CHECKING:
 class Equippable:
     slot: EquipmentSlot
     equip_sound: SoundEventRef | None = None  # Sound event to play when the item is equipped. If not specified, the default armor equip sound will be played.
-    asset_id: str | None = None
-    camera_overlay: str | None = None  # The overlay texture that should render in first person when equipped.
-    allowed_entities: str | list[str] | None = None  # Limits which entities can equip this item.
+    asset_id: Annotated[str, IdSpec(registry='equipment')] | None = None
+    camera_overlay: Annotated[str, IdSpec(registry='texture')] | None = None  # The overlay texture that should render in first person when equipped.
+    allowed_entities: Annotated[str, IdSpec(registry='entity_type', tags='allowed')] | list[Annotated[str, IdSpec(registry='entity_type')]] | None = None  # Limits which entities can equip this item.
     dispensable: bool | None = None  # Whether the item can be equipped by using a dispenser. Defaults to `true`.
     swappable: bool | None = None  # Whether the item can be equipped by right-clicking. Defaults to `true`.
     damage_on_hurt: bool | None = None  # Whether the item will be damaged when the wearer is damaged. Defaults to `true`.

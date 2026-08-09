@@ -2,13 +2,15 @@
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from runtime_metadata import IdSpec
+
 if TYPE_CHECKING:
     from generated_symbols.util.text.Text import Text
 
 
 @dataclass(kw_only=True)
 class PaintingVariant:
-    asset_id: str
+    asset_id: Annotated[str, IdSpec(registry='texture', path='painting/')]
     width: Annotated[int, 'Range | `1`-`16` | both inclusive']  # Dimension in blocks.
     height: Annotated[int, 'Range | `1`-`16` | both inclusive']  # Dimension in blocks.
     title: Text | None = None

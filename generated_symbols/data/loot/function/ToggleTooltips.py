@@ -1,12 +1,14 @@
 # Generated from symbols.json for ::java::data::loot::function::ToggleTooltips
 from dataclasses import dataclass
+from typing import Annotated
 
 from generated_symbols.data.loot.function.Conditions import Conditions
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class ToggleTooltips(Conditions):
-    toggles: dict[str, bool]  # Toggles which tooltips are shown.
+    toggles: dict[Annotated[str, IdSpec(registry='data_component_type')], bool]  # Toggles which tooltips are shown.
 
 
 # ~~~ MODEL DUMP ~~~

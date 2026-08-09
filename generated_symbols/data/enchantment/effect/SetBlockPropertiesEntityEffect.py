@@ -1,13 +1,18 @@
 # Generated from symbols.json for ::java::data::enchantment::effect::SetBlockPropertiesEntityEffect
 from dataclasses import dataclass
-from typing import Any
+from typing import Annotated
+
+from runtime_metadata import IdSpec
+
+
+type PropertiesStructDataComponentBlockStateBlockItemStatesNone = dict[str, str]
 
 
 @dataclass(kw_only=True)
 class SetBlockPropertiesEntityEffect:
-    properties: Any
+    properties: PropertiesStructDataComponentBlockStateBlockItemStatesNone
     offset: tuple[int, int, int] | None = None  # Relative coordinates to offset the block by. Defaults to `[0, 0, 0]`.
-    trigger_game_event: str | None = None  # Defaults to no game event dispatched.
+    trigger_game_event: Annotated[str, IdSpec(registry='game_event')] | None = None  # Defaults to no game event dispatched.
 
 
 # ~~~ MODEL DUMP ~~~

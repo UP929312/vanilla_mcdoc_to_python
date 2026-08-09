@@ -1,11 +1,14 @@
 # Generated from symbols.json for ::java::data::gametest::test_environment::FunctionTestEnvironment
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class FunctionTestEnvironment:
-    setup: str | None = None
-    teardown: str | None = None
+    setup: Annotated[str, IdSpec(registry='function')] | None = None
+    teardown: Annotated[str, IdSpec(registry='function')] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

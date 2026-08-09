@@ -1,11 +1,11 @@
 # Generated from symbols.json for ::java::data::advancement::predicate::BlockPredicateState
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
 
 
-type BlockPredicateState = dict[Any, MinMaxBounds[Any]]
+type BlockPredicateState = dict[str, MinMaxBounds[str]]
 
 
 # ~~~ MODEL DUMP ~~~

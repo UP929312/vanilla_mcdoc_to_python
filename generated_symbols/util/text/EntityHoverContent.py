@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::util::text::EntityHoverContent
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.util.text.Text import Text
@@ -8,7 +10,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class EntityHoverContent:
-    type: str
+    type: Annotated[str, IdSpec(registry='entity_type')]
     id: tuple[int, int, int, int] | str
     name: Text | None = None
 

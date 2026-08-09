@@ -1,13 +1,16 @@
 # Generated from symbols.json for ::java::data::loot::function::FireworkExplosions
 from dataclasses import dataclass
-from typing import Any
+from typing import TYPE_CHECKING
 
 from generated_symbols.data.loot.function.ListOperation import ListOperation
+
+if TYPE_CHECKING:
+    from generated_symbols.world.component.item.Explosion import Explosion
 
 
 @dataclass(kw_only=True)
 class FireworkExplosions(ListOperation):
-    values: list[Any]
+    values: list[Explosion]
 
 
 # ~~~ MODEL DUMP ~~~

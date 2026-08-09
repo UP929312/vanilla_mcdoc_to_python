@@ -2,6 +2,8 @@
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from runtime_metadata import IdSpec
+
 if TYPE_CHECKING:
     from generated_symbols.data.enchantment.LevelBasedValue import LevelBasedValue
 
@@ -10,7 +12,7 @@ if TYPE_CHECKING:
 class RandomChanceWithEnchantedBonus:
     unenchanted_chance: Annotated[float, 'Range | `0`-`1` | both inclusive']
     enchanted_chance: LevelBasedValue
-    enchantment: str
+    enchantment: Annotated[str, IdSpec(registry='enchantment')]
 
 
 # ~~~ MODEL DUMP ~~~

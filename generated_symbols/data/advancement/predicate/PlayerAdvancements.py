@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::data::advancement::predicate::PlayerAdvancements
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 type PlayerAdvancementsValueStruct = dict[str, bool]
 
 
-type PlayerAdvancements = dict[str, bool | PlayerAdvancementsValueStruct]
+type PlayerAdvancements = dict[Annotated[str, IdSpec(registry='advancement')], bool | PlayerAdvancementsValueStruct]
 
 
 # ~~~ MODEL DUMP ~~~

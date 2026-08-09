@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::data::advancement::predicate::StatisticPredicate
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
@@ -8,8 +10,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class StatisticPredicate:
-    type: str
-    stat: Any
+    type: Annotated[str, IdSpec(registry='stat_type')]
+    stat: str | Annotated[str, IdSpec(registry='item')] | Annotated[str, IdSpec(registry='custom_stat')] | Annotated[str, IdSpec(registry='entity_type')] | Annotated[str, IdSpec(registry='block')]
     value: MinMaxBounds[int] | int
 
 

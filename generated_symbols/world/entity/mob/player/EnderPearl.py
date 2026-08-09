@@ -1,12 +1,14 @@
 # Generated from symbols.json for ::java::world::entity::mob::player::EnderPearl
 from dataclasses import dataclass
+from typing import Annotated
 
 from generated_symbols.world.entity.AnyEntity import AnyEntity
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class EnderPearl(AnyEntity):
-    ender_pearl_dimension: str
+    ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
 
 
 # ~~~ MODEL DUMP ~~~

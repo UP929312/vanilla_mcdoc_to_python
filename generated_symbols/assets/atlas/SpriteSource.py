@@ -1,14 +1,54 @@
 # Generated from symbols.json for ::java::assets::atlas::SpriteSource
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated, Literal
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.assets.atlas.SpriteSourceType import SpriteSourceType
+    from generated_symbols.assets.atlas.FilterPattern import FilterPattern
+    from generated_symbols.assets.atlas.PaletteTexture import PaletteTexture
+    from generated_symbols.assets.atlas.UnstitchRegion import UnstitchRegion
 
 
 @dataclass(kw_only=True)
-class SpriteSource:
-    type: SpriteSourceType
+class SpriteSourceDirectory:
+    type: Literal['minecraft:directory']
+    source: str  # Directory of texture locations to include, relative to the `textures` folder, not including the trailing `/`.
+    prefix: str  # The sprite name prefix, usually ending with `/`.
+
+
+@dataclass(kw_only=True)
+class SpriteSourceFilter:
+    type: Literal['minecraft:filter']
+    pattern: FilterPattern  # Pattern to remove sprite identifiers already in the atlas. The order of sprite sources is important.
+
+
+@dataclass(kw_only=True)
+class SpriteSourcePalettedPermutations:
+    type: Literal['minecraft:paletted_permutations']
+    textures: list[Annotated[str, IdSpec(registry='texture')]]
+    palette_key: PaletteTexture
+    permutations: dict[str, PaletteTexture]
+    separator: str | None = None  # Value to use when joining the texture and permutation names to produce the sprite name. Defaults to `_`.
+
+
+@dataclass(kw_only=True)
+class SpriteSourceSingle:
+    type: Literal['minecraft:single']
+    resource: Annotated[str, IdSpec(registry='texture')]  # A single texture location of the source.
+    sprite: Annotated[str, IdSpec(registry='texture', definition=True)] | None = None  # The identifier of the sprite that can referenced. If not specified, matches `resource`.
+
+
+@dataclass(kw_only=True)
+class SpriteSourceUnstitch:
+    type: Literal['minecraft:unstitch']
+    resource: Annotated[str, IdSpec(registry='texture')]
+    regions: list[UnstitchRegion]
+    divisor_x: float | None = None  # If set to the resource width, regions will use pixel coordinates.
+    divisor_y: float | None = None  # If set to the resource height, regions will use pixel coordinates.
+
+
+type SpriteSource = SpriteSourceDirectory | SpriteSourceFilter | SpriteSourcePalettedPermutations | SpriteSourceSingle | SpriteSourceUnstitch
 
 
 # ~~~ MODEL DUMP ~~~

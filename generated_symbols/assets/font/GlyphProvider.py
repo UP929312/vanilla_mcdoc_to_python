@@ -1,16 +1,66 @@
 # Generated from symbols.json for ::java::assets::font::GlyphProvider
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated, Literal
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.assets.font.FontOption import FontOption
-    from generated_symbols.assets.font.GlyphProviderType import GlyphProviderType
+    from generated_symbols.assets.font.UnihexOverrideRange import UnihexOverrideRange
 
 
 @dataclass(kw_only=True)
-class GlyphProvider:
-    type: GlyphProviderType
+class GlyphProviderBitmap:
+    type: Literal['minecraft:bitmap']
+    file: str
+    ascent: int
+    chars: Annotated[list[Annotated[str, 'Length = 1 (inclusive) and above']], 'Length = 1 (inclusive) and above']
     filter: dict[FontOption, bool] | None = None
+    height: int | None = None
+
+
+@dataclass(kw_only=True)
+class GlyphProviderLegacyUnicode:
+    type: Literal['minecraft:legacy_unicode']
+    sizes: str
+    template: str
+    filter: dict[FontOption, bool] | None = None
+
+
+@dataclass(kw_only=True)
+class GlyphProviderReference:
+    type: Literal['minecraft:reference']
+    id: Annotated[str, IdSpec(registry='font')]
+    filter: dict[FontOption, bool] | None = None
+
+
+@dataclass(kw_only=True)
+class GlyphProviderSpace:
+    type: Literal['minecraft:space']
+    advances: dict[Annotated[str, 'Length = 1'], float]
+    filter: dict[FontOption, bool] | None = None
+
+
+@dataclass(kw_only=True)
+class GlyphProviderTtf:
+    type: Literal['minecraft:ttf']
+    file: str
+    filter: dict[FontOption, bool] | None = None
+    size: float | None = None
+    oversample: float | None = None
+    shift: tuple[float, float] | None = None
+    skip: str | list[str] | None = None
+
+
+@dataclass(kw_only=True)
+class GlyphProviderUnihex:
+    type: Literal['minecraft:unihex']
+    hex_file: str  # ZIP archive containing one or more *.hex files (files in archive with different extensions are ignored).
+    filter: dict[FontOption, bool] | None = None
+    size_overrides: list[UnihexOverrideRange] | None = None  # List of ranges to override the size of.
+
+
+type GlyphProvider = GlyphProviderBitmap | GlyphProviderLegacyUnicode | GlyphProviderReference | GlyphProviderSpace | GlyphProviderTtf | GlyphProviderUnihex
 
 
 # ~~~ MODEL DUMP ~~~

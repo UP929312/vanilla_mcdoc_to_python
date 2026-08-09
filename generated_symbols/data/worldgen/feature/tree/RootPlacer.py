@@ -1,19 +1,24 @@
 # Generated from symbols.json for ::java::data::worldgen::feature::tree::RootPlacer
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Literal
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.IntProvider import IntProvider
     from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
     from generated_symbols.data.worldgen.feature.tree.AboveRootPlacement import AboveRootPlacement
+    from generated_symbols.data.worldgen.feature.tree.MangroveRootPlacement import MangroveRootPlacement
 
 
 @dataclass(kw_only=True)
-class RootPlacer:
-    type: str
+class RootPlacerMangroveRootPlacer:
+    type: Literal['minecraft:mangrove_root_placer']
     root_provider: BlockStateProvider
     trunk_offset_y: IntProvider[int] | int
+    mangrove_root_placement: MangroveRootPlacement
     above_root_placement: AboveRootPlacement | None = None
+
+
+type RootPlacer = RootPlacerMangroveRootPlacer
 
 
 # ~~~ MODEL DUMP ~~~

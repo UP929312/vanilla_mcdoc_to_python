@@ -1,11 +1,13 @@
 # Generated from symbols.json for ::java::data::dialog::DialogListRef
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.dialog.Dialog import Dialog
 
 
-type DialogListRef = Dialog | str | list[str | Dialog]
+type DialogListRef = Dialog | Annotated[str, IdSpec(registry='dialog', tags='allowed')] | list[Annotated[str, IdSpec(registry='dialog')] | Dialog]
 
 
 # ~~~ MODEL DUMP ~~~

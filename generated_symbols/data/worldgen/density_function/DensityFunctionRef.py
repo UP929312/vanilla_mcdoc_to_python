@@ -1,11 +1,13 @@
 # Generated from symbols.json for ::java::data::worldgen::density_function::DensityFunctionRef
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.density_function.DensityFunction import DensityFunction
 
 
-type DensityFunctionRef = str | DensityFunction
+type DensityFunctionRef = Annotated[str, IdSpec(registry='worldgen/density_function')] | DensityFunction
 
 
 # ~~~ MODEL DUMP ~~~

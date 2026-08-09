@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::assets::item_definition::StandingSign
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.assets.item_definition.StandingSignAttachment import StandingSignAttachment
@@ -10,7 +12,7 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class StandingSign:
     wood_type: WoodType
-    texture: str | None = None
+    texture: Annotated[str, IdSpec(registry='texture', path='entity/signs/')] | None = None
     attachement: StandingSignAttachment | None = None  # There is an extra "e" in the field name. See MC-307498.  Defaults to `ground`.
 
 

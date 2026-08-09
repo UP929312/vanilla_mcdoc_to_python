@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::data::worldgen::material_condition::NoiseThresholdCondition
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class NoiseThresholdCondition:
-    noise: str
+    noise: Annotated[str, IdSpec(registry='worldgen/noise')]
     min_threshold: float
     max_threshold: float
     is_3d: bool | None = None  # Defaults to `false`.

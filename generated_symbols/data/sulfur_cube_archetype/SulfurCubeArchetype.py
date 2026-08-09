@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::data::sulfur_cube_archetype::SulfurCubeArchetype
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.sulfur_cube_archetype.AttributeEntry import AttributeEntry
@@ -12,7 +14,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class SulfurCubeArchetype:
-    items: str | list[str]
+    items: Annotated[str, IdSpec(registry='item', tags='allowed')] | list[Annotated[str, IdSpec(registry='item')]]
     knockback_modifiers: KnockbackModifiers
     attribute_modifiers: list[AttributeEntry]
     sound_settings: SoundSettings

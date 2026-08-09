@@ -1,15 +1,26 @@
 # Generated from symbols.json for ::java::data::util::NbtProvider
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated, Literal
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.NbtContextTarget import NbtContextTarget
 
 
 @dataclass(kw_only=True)
-class NbtProviderStruct:
-    type: str
+class NbtProviderStructContext:
+    type: Literal['minecraft:context']
+    target: NbtContextTarget
 
+
+@dataclass(kw_only=True)
+class NbtProviderStructStorage:
+    type: Literal['minecraft:storage']
+    source: Annotated[str, IdSpec(registry='storage')]
+
+
+type NbtProviderStruct = NbtProviderStructContext | NbtProviderStructStorage
 
 type NbtProvider = NbtContextTarget | NbtProviderStruct
 

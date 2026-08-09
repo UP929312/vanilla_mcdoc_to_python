@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::world::component::item::MapDecoration
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class MapDecoration:
-    type: str  # Decoration type.
+    type: Annotated[str, IdSpec(registry='map_decoration_type')]  # Decoration type.
     x: float  # World x position.
     z: float  # World z position.
     rotation: float  # Rotation of the decoration, measured in degrees clockwise.

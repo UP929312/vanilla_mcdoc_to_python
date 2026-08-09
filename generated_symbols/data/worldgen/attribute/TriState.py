@@ -1,7 +1,8 @@
 # Generated from symbols.json for ::java::data::worldgen::attribute::TriState
+from typing import Literal
 
 
-type TriState = bool | str
+type TriState = bool | Literal['default']
 
 
 # ~~~ MODEL DUMP ~~~

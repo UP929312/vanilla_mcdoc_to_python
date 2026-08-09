@@ -1,6 +1,6 @@
 # Generated from symbols.json for ::java::world::entity::display::DisplayBase
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, Literal
 
 from generated_symbols.world.entity.EntityBase import EntityBase
 
@@ -23,7 +23,7 @@ class DisplayBase(EntityBase):
     view_range: Annotated[float, 'Range | Min `0` and above | inclusive'] | None = None  # Maximum view range of this entity. Actual distance depends on client-side render distance and entity distance scaling. Default value 1.0 (roughly the same as fireball).
     width: Annotated[float, 'Range | Min `0` and above | inclusive'] | None = None  # Describe width of the culling bounding box.  Bounding box spans vertically from y to y+height and horizontally width/2 in all directions from the entity position.  If set to 0, culling is disabled. Defaults to 0.
     height: Annotated[float, 'Range | Min `0` and above | inclusive'] | None = None  # Describes height of the culling bounding box.  Bounding box spans vertically from y to y+height and horizontally width/2 in all directions from the entity position.  If set to 0, culling is disabled. Defaults to 0.
-    glow_color_override: int | None = None  # Override glow border color. If set to 0, uses team color. Defaults to 0.  Calculated as `RED << 16 | GREEN << 8 | BLUE`. Each of these fields must be between 0 and 255, inclusive.
+    glow_color_override: Literal[0] | int | None = None  # Override glow border color. If set to 0, uses team color. Defaults to 0.  Calculated as `RED << 16 | GREEN << 8 | BLUE`. Each of these fields must be between 0 and 255, inclusive.
 
 
 # ~~~ MODEL DUMP ~~~

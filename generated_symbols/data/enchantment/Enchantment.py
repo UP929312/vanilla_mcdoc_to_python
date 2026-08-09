@@ -2,6 +2,8 @@
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from runtime_metadata import IdSpec
+
 if TYPE_CHECKING:
     from generated_symbols.data.enchantment.EnchantmentCost import EnchantmentCost
     from generated_symbols.data.enchantment.effect_component.EnchantmentEffectComponentMap import EnchantmentEffectComponentMap
@@ -12,15 +14,15 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class Enchantment:
     description: Text
-    supported_items: str | list[str]
+    supported_items: Annotated[str, IdSpec(registry='item', tags='allowed')] | list[Annotated[str, IdSpec(registry='item')]]
     weight: Annotated[int, 'Range | `1`-`1024` | both inclusive']  # How commonly the Enchantment appears, compared to the total combined `weight` of all available Enchantments.
     max_level: Annotated[int, 'Range | `1`-`255` | both inclusive']  # Maximum level of the enchantment.
     min_cost: EnchantmentCost  # Minimum experience cost.
     max_cost: EnchantmentCost  # Maximum experience cost.
     anvil_cost: Annotated[int, 'Range | Min `0` and above | inclusive']  # Halved when an Enchantment is added to a book. The effective fee is multiplied by the level of the Enchantment.
     slots: list[EquipmentSlotGroup]
-    exclusive_set: str | list[str] | None = None
-    primary_items: str | list[str] | None = None  # Item types for which this Enchantment shows up in Enchanting Tables and on traded equipment.  Must be a subset of `supported_items`.
+    exclusive_set: Annotated[str, IdSpec(registry='enchantment', tags='allowed')] | list[Annotated[str, IdSpec(registry='enchantment')]] | None = None
+    primary_items: Annotated[str, IdSpec(registry='item', tags='allowed')] | list[Annotated[str, IdSpec(registry='item')]] | None = None  # Item types for which this Enchantment shows up in Enchanting Tables and on traded equipment.  Must be a subset of `supported_items`.
     effects: EnchantmentEffectComponentMap | None = None
 
 

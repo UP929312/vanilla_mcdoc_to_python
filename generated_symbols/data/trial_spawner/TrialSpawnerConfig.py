@@ -2,6 +2,8 @@
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from runtime_metadata import IdSpec
+
 if TYPE_CHECKING:
     from generated_symbols.util.WeightedList import WeightedList
     from generated_symbols.world.block.spawner.SpawnPotential import SpawnPotential
@@ -16,8 +18,8 @@ class TrialSpawnerConfig:
     simultaneous_mobs_added_per_player: float | None = None  # Number added to `simultaneous_mobs` for each additional player
     ticks_between_spawn: int | None = None  # Ticks until the next spawn.
     spawn_potentials: list[SpawnPotential] | None = None  # Entities that can be placed.
-    loot_tables_to_eject: WeightedList[str] | None = None  # Loot tables to use when ejecting loot. Chooses one loot table based on weight and then uses it as often as there are players nearby.
-    items_to_drop_when_ominous: str | None = None  # Loot table to use when summoning ominous item spawners. One roll seeded based on rough location to determine all items used during the battle.
+    loot_tables_to_eject: WeightedList[Annotated[str, IdSpec(registry='loot_table')]] | None = None  # Loot tables to use when ejecting loot. Chooses one loot table based on weight and then uses it as often as there are players nearby.
+    items_to_drop_when_ominous: Annotated[str, IdSpec(registry='loot_table')] | None = None  # Loot table to use when summoning ominous item spawners. One roll seeded based on rough location to determine all items used during the battle.
 
 
 # ~~~ MODEL DUMP ~~~

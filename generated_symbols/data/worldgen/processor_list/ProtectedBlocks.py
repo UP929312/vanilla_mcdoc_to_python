@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::data::worldgen::processor_list::ProtectedBlocks
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class ProtectedBlocks:
-    value: str | list[str]
+    value: Annotated[str, IdSpec(registry='block', tags='allowed')] | list[Annotated[str, IdSpec(registry='block')]]
 
 
 # ~~~ MODEL DUMP ~~~

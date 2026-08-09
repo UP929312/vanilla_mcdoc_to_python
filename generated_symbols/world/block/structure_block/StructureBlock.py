@@ -1,8 +1,9 @@
 # Generated from symbols.json for ::java::world::block::structure_block::StructureBlock
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.world.block.BlockEntity import BlockEntity
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.world.block.structure_block.Mirror import Mirror
@@ -12,7 +13,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class StructureBlock(BlockEntity):
-    name: str | None = None
+    name: Annotated[str, IdSpec(registry='structure', empty='allowed')] | None = None
     author: str | None = None  # Author of the structure.
     metadata: str | None = None  # Custom data for the structure. Stores the data id for "DATA" mode.
     posX: int | None = None  # Relative offset.

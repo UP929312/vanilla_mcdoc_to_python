@@ -1,5 +1,6 @@
 # Generated from symbols.json for ::java::util::text::NormalText
 from dataclasses import dataclass
+from typing import Literal
 
 from generated_symbols.util.text.TextBase import TextBase
 
@@ -7,7 +8,7 @@ from generated_symbols.util.text.TextBase import TextBase
 @dataclass(kw_only=True)
 class NormalText(TextBase):
     text: str
-    type: str | None = None
+    type: Literal['text'] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

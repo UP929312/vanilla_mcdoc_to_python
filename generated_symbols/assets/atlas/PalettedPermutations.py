@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::assets::atlas::PalettedPermutations
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.assets.atlas.PaletteTexture import PaletteTexture
@@ -8,7 +10,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class PalettedPermutations:
-    textures: list[str]
+    textures: list[Annotated[str, IdSpec(registry='texture')]]
     palette_key: PaletteTexture
     permutations: dict[str, PaletteTexture]
     separator: str | None = None  # Value to use when joining the texture and permutation names to produce the sprite name. Defaults to `_`.

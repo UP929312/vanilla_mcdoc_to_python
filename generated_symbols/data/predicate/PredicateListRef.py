@@ -1,11 +1,13 @@
 # Generated from symbols.json for ::java::data::predicate::PredicateListRef
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.loot.LootCondition import LootCondition
 
 
-type PredicateListRef = LootCondition | str | list[str | LootCondition]
+type PredicateListRef = LootCondition | Annotated[str, IdSpec(registry='predicate', tags='allowed')] | list[Annotated[str, IdSpec(registry='predicate')] | LootCondition]
 
 
 # ~~~ MODEL DUMP ~~~

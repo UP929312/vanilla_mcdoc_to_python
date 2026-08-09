@@ -1,7 +1,10 @@
 # Generated from symbols.json for ::java::data::trim::TrimMaterialOverrides
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
-type TrimMaterialOverrides = dict[str, str]
+type TrimMaterialOverrides = dict[Annotated[str, IdSpec(registry='equipment')], str]
 
 
 # ~~~ MODEL DUMP ~~~

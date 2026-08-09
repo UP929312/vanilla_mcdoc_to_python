@@ -1,15 +1,20 @@
 # Generated from symbols.json for ::java::util::fluid_state::FluidState
 from dataclasses import dataclass
-from typing import Any
+from typing import Annotated
+
+from runtime_metadata import IdSpec
+
+
+type PropertiesStructFluidStatesNone = dict[str, str]
 
 
 @dataclass(kw_only=True)
 class FluidStateStruct:
-    id: str
-    properties: Any | None = None
+    id: Annotated[str, IdSpec(registry='fluid')]
+    properties: PropertiesStructFluidStatesNone | None = None
 
 
-type FluidState = str | FluidStateStruct
+type FluidState = Annotated[str, IdSpec(registry='fluid')] | FluidStateStruct
 
 
 # ~~~ MODEL DUMP ~~~

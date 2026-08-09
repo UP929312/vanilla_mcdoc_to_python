@@ -1,13 +1,15 @@
 # Generated from symbols.json for ::java::world::entity::mob::breedable::saddled::Pig
 from dataclasses import dataclass
+from typing import Annotated
 
 from generated_symbols.world.entity.mob.breedable.saddled.Saddled import Saddled
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class Pig(Saddled):
-    variant: str | None = None
-    sound_variant: str | None = None
+    variant: Annotated[str, IdSpec(registry='pig_variant')] | None = None
+    sound_variant: Annotated[str, IdSpec(registry='pig_sound_variant')] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

@@ -1,8 +1,10 @@
 # Generated from symbols.json for ::java::data::enchantment::provider::EnchantmentsType
 from typing import Annotated
 
+from runtime_metadata import IdSpec
 
-type EnchantmentsType = str | Annotated[list[str], 'Length = 1 (inclusive) and above']
+
+type EnchantmentsType = Annotated[str, IdSpec(registry='enchantment', tags='allowed')] | Annotated[list[Annotated[str, IdSpec(registry='enchantment')]], 'Length = 1 (inclusive) and above']
 
 
 # ~~~ MODEL DUMP ~~~

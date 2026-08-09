@@ -1,12 +1,14 @@
 # Generated from symbols.json for ::java::data::worldgen::feature::block_predicate::MatchingFluidsPredicate
 from dataclasses import dataclass
+from typing import Annotated
 
 from generated_symbols.data.worldgen.feature.block_predicate.PredicateOffset import PredicateOffset
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class MatchingFluidsPredicate(PredicateOffset):
-    fluids: list[str] | str
+    fluids: list[Annotated[str, IdSpec(registry='fluid')]] | Annotated[str, IdSpec(registry='fluid', tags='allowed')]
 
 
 # ~~~ MODEL DUMP ~~~

@@ -1,13 +1,15 @@
 # Generated from symbols.json for ::java::data::variants::cat::CatVariant
 from dataclasses import dataclass
+from typing import Annotated
 
 from generated_symbols.data.variants.SpawnPrioritySelectors import SpawnPrioritySelectors
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class CatVariant(SpawnPrioritySelectors):
-    asset_id: str  # The cat texture to use for this variant.
-    baby_asset_id: str  # The baby cat texture to use for this variant.
+    asset_id: Annotated[str, IdSpec(registry='texture')]  # The cat texture to use for this variant.
+    baby_asset_id: Annotated[str, IdSpec(registry='texture')]  # The baby cat texture to use for this variant.
 
 
 # ~~~ MODEL DUMP ~~~

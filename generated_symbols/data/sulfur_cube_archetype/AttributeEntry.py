@@ -1,12 +1,14 @@
 # Generated from symbols.json for ::java::data::sulfur_cube_archetype::AttributeEntry
 from dataclasses import dataclass
+from typing import Annotated
 
 from generated_symbols.world.entity.mob.ModernAttributeModifier import ModernAttributeModifier
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class AttributeEntry(ModernAttributeModifier):
-    attribute: str  # Attribute type to modify.
+    attribute: Annotated[str, IdSpec(registry='attribute')]  # Attribute type to modify.
 
 
 # ~~~ MODEL DUMP ~~~

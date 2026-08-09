@@ -1,12 +1,14 @@
 # Generated from symbols.json for ::java::data::worldgen::feature::block_predicate::MatchingBlockTagPredicate
 from dataclasses import dataclass
+from typing import Annotated
 
 from generated_symbols.data.worldgen.feature.block_predicate.PredicateOffset import PredicateOffset
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class MatchingBlockTagPredicate(PredicateOffset):
-    tag: str
+    tag: Annotated[str, IdSpec(registry='block', tags='implicit')]
 
 
 # ~~~ MODEL DUMP ~~~

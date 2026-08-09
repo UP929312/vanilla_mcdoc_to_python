@@ -2,6 +2,8 @@
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from runtime_metadata import IdSpec
+
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.IntProvider import IntProvider
     from generated_symbols.data.worldgen.attribute.GlobalEnvironmentAttributeMap import GlobalEnvironmentAttributeMap
@@ -17,14 +19,14 @@ class DimensionType:
     coordinate_scale: Annotated[float, 'Range | `1e-05`-`30000000` | both inclusive']
     ambient_light: Annotated[float, 'Range | `0`-`1` | both inclusive']
     logical_height: Annotated[int, 'Range | `0`-`4064` | both inclusive']  # Portals can't spawn and chorus fruit can't teleport players above this height.
-    infiniburn: str | list[str]  # Defining what blocks keep fire infinitely burning.
+    infiniburn: Annotated[str, IdSpec(registry='block', tags='allowed')] | list[Annotated[str, IdSpec(registry='block')]]  # Defining what blocks keep fire infinitely burning.
     min_y: Annotated[int, 'Range | `-2032`-`2031` | both inclusive | divisible by 16']  # The minimum height in which blocks can exist.
     height: Annotated[int, 'Range | `16`-`4064` | both inclusive | divisible by 16']  # The total height in which blocks can exist. Max Y = Min Y + Height.
     monster_spawn_light_level: IntProvider[Annotated[int, 'Range | `0`-`15` | both inclusive']] | Annotated[int, 'Range | `0`-`15` | both inclusive']
     monster_spawn_block_light_limit: Annotated[int, 'Range | `0`-`15` | both inclusive']
     attributes: GlobalEnvironmentAttributeMap | None = None
-    default_clock: str | None = None
-    timelines: str | list[str] | None = None
+    default_clock: Annotated[str, IdSpec(registry='world_clock')] | None = None
+    timelines: Annotated[str, IdSpec(registry='timeline', tags='allowed')] | list[Annotated[str, IdSpec(registry='timeline')]] | None = None
     has_fixed_time: bool | None = None  # Defaults to `false`.
     skybox: SkyboxType | None = None  # Skybox type. Defaults to `overworld`.
     cardinal_light: CardinalLightType | None = None  # The direction of cardinal lighting that affects blocks.

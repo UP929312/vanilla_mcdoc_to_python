@@ -1,8 +1,10 @@
 # Generated from symbols.json for ::java::data::recipe::Ingredient
 from typing import Annotated
 
+from runtime_metadata import IdSpec
 
-type Ingredient = Annotated[list[str], 'Length = 1 (inclusive) and above'] | str
+
+type Ingredient = Annotated[list[Annotated[str, IdSpec(registry='item', exclude=('air',))]], 'Length = 1 (inclusive) and above'] | Annotated[str, IdSpec(registry='item', tags='allowed', exclude=('air',))]
 
 
 # ~~~ MODEL DUMP ~~~

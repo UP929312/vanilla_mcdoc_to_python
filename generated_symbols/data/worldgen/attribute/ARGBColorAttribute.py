@@ -1,19 +1,21 @@
 # Generated from symbols.json for ::java::data::worldgen::attribute::ARGBColorAttribute
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Any
+from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.data.timeline.AttributeTrackBase import AttributeTrackBase
 
 if TYPE_CHECKING:
+    from generated_symbols.data.worldgen.attribute.modifier.BlendToGray import BlendToGray
     from generated_symbols.data.worldgen.attribute.modifier.ColorModifierType import ColorModifierType
     from generated_symbols.data.worldgen.attribute.modifier.TranslucentColorAttributeModifier import TranslucentColorAttributeModifier
     from generated_symbols.util.color.StringARGB import StringARGB
+    from generated_symbols.util.color.StringRGB import StringRGB
 
 
 @dataclass(kw_only=True)
 class KeyframesStruct:
     ticks: Annotated[int, 'Range | Min `0` and above | inclusive']
-    value: Any
+    value: StringARGB | StringRGB | BlendToGray | StringRGB | StringARGB
 
 
 @dataclass(kw_only=True)

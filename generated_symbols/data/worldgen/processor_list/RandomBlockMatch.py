@@ -2,10 +2,12 @@
 from dataclasses import dataclass
 from typing import Annotated
 
+from runtime_metadata import IdSpec
+
 
 @dataclass(kw_only=True)
 class RandomBlockMatch:
-    block: str
+    block: Annotated[str, IdSpec(registry='block')]
     probability: Annotated[float, 'Range | `0`-`1` | both inclusive']
 
 

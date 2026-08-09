@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::data::advancement::predicate::ItemPredicate
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
@@ -10,7 +12,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class ItemPredicate:
-    items: str | list[str] | None = None
+    items: Annotated[str, IdSpec(registry='item', tags='allowed')] | list[Annotated[str, IdSpec(registry='item')]] | None = None
     count: MinMaxBounds[int] | int | None = None
     components: DataComponentExactPredicate | None = None
     predicates: DataComponentPredicate | None = None

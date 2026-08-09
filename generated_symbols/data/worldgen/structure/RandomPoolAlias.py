@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::data::worldgen::structure::RandomPoolAlias
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.util.NonEmptyWeightedList import NonEmptyWeightedList
@@ -8,8 +10,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class RandomPoolAlias:
-    alias: str
-    targets: NonEmptyWeightedList[str]
+    alias: Annotated[str, IdSpec()]
+    targets: NonEmptyWeightedList[Annotated[str, IdSpec(registry='worldgen/template_pool')]]
 
 
 # ~~~ MODEL DUMP ~~~

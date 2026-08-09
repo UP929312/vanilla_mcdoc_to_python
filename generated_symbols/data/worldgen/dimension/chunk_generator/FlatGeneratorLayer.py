@@ -2,11 +2,13 @@
 from dataclasses import dataclass
 from typing import Annotated
 
+from runtime_metadata import IdSpec
+
 
 @dataclass(kw_only=True)
 class FlatGeneratorLayer:
     height: Annotated[int, 'Range | `0`-`4096` | both inclusive']
-    block: str
+    block: Annotated[str, IdSpec(registry='block')]
 
 
 # ~~~ MODEL DUMP ~~~

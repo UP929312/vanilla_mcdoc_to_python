@@ -1,6 +1,6 @@
 # Generated from symbols.json for ::java::util::text::KeybindText
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Literal
 
 from generated_symbols.util.text.TextBase import TextBase
 
@@ -11,7 +11,7 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class KeybindText(TextBase):
     keybind: Keybind
-    type: str | None = None
+    type: Literal['keybind'] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

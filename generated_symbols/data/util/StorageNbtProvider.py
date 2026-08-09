@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::data::util::StorageNbtProvider
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class StorageNbtProvider:
-    source: str
+    source: Annotated[str, IdSpec(registry='storage')]
 
 
 # ~~~ MODEL DUMP ~~~

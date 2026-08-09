@@ -1,13 +1,15 @@
 # Generated from symbols.json for ::java::world::item::SingleItemOfComponent
 from dataclasses import dataclass
-from typing import Generic, TypeVar
+from typing import Annotated, Generic, TypeVar
+
+from runtime_metadata import IdSpec
 
 
 T = TypeVar('T')
 
 @dataclass(kw_only=True)
 class SingleItemOfComponent(Generic[T]):
-    id: str  # ID of the item.
+    id: Annotated[str, IdSpec(registry='item', exclude=('air',))]  # ID of the item.
     components: T | None = None
 
 

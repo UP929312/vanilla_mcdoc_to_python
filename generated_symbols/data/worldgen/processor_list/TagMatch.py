@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::data::worldgen::processor_list::TagMatch
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class TagMatch:
-    tag: str
+    tag: Annotated[str, IdSpec(registry='block', tags='implicit')]
 
 
 # ~~~ MODEL DUMP ~~~

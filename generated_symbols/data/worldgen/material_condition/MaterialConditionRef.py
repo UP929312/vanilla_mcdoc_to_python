@@ -1,11 +1,13 @@
 # Generated from symbols.json for ::java::data::worldgen::material_condition::MaterialConditionRef
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.material_condition.MaterialCondition import MaterialCondition
 
 
-type MaterialConditionRef = str | MaterialCondition
+type MaterialConditionRef = Annotated[str, IdSpec(registry='material_condition')] | MaterialCondition
 
 
 # ~~~ MODEL DUMP ~~~

@@ -1,6 +1,6 @@
 # Generated from symbols.json for ::java::world::item::BlockItem
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING
 
 from generated_symbols.world.item.ItemBase import ItemBase
 
@@ -8,10 +8,13 @@ if TYPE_CHECKING:
     from generated_symbols.world.block.BlockEntityData import BlockEntityData
 
 
+type BlockStateTagStructBlockItemStatesNone = dict[str, str]
+
+
 @dataclass(kw_only=True)
 class BlockItem(ItemBase):
     BlockEntityTag: BlockEntityData | None = None
-    BlockStateTag: Any | None = None  # Blockstate that the placed block will have.
+    BlockStateTag: BlockStateTagStructBlockItemStatesNone | None = None  # Blockstate that the placed block will have.
 
 
 # ~~~ MODEL DUMP ~~~

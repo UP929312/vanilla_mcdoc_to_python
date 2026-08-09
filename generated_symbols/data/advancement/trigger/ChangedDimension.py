@@ -1,13 +1,15 @@
 # Generated from symbols.json for ::java::data::advancement::trigger::ChangedDimension
 from dataclasses import dataclass
+from typing import Annotated
 
 from generated_symbols.data.advancement.trigger.TriggerBase import TriggerBase
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class ChangedDimension(TriggerBase):
-    from_: str | None = None
-    to: str | None = None
+    from_: Annotated[str, IdSpec(registry='dimension')] | None = None
+    to: Annotated[str, IdSpec(registry='dimension')] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

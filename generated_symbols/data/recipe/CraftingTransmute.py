@@ -4,6 +4,7 @@ from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.data.recipe.CraftingBookInfo import CraftingBookInfo
 from generated_symbols.data.recipe.NotificationInfo import NotificationInfo
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.recipe.Ingredient import Ingredient
@@ -15,7 +16,7 @@ if TYPE_CHECKING:
 class CraftingTransmute(NotificationInfo, CraftingBookInfo):
     input: Ingredient  # The ingredient that will transfer its data components to the result item.
     material: Ingredient  # An additional ingredient.
-    result: ItemStack | str  # The result item that will be merged with the input ingredient.
+    result: ItemStack | Annotated[str, IdSpec(registry='item', exclude=('air',))]  # The result item that will be merged with the input ingredient.
     material_count: MinMaxBounds[Annotated[int, 'Range | `1`-`8` | both inclusive']] | Annotated[int, 'Range | `1`-`8` | both inclusive'] | None = None  # The allowed count of material. Defaults to `1`.
     add_material_count_to_result: bool | None = None  # When true, the number of materials will be added to the result count.  Defaults to `false`.
 

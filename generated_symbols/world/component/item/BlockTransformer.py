@@ -2,6 +2,8 @@
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from runtime_metadata import IdSpec
+
 if TYPE_CHECKING:
     from generated_symbols.data.util.SoundEventRef import SoundEventRef
     from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
@@ -17,7 +19,7 @@ class BlockTransformer:
     sound: SoundEventRef | None = None  # Defaults to not playing sound.
     particle: BlockTransformParticle | None = None  # Defaults to `none`.
     disallowed_faces: list[Direction] | None = None  # If a disallowed face is interacted with, the next transformer will be attempted.  Defaults to empty (allowing all faces).
-    loot: str | None = None  # The loot to drop on a successful transformation.  Defaults to drop nothing.
+    loot: Annotated[str, IdSpec(registry='loot_table')] | None = None  # The loot to drop on a successful transformation.  Defaults to drop nothing.
     drop_strategy: BlockTransformDropStrategy | None = None  # Where the `loot` should drop.  Defaults to `from_middle`.
     transform_type: BlockTransformType | None = None  # How nearby blocks are affected by the transformation.  Defaults to `single_block`.
     update_from_neighbors: bool | None = None  # Whether the transformed block should update based on neighboring blocks.  Defaults to `true`.

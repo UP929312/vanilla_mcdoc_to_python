@@ -1,11 +1,13 @@
 # Generated from symbols.json for ::java::assets::item_definition::ContextEntityType
 from dataclasses import dataclass
+from typing import Annotated
 
 from generated_symbols.assets.item_definition.SelectCases import SelectCases
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
-class ContextEntityType(SelectCases[str]):
+class ContextEntityType(SelectCases[Annotated[str, IdSpec(registry='entity_type')]]):
     pass
 
 

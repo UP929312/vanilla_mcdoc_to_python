@@ -1,11 +1,13 @@
 # Generated from symbols.json for ::java::data::worldgen::surface_builder::ConfiguredSurfaceBuilderRef
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.surface_builder.ConfiguredSurfaceBuilder import ConfiguredSurfaceBuilder
 
 
-type ConfiguredSurfaceBuilderRef = str | ConfiguredSurfaceBuilder
+type ConfiguredSurfaceBuilderRef = Annotated[str, IdSpec(registry='worldgen/configured_surface_builder')] | ConfiguredSurfaceBuilder
 
 
 # ~~~ MODEL DUMP ~~~

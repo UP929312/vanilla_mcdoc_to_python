@@ -1,15 +1,18 @@
 # Generated from symbols.json for ::java::data::worldgen::attribute::modifier::ColorAttributeModifier
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+    from generated_symbols.data.worldgen.attribute.modifier.BlendToGray import BlendToGray
     from generated_symbols.data.worldgen.attribute.modifier.ColorModifierType import ColorModifierType
+    from generated_symbols.util.color.StringARGB import StringARGB
+    from generated_symbols.util.color.StringRGB import StringRGB
 
 
 @dataclass(kw_only=True)
 class ColorAttributeModifier:
     modifier: ColorModifierType
-    argument: Any
+    argument: StringRGB | StringARGB | BlendToGray
 
 
 # ~~~ MODEL DUMP ~~~

@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::data::worldgen::processor_list::BlockMatch
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class BlockMatch:
-    block: str
+    block: Annotated[str, IdSpec(registry='block')]
 
 
 # ~~~ MODEL DUMP ~~~

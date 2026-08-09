@@ -1,12 +1,14 @@
 # Generated from symbols.json for ::java::data::variants::frog::FrogVariant
 from dataclasses import dataclass
+from typing import Annotated
 
 from generated_symbols.data.variants.SpawnPrioritySelectors import SpawnPrioritySelectors
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class FrogVariant(SpawnPrioritySelectors):
-    asset_id: str  # The frog texture to use for this variant.
+    asset_id: Annotated[str, IdSpec(registry='texture')]  # The frog texture to use for this variant.
 
 
 # ~~~ MODEL DUMP ~~~

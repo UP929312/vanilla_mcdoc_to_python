@@ -1,12 +1,14 @@
 # Generated from symbols.json for ::java::data::loot::function::Reference
 from dataclasses import dataclass
+from typing import Annotated
 
 from generated_symbols.data.loot.function.Conditions import Conditions
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class Reference(Conditions):
-    name: str  # Item modifier to reference.
+    name: Annotated[str, IdSpec(registry='item_modifier')]  # Item modifier to reference.
 
 
 # ~~~ MODEL DUMP ~~~

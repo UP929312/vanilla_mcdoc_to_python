@@ -1,8 +1,9 @@
 # Generated from symbols.json for ::java::data::loot::function::CopyComponents
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.data.loot.function.Conditions import Conditions
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.loot.BlockEntityTarget import BlockEntityTarget
@@ -13,8 +14,8 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class CopyComponents(Conditions):
     source: BlockEntityTarget | EntityTarget | ItemStackTarget
-    include: list[str] | None = None  # If omitted, all components present are included
-    exclude: list[str] | None = None  # Defaults to none.
+    include: list[Annotated[str, IdSpec(registry='data_component_type')]] | None = None  # If omitted, all components present are included
+    exclude: list[Annotated[str, IdSpec(registry='data_component_type')]] | None = None  # Defaults to none.
 
 
 # ~~~ MODEL DUMP ~~~

@@ -1,7 +1,8 @@
 # Generated from symbols.json for ::java::data::loot::BlockEntityTarget
+from typing import Literal
 
 
-type BlockEntityTarget = str
+type BlockEntityTarget = Literal['block_entity']
 
 
 # ~~~ MODEL DUMP ~~~

@@ -1,6 +1,6 @@
 # Generated from symbols.json for ::java::world::block::crafter::Crafter
 from dataclasses import dataclass
-from typing import Annotated
+from typing import Annotated, Literal
 
 from generated_symbols.world.block.container.Container9 import Container9
 
@@ -9,7 +9,7 @@ from generated_symbols.world.block.container.Container9 import Container9
 class Crafter(Container9):
     crafting_ticks_remaining: int | None = None
     disabled_slots: Annotated[list[Annotated[int, 'Range | `0`-`8` | both inclusive']], 'Length = up to 9 (inclusive)'] | None = None
-    triggered: int | None = None
+    triggered: Literal[0] | Literal[1] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

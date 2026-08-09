@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::assets::sounds::Sound
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Any
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.assets.sounds.SoundType import SoundType
@@ -8,7 +10,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class Sound:
-    name: Any
+    name: Annotated[str, IdSpec(registry='sound')] | Annotated[str, IdSpec(registry='weighed_sound_event')]
     type: SoundType | None = None  # Changes how `name` is interpreted. Defaults to `file`.
     volume: Annotated[float, 'Range | Min `0` and above | inclusive'] | None = None  # Defaults to 1.0.
     pitch: Annotated[float, 'Range | Min `0` and above | inclusive'] | None = None  # Default is 1.0.

@@ -1,15 +1,17 @@
 # Generated from symbols.json for ::java::data::worldgen::noise_settings::NoiseGeneratorSettingsRef
 from dataclasses import dataclass
+from typing import Annotated
 
 from generated_symbols.data.worldgen.noise_settings.NoiseGeneratorSettings import NoiseGeneratorSettings
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class NoiseGeneratorSettingsRefStruct(NoiseGeneratorSettings):
-    name: str
+    name: Annotated[str, IdSpec(registry='worldgen/noise_settings', definition=True)]
 
 
-type NoiseGeneratorSettingsRef = str | NoiseGeneratorSettingsRefStruct
+type NoiseGeneratorSettingsRef = Annotated[str, IdSpec(registry='worldgen/noise_settings')] | NoiseGeneratorSettingsRefStruct
 
 
 # ~~~ MODEL DUMP ~~~

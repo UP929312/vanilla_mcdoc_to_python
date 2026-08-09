@@ -1,8 +1,9 @@
 # Generated from symbols.json for ::java::data::loot::function::SetEnchantments
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.data.loot.function.Conditions import Conditions
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.number_provider.NumberProviderRef import NumberProviderRef
@@ -10,7 +11,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class SetEnchantments(Conditions):
-    enchantments: dict[str, NumberProviderRef]  # A map of enchantments to levels. Setting an enchantment to `0` removes it from the item.  Each level is clamped to a positive integer.
+    enchantments: dict[Annotated[str, IdSpec(registry='enchantment')], NumberProviderRef]  # A map of enchantments to levels. Setting an enchantment to `0` removes it from the item.  Each level is clamped to a positive integer.
     add: bool | None = None  # Whether to add to the level of each enchantment. Defaults to `false`.
 
 

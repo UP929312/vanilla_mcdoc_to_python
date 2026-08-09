@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::assets::item_definition::HasComponent
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class HasComponent:
-    component: str
+    component: Annotated[str, IdSpec(registry='data_component_type')]
     ignore_default: bool | None = None  # Whether the default components should be handled as "no component". Defaults to false.
 
 

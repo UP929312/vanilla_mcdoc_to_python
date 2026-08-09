@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::data::worldgen::feature::block_state_provider::RandomBlockStateProvider
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class RandomBlockStateProvider:
-    blocks: str | list[str]
+    blocks: Annotated[str, IdSpec(registry='block', tags='allowed')] | list[Annotated[str, IdSpec(registry='block')]]
 
 
 # ~~~ MODEL DUMP ~~~

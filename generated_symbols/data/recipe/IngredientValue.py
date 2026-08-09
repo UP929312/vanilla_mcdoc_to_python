@@ -1,15 +1,18 @@
 # Generated from symbols.json for ::java::data::recipe::IngredientValue
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class IngredientValueStruct1:
-    item: str
+    item: Annotated[str, IdSpec(registry='item')]
 
 
 @dataclass(kw_only=True)
 class IngredientValueStruct2:
-    tag: str
+    tag: Annotated[str, IdSpec(registry='item', tags='implicit')]
 
 
 type IngredientValue = IngredientValueStruct1 | IngredientValueStruct2

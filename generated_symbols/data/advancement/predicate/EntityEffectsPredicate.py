@@ -1,11 +1,13 @@
 # Generated from symbols.json for ::java::data::advancement::predicate::EntityEffectsPredicate
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.advancement.predicate.MobEffectPredicate import MobEffectPredicate
 
 
-type EntityEffectsPredicate = dict[str, MobEffectPredicate]
+type EntityEffectsPredicate = dict[Annotated[str, IdSpec(registry='mob_effect')], MobEffectPredicate]
 
 
 # ~~~ MODEL DUMP ~~~

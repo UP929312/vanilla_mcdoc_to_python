@@ -1,10 +1,11 @@
 # Generated from symbols.json for ::java::data::enchantment::effect::ParticlePosition
 from dataclasses import dataclass
+from typing import Literal
 
 
 @dataclass(kw_only=True)
 class ParticlePosition:
-    type: str
+    type: Literal['entity_position'] | Literal['in_bounding_box']
     offset: float | None = None  # Defaults to 0.
     scale: float | None = None  # Defaults to 1.
 

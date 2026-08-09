@@ -1,13 +1,15 @@
 # Generated from symbols.json for ::java::util::effect::MobEffectInstance
 from dataclasses import dataclass
-from typing import Annotated
+from typing import Annotated, Literal
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class MobEffectInstance:
-    id: str
+    id: Annotated[str, IdSpec(registry='mob_effect')]
     amplifier: int | Annotated[int, 'Range | `0`-`255` | both inclusive'] | None = None  # Level I having value 0. Defaults to 0.
-    duration: int | Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # Duration of the effect in ticks. Infinite is represented by `-1`.
+    duration: Literal[-1] | Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # Duration of the effect in ticks. Infinite is represented by `-1`.
     ambient: bool | None = None  # Whether the effect appears as a HUD icon in addition to in the inventory GUI (same behavior as beacons when `true`). Defaults to `false`.
     show_particles: bool | None = None  # Defaults to `true`.
     show_icon: bool | None = None  # Whether the effect appears in the inventory GUI. Defaults to `true`

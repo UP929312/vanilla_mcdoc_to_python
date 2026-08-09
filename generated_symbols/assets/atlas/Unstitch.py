@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::assets::atlas::Unstitch
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.assets.atlas.UnstitchRegion import UnstitchRegion
@@ -8,7 +10,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class Unstitch:
-    resource: str
+    resource: Annotated[str, IdSpec(registry='texture')]
     regions: list[UnstitchRegion]
     divisor_x: float | None = None  # If set to the resource width, regions will use pixel coordinates.
     divisor_y: float | None = None  # If set to the resource height, regions will use pixel coordinates.

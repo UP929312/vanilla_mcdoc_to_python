@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::data::worldgen::surface_builder::ConfiguredSurfaceBuilder
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.util.block_state.BlockState import BlockState
@@ -15,7 +17,7 @@ class ConfigStruct:
 
 @dataclass(kw_only=True)
 class ConfiguredSurfaceBuilder:
-    type: str
+    type: Annotated[str, IdSpec(registry='worldgen/surface_builder')]
     config: ConfigStruct
 
 

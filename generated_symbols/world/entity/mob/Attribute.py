@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::world::entity::mob::Attribute
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.world.entity.mob.AttributeModifier import AttributeModifier
@@ -8,7 +10,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class Attribute:
-    id: str | None = None
+    id: Annotated[str, IdSpec(registry='attribute')] | None = None
     base: float | None = None
     modifiers: list[AttributeModifier] | None = None
 

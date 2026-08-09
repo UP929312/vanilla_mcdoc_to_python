@@ -2,6 +2,8 @@
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from runtime_metadata import IdSpec
+
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.attribute.PositionalEnvironmentAttributeMap import PositionalEnvironmentAttributeMap
     from generated_symbols.data.worldgen.biome.BiomeEffects import BiomeEffects
@@ -17,7 +19,7 @@ class Biome:
     has_precipitation: bool
     effects: BiomeEffects
     carvers: CarverListRef
-    features: Annotated[list[list[PlacedFeatureRef] | str], 'Length = up to 11 (inclusive)']
+    features: Annotated[list[list[PlacedFeatureRef] | Annotated[str, IdSpec(registry='worldgen/placed_feature', tags='required')]], 'Length = up to 11 (inclusive)']
     attributes: PositionalEnvironmentAttributeMap | None = None
     temperature_modifier: TemperatureModifier | None = None
 

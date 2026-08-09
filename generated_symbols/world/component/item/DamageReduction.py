@@ -2,12 +2,14 @@
 from dataclasses import dataclass
 from typing import Annotated
 
+from runtime_metadata import IdSpec
+
 
 @dataclass(kw_only=True)
 class DamageReduction:
     base: float  # Constant amount of damage to be blocked.
     factor: float  # Fraction of the dealt damage that should be blocked.
-    type: str | list[str] | None = None  # An optional damage type to filter this reduction by. If not specified, any damage type is accepted for this reduction.
+    type: Annotated[str, IdSpec(registry='damage_type', tags='allowed')] | list[Annotated[str, IdSpec(registry='damage_type')]] | None = None  # An optional damage type to filter this reduction by. If not specified, any damage type is accepted for this reduction.
     horizontal_blocking_angle: Annotated[float, 'Range | Min `0` and above | inclusive'] | None = None  # Maximum angle between facing direction and incoming attack direction for the blocking to be effective
 
 

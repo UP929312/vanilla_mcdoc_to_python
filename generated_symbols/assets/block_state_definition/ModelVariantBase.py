@@ -1,6 +1,6 @@
 # Generated from symbols.json for ::java::assets::block_state_definition::ModelVariantBase
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Literal
 
 if TYPE_CHECKING:
     from generated_symbols.assets.model.ModelRef import ModelRef
@@ -9,9 +9,9 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class ModelVariantBase:
     model: ModelRef
-    x: int | None = None
-    y: int | None = None
-    z: int | None = None
+    x: Literal[0] | Literal[90] | Literal[180] | Literal[270] | None = None
+    y: Literal[0] | Literal[90] | Literal[180] | Literal[270] | None = None
+    z: Literal[0] | Literal[90] | Literal[180] | Literal[270] | None = None
     uvlock: bool | None = None  # If set to `true`, the textures are not rotated with the block.
 
 

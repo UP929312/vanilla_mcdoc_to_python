@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::data::decorated_pot_pattern::DecoratedPotPattern
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class DecoratedPotPattern:
-    asset_id: str
+    asset_id: Annotated[str, IdSpec(registry='texture', path='entity/decorated_pot/')]
 
 
 # ~~~ MODEL DUMP ~~~

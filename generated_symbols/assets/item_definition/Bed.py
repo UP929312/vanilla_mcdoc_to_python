@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::assets::item_definition::Bed
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.assets.item_definition.BedPart import BedPart
@@ -8,7 +10,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class Bed:
-    texture: str
+    texture: Annotated[str, IdSpec(registry='texture', path='entity/bed/')]
     part: BedPart
 
 

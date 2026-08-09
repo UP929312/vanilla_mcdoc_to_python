@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::util::particle::BlockParticle
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.util.block_state.BlockState import BlockState
@@ -8,7 +10,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class BlockParticle:
-    block_state: str | BlockState
+    block_state: Annotated[str, IdSpec(registry='block')] | BlockState
 
 
 # ~~~ MODEL DUMP ~~~

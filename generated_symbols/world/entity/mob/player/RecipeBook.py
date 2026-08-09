@@ -1,11 +1,14 @@
 # Generated from symbols.json for ::java::world::entity::mob::player::RecipeBook
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class RecipeBook:
-    recipes: list[str] | None = None  # Recipes the player has acquired.
-    toBeDisplayed: list[str] | None = None  # Recipes that should pulse in the crafting book.
+    recipes: list[Annotated[str, IdSpec(registry='recipe')]] | None = None  # Recipes the player has acquired.
+    toBeDisplayed: list[Annotated[str, IdSpec(registry='recipe')]] | None = None  # Recipes that should pulse in the crafting book.
     isFilteringCraftable: bool | None = None  # Whether the player has filtered crafting on in the crafting table.
     isGuiOpen: bool | None = None  # Whether the player has the crafting book open in the crafting table.
     isFurnaceFilteringCraftable: bool | None = None  # Whether the player has filtered crafting on in the furnace.

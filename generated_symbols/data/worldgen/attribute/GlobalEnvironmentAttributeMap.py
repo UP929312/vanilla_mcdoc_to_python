@@ -1,11 +1,13 @@
 # Generated from symbols.json for ::java::data::worldgen::attribute::GlobalEnvironmentAttributeMap
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.attribute.EnvironmentAttributeMap import EnvironmentAttributeMap
 
 
-GlobalEnvironmentAttributeMap = EnvironmentAttributeMap[str]
+GlobalEnvironmentAttributeMap = EnvironmentAttributeMap[Annotated[str, IdSpec(registry='environment_attribute')]]
 
 
 # ~~~ MODEL DUMP ~~~

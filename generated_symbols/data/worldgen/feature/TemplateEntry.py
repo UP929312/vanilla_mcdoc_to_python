@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::data::worldgen::feature::TemplateEntry
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.util.Rotation import Rotation
@@ -8,7 +10,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class TemplateEntry:
-    id: str  # The structure template to place.
+    id: Annotated[str, IdSpec(registry='structure')]  # The structure template to place.
     rotations: list[Rotation] | None = None  # Rotations to choose from and apply to this template, centered around the origin. If not specified, defaults to all allowed rotations.
 
 

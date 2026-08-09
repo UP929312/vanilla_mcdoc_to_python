@@ -1,6 +1,6 @@
 # Generated from symbols.json for ::java::world::entity::mob::breedable::villager::PlayerReputationPart
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING, Annotated, Literal
 
 if TYPE_CHECKING:
     from generated_symbols.world.entity.mob.breedable.villager.ReputationPart import ReputationPart
@@ -9,7 +9,7 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class PlayerReputationPart:
     Type: ReputationPart | None = None
-    Value: Any | None = None
+    Value: Annotated[int, 'Range | `5`-`100` | both inclusive'] | Literal[20] | Annotated[int, 'Range | `5`-`200` | both inclusive'] | Annotated[int, 'Range | `1`-`25` | both inclusive'] | None = None
     Target: tuple[int, int, int, int] | None = None  # UUID of the player that caused the gossip-worthy event(s) related to this reputation part.
 
 

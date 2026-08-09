@@ -1,6 +1,6 @@
 # Generated from symbols.json for ::java::util::text::SelectorText
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Literal
 
 from generated_symbols.util.text.TextBase import TextBase
 
@@ -12,7 +12,7 @@ if TYPE_CHECKING:
 class SelectorText(TextBase):
     selector: str
     separator: Text | None = None
-    type: str | None = None
+    type: Literal['selector'] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

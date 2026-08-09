@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::data::gametest::test_environment::TimelineAttributesTestEnvironment
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class TimelineAttributesTestEnvironment:
-    timelines: list[str]
+    timelines: list[Annotated[str, IdSpec(registry='timeline')]]
 
 
 # ~~~ MODEL DUMP ~~~

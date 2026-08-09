@@ -1,17 +1,18 @@
 # Generated from symbols.json for ::java::world::entity::mob::breedable::mooshroom::Mooshroom
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING
 
 from generated_symbols.world.entity.mob.breedable.Breedable import Breedable
 
 if TYPE_CHECKING:
     from generated_symbols.world.component.entity.MooshroomType import MooshroomType
+    from generated_symbols.world.component.item.SuspiciousStewEffect import SuspiciousStewEffect
 
 
 @dataclass(kw_only=True)
 class Mooshroom(Breedable):
     Type: MooshroomType | None = None
-    stew_effects: Any | None = None
+    stew_effects: list[SuspiciousStewEffect] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

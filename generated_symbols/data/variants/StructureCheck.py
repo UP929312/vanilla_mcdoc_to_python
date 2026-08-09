@@ -1,10 +1,13 @@
 # Generated from symbols.json for ::java::data::variants::StructureCheck
 from dataclasses import dataclass
+from typing import Annotated
+
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class StructureCheck:
-    structures: str | list[str]  # Checks if the entity is spawning in specific structures.
+    structures: Annotated[str, IdSpec(registry='worldgen/structure', tags='allowed')] | list[Annotated[str, IdSpec(registry='worldgen/structure')]]  # Checks if the entity is spawning in specific structures.
 
 
 # ~~~ MODEL DUMP ~~~

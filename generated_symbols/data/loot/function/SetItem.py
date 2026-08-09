@@ -1,12 +1,14 @@
 # Generated from symbols.json for ::java::data::loot::function::SetItem
 from dataclasses import dataclass
+from typing import Annotated
 
 from generated_symbols.data.loot.function.Conditions import Conditions
+from runtime_metadata import IdSpec
 
 
 @dataclass(kw_only=True)
 class SetItem(Conditions):
-    item: str
+    item: Annotated[str, IdSpec(registry='item', exclude=('air',))]
 
 
 # ~~~ MODEL DUMP ~~~

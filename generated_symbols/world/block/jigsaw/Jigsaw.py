@@ -1,6 +1,8 @@
 # Generated from symbols.json for ::java::world::block::jigsaw::Jigsaw
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.world.block.jigsaw.JointType import JointType
@@ -9,7 +11,7 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class Jigsaw:
     joint: JointType | None = None  # How the resultant structure can be transformed.
-    pool: str | None = None  # Structure pool this will "spawn" in.
+    pool: Annotated[str, IdSpec(registry='worldgen/template_pool')] | None = None  # Structure pool this will "spawn" in.
     name: str | None = None  # ID this will "spawn" in.
     target: str | None = None  # ID of the type of jigsaw this will be "spawned" from.
     final_state: str | None = None  # Final block state of the jigsaw.

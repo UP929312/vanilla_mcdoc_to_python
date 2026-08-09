@@ -1,6 +1,6 @@
 # Generated from symbols.json for ::java::assets::model::ModelElement
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, Literal
 
 if TYPE_CHECKING:
     from generated_symbols.assets.model.ModelElementRotation import ModelElementRotation
@@ -12,7 +12,7 @@ class FacesStructValueStruct:
     texture: str
     uv: tuple[float, float, float, float] | None = None
     cullface: Direction | None = None
-    rotation: int | None = None
+    rotation: Literal[0] | Literal[90] | Literal[180] | Literal[270] | None = None
     tintindex: int | None = None
 
 
