@@ -17,13 +17,15 @@ class FoodPredicate:
 
     # GlobalEnvironmentAttributeMap, is a type of types with literal keys in the dictionary.
     r"generated_symbols\data\worldgen\attribute\GlobalEnvironmentAttributeMap.py": """# Generated from symbols.json for ::java::data::worldgen::attribute::GlobalEnvironmentAttributeMap
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.attribute.EnvironmentAttributeMap import EnvironmentAttributeMap
 
 
-GlobalEnvironmentAttributeMap = EnvironmentAttributeMap[str]
+GlobalEnvironmentAttributeMap = EnvironmentAttributeMap[Annotated[str, IdSpec(registry='environment_attribute')]]
 
 """,
 
@@ -109,7 +111,9 @@ class Shield(ItemBase):
     # Lowercase pair keys are converted to PascalCase when naming nested structs.
     r"generated_symbols\assets\equipment\TrimOverride.py": """# Generated from symbols.json for ::java::assets::equipment::TrimOverride
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.assets.atlas.PaletteRef import PaletteRef
@@ -117,14 +121,14 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class WhenStruct:
-    pattern: str | None = None
-    material: str | None = None
+    pattern: Annotated[str, IdSpec(registry='trim_pattern')] | None = None
+    material: Annotated[str, IdSpec(registry='trim_material')] | None = None
 
 
 @dataclass(kw_only=True)
 class TrimOverride:
     when: WhenStruct
-    texture: str | None = None  # When present, overrides the base texture provided by trim pattern.  The texture is located under `trims/entity/<layer>/`.
+    texture: Annotated[str, IdSpec()] | None = None  # When present, overrides the base texture provided by trim pattern.  The texture is located under `trims/entity/<layer>/`.
     palette: PaletteRef | None = None  # When present, overrides the palette texture provided by trim material.
 """,
 
@@ -179,19 +183,56 @@ if TYPE_CHECKING:
 type Text = str | TextObject | Annotated[list[Text], 'Length = 1 (inclusive) and above']
 """,
 
-    # Has a union attr, so makes its own Struct.
+    # Dispatcher spread branches retain their correlated discriminator and fields.
     r"generated_symbols\data\worldgen\HeightProvider.py": """# Generated from symbols.json for ::java::data::worldgen::HeightProvider
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated, Literal
+
+from generated_symbols.data.worldgen.UniformHeightProvider import UniformHeightProvider
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.VerticalAnchor import VerticalAnchor
+    from generated_symbols.util.NonEmptyWeightedList import NonEmptyWeightedList
 
 
 @dataclass(kw_only=True)
-class HeightProviderStruct:
-    type: str
+class HeightProviderStructBiasedToBottom(UniformHeightProvider):
+    type: Literal['minecraft:biased_to_bottom']
+    inner: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None
 
+
+@dataclass(kw_only=True)
+class HeightProviderStructConstant:
+    type: Literal['minecraft:constant']
+    value: VerticalAnchor
+
+
+@dataclass(kw_only=True)
+class HeightProviderStructTrapezoid(UniformHeightProvider):
+    type: Literal['minecraft:trapezoid']
+    plateau: int | None = None
+
+
+@dataclass(kw_only=True)
+class HeightProviderStructUniform:
+    type: Literal['minecraft:uniform']
+    min_inclusive: VerticalAnchor
+    max_inclusive: VerticalAnchor
+
+
+@dataclass(kw_only=True)
+class HeightProviderStructVeryBiasedToBottom(UniformHeightProvider):
+    type: Literal['minecraft:very_biased_to_bottom']
+    inner: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None
+
+
+@dataclass(kw_only=True)
+class HeightProviderStructWeightedList:
+    type: Literal['minecraft:weighted_list']
+    distribution: NonEmptyWeightedList[HeightProvider]
+
+
+type HeightProviderStruct = HeightProviderStructBiasedToBottom | HeightProviderStructConstant | HeightProviderStructTrapezoid | HeightProviderStructUniform | HeightProviderStructVeryBiasedToBottom | HeightProviderStructWeightedList
 
 type HeightProvider = HeightProviderStruct | VerticalAnchor
 """,
@@ -199,7 +240,9 @@ type HeightProvider = HeightProviderStruct | VerticalAnchor
     # Nothing in particular, just a nice, nested object with lots going on
     r"generated_symbols\data\advancement\AdvancementDisplay.py": """# Generated from symbols.json for ::java::data::advancement::AdvancementDisplay
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.advancement.AdvancementFrame import AdvancementFrame
@@ -212,7 +255,7 @@ class AdvancementDisplay:
     icon: ItemStackTemplate
     title: Text
     description: Text
-    background: str | None = None  # Used for the advancement tab (root advancement only).
+    background: Annotated[str, IdSpec(registry='texture')] | None = None  # Used for the advancement tab (root advancement only).
     frame: AdvancementFrame | None = None  # Controls the advancement tile frame. Defaults to `task`.
     show_toast: bool | None = None  # Whether to show the toast pop up after completing this advancement. Defaults to `true`.
     announce_to_chat: bool | None = None  # Whether to announce in the chat when this advancement has been completed. Defaults to `true`.
@@ -251,7 +294,9 @@ class AdvancementDisplay:
 
     r"generated_symbols\world\entity\mob\AttributeModifier.py": """# Generated from symbols.json for ::java::world::entity::mob::AttributeModifier
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated
+
+from runtime_metadata import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.util.attribute.AttributeOperation import AttributeOperation
@@ -259,7 +304,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class AttributeModifier:
-    id: str  # The unique identifier of this attribute modifier.
+    id: Annotated[str, IdSpec(registry='attribute_modifier')]  # The unique identifier of this attribute modifier.
     amount: float  # Change in the attribute.
     operation: AttributeOperation  # The operation used for this modifier.
 """,
@@ -280,6 +325,8 @@ type ModelElementRotation = dict[Axis, float]
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from runtime_metadata import IdSpec
+
 if TYPE_CHECKING:
     from generated_symbols.util.avatar.PlayerModelType import PlayerModelType
     from generated_symbols.util.avatar.ProfileProperty import ProfileProperty
@@ -291,9 +338,9 @@ class ProfileStruct:
     name: str | None = None  # Username of a player profile. If `id` doesn't exist, this field is used to fetch the current skin of the profile.
     id: tuple[int, int, int, int] | None = None  # UUID of the player profile. If `name` doesn't exist, this field is used to fetch the current skin of the profile.
     properties: Annotated[list[ProfileProperty], 'Length = 0-16 (both inclusive)'] | ProfilePropertyMap | None = None  # Resolved textures hosted on the minecraft CDN.
-    texture: str | None = None  # Skin texture override.
-    cape: str | None = None  # Cape texture override.
-    elytra: str | None = None  # Elytra texture override. If this texture is not present either as override or in player profile, the cape texture is used. If the cape texture is also not present, the default elytra texture is used.
+    texture: Annotated[str, IdSpec(registry='texture')] | None = None  # Skin texture override.
+    cape: Annotated[str, IdSpec(registry='texture')] | None = None  # Cape texture override.
+    elytra: Annotated[str, IdSpec(registry='texture')] | None = None  # Elytra texture override. If this texture is not present either as override or in player profile, the cape texture is used. If the cape texture is also not present, the default elytra texture is used.
     model: PlayerModelType | None = None  # Model type override.
 
 
@@ -429,7 +476,7 @@ class TrickyTrialsStructureConfig:
     # Mapping values that are structs become named dataclasses rather than unions of their field keys.
     r"generated_symbols\assets\model\ModelElementFaceMap.py": """# Generated from symbols.json for ::java::assets::model::ModelElementFaceMap
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Literal
 
 if TYPE_CHECKING:
     from generated_symbols.util.direction.Direction import Direction
@@ -440,7 +487,7 @@ class ModelElementFaceMapValueStruct:
     texture: str
     uv: tuple[float, float, float, float] | None = None
     cullface: Direction | None = None
-    rotation: int | None = None
+    rotation: Literal[0] | Literal[90] | Literal[180] | Literal[270] | None = None
     tintindex: int | None = None
 
 

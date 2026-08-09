@@ -1,8 +1,12 @@
 import json
 from typing import Any
 
+from schema_resolution import SchemaGraph
 from typed_models import KIND_TO_MODEL, TemplateSchema, RenderContext, Import
-from utils import GENERATED_SYMBOLS_DIRECTORY, symbol_path_to_import_string_and_name, symbol_path_to_object_name, manage_directory_and_inits
+from utils import GENERATED_SYMBOLS_DIRECTORY, SYMBOLS_MAP, symbol_path_to_import_string_and_name, symbol_path_to_object_name, manage_directory_and_inits
+
+
+SCHEMA_GRAPH = SchemaGraph.from_symbol_maps(SYMBOLS_MAP)
 
 
 def make_python_file_content(resource_type: str, resource_data: dict[str, Any], class_name: str) -> str:
@@ -10,7 +14,7 @@ def make_python_file_content(resource_type: str, resource_data: dict[str, Any], 
     current_model = class_type(**resource_data).remove_version_data()
 
     signature_lines: list[str] = []
-    ctx = RenderContext(current_symbol_path=resource_type)
+    ctx = RenderContext(current_symbol_path=resource_type, schema_graph=SCHEMA_GRAPH)
     body_lines = current_model.to_python_code(class_name, ctx)
 
     # Add TypeVar declarations after rendering so discovered local type params are included.
@@ -25,7 +29,7 @@ def make_python_file_content(resource_type: str, resource_data: dict[str, Any], 
 
     # Build top-of-file imports from the final rendered import set.
     file_comment = [f"# Generated from symbols.json for {resource_type}"]
-    file_contents = "\n".join(file_comment + ctx.imports_to_python_code() + signature_lines + ctx.additional_dataclasses + body_lines).rstrip() + "\n"
+    file_contents = "\n".join(file_comment + Import.to_python_code(ctx.required_imports) + signature_lines + ctx.additional_dataclasses + body_lines).rstrip() + "\n"
 
     # Add the raw model at the bottom, for reference:
     stringified_output = json.dumps({resource_type: resource_data}, indent=4).replace("true", "True").replace("false", "False")

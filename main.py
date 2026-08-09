@@ -7,12 +7,7 @@ SYMBOLS_MAP_NO_ANONYMOUS = {key: value for key, value in SYMBOLS_MAP["mcdoc"].it
 for resource_type, resource_data in SYMBOLS_MAP_NO_ANONYMOUS.items():
     make_python_file_of_model(resource_type, resource_data)
 
-# for resource_type, resource_data in SYMBOLS_MAP["mcdoc/dispatcher"].items():
-#     make_python_file_of_model(resource_type, {"kind": "mcdocdispatcher", **resource_data})
-
 run_assertions()
-
-# TODO: For string's with an equal value, e.g. dimension, figure something out, the annotation system is ugly...
 
 # mypy . --strict --exclude generated_symbols
 # coverage run --branch main.py
@@ -41,6 +36,7 @@ HANDY_LINKS = [
     r"generated_symbols\world\component\DataComponentPredicate.py",  # Overly simplified -> dict[str, Any], the Any is a Dispatcher
     r"generated_symbols\assets\credits\Credits.py",  # Needs to make it's own Structs (list does)
     r"generated_symbols\data\advancement\predicate\BlockPredicate.py",  # str | Dispatcher (resolves to Any)
+    r"generated_symbols\data\advancement\Advancement.py",  # Super weird attributes.
     r"",  # 
 ]
 
