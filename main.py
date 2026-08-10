@@ -9,6 +9,8 @@ for resource_type, resource_data in SYMBOLS_MAP_NO_ANONYMOUS.items():
 
 run_assertions()
 
+# TODO: Nice import system, especially for things in data/asserts (So you can do from . import Advancement)
+
 # mypy . --strict --exclude generated_symbols
 # coverage run --branch main.py
 # coverage html 

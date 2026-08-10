@@ -253,12 +253,6 @@ class StringSchema(BaseSchema):
     kind: Literal["string"] = Field(repr=False)
     length_range: LengthRange | None = Field(default=None, alias="lengthRange")
     value: str | None = None  # For literal strings
-    # Value options (only these ones)
-    # [
-    #     'atlas', 'attacker', 'block', 'block_entity', 'ceiling', 'container', 'default', 'entity', 'entity_position',
-    #     'floor', 'front', 'in_bounding_box', 'keybind', 'nbt', 'object', 'override', 'player', 'score', 'selector',
-    #     'side', 'storage', 'text', 'tool', 'translatable', 'victim'
-    # ]
 
     def to_annotation(self, ctx: RenderContext) -> str:
         id_spec = next((spec for attribute in self.attributes if (spec := attribute.to_id_spec()) is not None), None)

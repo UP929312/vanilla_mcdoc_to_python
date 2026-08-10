@@ -104,6 +104,12 @@ def iter_child_schemas(value: object) -> Generator[BaseSchema]:
             yield from iter_child_schemas(item)
 
 
+def resource_path_to_python_path(resource_path: str) -> str:
+    path, name = symbol_path_to_import_string_and_name(resource_path)
+    output_path = GENERATED_SYMBOLS_DIRECTORY.joinpath(*path.split(".")[1:-1], name).with_suffix(".py")
+    return str(output_path)
+
+
 def manage_directory_and_inits(path: Path) -> None:
     """Creates the subfolders required, plus the __init__ files too"""
     path.mkdir(parents=True, exist_ok=True)

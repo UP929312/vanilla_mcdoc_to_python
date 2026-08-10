@@ -3,7 +3,7 @@ from typing import Any
 
 from schema_resolution import SchemaGraph
 from typed_models import KIND_TO_MODEL, TemplateSchema, RenderContext, Import
-from utils import GENERATED_SYMBOLS_DIRECTORY, SYMBOLS_MAP, symbol_path_to_import_string_and_name, symbol_path_to_object_name, manage_directory_and_inits
+from utils import GENERATED_SYMBOLS_DIRECTORY, SYMBOLS_MAP, resource_path_to_python_path, symbol_path_to_import_string_and_name, symbol_path_to_object_name, manage_directory_and_inits
 
 
 SCHEMA_GRAPH = SchemaGraph.from_symbol_maps(SYMBOLS_MAP)
@@ -28,7 +28,13 @@ def make_python_file_content(resource_type: str, resource_data: dict[str, Any], 
         signature_lines.append("")
 
     # Build top-of-file imports from the final rendered import set.
-    file_comment = [f"# Generated from symbols.json for {resource_type}"]
+    file_comment = [
+        "\"\"\"",
+        f"Generated from symbols.json for {resource_type}",
+        f"Local link to file: {resource_path_to_python_path(resource_type).replace("\\", "/")}",
+        "\"\"\"",
+        "# ~~~ CODE ~~~"
+    ]
     file_contents = "\n".join(file_comment + Import.to_python_code(ctx.required_imports) + signature_lines + ctx.additional_dataclasses + body_lines).rstrip() + "\n"
 
     # Add the raw model at the bottom, for reference:
