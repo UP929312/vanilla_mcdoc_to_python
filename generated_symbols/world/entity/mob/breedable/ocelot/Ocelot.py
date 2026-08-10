@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::breedable::ocelot::Ocelot
+"""
+Generated from symbols.json for ::java::world::entity::mob::breedable::ocelot::Ocelot
+Local link to file: generated_symbols/world/entity/mob/breedable/ocelot/Ocelot.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.world.entity.mob.breedable.Breedable import Breedable

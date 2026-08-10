@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::component::item::ConsumeEffect
+"""
+Generated from symbols.json for ::java::world::component::item::ConsumeEffect
+Local link to file: generated_symbols/world/component/item/ConsumeEffect.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Literal
 

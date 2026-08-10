@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::registry_ref::ItemListRef
+"""
+Generated from symbols.json for ::java::util::registry_ref::ItemListRef
+Local link to file: generated_symbols/util/registry_ref/ItemListRef.py
+"""
+# ~~~ CODE ~~~
 from typing import Annotated
 
 from runtime_metadata import IdSpec

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::item_definition::Book
+"""
+Generated from symbols.json for ::java::assets::item_definition::Book
+Local link to file: generated_symbols/assets/item_definition/Book.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::direction::HorizontalDirectionByte
+"""
+Generated from symbols.json for ::java::util::direction::HorizontalDirectionByte
+Local link to file: generated_symbols/util/direction/HorizontalDirectionByte.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

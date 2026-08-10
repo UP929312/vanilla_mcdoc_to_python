@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::Trigger
+"""
+Generated from symbols.json for ::java::data::advancement::Trigger
+Local link to file: generated_symbols/data/advancement/Trigger.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::display::DecomposedTransformation
+"""
+Generated from symbols.json for ::java::world::entity::display::DecomposedTransformation
+Local link to file: generated_symbols/world/entity/display/DecomposedTransformation.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

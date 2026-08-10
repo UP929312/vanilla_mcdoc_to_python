@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::damage_type::DamageType
+"""
+Generated from symbols.json for ::java::data::damage_type::DamageType
+Local link to file: generated_symbols/data/damage_type/DamageType.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

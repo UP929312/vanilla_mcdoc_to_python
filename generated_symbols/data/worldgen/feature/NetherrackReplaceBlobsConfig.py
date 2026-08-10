@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::NetherrackReplaceBlobsConfig
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::NetherrackReplaceBlobsConfig
+Local link to file: generated_symbols/data/worldgen/feature/NetherrackReplaceBlobsConfig.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

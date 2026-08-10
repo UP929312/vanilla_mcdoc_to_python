@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::structure::StructureNBT
+"""
+Generated from symbols.json for ::java::data::structure::StructureNBT
+Local link to file: generated_symbols/data/structure/StructureNBT.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

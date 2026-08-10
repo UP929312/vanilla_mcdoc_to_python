@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::predicate::PredicateRef
+"""
+Generated from symbols.json for ::java::data::predicate::PredicateRef
+Local link to file: generated_symbols/data/predicate/PredicateRef.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from runtime_metadata import IdSpec

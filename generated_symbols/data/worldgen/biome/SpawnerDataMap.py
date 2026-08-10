@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::biome::SpawnerDataMap
+"""
+Generated from symbols.json for ::java::data::worldgen::biome::SpawnerDataMap
+Local link to file: generated_symbols/data/worldgen/biome/SpawnerDataMap.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:

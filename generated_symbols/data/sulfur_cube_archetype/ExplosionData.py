@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::sulfur_cube_archetype::ExplosionData
+"""
+Generated from symbols.json for ::java::data::sulfur_cube_archetype::ExplosionData
+Local link to file: generated_symbols/data/sulfur_cube_archetype/ExplosionData.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

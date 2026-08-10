@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::breedable::villager::ReputationPart
+"""
+Generated from symbols.json for ::java::world::entity::mob::breedable::villager::ReputationPart
+Local link to file: generated_symbols/world/entity/mob/breedable/villager/ReputationPart.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

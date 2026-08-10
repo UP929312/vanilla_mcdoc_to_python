@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::predicate::EntitySubPredicateMap
+"""
+Generated from symbols.json for ::java::data::advancement::predicate::EntitySubPredicateMap
+Local link to file: generated_symbols/data/advancement/predicate/EntitySubPredicateMap.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from runtime_metadata import IdSpec

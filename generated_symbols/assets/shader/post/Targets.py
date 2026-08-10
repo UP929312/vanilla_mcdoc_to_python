@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::shader::post::Targets
+"""
+Generated from symbols.json for ::java::assets::shader::post::Targets
+Local link to file: generated_symbols/assets/shader/post/Targets.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from runtime_metadata import IdSpec

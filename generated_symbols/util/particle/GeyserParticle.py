@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::particle::GeyserParticle
+"""
+Generated from symbols.json for ::java::util::particle::GeyserParticle
+Local link to file: generated_symbols/util/particle/GeyserParticle.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

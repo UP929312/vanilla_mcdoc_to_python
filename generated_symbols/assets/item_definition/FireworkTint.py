@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::item_definition::FireworkTint
+"""
+Generated from symbols.json for ::java::assets::item_definition::FireworkTint
+Local link to file: generated_symbols/assets/item_definition/FireworkTint.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

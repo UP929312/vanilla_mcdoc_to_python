@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::interaction::Interaction
+"""
+Generated from symbols.json for ::java::world::entity::interaction::Interaction
+Local link to file: generated_symbols/world/entity/interaction/Interaction.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

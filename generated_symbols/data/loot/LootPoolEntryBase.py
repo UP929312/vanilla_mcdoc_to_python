@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::LootPoolEntryBase
+"""
+Generated from symbols.json for ::java::data::loot::LootPoolEntryBase
+Local link to file: generated_symbols/data/loot/LootPoolEntryBase.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

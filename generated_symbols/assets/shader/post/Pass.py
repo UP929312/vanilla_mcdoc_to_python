@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::shader::post::Pass
+"""
+Generated from symbols.json for ::java::assets::shader::post::Pass
+Local link to file: generated_symbols/assets/shader/post/Pass.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

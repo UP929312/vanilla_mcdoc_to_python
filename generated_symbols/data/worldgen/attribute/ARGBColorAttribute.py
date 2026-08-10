@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::attribute::ARGBColorAttribute
+"""
+Generated from symbols.json for ::java::data::worldgen::attribute::ARGBColorAttribute
+Local link to file: generated_symbols/data/worldgen/attribute/ARGBColorAttribute.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

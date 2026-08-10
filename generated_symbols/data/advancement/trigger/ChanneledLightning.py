@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::trigger::ChanneledLightning
+"""
+Generated from symbols.json for ::java::data::advancement::trigger::ChanneledLightning
+Local link to file: generated_symbols/data/advancement/trigger/ChanneledLightning.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

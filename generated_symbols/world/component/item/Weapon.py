@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::component::item::Weapon
+"""
+Generated from symbols.json for ::java::world::component::item::Weapon
+Local link to file: generated_symbols/world/component/item/Weapon.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

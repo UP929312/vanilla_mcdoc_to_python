@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::GlobalPos
+"""
+Generated from symbols.json for ::java::util::GlobalPos
+Local link to file: generated_symbols/util/GlobalPos.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

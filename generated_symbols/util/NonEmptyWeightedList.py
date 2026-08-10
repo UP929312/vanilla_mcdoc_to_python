@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::NonEmptyWeightedList
+"""
+Generated from symbols.json for ::java::util::NonEmptyWeightedList
+Local link to file: generated_symbols/util/NonEmptyWeightedList.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, TypeVar
 
 if TYPE_CHECKING:

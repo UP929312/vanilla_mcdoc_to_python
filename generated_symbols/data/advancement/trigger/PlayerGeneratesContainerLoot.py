@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::trigger::PlayerGeneratesContainerLoot
+"""
+Generated from symbols.json for ::java::data::advancement::trigger::PlayerGeneratesContainerLoot
+Local link to file: generated_symbols/data/advancement/trigger/PlayerGeneratesContainerLoot.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

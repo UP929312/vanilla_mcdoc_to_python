@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::attribute::EnvironmentAttributeMap
+"""
+Generated from symbols.json for ::java::data::worldgen::attribute::EnvironmentAttributeMap
+Local link to file: generated_symbols/data/worldgen/attribute/EnvironmentAttributeMap.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, Any, TypeVar
 
 from runtime_metadata import IdSpec

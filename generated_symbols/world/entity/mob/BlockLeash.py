@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::BlockLeash
+"""
+Generated from symbols.json for ::java::world::entity::mob::BlockLeash
+Local link to file: generated_symbols/world/entity/mob/BlockLeash.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

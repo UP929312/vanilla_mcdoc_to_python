@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::component::predicate::ItemCountPseudoPredicate
+"""
+Generated from symbols.json for ::java::world::component::predicate::ItemCountPseudoPredicate
+Local link to file: generated_symbols/world/component/predicate/ItemCountPseudoPredicate.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 if TYPE_CHECKING:

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::variants::cat::CatSounds
+"""
+Generated from symbols.json for ::java::data::variants::cat::CatSounds
+Local link to file: generated_symbols/data/variants/cat/CatSounds.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

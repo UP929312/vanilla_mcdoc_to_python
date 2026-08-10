@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::block_state::BlockState
+"""
+Generated from symbols.json for ::java::util::block_state::BlockState
+Local link to file: generated_symbols/util/block_state/BlockState.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

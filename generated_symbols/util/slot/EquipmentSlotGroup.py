@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::slot::EquipmentSlotGroup
+"""
+Generated from symbols.json for ::java::util::slot::EquipmentSlotGroup
+Local link to file: generated_symbols/util/slot/EquipmentSlotGroup.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

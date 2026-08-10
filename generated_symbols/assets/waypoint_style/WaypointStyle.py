@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::waypoint_style::WaypointStyle
+"""
+Generated from symbols.json for ::java::assets::waypoint_style::WaypointStyle
+Local link to file: generated_symbols/assets/waypoint_style/WaypointStyle.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

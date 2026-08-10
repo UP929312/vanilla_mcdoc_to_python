@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::component::predicate::BundleContentsPredicate
+"""
+Generated from symbols.json for ::java::world::component::predicate::BundleContentsPredicate
+Local link to file: generated_symbols/world/component/predicate/BundleContentsPredicate.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

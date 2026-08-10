@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::creeper::Creeper
+"""
+Generated from symbols.json for ::java::world::entity::mob::creeper::Creeper
+Local link to file: generated_symbols/world/entity/mob/creeper/Creeper.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.world.entity.mob.MobBase import MobBase

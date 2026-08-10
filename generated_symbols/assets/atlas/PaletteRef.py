@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::atlas::PaletteRef
+"""
+Generated from symbols.json for ::java::assets::atlas::PaletteRef
+Local link to file: generated_symbols/assets/atlas/PaletteRef.py
+"""
+# ~~~ CODE ~~~
 from typing import Annotated
 
 from runtime_metadata import IdSpec

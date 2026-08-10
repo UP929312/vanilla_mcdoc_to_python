@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::function::EnchantedCountIncrease
+"""
+Generated from symbols.json for ::java::data::loot::function::EnchantedCountIncrease
+Local link to file: generated_symbols/data/loot/function/EnchantedCountIncrease.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

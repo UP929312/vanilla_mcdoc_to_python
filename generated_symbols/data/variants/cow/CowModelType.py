@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::variants::cow::CowModelType
+"""
+Generated from symbols.json for ::java::data::variants::cow::CowModelType
+Local link to file: generated_symbols/data/variants/cow/CowModelType.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::texture_meta::TileScaling
+"""
+Generated from symbols.json for ::java::assets::texture_meta::TileScaling
+Local link to file: generated_symbols/assets/texture_meta/TileScaling.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

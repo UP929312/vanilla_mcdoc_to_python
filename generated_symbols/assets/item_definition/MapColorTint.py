@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::item_definition::MapColorTint
+"""
+Generated from symbols.json for ::java::assets::item_definition::MapColorTint
+Local link to file: generated_symbols/assets/item_definition/MapColorTint.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::function::SetCount
+"""
+Generated from symbols.json for ::java::data::loot::function::SetCount
+Local link to file: generated_symbols/data/loot/function/SetCount.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

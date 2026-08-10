@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::item_modifier::ItemModifier
+"""
+Generated from symbols.json for ::java::data::item_modifier::ItemModifier
+Local link to file: generated_symbols/data/item_modifier/ItemModifier.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from runtime_metadata import IdSpec

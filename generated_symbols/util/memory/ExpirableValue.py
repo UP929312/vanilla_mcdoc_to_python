@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::memory::ExpirableValue
+"""
+Generated from symbols.json for ::java::util::memory::ExpirableValue
+Local link to file: generated_symbols/util/memory/ExpirableValue.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

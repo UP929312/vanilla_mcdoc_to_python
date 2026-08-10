@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::Particle
+"""
+Generated from symbols.json for ::java::util::Particle
+Local link to file: generated_symbols/util/Particle.py
+"""
+# ~~~ CODE ~~~
 from generated_symbols.util.particle.Particle import Particle as Particle_alias
 
 

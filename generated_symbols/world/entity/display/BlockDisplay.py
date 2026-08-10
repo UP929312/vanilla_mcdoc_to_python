@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::display::BlockDisplay
+"""
+Generated from symbols.json for ::java::world::entity::display::BlockDisplay
+Local link to file: generated_symbols/world/entity/display/BlockDisplay.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::item_definition::TrimMaterial
+"""
+Generated from symbols.json for ::java::assets::item_definition::TrimMaterial
+Local link to file: generated_symbols/assets/item_definition/TrimMaterial.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

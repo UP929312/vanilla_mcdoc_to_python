@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::util::WeightedSoundEvent
+"""
+Generated from symbols.json for ::java::data::util::WeightedSoundEvent
+Local link to file: generated_symbols/data/util/WeightedSoundEvent.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

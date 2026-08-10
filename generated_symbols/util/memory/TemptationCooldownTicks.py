@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::memory::TemptationCooldownTicks
+"""
+Generated from symbols.json for ::java::util::memory::TemptationCooldownTicks
+Local link to file: generated_symbols/util/memory/TemptationCooldownTicks.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.util.memory.ExpirableValue import ExpirableValue

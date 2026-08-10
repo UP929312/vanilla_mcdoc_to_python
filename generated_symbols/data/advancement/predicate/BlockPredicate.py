@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::predicate::BlockPredicate
+"""
+Generated from symbols.json for ::java::data::advancement::predicate::BlockPredicate
+Local link to file: generated_symbols/data/advancement/predicate/BlockPredicate.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::util::RandomIntGeneratorType
+"""
+Generated from symbols.json for ::java::data::util::RandomIntGeneratorType
+Local link to file: generated_symbols/data/util/RandomIntGeneratorType.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

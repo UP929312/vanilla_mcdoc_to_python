@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::util::NbtProviderSource
+"""
+Generated from symbols.json for ::java::data::util::NbtProviderSource
+Local link to file: generated_symbols/data/util/NbtProviderSource.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

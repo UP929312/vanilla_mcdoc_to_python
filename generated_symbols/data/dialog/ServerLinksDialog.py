@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::dialog::ServerLinksDialog
+"""
+Generated from symbols.json for ::java::data::dialog::ServerLinksDialog
+Local link to file: generated_symbols/data/dialog/ServerLinksDialog.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.data.dialog.ButtonListDialogBase import ButtonListDialogBase

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::trigger::ShotCrossbow
+"""
+Generated from symbols.json for ::java::data::advancement::trigger::ShotCrossbow
+Local link to file: generated_symbols/data/advancement/trigger/ShotCrossbow.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

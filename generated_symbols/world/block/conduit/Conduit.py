@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::block::conduit::Conduit
+"""
+Generated from symbols.json for ::java::world::block::conduit::Conduit
+Local link to file: generated_symbols/world/block/conduit/Conduit.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.world.block.BlockEntity import BlockEntity

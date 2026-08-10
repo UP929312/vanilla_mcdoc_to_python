@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::trigger::Conditions
+"""
+Generated from symbols.json for ::java::data::advancement::trigger::Conditions
+Local link to file: generated_symbols/data/advancement/trigger/Conditions.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Generic, TypeVar
 

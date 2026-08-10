@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::util::ConstantIntGenerator
+"""
+Generated from symbols.json for ::java::data::util::ConstantIntGenerator
+Local link to file: generated_symbols/data/util/ConstantIntGenerator.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

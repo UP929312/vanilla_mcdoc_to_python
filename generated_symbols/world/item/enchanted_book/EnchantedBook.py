@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::item::enchanted_book::EnchantedBook
+"""
+Generated from symbols.json for ::java::world::item::enchanted_book::EnchantedBook
+Local link to file: generated_symbols/world/item/enchanted_book/EnchantedBook.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

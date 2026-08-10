@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::trigger::ChangedDimension
+"""
+Generated from symbols.json for ::java::data::advancement::trigger::ChangedDimension
+Local link to file: generated_symbols/data/advancement/trigger/ChangedDimension.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

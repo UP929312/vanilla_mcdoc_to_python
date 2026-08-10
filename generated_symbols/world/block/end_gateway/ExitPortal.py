@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::block::end_gateway::ExitPortal
+"""
+Generated from symbols.json for ::java::world::block::end_gateway::ExitPortal
+Local link to file: generated_symbols/world/block/end_gateway/ExitPortal.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

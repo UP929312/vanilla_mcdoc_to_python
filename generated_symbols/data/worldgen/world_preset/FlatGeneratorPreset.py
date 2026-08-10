@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::world_preset::FlatGeneratorPreset
+"""
+Generated from symbols.json for ::java::data::worldgen::world_preset::FlatGeneratorPreset
+Local link to file: generated_symbols/data/worldgen/world_preset/FlatGeneratorPreset.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

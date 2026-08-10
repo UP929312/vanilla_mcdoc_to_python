@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::enchantment::effect_component::AttackTarget
+"""
+Generated from symbols.json for ::java::data::enchantment::effect_component::AttackTarget
+Local link to file: generated_symbols/data/enchantment/effect_component/AttackTarget.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

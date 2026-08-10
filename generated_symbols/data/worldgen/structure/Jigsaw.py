@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::structure::Jigsaw
+"""
+Generated from symbols.json for ::java::data::worldgen::structure::Jigsaw
+Local link to file: generated_symbols/data/worldgen/structure/Jigsaw.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

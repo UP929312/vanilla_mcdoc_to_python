@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::projectile::throwable::ThrowableItem
+"""
+Generated from symbols.json for ::java::world::entity::projectile::throwable::ThrowableItem
+Local link to file: generated_symbols/world/entity/projectile/throwable/ThrowableItem.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

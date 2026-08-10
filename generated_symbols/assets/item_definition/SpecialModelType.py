@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::item_definition::SpecialModelType
+"""
+Generated from symbols.json for ::java::assets::item_definition::SpecialModelType
+Local link to file: generated_symbols/assets/item_definition/SpecialModelType.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

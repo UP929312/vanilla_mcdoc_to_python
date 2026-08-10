@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::piglin::Piglin
+"""
+Generated from symbols.json for ::java::world::entity::mob::piglin::Piglin
+Local link to file: generated_symbols/world/entity/mob/piglin/Piglin.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

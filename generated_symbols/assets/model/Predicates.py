@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::model::Predicates
+"""
+Generated from symbols.json for ::java::assets::model::Predicates
+Local link to file: generated_symbols/assets/model/Predicates.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

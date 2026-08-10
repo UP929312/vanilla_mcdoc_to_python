@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::breedable::tamable::Parrot
+"""
+Generated from symbols.json for ::java::world::entity::mob::breedable::tamable::Parrot
+Local link to file: generated_symbols/world/entity/mob/breedable/tamable/Parrot.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

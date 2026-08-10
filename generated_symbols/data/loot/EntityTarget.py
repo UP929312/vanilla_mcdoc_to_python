@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::EntityTarget
+"""
+Generated from symbols.json for ::java::data::loot::EntityTarget
+Local link to file: generated_symbols/data/loot/EntityTarget.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

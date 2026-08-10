@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::function::MapDecoration
+"""
+Generated from symbols.json for ::java::data::loot::function::MapDecoration
+Local link to file: generated_symbols/data/loot/function/MapDecoration.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::LootTableListRef
+"""
+Generated from symbols.json for ::java::data::loot::LootTableListRef
+Local link to file: generated_symbols/data/loot/LootTableListRef.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from runtime_metadata import IdSpec

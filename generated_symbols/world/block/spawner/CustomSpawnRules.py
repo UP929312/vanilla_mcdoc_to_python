@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::block::spawner::CustomSpawnRules
+"""
+Generated from symbols.json for ::java::world::block::spawner::CustomSpawnRules
+Local link to file: generated_symbols/world/block/spawner/CustomSpawnRules.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

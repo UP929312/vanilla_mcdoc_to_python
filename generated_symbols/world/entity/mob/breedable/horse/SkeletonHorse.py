@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::breedable::horse::SkeletonHorse
+"""
+Generated from symbols.json for ::java::world::entity::mob::breedable::horse::SkeletonHorse
+Local link to file: generated_symbols/world/entity/mob/breedable/horse/SkeletonHorse.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.world.entity.mob.breedable.horse.HorseBase import HorseBase

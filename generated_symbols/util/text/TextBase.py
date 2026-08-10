@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::text::TextBase
+"""
+Generated from symbols.json for ::java::util::text::TextBase
+Local link to file: generated_symbols/util/text/TextBase.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

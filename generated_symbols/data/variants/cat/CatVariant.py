@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::variants::cat::CatVariant
+"""
+Generated from symbols.json for ::java::data::variants::cat::CatVariant
+Local link to file: generated_symbols/data/variants/cat/CatVariant.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

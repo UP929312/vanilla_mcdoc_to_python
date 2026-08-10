@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::text::PlayerHeadText
+"""
+Generated from symbols.json for ::java::util::text::PlayerHeadText
+Local link to file: generated_symbols/util/text/PlayerHeadText.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Literal
 

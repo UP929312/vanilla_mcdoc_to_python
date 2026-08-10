@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::font::UnihexOverrideRange
+"""
+Generated from symbols.json for ::java::assets::font::UnihexOverrideRange
+Local link to file: generated_symbols/assets/font/UnihexOverrideRange.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

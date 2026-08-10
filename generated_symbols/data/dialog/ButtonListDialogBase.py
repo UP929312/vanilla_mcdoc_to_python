@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::dialog::ButtonListDialogBase
+"""
+Generated from symbols.json for ::java::data::dialog::ButtonListDialogBase
+Local link to file: generated_symbols/data/dialog/ButtonListDialogBase.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

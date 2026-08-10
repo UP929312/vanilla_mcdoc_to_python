@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::biome::BiomeCategory
+"""
+Generated from symbols.json for ::java::data::worldgen::biome::BiomeCategory
+Local link to file: generated_symbols/data/worldgen/biome/BiomeCategory.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

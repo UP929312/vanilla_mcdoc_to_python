@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::dialog::input::InputControl
+"""
+Generated from symbols.json for ::java::data::dialog::input::InputControl
+Local link to file: generated_symbols/data/dialog/input/InputControl.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Literal
 

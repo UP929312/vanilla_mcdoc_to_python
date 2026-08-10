@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::attribute::modifier::FloatWithAlpha
+"""
+Generated from symbols.json for ::java::data::worldgen::attribute::modifier::FloatWithAlpha
+Local link to file: generated_symbols/data/worldgen/attribute/modifier/FloatWithAlpha.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

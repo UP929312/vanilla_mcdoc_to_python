@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::recipe::Ingredient
+"""
+Generated from symbols.json for ::java::data::recipe::Ingredient
+Local link to file: generated_symbols/data/recipe/Ingredient.py
+"""
+# ~~~ CODE ~~~
 from typing import Annotated
 
 from runtime_metadata import IdSpec

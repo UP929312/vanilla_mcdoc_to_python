@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::placement::SurfaceWaterDepthFilter
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::placement::SurfaceWaterDepthFilter
+Local link to file: generated_symbols/data/worldgen/feature/placement/SurfaceWaterDepthFilter.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

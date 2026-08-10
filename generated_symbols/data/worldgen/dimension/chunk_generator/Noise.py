@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::dimension::chunk_generator::Noise
+"""
+Generated from symbols.json for ::java::data::worldgen::dimension::chunk_generator::Noise
+Local link to file: generated_symbols/data/worldgen/dimension/chunk_generator/Noise.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

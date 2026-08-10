@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::item::Display
+"""
+Generated from symbols.json for ::java::world::item::Display
+Local link to file: generated_symbols/world/item/Display.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

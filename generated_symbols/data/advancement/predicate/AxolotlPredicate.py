@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::predicate::AxolotlPredicate
+"""
+Generated from symbols.json for ::java::data::advancement::predicate::AxolotlPredicate
+Local link to file: generated_symbols/data/advancement/predicate/AxolotlPredicate.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

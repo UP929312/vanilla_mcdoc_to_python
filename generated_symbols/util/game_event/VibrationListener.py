@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::game_event::VibrationListener
+"""
+Generated from symbols.json for ::java::util::game_event::VibrationListener
+Local link to file: generated_symbols/util/game_event/VibrationListener.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

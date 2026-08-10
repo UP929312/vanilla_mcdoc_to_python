@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::structure_set::StructureSet
+"""
+Generated from symbols.json for ::java::data::worldgen::structure_set::StructureSet
+Local link to file: generated_symbols/data/worldgen/structure_set/StructureSet.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::dialog::input::NumberRangeInput
+"""
+Generated from symbols.json for ::java::data::dialog::input::NumberRangeInput
+Local link to file: generated_symbols/data/dialog/input/NumberRangeInput.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

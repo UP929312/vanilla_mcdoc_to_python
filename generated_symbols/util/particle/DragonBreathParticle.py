@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::particle::DragonBreathParticle
+"""
+Generated from symbols.json for ::java::util::particle::DragonBreathParticle
+Local link to file: generated_symbols/util/particle/DragonBreathParticle.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

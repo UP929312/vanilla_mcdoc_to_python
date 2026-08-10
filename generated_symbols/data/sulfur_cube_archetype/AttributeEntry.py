@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::sulfur_cube_archetype::AttributeEntry
+"""
+Generated from symbols.json for ::java::data::sulfur_cube_archetype::AttributeEntry
+Local link to file: generated_symbols/data/sulfur_cube_archetype/AttributeEntry.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

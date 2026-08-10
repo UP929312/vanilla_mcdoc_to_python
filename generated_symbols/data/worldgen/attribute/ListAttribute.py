@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::attribute::ListAttribute
+"""
+Generated from symbols.json for ::java::data::worldgen::attribute::ListAttribute
+Local link to file: generated_symbols/data/worldgen/attribute/ListAttribute.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Generic, TypeVar
 

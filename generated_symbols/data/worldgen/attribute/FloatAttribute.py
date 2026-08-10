@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::attribute::FloatAttribute
+"""
+Generated from symbols.json for ::java::data::worldgen::attribute::FloatAttribute
+Local link to file: generated_symbols/data/worldgen/attribute/FloatAttribute.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Generic, TypeVar
 

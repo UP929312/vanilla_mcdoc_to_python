@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::util::BinomialIntGenerator
+"""
+Generated from symbols.json for ::java::data::util::BinomialIntGenerator
+Local link to file: generated_symbols/data/util/BinomialIntGenerator.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

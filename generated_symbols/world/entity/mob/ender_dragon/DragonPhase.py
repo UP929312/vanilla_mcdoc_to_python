@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::ender_dragon::DragonPhase
+"""
+Generated from symbols.json for ::java::world::entity::mob::ender_dragon::DragonPhase
+Local link to file: generated_symbols/world/entity/mob/ender_dragon/DragonPhase.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::function::ContainerComponents
+"""
+Generated from symbols.json for ::java::data::loot::function::ContainerComponents
+Local link to file: generated_symbols/data/loot/function/ContainerComponents.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

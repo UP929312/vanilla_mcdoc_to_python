@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::function::SetFireworkExplosion
+"""
+Generated from symbols.json for ::java::data::loot::function::SetFireworkExplosion
+Local link to file: generated_symbols/data/loot/function/SetFireworkExplosion.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

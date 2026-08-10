@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::atlas::PaletteTexture
+"""
+Generated from symbols.json for ::java::assets::atlas::PaletteTexture
+Local link to file: generated_symbols/assets/atlas/PaletteTexture.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:

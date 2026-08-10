@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::dialog::DialogBase
+"""
+Generated from symbols.json for ::java::data::dialog::DialogBase
+Local link to file: generated_symbols/data/dialog/DialogBase.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Literal
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::recipe::CraftingSpecialShieldDecoration
+"""
+Generated from symbols.json for ::java::data::recipe::CraftingSpecialShieldDecoration
+Local link to file: generated_symbols/data/recipe/CraftingSpecialShieldDecoration.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

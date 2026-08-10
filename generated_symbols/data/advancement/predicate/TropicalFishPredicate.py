@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::predicate::TropicalFishPredicate
+"""
+Generated from symbols.json for ::java::data::advancement::predicate::TropicalFishPredicate
+Local link to file: generated_symbols/data/advancement/predicate/TropicalFishPredicate.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

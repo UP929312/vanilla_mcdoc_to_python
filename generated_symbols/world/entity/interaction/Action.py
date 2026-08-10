@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::interaction::Action
+"""
+Generated from symbols.json for ::java::world::entity::interaction::Action
+Local link to file: generated_symbols/world/entity/interaction/Action.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

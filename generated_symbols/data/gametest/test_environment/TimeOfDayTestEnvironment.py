@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::gametest::test_environment::TimeOfDayTestEnvironment
+"""
+Generated from symbols.json for ::java::data::gametest::test_environment::TimeOfDayTestEnvironment
+Local link to file: generated_symbols/data/gametest/test_environment/TimeOfDayTestEnvironment.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

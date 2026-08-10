@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::dialog::AfterAction
+"""
+Generated from symbols.json for ::java::data::dialog::AfterAction
+Local link to file: generated_symbols/data/dialog/AfterAction.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::equipment::TrimOverride
+"""
+Generated from symbols.json for ::java::assets::equipment::TrimOverride
+Local link to file: generated_symbols/assets/equipment/TrimOverride.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::block_state_definition::WeightedModelVariant
+"""
+Generated from symbols.json for ::java::assets::block_state_definition::WeightedModelVariant
+Local link to file: generated_symbols/assets/block_state_definition/WeightedModelVariant.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

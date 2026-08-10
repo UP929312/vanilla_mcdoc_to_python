@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::predicate::SpecificType
+"""
+Generated from symbols.json for ::java::data::advancement::predicate::SpecificType
+Local link to file: generated_symbols/data/advancement/predicate/SpecificType.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

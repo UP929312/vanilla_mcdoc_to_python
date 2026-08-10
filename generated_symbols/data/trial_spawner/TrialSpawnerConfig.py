@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::trial_spawner::TrialSpawnerConfig
+"""
+Generated from symbols.json for ::java::data::trial_spawner::TrialSpawnerConfig
+Local link to file: generated_symbols/data/trial_spawner/TrialSpawnerConfig.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::component::entity::FoxType
+"""
+Generated from symbols.json for ::java::world::component::entity::FoxType
+Local link to file: generated_symbols/world/component/entity/FoxType.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

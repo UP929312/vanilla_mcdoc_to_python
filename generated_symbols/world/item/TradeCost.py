@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::item::TradeCost
+"""
+Generated from symbols.json for ::java::world::item::TradeCost
+Local link to file: generated_symbols/world/item/TradeCost.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

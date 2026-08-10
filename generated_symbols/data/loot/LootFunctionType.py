@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::LootFunctionType
+"""
+Generated from symbols.json for ::java::data::loot::LootFunctionType
+Local link to file: generated_symbols/data/loot/LootFunctionType.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

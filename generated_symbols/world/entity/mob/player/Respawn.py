@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::player::Respawn
+"""
+Generated from symbols.json for ::java::world::entity::mob::player::Respawn
+Local link to file: generated_symbols/world/entity/mob/player/Respawn.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

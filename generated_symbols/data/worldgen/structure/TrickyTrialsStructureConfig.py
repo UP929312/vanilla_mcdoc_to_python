@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::structure::TrickyTrialsStructureConfig
+"""
+Generated from symbols.json for ::java::data::worldgen::structure::TrickyTrialsStructureConfig
+Local link to file: generated_symbols/data/worldgen/structure/TrickyTrialsStructureConfig.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

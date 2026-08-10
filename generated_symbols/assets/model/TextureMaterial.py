@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::model::TextureMaterial
+"""
+Generated from symbols.json for ::java::assets::model::TextureMaterial
+Local link to file: generated_symbols/assets/model/TextureMaterial.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

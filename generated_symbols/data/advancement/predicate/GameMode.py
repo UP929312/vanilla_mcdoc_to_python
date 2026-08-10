@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::predicate::GameMode
+"""
+Generated from symbols.json for ::java::data::advancement::predicate::GameMode
+Local link to file: generated_symbols/data/advancement/predicate/GameMode.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

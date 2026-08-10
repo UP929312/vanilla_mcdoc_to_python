@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::recipe::CookingBookCategory
+"""
+Generated from symbols.json for ::java::data::recipe::CookingBookCategory
+Local link to file: generated_symbols/data/recipe/CookingBookCategory.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

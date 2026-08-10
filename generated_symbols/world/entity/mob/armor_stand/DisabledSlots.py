@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::armor_stand::DisabledSlots
+"""
+Generated from symbols.json for ::java::world::entity::mob::armor_stand::DisabledSlots
+Local link to file: generated_symbols/world/entity/mob/armor_stand/DisabledSlots.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

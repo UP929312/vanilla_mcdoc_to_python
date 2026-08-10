@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::block::chiseled_bookshelf::ChiseledBookshelf
+"""
+Generated from symbols.json for ::java::world::block::chiseled_bookshelf::ChiseledBookshelf
+Local link to file: generated_symbols/world/block/chiseled_bookshelf/ChiseledBookshelf.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

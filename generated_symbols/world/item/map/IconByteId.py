@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::item::map::IconByteId
+"""
+Generated from symbols.json for ::java::world::item::map::IconByteId
+Local link to file: generated_symbols/world/item/map/IconByteId.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

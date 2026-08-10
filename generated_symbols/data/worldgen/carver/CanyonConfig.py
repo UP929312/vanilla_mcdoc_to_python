@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::carver::CanyonConfig
+"""
+Generated from symbols.json for ::java::data::worldgen::carver::CanyonConfig
+Local link to file: generated_symbols/data/worldgen/carver/CanyonConfig.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

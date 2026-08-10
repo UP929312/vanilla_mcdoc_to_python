@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::number_provider::EnchantmentLevelProvider
+"""
+Generated from symbols.json for ::java::data::number_provider::EnchantmentLevelProvider
+Local link to file: generated_symbols/data/number_provider/EnchantmentLevelProvider.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::gametest::test_environment::TimelineAttributesTestEnvironment
+"""
+Generated from symbols.json for ::java::data::gametest::test_environment::TimelineAttributesTestEnvironment
+Local link to file: generated_symbols/data/gametest/test_environment/TimelineAttributesTestEnvironment.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

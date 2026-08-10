@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::component::item::ToolRule
+"""
+Generated from symbols.json for ::java::world::component::item::ToolRule
+Local link to file: generated_symbols/world/component/item/ToolRule.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::block::vault::Vault
+"""
+Generated from symbols.json for ::java::world::block::vault::Vault
+Local link to file: generated_symbols/world/block/vault/Vault.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

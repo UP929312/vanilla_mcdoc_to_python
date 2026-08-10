@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::breedable::villager::Recipe
+"""
+Generated from symbols.json for ::java::world::entity::mob::breedable::villager::Recipe
+Local link to file: generated_symbols/world/entity/mob/breedable/villager/Recipe.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

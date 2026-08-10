@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::component::item::KineticWeapon
+"""
+Generated from symbols.json for ::java::world::component::item::KineticWeapon
+Local link to file: generated_symbols/world/component/item/KineticWeapon.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

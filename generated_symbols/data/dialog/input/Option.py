@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::dialog::input::Option
+"""
+Generated from symbols.json for ::java::data::dialog::input::Option
+Local link to file: generated_symbols/data/dialog/input/Option.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

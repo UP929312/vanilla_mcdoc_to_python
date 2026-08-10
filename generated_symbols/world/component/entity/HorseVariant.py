@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::component::entity::HorseVariant
+"""
+Generated from symbols.json for ::java::world::component::entity::HorseVariant
+Local link to file: generated_symbols/world/component/entity/HorseVariant.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

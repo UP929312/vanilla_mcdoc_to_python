@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::component::item::Tool
+"""
+Generated from symbols.json for ::java::world::component::item::Tool
+Local link to file: generated_symbols/world/component/item/Tool.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

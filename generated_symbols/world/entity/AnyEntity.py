@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::AnyEntity
+"""
+Generated from symbols.json for ::java::world::entity::AnyEntity
+Local link to file: generated_symbols/world/entity/AnyEntity.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Any, Literal
 

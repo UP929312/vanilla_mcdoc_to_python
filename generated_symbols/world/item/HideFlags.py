@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::item::HideFlags
+"""
+Generated from symbols.json for ::java::world::item::HideFlags
+Local link to file: generated_symbols/world/item/HideFlags.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

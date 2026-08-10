@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::painting::Painting
+"""
+Generated from symbols.json for ::java::world::entity::painting::Painting
+Local link to file: generated_symbols/world/entity/painting/Painting.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

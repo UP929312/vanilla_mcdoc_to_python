@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::memory::AdmiringDisable
+"""
+Generated from symbols.json for ::java::util::memory::AdmiringDisable
+Local link to file: generated_symbols/util/memory/AdmiringDisable.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.util.memory.ExpirableValue import ExpirableValue

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::processor_list::BlockRot
+"""
+Generated from symbols.json for ::java::data::worldgen::processor_list::BlockRot
+Local link to file: generated_symbols/data/worldgen/processor_list/BlockRot.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

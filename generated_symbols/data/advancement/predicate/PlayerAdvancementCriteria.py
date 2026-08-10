@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::predicate::PlayerAdvancementCriteria
+"""
+Generated from symbols.json for ::java::data::advancement::predicate::PlayerAdvancementCriteria
+Local link to file: generated_symbols/data/advancement/predicate/PlayerAdvancementCriteria.py
+"""
+# ~~~ CODE ~~~
 
 
 type PlayerAdvancementCriteria = dict[str, bool]

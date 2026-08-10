@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::texture_meta::ColormapTextureMeta
+"""
+Generated from symbols.json for ::java::assets::texture_meta::ColormapTextureMeta
+Local link to file: generated_symbols/assets/texture_meta/ColormapTextureMeta.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

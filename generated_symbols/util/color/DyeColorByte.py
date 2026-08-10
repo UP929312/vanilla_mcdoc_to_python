@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::color::DyeColorByte
+"""
+Generated from symbols.json for ::java::util::color::DyeColorByte
+Local link to file: generated_symbols/util/color/DyeColorByte.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

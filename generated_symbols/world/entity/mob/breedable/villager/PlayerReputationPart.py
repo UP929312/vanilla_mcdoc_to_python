@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::breedable::villager::PlayerReputationPart
+"""
+Generated from symbols.json for ::java::world::entity::mob::breedable::villager::PlayerReputationPart
+Local link to file: generated_symbols/world/entity/mob/breedable/villager/PlayerReputationPart.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Literal
 

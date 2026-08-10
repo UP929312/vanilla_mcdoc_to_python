@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::shader::program::BlendFunc
+"""
+Generated from symbols.json for ::java::assets::shader::program::BlendFunc
+Local link to file: generated_symbols/assets/shader/program/BlendFunc.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::FloatProvider
+"""
+Generated from symbols.json for ::java::data::worldgen::FloatProvider
+Local link to file: generated_symbols/data/worldgen/FloatProvider.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated, Generic, TypeVar
 

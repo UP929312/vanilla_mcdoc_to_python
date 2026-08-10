@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::item::firework::Fireworks
+"""
+Generated from symbols.json for ::java::world::item::firework::Fireworks
+Local link to file: generated_symbols/world/item/firework/Fireworks.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

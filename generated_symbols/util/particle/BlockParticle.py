@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::particle::BlockParticle
+"""
+Generated from symbols.json for ::java::util::particle::BlockParticle
+Local link to file: generated_symbols/util/particle/BlockParticle.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

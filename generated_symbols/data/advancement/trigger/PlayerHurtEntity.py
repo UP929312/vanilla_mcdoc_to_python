@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::trigger::PlayerHurtEntity
+"""
+Generated from symbols.json for ::java::data::advancement::trigger::PlayerHurtEntity
+Local link to file: generated_symbols/data/advancement/trigger/PlayerHurtEntity.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

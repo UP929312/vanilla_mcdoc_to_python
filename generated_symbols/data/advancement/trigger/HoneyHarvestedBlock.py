@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::trigger::HoneyHarvestedBlock
+"""
+Generated from symbols.json for ::java::data::advancement::trigger::HoneyHarvestedBlock
+Local link to file: generated_symbols/data/advancement/trigger/HoneyHarvestedBlock.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

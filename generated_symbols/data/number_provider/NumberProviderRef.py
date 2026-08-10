@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::number_provider::NumberProviderRef
+"""
+Generated from symbols.json for ::java::data::number_provider::NumberProviderRef
+Local link to file: generated_symbols/data/number_provider/NumberProviderRef.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from runtime_metadata import IdSpec

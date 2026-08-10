@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::ClampedNormalIntProvider
+"""
+Generated from symbols.json for ::java::data::worldgen::ClampedNormalIntProvider
+Local link to file: generated_symbols/data/worldgen/ClampedNormalIntProvider.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Generic, TypeVar
 

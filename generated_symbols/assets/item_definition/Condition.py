@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::item_definition::Condition
+"""
+Generated from symbols.json for ::java::assets::item_definition::Condition
+Local link to file: generated_symbols/assets/item_definition/Condition.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Literal
 

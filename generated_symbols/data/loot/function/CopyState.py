@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::function::CopyState
+"""
+Generated from symbols.json for ::java::data::loot::function::CopyState
+Local link to file: generated_symbols/data/loot/function/CopyState.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

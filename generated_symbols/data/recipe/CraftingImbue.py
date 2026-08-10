@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::recipe::CraftingImbue
+"""
+Generated from symbols.json for ::java::data::recipe::CraftingImbue
+Local link to file: generated_symbols/data/recipe/CraftingImbue.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

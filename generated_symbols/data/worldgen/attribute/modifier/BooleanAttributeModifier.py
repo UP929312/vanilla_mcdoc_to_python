@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::attribute::modifier::BooleanAttributeModifier
+"""
+Generated from symbols.json for ::java::data::worldgen::attribute::modifier::BooleanAttributeModifier
+Local link to file: generated_symbols/data/worldgen/attribute/modifier/BooleanAttributeModifier.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

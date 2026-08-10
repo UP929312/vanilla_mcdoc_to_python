@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::function::ListOperation
+"""
+Generated from symbols.json for ::java::data::loot::function::ListOperation
+Local link to file: generated_symbols/data/loot/function/ListOperation.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated, Literal
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::SequenceConfig
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::SequenceConfig
+Local link to file: generated_symbols/data/worldgen/feature/SequenceConfig.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

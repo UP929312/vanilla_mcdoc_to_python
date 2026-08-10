@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::EffectId
+"""
+Generated from symbols.json for ::java::util::EffectId
+Local link to file: generated_symbols/util/EffectId.py
+"""
+# ~~~ CODE ~~~
 from generated_symbols.util.effect.EffectId import EffectId as EffectId_alias
 
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::breedable::tamable::Wolf
+"""
+Generated from symbols.json for ::java::world::entity::mob::breedable::tamable::Wolf
+Local link to file: generated_symbols/world/entity/mob/breedable/tamable/Wolf.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::item_definition::MainHand
+"""
+Generated from symbols.json for ::java::assets::item_definition::MainHand
+Local link to file: generated_symbols/assets/item_definition/MainHand.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

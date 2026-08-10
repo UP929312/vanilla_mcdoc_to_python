@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::structure::RandomGroupPoolAlias
+"""
+Generated from symbols.json for ::java::data::worldgen::structure::RandomGroupPoolAlias
+Local link to file: generated_symbols/data/worldgen/structure/RandomGroupPoolAlias.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

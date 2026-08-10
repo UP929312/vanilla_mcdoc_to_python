@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::model::ModelElementRotationBase
+"""
+Generated from symbols.json for ::java::assets::model::ModelElementRotationBase
+Local link to file: generated_symbols/assets/model/ModelElementRotationBase.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

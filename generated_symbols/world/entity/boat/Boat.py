@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::boat::Boat
+"""
+Generated from symbols.json for ::java::world::entity::boat::Boat
+Local link to file: generated_symbols/world/entity/boat/Boat.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.world.entity.EntityBase import EntityBase

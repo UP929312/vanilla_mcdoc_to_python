@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::pack::Pack
+"""
+Generated from symbols.json for ::java::pack::Pack
+Local link to file: generated_symbols/pack/Pack.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

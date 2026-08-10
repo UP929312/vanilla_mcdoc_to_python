@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::breedable::saddled::Pig
+"""
+Generated from symbols.json for ::java::world::entity::mob::breedable::saddled::Pig
+Local link to file: generated_symbols/world/entity/mob/breedable/saddled/Pig.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

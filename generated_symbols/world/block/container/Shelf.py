@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::block::container::Shelf
+"""
+Generated from symbols.json for ::java::world::block::container::Shelf
+Local link to file: generated_symbols/world/block/container/Shelf.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

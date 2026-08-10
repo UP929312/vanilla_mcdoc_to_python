@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::Rotation
+"""
+Generated from symbols.json for ::java::util::Rotation
+Local link to file: generated_symbols/util/Rotation.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

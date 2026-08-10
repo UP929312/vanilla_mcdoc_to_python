@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::evoker_fangs::Owner
+"""
+Generated from symbols.json for ::java::world::entity::evoker_fangs::Owner
+Local link to file: generated_symbols/world/entity/evoker_fangs/Owner.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::function::Reference
+"""
+Generated from symbols.json for ::java::data::loot::function::Reference
+Local link to file: generated_symbols/data/loot/function/Reference.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::tree::CherryFoliagePlacer
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::tree::CherryFoliagePlacer
+Local link to file: generated_symbols/data/worldgen/feature/tree/CherryFoliagePlacer.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

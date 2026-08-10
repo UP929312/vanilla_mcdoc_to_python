@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::DeltaConfig
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::DeltaConfig
+Local link to file: generated_symbols/data/worldgen/feature/DeltaConfig.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

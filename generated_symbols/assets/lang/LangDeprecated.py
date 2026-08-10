@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::lang::LangDeprecated
+"""
+Generated from symbols.json for ::java::assets::lang::LangDeprecated
+Local link to file: generated_symbols/assets/lang/LangDeprecated.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

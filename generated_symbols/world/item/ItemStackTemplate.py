@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::item::ItemStackTemplate
+"""
+Generated from symbols.json for ::java::world::item::ItemStackTemplate
+Local link to file: generated_symbols/world/item/ItemStackTemplate.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from runtime_metadata import IdSpec

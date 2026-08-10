@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::function::EnchantWithLevels
+"""
+Generated from symbols.json for ::java::data::loot::function::EnchantWithLevels
+Local link to file: generated_symbols/data/loot/function/EnchantWithLevels.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

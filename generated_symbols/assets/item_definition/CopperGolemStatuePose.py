@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::item_definition::CopperGolemStatuePose
+"""
+Generated from symbols.json for ::java::assets::item_definition::CopperGolemStatuePose
+Local link to file: generated_symbols/assets/item_definition/CopperGolemStatuePose.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

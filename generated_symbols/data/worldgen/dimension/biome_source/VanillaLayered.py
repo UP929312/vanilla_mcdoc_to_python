@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::dimension::biome_source::VanillaLayered
+"""
+Generated from symbols.json for ::java::data::worldgen::dimension::biome_source::VanillaLayered
+Local link to file: generated_symbols/data/worldgen/dimension/biome_source/VanillaLayered.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

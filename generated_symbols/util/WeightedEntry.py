@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::WeightedEntry
+"""
+Generated from symbols.json for ::java::util::WeightedEntry
+Local link to file: generated_symbols/util/WeightedEntry.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated, Generic, TypeVar
 

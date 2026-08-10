@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::trim::ArmorMaterial
+"""
+Generated from symbols.json for ::java::data::trim::ArmorMaterial
+Local link to file: generated_symbols/data/trim/ArmorMaterial.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

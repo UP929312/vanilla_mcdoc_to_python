@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::component::item::Consumable
+"""
+Generated from symbols.json for ::java::world::component::item::Consumable
+Local link to file: generated_symbols/world/component/item/Consumable.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

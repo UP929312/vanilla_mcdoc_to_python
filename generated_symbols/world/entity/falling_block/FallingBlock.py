@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::falling_block::FallingBlock
+"""
+Generated from symbols.json for ::java::world::entity::falling_block::FallingBlock
+Local link to file: generated_symbols/world/entity/falling_block/FallingBlock.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Any
 

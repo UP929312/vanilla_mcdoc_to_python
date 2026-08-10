@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::function::ExplorationMap
+"""
+Generated from symbols.json for ::java::data::loot::function::ExplorationMap
+Local link to file: generated_symbols/data/loot/function/ExplorationMap.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

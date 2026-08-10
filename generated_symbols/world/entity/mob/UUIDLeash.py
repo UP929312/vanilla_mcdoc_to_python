@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::UUIDLeash
+"""
+Generated from symbols.json for ::java::world::entity::mob::UUIDLeash
+Local link to file: generated_symbols/world/entity/mob/UUIDLeash.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

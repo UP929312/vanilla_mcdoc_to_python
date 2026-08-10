@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::trigger::SpearMobs
+"""
+Generated from symbols.json for ::java::data::advancement::trigger::SpearMobs
+Local link to file: generated_symbols/data/advancement/trigger/SpearMobs.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

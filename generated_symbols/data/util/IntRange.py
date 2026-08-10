@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::util::IntRange
+"""
+Generated from symbols.json for ::java::data::util::IntRange
+Local link to file: generated_symbols/data/util/IntRange.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

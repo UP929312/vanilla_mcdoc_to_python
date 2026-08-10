@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::LootCondition
+"""
+Generated from symbols.json for ::java::data::loot::LootCondition
+Local link to file: generated_symbols/data/loot/LootCondition.py
+"""
+# ~~~ CODE ~~~
 from generated_symbols.data.loot.condition.LootCondition import LootCondition as LootCondition_alias
 
 

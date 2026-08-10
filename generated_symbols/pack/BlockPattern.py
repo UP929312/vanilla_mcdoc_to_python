@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::pack::BlockPattern
+"""
+Generated from symbols.json for ::java::pack::BlockPattern
+Local link to file: generated_symbols/pack/BlockPattern.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

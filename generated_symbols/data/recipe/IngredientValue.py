@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::recipe::IngredientValue
+"""
+Generated from symbols.json for ::java::data::recipe::IngredientValue
+Local link to file: generated_symbols/data/recipe/IngredientValue.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

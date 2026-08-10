@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::component::item::PiercingWeapon
+"""
+Generated from symbols.json for ::java::world::component::item::PiercingWeapon
+Local link to file: generated_symbols/world/component/item/PiercingWeapon.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

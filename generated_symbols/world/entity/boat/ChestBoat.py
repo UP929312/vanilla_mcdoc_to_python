@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::boat::ChestBoat
+"""
+Generated from symbols.json for ::java::world::entity::boat::ChestBoat
+Local link to file: generated_symbols/world/entity/boat/ChestBoat.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

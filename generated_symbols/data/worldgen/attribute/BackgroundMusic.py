@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::attribute::BackgroundMusic
+"""
+Generated from symbols.json for ::java::data::worldgen::attribute::BackgroundMusic
+Local link to file: generated_symbols/data/worldgen/attribute/BackgroundMusic.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

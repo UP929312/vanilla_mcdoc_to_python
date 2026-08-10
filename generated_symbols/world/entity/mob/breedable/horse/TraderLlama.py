@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::breedable::horse::TraderLlama
+"""
+Generated from symbols.json for ::java::world::entity::mob::breedable::horse::TraderLlama
+Local link to file: generated_symbols/world/entity/mob/breedable/horse/TraderLlama.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.world.entity.mob.breedable.horse.Llama import Llama

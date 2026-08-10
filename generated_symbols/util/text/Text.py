@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::text::Text
+"""
+Generated from symbols.json for ::java::util::text::Text
+Local link to file: generated_symbols/util/text/Text.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 if TYPE_CHECKING:

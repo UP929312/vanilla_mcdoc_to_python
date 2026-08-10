@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::item::ItemStackOfComponent
+"""
+Generated from symbols.json for ::java::world::item::ItemStackOfComponent
+Local link to file: generated_symbols/world/item/ItemStackOfComponent.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated, Generic, TypeVar
 

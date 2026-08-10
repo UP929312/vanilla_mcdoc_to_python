@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::registry_ref::BlockListRef
+"""
+Generated from symbols.json for ::java::util::registry_ref::BlockListRef
+Local link to file: generated_symbols/util/registry_ref/BlockListRef.py
+"""
+# ~~~ CODE ~~~
 from typing import Annotated
 
 from runtime_metadata import IdSpec

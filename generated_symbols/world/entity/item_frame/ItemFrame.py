@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::item_frame::ItemFrame
+"""
+Generated from symbols.json for ::java::world::entity::item_frame::ItemFrame
+Local link to file: generated_symbols/world/entity/item_frame/ItemFrame.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

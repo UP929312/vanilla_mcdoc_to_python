@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::enchantment::level_based_value::FractionLevelValue
+"""
+Generated from symbols.json for ::java::data::enchantment::level_based_value::FractionLevelValue
+Local link to file: generated_symbols/data/enchantment/level_based_value/FractionLevelValue.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

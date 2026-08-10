@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::model::ModelOverridePredicates
+"""
+Generated from symbols.json for ::java::assets::model::ModelOverridePredicates
+Local link to file: generated_symbols/assets/model/ModelOverridePredicates.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:

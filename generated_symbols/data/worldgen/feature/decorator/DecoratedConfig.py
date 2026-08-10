@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::decorator::DecoratedConfig
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::decorator::DecoratedConfig
+Local link to file: generated_symbols/data/worldgen/feature/decorator/DecoratedConfig.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

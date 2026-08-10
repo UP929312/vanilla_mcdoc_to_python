@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::text::EntityNbtText
+"""
+Generated from symbols.json for ::java::util::text::EntityNbtText
+Local link to file: generated_symbols/util/text/EntityNbtText.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Literal
 

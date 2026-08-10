@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::memory::LastSlept
+"""
+Generated from symbols.json for ::java::util::memory::LastSlept
+Local link to file: generated_symbols/util/memory/LastSlept.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.util.memory.ExpirableValue import ExpirableValue

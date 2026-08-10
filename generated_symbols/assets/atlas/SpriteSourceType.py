@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::atlas::SpriteSourceType
+"""
+Generated from symbols.json for ::java::assets::atlas::SpriteSourceType
+Local link to file: generated_symbols/assets/atlas/SpriteSourceType.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

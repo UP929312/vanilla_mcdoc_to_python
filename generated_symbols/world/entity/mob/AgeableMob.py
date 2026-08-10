@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::AgeableMob
+"""
+Generated from symbols.json for ::java::world::entity::mob::AgeableMob
+Local link to file: generated_symbols/world/entity/mob/AgeableMob.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

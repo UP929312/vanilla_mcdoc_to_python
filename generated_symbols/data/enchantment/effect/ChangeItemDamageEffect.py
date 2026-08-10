@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::enchantment::effect::ChangeItemDamageEffect
+"""
+Generated from symbols.json for ::java::data::enchantment::effect::ChangeItemDamageEffect
+Local link to file: generated_symbols/data/enchantment/effect/ChangeItemDamageEffect.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

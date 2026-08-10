@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::font::LegacyUnicodeProvider
+"""
+Generated from symbols.json for ::java::assets::font::LegacyUnicodeProvider
+Local link to file: generated_symbols/assets/font/LegacyUnicodeProvider.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

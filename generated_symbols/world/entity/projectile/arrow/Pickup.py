@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::projectile::arrow::Pickup
+"""
+Generated from symbols.json for ::java::world::entity::projectile::arrow::Pickup
+Local link to file: generated_symbols/world/entity/projectile/arrow/Pickup.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

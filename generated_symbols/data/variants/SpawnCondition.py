@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::variants::SpawnCondition
+"""
+Generated from symbols.json for ::java::data::variants::SpawnCondition
+Local link to file: generated_symbols/data/variants/SpawnCondition.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Literal
 

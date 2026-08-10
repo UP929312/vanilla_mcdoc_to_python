@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::text::ScoreHolder
+"""
+Generated from symbols.json for ::java::util::text::ScoreHolder
+Local link to file: generated_symbols/util/text/ScoreHolder.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

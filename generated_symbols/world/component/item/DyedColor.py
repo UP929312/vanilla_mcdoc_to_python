@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::component::item::DyedColor
+"""
+Generated from symbols.json for ::java::world::component::item::DyedColor
+Local link to file: generated_symbols/world/component/item/DyedColor.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

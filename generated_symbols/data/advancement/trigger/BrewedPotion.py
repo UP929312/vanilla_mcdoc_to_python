@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::trigger::BrewedPotion
+"""
+Generated from symbols.json for ::java::data::advancement::trigger::BrewedPotion
+Local link to file: generated_symbols/data/advancement/trigger/BrewedPotion.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

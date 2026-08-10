@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::density_function::DistanceToPoint
+"""
+Generated from symbols.json for ::java::data::worldgen::density_function::DistanceToPoint
+Local link to file: generated_symbols/data/worldgen/density_function/DistanceToPoint.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

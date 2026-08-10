@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::minecart::Minecart
+"""
+Generated from symbols.json for ::java::world::entity::minecart::Minecart
+Local link to file: generated_symbols/world/entity/minecart/Minecart.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

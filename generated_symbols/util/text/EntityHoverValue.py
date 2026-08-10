@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::text::EntityHoverValue
+"""
+Generated from symbols.json for ::java::util::text::EntityHoverValue
+Local link to file: generated_symbols/util/text/EntityHoverValue.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

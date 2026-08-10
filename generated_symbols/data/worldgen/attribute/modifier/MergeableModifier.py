@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::attribute::modifier::MergeableModifier
+"""
+Generated from symbols.json for ::java::data::worldgen::attribute::modifier::MergeableModifier
+Local link to file: generated_symbols/data/worldgen/attribute/modifier/MergeableModifier.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Generic, TypeVar
 

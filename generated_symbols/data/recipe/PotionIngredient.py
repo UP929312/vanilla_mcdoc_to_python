@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::recipe::PotionIngredient
+"""
+Generated from symbols.json for ::java::data::recipe::PotionIngredient
+Local link to file: generated_symbols/data/recipe/PotionIngredient.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

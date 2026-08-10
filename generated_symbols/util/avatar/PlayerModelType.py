@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::avatar::PlayerModelType
+"""
+Generated from symbols.json for ::java::util::avatar::PlayerModelType
+Local link to file: generated_symbols/util/avatar/PlayerModelType.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

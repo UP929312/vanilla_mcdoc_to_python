@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::function::CopyNbt
+"""
+Generated from symbols.json for ::java::data::loot::function::CopyNbt
+Local link to file: generated_symbols/data/loot/function/CopyNbt.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

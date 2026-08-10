@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::enchantment::effect_component::TickEnchantmentEffect
+"""
+Generated from symbols.json for ::java::data::enchantment::effect_component::TickEnchantmentEffect
+Local link to file: generated_symbols/data/enchantment/effect_component/TickEnchantmentEffect.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::direction::DirectionInt
+"""
+Generated from symbols.json for ::java::util::direction::DirectionInt
+Local link to file: generated_symbols/util/direction/DirectionInt.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

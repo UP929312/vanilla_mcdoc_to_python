@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::gametest::test_environment::AllOffTestEnvironment
+"""
+Generated from symbols.json for ::java::data::gametest::test_environment::AllOffTestEnvironment
+Local link to file: generated_symbols/data/gametest/test_environment/AllOffTestEnvironment.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

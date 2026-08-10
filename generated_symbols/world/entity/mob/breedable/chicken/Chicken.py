@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::breedable::chicken::Chicken
+"""
+Generated from symbols.json for ::java::world::entity::mob::breedable::chicken::Chicken
+Local link to file: generated_symbols/world/entity/mob/breedable/chicken/Chicken.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

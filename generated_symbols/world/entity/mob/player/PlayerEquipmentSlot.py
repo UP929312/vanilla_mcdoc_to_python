@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::player::PlayerEquipmentSlot
+"""
+Generated from symbols.json for ::java::world::entity::mob::player::PlayerEquipmentSlot
+Local link to file: generated_symbols/world/entity/mob/player/PlayerEquipmentSlot.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::ItemStackTarget
+"""
+Generated from symbols.json for ::java::data::loot::ItemStackTarget
+Local link to file: generated_symbols/data/loot/ItemStackTarget.py
+"""
+# ~~~ CODE ~~~
 from typing import Literal
 
 

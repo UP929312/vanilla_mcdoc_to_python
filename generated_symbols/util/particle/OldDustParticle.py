@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::particle::OldDustParticle
+"""
+Generated from symbols.json for ::java::util::particle::OldDustParticle
+Local link to file: generated_symbols/util/particle/OldDustParticle.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

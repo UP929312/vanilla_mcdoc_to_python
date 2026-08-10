@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::atlas::UnstitchRegion
+"""
+Generated from symbols.json for ::java::assets::atlas::UnstitchRegion
+Local link to file: generated_symbols/assets/atlas/UnstitchRegion.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

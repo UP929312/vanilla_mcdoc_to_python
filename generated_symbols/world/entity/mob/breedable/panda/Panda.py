@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::breedable::panda::Panda
+"""
+Generated from symbols.json for ::java::world::entity::mob::breedable::panda::Panda
+Local link to file: generated_symbols/world/entity/mob/breedable/panda/Panda.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

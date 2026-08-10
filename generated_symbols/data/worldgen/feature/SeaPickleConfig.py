@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::SeaPickleConfig
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::SeaPickleConfig
+Local link to file: generated_symbols/data/worldgen/feature/SeaPickleConfig.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

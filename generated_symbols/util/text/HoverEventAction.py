@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::text::HoverEventAction
+"""
+Generated from symbols.json for ::java::util::text::HoverEventAction
+Local link to file: generated_symbols/util/text/HoverEventAction.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

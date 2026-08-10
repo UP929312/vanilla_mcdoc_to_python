@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::enchantment::effect::MultiplyEffectValue
+"""
+Generated from symbols.json for ::java::data::enchantment::effect::MultiplyEffectValue
+Local link to file: generated_symbols/data/enchantment/effect/MultiplyEffectValue.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

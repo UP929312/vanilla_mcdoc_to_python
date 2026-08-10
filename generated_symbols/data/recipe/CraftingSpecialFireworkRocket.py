@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::recipe::CraftingSpecialFireworkRocket
+"""
+Generated from symbols.json for ::java::data::recipe::CraftingSpecialFireworkRocket
+Local link to file: generated_symbols/data/recipe/CraftingSpecialFireworkRocket.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

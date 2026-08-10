@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::shader::post::FixedSizedTarget
+"""
+Generated from symbols.json for ::java::assets::shader::post::FixedSizedTarget
+Local link to file: generated_symbols/assets/shader/post/FixedSizedTarget.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::projectile::fireball::AcceleratingProjectileBase
+"""
+Generated from symbols.json for ::java::world::entity::projectile::fireball::AcceleratingProjectileBase
+Local link to file: generated_symbols/world/entity/projectile/fireball/AcceleratingProjectileBase.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.world.entity.projectile.ProjectileBase import ProjectileBase

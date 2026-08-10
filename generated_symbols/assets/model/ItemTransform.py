@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::model::ItemTransform
+"""
+Generated from symbols.json for ::java::assets::model::ItemTransform
+Local link to file: generated_symbols/assets/model/ItemTransform.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

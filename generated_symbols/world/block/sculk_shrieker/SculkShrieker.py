@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::block::sculk_shrieker::SculkShrieker
+"""
+Generated from symbols.json for ::java::world::block::sculk_shrieker::SculkShrieker
+Local link to file: generated_symbols/world/block/sculk_shrieker/SculkShrieker.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

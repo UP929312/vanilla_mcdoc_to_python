@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::predicate::FishingHookPredicate
+"""
+Generated from symbols.json for ::java::data::advancement::predicate::FishingHookPredicate
+Local link to file: generated_symbols/data/advancement/predicate/FishingHookPredicate.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

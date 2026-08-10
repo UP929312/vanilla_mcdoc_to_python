@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::attribute::DiscreteAttribute
+"""
+Generated from symbols.json for ::java::data::worldgen::attribute::DiscreteAttribute
+Local link to file: generated_symbols/data/worldgen/attribute/DiscreteAttribute.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Generic, Literal, TypeVar
 

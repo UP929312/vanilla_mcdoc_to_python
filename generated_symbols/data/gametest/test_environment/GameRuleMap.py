@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::gametest::test_environment::GameRuleMap
+"""
+Generated from symbols.json for ::java::data::gametest::test_environment::GameRuleMap
+Local link to file: generated_symbols/data/gametest/test_environment/GameRuleMap.py
+"""
+# ~~~ CODE ~~~
 from typing import Annotated
 
 from runtime_metadata import IdSpec

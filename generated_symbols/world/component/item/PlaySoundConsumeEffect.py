@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::component::item::PlaySoundConsumeEffect
+"""
+Generated from symbols.json for ::java::world::component::item::PlaySoundConsumeEffect
+Local link to file: generated_symbols/world/component/item/PlaySoundConsumeEffect.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

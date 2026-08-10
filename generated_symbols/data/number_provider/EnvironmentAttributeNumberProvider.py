@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::number_provider::EnvironmentAttributeNumberProvider
+"""
+Generated from symbols.json for ::java::data::number_provider::EnvironmentAttributeNumberProvider
+Local link to file: generated_symbols/data/number_provider/EnvironmentAttributeNumberProvider.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

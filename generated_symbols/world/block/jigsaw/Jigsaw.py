@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::block::jigsaw::Jigsaw
+"""
+Generated from symbols.json for ::java::world::block::jigsaw::Jigsaw
+Local link to file: generated_symbols/world/block/jigsaw/Jigsaw.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

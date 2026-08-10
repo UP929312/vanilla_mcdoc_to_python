@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::trim::TrimMaterialOverrides
+"""
+Generated from symbols.json for ::java::data::trim::TrimMaterialOverrides
+Local link to file: generated_symbols/data/trim/TrimMaterialOverrides.py
+"""
+# ~~~ CODE ~~~
 from typing import Annotated
 
 from runtime_metadata import IdSpec

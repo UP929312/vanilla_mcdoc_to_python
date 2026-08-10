@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::item_definition::BedPart
+"""
+Generated from symbols.json for ::java::assets::item_definition::BedPart
+Local link to file: generated_symbols/assets/item_definition/BedPart.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

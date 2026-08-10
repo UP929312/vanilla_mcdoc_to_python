@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::variants::pig::PigSounds
+"""
+Generated from symbols.json for ::java::data::variants::pig::PigSounds
+Local link to file: generated_symbols/data/variants/pig/PigSounds.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

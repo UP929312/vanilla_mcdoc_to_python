@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::particle::VibrationParticle
+"""
+Generated from symbols.json for ::java::util::particle::VibrationParticle
+Local link to file: generated_symbols/util/particle/VibrationParticle.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.util.particle.VibrationParticleData import VibrationParticleData

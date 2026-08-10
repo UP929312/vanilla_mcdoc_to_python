@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::font::ReferenceProvider
+"""
+Generated from symbols.json for ::java::assets::font::ReferenceProvider
+Local link to file: generated_symbols/assets/font/ReferenceProvider.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

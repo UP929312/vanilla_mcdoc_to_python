@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::timeline::TimeMarker
+"""
+Generated from symbols.json for ::java::data::timeline::TimeMarker
+Local link to file: generated_symbols/data/timeline/TimeMarker.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

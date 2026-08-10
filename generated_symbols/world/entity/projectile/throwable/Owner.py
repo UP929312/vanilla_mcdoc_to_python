@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::projectile::throwable::Owner
+"""
+Generated from symbols.json for ::java::world::entity::projectile::throwable::Owner
+Local link to file: generated_symbols/world/entity/projectile/throwable/Owner.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

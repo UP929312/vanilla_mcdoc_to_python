@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::dimension::biome_source::NoiseParameters
+"""
+Generated from symbols.json for ::java::data::worldgen::dimension::biome_source::NoiseParameters
+Local link to file: generated_symbols/data/worldgen/dimension/biome_source/NoiseParameters.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

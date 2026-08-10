@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::raider::RaiderBase
+"""
+Generated from symbols.json for ::java::world::entity::mob::raider::RaiderBase
+Local link to file: generated_symbols/world/entity/mob/raider/RaiderBase.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

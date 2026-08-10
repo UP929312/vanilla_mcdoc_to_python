@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::variants::instrument::Instrument
+"""
+Generated from symbols.json for ::java::data::variants::instrument::Instrument
+Local link to file: generated_symbols/data/variants/instrument/Instrument.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

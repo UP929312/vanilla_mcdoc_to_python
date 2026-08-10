@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::player::Gamemode
+"""
+Generated from symbols.json for ::java::world::entity::mob::player::Gamemode
+Local link to file: generated_symbols/world/entity/mob/player/Gamemode.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

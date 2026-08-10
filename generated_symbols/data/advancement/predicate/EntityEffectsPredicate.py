@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::predicate::EntityEffectsPredicate
+"""
+Generated from symbols.json for ::java::data::advancement::predicate::EntityEffectsPredicate
+Local link to file: generated_symbols/data/advancement/predicate/EntityEffectsPredicate.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from runtime_metadata import IdSpec

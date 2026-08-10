@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::enchantment::effect::ExponentialEffectValue
+"""
+Generated from symbols.json for ::java::data::enchantment::effect::ExponentialEffectValue
+Local link to file: generated_symbols/data/enchantment/effect/ExponentialEffectValue.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::slot::SlottedItem
+"""
+Generated from symbols.json for ::java::util::slot::SlottedItem
+Local link to file: generated_symbols/util/slot/SlottedItem.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Generic, TypeVar
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::tree::BeehiveTreeDecorator
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::tree::BeehiveTreeDecorator
+Local link to file: generated_symbols/data/worldgen/feature/tree/BeehiveTreeDecorator.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

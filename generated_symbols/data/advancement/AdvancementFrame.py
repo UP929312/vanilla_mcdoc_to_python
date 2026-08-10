@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::AdvancementFrame
+"""
+Generated from symbols.json for ::java::data::advancement::AdvancementFrame
+Local link to file: generated_symbols/data/advancement/AdvancementFrame.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

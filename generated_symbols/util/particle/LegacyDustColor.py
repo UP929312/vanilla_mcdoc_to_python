@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::particle::LegacyDustColor
+"""
+Generated from symbols.json for ::java::util::particle::LegacyDustColor
+Local link to file: generated_symbols/util/particle/LegacyDustColor.py
+"""
+# ~~~ CODE ~~~
 
 
 type LegacyDustColor = tuple[float, float, float]

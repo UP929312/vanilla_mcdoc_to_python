@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::text::StorageNbtText
+"""
+Generated from symbols.json for ::java::util::text::StorageNbtText
+Local link to file: generated_symbols/util/text/StorageNbtText.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated, Literal
 

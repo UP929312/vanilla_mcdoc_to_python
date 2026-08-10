@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::structure::LiquidSettings
+"""
+Generated from symbols.json for ::java::data::worldgen::structure::LiquidSettings
+Local link to file: generated_symbols/data/worldgen/structure/LiquidSettings.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

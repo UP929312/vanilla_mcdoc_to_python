@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::structure::WildUpdateStructureConfig
+"""
+Generated from symbols.json for ::java::data::worldgen::structure::WildUpdateStructureConfig
+Local link to file: generated_symbols/data/worldgen/structure/WildUpdateStructureConfig.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

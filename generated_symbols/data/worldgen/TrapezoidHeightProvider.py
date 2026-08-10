@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::TrapezoidHeightProvider
+"""
+Generated from symbols.json for ::java::data::worldgen::TrapezoidHeightProvider
+Local link to file: generated_symbols/data/worldgen/TrapezoidHeightProvider.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.data.worldgen.UniformHeightProvider import UniformHeightProvider

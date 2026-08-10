@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::placement::RarityFilter
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::placement::RarityFilter
+Local link to file: generated_symbols/data/worldgen/feature/placement/RarityFilter.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

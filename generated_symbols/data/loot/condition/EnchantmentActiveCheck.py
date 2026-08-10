@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::condition::EnchantmentActiveCheck
+"""
+Generated from symbols.json for ::java::data::loot::condition::EnchantmentActiveCheck
+Local link to file: generated_symbols/data/loot/condition/EnchantmentActiveCheck.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

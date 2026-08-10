@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::predicate::EntityTypePredicate
+"""
+Generated from symbols.json for ::java::data::advancement::predicate::EntityTypePredicate
+Local link to file: generated_symbols/data/advancement/predicate/EntityTypePredicate.py
+"""
+# ~~~ CODE ~~~
 from typing import Annotated
 
 from runtime_metadata import IdSpec

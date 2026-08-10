@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::block_state_definition::ModelVariantBase
+"""
+Generated from symbols.json for ::java::assets::block_state_definition::ModelVariantBase
+Local link to file: generated_symbols/assets/block_state_definition/ModelVariantBase.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Literal
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::component::item::KineticWeaponEffectCondition
+"""
+Generated from symbols.json for ::java::world::component::item::KineticWeaponEffectCondition
+Local link to file: generated_symbols/world/component/item/KineticWeaponEffectCondition.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::tree::PlaceOnGroundTreeDecorator
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::tree::PlaceOnGroundTreeDecorator
+Local link to file: generated_symbols/data/worldgen/feature/tree/PlaceOnGroundTreeDecorator.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

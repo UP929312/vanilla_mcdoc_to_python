@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::item::potion::EffectItem
+"""
+Generated from symbols.json for ::java::world::item::potion::EffectItem
+Local link to file: generated_symbols/world/item/potion/EffectItem.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

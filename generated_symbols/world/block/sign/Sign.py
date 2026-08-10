@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::block::sign::Sign
+"""
+Generated from symbols.json for ::java::world::block::sign::Sign
+Local link to file: generated_symbols/world/block/sign/Sign.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

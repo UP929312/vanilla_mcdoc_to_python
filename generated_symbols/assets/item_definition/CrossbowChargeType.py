@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::item_definition::CrossbowChargeType
+"""
+Generated from symbols.json for ::java::assets::item_definition::CrossbowChargeType
+Local link to file: generated_symbols/assets/item_definition/CrossbowChargeType.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

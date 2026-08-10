@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::font::FontOption
+"""
+Generated from symbols.json for ::java::assets::font::FontOption
+Local link to file: generated_symbols/assets/font/FontOption.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

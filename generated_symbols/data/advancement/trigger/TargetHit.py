@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::trigger::TargetHit
+"""
+Generated from symbols.json for ::java::data::advancement::trigger::TargetHit
+Local link to file: generated_symbols/data/advancement/trigger/TargetHit.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

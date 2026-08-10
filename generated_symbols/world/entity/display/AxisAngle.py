@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::display::AxisAngle
+"""
+Generated from symbols.json for ::java::world::entity::display::AxisAngle
+Local link to file: generated_symbols/world/entity/display/AxisAngle.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

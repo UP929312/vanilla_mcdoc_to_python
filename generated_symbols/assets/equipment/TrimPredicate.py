@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::equipment::TrimPredicate
+"""
+Generated from symbols.json for ::java::assets::equipment::TrimPredicate
+Local link to file: generated_symbols/assets/equipment/TrimPredicate.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

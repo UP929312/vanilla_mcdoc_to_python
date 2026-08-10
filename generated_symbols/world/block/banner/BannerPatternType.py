@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::block::banner::BannerPatternType
+"""
+Generated from symbols.json for ::java::world::block::banner::BannerPatternType
+Local link to file: generated_symbols/world/block/banner/BannerPatternType.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::processor_list::ProtectedBlocks
+"""
+Generated from symbols.json for ::java::data::worldgen::processor_list::ProtectedBlocks
+Local link to file: generated_symbols/data/worldgen/processor_list/ProtectedBlocks.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

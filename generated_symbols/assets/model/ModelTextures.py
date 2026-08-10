@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::model::ModelTextures
+"""
+Generated from symbols.json for ::java::assets::model::ModelTextures
+Local link to file: generated_symbols/assets/model/ModelTextures.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:

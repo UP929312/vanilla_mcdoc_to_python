@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::predicate::PlayerPredicate
+"""
+Generated from symbols.json for ::java::data::advancement::predicate::PlayerPredicate
+Local link to file: generated_symbols/data/advancement/predicate/PlayerPredicate.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

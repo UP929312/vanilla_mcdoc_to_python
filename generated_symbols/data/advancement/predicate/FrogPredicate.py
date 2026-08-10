@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::predicate::FrogPredicate
+"""
+Generated from symbols.json for ::java::data::advancement::predicate::FrogPredicate
+Local link to file: generated_symbols/data/advancement/predicate/FrogPredicate.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

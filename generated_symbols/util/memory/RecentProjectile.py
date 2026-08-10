@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::memory::RecentProjectile
+"""
+Generated from symbols.json for ::java::util::memory::RecentProjectile
+Local link to file: generated_symbols/util/memory/RecentProjectile.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.util.memory.ExpirableValue import ExpirableValue

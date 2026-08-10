@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::decorator::WaterDepthThresholdConfig
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::decorator::WaterDepthThresholdConfig
+Local link to file: generated_symbols/data/worldgen/feature/decorator/WaterDepthThresholdConfig.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

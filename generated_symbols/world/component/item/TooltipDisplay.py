@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::component::item::TooltipDisplay
+"""
+Generated from symbols.json for ::java::world::component::item::TooltipDisplay
+Local link to file: generated_symbols/world/component/item/TooltipDisplay.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

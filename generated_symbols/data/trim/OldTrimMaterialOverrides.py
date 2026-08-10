@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::trim::OldTrimMaterialOverrides
+"""
+Generated from symbols.json for ::java::data::trim::OldTrimMaterialOverrides
+Local link to file: generated_symbols/data/trim/OldTrimMaterialOverrides.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:

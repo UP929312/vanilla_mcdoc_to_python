@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::predicate::EntityFlagsPredicate
+"""
+Generated from symbols.json for ::java::data::advancement::predicate::EntityFlagsPredicate
+Local link to file: generated_symbols/data/advancement/predicate/EntityFlagsPredicate.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

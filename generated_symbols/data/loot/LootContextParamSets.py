@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::LootContextParamSets
+"""
+Generated from symbols.json for ::java::data::loot::LootContextParamSets
+Local link to file: generated_symbols/data/loot/LootContextParamSets.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

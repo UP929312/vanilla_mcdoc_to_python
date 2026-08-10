@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::item_definition::ShulkerBox
+"""
+Generated from symbols.json for ::java::assets::item_definition::ShulkerBox
+Local link to file: generated_symbols/assets/item_definition/ShulkerBox.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

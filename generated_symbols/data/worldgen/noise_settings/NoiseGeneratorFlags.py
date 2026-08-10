@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::noise_settings::NoiseGeneratorFlags
+"""
+Generated from symbols.json for ::java::data::worldgen::noise_settings::NoiseGeneratorFlags
+Local link to file: generated_symbols/data/worldgen/noise_settings/NoiseGeneratorFlags.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

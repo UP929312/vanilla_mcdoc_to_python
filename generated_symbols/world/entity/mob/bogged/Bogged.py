@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::bogged::Bogged
+"""
+Generated from symbols.json for ::java::world::entity::mob::bogged::Bogged
+Local link to file: generated_symbols/world/entity/mob/bogged/Bogged.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.world.entity.mob.MobBase import MobBase

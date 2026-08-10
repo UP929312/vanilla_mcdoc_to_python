@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::variants::chicken::ChickenModelType
+"""
+Generated from symbols.json for ::java::data::variants::chicken::ChickenModelType
+Local link to file: generated_symbols/data/variants/chicken/ChickenModelType.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

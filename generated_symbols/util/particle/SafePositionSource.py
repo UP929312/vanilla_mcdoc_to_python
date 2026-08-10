@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::particle::SafePositionSource
+"""
+Generated from symbols.json for ::java::util::particle::SafePositionSource
+Local link to file: generated_symbols/util/particle/SafePositionSource.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Literal
 

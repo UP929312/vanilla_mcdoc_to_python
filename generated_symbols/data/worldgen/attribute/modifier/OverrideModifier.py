@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::attribute::modifier::OverrideModifier
+"""
+Generated from symbols.json for ::java::data::worldgen::attribute::modifier::OverrideModifier
+Local link to file: generated_symbols/data/worldgen/attribute/modifier/OverrideModifier.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Generic, Literal, TypeVar
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::template_pool::Projection
+"""
+Generated from symbols.json for ::java::data::worldgen::template_pool::Projection
+Local link to file: generated_symbols/data/worldgen/template_pool/Projection.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

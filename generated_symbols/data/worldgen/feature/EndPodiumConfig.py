@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::EndPodiumConfig
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::EndPodiumConfig
+Local link to file: generated_symbols/data/worldgen/feature/EndPodiumConfig.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

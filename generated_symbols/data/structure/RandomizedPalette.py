@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::structure::RandomizedPalette
+"""
+Generated from symbols.json for ::java::data::structure::RandomizedPalette
+Local link to file: generated_symbols/data/structure/RandomizedPalette.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

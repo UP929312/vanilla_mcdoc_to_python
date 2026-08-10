@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::chat_type::ChatDecoration
+"""
+Generated from symbols.json for ::java::data::chat_type::ChatDecoration
+Local link to file: generated_symbols/data/chat_type/ChatDecoration.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

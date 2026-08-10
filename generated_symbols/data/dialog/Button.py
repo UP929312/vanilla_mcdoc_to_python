@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::dialog::Button
+"""
+Generated from symbols.json for ::java::data::dialog::Button
+Local link to file: generated_symbols/data/dialog/Button.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

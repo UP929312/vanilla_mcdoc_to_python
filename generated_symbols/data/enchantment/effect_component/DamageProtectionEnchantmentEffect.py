@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::enchantment::effect_component::DamageProtectionEnchantmentEffect
+"""
+Generated from symbols.json for ::java::data::enchantment::effect_component::DamageProtectionEnchantmentEffect
+Local link to file: generated_symbols/data/enchantment/effect_component/DamageProtectionEnchantmentEffect.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::raider::PatrolTarget
+"""
+Generated from symbols.json for ::java::world::entity::mob::raider::PatrolTarget
+Local link to file: generated_symbols/world/entity/mob/raider/PatrolTarget.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::block::spawner::SpawnerEntry
+"""
+Generated from symbols.json for ::java::world::block::spawner::SpawnerEntry
+Local link to file: generated_symbols/world/block/spawner/SpawnerEntry.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

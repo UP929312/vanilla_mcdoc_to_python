@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::biome::Precipitation
+"""
+Generated from symbols.json for ::java::data::worldgen::biome::Precipitation
+Local link to file: generated_symbols/data/worldgen/biome/Precipitation.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

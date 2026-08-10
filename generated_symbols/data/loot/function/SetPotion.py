@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::function::SetPotion
+"""
+Generated from symbols.json for ::java::data::loot::function::SetPotion
+Local link to file: generated_symbols/data/loot/function/SetPotion.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

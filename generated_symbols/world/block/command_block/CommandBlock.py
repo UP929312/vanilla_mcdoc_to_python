@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::block::command_block::CommandBlock
+"""
+Generated from symbols.json for ::java::world::block::command_block::CommandBlock
+Local link to file: generated_symbols/world/block/command_block/CommandBlock.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.world.block.BlockEntity import BlockEntity

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::util::IntLimiter
+"""
+Generated from symbols.json for ::java::data::util::IntLimiter
+Local link to file: generated_symbols/data/util/IntLimiter.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

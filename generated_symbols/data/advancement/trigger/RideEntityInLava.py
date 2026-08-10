@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::trigger::RideEntityInLava
+"""
+Generated from symbols.json for ::java::data::advancement::trigger::RideEntityInLava
+Local link to file: generated_symbols/data/advancement/trigger/RideEntityInLava.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

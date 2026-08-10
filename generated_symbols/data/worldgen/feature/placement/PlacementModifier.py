@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::placement::PlacementModifier
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::placement::PlacementModifier
+Local link to file: generated_symbols/data/worldgen/feature/placement/PlacementModifier.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Literal
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::shader::post::TextureInput
+"""
+Generated from symbols.json for ::java::assets::shader::post::TextureInput
+Local link to file: generated_symbols/assets/shader/post/TextureInput.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

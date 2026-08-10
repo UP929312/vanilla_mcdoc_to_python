@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::dimension::biome_source::BiomeSource
+"""
+Generated from symbols.json for ::java::data::worldgen::dimension::biome_source::BiomeSource
+Local link to file: generated_symbols/data/worldgen/dimension/biome_source/BiomeSource.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Literal
 

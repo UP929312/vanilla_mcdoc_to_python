@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::gpu_warnlist::GpuWarnlist
+"""
+Generated from symbols.json for ::java::assets::gpu_warnlist::GpuWarnlist
+Local link to file: generated_symbols/assets/gpu_warnlist/GpuWarnlist.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

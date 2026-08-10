@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::item_definition::Damage
+"""
+Generated from symbols.json for ::java::assets::item_definition::Damage
+Local link to file: generated_symbols/assets/item_definition/Damage.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

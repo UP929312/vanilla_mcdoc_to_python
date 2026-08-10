@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::breedable::villager::VillagerData
+"""
+Generated from symbols.json for ::java::world::entity::mob::breedable::villager::VillagerData
+Local link to file: generated_symbols/world/entity/mob/breedable/villager/VillagerData.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

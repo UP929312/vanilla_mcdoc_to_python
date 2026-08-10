@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::shader::post::UniformValue
+"""
+Generated from symbols.json for ::java::assets::shader::post::UniformValue
+Local link to file: generated_symbols/assets/shader/post/UniformValue.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

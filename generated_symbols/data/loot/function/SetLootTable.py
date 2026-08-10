@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::function::SetLootTable
+"""
+Generated from symbols.json for ::java::data::loot::function::SetLootTable
+Local link to file: generated_symbols/data/loot/function/SetLootTable.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::shader::program::ShaderProgram
+"""
+Generated from symbols.json for ::java::assets::shader::program::ShaderProgram
+Local link to file: generated_symbols/assets/shader/program/ShaderProgram.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

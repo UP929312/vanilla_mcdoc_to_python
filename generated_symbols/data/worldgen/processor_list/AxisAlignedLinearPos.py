@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::processor_list::AxisAlignedLinearPos
+"""
+Generated from symbols.json for ::java::data::worldgen::processor_list::AxisAlignedLinearPos
+Local link to file: generated_symbols/data/worldgen/processor_list/AxisAlignedLinearPos.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

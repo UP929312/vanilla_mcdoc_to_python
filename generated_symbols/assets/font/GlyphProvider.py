@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::font::GlyphProvider
+"""
+Generated from symbols.json for ::java::assets::font::GlyphProvider
+Local link to file: generated_symbols/assets/font/GlyphProvider.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Literal
 

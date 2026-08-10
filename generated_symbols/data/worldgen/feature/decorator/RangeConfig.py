@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::decorator::RangeConfig
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::decorator::RangeConfig
+Local link to file: generated_symbols/data/worldgen/feature/decorator/RangeConfig.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

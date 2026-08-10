@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::component::block::SignLines
+"""
+Generated from symbols.json for ::java::world::component::block::SignLines
+Local link to file: generated_symbols/world/component/block/SignLines.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::block::head::Properties
+"""
+Generated from symbols.json for ::java::world::block::head::Properties
+Local link to file: generated_symbols/world/block/head/Properties.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

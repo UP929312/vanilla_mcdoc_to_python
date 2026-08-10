@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::condition::RandomChanceWithEnchantedBonus
+"""
+Generated from symbols.json for ::java::data::loot::condition::RandomChanceWithEnchantedBonus
+Local link to file: generated_symbols/data/loot/condition/RandomChanceWithEnchantedBonus.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::item::knowledge_book::KnowledgeBook
+"""
+Generated from symbols.json for ::java::world::item::knowledge_book::KnowledgeBook
+Local link to file: generated_symbols/world/item/knowledge_book/KnowledgeBook.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

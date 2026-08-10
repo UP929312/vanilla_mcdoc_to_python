@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::block_state_provider::RandomizedIntStateProvider
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::block_state_provider::RandomizedIntStateProvider
+Local link to file: generated_symbols/data/worldgen/feature/block_state_provider/RandomizedIntStateProvider.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

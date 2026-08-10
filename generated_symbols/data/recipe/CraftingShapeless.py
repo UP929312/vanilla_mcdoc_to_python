@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::recipe::CraftingShapeless
+"""
+Generated from symbols.json for ::java::data::recipe::CraftingShapeless
+Local link to file: generated_symbols/data/recipe/CraftingShapeless.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::text::RunCommand
+"""
+Generated from symbols.json for ::java::util::text::RunCommand
+Local link to file: generated_symbols/util/text/RunCommand.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

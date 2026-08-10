@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::breedable::tamable::CatType
+"""
+Generated from symbols.json for ::java::world::entity::mob::breedable::tamable::CatType
+Local link to file: generated_symbols/world/entity/mob/breedable/tamable/CatType.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::structure::BuriedTreasure
+"""
+Generated from symbols.json for ::java::data::worldgen::structure::BuriedTreasure
+Local link to file: generated_symbols/data/worldgen/structure/BuriedTreasure.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

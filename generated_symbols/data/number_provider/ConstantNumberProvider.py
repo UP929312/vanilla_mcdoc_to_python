@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::number_provider::ConstantNumberProvider
+"""
+Generated from symbols.json for ::java::data::number_provider::ConstantNumberProvider
+Local link to file: generated_symbols/data/number_provider/ConstantNumberProvider.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

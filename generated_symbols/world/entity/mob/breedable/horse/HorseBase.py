@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::breedable::horse::HorseBase
+"""
+Generated from symbols.json for ::java::world::entity::mob::breedable::horse::HorseBase
+Local link to file: generated_symbols/world/entity/mob/breedable/horse/HorseBase.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

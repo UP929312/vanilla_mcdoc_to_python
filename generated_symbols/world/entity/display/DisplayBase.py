@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::display::DisplayBase
+"""
+Generated from symbols.json for ::java::world::entity::display::DisplayBase
+Local link to file: generated_symbols/world/entity/display/DisplayBase.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Literal
 

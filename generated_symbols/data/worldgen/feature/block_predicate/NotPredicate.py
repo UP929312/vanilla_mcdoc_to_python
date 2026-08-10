@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::block_predicate::NotPredicate
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::block_predicate::NotPredicate
+Local link to file: generated_symbols/data/worldgen/feature/block_predicate/NotPredicate.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

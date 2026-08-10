@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::color::RGBA
+"""
+Generated from symbols.json for ::java::util::color::RGBA
+Local link to file: generated_symbols/util/color/RGBA.py
+"""
+# ~~~ CODE ~~~
 from typing import Annotated
 
 

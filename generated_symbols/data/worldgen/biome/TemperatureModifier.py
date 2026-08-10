@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::biome::TemperatureModifier
+"""
+Generated from symbols.json for ::java::data::worldgen::biome::TemperatureModifier
+Local link to file: generated_symbols/data/worldgen/biome/TemperatureModifier.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

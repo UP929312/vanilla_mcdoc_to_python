@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::variants::jukebox_song::JukeboxSong
+"""
+Generated from symbols.json for ::java::data::variants::jukebox_song::JukeboxSong
+Local link to file: generated_symbols/data/variants/jukebox_song/JukeboxSong.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

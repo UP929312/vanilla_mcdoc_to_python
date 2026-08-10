@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::tree::PaleMossTreeDecorator
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::tree::PaleMossTreeDecorator
+Local link to file: generated_symbols/data/worldgen/feature/tree/PaleMossTreeDecorator.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

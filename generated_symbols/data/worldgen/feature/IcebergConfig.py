@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::IcebergConfig
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::IcebergConfig
+Local link to file: generated_symbols/data/worldgen/feature/IcebergConfig.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::trigger::UsedEnderEye
+"""
+Generated from symbols.json for ::java::data::advancement::trigger::UsedEnderEye
+Local link to file: generated_symbols/data/advancement/trigger/UsedEnderEye.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

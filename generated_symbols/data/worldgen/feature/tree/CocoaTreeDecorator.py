@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::tree::CocoaTreeDecorator
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::tree::CocoaTreeDecorator
+Local link to file: generated_symbols/data/worldgen/feature/tree/CocoaTreeDecorator.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

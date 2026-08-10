@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::block_state_provider::RotatedStateProvider
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::block_state_provider::RotatedStateProvider
+Local link to file: generated_symbols/data/worldgen/feature/block_state_provider/RotatedStateProvider.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

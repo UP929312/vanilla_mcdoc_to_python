@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::material_condition::MaterialCondition
+"""
+Generated from symbols.json for ::java::data::worldgen::material_condition::MaterialCondition
+Local link to file: generated_symbols/data/worldgen/material_condition/MaterialCondition.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Literal
 

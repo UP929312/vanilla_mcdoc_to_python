@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::text::Keybind
+"""
+Generated from symbols.json for ::java::util::text::Keybind
+Local link to file: generated_symbols/util/text/Keybind.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

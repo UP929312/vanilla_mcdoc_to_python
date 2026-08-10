@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::predicate::PlayerRecipes
+"""
+Generated from symbols.json for ::java::data::advancement::predicate::PlayerRecipes
+Local link to file: generated_symbols/data/advancement/predicate/PlayerRecipes.py
+"""
+# ~~~ CODE ~~~
 from typing import Annotated
 
 from runtime_metadata import IdSpec

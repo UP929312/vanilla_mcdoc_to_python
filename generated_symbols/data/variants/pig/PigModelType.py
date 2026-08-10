@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::variants::pig::PigModelType
+"""
+Generated from symbols.json for ::java::data::variants::pig::PigModelType
+Local link to file: generated_symbols/data/variants/pig/PigModelType.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

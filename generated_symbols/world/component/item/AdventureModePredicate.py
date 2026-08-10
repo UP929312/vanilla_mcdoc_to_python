@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::component::item::AdventureModePredicate
+"""
+Generated from symbols.json for ::java::world::component::item::AdventureModePredicate
+Local link to file: generated_symbols/world/component/item/AdventureModePredicate.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 if TYPE_CHECKING:

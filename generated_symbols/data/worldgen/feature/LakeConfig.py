@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::LakeConfig
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::LakeConfig
+Local link to file: generated_symbols/data/worldgen/feature/LakeConfig.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

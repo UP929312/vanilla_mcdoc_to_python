@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::component::item::Unbreakable
+"""
+Generated from symbols.json for ::java::world::component::item::Unbreakable
+Local link to file: generated_symbols/world/component/item/Unbreakable.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

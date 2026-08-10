@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::block::beehive::Bee
+"""
+Generated from symbols.json for ::java::world::block::beehive::Bee
+Local link to file: generated_symbols/world/block/beehive/Bee.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

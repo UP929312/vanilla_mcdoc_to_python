@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::particle::EffectParticle
+"""
+Generated from symbols.json for ::java::util::particle::EffectParticle
+Local link to file: generated_symbols/util/particle/EffectParticle.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

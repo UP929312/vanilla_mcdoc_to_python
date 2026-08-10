@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::noise_settings::NoiseGeneratorSettings
+"""
+Generated from symbols.json for ::java::data::worldgen::noise_settings::NoiseGeneratorSettings
+Local link to file: generated_symbols/data/worldgen/noise_settings/NoiseGeneratorSettings.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

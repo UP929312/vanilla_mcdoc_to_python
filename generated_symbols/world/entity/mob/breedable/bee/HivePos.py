@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::breedable::bee::HivePos
+"""
+Generated from symbols.json for ::java::world::entity::mob::breedable::bee::HivePos
+Local link to file: generated_symbols/world/entity/mob/breedable/bee/HivePos.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

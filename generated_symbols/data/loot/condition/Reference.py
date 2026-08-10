@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::condition::Reference
+"""
+Generated from symbols.json for ::java::data::loot::condition::Reference
+Local link to file: generated_symbols/data/loot/condition/Reference.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

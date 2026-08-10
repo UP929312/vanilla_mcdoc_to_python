@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::function::SetStewEffect
+"""
+Generated from symbols.json for ::java::data::loot::function::SetStewEffect
+Local link to file: generated_symbols/data/loot/function/SetStewEffect.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

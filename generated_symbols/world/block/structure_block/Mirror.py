@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::block::structure_block::Mirror
+"""
+Generated from symbols.json for ::java::world::block::structure_block::Mirror
+Local link to file: generated_symbols/world/block/structure_block/Mirror.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

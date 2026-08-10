@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::dimension::chunk_generator::FlatGeneratorLayer
+"""
+Generated from symbols.json for ::java::data::worldgen::dimension::chunk_generator::FlatGeneratorLayer
+Local link to file: generated_symbols/data/worldgen/dimension/chunk_generator/FlatGeneratorLayer.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

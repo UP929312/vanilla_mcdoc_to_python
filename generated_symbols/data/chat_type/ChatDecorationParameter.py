@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::chat_type::ChatDecorationParameter
+"""
+Generated from symbols.json for ::java::data::chat_type::ChatDecorationParameter
+Local link to file: generated_symbols/data/chat_type/ChatDecorationParameter.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::block::lectern::Lectern
+"""
+Generated from symbols.json for ::java::world::block::lectern::Lectern
+Local link to file: generated_symbols/world/block/lectern/Lectern.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

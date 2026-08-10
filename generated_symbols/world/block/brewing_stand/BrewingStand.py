@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::block::brewing_stand::BrewingStand
+"""
+Generated from symbols.json for ::java::world::block::brewing_stand::BrewingStand
+Local link to file: generated_symbols/world/block/brewing_stand/BrewingStand.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

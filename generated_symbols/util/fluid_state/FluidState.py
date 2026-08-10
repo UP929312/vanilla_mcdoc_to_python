@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::fluid_state::FluidState
+"""
+Generated from symbols.json for ::java::util::fluid_state::FluidState
+Local link to file: generated_symbols/util/fluid_state/FluidState.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

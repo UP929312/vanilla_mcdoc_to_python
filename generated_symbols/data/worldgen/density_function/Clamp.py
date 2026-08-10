@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::density_function::Clamp
+"""
+Generated from symbols.json for ::java::data::worldgen::density_function::Clamp
+Local link to file: generated_symbols/data/worldgen/density_function/Clamp.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

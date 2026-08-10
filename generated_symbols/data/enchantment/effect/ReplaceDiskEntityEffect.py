@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::enchantment::effect::ReplaceDiskEntityEffect
+"""
+Generated from symbols.json for ::java::data::enchantment::effect::ReplaceDiskEntityEffect
+Local link to file: generated_symbols/data/enchantment/effect/ReplaceDiskEntityEffect.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

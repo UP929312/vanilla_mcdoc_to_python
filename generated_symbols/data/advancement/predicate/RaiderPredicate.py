@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::predicate::RaiderPredicate
+"""
+Generated from symbols.json for ::java::data::advancement::predicate::RaiderPredicate
+Local link to file: generated_symbols/data/advancement/predicate/RaiderPredicate.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

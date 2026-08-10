@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::trigger::EnterBlock
+"""
+Generated from symbols.json for ::java::data::advancement::trigger::EnterBlock
+Local link to file: generated_symbols/data/advancement/trigger/EnterBlock.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

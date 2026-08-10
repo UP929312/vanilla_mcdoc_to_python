@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::equipment::Equipment
+"""
+Generated from symbols.json for ::java::assets::equipment::Equipment
+Local link to file: generated_symbols/assets/equipment/Equipment.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

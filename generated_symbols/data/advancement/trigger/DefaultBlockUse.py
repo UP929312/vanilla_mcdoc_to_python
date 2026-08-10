@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::trigger::DefaultBlockUse
+"""
+Generated from symbols.json for ::java::data::advancement::trigger::DefaultBlockUse
+Local link to file: generated_symbols/data/advancement/trigger/DefaultBlockUse.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

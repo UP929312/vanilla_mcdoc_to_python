@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::equipment::Dyeable
+"""
+Generated from symbols.json for ::java::assets::equipment::Dyeable
+Local link to file: generated_symbols/assets/equipment/Dyeable.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

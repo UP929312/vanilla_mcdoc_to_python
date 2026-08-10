@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::enchantment::effect::RunFunctionEntityEffect
+"""
+Generated from symbols.json for ::java::data::enchantment::effect::RunFunctionEntityEffect
+Local link to file: generated_symbols/data/enchantment/effect/RunFunctionEntityEffect.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

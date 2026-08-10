@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::particle::DustColor
+"""
+Generated from symbols.json for ::java::util::particle::DustColor
+Local link to file: generated_symbols/util/particle/DustColor.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:

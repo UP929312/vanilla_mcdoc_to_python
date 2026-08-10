@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::template_pool::FeatureElement
+"""
+Generated from symbols.json for ::java::data::worldgen::template_pool::FeatureElement
+Local link to file: generated_symbols/data/worldgen/template_pool/FeatureElement.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

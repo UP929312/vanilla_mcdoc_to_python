@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::material_condition::MaterialConditionRef
+"""
+Generated from symbols.json for ::java::data::worldgen::material_condition::MaterialConditionRef
+Local link to file: generated_symbols/data/worldgen/material_condition/MaterialConditionRef.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from runtime_metadata import IdSpec

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::text::TextObject
+"""
+Generated from symbols.json for ::java::util::text::TextObject
+Local link to file: generated_symbols/util/text/TextObject.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Literal
 

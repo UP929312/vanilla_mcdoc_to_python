@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::variants::frog::FrogVariant
+"""
+Generated from symbols.json for ::java::data::variants::frog::FrogVariant
+Local link to file: generated_symbols/data/variants/frog/FrogVariant.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

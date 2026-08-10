@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::font::TtfProvider
+"""
+Generated from symbols.json for ::java::assets::font::TtfProvider
+Local link to file: generated_symbols/assets/font/TtfProvider.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

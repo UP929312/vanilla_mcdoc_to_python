@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::structure_set::RandomSpreadPlacement
+"""
+Generated from symbols.json for ::java::data::worldgen::structure_set::RandomSpreadPlacement
+Local link to file: generated_symbols/data/worldgen/structure_set/RandomSpreadPlacement.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

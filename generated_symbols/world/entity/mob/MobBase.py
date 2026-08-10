@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::MobBase
+"""
+Generated from symbols.json for ::java::world::entity::mob::MobBase
+Local link to file: generated_symbols/world/entity/mob/MobBase.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::item_definition::ComponentFlags
+"""
+Generated from symbols.json for ::java::assets::item_definition::ComponentFlags
+Local link to file: generated_symbols/assets/item_definition/ComponentFlags.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

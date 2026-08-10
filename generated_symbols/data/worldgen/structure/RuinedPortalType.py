@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::structure::RuinedPortalType
+"""
+Generated from symbols.json for ::java::data::worldgen::structure::RuinedPortalType
+Local link to file: generated_symbols/data/worldgen/structure/RuinedPortalType.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

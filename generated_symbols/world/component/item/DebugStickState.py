@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::component::item::DebugStickState
+"""
+Generated from symbols.json for ::java::world::component::item::DebugStickState
+Local link to file: generated_symbols/world/component/item/DebugStickState.py
+"""
+# ~~~ CODE ~~~
 from typing import Annotated
 
 from runtime_metadata import IdSpec

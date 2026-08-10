@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::dimension::DimensionTypeEffects
+"""
+Generated from symbols.json for ::java::data::worldgen::dimension::DimensionTypeEffects
+Local link to file: generated_symbols/data/worldgen/dimension/DimensionTypeEffects.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

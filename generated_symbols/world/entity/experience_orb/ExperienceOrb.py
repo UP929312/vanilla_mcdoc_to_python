@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::experience_orb::ExperienceOrb
+"""
+Generated from symbols.json for ::java::world::entity::experience_orb::ExperienceOrb
+Local link to file: generated_symbols/world/entity/experience_orb/ExperienceOrb.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.world.entity.EntityBase import EntityBase

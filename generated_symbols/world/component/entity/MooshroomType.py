@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::component::entity::MooshroomType
+"""
+Generated from symbols.json for ::java::world::component::entity::MooshroomType
+Local link to file: generated_symbols/world/component/entity/MooshroomType.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::LargeDripstoneConfig
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::LargeDripstoneConfig
+Local link to file: generated_symbols/data/worldgen/feature/LargeDripstoneConfig.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

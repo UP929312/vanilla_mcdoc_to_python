@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::block::jigsaw::JointType
+"""
+Generated from symbols.json for ::java::world::block::jigsaw::JointType
+Local link to file: generated_symbols/world/block/jigsaw/JointType.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::material_rule::BlockRule
+"""
+Generated from symbols.json for ::java::data::worldgen::material_rule::BlockRule
+Local link to file: generated_symbols/data/worldgen/material_rule/BlockRule.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

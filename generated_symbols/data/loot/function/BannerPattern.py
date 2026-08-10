@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::function::BannerPattern
+"""
+Generated from symbols.json for ::java::data::loot::function::BannerPattern
+Local link to file: generated_symbols/data/loot/function/BannerPattern.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

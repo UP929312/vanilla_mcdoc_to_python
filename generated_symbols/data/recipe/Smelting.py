@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::recipe::Smelting
+"""
+Generated from symbols.json for ::java::data::recipe::Smelting
+Local link to file: generated_symbols/data/recipe/Smelting.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::WeightedList
+"""
+Generated from symbols.json for ::java::util::WeightedList
+Local link to file: generated_symbols/util/WeightedList.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING, TypeVar
 
 if TYPE_CHECKING:

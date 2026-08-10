@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::item_definition::ActuallyTranslucentRGB
+"""
+Generated from symbols.json for ::java::assets::item_definition::ActuallyTranslucentRGB
+Local link to file: generated_symbols/assets/item_definition/ActuallyTranslucentRGB.py
+"""
+# ~~~ CODE ~~~
 from typing import Annotated
 
 

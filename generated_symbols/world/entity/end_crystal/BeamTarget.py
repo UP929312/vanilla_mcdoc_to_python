@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::end_crystal::BeamTarget
+"""
+Generated from symbols.json for ::java::world::entity::end_crystal::BeamTarget
+Local link to file: generated_symbols/world/entity/end_crystal/BeamTarget.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

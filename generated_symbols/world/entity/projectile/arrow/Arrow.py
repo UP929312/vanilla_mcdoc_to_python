@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::projectile::arrow::Arrow
+"""
+Generated from symbols.json for ::java::world::entity::projectile::arrow::Arrow
+Local link to file: generated_symbols/world/entity/projectile/arrow/Arrow.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.world.entity.projectile.arrow.ArrowBase import ArrowBase

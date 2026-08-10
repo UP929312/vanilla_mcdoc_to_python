@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::trigger::ThrownItemPickedUpByEntity
+"""
+Generated from symbols.json for ::java::data::advancement::trigger::ThrownItemPickedUpByEntity
+Local link to file: generated_symbols/data/advancement/trigger/ThrownItemPickedUpByEntity.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

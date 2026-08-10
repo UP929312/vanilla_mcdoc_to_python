@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::biome::CarversPerStep
+"""
+Generated from symbols.json for ::java::data::worldgen::biome::CarversPerStep
+Local link to file: generated_symbols/data/worldgen/biome/CarversPerStep.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:

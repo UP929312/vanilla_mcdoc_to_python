@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::WeightListHeightProvider
+"""
+Generated from symbols.json for ::java::data::worldgen::WeightListHeightProvider
+Local link to file: generated_symbols/data/worldgen/WeightListHeightProvider.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

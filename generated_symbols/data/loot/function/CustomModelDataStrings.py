@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::function::CustomModelDataStrings
+"""
+Generated from symbols.json for ::java::data::loot::function::CustomModelDataStrings
+Local link to file: generated_symbols/data/loot/function/CustomModelDataStrings.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.data.loot.function.ListOperation import ListOperation

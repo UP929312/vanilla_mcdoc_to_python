@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::damage_type::DeathMessageType
+"""
+Generated from symbols.json for ::java::data::damage_type::DeathMessageType
+Local link to file: generated_symbols/data/damage_type/DeathMessageType.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

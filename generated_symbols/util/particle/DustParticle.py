@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::particle::DustParticle
+"""
+Generated from symbols.json for ::java::util::particle::DustParticle
+Local link to file: generated_symbols/util/particle/DustParticle.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

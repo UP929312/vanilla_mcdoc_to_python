@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::surface_builder::Config
+"""
+Generated from symbols.json for ::java::data::worldgen::surface_builder::Config
+Local link to file: generated_symbols/data/worldgen/surface_builder/Config.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::predicate::SheepPredicate
+"""
+Generated from symbols.json for ::java::data::advancement::predicate::SheepPredicate
+Local link to file: generated_symbols/data/advancement/predicate/SheepPredicate.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

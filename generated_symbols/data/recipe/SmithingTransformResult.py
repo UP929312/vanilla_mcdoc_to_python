@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::recipe::SmithingTransformResult
+"""
+Generated from symbols.json for ::java::data::recipe::SmithingTransformResult
+Local link to file: generated_symbols/data/recipe/SmithingTransformResult.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

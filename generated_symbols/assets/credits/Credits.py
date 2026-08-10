@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::credits::Credits
+"""
+Generated from symbols.json for ::java::assets::credits::Credits
+Local link to file: generated_symbols/assets/credits/Credits.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated, Literal
 

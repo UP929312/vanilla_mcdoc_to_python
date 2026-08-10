@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::predicate::InputPredicate
+"""
+Generated from symbols.json for ::java::data::advancement::predicate::InputPredicate
+Local link to file: generated_symbols/data/advancement/predicate/InputPredicate.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

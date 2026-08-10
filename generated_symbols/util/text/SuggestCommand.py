@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::text::SuggestCommand
+"""
+Generated from symbols.json for ::java::util::text::SuggestCommand
+Local link to file: generated_symbols/util/text/SuggestCommand.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

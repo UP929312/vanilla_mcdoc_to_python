@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::condition::Inverted
+"""
+Generated from symbols.json for ::java::data::loot::condition::Inverted
+Local link to file: generated_symbols/data/loot/condition/Inverted.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

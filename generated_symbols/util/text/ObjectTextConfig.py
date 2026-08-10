@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::text::ObjectTextConfig
+"""
+Generated from symbols.json for ::java::util::text::ObjectTextConfig
+Local link to file: generated_symbols/util/text/ObjectTextConfig.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

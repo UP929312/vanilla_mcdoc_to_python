@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::model::ModelRef
+"""
+Generated from symbols.json for ::java::assets::model::ModelRef
+Local link to file: generated_symbols/assets/model/ModelRef.py
+"""
+# ~~~ CODE ~~~
 from typing import Annotated
 
 from runtime_metadata import IdSpec

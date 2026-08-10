@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::util::UniformIntGenerator
+"""
+Generated from symbols.json for ::java::data::util::UniformIntGenerator
+Local link to file: generated_symbols/data/util/UniformIntGenerator.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

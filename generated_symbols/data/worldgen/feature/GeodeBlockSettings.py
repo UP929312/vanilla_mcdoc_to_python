@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::GeodeBlockSettings
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::GeodeBlockSettings
+Local link to file: generated_symbols/data/worldgen/feature/GeodeBlockSettings.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::marker::Marker
+"""
+Generated from symbols.json for ::java::world::entity::marker::Marker
+Local link to file: generated_symbols/world/entity/marker/Marker.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.world.entity.EntityBase import EntityBase

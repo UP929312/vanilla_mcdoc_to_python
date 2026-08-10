@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::game_event::EntityPositionSource
+"""
+Generated from symbols.json for ::java::util::game_event::EntityPositionSource
+Local link to file: generated_symbols/util/game_event/EntityPositionSource.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

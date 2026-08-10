@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::placement::PlacedFeatureListRef
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::placement::PlacedFeatureListRef
+Local link to file: generated_symbols/data/worldgen/feature/placement/PlacedFeatureListRef.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from runtime_metadata import IdSpec

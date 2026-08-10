@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::enchantment::level_based_value::LevelBasedValue
+"""
+Generated from symbols.json for ::java::data::enchantment::level_based_value::LevelBasedValue
+Local link to file: generated_symbols/data/enchantment/level_based_value/LevelBasedValue.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:

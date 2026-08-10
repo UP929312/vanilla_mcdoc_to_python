@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::text::ShowItem
+"""
+Generated from symbols.json for ::java::util::text::ShowItem
+Local link to file: generated_symbols/util/text/ShowItem.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.world.item.ItemStack import ItemStack

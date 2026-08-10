@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::shader::program::BlendMode
+"""
+Generated from symbols.json for ::java::assets::shader::program::BlendMode
+Local link to file: generated_symbols/assets/shader/program/BlendMode.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

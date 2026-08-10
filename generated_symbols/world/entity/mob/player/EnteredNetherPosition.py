@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::player::EnteredNetherPosition
+"""
+Generated from symbols.json for ::java::world::entity::mob::player::EnteredNetherPosition
+Local link to file: generated_symbols/world/entity/mob/player/EnteredNetherPosition.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

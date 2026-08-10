@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::enchantment::level_based_value::LookupLevelValue
+"""
+Generated from symbols.json for ::java::data::enchantment::level_based_value::LookupLevelValue
+Local link to file: generated_symbols/data/enchantment/level_based_value/LookupLevelValue.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

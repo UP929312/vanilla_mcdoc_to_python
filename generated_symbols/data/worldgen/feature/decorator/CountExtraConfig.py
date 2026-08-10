@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::decorator::CountExtraConfig
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::decorator::CountExtraConfig
+Local link to file: generated_symbols/data/worldgen/feature/decorator/CountExtraConfig.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

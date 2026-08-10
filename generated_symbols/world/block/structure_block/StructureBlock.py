@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::block::structure_block::StructureBlock
+"""
+Generated from symbols.json for ::java::world::block::structure_block::StructureBlock
+Local link to file: generated_symbols/world/block/structure_block/StructureBlock.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

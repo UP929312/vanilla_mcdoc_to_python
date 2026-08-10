@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::function::UniformBonusFormula
+"""
+Generated from symbols.json for ::java::data::loot::function::UniformBonusFormula
+Local link to file: generated_symbols/data/loot/function/UniformBonusFormula.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

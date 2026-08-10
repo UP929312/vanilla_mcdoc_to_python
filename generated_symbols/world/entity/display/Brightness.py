@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::display::Brightness
+"""
+Generated from symbols.json for ::java::world::entity::display::Brightness
+Local link to file: generated_symbols/world/entity/display/Brightness.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

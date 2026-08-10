@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::DropChances
+"""
+Generated from symbols.json for ::java::world::entity::mob::DropChances
+Local link to file: generated_symbols/world/entity/mob/DropChances.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 if TYPE_CHECKING:

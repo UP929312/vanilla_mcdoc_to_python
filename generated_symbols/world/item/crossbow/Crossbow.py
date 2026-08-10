@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::item::crossbow::Crossbow
+"""
+Generated from symbols.json for ::java::world::item::crossbow::Crossbow
+Local link to file: generated_symbols/world/item/crossbow/Crossbow.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::trigger::CompositeEntity
+"""
+Generated from symbols.json for ::java::data::advancement::trigger::CompositeEntity
+Local link to file: generated_symbols/data/advancement/trigger/CompositeEntity.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::decorator::CarvingMaskConfig
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::decorator::CarvingMaskConfig
+Local link to file: generated_symbols/data/worldgen/feature/decorator/CarvingMaskConfig.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

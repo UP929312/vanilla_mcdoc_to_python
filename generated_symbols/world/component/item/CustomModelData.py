@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::component::item::CustomModelData
+"""
+Generated from symbols.json for ::java::world::component::item::CustomModelData
+Local link to file: generated_symbols/world/component/item/CustomModelData.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

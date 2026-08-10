@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::number_provider::StorageNumberProvider
+"""
+Generated from symbols.json for ::java::data::number_provider::StorageNumberProvider
+Local link to file: generated_symbols/data/number_provider/StorageNumberProvider.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

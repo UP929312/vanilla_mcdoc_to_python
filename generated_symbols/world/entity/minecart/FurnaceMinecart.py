@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::minecart::FurnaceMinecart
+"""
+Generated from symbols.json for ::java::world::entity::minecart::FurnaceMinecart
+Local link to file: generated_symbols/world/entity/minecart/FurnaceMinecart.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.world.entity.minecart.Minecart import Minecart

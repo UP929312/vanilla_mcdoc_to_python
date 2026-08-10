@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::block::campfire::Campfire
+"""
+Generated from symbols.json for ::java::world::block::campfire::Campfire
+Local link to file: generated_symbols/world/block/campfire/Campfire.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

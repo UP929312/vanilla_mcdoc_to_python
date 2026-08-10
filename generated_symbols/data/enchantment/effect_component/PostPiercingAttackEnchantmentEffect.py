@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::enchantment::effect_component::PostPiercingAttackEnchantmentEffect
+"""
+Generated from symbols.json for ::java::data::enchantment::effect_component::PostPiercingAttackEnchantmentEffect
+Local link to file: generated_symbols/data/enchantment/effect_component/PostPiercingAttackEnchantmentEffect.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

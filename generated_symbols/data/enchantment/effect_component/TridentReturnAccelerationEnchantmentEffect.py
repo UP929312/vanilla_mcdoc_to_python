@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::enchantment::effect_component::TridentReturnAccelerationEnchantmentEffect
+"""
+Generated from symbols.json for ::java::data::enchantment::effect_component::TridentReturnAccelerationEnchantmentEffect
+Local link to file: generated_symbols/data/enchantment/effect_component/TridentReturnAccelerationEnchantmentEffect.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::text::KeybindText
+"""
+Generated from symbols.json for ::java::util::text::KeybindText
+Local link to file: generated_symbols/util/text/KeybindText.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Literal
 

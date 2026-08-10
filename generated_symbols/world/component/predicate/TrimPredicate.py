@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::component::predicate::TrimPredicate
+"""
+Generated from symbols.json for ::java::world::component::predicate::TrimPredicate
+Local link to file: generated_symbols/world/component/predicate/TrimPredicate.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

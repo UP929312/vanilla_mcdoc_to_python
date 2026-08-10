@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::block_state_definition::ModelVariant
+"""
+Generated from symbols.json for ::java::assets::block_state_definition::ModelVariant
+Local link to file: generated_symbols/assets/block_state_definition/ModelVariant.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

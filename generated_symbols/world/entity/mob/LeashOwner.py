@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::LeashOwner
+"""
+Generated from symbols.json for ::java::world::entity::mob::LeashOwner
+Local link to file: generated_symbols/world/entity/mob/LeashOwner.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

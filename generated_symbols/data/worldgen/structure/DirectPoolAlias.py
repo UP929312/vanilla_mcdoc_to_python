@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::structure::DirectPoolAlias
+"""
+Generated from symbols.json for ::java::data::worldgen::structure::DirectPoolAlias
+Local link to file: generated_symbols/data/worldgen/structure/DirectPoolAlias.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

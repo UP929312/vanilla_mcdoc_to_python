@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::noise_settings::NoiseSamplingSettings
+"""
+Generated from symbols.json for ::java::data::worldgen::noise_settings::NoiseSamplingSettings
+Local link to file: generated_symbols/data/worldgen/noise_settings/NoiseSamplingSettings.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

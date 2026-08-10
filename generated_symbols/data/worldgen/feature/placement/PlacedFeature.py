@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::placement::PlacedFeature
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::placement::PlacedFeature
+Local link to file: generated_symbols/data/worldgen/feature/placement/PlacedFeature.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

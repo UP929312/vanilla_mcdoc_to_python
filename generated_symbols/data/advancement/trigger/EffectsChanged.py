@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::trigger::EffectsChanged
+"""
+Generated from symbols.json for ::java::data::advancement::trigger::EffectsChanged
+Local link to file: generated_symbols/data/advancement/trigger/EffectsChanged.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

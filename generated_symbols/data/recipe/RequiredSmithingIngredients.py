@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::recipe::RequiredSmithingIngredients
+"""
+Generated from symbols.json for ::java::data::recipe::RequiredSmithingIngredients
+Local link to file: generated_symbols/data/recipe/RequiredSmithingIngredients.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

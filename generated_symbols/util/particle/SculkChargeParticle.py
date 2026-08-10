@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::particle::SculkChargeParticle
+"""
+Generated from symbols.json for ::java::util::particle::SculkChargeParticle
+Local link to file: generated_symbols/util/particle/SculkChargeParticle.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

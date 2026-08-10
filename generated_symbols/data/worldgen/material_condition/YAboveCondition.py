@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::material_condition::YAboveCondition
+"""
+Generated from symbols.json for ::java::data::worldgen::material_condition::YAboveCondition
+Local link to file: generated_symbols/data/worldgen/material_condition/YAboveCondition.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

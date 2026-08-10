@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::block_state_definition::BlockStateDefinitionVariantMap
+"""
+Generated from symbols.json for ::java::assets::block_state_definition::BlockStateDefinitionVariantMap
+Local link to file: generated_symbols/assets/block_state_definition/BlockStateDefinitionVariantMap.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:

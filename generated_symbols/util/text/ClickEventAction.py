@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::text::ClickEventAction
+"""
+Generated from symbols.json for ::java::util::text::ClickEventAction
+Local link to file: generated_symbols/util/text/ClickEventAction.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

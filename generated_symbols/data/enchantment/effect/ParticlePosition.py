@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::enchantment::effect::ParticlePosition
+"""
+Generated from symbols.json for ::java::data::enchantment::effect::ParticlePosition
+Local link to file: generated_symbols/data/enchantment/effect/ParticlePosition.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Literal
 

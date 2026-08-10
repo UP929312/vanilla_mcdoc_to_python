@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::dimension::biome_source::Checkerboard
+"""
+Generated from symbols.json for ::java::data::worldgen::dimension::biome_source::Checkerboard
+Local link to file: generated_symbols/data/worldgen/dimension/biome_source/Checkerboard.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::predicate::FoodPredicate
+"""
+Generated from symbols.json for ::java::data::advancement::predicate::FoodPredicate
+Local link to file: generated_symbols/data/advancement/predicate/FoodPredicate.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

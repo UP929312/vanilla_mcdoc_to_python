@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::CaveSurface
+"""
+Generated from symbols.json for ::java::data::worldgen::CaveSurface
+Local link to file: generated_symbols/data/worldgen/CaveSurface.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

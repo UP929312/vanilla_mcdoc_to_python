@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::HugeMushroomConfig
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::HugeMushroomConfig
+Local link to file: generated_symbols/data/worldgen/feature/HugeMushroomConfig.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

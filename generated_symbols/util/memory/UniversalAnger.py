@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::memory::UniversalAnger
+"""
+Generated from symbols.json for ::java::util::memory::UniversalAnger
+Local link to file: generated_symbols/util/memory/UniversalAnger.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.util.memory.ExpirableValue import ExpirableValue

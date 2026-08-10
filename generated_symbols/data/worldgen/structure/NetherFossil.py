@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::structure::NetherFossil
+"""
+Generated from symbols.json for ::java::data::worldgen::structure::NetherFossil
+Local link to file: generated_symbols/data/worldgen/structure/NetherFossil.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

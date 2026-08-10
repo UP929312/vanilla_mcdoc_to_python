@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::dialog::ConfirmationDialog
+"""
+Generated from symbols.json for ::java::data::dialog::ConfirmationDialog
+Local link to file: generated_symbols/data/dialog/ConfirmationDialog.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

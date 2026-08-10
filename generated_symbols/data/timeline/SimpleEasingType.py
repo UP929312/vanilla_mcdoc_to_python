@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::timeline::SimpleEasingType
+"""
+Generated from symbols.json for ::java::data::timeline::SimpleEasingType
+Local link to file: generated_symbols/data/timeline/SimpleEasingType.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

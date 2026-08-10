@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::function::BannerPatternLayer
+"""
+Generated from symbols.json for ::java::data::loot::function::BannerPatternLayer
+Local link to file: generated_symbols/data/loot/function/BannerPatternLayer.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

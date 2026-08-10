@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::block::Lockable
+"""
+Generated from symbols.json for ::java::world::block::Lockable
+Local link to file: generated_symbols/world/block/Lockable.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::function::LootingEnchant
+"""
+Generated from symbols.json for ::java::data::loot::function::LootingEnchant
+Local link to file: generated_symbols/data/loot/function/LootingEnchant.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.data.loot.function.Conditions import Conditions

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::trigger::EntityKilledPlayer
+"""
+Generated from symbols.json for ::java::data::advancement::trigger::EntityKilledPlayer
+Local link to file: generated_symbols/data/advancement/trigger/EntityKilledPlayer.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

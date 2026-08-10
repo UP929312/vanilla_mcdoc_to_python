@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::component::predicate::PotionTypeMatch
+"""
+Generated from symbols.json for ::java::world::component::predicate::PotionTypeMatch
+Local link to file: generated_symbols/world/component/predicate/PotionTypeMatch.py
+"""
+# ~~~ CODE ~~~
 from typing import Annotated
 
 from runtime_metadata import IdSpec

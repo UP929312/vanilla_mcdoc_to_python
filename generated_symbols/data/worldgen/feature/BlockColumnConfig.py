@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::BlockColumnConfig
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::BlockColumnConfig
+Local link to file: generated_symbols/data/worldgen/feature/BlockColumnConfig.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

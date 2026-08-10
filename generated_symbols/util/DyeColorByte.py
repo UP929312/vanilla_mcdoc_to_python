@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::DyeColorByte
+"""
+Generated from symbols.json for ::java::util::DyeColorByte
+Local link to file: generated_symbols/util/DyeColorByte.py
+"""
+# ~~~ CODE ~~~
 from generated_symbols.util.color.DyeColorByte import DyeColorByte as DyeColorByte_alias
 
 

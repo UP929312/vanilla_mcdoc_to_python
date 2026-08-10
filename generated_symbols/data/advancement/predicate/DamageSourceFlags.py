@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::predicate::DamageSourceFlags
+"""
+Generated from symbols.json for ::java::data::advancement::predicate::DamageSourceFlags
+Local link to file: generated_symbols/data/advancement/predicate/DamageSourceFlags.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

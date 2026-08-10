@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::armor_stand::ArmorStand
+"""
+Generated from symbols.json for ::java::world::entity::mob::armor_stand::ArmorStand
+Local link to file: generated_symbols/world/entity/mob/armor_stand/ArmorStand.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

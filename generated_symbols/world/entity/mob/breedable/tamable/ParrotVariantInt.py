@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::breedable::tamable::ParrotVariantInt
+"""
+Generated from symbols.json for ::java::world::entity::mob::breedable::tamable::ParrotVariantInt
+Local link to file: generated_symbols/world/entity/mob/breedable/tamable/ParrotVariantInt.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

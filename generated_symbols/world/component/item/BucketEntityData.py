@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::component::item::BucketEntityData
+"""
+Generated from symbols.json for ::java::world::component::item::BucketEntityData
+Local link to file: generated_symbols/world/component/item/BucketEntityData.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

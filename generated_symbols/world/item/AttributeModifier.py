@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::item::AttributeModifier
+"""
+Generated from symbols.json for ::java::world::item::AttributeModifier
+Local link to file: generated_symbols/world/item/AttributeModifier.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

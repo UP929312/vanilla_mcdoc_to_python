@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::util::NbtContextTarget
+"""
+Generated from symbols.json for ::java::data::util::NbtContextTarget
+Local link to file: generated_symbols/data/util/NbtContextTarget.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:

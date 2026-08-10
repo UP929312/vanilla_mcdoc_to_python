@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::ExplicitInclusiveRange
+"""
+Generated from symbols.json for ::java::util::ExplicitInclusiveRange
+Local link to file: generated_symbols/util/ExplicitInclusiveRange.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Generic, TypeVar
 

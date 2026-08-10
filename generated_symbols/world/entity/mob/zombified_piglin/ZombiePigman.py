@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::zombified_piglin::ZombiePigman
+"""
+Generated from symbols.json for ::java::world::entity::mob::zombified_piglin::ZombiePigman
+Local link to file: generated_symbols/world/entity/mob/zombified_piglin/ZombiePigman.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.world.entity.mob.MobBase import MobBase

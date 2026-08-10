@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::item::goat_horn::GoatHorn
+"""
+Generated from symbols.json for ::java::world::item::goat_horn::GoatHorn
+Local link to file: generated_symbols/world/item/goat_horn/GoatHorn.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

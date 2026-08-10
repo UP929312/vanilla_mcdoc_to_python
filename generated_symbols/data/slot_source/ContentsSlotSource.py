@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::slot_source::ContentsSlotSource
+"""
+Generated from symbols.json for ::java::data::slot_source::ContentsSlotSource
+Local link to file: generated_symbols/data/slot_source/ContentsSlotSource.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::trigger::KilledByCrossbow
+"""
+Generated from symbols.json for ::java::data::advancement::trigger::KilledByCrossbow
+Local link to file: generated_symbols/data/advancement/trigger/KilledByCrossbow.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

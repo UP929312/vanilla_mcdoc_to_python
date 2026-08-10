@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::display::Rotation
+"""
+Generated from symbols.json for ::java::world::entity::display::Rotation
+Local link to file: generated_symbols/world/entity/display/Rotation.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:

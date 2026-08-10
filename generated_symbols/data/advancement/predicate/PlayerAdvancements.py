@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::predicate::PlayerAdvancements
+"""
+Generated from symbols.json for ::java::data::advancement::predicate::PlayerAdvancements
+Local link to file: generated_symbols/data/advancement/predicate/PlayerAdvancements.py
+"""
+# ~~~ CODE ~~~
 from typing import Annotated
 
 from runtime_metadata import IdSpec

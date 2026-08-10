@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::DiskConfig
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::DiskConfig
+Local link to file: generated_symbols/data/worldgen/feature/DiskConfig.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::equipment::WingsLayer
+"""
+Generated from symbols.json for ::java::assets::equipment::WingsLayer
+Local link to file: generated_symbols/assets/equipment/WingsLayer.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Generic, TypeVar
 

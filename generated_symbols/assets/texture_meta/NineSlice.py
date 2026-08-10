@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::texture_meta::NineSlice
+"""
+Generated from symbols.json for ::java::assets::texture_meta::NineSlice
+Local link to file: generated_symbols/assets/texture_meta/NineSlice.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

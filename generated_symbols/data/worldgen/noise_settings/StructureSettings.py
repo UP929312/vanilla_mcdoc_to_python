@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::noise_settings::StructureSettings
+"""
+Generated from symbols.json for ::java::data::worldgen::noise_settings::StructureSettings
+Local link to file: generated_symbols/data/worldgen/noise_settings/StructureSettings.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::memory::IsTempted
+"""
+Generated from symbols.json for ::java::util::memory::IsTempted
+Local link to file: generated_symbols/util/memory/IsTempted.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.util.memory.ExpirableValue import ExpirableValue

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::item_definition::UseCycle
+"""
+Generated from symbols.json for ::java::assets::item_definition::UseCycle
+Local link to file: generated_symbols/assets/item_definition/UseCycle.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

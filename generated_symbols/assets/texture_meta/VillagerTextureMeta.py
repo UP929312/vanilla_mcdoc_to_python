@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::texture_meta::VillagerTextureMeta
+"""
+Generated from symbols.json for ::java::assets::texture_meta::VillagerTextureMeta
+Local link to file: generated_symbols/assets/texture_meta/VillagerTextureMeta.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

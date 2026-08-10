@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::item::fish_bucket::BasicFishBucket
+"""
+Generated from symbols.json for ::java::world::item::fish_bucket::BasicFishBucket
+Local link to file: generated_symbols/world/item/fish_bucket/BasicFishBucket.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

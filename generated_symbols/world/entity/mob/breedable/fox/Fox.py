@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::breedable::fox::Fox
+"""
+Generated from symbols.json for ::java::world::entity::mob::breedable::fox::Fox
+Local link to file: generated_symbols/world/entity/mob/breedable/fox/Fox.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

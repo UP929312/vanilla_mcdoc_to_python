@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::item_definition::ModelTint
+"""
+Generated from symbols.json for ::java::assets::item_definition::ModelTint
+Local link to file: generated_symbols/assets/item_definition/ModelTint.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Literal
 

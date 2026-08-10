@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::mannequin::MannequinPose
+"""
+Generated from symbols.json for ::java::world::entity::mob::mannequin::MannequinPose
+Local link to file: generated_symbols/world/entity/mob/mannequin/MannequinPose.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

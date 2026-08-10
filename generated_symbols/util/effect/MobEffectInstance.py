@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::effect::MobEffectInstance
+"""
+Generated from symbols.json for ::java::util::effect::MobEffectInstance
+Local link to file: generated_symbols/util/effect/MobEffectInstance.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated, Literal
 

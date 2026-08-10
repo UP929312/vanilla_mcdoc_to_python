@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::enchantment::effect::ExplosionParticleInfo
+"""
+Generated from symbols.json for ::java::data::enchantment::effect::ExplosionParticleInfo
+Local link to file: generated_symbols/data/enchantment/effect/ExplosionParticleInfo.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

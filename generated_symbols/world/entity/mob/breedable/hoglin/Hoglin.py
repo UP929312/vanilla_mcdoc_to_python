@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::breedable::hoglin::Hoglin
+"""
+Generated from symbols.json for ::java::world::entity::mob::breedable::hoglin::Hoglin
+Local link to file: generated_symbols/world/entity/mob/breedable/hoglin/Hoglin.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.world.entity.mob.breedable.Breedable import Breedable

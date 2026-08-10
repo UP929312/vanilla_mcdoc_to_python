@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::function::CopyNameSource
+"""
+Generated from symbols.json for ::java::data::loot::function::CopyNameSource
+Local link to file: generated_symbols/data/loot/function/CopyNameSource.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

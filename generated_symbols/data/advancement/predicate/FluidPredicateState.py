@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::predicate::FluidPredicateState
+"""
+Generated from symbols.json for ::java::data::advancement::predicate::FluidPredicateState
+Local link to file: generated_symbols/data/advancement/predicate/FluidPredicateState.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:

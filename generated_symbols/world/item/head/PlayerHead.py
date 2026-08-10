@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::item::head::PlayerHead
+"""
+Generated from symbols.json for ::java::world::item::head::PlayerHead
+Local link to file: generated_symbols/world/item/head/PlayerHead.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

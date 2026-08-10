@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::block_predicate::MatchingBlocksPredicate
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::block_predicate::MatchingBlocksPredicate
+Local link to file: generated_symbols/data/worldgen/feature/block_predicate/MatchingBlocksPredicate.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

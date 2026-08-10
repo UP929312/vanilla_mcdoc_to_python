@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::effect::ModernMobEffect
+"""
+Generated from symbols.json for ::java::util::effect::ModernMobEffect
+Local link to file: generated_symbols/util/effect/ModernMobEffect.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Literal
 

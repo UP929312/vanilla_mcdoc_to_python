@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::function::SetBookCover
+"""
+Generated from symbols.json for ::java::data::loot::function::SetBookCover
+Local link to file: generated_symbols/data/loot/function/SetBookCover.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

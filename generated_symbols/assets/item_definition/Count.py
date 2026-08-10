@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::item_definition::Count
+"""
+Generated from symbols.json for ::java::assets::item_definition::Count
+Local link to file: generated_symbols/assets/item_definition/Count.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

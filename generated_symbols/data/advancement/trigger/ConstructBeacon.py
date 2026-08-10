@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::trigger::ConstructBeacon
+"""
+Generated from symbols.json for ::java::data::advancement::trigger::ConstructBeacon
+Local link to file: generated_symbols/data/advancement/trigger/ConstructBeacon.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

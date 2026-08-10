@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::trigger::UsedTotem
+"""
+Generated from symbols.json for ::java::data::advancement::trigger::UsedTotem
+Local link to file: generated_symbols/data/advancement/trigger/UsedTotem.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

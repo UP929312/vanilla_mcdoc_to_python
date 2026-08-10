@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::density_function::DistanceMetric
+"""
+Generated from symbols.json for ::java::data::worldgen::density_function::DistanceMetric
+Local link to file: generated_symbols/data/worldgen/density_function/DistanceMetric.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::memory::IsSniffing
+"""
+Generated from symbols.json for ::java::util::memory::IsSniffing
+Local link to file: generated_symbols/util/memory/IsSniffing.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.util.memory.ExpirableValue import ExpirableValue

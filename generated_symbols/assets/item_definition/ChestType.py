@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::item_definition::ChestType
+"""
+Generated from symbols.json for ::java::assets::item_definition::ChestType
+Local link to file: generated_symbols/assets/item_definition/ChestType.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

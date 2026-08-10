@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::dolphin::Dolphin
+"""
+Generated from symbols.json for ::java::world::entity::mob::dolphin::Dolphin
+Local link to file: generated_symbols/world/entity/mob/dolphin/Dolphin.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.world.entity.mob.AgeableMob import AgeableMob

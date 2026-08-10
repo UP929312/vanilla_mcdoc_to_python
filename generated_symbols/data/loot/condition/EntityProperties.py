@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::condition::EntityProperties
+"""
+Generated from symbols.json for ::java::data::loot::condition::EntityProperties
+Local link to file: generated_symbols/data/loot/condition/EntityProperties.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

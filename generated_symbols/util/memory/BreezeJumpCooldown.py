@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::memory::BreezeJumpCooldown
+"""
+Generated from symbols.json for ::java::util::memory::BreezeJumpCooldown
+Local link to file: generated_symbols/util/memory/BreezeJumpCooldown.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.util.memory.ExpirableValue import ExpirableValue

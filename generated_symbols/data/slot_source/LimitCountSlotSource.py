@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::slot_source::LimitCountSlotSource
+"""
+Generated from symbols.json for ::java::data::slot_source::LimitCountSlotSource
+Local link to file: generated_symbols/data/slot_source/LimitCountSlotSource.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

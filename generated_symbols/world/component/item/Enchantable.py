@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::component::item::Enchantable
+"""
+Generated from symbols.json for ::java::world::component::item::Enchantable
+Local link to file: generated_symbols/world/component/item/Enchantable.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

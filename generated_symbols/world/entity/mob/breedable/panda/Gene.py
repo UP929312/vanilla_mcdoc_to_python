@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::breedable::panda::Gene
+"""
+Generated from symbols.json for ::java::world::entity::mob::breedable::panda::Gene
+Local link to file: generated_symbols/world/entity/mob/breedable/panda/Gene.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

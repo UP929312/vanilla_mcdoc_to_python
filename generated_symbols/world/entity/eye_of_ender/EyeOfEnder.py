@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::eye_of_ender::EyeOfEnder
+"""
+Generated from symbols.json for ::java::world::entity::eye_of_ender::EyeOfEnder
+Local link to file: generated_symbols/world/entity/eye_of_ender/EyeOfEnder.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

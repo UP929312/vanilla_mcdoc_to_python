@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::FilteredText
+"""
+Generated from symbols.json for ::java::util::FilteredText
+Local link to file: generated_symbols/util/FilteredText.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Generic, TypeVar
 

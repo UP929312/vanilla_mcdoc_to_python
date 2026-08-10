@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::predicate::Predicate
+"""
+Generated from symbols.json for ::java::data::predicate::Predicate
+Local link to file: generated_symbols/data/predicate/Predicate.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:

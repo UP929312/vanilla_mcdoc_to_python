@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::LootFunction
+"""
+Generated from symbols.json for ::java::data::loot::LootFunction
+Local link to file: generated_symbols/data/loot/LootFunction.py
+"""
+# ~~~ CODE ~~~
 from generated_symbols.data.loot.function.LootFunction import LootFunction as LootFunction_alias
 
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::storage::UnknownStorage
+"""
+Generated from symbols.json for ::java::data::storage::UnknownStorage
+Local link to file: generated_symbols/data/storage/UnknownStorage.py
+"""
+# ~~~ CODE ~~~
 from typing import Any
 
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::structure::Mineshaft
+"""
+Generated from symbols.json for ::java::data::worldgen::structure::Mineshaft
+Local link to file: generated_symbols/data/worldgen/structure/Mineshaft.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

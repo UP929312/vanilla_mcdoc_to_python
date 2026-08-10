@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::area_effect_cloud::AreaEffectCloud
+"""
+Generated from symbols.json for ::java::world::entity::area_effect_cloud::AreaEffectCloud
+Local link to file: generated_symbols/world/entity/area_effect_cloud/AreaEffectCloud.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

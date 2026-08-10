@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::armor_stand::Pose
+"""
+Generated from symbols.json for ::java::world::entity::mob::armor_stand::Pose
+Local link to file: generated_symbols/world/entity/mob/armor_stand/Pose.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

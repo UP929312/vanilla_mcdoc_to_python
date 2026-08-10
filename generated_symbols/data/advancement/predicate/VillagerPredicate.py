@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::predicate::VillagerPredicate
+"""
+Generated from symbols.json for ::java::data::advancement::predicate::VillagerPredicate
+Local link to file: generated_symbols/data/advancement/predicate/VillagerPredicate.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

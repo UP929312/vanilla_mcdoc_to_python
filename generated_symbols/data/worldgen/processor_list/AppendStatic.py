@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::processor_list::AppendStatic
+"""
+Generated from symbols.json for ::java::data::worldgen::processor_list::AppendStatic
+Local link to file: generated_symbols/data/worldgen/processor_list/AppendStatic.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Any
 

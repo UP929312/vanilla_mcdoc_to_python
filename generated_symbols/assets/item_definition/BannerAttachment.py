@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::item_definition::BannerAttachment
+"""
+Generated from symbols.json for ::java::assets::item_definition::BannerAttachment
+Local link to file: generated_symbols/assets/item_definition/BannerAttachment.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

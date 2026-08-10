@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::structure::SpawnOverride
+"""
+Generated from symbols.json for ::java::data::worldgen::structure::SpawnOverride
+Local link to file: generated_symbols/data/worldgen/structure/SpawnOverride.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

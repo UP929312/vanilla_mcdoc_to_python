@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::recipe::Stonecutting
+"""
+Generated from symbols.json for ::java::data::recipe::Stonecutting
+Local link to file: generated_symbols/data/recipe/Stonecutting.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

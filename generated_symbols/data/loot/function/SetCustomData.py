@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::function::SetCustomData
+"""
+Generated from symbols.json for ::java::data::loot::function::SetCustomData
+Local link to file: generated_symbols/data/loot/function/SetCustomData.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

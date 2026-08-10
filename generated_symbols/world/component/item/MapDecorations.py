@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::component::item::MapDecorations
+"""
+Generated from symbols.json for ::java::world::component::item::MapDecorations
+Local link to file: generated_symbols/world/component/item/MapDecorations.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:

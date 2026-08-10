@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::memory::SnifferExploredPositions
+"""
+Generated from symbols.json for ::java::util::memory::SnifferExploredPositions
+Local link to file: generated_symbols/util/memory/SnifferExploredPositions.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

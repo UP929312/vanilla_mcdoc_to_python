@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::font::Font
+"""
+Generated from symbols.json for ::java::assets::font::Font
+Local link to file: generated_symbols/assets/font/Font.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

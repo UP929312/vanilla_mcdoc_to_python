@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::density_function::Spline
+"""
+Generated from symbols.json for ::java::data::worldgen::density_function::Spline
+Local link to file: generated_symbols/data/worldgen/density_function/Spline.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

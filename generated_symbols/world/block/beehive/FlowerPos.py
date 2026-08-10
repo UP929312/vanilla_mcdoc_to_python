@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::block::beehive::FlowerPos
+"""
+Generated from symbols.json for ::java::world::block::beehive::FlowerPos
+Local link to file: generated_symbols/world/block/beehive/FlowerPos.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

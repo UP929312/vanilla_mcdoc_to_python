@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::variants::pig::PigVariant
+"""
+Generated from symbols.json for ::java::data::variants::pig::PigVariant
+Local link to file: generated_symbols/data/variants/pig/PigVariant.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

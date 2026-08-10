@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::biome::GrassColorModifier
+"""
+Generated from symbols.json for ::java::data::worldgen::biome::GrassColorModifier
+Local link to file: generated_symbols/data/worldgen/biome/GrassColorModifier.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::item_definition::WoodType
+"""
+Generated from symbols.json for ::java::assets::item_definition::WoodType
+Local link to file: generated_symbols/assets/item_definition/WoodType.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

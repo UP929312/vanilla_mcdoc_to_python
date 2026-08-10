@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::block::head::Skull
+"""
+Generated from symbols.json for ::java::world::block::head::Skull
+Local link to file: generated_symbols/world/block/head/Skull.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

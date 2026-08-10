@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::structure::Structure
+"""
+Generated from symbols.json for ::java::data::worldgen::structure::Structure
+Local link to file: generated_symbols/data/worldgen/structure/Structure.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Literal
 

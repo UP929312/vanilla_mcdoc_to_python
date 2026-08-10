@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::number_provider::ResolvableNumber
+"""
+Generated from symbols.json for ::java::data::number_provider::ResolvableNumber
+Local link to file: generated_symbols/data/number_provider/ResolvableNumber.py
+"""
+# ~~~ CODE ~~~
 from typing import Annotated
 
 from runtime_metadata import IdSpec

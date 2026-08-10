@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::variants::wolf::WolfVariantAssetInfo
+"""
+Generated from symbols.json for ::java::data::variants::wolf::WolfVariantAssetInfo
+Local link to file: generated_symbols/data/variants/wolf/WolfVariantAssetInfo.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

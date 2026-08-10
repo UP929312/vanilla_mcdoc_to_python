@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::text::TextColor
+"""
+Generated from symbols.json for ::java::util::text::TextColor
+Local link to file: generated_symbols/util/text/TextColor.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::density_function::ShiftedNoise
+"""
+Generated from symbols.json for ::java::data::worldgen::density_function::ShiftedNoise
+Local link to file: generated_symbols/data/worldgen/density_function/ShiftedNoise.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

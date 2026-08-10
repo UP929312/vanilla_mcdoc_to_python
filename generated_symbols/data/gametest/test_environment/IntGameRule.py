@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::gametest::test_environment::IntGameRule
+"""
+Generated from symbols.json for ::java::data::gametest::test_environment::IntGameRule
+Local link to file: generated_symbols/data/gametest/test_environment/IntGameRule.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

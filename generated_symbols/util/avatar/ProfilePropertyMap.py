@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::avatar::ProfilePropertyMap
+"""
+Generated from symbols.json for ::java::util::avatar::ProfilePropertyMap
+Local link to file: generated_symbols/util/avatar/ProfilePropertyMap.py
+"""
+# ~~~ CODE ~~~
 
 
 type ProfilePropertyMap = dict[str, list[str]]

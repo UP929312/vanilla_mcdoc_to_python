@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::block::creaking_heart::CreakingHeart
+"""
+Generated from symbols.json for ::java::world::block::creaking_heart::CreakingHeart
+Local link to file: generated_symbols/world/block/creaking_heart/CreakingHeart.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.world.block.BlockEntity import BlockEntity

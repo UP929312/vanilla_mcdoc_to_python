@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::pack::PackOverlay
+"""
+Generated from symbols.json for ::java::pack::PackOverlay
+Local link to file: generated_symbols/pack/PackOverlay.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

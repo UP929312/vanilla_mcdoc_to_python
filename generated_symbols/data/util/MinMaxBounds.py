@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::util::MinMaxBounds
+"""
+Generated from symbols.json for ::java::data::util::MinMaxBounds
+Local link to file: generated_symbols/data/util/MinMaxBounds.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Generic, TypeVar
 

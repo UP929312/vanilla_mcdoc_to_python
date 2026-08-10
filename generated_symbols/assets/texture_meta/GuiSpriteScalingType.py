@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::texture_meta::GuiSpriteScalingType
+"""
+Generated from symbols.json for ::java::assets::texture_meta::GuiSpriteScalingType
+Local link to file: generated_symbols/assets/texture_meta/GuiSpriteScalingType.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

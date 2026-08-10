@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::item::map::IdentifiedDecoration
+"""
+Generated from symbols.json for ::java::world::item::map::IdentifiedDecoration
+Local link to file: generated_symbols/world/item/map/IdentifiedDecoration.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.world.item.map.Decoration import Decoration

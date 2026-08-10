@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::LootConditionType
+"""
+Generated from symbols.json for ::java::data::loot::LootConditionType
+Local link to file: generated_symbols/data/loot/LootConditionType.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

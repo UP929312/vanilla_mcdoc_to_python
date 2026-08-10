@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::function::BinomialWithBonusCountFormula
+"""
+Generated from symbols.json for ::java::data::loot::function::BinomialWithBonusCountFormula
+Local link to file: generated_symbols/data/loot/function/BinomialWithBonusCountFormula.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::item::firework::ExplosionType
+"""
+Generated from symbols.json for ::java::world::item::firework::ExplosionType
+Local link to file: generated_symbols/world/item/firework/ExplosionType.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

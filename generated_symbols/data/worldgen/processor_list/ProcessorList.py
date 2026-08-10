@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::processor_list::ProcessorList
+"""
+Generated from symbols.json for ::java::data::worldgen::processor_list::ProcessorList
+Local link to file: generated_symbols/data/worldgen/processor_list/ProcessorList.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

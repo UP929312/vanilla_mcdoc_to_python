@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::ProbabilityConfig
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::ProbabilityConfig
+Local link to file: generated_symbols/data/worldgen/feature/ProbabilityConfig.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::decorator::HeightmapConfig
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::decorator::HeightmapConfig
+Local link to file: generated_symbols/data/worldgen/feature/decorator/HeightmapConfig.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

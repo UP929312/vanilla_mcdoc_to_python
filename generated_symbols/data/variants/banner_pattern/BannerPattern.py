@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::variants::banner_pattern::BannerPattern
+"""
+Generated from symbols.json for ::java::data::variants::banner_pattern::BannerPattern
+Local link to file: generated_symbols/data/variants/banner_pattern/BannerPattern.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

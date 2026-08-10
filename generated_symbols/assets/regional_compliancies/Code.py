@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::regional_compliancies::Code
+"""
+Generated from symbols.json for ::java::assets::regional_compliancies::Code
+Local link to file: generated_symbols/assets/regional_compliancies/Code.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

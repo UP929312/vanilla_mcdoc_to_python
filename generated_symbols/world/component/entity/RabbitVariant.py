@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::component::entity::RabbitVariant
+"""
+Generated from symbols.json for ::java::world::component::entity::RabbitVariant
+Local link to file: generated_symbols/world/component/entity/RabbitVariant.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

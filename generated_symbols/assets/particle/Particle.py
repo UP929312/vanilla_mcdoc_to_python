@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::particle::Particle
+"""
+Generated from symbols.json for ::java::assets::particle::Particle
+Local link to file: generated_symbols/assets/particle/Particle.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

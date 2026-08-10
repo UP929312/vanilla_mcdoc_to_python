@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::atlas::Directory
+"""
+Generated from symbols.json for ::java::assets::atlas::Directory
+Local link to file: generated_symbols/assets/atlas/Directory.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

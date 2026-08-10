@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::enchantment::provider::EnchantmentsType
+"""
+Generated from symbols.json for ::java::data::enchantment::provider::EnchantmentsType
+Local link to file: generated_symbols/data/enchantment/provider/EnchantmentsType.py
+"""
+# ~~~ CODE ~~~
 from typing import Annotated
 
 from runtime_metadata import IdSpec

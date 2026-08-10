@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::particle::DustColorTransitionParticle
+"""
+Generated from symbols.json for ::java::util::particle::DustColorTransitionParticle
+Local link to file: generated_symbols/util/particle/DustColorTransitionParticle.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

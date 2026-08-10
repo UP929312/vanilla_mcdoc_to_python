@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::block::crafter::Crafter
+"""
+Generated from symbols.json for ::java::world::block::crafter::Crafter
+Local link to file: generated_symbols/world/block/crafter/Crafter.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated, Literal
 

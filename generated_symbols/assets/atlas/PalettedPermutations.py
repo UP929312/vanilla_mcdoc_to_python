@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::atlas::PalettedPermutations
+"""
+Generated from symbols.json for ::java::assets::atlas::PalettedPermutations
+Local link to file: generated_symbols/assets/atlas/PalettedPermutations.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

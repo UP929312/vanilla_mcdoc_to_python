@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::enchantment::level_based_value::SquaredLevelValue
+"""
+Generated from symbols.json for ::java::data::enchantment::level_based_value::SquaredLevelValue
+Local link to file: generated_symbols/data/enchantment/level_based_value/SquaredLevelValue.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::zoglin::Zoglin
+"""
+Generated from symbols.json for ::java::world::entity::mob::zoglin::Zoglin
+Local link to file: generated_symbols/world/entity/mob/zoglin/Zoglin.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.world.entity.mob.MobBase import MobBase

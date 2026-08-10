@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::player::RecipeBook
+"""
+Generated from symbols.json for ::java::world::entity::mob::player::RecipeBook
+Local link to file: generated_symbols/world/entity/mob/player/RecipeBook.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

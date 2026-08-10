@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::component::item::MobVisibility
+"""
+Generated from symbols.json for ::java::world::component::item::MobVisibility
+Local link to file: generated_symbols/world/component/item/MobVisibility.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::predicate::SalmonPredicate
+"""
+Generated from symbols.json for ::java::data::advancement::predicate::SalmonPredicate
+Local link to file: generated_symbols/data/advancement/predicate/SalmonPredicate.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

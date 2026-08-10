@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::block_predicate::InsideWorldBoundsPredicate
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::block_predicate::InsideWorldBoundsPredicate
+Local link to file: generated_symbols/data/worldgen/feature/block_predicate/InsideWorldBoundsPredicate.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.data.worldgen.feature.block_predicate.PredicateOffset import PredicateOffset

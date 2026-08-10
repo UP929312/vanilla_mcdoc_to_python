@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::block::container::Hopper
+"""
+Generated from symbols.json for ::java::world::block::container::Hopper
+Local link to file: generated_symbols/world/block/container/Hopper.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

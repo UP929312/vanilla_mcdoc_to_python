@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::component::item::AttributeDisplayTextOverride
+"""
+Generated from symbols.json for ::java::world::component::item::AttributeDisplayTextOverride
+Local link to file: generated_symbols/world/component/item/AttributeDisplayTextOverride.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

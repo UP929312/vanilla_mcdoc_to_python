@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::predicate::DamageSourcePredicate
+"""
+Generated from symbols.json for ::java::data::advancement::predicate::DamageSourcePredicate
+Local link to file: generated_symbols/data/advancement/predicate/DamageSourcePredicate.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

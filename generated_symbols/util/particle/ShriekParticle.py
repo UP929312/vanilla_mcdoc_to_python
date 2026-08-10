@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::particle::ShriekParticle
+"""
+Generated from symbols.json for ::java::util::particle::ShriekParticle
+Local link to file: generated_symbols/util/particle/ShriekParticle.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

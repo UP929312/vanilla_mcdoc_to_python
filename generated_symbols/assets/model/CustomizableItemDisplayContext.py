@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::model::CustomizableItemDisplayContext
+"""
+Generated from symbols.json for ::java::assets::model::CustomizableItemDisplayContext
+Local link to file: generated_symbols/assets/model/CustomizableItemDisplayContext.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

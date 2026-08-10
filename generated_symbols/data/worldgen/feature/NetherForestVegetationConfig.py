@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::NetherForestVegetationConfig
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::NetherForestVegetationConfig
+Local link to file: generated_symbols/data/worldgen/feature/NetherForestVegetationConfig.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::dimension::biome_source::MultiNoise
+"""
+Generated from symbols.json for ::java::data::worldgen::dimension::biome_source::MultiNoise
+Local link to file: generated_symbols/data/worldgen/dimension/biome_source/MultiNoise.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

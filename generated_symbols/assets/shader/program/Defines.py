@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::shader::program::Defines
+"""
+Generated from symbols.json for ::java::assets::shader::program::Defines
+Local link to file: generated_symbols/assets/shader/program/Defines.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

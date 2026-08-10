@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::EndSpike
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::EndSpike
+Local link to file: generated_symbols/data/worldgen/feature/EndSpike.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

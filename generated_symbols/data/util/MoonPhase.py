@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::util::MoonPhase
+"""
+Generated from symbols.json for ::java::data::util::MoonPhase
+Local link to file: generated_symbols/data/util/MoonPhase.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

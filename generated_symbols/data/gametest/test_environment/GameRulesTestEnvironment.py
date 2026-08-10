@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::gametest::test_environment::GameRulesTestEnvironment
+"""
+Generated from symbols.json for ::java::data::gametest::test_environment::GameRulesTestEnvironment
+Local link to file: generated_symbols/data/gametest/test_environment/GameRulesTestEnvironment.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

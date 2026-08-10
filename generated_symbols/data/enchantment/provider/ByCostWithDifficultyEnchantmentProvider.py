@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::enchantment::provider::ByCostWithDifficultyEnchantmentProvider
+"""
+Generated from symbols.json for ::java::data::enchantment::provider::ByCostWithDifficultyEnchantmentProvider
+Local link to file: generated_symbols/data/enchantment/provider/ByCostWithDifficultyEnchantmentProvider.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

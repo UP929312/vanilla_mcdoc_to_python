@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::structure_set::FrequencyReductionMethod
+"""
+Generated from symbols.json for ::java::data::worldgen::structure_set::FrequencyReductionMethod
+Local link to file: generated_symbols/data/worldgen/structure_set/FrequencyReductionMethod.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

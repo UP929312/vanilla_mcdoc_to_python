@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::structure::OceanRuin
+"""
+Generated from symbols.json for ::java::data::worldgen::structure::OceanRuin
+Local link to file: generated_symbols/data/worldgen/structure/OceanRuin.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

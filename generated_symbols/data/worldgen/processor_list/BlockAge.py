@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::processor_list::BlockAge
+"""
+Generated from symbols.json for ::java::data::worldgen::processor_list::BlockAge
+Local link to file: generated_symbols/data/worldgen/processor_list/BlockAge.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

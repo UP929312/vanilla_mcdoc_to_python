@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::attribute::AttributeName
+"""
+Generated from symbols.json for ::java::util::attribute::AttributeName
+Local link to file: generated_symbols/util/attribute/AttributeName.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

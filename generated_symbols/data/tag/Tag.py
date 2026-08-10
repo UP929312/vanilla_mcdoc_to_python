@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::tag::Tag
+"""
+Generated from symbols.json for ::java::data::tag::Tag
+Local link to file: generated_symbols/data/tag/Tag.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Generic, TypeVar
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::carver::ConfiguredCarver
+"""
+Generated from symbols.json for ::java::data::worldgen::carver::ConfiguredCarver
+Local link to file: generated_symbols/data/worldgen/carver/ConfiguredCarver.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Literal
 

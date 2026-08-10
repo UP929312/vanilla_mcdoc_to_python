@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::dialog::MultiActionDialog
+"""
+Generated from symbols.json for ::java::data::dialog::MultiActionDialog
+Local link to file: generated_symbols/data/dialog/MultiActionDialog.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

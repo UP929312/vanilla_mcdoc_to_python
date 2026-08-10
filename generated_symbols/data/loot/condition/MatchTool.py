@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::condition::MatchTool
+"""
+Generated from symbols.json for ::java::data::loot::condition::MatchTool
+Local link to file: generated_symbols/data/loot/condition/MatchTool.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

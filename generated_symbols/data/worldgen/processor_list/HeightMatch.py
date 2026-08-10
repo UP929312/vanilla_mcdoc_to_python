@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::processor_list::HeightMatch
+"""
+Generated from symbols.json for ::java::data::worldgen::processor_list::HeightMatch
+Local link to file: generated_symbols/data/worldgen/processor_list/HeightMatch.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

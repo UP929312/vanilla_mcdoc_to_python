@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::memory::VisitedBlockPositions
+"""
+Generated from symbols.json for ::java::util::memory::VisitedBlockPositions
+Local link to file: generated_symbols/util/memory/VisitedBlockPositions.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::font::SpaceProvider
+"""
+Generated from symbols.json for ::java::assets::font::SpaceProvider
+Local link to file: generated_symbols/assets/font/SpaceProvider.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

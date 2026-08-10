@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::block::test_instance_block::TestInstanceBlockStatus
+"""
+Generated from symbols.json for ::java::world::block::test_instance_block::TestInstanceBlockStatus
+Local link to file: generated_symbols/world/block/test_instance_block/TestInstanceBlockStatus.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

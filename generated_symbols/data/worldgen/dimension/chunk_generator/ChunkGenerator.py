@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::dimension::chunk_generator::ChunkGenerator
+"""
+Generated from symbols.json for ::java::data::worldgen::dimension::chunk_generator::ChunkGenerator
+Local link to file: generated_symbols/data/worldgen/dimension/chunk_generator/ChunkGenerator.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Literal
 

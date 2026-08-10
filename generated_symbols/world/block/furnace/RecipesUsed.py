@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::block::furnace::RecipesUsed
+"""
+Generated from symbols.json for ::java::world::block::furnace::RecipesUsed
+Local link to file: generated_symbols/world/block/furnace/RecipesUsed.py
+"""
+# ~~~ CODE ~~~
 from typing import Annotated
 
 from runtime_metadata import IdSpec

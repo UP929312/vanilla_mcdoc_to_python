@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::placement::RandomOffsetModifier
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::placement::RandomOffsetModifier
+Local link to file: generated_symbols/data/worldgen/feature/placement/RandomOffsetModifier.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

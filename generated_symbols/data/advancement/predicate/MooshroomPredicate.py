@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::predicate::MooshroomPredicate
+"""
+Generated from symbols.json for ::java::data::advancement::predicate::MooshroomPredicate
+Local link to file: generated_symbols/data/advancement/predicate/MooshroomPredicate.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

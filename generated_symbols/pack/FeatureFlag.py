@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::pack::FeatureFlag
+"""
+Generated from symbols.json for ::java::pack::FeatureFlag
+Local link to file: generated_symbols/pack/FeatureFlag.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

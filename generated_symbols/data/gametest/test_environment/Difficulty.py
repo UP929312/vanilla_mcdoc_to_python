@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::gametest::test_environment::Difficulty
+"""
+Generated from symbols.json for ::java::data::gametest::test_environment::Difficulty
+Local link to file: generated_symbols/data/gametest/test_environment/Difficulty.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

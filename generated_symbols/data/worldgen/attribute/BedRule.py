@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::attribute::BedRule
+"""
+Generated from symbols.json for ::java::data::worldgen::attribute::BedRule
+Local link to file: generated_symbols/data/worldgen/attribute/BedRule.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

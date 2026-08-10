@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::warden::AngerManagement
+"""
+Generated from symbols.json for ::java::world::entity::mob::warden::AngerManagement
+Local link to file: generated_symbols/world/entity/mob/warden/AngerManagement.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

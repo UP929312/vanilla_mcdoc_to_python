@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::enchantment::effect::AttributeEffect
+"""
+Generated from symbols.json for ::java::data::enchantment::effect::AttributeEffect
+Local link to file: generated_symbols/data/enchantment/effect/AttributeEffect.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

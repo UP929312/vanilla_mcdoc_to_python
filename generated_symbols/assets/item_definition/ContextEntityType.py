@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::item_definition::ContextEntityType
+"""
+Generated from symbols.json for ::java::assets::item_definition::ContextEntityType
+Local link to file: generated_symbols/assets/item_definition/ContextEntityType.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

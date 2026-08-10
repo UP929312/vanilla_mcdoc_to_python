@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::tag::ExplicitTagEntry
+"""
+Generated from symbols.json for ::java::data::tag::ExplicitTagEntry
+Local link to file: generated_symbols/data/tag/ExplicitTagEntry.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Generic, TypeVar
 

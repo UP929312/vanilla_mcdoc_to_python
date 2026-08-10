@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::trigger::RecipeUnlocked
+"""
+Generated from symbols.json for ::java::data::advancement::trigger::RecipeUnlocked
+Local link to file: generated_symbols/data/advancement/trigger/RecipeUnlocked.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

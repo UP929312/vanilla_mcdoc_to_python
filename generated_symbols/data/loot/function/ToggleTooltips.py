@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::function::ToggleTooltips
+"""
+Generated from symbols.json for ::java::data::loot::function::ToggleTooltips
+Local link to file: generated_symbols/data/loot/function/ToggleTooltips.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

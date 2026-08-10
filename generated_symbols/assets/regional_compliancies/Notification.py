@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::regional_compliancies::Notification
+"""
+Generated from symbols.json for ::java::assets::regional_compliancies::Notification
+Local link to file: generated_symbols/assets/regional_compliancies/Notification.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

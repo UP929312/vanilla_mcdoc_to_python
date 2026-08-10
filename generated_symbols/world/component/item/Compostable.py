@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::component::item::Compostable
+"""
+Generated from symbols.json for ::java::world::component::item::Compostable
+Local link to file: generated_symbols/world/component/item/Compostable.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

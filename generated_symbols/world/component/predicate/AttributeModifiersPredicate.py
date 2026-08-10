@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::component::predicate::AttributeModifiersPredicate
+"""
+Generated from symbols.json for ::java::world::component::predicate::AttributeModifiersPredicate
+Local link to file: generated_symbols/world/component/predicate/AttributeModifiersPredicate.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

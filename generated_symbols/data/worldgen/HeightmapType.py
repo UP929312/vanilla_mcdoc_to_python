@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::HeightmapType
+"""
+Generated from symbols.json for ::java::data::worldgen::HeightmapType
+Local link to file: generated_symbols/data/worldgen/HeightmapType.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

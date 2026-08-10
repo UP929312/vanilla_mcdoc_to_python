@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::recipe::CraftingIngredients
+"""
+Generated from symbols.json for ::java::data::recipe::CraftingIngredients
+Local link to file: generated_symbols/data/recipe/CraftingIngredients.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:

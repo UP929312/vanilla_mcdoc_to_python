@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::dialog::action::DynamicRunCommand
+"""
+Generated from symbols.json for ::java::data::dialog::action::DynamicRunCommand
+Local link to file: generated_symbols/data/dialog/action/DynamicRunCommand.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

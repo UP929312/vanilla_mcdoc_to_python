@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::structure_set::StructureSetElement
+"""
+Generated from symbols.json for ::java::data::worldgen::structure_set::StructureSetElement
+Local link to file: generated_symbols/data/worldgen/structure_set/StructureSetElement.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

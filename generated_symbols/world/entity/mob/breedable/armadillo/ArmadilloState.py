@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::breedable::armadillo::ArmadilloState
+"""
+Generated from symbols.json for ::java::world::entity::mob::breedable::armadillo::ArmadilloState
+Local link to file: generated_symbols/world/entity/mob/breedable/armadillo/ArmadilloState.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

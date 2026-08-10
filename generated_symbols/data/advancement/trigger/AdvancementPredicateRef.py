@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::trigger::AdvancementPredicateRef
+"""
+Generated from symbols.json for ::java::data::advancement::trigger::AdvancementPredicateRef
+Local link to file: generated_symbols/data/advancement/trigger/AdvancementPredicateRef.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:

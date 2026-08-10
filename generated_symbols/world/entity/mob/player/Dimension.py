@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::player::Dimension
+"""
+Generated from symbols.json for ::java::world::entity::mob::player::Dimension
+Local link to file: generated_symbols/world/entity/mob/player/Dimension.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

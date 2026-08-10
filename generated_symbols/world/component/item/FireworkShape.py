@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::component::item::FireworkShape
+"""
+Generated from symbols.json for ::java::world::component::item::FireworkShape
+Local link to file: generated_symbols/world/component/item/FireworkShape.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

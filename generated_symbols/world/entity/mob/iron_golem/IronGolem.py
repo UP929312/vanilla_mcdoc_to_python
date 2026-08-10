@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::iron_golem::IronGolem
+"""
+Generated from symbols.json for ::java::world::entity::mob::iron_golem::IronGolem
+Local link to file: generated_symbols/world/entity/mob/iron_golem/IronGolem.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.world.entity.mob.MobBase import MobBase

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::function::SetBannerPattern
+"""
+Generated from symbols.json for ::java::data::loot::function::SetBannerPattern
+Local link to file: generated_symbols/data/loot/function/SetBannerPattern.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

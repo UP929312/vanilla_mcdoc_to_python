@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::component::item::WritableBookContent
+"""
+Generated from symbols.json for ::java::world::component::item::WritableBookContent
+Local link to file: generated_symbols/world/component/item/WritableBookContent.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::shader::post::OldTarget
+"""
+Generated from symbols.json for ::java::assets::shader::post::OldTarget
+Local link to file: generated_symbols/assets/shader/post/OldTarget.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::dimension::chunk_generator::Flat
+"""
+Generated from symbols.json for ::java::data::worldgen::dimension::chunk_generator::Flat
+Local link to file: generated_symbols/data/worldgen/dimension/chunk_generator/Flat.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::DecorationStep
+"""
+Generated from symbols.json for ::java::data::worldgen::DecorationStep
+Local link to file: generated_symbols/data/worldgen/DecorationStep.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::NeutralMob
+"""
+Generated from symbols.json for ::java::world::entity::mob::NeutralMob
+Local link to file: generated_symbols/world/entity/mob/NeutralMob.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

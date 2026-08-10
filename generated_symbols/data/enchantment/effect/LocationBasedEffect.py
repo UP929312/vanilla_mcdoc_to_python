@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::enchantment::effect::LocationBasedEffect
+"""
+Generated from symbols.json for ::java::data::enchantment::effect::LocationBasedEffect
+Local link to file: generated_symbols/data/enchantment/effect/LocationBasedEffect.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Literal
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::structure::TerrainAdaptation
+"""
+Generated from symbols.json for ::java::data::worldgen::structure::TerrainAdaptation
+Local link to file: generated_symbols/data/worldgen/structure/TerrainAdaptation.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

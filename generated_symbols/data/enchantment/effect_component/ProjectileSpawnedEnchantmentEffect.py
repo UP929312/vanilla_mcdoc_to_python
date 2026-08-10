@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::enchantment::effect_component::ProjectileSpawnedEnchantmentEffect
+"""
+Generated from symbols.json for ::java::data::enchantment::effect_component::ProjectileSpawnedEnchantmentEffect
+Local link to file: generated_symbols/data/enchantment/effect_component/ProjectileSpawnedEnchantmentEffect.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

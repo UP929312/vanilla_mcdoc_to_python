@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::placement::NoiseBasedCountModifier
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::placement::NoiseBasedCountModifier
+Local link to file: generated_symbols/data/worldgen/feature/placement/NoiseBasedCountModifier.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

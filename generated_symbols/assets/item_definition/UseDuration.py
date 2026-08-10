@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::item_definition::UseDuration
+"""
+Generated from symbols.json for ::java::assets::item_definition::UseDuration
+Local link to file: generated_symbols/assets/item_definition/UseDuration.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

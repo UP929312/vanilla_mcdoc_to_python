@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::effect::EffectId
+"""
+Generated from symbols.json for ::java::util::effect::EffectId
+Local link to file: generated_symbols/util/effect/EffectId.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:

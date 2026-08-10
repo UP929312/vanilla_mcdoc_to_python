@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::dimension::DimensionType
+"""
+Generated from symbols.json for ::java::data::worldgen::dimension::DimensionType
+Local link to file: generated_symbols/data/worldgen/dimension/DimensionType.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

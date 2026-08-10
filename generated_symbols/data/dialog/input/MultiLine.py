@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::dialog::input::MultiLine
+"""
+Generated from symbols.json for ::java::data::dialog::input::MultiLine
+Local link to file: generated_symbols/data/dialog/input/MultiLine.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

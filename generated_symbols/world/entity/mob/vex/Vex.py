@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::vex::Vex
+"""
+Generated from symbols.json for ::java::world::entity::mob::vex::Vex
+Local link to file: generated_symbols/world/entity/mob/vex/Vex.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.world.entity.mob.MobBase import MobBase

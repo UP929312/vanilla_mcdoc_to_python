@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::dimension::biome_source::MultiNoiseBase
+"""
+Generated from symbols.json for ::java::data::worldgen::dimension::biome_source::MultiNoiseBase
+Local link to file: generated_symbols/data/worldgen/dimension/biome_source/MultiNoiseBase.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

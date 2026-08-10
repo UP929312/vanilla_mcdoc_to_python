@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::FlatWeightedList
+"""
+Generated from symbols.json for ::java::util::FlatWeightedList
+Local link to file: generated_symbols/util/FlatWeightedList.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING, TypeVar
 
 if TYPE_CHECKING:

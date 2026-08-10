@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::block::container::ContainerBase
+"""
+Generated from symbols.json for ::java::world::block::container::ContainerBase
+Local link to file: generated_symbols/world/block/container/ContainerBase.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

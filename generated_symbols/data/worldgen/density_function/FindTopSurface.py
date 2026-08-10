@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::density_function::FindTopSurface
+"""
+Generated from symbols.json for ::java::data::worldgen::density_function::FindTopSurface
+Local link to file: generated_symbols/data/worldgen/density_function/FindTopSurface.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

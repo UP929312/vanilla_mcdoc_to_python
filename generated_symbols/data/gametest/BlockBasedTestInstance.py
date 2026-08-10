@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::gametest::BlockBasedTestInstance
+"""
+Generated from symbols.json for ::java::data::gametest::BlockBasedTestInstance
+Local link to file: generated_symbols/data/gametest/BlockBasedTestInstance.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.data.gametest.TestData import TestData

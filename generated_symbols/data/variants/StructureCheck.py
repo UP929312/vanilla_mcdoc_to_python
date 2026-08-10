@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::variants::StructureCheck
+"""
+Generated from symbols.json for ::java::data::variants::StructureCheck
+Local link to file: generated_symbols/data/variants/StructureCheck.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::block::beacon::NoneId
+"""
+Generated from symbols.json for ::java::world::block::beacon::NoneId
+Local link to file: generated_symbols/world/block/beacon/NoneId.py
+"""
+# ~~~ CODE ~~~
 from typing import Literal
 
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::timeline::EnvironmentAttributeTrackMap
+"""
+Generated from symbols.json for ::java::data::timeline::EnvironmentAttributeTrackMap
+Local link to file: generated_symbols/data/timeline/EnvironmentAttributeTrackMap.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Any, Generic, Literal, TypeVar
 

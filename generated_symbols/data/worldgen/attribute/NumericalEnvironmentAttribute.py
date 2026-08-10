@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::attribute::NumericalEnvironmentAttribute
+"""
+Generated from symbols.json for ::java::data::worldgen::attribute::NumericalEnvironmentAttribute
+Local link to file: generated_symbols/data/worldgen/attribute/NumericalEnvironmentAttribute.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

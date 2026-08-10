@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::text::ShowDialog
+"""
+Generated from symbols.json for ::java::util::text::ShowDialog
+Local link to file: generated_symbols/util/text/ShowDialog.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

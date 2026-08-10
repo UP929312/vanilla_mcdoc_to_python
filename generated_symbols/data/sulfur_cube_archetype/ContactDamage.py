@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::sulfur_cube_archetype::ContactDamage
+"""
+Generated from symbols.json for ::java::data::sulfur_cube_archetype::ContactDamage
+Local link to file: generated_symbols/data/sulfur_cube_archetype/ContactDamage.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

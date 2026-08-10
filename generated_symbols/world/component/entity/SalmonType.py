@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::component::entity::SalmonType
+"""
+Generated from symbols.json for ::java::world::component::entity::SalmonType
+Local link to file: generated_symbols/world/component/entity/SalmonType.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

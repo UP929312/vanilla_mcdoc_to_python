@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::FallDamageLogicData
+"""
+Generated from symbols.json for ::java::world::entity::mob::FallDamageLogicData
+Local link to file: generated_symbols/world/entity/mob/FallDamageLogicData.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

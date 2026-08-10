@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::function::ApplyBonus
+"""
+Generated from symbols.json for ::java::data::loot::function::ApplyBonus
+Local link to file: generated_symbols/data/loot/function/ApplyBonus.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated, Literal
 

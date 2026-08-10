@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::condition::KilledByPlayer
+"""
+Generated from symbols.json for ::java::data::loot::condition::KilledByPlayer
+Local link to file: generated_symbols/data/loot/condition/KilledByPlayer.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

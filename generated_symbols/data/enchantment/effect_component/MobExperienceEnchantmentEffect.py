@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::enchantment::effect_component::MobExperienceEnchantmentEffect
+"""
+Generated from symbols.json for ::java::data::enchantment::effect_component::MobExperienceEnchantmentEffect
+Local link to file: generated_symbols/data/enchantment/effect_component/MobExperienceEnchantmentEffect.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

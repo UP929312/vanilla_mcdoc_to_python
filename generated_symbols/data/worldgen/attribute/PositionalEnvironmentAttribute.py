@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::attribute::PositionalEnvironmentAttribute
+"""
+Generated from symbols.json for ::java::data::worldgen::attribute::PositionalEnvironmentAttribute
+Local link to file: generated_symbols/data/worldgen/attribute/PositionalEnvironmentAttribute.py
+"""
+# ~~~ CODE ~~~
 from typing import Annotated
 
 from runtime_metadata import IdSpec

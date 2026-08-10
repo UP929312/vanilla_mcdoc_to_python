@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::util::NbtProvider
+"""
+Generated from symbols.json for ::java::data::util::NbtProvider
+Local link to file: generated_symbols/data/util/NbtProvider.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Literal
 

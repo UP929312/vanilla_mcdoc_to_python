@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::component::item::ItemDamageFunction
+"""
+Generated from symbols.json for ::java::world::component::item::ItemDamageFunction
+Local link to file: generated_symbols/world/component/item/ItemDamageFunction.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

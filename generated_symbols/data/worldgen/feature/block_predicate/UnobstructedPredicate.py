@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::block_predicate::UnobstructedPredicate
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::block_predicate::UnobstructedPredicate
+Local link to file: generated_symbols/data/worldgen/feature/block_predicate/UnobstructedPredicate.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

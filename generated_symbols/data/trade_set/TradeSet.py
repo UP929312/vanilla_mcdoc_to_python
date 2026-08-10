@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::trade_set::TradeSet
+"""
+Generated from symbols.json for ::java::data::trade_set::TradeSet
+Local link to file: generated_symbols/data/trade_set/TradeSet.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

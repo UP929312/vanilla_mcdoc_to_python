@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::surface_builder::ConfiguredSurfaceBuilderRef
+"""
+Generated from symbols.json for ::java::data::worldgen::surface_builder::ConfiguredSurfaceBuilderRef
+Local link to file: generated_symbols/data/worldgen/surface_builder/ConfiguredSurfaceBuilderRef.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from runtime_metadata import IdSpec

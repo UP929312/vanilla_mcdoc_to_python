@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::atlas::Filter
+"""
+Generated from symbols.json for ::java::assets::atlas::Filter
+Local link to file: generated_symbols/assets/atlas/Filter.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::enchantment::level_based_value::ExponentLevelValue
+"""
+Generated from symbols.json for ::java::data::enchantment::level_based_value::ExponentLevelValue
+Local link to file: generated_symbols/data/enchantment/level_based_value/ExponentLevelValue.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

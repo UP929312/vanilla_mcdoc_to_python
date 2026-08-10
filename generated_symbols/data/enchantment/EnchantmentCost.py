@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::enchantment::EnchantmentCost
+"""
+Generated from symbols.json for ::java::data::enchantment::EnchantmentCost
+Local link to file: generated_symbols/data/enchantment/EnchantmentCost.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

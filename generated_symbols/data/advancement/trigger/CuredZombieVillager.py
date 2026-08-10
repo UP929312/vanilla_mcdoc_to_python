@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::trigger::CuredZombieVillager
+"""
+Generated from symbols.json for ::java::data::advancement::trigger::CuredZombieVillager
+Local link to file: generated_symbols/data/advancement/trigger/CuredZombieVillager.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

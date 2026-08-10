@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::util::RandomValueBounds
+"""
+Generated from symbols.json for ::java::data::util::RandomValueBounds
+Local link to file: generated_symbols/data/util/RandomValueBounds.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

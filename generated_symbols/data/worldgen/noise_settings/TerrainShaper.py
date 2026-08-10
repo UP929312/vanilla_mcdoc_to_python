@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::noise_settings::TerrainShaper
+"""
+Generated from symbols.json for ::java::data::worldgen::noise_settings::TerrainShaper
+Local link to file: generated_symbols/data/worldgen/noise_settings/TerrainShaper.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

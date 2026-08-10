@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::DynamicDrops
+"""
+Generated from symbols.json for ::java::data::loot::DynamicDrops
+Local link to file: generated_symbols/data/loot/DynamicDrops.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

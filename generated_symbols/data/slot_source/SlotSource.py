@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::slot_source::SlotSource
+"""
+Generated from symbols.json for ::java::data::slot_source::SlotSource
+Local link to file: generated_symbols/data/slot_source/SlotSource.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from runtime_metadata import IdSpec

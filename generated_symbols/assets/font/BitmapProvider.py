@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::font::BitmapProvider
+"""
+Generated from symbols.json for ::java::assets::font::BitmapProvider
+Local link to file: generated_symbols/assets/font/BitmapProvider.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

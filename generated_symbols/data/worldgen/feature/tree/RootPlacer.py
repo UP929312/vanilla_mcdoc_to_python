@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::tree::RootPlacer
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::tree::RootPlacer
+Local link to file: generated_symbols/data/worldgen/feature/tree/RootPlacer.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Literal
 

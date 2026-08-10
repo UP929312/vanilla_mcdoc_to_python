@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::enchantment::effect_component::FishingTimeReductionEnchantmentEffect
+"""
+Generated from symbols.json for ::java::data::enchantment::effect_component::FishingTimeReductionEnchantmentEffect
+Local link to file: generated_symbols/data/enchantment/effect_component/FishingTimeReductionEnchantmentEffect.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::block::spawner::SpawnPotential
+"""
+Generated from symbols.json for ::java::world::block::spawner::SpawnPotential
+Local link to file: generated_symbols/world/block/spawner/SpawnPotential.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:

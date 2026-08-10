@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::component::predicate::CollectionPredicate
+"""
+Generated from symbols.json for ::java::world::component::predicate::CollectionPredicate
+Local link to file: generated_symbols/world/component/predicate/CollectionPredicate.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Generic, TypeVar
 

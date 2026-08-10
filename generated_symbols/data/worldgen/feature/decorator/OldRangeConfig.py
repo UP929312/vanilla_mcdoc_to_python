@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::decorator::OldRangeConfig
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::decorator::OldRangeConfig
+Local link to file: generated_symbols/data/worldgen/feature/decorator/OldRangeConfig.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

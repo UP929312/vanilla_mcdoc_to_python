@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::processor_list::LinearPos
+"""
+Generated from symbols.json for ::java::data::worldgen::processor_list::LinearPos
+Local link to file: generated_symbols/data/worldgen/processor_list/LinearPos.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

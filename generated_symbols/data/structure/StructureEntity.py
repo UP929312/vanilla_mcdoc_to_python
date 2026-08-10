@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::structure::StructureEntity
+"""
+Generated from symbols.json for ::java::data::structure::StructureEntity
+Local link to file: generated_symbols/data/structure/StructureEntity.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

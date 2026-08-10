@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::enchantment::effect::SetBlockPropertiesEntityEffect
+"""
+Generated from symbols.json for ::java::data::enchantment::effect::SetBlockPropertiesEntityEffect
+Local link to file: generated_symbols/data/enchantment/effect/SetBlockPropertiesEntityEffect.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

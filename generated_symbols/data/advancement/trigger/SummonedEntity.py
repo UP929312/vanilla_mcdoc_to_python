@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::trigger::SummonedEntity
+"""
+Generated from symbols.json for ::java::data::advancement::trigger::SummonedEntity
+Local link to file: generated_symbols/data/advancement/trigger/SummonedEntity.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

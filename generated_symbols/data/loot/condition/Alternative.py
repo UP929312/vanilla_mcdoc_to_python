@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::condition::Alternative
+"""
+Generated from symbols.json for ::java::data::loot::condition::Alternative
+Local link to file: generated_symbols/data/loot/condition/Alternative.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

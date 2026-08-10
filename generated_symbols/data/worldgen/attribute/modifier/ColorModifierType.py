@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::attribute::modifier::ColorModifierType
+"""
+Generated from symbols.json for ::java::data::worldgen::attribute::modifier::ColorModifierType
+Local link to file: generated_symbols/data/worldgen/attribute/modifier/ColorModifierType.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

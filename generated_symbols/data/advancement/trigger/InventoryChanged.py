@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::trigger::InventoryChanged
+"""
+Generated from symbols.json for ::java::data::advancement::trigger::InventoryChanged
+Local link to file: generated_symbols/data/advancement/trigger/InventoryChanged.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::variants::BiomeCheck
+"""
+Generated from symbols.json for ::java::data::variants::BiomeCheck
+Local link to file: generated_symbols/data/variants/BiomeCheck.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

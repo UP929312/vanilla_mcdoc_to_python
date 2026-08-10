@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::condition::EnvironmentAttributeCheck
+"""
+Generated from symbols.json for ::java::data::loot::condition::EnvironmentAttributeCheck
+Local link to file: generated_symbols/data/loot/condition/EnvironmentAttributeCheck.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Any
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::processor_list::Capped
+"""
+Generated from symbols.json for ::java::data::worldgen::processor_list::Capped
+Local link to file: generated_symbols/data/worldgen/processor_list/Capped.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

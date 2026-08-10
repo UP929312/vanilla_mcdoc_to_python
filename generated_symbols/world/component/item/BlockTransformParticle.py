@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::component::item::BlockTransformParticle
+"""
+Generated from symbols.json for ::java::world::component::item::BlockTransformParticle
+Local link to file: generated_symbols/world/component/item/BlockTransformParticle.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

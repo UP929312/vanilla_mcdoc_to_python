@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::particle::VibrationParticleData
+"""
+Generated from symbols.json for ::java::util::particle::VibrationParticleData
+Local link to file: generated_symbols/util/particle/VibrationParticleData.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

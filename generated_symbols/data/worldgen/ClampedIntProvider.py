@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::ClampedIntProvider
+"""
+Generated from symbols.json for ::java::data::worldgen::ClampedIntProvider
+Local link to file: generated_symbols/data/worldgen/ClampedIntProvider.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Generic, TypeVar
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::processor_list::BlockEntityModifier
+"""
+Generated from symbols.json for ::java::data::worldgen::processor_list::BlockEntityModifier
+Local link to file: generated_symbols/data/worldgen/processor_list/BlockEntityModifier.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated, Any, Literal
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::chat_type::NarrationPriority
+"""
+Generated from symbols.json for ::java::data::chat_type::NarrationPriority
+Local link to file: generated_symbols/data/chat_type/NarrationPriority.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

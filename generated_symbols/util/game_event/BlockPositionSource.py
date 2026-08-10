@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::game_event::BlockPositionSource
+"""
+Generated from symbols.json for ::java::util::game_event::BlockPositionSource
+Local link to file: generated_symbols/util/game_event/BlockPositionSource.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

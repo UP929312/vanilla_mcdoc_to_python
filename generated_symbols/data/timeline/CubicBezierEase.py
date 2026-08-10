@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::timeline::CubicBezierEase
+"""
+Generated from symbols.json for ::java::data::timeline::CubicBezierEase
+Local link to file: generated_symbols/data/timeline/CubicBezierEase.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

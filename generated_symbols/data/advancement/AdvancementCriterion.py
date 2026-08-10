@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::AdvancementCriterion
+"""
+Generated from symbols.json for ::java::data::advancement::AdvancementCriterion
+Local link to file: generated_symbols/data/advancement/AdvancementCriterion.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Literal
 

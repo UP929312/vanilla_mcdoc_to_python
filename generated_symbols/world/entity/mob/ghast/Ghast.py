@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::ghast::Ghast
+"""
+Generated from symbols.json for ::java::world::entity::mob::ghast::Ghast
+Local link to file: generated_symbols/world/entity/mob/ghast/Ghast.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

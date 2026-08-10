@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::predicate::CatPredicate
+"""
+Generated from symbols.json for ::java::data::advancement::predicate::CatPredicate
+Local link to file: generated_symbols/data/advancement/predicate/CatPredicate.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

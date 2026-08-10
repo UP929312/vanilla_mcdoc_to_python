@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::texture_meta::MipmapStrategy
+"""
+Generated from symbols.json for ::java::assets::texture_meta::MipmapStrategy
+Local link to file: generated_symbols/assets/texture_meta/MipmapStrategy.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

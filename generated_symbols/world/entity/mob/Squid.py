@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::Squid
+"""
+Generated from symbols.json for ::java::world::entity::mob::Squid
+Local link to file: generated_symbols/world/entity/mob/Squid.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.world.entity.mob.AgeableMob import AgeableMob

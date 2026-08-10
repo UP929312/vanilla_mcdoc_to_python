@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::variants::wolf::WolfSounds
+"""
+Generated from symbols.json for ::java::data::variants::wolf::WolfSounds
+Local link to file: generated_symbols/data/variants/wolf/WolfSounds.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

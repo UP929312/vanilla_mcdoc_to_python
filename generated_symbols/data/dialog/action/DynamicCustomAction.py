@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::dialog::action::DynamicCustomAction
+"""
+Generated from symbols.json for ::java::data::dialog::action::DynamicCustomAction
+Local link to file: generated_symbols/data/dialog/action/DynamicCustomAction.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

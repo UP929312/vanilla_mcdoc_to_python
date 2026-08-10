@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::texture_meta::TextureAnimation
+"""
+Generated from symbols.json for ::java::assets::texture_meta::TextureAnimation
+Local link to file: generated_symbols/assets/texture_meta/TextureAnimation.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

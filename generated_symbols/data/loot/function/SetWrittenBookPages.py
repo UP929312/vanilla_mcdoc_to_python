@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::function::SetWrittenBookPages
+"""
+Generated from symbols.json for ::java::data::loot::function::SetWrittenBookPages
+Local link to file: generated_symbols/data/loot/function/SetWrittenBookPages.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

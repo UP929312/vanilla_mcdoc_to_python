@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::item::map::Decoration
+"""
+Generated from symbols.json for ::java::world::item::map::Decoration
+Local link to file: generated_symbols/world/item/map/Decoration.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

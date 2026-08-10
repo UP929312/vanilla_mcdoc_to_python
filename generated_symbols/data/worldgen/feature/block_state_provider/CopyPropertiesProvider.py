@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::block_state_provider::CopyPropertiesProvider
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::block_state_provider::CopyPropertiesProvider
+Local link to file: generated_symbols/data/worldgen/feature/block_state_provider/CopyPropertiesProvider.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

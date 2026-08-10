@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::damage_type::DamageScaling
+"""
+Generated from symbols.json for ::java::data::damage_type::DamageScaling
+Local link to file: generated_symbols/data/damage_type/DamageScaling.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

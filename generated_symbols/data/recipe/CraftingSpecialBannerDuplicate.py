@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::recipe::CraftingSpecialBannerDuplicate
+"""
+Generated from symbols.json for ::java::data::recipe::CraftingSpecialBannerDuplicate
+Local link to file: generated_symbols/data/recipe/CraftingSpecialBannerDuplicate.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

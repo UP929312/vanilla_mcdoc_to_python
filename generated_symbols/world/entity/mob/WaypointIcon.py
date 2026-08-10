@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::WaypointIcon
+"""
+Generated from symbols.json for ::java::world::entity::mob::WaypointIcon
+Local link to file: generated_symbols/world/entity/mob/WaypointIcon.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

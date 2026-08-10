@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::IntProvider
+"""
+Generated from symbols.json for ::java::data::worldgen::IntProvider
+Local link to file: generated_symbols/data/worldgen/IntProvider.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated, Generic, TypeVar
 

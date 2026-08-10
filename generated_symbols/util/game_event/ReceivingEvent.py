@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::game_event::ReceivingEvent
+"""
+Generated from symbols.json for ::java::util::game_event::ReceivingEvent
+Local link to file: generated_symbols/util/game_event/ReceivingEvent.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

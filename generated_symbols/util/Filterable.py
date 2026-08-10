@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::Filterable
+"""
+Generated from symbols.json for ::java::util::Filterable
+Local link to file: generated_symbols/util/Filterable.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Generic, TypeVar
 

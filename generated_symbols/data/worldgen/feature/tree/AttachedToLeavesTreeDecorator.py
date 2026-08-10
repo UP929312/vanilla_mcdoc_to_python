@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::tree::AttachedToLeavesTreeDecorator
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::tree::AttachedToLeavesTreeDecorator
+Local link to file: generated_symbols/data/worldgen/feature/tree/AttachedToLeavesTreeDecorator.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

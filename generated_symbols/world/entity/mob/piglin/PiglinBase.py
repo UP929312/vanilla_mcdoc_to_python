@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::piglin::PiglinBase
+"""
+Generated from symbols.json for ::java::world::entity::mob::piglin::PiglinBase
+Local link to file: generated_symbols/world/entity/mob/piglin/PiglinBase.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.world.entity.mob.MobBase import MobBase

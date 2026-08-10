@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::villager_trade::VillagerTrade
+"""
+Generated from symbols.json for ::java::data::villager_trade::VillagerTrade
+Local link to file: generated_symbols/data/villager_trade/VillagerTrade.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::shader::post::TargetInput
+"""
+Generated from symbols.json for ::java::assets::shader::post::TargetInput
+Local link to file: generated_symbols/assets/shader/post/TargetInput.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

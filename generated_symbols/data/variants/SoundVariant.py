@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::variants::SoundVariant
+"""
+Generated from symbols.json for ::java::data::variants::SoundVariant
+Local link to file: generated_symbols/data/variants/SoundVariant.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Generic, TypeVar
 

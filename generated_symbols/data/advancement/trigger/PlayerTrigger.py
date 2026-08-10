@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::trigger::PlayerTrigger
+"""
+Generated from symbols.json for ::java::data::advancement::trigger::PlayerTrigger
+Local link to file: generated_symbols/data/advancement/trigger/PlayerTrigger.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.data.advancement.trigger.TriggerBase import TriggerBase

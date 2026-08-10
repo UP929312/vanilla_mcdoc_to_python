@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::shader::program::UniformType
+"""
+Generated from symbols.json for ::java::assets::shader::program::UniformType
+Local link to file: generated_symbols/assets/shader/program/UniformType.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

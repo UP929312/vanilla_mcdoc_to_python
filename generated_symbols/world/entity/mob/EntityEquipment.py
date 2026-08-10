@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::EntityEquipment
+"""
+Generated from symbols.json for ::java::world::entity::mob::EntityEquipment
+Local link to file: generated_symbols/world/entity/mob/EntityEquipment.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:

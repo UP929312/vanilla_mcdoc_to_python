@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::dimension::biome_source::ClimateParameters
+"""
+Generated from symbols.json for ::java::data::worldgen::dimension::biome_source::ClimateParameters
+Local link to file: generated_symbols/data/worldgen/dimension/biome_source/ClimateParameters.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

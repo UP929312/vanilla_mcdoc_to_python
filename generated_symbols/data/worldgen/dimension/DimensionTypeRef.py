@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::dimension::DimensionTypeRef
+"""
+Generated from symbols.json for ::java::data::worldgen::dimension::DimensionTypeRef
+Local link to file: generated_symbols/data/worldgen/dimension/DimensionTypeRef.py
+"""
+# ~~~ CODE ~~~
 from typing import Annotated
 
 from runtime_metadata import IdSpec

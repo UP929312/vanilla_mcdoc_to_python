@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::GrowingPlantHeight
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::GrowingPlantHeight
+Local link to file: generated_symbols/data/worldgen/feature/GrowingPlantHeight.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

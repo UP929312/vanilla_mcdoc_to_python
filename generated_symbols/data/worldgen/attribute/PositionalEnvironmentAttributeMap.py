@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::attribute::PositionalEnvironmentAttributeMap
+"""
+Generated from symbols.json for ::java::data::worldgen::attribute::PositionalEnvironmentAttributeMap
+Local link to file: generated_symbols/data/worldgen/attribute/PositionalEnvironmentAttributeMap.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:

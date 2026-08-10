@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::FillLayerConfig
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::FillLayerConfig
+Local link to file: generated_symbols/data/worldgen/feature/FillLayerConfig.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

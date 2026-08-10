@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::predicate::EntitySlotsPredicate
+"""
+Generated from symbols.json for ::java::data::advancement::predicate::EntitySlotsPredicate
+Local link to file: generated_symbols/data/advancement/predicate/EntitySlotsPredicate.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:

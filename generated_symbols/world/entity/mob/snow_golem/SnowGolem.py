@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::snow_golem::SnowGolem
+"""
+Generated from symbols.json for ::java::world::entity::mob::snow_golem::SnowGolem
+Local link to file: generated_symbols/world/entity/mob/snow_golem/SnowGolem.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.world.entity.mob.MobBase import MobBase

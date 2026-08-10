@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::function::ToggleableDataComponent
+"""
+Generated from symbols.json for ::java::data::loot::function::ToggleableDataComponent
+Local link to file: generated_symbols/data/loot/function/ToggleableDataComponent.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

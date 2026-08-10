@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::enchantment::LevelBasedValue
+"""
+Generated from symbols.json for ::java::data::enchantment::LevelBasedValue
+Local link to file: generated_symbols/data/enchantment/LevelBasedValue.py
+"""
+# ~~~ CODE ~~~
 from generated_symbols.data.enchantment.level_based_value.LevelBasedValue import LevelBasedValue as LevelBasedValue_alias
 
 

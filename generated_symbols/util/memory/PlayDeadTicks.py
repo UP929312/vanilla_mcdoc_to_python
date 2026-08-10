@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::memory::PlayDeadTicks
+"""
+Generated from symbols.json for ::java::util::memory::PlayDeadTicks
+Local link to file: generated_symbols/util/memory/PlayDeadTicks.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.util.memory.ExpirableValue import ExpirableValue

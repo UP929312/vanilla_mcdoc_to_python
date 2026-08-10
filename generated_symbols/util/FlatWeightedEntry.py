@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::FlatWeightedEntry
+"""
+Generated from symbols.json for ::java::util::FlatWeightedEntry
+Local link to file: generated_symbols/util/FlatWeightedEntry.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated, Generic, TypeVar
 

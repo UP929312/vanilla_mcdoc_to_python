@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::sounds::Sound
+"""
+Generated from symbols.json for ::java::assets::sounds::Sound
+Local link to file: generated_symbols/assets/sounds/Sound.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

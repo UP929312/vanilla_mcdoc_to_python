@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::memory::Home
+"""
+Generated from symbols.json for ::java::util::memory::Home
+Local link to file: generated_symbols/util/memory/Home.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::trigger::ItemDurabilityChanged
+"""
+Generated from symbols.json for ::java::data::advancement::trigger::ItemDurabilityChanged
+Local link to file: generated_symbols/data/advancement/trigger/ItemDurabilityChanged.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

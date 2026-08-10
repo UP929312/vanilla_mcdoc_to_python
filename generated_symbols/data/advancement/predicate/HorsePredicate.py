@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::predicate::HorsePredicate
+"""
+Generated from symbols.json for ::java::data::advancement::predicate::HorsePredicate
+Local link to file: generated_symbols/data/advancement/predicate/HorsePredicate.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::structure::StructureRef
+"""
+Generated from symbols.json for ::java::data::worldgen::structure::StructureRef
+Local link to file: generated_symbols/data/worldgen/structure/StructureRef.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from runtime_metadata import IdSpec

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::SingletonPoolEntry
+"""
+Generated from symbols.json for ::java::data::loot::SingletonPoolEntry
+Local link to file: generated_symbols/data/loot/SingletonPoolEntry.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

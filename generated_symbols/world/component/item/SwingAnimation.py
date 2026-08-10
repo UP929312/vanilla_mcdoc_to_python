@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::component::item::SwingAnimation
+"""
+Generated from symbols.json for ::java::world::component::item::SwingAnimation
+Local link to file: generated_symbols/world/component/item/SwingAnimation.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

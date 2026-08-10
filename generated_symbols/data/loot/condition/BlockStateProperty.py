@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::condition::BlockStateProperty
+"""
+Generated from symbols.json for ::java::data::loot::condition::BlockStateProperty
+Local link to file: generated_symbols/data/loot/condition/BlockStateProperty.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

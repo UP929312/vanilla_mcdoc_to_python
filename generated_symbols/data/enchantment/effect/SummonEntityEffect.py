@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::enchantment::effect::SummonEntityEffect
+"""
+Generated from symbols.json for ::java::data::enchantment::effect::SummonEntityEffect
+Local link to file: generated_symbols/data/enchantment/effect/SummonEntityEffect.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

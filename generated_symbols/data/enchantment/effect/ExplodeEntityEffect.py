@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::enchantment::effect::ExplodeEntityEffect
+"""
+Generated from symbols.json for ::java::data::enchantment::effect::ExplodeEntityEffect
+Local link to file: generated_symbols/data/enchantment/effect/ExplodeEntityEffect.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::function::CopyNbtStrategy
+"""
+Generated from symbols.json for ::java::data::loot::function::CopyNbtStrategy
+Local link to file: generated_symbols/data/loot/function/CopyNbtStrategy.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

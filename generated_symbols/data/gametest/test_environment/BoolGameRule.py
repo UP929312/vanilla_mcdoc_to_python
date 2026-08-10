@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::gametest::test_environment::BoolGameRule
+"""
+Generated from symbols.json for ::java::data::gametest::test_environment::BoolGameRule
+Local link to file: generated_symbols/data/gametest/test_environment/BoolGameRule.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

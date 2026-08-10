@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::item::map::FilledMap
+"""
+Generated from symbols.json for ::java::world::item::map::FilledMap
+Local link to file: generated_symbols/world/item/map/FilledMap.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::block_state_definition::BlockStateDefinition
+"""
+Generated from symbols.json for ::java::assets::block_state_definition::BlockStateDefinition
+Local link to file: generated_symbols/assets/block_state_definition/BlockStateDefinition.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

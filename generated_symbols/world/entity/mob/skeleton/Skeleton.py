@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::skeleton::Skeleton
+"""
+Generated from symbols.json for ::java::world::entity::mob::skeleton::Skeleton
+Local link to file: generated_symbols/world/entity/mob/skeleton/Skeleton.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.world.entity.mob.MobBase import MobBase

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::block::jukebox::Jukebox
+"""
+Generated from symbols.json for ::java::world::block::jukebox::Jukebox
+Local link to file: generated_symbols/world/block/jukebox/Jukebox.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

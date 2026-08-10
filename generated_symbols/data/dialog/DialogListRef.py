@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::dialog::DialogListRef
+"""
+Generated from symbols.json for ::java::data::dialog::DialogListRef
+Local link to file: generated_symbols/data/dialog/DialogListRef.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from runtime_metadata import IdSpec

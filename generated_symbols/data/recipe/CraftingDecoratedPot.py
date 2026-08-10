@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::recipe::CraftingDecoratedPot
+"""
+Generated from symbols.json for ::java::data::recipe::CraftingDecoratedPot
+Local link to file: generated_symbols/data/recipe/CraftingDecoratedPot.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::component::DataComponentPredicate
+"""
+Generated from symbols.json for ::java::world::component::DataComponentPredicate
+Local link to file: generated_symbols/world/component/DataComponentPredicate.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

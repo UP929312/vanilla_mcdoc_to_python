@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::variants::chicken::ChickenSounds
+"""
+Generated from symbols.json for ::java::data::variants::chicken::ChickenSounds
+Local link to file: generated_symbols/data/variants/chicken/ChickenSounds.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::particle::TrailParticle
+"""
+Generated from symbols.json for ::java::util::particle::TrailParticle
+Local link to file: generated_symbols/util/particle/TrailParticle.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::structure::Palette
+"""
+Generated from symbols.json for ::java::data::structure::Palette
+Local link to file: generated_symbols/data/structure/Palette.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

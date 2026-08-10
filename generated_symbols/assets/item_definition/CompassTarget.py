@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::item_definition::CompassTarget
+"""
+Generated from symbols.json for ::java::assets::item_definition::CompassTarget
+Local link to file: generated_symbols/assets/item_definition/CompassTarget.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

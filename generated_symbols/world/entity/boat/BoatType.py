@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::boat::BoatType
+"""
+Generated from symbols.json for ::java::world::entity::boat::BoatType
+Local link to file: generated_symbols/world/entity/boat/BoatType.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

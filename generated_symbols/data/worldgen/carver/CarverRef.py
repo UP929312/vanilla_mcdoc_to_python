@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::carver::CarverRef
+"""
+Generated from symbols.json for ::java::data::worldgen::carver::CarverRef
+Local link to file: generated_symbols/data/worldgen/carver/CarverRef.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from runtime_metadata import IdSpec

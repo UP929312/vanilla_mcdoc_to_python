@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::item::SingleItem
+"""
+Generated from symbols.json for ::java::world::item::SingleItem
+Local link to file: generated_symbols/world/item/SingleItem.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:

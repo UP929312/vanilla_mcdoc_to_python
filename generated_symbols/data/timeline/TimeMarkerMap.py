@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::timeline::TimeMarkerMap
+"""
+Generated from symbols.json for ::java::data::timeline::TimeMarkerMap
+Local link to file: generated_symbols/data/timeline/TimeMarkerMap.py
+"""
+# ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from runtime_metadata import IdSpec

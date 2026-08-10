@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::particle::OldDustTransition
+"""
+Generated from symbols.json for ::java::util::particle::OldDustTransition
+Local link to file: generated_symbols/util/particle/OldDustTransition.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

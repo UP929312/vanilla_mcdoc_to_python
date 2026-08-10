@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::component::predicate::FireworkExplosionPredicate
+"""
+Generated from symbols.json for ::java::world::component::predicate::FireworkExplosionPredicate
+Local link to file: generated_symbols/world/component/predicate/FireworkExplosionPredicate.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

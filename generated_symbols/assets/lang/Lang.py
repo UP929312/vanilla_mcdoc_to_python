@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::lang::Lang
+"""
+Generated from symbols.json for ::java::assets::lang::Lang
+Local link to file: generated_symbols/assets/lang/Lang.py
+"""
+# ~~~ CODE ~~~
 
 
 type Lang = dict[str, str]

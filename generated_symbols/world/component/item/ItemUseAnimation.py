@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::component::item::ItemUseAnimation
+"""
+Generated from symbols.json for ::java::world::component::item::ItemUseAnimation
+Local link to file: generated_symbols/world/component/item/ItemUseAnimation.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

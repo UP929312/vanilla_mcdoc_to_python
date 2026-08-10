@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::trigger::SafelyHarvestHoney
+"""
+Generated from symbols.json for ::java::data::advancement::trigger::SafelyHarvestHoney
+Local link to file: generated_symbols/data/advancement/trigger/SafelyHarvestHoney.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

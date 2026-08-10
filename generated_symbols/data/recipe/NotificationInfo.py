@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::recipe::NotificationInfo
+"""
+Generated from symbols.json for ::java::data::recipe::NotificationInfo
+Local link to file: generated_symbols/data/recipe/NotificationInfo.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::item::compass::LodestonePos
+"""
+Generated from symbols.json for ::java::world::item::compass::LodestonePos
+Local link to file: generated_symbols/world/item/compass/LodestonePos.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::advancement::predicate::PaintingPredicate
+"""
+Generated from symbols.json for ::java::data::advancement::predicate::PaintingPredicate
+Local link to file: generated_symbols/data/advancement/predicate/PaintingPredicate.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

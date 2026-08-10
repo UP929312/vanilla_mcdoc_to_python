@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::enchantment::level_based_value::LinearLevelValue
+"""
+Generated from symbols.json for ::java::data::enchantment::level_based_value::LinearLevelValue
+Local link to file: generated_symbols/data/enchantment/level_based_value/LinearLevelValue.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

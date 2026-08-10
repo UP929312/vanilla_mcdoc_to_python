@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::SpeleothemConfig
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::SpeleothemConfig
+Local link to file: generated_symbols/data/worldgen/feature/SpeleothemConfig.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

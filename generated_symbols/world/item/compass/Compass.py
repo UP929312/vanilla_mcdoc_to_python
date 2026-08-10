@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::item::compass::Compass
+"""
+Generated from symbols.json for ::java::world::item::compass::Compass
+Local link to file: generated_symbols/world/item/compass/Compass.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 

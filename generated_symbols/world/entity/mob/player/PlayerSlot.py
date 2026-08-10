@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::player::PlayerSlot
+"""
+Generated from symbols.json for ::java::world::entity::mob::player::PlayerSlot
+Local link to file: generated_symbols/world/entity/mob/player/PlayerSlot.py
+"""
+# ~~~ CODE ~~~
 from typing import Annotated
 
 

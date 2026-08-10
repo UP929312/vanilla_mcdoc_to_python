@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::fish::PuffState
+"""
+Generated from symbols.json for ::java::world::entity::mob::fish::PuffState
+Local link to file: generated_symbols/world/entity/mob/fish/PuffState.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

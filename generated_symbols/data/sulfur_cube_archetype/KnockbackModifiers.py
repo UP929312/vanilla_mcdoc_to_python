@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::sulfur_cube_archetype::KnockbackModifiers
+"""
+Generated from symbols.json for ::java::data::sulfur_cube_archetype::KnockbackModifiers
+Local link to file: generated_symbols/data/sulfur_cube_archetype/KnockbackModifiers.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

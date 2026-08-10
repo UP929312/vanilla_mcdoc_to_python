@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::projectile::shulker_bullet::BulletTarget
+"""
+Generated from symbols.json for ::java::world::entity::projectile::shulker_bullet::BulletTarget
+Local link to file: generated_symbols/world/entity/projectile/shulker_bullet/BulletTarget.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 

@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::model::Model
+"""
+Generated from symbols.json for ::java::assets::model::Model
+Local link to file: generated_symbols/assets/model/Model.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Literal
 

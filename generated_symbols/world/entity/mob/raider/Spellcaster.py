@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::entity::mob::raider::Spellcaster
+"""
+Generated from symbols.json for ::java::world::entity::mob::raider::Spellcaster
+Local link to file: generated_symbols/world/entity/mob/raider/Spellcaster.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 
 from generated_symbols.world.entity.mob.raider.RaiderBase import RaiderBase

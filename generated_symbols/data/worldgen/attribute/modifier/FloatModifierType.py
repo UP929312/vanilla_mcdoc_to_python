@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::attribute::modifier::FloatModifierType
+"""
+Generated from symbols.json for ::java::data::worldgen::attribute::modifier::FloatModifierType
+Local link to file: generated_symbols/data/worldgen/attribute/modifier/FloatModifierType.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

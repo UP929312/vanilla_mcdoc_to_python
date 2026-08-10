@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::DyeColor
+"""
+Generated from symbols.json for ::java::util::DyeColor
+Local link to file: generated_symbols/util/DyeColor.py
+"""
+# ~~~ CODE ~~~
 from generated_symbols.util.color.DyeColor import DyeColor as DyeColor_alias
 
 

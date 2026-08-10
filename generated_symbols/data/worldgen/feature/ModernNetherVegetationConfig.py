@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::worldgen::feature::ModernNetherVegetationConfig
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::ModernNetherVegetationConfig
+Local link to file: generated_symbols/data/worldgen/feature/ModernNetherVegetationConfig.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Annotated
 

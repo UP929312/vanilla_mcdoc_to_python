@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::assets::item_definition::NumericPropertyType
+"""
+Generated from symbols.json for ::java::assets::item_definition::NumericPropertyType
+Local link to file: generated_symbols/assets/item_definition/NumericPropertyType.py
+"""
+# ~~~ CODE ~~~
 from enum import Enum
 
 

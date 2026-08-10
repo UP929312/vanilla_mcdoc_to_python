@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::data::loot::function::Sequence
+"""
+Generated from symbols.json for ::java::data::loot::function::Sequence
+Local link to file: generated_symbols/data/loot/function/Sequence.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

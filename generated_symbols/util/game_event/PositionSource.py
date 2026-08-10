@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::util::game_event::PositionSource
+"""
+Generated from symbols.json for ::java::util::game_event::PositionSource
+Local link to file: generated_symbols/util/game_event/PositionSource.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import Literal
 

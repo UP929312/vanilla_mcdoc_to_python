@@ -1,4 +1,8 @@
-# Generated from symbols.json for ::java::world::block::sculk_sensor::SculkSensor
+"""
+Generated from symbols.json for ::java::world::block::sculk_sensor::SculkSensor
+Local link to file: generated_symbols/world/block/sculk_sensor/SculkSensor.py
+"""
+# ~~~ CODE ~~~
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
