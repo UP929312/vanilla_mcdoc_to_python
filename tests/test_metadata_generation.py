@@ -1,6 +1,6 @@
 import unittest
 
-from code_generation import make_python_file_content
+from code_generation import make_python_file_content, make_root_init_content
 from runtime_metadata import IdSpec
 from utils import SYMBOLS_MAP
 
@@ -81,6 +81,24 @@ class DispatcherSpreadGenerationTests(unittest.TestCase):
 
         self.assertIn("class EntitySubPredicatePredicates:", content)
         self.assertIn("type: Literal['minecraft:predicates']", content)
+
+
+class RootExportGenerationTests(unittest.TestCase):
+    def test_exports_unique_data_and_asset_symbols_lazily(self) -> None:
+        content = make_root_init_content([
+            "::java::data::advancement::Advancement",
+            "::java::assets::model::Model",
+            "::java::world::entity::Entity",
+            "::java::data::other::Model",
+            "::java::data::anonymous::Ignored",
+        ])
+
+        self.assertIn("from generated_symbols.data.advancement.Advancement import Advancement", content)
+        self.assertIn('"Advancement": "generated_symbols.data.advancement.Advancement"', content)
+        self.assertNotIn('"Model",', content)
+        self.assertNotIn('"Entity",', content)
+        self.assertNotIn('"Ignored",', content)
+        self.assertIn("def __getattr__(name: str) -> object:", content)
 
 if __name__ == "__main__":
     unittest.main()

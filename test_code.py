@@ -1,7 +1,7 @@
-from generated_symbols.data.advancement.predicate.FoodPredicate import FoodPredicate
-from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
+from generated_symbols import FoodPredicate, MinMaxBounds
 
 my_food_predicate = FoodPredicate(
-    level=MinMaxBounds[int](min=1, max=10),
+    level=MinMaxBounds(min=1, max=10),
     saturation=5,
 )
+print(my_food_predicate)

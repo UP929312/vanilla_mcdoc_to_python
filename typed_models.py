@@ -116,7 +116,7 @@ class BaseSchema(BaseModel):
         raise NotImplementedError(f"This should never get called directly on a {self.__class__.__name__}")
 
     def remove_version_data(self) -> BaseSchema:
-        self.attributes = [x for x in self.attributes if not x.is_undesirable_attribute]
+        self.attributes = [x for x in self.attributes if not x.name in {"since", "until", "deprecated"}]
         for field_name in type(self).model_fields:
             for child in iter_child_schemas(getattr(self, field_name)):
                 child.remove_version_data()
@@ -132,19 +132,15 @@ class Attribute(BaseModel):
     def is_version_attribute(self) -> bool:
         return self.name in {"since", "until"}
 
-    @property
-    def is_undesirable_attribute(self) -> bool:
-        return self.is_version_attribute or self.name == "deprecated"
-
     def to_id_spec(self) -> IdSpec | None:
-        return IdSpec.from_value(self._attribute_value(self.value)) if self.name == "id" else None
+        return IdSpec.from_value(self._attribute_value(self.value)) if self.name == "id" else None  # type: ignore[arg-type]
 
     @classmethod
-    def _attribute_value(cls, schema: LiteralSchema | TreeSchema | DispatcherSchema | ReferenceSchema | None) -> object:
+    def _attribute_value(cls, schema: LiteralSchema | TreeSchema | None) -> object:
         if schema is None:
             return None
         if isinstance(schema, LiteralSchema):
-            return getattr(schema.value, "value", None)
+            return schema.value.value
         if isinstance(schema, TreeSchema):
             values = {key: cls._attribute_value(value) for key, value in schema.values.root.items()}
             return tuple(values[key] for key in sorted(values, key=int)) if values and all(key.isdigit() for key in values) else values
@@ -169,7 +165,7 @@ class ValueRange(BaseModel):
 
     def extract_divisible_by_value(self, attributes: list[Attribute]) -> str | None:
         divisible_by_attr_value: str | None = next(
-            (attr.value.value.value for attr in attributes or [] if attr.name == "divisible_by"),  # type: ignore
+            (attr.value.value.value for attr in attributes or [] if attr.name == "divisible_by"),  # type: ignore[abc]
             None
         )
         return divisible_by_attr_value

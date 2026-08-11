@@ -1,4 +1,6 @@
 import json
+from collections import defaultdict
+from collections.abc import Iterable
 from typing import Any
 
 from schema_resolution import SchemaGraph
@@ -7,6 +9,66 @@ from utils import GENERATED_SYMBOLS_DIRECTORY, SYMBOLS_MAP, resource_path_to_pyt
 
 
 SCHEMA_GRAPH = SchemaGraph.from_symbol_maps(SYMBOLS_MAP)
+
+
+def make_root_init_content(symbol_paths: Iterable[str]) -> str:
+    exports_by_name: defaultdict[str, list[str]] = defaultdict(list)
+    for symbol_path in symbol_paths:
+        if "anonymous" in symbol_path or not symbol_path.startswith(("::java::data::", "::java::assets::")):
+            continue
+        module, name = symbol_path_to_import_string_and_name(symbol_path)
+        exports_by_name[name].append(module)
+
+    exports = {
+        name: modules[0]
+        for name, modules in exports_by_name.items()
+        if len(modules) == 1
+    }
+    names = sorted(exports)
+
+    lines = [
+        '"""Lazy top-level exports for generated data and asset symbols."""',
+        "",
+        "from importlib import import_module",
+        "from typing import TYPE_CHECKING",
+        "",
+        "if TYPE_CHECKING:",
+    ]
+    lines.extend(f"    from {exports[name]} import {name}" for name in names)
+    lines.extend([
+        "",
+        "__all__ = [",
+        *(f'    "{name}",' for name in names),
+        "]",
+    ])
+    lines.extend([
+        "",
+        "_EXPORTS = {",
+        *(f'    "{name}": "{exports[name]}",' for name in names),
+        "}",
+        "",
+    ])
+    lines.extend([
+        "",
+        "def __getattr__(name: str) -> object:",
+        "    module_name = _EXPORTS.get(name)",
+        "    if module_name is None:",
+        "        raise AttributeError(f\"module {__name__!r} has no attribute {name!r}\")",
+        "    value = getattr(import_module(module_name), name)",
+        "    globals()[name] = value",
+        "    return value",
+        "",
+    ])
+    return "\n".join(lines)
+
+
+def make_root_init_file(symbol_paths: Iterable[str]) -> None:
+    output_path = GENERATED_SYMBOLS_DIRECTORY / "__init__.py"
+    file_contents = make_root_init_content(symbol_paths)
+    old_contents = output_path.read_text(encoding="utf-8") if output_path.exists() else None
+    if file_contents != old_contents:
+        print("File change detected:", output_path)
+        output_path.write_text(file_contents, encoding="utf-8")
 
 
 def make_python_file_content(resource_type: str, resource_data: dict[str, Any], class_name: str) -> str:

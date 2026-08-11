@@ -1,4 +1,4 @@
-from code_generation import make_python_file_of_model
+from code_generation import make_python_file_of_model, make_root_init_file
 from utils import SYMBOLS_MAP
 from tests.assertions import run_assertions
 
@@ -7,9 +7,9 @@ SYMBOLS_MAP_NO_ANONYMOUS = {key: value for key, value in SYMBOLS_MAP["mcdoc"].it
 for resource_type, resource_data in SYMBOLS_MAP_NO_ANONYMOUS.items():
     make_python_file_of_model(resource_type, resource_data)
 
-run_assertions()
+make_root_init_file(SYMBOLS_MAP_NO_ANONYMOUS)
 
-# TODO: Nice import system, especially for things in data/asserts (So you can do from . import Advancement)
+run_assertions()
 
 # mypy . --strict --exclude generated_symbols
 # coverage run --branch main.py
