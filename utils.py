@@ -9,7 +9,7 @@ if TYPE_CHECKING:
 
 INDENT = 4
 GENERATED_SYMBOLS_DIRECTORY = Path("generated_symbols")
-SAFE_GUARD_JAVA_NUMBERS = False  # Do we annotate, say, ints to have bounds (e.g. <=2147483647), or just mark them as "int" 
+SAFE_GUARD_JAVA_NUMBERS = False  # Do we annotate, say, ints to have bounds (e.g. <=2147483647), or just mark them as "int"
 
 REFETCH_SYMBOLS = False
 REFETCH_VERSIONS = False
@@ -111,7 +111,7 @@ def manage_directory_and_inits(path: Path) -> None:
     """Creates the subfolders required, plus the __init__ files too"""
     path.mkdir(parents=True, exist_ok=True)
     current = path
-    while current != GENERATED_SYMBOLS_DIRECTORY.parent and current != current.parent:
+    while current not in {GENERATED_SYMBOLS_DIRECTORY.parent, current.parent}:
         init_file = current / "__init__.py"
         if not init_file.exists():
             init_file.parent.mkdir(parents=True, exist_ok=True)

@@ -970,9 +970,7 @@ class StructSchema(BaseSchema):
 
     def to_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None = None) -> str:
         value_struct_name = f"{nested_struct_name}ValueStruct" if nested_struct_name is not None else None
-        mapping_alias = self._mapping_alias_annotation(ctx, value_struct_name)
-        if mapping_alias is None:
-            raise TypeError("A non-mapping StructSchema must be materialized before it can be used as an annotation")
+        mapping_alias: str = self._mapping_alias_annotation(ctx, value_struct_name)  # type: ignore[assignment]
         return mapping_alias
 
 
