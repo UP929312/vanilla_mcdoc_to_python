@@ -1,74 +1,57 @@
 import json
-from collections import defaultdict
 from collections.abc import Iterable
 from typing import Any
 
+from context import Import, SingleSymbolContext
 from schema_resolution import SchemaGraph
-from typed_models import KIND_TO_MODEL, TemplateSchema, RenderContext, Import
-from utils import GENERATED_SYMBOLS_DIRECTORY, SYMBOLS_MAP, resource_path_to_python_path, symbol_path_to_import_string_and_name, symbol_path_to_object_name, manage_directory_and_inits
+from typed_models import KIND_TO_MODEL, TemplateSchema
+from utils import GENERATED_SYMBOLS_DIRECTORY, SYMBOLS_MAP, resource_path_to_python_path, symbol_path_to_import_string_and_name, symbol_path_to_object_name, manage_directory_and_inits, write_file_if_changed
 
 
 SCHEMA_GRAPH = SchemaGraph.from_symbol_maps(SYMBOLS_MAP)
 
+EXPORT_SCOPES = {
+    "generated_symbols.data": "::java::data::",
+    "generated_symbols.assets": "::java::assets::",
+}
 
-def make_root_init_content(symbol_paths: Iterable[str]) -> str:
-    exports_by_name: defaultdict[str, list[str]] = defaultdict(list)
+
+def make_init_content(symbol_paths: Iterable[str], included_prefixes: tuple[str, ...]) -> str:
+    exports_by_name: dict[str, list[str]] = {}
     for symbol_path in symbol_paths:
-        if "anonymous" in symbol_path or not symbol_path.startswith(("::java::data::", "::java::assets::")):
+        if not symbol_path.startswith(included_prefixes):
             continue
         module, name = symbol_path_to_import_string_and_name(symbol_path)
+        if name not in exports_by_name:
+            exports_by_name[name] = []
         exports_by_name[name].append(module)
 
-    exports = {
-        name: modules[0]
-        for name, modules in exports_by_name.items()
-        if len(modules) == 1
-    }
+    exports = {name: modules[0] for name, modules in exports_by_name.items() if len(modules) == 1}
     names = sorted(exports)
 
     lines = [
-        '"""Lazy top-level exports for generated data and asset symbols."""',
+        '"""Exports for generated symbols."""',
         "",
-        "from importlib import import_module",
-        "from typing import TYPE_CHECKING",
-        "",
-        "if TYPE_CHECKING:",
-    ]
-    lines.extend(f"    from {exports[name]} import {name}" for name in names)
-    lines.extend([
+        "\n".join(f"from {exports[name]} import {name}" for name in names),
         "",
         "__all__ = [",
         *(f'    "{name}",' for name in names),
         "]",
-    ])
-    lines.extend([
         "",
-        "_EXPORTS = {",
-        *(f'    "{name}": "{exports[name]}",' for name in names),
-        "}",
-        "",
-    ])
-    lines.extend([
-        "",
-        "def __getattr__(name: str) -> object:",
-        "    module_name = _EXPORTS.get(name)",
-        "    if module_name is None:",
-        "        raise AttributeError(f\"module {__name__!r} has no attribute {name!r}\")",
-        "    value = getattr(import_module(module_name), name)",
-        "    globals()[name] = value",
-        "    return value",
-        "",
-    ])
+    ]
     return "\n".join(lines)
 
 
-def make_root_init_file(symbol_paths: Iterable[str]) -> None:
-    output_path = GENERATED_SYMBOLS_DIRECTORY / "__init__.py"
-    file_contents = make_root_init_content(symbol_paths)
-    old_contents = output_path.read_text(encoding="utf-8") if output_path.exists() else None
-    if file_contents != old_contents:
-        print("File change detected:", output_path)
-        output_path.write_text(file_contents, encoding="utf-8")
+def make_init_files(symbol_paths: Iterable[str]) -> None:
+    paths = tuple(symbol_paths)
+    init_files = {GENERATED_SYMBOLS_DIRECTORY / "__init__.py": '"""Generated data and asset symbol packages."""\n'}
+    for package, symbol_prefix in EXPORT_SCOPES.items():
+        relative_package = package.removeprefix(f"{GENERATED_SYMBOLS_DIRECTORY.name}.")
+        output_path = GENERATED_SYMBOLS_DIRECTORY.joinpath(*relative_package.split("."), "__init__.py")
+        init_files[output_path] = make_init_content(paths, (symbol_prefix,))
+
+    for output_path, file_contents in init_files.items():
+        write_file_if_changed(output_path, file_contents)
 
 
 def make_python_file_content(resource_type: str, resource_data: dict[str, Any], class_name: str) -> str:
@@ -76,16 +59,18 @@ def make_python_file_content(resource_type: str, resource_data: dict[str, Any], 
     current_model = class_type(**resource_data).remove_version_data()
 
     signature_lines: list[str] = []
-    ctx = RenderContext(current_symbol_path=resource_type, schema_graph=SCHEMA_GRAPH)
+    ctx = SingleSymbolContext(current_symbol_path=resource_type, schema_graph=SCHEMA_GRAPH)
     body_lines = current_model.to_python_code(class_name, ctx)
 
     # Add TypeVar declarations after rendering so discovered local type params are included.
     if ctx.local_type_params:
         ctx.required_imports.add(Import('typing', 'TypeVar', False, True))
         declared_paths = set(type_param.path for type_param in current_model.type_params) if isinstance(current_model, TemplateSchema) else set()
-        declared_names = sorted(symbol_path_to_object_name(path) for path in declared_paths)
-        discovered_names = sorted(path.split("::")[-1] for path in ctx.local_type_params if path not in declared_paths)
-        for type_name in declared_names + discovered_names:
+        type_names = sorted(
+            {symbol_path_to_object_name(path) for path in declared_paths}
+            | {path.split("::")[-1] for path in ctx.local_type_params if path not in declared_paths}
+        )
+        for type_name in type_names:
             signature_lines.append(f"{type_name} = TypeVar('{type_name}')")
         signature_lines.append("")
 
@@ -112,10 +97,4 @@ def make_python_file_of_model(resource_type: str, resource_data: dict[str, Any])
     output_path = GENERATED_SYMBOLS_DIRECTORY.joinpath(*path.split(".")[1:-1], name).with_suffix(".py")
     manage_directory_and_inits(output_path.parent)
     file_contents = make_python_file_content(resource_type, resource_data, class_name=output_path.stem)
-
-    # Simple change detection:
-    old_exists = output_path.exists()
-    old_contents = output_path.read_text(encoding="utf-8") if old_exists else None
-    if file_contents != old_contents:
-        print("File change detected:", output_path)
-        output_path.write_text(file_contents, encoding="utf-8")
+    write_file_if_changed(output_path, file_contents)

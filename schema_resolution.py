@@ -3,7 +3,7 @@ from typing import Any
 
 from typed_models import (
     BaseSchema, ConcreteSchema, DispatcherSchema, DynamicIndexSchema, IndexedSchema,
-    KIND_TO_MODEL, PairSchema, ReferenceSchema, StringSchema, StructSchema, TemplateSchema,
+    KIND_TO_MODEL, PairSchema, ReferenceSchema, SpreadFieldSchema, StringSchema, StructSchema, TemplateSchema,
 )
 
 
@@ -35,17 +35,33 @@ class SchemaGraph:
         if isinstance(schema, ConcreteSchema):
             if isinstance(schema.child, ReferenceSchema):
                 target = self.symbols.get(schema.child.path)
-                if isinstance(target, TemplateSchema):
-                    arguments = dict(zip(
-                        (parameter.path for parameter in target.type_params),
-                        schema.type_args,
-                        strict=False,
-                    ))
-                    return self.resolve(self._substitute(target.child, arguments))
+                assert isinstance(target, TemplateSchema)
+                arguments = dict(zip(
+                    (parameter.path for parameter in target.type_params),
+                    schema.type_args,
+                    strict=False,
+                ))
+                return self.resolve(self._substitute(target.child, arguments))
             return self.resolve(schema.child)
-        if isinstance(schema, TemplateSchema):
-            return self.resolve(schema.child)
-        return (schema,)
+        return (schema, )
+
+    def is_runtime_class(self, schema: BaseSchema, seen: set[str] | None = None) -> bool:
+        """Whether a schema renders as one class that can be inherited."""
+        if isinstance(schema, ConcreteSchema):
+            resolved = self.resolve(schema)
+            return len(resolved) == 1 and self.is_runtime_class(resolved[0], seen)
+        if isinstance(schema, ReferenceSchema):
+            seen = set() if seen is None else seen
+            target = self.symbols.get(schema.path)
+            return target is None or self.is_runtime_class(target, seen | {schema.path})
+        if not isinstance(schema, StructSchema):
+            return False
+        if schema._mapping_pair() is not None or schema._dispatcher_spread() is not None:
+            return False
+        return all(
+            not isinstance(field, SpreadFieldSchema) or self.is_runtime_class(field.type, seen)
+            for field in schema.fields
+        )
 
     def annotation_candidates(self, schema: DispatcherSchema | IndexedSchema) -> tuple[BaseSchema, ...]:
         """Return every schema that a dispatcher or index can select statically."""
@@ -53,24 +69,23 @@ class SchemaGraph:
             return self._dispatcher_candidates(schema)
         return self._indexed_candidates(schema)
 
+    def instantiate(self, schema: TemplateSchema, arguments: list[BaseSchema]) -> BaseSchema:
+        mapping = dict(zip((parameter.path for parameter in schema.type_params), arguments, strict=False))
+        return self._substitute(schema.child, mapping)
+
     def _dispatcher_candidates(self, schema: DispatcherSchema) -> tuple[BaseSchema, ...]:
         registry = self.dispatchers.get(schema.registry, {})
         candidates: list[BaseSchema] = []
         for index in schema.parallel_indices:
-            if isinstance(index, DynamicIndexSchema) or index.value == "%fallback":
-                candidates.extend(registry.values())
-                continue
-            branch = registry.get(self._normalize_key(index.value), registry.get("%unknown"))
-            if branch is not None:
-                candidates.append(branch)
+            assert isinstance(index, DynamicIndexSchema) or index.value == "%fallback"
+            candidates.extend(registry.values())
         return self._deduplicate(candidates)
 
     def _indexed_candidates(self, schema: IndexedSchema) -> tuple[BaseSchema, ...]:
         candidates: list[BaseSchema] = []
         for branch in self.annotation_candidates(schema.child):
             for resolved in self.resolve(branch):
-                if not isinstance(resolved, StructSchema):
-                    continue
+                assert isinstance(resolved, StructSchema)
                 for index in schema.parallelIndices:
                     fields = (
                         [field for field in resolved.fields if isinstance(field, PairSchema)]

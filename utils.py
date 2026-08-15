@@ -63,10 +63,7 @@ def symbol_path_to_import_string_and_name(path: str) -> tuple[str, str]:
        e.g. ::java::data::worldgen::IntProvider -> data.worldgen.IntProvider & IntProvider
        So we can do things like imports: from generated_symbolds.data.worldgen.IntProvider import IntProvider
     """
-    if path.startswith("::java::"):  # For regular mcdoc stuff
-        *segments, identifier = path.removeprefix('::java::').split('::')
-    else:  # For mcdoc/dispatcher
-        *segments, identifier = path.split(":")
+    *segments, identifier = path.removeprefix('::java::').split('::')
     module = f"{GENERATED_SYMBOLS_DIRECTORY.name}.{'.'.join(segments)}.{identifier}"
     return module, identifier
 
@@ -120,3 +117,10 @@ def manage_directory_and_inits(path: Path) -> None:
             init_file.parent.mkdir(parents=True, exist_ok=True)
             init_file.write_text("\n", encoding="utf-8")
         current = current.parent
+
+
+def write_file_if_changed(path: Path, contents: str) -> None:
+    old_contents = path.read_text(encoding="utf-8") if path.exists() else None
+    if contents != old_contents:
+        print("File change detected:", path)
+        path.write_text(contents, encoding="utf-8")

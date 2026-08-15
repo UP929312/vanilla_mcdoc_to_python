@@ -12,7 +12,3 @@ def run_assertions() -> None:
         generated_file_path = Path(metadata.split("Local link to file: ")[1].split("\n")[0])
         generated_file_contents = generated_file_path.read_text().split(DUMP_DIVIDER)[0].split(CODE_DIVIDER)[1]
         assert generated_file_contents.strip().strip("\n") == expected_code.strip().strip("\n"), f"{generated_file_path} was different!"
-
-
-if __name__ == "__main__":
-    run_assertions()

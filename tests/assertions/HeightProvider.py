@@ -1,6 +1,6 @@
 # ~~~ WHAT ARE WE TESTING ~~~
 
-# Dispatcher spread branches retain their correlated discriminator and fields.
+# Dispatcher spread branches retain their correlated selector value and fields.
 
 # ~~~ FILE CONTENT ~~~
 """
