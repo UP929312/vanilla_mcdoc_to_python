@@ -106,6 +106,7 @@ from generated_symbols.assets.block_state_definition.ModelVariant import ModelVa
 from generated_symbols.assets.block_state_definition.ModelVariantBase import ModelVariantBase
 from generated_symbols.assets.block_state_definition.MultiPartAlternatives import MultiPartAlternatives
 from generated_symbols.assets.block_state_definition.MultiPartAnd import MultiPartAnd
+from generated_symbols.assets.block_state_definition.MultiPartBlockStates import MultiPartBlockStates
 from generated_symbols.assets.block_state_definition.MultiPartCondition import MultiPartCondition
 from generated_symbols.assets.model.MultipleAxesModelElementRotation import MultipleAxesModelElementRotation
 from generated_symbols.assets.texture_meta.NineSlice import NineSlice
@@ -290,6 +291,7 @@ __all__ = [
     "ModelVariantBase",
     "MultiPartAlternatives",
     "MultiPartAnd",
+    "MultiPartBlockStates",
     "MultiPartCondition",
     "MultipleAxesModelElementRotation",
     "NineSlice",

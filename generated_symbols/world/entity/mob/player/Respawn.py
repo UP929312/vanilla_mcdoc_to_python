@@ -15,7 +15,7 @@ class Respawn:
     yaw: float  # The Y-rotation of the player's respawn point
     pitch: float  # The X-rotation of the player's respawn point
     forced: bool | None = None  # Whether the player must spawn at the respawn point.
-    dimension: Annotated[str, IdSpec(registry='dimension')]  # Dimension of the player's respawn point. Defaults to overworl.
+    dimension: Annotated[str, IdSpec(registry='dimension')]  # Dimension of the player's respawn point.
 
 
 # ~~~ MODEL DUMP ~~~
@@ -145,7 +145,7 @@ _ = {
                             "fields": [
                                 {
                                     "kind": "pair",
-                                    "desc": "Dimension of the player's respawn point. Defaults to overworl.",
+                                    "desc": "Dimension of the player's respawn point.",
                                     "key": "dimension",
                                     "type": {
                                         "kind": "string",

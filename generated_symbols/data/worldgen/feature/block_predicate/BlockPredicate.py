@@ -83,12 +83,20 @@ class BlockPredicateUnobstructed:
 
 
 @dataclass(kw_only=True)
+class BlockPredicateVolumeMatch:
+    type: Literal['minecraft:volume_match']
+    min: tuple[Annotated[int, 'Range | `-16`-`16` | both inclusive'], Annotated[int, 'Range | `-16`-`16` | both inclusive'], Annotated[int, 'Range | `-16`-`16` | both inclusive']]
+    max: tuple[Annotated[int, 'Range | `-16`-`16` | both inclusive'], Annotated[int, 'Range | `-16`-`16` | both inclusive'], Annotated[int, 'Range | `-16`-`16` | both inclusive']]
+    match: BlockPredicate
+
+
+@dataclass(kw_only=True)
 class BlockPredicateWouldSurvive(PredicateOffset):
     type: Literal['minecraft:would_survive']
     state: BlockState
 
 
-type BlockPredicate = BlockPredicateAllOf | BlockPredicateAnyOf | BlockPredicateHasSturdyFace | BlockPredicateHeightRange | BlockPredicateInsideWorldBounds | BlockPredicateMatchingBiomes | BlockPredicateMatchingBlockTag | BlockPredicateMatchingBlocks | BlockPredicateMatchingFluids | BlockPredicateNot | BlockPredicateUnobstructed | BlockPredicateWouldSurvive
+type BlockPredicate = BlockPredicateAllOf | BlockPredicateAnyOf | BlockPredicateHasSturdyFace | BlockPredicateHeightRange | BlockPredicateInsideWorldBounds | BlockPredicateMatchingBiomes | BlockPredicateMatchingBlockTag | BlockPredicateMatchingBlocks | BlockPredicateMatchingFluids | BlockPredicateNot | BlockPredicateUnobstructed | BlockPredicateVolumeMatch | BlockPredicateWouldSurvive
 
 
 # ~~~ MODEL DUMP ~~~

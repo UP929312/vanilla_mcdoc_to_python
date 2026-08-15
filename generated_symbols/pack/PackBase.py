@@ -15,10 +15,10 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class PackBase:
     description: Text
-    pack_format: int | None = None
-    supported_formats: InclusiveRange[int] | int | None = None
-    min_format: PackFormat | None = None
-    max_format: PackFormat | None = None
+    pack_format: int | None = None  # Optional since 1.21.9. Define it if you want older versions to recognize your pack with a “made for a newer version” warning message.  Because of backwards compatibility, only the main pack format can be used here. Minor formats can only be specified in min and max format.
+    supported_formats: InclusiveRange[int] | int | None = None  # Must not be specified in case min_format indicates a format version for 1.21.9 and later.
+    min_format: PackFormat | None = None  # The minimun format that is supported. To specify a minor version, use a list of two integers.
+    max_format: PackFormat | None = None  # The maximum format that is supported. To specify a minor version, use a list of two integers.
 
 
 # ~~~ MODEL DUMP ~~~
@@ -36,6 +36,7 @@ _ = {
             },
             {
                 "kind": "pair",
+                "desc": "Optional since 1.21.9. Define it if you want older versions to recognize your pack with\na \u201cmade for a newer version\u201d warning message.\n\nBecause of backwards compatibility, only the main pack format can\nbe used here. Minor formats can only be specified in min and max format.",
                 "key": "pack_format",
                 "type": {
                     "kind": "int",
@@ -61,6 +62,7 @@ _ = {
                         }
                     }
                 ],
+                "desc": "Must not be specified in case min_format indicates a format version for 1.21.9 and\nlater.",
                 "key": "supported_formats",
                 "type": {
                     "kind": "concrete",
@@ -95,6 +97,7 @@ _ = {
                         }
                     }
                 ],
+                "desc": "The minimun format that is supported. To specify a minor version, use a list of two\nintegers.",
                 "key": "min_format",
                 "type": {
                     "kind": "reference",
@@ -121,6 +124,7 @@ _ = {
                         }
                     }
                 ],
+                "desc": "The maximum format that is supported. To specify a minor version, use a list of two\nintegers.",
                 "key": "max_format",
                 "type": {
                     "kind": "reference",

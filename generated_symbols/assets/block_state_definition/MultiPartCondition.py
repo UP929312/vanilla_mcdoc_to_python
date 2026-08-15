@@ -11,10 +11,15 @@ class MultiPartConditionStruct1:
     OR: list[MultiPartCondition]
 
 
-type MultiPartConditionStruct2 = dict[str, str]
+@dataclass(kw_only=True)
+class MultiPartConditionStruct2:
+    AND: list[MultiPartCondition]
 
 
-type MultiPartCondition = MultiPartConditionStruct1 | MultiPartConditionStruct2
+type MultiPartConditionStruct3 = dict[str, str]
+
+
+type MultiPartCondition = MultiPartConditionStruct1 | MultiPartConditionStruct2 | MultiPartConditionStruct3
 
 
 # ~~~ MODEL DUMP ~~~
@@ -28,6 +33,22 @@ _ = {
                     {
                         "kind": "pair",
                         "key": "OR",
+                        "type": {
+                            "kind": "list",
+                            "item": {
+                                "kind": "reference",
+                                "path": "::java::assets::block_state_definition::MultiPartCondition"
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "kind": "struct",
+                "fields": [
+                    {
+                        "kind": "pair",
+                        "key": "AND",
                         "type": {
                             "kind": "list",
                             "item": {

@@ -596,6 +596,7 @@ class ConfiguredFeatureSteppedColumnCluster:
 class ConfiguredFeatureTemplate:
     type: Literal['minecraft:template']
     templates: WeightedList[TemplateEntry]
+    processors: ProcessorListRef | None = None
 
 
 @dataclass(kw_only=True)

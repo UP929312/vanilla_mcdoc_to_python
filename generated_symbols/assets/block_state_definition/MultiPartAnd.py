@@ -3,9 +3,16 @@ Generated from symbols.json for ::java::assets::block_state_definition::MultiPar
 Local link to file: generated_symbols/assets/block_state_definition/MultiPartAnd.py
 """
 # ~~~ CODE ~~~
+from dataclasses import dataclass
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from generated_symbols.assets.block_state_definition.MultiPartCondition import MultiPartCondition
 
 
-type MultiPartAnd = dict[str, str]
+@dataclass(kw_only=True)
+class MultiPartAnd:
+    AND: list[MultiPartCondition]
 
 
 # ~~~ MODEL DUMP ~~~
@@ -15,11 +22,13 @@ _ = {
         "fields": [
             {
                 "kind": "pair",
-                "key": {
-                    "kind": "string"
-                },
+                "key": "AND",
                 "type": {
-                    "kind": "string"
+                    "kind": "list",
+                    "item": {
+                        "kind": "reference",
+                        "path": "::java::assets::block_state_definition::MultiPartCondition"
+                    }
                 }
             }
         ]

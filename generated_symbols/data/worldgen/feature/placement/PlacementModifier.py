@@ -113,6 +113,12 @@ class PlacementModifierRandomOffset:
 
 
 @dataclass(kw_only=True)
+class PlacementModifierRandomlySelected:
+    type: Literal['minecraft:randomly_selected']
+    placements: Annotated[list[PlacementModifier], 'Length = 1 (inclusive) and above']
+
+
+@dataclass(kw_only=True)
 class PlacementModifierRarityFilter:
     type: Literal['minecraft:rarity_filter']
     chance: Annotated[int, 'Range | Min `0` and above | inclusive']
@@ -132,7 +138,7 @@ class PlacementModifierSurfaceWaterDepthFilter:
     max_water_depth: int
 
 
-type PlacementModifier = PlacementModifierBlockPredicateFilter | PlacementModifierCarvingMask | PlacementModifierCount | PlacementModifierCountOnEveryLayer | PlacementModifierCuboid | PlacementModifierEnvironmentScan | PlacementModifierFixedPlacement | PlacementModifierHeightRange | PlacementModifierHeightmap | PlacementModifierNoiseBasedCount | PlacementModifierNoiseThresholdCount | PlacementModifierOffset | PlacementModifierRandomChance | PlacementModifierRandomOffset | PlacementModifierRarityFilter | PlacementModifierSurfaceRelativeThresholdFilter | PlacementModifierSurfaceWaterDepthFilter
+type PlacementModifier = PlacementModifierBlockPredicateFilter | PlacementModifierCarvingMask | PlacementModifierCount | PlacementModifierCountOnEveryLayer | PlacementModifierCuboid | PlacementModifierEnvironmentScan | PlacementModifierFixedPlacement | PlacementModifierHeightRange | PlacementModifierHeightmap | PlacementModifierNoiseBasedCount | PlacementModifierNoiseThresholdCount | PlacementModifierOffset | PlacementModifierRandomChance | PlacementModifierRandomOffset | PlacementModifierRandomlySelected | PlacementModifierRarityFilter | PlacementModifierSurfaceRelativeThresholdFilter | PlacementModifierSurfaceWaterDepthFilter
 
 
 # ~~~ MODEL DUMP ~~~

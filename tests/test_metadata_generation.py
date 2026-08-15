@@ -107,10 +107,11 @@ class TestDispatcherSpreadGeneration:
 
         assert "class AdvancementCriterionInventoryChanged:" in content
         assert "trigger: Literal['minecraft:inventory_changed']" in content
-        assert "conditions: InventoryChanged | None = None" in content
+        assert "class ConditionsStruct21(PlayerConditions):" in content
+        assert "conditions: ConditionsStruct21 | None = None" in content
         assert "class AdvancementCriterionTick:" in content
         assert "trigger: Literal['minecraft:tick']" in content
-        assert "conditions: TriggerBase | None = None" in content
+        assert "conditions: PlayerConditions | None = None" in content
         assert "type AdvancementCriterion = AdvancementCriterionAllayDropItemOnBlock |" in content
 
     def test_dynamic_map_branch_does_not_break_distribution(self) -> None:
@@ -159,6 +160,14 @@ class TestRootExportGeneration:
 
 
 class TestRuntimeImportGeneration:
+    def test_concrete_struct_type_argument_is_materialized(self) -> None:
+        path = "::java::data::advancement::trigger::AnyBlockInteractionTrigger"
+        content = generated_body(path, SYMBOLS_MAP["mcdoc"][path], "AnyBlockInteractionTrigger")
+
+        assert "class AnyBlockInteractionTriggerTypeArg(PlayerConditions):" in content
+        assert "location: AdvancementLocationPredicate | None = None" in content
+        assert "AnyBlockInteractionTrigger = AllOptional[AnyBlockInteractionTriggerTypeArg]" in content
+
     def test_dataclass_fields_preserve_schema_order(self) -> None:
         path = "::java::data::advancement::Advancement"
         content = generated_body(path, SYMBOLS_MAP["mcdoc"][path], "Advancement")

@@ -7,9 +7,10 @@ from generated_symbols.data.advancement.Advancement import Advancement
 from generated_symbols.data.advancement.AdvancementCriteriaMap import AdvancementCriteriaMap
 from generated_symbols.data.advancement.AdvancementCriterion import AdvancementCriterion
 from generated_symbols.data.advancement.AdvancementDisplay import AdvancementDisplay
+from generated_symbols.data.advancement.trigger.AdvancementEntityPredicate import AdvancementEntityPredicate
 from generated_symbols.data.advancement.AdvancementFrame import AdvancementFrame
 from generated_symbols.data.advancement.AdvancementIcon import AdvancementIcon
-from generated_symbols.data.advancement.trigger.AdvancementPredicateRef import AdvancementPredicateRef
+from generated_symbols.data.advancement.trigger.AdvancementLocationPredicate import AdvancementLocationPredicate
 from generated_symbols.data.advancement.AdvancementRewards import AdvancementRewards
 from generated_symbols.data.dialog.AfterAction import AfterAction
 from generated_symbols.data.loot.condition.AllOf import AllOf
@@ -17,13 +18,13 @@ from generated_symbols.data.enchantment.effect.AllOfEffectValue import AllOfEffe
 from generated_symbols.data.enchantment.effect.AllOfEntityEffect import AllOfEntityEffect
 from generated_symbols.data.enchantment.effect.AllOfLocationBasedEffect import AllOfLocationBasedEffect
 from generated_symbols.data.gametest.test_environment.AllOffTestEnvironment import AllOffTestEnvironment
-from generated_symbols.data.advancement.trigger.AllayDropItemOnBlock import AllayDropItemOnBlock
+from generated_symbols.data.advancement.trigger.AllOptional import AllOptional
 from generated_symbols.data.worldgen.feature.tree.AlterGroundTreeDecorator import AlterGroundTreeDecorator
 from generated_symbols.data.loot.condition.Alternative import Alternative
 from generated_symbols.data.worldgen.attribute.AmbientParticle import AmbientParticle
 from generated_symbols.data.worldgen.attribute.AmbientSounds import AmbientSounds
 from generated_symbols.data.enchantment.effect_component.AmmoUseEnchantmentEffect import AmmoUseEnchantmentEffect
-from generated_symbols.data.advancement.trigger.AnyBlockUse import AnyBlockUse
+from generated_symbols.data.advancement.trigger.AnyBlockInteractionTrigger import AnyBlockInteractionTrigger
 from generated_symbols.data.loot.condition.AnyOf import AnyOf
 from generated_symbols.data.worldgen.processor_list.AppendLoot import AppendLoot
 from generated_symbols.data.worldgen.processor_list.AppendStatic import AppendStatic
@@ -49,7 +50,7 @@ from generated_symbols.data.loot.function.BannerPatternLayer import BannerPatter
 from generated_symbols.data.worldgen.feature.block_state_provider.BaseNoiseProvider import BaseNoiseProvider
 from generated_symbols.data.worldgen.attribute.BedRule import BedRule
 from generated_symbols.data.worldgen.attribute.BedRuleType import BedRuleType
-from generated_symbols.data.advancement.trigger.BeeNestDestroyed import BeeNestDestroyed
+from generated_symbols.data.advancement.trigger.BeeNestDestroyedTrigger import BeeNestDestroyedTrigger
 from generated_symbols.data.worldgen.feature.tree.BeehiveTreeDecorator import BeehiveTreeDecorator
 from generated_symbols.data.worldgen.feature.tree.BendingTrunkPlacer import BendingTrunkPlacer
 from generated_symbols.data.util.BinomialIntGenerator import BinomialIntGenerator
@@ -85,6 +86,7 @@ from generated_symbols.data.worldgen.feature.placement.BlockPredicateFilter impo
 from generated_symbols.data.advancement.predicate.BlockPredicateState import BlockPredicateState
 from generated_symbols.data.worldgen.processor_list.BlockRot import BlockRot
 from generated_symbols.data.worldgen.material_rule.BlockRule import BlockRule
+from generated_symbols.data.advancement.trigger.BlockStateConditions import BlockStateConditions
 from generated_symbols.data.worldgen.processor_list.BlockStateMatch import BlockStateMatch
 from generated_symbols.data.loot.condition.BlockStateProperty import BlockStateProperty
 from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
@@ -97,8 +99,8 @@ from generated_symbols.data.dialog.input.BooleanInput import BooleanInput
 from generated_symbols.data.worldgen.attribute.modifier.BooleanModifierType import BooleanModifierType
 from generated_symbols.data.worldgen.BottomBiasHeightProvider import BottomBiasHeightProvider
 from generated_symbols.data.worldgen.structure.BoundingBox import BoundingBox
-from generated_symbols.data.advancement.trigger.BredAnimals import BredAnimals
-from generated_symbols.data.advancement.trigger.BrewedPotion import BrewedPotion
+from generated_symbols.data.advancement.trigger.BredAnimalsTrigger import BredAnimalsTrigger
+from generated_symbols.data.advancement.trigger.BrewedPotionTrigger import BrewedPotionTrigger
 from generated_symbols.data.recipe.Brewing import Brewing
 from generated_symbols.data.worldgen.structure.BuriedTreasure import BuriedTreasure
 from generated_symbols.data.dialog.Button import Button
@@ -122,9 +124,9 @@ from generated_symbols.data.variants.cat.CatSounds import CatSounds
 from generated_symbols.data.variants.cat.CatVariant import CatVariant
 from generated_symbols.data.worldgen.carver.CaveConfig import CaveConfig
 from generated_symbols.data.worldgen.feature.decorator.ChanceConfig import ChanceConfig
+from generated_symbols.data.advancement.trigger.ChangeDimensionTrigger import ChangeDimensionTrigger
 from generated_symbols.data.enchantment.effect.ChangeItemDamageEffect import ChangeItemDamageEffect
-from generated_symbols.data.advancement.trigger.ChangedDimension import ChangedDimension
-from generated_symbols.data.advancement.trigger.ChanneledLightning import ChanneledLightning
+from generated_symbols.data.advancement.trigger.ChanneledLightningTrigger import ChanneledLightningTrigger
 from generated_symbols.data.chat_type.ChatDecoration import ChatDecoration
 from generated_symbols.data.chat_type.ChatDecorationParameter import ChatDecorationParameter
 from generated_symbols.data.chat_type.ChatType import ChatType
@@ -149,12 +151,12 @@ from generated_symbols.data.worldgen.attribute.modifier.ColorModifierType import
 from generated_symbols.data.worldgen.feature.ColumnPlacer import ColumnPlacer
 from generated_symbols.data.worldgen.feature.ColumnsConfig import ColumnsConfig
 from generated_symbols.data.worldgen.feature.block_predicate.CombiningPredicate import CombiningPredicate
-from generated_symbols.data.advancement.trigger.CompositeEntity import CompositeEntity
 from generated_symbols.data.worldgen.processor_list.CompositeMatch import CompositeMatch
 from generated_symbols.data.loot.CompositePoolEntry import CompositePoolEntry
 from generated_symbols.data.worldgen.structure_set.ConcentricRingsPlacement import ConcentricRingsPlacement
 from generated_symbols.data.worldgen.material_rule.ConditionRule import ConditionRule
 from generated_symbols.data.number_provider.ConditionalNumberProvider import ConditionalNumberProvider
+from generated_symbols.data.loot.function.Conditions import Conditions
 from generated_symbols.data.worldgen.surface_builder.Config import Config
 from generated_symbols.data.worldgen.carver.ConfiguredCarver import ConfiguredCarver
 from generated_symbols.data.worldgen.feature.decorator.ConfiguredDecorator import ConfiguredDecorator
@@ -168,8 +170,8 @@ from generated_symbols.data.worldgen.ConstantHeightProvider import ConstantHeigh
 from generated_symbols.data.util.ConstantIntGenerator import ConstantIntGenerator
 from generated_symbols.data.worldgen.ConstantIntProvider import ConstantIntProvider
 from generated_symbols.data.number_provider.ConstantNumberProvider import ConstantNumberProvider
-from generated_symbols.data.advancement.trigger.ConstructBeacon import ConstructBeacon
-from generated_symbols.data.advancement.trigger.ConsumeItem import ConsumeItem
+from generated_symbols.data.advancement.trigger.ConstructBeaconTrigger import ConstructBeaconTrigger
+from generated_symbols.data.advancement.trigger.ConsumeItemTrigger import ConsumeItemTrigger
 from generated_symbols.data.sulfur_cube_archetype.ContactDamage import ContactDamage
 from generated_symbols.data.loot.function.ContainerComponents import ContainerComponents
 from generated_symbols.data.slot_source.ContentsSlotSource import ContentsSlotSource
@@ -216,7 +218,7 @@ from generated_symbols.data.enchantment.effect_component.CrossbowChargeSoundsEnc
 from generated_symbols.data.timeline.CubicBezierEase import CubicBezierEase
 from generated_symbols.data.worldgen.density_function.CubicSpline import CubicSpline
 from generated_symbols.data.worldgen.feature.placement.CuboidModifier import CuboidModifier
-from generated_symbols.data.advancement.trigger.CuredZombieVillager import CuredZombieVillager
+from generated_symbols.data.advancement.trigger.CuredZombieVillagerTrigger import CuredZombieVillagerTrigger
 from generated_symbols.data.loot.function.CustomModelDataColors import CustomModelDataColors
 from generated_symbols.data.loot.function.CustomModelDataFlags import CustomModelDataFlags
 from generated_symbols.data.loot.function.CustomModelDataFloats import CustomModelDataFloats
@@ -237,7 +239,7 @@ from generated_symbols.data.damage_type.DamageType import DamageType
 from generated_symbols.data.damage_type.DeathMessageType import DeathMessageType
 from generated_symbols.data.decorated_pot_pattern.DecoratedPotPattern import DecoratedPotPattern
 from generated_symbols.data.worldgen.DecorationStep import DecorationStep
-from generated_symbols.data.advancement.trigger.DefaultBlockUse import DefaultBlockUse
+from generated_symbols.data.advancement.trigger.DefaultBlockInteractionTrigger import DefaultBlockInteractionTrigger
 from generated_symbols.data.worldgen.feature.DeltaConfig import DeltaConfig
 from generated_symbols.data.worldgen.density_function.DensityFunction import DensityFunction
 from generated_symbols.data.worldgen.density_function.DensityFunctionRef import DensityFunctionRef
@@ -260,13 +262,14 @@ from generated_symbols.data.worldgen.feature.DiskConfig import DiskConfig
 from generated_symbols.data.worldgen.density_function.DistanceMetric import DistanceMetric
 from generated_symbols.data.advancement.predicate.DistancePredicate import DistancePredicate
 from generated_symbols.data.worldgen.density_function.DistanceToPoint import DistanceToPoint
+from generated_symbols.data.advancement.trigger.DistanceTrigger import DistanceTrigger
 from generated_symbols.data.worldgen.feature.block_state_provider.DualNoiseProvider import DualNoiseProvider
 from generated_symbols.data.dialog.action.DynamicCustomAction import DynamicCustomAction
 from generated_symbols.data.loot.DynamicDrops import DynamicDrops
 from generated_symbols.data.loot.DynamicPoolEntry import DynamicPoolEntry
 from generated_symbols.data.dialog.action.DynamicRunCommand import DynamicRunCommand
 from generated_symbols.data.timeline.EasingType import EasingType
-from generated_symbols.data.advancement.trigger.EffectsChanged import EffectsChanged
+from generated_symbols.data.advancement.trigger.EffectsChangedTrigger import EffectsChangedTrigger
 from generated_symbols.data.worldgen.template_pool.Element import Element
 from generated_symbols.data.worldgen.template_pool.ElementBase import ElementBase
 from generated_symbols.data.worldgen.feature.EmeraldOreConfig import EmeraldOreConfig
@@ -274,7 +277,7 @@ from generated_symbols.data.loot.function.EnchantRandomly import EnchantRandomly
 from generated_symbols.data.loot.function.EnchantWithLevels import EnchantWithLevels
 from generated_symbols.data.loot.function.EnchantedCountBase import EnchantedCountBase
 from generated_symbols.data.loot.function.EnchantedCountIncrease import EnchantedCountIncrease
-from generated_symbols.data.advancement.trigger.EnchantedItem import EnchantedItem
+from generated_symbols.data.advancement.trigger.EnchantedItemTrigger import EnchantedItemTrigger
 from generated_symbols.data.enchantment.Enchantment import Enchantment
 from generated_symbols.data.loot.condition.EnchantmentActiveCheck import EnchantmentActiveCheck
 from generated_symbols.data.enchantment.EnchantmentCost import EnchantmentCost
@@ -287,13 +290,12 @@ from generated_symbols.data.worldgen.feature.EndGatewayConfig import EndGatewayC
 from generated_symbols.data.worldgen.feature.EndPodiumConfig import EndPodiumConfig
 from generated_symbols.data.worldgen.feature.EndSpike import EndSpike
 from generated_symbols.data.worldgen.feature.EndSpikeConfig import EndSpikeConfig
-from generated_symbols.data.advancement.trigger.EnterBlock import EnterBlock
+from generated_symbols.data.advancement.trigger.EnterBlockTrigger import EnterBlockTrigger
 from generated_symbols.data.enchantment.effect.EntityEffect import EntityEffect
 from generated_symbols.data.advancement.predicate.EntityEffectsPredicate import EntityEffectsPredicate
 from generated_symbols.data.advancement.predicate.EntityEquipmentPredicate import EntityEquipmentPredicate
 from generated_symbols.data.advancement.predicate.EntityFlagsPredicate import EntityFlagsPredicate
-from generated_symbols.data.advancement.trigger.EntityHurtPlayer import EntityHurtPlayer
-from generated_symbols.data.advancement.trigger.EntityKilledPlayer import EntityKilledPlayer
+from generated_symbols.data.advancement.trigger.EntityHurtPlayerTrigger import EntityHurtPlayerTrigger
 from generated_symbols.data.advancement.predicate.EntityPredicate import EntityPredicate
 from generated_symbols.data.loot.condition.EntityProperties import EntityProperties
 from generated_symbols.data.loot.condition.EntityScores import EntityScores
@@ -317,15 +319,14 @@ from generated_symbols.data.sulfur_cube_archetype.ExplosionData import Explosion
 from generated_symbols.data.enchantment.effect.ExplosionParticleInfo import ExplosionParticleInfo
 from generated_symbols.data.enchantment.level_based_value.ExponentLevelValue import ExponentLevelValue
 from generated_symbols.data.enchantment.effect.ExponentialEffectValue import ExponentialEffectValue
-from generated_symbols.data.advancement.trigger.FallAfterExplosion import FallAfterExplosion
-from generated_symbols.data.advancement.trigger.FallFromHeight import FallFromHeight
+from generated_symbols.data.advancement.trigger.FallAfterExplosionTrigger import FallAfterExplosionTrigger
 from generated_symbols.data.worldgen.feature.tree.FallenTreeConfig import FallenTreeConfig
 from generated_symbols.data.worldgen.template_pool.FeatureElement import FeatureElement
 from generated_symbols.data.worldgen.feature.FeatureRef import FeatureRef
 from generated_symbols.data.worldgen.feature.tree.FeatureSize import FeatureSize
 from generated_symbols.data.worldgen.feature.FillLayerConfig import FillLayerConfig
 from generated_symbols.data.loot.function.FillPlayerHead import FillPlayerHead
-from generated_symbols.data.advancement.trigger.FilledBucket import FilledBucket
+from generated_symbols.data.advancement.trigger.FilledBucketTrigger import FilledBucketTrigger
 from generated_symbols.data.slot_source.FilterSlotSource import FilterSlotSource
 from generated_symbols.data.loot.function.Filtered import Filtered
 from generated_symbols.data.worldgen.density_function.FindTopSurface import FindTopSurface
@@ -333,7 +334,7 @@ from generated_symbols.data.loot.function.FireworkExplosions import FireworkExpl
 from generated_symbols.data.recipe.FireworkShapeIngredients import FireworkShapeIngredients
 from generated_symbols.data.advancement.predicate.FishingHookPredicate import FishingHookPredicate
 from generated_symbols.data.enchantment.effect_component.FishingLuckBonusEnchantmentEffect import FishingLuckBonusEnchantmentEffect
-from generated_symbols.data.advancement.trigger.FishingRodHooked import FishingRodHooked
+from generated_symbols.data.advancement.trigger.FishingRodHookedTrigger import FishingRodHookedTrigger
 from generated_symbols.data.enchantment.effect_component.FishingTimeReductionEnchantmentEffect import FishingTimeReductionEnchantmentEffect
 from generated_symbols.data.worldgen.dimension.biome_source.Fixed import Fixed
 from generated_symbols.data.worldgen.feature.placement.FixedPlacementModifier import FixedPlacementModifier
@@ -384,12 +385,12 @@ from generated_symbols.data.worldgen.feature.decorator.HeightmapConfig import He
 from generated_symbols.data.worldgen.feature.placement.HeightmapModifier import HeightmapModifier
 from generated_symbols.data.worldgen.HeightmapType import HeightmapType
 from generated_symbols.data.enchantment.effect_component.HitBlockEnchantmentEffect import HitBlockEnchantmentEffect
-from generated_symbols.data.advancement.trigger.HoneyHarvestedBlock import HoneyHarvestedBlock
 from generated_symbols.data.advancement.predicate.HorsePredicate import HorsePredicate
 from generated_symbols.data.worldgen.feature.HugeFungusConfig import HugeFungusConfig
 from generated_symbols.data.worldgen.feature.HugeMushroomConfig import HugeMushroomConfig
 from generated_symbols.data.worldgen.feature.IcebergConfig import IcebergConfig
 from generated_symbols.data.enchantment.effect.IgniteEntityEffect import IgniteEntityEffect
+from generated_symbols.data.advancement.trigger.ImpossibleTrigger import ImpossibleTrigger
 from generated_symbols.data.recipe.Ingredient import Ingredient
 from generated_symbols.data.recipe.IngredientItem import IngredientItem
 from generated_symbols.data.recipe.IngredientTag import IngredientTag
@@ -403,27 +404,27 @@ from generated_symbols.data.gametest.test_environment.IntGameRule import IntGame
 from generated_symbols.data.util.IntLimiter import IntLimiter
 from generated_symbols.data.worldgen.IntProvider import IntProvider
 from generated_symbols.data.util.IntRange import IntRange
-from generated_symbols.data.advancement.trigger.InventoryChanged import InventoryChanged
+from generated_symbols.data.advancement.trigger.InventoryChangeTrigger import InventoryChangeTrigger
 from generated_symbols.data.advancement.trigger.InventoryChangedSlots import InventoryChangedSlots
 from generated_symbols.data.loot.condition.Inverted import Inverted
 from generated_symbols.data.worldgen.processor_list.InvertedMatch import InvertedMatch
 from generated_symbols.data.worldgen.density_function.InvervalSelect import InvervalSelect
 from generated_symbols.data.dialog.body.ItemBody import ItemBody
 from generated_symbols.data.enchantment.effect_component.ItemDamageEnchantmentEffect import ItemDamageEnchantmentEffect
-from generated_symbols.data.advancement.trigger.ItemDurabilityChanged import ItemDurabilityChanged
+from generated_symbols.data.advancement.trigger.ItemDurabilityTrigger import ItemDurabilityTrigger
 from generated_symbols.data.item_modifier.ItemModifier import ItemModifier
 from generated_symbols.data.loot.ItemPoolEntry import ItemPoolEntry
 from generated_symbols.data.advancement.predicate.ItemPredicate import ItemPredicate
 from generated_symbols.data.recipe.ItemResult import ItemResult
 from generated_symbols.data.loot.ItemStackTarget import ItemStackTarget
-from generated_symbols.data.advancement.trigger.ItemUsedOnBlock import ItemUsedOnBlock
+from generated_symbols.data.advancement.trigger.ItemUesdOnLocationConditions import ItemUesdOnLocationConditions
+from generated_symbols.data.advancement.trigger.ItemUsedOnLocationTrigger import ItemUsedOnLocationTrigger
 from generated_symbols.data.worldgen.structure.Jigsaw import Jigsaw
 from generated_symbols.data.worldgen.structure.JigsawDistanceLimits import JigsawDistanceLimits
 from generated_symbols.data.variants.jukebox_song.JukeboxSong import JukeboxSong
-from generated_symbols.data.advancement.trigger.KillMobNearSculkCatalyst import KillMobNearSculkCatalyst
-from generated_symbols.data.advancement.trigger.KilledByArrow import KilledByArrow
-from generated_symbols.data.advancement.trigger.KilledByCrossbow import KilledByCrossbow
+from generated_symbols.data.advancement.trigger.KilledByArrowTrigger import KilledByArrowTrigger
 from generated_symbols.data.loot.condition.KilledByPlayer import KilledByPlayer
+from generated_symbols.data.advancement.trigger.KilledTrigger import KilledTrigger
 from generated_symbols.data.enchantment.effect_component.KnockbackEnchantmentEffect import KnockbackEnchantmentEffect
 from generated_symbols.data.sulfur_cube_archetype.KnockbackModifiers import KnockbackModifiers
 from generated_symbols.data.worldgen.feature.LakeConfig import LakeConfig
@@ -432,9 +433,9 @@ from generated_symbols.data.worldgen.feature.tree.LeaveVineTreeDecorator import 
 from generated_symbols.data.loot.function.LegacyExplorationMapDestination import LegacyExplorationMapDestination
 from generated_symbols.data.worldgen.density_function.Lerp import Lerp
 from generated_symbols.data.enchantment.level_based_value.LevelBasedValueMap import LevelBasedValueMap
-from generated_symbols.data.advancement.trigger.Levitation import Levitation
+from generated_symbols.data.advancement.trigger.LevitationTrigger import LevitationTrigger
 from generated_symbols.data.advancement.predicate.LightningBoltPredicate import LightningBoltPredicate
-from generated_symbols.data.advancement.trigger.LightningStrike import LightningStrike
+from generated_symbols.data.advancement.trigger.LightningStrikeTrigger import LightningStrikeTrigger
 from generated_symbols.data.loot.function.LimitCount import LimitCount
 from generated_symbols.data.slot_source.LimitCountSlotSource import LimitCountSlotSource
 from generated_symbols.data.enchantment.level_based_value.LinearLevelValue import LinearLevelValue
@@ -454,6 +455,7 @@ from generated_symbols.data.loot.condition.LocationCheck import LocationCheck
 from generated_symbols.data.advancement.predicate.LocationPredicate import LocationPredicate
 from generated_symbols.data.advancement.predicate.LocationPredicateLight import LocationPredicateLight
 from generated_symbols.data.advancement.predicate.LocationPredicatePosition import LocationPredicatePosition
+from generated_symbols.data.advancement.trigger.LocationTrigger import LocationTrigger
 from generated_symbols.data.enchantment.level_based_value.LookupLevelValue import LookupLevelValue
 from generated_symbols.data.loot.LootConditionType import LootConditionType
 from generated_symbols.data.loot.LootContextParamSets import LootContextParamSets
@@ -466,6 +468,7 @@ from generated_symbols.data.loot.LootTable import LootTable
 from generated_symbols.data.loot.LootTableListRef import LootTableListRef
 from generated_symbols.data.loot.LootTablePoolEntry import LootTablePoolEntry
 from generated_symbols.data.loot.LootTableRef import LootTableRef
+from generated_symbols.data.advancement.trigger.LootTableTrigger import LootTableTrigger
 from generated_symbols.data.loot.function.LootingEnchant import LootingEnchant
 from generated_symbols.data.worldgen.feature.tree.MangroveRootPlacement import MangroveRootPlacement
 from generated_symbols.data.worldgen.feature.tree.MangroveRootPlacer import MangroveRootPlacer
@@ -515,7 +518,7 @@ from generated_symbols.data.util.NbtProvider import NbtProvider
 from generated_symbols.data.util.NbtProviderSource import NbtProviderSource
 from generated_symbols.data.worldgen.feature.NetherForestVegetationConfig import NetherForestVegetationConfig
 from generated_symbols.data.worldgen.structure.NetherFossil import NetherFossil
-from generated_symbols.data.advancement.trigger.NetherTravel import NetherTravel
+from generated_symbols.data.advancement.trigger.NetherTravelTrigger import NetherTravelTrigger
 from generated_symbols.data.worldgen.feature.NetherrackReplaceBlobsConfig import NetherrackReplaceBlobsConfig
 from generated_symbols.data.worldgen.feature.placement.NoiseBasedCountModifier import NoiseBasedCountModifier
 from generated_symbols.data.worldgen.noise_settings.NoiseGeneratorFlags import NoiseGeneratorFlags
@@ -563,15 +566,18 @@ from generated_symbols.data.advancement.predicate.PaintingPredicate import Paint
 from generated_symbols.data.variants.painting.PaintingVariant import PaintingVariant
 from generated_symbols.data.worldgen.feature.tree.PaleMossTreeDecorator import PaleMossTreeDecorator
 from generated_symbols.data.structure.Palette import Palette
+from generated_symbols.data.advancement.trigger.ParitalRequired import ParitalRequired
 from generated_symbols.data.advancement.predicate.ParrotPredicate import ParrotPredicate
 from generated_symbols.data.enchantment.effect.ParticlePosition import ParticlePosition
 from generated_symbols.data.enchantment.effect.ParticleVelocity import ParticleVelocity
+from generated_symbols.data.advancement.trigger.PickedUpItemTrigger import PickedUpItemTrigger
 from generated_symbols.data.variants.pig.PigModelType import PigModelType
 from generated_symbols.data.variants.pig.PigSounds import PigSounds
 from generated_symbols.data.variants.pig.PigVariant import PigVariant
 from generated_symbols.data.worldgen.feature.tree.PineFoliagePlacer import PineFoliagePlacer
 from generated_symbols.data.worldgen.feature.tree.PlaceOnGroundTreeDecorator import PlaceOnGroundTreeDecorator
-from generated_symbols.data.advancement.trigger.PlacedBlock import PlacedBlock
+from generated_symbols.data.advancement.trigger.PlacedBlockConditions import PlacedBlockConditions
+from generated_symbols.data.advancement.trigger.PlacedBlockTrigger import PlacedBlockTrigger
 from generated_symbols.data.worldgen.feature.placement.PlacedFeature import PlacedFeature
 from generated_symbols.data.worldgen.feature.placement.PlacedFeatureListRef import PlacedFeatureListRef
 from generated_symbols.data.worldgen.feature.placement.PlacedFeatureRef import PlacedFeatureRef
@@ -580,10 +586,9 @@ from generated_symbols.data.dialog.body.PlainMessage import PlainMessage
 from generated_symbols.data.enchantment.effect.PlaySoundEntityEffect import PlaySoundEntityEffect
 from generated_symbols.data.advancement.predicate.PlayerAdvancementCriteria import PlayerAdvancementCriteria
 from generated_symbols.data.advancement.predicate.PlayerAdvancements import PlayerAdvancements
-from generated_symbols.data.advancement.trigger.PlayerGeneratesContainerLoot import PlayerGeneratesContainerLoot
-from generated_symbols.data.advancement.trigger.PlayerHurtEntity import PlayerHurtEntity
-from generated_symbols.data.advancement.trigger.PlayerInteract import PlayerInteract
-from generated_symbols.data.advancement.trigger.PlayerKilledEntity import PlayerKilledEntity
+from generated_symbols.data.advancement.trigger.PlayerConditions import PlayerConditions
+from generated_symbols.data.advancement.trigger.PlayerHurtEntityTrigger import PlayerHurtEntityTrigger
+from generated_symbols.data.advancement.trigger.PlayerInteractTrigger import PlayerInteractTrigger
 from generated_symbols.data.advancement.predicate.PlayerPredicate import PlayerPredicate
 from generated_symbols.data.advancement.predicate.PlayerRecipes import PlayerRecipes
 from generated_symbols.data.advancement.trigger.PlayerTrigger import PlayerTrigger
@@ -642,15 +647,16 @@ from generated_symbols.data.worldgen.structure_set.RandomSpreadPlacement import 
 from generated_symbols.data.util.RandomValueBounds import RandomValueBounds
 from generated_symbols.data.worldgen.feature.block_state_provider.RandomizedIntStateProvider import RandomizedIntStateProvider
 from generated_symbols.data.structure.RandomizedPalette import RandomizedPalette
+from generated_symbols.data.worldgen.feature.placement.RandomlySelectedModifier import RandomlySelectedModifier
 from generated_symbols.data.worldgen.density_function.RangeChoice import RangeChoice
 from generated_symbols.data.worldgen.feature.decorator.RangeConfig import RangeConfig
 from generated_symbols.data.slot_source.RangeSlotSource import RangeSlotSource
 from generated_symbols.data.worldgen.feature.placement.RarityFilter import RarityFilter
 from generated_symbols.data.worldgen.density_function.RarityType import RarityType
 from generated_symbols.data.recipe.Recipe import Recipe
-from generated_symbols.data.advancement.trigger.RecipeCrafted import RecipeCrafted
+from generated_symbols.data.advancement.trigger.RecipeCraftedTrigger import RecipeCraftedTrigger
 from generated_symbols.data.recipe.RecipeListRef import RecipeListRef
-from generated_symbols.data.advancement.trigger.RecipeUnlocked import RecipeUnlocked
+from generated_symbols.data.advancement.trigger.RecipeUnlockedTrigger import RecipeUnlockedTrigger
 from generated_symbols.data.dialog.RedirectDialog import RedirectDialog
 from generated_symbols.data.enchantment.effect.ReduceBinomialEffectValue import ReduceBinomialEffectValue
 from generated_symbols.data.enchantment.effect_component.RepairWithXpEnchantmentEffect import RepairWithXpEnchantmentEffect
@@ -658,10 +664,8 @@ from generated_symbols.data.enchantment.effect.ReplaceBlockEntityEffect import R
 from generated_symbols.data.enchantment.effect.ReplaceDiskEntityEffect import ReplaceDiskEntityEffect
 from generated_symbols.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
 from generated_symbols.data.worldgen.feature.ReplaceSingleBlockConfig import ReplaceSingleBlockConfig
-from generated_symbols.data.advancement.trigger.RequiredConditions import RequiredConditions
 from generated_symbols.data.recipe.RequiredSmithingIngredients import RequiredSmithingIngredients
 from generated_symbols.data.number_provider.ResolvableNumber import ResolvableNumber
-from generated_symbols.data.advancement.trigger.RideEntityInLava import RideEntityInLava
 from generated_symbols.data.worldgen.feature.tree.RootPlacer import RootPlacer
 from generated_symbols.data.worldgen.feature.RootSystemConfig import RootSystemConfig
 from generated_symbols.data.worldgen.feature.block_state_provider.RotatedStateProvider import RotatedStateProvider
@@ -674,7 +678,6 @@ from generated_symbols.data.worldgen.processor_list.Rule import Rule
 from generated_symbols.data.worldgen.feature.RuleBasedBlockStateProvider import RuleBasedBlockStateProvider
 from generated_symbols.data.worldgen.processor_list.RuleTest import RuleTest
 from generated_symbols.data.enchantment.effect.RunFunctionEntityEffect import RunFunctionEntityEffect
-from generated_symbols.data.advancement.trigger.SafelyHarvestHoney import SafelyHarvestHoney
 from generated_symbols.data.advancement.predicate.SalmonPredicate import SalmonPredicate
 from generated_symbols.data.advancement.predicate.SalmonVariant import SalmonVariant
 from generated_symbols.data.number_provider.ScoreNumberProvider import ScoreNumberProvider
@@ -718,7 +721,7 @@ from generated_symbols.data.worldgen.feature.tree.ShelfMushroomTreeDecorator imp
 from generated_symbols.data.worldgen.density_function.Shift import Shift
 from generated_symbols.data.worldgen.density_function.ShiftedNoise import ShiftedNoise
 from generated_symbols.data.worldgen.structure.Shipwreck import Shipwreck
-from generated_symbols.data.advancement.trigger.ShotCrossbow import ShotCrossbow
+from generated_symbols.data.advancement.trigger.ShotCrossbowTrigger import ShotCrossbowTrigger
 from generated_symbols.data.worldgen.feature.SimpleBlockConfig import SimpleBlockConfig
 from generated_symbols.data.timeline.SimpleEasingType import SimpleEasingType
 from generated_symbols.data.worldgen.feature.SimpleRandomSelectorConfig import SimpleRandomSelectorConfig
@@ -730,7 +733,7 @@ from generated_symbols.data.enchantment.provider.SingleProvider import SinglePro
 from generated_symbols.data.loot.SingletonPoolEntry import SingletonPoolEntry
 from generated_symbols.data.worldgen.dimension.SkyboxType import SkyboxType
 from generated_symbols.data.worldgen.density_function.Slice import Slice
-from generated_symbols.data.advancement.trigger.SlideDownBlock import SlideDownBlock
+from generated_symbols.data.advancement.trigger.SlideDownBlockTrigger import SlideDownBlockTrigger
 from generated_symbols.data.advancement.predicate.SlimePredicate import SlimePredicate
 from generated_symbols.data.slot_source.SlotSource import SlotSource
 from generated_symbols.data.loot.SlotsPoolEntry import SlotsPoolEntry
@@ -753,7 +756,7 @@ from generated_symbols.data.variants.SpawnPrioritySelectors import SpawnPriority
 from generated_symbols.data.worldgen.noise_settings.SpawnTargetPoint import SpawnTargetPoint
 from generated_symbols.data.worldgen.biome.SpawnerData import SpawnerData
 from generated_symbols.data.worldgen.biome.SpawnerDataMap import SpawnerDataMap
-from generated_symbols.data.advancement.trigger.SpearMobs import SpearMobs
+from generated_symbols.data.advancement.trigger.SpearMobsTrigger import SpearMobsTrigger
 from generated_symbols.data.advancement.predicate.SpecificType import SpecificType
 from generated_symbols.data.worldgen.feature.SpeleothemClusterConfig import SpeleothemClusterConfig
 from generated_symbols.data.worldgen.feature.SpeleothemConfig import SpeleothemConfig
@@ -765,6 +768,7 @@ from generated_symbols.data.worldgen.structure_set.SpreadType import SpreadType
 from generated_symbols.data.worldgen.feature.SpringConfig import SpringConfig
 from generated_symbols.data.worldgen.feature.tree.SprucePineFoliagePlacer import SprucePineFoliagePlacer
 from generated_symbols.data.enchantment.level_based_value.SquaredLevelValue import SquaredLevelValue
+from generated_symbols.data.advancement.trigger.StartRidingTrigger import StartRidingTrigger
 from generated_symbols.data.advancement.predicate.StatisticPredicate import StatisticPredicate
 from generated_symbols.data.loot.function.StewEffect import StewEffect
 from generated_symbols.data.worldgen.material_condition.StoneDepthCondition import StoneDepthCondition
@@ -785,7 +789,7 @@ from generated_symbols.data.worldgen.noise_settings.StructureSettings import Str
 from generated_symbols.data.sulfur_cube_archetype.SulfurCubeArchetype import SulfurCubeArchetype
 from generated_symbols.data.number_provider.SumNumberProvider import SumNumberProvider
 from generated_symbols.data.enchantment.effect.SummonEntityEffect import SummonEntityEffect
-from generated_symbols.data.advancement.trigger.SummonedEntity import SummonedEntity
+from generated_symbols.data.advancement.trigger.SummonedEntityTrigger import SummonedEntityTrigger
 from generated_symbols.data.worldgen.feature.placement.SurfaceRelativeThresholdFilter import SurfaceRelativeThresholdFilter
 from generated_symbols.data.worldgen.feature.placement.SurfaceWaterDepthFilter import SurfaceWaterDepthFilter
 from generated_symbols.data.loot.condition.TableBonus import TableBonus
@@ -793,9 +797,9 @@ from generated_symbols.data.tag.Tag import Tag
 from generated_symbols.data.tag.TagEntry import TagEntry
 from generated_symbols.data.worldgen.processor_list.TagMatch import TagMatch
 from generated_symbols.data.loot.TagPoolEntry import TagPoolEntry
-from generated_symbols.data.advancement.trigger.TameAnimal import TameAnimal
+from generated_symbols.data.advancement.trigger.TameAnimalTrigger import TameAnimalTrigger
 from generated_symbols.data.worldgen.feature.TargetBlock import TargetBlock
-from generated_symbols.data.advancement.trigger.TargetHit import TargetHit
+from generated_symbols.data.advancement.trigger.TargetBlockTrigger import TargetBlockTrigger
 from generated_symbols.data.worldgen.biome.TemperatureModifier import TemperatureModifier
 from generated_symbols.data.worldgen.feature.TemplateConfig import TemplateConfig
 from generated_symbols.data.worldgen.feature.TemplateEntry import TemplateEntry
@@ -811,8 +815,6 @@ from generated_symbols.data.chat_type.TextDisplay import TextDisplay
 from generated_symbols.data.dialog.input.TextInput import TextInput
 from generated_symbols.data.worldgen.dimension.biome_source.TheEnd import TheEnd
 from generated_symbols.data.worldgen.feature.tree.ThreeLayersFeatureSize import ThreeLayersFeatureSize
-from generated_symbols.data.advancement.trigger.ThrownItemPickedUpByEntity import ThrownItemPickedUpByEntity
-from generated_symbols.data.advancement.trigger.ThrownItemPickedUpByPlayer import ThrownItemPickedUpByPlayer
 from generated_symbols.data.enchantment.effect_component.TickEnchantmentEffect import TickEnchantmentEffect
 from generated_symbols.data.worldgen.density_function.TilingMode import TilingMode
 from generated_symbols.data.loot.condition.TimeCheck import TimeCheck
@@ -824,6 +826,7 @@ from generated_symbols.data.gametest.test_environment.TimelineAttributesTestEnvi
 from generated_symbols.data.loot.function.ToggleTooltips import ToggleTooltips
 from generated_symbols.data.loot.function.ToggleableDataComponent import ToggleableDataComponent
 from generated_symbols.data.trade_set.TradeSet import TradeSet
+from generated_symbols.data.advancement.trigger.TradeTrigger import TradeTrigger
 from generated_symbols.data.worldgen.attribute.modifier.TranslucentColorAttributeModifier import TranslucentColorAttributeModifier
 from generated_symbols.data.worldgen.TrapezoidHeightProvider import TrapezoidHeightProvider
 from generated_symbols.data.worldgen.feature.tree.TreeConfig import TreeConfig
@@ -833,7 +836,6 @@ from generated_symbols.data.trial_spawner.TrialSpawnerConfig import TrialSpawner
 from generated_symbols.data.worldgen.structure.TrickyTrialsStructureConfig import TrickyTrialsStructureConfig
 from generated_symbols.data.enchantment.effect_component.TridentReturnAccelerationEnchantmentEffect import TridentReturnAccelerationEnchantmentEffect
 from generated_symbols.data.advancement.Trigger import Trigger
-from generated_symbols.data.advancement.trigger.TriggerBase import TriggerBase
 from generated_symbols.data.trim.TrimMaterial import TrimMaterial
 from generated_symbols.data.trim.TrimMaterialOverrides import TrimMaterialOverrides
 from generated_symbols.data.trim.TrimPattern import TrimPattern
@@ -853,9 +855,9 @@ from generated_symbols.data.number_provider.UniformNumberProvider import Uniform
 from generated_symbols.data.storage.UnknownStorage import UnknownStorage
 from generated_symbols.data.worldgen.feature.block_predicate.UnobstructedPredicate import UnobstructedPredicate
 from generated_symbols.data.worldgen.feature.tree.UpwardsBranchingTrunkPlacer import UpwardsBranchingTrunkPlacer
-from generated_symbols.data.advancement.trigger.UsedEnderEye import UsedEnderEye
-from generated_symbols.data.advancement.trigger.UsedTotem import UsedTotem
-from generated_symbols.data.advancement.trigger.UsingItem import UsingItem
+from generated_symbols.data.advancement.trigger.UsedEnderEyeTrigger import UsedEnderEyeTrigger
+from generated_symbols.data.advancement.trigger.UsedTotemTrigger import UsedTotemTrigger
+from generated_symbols.data.advancement.trigger.UsingItemTrigger import UsingItemTrigger
 from generated_symbols.data.loot.condition.ValueCheck import ValueCheck
 from generated_symbols.data.enchantment.effect.ValueEffect import ValueEffect
 from generated_symbols.data.worldgen.dimension.biome_source.VanillaLayered import VanillaLayered
@@ -863,6 +865,8 @@ from generated_symbols.data.worldgen.feature.VegetationPatchConfig import Vegeta
 from generated_symbols.data.worldgen.VerticalAnchor import VerticalAnchor
 from generated_symbols.data.worldgen.material_condition.VerticalGradientCondition import VerticalGradientCondition
 from generated_symbols.data.advancement.predicate.VillagerPredicate import VillagerPredicate
+from generated_symbols.data.villager_trade.VillagerTrade import VillagerTrade
+from generated_symbols.data.worldgen.feature.block_predicate.VolumeMatchPredicate import VolumeMatchPredicate
 from generated_symbols.data.worldgen.material_condition.WaterCondition import WaterCondition
 from generated_symbols.data.worldgen.feature.decorator.WaterDepthThresholdConfig import WaterDepthThresholdConfig
 from generated_symbols.data.gametest.test_environment.Weather import Weather
@@ -895,9 +899,10 @@ __all__ = [
     "AdvancementCriteriaMap",
     "AdvancementCriterion",
     "AdvancementDisplay",
+    "AdvancementEntityPredicate",
     "AdvancementFrame",
     "AdvancementIcon",
-    "AdvancementPredicateRef",
+    "AdvancementLocationPredicate",
     "AdvancementRewards",
     "AfterAction",
     "AllOf",
@@ -905,13 +910,13 @@ __all__ = [
     "AllOfEntityEffect",
     "AllOfLocationBasedEffect",
     "AllOffTestEnvironment",
-    "AllayDropItemOnBlock",
+    "AllOptional",
     "AlterGroundTreeDecorator",
     "Alternative",
     "AmbientParticle",
     "AmbientSounds",
     "AmmoUseEnchantmentEffect",
-    "AnyBlockUse",
+    "AnyBlockInteractionTrigger",
     "AnyOf",
     "AppendLoot",
     "AppendStatic",
@@ -937,7 +942,7 @@ __all__ = [
     "BaseNoiseProvider",
     "BedRule",
     "BedRuleType",
-    "BeeNestDestroyed",
+    "BeeNestDestroyedTrigger",
     "BeehiveTreeDecorator",
     "BendingTrunkPlacer",
     "BinomialIntGenerator",
@@ -973,6 +978,7 @@ __all__ = [
     "BlockPredicateState",
     "BlockRot",
     "BlockRule",
+    "BlockStateConditions",
     "BlockStateMatch",
     "BlockStateProperty",
     "BlockStateProvider",
@@ -985,8 +991,8 @@ __all__ = [
     "BooleanModifierType",
     "BottomBiasHeightProvider",
     "BoundingBox",
-    "BredAnimals",
-    "BrewedPotion",
+    "BredAnimalsTrigger",
+    "BrewedPotionTrigger",
     "Brewing",
     "BuriedTreasure",
     "Button",
@@ -1010,9 +1016,9 @@ __all__ = [
     "CatVariant",
     "CaveConfig",
     "ChanceConfig",
+    "ChangeDimensionTrigger",
     "ChangeItemDamageEffect",
-    "ChangedDimension",
-    "ChanneledLightning",
+    "ChanneledLightningTrigger",
     "ChatDecoration",
     "ChatDecorationParameter",
     "ChatType",
@@ -1037,12 +1043,12 @@ __all__ = [
     "ColumnPlacer",
     "ColumnsConfig",
     "CombiningPredicate",
-    "CompositeEntity",
     "CompositeMatch",
     "CompositePoolEntry",
     "ConcentricRingsPlacement",
     "ConditionRule",
     "ConditionalNumberProvider",
+    "Conditions",
     "Config",
     "ConfiguredCarver",
     "ConfiguredDecorator",
@@ -1056,8 +1062,8 @@ __all__ = [
     "ConstantIntGenerator",
     "ConstantIntProvider",
     "ConstantNumberProvider",
-    "ConstructBeacon",
-    "ConsumeItem",
+    "ConstructBeaconTrigger",
+    "ConsumeItemTrigger",
     "ContactDamage",
     "ContainerComponents",
     "ContentsSlotSource",
@@ -1104,7 +1110,7 @@ __all__ = [
     "CubicBezierEase",
     "CubicSpline",
     "CuboidModifier",
-    "CuredZombieVillager",
+    "CuredZombieVillagerTrigger",
     "CustomModelDataColors",
     "CustomModelDataFlags",
     "CustomModelDataFloats",
@@ -1125,7 +1131,7 @@ __all__ = [
     "DeathMessageType",
     "DecoratedPotPattern",
     "DecorationStep",
-    "DefaultBlockUse",
+    "DefaultBlockInteractionTrigger",
     "DeltaConfig",
     "DensityFunction",
     "DensityFunctionRef",
@@ -1148,13 +1154,14 @@ __all__ = [
     "DistanceMetric",
     "DistancePredicate",
     "DistanceToPoint",
+    "DistanceTrigger",
     "DualNoiseProvider",
     "DynamicCustomAction",
     "DynamicDrops",
     "DynamicPoolEntry",
     "DynamicRunCommand",
     "EasingType",
-    "EffectsChanged",
+    "EffectsChangedTrigger",
     "Element",
     "ElementBase",
     "EmeraldOreConfig",
@@ -1162,7 +1169,7 @@ __all__ = [
     "EnchantWithLevels",
     "EnchantedCountBase",
     "EnchantedCountIncrease",
-    "EnchantedItem",
+    "EnchantedItemTrigger",
     "Enchantment",
     "EnchantmentActiveCheck",
     "EnchantmentCost",
@@ -1175,13 +1182,12 @@ __all__ = [
     "EndPodiumConfig",
     "EndSpike",
     "EndSpikeConfig",
-    "EnterBlock",
+    "EnterBlockTrigger",
     "EntityEffect",
     "EntityEffectsPredicate",
     "EntityEquipmentPredicate",
     "EntityFlagsPredicate",
-    "EntityHurtPlayer",
-    "EntityKilledPlayer",
+    "EntityHurtPlayerTrigger",
     "EntityPredicate",
     "EntityProperties",
     "EntityScores",
@@ -1205,15 +1211,14 @@ __all__ = [
     "ExplosionParticleInfo",
     "ExponentLevelValue",
     "ExponentialEffectValue",
-    "FallAfterExplosion",
-    "FallFromHeight",
+    "FallAfterExplosionTrigger",
     "FallenTreeConfig",
     "FeatureElement",
     "FeatureRef",
     "FeatureSize",
     "FillLayerConfig",
     "FillPlayerHead",
-    "FilledBucket",
+    "FilledBucketTrigger",
     "FilterSlotSource",
     "Filtered",
     "FindTopSurface",
@@ -1221,7 +1226,7 @@ __all__ = [
     "FireworkShapeIngredients",
     "FishingHookPredicate",
     "FishingLuckBonusEnchantmentEffect",
-    "FishingRodHooked",
+    "FishingRodHookedTrigger",
     "FishingTimeReductionEnchantmentEffect",
     "Fixed",
     "FixedPlacementModifier",
@@ -1272,12 +1277,12 @@ __all__ = [
     "HeightmapModifier",
     "HeightmapType",
     "HitBlockEnchantmentEffect",
-    "HoneyHarvestedBlock",
     "HorsePredicate",
     "HugeFungusConfig",
     "HugeMushroomConfig",
     "IcebergConfig",
     "IgniteEntityEffect",
+    "ImpossibleTrigger",
     "Ingredient",
     "IngredientItem",
     "IngredientTag",
@@ -1291,27 +1296,27 @@ __all__ = [
     "IntLimiter",
     "IntProvider",
     "IntRange",
-    "InventoryChanged",
+    "InventoryChangeTrigger",
     "InventoryChangedSlots",
     "Inverted",
     "InvertedMatch",
     "InvervalSelect",
     "ItemBody",
     "ItemDamageEnchantmentEffect",
-    "ItemDurabilityChanged",
+    "ItemDurabilityTrigger",
     "ItemModifier",
     "ItemPoolEntry",
     "ItemPredicate",
     "ItemResult",
     "ItemStackTarget",
-    "ItemUsedOnBlock",
+    "ItemUesdOnLocationConditions",
+    "ItemUsedOnLocationTrigger",
     "Jigsaw",
     "JigsawDistanceLimits",
     "JukeboxSong",
-    "KillMobNearSculkCatalyst",
-    "KilledByArrow",
-    "KilledByCrossbow",
+    "KilledByArrowTrigger",
     "KilledByPlayer",
+    "KilledTrigger",
     "KnockbackEnchantmentEffect",
     "KnockbackModifiers",
     "LakeConfig",
@@ -1320,9 +1325,9 @@ __all__ = [
     "LegacyExplorationMapDestination",
     "Lerp",
     "LevelBasedValueMap",
-    "Levitation",
+    "LevitationTrigger",
     "LightningBoltPredicate",
-    "LightningStrike",
+    "LightningStrikeTrigger",
     "LimitCount",
     "LimitCountSlotSource",
     "LinearLevelValue",
@@ -1342,6 +1347,7 @@ __all__ = [
     "LocationPredicate",
     "LocationPredicateLight",
     "LocationPredicatePosition",
+    "LocationTrigger",
     "LookupLevelValue",
     "LootConditionType",
     "LootContextParamSets",
@@ -1354,6 +1360,7 @@ __all__ = [
     "LootTableListRef",
     "LootTablePoolEntry",
     "LootTableRef",
+    "LootTableTrigger",
     "LootingEnchant",
     "MangroveRootPlacement",
     "MangroveRootPlacer",
@@ -1403,7 +1410,7 @@ __all__ = [
     "NbtProviderSource",
     "NetherForestVegetationConfig",
     "NetherFossil",
-    "NetherTravel",
+    "NetherTravelTrigger",
     "NetherrackReplaceBlobsConfig",
     "NoiseBasedCountModifier",
     "NoiseGeneratorFlags",
@@ -1451,15 +1458,18 @@ __all__ = [
     "PaintingVariant",
     "PaleMossTreeDecorator",
     "Palette",
+    "ParitalRequired",
     "ParrotPredicate",
     "ParticlePosition",
     "ParticleVelocity",
+    "PickedUpItemTrigger",
     "PigModelType",
     "PigSounds",
     "PigVariant",
     "PineFoliagePlacer",
     "PlaceOnGroundTreeDecorator",
-    "PlacedBlock",
+    "PlacedBlockConditions",
+    "PlacedBlockTrigger",
     "PlacedFeature",
     "PlacedFeatureListRef",
     "PlacedFeatureRef",
@@ -1468,10 +1478,9 @@ __all__ = [
     "PlaySoundEntityEffect",
     "PlayerAdvancementCriteria",
     "PlayerAdvancements",
-    "PlayerGeneratesContainerLoot",
-    "PlayerHurtEntity",
-    "PlayerInteract",
-    "PlayerKilledEntity",
+    "PlayerConditions",
+    "PlayerHurtEntityTrigger",
+    "PlayerInteractTrigger",
     "PlayerPredicate",
     "PlayerRecipes",
     "PlayerTrigger",
@@ -1530,15 +1539,16 @@ __all__ = [
     "RandomValueBounds",
     "RandomizedIntStateProvider",
     "RandomizedPalette",
+    "RandomlySelectedModifier",
     "RangeChoice",
     "RangeConfig",
     "RangeSlotSource",
     "RarityFilter",
     "RarityType",
     "Recipe",
-    "RecipeCrafted",
+    "RecipeCraftedTrigger",
     "RecipeListRef",
-    "RecipeUnlocked",
+    "RecipeUnlockedTrigger",
     "RedirectDialog",
     "ReduceBinomialEffectValue",
     "RepairWithXpEnchantmentEffect",
@@ -1546,10 +1556,8 @@ __all__ = [
     "ReplaceDiskEntityEffect",
     "ReplaceSectionListOperation",
     "ReplaceSingleBlockConfig",
-    "RequiredConditions",
     "RequiredSmithingIngredients",
     "ResolvableNumber",
-    "RideEntityInLava",
     "RootPlacer",
     "RootSystemConfig",
     "RotatedStateProvider",
@@ -1562,7 +1570,6 @@ __all__ = [
     "RuleBasedBlockStateProvider",
     "RuleTest",
     "RunFunctionEntityEffect",
-    "SafelyHarvestHoney",
     "SalmonPredicate",
     "SalmonVariant",
     "ScoreNumberProvider",
@@ -1606,7 +1613,7 @@ __all__ = [
     "Shift",
     "ShiftedNoise",
     "Shipwreck",
-    "ShotCrossbow",
+    "ShotCrossbowTrigger",
     "SimpleBlockConfig",
     "SimpleEasingType",
     "SimpleRandomSelectorConfig",
@@ -1618,7 +1625,7 @@ __all__ = [
     "SingletonPoolEntry",
     "SkyboxType",
     "Slice",
-    "SlideDownBlock",
+    "SlideDownBlockTrigger",
     "SlimePredicate",
     "SlotSource",
     "SlotsPoolEntry",
@@ -1641,7 +1648,7 @@ __all__ = [
     "SpawnTargetPoint",
     "SpawnerData",
     "SpawnerDataMap",
-    "SpearMobs",
+    "SpearMobsTrigger",
     "SpecificType",
     "SpeleothemClusterConfig",
     "SpeleothemConfig",
@@ -1653,6 +1660,7 @@ __all__ = [
     "SpringConfig",
     "SprucePineFoliagePlacer",
     "SquaredLevelValue",
+    "StartRidingTrigger",
     "StatisticPredicate",
     "StewEffect",
     "StoneDepthCondition",
@@ -1673,7 +1681,7 @@ __all__ = [
     "SulfurCubeArchetype",
     "SumNumberProvider",
     "SummonEntityEffect",
-    "SummonedEntity",
+    "SummonedEntityTrigger",
     "SurfaceRelativeThresholdFilter",
     "SurfaceWaterDepthFilter",
     "TableBonus",
@@ -1681,9 +1689,9 @@ __all__ = [
     "TagEntry",
     "TagMatch",
     "TagPoolEntry",
-    "TameAnimal",
+    "TameAnimalTrigger",
     "TargetBlock",
-    "TargetHit",
+    "TargetBlockTrigger",
     "TemperatureModifier",
     "TemplateConfig",
     "TemplateEntry",
@@ -1699,8 +1707,6 @@ __all__ = [
     "TextInput",
     "TheEnd",
     "ThreeLayersFeatureSize",
-    "ThrownItemPickedUpByEntity",
-    "ThrownItemPickedUpByPlayer",
     "TickEnchantmentEffect",
     "TilingMode",
     "TimeCheck",
@@ -1712,6 +1718,7 @@ __all__ = [
     "ToggleTooltips",
     "ToggleableDataComponent",
     "TradeSet",
+    "TradeTrigger",
     "TranslucentColorAttributeModifier",
     "TrapezoidHeightProvider",
     "TreeConfig",
@@ -1721,7 +1728,6 @@ __all__ = [
     "TrickyTrialsStructureConfig",
     "TridentReturnAccelerationEnchantmentEffect",
     "Trigger",
-    "TriggerBase",
     "TrimMaterial",
     "TrimMaterialOverrides",
     "TrimPattern",
@@ -1741,9 +1747,9 @@ __all__ = [
     "UnknownStorage",
     "UnobstructedPredicate",
     "UpwardsBranchingTrunkPlacer",
-    "UsedEnderEye",
-    "UsedTotem",
-    "UsingItem",
+    "UsedEnderEyeTrigger",
+    "UsedTotemTrigger",
+    "UsingItemTrigger",
     "ValueCheck",
     "ValueEffect",
     "VanillaLayered",
@@ -1751,6 +1757,8 @@ __all__ = [
     "VerticalAnchor",
     "VerticalGradientCondition",
     "VillagerPredicate",
+    "VillagerTrade",
+    "VolumeMatchPredicate",
     "WaterCondition",
     "WaterDepthThresholdConfig",
     "Weather",

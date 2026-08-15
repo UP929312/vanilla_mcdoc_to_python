@@ -8,12 +8,14 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.TemplateEntry import TemplateEntry
+    from generated_symbols.data.worldgen.processor_list.ProcessorListRef import ProcessorListRef
     from generated_symbols.util.WeightedList import WeightedList
 
 
 @dataclass(kw_only=True)
 class TemplateConfig:
     templates: WeightedList[TemplateEntry]
+    processors: ProcessorListRef | None = None
 
 
 # ~~~ MODEL DUMP ~~~
@@ -37,6 +39,27 @@ _ = {
                         }
                     ]
                 }
+            },
+            {
+                "kind": "pair",
+                "attributes": [
+                    {
+                        "name": "since",
+                        "value": {
+                            "kind": "literal",
+                            "value": {
+                                "kind": "string",
+                                "value": "26.3"
+                            }
+                        }
+                    }
+                ],
+                "key": "processors",
+                "type": {
+                    "kind": "reference",
+                    "path": "::java::data::worldgen::processor_list::ProcessorListRef"
+                },
+                "optional": True
             }
         ]
     }

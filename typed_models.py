@@ -369,7 +369,7 @@ class EnumSchema(BaseSchema):
 type ConcreteSchemaTypeArgTypes = (
     AnySchema | BooleanSchema | ByteSchema | ConcreteSchema | DispatcherSchema | FloatSchema | IndexedSchema
     | IntArraySchema | IntSchema | ListSchema | LiteralSchema | LongSchema | ReferenceSchema | ShortSchema
-    | StringSchema | TupleSchema | UnionSchema
+    | StringSchema | StructSchema | TupleSchema | UnionSchema
 )
 
 class ConcreteSchema(BaseSchema):
@@ -401,9 +401,12 @@ class ConcreteSchema(BaseSchema):
     def to_python_code(self, class_name: str, ctx: SingleSymbolContext) -> list[str]:
         # We ommit the "type" so we can bind them, and then other things can inherit this binding.
         runtime_ctx = ctx.with_rendering_options(require_runtime_imports=True)
-        return [f"{class_name} = {self.to_annotation(runtime_ctx)}"]
+        return [f"{class_name} = {self.to_annotation(runtime_ctx, class_name)}"]
 
-    def to_annotation(self, ctx: SingleSymbolContext) -> str:
+    def to_nested_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None) -> str:
+        return self.to_annotation(ctx, nested_struct_name)
+
+    def to_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None = None) -> str:
         dispatcher_type_args: list[BaseSchema] = list(self.type_args)
         child_annotation = (
             self.child.to_annotation(ctx, type_args=dispatcher_type_args)
@@ -414,8 +417,23 @@ class ConcreteSchema(BaseSchema):
             ctx.schema_graph is None
             or isinstance(ctx.schema_graph.symbols.get(self.child.path), TemplateSchema)
         )
+        owner_name = nested_struct_name or (
+            symbol_path_to_object_name(ctx.current_symbol_path)
+            if ctx.current_symbol_path is not None
+            else "Concrete"
+        )
+        struct_count = sum(isinstance(type_arg, StructSchema) for type_arg in self.type_args)
+        struct_index = 0
+        type_arg_annotations: list[str] = []
+        for type_arg in self.type_args:
+            if isinstance(type_arg, StructSchema):
+                struct_index += 1
+                suffix = str(struct_index) if struct_count > 1 else ""
+                type_arg_annotations.append(type_arg.to_materialized_annotation(f"{owner_name}TypeArg{suffix}", ctx))
+            else:
+                type_arg_annotations.append(type_arg.to_annotation(ctx))
         concrete_annotation = (
-            f"{child_annotation}[{', '.join(type_arg.to_annotation(ctx) for type_arg in self.type_args)}]"
+            f"{child_annotation}[{', '.join(type_arg_annotations)}]"
             if child_is_template
             else child_annotation
         )
