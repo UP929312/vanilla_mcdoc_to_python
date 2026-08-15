@@ -52,8 +52,8 @@ class SingleSymbolContext:
     required_imports: set[Import] = field(default_factory=set)
     local_type_params: set[str] = field(default_factory=set)
     additional_dataclasses: list[str] = field(default_factory=list)
-    current_symbol_path: str | None = None
-    schema_graph: SchemaGraph | None = None
+    schema_graph: SchemaGraph = field(default_factory=lambda: SchemaGraph.from_symbol_maps({}))
+    current_symbol_path: str = ""
     allow_numeric_type_arg_shortcuts: bool = True
     require_runtime_imports: bool = False
     # Stable names per (preferred name, schema/path fingerprint), shared by nested contexts.
@@ -75,7 +75,6 @@ class SingleSymbolContext:
         key = preferred, fingerprint
         if key not in self.allocated_name_by_identity:
             used = set(self.allocated_name_by_identity.values())
-            assert self.current_symbol_path is not None
             used.add(symbol_path_to_object_name(self.current_symbol_path))
             suffix = 2
             name = preferred

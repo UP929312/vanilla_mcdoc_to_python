@@ -32,7 +32,7 @@ class IdSpec:
             options["exclude"] = (exclude,) if isinstance(exclude, str) else tuple(exclude)
         return cls(**options)
 
-    def to_python_code(self) -> str:
+    def to_annotation(self) -> str:
         values: list[tuple[str, object]] = [
             ("registry", self.registry),
             ("tags", self.tags),
@@ -53,10 +53,12 @@ def registry_import(registry: str) -> tuple[str, str]:
 
 
 def known_registry_alias(ctx: SingleSymbolContext, id_spec: IdSpec) -> str | None:
-    if ctx.schema_graph is None or id_spec.registry is None or id_spec.exclude:
+    if id_spec.registry is None or id_spec.exclude:
         return None
     registry = ctx.schema_graph.dispatchers.get(f"minecraft:{id_spec.registry}", {})
-    if not any(not key.startswith("%") for key in registry):
+    if not registry or not any(not key.startswith("%") for key in registry):
+        # Reject empty registries or those containing only fallback entries like %unknown.
+        # Only registries with concrete (non-%) IDs get a type alias generated.
         return None
     module, identifier = registry_import(id_spec.registry)
     ctx.required_imports.add(Import(module, identifier, not ctx.require_runtime_imports, False))

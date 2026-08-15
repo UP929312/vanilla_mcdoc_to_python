@@ -18,6 +18,7 @@ run_assertions()
 # coverage run --branch main.py
 # coverage html 
 # start microsoft-edge:htmlcov\index.html
+# python3 -m pytest
 
 # https://github.com/sandstone-mc/sandstone/blob/828171c5fc1f5903e7ae1c508fe638d6481ab8e9/src/arguments/generated/world/item/compass.ts#L6
 # https://github.com/OguzhanUmutlu/flare/blob/84b5121a21827eefcfca846ac6859512187e7f84/flare/generated/item.py#L166

@@ -69,7 +69,7 @@ class TestIdMetadataGeneration:
     def test_id_spec_renders_only_non_default_options(self) -> None:
         spec = IdSpec(registry="texture", tags="allowed", definition=True, path="entity/")
 
-        assert spec.to_python_code() == "IdSpec(registry='texture', tags='allowed', definition=True, path='entity/')"
+        assert spec.to_annotation() == "IdSpec(registry='texture', tags='allowed', definition=True, path='entity/')"
 
     def test_used_registry_names_are_discovered_from_nested_schemas(self) -> None:
         registries = used_registry_names(SCHEMA_GRAPH)
@@ -215,7 +215,9 @@ class TestRuntimeImportGeneration:
 
         assert len(schema.members) == 1
         assert isinstance(schema.members[0], IntSchema)
-        assert schema.to_python_code("CurrentValue", SingleSymbolContext()) == ["type CurrentValue = int"]
+        assert schema.to_python_code("CurrentValue", SingleSymbolContext(current_symbol_path="CurrentValue", schema_graph=SCHEMA_GRAPH)) == [
+            "type CurrentValue = int",
+        ]
 
     def test_concrete_alias_dependencies_are_runtime_imports(self) -> None:
         path = "::java::data::worldgen::attribute::GlobalEnvironmentAttributeMap"
