@@ -6,7 +6,7 @@ Local link to file: generated_symbols/data/worldgen/feature/decorator/Configured
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.decorator.CarvingMaskConfig import CarvingMaskConfig

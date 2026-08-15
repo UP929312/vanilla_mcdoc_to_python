@@ -15,7 +15,7 @@ if TYPE_CHECKING:
 
 
 @dataclass(kw_only=True)
-class CraftingImbue(NotificationInfo, CraftingBookInfo):
+class CraftingImbue(CraftingBookInfo, NotificationInfo):
     source: Ingredient  # The item to provide potion effect.  Its `potion_contents` component will be copied.  This item is placed at the center grid.
     material: Ingredient  # Additional ingredients.  8 `material` items are required to surroud the `source` item.
     result: ItemStackTemplate

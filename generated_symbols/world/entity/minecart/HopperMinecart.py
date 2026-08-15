@@ -14,7 +14,7 @@ if TYPE_CHECKING:
 
 
 @dataclass(kw_only=True)
-class HopperMinecart(Minecart, ContainerMinecart):
+class HopperMinecart(ContainerMinecart, Minecart):
     Items: Annotated[list[SlottedItem[Annotated[int, 'Range | `0`-`4` | both inclusive']]], 'Length = 0-5 (both inclusive)'] | None = None  # Slots from 0 to 4.
     TransferCooldown: int | None = None  # Ticks until an item can be transferred.
     Enabled: bool | None = None  # Whether it should pick up items.

@@ -10,7 +10,7 @@ from generated_symbols.world.entity.mob.slime.CubeMob import CubeMob
 
 
 @dataclass(kw_only=True)
-class Slime(MobBase, CubeMob):
+class Slime(CubeMob, MobBase):
     pass
 
 

@@ -15,7 +15,7 @@ if TYPE_CHECKING:
 
 
 @dataclass(kw_only=True)
-class CraftingDye(NotificationInfo, CraftingBookInfo):
+class CraftingDye(CraftingBookInfo, NotificationInfo):
     target: Ingredient  # The item to be dyed.  Its `dyed_color` component will be dyed. The other components are copied.
     dye: Ingredient  # The items to provide dye color.  Colors are provided by the `dye` component.  Multiple dyes can be used at the same time.
     result: ItemStackTemplate

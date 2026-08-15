@@ -6,12 +6,13 @@ Local link to file: generated_symbols/data/worldgen/feature/RootSystemConfig.py
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.FeatureRef import FeatureRef
     from generated_symbols.data.worldgen.feature.block_predicate.BlockPredicate import BlockPredicate
     from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
+    from generated_symbols.registry.KnownBlockId import KnownBlockId
 
 
 @dataclass(kw_only=True)
@@ -26,7 +27,7 @@ class RootSystemConfig:
     hanging_roots_vertical_span: Annotated[int, 'Range | `1`-`16` | both inclusive']
     hanging_root_placement_attempts: Annotated[int, 'Range | `0`-`256` | both inclusive']
     allowed_vertical_water_for_tree: Annotated[int, 'Range | `1`-`64` | both inclusive']
-    root_replaceable: Annotated[str, IdSpec(registry='block', tags='allowed')] | list[Annotated[str, IdSpec(registry='block')]]
+    root_replaceable: Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | list[Annotated[str, IdSpec(registry='block')] | KnownBlockId]
     root_state_provider: BlockStateProvider
     hanging_root_state_provider: BlockStateProvider
     allowed_tree_position: BlockPredicate

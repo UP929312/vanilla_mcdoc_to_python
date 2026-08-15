@@ -6,17 +6,18 @@ Local link to file: generated_symbols/data/advancement/predicate/PreComponentsIt
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.advancement.predicate.EnchantmentPredicate import EnchantmentPredicate
     from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
+    from generated_symbols.registry.KnownItemId import KnownItemId
 
 
 @dataclass(kw_only=True)
 class PreComponentsItemPredicate:
-    items: list[Annotated[str, IdSpec(registry='item')]] | None = None
-    tag: Annotated[str, IdSpec(registry='item', tags='implicit')] | None = None
+    items: list[Annotated[str, IdSpec(registry='item')] | KnownItemId] | None = None
+    tag: Annotated[str, IdSpec(registry='item', tags='implicit')] | KnownItemId | None = None
     durability: MinMaxBounds[int] | int | None = None
     potion: Annotated[str, IdSpec(registry='potion')] | None = None
     enchantments: list[EnchantmentPredicate] | None = None

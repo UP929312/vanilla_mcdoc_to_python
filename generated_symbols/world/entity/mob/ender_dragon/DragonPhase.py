@@ -7,17 +7,17 @@ from enum import Enum
 
 
 class DragonPhase(Enum):
-    CIRCLING = "0"
-    STRAFING = "1"
-    FLYINGTOPORTAL = "2"
-    LANDING = "3"
-    TAKINGOFF = "4"
-    BREATHATTACK = "5"
-    LANDED = "6"
-    ROAR = "7"
-    CHARGING = "8"
-    DYING = "9"
-    HOVERING = "10"
+    CIRCLING = 0
+    STRAFING = 1
+    FLYINGTOPORTAL = 2
+    LANDING = 3
+    TAKINGOFF = 4
+    BREATHATTACK = 5
+    LANDED = 6
+    ROAR = 7
+    CHARGING = 8
+    DYING = 9
+    HOVERING = 10
 
 
 # ~~~ MODEL DUMP ~~~

@@ -10,7 +10,7 @@ from generated_symbols.world.entity.mob.MobBase import MobBase
 
 
 @dataclass(kw_only=True)
-class GlowSquid(MobBase, AgeableMob):
+class GlowSquid(AgeableMob, MobBase):
     DarkTicksRemaining: int | None = None  # Ticks that it will wait before glowing.
 
 

@@ -8,8 +8,7 @@ from typing import TYPE_CHECKING, Annotated, Literal
 
 from generated_symbols.data.loot.function.Conditions import Conditions
 from generated_symbols.data.loot.function.EnchantedCountBase import EnchantedCountBase
-from generated_symbols.data.loot.function.ListOperation import ListOperation
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.advancement.predicate.ItemPredicate import ItemPredicate
@@ -27,6 +26,7 @@ if TYPE_CHECKING:
     from generated_symbols.data.number_provider.NumberProviderRef import NumberProviderRef
     from generated_symbols.data.util.IntRange import IntRange
     from generated_symbols.data.util.NbtProvider import NbtProvider
+    from generated_symbols.registry.KnownBlockId import KnownBlockId
     from generated_symbols.util.Filterable import Filterable
     from generated_symbols.util.color.RGB import RGB
     from generated_symbols.util.text.Text import Text
@@ -43,7 +43,7 @@ class ParametersStruct:
 
 
 @dataclass(kw_only=True)
-class ParametersStruct:
+class ParametersStruct2:
     bonusMultiplier: int
 
 
@@ -55,36 +55,149 @@ class OpsStruct:
 
 
 @dataclass(kw_only=True)
-class OpsStruct:
-    source: str
-    target: str
-    op: CopyNbtStrategy
-
-
-@dataclass(kw_only=True)
-class FloatsStruct(ListOperation):
+class FloatsStructAppend:
     values: list[NumberProviderRef]
+    mode: Literal['minecraft:append']  # Determines how the existing list should be modified.
 
 
 @dataclass(kw_only=True)
-class FlagsStruct(ListOperation):
+class FloatsStructInsert:
+    values: list[NumberProviderRef]
+    mode: Literal['minecraft:insert']  # Determines how the existing list should be modified.
+    offset: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The offset in the list to insert into. Defaults to 0.
+
+
+@dataclass(kw_only=True)
+class FloatsStructReplaceAll:
+    values: list[NumberProviderRef]
+    mode: Literal['minecraft:replace_all']  # Determines how the existing list should be modified.
+
+
+@dataclass(kw_only=True)
+class FloatsStructReplaceSection:
+    values: list[NumberProviderRef]
+    mode: Literal['minecraft:replace_section']  # Determines how the existing list should be modified.
+    offset: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The offset of the section to replace. Defaults to 0.
+    size: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The size of the section to replace. Defaults to size of the new list.
+
+
+type FloatsStruct = FloatsStructAppend | FloatsStructInsert | FloatsStructReplaceAll | FloatsStructReplaceSection
+
+@dataclass(kw_only=True)
+class FlagsStructAppend:
     values: list[bool]
+    mode: Literal['minecraft:append']  # Determines how the existing list should be modified.
 
 
 @dataclass(kw_only=True)
-class StringsStruct(ListOperation):
+class FlagsStructInsert:
+    values: list[bool]
+    mode: Literal['minecraft:insert']  # Determines how the existing list should be modified.
+    offset: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The offset in the list to insert into. Defaults to 0.
+
+
+@dataclass(kw_only=True)
+class FlagsStructReplaceAll:
+    values: list[bool]
+    mode: Literal['minecraft:replace_all']  # Determines how the existing list should be modified.
+
+
+@dataclass(kw_only=True)
+class FlagsStructReplaceSection:
+    values: list[bool]
+    mode: Literal['minecraft:replace_section']  # Determines how the existing list should be modified.
+    offset: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The offset of the section to replace. Defaults to 0.
+    size: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The size of the section to replace. Defaults to size of the new list.
+
+
+type FlagsStruct = FlagsStructAppend | FlagsStructInsert | FlagsStructReplaceAll | FlagsStructReplaceSection
+
+@dataclass(kw_only=True)
+class StringsStructAppend:
     values: list[str]
+    mode: Literal['minecraft:append']  # Determines how the existing list should be modified.
 
 
 @dataclass(kw_only=True)
-class ColorsStruct(ListOperation):
+class StringsStructInsert:
+    values: list[str]
+    mode: Literal['minecraft:insert']  # Determines how the existing list should be modified.
+    offset: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The offset in the list to insert into. Defaults to 0.
+
+
+@dataclass(kw_only=True)
+class StringsStructReplaceAll:
+    values: list[str]
+    mode: Literal['minecraft:replace_all']  # Determines how the existing list should be modified.
+
+
+@dataclass(kw_only=True)
+class StringsStructReplaceSection:
+    values: list[str]
+    mode: Literal['minecraft:replace_section']  # Determines how the existing list should be modified.
+    offset: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The offset of the section to replace. Defaults to 0.
+    size: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The size of the section to replace. Defaults to size of the new list.
+
+
+type StringsStruct = StringsStructAppend | StringsStructInsert | StringsStructReplaceAll | StringsStructReplaceSection
+
+@dataclass(kw_only=True)
+class ColorsStructAppend:
     values: list[NumberProviderRef | RGB]
+    mode: Literal['minecraft:append']  # Determines how the existing list should be modified.
 
 
 @dataclass(kw_only=True)
-class ExplosionsStruct(ListOperation):
-    values: list[Explosion]
+class ColorsStructInsert:
+    values: list[NumberProviderRef | RGB]
+    mode: Literal['minecraft:insert']  # Determines how the existing list should be modified.
+    offset: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The offset in the list to insert into. Defaults to 0.
 
+
+@dataclass(kw_only=True)
+class ColorsStructReplaceAll:
+    values: list[NumberProviderRef | RGB]
+    mode: Literal['minecraft:replace_all']  # Determines how the existing list should be modified.
+
+
+@dataclass(kw_only=True)
+class ColorsStructReplaceSection:
+    values: list[NumberProviderRef | RGB]
+    mode: Literal['minecraft:replace_section']  # Determines how the existing list should be modified.
+    offset: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The offset of the section to replace. Defaults to 0.
+    size: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The size of the section to replace. Defaults to size of the new list.
+
+
+type ColorsStruct = ColorsStructAppend | ColorsStructInsert | ColorsStructReplaceAll | ColorsStructReplaceSection
+
+@dataclass(kw_only=True)
+class ExplosionsStructAppend:
+    values: list[Explosion]
+    mode: Literal['minecraft:append']  # Determines how the existing list should be modified.
+
+
+@dataclass(kw_only=True)
+class ExplosionsStructInsert:
+    values: list[Explosion]
+    mode: Literal['minecraft:insert']  # Determines how the existing list should be modified.
+    offset: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The offset in the list to insert into. Defaults to 0.
+
+
+@dataclass(kw_only=True)
+class ExplosionsStructReplaceAll:
+    values: list[Explosion]
+    mode: Literal['minecraft:replace_all']  # Determines how the existing list should be modified.
+
+
+@dataclass(kw_only=True)
+class ExplosionsStructReplaceSection:
+    values: list[Explosion]
+    mode: Literal['minecraft:replace_section']  # Determines how the existing list should be modified.
+    offset: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The offset of the section to replace. Defaults to 0.
+    size: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The size of the section to replace. Defaults to size of the new list.
+
+
+type ExplosionsStruct = ExplosionsStructAppend | ExplosionsStructInsert | ExplosionsStructReplaceAll | ExplosionsStructReplaceSection
 
 @dataclass(kw_only=True)
 class LootFunctionApplyBonusBinomialWithBonusCount(Conditions):
@@ -106,7 +219,7 @@ class LootFunctionApplyBonusUniformBonusCount(Conditions):
     type: Literal['minecraft:apply_bonus']
     enchantment: Annotated[str, IdSpec(registry='enchantment')]
     formula: Literal['minecraft:uniform_bonus_count']
-    parameters: ParametersStruct
+    parameters: ParametersStruct2
 
 
 type LootFunctionApplyBonus = LootFunctionApplyBonusBinomialWithBonusCount | LootFunctionApplyBonusOreDrops | LootFunctionApplyBonusUniformBonusCount
@@ -142,7 +255,7 @@ class LootFunctionCopyNbt(Conditions):
 @dataclass(kw_only=True)
 class LootFunctionCopyState(Conditions):
     type: Literal['minecraft:copy_state']
-    block: Annotated[str, IdSpec(registry='block')]
+    block: Annotated[str, IdSpec(registry='block')] | KnownBlockId
     properties: list[str]
 
 
@@ -168,7 +281,7 @@ class LootFunctionEnchantWithLevels(Conditions):
 
 
 @dataclass(kw_only=True)
-class LootFunctionEnchantedCountIncrease(EnchantedCountBase, Conditions):
+class LootFunctionEnchantedCountIncrease(Conditions, EnchantedCountBase):
     type: Literal['minecraft:enchanted_count_increase']
     enchantment: Annotated[str, IdSpec(registry='enchantment')]  # Enchantment that increases yields.
 
@@ -214,7 +327,7 @@ class LootFunctionLimitCount(Conditions):
 
 
 @dataclass(kw_only=True)
-class LootFunctionLootingEnchant(EnchantedCountBase, Conditions):
+class LootFunctionLootingEnchant(Conditions, EnchantedCountBase):
     type: Literal['minecraft:looting_enchant']
 
 
@@ -340,17 +453,47 @@ class LootFunctionSetItem(Conditions):
 @dataclass(kw_only=True)
 class LootFunctionSetLootTable(Conditions):
     type: Literal['minecraft:set_loot_table']
-    type: Annotated[str, IdSpec(registry='block_entity_type')]  # The block entity type of the container.
+    type_2: Annotated[str, IdSpec(registry='block_entity_type')]  # The block entity type of the container.
     tag: Annotated[str, IdSpec(registry='loot_table')]  # The loot table to set to the container block item.
     seed: int | None = None  # The container seed to use. Defaults to a random seed.
 
 
 @dataclass(kw_only=True)
-class LootFunctionSetLore(ListOperation, Conditions):
+class LootFunctionSetLoreAppend(Conditions):
     type: Literal['minecraft:set_lore']
     lore: list[Text]
+    mode: Literal['minecraft:append']  # Determines how the existing list should be modified.
     entity: EntityTarget | None = None  # The entity used to resolve the text components.
 
+
+@dataclass(kw_only=True)
+class LootFunctionSetLoreInsert(Conditions):
+    type: Literal['minecraft:set_lore']
+    lore: list[Text]
+    mode: Literal['minecraft:insert']  # Determines how the existing list should be modified.
+    entity: EntityTarget | None = None  # The entity used to resolve the text components.
+    offset: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The offset in the list to insert into. Defaults to 0.
+
+
+@dataclass(kw_only=True)
+class LootFunctionSetLoreReplaceAll(Conditions):
+    type: Literal['minecraft:set_lore']
+    lore: list[Text]
+    mode: Literal['minecraft:replace_all']  # Determines how the existing list should be modified.
+    entity: EntityTarget | None = None  # The entity used to resolve the text components.
+
+
+@dataclass(kw_only=True)
+class LootFunctionSetLoreReplaceSection(Conditions):
+    type: Literal['minecraft:set_lore']
+    lore: list[Text]
+    mode: Literal['minecraft:replace_section']  # Determines how the existing list should be modified.
+    entity: EntityTarget | None = None  # The entity used to resolve the text components.
+    offset: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The offset of the section to replace. Defaults to 0.
+    size: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The size of the section to replace. Defaults to size of the new list.
+
+
+type LootFunctionSetLore = LootFunctionSetLoreAppend | LootFunctionSetLoreInsert | LootFunctionSetLoreReplaceAll | LootFunctionSetLoreReplaceSection
 
 @dataclass(kw_only=True)
 class LootFunctionSetName(Conditions):
@@ -397,16 +540,70 @@ class LootFunctionSetStewEffect(Conditions):
 
 
 @dataclass(kw_only=True)
-class LootFunctionSetWritableBookPages(ListOperation, Conditions):
+class LootFunctionSetWritableBookPagesAppend(Conditions):
     type: Literal['minecraft:set_writable_book_pages']
     pages: list[Filterable[str]]  # Sets the pages of a book and quill.
+    mode: Literal['minecraft:append']  # Determines how the existing list should be modified.
 
 
 @dataclass(kw_only=True)
-class LootFunctionSetWrittenBookPages(ListOperation, Conditions):
+class LootFunctionSetWritableBookPagesInsert(Conditions):
+    type: Literal['minecraft:set_writable_book_pages']
+    pages: list[Filterable[str]]  # Sets the pages of a book and quill.
+    mode: Literal['minecraft:insert']  # Determines how the existing list should be modified.
+    offset: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The offset in the list to insert into. Defaults to 0.
+
+
+@dataclass(kw_only=True)
+class LootFunctionSetWritableBookPagesReplaceAll(Conditions):
+    type: Literal['minecraft:set_writable_book_pages']
+    pages: list[Filterable[str]]  # Sets the pages of a book and quill.
+    mode: Literal['minecraft:replace_all']  # Determines how the existing list should be modified.
+
+
+@dataclass(kw_only=True)
+class LootFunctionSetWritableBookPagesReplaceSection(Conditions):
+    type: Literal['minecraft:set_writable_book_pages']
+    pages: list[Filterable[str]]  # Sets the pages of a book and quill.
+    mode: Literal['minecraft:replace_section']  # Determines how the existing list should be modified.
+    offset: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The offset of the section to replace. Defaults to 0.
+    size: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The size of the section to replace. Defaults to size of the new list.
+
+
+type LootFunctionSetWritableBookPages = LootFunctionSetWritableBookPagesAppend | LootFunctionSetWritableBookPagesInsert | LootFunctionSetWritableBookPagesReplaceAll | LootFunctionSetWritableBookPagesReplaceSection
+
+@dataclass(kw_only=True)
+class LootFunctionSetWrittenBookPagesAppend(Conditions):
     type: Literal['minecraft:set_written_book_pages']
     pages: list[Filterable[Text]]  # Sets the pages of a written book.
+    mode: Literal['minecraft:append']  # Determines how the existing list should be modified.
 
+
+@dataclass(kw_only=True)
+class LootFunctionSetWrittenBookPagesInsert(Conditions):
+    type: Literal['minecraft:set_written_book_pages']
+    pages: list[Filterable[Text]]  # Sets the pages of a written book.
+    mode: Literal['minecraft:insert']  # Determines how the existing list should be modified.
+    offset: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The offset in the list to insert into. Defaults to 0.
+
+
+@dataclass(kw_only=True)
+class LootFunctionSetWrittenBookPagesReplaceAll(Conditions):
+    type: Literal['minecraft:set_written_book_pages']
+    pages: list[Filterable[Text]]  # Sets the pages of a written book.
+    mode: Literal['minecraft:replace_all']  # Determines how the existing list should be modified.
+
+
+@dataclass(kw_only=True)
+class LootFunctionSetWrittenBookPagesReplaceSection(Conditions):
+    type: Literal['minecraft:set_written_book_pages']
+    pages: list[Filterable[Text]]  # Sets the pages of a written book.
+    mode: Literal['minecraft:replace_section']  # Determines how the existing list should be modified.
+    offset: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The offset of the section to replace. Defaults to 0.
+    size: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The size of the section to replace. Defaults to size of the new list.
+
+
+type LootFunctionSetWrittenBookPages = LootFunctionSetWrittenBookPagesAppend | LootFunctionSetWrittenBookPagesInsert | LootFunctionSetWrittenBookPagesReplaceAll | LootFunctionSetWrittenBookPagesReplaceSection
 
 @dataclass(kw_only=True)
 class LootFunctionToggleTooltips(Conditions):

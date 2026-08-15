@@ -39,7 +39,7 @@ if TYPE_CHECKING:
     from generated_symbols.world.block.sign.Sign import Sign
     from generated_symbols.world.block.spawner.Spawner import Spawner
     from generated_symbols.world.block.spawner.TrialSpawner import TrialSpawner
-    from generated_symbols.world.block.structure_block.StructureBlock import StructureBlock
+    from generated_symbols.world.block.structure_block.StructureBlock import StructureBlock as StructureBlock2
     from generated_symbols.world.block.test_block.TestBlock import TestBlock
     from generated_symbols.world.block.test_instance_block.TestInstanceBlock import TestInstanceBlock
     from generated_symbols.world.block.vault.Vault import Vault
@@ -54,7 +54,7 @@ class NbtStructBlockUnknown:
 class StructureBlock:
     state: Annotated[int, 'Range | Min `0` and above | inclusive']
     pos: tuple[Annotated[int, 'Range | Min `0` and above | inclusive'], Annotated[int, 'Range | Min `0` and above | inclusive'], Annotated[int, 'Range | Min `0` and above | inclusive']]
-    nbt: NbtStructBlockUnknown | Sign | Shelf | Container27 | Beacon | BlockEntity | Beehive | Banner | Furnace | BrewingStand | SculkSensor | Campfire | CommandBlock | ChiseledBookshelf | Comparator | Conduit | Crafter | Skull | DecoratedPot | Container9 | EnchantingTable | EndGateway | Hopper | Jigsaw | Jukebox | Lectern | MovingPiston | PotentSulfur | SculkCatalyst | SculkShrieker | Spawner | StructureBlock | BrushableBlock | TestBlock | TestInstanceBlock | TrialSpawner | Vault | None = None
+    nbt: NbtStructBlockUnknown | Sign | Shelf | Container27 | Beacon | BlockEntity | Beehive | Banner | Furnace | BrewingStand | SculkSensor | Campfire | CommandBlock | ChiseledBookshelf | Comparator | Conduit | Crafter | Skull | DecoratedPot | Container9 | EnchantingTable | EndGateway | Hopper | Jigsaw | Jukebox | Lectern | MovingPiston | PotentSulfur | SculkCatalyst | SculkShrieker | Spawner | StructureBlock2 | BrushableBlock | TestBlock | TestInstanceBlock | TrialSpawner | Vault | None = None
 
 
 # ~~~ MODEL DUMP ~~~

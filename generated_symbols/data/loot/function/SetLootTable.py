@@ -7,7 +7,7 @@ from dataclasses import dataclass
 from typing import Annotated
 
 from generated_symbols.data.loot.function.Conditions import Conditions
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 
 @dataclass(kw_only=True)

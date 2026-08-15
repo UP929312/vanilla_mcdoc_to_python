@@ -7,13 +7,13 @@ from enum import Enum
 
 
 class RabbitType(Enum):
-    BROWN = "0"
-    WHITE = "1"
-    BLACK = "2"
-    BLACKANDWHITE = "3"
-    GOLD = "4"
-    SALTANDPEPPER = "5"
-    KILLER = "99"
+    BROWN = 0
+    WHITE = 1
+    BLACK = 2
+    BLACKANDWHITE = 3
+    GOLD = 4
+    SALTANDPEPPER = 5
+    KILLER = 99
 
 
 # ~~~ MODEL DUMP ~~~

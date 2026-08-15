@@ -8,7 +8,7 @@ from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.data.recipe.CraftingBookInfo import CraftingBookInfo
 from generated_symbols.data.recipe.NotificationInfo import NotificationInfo
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.recipe.Ingredient import Ingredient
@@ -17,7 +17,7 @@ if TYPE_CHECKING:
 
 
 @dataclass(kw_only=True)
-class CraftingTransmute(NotificationInfo, CraftingBookInfo):
+class CraftingTransmute(CraftingBookInfo, NotificationInfo):
     input: Ingredient  # The ingredient that will transfer its data components to the result item.
     material: Ingredient  # An additional ingredient.
     result: ItemStack | Annotated[str, IdSpec(registry='item', exclude=('air',))]  # The result item that will be merged with the input ingredient.

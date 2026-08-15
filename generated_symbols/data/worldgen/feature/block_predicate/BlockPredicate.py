@@ -7,10 +7,11 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Literal
 
 from generated_symbols.data.worldgen.feature.block_predicate.PredicateOffset import PredicateOffset
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.VerticalAnchor import VerticalAnchor
+    from generated_symbols.registry.KnownBlockId import KnownBlockId
     from generated_symbols.util.block_state.BlockState import BlockState
     from generated_symbols.util.direction.Direction import Direction
 
@@ -54,13 +55,13 @@ class BlockPredicateMatchingBiomes:
 @dataclass(kw_only=True)
 class BlockPredicateMatchingBlockTag(PredicateOffset):
     type: Literal['minecraft:matching_block_tag']
-    tag: Annotated[str, IdSpec(registry='block', tags='implicit')]
+    tag: Annotated[str, IdSpec(registry='block', tags='implicit')] | KnownBlockId
 
 
 @dataclass(kw_only=True)
 class BlockPredicateMatchingBlocks(PredicateOffset):
     type: Literal['minecraft:matching_blocks']
-    blocks: list[Annotated[str, IdSpec(registry='block')]] | Annotated[str, IdSpec(registry='block', tags='allowed')]
+    blocks: list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId
 
 
 @dataclass(kw_only=True)

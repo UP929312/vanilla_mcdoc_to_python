@@ -5,7 +5,7 @@ Local link to file: generated_symbols/data/worldgen/density_function/NoiseParame
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.dimension.biome_source.NoiseParameters import NoiseParameters

@@ -5,7 +5,7 @@ Local link to file: generated_symbols/data/advancement/predicate/EntityTypePredi
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 
 type EntityTypePredicate = Annotated[str, IdSpec(registry='entity_type', tags='allowed')] | list[Annotated[str, IdSpec(registry='entity_type')]]

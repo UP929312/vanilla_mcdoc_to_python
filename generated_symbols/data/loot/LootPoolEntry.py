@@ -8,7 +8,7 @@ from typing import TYPE_CHECKING, Annotated, Literal
 
 from generated_symbols.data.loot.LootPoolEntryBase import LootPoolEntryBase
 from generated_symbols.data.loot.SingletonPoolEntry import SingletonPoolEntry
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.loot.DynamicDrops import DynamicDrops

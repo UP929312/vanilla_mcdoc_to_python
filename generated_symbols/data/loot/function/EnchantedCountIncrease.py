@@ -8,11 +8,11 @@ from typing import Annotated
 
 from generated_symbols.data.loot.function.Conditions import Conditions
 from generated_symbols.data.loot.function.EnchantedCountBase import EnchantedCountBase
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 
 @dataclass(kw_only=True)
-class EnchantedCountIncrease(EnchantedCountBase, Conditions):
+class EnchantedCountIncrease(Conditions, EnchantedCountBase):
     enchantment: Annotated[str, IdSpec(registry='enchantment')]  # Enchantment that increases yields.
 
 

@@ -10,7 +10,7 @@ from generated_symbols.world.entity.minecart.Minecart import Minecart
 
 
 @dataclass(kw_only=True)
-class CommandBlockMinecart(Minecart, BaseCommandBlock):
+class CommandBlockMinecart(BaseCommandBlock, Minecart):
     pass
 
 

@@ -7,10 +7,10 @@ from enum import Enum
 
 
 class LlamaVariantInt(Enum):
-    CREAMY = "0"
-    WHITE = "1"
-    BROWN = "2"
-    GRAY = "3"
+    CREAMY = 0
+    WHITE = 1
+    BROWN = 2
+    GRAY = 3
 
 
 # ~~~ MODEL DUMP ~~~

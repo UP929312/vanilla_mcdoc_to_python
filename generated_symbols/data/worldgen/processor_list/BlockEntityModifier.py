@@ -4,9 +4,9 @@ Local link to file: generated_symbols/data/worldgen/processor_list/BlockEntityMo
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import Annotated, Any, Literal
+from typing import Annotated, Literal
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 
 @dataclass(kw_only=True)

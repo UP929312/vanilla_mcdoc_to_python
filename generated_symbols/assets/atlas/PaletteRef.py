@@ -5,7 +5,7 @@ Local link to file: generated_symbols/assets/atlas/PaletteRef.py
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 
 type PaletteRef = Annotated[str, IdSpec(registry='texture', path='palettes/')]

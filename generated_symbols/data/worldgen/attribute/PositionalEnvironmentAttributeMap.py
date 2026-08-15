@@ -3,11 +3,8 @@ Generated from symbols.json for ::java::data::worldgen::attribute::PositionalEnv
 Local link to file: generated_symbols/data/worldgen/attribute/PositionalEnvironmentAttributeMap.py
 """
 # ~~~ CODE ~~~
-from typing import TYPE_CHECKING
-
-if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.attribute.EnvironmentAttributeMap import EnvironmentAttributeMap
-    from generated_symbols.data.worldgen.attribute.PositionalEnvironmentAttribute import PositionalEnvironmentAttribute
+from generated_symbols.data.worldgen.attribute.EnvironmentAttributeMap import EnvironmentAttributeMap
+from generated_symbols.data.worldgen.attribute.PositionalEnvironmentAttribute import PositionalEnvironmentAttribute
 
 
 PositionalEnvironmentAttributeMap = EnvironmentAttributeMap[PositionalEnvironmentAttribute]

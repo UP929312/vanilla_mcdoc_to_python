@@ -6,17 +6,18 @@ Local link to file: generated_symbols/data/worldgen/biome/NaturalMobSpawns.py
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.biome.MobSpawnCost import MobSpawnCost
     from generated_symbols.data.worldgen.biome.SpawnerDataMap import SpawnerDataMap
+    from generated_symbols.registry.KnownEntityId import KnownEntityId
 
 
 @dataclass(kw_only=True)
 class NaturalMobSpawns:
     spawns_by_category: SpawnerDataMap
-    spawn_costs: dict[Annotated[str, IdSpec(registry='entity')], MobSpawnCost]
+    spawn_costs: dict[Annotated[str, IdSpec(registry='entity')] | KnownEntityId, MobSpawnCost]
 
 
 # ~~~ MODEL DUMP ~~~

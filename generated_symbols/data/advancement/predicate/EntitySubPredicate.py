@@ -6,7 +6,7 @@ Local link to file: generated_symbols/data/advancement/predicate/EntitySubPredic
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Literal
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.advancement.predicate.BlockPredicate import BlockPredicate
@@ -25,50 +25,6 @@ if TYPE_CHECKING:
     from generated_symbols.world.component.entity.RabbitVariant import RabbitVariant
     from generated_symbols.world.component.entity.TropicalFishPattern import TropicalFishPattern
     from generated_symbols.world.entity.boat.BoatType import BoatType
-
-
-@dataclass(kw_only=True)
-class PositionStruct:
-    x: MinMaxBounds[float] | float | None = None
-    y: MinMaxBounds[float] | float | None = None
-    z: MinMaxBounds[float] | float | None = None
-
-
-@dataclass(kw_only=True)
-class LightStruct:
-    light: MinMaxBounds[Annotated[int, 'Range | `0`-`15` | both inclusive']] | Annotated[int, 'Range | `0`-`15` | both inclusive'] | None = None
-
-
-@dataclass(kw_only=True)
-class PositionStruct:
-    x: MinMaxBounds[float] | float | None = None
-    y: MinMaxBounds[float] | float | None = None
-    z: MinMaxBounds[float] | float | None = None
-
-
-@dataclass(kw_only=True)
-class LightStruct:
-    light: MinMaxBounds[Annotated[int, 'Range | `0`-`15` | both inclusive']] | Annotated[int, 'Range | `0`-`15` | both inclusive'] | None = None
-
-
-type AdvancementsStructValueStruct = dict[str, bool]
-
-
-@dataclass(kw_only=True)
-class InputStruct:
-    forward: bool | None = None
-    backward: bool | None = None
-    left: bool | None = None
-    right: bool | None = None
-    jump: bool | None = None
-    sneak: bool | None = None
-    sprint: bool | None = None
-
-
-@dataclass(kw_only=True)
-class FoodStruct:
-    level: MinMaxBounds[int] | int | None = None
-    saturation: MinMaxBounds[float] | float | None = None
 
 
 @dataclass(kw_only=True)

@@ -7,11 +7,11 @@ from enum import Enum
 
 
 class ExplosionType(Enum):
-    SMALLBALL = "0"
-    LARGEBALL = "1"
-    STAR = "2"
-    CREEPER = "3"
-    BURST = "4"
+    SMALLBALL = 0
+    LARGEBALL = 1
+    STAR = 2
+    CREEPER = 3
+    BURST = 4
 
 
 # ~~~ MODEL DUMP ~~~

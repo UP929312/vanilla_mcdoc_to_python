@@ -7,7 +7,7 @@ from enum import Enum
 
 
 class ShulkerColor(Enum):
-    NORMAL = "16"
+    NORMAL = 16
 
 
 # ~~~ MODEL DUMP ~~~

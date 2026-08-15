@@ -4,6 +4,9 @@ Local link to file: generated_symbols/world/entity/mob/player/Respawn.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
+from typing import Annotated
+
+from minecraft_registry import IdSpec
 
 
 @dataclass(kw_only=True)
@@ -11,6 +14,7 @@ class Respawn:
     pos: tuple[int, int, int]  # The block coordinates of the player's respawn point
     yaw: float  # The Y-rotation of the player's respawn point
     pitch: float  # The X-rotation of the player's respawn point
+    dimension: Annotated[str, IdSpec(registry='dimension')]  # Dimension of the player's respawn point. Defaults to overworl.
     forced: bool | None = None  # Whether the player must spawn at the respawn point.
 
 

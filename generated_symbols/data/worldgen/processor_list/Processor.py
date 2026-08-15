@@ -6,12 +6,13 @@ Local link to file: generated_symbols/data/worldgen/processor_list/Processor.py
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Literal
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.HeightmapType import HeightmapType
     from generated_symbols.data.worldgen.IntProvider import IntProvider
-    from generated_symbols.data.worldgen.processor_list.ProcessorRule import ProcessorRule
+    from generated_symbols.data.worldgen.processor_list.ProcessorRule import ProcessorRule as ProcessorRule2
+    from generated_symbols.registry.KnownBlockId import KnownBlockId
     from generated_symbols.util.block_state.BlockState import BlockState
 
 
@@ -31,7 +32,7 @@ class ProcessorBlockIgnore:
 class ProcessorBlockRot:
     processor_type: Literal['minecraft:block_rot']
     integrity: Annotated[float, 'Range | `0`-`1` | both inclusive']
-    rottable_blocks: list[Annotated[str, IdSpec(registry='block')]] | Annotated[str, IdSpec(registry='block', tags='allowed')] | None = None
+    rottable_blocks: list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | None = None
 
 
 @dataclass(kw_only=True)
@@ -51,13 +52,13 @@ class ProcessorGravity:
 @dataclass(kw_only=True)
 class ProcessorProtectedBlocks:
     processor_type: Literal['minecraft:protected_blocks']
-    value: Annotated[str, IdSpec(registry='block', tags='allowed')] | list[Annotated[str, IdSpec(registry='block')]]
+    value: Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | list[Annotated[str, IdSpec(registry='block')] | KnownBlockId]
 
 
 @dataclass(kw_only=True)
 class ProcessorRule:
     processor_type: Literal['minecraft:rule']
-    rules: list[ProcessorRule]
+    rules: list[ProcessorRule2]
 
 
 type Processor = ProcessorBlockAge | ProcessorBlockIgnore | ProcessorBlockRot | ProcessorCapped | ProcessorGravity | ProcessorProtectedBlocks | ProcessorRule

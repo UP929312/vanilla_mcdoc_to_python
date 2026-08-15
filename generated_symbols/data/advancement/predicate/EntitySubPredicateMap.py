@@ -5,7 +5,7 @@ Local link to file: generated_symbols/data/advancement/predicate/EntitySubPredic
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.advancement.predicate.AxolotlPredicate import AxolotlPredicate

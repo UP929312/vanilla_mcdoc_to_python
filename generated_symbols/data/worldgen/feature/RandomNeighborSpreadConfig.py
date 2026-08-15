@@ -6,18 +6,19 @@ Local link to file: generated_symbols/data/worldgen/feature/RandomNeighborSpread
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.IntProvider import IntProvider
     from generated_symbols.data.worldgen.feature.block_predicate.BlockPredicate import BlockPredicate
     from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
+    from generated_symbols.registry.KnownBlockId import KnownBlockId
 
 
 @dataclass(kw_only=True)
 class RandomNeighborSpreadConfig:
     block: BlockStateProvider
-    accepted_neighbors: Annotated[str, IdSpec(registry='block', tags='allowed')] | list[Annotated[str, IdSpec(registry='block')]]
+    accepted_neighbors: Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | list[Annotated[str, IdSpec(registry='block')] | KnownBlockId]
     can_replace: BlockPredicate
     attempts: IntProvider[Annotated[int, 'Range | `1`-`3000` | both inclusive']] | Annotated[int, 'Range | `1`-`3000` | both inclusive']
     xz_offset: IntProvider[Annotated[int, 'Range | `-16`-`16` | both inclusive']] | Annotated[int, 'Range | `-16`-`16` | both inclusive']

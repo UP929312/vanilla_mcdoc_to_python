@@ -6,9 +6,10 @@ Local link to file: generated_symbols/data/worldgen/feature/SpeleothemConfig.py
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
+    from generated_symbols.registry.KnownBlockId import KnownBlockId
     from generated_symbols.util.block_state.BlockState import BlockState
 
 
@@ -16,7 +17,7 @@ if TYPE_CHECKING:
 class SpeleothemConfig:
     base_block: BlockState
     pointed_block: BlockState
-    replaceable_blocks: list[Annotated[str, IdSpec(registry='block')]] | Annotated[str, IdSpec(registry='block', tags='allowed')]
+    replaceable_blocks: list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId
     chance_of_taller_generation: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
     chance_of_directional_spread: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
     chance_of_spread_radius2: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None

@@ -3,10 +3,9 @@ Generated from symbols.json for ::java::world::component::predicate::ItemCountPs
 Local link to file: generated_symbols/world/component/predicate/ItemCountPseudoPredicate.py
 """
 # ~~~ CODE ~~~
-from typing import TYPE_CHECKING, Annotated
+from typing import Annotated
 
-if TYPE_CHECKING:
-    from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
+from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
 
 
 ItemCountPseudoPredicate = MinMaxBounds[Annotated[int, 'Range | `1`-`99` | both inclusive']] | Annotated[int, 'Range | `1`-`99` | both inclusive']

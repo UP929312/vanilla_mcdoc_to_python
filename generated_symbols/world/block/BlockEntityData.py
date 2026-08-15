@@ -12,11 +12,12 @@ from generated_symbols.world.block.Nameable import Nameable
 from generated_symbols.world.block.command_block.BaseCommandBlock import BaseCommandBlock
 from generated_symbols.world.block.container.Container9 import Container9
 from generated_symbols.world.block.container.ContainerBase import ContainerBase
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.trial_spawner.TrialSpawnerConfig import TrialSpawnerConfig
-    from generated_symbols.util.Rotation import Rotation
+    from generated_symbols.registry.KnownTestInstanceId import KnownTestInstanceId
+    from generated_symbols.util.Rotation import Rotation as Rotation2
     from generated_symbols.util.avatar.Profile import Profile
     from generated_symbols.util.block_state.BlockState import BlockState
     from generated_symbols.util.direction.DirectionByte import DirectionByte
@@ -41,10 +42,10 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class DataStruct:
     size: tuple[int, int, int]
-    rotation: Rotation
+    rotation: Rotation2
     ignore_entities: bool
     status: TestInstanceBlockStatus
-    test: Annotated[str, IdSpec(registry='test_instance')] | None = None
+    test: Annotated[str, IdSpec(registry='test_instance')] | KnownTestInstanceId | None = None
     error_message: Text | None = None
 
 
@@ -91,7 +92,7 @@ class BlockEntityDataBarrel(ContainerBase):
 
 
 @dataclass(kw_only=True)
-class BlockEntityDataBeacon(BlockEntity, Nameable, Lockable):
+class BlockEntityDataBeacon(BlockEntity, Lockable, Nameable):
     id: Literal['minecraft:beacon']
     Levels: int | None = None  # Number of levels from the pyramid.
     primary_effect: Annotated[str, IdSpec(registry='mob_effect')] | None = None
@@ -106,7 +107,7 @@ class BlockEntityDataBeehive(BlockEntity):
 
 
 @dataclass(kw_only=True)
-class BlockEntityDataBlastFurnace(BlockEntity, Nameable, Lockable):
+class BlockEntityDataBlastFurnace(BlockEntity, Lockable, Nameable):
     id: Literal['minecraft:blast_furnace']
     Items: Annotated[list[SlottedItem[Annotated[int, 'Range | `0`-`2` | both inclusive']]], 'Length = 0-3 (both inclusive)'] | None = None  # The items in this furnace, with slots: * 0: Item being smelted * 1: Fuel * 2: Output
     cooking_total_time: int | None = None  # The total amount of time the current cooking process will take. Defaults to `0`.
@@ -118,7 +119,7 @@ class BlockEntityDataBlastFurnace(BlockEntity, Nameable, Lockable):
 
 
 @dataclass(kw_only=True)
-class BlockEntityDataBrewingStand(BlockEntity, Nameable, Lockable):
+class BlockEntityDataBrewingStand(BlockEntity, Lockable, Nameable):
     id: Literal['minecraft:brewing_stand']
     Items: Annotated[list[SlottedItem[Annotated[int, 'Range | `0`-`4` | both inclusive']]], 'Length = 0-5 (both inclusive)'] | None = None  # * 0: left brewing slot * 1: middle brewing slot * 2: right brewing slot * 3: ingredient slot * 4: fuel slot
     BrewTime: int | None = None  # Number of ticks until the brewing is complete.
@@ -166,7 +167,7 @@ class BlockEntityDataChiseledBookshelf(BlockEntity):
 
 
 @dataclass(kw_only=True)
-class BlockEntityDataCommandBlock(BlockEntity, Nameable, BaseCommandBlock):
+class BlockEntityDataCommandBlock(BaseCommandBlock, BlockEntity, Nameable):
     id: Literal['minecraft:command_block']
     powered: bool | None = None  # Whether it is powered by redstone.
     auto: bool | None = None  # Whether it is automatically powered.
@@ -234,7 +235,7 @@ class BlockEntityDataEndGateway(BlockEntity):
 
 
 @dataclass(kw_only=True)
-class BlockEntityDataFurnace(BlockEntity, Nameable, Lockable):
+class BlockEntityDataFurnace(BlockEntity, Lockable, Nameable):
     id: Literal['minecraft:furnace']
     Items: Annotated[list[SlottedItem[Annotated[int, 'Range | `0`-`2` | both inclusive']]], 'Length = 0-3 (both inclusive)'] | None = None  # The items in this furnace, with slots: * 0: Item being smelted * 1: Fuel * 2: Output
     cooking_total_time: int | None = None  # The total amount of time the current cooking process will take. Defaults to `0`.
@@ -359,7 +360,7 @@ class BlockEntityDataSkull(BlockEntity):
 
 
 @dataclass(kw_only=True)
-class BlockEntityDataSmoker(BlockEntity, Nameable, Lockable):
+class BlockEntityDataSmoker(BlockEntity, Lockable, Nameable):
     id: Literal['minecraft:smoker']
     Items: Annotated[list[SlottedItem[Annotated[int, 'Range | `0`-`2` | both inclusive']]], 'Length = 0-3 (both inclusive)'] | None = None  # The items in this furnace, with slots: * 0: Item being smelted * 1: Fuel * 2: Output
     cooking_total_time: int | None = None  # The total amount of time the current cooking process will take. Defaults to `0`.

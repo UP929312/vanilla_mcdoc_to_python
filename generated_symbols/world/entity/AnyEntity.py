@@ -4,7 +4,7 @@ Local link to file: generated_symbols/world/entity/AnyEntity.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Any, Literal
+from typing import TYPE_CHECKING, Annotated, Literal
 
 from generated_symbols.world.block.command_block.BaseCommandBlock import BaseCommandBlock
 from generated_symbols.world.entity.BlockAttachedEntity import BlockAttachedEntity
@@ -35,11 +35,11 @@ from generated_symbols.world.entity.projectile.fireball.AcceleratingProjectileBa
 from generated_symbols.world.entity.projectile.fireball.DespawnableProjectileBase import DespawnableProjectileBase
 from generated_symbols.world.entity.projectile.fireball.FireballBase import FireballBase
 from generated_symbols.world.entity.projectile.throwable.Throwable import Throwable
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.assets.model.ItemDisplayContext import ItemDisplayContext
-    from generated_symbols.util.BlockState import BlockState
+    from generated_symbols.util.BlockState import BlockState as BlockState2
     from generated_symbols.util.DyeColorByte import DyeColorByte
     from generated_symbols.util.GlobalPos import GlobalPos
     from generated_symbols.util.avatar.HumanoidArm import HumanoidArm
@@ -47,7 +47,7 @@ if TYPE_CHECKING:
     from generated_symbols.util.avatar.Profile import Profile
     from generated_symbols.util.block_state.BlockState import BlockState
     from generated_symbols.util.color.DyeColor import DyeColor
-    from generated_symbols.util.color.DyeColorByte import DyeColorByte
+    from generated_symbols.util.color.DyeColorByte import DyeColorByte as DyeColorByte2
     from generated_symbols.util.direction.DirectionByte import DirectionByte
     from generated_symbols.util.direction.HorizontalDirectionByte import HorizontalDirectionByte
     from generated_symbols.util.game_event.VibrationListener import VibrationListener
@@ -101,68 +101,13 @@ class LeashStruct:
 
 
 @dataclass(kw_only=True)
-class LeashStruct:
-    UUID: tuple[int, int, int, int] | None = None
-
-
-@dataclass(kw_only=True)
-class LeashStruct:
-    UUID: tuple[int, int, int, int] | None = None
-
-
-@dataclass(kw_only=True)
 class ItemsStruct:
     pass
-
-
-@dataclass(kw_only=True)
-class LeashStruct:
-    UUID: tuple[int, int, int, int] | None = None
 
 
 @dataclass(kw_only=True)
 class TileEntityDataStruct:
     pass
-
-
-@dataclass(kw_only=True)
-class LeashStruct:
-    UUID: tuple[int, int, int, int] | None = None
-
-
-@dataclass(kw_only=True)
-class LeashStruct:
-    UUID: tuple[int, int, int, int] | None = None
-
-
-@dataclass(kw_only=True)
-class ItemsStruct:
-    pass
-
-
-@dataclass(kw_only=True)
-class LeashStruct:
-    UUID: tuple[int, int, int, int] | None = None
-
-
-@dataclass(kw_only=True)
-class LeashStruct:
-    UUID: tuple[int, int, int, int] | None = None
-
-
-@dataclass(kw_only=True)
-class LeashStruct:
-    UUID: tuple[int, int, int, int] | None = None
-
-
-@dataclass(kw_only=True)
-class LeashStruct:
-    UUID: tuple[int, int, int, int] | None = None
-
-
-@dataclass(kw_only=True)
-class LeashStruct:
-    UUID: tuple[int, int, int, int] | None = None
 
 
 @dataclass(kw_only=True)
@@ -397,7 +342,7 @@ class AnyEntityChestBoat(Boat):
 
 
 @dataclass(kw_only=True)
-class AnyEntityChestMinecart(Minecart, ContainerMinecart):
+class AnyEntityChestMinecart(ContainerMinecart, Minecart):
     id: Literal['minecraft:chest_minecart']  # The ID of this entity. Not present on player entities.
     Items: Annotated[list[SlottedItem[Annotated[int, 'Range | `0`-`26` | both inclusive']]], 'Length = 0-27 (both inclusive)'] | None = None  # Slots from 0 to 26.
 
@@ -418,7 +363,7 @@ class AnyEntityCod(MobBase):
 
 
 @dataclass(kw_only=True)
-class AnyEntityCommandBlockMinecart(Minecart, BaseCommandBlock):
+class AnyEntityCommandBlockMinecart(BaseCommandBlock, Minecart):
     id: Literal['minecraft:command_block_minecart']  # The ID of this entity. Not present on player entities.
 
 
@@ -477,7 +422,7 @@ class AnyEntityDarkOakChestBoat(Boat):
 
 
 @dataclass(kw_only=True)
-class AnyEntityDolphin(MobBase, AgeableMob):
+class AnyEntityDolphin(AgeableMob, MobBase):
     id: Literal['minecraft:dolphin']  # The ID of this entity. Not present on player entities.
     GotFish: bool | None = None  # Whether it has gotten fish from a player.
     Moistness: int | None = None  # Moistness level of the dolphin. Set to 2400 when the dolphin is in water or rain, otherwise decreases by 1 every tick. The dolphin takes damage when level is at 0 or below.
@@ -548,7 +493,7 @@ class AnyEntityEnderPearl(Throwable):
 @dataclass(kw_only=True)
 class AnyEntityEnderman(MobBase, NeutralMob):
     id: Literal['minecraft:enderman']  # The ID of this entity. Not present on player entities.
-    carriedBlockState: BlockState | None = None  # Block it is carrying.
+    carriedBlockState: BlockState2 | None = None  # Block it is carrying.
 
 
 @dataclass(kw_only=True)
@@ -596,7 +541,7 @@ class AnyEntityEyeOfEnder(EntityBase):
 class AnyEntityFallingBlock(EntityBase):
     id: Literal['minecraft:falling_block']  # The ID of this entity. Not present on player entities.
     TileEntityData: TileEntityDataStruct | None = None  # NBT data for the placed block.
-    BlockState: BlockState | None = None  # Block state for the placed block. Defaults to sand.
+    BlockState: BlockState2 | None = None  # Block state for the placed block. Defaults to sand.
     Time: int | None = None  # Ticks it has existed.
     DropItem: bool | None = None  # Whether it should drop as a block when destroyed.
     HurtEntities: bool | None = None  # Whether this it should hurt entities.
@@ -678,7 +623,7 @@ class AnyEntityGlowItemFrame(BlockAttachedEntity):
 
 
 @dataclass(kw_only=True)
-class AnyEntityGlowSquid(MobBase, AgeableMob):
+class AnyEntityGlowSquid(AgeableMob, MobBase):
     id: Literal['minecraft:glow_squid']  # The ID of this entity. Not present on player entities.
     DarkTicksRemaining: int | None = None  # Ticks that it will wait before glowing.
 
@@ -708,7 +653,7 @@ class AnyEntityGuardian(LivingEntity):
 
 
 @dataclass(kw_only=True)
-class AnyEntityHappyGhast(MobBase, AgeableMob):
+class AnyEntityHappyGhast(AgeableMob, MobBase):
     id: Literal['minecraft:happy_ghast']  # The ID of this entity. Not present on player entities.
     still_timeout: int | None = None
 
@@ -722,7 +667,7 @@ class AnyEntityHoglin(Breedable):
 
 
 @dataclass(kw_only=True)
-class AnyEntityHopperMinecart(Minecart, ContainerMinecart):
+class AnyEntityHopperMinecart(ContainerMinecart, Minecart):
     id: Literal['minecraft:hopper_minecart']  # The ID of this entity. Not present on player entities.
     Items: Annotated[list[SlottedItem[Annotated[int, 'Range | `0`-`4` | both inclusive']]], 'Length = 0-5 (both inclusive)'] | None = None  # Slots from 0 to 4.
     TransferCooldown: int | None = None  # Ticks until an item can be transferred.
@@ -833,7 +778,7 @@ class AnyEntityLlamaSpit(ProjectileBase):
 
 
 @dataclass(kw_only=True)
-class AnyEntityMagmaCube(MobBase, CubeMob):
+class AnyEntityMagmaCube(CubeMob, MobBase):
     id: Literal['minecraft:magma_cube']  # The ID of this entity. Not present on player entities.
 
 
@@ -871,7 +816,7 @@ class AnyEntityMarker(EntityBase):
 @dataclass(kw_only=True)
 class AnyEntityMinecart(EntityBase):
     id: Literal['minecraft:minecart']  # The ID of this entity. Not present on player entities.
-    DisplayState: BlockState | None = None  # Custom block to display.
+    DisplayState: BlockState2 | None = None  # Custom block to display.
     DisplayOffset: int | None = None  # Vertical offset of the block display.
 
 
@@ -1108,7 +1053,7 @@ class AnyEntityShulker(MobBase):
     id: Literal['minecraft:shulker']  # The ID of this entity. Not present on player entities.
     Peek: bool | None = None  # Whether it is peeking.
     AttachFace: DirectionByte | None = None  # Which face it is attached to.
-    Color: DyeColorByte | ShulkerColor | None = None
+    Color: DyeColorByte2 | ShulkerColor | None = None
 
 
 @dataclass(kw_only=True)
@@ -1152,7 +1097,7 @@ class AnyEntitySkeletonHorse(HorseBase):
 
 
 @dataclass(kw_only=True)
-class AnyEntitySlime(MobBase, CubeMob):
+class AnyEntitySlime(CubeMob, MobBase):
     id: Literal['minecraft:slime']  # The ID of this entity. Not present on player entities.
 
 
@@ -1163,7 +1108,7 @@ class AnyEntitySmallFireball(DespawnableProjectileBase):
 
 
 @dataclass(kw_only=True)
-class AnyEntitySniffer(MobBase, AgeableMob):
+class AnyEntitySniffer(AgeableMob, MobBase):
     id: Literal['minecraft:sniffer']  # The ID of this entity. Not present on player entities.
     InLove: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # Ticks until it stops searching for a mate.
     LoveCause: tuple[int, int, int, int] | None = None  # Player that caused this mob to breed.
@@ -1237,7 +1182,7 @@ class AnyEntitySpruceChestBoat(Boat):
 
 
 @dataclass(kw_only=True)
-class AnyEntitySquid(MobBase, AgeableMob):
+class AnyEntitySquid(AgeableMob, MobBase):
     id: Literal['minecraft:squid']  # The ID of this entity. Not present on player entities.
 
 
@@ -1263,7 +1208,7 @@ class AnyEntityStrider(Breedable):
 
 
 @dataclass(kw_only=True)
-class AnyEntitySulfurCube(MobBase, AgeableMob, CubeMob):
+class AnyEntitySulfurCube(AgeableMob, CubeMob, MobBase):
     id: Literal['minecraft:sulfur_cube']  # The ID of this entity. Not present on player entities.
     pickup_timer: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None
     from_bucket: bool | None = None
@@ -1413,7 +1358,7 @@ class AnyEntityWitherSkull(DespawnableProjectileBase):
 
 
 @dataclass(kw_only=True)
-class AnyEntityWolf(Tamable, NeutralMob):
+class AnyEntityWolf(NeutralMob, Tamable):
     id: Literal['minecraft:wolf']  # The ID of this entity. Not present on player entities.
     CollarColor: DyeColorByte | None = None  # Collar color, present for wild wolfs. Defaults to 14 (red).
     variant: Annotated[str, IdSpec(registry='wolf_variant')] | None = None

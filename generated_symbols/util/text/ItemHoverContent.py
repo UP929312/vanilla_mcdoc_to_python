@@ -6,15 +6,16 @@ Local link to file: generated_symbols/util/text/ItemHoverContent.py
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
+    from generated_symbols.registry.KnownItemId import KnownItemId
     from generated_symbols.world.component.DataComponentPatch import DataComponentPatch
 
 
 @dataclass(kw_only=True)
 class ItemHoverContent:
-    id: Annotated[str, IdSpec(registry='item')]
+    id: Annotated[str, IdSpec(registry='item')] | KnownItemId
     count: int | None = None
     components: DataComponentPatch | None = None
 

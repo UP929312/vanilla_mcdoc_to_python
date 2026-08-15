@@ -4,12 +4,9 @@ Local link to file: generated_symbols/assets/item_definition/MainHand.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
 
 from generated_symbols.assets.item_definition.SelectCases import SelectCases
-
-if TYPE_CHECKING:
-    from generated_symbols.util.avatar.HumanoidArm import HumanoidArm
+from generated_symbols.util.avatar.HumanoidArm import HumanoidArm
 
 
 @dataclass(kw_only=True)

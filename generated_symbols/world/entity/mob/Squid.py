@@ -10,7 +10,7 @@ from generated_symbols.world.entity.mob.MobBase import MobBase
 
 
 @dataclass(kw_only=True)
-class Squid(MobBase, AgeableMob):
+class Squid(AgeableMob, MobBase):
     pass
 
 

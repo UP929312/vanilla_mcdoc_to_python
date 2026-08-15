@@ -15,7 +15,7 @@ if TYPE_CHECKING:
 
 
 @dataclass(kw_only=True)
-class CraftingShapeless(NotificationInfo, CraftingBookInfo):
+class CraftingShapeless(CraftingBookInfo, NotificationInfo):
     ingredients: Annotated[list[Ingredient], 'Length = 1-9 (both inclusive)']
     result: ItemStackTemplate
 

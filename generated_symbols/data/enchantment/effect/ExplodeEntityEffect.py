@@ -6,13 +6,14 @@ Local link to file: generated_symbols/data/enchantment/effect/ExplodeEntityEffec
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.enchantment.LevelBasedValue import LevelBasedValue
     from generated_symbols.data.enchantment.effect.BlockInteraction import BlockInteraction
     from generated_symbols.data.enchantment.effect.ExplosionParticleInfo import ExplosionParticleInfo
     from generated_symbols.data.util.SoundEventRef import SoundEventRef
+    from generated_symbols.registry.KnownBlockId import KnownBlockId
     from generated_symbols.util.particle.Particle import Particle
 
 
@@ -25,7 +26,7 @@ class ExplodeEntityEffect:
     sound: SoundEventRef
     attribute_to_user: bool | None = None  # Whether the explosion should be attributed to the user of the enchanted tool.
     damage_type: Annotated[str, IdSpec(registry='damage_type')] | None = None  # If omitted, no damage is dealt by the explosion.
-    immune_blocks: Annotated[str, IdSpec(registry='block', tags='allowed')] | list[Annotated[str, IdSpec(registry='block')]] | None = None  # List of Blocks or hash-prefixed Block Tag specifying which blocks fully block the explosion.
+    immune_blocks: Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | None = None  # List of Blocks or hash-prefixed Block Tag specifying which blocks fully block the explosion.
     knockback_multiplier: LevelBasedValue | None = None  # If omitted, constant value `1` is applied.
     offset: tuple[float, float, float] | None = None  # Relative coordinates to offset the explosion by. Defaults to `[0, 0, 0]`.
     create_fire: bool | None = None  # Whether fire is placed within the explosion radius.

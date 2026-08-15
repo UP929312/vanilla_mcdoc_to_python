@@ -4,17 +4,40 @@ Local link to file: generated_symbols/data/loot/function/CustomModelDataFloats.p
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
-
-from generated_symbols.data.loot.function.ListOperation import ListOperation
+from typing import TYPE_CHECKING, Annotated, Literal
 
 if TYPE_CHECKING:
     from generated_symbols.data.number_provider.NumberProviderRef import NumberProviderRef
 
 
 @dataclass(kw_only=True)
-class CustomModelDataFloats(ListOperation):
+class CustomModelDataFloatsAppend:
     values: list[NumberProviderRef]
+    mode: Literal['minecraft:append']  # Determines how the existing list should be modified.
+
+
+@dataclass(kw_only=True)
+class CustomModelDataFloatsInsert:
+    values: list[NumberProviderRef]
+    mode: Literal['minecraft:insert']  # Determines how the existing list should be modified.
+    offset: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The offset in the list to insert into. Defaults to 0.
+
+
+@dataclass(kw_only=True)
+class CustomModelDataFloatsReplaceAll:
+    values: list[NumberProviderRef]
+    mode: Literal['minecraft:replace_all']  # Determines how the existing list should be modified.
+
+
+@dataclass(kw_only=True)
+class CustomModelDataFloatsReplaceSection:
+    values: list[NumberProviderRef]
+    mode: Literal['minecraft:replace_section']  # Determines how the existing list should be modified.
+    offset: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The offset of the section to replace. Defaults to 0.
+    size: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The size of the section to replace. Defaults to size of the new list.
+
+
+type CustomModelDataFloats = CustomModelDataFloatsAppend | CustomModelDataFloatsInsert | CustomModelDataFloatsReplaceAll | CustomModelDataFloatsReplaceSection
 
 
 # ~~~ MODEL DUMP ~~~

@@ -6,10 +6,11 @@ Local link to file: generated_symbols/data/advancement/predicate/BlockPredicate.
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.advancement.predicate.BlockPredicateState import BlockPredicateState
+    from generated_symbols.registry.KnownBlockId import KnownBlockId
     from generated_symbols.world.block.BlockEntity import BlockEntity
     from generated_symbols.world.block.banner.Banner import Banner
     from generated_symbols.world.block.beacon.Beacon import Beacon
@@ -51,18 +52,13 @@ if TYPE_CHECKING:
 
 
 @dataclass(kw_only=True)
-class BlockStructUnknown:
-    pass
-
-
-@dataclass(kw_only=True)
 class NbtStructBlockUnknown:
     pass
 
 
 @dataclass(kw_only=True)
 class BlockPredicate:
-    blocks: Annotated[str, IdSpec(registry='block', tags='allowed')] | list[Annotated[str, IdSpec(registry='block')]] | None = None
+    blocks: Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | None = None
     state: BlockPredicateState | None = None
     nbt: str | NbtStructBlockUnknown | Sign | Shelf | Container27 | Beacon | BlockEntity | Beehive | Banner | Furnace | BrewingStand | SculkSensor | Campfire | CommandBlock | ChiseledBookshelf | Comparator | Conduit | Crafter | Skull | DecoratedPot | Container9 | EnchantingTable | EndGateway | Hopper | Jigsaw | Jukebox | Lectern | MovingPiston | PotentSulfur | SculkCatalyst | SculkShrieker | Spawner | StructureBlock | BrushableBlock | TestBlock | TestInstanceBlock | TrialSpawner | Vault | None = None
     components: DataComponentExactPredicate | None = None  # Match exact data component values on the block entity.

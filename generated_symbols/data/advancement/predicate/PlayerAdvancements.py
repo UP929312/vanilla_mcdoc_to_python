@@ -5,7 +5,7 @@ Local link to file: generated_symbols/data/advancement/predicate/PlayerAdvanceme
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 
 type PlayerAdvancementsValueStruct = dict[str, bool]

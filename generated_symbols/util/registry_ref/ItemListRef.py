@@ -3,12 +3,15 @@ Generated from symbols.json for ::java::util::registry_ref::ItemListRef
 Local link to file: generated_symbols/util/registry_ref/ItemListRef.py
 """
 # ~~~ CODE ~~~
-from typing import Annotated
+from typing import TYPE_CHECKING, Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
+
+if TYPE_CHECKING:
+    from generated_symbols.registry.KnownItemId import KnownItemId
 
 
-type ItemListRef = Annotated[str, IdSpec(registry='item', tags='allowed')] | list[Annotated[str, IdSpec(registry='item')]]
+type ItemListRef = Annotated[str, IdSpec(registry='item', tags='allowed')] | KnownItemId | list[Annotated[str, IdSpec(registry='item')] | KnownItemId]
 
 
 # ~~~ MODEL DUMP ~~~

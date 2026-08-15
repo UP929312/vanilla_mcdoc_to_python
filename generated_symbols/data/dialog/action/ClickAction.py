@@ -6,10 +6,11 @@ Local link to file: generated_symbols/data/dialog/action/ClickAction.py
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Any, Literal
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.dialog.Dialog import Dialog
+    from generated_symbols.registry.KnownDialogId import KnownDialogId
     from generated_symbols.util.custom_event.UnknownDynamicAdditions import UnknownDynamicAdditions
 
 
@@ -60,7 +61,7 @@ class ClickActionRunCommand:
 @dataclass(kw_only=True)
 class ClickActionShowDialog:
     type: Literal['minecraft:show_dialog']
-    dialog: Annotated[str, IdSpec(registry='dialog')] | Dialog
+    dialog: Annotated[str, IdSpec(registry='dialog')] | KnownDialogId | Dialog
 
 
 @dataclass(kw_only=True)

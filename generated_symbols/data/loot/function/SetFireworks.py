@@ -4,19 +4,42 @@ Local link to file: generated_symbols/data/loot/function/SetFireworks.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, Literal
 
 from generated_symbols.data.loot.function.Conditions import Conditions
-from generated_symbols.data.loot.function.ListOperation import ListOperation
 
 if TYPE_CHECKING:
     from generated_symbols.world.component.item.Explosion import Explosion
 
 
 @dataclass(kw_only=True)
-class ExplosionsStruct(ListOperation):
+class ExplosionsStructAppend:
     values: list[Explosion]
+    mode: Literal['minecraft:append']  # Determines how the existing list should be modified.
 
+
+@dataclass(kw_only=True)
+class ExplosionsStructInsert:
+    values: list[Explosion]
+    mode: Literal['minecraft:insert']  # Determines how the existing list should be modified.
+    offset: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The offset in the list to insert into. Defaults to 0.
+
+
+@dataclass(kw_only=True)
+class ExplosionsStructReplaceAll:
+    values: list[Explosion]
+    mode: Literal['minecraft:replace_all']  # Determines how the existing list should be modified.
+
+
+@dataclass(kw_only=True)
+class ExplosionsStructReplaceSection:
+    values: list[Explosion]
+    mode: Literal['minecraft:replace_section']  # Determines how the existing list should be modified.
+    offset: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The offset of the section to replace. Defaults to 0.
+    size: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The size of the section to replace. Defaults to size of the new list.
+
+
+type ExplosionsStruct = ExplosionsStructAppend | ExplosionsStructInsert | ExplosionsStructReplaceAll | ExplosionsStructReplaceSection
 
 @dataclass(kw_only=True)
 class SetFireworks(Conditions):

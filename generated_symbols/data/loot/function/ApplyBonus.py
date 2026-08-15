@@ -7,7 +7,7 @@ from dataclasses import dataclass
 from typing import Annotated, Literal
 
 from generated_symbols.data.loot.function.Conditions import Conditions
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 
 @dataclass(kw_only=True)
@@ -17,7 +17,7 @@ class ParametersStruct:
 
 
 @dataclass(kw_only=True)
-class ParametersStruct:
+class ParametersStruct2:
     bonusMultiplier: int
 
 
@@ -38,7 +38,7 @@ class ApplyBonusOreDrops(Conditions):
 class ApplyBonusUniformBonusCount(Conditions):
     enchantment: Annotated[str, IdSpec(registry='enchantment')]
     formula: Literal['minecraft:uniform_bonus_count']
-    parameters: ParametersStruct
+    parameters: ParametersStruct2
 
 
 type ApplyBonus = ApplyBonusBinomialWithBonusCount | ApplyBonusOreDrops | ApplyBonusUniformBonusCount

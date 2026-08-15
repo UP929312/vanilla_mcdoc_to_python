@@ -6,11 +6,12 @@ Local link to file: generated_symbols/data/gametest/test_environment/TestEnviron
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Literal
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.gametest.test_environment.Difficulty import Difficulty
     from generated_symbols.data.gametest.test_environment.Weather import Weather
+    from generated_symbols.registry.KnownGameRuleId import KnownGameRuleId
 
 
 @dataclass(kw_only=True)
@@ -42,7 +43,7 @@ class TestEnvironmentFunction:
 @dataclass(kw_only=True)
 class TestEnvironmentGameRules:
     type: Literal['minecraft:game_rules']
-    rules: dict[Annotated[str, IdSpec(registry='game_rule')], bool | Annotated[int, 'Range | Min `-1` and above | inclusive'] | Annotated[int, 'Range | Min `1` and above | inclusive'] | Annotated[int, 'Range | Min `0` and above | inclusive'] | Annotated[int, 'Range | `1`-`1000` | both inclusive'] | Annotated[int, 'Range | `0`-`8` | both inclusive']]
+    rules: dict[Annotated[str, IdSpec(registry='game_rule')] | KnownGameRuleId, bool | Annotated[int, 'Range | Min `-1` and above | inclusive'] | Annotated[int, 'Range | Min `1` and above | inclusive'] | Annotated[int, 'Range | Min `0` and above | inclusive'] | Annotated[int, 'Range | `1`-`1000` | both inclusive'] | Annotated[int, 'Range | `0`-`8` | both inclusive']]
 
 
 @dataclass(kw_only=True)

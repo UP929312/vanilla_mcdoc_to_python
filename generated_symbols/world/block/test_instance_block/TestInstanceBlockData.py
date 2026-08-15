@@ -6,9 +6,10 @@ Local link to file: generated_symbols/world/block/test_instance_block/TestInstan
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
+    from generated_symbols.registry.KnownTestInstanceId import KnownTestInstanceId
     from generated_symbols.util.Rotation import Rotation
     from generated_symbols.util.text.Text import Text
     from generated_symbols.world.block.test_instance_block.TestInstanceBlockStatus import TestInstanceBlockStatus
@@ -20,7 +21,7 @@ class TestInstanceBlockData:
     rotation: Rotation
     ignore_entities: bool
     status: TestInstanceBlockStatus
-    test: Annotated[str, IdSpec(registry='test_instance')] | None = None
+    test: Annotated[str, IdSpec(registry='test_instance')] | KnownTestInstanceId | None = None
     error_message: Text | None = None
 
 

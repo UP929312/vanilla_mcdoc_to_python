@@ -7,11 +7,11 @@ from enum import Enum
 
 
 class ParrotVariantInt(Enum):
-    REDBLUE = "0"
-    BLUE = "1"
-    GREEN = "2"
-    YELLOWBLUE = "3"
-    GRAY = "4"
+    REDBLUE = 0
+    BLUE = 1
+    GREEN = 2
+    YELLOWBLUE = 3
+    GRAY = 4
 
 
 # ~~~ MODEL DUMP ~~~

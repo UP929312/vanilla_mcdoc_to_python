@@ -5,7 +5,7 @@ Local link to file: generated_symbols/world/component/predicate/PotionTypeMatch.
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 
 type PotionTypeMatch = Annotated[str, IdSpec(registry='potion', tags='allowed')] | list[Annotated[str, IdSpec(registry='potion')]]

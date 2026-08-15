@@ -8,14 +8,14 @@ from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.world.entity.mob.NeutralMob import NeutralMob
 from generated_symbols.world.entity.mob.breedable.tamable.Tamable import Tamable
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.util.DyeColorByte import DyeColorByte
 
 
 @dataclass(kw_only=True)
-class Wolf(Tamable, NeutralMob):
+class Wolf(NeutralMob, Tamable):
     CollarColor: DyeColorByte | None = None  # Collar color, present for wild wolfs. Defaults to 14 (red).
     variant: Annotated[str, IdSpec(registry='wolf_variant')] | None = None
     sound_variant: Annotated[str, IdSpec(registry='wolf_sound_variant')] | None = None

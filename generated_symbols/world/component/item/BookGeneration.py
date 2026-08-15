@@ -7,10 +7,10 @@ from enum import Enum
 
 
 class BookGeneration(Enum):
-    ORIGINAL = "0"
-    COPY = "1"
-    COPYOFCOPY = "2"
-    TATTERED = "3"
+    ORIGINAL = 0
+    COPY = 1
+    COPYOFCOPY = 2
+    TATTERED = 3
 
 
 # ~~~ MODEL DUMP ~~~

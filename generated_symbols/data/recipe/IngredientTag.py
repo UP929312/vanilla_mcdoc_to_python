@@ -4,14 +4,17 @@ Local link to file: generated_symbols/data/recipe/IngredientTag.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import Annotated
+from typing import TYPE_CHECKING, Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
+
+if TYPE_CHECKING:
+    from generated_symbols.registry.KnownItemId import KnownItemId
 
 
 @dataclass(kw_only=True)
 class IngredientTag:
-    tag: Annotated[str, IdSpec(registry='item', tags='implicit')]
+    tag: Annotated[str, IdSpec(registry='item', tags='implicit')] | KnownItemId
 
 
 # ~~~ MODEL DUMP ~~~

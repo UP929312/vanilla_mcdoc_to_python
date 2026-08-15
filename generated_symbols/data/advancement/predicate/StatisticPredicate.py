@@ -6,16 +6,18 @@ Local link to file: generated_symbols/data/advancement/predicate/StatisticPredic
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
+    from generated_symbols.registry.KnownBlockId import KnownBlockId
+    from generated_symbols.registry.KnownItemId import KnownItemId
 
 
 @dataclass(kw_only=True)
 class StatisticPredicate:
     type: Annotated[str, IdSpec(registry='stat_type')]
-    stat: str | Annotated[str, IdSpec(registry='item')] | Annotated[str, IdSpec(registry='custom_stat')] | Annotated[str, IdSpec(registry='entity_type')] | Annotated[str, IdSpec(registry='block')]
+    stat: str | Annotated[str, IdSpec(registry='item')] | KnownItemId | Annotated[str, IdSpec(registry='custom_stat')] | Annotated[str, IdSpec(registry='entity_type')] | Annotated[str, IdSpec(registry='block')] | KnownBlockId
     value: MinMaxBounds[int] | int
 
 

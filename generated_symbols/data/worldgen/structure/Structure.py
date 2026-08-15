@@ -6,7 +6,7 @@ Local link to file: generated_symbols/data/worldgen/structure/Structure.py
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Literal
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.DecorationStep import DecorationStep
@@ -21,24 +21,6 @@ if TYPE_CHECKING:
     from generated_symbols.data.worldgen.structure.RuinedPortalSetup import RuinedPortalSetup
     from generated_symbols.data.worldgen.structure.SpawnOverride import SpawnOverride
     from generated_symbols.data.worldgen.structure.TerrainAdaptation import TerrainAdaptation
-
-
-@dataclass(kw_only=True)
-class DimensionPaddingStruct:
-    bottom: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None
-    top: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None
-
-
-@dataclass(kw_only=True)
-class DimensionPaddingStruct:
-    bottom: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None
-    top: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None
-
-
-@dataclass(kw_only=True)
-class DimensionPaddingStruct:
-    bottom: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None
-    top: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None
 
 
 @dataclass(kw_only=True)

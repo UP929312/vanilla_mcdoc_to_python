@@ -6,17 +6,18 @@ Local link to file: generated_symbols/data/advancement/predicate/ItemPredicate.p
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
+    from generated_symbols.registry.KnownItemId import KnownItemId
     from generated_symbols.world.component.DataComponentExactPredicate import DataComponentExactPredicate
     from generated_symbols.world.component.DataComponentPredicate import DataComponentPredicate
 
 
 @dataclass(kw_only=True)
 class ItemPredicate:
-    items: Annotated[str, IdSpec(registry='item', tags='allowed')] | list[Annotated[str, IdSpec(registry='item')]] | None = None
+    items: Annotated[str, IdSpec(registry='item', tags='allowed')] | KnownItemId | list[Annotated[str, IdSpec(registry='item')] | KnownItemId] | None = None
     count: MinMaxBounds[int] | int | None = None
     components: DataComponentExactPredicate | None = None
     predicates: DataComponentPredicate | None = None

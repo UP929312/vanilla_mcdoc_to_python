@@ -7,7 +7,7 @@ from dataclasses import dataclass
 from typing import Annotated
 
 from generated_symbols.data.worldgen.noise_settings.NoiseGeneratorSettings import NoiseGeneratorSettings
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 
 @dataclass(kw_only=True)

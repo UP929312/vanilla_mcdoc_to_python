@@ -3,10 +3,7 @@ Generated from symbols.json for ::java::util::effect::EffectId
 Local link to file: generated_symbols/util/effect/EffectId.py
 """
 # ~~~ CODE ~~~
-from typing import TYPE_CHECKING
-
-if TYPE_CHECKING:
-    from generated_symbols.util.effect.EffectIntId import EffectIntId
+from generated_symbols.util.effect.EffectIntId import EffectIntId
 
 
 type EffectId = EffectIntId

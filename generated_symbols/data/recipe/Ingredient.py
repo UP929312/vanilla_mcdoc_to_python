@@ -5,7 +5,7 @@ Local link to file: generated_symbols/data/recipe/Ingredient.py
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 
 type Ingredient = Annotated[list[Annotated[str, IdSpec(registry='item', exclude=('air',))]], 'Length = 1 (inclusive) and above'] | Annotated[str, IdSpec(registry='item', tags='allowed', exclude=('air',))]

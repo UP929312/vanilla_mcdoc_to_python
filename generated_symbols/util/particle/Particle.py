@@ -7,9 +7,10 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Literal
 
 from generated_symbols.util.particle.VibrationParticleData import VibrationParticleData
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
+    from generated_symbols.registry.KnownBlockId import KnownBlockId
     from generated_symbols.util.block_state.BlockState import BlockState
     from generated_symbols.util.color.RGB import RGB
     from generated_symbols.util.color.RGBA import RGBA
@@ -31,19 +32,19 @@ class ParticleUnknown:
 @dataclass(kw_only=True)
 class ParticleBlock:
     type: Literal['minecraft:block']
-    block_state: Annotated[str, IdSpec(registry='block')] | BlockState
+    block_state: Annotated[str, IdSpec(registry='block')] | KnownBlockId | BlockState
 
 
 @dataclass(kw_only=True)
 class ParticleBlockCrumble:
     type: Literal['minecraft:block_crumble']
-    block_state: Annotated[str, IdSpec(registry='block')] | BlockState
+    block_state: Annotated[str, IdSpec(registry='block')] | KnownBlockId | BlockState
 
 
 @dataclass(kw_only=True)
 class ParticleBlockMarker:
     type: Literal['minecraft:block_marker']
-    block_state: Annotated[str, IdSpec(registry='block')] | BlockState
+    block_state: Annotated[str, IdSpec(registry='block')] | KnownBlockId | BlockState
 
 
 @dataclass(kw_only=True)
@@ -70,7 +71,7 @@ class ParticleDustColorTransition:
 @dataclass(kw_only=True)
 class ParticleDustPillar:
     type: Literal['minecraft:dust_pillar']
-    block_state: Annotated[str, IdSpec(registry='block')] | BlockState
+    block_state: Annotated[str, IdSpec(registry='block')] | KnownBlockId | BlockState
 
 
 @dataclass(kw_only=True)
@@ -89,7 +90,7 @@ class ParticleEntityEffect:
 @dataclass(kw_only=True)
 class ParticleFallingDust:
     type: Literal['minecraft:falling_dust']
-    block_state: Annotated[str, IdSpec(registry='block')] | BlockState
+    block_state: Annotated[str, IdSpec(registry='block')] | KnownBlockId | BlockState
 
 
 @dataclass(kw_only=True)

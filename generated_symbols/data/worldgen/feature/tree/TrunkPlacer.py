@@ -6,11 +6,12 @@ Local link to file: generated_symbols/data/worldgen/feature/tree/TrunkPlacer.py
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Literal
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.IntProvider import IntProvider
     from generated_symbols.data.worldgen.UniformIntProvider import UniformIntProvider
+    from generated_symbols.registry.KnownBlockId import KnownBlockId
 
 
 @dataclass(kw_only=True)
@@ -102,7 +103,7 @@ class TrunkPlacerUpwardsBranchingTrunkPlacer:
     extra_branch_steps: IntProvider[Annotated[int, 'Range | Min `1` and above | inclusive']] | Annotated[int, 'Range | Min `1` and above | inclusive']
     extra_branch_length: IntProvider[Annotated[int, 'Range | Min `0` and above | inclusive']] | Annotated[int, 'Range | Min `0` and above | inclusive']
     place_branch_per_log_probability: Annotated[float, 'Range | `0`-`1` | both inclusive']
-    can_grow_through: list[Annotated[str, IdSpec(registry='block')]] | Annotated[str, IdSpec(registry='block', tags='allowed')]
+    can_grow_through: list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId
 
 
 type TrunkPlacer = TrunkPlacerBendingTrunkPlacer | TrunkPlacerCherryTrunkPlacer | TrunkPlacerDarkOakTrunkPlacer | TrunkPlacerFancyTrunkPlacer | TrunkPlacerForkingTrunkPlacer | TrunkPlacerGiantTrunkPlacer | TrunkPlacerMegaJungleTrunkPlacer | TrunkPlacerPoplarTrunkPlacer | TrunkPlacerStraightTrunkPlacer | TrunkPlacerUpwardsBranchingTrunkPlacer

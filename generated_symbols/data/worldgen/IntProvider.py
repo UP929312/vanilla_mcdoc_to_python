@@ -6,7 +6,7 @@ Local link to file: generated_symbols/data/worldgen/IntProvider.py
 from dataclasses import dataclass
 from typing import Annotated, Generic, TypeVar
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 
 T = TypeVar('T')

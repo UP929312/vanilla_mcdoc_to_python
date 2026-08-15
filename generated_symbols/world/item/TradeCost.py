@@ -6,11 +6,11 @@ Local link to file: generated_symbols/world/item/TradeCost.py
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
+from generated_symbols.world.component.DataComponentExactPredicate import DataComponentExactPredicate
 from generated_symbols.world.item.SingleItemOfComponent import SingleItemOfComponent
 
 if TYPE_CHECKING:
     from generated_symbols.data.number_provider.NumberProvider import NumberProvider
-    from generated_symbols.world.component.DataComponentExactPredicate import DataComponentExactPredicate
 
 
 @dataclass(kw_only=True)

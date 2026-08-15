@@ -6,9 +6,8 @@ Local link to file: generated_symbols/data/structure/StructureNBT.py
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.data.structure.BlockPalette import BlockPalette
-
 if TYPE_CHECKING:
+    from generated_symbols.util.block_state.BlockState import BlockState
     from generated_symbols.world.block.BlockEntity import BlockEntity
     from generated_symbols.world.block.banner.Banner import Banner
     from generated_symbols.world.block.beacon.Beacon import Beacon
@@ -68,11 +67,24 @@ class EntitiesStruct:
 
 
 @dataclass(kw_only=True)
-class StructureNBT(BlockPalette):
+class StructureNBTStruct1:
     DataVersion: Annotated[int, 'Range | Min `0` and above | inclusive']  # [Data version](https://minecraft.wiki/w/Data_version).
     size: tuple[Annotated[int, 'Range | Min `0` and above | inclusive'], Annotated[int, 'Range | Min `0` and above | inclusive'], Annotated[int, 'Range | Min `0` and above | inclusive']]
     blocks: list[BlocksStruct]
     entities: list[EntitiesStruct]
+    palette: list[BlockState]
+
+
+@dataclass(kw_only=True)
+class StructureNBTStruct2:
+    DataVersion: Annotated[int, 'Range | Min `0` and above | inclusive']  # [Data version](https://minecraft.wiki/w/Data_version).
+    size: tuple[Annotated[int, 'Range | Min `0` and above | inclusive'], Annotated[int, 'Range | Min `0` and above | inclusive'], Annotated[int, 'Range | Min `0` and above | inclusive']]
+    blocks: list[BlocksStruct]
+    entities: list[EntitiesStruct]
+    palettes: list[list[BlockState]]  # Sets of different block states used in the structure, a random palette gets selected based on coordinates.
+
+
+type StructureNBT = StructureNBTStruct1 | StructureNBTStruct2
 
 
 # ~~~ MODEL DUMP ~~~

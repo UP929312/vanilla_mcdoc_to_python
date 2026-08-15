@@ -6,7 +6,7 @@ Local link to file: generated_symbols/data/worldgen/surface_builder/ConfiguredSu
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.util.block_state.BlockState import BlockState

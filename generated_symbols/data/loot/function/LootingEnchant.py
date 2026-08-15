@@ -10,7 +10,7 @@ from generated_symbols.data.loot.function.EnchantedCountBase import EnchantedCou
 
 
 @dataclass(kw_only=True)
-class LootingEnchant(EnchantedCountBase, Conditions):
+class LootingEnchant(Conditions, EnchantedCountBase):
     pass
 
 

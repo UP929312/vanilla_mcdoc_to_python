@@ -5,7 +5,7 @@ Local link to file: generated_symbols/data/timeline/TimeMarkerMap.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.timeline.TimeMarker import TimeMarker

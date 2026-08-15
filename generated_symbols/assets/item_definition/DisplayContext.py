@@ -4,12 +4,9 @@ Local link to file: generated_symbols/assets/item_definition/DisplayContext.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
 
 from generated_symbols.assets.item_definition.SelectCases import SelectCases
-
-if TYPE_CHECKING:
-    from generated_symbols.assets.model.ItemDisplayContext import ItemDisplayContext
+from generated_symbols.assets.model.ItemDisplayContext import ItemDisplayContext
 
 
 @dataclass(kw_only=True)

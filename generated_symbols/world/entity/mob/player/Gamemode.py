@@ -7,10 +7,10 @@ from enum import Enum
 
 
 class Gamemode(Enum):
-    SURVIVAL = "0"
-    CREATIVE = "1"
-    ADVENTURE = "2"
-    SPECTATOR = "3"
+    SURVIVAL = 0
+    CREATIVE = 1
+    ADVENTURE = 2
+    SPECTATOR = 3
 
 
 # ~~~ MODEL DUMP ~~~

@@ -4,9 +4,12 @@ Local link to file: generated_symbols/util/block_state/BlockState.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import Annotated
+from typing import TYPE_CHECKING, Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
+
+if TYPE_CHECKING:
+    from generated_symbols.registry.KnownBlockId import KnownBlockId
 
 
 type PropertiesStructBlockStatesNone = dict[str, str]
@@ -14,11 +17,11 @@ type PropertiesStructBlockStatesNone = dict[str, str]
 
 @dataclass(kw_only=True)
 class BlockStateStruct:
-    id: Annotated[str, IdSpec(registry='block')]
+    id: Annotated[str, IdSpec(registry='block')] | KnownBlockId
     properties: PropertiesStructBlockStatesNone | None = None
 
 
-type BlockState = Annotated[str, IdSpec(registry='block')] | BlockStateStruct
+type BlockState = Annotated[str, IdSpec(registry='block')] | KnownBlockId | BlockStateStruct
 
 
 # ~~~ MODEL DUMP ~~~

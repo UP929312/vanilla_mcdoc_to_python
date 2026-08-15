@@ -5,7 +5,7 @@ Local link to file: generated_symbols/data/worldgen/attribute/PositionalEnvironm
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 
 type PositionalEnvironmentAttribute = Annotated[str, IdSpec(registry='environment_attribute', exclude=('gameplay/fast_lava', 'gameplay/sky_light_level'))]

@@ -3,10 +3,7 @@ Generated from symbols.json for ::java::data::advancement::trigger::AdvancementP
 Local link to file: generated_symbols/data/advancement/trigger/AdvancementPredicateRef.py
 """
 # ~~~ CODE ~~~
-from typing import TYPE_CHECKING
-
-if TYPE_CHECKING:
-    from generated_symbols.data.predicate.PredicateRef import PredicateRef
+from generated_symbols.data.predicate.PredicateRef import PredicateRef
 
 
 type AdvancementPredicateRef = PredicateRef

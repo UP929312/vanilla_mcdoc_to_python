@@ -6,7 +6,7 @@ Local link to file: generated_symbols/data/sulfur_cube_archetype/SulfurCubeArche
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.sulfur_cube_archetype.AttributeEntry import AttributeEntry
@@ -14,11 +14,12 @@ if TYPE_CHECKING:
     from generated_symbols.data.sulfur_cube_archetype.ExplosionData import ExplosionData
     from generated_symbols.data.sulfur_cube_archetype.KnockbackModifiers import KnockbackModifiers
     from generated_symbols.data.sulfur_cube_archetype.SoundSettings import SoundSettings
+    from generated_symbols.registry.KnownItemId import KnownItemId
 
 
 @dataclass(kw_only=True)
 class SulfurCubeArchetype:
-    items: Annotated[str, IdSpec(registry='item', tags='allowed')] | list[Annotated[str, IdSpec(registry='item')]]
+    items: Annotated[str, IdSpec(registry='item', tags='allowed')] | KnownItemId | list[Annotated[str, IdSpec(registry='item')] | KnownItemId]
     knockback_modifiers: KnockbackModifiers
     attribute_modifiers: list[AttributeEntry]
     sound_settings: SoundSettings

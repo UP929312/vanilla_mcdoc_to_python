@@ -15,7 +15,7 @@ if TYPE_CHECKING:
 
 
 @dataclass(kw_only=True)
-class CraftingShaped(NotificationInfo, CraftingBookInfo):
+class CraftingShaped(CraftingBookInfo, NotificationInfo):
     pattern: Annotated[list[Annotated[str, 'Length = 1-3 (both inclusive)']], 'Length = 1-3 (both inclusive)']
     key: dict[str, Ingredient]
     result: ItemStackTemplate

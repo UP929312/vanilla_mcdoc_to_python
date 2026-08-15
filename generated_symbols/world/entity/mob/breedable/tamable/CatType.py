@@ -7,18 +7,18 @@ from enum import Enum
 
 
 class CatType(Enum):
-    INVISIBLE = "-1"
-    TABBY = "0"
-    TUXEDO = "1"
-    RED = "2"
-    SIAMESE = "3"
-    SHORTHAIR = "4"
-    CALICO = "5"
-    PERSIAN = "6"
-    RAGDOLL = "7"
-    WHITE = "8"
-    JELLIE = "9"
-    BLACK = "10"
+    INVISIBLE = -1
+    TABBY = 0
+    TUXEDO = 1
+    RED = 2
+    SIAMESE = 3
+    SHORTHAIR = 4
+    CALICO = 5
+    PERSIAN = 6
+    RAGDOLL = 7
+    WHITE = 8
+    JELLIE = 9
+    BLACK = 10
 
 
 # ~~~ MODEL DUMP ~~~

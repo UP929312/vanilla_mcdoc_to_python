@@ -4,14 +4,17 @@ Local link to file: generated_symbols/data/worldgen/processor_list/ProtectedBloc
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import Annotated
+from typing import TYPE_CHECKING, Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
+
+if TYPE_CHECKING:
+    from generated_symbols.registry.KnownBlockId import KnownBlockId
 
 
 @dataclass(kw_only=True)
 class ProtectedBlocks:
-    value: Annotated[str, IdSpec(registry='block', tags='allowed')] | list[Annotated[str, IdSpec(registry='block')]]
+    value: Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | list[Annotated[str, IdSpec(registry='block')] | KnownBlockId]
 
 
 # ~~~ MODEL DUMP ~~~

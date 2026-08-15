@@ -15,7 +15,7 @@ if TYPE_CHECKING:
 
 
 @dataclass(kw_only=True)
-class BrewingStand(BlockEntity, Nameable, Lockable):
+class BrewingStand(BlockEntity, Lockable, Nameable):
     Items: Annotated[list[SlottedItem[Annotated[int, 'Range | `0`-`4` | both inclusive']]], 'Length = 0-5 (both inclusive)'] | None = None  # * 0: left brewing slot * 1: middle brewing slot * 2: right brewing slot * 3: ingredient slot * 4: fuel slot
     BrewTime: int | None = None  # Number of ticks until the brewing is complete.
     Fuel: int | None = None  # Amount of fuel the brewing stand has left.

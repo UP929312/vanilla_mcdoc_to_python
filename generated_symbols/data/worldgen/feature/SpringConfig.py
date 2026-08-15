@@ -6,9 +6,10 @@ Local link to file: generated_symbols/data/worldgen/feature/SpringConfig.py
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
+    from generated_symbols.registry.KnownBlockId import KnownBlockId
     from generated_symbols.util.fluid_state.FluidState import FluidState
 
 
@@ -18,7 +19,7 @@ class SpringConfig:
     rock_count: int
     hole_count: int
     requires_block_below: bool
-    valid_blocks: list[Annotated[str, IdSpec(registry='block')]] | Annotated[str, IdSpec(registry='block', tags='allowed')]
+    valid_blocks: list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId
 
 
 # ~~~ MODEL DUMP ~~~

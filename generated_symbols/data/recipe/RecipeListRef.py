@@ -5,7 +5,7 @@ Local link to file: generated_symbols/data/recipe/RecipeListRef.py
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 
 type RecipeListRef = Annotated[str, IdSpec(registry='recipe', tags='allowed')] | list[Annotated[str, IdSpec(registry='recipe')]]

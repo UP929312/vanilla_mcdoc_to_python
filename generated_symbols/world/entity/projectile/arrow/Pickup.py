@@ -7,9 +7,9 @@ from enum import Enum
 
 
 class Pickup(Enum):
-    NONE = "0"
-    ANY = "1"
-    CREATIVE = "2"
+    NONE = 0
+    ANY = 1
+    CREATIVE = 2
 
 
 # ~~~ MODEL DUMP ~~~

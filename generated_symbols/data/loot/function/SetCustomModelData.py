@@ -4,10 +4,9 @@ Local link to file: generated_symbols/data/loot/function/SetCustomModelData.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated, Literal
 
 from generated_symbols.data.loot.function.Conditions import Conditions
-from generated_symbols.data.loot.function.ListOperation import ListOperation
 
 if TYPE_CHECKING:
     from generated_symbols.data.number_provider.NumberProviderRef import NumberProviderRef
@@ -15,24 +14,120 @@ if TYPE_CHECKING:
 
 
 @dataclass(kw_only=True)
-class FloatsStruct(ListOperation):
+class FloatsStructAppend:
     values: list[NumberProviderRef]
+    mode: Literal['minecraft:append']  # Determines how the existing list should be modified.
 
 
 @dataclass(kw_only=True)
-class FlagsStruct(ListOperation):
+class FloatsStructInsert:
+    values: list[NumberProviderRef]
+    mode: Literal['minecraft:insert']  # Determines how the existing list should be modified.
+    offset: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The offset in the list to insert into. Defaults to 0.
+
+
+@dataclass(kw_only=True)
+class FloatsStructReplaceAll:
+    values: list[NumberProviderRef]
+    mode: Literal['minecraft:replace_all']  # Determines how the existing list should be modified.
+
+
+@dataclass(kw_only=True)
+class FloatsStructReplaceSection:
+    values: list[NumberProviderRef]
+    mode: Literal['minecraft:replace_section']  # Determines how the existing list should be modified.
+    offset: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The offset of the section to replace. Defaults to 0.
+    size: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The size of the section to replace. Defaults to size of the new list.
+
+
+type FloatsStruct = FloatsStructAppend | FloatsStructInsert | FloatsStructReplaceAll | FloatsStructReplaceSection
+
+@dataclass(kw_only=True)
+class FlagsStructAppend:
     values: list[bool]
+    mode: Literal['minecraft:append']  # Determines how the existing list should be modified.
 
 
 @dataclass(kw_only=True)
-class StringsStruct(ListOperation):
+class FlagsStructInsert:
+    values: list[bool]
+    mode: Literal['minecraft:insert']  # Determines how the existing list should be modified.
+    offset: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The offset in the list to insert into. Defaults to 0.
+
+
+@dataclass(kw_only=True)
+class FlagsStructReplaceAll:
+    values: list[bool]
+    mode: Literal['minecraft:replace_all']  # Determines how the existing list should be modified.
+
+
+@dataclass(kw_only=True)
+class FlagsStructReplaceSection:
+    values: list[bool]
+    mode: Literal['minecraft:replace_section']  # Determines how the existing list should be modified.
+    offset: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The offset of the section to replace. Defaults to 0.
+    size: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The size of the section to replace. Defaults to size of the new list.
+
+
+type FlagsStruct = FlagsStructAppend | FlagsStructInsert | FlagsStructReplaceAll | FlagsStructReplaceSection
+
+@dataclass(kw_only=True)
+class StringsStructAppend:
     values: list[str]
+    mode: Literal['minecraft:append']  # Determines how the existing list should be modified.
 
 
 @dataclass(kw_only=True)
-class ColorsStruct(ListOperation):
-    values: list[NumberProviderRef | RGB]
+class StringsStructInsert:
+    values: list[str]
+    mode: Literal['minecraft:insert']  # Determines how the existing list should be modified.
+    offset: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The offset in the list to insert into. Defaults to 0.
 
+
+@dataclass(kw_only=True)
+class StringsStructReplaceAll:
+    values: list[str]
+    mode: Literal['minecraft:replace_all']  # Determines how the existing list should be modified.
+
+
+@dataclass(kw_only=True)
+class StringsStructReplaceSection:
+    values: list[str]
+    mode: Literal['minecraft:replace_section']  # Determines how the existing list should be modified.
+    offset: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The offset of the section to replace. Defaults to 0.
+    size: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The size of the section to replace. Defaults to size of the new list.
+
+
+type StringsStruct = StringsStructAppend | StringsStructInsert | StringsStructReplaceAll | StringsStructReplaceSection
+
+@dataclass(kw_only=True)
+class ColorsStructAppend:
+    values: list[NumberProviderRef | RGB]
+    mode: Literal['minecraft:append']  # Determines how the existing list should be modified.
+
+
+@dataclass(kw_only=True)
+class ColorsStructInsert:
+    values: list[NumberProviderRef | RGB]
+    mode: Literal['minecraft:insert']  # Determines how the existing list should be modified.
+    offset: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The offset in the list to insert into. Defaults to 0.
+
+
+@dataclass(kw_only=True)
+class ColorsStructReplaceAll:
+    values: list[NumberProviderRef | RGB]
+    mode: Literal['minecraft:replace_all']  # Determines how the existing list should be modified.
+
+
+@dataclass(kw_only=True)
+class ColorsStructReplaceSection:
+    values: list[NumberProviderRef | RGB]
+    mode: Literal['minecraft:replace_section']  # Determines how the existing list should be modified.
+    offset: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The offset of the section to replace. Defaults to 0.
+    size: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The size of the section to replace. Defaults to size of the new list.
+
+
+type ColorsStruct = ColorsStructAppend | ColorsStructInsert | ColorsStructReplaceAll | ColorsStructReplaceSection
 
 @dataclass(kw_only=True)
 class SetCustomModelData(Conditions):

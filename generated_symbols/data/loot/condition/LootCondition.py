@@ -6,7 +6,7 @@ Local link to file: generated_symbols/data/loot/condition/LootCondition.py
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Any, Literal
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.advancement.predicate.BlockPredicateState import BlockPredicateState
@@ -27,6 +27,8 @@ if TYPE_CHECKING:
     from generated_symbols.data.worldgen.attribute.BedRule import BedRule
     from generated_symbols.data.worldgen.attribute.TriState import TriState
     from generated_symbols.data.worldgen.biome.NaturalMobSpawns import NaturalMobSpawns
+    from generated_symbols.registry.KnownBlockId import KnownBlockId
+    from generated_symbols.registry.KnownEnvironmentAttributeId import KnownEnvironmentAttributeId
     from generated_symbols.util.color.StringARGB import StringARGB
     from generated_symbols.util.color.StringRGB import StringRGB
     from generated_symbols.util.particle.Particle import Particle
@@ -74,11 +76,6 @@ type PropertiesStructBlockStatesNone = dict[str, str]
 
 
 @dataclass(kw_only=True)
-class BlockStructUnknown:
-    pass
-
-
-@dataclass(kw_only=True)
 class NbtStructBlockUnknown:
     pass
 
@@ -104,7 +101,7 @@ class LootConditionAnyOf:
 @dataclass(kw_only=True)
 class LootConditionBlockStateProperty:
     type: Literal['minecraft:block_state_property']
-    block: Annotated[str, IdSpec(registry='block')]
+    block: Annotated[str, IdSpec(registry='block')] | KnownBlockId
     properties: PropertiesStructBlockStatesNone | None = None
 
 
@@ -137,7 +134,7 @@ class LootConditionEntityScores:
 @dataclass(kw_only=True)
 class LootConditionEnvironmentAttributeCheck:
     type: Literal['minecraft:environment_attribute_check']
-    attribute: Annotated[str, IdSpec(registry='environment_attribute')]
+    attribute: Annotated[str, IdSpec(registry='environment_attribute')] | KnownEnvironmentAttributeId
     value: Any | AmbientSounds | BackgroundMusic | bool | Annotated[float, 'Range | `0`-`1` | both inclusive'] | Annotated[str, IdSpec(registry='activity')] | BedRule | Annotated[float, 'Range | `0`-`0.9999999` | both inclusive'] | TriState | NaturalMobSpawns | Annotated[float, 'Range | `0`-`15` | both inclusive'] | StringRGB | list[AmbientParticle] | StringARGB | Annotated[float, 'Range | Min `0` and above | inclusive'] | float | Particle | MoonPhase
 
 
@@ -165,7 +162,7 @@ class LootConditionLocationCheck:
 @dataclass(kw_only=True)
 class LootConditionMatchBlock:
     type: Literal['minecraft:match_block']
-    blocks: Annotated[str, IdSpec(registry='block', tags='allowed')] | list[Annotated[str, IdSpec(registry='block')]] | None = None
+    blocks: Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | None = None
     state: BlockPredicateState | None = None
     nbt: str | NbtStructBlockUnknown | Sign | Shelf | Container27 | Beacon | BlockEntity | Beehive | Banner | Furnace | BrewingStand | SculkSensor | Campfire | CommandBlock | ChiseledBookshelf | Comparator | Conduit | Crafter | Skull | DecoratedPot | Container9 | EnchantingTable | EndGateway | Hopper | Jigsaw | Jukebox | Lectern | MovingPiston | PotentSulfur | SculkCatalyst | SculkShrieker | Spawner | StructureBlock | BrushableBlock | TestBlock | TestInstanceBlock | TrialSpawner | Vault | None = None
     components: DataComponentExactPredicate | None = None  # Match exact data component values on the block entity.

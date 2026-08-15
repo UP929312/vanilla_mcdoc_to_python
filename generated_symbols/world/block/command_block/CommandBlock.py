@@ -11,7 +11,7 @@ from generated_symbols.world.block.command_block.BaseCommandBlock import BaseCom
 
 
 @dataclass(kw_only=True)
-class CommandBlock(BlockEntity, Nameable, BaseCommandBlock):
+class CommandBlock(BaseCommandBlock, BlockEntity, Nameable):
     powered: bool | None = None  # Whether it is powered by redstone.
     auto: bool | None = None  # Whether it is automatically powered.
     conditionMet: bool | None = None  # Whether the previous command block was successful when the command block was executed. This is always true for non-conditional command blocks.

@@ -4,7 +4,6 @@ Local link to file: generated_symbols/data/worldgen/processor_list/AppendStatic.
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import Any
 
 
 @dataclass(kw_only=True)

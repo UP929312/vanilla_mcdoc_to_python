@@ -7,12 +7,13 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Literal
 
 from generated_symbols.data.worldgen.feature.block_state_provider.BaseNoiseProvider import BaseNoiseProvider
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.IntProvider import IntProvider
     from generated_symbols.data.worldgen.dimension.biome_source.NoiseParameters import NoiseParameters
     from generated_symbols.data.worldgen.feature.block_predicate.BlockPredicate import BlockPredicate
+    from generated_symbols.registry.KnownBlockId import KnownBlockId
     from generated_symbols.util.InclusiveRange import InclusiveRange
     from generated_symbols.util.NonEmptyWeightedList import NonEmptyWeightedList
     from generated_symbols.util.block_state.BlockState import BlockState
@@ -59,7 +60,7 @@ class BlockStateProviderNoiseThresholdProvider(BaseNoiseProvider):
 @dataclass(kw_only=True)
 class BlockStateProviderRandomBlockProvider:
     type: Literal['minecraft:random_block_provider']
-    blocks: Annotated[str, IdSpec(registry='block', tags='allowed')] | list[Annotated[str, IdSpec(registry='block')]]
+    blocks: Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | list[Annotated[str, IdSpec(registry='block')] | KnownBlockId]
 
 
 @dataclass(kw_only=True)

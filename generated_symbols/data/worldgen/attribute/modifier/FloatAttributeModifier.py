@@ -16,7 +16,7 @@ T = TypeVar('T')
 @dataclass(kw_only=True)
 class FloatAttributeModifier(Generic[T]):
     modifier: FloatModifierType
-    argument: T | float | FloatWithAlpha[T]
+    argument: T | float | FloatWithAlpha
 
 
 # ~~~ MODEL DUMP ~~~

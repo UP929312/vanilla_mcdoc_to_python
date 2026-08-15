@@ -6,7 +6,7 @@ Local link to file: generated_symbols/data/worldgen/feature/ConfiguredFeature.py
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Literal
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.CaveSurface import CaveSurface
@@ -33,6 +33,7 @@ if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.tree.TreeDecorator import TreeDecorator
     from generated_symbols.data.worldgen.feature.tree.TrunkPlacer import TrunkPlacer
     from generated_symbols.data.worldgen.processor_list.ProcessorListRef import ProcessorListRef
+    from generated_symbols.registry.KnownBlockId import KnownBlockId
     from generated_symbols.util.WeightedList import WeightedList
     from generated_symbols.util.block_state.BlockState import BlockState
     from generated_symbols.util.direction.Direction import Direction
@@ -58,7 +59,7 @@ class ConfiguredFeatureBasaltColumns:
     block: BlockStateProvider
     can_replace: BlockPredicate
     continue_through: BlockPredicate
-    cannot_place_on: Annotated[str, IdSpec(registry='block', tags='allowed')] | list[Annotated[str, IdSpec(registry='block')]]
+    cannot_place_on: Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | list[Annotated[str, IdSpec(registry='block')] | KnownBlockId]
     column_reach: IntProvider[Annotated[int, 'Range | `0`-`3` | both inclusive']] | Annotated[int, 'Range | `0`-`3` | both inclusive']
     column_count: IntProvider[Annotated[int, 'Range | `1`-`150` | both inclusive']] | Annotated[int, 'Range | `1`-`150` | both inclusive']
     height: IntProvider[Annotated[int, 'Range | `1`-`10` | both inclusive']] | Annotated[int, 'Range | `1`-`10` | both inclusive']
@@ -129,7 +130,7 @@ class ConfiguredFeatureDripstoneCluster:
     type: Literal['minecraft:dripstone_cluster']
     base_block: BlockState
     pointed_block: BlockState
-    replaceable_blocks: list[Annotated[str, IdSpec(registry='block')]] | Annotated[str, IdSpec(registry='block', tags='allowed')]
+    replaceable_blocks: list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId
     floor_to_ceiling_search_range: Annotated[int, 'Range | `1`-`512` | both inclusive']
     height: IntProvider[Annotated[int, 'Range | `0`-`128` | both inclusive']] | Annotated[int, 'Range | `0`-`128` | both inclusive']
     radius: IntProvider[Annotated[int, 'Range | `0`-`128` | both inclusive']] | Annotated[int, 'Range | `0`-`128` | both inclusive']
@@ -239,7 +240,7 @@ class ConfiguredFeatureGlowLichen:
     can_place_on_floor: bool | None = None
     can_place_on_ceiling: bool | None = None
     can_place_on_wall: bool | None = None
-    can_be_placed_on: list[Annotated[str, IdSpec(registry='block')]] | Annotated[str, IdSpec(registry='block', tags='allowed')] | None = None
+    can_be_placed_on: list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | None = None
 
 
 @dataclass(kw_only=True)
@@ -309,7 +310,7 @@ class ConfiguredFeatureLake:
 @dataclass(kw_only=True)
 class ConfiguredFeatureLargeDripstone:
     type: Literal['minecraft:large_dripstone']
-    replaceable_blocks: list[Annotated[str, IdSpec(registry='block')]] | Annotated[str, IdSpec(registry='block', tags='allowed')]
+    replaceable_blocks: list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId
     column_radius: IntProvider[Annotated[int, 'Range | `0`-`16` | both inclusive']] | Annotated[int, 'Range | `0`-`16` | both inclusive']
     height_scale: FloatProvider[Annotated[float, 'Range | `0`-`20` | both inclusive']] | Annotated[float, 'Range | `0`-`20` | both inclusive']
     max_column_radius_to_cave_height_ratio: Annotated[float, 'Range | `0`-`1` | both inclusive']
@@ -330,7 +331,7 @@ class ConfiguredFeatureMultifaceGrowth:
     can_place_on_floor: bool | None = None
     can_place_on_ceiling: bool | None = None
     can_place_on_wall: bool | None = None
-    can_be_placed_on: list[Annotated[str, IdSpec(registry='block')]] | Annotated[str, IdSpec(registry='block', tags='allowed')] | None = None
+    can_be_placed_on: list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | None = None
 
 
 @dataclass(kw_only=True)
@@ -385,7 +386,7 @@ class ConfiguredFeaturePointedDripstone:
     type: Literal['minecraft:pointed_dripstone']
     base_block: BlockState
     pointed_block: BlockState
-    replaceable_blocks: list[Annotated[str, IdSpec(registry='block')]] | Annotated[str, IdSpec(registry='block', tags='allowed')]
+    replaceable_blocks: list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId
     chance_of_taller_generation: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
     chance_of_directional_spread: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
     chance_of_spread_radius2: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
@@ -412,7 +413,7 @@ class ConfiguredFeatureRandomBooleanSelector:
 class ConfiguredFeatureRandomNeighborSpread:
     type: Literal['minecraft:random_neighbor_spread']
     block: BlockStateProvider
-    accepted_neighbors: Annotated[str, IdSpec(registry='block', tags='allowed')] | list[Annotated[str, IdSpec(registry='block')]]
+    accepted_neighbors: Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | list[Annotated[str, IdSpec(registry='block')] | KnownBlockId]
     can_replace: BlockPredicate
     attempts: IntProvider[Annotated[int, 'Range | `1`-`3000` | both inclusive']] | Annotated[int, 'Range | `1`-`3000` | both inclusive']
     xz_offset: IntProvider[Annotated[int, 'Range | `-16`-`16` | both inclusive']] | Annotated[int, 'Range | `-16`-`16` | both inclusive']
@@ -454,7 +455,7 @@ class ConfiguredFeatureRootSystem:
     hanging_roots_vertical_span: Annotated[int, 'Range | `1`-`16` | both inclusive']
     hanging_root_placement_attempts: Annotated[int, 'Range | `0`-`256` | both inclusive']
     allowed_vertical_water_for_tree: Annotated[int, 'Range | `1`-`64` | both inclusive']
-    root_replaceable: Annotated[str, IdSpec(registry='block', tags='allowed')] | list[Annotated[str, IdSpec(registry='block')]]
+    root_replaceable: Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | list[Annotated[str, IdSpec(registry='block')] | KnownBlockId]
     root_state_provider: BlockStateProvider
     hanging_root_state_provider: BlockStateProvider
     allowed_tree_position: BlockPredicate
@@ -534,7 +535,7 @@ class ConfiguredFeatureSpeleothem:
     type: Literal['minecraft:speleothem']
     base_block: BlockState
     pointed_block: BlockState
-    replaceable_blocks: list[Annotated[str, IdSpec(registry='block')]] | Annotated[str, IdSpec(registry='block', tags='allowed')]
+    replaceable_blocks: list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId
     chance_of_taller_generation: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
     chance_of_directional_spread: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
     chance_of_spread_radius2: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
@@ -546,7 +547,7 @@ class ConfiguredFeatureSpeleothemCluster:
     type: Literal['minecraft:speleothem_cluster']
     base_block: BlockState
     pointed_block: BlockState
-    replaceable_blocks: list[Annotated[str, IdSpec(registry='block')]] | Annotated[str, IdSpec(registry='block', tags='allowed')]
+    replaceable_blocks: list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId
     floor_to_ceiling_search_range: Annotated[int, 'Range | `1`-`512` | both inclusive']
     height: IntProvider[Annotated[int, 'Range | `0`-`128` | both inclusive']] | Annotated[int, 'Range | `0`-`128` | both inclusive']
     radius: IntProvider[Annotated[int, 'Range | `0`-`128` | both inclusive']] | Annotated[int, 'Range | `0`-`128` | both inclusive']
@@ -575,7 +576,7 @@ class ConfiguredFeatureSpringFeature:
     rock_count: int
     hole_count: int
     requires_block_below: bool
-    valid_blocks: list[Annotated[str, IdSpec(registry='block')]] | Annotated[str, IdSpec(registry='block', tags='allowed')]
+    valid_blocks: list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId
 
 
 @dataclass(kw_only=True)
@@ -584,7 +585,7 @@ class ConfiguredFeatureSteppedColumnCluster:
     block: BlockStateProvider
     can_replace: BlockPredicate
     continue_through: BlockPredicate
-    cannot_place_on: Annotated[str, IdSpec(registry='block', tags='allowed')] | list[Annotated[str, IdSpec(registry='block')]]
+    cannot_place_on: Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | list[Annotated[str, IdSpec(registry='block')] | KnownBlockId]
     column_reach: IntProvider[Annotated[int, 'Range | `0`-`3` | both inclusive']] | Annotated[int, 'Range | `0`-`3` | both inclusive']
     column_count: IntProvider[Annotated[int, 'Range | `1`-`150` | both inclusive']] | Annotated[int, 'Range | `1`-`150` | both inclusive']
     height: IntProvider[Annotated[int, 'Range | `1`-`10` | both inclusive']] | Annotated[int, 'Range | `1`-`10` | both inclusive']
@@ -637,7 +638,7 @@ class ConfiguredFeatureVegetationPatch:
     extra_edge_column_chance: Annotated[float, 'Range | `0`-`1` | both inclusive']
     vegetation_chance: Annotated[float, 'Range | `0`-`1` | both inclusive']
     xz_radius: IntProvider[int] | int
-    replaceable: Annotated[str, IdSpec(registry='block', tags='allowed')] | list[Annotated[str, IdSpec(registry='block')]]
+    replaceable: Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | list[Annotated[str, IdSpec(registry='block')] | KnownBlockId]
     ground_state: BlockStateProvider
     vegetation_feature: FeatureRef
 
@@ -652,7 +653,7 @@ class ConfiguredFeatureWaterloggedVegetationPatch:
     extra_edge_column_chance: Annotated[float, 'Range | `0`-`1` | both inclusive']
     vegetation_chance: Annotated[float, 'Range | `0`-`1` | both inclusive']
     xz_radius: IntProvider[int] | int
-    replaceable: Annotated[str, IdSpec(registry='block', tags='allowed')] | list[Annotated[str, IdSpec(registry='block')]]
+    replaceable: Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | list[Annotated[str, IdSpec(registry='block')] | KnownBlockId]
     ground_state: BlockStateProvider
     vegetation_feature: FeatureRef
 

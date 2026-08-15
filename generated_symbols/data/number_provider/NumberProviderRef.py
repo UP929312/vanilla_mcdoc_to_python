@@ -5,13 +5,14 @@ Local link to file: generated_symbols/data/number_provider/NumberProviderRef.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.number_provider.NumberProvider import NumberProvider
+    from generated_symbols.registry.KnownNumberProviderId import KnownNumberProviderId
 
 
-type NumberProviderRef = NumberProvider | Annotated[str, IdSpec(registry='number_provider')]
+type NumberProviderRef = NumberProvider | Annotated[str, IdSpec(registry='number_provider')] | KnownNumberProviderId
 
 
 # ~~~ MODEL DUMP ~~~

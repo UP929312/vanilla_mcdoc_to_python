@@ -21,48 +21,6 @@ class EntriesStruct:
 
 
 @dataclass(kw_only=True)
-class EntriesStruct:
-    threshold: float
-    model: ItemModel
-
-
-@dataclass(kw_only=True)
-class EntriesStruct:
-    threshold: float
-    model: ItemModel
-
-
-@dataclass(kw_only=True)
-class EntriesStruct:
-    threshold: float
-    model: ItemModel
-
-
-@dataclass(kw_only=True)
-class EntriesStruct:
-    threshold: float
-    model: ItemModel
-
-
-@dataclass(kw_only=True)
-class EntriesStruct:
-    threshold: float
-    model: ItemModel
-
-
-@dataclass(kw_only=True)
-class EntriesStruct:
-    threshold: float
-    model: ItemModel
-
-
-@dataclass(kw_only=True)
-class EntriesStruct:
-    threshold: float
-    model: ItemModel
-
-
-@dataclass(kw_only=True)
 class RangeDispatchUnknown:
     property: NumericPropertyType
     entries: list[EntriesStruct]  # List of ranges. Will select last entry with threshold less or equal to value. Order does not matter, list will be sorted by threshold in ascending order.

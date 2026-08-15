@@ -7,9 +7,9 @@ from enum import Enum
 
 
 class Dimension(Enum):
-    NETHER = "-1"
-    OVERWORLD = "0"
-    END = "1"
+    NETHER = -1
+    OVERWORLD = 0
+    END = 1
 
 
 # ~~~ MODEL DUMP ~~~

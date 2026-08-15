@@ -3,14 +3,11 @@ Generated from symbols.json for ::java::world::block::spawner::SpawnPotential
 Local link to file: generated_symbols/world/block/spawner/SpawnPotential.py
 """
 # ~~~ CODE ~~~
-from typing import TYPE_CHECKING
-
-if TYPE_CHECKING:
-    from generated_symbols.util.WeightedEntry import WeightedEntry
-    from generated_symbols.world.block.spawner.SpawnerEntry import SpawnerEntry
+from generated_symbols.util.WeightedEntry import WeightedEntry
+from generated_symbols.world.block.spawner.SpawnerEntry import SpawnerEntry
 
 
-type SpawnPotential = WeightedEntry[SpawnerEntry]
+SpawnPotential = WeightedEntry[SpawnerEntry]
 
 
 # ~~~ MODEL DUMP ~~~

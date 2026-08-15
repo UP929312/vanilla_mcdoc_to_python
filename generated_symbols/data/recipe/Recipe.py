@@ -9,7 +9,7 @@ from typing import TYPE_CHECKING, Annotated, Literal
 from generated_symbols.data.recipe.CookingBookInfo import CookingBookInfo
 from generated_symbols.data.recipe.CraftingBookInfo import CraftingBookInfo
 from generated_symbols.data.recipe.NotificationInfo import NotificationInfo
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.recipe.Ingredient import Ingredient
@@ -17,17 +17,18 @@ if TYPE_CHECKING:
     from generated_symbols.data.recipe.ItemResult import ItemResult
     from generated_symbols.data.recipe.PotionIngredient import PotionIngredient
     from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
+    from generated_symbols.registry.KnownRecipeSerializerId import KnownRecipeSerializerId
     from generated_symbols.world.item.ItemStack import ItemStack
     from generated_symbols.world.item.ItemStackTemplate import ItemStackTemplate
 
 
 @dataclass(kw_only=True)
 class RecipeUnknown:
-    type: Annotated[str, IdSpec(registry='recipe_serializer')]
+    type: Annotated[str, IdSpec(registry='recipe_serializer')] | KnownRecipeSerializerId
 
 
 @dataclass(kw_only=True)
-class RecipeBlasting(NotificationInfo, CookingBookInfo):
+class RecipeBlasting(CookingBookInfo, NotificationInfo):
     type: Literal['minecraft:blasting']
     ingredient: Ingredient
     result: ItemStackTemplate
@@ -44,7 +45,7 @@ class RecipeBrewing:
 
 
 @dataclass(kw_only=True)
-class RecipeCampfireCooking(NotificationInfo, CookingBookInfo):
+class RecipeCampfireCooking(CookingBookInfo, NotificationInfo):
     type: Literal['minecraft:campfire_cooking']
     ingredient: Ingredient
     result: ItemStackTemplate
@@ -58,7 +59,7 @@ class RecipeCraftingDecoratedPot:
 
 
 @dataclass(kw_only=True)
-class RecipeCraftingDye(NotificationInfo, CraftingBookInfo):
+class RecipeCraftingDye(CraftingBookInfo, NotificationInfo):
     type: Literal['minecraft:crafting_dye']
     target: Ingredient  # The item to be dyed.  Its `dyed_color` component will be dyed. The other components are copied.
     dye: Ingredient  # The items to provide dye color.  Colors are provided by the `dye` component.  Multiple dyes can be used at the same time.
@@ -66,7 +67,7 @@ class RecipeCraftingDye(NotificationInfo, CraftingBookInfo):
 
 
 @dataclass(kw_only=True)
-class RecipeCraftingImbue(NotificationInfo, CraftingBookInfo):
+class RecipeCraftingImbue(CraftingBookInfo, NotificationInfo):
     type: Literal['minecraft:crafting_imbue']
     source: Ingredient  # The item to provide potion effect.  Its `potion_contents` component will be copied.  This item is placed at the center grid.
     material: Ingredient  # Additional ingredients.  8 `material` items are required to surroud the `source` item.
@@ -74,7 +75,7 @@ class RecipeCraftingImbue(NotificationInfo, CraftingBookInfo):
 
 
 @dataclass(kw_only=True)
-class RecipeCraftingShaped(NotificationInfo, CraftingBookInfo):
+class RecipeCraftingShaped(CraftingBookInfo, NotificationInfo):
     type: Literal['minecraft:crafting_shaped']
     pattern: Annotated[list[Annotated[str, 'Length = 1-3 (both inclusive)']], 'Length = 1-3 (both inclusive)']
     key: dict[str, Ingredient]
@@ -82,7 +83,7 @@ class RecipeCraftingShaped(NotificationInfo, CraftingBookInfo):
 
 
 @dataclass(kw_only=True)
-class RecipeCraftingShapeless(NotificationInfo, CraftingBookInfo):
+class RecipeCraftingShapeless(CraftingBookInfo, NotificationInfo):
     type: Literal['minecraft:crafting_shapeless']
     ingredients: Annotated[list[Ingredient], 'Length = 1-9 (both inclusive)']
     result: ItemStackTemplate
@@ -124,7 +125,7 @@ class RecipeCraftingSpecialShielddecoration:
 
 
 @dataclass(kw_only=True)
-class RecipeCraftingTransmute(NotificationInfo, CraftingBookInfo):
+class RecipeCraftingTransmute(CraftingBookInfo, NotificationInfo):
     type: Literal['minecraft:crafting_transmute']
     input: Ingredient  # The ingredient that will transfer its data components to the result item.
     material: Ingredient  # An additional ingredient.
@@ -134,7 +135,7 @@ class RecipeCraftingTransmute(NotificationInfo, CraftingBookInfo):
 
 
 @dataclass(kw_only=True)
-class RecipeSmelting(NotificationInfo, CookingBookInfo):
+class RecipeSmelting(CookingBookInfo, NotificationInfo):
     type: Literal['minecraft:smelting']
     ingredient: Ingredient
     result: ItemStackTemplate
@@ -169,7 +170,7 @@ class RecipeSmithingTrim(NotificationInfo):
 
 
 @dataclass(kw_only=True)
-class RecipeSmoking(NotificationInfo, CookingBookInfo):
+class RecipeSmoking(CookingBookInfo, NotificationInfo):
     type: Literal['minecraft:smoking']
     ingredient: Ingredient
     result: ItemStackTemplate

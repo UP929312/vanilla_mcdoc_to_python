@@ -7,9 +7,9 @@ from enum import Enum
 
 
 class PuffState(Enum):
-    DEFLATED = "0"
-    HALFPUFFED = "1"
-    PUFFED = "2"
+    DEFLATED = 0
+    HALFPUFFED = 1
+    PUFFED = 2
 
 
 # ~~~ MODEL DUMP ~~~

@@ -3,11 +3,8 @@ Generated from symbols.json for ::java::world::item::ItemCost
 Local link to file: generated_symbols/world/item/ItemCost.py
 """
 # ~~~ CODE ~~~
-from typing import TYPE_CHECKING
-
-if TYPE_CHECKING:
-    from generated_symbols.world.component.DataComponentExactPredicate import DataComponentExactPredicate
-    from generated_symbols.world.item.ItemStackOfComponent import ItemStackOfComponent
+from generated_symbols.world.component.DataComponentExactPredicate import DataComponentExactPredicate
+from generated_symbols.world.item.ItemStackOfComponent import ItemStackOfComponent
 
 
 ItemCost = ItemStackOfComponent[DataComponentExactPredicate]

@@ -6,7 +6,7 @@ Local link to file: generated_symbols/world/entity/mob/breedable/villager/Villag
 from dataclasses import dataclass
 from typing import Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 
 @dataclass(kw_only=True)

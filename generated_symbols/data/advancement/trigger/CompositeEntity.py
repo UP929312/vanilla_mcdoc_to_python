@@ -3,10 +3,7 @@ Generated from symbols.json for ::java::data::advancement::trigger::CompositeEnt
 Local link to file: generated_symbols/data/advancement/trigger/CompositeEntity.py
 """
 # ~~~ CODE ~~~
-from typing import TYPE_CHECKING
-
-if TYPE_CHECKING:
-    from generated_symbols.data.advancement.trigger.AdvancementPredicateRef import AdvancementPredicateRef
+from generated_symbols.data.advancement.trigger.AdvancementPredicateRef import AdvancementPredicateRef
 
 
 type CompositeEntity = AdvancementPredicateRef

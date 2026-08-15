@@ -4,14 +4,17 @@ Local link to file: generated_symbols/data/worldgen/processor_list/RandomBlockMa
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import Annotated
+from typing import TYPE_CHECKING, Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
+
+if TYPE_CHECKING:
+    from generated_symbols.registry.KnownBlockId import KnownBlockId
 
 
 @dataclass(kw_only=True)
 class RandomBlockMatch:
-    block: Annotated[str, IdSpec(registry='block')]
+    block: Annotated[str, IdSpec(registry='block')] | KnownBlockId
     probability: Annotated[float, 'Range | `0`-`1` | both inclusive']
 
 

@@ -4,15 +4,18 @@ Local link to file: generated_symbols/data/loot/function/CopyState.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import Annotated
+from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.data.loot.function.Conditions import Conditions
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
+
+if TYPE_CHECKING:
+    from generated_symbols.registry.KnownBlockId import KnownBlockId
 
 
 @dataclass(kw_only=True)
 class CopyState(Conditions):
-    block: Annotated[str, IdSpec(registry='block')]
+    block: Annotated[str, IdSpec(registry='block')] | KnownBlockId
     properties: list[str]
 
 

@@ -5,13 +5,14 @@ Local link to file: generated_symbols/data/slot_source/SlotSource.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.slot_source.TypedSlotSource import TypedSlotSource
+    from generated_symbols.registry.KnownSlotSourceId import KnownSlotSourceId
 
 
-type SlotSource = TypedSlotSource | list[SlotSource] | Annotated[str, IdSpec(registry='slot_source', tags='allowed')]
+type SlotSource = TypedSlotSource | list[SlotSource] | Annotated[str, IdSpec(registry='slot_source', tags='allowed')] | KnownSlotSourceId
 
 
 # ~~~ MODEL DUMP ~~~

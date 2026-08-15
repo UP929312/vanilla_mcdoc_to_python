@@ -3,10 +3,7 @@ Generated from symbols.json for ::java::data::advancement::predicate::EntityPred
 Local link to file: generated_symbols/data/advancement/predicate/EntityPredicate.py
 """
 # ~~~ CODE ~~~
-from typing import TYPE_CHECKING
-
-if TYPE_CHECKING:
-    from generated_symbols.data.advancement.predicate.EntitySubPredicateMap import EntitySubPredicateMap
+from generated_symbols.data.advancement.predicate.EntitySubPredicateMap import EntitySubPredicateMap
 
 
 type EntityPredicate = EntitySubPredicateMap

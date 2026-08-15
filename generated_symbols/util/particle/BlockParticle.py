@@ -6,15 +6,16 @@ Local link to file: generated_symbols/util/particle/BlockParticle.py
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
+    from generated_symbols.registry.KnownBlockId import KnownBlockId
     from generated_symbols.util.block_state.BlockState import BlockState
 
 
 @dataclass(kw_only=True)
 class BlockParticle:
-    block_state: Annotated[str, IdSpec(registry='block')] | BlockState
+    block_state: Annotated[str, IdSpec(registry='block')] | KnownBlockId | BlockState
 
 
 # ~~~ MODEL DUMP ~~~

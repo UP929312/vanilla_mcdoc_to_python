@@ -6,7 +6,7 @@ Local link to file: generated_symbols/data/number_provider/StorageNumberProvider
 from dataclasses import dataclass
 from typing import Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 
 @dataclass(kw_only=True)

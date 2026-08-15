@@ -15,7 +15,7 @@ if TYPE_CHECKING:
 
 
 @dataclass(kw_only=True)
-class Smelting(NotificationInfo, CookingBookInfo):
+class Smelting(CookingBookInfo, NotificationInfo):
     ingredient: Ingredient
     result: ItemStackTemplate
     experience: float | None = None

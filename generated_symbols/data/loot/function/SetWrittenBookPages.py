@@ -4,10 +4,9 @@ Local link to file: generated_symbols/data/loot/function/SetWrittenBookPages.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated, Literal
 
 from generated_symbols.data.loot.function.Conditions import Conditions
-from generated_symbols.data.loot.function.ListOperation import ListOperation
 
 if TYPE_CHECKING:
     from generated_symbols.util.Filterable import Filterable
@@ -15,8 +14,33 @@ if TYPE_CHECKING:
 
 
 @dataclass(kw_only=True)
-class SetWrittenBookPages(ListOperation, Conditions):
+class SetWrittenBookPagesAppend(Conditions):
     pages: list[Filterable[Text]]  # Sets the pages of a written book.
+    mode: Literal['minecraft:append']  # Determines how the existing list should be modified.
+
+
+@dataclass(kw_only=True)
+class SetWrittenBookPagesInsert(Conditions):
+    pages: list[Filterable[Text]]  # Sets the pages of a written book.
+    mode: Literal['minecraft:insert']  # Determines how the existing list should be modified.
+    offset: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The offset in the list to insert into. Defaults to 0.
+
+
+@dataclass(kw_only=True)
+class SetWrittenBookPagesReplaceAll(Conditions):
+    pages: list[Filterable[Text]]  # Sets the pages of a written book.
+    mode: Literal['minecraft:replace_all']  # Determines how the existing list should be modified.
+
+
+@dataclass(kw_only=True)
+class SetWrittenBookPagesReplaceSection(Conditions):
+    pages: list[Filterable[Text]]  # Sets the pages of a written book.
+    mode: Literal['minecraft:replace_section']  # Determines how the existing list should be modified.
+    offset: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The offset of the section to replace. Defaults to 0.
+    size: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The size of the section to replace. Defaults to size of the new list.
+
+
+type SetWrittenBookPages = SetWrittenBookPagesAppend | SetWrittenBookPagesInsert | SetWrittenBookPagesReplaceAll | SetWrittenBookPagesReplaceSection
 
 
 # ~~~ MODEL DUMP ~~~

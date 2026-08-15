@@ -4,15 +4,18 @@ Local link to file: generated_symbols/data/worldgen/dimension/chunk_generator/Fl
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import Annotated
+from typing import TYPE_CHECKING, Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
+
+if TYPE_CHECKING:
+    from generated_symbols.registry.KnownBlockId import KnownBlockId
 
 
 @dataclass(kw_only=True)
 class FlatGeneratorLayer:
     height: Annotated[int, 'Range | `0`-`4096` | both inclusive']
-    block: Annotated[str, IdSpec(registry='block')]
+    block: Annotated[str, IdSpec(registry='block')] | KnownBlockId
 
 
 # ~~~ MODEL DUMP ~~~

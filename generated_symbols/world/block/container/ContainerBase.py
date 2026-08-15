@@ -9,11 +9,11 @@ from typing import Annotated
 from generated_symbols.world.block.BlockEntity import BlockEntity
 from generated_symbols.world.block.Lockable import Lockable
 from generated_symbols.world.block.Nameable import Nameable
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 
 @dataclass(kw_only=True)
-class ContainerBase(BlockEntity, Nameable, Lockable):
+class ContainerBase(BlockEntity, Lockable, Nameable):
     LootTable: Annotated[str, IdSpec(registry='loot_table', empty='allowed')] | None = None  # Loot table that will populate this container.
     LootTableSeed: int | None = None  # Seed of the loot table.
 

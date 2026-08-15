@@ -36,7 +36,7 @@ class DialogBaseClose:
 
 
 @dataclass(kw_only=True)
-class DialogBaseNone:
+class DialogBaseNone2:
     title: Text
     pause: Literal[False]  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.  The currently selected `after_action` only supports the value `false`
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
@@ -57,7 +57,7 @@ class DialogBaseWaitForResponse:
     pause: bool | None = None  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.
 
 
-type DialogBase = DialogBaseNone | DialogBaseClose | DialogBaseNone | DialogBaseWaitForResponse
+type DialogBase = DialogBaseNone | DialogBaseClose | DialogBaseNone2 | DialogBaseWaitForResponse
 
 
 # ~~~ MODEL DUMP ~~~

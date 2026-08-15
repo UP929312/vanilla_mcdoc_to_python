@@ -4,7 +4,7 @@ Local link to file: generated_symbols/world/entity/falling_block/FallingBlock.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING
 
 from generated_symbols.world.entity.EntityBase import EntityBase
 

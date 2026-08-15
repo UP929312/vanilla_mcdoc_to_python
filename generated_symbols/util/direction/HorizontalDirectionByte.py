@@ -7,10 +7,10 @@ from enum import Enum
 
 
 class HorizontalDirectionByte(Enum):
-    SOUTH = "0"
-    WEST = "1"
-    NORTH = "2"
-    EAST = "3"
+    SOUTH = 0
+    WEST = 1
+    NORTH = 2
+    EAST = 3
 
 
 # ~~~ MODEL DUMP ~~~

@@ -6,9 +6,10 @@ Local link to file: generated_symbols/data/worldgen/processor_list/RuleTest.py
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Literal
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
+    from generated_symbols.registry.KnownBlockId import KnownBlockId
     from generated_symbols.util.block_state.BlockState import BlockState
 
 
@@ -27,7 +28,7 @@ class RuleTestAnyOf:
 @dataclass(kw_only=True)
 class RuleTestBlockMatch:
     predicate_type: Literal['minecraft:block_match']
-    block: Annotated[str, IdSpec(registry='block')]
+    block: Annotated[str, IdSpec(registry='block')] | KnownBlockId
 
 
 @dataclass(kw_only=True)
@@ -52,7 +53,7 @@ class RuleTestNot:
 @dataclass(kw_only=True)
 class RuleTestRandomBlockMatch:
     predicate_type: Literal['minecraft:random_block_match']
-    block: Annotated[str, IdSpec(registry='block')]
+    block: Annotated[str, IdSpec(registry='block')] | KnownBlockId
     probability: Annotated[float, 'Range | `0`-`1` | both inclusive']
 
 
@@ -66,7 +67,7 @@ class RuleTestRandomBlockstateMatch:
 @dataclass(kw_only=True)
 class RuleTestTagMatch:
     predicate_type: Literal['minecraft:tag_match']
-    tag: Annotated[str, IdSpec(registry='block', tags='implicit')]
+    tag: Annotated[str, IdSpec(registry='block', tags='implicit')] | KnownBlockId
 
 
 type RuleTest = RuleTestAllOf | RuleTestAnyOf | RuleTestBlockMatch | RuleTestBlockstateMatch | RuleTestHeightMatch | RuleTestNot | RuleTestRandomBlockMatch | RuleTestRandomBlockstateMatch | RuleTestTagMatch

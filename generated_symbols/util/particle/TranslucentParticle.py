@@ -3,10 +3,7 @@ Generated from symbols.json for ::java::util::particle::TranslucentParticle
 Local link to file: generated_symbols/util/particle/TranslucentParticle.py
 """
 # ~~~ CODE ~~~
-from typing import TYPE_CHECKING
-
-if TYPE_CHECKING:
-    from generated_symbols.util.color.RGBA import RGBA
+from generated_symbols.util.color.RGBA import RGBA
 
 
 type TranslucentParticle = RGBA

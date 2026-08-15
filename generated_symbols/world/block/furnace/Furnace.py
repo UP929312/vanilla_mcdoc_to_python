@@ -9,14 +9,14 @@ from typing import TYPE_CHECKING, Annotated
 from generated_symbols.world.block.BlockEntity import BlockEntity
 from generated_symbols.world.block.Lockable import Lockable
 from generated_symbols.world.block.Nameable import Nameable
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.util.slot.SlottedItem import SlottedItem
 
 
 @dataclass(kw_only=True)
-class Furnace(BlockEntity, Nameable, Lockable):
+class Furnace(BlockEntity, Lockable, Nameable):
     Items: Annotated[list[SlottedItem[Annotated[int, 'Range | `0`-`2` | both inclusive']]], 'Length = 0-3 (both inclusive)'] | None = None  # The items in this furnace, with slots: * 0: Item being smelted * 1: Fuel * 2: Output
     cooking_total_time: int | None = None  # The total amount of time the current cooking process will take. Defaults to `0`.
     cooking_time_spent: int | None = None  # The amount of time that the current cooking process has taken so far. Defaults to `0`.

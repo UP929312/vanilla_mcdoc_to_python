@@ -6,7 +6,7 @@ Local link to file: generated_symbols/util/fluid_state/FluidState.py
 from dataclasses import dataclass
 from typing import Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 
 type PropertiesStructFluidStatesNone = dict[str, str]

@@ -5,13 +5,14 @@ Local link to file: generated_symbols/data/dialog/DialogListRef.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.dialog.Dialog import Dialog
+    from generated_symbols.registry.KnownDialogId import KnownDialogId
 
 
-type DialogListRef = Dialog | Annotated[str, IdSpec(registry='dialog', tags='allowed')] | list[Annotated[str, IdSpec(registry='dialog')] | Dialog]
+type DialogListRef = Dialog | Annotated[str, IdSpec(registry='dialog', tags='allowed')] | KnownDialogId | list[Annotated[str, IdSpec(registry='dialog')] | KnownDialogId | Dialog]
 
 
 # ~~~ MODEL DUMP ~~~

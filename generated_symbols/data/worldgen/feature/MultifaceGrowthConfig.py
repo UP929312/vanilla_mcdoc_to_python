@@ -6,10 +6,11 @@ Local link to file: generated_symbols/data/worldgen/feature/MultifaceGrowthConfi
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.MultifaceBlock import MultifaceBlock
+    from generated_symbols.registry.KnownBlockId import KnownBlockId
 
 
 @dataclass(kw_only=True)
@@ -20,7 +21,7 @@ class MultifaceGrowthConfig:
     can_place_on_floor: bool | None = None
     can_place_on_ceiling: bool | None = None
     can_place_on_wall: bool | None = None
-    can_be_placed_on: list[Annotated[str, IdSpec(registry='block')]] | Annotated[str, IdSpec(registry='block', tags='allowed')] | None = None
+    can_be_placed_on: list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | None = None
 
 
 # ~~~ MODEL DUMP ~~~

@@ -5,7 +5,7 @@ Local link to file: generated_symbols/data/enchantment/provider/EnchantmentsType
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 
 type EnchantmentsType = Annotated[str, IdSpec(registry='enchantment', tags='allowed')] | Annotated[list[Annotated[str, IdSpec(registry='enchantment')]], 'Length = 1 (inclusive) and above']

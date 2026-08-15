@@ -3,11 +3,8 @@ Generated from symbols.json for ::java::world::item::SingleItem
 Local link to file: generated_symbols/world/item/SingleItem.py
 """
 # ~~~ CODE ~~~
-from typing import TYPE_CHECKING
-
-if TYPE_CHECKING:
-    from generated_symbols.world.component.DataComponentPatch import DataComponentPatch
-    from generated_symbols.world.item.SingleItemOfComponent import SingleItemOfComponent
+from generated_symbols.world.component.DataComponentPatch import DataComponentPatch
+from generated_symbols.world.item.SingleItemOfComponent import SingleItemOfComponent
 
 
 SingleItem = SingleItemOfComponent[DataComponentPatch]

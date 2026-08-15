@@ -6,13 +6,14 @@ Local link to file: generated_symbols/data/worldgen/feature/VegetationPatchConfi
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.CaveSurface import CaveSurface
     from generated_symbols.data.worldgen.IntProvider import IntProvider
     from generated_symbols.data.worldgen.feature.FeatureRef import FeatureRef
     from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
+    from generated_symbols.registry.KnownBlockId import KnownBlockId
 
 
 @dataclass(kw_only=True)
@@ -24,7 +25,7 @@ class VegetationPatchConfig:
     extra_edge_column_chance: Annotated[float, 'Range | `0`-`1` | both inclusive']
     vegetation_chance: Annotated[float, 'Range | `0`-`1` | both inclusive']
     xz_radius: IntProvider[int] | int
-    replaceable: Annotated[str, IdSpec(registry='block', tags='allowed')] | list[Annotated[str, IdSpec(registry='block')]]
+    replaceable: Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | list[Annotated[str, IdSpec(registry='block')] | KnownBlockId]
     ground_state: BlockStateProvider
     vegetation_feature: FeatureRef
 

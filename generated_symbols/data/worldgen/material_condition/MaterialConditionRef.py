@@ -5,13 +5,14 @@ Local link to file: generated_symbols/data/worldgen/material_condition/MaterialC
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.material_condition.MaterialCondition import MaterialCondition
+    from generated_symbols.registry.KnownMaterialConditionId import KnownMaterialConditionId
 
 
-type MaterialConditionRef = Annotated[str, IdSpec(registry='material_condition')] | MaterialCondition
+type MaterialConditionRef = Annotated[str, IdSpec(registry='material_condition')] | KnownMaterialConditionId | MaterialCondition
 
 
 # ~~~ MODEL DUMP ~~~

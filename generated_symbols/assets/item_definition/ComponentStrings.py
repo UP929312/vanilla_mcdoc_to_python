@@ -4,79 +4,77 @@ Local link to file: generated_symbols/assets/item_definition/ComponentStrings.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import Annotated
 
 from generated_symbols.assets.item_definition.SelectCases import SelectCases
-from runtime_metadata import IdSpec
-
-if TYPE_CHECKING:
-    from generated_symbols.data.advancement.predicate.ItemPredicate import ItemPredicate
-    from generated_symbols.data.damage_type.DamageType import DamageType
-    from generated_symbols.data.util.SoundEventRef import SoundEventRef
-    from generated_symbols.data.variants.instrument.Instrument import Instrument
-    from generated_symbols.util.avatar.Profile import Profile
-    from generated_symbols.util.color.DyeColor import DyeColor
-    from generated_symbols.util.color.RGB import RGB
-    from generated_symbols.util.text.Text import Text
-    from generated_symbols.world.block.BlockEntityData import BlockEntityData
-    from generated_symbols.world.block.banner.BannerPatternLayer import BannerPatternLayer
-    from generated_symbols.world.component.CustomData import CustomData
-    from generated_symbols.world.component.block.ContainerLoot import ContainerLoot
-    from generated_symbols.world.component.block.ContainerSlot import ContainerSlot
-    from generated_symbols.world.component.block.Occupant import Occupant
-    from generated_symbols.world.component.block.PotDecorations import PotDecorations
-    from generated_symbols.world.component.block.SignText import SignText
-    from generated_symbols.world.component.entity.AxolotlVariant import AxolotlVariant
-    from generated_symbols.world.component.entity.FoxType import FoxType
-    from generated_symbols.world.component.entity.HorseVariant import HorseVariant
-    from generated_symbols.world.component.entity.LlamaVariant import LlamaVariant
-    from generated_symbols.world.component.entity.MooshroomType import MooshroomType
-    from generated_symbols.world.component.entity.ParrotVariant import ParrotVariant
-    from generated_symbols.world.component.entity.RabbitVariant import RabbitVariant
-    from generated_symbols.world.component.entity.SalmonType import SalmonType
-    from generated_symbols.world.component.entity.TropicalFishPattern import TropicalFishPattern
-    from generated_symbols.world.component.item.AdventureModePredicate import AdventureModePredicate
-    from generated_symbols.world.component.item.AttackRange import AttackRange
-    from generated_symbols.world.component.item.AttributeModifier import AttributeModifier
-    from generated_symbols.world.component.item.BlockTransformer import BlockTransformer
-    from generated_symbols.world.component.item.BrewingFuel import BrewingFuel
-    from generated_symbols.world.component.item.BucketEntityData import BucketEntityData
-    from generated_symbols.world.component.item.Compostable import Compostable
-    from generated_symbols.world.component.item.Consumable import Consumable
-    from generated_symbols.world.component.item.CookingFuel import CookingFuel
-    from generated_symbols.world.component.item.CustomModelData import CustomModelData
-    from generated_symbols.world.component.item.DamageResistant import DamageResistant
-    from generated_symbols.world.component.item.DeathProtection import DeathProtection
-    from generated_symbols.world.component.item.DebugStickState import DebugStickState
-    from generated_symbols.world.component.item.Enchantable import Enchantable
-    from generated_symbols.world.component.item.EnchantmentLevels import EnchantmentLevels
-    from generated_symbols.world.component.item.Equippable import Equippable
-    from generated_symbols.world.component.item.Explosion import Explosion
-    from generated_symbols.world.component.item.Fireworks import Fireworks
-    from generated_symbols.world.component.item.Food import Food
-    from generated_symbols.world.component.item.KineticWeapon import KineticWeapon
-    from generated_symbols.world.component.item.LodestoneTracker import LodestoneTracker
-    from generated_symbols.world.component.item.MapDecorations import MapDecorations
-    from generated_symbols.world.component.item.MobVisibility import MobVisibility
-    from generated_symbols.world.component.item.PiercingWeapon import PiercingWeapon
-    from generated_symbols.world.component.item.PotionContents import PotionContents
-    from generated_symbols.world.component.item.Rarity import Rarity
-    from generated_symbols.world.component.item.Repairable import Repairable
-    from generated_symbols.world.component.item.SuspiciousStewEffect import SuspiciousStewEffect
-    from generated_symbols.world.component.item.SwingAnimation import SwingAnimation
-    from generated_symbols.world.component.item.Tool import Tool
-    from generated_symbols.world.component.item.TooltipDisplay import TooltipDisplay
-    from generated_symbols.world.component.item.Trim import Trim
-    from generated_symbols.world.component.item.Unbreakable import Unbreakable
-    from generated_symbols.world.component.item.UseCooldown import UseCooldown
-    from generated_symbols.world.component.item.UseEffects import UseEffects
-    from generated_symbols.world.component.item.VillagerFood import VillagerFood
-    from generated_symbols.world.component.item.Weapon import Weapon
-    from generated_symbols.world.component.item.WritableBookContent import WritableBookContent
-    from generated_symbols.world.component.item.WrittenBookContent import WrittenBookContent
-    from generated_symbols.world.component.item.blocks_attacks import blocks_attacks
-    from generated_symbols.world.entity.AnyEntity import AnyEntity
-    from generated_symbols.world.item.ItemStackTemplate import ItemStackTemplate
+from generated_symbols.data.advancement.predicate.ItemPredicate import ItemPredicate
+from generated_symbols.data.damage_type.DamageType import DamageType
+from generated_symbols.data.util.SoundEventRef import SoundEventRef
+from generated_symbols.data.variants.instrument.Instrument import Instrument
+from generated_symbols.util.avatar.Profile import Profile
+from generated_symbols.util.color.DyeColor import DyeColor
+from generated_symbols.util.color.RGB import RGB
+from generated_symbols.util.text.Text import Text
+from generated_symbols.world.block.BlockEntityData import BlockEntityData
+from generated_symbols.world.block.banner.BannerPatternLayer import BannerPatternLayer
+from generated_symbols.world.component.CustomData import CustomData
+from generated_symbols.world.component.block.ContainerLoot import ContainerLoot
+from generated_symbols.world.component.block.ContainerSlot import ContainerSlot
+from generated_symbols.world.component.block.Occupant import Occupant
+from generated_symbols.world.component.block.PotDecorations import PotDecorations
+from generated_symbols.world.component.block.SignText import SignText
+from generated_symbols.world.component.entity.AxolotlVariant import AxolotlVariant
+from generated_symbols.world.component.entity.FoxType import FoxType
+from generated_symbols.world.component.entity.HorseVariant import HorseVariant
+from generated_symbols.world.component.entity.LlamaVariant import LlamaVariant
+from generated_symbols.world.component.entity.MooshroomType import MooshroomType
+from generated_symbols.world.component.entity.ParrotVariant import ParrotVariant
+from generated_symbols.world.component.entity.RabbitVariant import RabbitVariant
+from generated_symbols.world.component.entity.SalmonType import SalmonType
+from generated_symbols.world.component.entity.TropicalFishPattern import TropicalFishPattern
+from generated_symbols.world.component.item.AdventureModePredicate import AdventureModePredicate
+from generated_symbols.world.component.item.AttackRange import AttackRange
+from generated_symbols.world.component.item.AttributeModifier import AttributeModifier
+from generated_symbols.world.component.item.BlockTransformer import BlockTransformer
+from generated_symbols.world.component.item.BrewingFuel import BrewingFuel
+from generated_symbols.world.component.item.BucketEntityData import BucketEntityData
+from generated_symbols.world.component.item.Compostable import Compostable
+from generated_symbols.world.component.item.Consumable import Consumable
+from generated_symbols.world.component.item.CookingFuel import CookingFuel
+from generated_symbols.world.component.item.CustomModelData import CustomModelData
+from generated_symbols.world.component.item.DamageResistant import DamageResistant
+from generated_symbols.world.component.item.DeathProtection import DeathProtection
+from generated_symbols.world.component.item.DebugStickState import DebugStickState
+from generated_symbols.world.component.item.Enchantable import Enchantable
+from generated_symbols.world.component.item.EnchantmentLevels import EnchantmentLevels
+from generated_symbols.world.component.item.Equippable import Equippable
+from generated_symbols.world.component.item.Explosion import Explosion
+from generated_symbols.world.component.item.Fireworks import Fireworks
+from generated_symbols.world.component.item.Food import Food
+from generated_symbols.world.component.item.KineticWeapon import KineticWeapon
+from generated_symbols.world.component.item.LodestoneTracker import LodestoneTracker
+from generated_symbols.world.component.item.MapDecorations import MapDecorations
+from generated_symbols.world.component.item.MobVisibility import MobVisibility
+from generated_symbols.world.component.item.PiercingWeapon import PiercingWeapon
+from generated_symbols.world.component.item.PotionContents import PotionContents
+from generated_symbols.world.component.item.Rarity import Rarity
+from generated_symbols.world.component.item.Repairable import Repairable
+from generated_symbols.world.component.item.SuspiciousStewEffect import SuspiciousStewEffect
+from generated_symbols.world.component.item.SwingAnimation import SwingAnimation
+from generated_symbols.world.component.item.Tool import Tool
+from generated_symbols.world.component.item.TooltipDisplay import TooltipDisplay
+from generated_symbols.world.component.item.Trim import Trim
+from generated_symbols.world.component.item.Unbreakable import Unbreakable
+from generated_symbols.world.component.item.UseCooldown import UseCooldown
+from generated_symbols.world.component.item.UseEffects import UseEffects
+from generated_symbols.world.component.item.VillagerFood import VillagerFood
+from generated_symbols.world.component.item.Weapon import Weapon
+from generated_symbols.world.component.item.WritableBookContent import WritableBookContent
+from generated_symbols.world.component.item.WrittenBookContent import WrittenBookContent
+from generated_symbols.world.component.item.blocks_attacks import blocks_attacks
+from generated_symbols.world.entity.AnyEntity import AnyEntity
+from generated_symbols.world.item.ItemStackTemplate import ItemStackTemplate
+from minecraft_registry import IdSpec
 
 
 type DataComponentStructBlockStateBlockItemStatesNone = dict[str, str]

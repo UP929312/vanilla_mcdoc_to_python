@@ -7,7 +7,7 @@ from dataclasses import dataclass
 from typing import Annotated, Literal
 
 from generated_symbols.util.text.TextNbtBase import TextNbtBase
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 
 @dataclass(kw_only=True)

@@ -7,14 +7,14 @@ from enum import Enum
 
 
 class HideFlags(Enum):
-    ENCHANTMENTS = "1"
-    ATTRIBUTEMODIFIERS = "2"
-    UNBREAKABLE = "3"
-    CANDESTROY = "4"
-    CANPLACEON = "5"
-    OTHER = "6"
-    LEATHERCOLOR = "7"
-    TRIM = "8"
+    ENCHANTMENTS = 1
+    ATTRIBUTEMODIFIERS = 2
+    UNBREAKABLE = 3
+    CANDESTROY = 4
+    CANPLACEON = 5
+    OTHER = 6
+    LEATHERCOLOR = 7
+    TRIM = 8
 
 
 # ~~~ MODEL DUMP ~~~

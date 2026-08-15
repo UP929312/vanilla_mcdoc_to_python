@@ -7,11 +7,11 @@ from enum import Enum
 
 
 class AxolotlVariantInt(Enum):
-    LUCY = "0"
-    WILD = "1"
-    GOLD = "2"
-    CYAN = "3"
-    BLUE = "4"
+    LUCY = 0
+    WILD = 1
+    GOLD = 2
+    CYAN = 3
+    BLUE = 4
 
 
 # ~~~ MODEL DUMP ~~~

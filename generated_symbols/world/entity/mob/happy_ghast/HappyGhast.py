@@ -10,7 +10,7 @@ from generated_symbols.world.entity.mob.MobBase import MobBase
 
 
 @dataclass(kw_only=True)
-class HappyGhast(MobBase, AgeableMob):
+class HappyGhast(AgeableMob, MobBase):
     still_timeout: int | None = None
 
 

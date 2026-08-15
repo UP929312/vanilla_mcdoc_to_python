@@ -5,7 +5,7 @@ Local link to file: generated_symbols/world/component/PersistentDataComponent.py
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 
 type PersistentDataComponent = Annotated[str, IdSpec(registry='data_component_type', exclude=('additional_trade_cost', 'creative_slot_lock', 'map_post_processing'))]

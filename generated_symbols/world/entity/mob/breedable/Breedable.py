@@ -11,7 +11,7 @@ from generated_symbols.world.entity.mob.MobBase import MobBase
 
 
 @dataclass(kw_only=True)
-class Breedable(MobBase, AgeableMob):
+class Breedable(AgeableMob, MobBase):
     InLove: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # Ticks until it stops searching for a mate.
     LoveCause: tuple[int, int, int, int] | None = None  # Player that caused this mob to breed.
 

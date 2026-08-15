@@ -5,7 +5,7 @@ Local link to file: generated_symbols/world/component/item/EnchantmentLevels.py
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 
 type EnchantmentLevels = dict[Annotated[str, IdSpec(registry='enchantment')], Annotated[int, 'Range | `1`-`255` | both inclusive']]

@@ -9,7 +9,7 @@ from typing import TYPE_CHECKING, Annotated, Literal
 from generated_symbols.util.text.ObjectTextConfig import ObjectTextConfig
 from generated_symbols.util.text.TextBase import TextBase
 from generated_symbols.util.text.TextNbtBase import TextNbtBase
-from runtime_metadata import IdSpec
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.util.avatar.Profile import Profile

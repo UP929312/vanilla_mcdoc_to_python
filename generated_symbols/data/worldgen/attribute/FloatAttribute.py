@@ -15,17 +15,16 @@ if TYPE_CHECKING:
 
 
 T = TypeVar('T')
-T = TypeVar('T')
 
 @dataclass(kw_only=True)
-class KeyframesStruct(Generic[T, T]):
+class KeyframesStruct(Generic[T]):
     ticks: Annotated[int, 'Range | Min `0` and above | inclusive']
-    value: T | float | FloatWithAlpha[T]
+    value: T | float | FloatWithAlpha
 
 
 @dataclass(kw_only=True)
 class AttributeTrackStruct(AttributeTrackBase, Generic[T]):
-    keyframes: Annotated[list[KeyframesStruct[T, T]], 'Length = 1 (inclusive) and above']
+    keyframes: Annotated[list[KeyframesStruct[T]], 'Length = 1 (inclusive) and above']
     modifier: FloatModifierType | None = None
 
 
@@ -33,7 +32,7 @@ class AttributeTrackStruct(AttributeTrackBase, Generic[T]):
 class FloatAttribute(Generic[T]):
     value: T
     modifier: FloatAttributeModifier[T]
-    attribute_track: AttributeTrackStruct[T, T]
+    attribute_track: AttributeTrackStruct[T]
 
 
 # ~~~ MODEL DUMP ~~~
