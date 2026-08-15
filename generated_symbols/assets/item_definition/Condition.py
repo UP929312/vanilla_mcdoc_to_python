@@ -41,9 +41,9 @@ class ConditionComponent:
     property: Literal['minecraft:component']
     on_true: ItemModel
     on_false: ItemModel
+    transformation: Transformation | None = None
     predicate: Annotated[str, IdSpec(registry='data_component_predicate_type')]  # The component predicate to check.
     value: None | AttributeModifiersPredicate | BundleContentsPredicate | ContainerPredicate | CustomData | ItemDamagePredicate | list[EnchantmentPredicate] | FireworkExplosionPredicate | FireworksPredicate | JukeboxPlayablePredicate | PotionsPredicate | TrimPredicate | Annotated[str, IdSpec(registry='villager_type', tags='allowed')] | list[Annotated[str, IdSpec(registry='villager_type')]] | WritableBookPredicate | WrittenBookPredicate  # The predicate-specific value.
-    transformation: Transformation | None = None
 
 
 @dataclass(kw_only=True)
@@ -60,8 +60,8 @@ class ConditionHasComponent:
     property: Literal['minecraft:has_component']
     on_true: ItemModel
     on_false: ItemModel
-    component: Annotated[str, IdSpec(registry='data_component_type')]
     transformation: Transformation | None = None
+    component: Annotated[str, IdSpec(registry='data_component_type')]
     ignore_default: bool | None = None  # Whether the default components should be handled as "no component". Defaults to false.
 
 
@@ -70,8 +70,8 @@ class ConditionKeybindDown:
     property: Literal['minecraft:keybind_down']
     on_true: ItemModel
     on_false: ItemModel
-    keybind: Keybind  # The keybind ID to check for.
     transformation: Transformation | None = None
+    keybind: Keybind  # The keybind ID to check for.
 
 
 @dataclass(kw_only=True)

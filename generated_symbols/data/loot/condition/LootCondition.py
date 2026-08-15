@@ -153,10 +153,10 @@ class LootConditionKilledByPlayer:
 @dataclass(kw_only=True)
 class LootConditionLocationCheck:
     type: Literal['minecraft:location_check']
-    predicate: LocationPredicate
     offsetX: int | None = None
     offsetY: int | None = None
     offsetZ: int | None = None
+    predicate: LocationPredicate
 
 
 @dataclass(kw_only=True)

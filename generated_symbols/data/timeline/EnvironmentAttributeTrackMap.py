@@ -38,8 +38,8 @@ class KeyframesStruct:
 
 @dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct1(AttributeTrackBase):
-    keyframes: Annotated[list[KeyframesStruct], 'Length = 1 (inclusive) and above']
     modifier: Literal['override'] | None = None
+    keyframes: Annotated[list[KeyframesStruct], 'Length = 1 (inclusive) and above']
 
 
 @dataclass(kw_only=True)
@@ -50,8 +50,8 @@ class KeyframesStruct2:
 
 @dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct2(AttributeTrackBase):
-    keyframes: Annotated[list[KeyframesStruct2], 'Length = 1 (inclusive) and above']
     modifier: Literal['override'] | None = None
+    keyframes: Annotated[list[KeyframesStruct2], 'Length = 1 (inclusive) and above']
 
 
 @dataclass(kw_only=True)
@@ -62,8 +62,8 @@ class KeyframesStruct3:
 
 @dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct3(AttributeTrackBase):
-    keyframes: Annotated[list[KeyframesStruct3], 'Length = 1 (inclusive) and above']
     modifier: Literal['override'] | None = None
+    keyframes: Annotated[list[KeyframesStruct3], 'Length = 1 (inclusive) and above']
 
 
 @dataclass(kw_only=True)
@@ -74,8 +74,8 @@ class KeyframesStruct4:
 
 @dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct4(AttributeTrackBase):
-    keyframes: Annotated[list[KeyframesStruct4], 'Length = 1 (inclusive) and above']
     modifier: BooleanModifierType | None = None
+    keyframes: Annotated[list[KeyframesStruct4], 'Length = 1 (inclusive) and above']
 
 
 @dataclass(kw_only=True)
@@ -86,8 +86,8 @@ class KeyframesStruct5:
 
 @dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct5(AttributeTrackBase):
-    keyframes: Annotated[list[KeyframesStruct5], 'Length = 1 (inclusive) and above']
     modifier: FloatModifierType | None = None
+    keyframes: Annotated[list[KeyframesStruct5], 'Length = 1 (inclusive) and above']
 
 
 @dataclass(kw_only=True)
@@ -98,8 +98,8 @@ class KeyframesStruct6:
 
 @dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct6(AttributeTrackBase):
-    keyframes: Annotated[list[KeyframesStruct6], 'Length = 1 (inclusive) and above']
     modifier: Literal['override'] | None = None
+    keyframes: Annotated[list[KeyframesStruct6], 'Length = 1 (inclusive) and above']
 
 
 @dataclass(kw_only=True)
@@ -110,8 +110,8 @@ class KeyframesStruct7:
 
 @dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct7(AttributeTrackBase):
-    keyframes: Annotated[list[KeyframesStruct7], 'Length = 1 (inclusive) and above']
     modifier: Literal['override'] | None = None
+    keyframes: Annotated[list[KeyframesStruct7], 'Length = 1 (inclusive) and above']
 
 
 @dataclass(kw_only=True)
@@ -122,8 +122,8 @@ class KeyframesStruct8:
 
 @dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct8(AttributeTrackBase):
-    keyframes: Annotated[list[KeyframesStruct8], 'Length = 1 (inclusive) and above']
     modifier: FloatModifierType | None = None
+    keyframes: Annotated[list[KeyframesStruct8], 'Length = 1 (inclusive) and above']
 
 
 @dataclass(kw_only=True)
@@ -134,8 +134,8 @@ class KeyframesStruct9:
 
 @dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct9(AttributeTrackBase):
-    keyframes: Annotated[list[KeyframesStruct9], 'Length = 1 (inclusive) and above']
     modifier: Literal['override'] | None = None
+    keyframes: Annotated[list[KeyframesStruct9], 'Length = 1 (inclusive) and above']
 
 
 @dataclass(kw_only=True)
@@ -146,8 +146,8 @@ class KeyframesStruct10:
 
 @dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct10(AttributeTrackBase):
-    keyframes: Annotated[list[KeyframesStruct10], 'Length = 1 (inclusive) and above']
     modifier: MergeableModifierType | None = None
+    keyframes: Annotated[list[KeyframesStruct10], 'Length = 1 (inclusive) and above']
 
 
 @dataclass(kw_only=True)
@@ -158,8 +158,8 @@ class KeyframesStruct11:
 
 @dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct11(AttributeTrackBase):
-    keyframes: Annotated[list[KeyframesStruct11], 'Length = 1 (inclusive) and above']
     modifier: FloatModifierType | None = None
+    keyframes: Annotated[list[KeyframesStruct11], 'Length = 1 (inclusive) and above']
 
 
 @dataclass(kw_only=True)
@@ -170,8 +170,8 @@ class KeyframesStruct12:
 
 @dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct12(AttributeTrackBase):
-    keyframes: Annotated[list[KeyframesStruct12], 'Length = 1 (inclusive) and above']
     modifier: ColorModifierType | None = None
+    keyframes: Annotated[list[KeyframesStruct12], 'Length = 1 (inclusive) and above']
 
 
 @dataclass(kw_only=True)
@@ -182,8 +182,8 @@ class KeyframesStruct13:
 
 @dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct13(AttributeTrackBase):
-    keyframes: Annotated[list[KeyframesStruct13], 'Length = 1 (inclusive) and above']
     modifier: ListModifierType | None = None
+    keyframes: Annotated[list[KeyframesStruct13], 'Length = 1 (inclusive) and above']
 
 
 @dataclass(kw_only=True)
@@ -194,8 +194,8 @@ class KeyframesStruct14:
 
 @dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct14(AttributeTrackBase):
-    keyframes: Annotated[list[KeyframesStruct14], 'Length = 1 (inclusive) and above']
     modifier: ColorModifierType | None = None
+    keyframes: Annotated[list[KeyframesStruct14], 'Length = 1 (inclusive) and above']
 
 
 @dataclass(kw_only=True)
@@ -206,8 +206,8 @@ class KeyframesStruct15:
 
 @dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct15(AttributeTrackBase):
-    keyframes: Annotated[list[KeyframesStruct15], 'Length = 1 (inclusive) and above']
     modifier: FloatModifierType | None = None
+    keyframes: Annotated[list[KeyframesStruct15], 'Length = 1 (inclusive) and above']
 
 
 @dataclass(kw_only=True)
@@ -218,8 +218,8 @@ class KeyframesStruct16:
 
 @dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct16(AttributeTrackBase):
-    keyframes: Annotated[list[KeyframesStruct16], 'Length = 1 (inclusive) and above']
     modifier: FloatModifierType | None = None
+    keyframes: Annotated[list[KeyframesStruct16], 'Length = 1 (inclusive) and above']
 
 
 @dataclass(kw_only=True)
@@ -230,8 +230,8 @@ class KeyframesStruct17:
 
 @dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct17(AttributeTrackBase):
-    keyframes: Annotated[list[KeyframesStruct17], 'Length = 1 (inclusive) and above']
     modifier: Literal['override'] | None = None
+    keyframes: Annotated[list[KeyframesStruct17], 'Length = 1 (inclusive) and above']
 
 
 @dataclass(kw_only=True)
@@ -242,8 +242,8 @@ class KeyframesStruct18:
 
 @dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct18(AttributeTrackBase):
-    keyframes: Annotated[list[KeyframesStruct18], 'Length = 1 (inclusive) and above']
     modifier: Literal['override'] | None = None
+    keyframes: Annotated[list[KeyframesStruct18], 'Length = 1 (inclusive) and above']
 
 
 type EnvironmentAttributeTrackMap = dict[Annotated[str, IdSpec(registry='environment_attribute')] | KnownEnvironmentAttributeId, EnvironmentAttributeTrackMapValueStruct1 | EnvironmentAttributeTrackMapValueStruct2 | EnvironmentAttributeTrackMapValueStruct3 | EnvironmentAttributeTrackMapValueStruct4 | EnvironmentAttributeTrackMapValueStruct5 | EnvironmentAttributeTrackMapValueStruct6 | EnvironmentAttributeTrackMapValueStruct7 | EnvironmentAttributeTrackMapValueStruct8 | EnvironmentAttributeTrackMapValueStruct9 | EnvironmentAttributeTrackMapValueStruct10 | EnvironmentAttributeTrackMapValueStruct11 | EnvironmentAttributeTrackMapValueStruct12 | EnvironmentAttributeTrackMapValueStruct13 | EnvironmentAttributeTrackMapValueStruct14 | EnvironmentAttributeTrackMapValueStruct15 | EnvironmentAttributeTrackMapValueStruct16 | EnvironmentAttributeTrackMapValueStruct17 | EnvironmentAttributeTrackMapValueStruct18]

@@ -19,8 +19,8 @@ class RulesStruct:
 
 @dataclass(kw_only=True)
 class RuleBasedBlockStateProvider:
-    rules: list[RulesStruct]
     fallback: BlockStateProvider | None = None
+    rules: list[RulesStruct]
 
 
 # ~~~ MODEL DUMP ~~~

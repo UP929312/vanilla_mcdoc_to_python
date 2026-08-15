@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class ProjectileSpreadEnchantmentEffect:
-    effect: ValueEffect  # Maximum spread of projectiles measured in degrees from the aim line.
     requirements: Predicate | None = None  # Predicate context: Entity Parameters.  `this` is the entity shooting the projectile.
+    effect: ValueEffect  # Maximum spread of projectiles measured in degrees from the aim line.
 
 
 # ~~~ MODEL DUMP ~~~

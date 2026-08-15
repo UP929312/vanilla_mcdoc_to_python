@@ -49,8 +49,8 @@ class TypedSlotSourceLimitSlots:
 @dataclass(kw_only=True)
 class TypedSlotSourceSlotRange:
     type: Literal['minecraft:slot_range']
-    slots: str
     source: EntityTarget | BlockEntityTarget | Literal['container'] | None = None  # Defaults to `container`.
+    slots: str
 
 
 type TypedSlotSource = TypedSlotSourceContents | TypedSlotSourceEmpty | TypedSlotSourceFiltered | TypedSlotSourceGroup | TypedSlotSourceLimitSlots | TypedSlotSourceSlotRange

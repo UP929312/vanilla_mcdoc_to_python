@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class LootPool:
     rolls: NumberProviderRef
-    entries: list[LootPoolEntry]
     bonus_rolls: NumberProviderRef | None = None
+    entries: list[LootPoolEntry]
     modifier: ItemModifier | None = None
     condition: PredicateRef | None = None
 

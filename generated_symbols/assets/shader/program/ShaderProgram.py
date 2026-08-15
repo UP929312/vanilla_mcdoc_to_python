@@ -18,8 +18,8 @@ if TYPE_CHECKING:
 class ShaderProgram:
     vertex: Annotated[str, IdSpec(registry='shader/vertex')]
     fragment: Annotated[str, IdSpec(registry='shader/fragment')]
-    uniforms: list[Uniform]
     samplers: list[Sampler] | None = None
+    uniforms: list[Uniform]
     defines: Defines | None = None  # Defines GLSL directives to be injected into the shader source.
 
 

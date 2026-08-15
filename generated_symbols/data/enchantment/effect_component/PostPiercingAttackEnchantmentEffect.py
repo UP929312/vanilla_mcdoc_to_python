@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class PostPiercingAttackEnchantmentEffect:
-    effect: EntityEffect  # The effect to apply on attacker.
     requirements: Predicate | None = None  # Predicate context: Damage Parameters.
+    effect: EntityEffect  # The effect to apply on attacker.
 
 
 # ~~~ MODEL DUMP ~~~

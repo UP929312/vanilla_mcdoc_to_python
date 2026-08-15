@@ -12,10 +12,10 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class LocationCheck:
-    predicate: LocationPredicate
     offsetX: int | None = None
     offsetY: int | None = None
     offsetZ: int | None = None
+    predicate: LocationPredicate
 
 
 # ~~~ MODEL DUMP ~~~

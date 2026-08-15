@@ -11,8 +11,8 @@ from minecraft_registry import IdSpec
 
 @dataclass(kw_only=True)
 class Checkerboard:
-    biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     scale: Annotated[int, 'Range | `0`-`62` | both inclusive'] | None = None
+    biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
 
 
 # ~~~ MODEL DUMP ~~~

@@ -26,12 +26,12 @@ class ConfiguredCarverCave(CarverConfigBase):
     type: Literal['minecraft:cave']
     count: IntProvider[Annotated[int, 'Range | Min `0` and above | inclusive']] | Annotated[int, 'Range | Min `0` and above | inclusive']
     thickness: FloatProvider[Annotated[float, 'Range | Min `0` and above | inclusive']] | Annotated[float, 'Range | Min `0` and above | inclusive']
+    weird_thickness_bias: bool | None = None  # Defaults to `false`.
     room_vertical_radius_multiplier: FloatProvider[float] | float
     horizontal_radius_multiplier: FloatProvider[float] | float
     vertical_radius_multiplier: FloatProvider[float] | float
-    floor_level: FloatProvider[Annotated[float, 'Range | `-1`-`1` | both inclusive']] | Annotated[float, 'Range | `-1`-`1` | both inclusive']
-    weird_thickness_bias: bool | None = None  # Defaults to `false`.
     start_vertical_radiues_multiplier: FloatProvider[float] | float | None = None  # Defaults to constant 1.0
+    floor_level: FloatProvider[Annotated[float, 'Range | `-1`-`1` | both inclusive']] | Annotated[float, 'Range | `-1`-`1` | both inclusive']
 
 
 @dataclass(kw_only=True)
@@ -39,12 +39,12 @@ class ConfiguredCarverNetherCave(CarverConfigBase):
     type: Literal['minecraft:nether_cave']
     count: IntProvider[Annotated[int, 'Range | Min `0` and above | inclusive']] | Annotated[int, 'Range | Min `0` and above | inclusive']
     thickness: FloatProvider[Annotated[float, 'Range | Min `0` and above | inclusive']] | Annotated[float, 'Range | Min `0` and above | inclusive']
+    weird_thickness_bias: bool | None = None  # Defaults to `false`.
     room_vertical_radius_multiplier: FloatProvider[float] | float
     horizontal_radius_multiplier: FloatProvider[float] | float
     vertical_radius_multiplier: FloatProvider[float] | float
-    floor_level: FloatProvider[Annotated[float, 'Range | `-1`-`1` | both inclusive']] | Annotated[float, 'Range | `-1`-`1` | both inclusive']
-    weird_thickness_bias: bool | None = None  # Defaults to `false`.
     start_vertical_radiues_multiplier: FloatProvider[float] | float | None = None  # Defaults to constant 1.0
+    floor_level: FloatProvider[Annotated[float, 'Range | `-1`-`1` | both inclusive']] | Annotated[float, 'Range | `-1`-`1` | both inclusive']
 
 
 type ConfiguredCarver = ConfiguredCarverCanyon | ConfiguredCarverCave | ConfiguredCarverNetherCave

@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class WrittenBookContent:
+    pages: list[Filterable[Text]] | None = None
     title: Filterable[Annotated[str, 'Length = up to 32 (inclusive)']]
     author: str
-    pages: list[Filterable[Text]] | None = None
     generation: BookGeneration | None = None  # Number of times this written book has been copied. Defaults to 0. If the value is greater than 1, the book cannot be copied.
     resolved: bool | None = None  # Whether the dynamic content on the pages has been resolved.
 

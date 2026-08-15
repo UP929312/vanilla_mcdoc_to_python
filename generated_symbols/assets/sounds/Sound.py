@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class Sound:
-    name: Annotated[str, IdSpec(registry='sound')] | Annotated[str, IdSpec(registry='weighed_sound_event')]
     type: SoundType | None = None  # Changes how `name` is interpreted. Defaults to `file`.
+    name: Annotated[str, IdSpec(registry='sound')] | Annotated[str, IdSpec(registry='weighed_sound_event')]
     volume: Annotated[float, 'Range | Min `0` and above | inclusive'] | None = None  # Defaults to 1.0.
     pitch: Annotated[float, 'Range | Min `0` and above | inclusive'] | None = None  # Default is 1.0.
     weight: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # Chance that this sound is selected to play. Defaults to 1.

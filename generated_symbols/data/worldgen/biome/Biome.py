@@ -18,14 +18,14 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class Biome:
+    attributes: PositionalEnvironmentAttributeMap | None = None
     temperature: float
     downfall: float
     has_precipitation: bool
+    temperature_modifier: TemperatureModifier | None = None
     effects: BiomeEffects
     carvers: CarverListRef
     features: Annotated[list[list[PlacedFeatureRef] | Annotated[str, IdSpec(registry='worldgen/placed_feature', tags='required')]], 'Length = up to 11 (inclusive)']
-    attributes: PositionalEnvironmentAttributeMap | None = None
-    temperature_modifier: TemperatureModifier | None = None
 
 
 # ~~~ MODEL DUMP ~~~

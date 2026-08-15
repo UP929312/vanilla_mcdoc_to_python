@@ -16,8 +16,8 @@ class Instrument:
     sound_event: SoundEventRef
     range: Annotated[float, 'Range | Min `0` and above | inclusive']  # Maximum range in blocks that the sound can be heard
     use_duration: Annotated[float, 'Range | Min `0` and above | inclusive']  # Duration of use in seconds, used as item cooldown
-    description: Text
     durability_damage: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None
+    description: Text
 
 
 # ~~~ MODEL DUMP ~~~

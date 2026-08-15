@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class SetName(Conditions):
-    name: Text
     entity: EntityTarget | None = None  # Specifies the entity to act as the target `@s` in the JSON text component.
+    name: Text
     target: SetNameTarget | None = None  # Which name component to set. Defaults to `custom_name`.
 
 

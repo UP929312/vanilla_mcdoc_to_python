@@ -12,9 +12,9 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class UniformValue:
+    name: str | None = None  # Unused by the game, but good to set in practice.
     type: UniformValueType
     value: float | int | tuple[int, int, int] | tuple[float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float] | tuple[float, float] | tuple[float, float, float] | tuple[float, float, float, float]
-    name: str | None = None  # Unused by the game, but good to set in practice.
 
 
 # ~~~ MODEL DUMP ~~~

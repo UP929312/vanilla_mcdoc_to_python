@@ -16,9 +16,9 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class SmithingTransform(NotificationInfo):
     base: Ingredient  # Ingredient specifying an item to be transformed.
-    result: ItemStackTemplate  # Resulting transformed item.
     addition: Ingredient | None = None  # Material that will be used.
     template: Ingredient | None = None  # Template item that will be used for the pattern.
+    result: ItemStackTemplate  # Resulting transformed item.
 
 
 # ~~~ MODEL DUMP ~~~

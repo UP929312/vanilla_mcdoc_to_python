@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class DamageEnchantmentEffect:
-    effect: ValueEffect  # Damage dealt by the weapon.
     requirements: Predicate | None = None  # Predicate context: Damage Parameters.
+    effect: ValueEffect  # Damage dealt by the weapon.
 
 
 # ~~~ MODEL DUMP ~~~

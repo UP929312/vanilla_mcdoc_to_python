@@ -22,8 +22,8 @@ class BiomesStruct:
 @dataclass(kw_only=True)
 class BiomeSourceCheckerboard:
     type: Literal['minecraft:checkerboard']
-    biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     scale: Annotated[int, 'Range | `0`-`62` | both inclusive'] | None = None
+    biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
 
 
 @dataclass(kw_only=True)
@@ -35,8 +35,8 @@ class BiomeSourceFixed:
 @dataclass(kw_only=True)
 class BiomeSourceMultiNoiseNone(MultiNoiseBase):
     type: Literal['minecraft:multi_noise']
-    biomes: list[BiomesStruct]
     preset: Annotated[str, IdSpec(registry='worldgen/multi_noise_biome_source_parameter_list')] | None = None
+    biomes: list[BiomesStruct]
 
 
 @dataclass(kw_only=True)

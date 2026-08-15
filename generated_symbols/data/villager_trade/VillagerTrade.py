@@ -19,8 +19,8 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class VillagerTrade:
     wants: TradeCost  # Price item required by the merchant.  The count is affected by various factors, including offered item, demand and player reputation.
-    gives: ItemStackTemplate  # Item being offered by the merchant.
     additional_wants: TradeCost | None = None  # Second item required by the merchant.  The count is not affected by any factors.
+    gives: ItemStackTemplate  # Item being offered by the merchant.
     given_item_modifier: ItemModifier | None = None  # Modifiers applied to the `gives` item.  Does **not** support `reference` item modifier.  Some modifiers can affect the price through the `additional_trade_cost` transient component.  The `additional_trade_cost` component is not saved on the offered item.  ID reference is not allowed here.
     max_uses: NumberProvider | None = None  # Maximum number of uses of this trade before the villager has to restock. Defaults to `4`.  Clamps to a positive integer.
     reputation_discount: NumberProvider | None = None  # How much demand & reputation each affect the price, is serialized as `priceMultiplier`. Defaults to `0.0`.  Clamps to a non-negative float.

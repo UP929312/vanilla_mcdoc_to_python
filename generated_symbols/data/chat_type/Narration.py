@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class Narration:
-    priority: NarrationPriority
     decoration: ChatDecoration | None = None
+    priority: NarrationPriority
 
 
 # ~~~ MODEL DUMP ~~~

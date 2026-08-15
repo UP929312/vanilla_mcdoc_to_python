@@ -1129,9 +1129,9 @@ class AnyEntitySnowball(Throwable):
 @dataclass(kw_only=True)
 class AnyEntitySpawnerMinecart(Minecart):
     id: Literal['minecraft:spawner_minecart']  # The ID of this entity. Not present on player entities.
-    SpawnCount: int  # Number of entities that will be placed.
     SpawnPotentials: list[SpawnPotential] | None = None  # List of potential entities to place next.
     SpawnData: SpawnerEntry | None = None  # Data for the next mob to place. Will be overwritten by `SpawnPotentials`.
+    SpawnCount: int  # Number of entities that will be placed.
     SpawnRange: int | None = None  # Range that the spawned entities will be placed in.
     Delay: int | None = None  # Ticks until the next spawn.
     MinSpawnDelay: int | None = None  # Minimum random delay for the next spawn.

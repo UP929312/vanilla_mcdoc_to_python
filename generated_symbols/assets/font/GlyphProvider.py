@@ -16,40 +16,40 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class GlyphProviderBitmap:
     type: Literal['minecraft:bitmap']
+    filter: dict[FontOption, bool] | None = None
     file: str
+    height: int | None = None
     ascent: int
     chars: Annotated[list[Annotated[str, 'Length = 1 (inclusive) and above']], 'Length = 1 (inclusive) and above']
-    filter: dict[FontOption, bool] | None = None
-    height: int | None = None
 
 
 @dataclass(kw_only=True)
 class GlyphProviderLegacyUnicode:
     type: Literal['minecraft:legacy_unicode']
+    filter: dict[FontOption, bool] | None = None
     sizes: str
     template: str
-    filter: dict[FontOption, bool] | None = None
 
 
 @dataclass(kw_only=True)
 class GlyphProviderReference:
     type: Literal['minecraft:reference']
-    id: Annotated[str, IdSpec(registry='font')]
     filter: dict[FontOption, bool] | None = None
+    id: Annotated[str, IdSpec(registry='font')]
 
 
 @dataclass(kw_only=True)
 class GlyphProviderSpace:
     type: Literal['minecraft:space']
-    advances: dict[Annotated[str, 'Length = 1'], float]
     filter: dict[FontOption, bool] | None = None
+    advances: dict[Annotated[str, 'Length = 1'], float]
 
 
 @dataclass(kw_only=True)
 class GlyphProviderTtf:
     type: Literal['minecraft:ttf']
-    file: str
     filter: dict[FontOption, bool] | None = None
+    file: str
     size: float | None = None
     oversample: float | None = None
     shift: tuple[float, float] | None = None
@@ -59,8 +59,8 @@ class GlyphProviderTtf:
 @dataclass(kw_only=True)
 class GlyphProviderUnihex:
     type: Literal['minecraft:unihex']
-    hex_file: str  # ZIP archive containing one or more *.hex files (files in archive with different extensions are ignored).
     filter: dict[FontOption, bool] | None = None
+    hex_file: str  # ZIP archive containing one or more *.hex files (files in archive with different extensions are ignored).
     size_overrides: list[UnihexOverrideRange] | None = None  # List of ranges to override the size of.
 
 

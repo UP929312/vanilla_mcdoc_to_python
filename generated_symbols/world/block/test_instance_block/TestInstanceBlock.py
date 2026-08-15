@@ -18,11 +18,11 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class DataStruct:
+    test: Annotated[str, IdSpec(registry='test_instance')] | KnownTestInstanceId | None = None
     size: tuple[int, int, int]
     rotation: Rotation
     ignore_entities: bool
     status: TestInstanceBlockStatus
-    test: Annotated[str, IdSpec(registry='test_instance')] | KnownTestInstanceId | None = None
     error_message: Text | None = None
 
 

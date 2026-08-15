@@ -130,11 +130,11 @@ class DensityFunctionStructFloor:
 class DensityFunctionStructGradient:
     type: Literal['minecraft:gradient']
     axis: Axis
+    tiling: TilingMode | None = None  # Defaults to `clamp_to_edge`.
     from_coordinate: int
     to_coordinate: int
     from_value: NoiseRange
     to_value: NoiseRange
-    tiling: TilingMode | None = None  # Defaults to `clamp_to_edge`.
 
 
 @dataclass(kw_only=True)

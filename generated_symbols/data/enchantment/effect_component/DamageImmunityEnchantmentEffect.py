@@ -17,8 +17,8 @@ class EffectStruct:
 
 @dataclass(kw_only=True)
 class DamageImmunityEnchantmentEffect:
-    effect: EffectStruct  # Dummy value; this is a boolean effect.
     requirements: Predicate | None = None  # Predicate context: Damage Parameters.
+    effect: EffectStruct  # Dummy value; this is a boolean effect.
 
 
 # ~~~ MODEL DUMP ~~~

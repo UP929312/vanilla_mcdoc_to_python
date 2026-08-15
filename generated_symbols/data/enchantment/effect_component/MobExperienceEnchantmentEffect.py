@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class MobExperienceEnchantmentEffect:
-    effect: ValueEffect  # Amount of experience awarded.
     requirements: Predicate | None = None  # Predicate context: Entity Parameters.  `this` is the killed mob.
+    effect: ValueEffect  # Amount of experience awarded.
 
 
 # ~~~ MODEL DUMP ~~~

@@ -15,7 +15,6 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class ItemBase:
-    key_name: Any  # Custom item NBT tags
     Damage: int | None = None  # Damage that an item has. Only used for tools, armor, etc.
     Unbreakable: bool | None = None  # Whether the item should be unbreakable. Only used for tools, armor, etc.
     CanDestroy: list[str] | None = None  # List of the block states that can be destroyed by this item when holding it in adventure mode.
@@ -27,6 +26,7 @@ class ItemBase:
     display: Display | None = None  # Display settings.
     HideFlags: int | None = None  # Bitfield for which flags to hide on an item.
     Trim: Trim | None = None  # Trim to apply to the item & armor when worn.
+    key_name: Any  # Custom item NBT tags
 
 
 # ~~~ MODEL DUMP ~~~

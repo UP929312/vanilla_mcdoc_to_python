@@ -10,9 +10,9 @@ from typing import Annotated
 @dataclass(kw_only=True)
 class BitmapProvider:
     file: str
+    height: int | None = None
     ascent: int
     chars: Annotated[list[Annotated[str, 'Length = 1 (inclusive) and above']], 'Length = 1 (inclusive) and above']
-    height: int | None = None
 
 
 # ~~~ MODEL DUMP ~~~

@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class ArmorEffectivenessEnchantmentEffect:
-    effect: ValueEffect  # Determines armor effectiveness; `0.0` for no effect, `1.0` for full effect.
     requirements: Predicate | None = None  # Predicate context: Damage Parameters.
+    effect: ValueEffect  # Determines armor effectiveness; `0.0` for no effect, `1.0` for full effect.
 
 
 # ~~~ MODEL DUMP ~~~

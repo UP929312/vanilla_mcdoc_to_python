@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class KnockbackEnchantmentEffect:
-    effect: ValueEffect  # Amount of knockback being applied.
     requirements: Predicate | None = None  # Predicate context: Damage Parameters.
+    effect: ValueEffect  # Amount of knockback being applied.
 
 
 # ~~~ MODEL DUMP ~~~

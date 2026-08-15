@@ -897,9 +897,6 @@ class StructSchema(BaseSchema):
             f"class {class_name}({', '.join(inherited_names)}):"
         )
 
-        # Collect field lines, separating required vs optional to satisfy dataclass ordering
-        required_field_lines: list[str] = []
-        optional_field_lines: list[str] = []
         used_keys: set[str] = set()
 
         assert all(isinstance(field, (PairSchema, SpreadFieldSchema)) for field in self.fields)  # It's never UnionSchema here
@@ -921,17 +918,10 @@ class StructSchema(BaseSchema):
             else:
                 annotation = pair_field.type.to_nested_annotation(ctx, PairSchema.nested_struct_name(key))
             if not annotation.strip() or annotation == "None":
-                continue  # Empty unions represent "no local type" here; skip so parent members can remain authoritative.
+                continue  # Empty unions represent weird stuff - skip so parent members can remain authoritative.
 
             line = f"    {key}: {annotation}{pair_field.optional_string_or_empty}{pair_field.description_or_empty}"
-            if pair_field.optional:
-                optional_field_lines.append(line)
-            else:
-                required_field_lines.append(line)
-
-        # Write required fields first, then optional fields (to allow Pydantic's BaseModel to not complain about defaults before required fields)
-        lines.extend(required_field_lines)
-        lines.extend(optional_field_lines)
+            lines.append(line)
         return lines + [""]
 
     def to_python_code(self, class_name: str, ctx: SingleSymbolContext) -> list[str]:

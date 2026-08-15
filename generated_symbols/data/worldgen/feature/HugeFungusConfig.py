@@ -17,8 +17,8 @@ class HugeFungusConfig:
     decor_state: BlockState
     stem_state: BlockState
     valid_base_block: BlockState
-    replaceable_blocks: BlockPredicate
     planted: bool | None = None
+    replaceable_blocks: BlockPredicate
 
 
 # ~~~ MODEL DUMP ~~~

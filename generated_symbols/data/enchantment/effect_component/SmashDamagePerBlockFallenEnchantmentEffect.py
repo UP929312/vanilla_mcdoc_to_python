@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class SmashDamagePerBlockFallenEnchantmentEffect:
-    effect: ValueEffect  # Amount of damage dealt per block fallen.
     requirements: Predicate | None = None  # Predicate context: Damage Parameters.
+    effect: ValueEffect  # Amount of damage dealt per block fallen.
 
 
 # ~~~ MODEL DUMP ~~~

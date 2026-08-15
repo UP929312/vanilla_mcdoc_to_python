@@ -71,10 +71,10 @@ class TreeDecoratorPaleMoss:
 @dataclass(kw_only=True)
 class TreeDecoratorPlaceOnGround:
     type: Literal['minecraft:place_on_ground']
-    block_state_provider: BlockStateProvider  # The block to place on the ground.
     tries: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # Defaults to `128`.
     radius: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # Defaults to `2`.
     height: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # Defaults to `1`.
+    block_state_provider: BlockStateProvider  # The block to place on the ground.
 
 
 @dataclass(kw_only=True)

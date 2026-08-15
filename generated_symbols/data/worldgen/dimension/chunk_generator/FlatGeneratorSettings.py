@@ -14,10 +14,10 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class FlatGeneratorSettings:
-    layers: list[FlatGeneratorLayer]
     biome: Annotated[str, IdSpec(registry='worldgen/biome')] | None = None
     lakes: bool | None = None
     features: bool | None = None
+    layers: list[FlatGeneratorLayer]
     structure_overrides: list[Annotated[str, IdSpec(registry='worldgen/structure_set')]] | Annotated[str, IdSpec(registry='worldgen/structure_set', tags='allowed')] | None = None
 
 

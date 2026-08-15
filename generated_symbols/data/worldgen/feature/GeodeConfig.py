@@ -18,7 +18,6 @@ class GeodeConfig:
     blocks: GeodeBlockSettings
     layers: GeodeLayerSettings
     crack: GeodeCrackSettings
-    invalid_blocks_threshold: int
     noise_multiplier: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
     use_potential_placements_chance: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
     use_alternate_layer0_chance: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
@@ -28,6 +27,7 @@ class GeodeConfig:
     point_offset: IntProvider[Annotated[int, 'Range | `1`-`10` | both inclusive']] | Annotated[int, 'Range | `1`-`10` | both inclusive'] | None = None
     min_gen_offset: int | None = None
     max_gen_offset: int | None = None
+    invalid_blocks_threshold: int
 
 
 # ~~~ MODEL DUMP ~~~

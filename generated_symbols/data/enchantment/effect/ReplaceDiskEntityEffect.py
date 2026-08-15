@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class ReplaceDiskEntityEffect(ReplaceBlockEntityEffect):
+    offset: tuple[int, int, int] | None = None  # Relative coordinates to offset the center of the cylinder by. Defaults to `[0, 0, 0]`.
     radius: LevelBasedValue
     height: LevelBasedValue
-    offset: tuple[int, int, int] | None = None  # Relative coordinates to offset the center of the cylinder by. Defaults to `[0, 0, 0]`.
 
 
 # ~~~ MODEL DUMP ~~~

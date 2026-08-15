@@ -12,8 +12,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class SpawnPrioritySelector:
-    priority: int  # The spawn priority to use.
     condition: SpawnCondition | None = None  # The spawn condition to check. If not present, the condition always matches.
+    priority: int  # The spawn priority to use.
 
 
 # ~~~ MODEL DUMP ~~~

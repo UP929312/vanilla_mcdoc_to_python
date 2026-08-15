@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class SingleBlockPillarConfig:
     block: BlockStateProvider
-    direction: VerticalDirection
     can_replace: BlockPredicate | None = None  # Defaults to "always true".
+    direction: VerticalDirection
     chance_to_continue: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None  # Defaults to 1.
     cap_feature: PlacedFeatureRef | None = None
 

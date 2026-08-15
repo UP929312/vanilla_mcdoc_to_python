@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class ProjectileSpawnedEnchantmentEffect:
-    effect: EntityEffect  # On the newly spawned projectile.
     requirements: Predicate | None = None  # Predicate context: Entity Parameters.  `this` is the newly spawned projectile.
+    effect: EntityEffect  # On the newly spawned projectile.
 
 
 # ~~~ MODEL DUMP ~~~

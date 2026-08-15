@@ -17,10 +17,10 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class WildUpdateStructureConfig:
     start_height: HeightProvider
-    max_distance_from_center: Annotated[int, 'Range | `1`-`128` | both inclusive'] | JigsawDistanceLimits[Annotated[int, 'Range | `1`-`128` | both inclusive']] | Annotated[int, 'Range | `1`-`128` | both inclusive'] | Annotated[int, 'Range | `1`-`116` | both inclusive'] | JigsawDistanceLimits[Annotated[int, 'Range | `1`-`116` | both inclusive']] | Annotated[int, 'Range | `1`-`116` | both inclusive']
-    use_expansion_hack: bool
     start_jigsaw_name: Annotated[str, IdSpec()] | None = None
     project_start_to_heightmap: HeightmapType | None = None
+    max_distance_from_center: Annotated[int, 'Range | `1`-`128` | both inclusive'] | JigsawDistanceLimits[Annotated[int, 'Range | `1`-`128` | both inclusive']] | Annotated[int, 'Range | `1`-`128` | both inclusive'] | Annotated[int, 'Range | `1`-`116` | both inclusive'] | JigsawDistanceLimits[Annotated[int, 'Range | `1`-`116` | both inclusive']] | Annotated[int, 'Range | `1`-`116` | both inclusive']
+    use_expansion_hack: bool
 
 
 # ~~~ MODEL DUMP ~~~

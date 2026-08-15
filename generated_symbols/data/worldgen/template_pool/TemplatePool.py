@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class TemplatePool:
+    name: str | None = None
     fallback: Annotated[str, IdSpec(registry='worldgen/template_pool')]
     elements: list[WeightedElement]
-    name: str | None = None
 
 
 # ~~~ MODEL DUMP ~~~

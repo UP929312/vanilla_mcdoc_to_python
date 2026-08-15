@@ -12,8 +12,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class CustomModelDataTint:
-    default: RGB  # Tint to apply when the `custom_model_data` component is not present, or when it doesn't have a color in the specified index.
     index: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The index of the `colors` list in the `custom_model_data` component. Defaults to 0.
+    default: RGB  # Tint to apply when the `custom_model_data` component is not present, or when it doesn't have a color in the specified index.
 
 
 # ~~~ MODEL DUMP ~~~

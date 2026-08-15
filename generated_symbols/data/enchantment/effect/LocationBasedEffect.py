@@ -79,18 +79,18 @@ class LocationBasedEffectDamageItem:
 @dataclass(kw_only=True)
 class LocationBasedEffectExplode:
     type: Literal['minecraft:explode']
-    radius: LevelBasedValue
-    block_interaction: BlockInteraction  # Whether the explosion has special effects on blocks.
-    small_particle: Particle
-    large_particle: Particle
-    sound: SoundEventRef
     attribute_to_user: bool | None = None  # Whether the explosion should be attributed to the user of the enchanted tool.
     damage_type: Annotated[str, IdSpec(registry='damage_type')] | None = None  # If omitted, no damage is dealt by the explosion.
     immune_blocks: Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | None = None  # List of Blocks or hash-prefixed Block Tag specifying which blocks fully block the explosion.
     knockback_multiplier: LevelBasedValue | None = None  # If omitted, constant value `1` is applied.
     offset: tuple[float, float, float] | None = None  # Relative coordinates to offset the explosion by. Defaults to `[0, 0, 0]`.
+    radius: LevelBasedValue
     create_fire: bool | None = None  # Whether fire is placed within the explosion radius.
+    block_interaction: BlockInteraction  # Whether the explosion has special effects on blocks.
+    small_particle: Particle
+    large_particle: Particle
     block_particles: list[ExplosionParticleInfo] | None = None
+    sound: SoundEventRef
 
 
 @dataclass(kw_only=True)
@@ -119,9 +119,9 @@ class LocationBasedEffectReplaceBlock:
 @dataclass(kw_only=True)
 class LocationBasedEffectReplaceDisk(ReplaceBlockEntityEffect):
     type: Literal['minecraft:replace_disk']
+    offset: tuple[int, int, int] | None = None  # Relative coordinates to offset the center of the cylinder by. Defaults to `[0, 0, 0]`.
     radius: LevelBasedValue
     height: LevelBasedValue
-    offset: tuple[int, int, int] | None = None  # Relative coordinates to offset the center of the cylinder by. Defaults to `[0, 0, 0]`.
 
 
 @dataclass(kw_only=True)

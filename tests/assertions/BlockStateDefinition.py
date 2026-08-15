@@ -18,8 +18,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class MultipartStruct:
-    apply: ModelVariant
     when: MultiPartCondition | None = None  # One condition or an array where at least one condition must apply.
+    apply: ModelVariant
 
 
 @dataclass(kw_only=True)

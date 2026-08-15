@@ -27,10 +27,10 @@ class Jigsaw:
     start_pool: Annotated[str, IdSpec(registry='worldgen/template_pool')]
     size: Annotated[int, 'Range | `1`-`20` | both inclusive']
     start_height: HeightProvider
-    max_distance_from_center: Annotated[int, 'Range | `1`-`128` | both inclusive'] | JigsawDistanceLimits[Annotated[int, 'Range | `1`-`128` | both inclusive']] | Annotated[int, 'Range | `1`-`128` | both inclusive'] | Annotated[int, 'Range | `1`-`116` | both inclusive'] | JigsawDistanceLimits[Annotated[int, 'Range | `1`-`116` | both inclusive']] | Annotated[int, 'Range | `1`-`116` | both inclusive']
-    use_expansion_hack: bool
     start_jigsaw_name: Annotated[str, IdSpec()] | None = None
     project_start_to_heightmap: HeightmapType | None = None
+    max_distance_from_center: Annotated[int, 'Range | `1`-`128` | both inclusive'] | JigsawDistanceLimits[Annotated[int, 'Range | `1`-`128` | both inclusive']] | Annotated[int, 'Range | `1`-`128` | both inclusive'] | Annotated[int, 'Range | `1`-`116` | both inclusive'] | JigsawDistanceLimits[Annotated[int, 'Range | `1`-`116` | both inclusive']] | Annotated[int, 'Range | `1`-`116` | both inclusive']
+    use_expansion_hack: bool
     pool_aliases: list[PoolAlias] | None = None
     dimension_padding: Annotated[int, 'Range | Min `0` and above | inclusive'] | DimensionPaddingStruct | None = None
     liquid_settings: LiquidSettings | None = None

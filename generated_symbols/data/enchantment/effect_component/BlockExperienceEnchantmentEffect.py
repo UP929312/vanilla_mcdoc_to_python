@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class BlockExperienceEnchantmentEffect:
-    effect: ValueEffect  # Amount of experience awarded.
     requirements: Predicate | None = None  # Predicate context: Item Parameters.
+    effect: ValueEffect  # Amount of experience awarded.
 
 
 # ~~~ MODEL DUMP ~~~

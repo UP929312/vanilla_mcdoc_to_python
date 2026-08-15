@@ -47,9 +47,9 @@ class SpriteSourceSingle:
 class SpriteSourceUnstitch:
     type: Literal['minecraft:unstitch']
     resource: Annotated[str, IdSpec(registry='texture')]
-    regions: list[UnstitchRegion]
     divisor_x: float | None = None  # If set to the resource width, regions will use pixel coordinates.
     divisor_y: float | None = None  # If set to the resource height, regions will use pixel coordinates.
+    regions: list[UnstitchRegion]
 
 
 type SpriteSource = SpriteSourceDirectory | SpriteSourceFilter | SpriteSourcePalettedPermutations | SpriteSourceSingle | SpriteSourceUnstitch

@@ -31,11 +31,11 @@ class InputControlBoolean:
 class InputControlNumberRange:
     type: Literal['minecraft:number_range']
     key: Annotated[str, 'Length = 1 (inclusive) and above'] | str  # The input key, which is used to build macro command and generate custom action payload.
+    width: Annotated[int, 'Range | `1`-`1024` | both inclusive'] | None = None  # Defaults to 200.
     label: Text  # Label displayed on the slider.
+    label_format: str | None = None  # The translation to be used for building label. `%1$s` is replaced by `label`; `%2$s` is replaced by current value of the slider. Defaults to `options.generic_value`.
     start: float  # Start value, inclusive.
     end: float  # End value, inclusive.
-    width: Annotated[int, 'Range | `1`-`1024` | both inclusive'] | None = None  # Defaults to 200.
-    label_format: str | None = None  # The translation to be used for building label. `%1$s` is replaced by `label`; `%2$s` is replaced by current value of the slider. Defaults to `options.generic_value`.
     step: Annotated[float, 'Range | Min `0` and above | inclusive'] | None = None  # Step size of the input. If not present, any value from range is allowed.
     initial: float | None = None  # Initial value of the slider. Rounded down nearest step. Defaults to the middle of the range.
 
@@ -44,18 +44,18 @@ class InputControlNumberRange:
 class InputControlSingleOption:
     type: Literal['minecraft:single_option']
     key: Annotated[str, 'Length = 1 (inclusive) and above'] | str  # The input key, which is used to build macro command and generate custom action payload.
-    label: Text  # Label displayed on the button.
-    options: Annotated[list[Option | str], 'Length = 1 (inclusive) and above']
     width: Annotated[int, 'Range | `1`-`1024` | both inclusive'] | None = None  # Defaults to 200.
+    label: Text  # Label displayed on the button.
     label_visible: bool | None = None  # Defaults to `true`.
+    options: Annotated[list[Option | str], 'Length = 1 (inclusive) and above']
 
 
 @dataclass(kw_only=True)
 class InputControlText:
     type: Literal['minecraft:text']
     key: Annotated[str, 'Length = 1 (inclusive) and above'] | str  # The input key, which is used to build macro command and generate custom action payload.
-    label: Text  # Label displayed to the left of control.
     width: Annotated[int, 'Range | `1`-`1024` | both inclusive'] | None = None  # Defaults to 200.
+    label: Text  # Label displayed to the left of control.
     label_visible: bool | None = None  # Defaults to `true`.
     initial: str | None = None  # Initial contents of the text input. Defaults to `""` (empty string).
     max_length: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # Maximum length of input Defaults to 32.

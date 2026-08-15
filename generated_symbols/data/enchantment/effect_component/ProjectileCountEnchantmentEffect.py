@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class ProjectileCountEnchantmentEffect:
-    effect: ValueEffect  # Amount of projectiles being loaded/drawn.  All projectile items except the first one will have `intangible_projectile` component applied.
     requirements: Predicate | None = None  # Predicate context: Entity Parameters.  `this` is the entity drawing the weapon.
+    effect: ValueEffect  # Amount of projectiles being loaded/drawn.  All projectile items except the first one will have `intangible_projectile` component applied.
 
 
 # ~~~ MODEL DUMP ~~~

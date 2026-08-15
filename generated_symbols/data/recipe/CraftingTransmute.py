@@ -20,9 +20,9 @@ if TYPE_CHECKING:
 class CraftingTransmute(CraftingBookInfo, NotificationInfo):
     input: Ingredient  # The ingredient that will transfer its data components to the result item.
     material: Ingredient  # An additional ingredient.
-    result: ItemStack | Annotated[str, IdSpec(registry='item', exclude=('air',))]  # The result item that will be merged with the input ingredient.
     material_count: MinMaxBounds[Annotated[int, 'Range | `1`-`8` | both inclusive']] | Annotated[int, 'Range | `1`-`8` | both inclusive'] | None = None  # The allowed count of material. Defaults to `1`.
     add_material_count_to_result: bool | None = None  # When true, the number of materials will be added to the result count.  Defaults to `false`.
+    result: ItemStack | Annotated[str, IdSpec(registry='item', exclude=('air',))]  # The result item that will be merged with the input ingredient.
 
 
 # ~~~ MODEL DUMP ~~~

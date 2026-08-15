@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class FishingLuckBonusEnchantmentEffect:
-    effect: ValueEffect  # Amount of luck being added.
     requirements: Predicate | None = None  # Predicate context: Entity Parameters.  `this` is the player fishing.
+    effect: ValueEffect  # Amount of luck being added.
 
 
 # ~~~ MODEL DUMP ~~~

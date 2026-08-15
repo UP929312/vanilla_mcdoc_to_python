@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class TridentReturnAccelerationEnchantmentEffect:
-    effect: ValueEffect  # Amount of acceleration applied to the returning trident.
     requirements: Predicate | None = None  # Predicate context: Entity Parameters.  `this` is the trident entity.
+    effect: ValueEffect  # Amount of acceleration applied to the returning trident.
 
 
 # ~~~ MODEL DUMP ~~~

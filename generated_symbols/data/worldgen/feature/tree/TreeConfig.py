@@ -17,15 +17,15 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class TreeConfig:
+    ignore_vines: bool | None = None
     minimum_size: FeatureSize
     below_trunk_provider: BlockStateProvider
     trunk_provider: BlockStateProvider
     foliage_provider: BlockStateProvider
+    root_placer: RootPlacer | None = None
     trunk_placer: TrunkPlacer
     foliage_placer: FoliagePlacer
     decorators: list[TreeDecorator]
-    ignore_vines: bool | None = None
-    root_placer: RootPlacer | None = None
 
 
 # ~~~ MODEL DUMP ~~~

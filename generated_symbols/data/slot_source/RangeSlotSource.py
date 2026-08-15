@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class RangeSlotSource:
-    slots: str
     source: EntityTarget | BlockEntityTarget | Literal['container'] | None = None  # Defaults to `container`.
+    slots: str
 
 
 # ~~~ MODEL DUMP ~~~

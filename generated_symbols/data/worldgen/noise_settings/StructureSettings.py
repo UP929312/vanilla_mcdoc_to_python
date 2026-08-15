@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class StructureSettings:
-    structures: dict[Annotated[str, IdSpec(registry='worldgen/structure_feature')], RandomSpreadPlacement]
     stronghold: ConcentricRingsPlacement | None = None
+    structures: dict[Annotated[str, IdSpec(registry='worldgen/structure_feature')], RandomSpreadPlacement]
 
 
 # ~~~ MODEL DUMP ~~~

@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 class CraftingSpecialBookCloning:
     source: Ingredient  # The book item.  Its `written_book_contents` component will be copied, with `generation` value increased by 1.  The other components are copied as-is.   The book will be kept in the crafting grid.
     material: Ingredient  # Additional ingredients.  Multiple materials can be used at the same time.  The number of materials beyond the first one will be added to the result count.
-    result: ItemStackTemplate
     allowed_generations: MinMaxBounds[Annotated[int, 'Range | `0`-`2` | both inclusive']] | Annotated[int, 'Range | `0`-`2` | both inclusive'] | None = None  # Limits the generation of the `source` item that can be copied. Defaults to allow generation 0 and 1 (original and first copy).
+    result: ItemStackTemplate
 
 
 # ~~~ MODEL DUMP ~~~

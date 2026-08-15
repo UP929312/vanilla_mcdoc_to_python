@@ -12,11 +12,11 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class CarverDebugSettings:
+    debug_mode: bool | None = None
     air_state: BlockState
     water_state: BlockState
     lava_state: BlockState
     barrier_state: BlockState
-    debug_mode: bool | None = None
 
 
 # ~~~ MODEL DUMP ~~~

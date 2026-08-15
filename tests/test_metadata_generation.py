@@ -159,6 +159,14 @@ class TestRootExportGeneration:
 
 
 class TestRuntimeImportGeneration:
+    def test_dataclass_fields_preserve_schema_order(self) -> None:
+        path = "::java::data::advancement::Advancement"
+        content = generated_body(path, SYMBOLS_MAP["mcdoc"][path], "Advancement")
+        field_names = ("display", "parent", "criteria", "requirements", "rewards", "sends_telemetry_event")
+
+        positions = [content.index(f"    {name}:") for name in field_names]
+        assert positions == sorted(positions)
+
     def test_mapping_struct_materializes_inline_struct_values(self) -> None:
         content = generated_body(
             "::test::InlineStructMap",

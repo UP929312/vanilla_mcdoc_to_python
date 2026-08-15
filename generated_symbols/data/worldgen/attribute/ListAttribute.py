@@ -23,8 +23,8 @@ class KeyframesStruct(Generic[E]):
 
 @dataclass(kw_only=True)
 class AttributeTrackStruct(AttributeTrackBase, Generic[E]):
-    keyframes: Annotated[list[KeyframesStruct[E]], 'Length = 1 (inclusive) and above']
     modifier: ListModifierType | None = None
+    keyframes: Annotated[list[KeyframesStruct[E]], 'Length = 1 (inclusive) and above']
 
 
 @dataclass(kw_only=True)

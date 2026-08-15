@@ -18,8 +18,8 @@ class MultilineStruct:
 
 @dataclass(kw_only=True)
 class TextInput:
-    label: Text  # Label displayed to the left of control.
     width: Annotated[int, 'Range | `1`-`1024` | both inclusive'] | None = None  # Defaults to 200.
+    label: Text  # Label displayed to the left of control.
     label_visible: bool | None = None  # Defaults to `true`.
     initial: str | None = None  # Initial contents of the text input. Defaults to `""` (empty string).
     max_length: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # Maximum length of input Defaults to 32.

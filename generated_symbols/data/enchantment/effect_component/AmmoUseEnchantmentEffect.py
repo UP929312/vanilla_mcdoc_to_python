@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class AmmoUseEnchantmentEffect:
-    effect: ValueEffect  # Amount of ammunition being used up.  `0` has a side effect of applying `intangible_projectile` component to the projectile item.
     requirements: Predicate | None = None  # Predicate context: Item Parameters.
+    effect: ValueEffect  # Amount of ammunition being used up.  `0` has a side effect of applying `intangible_projectile` component to the projectile item.
 
 
 # ~~~ MODEL DUMP ~~~

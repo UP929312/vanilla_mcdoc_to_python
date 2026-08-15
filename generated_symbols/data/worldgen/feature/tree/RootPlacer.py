@@ -18,8 +18,8 @@ class RootPlacerMangroveRootPlacer:
     type: Literal['minecraft:mangrove_root_placer']
     root_provider: BlockStateProvider
     trunk_offset_y: IntProvider[int] | int
-    mangrove_root_placement: MangroveRootPlacement
     above_root_placement: AboveRootPlacement | None = None
+    mangrove_root_placement: MangroveRootPlacement
 
 
 type RootPlacer = RootPlacerMangroveRootPlacer

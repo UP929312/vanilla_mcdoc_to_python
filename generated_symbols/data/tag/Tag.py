@@ -14,8 +14,8 @@ E = TypeVar('E')
 
 @dataclass(kw_only=True)
 class Tag(Generic[E]):
-    values: list[TagEntry[E]]
     replace: bool | None = None
+    values: list[TagEntry[E]]
 
 
 # ~~~ MODEL DUMP ~~~

@@ -235,9 +235,9 @@ class ItemModelConditionComponent:
     property: Literal['minecraft:component']
     on_true: ItemModel
     on_false: ItemModel
+    transformation: Transformation | None = None
     predicate: Annotated[str, IdSpec(registry='data_component_predicate_type')]  # The component predicate to check.
     value: None | AttributeModifiersPredicate | BundleContentsPredicate | ContainerPredicate | CustomData | ItemDamagePredicate | list[EnchantmentPredicate] | FireworkExplosionPredicate | FireworksPredicate | JukeboxPlayablePredicate | PotionsPredicate | TrimPredicate | Annotated[str, IdSpec(registry='villager_type', tags='allowed')] | list[Annotated[str, IdSpec(registry='villager_type')]] | WritableBookPredicate | WrittenBookPredicate  # The predicate-specific value.
-    transformation: Transformation | None = None
 
 
 @dataclass(kw_only=True)
@@ -256,8 +256,8 @@ class ItemModelConditionHasComponent:
     property: Literal['minecraft:has_component']
     on_true: ItemModel
     on_false: ItemModel
-    component: Annotated[str, IdSpec(registry='data_component_type')]
     transformation: Transformation | None = None
+    component: Annotated[str, IdSpec(registry='data_component_type')]
     ignore_default: bool | None = None  # Whether the default components should be handled as "no component". Defaults to false.
 
 
@@ -267,8 +267,8 @@ class ItemModelConditionKeybindDown:
     property: Literal['minecraft:keybind_down']
     on_true: ItemModel
     on_false: ItemModel
-    keybind: Keybind  # The keybind ID to check for.
     transformation: Transformation | None = None
+    keybind: Keybind  # The keybind ID to check for.
 
 
 @dataclass(kw_only=True)
@@ -294,8 +294,8 @@ class ItemModelModel:
 class ItemModelRangeDispatchUnknown:
     type: Literal['minecraft:range_dispatch']
     property: NumericPropertyType
-    entries: list[EntriesStruct]  # List of ranges. Will select last entry with threshold less or equal to value. Order does not matter, list will be sorted by threshold in ascending order.
     scale: float | None = None  # Factor to multiply the property value with. Defaults to 1.
+    entries: list[EntriesStruct]  # List of ranges. Will select last entry with threshold less or equal to value. Order does not matter, list will be sorted by threshold in ascending order.
     fallback: ItemModel | None = None  # Item model to render if no entries were less or equal to the value.
     transformation: Transformation | None = None
 
@@ -304,11 +304,11 @@ class ItemModelRangeDispatchUnknown:
 class ItemModelRangeDispatchCompass:
     type: Literal['minecraft:range_dispatch']
     property: Literal['minecraft:compass']
-    entries: list[EntriesStruct]  # List of ranges. Will select last entry with threshold less or equal to value. Order does not matter, list will be sorted by threshold in ascending order.
-    target: CompassTarget
     scale: float | None = None  # Factor to multiply the property value with. Defaults to 1.
+    entries: list[EntriesStruct]  # List of ranges. Will select last entry with threshold less or equal to value. Order does not matter, list will be sorted by threshold in ascending order.
     fallback: ItemModel | None = None  # Item model to render if no entries were less or equal to the value.
     transformation: Transformation | None = None
+    target: CompassTarget
     wobble: bool | None = None  # Whether to oscillate for some time around target before settling. Defaults to true.
 
 
@@ -316,8 +316,8 @@ class ItemModelRangeDispatchCompass:
 class ItemModelRangeDispatchCount:
     type: Literal['minecraft:range_dispatch']
     property: Literal['minecraft:count']
-    entries: list[EntriesStruct]  # List of ranges. Will select last entry with threshold less or equal to value. Order does not matter, list will be sorted by threshold in ascending order.
     scale: float | None = None  # Factor to multiply the property value with. Defaults to 1.
+    entries: list[EntriesStruct]  # List of ranges. Will select last entry with threshold less or equal to value. Order does not matter, list will be sorted by threshold in ascending order.
     fallback: ItemModel | None = None  # Item model to render if no entries were less or equal to the value.
     transformation: Transformation | None = None
     normalize: bool | None = None  # If false, returns count clamped to `0..max_stack_size`. If true, returns count divided by the `max_stack_size` component, clamped to `0..1`. Defaults to true.
@@ -327,8 +327,8 @@ class ItemModelRangeDispatchCount:
 class ItemModelRangeDispatchCustomModelData:
     type: Literal['minecraft:range_dispatch']
     property: Literal['minecraft:custom_model_data']
-    entries: list[EntriesStruct]  # List of ranges. Will select last entry with threshold less or equal to value. Order does not matter, list will be sorted by threshold in ascending order.
     scale: float | None = None  # Factor to multiply the property value with. Defaults to 1.
+    entries: list[EntriesStruct]  # List of ranges. Will select last entry with threshold less or equal to value. Order does not matter, list will be sorted by threshold in ascending order.
     fallback: ItemModel | None = None  # Item model to render if no entries were less or equal to the value.
     transformation: Transformation | None = None
     index: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The index of the `floats` list in the `custom_model_data` component. Defaults to 0.
@@ -338,8 +338,8 @@ class ItemModelRangeDispatchCustomModelData:
 class ItemModelRangeDispatchDamage:
     type: Literal['minecraft:range_dispatch']
     property: Literal['minecraft:damage']
-    entries: list[EntriesStruct]  # List of ranges. Will select last entry with threshold less or equal to value. Order does not matter, list will be sorted by threshold in ascending order.
     scale: float | None = None  # Factor to multiply the property value with. Defaults to 1.
+    entries: list[EntriesStruct]  # List of ranges. Will select last entry with threshold less or equal to value. Order does not matter, list will be sorted by threshold in ascending order.
     fallback: ItemModel | None = None  # Item model to render if no entries were less or equal to the value.
     transformation: Transformation | None = None
     normalize: bool | None = None  # If false, returns value of damage, clamped to `0..max_damage`. If true, returns value of damage divided by the `max_damage` component, clamped to `0..1`. Defaults to true.
@@ -349,11 +349,11 @@ class ItemModelRangeDispatchDamage:
 class ItemModelRangeDispatchTime:
     type: Literal['minecraft:range_dispatch']
     property: Literal['minecraft:time']
-    entries: list[EntriesStruct]  # List of ranges. Will select last entry with threshold less or equal to value. Order does not matter, list will be sorted by threshold in ascending order.
-    source: TimeSource
     scale: float | None = None  # Factor to multiply the property value with. Defaults to 1.
+    entries: list[EntriesStruct]  # List of ranges. Will select last entry with threshold less or equal to value. Order does not matter, list will be sorted by threshold in ascending order.
     fallback: ItemModel | None = None  # Item model to render if no entries were less or equal to the value.
     transformation: Transformation | None = None
+    source: TimeSource
     wobble: bool | None = None  # Whether to oscillate for some time around target before settling. Defaults to true.
 
 
@@ -361,8 +361,8 @@ class ItemModelRangeDispatchTime:
 class ItemModelRangeDispatchUseCycle:
     type: Literal['minecraft:range_dispatch']
     property: Literal['minecraft:use_cycle']
-    entries: list[EntriesStruct]  # List of ranges. Will select last entry with threshold less or equal to value. Order does not matter, list will be sorted by threshold in ascending order.
     scale: float | None = None  # Factor to multiply the property value with. Defaults to 1.
+    entries: list[EntriesStruct]  # List of ranges. Will select last entry with threshold less or equal to value. Order does not matter, list will be sorted by threshold in ascending order.
     fallback: ItemModel | None = None  # Item model to render if no entries were less or equal to the value.
     transformation: Transformation | None = None
     period: float | None = None  # returns remaining item use ticks modulo `period`. Defaults to 1.
@@ -372,8 +372,8 @@ class ItemModelRangeDispatchUseCycle:
 class ItemModelRangeDispatchUseDuration:
     type: Literal['minecraft:range_dispatch']
     property: Literal['minecraft:use_duration']
-    entries: list[EntriesStruct]  # List of ranges. Will select last entry with threshold less or equal to value. Order does not matter, list will be sorted by threshold in ascending order.
     scale: float | None = None  # Factor to multiply the property value with. Defaults to 1.
+    entries: list[EntriesStruct]  # List of ranges. Will select last entry with threshold less or equal to value. Order does not matter, list will be sorted by threshold in ascending order.
     fallback: ItemModel | None = None  # Item model to render if no entries were less or equal to the value.
     transformation: Transformation | None = None
     remaining: bool | None = None  # If true, returns remaining item use ticks. If false, returns item use ticks so far. Defaults to false.
@@ -393,9 +393,9 @@ class ItemModelSelectUnknown(SelectCases[str]):
 class ItemModelSelectBlockState(SelectCases[str]):
     type: Literal['minecraft:select']
     property: Literal['minecraft:block_state']
-    block_state_property: str
     fallback: ItemModel | None = None  # Item model to render if none of the cases matched the value.
     transformation: Transformation | None = None
+    block_state_property: str
 
 
 @dataclass(kw_only=True)
@@ -410,9 +410,9 @@ class ItemModelSelectChargeType(SelectCases[CrossbowChargeType]):
 class ItemModelSelectComponent(SelectCases[int | SwingAnimation | AttackRange | list[AttributeModifier] | AxolotlVariant | list[BannerPatternLayer] | DyeColor | list[Occupant] | BlockEntityData | str | DataComponentStructBlockStateBlockItemStatesNone | Annotated[list[BlockTransformer], 'Length = 1-200 (both inclusive)'] | blocks_attacks | SoundEventRef | BrewingFuel | BucketEntityData | str | list[ItemStackTemplate] | AdventureModePredicate | Annotated[str, IdSpec(registry='cat_sound_variant')] | Annotated[str, IdSpec(registry='cat_variant')] | Annotated[str, IdSpec(registry='chicken_sound_variant')] | Annotated[str, IdSpec(registry='chicken_variant')] | Compostable | Consumable | Annotated[list[ContainerSlot], 'Length = up to 256 (inclusive)'] | ContainerLoot | CookingFuel | Annotated[str, IdSpec(registry='cow_sound_variant')] | Annotated[str, IdSpec(registry='cow_variant')] | DataComponentStructCreativeSlotLock | CustomData | CustomModelData | Text | Annotated[int, 'Range | Min `0` and above | inclusive'] | DamageResistant | Annotated[str, IdSpec(registry='damage_type')] | DamageType | DeathProtection | DebugStickState | RGB | Enchantable | bool | EnchantmentLevels | AnyEntity | str | Equippable | Explosion | Fireworks | Food | FoxType | Annotated[str, IdSpec(registry='frog_variant')] | HorseVariant | Annotated[str, IdSpec(registry='instrument')] | Instrument | Annotated[str, IdSpec(registry='item_definition')] | Annotated[str, IdSpec(registry='jukebox_song')] | KineticWeapon | LlamaVariant | ItemPredicate | LodestoneTracker | list[Text] | MapDecorations | Annotated[int, 'Range | Min `1` and above | inclusive'] | Annotated[int, 'Range | `1`-`99` | both inclusive'] | Annotated[float, 'Range | `0`-`1` | both inclusive'] | MobVisibility | MooshroomType | Annotated[str, IdSpec(registry='weighed_sound_event')] | Annotated[int, 'Range | `0`-`4` | both inclusive'] | Annotated[str, IdSpec(registry='painting_variant')] | ParrotVariant | PiercingWeapon | Annotated[str, IdSpec(registry='pig_sound_variant')] | Annotated[str, IdSpec(registry='pig_variant')] | PotDecorations | PotionContents | Annotated[str, IdSpec(registry='potion')] | Annotated[float, 'Range | Min `0` and above | inclusive'] | Profile | Annotated[str, IdSpec(registry='banner_pattern', tags='allowed')] | list[Annotated[str, IdSpec(registry='banner_pattern')]] | Annotated[str, IdSpec(registry='decorated_pot_pattern')] | Annotated[str, IdSpec(registry='trim_material')] | RabbitVariant | Rarity | list[Annotated[str, IdSpec(registry='recipe')]] | Repairable | SalmonType | SignText | ItemStackTemplate | list[SuspiciousStewEffect] | Tool | TooltipDisplay | Annotated[str, IdSpec()] | Trim | TropicalFishPattern | Unbreakable | UseCooldown | UseEffects | VillagerFood | Annotated[str, IdSpec(registry='villager_type')] | Weapon | Annotated[str, IdSpec(registry='wolf_sound_variant')] | Annotated[str, IdSpec(registry='wolf_variant')] | WritableBookContent | WrittenBookContent | Annotated[str, IdSpec(registry='zombie_nautilus_variant')]]):
     type: Literal['minecraft:select']
     property: Literal['minecraft:component']
-    component: Annotated[str, IdSpec(registry='data_component_type')]  # The component type to check the values of. If the selected value comes from a registry that the client doesn't have access to, the entry will be silently ignored.
     fallback: ItemModel | None = None  # Item model to render if none of the cases matched the value.
     transformation: Transformation | None = None
+    component: Annotated[str, IdSpec(registry='data_component_type')]  # The component type to check the values of. If the selected value comes from a registry that the client doesn't have access to, the entry will be silently ignored.
 
 
 @dataclass(kw_only=True)
@@ -452,9 +452,9 @@ class ItemModelSelectDisplayContext(SelectCases[ItemDisplayContext]):
 class ItemModelSelectLocalTime(SelectCases[str]):
     type: Literal['minecraft:select']
     property: Literal['minecraft:local_time']
-    pattern: str  # Format to use for time formatting. Examples: `yyyy-MM-dd`, `HH:mm:ss`.
     fallback: ItemModel | None = None  # Item model to render if none of the cases matched the value.
     transformation: Transformation | None = None
+    pattern: str  # Format to use for time formatting. Examples: `yyyy-MM-dd`, `HH:mm:ss`.
     locale: str | None = None  # Defaults to the root locale. Examples: `en_US`, `cs_AU@numbers=thai;calendar=japanese`.
     time_zone: str | None = None  # Defaults to the timezone set on the client. Examples: `Europe/Stockholm`, `GMT+0:45`.
 

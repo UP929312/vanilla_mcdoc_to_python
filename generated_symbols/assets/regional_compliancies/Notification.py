@@ -8,10 +8,10 @@ from dataclasses import dataclass
 
 @dataclass(kw_only=True)
 class Notification:
+    delay: int | None = None
     period: int
     title: str
     message: str
-    delay: int | None = None
 
 
 # ~~~ MODEL DUMP ~~~

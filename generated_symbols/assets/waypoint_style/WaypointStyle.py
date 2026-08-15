@@ -11,9 +11,9 @@ from minecraft_registry import IdSpec
 
 @dataclass(kw_only=True)
 class WaypointStyle:
-    sprites: Annotated[list[Annotated[str, IdSpec(registry='texture', path='gui/sprites/hud/locator_bar_dot/')]], 'Length = 1 (inclusive) and above']
     near_distance: Annotated[int, 'Range | `0`-`60000000` | both inclusive'] | None = None  # Defaults to 128.
     far_distance: Annotated[int, 'Range | `0`-`60000000` | both inclusive'] | None = None  # Defaults to 322.
+    sprites: Annotated[list[Annotated[str, IdSpec(registry='texture', path='gui/sprites/hud/locator_bar_dot/')]], 'Length = 1 (inclusive) and above']
 
 
 # ~~~ MODEL DUMP ~~~

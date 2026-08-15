@@ -191,10 +191,10 @@ class ConfiguredFeatureFillLayer:
 @dataclass(kw_only=True)
 class ConfiguredFeatureFlower:
     type: Literal['minecraft:flower']
-    feature: FeatureRef
     tries: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # How many attempts will be made to find a placement. Defaults to 128.
     xz_spread: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # Defaults to 7.
     y_spread: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # Defaults to 3.
+    feature: FeatureRef
 
 
 @dataclass(kw_only=True)
@@ -219,7 +219,6 @@ class ConfiguredFeatureGeode:
     blocks: GeodeBlockSettings
     layers: GeodeLayerSettings
     crack: GeodeCrackSettings
-    invalid_blocks_threshold: int
     noise_multiplier: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
     use_potential_placements_chance: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
     use_alternate_layer0_chance: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
@@ -229,6 +228,7 @@ class ConfiguredFeatureGeode:
     point_offset: IntProvider[Annotated[int, 'Range | `1`-`10` | both inclusive']] | Annotated[int, 'Range | `1`-`10` | both inclusive'] | None = None
     min_gen_offset: int | None = None
     max_gen_offset: int | None = None
+    invalid_blocks_threshold: int
 
 
 @dataclass(kw_only=True)
@@ -269,8 +269,8 @@ class ConfiguredFeatureHugeFungus:
     decor_state: BlockState
     stem_state: BlockState
     valid_base_block: BlockState
-    replaceable_blocks: BlockPredicate
     planted: bool | None = None
+    replaceable_blocks: BlockPredicate
 
 
 @dataclass(kw_only=True)
@@ -311,6 +311,7 @@ class ConfiguredFeatureLake:
 class ConfiguredFeatureLargeDripstone:
     type: Literal['minecraft:large_dripstone']
     replaceable_blocks: list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId
+    floor_to_ceiling_search_range: Annotated[int, 'Range | `1`-`512` | both inclusive'] | None = None
     column_radius: IntProvider[Annotated[int, 'Range | `0`-`16` | both inclusive']] | Annotated[int, 'Range | `0`-`16` | both inclusive']
     height_scale: FloatProvider[Annotated[float, 'Range | `0`-`20` | both inclusive']] | Annotated[float, 'Range | `0`-`20` | both inclusive']
     max_column_radius_to_cave_height_ratio: Annotated[float, 'Range | `0`-`1` | both inclusive']
@@ -319,7 +320,6 @@ class ConfiguredFeatureLargeDripstone:
     wind_speed: FloatProvider[Annotated[float, 'Range | `0`-`2` | both inclusive']] | Annotated[float, 'Range | `0`-`2` | both inclusive']
     min_radius_for_wind: Annotated[int, 'Range | `0`-`100` | both inclusive']
     min_bluntness_for_wind: Annotated[float, 'Range | `0`-`1` | both inclusive']
-    floor_to_ceiling_search_range: Annotated[int, 'Range | `1`-`512` | both inclusive'] | None = None
 
 
 @dataclass(kw_only=True)
@@ -353,10 +353,10 @@ class ConfiguredFeatureNetherrackReplaceBlobs:
 @dataclass(kw_only=True)
 class ConfiguredFeatureNoBonemealFlower:
     type: Literal['minecraft:no_bonemeal_flower']
-    feature: FeatureRef
     tries: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # How many attempts will be made to find a placement. Defaults to 128.
     xz_spread: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # Defaults to 7.
     y_spread: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # Defaults to 3.
+    feature: FeatureRef
 
 
 @dataclass(kw_only=True)
@@ -423,10 +423,10 @@ class ConfiguredFeatureRandomNeighborSpread:
 @dataclass(kw_only=True)
 class ConfiguredFeatureRandomPatch:
     type: Literal['minecraft:random_patch']
-    feature: FeatureRef
     tries: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # How many attempts will be made to find a placement. Defaults to 128.
     xz_spread: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # Defaults to 7.
     y_spread: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # Defaults to 3.
+    feature: FeatureRef
 
 
 @dataclass(kw_only=True)
@@ -515,8 +515,8 @@ class ConfiguredFeatureSimpleRandomSelector:
 class ConfiguredFeatureSingleBlockPillar:
     type: Literal['minecraft:single_block_pillar']
     block: BlockStateProvider
-    direction: VerticalDirection
     can_replace: BlockPredicate | None = None  # Defaults to "always true".
+    direction: VerticalDirection
     chance_to_continue: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None  # Defaults to 1.
     cap_feature: PlacedFeatureRef | None = None
 
@@ -601,15 +601,15 @@ class ConfiguredFeatureTemplate:
 @dataclass(kw_only=True)
 class ConfiguredFeatureTree:
     type: Literal['minecraft:tree']
+    ignore_vines: bool | None = None
     minimum_size: FeatureSize
     below_trunk_provider: BlockStateProvider
     trunk_provider: BlockStateProvider
     foliage_provider: BlockStateProvider
+    root_placer: RootPlacer | None = None
     trunk_placer: TrunkPlacer
     foliage_placer: FoliagePlacer
     decorators: list[TreeDecorator]
-    ignore_vines: bool | None = None
-    root_placer: RootPlacer | None = None
 
 
 @dataclass(kw_only=True)

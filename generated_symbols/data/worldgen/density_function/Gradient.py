@@ -15,11 +15,11 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class Gradient:
     axis: Axis
+    tiling: TilingMode | None = None  # Defaults to `clamp_to_edge`.
     from_coordinate: int
     to_coordinate: int
     from_value: NoiseRange
     to_value: NoiseRange
-    tiling: TilingMode | None = None  # Defaults to `clamp_to_edge`.
 
 
 # ~~~ MODEL DUMP ~~~

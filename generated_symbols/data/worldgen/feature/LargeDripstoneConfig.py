@@ -17,6 +17,7 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class LargeDripstoneConfig:
     replaceable_blocks: list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId
+    floor_to_ceiling_search_range: Annotated[int, 'Range | `1`-`512` | both inclusive'] | None = None
     column_radius: IntProvider[Annotated[int, 'Range | `0`-`16` | both inclusive']] | Annotated[int, 'Range | `0`-`16` | both inclusive']
     height_scale: FloatProvider[Annotated[float, 'Range | `0`-`20` | both inclusive']] | Annotated[float, 'Range | `0`-`20` | both inclusive']
     max_column_radius_to_cave_height_ratio: Annotated[float, 'Range | `0`-`1` | both inclusive']
@@ -25,7 +26,6 @@ class LargeDripstoneConfig:
     wind_speed: FloatProvider[Annotated[float, 'Range | `0`-`2` | both inclusive']] | Annotated[float, 'Range | `0`-`2` | both inclusive']
     min_radius_for_wind: Annotated[int, 'Range | `0`-`100` | both inclusive']
     min_bluntness_for_wind: Annotated[float, 'Range | `0`-`1` | both inclusive']
-    floor_to_ceiling_search_range: Annotated[int, 'Range | `1`-`512` | both inclusive'] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

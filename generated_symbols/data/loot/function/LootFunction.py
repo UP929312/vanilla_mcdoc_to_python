@@ -461,34 +461,34 @@ class LootFunctionSetLootTable(Conditions):
 @dataclass(kw_only=True)
 class LootFunctionSetLoreAppend(Conditions):
     type: Literal['minecraft:set_lore']
+    entity: EntityTarget | None = None  # The entity used to resolve the text components.
     lore: list[Text]
     mode: Literal['minecraft:append']  # Determines how the existing list should be modified.
-    entity: EntityTarget | None = None  # The entity used to resolve the text components.
 
 
 @dataclass(kw_only=True)
 class LootFunctionSetLoreInsert(Conditions):
     type: Literal['minecraft:set_lore']
+    entity: EntityTarget | None = None  # The entity used to resolve the text components.
     lore: list[Text]
     mode: Literal['minecraft:insert']  # Determines how the existing list should be modified.
-    entity: EntityTarget | None = None  # The entity used to resolve the text components.
     offset: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The offset in the list to insert into. Defaults to 0.
 
 
 @dataclass(kw_only=True)
 class LootFunctionSetLoreReplaceAll(Conditions):
     type: Literal['minecraft:set_lore']
+    entity: EntityTarget | None = None  # The entity used to resolve the text components.
     lore: list[Text]
     mode: Literal['minecraft:replace_all']  # Determines how the existing list should be modified.
-    entity: EntityTarget | None = None  # The entity used to resolve the text components.
 
 
 @dataclass(kw_only=True)
 class LootFunctionSetLoreReplaceSection(Conditions):
     type: Literal['minecraft:set_lore']
+    entity: EntityTarget | None = None  # The entity used to resolve the text components.
     lore: list[Text]
     mode: Literal['minecraft:replace_section']  # Determines how the existing list should be modified.
-    entity: EntityTarget | None = None  # The entity used to resolve the text components.
     offset: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The offset of the section to replace. Defaults to 0.
     size: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The size of the section to replace. Defaults to size of the new list.
 
@@ -498,8 +498,8 @@ type LootFunctionSetLore = LootFunctionSetLoreAppend | LootFunctionSetLoreInsert
 @dataclass(kw_only=True)
 class LootFunctionSetName(Conditions):
     type: Literal['minecraft:set_name']
-    name: Text
     entity: EntityTarget | None = None  # Specifies the entity to act as the target `@s` in the JSON text component.
+    name: Text
     target: SetNameTarget | None = None  # Which name component to set. Defaults to `custom_name`.
 
 

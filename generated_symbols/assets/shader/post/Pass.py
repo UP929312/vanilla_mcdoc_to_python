@@ -18,8 +18,8 @@ if TYPE_CHECKING:
 class Pass:
     vertex_shader: Annotated[str, IdSpec(registry='shader/vertex')]
     fragment_shader: Annotated[str, IdSpec(registry='shader/fragment')]
-    output: Annotated[str, IdSpec(registry='shader_target')]
     inputs: list[TargetInput | TextureInput] | None = None
+    output: Annotated[str, IdSpec(registry='shader_target')]
     uniforms: UniformBlocks | None = None
 
 

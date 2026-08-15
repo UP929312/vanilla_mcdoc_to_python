@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class RepairWithXpEnchantmentEffect:
-    effect: ValueEffect  # Amount of durability increase per experience point, `mending` uses 2x.
     requirements: Predicate | None = None  # Predicate context: Item Parameters.
+    effect: ValueEffect  # Amount of durability increase per experience point, `mending` uses 2x.
 
 
 # ~~~ MODEL DUMP ~~~

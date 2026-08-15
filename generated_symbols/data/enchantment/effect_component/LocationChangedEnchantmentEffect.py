@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class LocationChangedEnchantmentEffect:
-    effect: LocationBasedEffect  # On the entity changing location.
     requirements: Predicate | None = None  # Predicate context: Location Parameters.
+    effect: LocationBasedEffect  # On the entity changing location.
 
 
 # ~~~ MODEL DUMP ~~~

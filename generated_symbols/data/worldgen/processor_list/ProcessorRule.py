@@ -15,10 +15,10 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class ProcessorRule:
+    position_predicate: PosRuleTest | None = None
     location_predicate: RuleTest
     input_predicate: RuleTest
     output_state: BlockState
-    position_predicate: PosRuleTest | None = None
     block_entity_modifier: BlockEntityModifier | None = None
 
 

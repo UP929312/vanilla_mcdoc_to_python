@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class FishingTimeReductionEnchantmentEffect:
-    effect: ValueEffect  # Time reduction in seconds (higher values mean less time until a fish bites).
     requirements: Predicate | None = None  # Predicate context: Entity Parameters.  `this` is the player fishing.
+    effect: ValueEffect  # Time reduction in seconds (higher values mean less time until a fish bites).
 
 
 # ~~~ MODEL DUMP ~~~

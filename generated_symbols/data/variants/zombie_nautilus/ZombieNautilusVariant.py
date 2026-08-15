@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class ZombieNautilusVariant(SpawnPrioritySelectors):
-    asset_id: Annotated[str, IdSpec(registry='texture')]  # The zombie nautilus texture to use for this variant.
     model: ZombieNautilusModelType | None = None
+    asset_id: Annotated[str, IdSpec(registry='texture')]  # The zombie nautilus texture to use for this variant.
 
 
 # ~~~ MODEL DUMP ~~~

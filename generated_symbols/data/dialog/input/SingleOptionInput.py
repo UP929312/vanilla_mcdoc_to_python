@@ -13,10 +13,10 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class SingleOptionInput:
-    label: Text  # Label displayed on the button.
-    options: Annotated[list[Option | str], 'Length = 1 (inclusive) and above']
     width: Annotated[int, 'Range | `1`-`1024` | both inclusive'] | None = None  # Defaults to 200.
+    label: Text  # Label displayed on the button.
     label_visible: bool | None = None  # Defaults to `true`.
+    options: Annotated[list[Option | str], 'Length = 1 (inclusive) and above']
 
 
 # ~~~ MODEL DUMP ~~~

@@ -22,13 +22,13 @@ class NoiseGeneratorSettings:
     default_fluid: BlockState
     sea_level: int
     disable_mob_generation: bool  # If true, mobs will not spawn during generation.
+    aquifers: Aquifer | None = None
+    ore_veins: list[OreVeinifier] | None = None
     legacy_random_source: bool
     noise: NoiseSettings
     noise_router: NoiseRouter
     spawn_target: list[SpawnTargetPoint]
     material_rule: MaterialRuleRef
-    aquifers: Aquifer | None = None
-    ore_veins: list[OreVeinifier] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

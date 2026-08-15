@@ -129,9 +129,9 @@ class RecipeCraftingTransmute(CraftingBookInfo, NotificationInfo):
     type: Literal['minecraft:crafting_transmute']
     input: Ingredient  # The ingredient that will transfer its data components to the result item.
     material: Ingredient  # An additional ingredient.
-    result: ItemStack | Annotated[str, IdSpec(registry='item', exclude=('air',))]  # The result item that will be merged with the input ingredient.
     material_count: MinMaxBounds[Annotated[int, 'Range | `1`-`8` | both inclusive']] | Annotated[int, 'Range | `1`-`8` | both inclusive'] | None = None  # The allowed count of material. Defaults to `1`.
     add_material_count_to_result: bool | None = None  # When true, the number of materials will be added to the result count.  Defaults to `false`.
+    result: ItemStack | Annotated[str, IdSpec(registry='item', exclude=('air',))]  # The result item that will be merged with the input ingredient.
 
 
 @dataclass(kw_only=True)
@@ -155,9 +155,9 @@ class RecipeSmithing:
 class RecipeSmithingTransform(NotificationInfo):
     type: Literal['minecraft:smithing_transform']
     base: Ingredient  # Ingredient specifying an item to be transformed.
-    result: ItemStackTemplate  # Resulting transformed item.
     addition: Ingredient | None = None  # Material that will be used.
     template: Ingredient | None = None  # Template item that will be used for the pattern.
+    result: ItemStackTemplate  # Resulting transformed item.
 
 
 @dataclass(kw_only=True)

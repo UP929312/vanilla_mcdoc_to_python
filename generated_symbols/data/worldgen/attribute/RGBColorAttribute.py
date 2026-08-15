@@ -24,8 +24,8 @@ class KeyframesStruct:
 
 @dataclass(kw_only=True)
 class AttributeTrackStruct(AttributeTrackBase):
-    keyframes: Annotated[list[KeyframesStruct], 'Length = 1 (inclusive) and above']
     modifier: ColorModifierType | None = None
+    keyframes: Annotated[list[KeyframesStruct], 'Length = 1 (inclusive) and above']
 
 
 @dataclass(kw_only=True)

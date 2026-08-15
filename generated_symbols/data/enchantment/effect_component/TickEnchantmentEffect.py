@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class TickEnchantmentEffect:
-    effect: EntityEffect  # On every tick. Performance recommendation: don't use with `run_function` unless necessary.
     requirements: Predicate | None = None  # Predicate context: Entity Parameters.  `this` is the entity with the Enchanted Item.
+    effect: EntityEffect  # On every tick. Performance recommendation: don't use with `run_function` unless necessary.
 
 
 # ~~~ MODEL DUMP ~~~

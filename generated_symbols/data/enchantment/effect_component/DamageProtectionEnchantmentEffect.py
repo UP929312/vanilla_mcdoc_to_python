@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class DamageProtectionEnchantmentEffect:
-    effect: ValueEffect  # Damage reduction factor.  Provides `factor * 4%` of damage reduction, capped at 80%.
     requirements: Predicate | None = None  # Predicate context: Damage Parameters.
+    effect: ValueEffect  # Damage reduction factor.  Provides `factor * 4%` of damage reduction, capped at 80%.
 
 
 # ~~~ MODEL DUMP ~~~

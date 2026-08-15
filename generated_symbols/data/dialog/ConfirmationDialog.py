@@ -45,12 +45,12 @@ class ConfirmationDialogNone2:
     yes: Button
     no: Button  # This action is also used for ESC-triggered exit.
     title: Text
-    pause: Literal[False]  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.  The currently selected `after_action` only supports the value `false`
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None
     inputs: list[InputControl] | None = None
     can_close_with_escape: bool | None = None  # Whether the dialog can be closed with ESC key. Defaults to `true`.
     after_action: Literal['minecraft:none'] | None = None  # An additional operation performed on dialog after click or submit actions. Defaults to `close`.  Value `none` requires `pause` set to `false`.
+    pause: Literal[False]  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.  The currently selected `after_action` only supports the value `false`
 
 
 @dataclass(kw_only=True)

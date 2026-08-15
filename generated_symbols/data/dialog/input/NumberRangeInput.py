@@ -12,11 +12,11 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class NumberRangeInput:
+    width: Annotated[int, 'Range | `1`-`1024` | both inclusive'] | None = None  # Defaults to 200.
     label: Text  # Label displayed on the slider.
+    label_format: str | None = None  # The translation to be used for building label. `%1$s` is replaced by `label`; `%2$s` is replaced by current value of the slider. Defaults to `options.generic_value`.
     start: float  # Start value, inclusive.
     end: float  # End value, inclusive.
-    width: Annotated[int, 'Range | `1`-`1024` | both inclusive'] | None = None  # Defaults to 200.
-    label_format: str | None = None  # The translation to be used for building label. `%1$s` is replaced by `label`; `%2$s` is replaced by current value of the slider. Defaults to `options.generic_value`.
     step: Annotated[float, 'Range | Min `0` and above | inclusive'] | None = None  # Step size of the input. If not present, any value from range is allowed.
     initial: float | None = None  # Initial value of the slider. Rounded down nearest step. Defaults to the middle of the range.
 

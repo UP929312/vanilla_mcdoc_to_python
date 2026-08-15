@@ -15,9 +15,9 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class PigVariant(SpawnPrioritySelectors):
+    model: PigModelType | None = None
     asset_id: Annotated[str, IdSpec(registry='texture')]  # The pig texture to use for this variant.
     baby_asset_id: Annotated[str, IdSpec(registry='texture')]  # The baby pig texture to use for this variant.
-    model: PigModelType | None = None
 
 
 # ~~~ MODEL DUMP ~~~

@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class ItemDamageEnchantmentEffect:
-    effect: ValueEffect  # Amount of damage being dealt to the item.
     requirements: Predicate | None = None  # Predicate context: Item Parameters.
+    effect: ValueEffect  # Amount of damage being dealt to the item.
 
 
 # ~~~ MODEL DUMP ~~~

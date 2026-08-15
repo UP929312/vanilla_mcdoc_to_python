@@ -21,8 +21,8 @@ class BiomesStruct:
 
 @dataclass(kw_only=True)
 class MultiNoiseNone(MultiNoiseBase):
-    biomes: list[BiomesStruct]
     preset: Annotated[str, IdSpec(registry='worldgen/multi_noise_biome_source_parameter_list')] | None = None
+    biomes: list[BiomesStruct]
 
 
 @dataclass(kw_only=True)

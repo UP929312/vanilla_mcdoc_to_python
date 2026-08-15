@@ -15,31 +15,31 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class SetLoreAppend(Conditions):
+    entity: EntityTarget | None = None  # The entity used to resolve the text components.
     lore: list[Text]
     mode: Literal['minecraft:append']  # Determines how the existing list should be modified.
-    entity: EntityTarget | None = None  # The entity used to resolve the text components.
 
 
 @dataclass(kw_only=True)
 class SetLoreInsert(Conditions):
+    entity: EntityTarget | None = None  # The entity used to resolve the text components.
     lore: list[Text]
     mode: Literal['minecraft:insert']  # Determines how the existing list should be modified.
-    entity: EntityTarget | None = None  # The entity used to resolve the text components.
     offset: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The offset in the list to insert into. Defaults to 0.
 
 
 @dataclass(kw_only=True)
 class SetLoreReplaceAll(Conditions):
+    entity: EntityTarget | None = None  # The entity used to resolve the text components.
     lore: list[Text]
     mode: Literal['minecraft:replace_all']  # Determines how the existing list should be modified.
-    entity: EntityTarget | None = None  # The entity used to resolve the text components.
 
 
 @dataclass(kw_only=True)
 class SetLoreReplaceSection(Conditions):
+    entity: EntityTarget | None = None  # The entity used to resolve the text components.
     lore: list[Text]
     mode: Literal['minecraft:replace_section']  # Determines how the existing list should be modified.
-    entity: EntityTarget | None = None  # The entity used to resolve the text components.
     offset: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The offset of the section to replace. Defaults to 0.
     size: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The size of the section to replace. Defaults to size of the new list.
 

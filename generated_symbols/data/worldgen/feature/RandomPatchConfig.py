@@ -12,10 +12,10 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class RandomPatchConfig:
-    feature: FeatureRef
     tries: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # How many attempts will be made to find a placement. Defaults to 128.
     xz_spread: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # Defaults to 7.
     y_spread: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # Defaults to 3.
+    feature: FeatureRef
 
 
 # ~~~ MODEL DUMP ~~~

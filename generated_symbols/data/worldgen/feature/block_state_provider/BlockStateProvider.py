@@ -81,8 +81,8 @@ class BlockStateProviderRotatedBlockProvider:
 @dataclass(kw_only=True)
 class BlockStateProviderRuleBasedStateProvider:
     type: Literal['minecraft:rule_based_state_provider']
-    rules: list[RulesStruct]
     fallback: BlockStateProvider | None = None
+    rules: list[RulesStruct]
 
 
 @dataclass(kw_only=True)

@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class HitBlockEnchantmentEffect:
-    effect: EntityEffect  # On the entity hitting the Block
     requirements: Predicate | None = None  # Predicate context: Entity Parameters.  `this` is the entity hitting the Block, unless during a projectile attack, then, `this` is the projectile.
+    effect: EntityEffect  # On the entity hitting the Block
 
 
 # ~~~ MODEL DUMP ~~~

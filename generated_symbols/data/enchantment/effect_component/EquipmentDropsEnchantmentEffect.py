@@ -13,9 +13,9 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class EquipmentDropsEnchantmentEffect:
+    requirements: Predicate | None = None  # Predicate context: Damage Parameters.
     effect: ValueEffect  # Chance between `0.0` and `1.0` of an equipped piece dropping.  If the drop chance on mob is 0, the chance will not be affected by this effect.
     enchanted: Literal['attacker'] | Literal['victim']  # Which subject needs to be enchanted for the effect to apply.
-    requirements: Predicate | None = None  # Predicate context: Damage Parameters.
 
 
 # ~~~ MODEL DUMP ~~~

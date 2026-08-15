@@ -20,12 +20,12 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class SulfurCubeArchetype:
     items: Annotated[str, IdSpec(registry='item', tags='allowed')] | KnownItemId | list[Annotated[str, IdSpec(registry='item')] | KnownItemId]
-    knockback_modifiers: KnockbackModifiers
-    attribute_modifiers: list[AttributeEntry]
-    sound_settings: SoundSettings
     buoyant: bool | None = None  # Defaults to `false`.
     explosion: ExplosionData | None = None  # When present, sulfur cube with this archetype will explode when ignited.
     contact_damage: ContactDamage | None = None
+    knockback_modifiers: KnockbackModifiers
+    attribute_modifiers: list[AttributeEntry]
+    sound_settings: SoundSettings
 
 
 # ~~~ MODEL DUMP ~~~

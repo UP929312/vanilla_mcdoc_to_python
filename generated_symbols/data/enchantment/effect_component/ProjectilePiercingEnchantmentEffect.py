@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class ProjectilePiercingEnchantmentEffect:
-    effect: ValueEffect  # Amount of entities the projectile will pierce through before despawning.
     requirements: Predicate | None = None  # Predicate context: Item Parameters.  Tool is the ammunition item.
+    effect: ValueEffect  # Amount of entities the projectile will pierce through before despawning.
 
 
 # ~~~ MODEL DUMP ~~~
