@@ -437,42 +437,16 @@ class ConcreteSchema(BaseSchema):
             if child_is_template
             else child_annotation
         )
-        if not self.type_args or not ctx.allow_numeric_type_arg_shortcuts:
-            return concrete_annotation
-
         # Optionally allow passing numeric primitive kind(s) directly alongside the concrete wrapper.
-        # There's also some weird other stuff, like this:
-        # "kind": "concrete",
-        # "child": {
-        #     "kind": "reference",
-        #     "path": "::java::util::Filterable"
-        # },
-        # "typeArgs": [{"kind": "string"}]
         shortcut_annotations = [
             type_arg.to_annotation(ctx) for type_arg in self.type_args if isinstance(type_arg, (IntSchema, FloatSchema))
         ]
-        if not shortcut_annotations:
-            return concrete_annotation
-
         # This allows you to omit "MinMaxBounds" and such, which generates `MinMaxBounds[int] | int`, QoL
-        return " | ".join(dict.fromkeys([concrete_annotation] + shortcut_annotations))
+        return " | ".join([concrete_annotation] + shortcut_annotations)
 
 
 class IndexedSchema(BaseSchema):
-    """Not even particularly sure, always has a child Dispatcher, and the weird parallelIndices?
-    "mcdoc:block_state_keys": {
-        "%none": {
-            "kind": "string"
-        },
-        "%unknown": {
-            "kind": "string"
-        }
-    }
-    This is like a custom implementation?
-    "registry": "mcdoc:block_state_keys"
-    It seems like it just indexes somewhere else?
-    Anyway, there's only 7 instances of it in the symbols, so we can "meh" for now.
-    """
+    """Is an index into a registry, with presets for defaults, fallbacks, etc."""
     kind: Literal["indexed"] = Field(repr=False)
     child: DispatcherSchema
     parallelIndices: list[StaticIndexSchema | DynamicIndexSchema]
@@ -481,12 +455,11 @@ class IndexedSchema(BaseSchema):
         return self.to_annotation(ctx, nested_struct_name)
 
     def to_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None = None) -> str:
-        candidates = ctx.schema_graph.annotation_candidates(self) if ctx.schema_graph is not None else ()
-        base_name = nested_struct_name or "IndexedValue"
-        return " | ".join(dict.fromkeys(
-            DispatcherSchema._branch_annotation(candidate, f"{base_name}{index}", ctx)
-            for index, candidate in enumerate(candidates, 1)
-        ))
+        assert ctx.schema_graph is not None
+        return " | ".join(
+            DispatcherSchema._branch_annotation(candidate, f"{nested_struct_name or 'IndexedValue'}{index}", ctx)
+            for index, candidate in enumerate(ctx.schema_graph.annotation_candidates(self), 1)
+        )
 
 
 class ReferenceSchema(BaseSchema):
@@ -503,8 +476,7 @@ class ReferenceSchema(BaseSchema):
         return [f"type {class_name} = {maybe_aliased_name}"]
 
     def to_annotation(self, ctx: SingleSymbolContext) -> str:
-        # Make sure we import the referenced symbol
-        return ctx.add_import_by_symbol_path(self.path)
+        return ctx.add_import_by_symbol_path(self.path)  # Make sure we import the referenced symbol
 
 
 type UnionSchemaMemberTypes = (
@@ -521,19 +493,12 @@ class UnionSchema(BaseSchema):
     @model_validator(mode="after")
     def prune_members_on_version(self) -> Self:
         # Remove members that are invalid for the current CURRENT_VERSION or are empty wrappers
-        self.members = [
-            member for member in self.members
-            # If member has attributes controlling versioning, respect them
-            if is_valid_with_attributes(member.attributes)
-        ]
+        self.members = [member for member in self.members if is_valid_with_attributes(member.attributes)]
         return self
 
     @staticmethod
     def _render_member(
-        member: UnionSchemaMemberTypes,
-        nested_name: str | None,
-        ctx: SingleSymbolContext,
-        declare_struct: bool,
+        member: UnionSchemaMemberTypes, nested_name: str | None, ctx: SingleSymbolContext, declare_struct: bool,
     ) -> tuple[list[str], str]:
         """Render one union member and any sibling declaration it requires."""
         if isinstance(member, StructSchema) and nested_name is not None:
@@ -542,9 +507,7 @@ class UnionSchema(BaseSchema):
             return [], member.to_materialized_annotation(nested_name, ctx)
         return [], member.to_nested_annotation(ctx, nested_name)
 
-    def _render_members(
-        self, nested_name: str | None, ctx: SingleSymbolContext, declare_structs: bool = False,
-    ) -> tuple[list[str], list[str]]:
+    def _render_members(self, nested_name: str | None, ctx: SingleSymbolContext, declare_structs: bool) -> tuple[list[str], list[str]]:
         """Render union annotations and any required sibling struct declarations."""
         declarations: list[str] = []
         annotations: list[str] = []
@@ -564,7 +527,7 @@ class UnionSchema(BaseSchema):
         return declarations, list(dict.fromkeys(annotations)) or ["None"]
 
     def to_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None = None) -> str:
-        _, annotations = self._render_members(nested_struct_name, ctx)
+        _, annotations = self._render_members(nested_struct_name, ctx, declare_structs=False)
         return " | ".join(annotations)
 
     def to_nested_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None) -> str:
@@ -637,12 +600,8 @@ class SpreadFieldSchema(BaseSchema):
         """Returns a reference, or a concrete schema's reference, or None"""
         if isinstance(self.type, ReferenceSchema):
             return self.type
-        if isinstance(self.type, ConcreteSchema):
-            if isinstance(self.type.child, ReferenceSchema):
-                return self.type.child
-            # if isinstance(self.type.child, DispatcherSchema):  # TODO: Eventually inherit from these
-            #     return None
-            # raise TypeError("Invalid SpreadField + ConcreteSchema")
+        if isinstance(self.type, ConcreteSchema) and isinstance(self.type.child, ReferenceSchema):
+            return self.type.child
         return None
 
     @classmethod
