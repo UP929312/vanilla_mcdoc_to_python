@@ -1,5 +1,5 @@
 from code_generation import SCHEMA_GRAPH, make_init_files, make_python_file_of_model
-from minecraft_registry import make_registry_id_files
+from minecraft_registry import make_registry_id_files, make_root_resource_registry_file
 from utils import SYMBOLS_MAP
 from tests.assertions import run_assertions
 
@@ -10,7 +10,8 @@ make_registry_id_files(SCHEMA_GRAPH)
 for resource_type, resource_data in SYMBOLS_MAP_NO_ANONYMOUS.items():
     make_python_file_of_model(resource_type, resource_data)
 
-make_init_files(SYMBOLS_MAP_NO_ANONYMOUS)
+make_root_resource_registry_file(SYMBOLS_MAP_NO_ANONYMOUS)
+make_init_files(SYMBOLS_MAP_NO_ANONYMOUS)  # Adds the nice top level imports
 
 run_assertions()
 

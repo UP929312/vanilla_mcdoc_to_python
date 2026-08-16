@@ -5,7 +5,7 @@ from pytest import MonkeyPatch
 
 from code_generation import SCHEMA_GRAPH, make_init_content, make_python_file_content
 from context import SingleSymbolContext
-from minecraft_registry import IdSpec, make_registry_id_file_content, make_registry_id_files, used_registry_names
+from minecraft_registry import IdSpec, make_registry_id_file_content, make_registry_id_files, make_root_resource_registry_content, used_registry_names
 from schema_resolution import SchemaGraph
 from typed_models import IntSchema, UnionSchema
 from utils import LATEST_VERSION, SYMBOLS_MAP
@@ -157,6 +157,42 @@ class TestRootExportGeneration:
         assert "from generated_symbols.data.loot.function.Conditions import Conditions" in content
         assert '"Reference",' not in content
         assert '"Advancement",' not in content
+
+
+class TestRootResourceMetadata:
+    def test_root_resource_dataclasses_expose_resource_dirs(self) -> None:
+        content = generated_body(
+            "::java::data::advancement::Advancement",
+            SYMBOLS_MAP["mcdoc"]["::java::data::advancement::Advancement"],
+            "Advancement",
+        )
+
+        assert "__resource_dir__ = 'advancement'" in content
+
+    def test_root_resource_aliases_do_not_crash_generation(self) -> None:
+        content = generated_body(
+            "::java::assets::credits::Credits",
+            SYMBOLS_MAP["mcdoc"]["::java::assets::credits::Credits"],
+            "Credits",
+        )
+
+        assert "type Credits = list[CreditsStruct]" in content
+        assert "__resource_dir__" not in content
+
+    def test_root_resource_registry_lists_datapack_and_pack_classes(self) -> None:
+        content = make_root_resource_registry_content([
+            "::java::data::advancement::Advancement",
+            "::java::data::recipe::Recipe",
+            "::java::assets::atlas::Atlas",
+            "::java::data::advancement::predicate::FoodPredicate",
+        ])
+
+        assert "root_datapack_classes" in content
+        assert "Advancement" in content
+        assert "Recipe" in content
+        assert "root_resource_pack_classes" in content
+        assert "Atlas" in content
+        assert "FoodPredicate" not in content
 
 
 class TestRuntimeImportGeneration:

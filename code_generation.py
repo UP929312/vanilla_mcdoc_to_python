@@ -3,17 +3,13 @@ from collections.abc import Iterable
 from typing import Any
 
 from context import Import, SingleSymbolContext
+from minecraft_registry import _RESOURCE_PATH_TO_TYPE
 from schema_resolution import SchemaGraph
 from typed_models import KIND_TO_MODEL, TemplateSchema
 from utils import GENERATED_SYMBOLS_DIRECTORY, SYMBOLS_MAP, resource_path_to_python_path, symbol_path_to_import_string_and_name, symbol_path_to_object_name, manage_directory_and_inits, write_file_if_changed
 
 
 SCHEMA_GRAPH = SchemaGraph.from_symbol_maps(SYMBOLS_MAP)
-
-EXPORT_SCOPES = {
-    "generated_symbols.data": "::java::data::",
-    "generated_symbols.assets": "::java::assets::",
-}
 
 
 def make_init_content(symbol_paths: Iterable[str], included_prefixes: tuple[str, ...]) -> str:
@@ -44,8 +40,12 @@ def make_init_content(symbol_paths: Iterable[str], included_prefixes: tuple[str,
 
 def make_init_files(symbol_paths: Iterable[str]) -> None:
     paths = tuple(symbol_paths)
+    scopes = {
+        "generated_symbols.data": "::java::data::",
+        "generated_symbols.assets": "::java::assets::",
+    }
     init_files = {GENERATED_SYMBOLS_DIRECTORY / "__init__.py": '"""Generated data and asset symbol packages."""\n'}
-    for package, symbol_prefix in EXPORT_SCOPES.items():
+    for package, symbol_prefix in scopes.items():
         relative_package = package.removeprefix(f"{GENERATED_SYMBOLS_DIRECTORY.name}.")
         output_path = GENERATED_SYMBOLS_DIRECTORY.joinpath(*relative_package.split("."), "__init__.py")
         init_files[output_path] = make_init_content(paths, (symbol_prefix,))
@@ -61,6 +61,12 @@ def make_python_file_content(resource_type: str, resource_data: dict[str, Any], 
     signature_lines: list[str] = []
     ctx = SingleSymbolContext(current_symbol_path=resource_type, schema_graph=SCHEMA_GRAPH)
     body_lines = current_model.to_python_code(class_name, ctx)
+
+    if (resource_key := _RESOURCE_PATH_TO_TYPE.get(resource_type)) is not None:
+        class_line_index = next((i for i, line in enumerate(body_lines) if line == f"class {class_name}:"), None)
+        if class_line_index is not None:
+            ctx.required_imports.add(Import("typing", "ClassVar", False, True))
+            body_lines.insert(class_line_index + 1, f"    __resource_dir__: ClassVar[str] = {resource_key!r}\n")
 
     # Add TypeVar declarations after rendering so discovered local type params are included.
     if ctx.local_type_params:
@@ -92,7 +98,7 @@ def make_python_file_content(resource_type: str, resource_data: dict[str, Any], 
 
 def make_python_file_of_model(resource_type: str, resource_data: dict[str, Any]) -> None:
     # Converts something like: `::java::data::loot::LootTablePoolEntry`
-    # Into `generated_symbols/data/loot/LootTablePoolEntry` (with `LootTablePoolEntry` as a class inside)
+    # Into `generated_symbols/data/loot/LootTablePoolEntry`
     path, name = symbol_path_to_import_string_and_name(resource_type)
     output_path = GENERATED_SYMBOLS_DIRECTORY.joinpath(*path.split(".")[1:-1], name).with_suffix(".py")
     manage_directory_and_inits(output_path.parent)

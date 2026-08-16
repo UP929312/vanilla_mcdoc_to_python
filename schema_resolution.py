@@ -1,4 +1,3 @@
-from collections.abc import Mapping
 from typing import Any
 
 from typed_models import (
@@ -8,12 +7,12 @@ from typed_models import (
 
 
 class SchemaGraph:
-    def __init__(self, symbols: Mapping[str, BaseSchema], dispatchers: Mapping[str, Mapping[str, BaseSchema]]) -> None:
-        self.symbols = dict(symbols)
-        self.dispatchers = {name: dict(branches) for name, branches in dispatchers.items()}
+    def __init__(self, symbols: dict[str, BaseSchema], dispatchers: dict[str, dict[str, BaseSchema]]) -> None:
+        self.symbols = symbols
+        self.dispatchers = dispatchers
 
     @classmethod
-    def from_symbol_maps(cls, symbol_maps: Mapping[str, Mapping[str, Any]]) -> SchemaGraph:
+    def from_symbol_maps(cls, symbol_maps: dict[str, dict[str, Any]]) -> SchemaGraph:
         symbols = {
             path: KIND_TO_MODEL[data["kind"]](**data).remove_version_data()
             for path, data in symbol_maps.get("mcdoc", {}).items()
@@ -30,18 +29,15 @@ class SchemaGraph:
     def resolve(self, schema: BaseSchema) -> tuple[BaseSchema, ...]:
         """Resolve references and instantiate concrete template applications."""
         if isinstance(schema, ReferenceSchema):
-            target = self.symbols.get(schema.path)
-            return () if target is None else self.resolve(target)
+            return self.resolve(schema=self.symbols[schema.path])
         if isinstance(schema, ConcreteSchema):
             if isinstance(schema.child, ReferenceSchema):
-                target = self.symbols.get(schema.child.path)
-                assert isinstance(target, TemplateSchema)
+                target: TemplateSchema = self.symbols[schema.child.path]  # type: ignore[assignment]
                 arguments = dict(zip(
                     (parameter.path for parameter in target.type_params),
                     schema.type_args,
-                    strict=False,
                 ))
-                return self.resolve(self._substitute(target.child, arguments))
+                return self.resolve(self._substitute(target.child, arguments))  # type: ignore[arg-type]
             return self.resolve(schema.child)
         return (schema, )
 
@@ -51,9 +47,8 @@ class SchemaGraph:
             resolved = self.resolve(schema)
             return len(resolved) == 1 and self.is_runtime_class(resolved[0], seen)
         if isinstance(schema, ReferenceSchema):
-            seen = set() if seen is None else seen
             target = self.symbols.get(schema.path)
-            return target is None or self.is_runtime_class(target, seen | {schema.path})
+            return target is None or self.is_runtime_class(target, (seen or set()) | {schema.path})
         if not isinstance(schema, StructSchema):
             return False
         if schema._mapping_pair() is not None or schema._dispatcher_spread() is not None:
@@ -90,7 +85,7 @@ class SchemaGraph:
                     fields = (
                         [field for field in resolved.fields if isinstance(field, PairSchema)]
                         if isinstance(index, DynamicIndexSchema)
-                        else [self._find_struct_field(resolved, self._normalize_key(index.value))]  # type: ignore[list-item]
+                        else [self._find_struct_field(resolved, index.value.removeprefix("minecraft:"))]  # type: ignore[list-item]
                     )
                     candidates.extend(field.type for field in fields if field is not None)
         return self._deduplicate(candidates)
@@ -110,10 +105,6 @@ class SchemaGraph:
         )
 
     @staticmethod
-    def _normalize_key(key: str) -> str:
-        return key.removeprefix("minecraft:")
-
-    @staticmethod
     def _deduplicate(schemas: list[BaseSchema]) -> tuple[BaseSchema, ...]:
         unique: list[BaseSchema] = []
         seen: set[str] = set()
@@ -125,17 +116,17 @@ class SchemaGraph:
         return tuple(unique)
 
     @staticmethod
-    def _substitute(schema: BaseSchema, mapping: Mapping[str, BaseSchema]) -> BaseSchema:
+    def _substitute(schema: BaseSchema, mapping: dict[str, BaseSchema]) -> BaseSchema:
+        """Recursively replace references to type parameters with concrete types."""
         def replace(value: object) -> object:
             if isinstance(value, dict):
                 if value.get("kind") == "reference" and value.get("path") in mapping:
-                    replacement = mapping[str(value["path"])]
+                    replacement = mapping[value["path"]]
                     return replacement.model_dump(by_alias=True)
                 return {key: replace(child) for key, child in value.items()}
             if isinstance(value, list):
                 return [replace(child) for child in value]
             return value
 
-        data = replace(schema.model_dump(by_alias=True))
-        assert isinstance(data, dict)
+        data: dict[str, Any] = replace(schema.model_dump(by_alias=True))  # type: ignore[assignment]
         return KIND_TO_MODEL[data["kind"]](**data)
