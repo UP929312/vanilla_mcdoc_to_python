@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/variants/cat/CatVariant.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import Annotated
+from typing import Annotated, ClassVar
 
 from generated_symbols.data.variants.SpawnPrioritySelectors import SpawnPrioritySelectors
 from minecraft_registry import IdSpec
@@ -12,6 +12,8 @@ from minecraft_registry import IdSpec
 
 @dataclass(kw_only=True)
 class CatVariant(SpawnPrioritySelectors):
+    __resource_dir__: ClassVar[str] = 'cat_variant'
+
     asset_id: Annotated[str, IdSpec(registry='texture')]  # The cat texture to use for this variant.
     baby_asset_id: Annotated[str, IdSpec(registry='texture')]  # The baby cat texture to use for this variant.
 

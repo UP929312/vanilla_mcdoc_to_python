@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/gametest/TestInstance.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import Annotated, Literal
+from typing import Annotated, ClassVar, Literal
 
 from generated_symbols.data.gametest.TestData import TestData
 from minecraft_registry import IdSpec
@@ -12,6 +12,8 @@ from minecraft_registry import IdSpec
 
 @dataclass(kw_only=True)
 class TestInstanceBlockBased(TestData):
+    __resource_dir__: ClassVar[str] = 'test_instance'
+
     type: Literal['minecraft:block_based']
 
 

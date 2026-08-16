@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/worldgen/feature/RootSystemConfig.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from minecraft_registry import IdSpec
 
@@ -17,6 +17,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class RootSystemConfig:
+    __resource_dir__: ClassVar[str] = 'worldgen/feature'
+
     required_vertical_space_for_tree: Annotated[int, 'Range | `1`-`64` | both inclusive']
     level_test_distance: Annotated[int, 'Range | `0`-`16` | both inclusive']
     max_level_deviation: Annotated[int, 'Range | `0`-`64` | both inclusive']

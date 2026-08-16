@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/dialog/Dialog.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Literal
+from typing import TYPE_CHECKING, Annotated, ClassVar, Literal
 
 if TYPE_CHECKING:
     from generated_symbols.data.dialog.AfterAction import AfterAction
@@ -17,6 +17,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class DialogConfirmationNone:
+    __resource_dir__: ClassVar[str] = 'dialog'
+
     type: Literal['minecraft:confirmation']
     yes: Button
     no: Button  # This action is also used for ESC-triggered exit.

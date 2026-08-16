@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/variants/cow/CowVariant.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from generated_symbols.data.variants.SpawnPrioritySelectors import SpawnPrioritySelectors
 from minecraft_registry import IdSpec
@@ -15,6 +15,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class CowVariant(SpawnPrioritySelectors):
+    __resource_dir__: ClassVar[str] = 'cow_variant'
+
     model: CowModelType | None = None
     asset_id: Annotated[str, IdSpec(registry='texture')]  # The cow texture to use for this variant.
     baby_asset_id: Annotated[str, IdSpec(registry='texture')]  # The baby cow texture to use for this variant.

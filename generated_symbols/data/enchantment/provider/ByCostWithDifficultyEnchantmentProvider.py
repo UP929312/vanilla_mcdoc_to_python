@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/enchantment/provider/ByCostWithDiffic
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, ClassVar
 
 if TYPE_CHECKING:
     from generated_symbols.data.enchantment.provider.EnchantmentsType import EnchantmentsType
@@ -12,6 +12,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class ByCostWithDifficultyEnchantmentProvider:
+    __resource_dir__: ClassVar[str] = 'enchantment_provider'
+
     enchantments: EnchantmentsType
     min_cost: Annotated[int, 'Range | Min `0` and above | inclusive']  # Positive integer representing the minimum possible cost
     max_cost_span: Annotated[int, 'Range | Min `0` and above | inclusive']  # Span of the cost randomization when the special factor is at its maximum.

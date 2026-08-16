@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/enchantment/provider/EnchantmentProvi
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Literal
+from typing import TYPE_CHECKING, Annotated, ClassVar, Literal
 
 from minecraft_registry import IdSpec
 
@@ -15,6 +15,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class EnchantmentProviderByCost:
+    __resource_dir__: ClassVar[str] = 'enchantment_provider'
+
     type: Literal['minecraft:by_cost']
     enchantments: EnchantmentsType
     cost: IntProvider[int] | int  # Cost to use for the Enchanting process.

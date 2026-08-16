@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/worldgen/processor_list/ProcessorList
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, ClassVar
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.processor_list.Processor import Processor
@@ -12,6 +12,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class ProcessorListStruct:
+    __resource_dir__: ClassVar[str] = 'worldgen/processor_list'
+
     processors: list[Processor]
 
 

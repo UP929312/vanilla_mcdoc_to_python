@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/worldgen/feature/SingleBlockPillarCon
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, ClassVar
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.block_predicate.BlockPredicate import BlockPredicate
@@ -15,6 +15,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class SingleBlockPillarConfig:
+    __resource_dir__: ClassVar[str] = 'worldgen/feature'
+
     block: BlockStateProvider
     can_replace: BlockPredicate | None = None  # Defaults to "always true".
     direction: VerticalDirection

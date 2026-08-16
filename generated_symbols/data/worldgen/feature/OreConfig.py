@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/worldgen/feature/OreConfig.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, ClassVar
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.TargetBlock import TargetBlock
@@ -12,6 +12,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class OreConfig:
+    __resource_dir__: ClassVar[str] = 'worldgen/feature'
+
     targets: list[TargetBlock]
     size: Annotated[int, 'Range | `0`-`64` | both inclusive']
     discard_chance_on_air_exposure: Annotated[float, 'Range | `0`-`1` | both inclusive']  # Chance that feature placement will be discarded if the ore is exposed to air blocks.

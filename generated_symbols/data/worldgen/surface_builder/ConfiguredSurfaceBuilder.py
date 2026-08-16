@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/worldgen/surface_builder/ConfiguredSu
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, ClassVar
+from typing import TYPE_CHECKING, Annotated
 
 from minecraft_registry import IdSpec
 
@@ -21,8 +21,6 @@ class ConfigStruct:
 
 @dataclass(kw_only=True)
 class ConfiguredSurfaceBuilder:
-    __resource_dir__: ClassVar[str] = 'worldgen/configured_surface_builder'
-
     type: Annotated[str, IdSpec(registry='worldgen/surface_builder')]
     config: ConfigStruct
 

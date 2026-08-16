@@ -4,13 +4,15 @@ Local link to file: generated_symbols/data/gametest/test_environment/ClockTimeTe
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import Annotated
+from typing import Annotated, ClassVar
 
 from minecraft_registry import IdSpec
 
 
 @dataclass(kw_only=True)
 class ClockTimeTestEnvironment:
+    __resource_dir__: ClassVar[str] = 'test_environment'
+
     clock: Annotated[str, IdSpec(registry='world_clock')]
     time: Annotated[int, 'Range | Min `0` and above | inclusive']
 

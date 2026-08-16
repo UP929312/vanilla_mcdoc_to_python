@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/worldgen/feature/BlockPileConfig.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, ClassVar
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
@@ -12,6 +12,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class BlockPileConfig:
+    __resource_dir__: ClassVar[str] = 'worldgen/feature'
+
     state_provider: BlockStateProvider
 
 

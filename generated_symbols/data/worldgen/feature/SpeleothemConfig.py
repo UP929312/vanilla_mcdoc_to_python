@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/worldgen/feature/SpeleothemConfig.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from minecraft_registry import IdSpec
 
@@ -15,6 +15,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class SpeleothemConfig:
+    __resource_dir__: ClassVar[str] = 'worldgen/feature'
+
     base_block: BlockState
     pointed_block: BlockState
     replaceable_blocks: list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId

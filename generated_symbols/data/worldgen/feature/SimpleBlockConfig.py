@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/worldgen/feature/SimpleBlockConfig.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, ClassVar
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
@@ -12,6 +12,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class SimpleBlockConfig:
+    __resource_dir__: ClassVar[str] = 'worldgen/feature'
+
     to_place: BlockStateProvider
     schedule_tick: bool | None = None  # Whether to schedule a block update. Defaults to `false`.
 

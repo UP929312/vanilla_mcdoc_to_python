@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/recipe/CraftingSpecialFireworkStar.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, ClassVar
 
 if TYPE_CHECKING:
     from generated_symbols.data.recipe.Ingredient import Ingredient
@@ -14,6 +14,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class CraftingSpecialFireworkStar:
+    __resource_dir__: ClassVar[str] = 'recipe'
+
     trail: Ingredient  # If this ingredient is provided, the result will have `has_trail` field set.
     twinkle: Ingredient  # If this ingredient is provided, the result will have `has_twinkle` field set.
     fuel: Ingredient  # Additional ingredient.  Exactly 1 additional ingredient is required.

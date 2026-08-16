@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/worldgen/structure/NetherFossil.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, ClassVar
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.HeightProvider import HeightProvider
@@ -12,6 +12,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class NetherFossil:
+    __resource_dir__: ClassVar[str] = 'worldgen/structure'
+
     height: HeightProvider
 
 

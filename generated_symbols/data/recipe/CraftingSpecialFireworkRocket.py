@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/recipe/CraftingSpecialFireworkRocket.
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, ClassVar
 
 if TYPE_CHECKING:
     from generated_symbols.data.recipe.Ingredient import Ingredient
@@ -13,6 +13,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class CraftingSpecialFireworkRocket:
+    __resource_dir__: ClassVar[str] = 'recipe'
+
     shell: Ingredient  # Additional ingredient.  Exactly 1 additional ingredient is required.
     fuel: Ingredient  # The fuel ingredient.  The count of fuel ingredients controls the `flight_duration` field.  Only 1 ~ 3 fuels are allowed.
     star: Ingredient  # The firework star ingredient.  Provides explosion data by the `firework_explosion` component.  Any count of stars (including 0) are allowed.

@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/worldgen/feature/LakeConfig.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, ClassVar
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.block_predicate.BlockPredicate import BlockPredicate
@@ -13,6 +13,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class LakeConfig:
+    __resource_dir__: ClassVar[str] = 'worldgen/feature'
+
     fluid: BlockStateProvider
     barrier: BlockStateProvider
     can_place_feature: BlockPredicate

@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/number_provider/NumberProvider.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Literal
+from typing import TYPE_CHECKING, Annotated, ClassVar, Literal
 
 from minecraft_registry import IdSpec
 
@@ -26,6 +26,8 @@ class CasesStruct:
 
 @dataclass(kw_only=True)
 class NumberProviderStructNone:
+    __resource_dir__: ClassVar[str] = 'number_provider'
+
     type: Annotated[str, IdSpec(registry='loot_number_provider_type')]
     min: NumberProviderRef | None = None
     max: NumberProviderRef | None = None

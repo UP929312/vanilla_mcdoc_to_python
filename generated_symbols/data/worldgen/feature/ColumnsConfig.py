@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/worldgen/feature/ColumnsConfig.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from minecraft_registry import IdSpec
 
@@ -17,6 +17,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class ColumnsConfig:
+    __resource_dir__: ClassVar[str] = 'worldgen/feature'
+
     block: BlockStateProvider
     can_replace: BlockPredicate
     continue_through: BlockPredicate

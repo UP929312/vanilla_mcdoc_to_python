@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/worldgen/carver/CaveConfig.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from generated_symbols.data.worldgen.carver.CarverConfigBase import CarverConfigBase
 
@@ -15,6 +15,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class CaveConfig(CarverConfigBase):
+    __resource_dir__: ClassVar[str] = 'worldgen/configured_carver'
+
     count: IntProvider[Annotated[int, 'Range | Min `0` and above | inclusive']] | Annotated[int, 'Range | Min `0` and above | inclusive']
     thickness: FloatProvider[Annotated[float, 'Range | Min `0` and above | inclusive']] | Annotated[float, 'Range | Min `0` and above | inclusive']
     weird_thickness_bias: bool | None = None  # Defaults to `false`.

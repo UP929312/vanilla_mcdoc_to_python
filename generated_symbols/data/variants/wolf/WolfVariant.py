@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/variants/wolf/WolfVariant.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, ClassVar
 
 from generated_symbols.data.variants.SpawnPrioritySelectors import SpawnPrioritySelectors
 
@@ -14,6 +14,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class WolfVariant(SpawnPrioritySelectors):
+    __resource_dir__: ClassVar[str] = 'wolf_variant'
+
     assets: WolfVariantAssetInfo  # The texture set to use for this wolf variant.
     baby_assets: WolfVariantAssetInfo  # The baby texture set to use for this wolf variant.
 

@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/worldgen/structure/Jigsaw.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from minecraft_registry import IdSpec
 
@@ -24,6 +24,8 @@ class DimensionPaddingStruct:
 
 @dataclass(kw_only=True)
 class Jigsaw:
+    __resource_dir__: ClassVar[str] = 'worldgen/structure'
+
     start_pool: Annotated[str, IdSpec(registry='worldgen/template_pool')]
     size: Annotated[int, 'Range | `1`-`20` | both inclusive']
     start_height: HeightProvider

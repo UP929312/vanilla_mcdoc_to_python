@@ -4,13 +4,15 @@ Local link to file: generated_symbols/data/gametest/test_environment/TimelineAtt
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import Annotated
+from typing import Annotated, ClassVar
 
 from minecraft_registry import IdSpec
 
 
 @dataclass(kw_only=True)
 class TimelineAttributesTestEnvironment:
+    __resource_dir__: ClassVar[str] = 'test_environment'
+
     timelines: list[Annotated[str, IdSpec(registry='timeline')]]
 
 

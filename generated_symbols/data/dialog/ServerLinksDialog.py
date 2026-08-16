@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/dialog/ServerLinksDialog.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Literal
+from typing import TYPE_CHECKING, Annotated, ClassVar, Literal
 
 if TYPE_CHECKING:
     from generated_symbols.data.dialog.AfterAction import AfterAction
@@ -16,6 +16,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class ServerLinksDialogNone:
+    __resource_dir__: ClassVar[str] = 'dialog'
+
     button_width: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # Width of buttons in the list. Defaults to 150.
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
     columns: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.

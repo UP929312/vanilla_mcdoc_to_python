@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/worldgen/feature/RandomNeighborSpread
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from minecraft_registry import IdSpec
 
@@ -17,6 +17,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class RandomNeighborSpreadConfig:
+    __resource_dir__: ClassVar[str] = 'worldgen/feature'
+
     block: BlockStateProvider
     accepted_neighbors: Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | list[Annotated[str, IdSpec(registry='block')] | KnownBlockId]
     can_replace: BlockPredicate

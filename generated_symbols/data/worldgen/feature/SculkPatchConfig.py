@@ -4,11 +4,13 @@ Local link to file: generated_symbols/data/worldgen/feature/SculkPatchConfig.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import Annotated
+from typing import Annotated, ClassVar
 
 
 @dataclass(kw_only=True)
 class SculkPatchConfig:
+    __resource_dir__: ClassVar[str] = 'worldgen/feature'
+
     charge_count: Annotated[int, 'Range | `1`-`32` | both inclusive']
     amount_per_charge: Annotated[int, 'Range | `1`-`500` | both inclusive']
     spread_attempts: Annotated[int, 'Range | `1`-`64` | both inclusive']

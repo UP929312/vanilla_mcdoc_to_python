@@ -4,10 +4,13 @@ Local link to file: generated_symbols/data/worldgen/structure/Shipwreck.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
+from typing import ClassVar
 
 
 @dataclass(kw_only=True)
 class Shipwreck:
+    __resource_dir__: ClassVar[str] = 'worldgen/structure'
+
     is_beached: bool | None = None
 
 

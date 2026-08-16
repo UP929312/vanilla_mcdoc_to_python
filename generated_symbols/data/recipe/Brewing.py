@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/recipe/Brewing.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, ClassVar
 
 if TYPE_CHECKING:
     from generated_symbols.data.recipe.PotionIngredient import PotionIngredient
@@ -13,6 +13,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class Brewing:
+    __resource_dir__: ClassVar[str] = 'recipe'
+
     input: PotionIngredient  # The original potion.
     reagent: PotionIngredient  # The ingredient.
     output: ItemStackTemplate

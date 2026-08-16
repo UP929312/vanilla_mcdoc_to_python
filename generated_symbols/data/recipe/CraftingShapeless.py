@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/recipe/CraftingShapeless.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from generated_symbols.data.recipe.CraftingBookInfo import CraftingBookInfo
 from generated_symbols.data.recipe.NotificationInfo import NotificationInfo
@@ -16,6 +16,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class CraftingShapeless(CraftingBookInfo, NotificationInfo):
+    __resource_dir__: ClassVar[str] = 'recipe'
+
     ingredients: Annotated[list[Ingredient], 'Length = 1-9 (both inclusive)']
     result: ItemStackTemplate
 

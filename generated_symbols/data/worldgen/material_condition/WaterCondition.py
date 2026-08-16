@@ -4,11 +4,13 @@ Local link to file: generated_symbols/data/worldgen/material_condition/WaterCond
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import Annotated
+from typing import Annotated, ClassVar
 
 
 @dataclass(kw_only=True)
 class WaterCondition:
+    __resource_dir__: ClassVar[str] = 'worldgen/material_condition'
+
     offset: int
     surface_depth_multiplier: Annotated[int, 'Range | `-20`-`20` | both inclusive']
     add_stone_depth: bool

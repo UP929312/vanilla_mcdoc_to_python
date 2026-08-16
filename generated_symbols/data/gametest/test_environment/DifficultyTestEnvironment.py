@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/gametest/test_environment/DifficultyT
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, ClassVar
 
 if TYPE_CHECKING:
     from generated_symbols.data.gametest.test_environment.Difficulty import Difficulty
@@ -12,6 +12,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class DifficultyTestEnvironment:
+    __resource_dir__: ClassVar[str] = 'test_environment'
+
     difficulty: Difficulty
 
 

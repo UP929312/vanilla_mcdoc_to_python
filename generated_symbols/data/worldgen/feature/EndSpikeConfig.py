@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/worldgen/feature/EndSpikeConfig.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, ClassVar
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.EndSpike import EndSpike
@@ -12,6 +12,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class EndSpikeConfig:
+    __resource_dir__: ClassVar[str] = 'worldgen/feature'
+
     spikes: list[EndSpike]
     crystal_invulnerable: bool | None = None
     crystal_beam_target: tuple[int, int, int] | None = None

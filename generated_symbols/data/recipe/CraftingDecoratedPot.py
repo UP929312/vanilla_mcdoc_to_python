@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/recipe/CraftingDecoratedPot.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, ClassVar
 
 if TYPE_CHECKING:
     from generated_symbols.data.recipe.Ingredient import Ingredient
@@ -13,6 +13,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class CraftingDecoratedPot:
+    __resource_dir__: ClassVar[str] = 'recipe'
+
     back: Ingredient
     left: Ingredient
     right: Ingredient

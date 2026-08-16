@@ -4,13 +4,15 @@ Local link to file: generated_symbols/data/worldgen/material_condition/NoiseThre
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import Annotated
+from typing import Annotated, ClassVar
 
 from minecraft_registry import IdSpec
 
 
 @dataclass(kw_only=True)
 class NoiseThresholdCondition:
+    __resource_dir__: ClassVar[str] = 'worldgen/material_condition'
+
     noise: Annotated[str, IdSpec(registry='worldgen/noise')]
     min_threshold: float
     max_threshold: float

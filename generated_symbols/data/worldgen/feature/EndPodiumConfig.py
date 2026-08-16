@@ -4,10 +4,13 @@ Local link to file: generated_symbols/data/worldgen/feature/EndPodiumConfig.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
+from typing import ClassVar
 
 
 @dataclass(kw_only=True)
 class EndPodiumConfig:
+    __resource_dir__: ClassVar[str] = 'worldgen/feature'
+
     active: bool | None = None  # Defaults to `false`.
 
 

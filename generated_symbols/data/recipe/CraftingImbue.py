@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/recipe/CraftingImbue.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, ClassVar
 
 from generated_symbols.data.recipe.CraftingBookInfo import CraftingBookInfo
 from generated_symbols.data.recipe.NotificationInfo import NotificationInfo
@@ -16,6 +16,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class CraftingImbue(CraftingBookInfo, NotificationInfo):
+    __resource_dir__: ClassVar[str] = 'recipe'
+
     source: Ingredient  # The item to provide potion effect.  Its `potion_contents` component will be copied.  This item is placed at the center grid.
     material: Ingredient  # Additional ingredients.  8 `material` items are required to surroud the `source` item.
     result: ItemStackTemplate

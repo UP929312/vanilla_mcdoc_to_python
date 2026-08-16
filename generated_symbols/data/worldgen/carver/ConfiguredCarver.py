@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/worldgen/carver/ConfiguredCarver.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Literal
+from typing import TYPE_CHECKING, Annotated, ClassVar, Literal
 
 from generated_symbols.data.worldgen.carver.CarverConfigBase import CarverConfigBase
 
@@ -16,6 +16,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class ConfiguredCarverCanyon(CarverConfigBase):
+    __resource_dir__: ClassVar[str] = 'worldgen/carver'
+
     type: Literal['minecraft:canyon']
     vertical_rotation: FloatProvider[float] | float
     shape: CanyonShape

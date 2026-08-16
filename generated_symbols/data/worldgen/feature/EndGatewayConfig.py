@@ -4,10 +4,13 @@ Local link to file: generated_symbols/data/worldgen/feature/EndGatewayConfig.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
+from typing import ClassVar
 
 
 @dataclass(kw_only=True)
 class EndGatewayConfig:
+    __resource_dir__: ClassVar[str] = 'worldgen/feature'
+
     exact: bool
     exit: tuple[int, int, int] | None = None
 

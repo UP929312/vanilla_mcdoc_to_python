@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/variants/wolf/WolfSounds.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, ClassVar
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.SoundEventRef import SoundEventRef
@@ -12,6 +12,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class WolfSounds:
+    __resource_dir__: ClassVar[str] = 'wolf_sound_variant'
+
     ambient_sound: SoundEventRef
     death_sound: SoundEventRef
     growl_sound: SoundEventRef

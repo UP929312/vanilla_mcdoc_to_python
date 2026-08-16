@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/dialog/ConfirmationDialog.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Literal
+from typing import TYPE_CHECKING, ClassVar, Literal
 
 if TYPE_CHECKING:
     from generated_symbols.data.dialog.AfterAction import AfterAction
@@ -16,6 +16,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class ConfirmationDialogNone:
+    __resource_dir__: ClassVar[str] = 'dialog'
+
     yes: Button
     no: Button  # This action is also used for ESC-triggered exit.
     title: Text

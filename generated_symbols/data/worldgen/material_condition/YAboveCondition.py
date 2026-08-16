@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/worldgen/material_condition/YAboveCon
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, ClassVar
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.VerticalAnchor import VerticalAnchor
@@ -12,6 +12,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class YAboveCondition:
+    __resource_dir__: ClassVar[str] = 'worldgen/material_condition'
+
     anchor: VerticalAnchor
     surface_depth_multiplier: Annotated[int, 'Range | `-20`-`20` | both inclusive']
     add_stone_depth: bool

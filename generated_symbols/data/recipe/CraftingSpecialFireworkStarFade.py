@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/recipe/CraftingSpecialFireworkStarFad
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, ClassVar
 
 if TYPE_CHECKING:
     from generated_symbols.data.recipe.Ingredient import Ingredient
@@ -13,6 +13,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class CraftingSpecialFireworkStarFade:
+    __resource_dir__: ClassVar[str] = 'recipe'
+
     target: Ingredient  # The firework star item.  The fade effect of its `firework_explosion` will be changed.  The other components are copied.
     dye: Ingredient  # The items to provide fade color.  Colors are provided by the `dye` component.  Multiple dyes can be used at the same time.
     result: ItemStackTemplate

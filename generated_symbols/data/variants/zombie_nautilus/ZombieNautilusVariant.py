@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/variants/zombie_nautilus/ZombieNautil
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from generated_symbols.data.variants.SpawnPrioritySelectors import SpawnPrioritySelectors
 from minecraft_registry import IdSpec
@@ -15,6 +15,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class ZombieNautilusVariant(SpawnPrioritySelectors):
+    __resource_dir__: ClassVar[str] = 'zombie_nautilus_variant'
+
     model: ZombieNautilusModelType | None = None
     asset_id: Annotated[str, IdSpec(registry='texture')]  # The zombie nautilus texture to use for this variant.
 

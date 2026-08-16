@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/worldgen/feature/MultifaceGrowthConfi
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from minecraft_registry import IdSpec
 
@@ -15,6 +15,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class MultifaceGrowthConfig:
+    __resource_dir__: ClassVar[str] = 'worldgen/feature'
+
     block: MultifaceBlock
     search_range: Annotated[int, 'Range | `1`-`64` | both inclusive'] | None = None
     chance_of_spreading: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None

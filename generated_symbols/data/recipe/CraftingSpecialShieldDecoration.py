@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/recipe/CraftingSpecialShieldDecoratio
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, ClassVar
 
 if TYPE_CHECKING:
     from generated_symbols.data.recipe.Ingredient import Ingredient
@@ -13,6 +13,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class CraftingSpecialShieldDecoration:
+    __resource_dir__: ClassVar[str] = 'recipe'
+
     target: Ingredient  # The item to be decorated. It is required to have no patterns.  Its components, except `base_color` and `banner_patterns`, are copied.
     banner: Ingredient  # The banner item. The item type is required to be `BannerItem`.  Determines the `base_color` component of the resulting item.
     result: ItemStackTemplate

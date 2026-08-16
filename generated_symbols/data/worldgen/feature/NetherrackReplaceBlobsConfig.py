@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/worldgen/feature/NetherrackReplaceBlo
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, ClassVar
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.IntProvider import IntProvider
@@ -13,6 +13,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class NetherrackReplaceBlobsConfig:
+    __resource_dir__: ClassVar[str] = 'worldgen/feature'
+
     state: BlockState
     target: BlockState
     radius: IntProvider[Annotated[int, 'Range | `0`-`12` | both inclusive']] | Annotated[int, 'Range | `0`-`12` | both inclusive']

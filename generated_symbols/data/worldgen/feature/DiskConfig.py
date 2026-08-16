@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/worldgen/feature/DiskConfig.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, ClassVar
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.IntProvider import IntProvider
@@ -14,6 +14,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class DiskConfig:
+    __resource_dir__: ClassVar[str] = 'worldgen/feature'
+
     state_provider: BlockStateProvider
     radius: IntProvider[Annotated[int, 'Range | `0`-`8` | both inclusive']] | Annotated[int, 'Range | `0`-`8` | both inclusive']
     half_height: Annotated[int, 'Range | `0`-`4` | both inclusive']

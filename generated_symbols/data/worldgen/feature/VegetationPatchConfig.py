@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/worldgen/feature/VegetationPatchConfi
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from minecraft_registry import IdSpec
 
@@ -18,6 +18,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class VegetationPatchConfig:
+    __resource_dir__: ClassVar[str] = 'worldgen/feature'
+
     surface: CaveSurface
     depth: IntProvider[Annotated[int, 'Range | `1`-`128` | both inclusive']] | Annotated[int, 'Range | `1`-`128` | both inclusive']
     vertical_range: Annotated[int, 'Range | `1`-`256` | both inclusive']

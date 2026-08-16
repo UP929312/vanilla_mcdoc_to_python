@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/recipe/Recipe.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Literal
+from typing import TYPE_CHECKING, Annotated, ClassVar, Literal
 
 from generated_symbols.data.recipe.CookingBookInfo import CookingBookInfo
 from generated_symbols.data.recipe.CraftingBookInfo import CraftingBookInfo
@@ -24,6 +24,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class RecipeUnknown:
+    __resource_dir__: ClassVar[str] = 'recipe'
+
     type: Annotated[str, IdSpec(registry='recipe_serializer')] | KnownRecipeSerializerId
 
 

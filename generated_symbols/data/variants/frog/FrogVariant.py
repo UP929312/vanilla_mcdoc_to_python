@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/variants/frog/FrogVariant.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import Annotated
+from typing import Annotated, ClassVar
 
 from generated_symbols.data.variants.SpawnPrioritySelectors import SpawnPrioritySelectors
 from minecraft_registry import IdSpec
@@ -12,6 +12,8 @@ from minecraft_registry import IdSpec
 
 @dataclass(kw_only=True)
 class FrogVariant(SpawnPrioritySelectors):
+    __resource_dir__: ClassVar[str] = 'frog_variant'
+
     asset_id: Annotated[str, IdSpec(registry='texture')]  # The frog texture to use for this variant.
 
 

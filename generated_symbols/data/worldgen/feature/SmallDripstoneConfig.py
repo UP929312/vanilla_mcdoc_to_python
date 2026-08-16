@@ -4,11 +4,13 @@ Local link to file: generated_symbols/data/worldgen/feature/SmallDripstoneConfig
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import Annotated
+from typing import Annotated, ClassVar
 
 
 @dataclass(kw_only=True)
 class SmallDripstoneConfig:
+    __resource_dir__: ClassVar[str] = 'worldgen/feature'
+
     max_placements: Annotated[int, 'Range | `0`-`100` | both inclusive'] | None = None
     empty_space_search_radius: Annotated[int, 'Range | `0`-`20` | both inclusive'] | None = None
     max_offset_from_origin: Annotated[int, 'Range | `0`-`20` | both inclusive'] | None = None

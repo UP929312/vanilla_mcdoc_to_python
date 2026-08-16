@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/chat_type/ChatType.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, ClassVar
 
 if TYPE_CHECKING:
     from generated_symbols.data.chat_type.ChatDecoration import ChatDecoration
@@ -12,6 +12,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class ChatType:
+    __resource_dir__: ClassVar[str] = 'chat_type'
+
     chat: ChatDecoration
     narration: ChatDecoration
 

@@ -4,11 +4,13 @@ Local link to file: generated_symbols/data/worldgen/feature/TwistingVinesConfig.
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import Annotated
+from typing import Annotated, ClassVar
 
 
 @dataclass(kw_only=True)
 class TwistingVinesConfig:
+    __resource_dir__: ClassVar[str] = 'worldgen/feature'
+
     spread_width: Annotated[int, 'Range | Min `1` and above | inclusive']
     spread_height: Annotated[int, 'Range | Min `1` and above | inclusive']
     max_height: Annotated[int, 'Range | Min `1` and above | inclusive']

@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/worldgen/density_function/DensityFunc
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Literal
+from typing import TYPE_CHECKING, Annotated, ClassVar, Literal
 
 from generated_symbols.data.worldgen.density_function.Noise import Noise
 from minecraft_registry import IdSpec
@@ -23,6 +23,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class DensityFunctionStructUnknown:
+    __resource_dir__: ClassVar[str] = 'worldgen/density_function'
+
     type: Annotated[str, IdSpec(registry='worldgen/density_function_type')]
 
 

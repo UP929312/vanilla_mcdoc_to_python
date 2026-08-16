@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/worldgen/feature/FillLayerConfig.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, ClassVar
 
 if TYPE_CHECKING:
     from generated_symbols.util.block_state.BlockState import BlockState
@@ -12,6 +12,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class FillLayerConfig:
+    __resource_dir__: ClassVar[str] = 'worldgen/feature'
+
     state: BlockState
     height: Annotated[int, 'Range | `0`-`255` | both inclusive']
 

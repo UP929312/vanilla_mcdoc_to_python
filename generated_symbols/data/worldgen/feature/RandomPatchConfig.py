@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/worldgen/feature/RandomPatchConfig.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, ClassVar
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.FeatureRef import FeatureRef
@@ -12,6 +12,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class RandomPatchConfig:
+    __resource_dir__: ClassVar[str] = 'worldgen/feature'
+
     tries: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # How many attempts will be made to find a placement. Defaults to 128.
     xz_spread: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # Defaults to 7.
     y_spread: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # Defaults to 3.

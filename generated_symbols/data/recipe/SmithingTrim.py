@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/recipe/SmithingTrim.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from generated_symbols.data.recipe.NotificationInfo import NotificationInfo
 from minecraft_registry import IdSpec
@@ -15,6 +15,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class SmithingTrim(NotificationInfo):
+    __resource_dir__: ClassVar[str] = 'recipe'
+
     base: Ingredient  # Ingredient specifying an item to be trimmed.
     addition: Ingredient  # Material that will be used.
     template: Ingredient  # Template item that will be used for the pattern.

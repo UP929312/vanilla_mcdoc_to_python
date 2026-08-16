@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/worldgen/structure/Structure.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Literal
+from typing import TYPE_CHECKING, Annotated, ClassVar, Literal
 
 from minecraft_registry import IdSpec
 
@@ -31,6 +31,8 @@ class DimensionPaddingStruct:
 
 @dataclass(kw_only=True)
 class StructureBastionRemnant:
+    __resource_dir__: ClassVar[str] = 'worldgen/structure'
+
     type: Literal['minecraft:bastion_remnant']
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.

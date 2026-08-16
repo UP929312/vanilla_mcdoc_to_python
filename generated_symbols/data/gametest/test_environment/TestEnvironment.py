@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/gametest/test_environment/TestEnviron
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Literal
+from typing import TYPE_CHECKING, Annotated, ClassVar, Literal
 
 from minecraft_registry import IdSpec
 
@@ -16,6 +16,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class TestEnvironmentAllOf:
+    __resource_dir__: ClassVar[str] = 'test_environment'
+
     type: Literal['minecraft:all_of']
     definitions: list[TestEnvironment]
 
