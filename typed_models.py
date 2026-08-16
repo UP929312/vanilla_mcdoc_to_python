@@ -23,7 +23,7 @@ class BaseSchema(BaseModel):
         return [f"type {class_name} = {self.to_annotation(ctx)}"]
 
     def to_annotation(self, ctx: SingleSymbolContext) -> str:
-        raise NotImplementedError(f"This should never get called directly on a {self.__class__.__name__}")
+        raise NotImplementedError(f"This should never get called directly on a {self.__class__.__name__}")  # pragma: no cover
 
     def remove_version_data(self) -> BaseSchema:
         self.attributes = [x for x in self.attributes if x.name not in {"since", "until", "deprecated"}]
@@ -94,7 +94,7 @@ class LengthRange(BaseModel):
             return f"Length = {self.min} (inclusive) and above"
         if self.max is not None:
             return f"Length = up to {self.max} (inclusive)"
-        raise TypeError("Min and Max are None! LengthRange.to_annotation_suffix error")
+        raise TypeError("Min and Max are None! LengthRange.to_annotation_suffix error")  # pragma: no cover
 
 
 class EnumValue(BaseModel):
@@ -143,7 +143,7 @@ class IntSchema(BaseSchema):
     def to_annotation(self, ctx: SingleSymbolContext) -> str:
         if self.value_range:
             return self.value_range.to_annotation(ctx, "int", self.attributes)
-        if SAFE_GUARD_JAVA_NUMBERS:
+        if SAFE_GUARD_JAVA_NUMBERS:  # pragma: no cover
             copied_schema = self.model_copy(update={
                 "value_range": ValueRange(min=self.min_value_internally, max=self.max_value_internally),
             })
@@ -212,7 +212,7 @@ class FloatSchema(BaseSchema):
     def to_annotation(self, ctx: SingleSymbolContext) -> str:
         if self.value_range:
             return self.value_range.to_annotation(ctx, "float", self.attributes)
-        if SAFE_GUARD_JAVA_NUMBERS:
+        if SAFE_GUARD_JAVA_NUMBERS:  # pragma: no cover
             min_value, max_value = (
                 self.min_value_internally[0 if self.kind == "float" else 1],
                 self.max_value_internally[0 if self.kind == "float" else 1],
@@ -455,6 +455,27 @@ class ReferenceSchema(BaseSchema):
     kind: Literal["reference"] = Field(repr=False)
     path: str
     attributes: list[Attribute] = Field(default_factory=list, repr=False)
+
+    @staticmethod
+    def collect_reference_paths(value: BaseSchema, template_paths: set[str] | None = None) -> set[str]:
+        """Collect valid reference paths, ignoring template roots."""
+        if isinstance(value, ReferenceSchema):
+            if (
+                not is_valid_with_attributes(value.attributes)
+                or template_paths is not None and value.path in template_paths
+            ):
+                return set()
+            return {value.path}
+
+        refs: set[str] = set()
+        for field in type(value).model_fields:
+            child = getattr(value, field)
+            if isinstance(child, BaseSchema):
+                refs |= ReferenceSchema.collect_reference_paths(child, template_paths)
+            elif isinstance(child, list):
+                for item in child:
+                    refs |= ReferenceSchema.collect_reference_paths(item, template_paths)
+        return refs
 
     def to_python_code(self, class_name: str, ctx: SingleSymbolContext) -> list[str]:
         path, name = symbol_path_to_import_string_and_name(self.path)

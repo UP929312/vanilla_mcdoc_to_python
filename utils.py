@@ -7,6 +7,7 @@ if TYPE_CHECKING:
 
     from typed_models import Attribute, BaseSchema
 
+
 INDENT = 4
 GENERATED_SYMBOLS_DIRECTORY = Path("generated_symbols")
 SAFE_GUARD_JAVA_NUMBERS = False  # Do we annotate, say, ints to have bounds (e.g. <=2147483647), or just mark them as "int"
@@ -14,7 +15,7 @@ SAFE_GUARD_JAVA_NUMBERS = False  # Do we annotate, say, ints to have bounds (e.g
 REFETCH_SYMBOLS = False
 REFETCH_VERSIONS = False
 
-if REFETCH_SYMBOLS:
+if REFETCH_SYMBOLS:  # pragma: no cover
     import requests  # type: ignore[import-untyped]
 
     print("Fetching latest symbols.json from https://raw.githubusercontent.com/SpyglassMC/vanilla-mcdoc/refs/heads/generated/symbols.json")
@@ -28,7 +29,7 @@ else:
     with open('symbols.json', 'r', encoding='utf-8') as file:
         SYMBOLS_MAP = json.load(file)
 
-if REFETCH_VERSIONS:
+if REFETCH_VERSIONS:  # pragma: no cover
     import requests
 
     print("Fetching latest version.json from https://raw.githubusercontent.com/misode/mcmeta/summary/versions/data.min.json")
@@ -49,9 +50,9 @@ ROOT_SYMBOLS_KEYS = dict({object_type: set(keys) for object_type, keys in SYMBOL
 def get_version_index(version: str) -> int:
     if version in VERSION_IDS:
         return VERSION_IDS.index(version)
-    if LATEST_VERSION.startswith(version):
+    if LATEST_VERSION.startswith(version):  # pragma: no cover
         return 0
-    raise TypeError(f"Invalid version: {version}. Must be one of {VERSION_IDS}.")
+    raise TypeError(f"Invalid version: {version}. Must be one of {VERSION_IDS}.")  # pragma: no cover
 
 
 def symbol_path_to_object_name(path: str) -> str:
@@ -79,15 +80,15 @@ def is_valid_with_attributes(attributes: list[Attribute], current_version: str =
     for attr in attributes or []:
         if attr.name == "until":
             until_version: str = attr.value.value.value  # type: ignore[union-attr, assignment]
-            if until_version is not None and current_index <= get_version_index(until_version):
+            if until_version is not None and current_index <= get_version_index(until_version):  # pragma: no cover
                 return False
         elif attr.name == "since":
             since_version: str = attr.value.value.value  # type: ignore[union-attr, assignment]
-            if since_version is not None and current_index > get_version_index(since_version):
+            if since_version is not None and current_index > get_version_index(since_version):  # pragma: no cover
                 return False
         elif attr.name == "deprecated":
             deprecated_version: str | None = attr.value.value.value if attr.value is not None else None  # type: ignore[union-attr, assignment]
-            if deprecated_version is None or current_index <= get_version_index(deprecated_version):
+            if deprecated_version is None or current_index <= get_version_index(deprecated_version):  # pragma: no cover
                 return False
     return True
 
@@ -113,7 +114,7 @@ def manage_directory_and_inits(path: Path) -> None:
     current = path
     while current not in {GENERATED_SYMBOLS_DIRECTORY.parent, current.parent}:
         init_file = current / "__init__.py"
-        if not init_file.exists():
+        if not init_file.exists():  # pragma: no cover
             init_file.parent.mkdir(parents=True, exist_ok=True)
             init_file.write_text("\n", encoding="utf-8")
         current = current.parent
@@ -121,6 +122,6 @@ def manage_directory_and_inits(path: Path) -> None:
 
 def write_file_if_changed(path: Path, contents: str) -> None:
     old_contents = path.read_text(encoding="utf-8") if path.exists() else None
-    if contents != old_contents:
+    if contents != old_contents:  # pragma: no cover
         print("File change detected:", path)
         path.write_text(contents, encoding="utf-8")

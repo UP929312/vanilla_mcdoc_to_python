@@ -167,7 +167,7 @@ class TestRootResourceMetadata:
             "Advancement",
         )
 
-        assert "__resource_dir__ = 'advancement'" in content
+        assert "__resource_dir__: ClassVar[str] = 'advancement'" in content
 
     def test_root_resource_aliases_do_not_crash_generation(self) -> None:
         content = generated_body(
@@ -178,6 +178,29 @@ class TestRootResourceMetadata:
 
         assert "type Credits = list[CreditsStruct]" in content
         assert "__resource_dir__" not in content
+
+    def test_recipe_serializer_branches_are_serializable_root_resources(self) -> None:
+        content = generated_body(
+            "::java::data::recipe::CraftingShaped",
+            SYMBOLS_MAP["mcdoc"]["::java::data::recipe::CraftingShaped"],
+            "CraftingShaped",
+        )
+
+        assert "__resource_dir__: ClassVar[str] = 'recipe'" in content
+
+        registry_content = make_root_resource_registry_content([
+            "::java::data::advancement::Advancement",
+            "::java::data::recipe::Recipe",
+            "::java::data::recipe::CraftingShaped",
+            "::java::data::advancement::predicate::FoodPredicate",
+        ])
+        assert "CraftingShaped" in registry_content
+        assert "FoodPredicate" not in registry_content
+
+    def test_generic_sound_variant_template_is_not_a_root_resource(self) -> None:
+        lookup = minecraft_registry.get_resource_lookup_map()
+        assert lookup.get("::java::data::variants::SoundVariant") is None
+        assert lookup.get("::java::data::variants::wolf::WolfSounds") == "wolf_sound_variant"
 
     def test_root_resource_registry_lists_datapack_and_pack_classes(self) -> None:
         content = make_root_resource_registry_content([

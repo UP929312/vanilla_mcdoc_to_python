@@ -10,12 +10,6 @@ if TYPE_CHECKING:
     from schema_resolution import SchemaGraph
     from typed_models import BaseSchema
 
-_RESOURCE_PATH_TO_TYPE = {
-    value["path"]: resource_key
-    for resource_key, value in SYMBOLS_MAP["mcdoc/dispatcher"]["minecraft:resource"].items()
-    if isinstance(value, dict) and "path" in value
-}
-
 
 @dataclass(frozen=True, slots=True)
 class IdSpec:
@@ -133,11 +127,11 @@ def make_root_resource_registry_content(symbol_paths: Iterable[str]) -> str:
     or if it's a "fragment", e.g. a FoodPredicate is a fragment, but the Predicate is the root resource."""
     datapack_paths = sorted({
         symbol_path for symbol_path in symbol_paths
-        if symbol_path in _RESOURCE_PATH_TO_TYPE and symbol_path.startswith("::java::data::")
+        if get_resource_lookup_map().get(symbol_path) is not None and symbol_path.startswith("::java::data::")
     })
     pack_paths = sorted({
         symbol_path for symbol_path in symbol_paths
-        if symbol_path in _RESOURCE_PATH_TO_TYPE and symbol_path.startswith("::java::assets::")
+        if get_resource_lookup_map().get(symbol_path) is not None and symbol_path.startswith("::java::assets::")
     })
 
     lines = [
@@ -168,3 +162,40 @@ def make_root_resource_registry_file(symbol_paths: Iterable[str]) -> None:
         GENERATED_SYMBOLS_DIRECTORY / "root_resource_registry.py",
         make_root_resource_registry_content(symbol_paths),
     )
+
+
+_RESOURCE_LOOKUP_MAP: dict[str, str] | None = None
+
+
+def get_resource_lookup_map() -> dict[str, str]:
+    """Build and cache the root-resource lookup once, shared across the project."""
+    global _RESOURCE_LOOKUP_MAP
+    if _RESOURCE_LOOKUP_MAP is None:
+        from schema_resolution import SchemaGraph
+        from typed_models import KIND_TO_MODEL, ReferenceSchema, StructSchema, TemplateSchema
+
+        schema_graph = SchemaGraph.from_symbol_maps(SYMBOLS_MAP)
+        template_paths = {path for path, schema in schema_graph.symbols.items() if isinstance(schema, TemplateSchema)}
+        base_map: dict[str, str] = {}
+
+        for resource_key, raw_value in SYMBOLS_MAP["mcdoc/dispatcher"]["minecraft:resource"].items():
+            model_value = KIND_TO_MODEL[raw_value["kind"]](**raw_value)
+            for reference_path in ReferenceSchema.collect_reference_paths(model_value, template_paths):
+                base_map[reference_path] = resource_key
+
+            if "path" not in raw_value:
+                continue
+            root_schema = schema_graph.symbols.get(raw_value["path"])
+            dispatcher_spread = root_schema._dispatcher_spread() if isinstance(root_schema, StructSchema) else None
+            if dispatcher_spread is None or dispatcher_spread[2] != "type":
+                continue
+
+            for branch_schema in schema_graph.dispatchers[dispatcher_spread[1].registry].values():
+                if isinstance(branch_schema, ReferenceSchema):
+                    base_map[branch_schema.path] = resource_key
+                for reference_path in ReferenceSchema.collect_reference_paths(branch_schema, template_paths):
+                    base_map[reference_path] = resource_key
+
+        _RESOURCE_LOOKUP_MAP = base_map
+    return _RESOURCE_LOOKUP_MAP
+
