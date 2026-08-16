@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/trial_spawner/TrialSpawnerConfig.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from minecraft_registry import IdSpec
 
@@ -15,6 +15,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class TrialSpawnerConfig:
+    __resource_dir__: ClassVar[str] = 'trial_spawner'
+
     spawn_range: Annotated[int, 'Range | `1`-`128` | both inclusive'] | None = None  # Maximum distance from the spawner that en entity can spawn
     total_mobs: float | None = None  # Total amount of entities that are spawned during one activation, when 1 player is nearby
     total_mobs_added_per_player: float | None = None  # Number added to `total_mobs` for each additional player

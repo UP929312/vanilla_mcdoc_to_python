@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/trade_set/TradeSet.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from minecraft_registry import IdSpec
 
@@ -14,6 +14,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class TradeSet:
+    __resource_dir__: ClassVar[str] = 'trade_set'
+
     trades: Annotated[str, IdSpec(registry='villager_trade', tags='allowed')] | list[Annotated[str, IdSpec(registry='villager_trade')]]  # Possible trade generators.
     amount: NumberProvider  # Amount of trades to be generated.  Clamps to an integer of at least `1`.
     allow_duplicates: bool | None = None  # Whether the trade set can use the same generator multiple times and generate duplicate trades. Defaults to `false`.

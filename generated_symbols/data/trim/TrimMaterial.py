@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/trim/TrimMaterial.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, ClassVar
 
 if TYPE_CHECKING:
     from generated_symbols.assets.atlas.PaletteRef import PaletteRef
@@ -13,6 +13,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class TrimMaterial:
+    __resource_dir__: ClassVar[str] = 'trim_material'
+
     palette: PaletteRef  # Palette ID which will be used in the resource pack.
     description: Text  # Text displayed in the item tooltip.
 

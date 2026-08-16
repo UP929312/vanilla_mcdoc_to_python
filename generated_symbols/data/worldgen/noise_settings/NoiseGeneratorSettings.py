@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/worldgen/noise_settings/NoiseGenerato
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, ClassVar
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.material_rule.MaterialRuleRef import MaterialRuleRef
@@ -18,6 +18,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class NoiseGeneratorSettings:
+    __resource_dir__: ClassVar[str] = 'worldgen/noise_settings'
+
     default_block: BlockState
     default_fluid: BlockState
     sea_level: int

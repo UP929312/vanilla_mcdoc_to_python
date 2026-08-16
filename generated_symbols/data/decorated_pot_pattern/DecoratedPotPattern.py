@@ -4,13 +4,15 @@ Local link to file: generated_symbols/data/decorated_pot_pattern/DecoratedPotPat
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import Annotated
+from typing import Annotated, ClassVar
 
 from minecraft_registry import IdSpec
 
 
 @dataclass(kw_only=True)
 class DecoratedPotPattern:
+    __resource_dir__: ClassVar[str] = 'decorated_pot_pattern'
+
     asset_id: Annotated[str, IdSpec(registry='texture', path='entity/decorated_pot/')]
 
 

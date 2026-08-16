@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/variants/instrument/Instrument.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, ClassVar
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.SoundEventRef import SoundEventRef
@@ -13,6 +13,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class Instrument:
+    __resource_dir__: ClassVar[str] = 'instrument'
+
     sound_event: SoundEventRef
     range: Annotated[float, 'Range | Min `0` and above | inclusive']  # Maximum range in blocks that the sound can be heard
     use_duration: Annotated[float, 'Range | Min `0` and above | inclusive']  # Duration of use in seconds, used as item cooldown

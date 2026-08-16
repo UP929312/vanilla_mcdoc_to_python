@@ -4,13 +4,15 @@ Local link to file: generated_symbols/data/variants/banner_pattern/BannerPattern
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import Annotated
+from typing import Annotated, ClassVar
 
 from minecraft_registry import IdSpec
 
 
 @dataclass(kw_only=True)
 class BannerPattern:
+    __resource_dir__: ClassVar[str] = 'banner_pattern'
+
     asset_id: Annotated[str, IdSpec(registry='texture', path='entity/banner/')]  # Also resolves to `assets/<namespace>/textures/entity/shield/<name>.png`.
     translation_key: str  # Translation key prefix per dye color (e.g. `block.minecraft.banner.custom.pattern` resolves to `block.minecraft.banner.custom.pattern.<dye color>`).
 

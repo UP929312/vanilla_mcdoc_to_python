@@ -4,7 +4,7 @@ Local link to file: generated_symbols/assets/atlas/Atlas.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, ClassVar
 
 if TYPE_CHECKING:
     from generated_symbols.assets.atlas.SpriteSource import SpriteSource
@@ -12,6 +12,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class Atlas:
+    __resource_dir__: ClassVar[str] = 'atlas'
+
     sources: list[SpriteSource]  # List of sprite sources which can add or remove sprite textures to this atlas.
 
 

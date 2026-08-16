@@ -4,13 +4,15 @@ Local link to file: generated_symbols/assets/waypoint_style/WaypointStyle.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import Annotated
+from typing import Annotated, ClassVar
 
 from minecraft_registry import IdSpec
 
 
 @dataclass(kw_only=True)
 class WaypointStyle:
+    __resource_dir__: ClassVar[str] = 'waypoint_style'
+
     near_distance: Annotated[int, 'Range | `0`-`60000000` | both inclusive'] | None = None  # Defaults to 128.
     far_distance: Annotated[int, 'Range | `0`-`60000000` | both inclusive'] | None = None  # Defaults to 322.
     sprites: Annotated[list[Annotated[str, IdSpec(registry='texture', path='gui/sprites/hud/locator_bar_dot/')]], 'Length = 1 (inclusive) and above']

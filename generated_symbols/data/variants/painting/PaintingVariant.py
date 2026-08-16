@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/variants/painting/PaintingVariant.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from minecraft_registry import IdSpec
 
@@ -14,6 +14,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class PaintingVariant:
+    __resource_dir__: ClassVar[str] = 'painting_variant'
+
     asset_id: Annotated[str, IdSpec(registry='texture', path='painting/')]
     width: Annotated[int, 'Range | `1`-`16` | both inclusive']  # Dimension in blocks.
     height: Annotated[int, 'Range | `1`-`16` | both inclusive']  # Dimension in blocks.

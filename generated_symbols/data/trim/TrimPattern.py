@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/trim/TrimPattern.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from minecraft_registry import IdSpec
 
@@ -14,6 +14,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class TrimPattern:
+    __resource_dir__: ClassVar[str] = 'trim_pattern'
+
     asset_id: Annotated[str, IdSpec()]  # ID of the pattern that will be used in the resource pack as an overlay on the armor.  The texture is located under `trims/entity/<layer>/`.
     description: Text  # Text displayed in the item tooltip.
     decal: bool | None = None  # Whether the pattern texture will be masked based on the underlying armor. Defaults to `false`.

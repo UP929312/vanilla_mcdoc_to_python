@@ -4,10 +4,13 @@ Local link to file: generated_symbols/assets/lang/LangDeprecated.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
+from typing import ClassVar
 
 
 @dataclass(kw_only=True)
 class LangDeprecated:
+    __resource_dir__: ClassVar[str] = 'lang/deprecated'
+
     removed: list[str]  # List of removed translation keys.
     renamed: dict[str, str]  # Mapping renamed translation keys from old to new keys.
 

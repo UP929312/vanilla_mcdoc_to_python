@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/worldgen/structure_set/StructureSet.p
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, ClassVar
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.structure_set.StructurePlacement import StructurePlacement
@@ -13,6 +13,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class StructureSet:
+    __resource_dir__: ClassVar[str] = 'worldgen/structure_set'
+
     structures: list[StructureSetElement]
     placement: StructurePlacement
 

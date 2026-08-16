@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/villager_trade/VillagerTrade.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from minecraft_registry import IdSpec
 
@@ -18,6 +18,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class VillagerTrade:
+    __resource_dir__: ClassVar[str] = 'villager_trade'
+
     wants: TradeCost  # Price item required by the merchant.  The count is affected by various factors, including offered item, demand and player reputation.
     additional_wants: TradeCost | None = None  # Second item required by the merchant.  The count is not affected by any factors.
     gives: ItemStackTemplate  # Item being offered by the merchant.

@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/timeline/Timeline.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from minecraft_registry import IdSpec
 
@@ -15,6 +15,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class Timeline:
+    __resource_dir__: ClassVar[str] = 'timeline'
+
     period_ticks: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # When not present, the timeline will not repeat.
     clock: Annotated[str, IdSpec(registry='world_clock')]  # The world clock this timeline is tied to.
     time_markers: TimeMarkerMap | None = None

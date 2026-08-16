@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/worldgen/biome/Biome.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from minecraft_registry import IdSpec
 
@@ -18,6 +18,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class Biome:
+    __resource_dir__: ClassVar[str] = 'worldgen/biome'
+
     attributes: PositionalEnvironmentAttributeMap | None = None
     temperature: float
     downfall: float

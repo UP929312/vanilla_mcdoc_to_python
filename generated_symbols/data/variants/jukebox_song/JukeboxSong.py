@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/variants/jukebox_song/JukeboxSong.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, ClassVar
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.SoundEventRef import SoundEventRef
@@ -13,6 +13,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class JukeboxSong:
+    __resource_dir__: ClassVar[str] = 'jukebox_song'
+
     description: Text  # Displayed in the HUD actionbar & item tooltip.
     comparator_output: Annotated[int, 'Range | `0`-`15` | both inclusive']
     length_in_seconds: Annotated[float, 'Range | Min `0` and above | inclusive']

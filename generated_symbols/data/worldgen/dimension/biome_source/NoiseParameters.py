@@ -4,11 +4,13 @@ Local link to file: generated_symbols/data/worldgen/dimension/biome_source/Noise
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import Annotated
+from typing import Annotated, ClassVar
 
 
 @dataclass(kw_only=True)
 class NoiseParameters:
+    __resource_dir__: ClassVar[str] = 'worldgen/noise'
+
     base_octave: Annotated[int, 'Range | `-32`-`32` | both inclusive']
     base_amplitude: Annotated[float, 'Range | `0`-`1000000` | both inclusive'] | None = None  # Defaults to 1.0.
     octave_count: Annotated[int, 'Range | `1`-`32` | both inclusive'] | None = None  # Defaults to 1.

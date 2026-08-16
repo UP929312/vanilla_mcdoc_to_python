@@ -4,7 +4,7 @@ Local link to file: generated_symbols/assets/equipment/Equipment.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, ClassVar
 
 if TYPE_CHECKING:
     from generated_symbols.assets.equipment.Layers import Layers
@@ -13,6 +13,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class Equipment:
+    __resource_dir__: ClassVar[str] = 'equipment'
+
     layers: Layers  # List of layers for each model layer type.
     trim_overrides: list[TrimOverride] | None = None  # Replaces trim texture based on armor trim.  Only the first entry that matches is applied.
 

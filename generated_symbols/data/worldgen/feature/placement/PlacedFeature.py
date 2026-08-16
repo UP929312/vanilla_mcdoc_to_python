@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/worldgen/feature/placement/PlacedFeat
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, ClassVar
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.ConfiguredFeatureRef import ConfiguredFeatureRef
@@ -13,6 +13,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class PlacedFeature:
+    __resource_dir__: ClassVar[str] = 'worldgen/placed_feature'
+
     feature: ConfiguredFeatureRef
     placement: list[PlacementModifier]
 

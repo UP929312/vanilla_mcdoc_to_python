@@ -4,7 +4,7 @@ Local link to file: generated_symbols/assets/shader/post/PostEffect.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, ClassVar
 
 if TYPE_CHECKING:
     from generated_symbols.assets.shader.post.Pass import Pass
@@ -13,6 +13,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class PostEffect:
+    __resource_dir__: ClassVar[str] = 'post_effect'
+
     targets: Targets | None = None
     passes: list[Pass] | None = None
 

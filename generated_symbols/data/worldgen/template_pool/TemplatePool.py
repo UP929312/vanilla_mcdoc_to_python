@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/worldgen/template_pool/TemplatePool.p
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from minecraft_registry import IdSpec
 
@@ -14,6 +14,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class TemplatePool:
+    __resource_dir__: ClassVar[str] = 'worldgen/template_pool'
+
     name: str | None = None
     fallback: Annotated[str, IdSpec(registry='worldgen/template_pool')]
     elements: list[WeightedElement]

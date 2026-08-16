@@ -4,7 +4,7 @@ Local link to file: generated_symbols/assets/shader/program/ShaderProgram.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from minecraft_registry import IdSpec
 
@@ -16,6 +16,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class ShaderProgram:
+    __resource_dir__: ClassVar[str] = 'shader'
+
     vertex: Annotated[str, IdSpec(registry='shader/vertex')]
     fragment: Annotated[str, IdSpec(registry='shader/fragment')]
     samplers: list[Sampler] | None = None

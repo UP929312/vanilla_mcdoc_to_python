@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/worldgen/dimension/DimensionType.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from minecraft_registry import IdSpec
 
@@ -18,6 +18,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class DimensionType:
+    __resource_dir__: ClassVar[str] = 'dimension_type'
+
     attributes: GlobalEnvironmentAttributeMap | None = None
     default_clock: Annotated[str, IdSpec(registry='world_clock')] | None = None
     timelines: Annotated[str, IdSpec(registry='timeline', tags='allowed')] | list[Annotated[str, IdSpec(registry='timeline')]] | None = None

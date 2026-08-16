@@ -4,7 +4,7 @@ Local link to file: generated_symbols/assets/item_definition/ItemDefinition.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, ClassVar
 
 if TYPE_CHECKING:
     from generated_symbols.assets.item_definition.ItemModel import ItemModel
@@ -12,6 +12,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class ItemDefinition:
+    __resource_dir__: ClassVar[str] = 'item_definition'
+
     model: ItemModel
     hand_animation_on_swap: bool | None = None  # Whether the down-and-up animation should be played in first-person view when the item stack is changed. Defaults to `true`.
     oversized_in_gui: bool | None = None  # Whether the item model is allowed to be bigger than its item slot. Defaults to `false`, which clips the item model in GUI to the item slot size. The behavior of `true` is **not** officially supported.

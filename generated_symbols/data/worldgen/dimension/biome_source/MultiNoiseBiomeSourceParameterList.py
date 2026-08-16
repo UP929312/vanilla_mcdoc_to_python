@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/worldgen/dimension/biome_source/Multi
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, ClassVar
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.dimension.biome_source.MultiNoisePreset import MultiNoisePreset
@@ -12,6 +12,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class MultiNoiseBiomeSourceParameterList:
+    __resource_dir__: ClassVar[str] = 'worldgen/multi_noise_biome_source_parameter_list'
+
     preset: MultiNoisePreset
 
 

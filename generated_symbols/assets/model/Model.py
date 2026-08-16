@@ -4,7 +4,7 @@ Local link to file: generated_symbols/assets/model/Model.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Literal
+from typing import TYPE_CHECKING, Annotated, ClassVar, Literal
 
 from minecraft_registry import IdSpec
 
@@ -23,6 +23,8 @@ class DisplayStructValueStruct:
 
 @dataclass(kw_only=True)
 class Model:
+    __resource_dir__: ClassVar[str] = 'model'
+
     parent: Annotated[str, IdSpec(registry='model')] | None = None
     ambientocclusion: bool | None = None
     gui_light: Literal['front'] | Literal['side'] | None = None

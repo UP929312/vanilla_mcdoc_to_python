@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/damage_type/DamageType.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, ClassVar
 
 if TYPE_CHECKING:
     from generated_symbols.data.damage_type.DamageEffects import DamageEffects
@@ -14,6 +14,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class DamageType:
+    __resource_dir__: ClassVar[str] = 'damage_type'
+
     message_id: str  # The message id used for deaths caused by this damage type. Is combined with the result of `death_message_type` to form a translation key.
     exhaustion: Annotated[float, 'Range | Min `0` and above | inclusive']  # Amount of hunger exhaustion to cause.
     scaling: DamageScaling  # Whether to scale damage with difficulty levels.

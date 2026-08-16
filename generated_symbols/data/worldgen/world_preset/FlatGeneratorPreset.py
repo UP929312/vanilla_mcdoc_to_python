@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/worldgen/world_preset/FlatGeneratorPr
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from minecraft_registry import IdSpec
 
@@ -14,6 +14,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class FlatGeneratorPreset:
+    __resource_dir__: ClassVar[str] = 'worldgen/flat_level_generator_preset'
+
     display: Annotated[str, IdSpec(registry='item', exclude=('air',))]
     settings: FlatGeneratorSettings
 

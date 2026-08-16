@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/sulfur_cube_archetype/SulfurCubeArche
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from minecraft_registry import IdSpec
 
@@ -19,6 +19,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class SulfurCubeArchetype:
+    __resource_dir__: ClassVar[str] = 'sulfur_cube_archetype'
+
     items: Annotated[str, IdSpec(registry='item', tags='allowed')] | KnownItemId | list[Annotated[str, IdSpec(registry='item')] | KnownItemId]
     buoyant: bool | None = None  # Defaults to `false`.
     explosion: ExplosionData | None = None  # When present, sulfur cube with this archetype will explode when ignited.

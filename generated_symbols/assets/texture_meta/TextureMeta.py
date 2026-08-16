@@ -4,7 +4,7 @@ Local link to file: generated_symbols/assets/texture_meta/TextureMeta.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, ClassVar
 
 if TYPE_CHECKING:
     from generated_symbols.assets.atlas.PaletteRef import PaletteRef
@@ -53,6 +53,8 @@ class PaletteStruct:
 
 @dataclass(kw_only=True)
 class TextureMeta:
+    __resource_dir__: ClassVar[str] = 'texture_meta'
+
     animation: AnimationStruct | None = None
     gui: GuiStruct | None = None
     villager: VillagerStruct | None = None  # Only available for villager textures.
