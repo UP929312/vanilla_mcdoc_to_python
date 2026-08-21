@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::structure::RuinedPortalT
 Local link to file: generated_symbols/data/worldgen/structure/RuinedPortalType.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class RuinedPortalType(Enum):
+class RuinedPortalType(StrEnum):
     STANDARD = "standard"
     DESERT = "desert"
     JUNGLE = "jungle"

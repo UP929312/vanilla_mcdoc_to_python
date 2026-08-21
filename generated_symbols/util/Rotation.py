@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::util::Rotation
 Local link to file: generated_symbols/util/Rotation.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class Rotation(Enum):
+class Rotation(StrEnum):
     NONE = "none"
     CLOCKWISE90 = "clockwise_90"
     CLOCKWISE180 = "180"

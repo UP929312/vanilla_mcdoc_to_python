@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::world::entity::mob::breedable::rabbit::R
 Local link to file: generated_symbols/world/entity/mob/breedable/rabbit/RabbitType.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import IntEnum
 
 
-class RabbitType(Enum):
+class RabbitType(IntEnum):
     BROWN = 0
     WHITE = 1
     BLACK = 2

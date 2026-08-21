@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::world::item::map::IconByteId
 Local link to file: generated_symbols/world/item/map/IconByteId.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import IntEnum
 
 
-class IconByteId(Enum):
+class IconByteId(IntEnum):
     PLAYER = 0  # White pentagon.
     FRAME = 1  # Green pentagon.
     REDMARKER = 2  # Red pentagon.

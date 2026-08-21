@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::world::block::jigsaw::JointType
 Local link to file: generated_symbols/world/block/jigsaw/JointType.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class JointType(Enum):
+class JointType(StrEnum):
     ROLLABLE = "rollable"  # The structure can be rotated
     ALIGNED = "aligned"  # The structure cannot be transformed
 

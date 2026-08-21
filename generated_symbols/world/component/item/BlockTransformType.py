@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::world::component::item::BlockTransformTy
 Local link to file: generated_symbols/world/component/item/BlockTransformType.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class BlockTransformType(Enum):
+class BlockTransformType(StrEnum):
     SINGLEBLOCK = "single_block"
     COPPERCHEST = "copper_chest"  # If the original block and the transformed block are both copper chests of any kind, the transform applies to the other half of the double chest.
 

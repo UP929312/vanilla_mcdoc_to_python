@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::assets::item_definition::NumericProperty
 Local link to file: generated_symbols/assets/item_definition/NumericPropertyType.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class NumericPropertyType(Enum):
+class NumericPropertyType(StrEnum):
     BUNDLEFULLNESS = "bundle/fullness"
     COMPASS = "compass"
     COOLDOWN = "cooldown"

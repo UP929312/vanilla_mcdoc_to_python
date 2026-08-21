@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::variants::chicken::ChickenModelTyp
 Local link to file: generated_symbols/data/variants/chicken/ChickenModelType.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class ChickenModelType(Enum):
+class ChickenModelType(StrEnum):
     NORMAL = "normal"
     COLD = "cold"
 

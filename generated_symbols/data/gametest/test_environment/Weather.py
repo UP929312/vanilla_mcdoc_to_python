@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::gametest::test_environment::Weathe
 Local link to file: generated_symbols/data/gametest/test_environment/Weather.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class Weather(Enum):
+class Weather(StrEnum):
     CLEAR = "clear"
     RAIN = "rain"
     THUNDER = "thunder"

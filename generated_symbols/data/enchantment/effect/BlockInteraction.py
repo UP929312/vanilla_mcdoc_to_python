@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::enchantment::effect::BlockInteract
 Local link to file: generated_symbols/data/enchantment/effect/BlockInteraction.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class BlockInteraction(Enum):
+class BlockInteraction(StrEnum):
     NONE = "none"  # No item drops or special behavior.
     BLOCKOLDDOC = "block"  # Drops items as if a block caused the explosion; `blockExplosionDropDecay` game rule applies.
     BLOCK = "block"  # Drops items as if a block caused the explosion; `block_explosion_drop_decay` game rule applies.

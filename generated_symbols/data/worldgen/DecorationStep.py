@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::DecorationStep
 Local link to file: generated_symbols/data/worldgen/DecorationStep.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class DecorationStep(Enum):
+class DecorationStep(StrEnum):
     RAWGENERATION = "raw_generation"
     LAKES = "lakes"
     LOCALMODIFICATIONS = "local_modifications"

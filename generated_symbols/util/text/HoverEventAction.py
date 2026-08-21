@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::util::text::HoverEventAction
 Local link to file: generated_symbols/util/text/HoverEventAction.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class HoverEventAction(Enum):
+class HoverEventAction(StrEnum):
     SHOWTEXT = "show_text"
     SHOWITEM = "show_item"
     SHOWENTITY = "show_entity"

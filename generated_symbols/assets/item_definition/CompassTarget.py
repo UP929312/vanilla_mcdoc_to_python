@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::assets::item_definition::CompassTarget
 Local link to file: generated_symbols/assets/item_definition/CompassTarget.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class CompassTarget(Enum):
+class CompassTarget(StrEnum):
     NONE = "none"  # Always an invalid target.
     SPAWN = "spawn"  # Points at world spawn.
     LODESTONE = "lodestone"  # Points at the location stored in the `lodestone_tracker` component.

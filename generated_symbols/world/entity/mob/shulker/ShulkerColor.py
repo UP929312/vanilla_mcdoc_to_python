@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::world::entity::mob::shulker::ShulkerColo
 Local link to file: generated_symbols/world/entity/mob/shulker/ShulkerColor.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import IntEnum
 
 
-class ShulkerColor(Enum):
+class ShulkerColor(IntEnum):
     NORMAL = 16
 
 

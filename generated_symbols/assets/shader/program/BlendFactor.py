@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::assets::shader::program::BlendFactor
 Local link to file: generated_symbols/assets/shader/program/BlendFactor.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class BlendFactor(Enum):
+class BlendFactor(StrEnum):
     ZERO = "0"
     ZERO2 = "zero"
     ONE = "1"

@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::biome::BiomeCategory
 Local link to file: generated_symbols/data/worldgen/biome/BiomeCategory.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class BiomeCategory(Enum):
+class BiomeCategory(StrEnum):
     BEACH = "beach"
     DESERT = "desert"
     EXTREMEHILLS = "extreme_hills"

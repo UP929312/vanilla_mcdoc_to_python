@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::world::component::item::FireworkShape
 Local link to file: generated_symbols/world/component/item/FireworkShape.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class FireworkShape(Enum):
+class FireworkShape(StrEnum):
     SMALLBALL = "small_ball"
     LARGEBALL = "large_ball"
     STAR = "star"

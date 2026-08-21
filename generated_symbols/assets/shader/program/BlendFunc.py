@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::assets::shader::program::BlendFunc
 Local link to file: generated_symbols/assets/shader/program/BlendFunc.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class BlendFunc(Enum):
+class BlendFunc(StrEnum):
     ADD = "add"
     SUBTRACT = "subtract"
     REVERSESUBTRACT = "reversesubtract"

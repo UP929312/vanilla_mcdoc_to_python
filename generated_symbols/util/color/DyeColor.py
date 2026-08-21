@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::util::color::DyeColor
 Local link to file: generated_symbols/util/color/DyeColor.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class DyeColor(Enum):
+class DyeColor(StrEnum):
     WHITE = "white"
     ORANGE = "orange"
     MAGENTA = "magenta"

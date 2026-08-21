@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::util::direction::Axis
 Local link to file: generated_symbols/util/direction/Axis.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class Axis(Enum):
+class Axis(StrEnum):
     X = "x"
     Y = "y"
     Z = "z"

@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::structure::BiomeTemperat
 Local link to file: generated_symbols/data/worldgen/structure/BiomeTemperature.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class BiomeTemperature(Enum):
+class BiomeTemperature(StrEnum):
     COLD = "cold"
     WARM = "warm"
 

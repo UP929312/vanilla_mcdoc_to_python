@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::world::entity::mob::fish::PuffState
 Local link to file: generated_symbols/world/entity/mob/fish/PuffState.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import IntEnum
 
 
-class PuffState(Enum):
+class PuffState(IntEnum):
     DEFLATED = 0
     HALFPUFFED = 1
     PUFFED = 2

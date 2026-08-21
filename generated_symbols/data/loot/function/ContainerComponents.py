@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::loot::function::ContainerComponent
 Local link to file: generated_symbols/data/loot/function/ContainerComponents.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class ContainerComponents(Enum):
+class ContainerComponents(StrEnum):
     CONTAINER = "container"
     BUNDLECONTENTS = "bundle_contents"
     CHARGEDPROJECTILES = "charged_projectiles"

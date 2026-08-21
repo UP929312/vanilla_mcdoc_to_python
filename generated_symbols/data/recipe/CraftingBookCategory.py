@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::recipe::CraftingBookCategory
 Local link to file: generated_symbols/data/recipe/CraftingBookCategory.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class CraftingBookCategory(Enum):
+class CraftingBookCategory(StrEnum):
     BUILDING = "building"
     REDSTONE = "redstone"
     EQUIPMENT = "equipment"

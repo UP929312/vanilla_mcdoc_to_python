@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::trim::ArmorMaterial
 Local link to file: generated_symbols/data/trim/ArmorMaterial.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class ArmorMaterial(Enum):
+class ArmorMaterial(StrEnum):
     LEATHER = "leather"
     CHAINMAIL = "chainmail"
     IRON = "iron"

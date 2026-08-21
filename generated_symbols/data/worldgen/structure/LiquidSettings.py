@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::structure::LiquidSetting
 Local link to file: generated_symbols/data/worldgen/structure/LiquidSettings.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class LiquidSettings(Enum):
+class LiquidSettings(StrEnum):
     APPLYWATERLOGGING = "apply_waterlogging"
     IGNOREWATERLOGGING = "ignore_waterlogging"
 

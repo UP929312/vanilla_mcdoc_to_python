@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::assets::model::CustomizableItemDisplayCo
 Local link to file: generated_symbols/assets/model/CustomizableItemDisplayContext.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class CustomizableItemDisplayContext(Enum):
+class CustomizableItemDisplayContext(StrEnum):
     FIRSTPERSONRIGHTHAND = "firstperson_righthand"
     FIRSTPERSONLEFTHAND = "firstperson_lefthand"
     THIRDPERSONRIGHTHAND = "thirdperson_righthand"

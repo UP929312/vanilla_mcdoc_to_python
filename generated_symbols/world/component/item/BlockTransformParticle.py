@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::world::component::item::BlockTransformPa
 Local link to file: generated_symbols/world/component/item/BlockTransformParticle.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class BlockTransformParticle(Enum):
+class BlockTransformParticle(StrEnum):
     NONE = "none"
     SCRAPE = "scrape"
     WAXON = "wax_on"

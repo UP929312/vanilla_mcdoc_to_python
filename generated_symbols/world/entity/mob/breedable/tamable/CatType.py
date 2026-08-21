@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::world::entity::mob::breedable::tamable::
 Local link to file: generated_symbols/world/entity/mob/breedable/tamable/CatType.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import IntEnum
 
 
-class CatType(Enum):
+class CatType(IntEnum):
     INVISIBLE = -1
     TABBY = 0
     TUXEDO = 1

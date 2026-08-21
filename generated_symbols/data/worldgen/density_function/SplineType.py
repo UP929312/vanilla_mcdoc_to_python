@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::density_function::Spline
 Local link to file: generated_symbols/data/worldgen/density_function/SplineType.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class SplineType(Enum):
+class SplineType(StrEnum):
     OFFSET = "offset"
     FACTOR = "factor"
     JAGGEDNESS = "jaggedness"

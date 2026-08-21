@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::world::block::structure_block::Rotation
 Local link to file: generated_symbols/world/block/structure_block/Rotation.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class Rotation(Enum):
+class Rotation(StrEnum):
     NONE = "NONE"
     CLOCKWISE90 = "CLOCKWISE_90"
     CLOCKWISE180 = "CLOCKWISE_180"

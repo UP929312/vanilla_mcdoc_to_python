@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::world::component::item::AttributeDisplay
 Local link to file: generated_symbols/world/component/item/AttributeDisplayType.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class AttributeDisplayType(Enum):
+class AttributeDisplayType(StrEnum):
     DEFAULT = "default"  # Shows the calculated attribute modifier values on the tooltip.
     HIDDEN = "hidden"  # Does not show the attribute modifier entry in tooltips.
     OVERRIDE = "override"  # Replaces the shown attribute modifier text.

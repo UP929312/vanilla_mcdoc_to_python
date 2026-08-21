@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::util::text::Keybind
 Local link to file: generated_symbols/util/text/Keybind.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class Keybind(Enum):
+class Keybind(StrEnum):
     ADVANCEMENTS = "key.advancements"
     ATTACK = "key.attack"
     BACK = "key.back"

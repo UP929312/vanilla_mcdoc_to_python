@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::world::component::entity::TropicalFishPa
 Local link to file: generated_symbols/world/component/entity/TropicalFishPattern.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class TropicalFishPattern(Enum):
+class TropicalFishPattern(StrEnum):
     KOB = "kob"
     SUNSTREAK = "sunstreak"
     SNOOPER = "snooper"

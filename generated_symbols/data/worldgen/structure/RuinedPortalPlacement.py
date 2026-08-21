@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::structure::RuinedPortalP
 Local link to file: generated_symbols/data/worldgen/structure/RuinedPortalPlacement.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class RuinedPortalPlacement(Enum):
+class RuinedPortalPlacement(StrEnum):
     ONLANDSURFACE = "on_land_surface"
     PARTLYBURIED = "partly_buried"
     ONOCEANFLOOR = "on_ocean_floor"

@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::advancement::predicate::SpecificTy
 Local link to file: generated_symbols/data/advancement/predicate/SpecificType.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class SpecificType(Enum):
+class SpecificType(StrEnum):
     ANY = "any"
     AXOLOTL = "axolotl"
     BOAT = "boat"

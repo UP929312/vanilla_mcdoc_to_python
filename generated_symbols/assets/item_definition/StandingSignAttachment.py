@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::assets::item_definition::StandingSignAtt
 Local link to file: generated_symbols/assets/item_definition/StandingSignAttachment.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class StandingSignAttachment(Enum):
+class StandingSignAttachment(StrEnum):
     WALL = "wall"
     GROUND = "ground"
 

@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::util::text::TextColor
 Local link to file: generated_symbols/util/text/TextColor.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class TextColor(Enum):
+class TextColor(StrEnum):
     BLACK = "black"
     DARKBLUE = "dark_blue"
     DARKGREEN = "dark_green"

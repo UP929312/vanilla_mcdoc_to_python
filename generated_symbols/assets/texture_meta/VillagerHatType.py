@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::assets::texture_meta::VillagerHatType
 Local link to file: generated_symbols/assets/texture_meta/VillagerHatType.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class VillagerHatType(Enum):
+class VillagerHatType(StrEnum):
     NONE = "none"
     PARITAL = "partial"
     FULL = "full"

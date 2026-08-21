@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::assets::regional_compliancies::Code
 Local link to file: generated_symbols/assets/regional_compliancies/Code.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class Code(Enum):
+class Code(StrEnum):
     ARUBA = "ABW"
     AFGHANISTAN = "AFG"
     ANGOLA = "AGO"

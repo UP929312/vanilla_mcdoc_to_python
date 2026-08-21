@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::assets::item_definition::ItemModeltype
 Local link to file: generated_symbols/assets/item_definition/ItemModeltype.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class ItemModeltype(Enum):
+class ItemModeltype(StrEnum):
     BUNDLESELECTEDITEM = "bundle/selected_item"
     COMPOSITE = "composite"
     CONDITION = "condition"

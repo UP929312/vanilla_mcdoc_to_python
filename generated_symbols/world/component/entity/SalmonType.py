@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::world::component::entity::SalmonType
 Local link to file: generated_symbols/world/component/entity/SalmonType.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class SalmonType(Enum):
+class SalmonType(StrEnum):
     SMALL = "small"
     MEDIUM = "medium"
     LARGE = "large"

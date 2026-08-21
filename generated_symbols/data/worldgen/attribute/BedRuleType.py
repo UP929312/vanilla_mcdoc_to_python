@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::attribute::BedRuleType
 Local link to file: generated_symbols/data/worldgen/attribute/BedRuleType.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class BedRuleType(Enum):
+class BedRuleType(StrEnum):
     ALWAYS = "always"
     WHENDARK = "when_dark"
     NEVER = "never"

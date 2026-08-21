@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::attribute::NumericalEnvi
 Local link to file: generated_symbols/data/worldgen/attribute/NumericalEnvironmentAttribute.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class NumericalEnvironmentAttribute(Enum):
+class NumericalEnvironmentAttribute(StrEnum):
     CLOUDHEIGHT = "visual/cloud_height"
     FOGSTARTDISTANCE = "visual/fog_start_distance"
     MOONANGLE = "visual/moon_angle"

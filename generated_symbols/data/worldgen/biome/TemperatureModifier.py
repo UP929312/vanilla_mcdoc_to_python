@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::biome::TemperatureModifi
 Local link to file: generated_symbols/data/worldgen/biome/TemperatureModifier.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class TemperatureModifier(Enum):
+class TemperatureModifier(StrEnum):
     NONE = "none"
     FROZEN = "frozen"
 

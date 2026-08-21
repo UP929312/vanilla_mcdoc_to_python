@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::world::entity::mob::breedable::tamable::
 Local link to file: generated_symbols/world/entity/mob/breedable/tamable/ParrotVariantInt.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import IntEnum
 
 
-class ParrotVariantInt(Enum):
+class ParrotVariantInt(IntEnum):
     REDBLUE = 0
     BLUE = 1
     GREEN = 2

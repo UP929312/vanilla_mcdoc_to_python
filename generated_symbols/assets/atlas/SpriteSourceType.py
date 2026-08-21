@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::assets::atlas::SpriteSourceType
 Local link to file: generated_symbols/assets/atlas/SpriteSourceType.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class SpriteSourceType(Enum):
+class SpriteSourceType(StrEnum):
     SINGLE = "single"
     DIRECTORY = "directory"
     FILTER = "filter"

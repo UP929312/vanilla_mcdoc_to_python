@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::dimension::CardinalLight
 Local link to file: generated_symbols/data/worldgen/dimension/CardinalLightType.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class CardinalLightType(Enum):
+class CardinalLightType(StrEnum):
     DEFAULT = "default"
     NETHER = "nether"
 

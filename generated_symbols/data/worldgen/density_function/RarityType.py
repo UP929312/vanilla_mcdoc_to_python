@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::density_function::Rarity
 Local link to file: generated_symbols/data/worldgen/density_function/RarityType.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class RarityType(Enum):
+class RarityType(StrEnum):
     TYPE1 = "type_1"
     TYPE2 = "type_2"
 

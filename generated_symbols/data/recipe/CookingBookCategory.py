@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::recipe::CookingBookCategory
 Local link to file: generated_symbols/data/recipe/CookingBookCategory.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class CookingBookCategory(Enum):
+class CookingBookCategory(StrEnum):
     FOOD = "food"
     BLOCKS = "blocks"
     MISC = "misc"

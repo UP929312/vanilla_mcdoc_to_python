@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::assets::model::Predicates
 Local link to file: generated_symbols/assets/model/Predicates.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class Predicates(Enum):
+class Predicates(StrEnum):
     ANGLE = "angle"  # Used on compasses to determine the current angle, expressed in a decimal value of less than one.
     BLOCKING = "blocking"  # Used on shields to determine if currently blocking. If `1`, the player is blocking.
     BROKEN = "broken"  # Used on Elytra to determine if broken. If `1`, the Elytra is broken.

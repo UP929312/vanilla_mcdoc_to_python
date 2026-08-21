@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::assets::item_definition::CrossbowChargeT
 Local link to file: generated_symbols/assets/item_definition/CrossbowChargeType.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class CrossbowChargeType(Enum):
+class CrossbowChargeType(StrEnum):
     NONE = "none"
     ARROW = "arrow"
     ROCKET = "rocket"

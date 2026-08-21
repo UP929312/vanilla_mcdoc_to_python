@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::pack::FeatureFlag
 Local link to file: generated_symbols/pack/FeatureFlag.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class FeatureFlag(Enum):
+class FeatureFlag(StrEnum):
     VANILLA = "vanilla"
     UPDATE120 = "update_1_20"
     BUNDLE = "bundle"

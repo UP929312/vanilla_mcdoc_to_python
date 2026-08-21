@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::structure_set::Frequency
 Local link to file: generated_symbols/data/worldgen/structure_set/FrequencyReductionMethod.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class FrequencyReductionMethod(Enum):
+class FrequencyReductionMethod(StrEnum):
     DEFAULT = "default"
     LEGACYTYPE1 = "legacy_type_1"
     LEGACYTYPE2 = "legacy_type_2"

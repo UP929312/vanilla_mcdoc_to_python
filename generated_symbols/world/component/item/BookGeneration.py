@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::world::component::item::BookGeneration
 Local link to file: generated_symbols/world/component/item/BookGeneration.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import IntEnum
 
 
-class BookGeneration(Enum):
+class BookGeneration(IntEnum):
     ORIGINAL = 0
     COPY = 1
     COPYOFCOPY = 2

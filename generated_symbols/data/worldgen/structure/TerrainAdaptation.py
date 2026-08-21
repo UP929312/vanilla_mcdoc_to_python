@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::structure::TerrainAdapta
 Local link to file: generated_symbols/data/worldgen/structure/TerrainAdaptation.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class TerrainAdaptation(Enum):
+class TerrainAdaptation(StrEnum):
     NONE = "none"
     BEARDTHIN = "beard_thin"
     BEARDBOX = "beard_box"

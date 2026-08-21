@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::world::component::item::ItemUseAnimation
 Local link to file: generated_symbols/world/component/item/ItemUseAnimation.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class ItemUseAnimation(Enum):
+class ItemUseAnimation(StrEnum):
     NONE = "none"
     EAT = "eat"
     DRINK = "drink"

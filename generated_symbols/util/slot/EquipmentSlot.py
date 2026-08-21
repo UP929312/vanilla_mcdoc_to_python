@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::util::slot::EquipmentSlot
 Local link to file: generated_symbols/util/slot/EquipmentSlot.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class EquipmentSlot(Enum):
+class EquipmentSlot(StrEnum):
     MAINHAND = "mainhand"
     OFFHAND = "offhand"
     HEAD = "head"

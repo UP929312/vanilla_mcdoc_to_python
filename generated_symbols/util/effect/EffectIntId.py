@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::util::effect::EffectIntId
 Local link to file: generated_symbols/util/effect/EffectIntId.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import IntEnum
 
 
-class EffectIntId(Enum):
+class EffectIntId(IntEnum):
     SPEED = 1
     SLOWNESS = 2
     HASTE = 3

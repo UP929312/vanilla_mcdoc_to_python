@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::template_pool::Projectio
 Local link to file: generated_symbols/data/worldgen/template_pool/Projection.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class Projection(Enum):
+class Projection(StrEnum):
     RIGID = "rigid"
     TERRAINMATCHING = "terrain_matching"
 

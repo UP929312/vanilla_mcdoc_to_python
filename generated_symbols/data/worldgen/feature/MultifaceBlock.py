@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::feature::MultifaceBlock
 Local link to file: generated_symbols/data/worldgen/feature/MultifaceBlock.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class MultifaceBlock(Enum):
+class MultifaceBlock(StrEnum):
     GLOWLICHEN = "glow_lichen"
     SCULKVEIN = "sculk_vein"
 

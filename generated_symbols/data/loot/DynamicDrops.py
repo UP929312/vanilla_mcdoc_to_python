@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::loot::DynamicDrops
 Local link to file: generated_symbols/data/loot/DynamicDrops.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class DynamicDrops(Enum):
+class DynamicDrops(StrEnum):
     CONTENTS = "contents"  # Drops the items in a shulker box.
     SHERDS = "sherds"  # Drops the sherds of a decorated pot.
 

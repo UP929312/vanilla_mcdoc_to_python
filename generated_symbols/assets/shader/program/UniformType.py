@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::assets::shader::program::UniformType
 Local link to file: generated_symbols/assets/shader/program/UniformType.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class UniformType(Enum):
+class UniformType(StrEnum):
     INT = "int"
     FLOAT = "float"
     MATRIX2X2 = "matrix2x2"

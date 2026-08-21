@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::dialog::AfterAction
 Local link to file: generated_symbols/data/dialog/AfterAction.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class AfterAction(Enum):
+class AfterAction(StrEnum):
     CLOSE = "close"  # Closes the dialog. Returns to the previous non-dialog screen, if any.
     NONE = "none"  # Does nothing. Only available if `pause` is set to `false`.
     WAITFORRESPONSE = "wait_for_response"  # Replaces the dialog with a "Waiting for Response" screen. The waiting screen unpauses the game in single-player mode.

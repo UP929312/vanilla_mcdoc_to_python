@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::structure::MineshaftType
 Local link to file: generated_symbols/data/worldgen/structure/MineshaftType.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class MineshaftType(Enum):
+class MineshaftType(StrEnum):
     NORMAL = "normal"
     MESA = "mesa"
 

@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::world::entity::mob::armor_stand::Disable
 Local link to file: generated_symbols/world/entity/mob/armor_stand/DisabledSlots.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import IntEnum
 
 
-class DisabledSlots(Enum):
+class DisabledSlots(IntEnum):
     HANDALL = 1
     BOOTSALL = 2
     LEGGINGSALL = 3

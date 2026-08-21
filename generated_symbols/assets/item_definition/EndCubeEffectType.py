@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::assets::item_definition::EndCubeEffectTy
 Local link to file: generated_symbols/assets/item_definition/EndCubeEffectType.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class EndCubeEffectType(Enum):
+class EndCubeEffectType(StrEnum):
     PORTAL = "portal"
     GATEWAY = "gateway"
 

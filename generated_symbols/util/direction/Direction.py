@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::util::direction::Direction
 Local link to file: generated_symbols/util/direction/Direction.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class Direction(Enum):
+class Direction(StrEnum):
     DOWN = "down"
     UP = "up"
     NORTH = "north"

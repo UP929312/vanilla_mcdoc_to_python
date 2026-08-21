@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::world::component::entity::AxolotlVariant
 Local link to file: generated_symbols/world/component/entity/AxolotlVariant.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class AxolotlVariant(Enum):
+class AxolotlVariant(StrEnum):
     LUCY = "lucy"
     WILD = "wild"
     GOLD = "gold"

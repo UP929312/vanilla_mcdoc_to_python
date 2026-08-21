@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::HeightmapType
 Local link to file: generated_symbols/data/worldgen/HeightmapType.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class HeightmapType(Enum):
+class HeightmapType(StrEnum):
     MOTIONBLOCKING = "MOTION_BLOCKING"
     MOTIONBLOCKINGNOLEAVES = "MOTION_BLOCKING_NO_LEAVES"
     OCEANFLOOR = "OCEAN_FLOOR"

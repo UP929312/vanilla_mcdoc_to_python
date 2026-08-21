@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::loot::function::SetNameTarget
 Local link to file: generated_symbols/data/loot/function/SetNameTarget.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class SetNameTarget(Enum):
+class SetNameTarget(StrEnum):
     ITEMNAME = "item_name"
     CUSTOMNAME = "custom_name"
 

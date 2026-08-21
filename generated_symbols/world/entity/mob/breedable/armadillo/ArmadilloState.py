@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::world::entity::mob::breedable::armadillo
 Local link to file: generated_symbols/world/entity/mob/breedable/armadillo/ArmadilloState.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class ArmadilloState(Enum):
+class ArmadilloState(StrEnum):
     IDLE = "idle"
     ROLLING = "rolling"
     SCARED = "scared"

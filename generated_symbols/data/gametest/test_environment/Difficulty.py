@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::gametest::test_environment::Diffic
 Local link to file: generated_symbols/data/gametest/test_environment/Difficulty.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class Difficulty(Enum):
+class Difficulty(StrEnum):
     PEACEFUL = "peaceful"
     EASY = "easy"
     NORMAL = "normal"

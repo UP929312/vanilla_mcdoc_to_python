@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::assets::item_definition::CopperGolemStat
 Local link to file: generated_symbols/assets/item_definition/CopperGolemStatuePose.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class CopperGolemStatuePose(Enum):
+class CopperGolemStatuePose(StrEnum):
     STANDING = "standing"
     SITTING = "sitting"
     RUNNING = "running"

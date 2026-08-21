@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::attribute::modifier::Mer
 Local link to file: generated_symbols/data/worldgen/attribute/modifier/MergeableModifierType.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class MergeableModifierType(Enum):
+class MergeableModifierType(StrEnum):
     OVERRIDE = "override"
     OVERLAY = "overlay"
 

@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::chat_type::NarrationPriority
 Local link to file: generated_symbols/data/chat_type/NarrationPriority.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class NarrationPriority(Enum):
+class NarrationPriority(StrEnum):
     CHAT = "chat"
     SYSTEM = "system"
 

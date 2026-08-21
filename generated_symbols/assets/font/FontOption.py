@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::assets::font::FontOption
 Local link to file: generated_symbols/assets/font/FontOption.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class FontOption(Enum):
+class FontOption(StrEnum):
     UNIFORM = "uniform"
     JAPANESEVARIANTS = "jp"
 

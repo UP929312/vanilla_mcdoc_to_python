@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::world::entity::mob::breedable::axolotl::
 Local link to file: generated_symbols/world/entity/mob/breedable/axolotl/AxolotlVariantInt.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import IntEnum
 
 
-class AxolotlVariantInt(Enum):
+class AxolotlVariantInt(IntEnum):
     LUCY = 0
     WILD = 1
     GOLD = 2

@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::world::component::item::Rarity
 Local link to file: generated_symbols/world/component/item/Rarity.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class Rarity(Enum):
+class Rarity(StrEnum):
     COMMON = "common"  # White name, or aqua when enchanted.
     UNCOMMON = "uncommon"  # Yellow name, or aqua when enchanted.
     RARE = "rare"  # Aqua name, or light purple when enchanted.

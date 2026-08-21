@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::attribute::modifier::Flo
 Local link to file: generated_symbols/data/worldgen/attribute/modifier/FloatModifierType.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class FloatModifierType(Enum):
+class FloatModifierType(StrEnum):
     OVERRIDE = "override"
     ADD = "add"
     SUBTRACT = "subtract"

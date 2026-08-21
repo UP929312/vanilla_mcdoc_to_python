@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::world::block::test_instance_block::TestI
 Local link to file: generated_symbols/world/block/test_instance_block/TestInstanceBlockStatus.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class TestInstanceBlockStatus(Enum):
+class TestInstanceBlockStatus(StrEnum):
     CLEARED = "cleared"
     RUNNING = "running"
     FINISHED = "finished"

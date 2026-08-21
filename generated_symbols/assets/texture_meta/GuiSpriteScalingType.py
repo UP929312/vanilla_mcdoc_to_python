@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::assets::texture_meta::GuiSpriteScalingTy
 Local link to file: generated_symbols/assets/texture_meta/GuiSpriteScalingType.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class GuiSpriteScalingType(Enum):
+class GuiSpriteScalingType(StrEnum):
     STRETCH = "stretch"
     TILE = "tile"
     NINESLICE = "nine_slice"

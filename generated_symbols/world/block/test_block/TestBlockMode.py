@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::world::block::test_block::TestBlockMode
 Local link to file: generated_symbols/world/block/test_block/TestBlockMode.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class TestBlockMode(Enum):
+class TestBlockMode(StrEnum):
     START = "start"
     LOG = "log"
     FAIL = "fail"

@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::loot::function::BannerPattern
 Local link to file: generated_symbols/data/loot/function/BannerPattern.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class BannerPattern(Enum):
+class BannerPattern(StrEnum):
     BASE = "base"
     SQUAREBOTTOMLEFT = "square_bottom_left"
     SQUAREBOTTOM = "square_bottom_right"

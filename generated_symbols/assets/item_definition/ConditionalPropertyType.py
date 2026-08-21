@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::assets::item_definition::ConditionalProp
 Local link to file: generated_symbols/assets/item_definition/ConditionalPropertyType.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class ConditionalPropertyType(Enum):
+class ConditionalPropertyType(StrEnum):
     BROKEN = "broken"
     BUNDLEHASSELECTEDITEM = "bundle/has_selected_item"
     CARRIED = "carried"

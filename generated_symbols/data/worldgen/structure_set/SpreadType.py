@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::structure_set::SpreadTyp
 Local link to file: generated_symbols/data/worldgen/structure_set/SpreadType.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class SpreadType(Enum):
+class SpreadType(StrEnum):
     LINEAR = "linear"
     TRIANGULAR = "triangular"
 

@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::attribute::modifier::Col
 Local link to file: generated_symbols/data/worldgen/attribute/modifier/ColorModifierType.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class ColorModifierType(Enum):
+class ColorModifierType(StrEnum):
     OVERRIDE = "override"
     ADD = "add"
     SUBTRACT = "subtract"

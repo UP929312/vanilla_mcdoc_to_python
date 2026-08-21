@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::world::item::firework::ExplosionType
 Local link to file: generated_symbols/world/item/firework/ExplosionType.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import IntEnum
 
 
-class ExplosionType(Enum):
+class ExplosionType(IntEnum):
     SMALLBALL = 0
     LARGEBALL = 1
     STAR = 2

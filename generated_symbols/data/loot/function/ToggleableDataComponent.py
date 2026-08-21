@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::loot::function::ToggleableDataComp
 Local link to file: generated_symbols/data/loot/function/ToggleableDataComponent.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class ToggleableDataComponent(Enum):
+class ToggleableDataComponent(StrEnum):
     ATTRIBUTEMODIFIERS = "attribute_modifiers"
     CANBREAK = "can_break"
     CANPLACEON = "can_place_on"

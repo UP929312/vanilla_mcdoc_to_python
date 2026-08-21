@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::assets::item_definition::HangingSignAtta
 Local link to file: generated_symbols/assets/item_definition/HangingSignAttachment.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class HangingSignAttachment(Enum):
+class HangingSignAttachment(StrEnum):
     WALL = "wall"
     CEILING = "ceiling"
     CEILINGMIDDLE = "ceiling_middle"

@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::density_function::Tiling
 Local link to file: generated_symbols/data/worldgen/density_function/TilingMode.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class TilingMode(Enum):
+class TilingMode(StrEnum):
     CLAMPTOEDGE = "clamp_to_edge"
     REPEAT = "repeat"
     MIRROREDREPEAT = "mirrored_repeat"

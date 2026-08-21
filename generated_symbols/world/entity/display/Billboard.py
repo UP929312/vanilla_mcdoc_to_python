@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::world::entity::display::Billboard
 Local link to file: generated_symbols/world/entity/display/Billboard.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class Billboard(Enum):
+class Billboard(StrEnum):
     FIXED = "fixed"  # No rotation.
     VERTICAL = "vertical"  # Pivot around the vertical axis.
     HORIZONTAL = "horizontal"  # Pivot around the horizontal axis.

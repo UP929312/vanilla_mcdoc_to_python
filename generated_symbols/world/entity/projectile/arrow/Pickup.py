@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::world::entity::projectile::arrow::Pickup
 Local link to file: generated_symbols/world/entity/projectile/arrow/Pickup.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import IntEnum
 
 
-class Pickup(Enum):
+class Pickup(IntEnum):
     NONE = 0
     ANY = 1
     CREATIVE = 2

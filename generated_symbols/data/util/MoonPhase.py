@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::util::MoonPhase
 Local link to file: generated_symbols/data/util/MoonPhase.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class MoonPhase(Enum):
+class MoonPhase(StrEnum):
     FULLMOON = "full_moon"
     WANINGGIBBOUS = "waning_gibbous"
     THIRDQUARTER = "third_quarter"

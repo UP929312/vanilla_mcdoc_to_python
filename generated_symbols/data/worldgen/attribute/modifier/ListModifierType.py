@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::attribute::modifier::Lis
 Local link to file: generated_symbols/data/worldgen/attribute/modifier/ListModifierType.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class ListModifierType(Enum):
+class ListModifierType(StrEnum):
     OVERRIDE = "override"
     APPEND = "append"
 

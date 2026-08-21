@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::world::component::entity::MooshroomType
 Local link to file: generated_symbols/world/component/entity/MooshroomType.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class MooshroomType(Enum):
+class MooshroomType(StrEnum):
     RED = "red"
     BROWN = "brown"
 

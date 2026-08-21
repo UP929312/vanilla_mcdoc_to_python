@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::assets::item_definition::HeadType
 Local link to file: generated_symbols/assets/item_definition/HeadType.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class HeadType(Enum):
+class HeadType(StrEnum):
     CREEPER = "creeper"
     DRAGON = "dragon"
     PIGLIN = "piglin"

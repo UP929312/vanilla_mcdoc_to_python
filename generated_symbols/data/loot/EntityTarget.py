@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::loot::EntityTarget
 Local link to file: generated_symbols/data/loot/EntityTarget.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class EntityTarget(Enum):
+class EntityTarget(StrEnum):
     THIS = "this"
     KILLER = "killer"
     ATTACKER = "attacker"

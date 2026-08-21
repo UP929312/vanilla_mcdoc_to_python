@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::world::component::entity::HorseVariant
 Local link to file: generated_symbols/world/component/entity/HorseVariant.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class HorseVariant(Enum):
+class HorseVariant(StrEnum):
     WHITE = "white"
     CREAMY = "creamy"
     CHESTNUT = "chestnut"

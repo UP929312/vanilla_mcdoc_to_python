@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::world::entity::mob::breedable::horse::Ho
 Local link to file: generated_symbols/world/entity/mob/breedable/horse/HorseVariantAndMarkings.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import IntEnum
 
 
-class HorseVariantAndMarkings(Enum):
+class HorseVariantAndMarkings(IntEnum):
     WHITE = 0
     CREAMY = 1
     CHESTNUT = 2

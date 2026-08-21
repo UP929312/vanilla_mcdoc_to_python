@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::world::entity::mob::player::PlayerEquipm
 Local link to file: generated_symbols/world/entity/mob/player/PlayerEquipmentSlot.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class PlayerEquipmentSlot(Enum):
+class PlayerEquipmentSlot(StrEnum):
     OFFHAND = "offhand"
     HEAD = "head"
     CHEST = "chest"

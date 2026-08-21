@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::assets::item_definition::BannerAttachmen
 Local link to file: generated_symbols/assets/item_definition/BannerAttachment.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class BannerAttachment(Enum):
+class BannerAttachment(StrEnum):
     WALL = "wall"
     GROUND = "ground"
 

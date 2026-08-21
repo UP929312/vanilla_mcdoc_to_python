@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::util::direction::VerticalDirection
 Local link to file: generated_symbols/util/direction/VerticalDirection.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class VerticalDirection(Enum):
+class VerticalDirection(StrEnum):
     DOWN = "down"
     UP = "up"
 

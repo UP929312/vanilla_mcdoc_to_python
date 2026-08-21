@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::util::attribute::AttributeName
 Local link to file: generated_symbols/util/attribute/AttributeName.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class AttributeName(Enum):
+class AttributeName(StrEnum):
     MAXHEALTH = "generic.maxHealth"
     FOLLOWRANGE = "generic.followRange"
     KNOCKBACKRESISTANCE = "generic.knockbackResistance"

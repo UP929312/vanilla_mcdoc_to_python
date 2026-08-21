@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::advancement::predicate::SalmonVari
 Local link to file: generated_symbols/data/advancement/predicate/SalmonVariant.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class SalmonVariant(Enum):
+class SalmonVariant(StrEnum):
     SMALL = "small"
     MEDIUM = "medium"
     LARGE = "large"

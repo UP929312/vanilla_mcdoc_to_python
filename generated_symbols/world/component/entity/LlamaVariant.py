@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::world::component::entity::LlamaVariant
 Local link to file: generated_symbols/world/component/entity/LlamaVariant.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class LlamaVariant(Enum):
+class LlamaVariant(StrEnum):
     CREAMY = "creamy"
     WHITE = "white"
     BROWN = "brown"

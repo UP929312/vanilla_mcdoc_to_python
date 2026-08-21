@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::loot::function::ApplyBonusFormula
 Local link to file: generated_symbols/data/loot/function/ApplyBonusFormula.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class ApplyBonusFormula(Enum):
+class ApplyBonusFormula(StrEnum):
     OREDROPS = "ore_drops"
     UNIFORMBONUSCOUNT = "uniform_bonus_count"
     BINOMIALWITHBONUSCOUNT = "binomial_with_bonus_count"

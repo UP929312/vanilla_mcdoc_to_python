@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::assets::item_definition::SelectPropertyT
 Local link to file: generated_symbols/assets/item_definition/SelectPropertyType.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class SelectPropertyType(Enum):
+class SelectPropertyType(StrEnum):
     BLOCKSTATE = "block_state"
     CHARGETYPE = "charge_type"
     COMPONENT = "component"

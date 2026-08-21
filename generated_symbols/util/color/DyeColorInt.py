@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::util::color::DyeColorInt
 Local link to file: generated_symbols/util/color/DyeColorInt.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import IntEnum
 
 
-class DyeColorInt(Enum):
+class DyeColorInt(IntEnum):
     WHITE = 0
     ORANGE = 1
     MAGENTA = 2

@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::dimension::SkyboxType
 Local link to file: generated_symbols/data/worldgen/dimension/SkyboxType.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class SkyboxType(Enum):
+class SkyboxType(StrEnum):
     NONE = "none"
     OVERWORLD = "overworld"
     END = "end"

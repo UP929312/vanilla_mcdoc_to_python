@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::util::direction::DirectionInt
 Local link to file: generated_symbols/util/direction/DirectionInt.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import IntEnum
 
 
-class DirectionInt(Enum):
+class DirectionInt(IntEnum):
     DOWN = 0
     UP = 1
     NORTH = 2

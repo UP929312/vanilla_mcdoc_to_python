@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::damage_type::DamageEffects
 Local link to file: generated_symbols/data/damage_type/DamageEffects.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class DamageEffects(Enum):
+class DamageEffects(StrEnum):
     HURT = "hurt"  # Default hurt sound.
     THORNS = "thorns"  # Thorns hurt sound.
     DROWNING = "drowning"  # Drowing sound.

@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::dimension::DimensionType
 Local link to file: generated_symbols/data/worldgen/dimension/DimensionTypeEffects.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class DimensionTypeEffects(Enum):
+class DimensionTypeEffects(StrEnum):
     OVERWORLD = "overworld"
     THENETHER = "the_nether"
     THEEND = "the_end"

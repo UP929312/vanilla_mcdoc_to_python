@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::world::entity::mob::breedable::horse::Ll
 Local link to file: generated_symbols/world/entity/mob/breedable/horse/LlamaVariantInt.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import IntEnum
 
 
-class LlamaVariantInt(Enum):
+class LlamaVariantInt(IntEnum):
     CREAMY = 0
     WHITE = 1
     BROWN = 2

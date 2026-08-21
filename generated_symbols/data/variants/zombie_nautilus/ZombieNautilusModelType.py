@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::variants::zombie_nautilus::ZombieN
 Local link to file: generated_symbols/data/variants/zombie_nautilus/ZombieNautilusModelType.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class ZombieNautilusModelType(Enum):
+class ZombieNautilusModelType(StrEnum):
     NORMAL = "normal"
     WARM = "warm"
 

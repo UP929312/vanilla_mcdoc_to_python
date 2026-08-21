@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::attribute::modifier::Boo
 Local link to file: generated_symbols/data/worldgen/attribute/modifier/BooleanModifierType.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class BooleanModifierType(Enum):
+class BooleanModifierType(StrEnum):
     OVERRIDE = "override"
     AND = "and"
     NAND = "nand"

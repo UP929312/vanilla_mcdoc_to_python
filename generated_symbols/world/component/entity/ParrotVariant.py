@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::world::component::entity::ParrotVariant
 Local link to file: generated_symbols/world/component/entity/ParrotVariant.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class ParrotVariant(Enum):
+class ParrotVariant(StrEnum):
     REDBLUE = "red_blue"
     BLUE = "blue"
     GREEN = "green"

@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::advancement::Trigger
 Local link to file: generated_symbols/data/advancement/Trigger.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class Trigger(Enum):
+class Trigger(StrEnum):
     ALLAYDROPITEMONBLOCK = "allay_drop_item_on_block"
     AVOIDVIBRATION = "avoid_vibration"
     BEENESTDESTROYED = "bee_nest_destroyed"

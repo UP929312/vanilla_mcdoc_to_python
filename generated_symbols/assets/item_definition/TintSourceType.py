@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::assets::item_definition::TintSourceType
 Local link to file: generated_symbols/assets/item_definition/TintSourceType.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class TintSourceType(Enum):
+class TintSourceType(StrEnum):
     CONSTANT = "constant"
     CUSTOMMODELDATA = "custom_model_data"
     DYE = "dye"

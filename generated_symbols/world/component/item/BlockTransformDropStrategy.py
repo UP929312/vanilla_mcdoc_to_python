@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::world::component::item::BlockTransformDr
 Local link to file: generated_symbols/world/component/item/BlockTransformDropStrategy.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class BlockTransformDropStrategy(Enum):
+class BlockTransformDropStrategy(StrEnum):
     CLICKEDFACE = "clicked_face"
     FROMMIDDLE = "from_middle"
 

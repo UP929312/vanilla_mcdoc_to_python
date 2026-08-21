@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::loot::function::CopyNameSource
 Local link to file: generated_symbols/data/loot/function/CopyNameSource.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class CopyNameSource(Enum):
+class CopyNameSource(StrEnum):
     THIS = "this"
     KILLER = "killer"
     ATTACKINGENTITY = "attacking_entity"

@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::dimension::biome_source:
 Local link to file: generated_symbols/data/worldgen/dimension/biome_source/MultiNoisePreset.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class MultiNoisePreset(Enum):
+class MultiNoisePreset(StrEnum):
     NETHER = "nether"
     OVERWORLD = "overworld"
 

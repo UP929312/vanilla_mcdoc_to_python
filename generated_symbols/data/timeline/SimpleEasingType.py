@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::timeline::SimpleEasingType
 Local link to file: generated_symbols/data/timeline/SimpleEasingType.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class SimpleEasingType(Enum):
+class SimpleEasingType(StrEnum):
     CONSTANT = "constant"
     LINEAR = "linear"
     INBACK = "in_back"

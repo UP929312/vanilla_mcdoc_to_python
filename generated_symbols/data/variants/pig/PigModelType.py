@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::variants::pig::PigModelType
 Local link to file: generated_symbols/data/variants/pig/PigModelType.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class PigModelType(Enum):
+class PigModelType(StrEnum):
     NORMAL = "normal"
     COLD = "cold"
 

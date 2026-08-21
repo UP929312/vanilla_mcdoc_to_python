@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::loot::LootFunctionType
 Local link to file: generated_symbols/data/loot/LootFunctionType.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class LootFunctionType(Enum):
+class LootFunctionType(StrEnum):
     APPLYBONUS = "apply_bonus"
     COPYNAME = "copy_name"
     COPYNBT = "copy_nbt"

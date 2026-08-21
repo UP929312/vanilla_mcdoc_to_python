@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::world::entity::mob::mannequin::Mannequin
 Local link to file: generated_symbols/world/entity/mob/mannequin/MannequinPose.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class MannequinPose(Enum):
+class MannequinPose(StrEnum):
     STANDING = "standing"
     CROUCHING = "crouching"
     SWIMMING = "swimming"

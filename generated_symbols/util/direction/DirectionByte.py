@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::util::direction::DirectionByte
 Local link to file: generated_symbols/util/direction/DirectionByte.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import IntEnum
 
 
-class DirectionByte(Enum):
+class DirectionByte(IntEnum):
     DOWN = 0
     UP = 1
     NORTH = 2

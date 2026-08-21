@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::world::item::HideFlags
 Local link to file: generated_symbols/world/item/HideFlags.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import IntEnum
 
 
-class HideFlags(Enum):
+class HideFlags(IntEnum):
     ENCHANTMENTS = 1
     ATTRIBUTEMODIFIERS = 2
     UNBREAKABLE = 3

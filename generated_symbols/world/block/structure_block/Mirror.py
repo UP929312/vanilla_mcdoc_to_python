@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::world::block::structure_block::Mirror
 Local link to file: generated_symbols/world/block/structure_block/Mirror.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class Mirror(Enum):
+class Mirror(StrEnum):
     NONE = "NONE"
     LEFTRIGHT = "LEFT_RIGHT"
     FRONTBACK = "FRONT_BACK"

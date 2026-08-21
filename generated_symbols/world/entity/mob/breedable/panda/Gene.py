@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::world::entity::mob::breedable::panda::Ge
 Local link to file: generated_symbols/world/entity/mob/breedable/panda/Gene.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class Gene(Enum):
+class Gene(StrEnum):
     NORMAL = "normal"  # (dominant)
     LAZY = "lazy"  # (dominant)
     WORRIED = "worried"  # (dominant)

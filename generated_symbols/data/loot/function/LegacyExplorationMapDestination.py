@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::loot::function::LegacyExplorationM
 Local link to file: generated_symbols/data/loot/function/LegacyExplorationMapDestination.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class LegacyExplorationMapDestination(Enum):
+class LegacyExplorationMapDestination(StrEnum):
     PILLAGEROUTPOST = "pillager_outpost"
     MINESHAFT = "mineshaft"
     MANSHION = "manshion"

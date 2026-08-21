@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::world::entity::mob::copper_golem::Weathe
 Local link to file: generated_symbols/world/entity/mob/copper_golem/WeatherState.py
 """
 # ~~~ CODE ~~~
-from enum import Enum
+from enum import StrEnum
 
 
-class WeatherState(Enum):
+class WeatherState(StrEnum):
     UNAFFECTED = "unaffected"
     EXPOSED = "exposed"
     WEATHERED = "weathered"
