@@ -354,8 +354,9 @@ class EnumSchema(BaseSchema):
     values: list[EnumValue]
 
     def to_python_code(self, class_name: str, ctx: SingleSymbolContext) -> list[str]:
-        ctx.required_imports.add(Import("enum", "Enum", False, True))
-        return [f"class {class_name}(Enum):"] + [
+        enum_kind = f"StrEnum" if self.enum_kind == "string" else "IntEnum"
+        ctx.required_imports.add(Import("enum", enum_kind, False, True))
+        return [f"class {class_name}({enum_kind}):"] + [
             f"    {value.identifier.upper()} = {value.to_annotation()}{value.description_comment_or_empty}"
             for value in self.values
         ]
