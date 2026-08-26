@@ -1,3 +1,4 @@
+import dataclasses
 import json
 from typing import Any, TYPE_CHECKING
 from pathlib import Path
@@ -100,6 +101,32 @@ def iter_child_schemas(value: object) -> Generator[BaseSchema]:
     elif isinstance(value, list):
         for item in value:
             yield from iter_child_schemas(item)
+
+
+def to_json(obj: object) -> str:
+    """Converts an object to a JSON string, handling special cases for certain types.
+    Also removes None values recursively from dataclasses, dictionaries and lists."""
+    return json.dumps(_convert(obj))
+
+
+def _convert(value: object) -> object:
+    """Gets everything into a JSON serializable format, recursively removing None values."""
+    if dataclasses.is_dataclass(value) and not isinstance(value, type):
+        return _convert(dataclasses.asdict(value))
+    if isinstance(value, dict):
+        return {k: _convert(v) for k, v in value.items() if v is not None}
+    if isinstance(value, (list, tuple)):
+        return [_convert(item) for item in value if item is not None]
+    return value
+
+
+def recursively_remove_none(value: object) -> object:
+    if isinstance(value, dict):
+        return {k: recursively_remove_none(v) for k, v in value.items() if v is not None}
+    elif isinstance(value, list):
+        return [recursively_remove_none(item) for item in value if item is not None]
+    else:
+        return value
 
 
 def resource_path_to_python_path(resource_path: str) -> str:
