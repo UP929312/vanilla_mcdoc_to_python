@@ -9,6 +9,7 @@ from typing import TYPE_CHECKING, Annotated, ClassVar, Literal
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
+    from generated_symbols.data.worldgen.density_function.DensityFunctionRef import DensityFunctionRef
     from generated_symbols.data.worldgen.material_condition.MaterialConditionRef import MaterialConditionRef
     from generated_symbols.data.worldgen.material_rule.MaterialRuleRef import MaterialRuleRef
     from generated_symbols.util.block_state.BlockState import BlockState
@@ -35,12 +36,24 @@ class MaterialRuleCondition:
 
 
 @dataclass(kw_only=True)
+class MaterialRuleOreVein:
+    type: Literal['minecraft:ore_vein']
+    ore_block: BlockState
+    raw_ore_block: BlockState
+    filler_block: BlockState
+    raw_ore_chance: Annotated[float, 'Range | `0`-`1` | both inclusive']
+    density: DensityFunctionRef
+    richness: DensityFunctionRef
+    filler_gap: DensityFunctionRef
+
+
+@dataclass(kw_only=True)
 class MaterialRuleSequence:
     type: Literal['minecraft:sequence']
     sequence: list[MaterialRuleRef]
 
 
-type MaterialRule = MaterialRuleUnknown | MaterialRuleBlock | MaterialRuleCondition | MaterialRuleSequence
+type MaterialRule = MaterialRuleUnknown | MaterialRuleBlock | MaterialRuleCondition | MaterialRuleOreVein | MaterialRuleSequence
 
 
 # ~~~ MODEL DUMP ~~~

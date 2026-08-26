@@ -1,6 +1,6 @@
 """
-Generated from symbols.json for ::java::world::component::item::BlockTransformType
-Local link to file: generated_symbols/world/component/item/BlockTransformType.py
+Generated from symbols.json for ::java::data::block_transformer::BlockTransformType
+Local link to file: generated_symbols/data/block_transformer/BlockTransformType.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum
@@ -13,7 +13,7 @@ class BlockTransformType(StrEnum):
 
 # ~~~ MODEL DUMP ~~~
 _ = {
-    "::java::world::component::item::BlockTransformType": {
+    "::java::data::block_transformer::BlockTransformType": {
         "kind": "enum",
         "enumKind": "string",
         "values": [

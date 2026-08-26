@@ -52,15 +52,7 @@ class BiomeSourceTheEnd:
     type: Literal['minecraft:the_end']
 
 
-@dataclass(kw_only=True)
-class BiomeSourceVanillaLayered:
-    type: Literal['minecraft:vanilla_layered']
-    seed: int
-    large_biomes: bool | None = None
-    legacy_biome_init_layer: bool | None = None
-
-
-type BiomeSource = BiomeSourceCheckerboard | BiomeSourceFixed | BiomeSourceMultiNoise | BiomeSourceTheEnd | BiomeSourceVanillaLayered
+type BiomeSource = BiomeSourceCheckerboard | BiomeSourceFixed | BiomeSourceMultiNoise | BiomeSourceTheEnd
 
 
 # ~~~ MODEL DUMP ~~~

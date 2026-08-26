@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/slot_source/GroupSlotSource.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, ClassVar
 
 if TYPE_CHECKING:
     from generated_symbols.data.slot_source.SlotSource import SlotSource
@@ -12,6 +12,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class GroupSlotSource:
+    __resource_dir__: ClassVar[str] = 'slot_source'
+
     terms: SlotSource
 
 

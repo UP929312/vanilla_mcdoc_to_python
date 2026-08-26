@@ -71,12 +71,6 @@ class LocationBasedEffectDamageEntity:
 
 
 @dataclass(kw_only=True)
-class LocationBasedEffectDamageItem:
-    type: Literal['minecraft:damage_item']
-    amount: LevelBasedValue  # Damage to apply to the enchanted item. The damage is not applied to items held by players in creative mode.
-
-
-@dataclass(kw_only=True)
 class LocationBasedEffectExplode:
     type: Literal['minecraft:explode']
     attribute_to_user: bool | None = None  # Whether the explosion should be attributed to the user of the enchanted tool.
@@ -156,7 +150,7 @@ class LocationBasedEffectSummonEntity:
     join_team: bool | None = None  # Whether the summoned entity should join the team of the owner of the Enchanted Item.
 
 
-type LocationBasedEffect = LocationBasedEffectAllOf | LocationBasedEffectApplyExhaustion | LocationBasedEffectApplyImpulse | LocationBasedEffectApplyMobEffect | LocationBasedEffectChangeItemDamage | LocationBasedEffectDamageEntity | LocationBasedEffectDamageItem | LocationBasedEffectExplode | LocationBasedEffectIgnite | LocationBasedEffectPlaySound | LocationBasedEffectReplaceBlock | LocationBasedEffectReplaceDisk | LocationBasedEffectRunFunction | LocationBasedEffectSetBlockProperties | LocationBasedEffectSpawnParticles | LocationBasedEffectSummonEntity
+type LocationBasedEffect = LocationBasedEffectAllOf | LocationBasedEffectApplyExhaustion | LocationBasedEffectApplyImpulse | LocationBasedEffectApplyMobEffect | LocationBasedEffectChangeItemDamage | LocationBasedEffectDamageEntity | LocationBasedEffectExplode | LocationBasedEffectIgnite | LocationBasedEffectPlaySound | LocationBasedEffectReplaceBlock | LocationBasedEffectReplaceDisk | LocationBasedEffectRunFunction | LocationBasedEffectSetBlockProperties | LocationBasedEffectSpawnParticles | LocationBasedEffectSummonEntity
 
 
 # ~~~ MODEL DUMP ~~~

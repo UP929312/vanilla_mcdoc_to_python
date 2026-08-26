@@ -24,14 +24,6 @@ class GlyphProviderBitmap:
 
 
 @dataclass(kw_only=True)
-class GlyphProviderLegacyUnicode:
-    type: Literal['minecraft:legacy_unicode']
-    filter: dict[FontOption, bool] | None = None
-    sizes: str
-    template: str
-
-
-@dataclass(kw_only=True)
 class GlyphProviderReference:
     type: Literal['minecraft:reference']
     filter: dict[FontOption, bool] | None = None
@@ -64,7 +56,7 @@ class GlyphProviderUnihex:
     size_overrides: list[UnihexOverrideRange] | None = None  # List of ranges to override the size of.
 
 
-type GlyphProvider = GlyphProviderBitmap | GlyphProviderLegacyUnicode | GlyphProviderReference | GlyphProviderSpace | GlyphProviderTtf | GlyphProviderUnihex
+type GlyphProvider = GlyphProviderBitmap | GlyphProviderReference | GlyphProviderSpace | GlyphProviderTtf | GlyphProviderUnihex
 
 
 # ~~~ MODEL DUMP ~~~

@@ -8,9 +8,7 @@ from enum import StrEnum
 
 class CopyNameSource(StrEnum):
     THIS = "this"
-    KILLER = "killer"
     ATTACKINGENTITY = "attacking_entity"
-    KILLERPLAYER = "killer_player"
     LASTDAMAGEPLAYER = "last_damage_player"
     BLOCKENTITY = "block_entity"
 

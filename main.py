@@ -48,7 +48,7 @@ HANDY_LINKS = [
     r"generated_symbols\assets\credits\Credits.py",  # Needs to make it's own Structs (list does)
     r"generated_symbols\data\advancement\predicate\BlockPredicate.py",  # str | Dispatcher (resolves to Any)
     r"generated_symbols\data\advancement\Advancement.py",  # Super weird attributes.
-    r"",  # 
+    r"generated_symbols\data\advancement\predicate\BlockPredicateState.py",  # Complicated Key (for now we do Annotated, need to smarten this up.)
 ]
 
 # Would be nice to have a wrapper type for the registry references

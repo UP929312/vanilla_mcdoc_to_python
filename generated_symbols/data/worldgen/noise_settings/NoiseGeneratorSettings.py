@@ -9,9 +9,9 @@ from typing import TYPE_CHECKING, ClassVar
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.material_rule.MaterialRuleRef import MaterialRuleRef
     from generated_symbols.data.worldgen.noise_settings.Aquifer import Aquifer
+    from generated_symbols.data.worldgen.noise_settings.DebugFunctionEntry import DebugFunctionEntry
     from generated_symbols.data.worldgen.noise_settings.NoiseRouter import NoiseRouter
     from generated_symbols.data.worldgen.noise_settings.NoiseSettings import NoiseSettings
-    from generated_symbols.data.worldgen.noise_settings.OreVeinifier import OreVeinifier
     from generated_symbols.data.worldgen.noise_settings.SpawnTargetPoint import SpawnTargetPoint
     from generated_symbols.util.block_state.BlockState import BlockState
 
@@ -25,12 +25,12 @@ class NoiseGeneratorSettings:
     sea_level: int
     disable_mob_generation: bool  # If true, mobs will not spawn during generation.
     aquifers: Aquifer | None = None
-    ore_veins: list[OreVeinifier] | None = None
     legacy_random_source: bool
     noise: NoiseSettings
     noise_router: NoiseRouter
     spawn_target: list[SpawnTargetPoint]
     material_rule: MaterialRuleRef
+    debug_functions: list[DebugFunctionEntry] | None = None
 
 
 # ~~~ MODEL DUMP ~~~
@@ -379,30 +379,6 @@ _ = {
                             "kind": "literal",
                             "value": {
                                 "kind": "string",
-                                "value": "26.3"
-                            }
-                        }
-                    }
-                ],
-                "key": "ore_veins",
-                "type": {
-                    "kind": "list",
-                    "item": {
-                        "kind": "reference",
-                        "path": "::java::data::worldgen::noise_settings::OreVeinifier"
-                    }
-                },
-                "optional": True
-            },
-            {
-                "kind": "pair",
-                "attributes": [
-                    {
-                        "name": "since",
-                        "value": {
-                            "kind": "literal",
-                            "value": {
-                                "kind": "string",
                                 "value": "1.18"
                             }
                         }
@@ -569,6 +545,30 @@ _ = {
                     "kind": "reference",
                     "path": "::java::data::worldgen::noise_settings::StructureSettings"
                 }
+            },
+            {
+                "kind": "pair",
+                "attributes": [
+                    {
+                        "name": "since",
+                        "value": {
+                            "kind": "literal",
+                            "value": {
+                                "kind": "string",
+                                "value": "26.3"
+                            }
+                        }
+                    }
+                ],
+                "key": "debug_functions",
+                "type": {
+                    "kind": "list",
+                    "item": {
+                        "kind": "reference",
+                        "path": "::java::data::worldgen::noise_settings::DebugFunctionEntry"
+                    }
+                },
+                "optional": True
             }
         ]
     }

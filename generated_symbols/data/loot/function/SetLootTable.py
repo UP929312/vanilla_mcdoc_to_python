@@ -12,8 +12,7 @@ from minecraft_registry import IdSpec
 
 @dataclass(kw_only=True)
 class SetLootTable(Conditions):
-    type: Annotated[str, IdSpec(registry='block_entity_type')]  # The block entity type of the container.
-    tag: Annotated[str, IdSpec(registry='loot_table')]  # The loot table to set to the container block item.
+    loot_table_id: Annotated[str, IdSpec(registry='loot_table')]  # The loot table to set to the container block item.
     seed: int | None = None  # The container seed to use. Defaults to a random seed.
 
 
@@ -23,7 +22,7 @@ _ = {
         "kind": "struct",
         "fields": [
             {
-                "kind": "pair",
+                "kind": "spread",
                 "attributes": [
                     {
                         "name": "since",
@@ -34,21 +33,89 @@ _ = {
                                 "value": "1.18"
                             }
                         }
+                    },
+                    {
+                        "name": "until",
+                        "value": {
+                            "kind": "literal",
+                            "value": {
+                                "kind": "string",
+                                "value": "1.20.5"
+                            }
+                        }
                     }
                 ],
-                "desc": "The block entity type of the container.",
-                "key": "type",
                 "type": {
-                    "kind": "string",
-                    "attributes": [
+                    "kind": "struct",
+                    "fields": [
                         {
-                            "name": "id",
+                            "kind": "pair",
+                            "desc": "The block entity type of the container.",
+                            "key": "type",
+                            "type": {
+                                "kind": "string",
+                                "attributes": [
+                                    {
+                                        "name": "id",
+                                        "value": {
+                                            "kind": "literal",
+                                            "value": {
+                                                "kind": "string",
+                                                "value": "block_entity_type"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "kind": "spread",
+                "attributes": [
+                    {
+                        "name": "since",
+                        "value": {
+                            "kind": "literal",
                             "value": {
-                                "kind": "literal",
-                                "value": {
-                                    "kind": "string",
-                                    "value": "block_entity_type"
-                                }
+                                "kind": "string",
+                                "value": "1.20.5"
+                            }
+                        }
+                    },
+                    {
+                        "name": "until",
+                        "value": {
+                            "kind": "literal",
+                            "value": {
+                                "kind": "string",
+                                "value": "26.3"
+                            }
+                        }
+                    }
+                ],
+                "type": {
+                    "kind": "struct",
+                    "fields": [
+                        {
+                            "kind": "pair",
+                            "desc": "A block entity type. Unused by the game. \\\nThe shortest word you can use is `bed` before 26.2, or `bell` in 26.2.",
+                            "key": "type",
+                            "type": {
+                                "kind": "string",
+                                "attributes": [
+                                    {
+                                        "name": "id",
+                                        "value": {
+                                            "kind": "literal",
+                                            "value": {
+                                                "kind": "string",
+                                                "value": "block_entity_type"
+                                            }
+                                        }
+                                    }
+                                ]
                             }
                         }
                     ]
@@ -101,7 +168,7 @@ _ = {
                     }
                 ],
                 "desc": "The loot table to set to the container block item.",
-                "key": "tag",
+                "key": "loot_table_id",
                 "type": {
                     "kind": "string",
                     "attributes": [

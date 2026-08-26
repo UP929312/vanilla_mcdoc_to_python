@@ -49,12 +49,6 @@ class TestEnvironmentGameRules:
 
 
 @dataclass(kw_only=True)
-class TestEnvironmentTimeOfDay:
-    type: Literal['minecraft:time_of_day']
-    time: Annotated[int, 'Range | Min `0` and above | inclusive']
-
-
-@dataclass(kw_only=True)
 class TestEnvironmentTimelineAttributes:
     type: Literal['minecraft:timeline_attributes']
     timelines: list[Annotated[str, IdSpec(registry='timeline')]]
@@ -66,7 +60,7 @@ class TestEnvironmentWeather:
     weather: Weather
 
 
-type TestEnvironment = TestEnvironmentAllOf | TestEnvironmentClockTime | TestEnvironmentDifficulty | TestEnvironmentFunction | TestEnvironmentGameRules | TestEnvironmentTimeOfDay | TestEnvironmentTimelineAttributes | TestEnvironmentWeather
+type TestEnvironment = TestEnvironmentAllOf | TestEnvironmentClockTime | TestEnvironmentDifficulty | TestEnvironmentFunction | TestEnvironmentGameRules | TestEnvironmentTimelineAttributes | TestEnvironmentWeather
 
 
 # ~~~ MODEL DUMP ~~~

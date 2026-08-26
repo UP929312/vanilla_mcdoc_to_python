@@ -35,6 +35,9 @@ class LootContextParamSets(StrEnum):
     VILLAGERTRADE = "villager_trade"
     COMMANDSLOTSOURCE = "command_slot_source"
     CONTAINERPROCESS = "container_process"
+    COMMANDCOMPUTEDEFAULT = "command_compute_default"
+    COMMANDCOMPUTEPOSITION = "command_compute_position"
+    COMMANDCOMPUTEENTITY = "command_compute_entity"
 
 
 # ~~~ MODEL DUMP ~~~
@@ -346,6 +349,54 @@ _ = {
                 ],
                 "identifier": "ContainerProcess",
                 "value": "container_process"
+            },
+            {
+                "attributes": [
+                    {
+                        "name": "since",
+                        "value": {
+                            "kind": "literal",
+                            "value": {
+                                "kind": "string",
+                                "value": "26.3"
+                            }
+                        }
+                    }
+                ],
+                "identifier": "CommandComputeDefault",
+                "value": "command_compute_default"
+            },
+            {
+                "attributes": [
+                    {
+                        "name": "since",
+                        "value": {
+                            "kind": "literal",
+                            "value": {
+                                "kind": "string",
+                                "value": "26.3"
+                            }
+                        }
+                    }
+                ],
+                "identifier": "CommandComputePosition",
+                "value": "command_compute_position"
+            },
+            {
+                "attributes": [
+                    {
+                        "name": "since",
+                        "value": {
+                            "kind": "literal",
+                            "value": {
+                                "kind": "string",
+                                "value": "26.3"
+                            }
+                        }
+                    }
+                ],
+                "identifier": "CommandComputeEntity",
+                "value": "command_compute_entity"
             }
         ]
     }

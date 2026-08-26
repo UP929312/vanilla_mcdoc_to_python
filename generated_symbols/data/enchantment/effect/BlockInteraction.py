@@ -8,11 +8,8 @@ from enum import StrEnum
 
 class BlockInteraction(StrEnum):
     NONE = "none"  # No item drops or special behavior.
-    BLOCKOLDDOC = "block"  # Drops items as if a block caused the explosion; `blockExplosionDropDecay` game rule applies.
     BLOCK = "block"  # Drops items as if a block caused the explosion; `block_explosion_drop_decay` game rule applies.
-    MOBOLDDOC = "mob"  # Drops items as if a mob caused the explosion; `mobExplosionDropDecay` game rule applies.
     MOB = "mob"  # Drops items as if a mob caused the explosion; `mob_explosion_drop_decay` game rule applies.
-    TNTOLDDOC = "tnt"  # Drops items as if TNT caused the explosion; `tntExplosionDropDecay` game rule applies.
     TNT = "tnt"  # Drops items as if TNT caused the explosion; `tnt_explosion_drop_decay` game rule applies.
     TRIGGER = "trigger"  # Triggers redstone-activated blocks.
 

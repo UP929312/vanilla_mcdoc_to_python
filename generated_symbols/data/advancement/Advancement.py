@@ -12,14 +12,15 @@ if TYPE_CHECKING:
     from generated_symbols.data.advancement.AdvancementCriterion import AdvancementCriterion
     from generated_symbols.data.advancement.AdvancementDisplay import AdvancementDisplay
     from generated_symbols.data.advancement.AdvancementRewards import AdvancementRewards
+    from generated_symbols.data.advancement.RootAdvancementDisplay import RootAdvancementDisplay
 
 
 @dataclass(kw_only=True)
 class Advancement:
     __resource_dir__: ClassVar[str] = 'advancement'
 
-    display: AdvancementDisplay | None = None  # If present, advancement will be visible in the advancement tabs.
     parent: Annotated[str, IdSpec(registry='advancement')] | None = None  # If this field is absent, this advancement is a root advancement. Circular references cause a loading failure.
+    display: RootAdvancementDisplay | AdvancementDisplay | None = None  # If present, advancement will be visible in the advancement tabs.
     criteria: dict[str, AdvancementCriterion]  # If `requirements` is not defined, all defined criteria will be required.
     requirements: Annotated[list[Annotated[list[str], 'Length = 1 (inclusive) and above']], 'Length = 1 (inclusive) and above'] | None = None  # If all criteria are required at once, this may be omitted.  Contains all of the `criteria` keys.  If all of the lists each have at least one criteria met, the advancement is complete (basically AND grouping of OR groups).
     rewards: AdvancementRewards | None = None  # Provided to the player when this advancement is obtained.
@@ -31,16 +32,6 @@ _ = {
     "::java::data::advancement::Advancement": {
         "kind": "struct",
         "fields": [
-            {
-                "kind": "pair",
-                "desc": "If present, advancement will be visible in the advancement tabs.",
-                "key": "display",
-                "type": {
-                    "kind": "reference",
-                    "path": "::java::data::advancement::AdvancementDisplay"
-                },
-                "optional": True
-            },
             {
                 "kind": "pair",
                 "desc": "If this field is absent, this advancement is a root advancement.\nCircular references cause a loading failure.",
@@ -59,6 +50,24 @@ _ = {
                             }
                         }
                     ]
+                },
+                "optional": True
+            },
+            {
+                "kind": "pair",
+                "desc": "If present, advancement will be visible in the advancement tabs.",
+                "key": "display",
+                "type": {
+                    "kind": "dispatcher",
+                    "parallelIndices": [
+                        {
+                            "kind": "dynamic",
+                            "accessor": [
+                                "parent"
+                            ]
+                        }
+                    ],
+                    "registry": "mcdoc:advancement_display"
                 },
                 "optional": True
             },

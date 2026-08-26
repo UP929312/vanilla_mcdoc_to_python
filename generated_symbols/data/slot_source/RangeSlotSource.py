@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/slot_source/RangeSlotSource.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Literal
+from typing import TYPE_CHECKING, ClassVar, Literal
 
 if TYPE_CHECKING:
     from generated_symbols.data.loot.BlockEntityTarget import BlockEntityTarget
@@ -13,6 +13,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class RangeSlotSource:
+    __resource_dir__: ClassVar[str] = 'slot_source'
+
     source: EntityTarget | BlockEntityTarget | Literal['container'] | None = None  # Defaults to `container`.
     slots: str
 

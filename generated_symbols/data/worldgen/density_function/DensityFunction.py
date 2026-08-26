@@ -6,7 +6,7 @@ Local link to file: generated_symbols/data/worldgen/density_function/DensityFunc
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar, Literal
 
-from generated_symbols.data.worldgen.density_function.Noise import Noise
+from generated_symbols.data.worldgen.density_function.OneArgument import OneArgument
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
@@ -15,8 +15,6 @@ if TYPE_CHECKING:
     from generated_symbols.data.worldgen.density_function.DistanceMetric import DistanceMetric
     from generated_symbols.data.worldgen.density_function.NoiseParametersRef import NoiseParametersRef
     from generated_symbols.data.worldgen.density_function.NoiseRange import NoiseRange
-    from generated_symbols.data.worldgen.density_function.RarityType import RarityType
-    from generated_symbols.data.worldgen.density_function.SplineType import SplineType
     from generated_symbols.data.worldgen.density_function.TilingMode import TilingMode
     from generated_symbols.util.direction.Axis import Axis
 
@@ -48,20 +46,8 @@ class DensityFunctionStructBlendDensity:
 
 
 @dataclass(kw_only=True)
-class DensityFunctionStructCache2d:
-    type: Literal['minecraft:cache_2d']
-    input: DensityFunctionRef
-
-
-@dataclass(kw_only=True)
-class DensityFunctionStructCacheAllInCell:
-    type: Literal['minecraft:cache_all_in_cell']
-    input: DensityFunctionRef
-
-
-@dataclass(kw_only=True)
-class DensityFunctionStructCacheOnce:
-    type: Literal['minecraft:cache_once']
+class DensityFunctionStructCache:
+    type: Literal['minecraft:cache']
     input: DensityFunctionRef
 
 
@@ -116,12 +102,6 @@ class DensityFunctionStructFindTopSurface:
 
 
 @dataclass(kw_only=True)
-class DensityFunctionStructFlatCache:
-    type: Literal['minecraft:flat_cache']
-    input: DensityFunctionRef
-
-
-@dataclass(kw_only=True)
 class DensityFunctionStructFloor:
     type: Literal['minecraft:floor']
     input: DensityFunctionRef
@@ -146,9 +126,10 @@ class DensityFunctionStructHalfNegative:
 
 
 @dataclass(kw_only=True)
-class DensityFunctionStructInterpolated:
+class DensityFunctionStructInterpolated(OneArgument):
     type: Literal['minecraft:interpolated']
-    input: DensityFunctionRef
+    cell_size_xz: Annotated[int, 'Range | Min `1` and above | inclusive']
+    cell_size_y: Annotated[int, 'Range | Min `1` and above | inclusive']
 
 
 @dataclass(kw_only=True)
@@ -157,12 +138,6 @@ class DensityFunctionStructIntervalSelect:
     input: DensityFunctionRef
     thresholds: Annotated[list[NoiseRange], 'Length = 1 (inclusive) and above']  # Must have exactly one fewer element than `functions`.
     functions: Annotated[list[DensityFunctionRef], 'Length = 2 (inclusive) and above']  # Must have exactly one more element than `thresholds`.
-
-
-@dataclass(kw_only=True)
-class DensityFunctionStructInvert:
-    type: Literal['minecraft:invert']
-    input: DensityFunctionRef
 
 
 @dataclass(kw_only=True)
@@ -212,6 +187,9 @@ class DensityFunctionStructNoise:
     noise: NoiseParametersRef
     xz_scale: float
     y_scale: float
+    shift_x: DensityFunctionRef | None = None  # Defaults to constant 0.
+    shift_y: DensityFunctionRef | None = None  # Defaults to constant 0.
+    shift_z: DensityFunctionRef | None = None  # Defaults to constant 0.
 
 
 @dataclass(kw_only=True)
@@ -279,14 +257,6 @@ class DensityFunctionStructShiftB:
 
 
 @dataclass(kw_only=True)
-class DensityFunctionStructShiftedNoise(Noise):
-    type: Literal['minecraft:shifted_noise']
-    shift_x: DensityFunctionRef
-    shift_y: DensityFunctionRef
-    shift_z: DensityFunctionRef
-
-
-@dataclass(kw_only=True)
 class DensityFunctionStructSign:
     type: Literal['minecraft:sign']
     input: DensityFunctionRef
@@ -338,41 +308,13 @@ class DensityFunctionStructSub:
 
 
 @dataclass(kw_only=True)
-class DensityFunctionStructTerrainShaperSpline:
-    type: Literal['minecraft:terrain_shaper_spline']
-    spline: SplineType
-    min_value: NoiseRange
-    max_value: NoiseRange
-    continentalness: DensityFunctionRef
-    erosion: DensityFunctionRef
-    weirdness: DensityFunctionRef
-
-
-@dataclass(kw_only=True)
 class DensityFunctionStructTruncate:
     type: Literal['minecraft:truncate']
     input: DensityFunctionRef
     multiple: DensityFunctionRef | None = None  # Defaults to constant 1.
 
 
-@dataclass(kw_only=True)
-class DensityFunctionStructWeirdScaledSampler:
-    type: Literal['minecraft:weird_scaled_sampler']
-    rarity_value_mapper: RarityType
-    noise: NoiseParametersRef
-    input: DensityFunctionRef
-
-
-@dataclass(kw_only=True)
-class DensityFunctionStructYClampedGradient:
-    type: Literal['minecraft:y_clamped_gradient']
-    from_y: Annotated[int, 'Range | `-4064`-`4062` | both inclusive']
-    to_y: Annotated[int, 'Range | `-4064`-`4062` | both inclusive']
-    from_value: NoiseRange
-    to_value: NoiseRange
-
-
-type DensityFunctionStruct = DensityFunctionStructUnknown | DensityFunctionStructAbs | DensityFunctionStructAdd | DensityFunctionStructBlendDensity | DensityFunctionStructCache2d | DensityFunctionStructCacheAllInCell | DensityFunctionStructCacheOnce | DensityFunctionStructCeil | DensityFunctionStructClamp | DensityFunctionStructConstant | DensityFunctionStructCube | DensityFunctionStructDistanceToPoint | DensityFunctionStructDiv | DensityFunctionStructFindTopSurface | DensityFunctionStructFlatCache | DensityFunctionStructFloor | DensityFunctionStructGradient | DensityFunctionStructHalfNegative | DensityFunctionStructInterpolated | DensityFunctionStructIntervalSelect | DensityFunctionStructInvert | DensityFunctionStructLerp | DensityFunctionStructLog | DensityFunctionStructMax | DensityFunctionStructMin | DensityFunctionStructMul | DensityFunctionStructNegate | DensityFunctionStructNoise | DensityFunctionStructOldBlendedNoise | DensityFunctionStructPow | DensityFunctionStructQuarterNegative | DensityFunctionStructRangeChoice | DensityFunctionStructReciprocal | DensityFunctionStructRound | DensityFunctionStructShift | DensityFunctionStructShiftA | DensityFunctionStructShiftB | DensityFunctionStructShiftedNoise | DensityFunctionStructSign | DensityFunctionStructSlice | DensityFunctionStructSlide | DensityFunctionStructSpline | DensityFunctionStructSqrt | DensityFunctionStructSquare | DensityFunctionStructSqueeze | DensityFunctionStructSub | DensityFunctionStructTerrainShaperSpline | DensityFunctionStructTruncate | DensityFunctionStructWeirdScaledSampler | DensityFunctionStructYClampedGradient
+type DensityFunctionStruct = DensityFunctionStructUnknown | DensityFunctionStructAbs | DensityFunctionStructAdd | DensityFunctionStructBlendDensity | DensityFunctionStructCache | DensityFunctionStructCeil | DensityFunctionStructClamp | DensityFunctionStructConstant | DensityFunctionStructCube | DensityFunctionStructDistanceToPoint | DensityFunctionStructDiv | DensityFunctionStructFindTopSurface | DensityFunctionStructFloor | DensityFunctionStructGradient | DensityFunctionStructHalfNegative | DensityFunctionStructInterpolated | DensityFunctionStructIntervalSelect | DensityFunctionStructLerp | DensityFunctionStructLog | DensityFunctionStructMax | DensityFunctionStructMin | DensityFunctionStructMul | DensityFunctionStructNegate | DensityFunctionStructNoise | DensityFunctionStructOldBlendedNoise | DensityFunctionStructPow | DensityFunctionStructQuarterNegative | DensityFunctionStructRangeChoice | DensityFunctionStructReciprocal | DensityFunctionStructRound | DensityFunctionStructShift | DensityFunctionStructShiftA | DensityFunctionStructShiftB | DensityFunctionStructSign | DensityFunctionStructSlice | DensityFunctionStructSlide | DensityFunctionStructSpline | DensityFunctionStructSqrt | DensityFunctionStructSquare | DensityFunctionStructSqueeze | DensityFunctionStructSub | DensityFunctionStructTruncate
 
 type DensityFunction = NoiseRange | DensityFunctionStruct
 

@@ -13,7 +13,7 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class SwingAnimation:
     type: SwingAnimationType | None = None  # The animation type to play when attacking or interacting using this item. Defaults to `whack`.
-    duration: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # The animation duration in ticks. Defaults to 6
+    duration: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The animation duration in ticks. Defaults to 6
 
 
 # ~~~ MODEL DUMP ~~~
@@ -36,11 +36,47 @@ _ = {
                 "desc": "The animation duration in ticks.\nDefaults to 6",
                 "key": "duration",
                 "type": {
-                    "kind": "int",
-                    "valueRange": {
-                        "kind": 0,
-                        "min": 1
-                    }
+                    "kind": "union",
+                    "members": [
+                        {
+                            "kind": "int",
+                            "valueRange": {
+                                "kind": 0,
+                                "min": 1
+                            },
+                            "attributes": [
+                                {
+                                    "name": "until",
+                                    "value": {
+                                        "kind": "literal",
+                                        "value": {
+                                            "kind": "string",
+                                            "value": "26.3"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "kind": "int",
+                            "valueRange": {
+                                "kind": 0,
+                                "min": 0
+                            },
+                            "attributes": [
+                                {
+                                    "name": "since",
+                                    "value": {
+                                        "kind": "literal",
+                                        "value": {
+                                            "kind": "string",
+                                            "value": "26.3"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
                 },
                 "optional": True
             }

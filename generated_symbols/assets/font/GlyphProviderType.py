@@ -10,7 +10,6 @@ class GlyphProviderType(StrEnum):
     BITMAP = "bitmap"
     TRUETYPE = "ttf"
     SPACE = "space"
-    LEGACYUNICODE = "legacy_unicode"
     UNIHEX = "unihex"
     REFERENCE = "reference"
 

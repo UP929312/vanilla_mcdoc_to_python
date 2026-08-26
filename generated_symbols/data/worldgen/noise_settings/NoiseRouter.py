@@ -18,7 +18,7 @@ class NoiseRouter:
     erosion: DensityFunctionRef
     depth: DensityFunctionRef
     ridges: DensityFunctionRef
-    preliminary_surface_level: DensityFunctionRef
+    chunk_surface_level: DensityFunctionRef
     final_density: DensityFunctionRef
 
 
@@ -28,7 +28,7 @@ _ = {
         "kind": "struct",
         "fields": [
             {
-                "kind": "pair",
+                "kind": "spread",
                 "attributes": [
                     {
                         "name": "until",
@@ -41,130 +41,66 @@ _ = {
                         }
                     }
                 ],
-                "key": "barrier",
                 "type": {
-                    "kind": "reference",
-                    "path": "::java::data::worldgen::density_function::DensityFunctionRef"
-                }
-            },
-            {
-                "kind": "pair",
-                "attributes": [
-                    {
-                        "name": "until",
-                        "value": {
-                            "kind": "literal",
-                            "value": {
-                                "kind": "string",
-                                "value": "26.3"
+                    "kind": "struct",
+                    "fields": [
+                        {
+                            "kind": "pair",
+                            "key": "barrier",
+                            "type": {
+                                "kind": "reference",
+                                "path": "::java::data::worldgen::density_function::DensityFunctionRef"
+                            }
+                        },
+                        {
+                            "kind": "pair",
+                            "key": "fluid_level_floodedness",
+                            "type": {
+                                "kind": "reference",
+                                "path": "::java::data::worldgen::density_function::DensityFunctionRef"
+                            }
+                        },
+                        {
+                            "kind": "pair",
+                            "key": "fluid_level_spread",
+                            "type": {
+                                "kind": "reference",
+                                "path": "::java::data::worldgen::density_function::DensityFunctionRef"
+                            }
+                        },
+                        {
+                            "kind": "pair",
+                            "key": "lava",
+                            "type": {
+                                "kind": "reference",
+                                "path": "::java::data::worldgen::density_function::DensityFunctionRef"
+                            }
+                        },
+                        {
+                            "kind": "pair",
+                            "key": "vein_toggle",
+                            "type": {
+                                "kind": "reference",
+                                "path": "::java::data::worldgen::density_function::DensityFunctionRef"
+                            }
+                        },
+                        {
+                            "kind": "pair",
+                            "key": "vein_ridged",
+                            "type": {
+                                "kind": "reference",
+                                "path": "::java::data::worldgen::density_function::DensityFunctionRef"
+                            }
+                        },
+                        {
+                            "kind": "pair",
+                            "key": "vein_gap",
+                            "type": {
+                                "kind": "reference",
+                                "path": "::java::data::worldgen::density_function::DensityFunctionRef"
                             }
                         }
-                    }
-                ],
-                "key": "fluid_level_floodedness",
-                "type": {
-                    "kind": "reference",
-                    "path": "::java::data::worldgen::density_function::DensityFunctionRef"
-                }
-            },
-            {
-                "kind": "pair",
-                "attributes": [
-                    {
-                        "name": "until",
-                        "value": {
-                            "kind": "literal",
-                            "value": {
-                                "kind": "string",
-                                "value": "26.3"
-                            }
-                        }
-                    }
-                ],
-                "key": "fluid_level_spread",
-                "type": {
-                    "kind": "reference",
-                    "path": "::java::data::worldgen::density_function::DensityFunctionRef"
-                }
-            },
-            {
-                "kind": "pair",
-                "attributes": [
-                    {
-                        "name": "until",
-                        "value": {
-                            "kind": "literal",
-                            "value": {
-                                "kind": "string",
-                                "value": "26.3"
-                            }
-                        }
-                    }
-                ],
-                "key": "lava",
-                "type": {
-                    "kind": "reference",
-                    "path": "::java::data::worldgen::density_function::DensityFunctionRef"
-                }
-            },
-            {
-                "kind": "pair",
-                "attributes": [
-                    {
-                        "name": "until",
-                        "value": {
-                            "kind": "literal",
-                            "value": {
-                                "kind": "string",
-                                "value": "26.3"
-                            }
-                        }
-                    }
-                ],
-                "key": "vein_toggle",
-                "type": {
-                    "kind": "reference",
-                    "path": "::java::data::worldgen::density_function::DensityFunctionRef"
-                }
-            },
-            {
-                "kind": "pair",
-                "attributes": [
-                    {
-                        "name": "until",
-                        "value": {
-                            "kind": "literal",
-                            "value": {
-                                "kind": "string",
-                                "value": "26.3"
-                            }
-                        }
-                    }
-                ],
-                "key": "vein_ridged",
-                "type": {
-                    "kind": "reference",
-                    "path": "::java::data::worldgen::density_function::DensityFunctionRef"
-                }
-            },
-            {
-                "kind": "pair",
-                "attributes": [
-                    {
-                        "name": "until",
-                        "value": {
-                            "kind": "literal",
-                            "value": {
-                                "kind": "string",
-                                "value": "26.3"
-                            }
-                        }
-                    }
-                ],
-                "key": "vein_gap",
-                "type": {
-                    "kind": "reference",
-                    "path": "::java::data::worldgen::density_function::DensityFunctionRef"
+                    ]
                 }
             },
             {
@@ -247,9 +183,39 @@ _ = {
                                 "value": "1.21.9"
                             }
                         }
+                    },
+                    {
+                        "name": "until",
+                        "value": {
+                            "kind": "literal",
+                            "value": {
+                                "kind": "string",
+                                "value": "26.3"
+                            }
+                        }
                     }
                 ],
                 "key": "preliminary_surface_level",
+                "type": {
+                    "kind": "reference",
+                    "path": "::java::data::worldgen::density_function::DensityFunctionRef"
+                }
+            },
+            {
+                "kind": "pair",
+                "attributes": [
+                    {
+                        "name": "since",
+                        "value": {
+                            "kind": "literal",
+                            "value": {
+                                "kind": "string",
+                                "value": "26.3"
+                            }
+                        }
+                    }
+                ],
+                "key": "chunk_surface_level",
                 "type": {
                     "kind": "reference",
                     "path": "::java::data::worldgen::density_function::DensityFunctionRef"

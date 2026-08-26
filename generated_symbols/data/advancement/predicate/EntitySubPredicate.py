@@ -13,18 +13,8 @@ if TYPE_CHECKING:
     from generated_symbols.data.advancement.predicate.EntityPredicate import EntityPredicate
     from generated_symbols.data.advancement.predicate.FluidPredicate import FluidPredicate
     from generated_symbols.data.advancement.predicate.GameMode import GameMode
-    from generated_symbols.data.advancement.predicate.SalmonVariant import SalmonVariant
     from generated_symbols.data.advancement.predicate.StatisticPredicate import StatisticPredicate
     from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
-    from generated_symbols.world.component.entity.AxolotlVariant import AxolotlVariant
-    from generated_symbols.world.component.entity.FoxType import FoxType
-    from generated_symbols.world.component.entity.HorseVariant import HorseVariant
-    from generated_symbols.world.component.entity.LlamaVariant import LlamaVariant
-    from generated_symbols.world.component.entity.MooshroomType import MooshroomType
-    from generated_symbols.world.component.entity.ParrotVariant import ParrotVariant
-    from generated_symbols.world.component.entity.RabbitVariant import RabbitVariant
-    from generated_symbols.world.component.entity.TropicalFishPattern import TropicalFishPattern
-    from generated_symbols.world.entity.boat.BoatType import BoatType
 
 
 @dataclass(kw_only=True)
@@ -57,24 +47,6 @@ class InputStruct:
 class FoodStruct:
     level: MinMaxBounds[int] | int | None = None
     saturation: MinMaxBounds[float] | float | None = None
-
-
-@dataclass(kw_only=True)
-class EntitySubPredicateAxolotl:
-    type: Literal['minecraft:axolotl']
-    variant: AxolotlVariant
-
-
-@dataclass(kw_only=True)
-class EntitySubPredicateBoat:
-    type: Literal['minecraft:boat']
-    variant: BoatType
-
-
-@dataclass(kw_only=True)
-class EntitySubPredicateCat:
-    type: Literal['minecraft:cat']
-    variant: Annotated[str, IdSpec(registry='cat_variant', tags='allowed')] | list[Annotated[str, IdSpec(registry='cat_variant')]]
 
 
 @dataclass(kw_only=True)
@@ -116,12 +88,6 @@ class EntitySubPredicateEquipment:
 
 
 @dataclass(kw_only=True)
-class EntitySubPredicateFishingHook:
-    type: Literal['minecraft:fishing_hook']
-    in_open_water: bool | None = None
-
-
-@dataclass(kw_only=True)
 class EntitySubPredicateFlags:
     type: Literal['minecraft:flags']
     is_on_fire: bool | None = None
@@ -136,37 +102,6 @@ class EntitySubPredicateFlags:
 
 
 @dataclass(kw_only=True)
-class EntitySubPredicateFox:
-    type: Literal['minecraft:fox']
-    variant: FoxType
-
-
-@dataclass(kw_only=True)
-class EntitySubPredicateFrog:
-    type: Literal['minecraft:frog']
-    variant: Annotated[str, IdSpec(registry='frog_variant', tags='allowed')] | list[Annotated[str, IdSpec(registry='frog_variant')]]
-
-
-@dataclass(kw_only=True)
-class EntitySubPredicateHorse:
-    type: Literal['minecraft:horse']
-    variant: HorseVariant
-
-
-@dataclass(kw_only=True)
-class EntitySubPredicateLightning:
-    type: Literal['minecraft:lightning']
-    blocks_set_on_fire: MinMaxBounds[int] | int | None = None
-    entity_struck: EntityPredicate | None = None
-
-
-@dataclass(kw_only=True)
-class EntitySubPredicateLlama:
-    type: Literal['minecraft:llama']
-    variant: LlamaVariant
-
-
-@dataclass(kw_only=True)
 class EntitySubPredicateLocation:
     type: Literal['minecraft:location']
     position: PositionStruct | None = None
@@ -178,12 +113,6 @@ class EntitySubPredicateLocation:
     fluid: FluidPredicate | None = None
     smokey: bool | None = None  # Whether the block is above (5 blocks or less) a campfire or soul campfire.
     can_see_sky: bool | None = None  # Whether the location has the maximum possible level of sky light
-
-
-@dataclass(kw_only=True)
-class EntitySubPredicateMooshroom:
-    type: Literal['minecraft:mooshroom']
-    variant: MooshroomType
 
 
 @dataclass(kw_only=True)
@@ -218,18 +147,6 @@ class EntitySubPredicateNbt:
 
 
 @dataclass(kw_only=True)
-class EntitySubPredicatePainting:
-    type: Literal['minecraft:painting']
-    variant: Annotated[str, IdSpec(registry='painting_variant', tags='allowed')] | list[Annotated[str, IdSpec(registry='painting_variant')]]
-
-
-@dataclass(kw_only=True)
-class EntitySubPredicateParrot:
-    type: Literal['minecraft:parrot']
-    variant: ParrotVariant
-
-
-@dataclass(kw_only=True)
 class EntitySubPredicatePassenger:
     type: Literal['minecraft:passenger']
 
@@ -240,52 +157,8 @@ class EntitySubPredicatePeriodicTick:
 
 
 @dataclass(kw_only=True)
-class EntitySubPredicatePlayer:
-    type: Literal['minecraft:player']
-    advancements: dict[Annotated[str, IdSpec(registry='advancement')], bool | AdvancementsStructValueStruct] | None = None
-    gamemode: list[GameMode] | None = None
-    level: MinMaxBounds[int] | int | None = None  # Experience/XP level.
-    recipes: dict[Annotated[str, IdSpec(registry='recipe')], bool] | None = None
-    stats: list[StatisticPredicate] | None = None
-    looking_at: EntityPredicate | None = None
-    input: InputStruct | None = None  # Checks the movement keys of the player.
-    food: FoodStruct | None = None
-
-
-@dataclass(kw_only=True)
 class EntitySubPredicatePredicates:
     type: Literal['minecraft:predicates']
-
-
-@dataclass(kw_only=True)
-class EntitySubPredicateRabbit:
-    type: Literal['minecraft:rabbit']
-    variant: RabbitVariant
-
-
-@dataclass(kw_only=True)
-class EntitySubPredicateRaider:
-    type: Literal['minecraft:raider']
-    has_raid: bool | None = None
-    is_captain: bool | None = None
-
-
-@dataclass(kw_only=True)
-class EntitySubPredicateSalmon:
-    type: Literal['minecraft:salmon']
-    variant: SalmonVariant | None = None
-
-
-@dataclass(kw_only=True)
-class EntitySubPredicateSheep:
-    type: Literal['minecraft:sheep']
-    sheared: bool | None = None
-
-
-@dataclass(kw_only=True)
-class EntitySubPredicateSlime:
-    type: Literal['minecraft:slime']
-    size: MinMaxBounds[int] | int | None = None
 
 
 @dataclass(kw_only=True)
@@ -315,12 +188,6 @@ class EntitySubPredicateTargetedEntity:
 @dataclass(kw_only=True)
 class EntitySubPredicateTeam:
     type: Literal['minecraft:team']
-
-
-@dataclass(kw_only=True)
-class EntitySubPredicateTropicalFish:
-    type: Literal['minecraft:tropical_fish']
-    variant: TropicalFishPattern
 
 
 @dataclass(kw_only=True)
@@ -373,19 +240,7 @@ class EntitySubPredicateVehicle:
     type: Literal['minecraft:vehicle']
 
 
-@dataclass(kw_only=True)
-class EntitySubPredicateVillager:
-    type: Literal['minecraft:villager']
-    variant: Annotated[str, IdSpec(registry='villager_type')]
-
-
-@dataclass(kw_only=True)
-class EntitySubPredicateWolf:
-    type: Literal['minecraft:wolf']
-    variant: Annotated[str, IdSpec(registry='wolf_variant', tags='allowed')] | list[Annotated[str, IdSpec(registry='wolf_variant')]]
-
-
-type EntitySubPredicate = EntitySubPredicateAxolotl | EntitySubPredicateBoat | EntitySubPredicateCat | EntitySubPredicateComponents | EntitySubPredicateDistance | EntitySubPredicateEffects | EntitySubPredicateEntityTags | EntitySubPredicateEntityType | EntitySubPredicateEquipment | EntitySubPredicateFishingHook | EntitySubPredicateFlags | EntitySubPredicateFox | EntitySubPredicateFrog | EntitySubPredicateHorse | EntitySubPredicateLightning | EntitySubPredicateLlama | EntitySubPredicateLocation | EntitySubPredicateMooshroom | EntitySubPredicateMovement | EntitySubPredicateMovementAffectedBy | EntitySubPredicateNbt | EntitySubPredicatePainting | EntitySubPredicateParrot | EntitySubPredicatePassenger | EntitySubPredicatePeriodicTick | EntitySubPredicatePlayer | EntitySubPredicatePredicates | EntitySubPredicateRabbit | EntitySubPredicateRaider | EntitySubPredicateSalmon | EntitySubPredicateSheep | EntitySubPredicateSlime | EntitySubPredicateSlots | EntitySubPredicateSteppingOn | EntitySubPredicateTargetedEntity | EntitySubPredicateTeam | EntitySubPredicateTropicalFish | EntitySubPredicateTypeSpecificCubeMob | EntitySubPredicateTypeSpecificFishingHook | EntitySubPredicateTypeSpecificLightning | EntitySubPredicateTypeSpecificPlayer | EntitySubPredicateTypeSpecificRaider | EntitySubPredicateTypeSpecificSheep | EntitySubPredicateVehicle | EntitySubPredicateVillager | EntitySubPredicateWolf
+type EntitySubPredicate = EntitySubPredicateComponents | EntitySubPredicateDistance | EntitySubPredicateEffects | EntitySubPredicateEntityTags | EntitySubPredicateEntityType | EntitySubPredicateEquipment | EntitySubPredicateFlags | EntitySubPredicateLocation | EntitySubPredicateMovement | EntitySubPredicateMovementAffectedBy | EntitySubPredicateNbt | EntitySubPredicatePassenger | EntitySubPredicatePeriodicTick | EntitySubPredicatePredicates | EntitySubPredicateSlots | EntitySubPredicateSteppingOn | EntitySubPredicateTargetedEntity | EntitySubPredicateTeam | EntitySubPredicateTypeSpecificCubeMob | EntitySubPredicateTypeSpecificFishingHook | EntitySubPredicateTypeSpecificLightning | EntitySubPredicateTypeSpecificPlayer | EntitySubPredicateTypeSpecificRaider | EntitySubPredicateTypeSpecificSheep | EntitySubPredicateVehicle
 
 
 # ~~~ MODEL DUMP ~~~

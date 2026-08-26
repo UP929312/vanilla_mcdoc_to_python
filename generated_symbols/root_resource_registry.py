@@ -1,6 +1,7 @@
 """Generated root-resource registry for datapack and resource-pack classes."""
 
 from generated_symbols.data.advancement.Advancement import Advancement
+from generated_symbols.data.block_transformer.BlockTransformData import BlockTransformData
 from generated_symbols.data.chat_type.ChatType import ChatType
 from generated_symbols.data.damage_type.DamageType import DamageType
 from generated_symbols.data.decorated_pot_pattern.DecoratedPotPattern import DecoratedPotPattern
@@ -27,7 +28,7 @@ from generated_symbols.data.gametest.test_environment.TestEnvironment import Tes
 from generated_symbols.data.gametest.test_environment.TimeOfDayTestEnvironment import TimeOfDayTestEnvironment
 from generated_symbols.data.gametest.test_environment.TimelineAttributesTestEnvironment import TimelineAttributesTestEnvironment
 from generated_symbols.data.gametest.test_environment.WeatherTestEnvironment import WeatherTestEnvironment
-from generated_symbols.data.item_modifier.ItemModifier import ItemModifier
+from generated_symbols.data.item_modifier.ItemModifierRoot import ItemModifierRoot
 from generated_symbols.data.loot.LootTable import LootTable
 from generated_symbols.data.number_provider.NumberProvider import NumberProvider
 from generated_symbols.data.predicate.Predicate import Predicate
@@ -51,7 +52,12 @@ from generated_symbols.data.recipe.Smithing import Smithing
 from generated_symbols.data.recipe.SmithingTransform import SmithingTransform
 from generated_symbols.data.recipe.SmithingTrim import SmithingTrim
 from generated_symbols.data.recipe.Stonecutting import Stonecutting
-from generated_symbols.data.slot_source.SlotSource import SlotSource
+from generated_symbols.data.slot_source.ContentsSlotSource import ContentsSlotSource
+from generated_symbols.data.slot_source.FilterSlotSource import FilterSlotSource
+from generated_symbols.data.slot_source.GroupSlotSource import GroupSlotSource
+from generated_symbols.data.slot_source.LimitCountSlotSource import LimitCountSlotSource
+from generated_symbols.data.slot_source.RangeSlotSource import RangeSlotSource
+from generated_symbols.data.slot_source.TypedSlotSource import TypedSlotSource
 from generated_symbols.data.sulfur_cube_archetype.SulfurCubeArchetype import SulfurCubeArchetype
 from generated_symbols.data.timeline.Timeline import Timeline
 from generated_symbols.data.trade_set.TradeSet import TradeSet
@@ -150,6 +156,7 @@ from generated_symbols.data.worldgen.material_condition.YAboveCondition import Y
 from generated_symbols.data.worldgen.material_rule.BlockRule import BlockRule
 from generated_symbols.data.worldgen.material_rule.ConditionRule import ConditionRule
 from generated_symbols.data.worldgen.material_rule.MaterialRule import MaterialRule
+from generated_symbols.data.worldgen.material_rule.OreVeinifier import OreVeinifier
 from generated_symbols.data.worldgen.material_rule.SequenceRule import SequenceRule
 from generated_symbols.data.worldgen.noise_settings.NoiseGeneratorSettings import NoiseGeneratorSettings
 from generated_symbols.data.worldgen.processor_list.ProcessorList import ProcessorList
@@ -185,6 +192,7 @@ from generated_symbols.assets.waypoint_style.WaypointStyle import WaypointStyle
 
 root_datapack_classes = (
     Advancement,
+    BlockTransformData,
     ChatType,
     DamageType,
     DecoratedPotPattern,
@@ -211,7 +219,7 @@ root_datapack_classes = (
     TimeOfDayTestEnvironment,
     TimelineAttributesTestEnvironment,
     WeatherTestEnvironment,
-    ItemModifier,
+    ItemModifierRoot,
     LootTable,
     NumberProvider,
     Predicate,
@@ -235,7 +243,12 @@ root_datapack_classes = (
     SmithingTransform,
     SmithingTrim,
     Stonecutting,
-    SlotSource,
+    ContentsSlotSource,
+    FilterSlotSource,
+    GroupSlotSource,
+    LimitCountSlotSource,
+    RangeSlotSource,
+    TypedSlotSource,
     SulfurCubeArchetype,
     Timeline,
     TradeSet,
@@ -334,6 +347,7 @@ root_datapack_classes = (
     BlockRule,
     ConditionRule,
     MaterialRule,
+    OreVeinifier,
     SequenceRule,
     NoiseGeneratorSettings,
     ProcessorList,

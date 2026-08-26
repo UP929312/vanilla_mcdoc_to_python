@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/slot_source/TypedSlotSource.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Literal
+from typing import TYPE_CHECKING, Annotated, ClassVar, Literal
 
 if TYPE_CHECKING:
     from generated_symbols.data.advancement.predicate.ItemPredicate import ItemPredicate
@@ -16,6 +16,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class TypedSlotSourceContents:
+    __resource_dir__: ClassVar[str] = 'slot_source'
+
     type: Literal['minecraft:contents']
     slot_source: SlotSource  # The slots to search.
     component: ContainerComponents  # If an item targeted by `slot_source` has this container component, selects all items inside.

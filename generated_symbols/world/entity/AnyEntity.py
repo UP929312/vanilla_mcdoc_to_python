@@ -250,11 +250,6 @@ class AnyEntityBlockDisplay(DisplayBase):
 
 
 @dataclass(kw_only=True)
-class AnyEntityBoat(EntityBase):
-    id: Literal['minecraft:boat']  # The ID of this entity. Not present on player entities.
-
-
-@dataclass(kw_only=True)
 class AnyEntityBogged(MobBase):
     id: Literal['minecraft:bogged']  # The ID of this entity. Not present on player entities.
     sheared: bool | None = None  # Whether the mushrooms on this bogged have been sheared.
@@ -334,14 +329,6 @@ class AnyEntityCherryChestBoat(Boat):
 
 
 @dataclass(kw_only=True)
-class AnyEntityChestBoat(Boat):
-    id: Literal['minecraft:chest_boat']  # The ID of this entity. Not present on player entities.
-    LootTable: Annotated[str, IdSpec(registry='loot_table', empty='allowed')] | None = None  # Loot table that will populate this chest boat.
-    LootTableSeed: int | None = None  # Seed of the loot table.
-    Items: Annotated[list[SlottedItem[Annotated[int, 'Range | `0`-`26` | both inclusive']]], 'Length = 0-27 (both inclusive)'] | None = None  # Slots from 0 to 26.
-
-
-@dataclass(kw_only=True)
 class AnyEntityChestMinecart(ContainerMinecart, Minecart):
     id: Literal['minecraft:chest_minecart']  # The ID of this entity. Not present on player entities.
     Items: Annotated[list[SlottedItem[Annotated[int, 'Range | `0`-`26` | both inclusive']]], 'Length = 0-27 (both inclusive)'] | None = None  # Slots from 0 to 26.
@@ -384,12 +371,6 @@ class AnyEntityCow(Breedable):
 @dataclass(kw_only=True)
 class AnyEntityCreaking(MobBase):
     id: Literal['minecraft:creaking']  # The ID of this entity. Not present on player entities.
-    home_pos: tuple[int, int, int] | None = None  # The creaking heart block that this is linked to.
-
-
-@dataclass(kw_only=True)
-class AnyEntityCreakingTransient(MobBase):
-    id: Literal['minecraft:creaking_transient']  # The ID of this entity. Not present on player entities.
     home_pos: tuple[int, int, int] | None = None  # The creaking heart block that this is linked to.
 
 
@@ -1398,13 +1379,6 @@ class AnyEntityZombieNautilus(Breedable):
 
 
 @dataclass(kw_only=True)
-class AnyEntityZombiePigman(MobBase, NeutralMob):
-    id: Literal['minecraft:zombie_pigman']  # The ID of this entity. Not present on player entities.
-    IsBaby: bool | None = None  # Whether it is a baby.
-    HurtBy: str | None = None  # Last player to hit a zombie pigman in this zombie pigman's detection range.
-
-
-@dataclass(kw_only=True)
 class AnyEntityZombieVillager(Zombie):
     id: Literal['minecraft:zombie_villager']  # The ID of this entity. Not present on player entities.
     VillagerData: VillagerData | None = None  # Villager's skin data
@@ -1422,7 +1396,7 @@ class AnyEntityZombifiedPiglin(MobBase, NeutralMob):
     HurtBy: str | None = None  # Last player to hit a zombie pigman in this zombie pigman's detection range.
 
 
-type AnyEntity = AnyEntityAcaciaBoat | AnyEntityAcaciaChestBoat | AnyEntityAllay | AnyEntityAreaEffectCloud | AnyEntityArmadillo | AnyEntityArmorStand | AnyEntityArrow | AnyEntityAxolotl | AnyEntityBambooChestRaft | AnyEntityBambooRaft | AnyEntityBat | AnyEntityBee | AnyEntityBirchBoat | AnyEntityBirchChestBoat | AnyEntityBlaze | AnyEntityBlockDisplay | AnyEntityBoat | AnyEntityBogged | AnyEntityBreeze | AnyEntityBreezeWindCharge | AnyEntityCamel | AnyEntityCamelHusk | AnyEntityCat | AnyEntityCaveSpider | AnyEntityCherryBoat | AnyEntityCherryChestBoat | AnyEntityChestBoat | AnyEntityChestMinecart | AnyEntityChicken | AnyEntityCod | AnyEntityCommandBlockMinecart | AnyEntityCopperGolem | AnyEntityCow | AnyEntityCreaking | AnyEntityCreakingTransient | AnyEntityCreeper | AnyEntityCushion | AnyEntityDarkOakBoat | AnyEntityDarkOakChestBoat | AnyEntityDolphin | AnyEntityDonkey | AnyEntityDragonFireball | AnyEntityDrowned | AnyEntityEgg | AnyEntityElderGuardian | AnyEntityEndCrystal | AnyEntityEnderDragon | AnyEntityEnderPearl | AnyEntityEnderman | AnyEntityEndermite | AnyEntityEvoker | AnyEntityEvokerFangs | AnyEntityExperienceBottle | AnyEntityExperienceOrb | AnyEntityEyeOfEnder | AnyEntityFallingBlock | AnyEntityFireball | AnyEntityFireworkRocket | AnyEntityFox | AnyEntityFrog | AnyEntityFurnaceMinecart | AnyEntityGhast | AnyEntityGiant | AnyEntityGlowItemFrame | AnyEntityGlowSquid | AnyEntityGoat | AnyEntityGuardian | AnyEntityHappyGhast | AnyEntityHoglin | AnyEntityHopperMinecart | AnyEntityHorse | AnyEntityHusk | AnyEntityIllusioner | AnyEntityInteraction | AnyEntityIronGolem | AnyEntityItem | AnyEntityItemDisplay | AnyEntityItemFrame | AnyEntityJungleBoat | AnyEntityJungleChestBoat | AnyEntityLeashKnot | AnyEntityLingeringPotion | AnyEntityLlama | AnyEntityLlamaSpit | AnyEntityMagmaCube | AnyEntityMangroveBoat | AnyEntityMangroveChestBoat | AnyEntityMannequin | AnyEntityMarker | AnyEntityMinecart | AnyEntityMooshroom | AnyEntityMule | AnyEntityNautilus | AnyEntityOakBoat | AnyEntityOakChestBoat | AnyEntityOcelot | AnyEntityOminousItemSpawner | AnyEntityPainting | AnyEntityPaleOakBoat | AnyEntityPaleOakChestBoat | AnyEntityPanda | AnyEntityParched | AnyEntityParrot | AnyEntityPhantom | AnyEntityPig | AnyEntityPiglin | AnyEntityPiglinBrute | AnyEntityPillager | AnyEntityPlayer | AnyEntityPolarBear | AnyEntityPoplarBoat | AnyEntityPopolarChestBoat | AnyEntityPotion | AnyEntityPufferfish | AnyEntityRabbit | AnyEntityRavager | AnyEntitySalmon | AnyEntitySheep | AnyEntityShulker | AnyEntityShulkerBullet | AnyEntitySilverfish | AnyEntitySkeleton | AnyEntitySkeletonHorse | AnyEntitySlime | AnyEntitySmallFireball | AnyEntitySniffer | AnyEntitySnowGolem | AnyEntitySnowball | AnyEntitySpawnerMinecart | AnyEntitySpectralArrow | AnyEntitySpider | AnyEntitySplashPotion | AnyEntitySpruceBoat | AnyEntitySpruceChestBoat | AnyEntitySquid | AnyEntityStray | AnyEntityStrider | AnyEntitySulfurCube | AnyEntityTadpole | AnyEntityTextDisplay | AnyEntityTnt | AnyEntityTntMinecart | AnyEntityTraderLlama | AnyEntityTrident | AnyEntityTropicalFish | AnyEntityTurtle | AnyEntityVex | AnyEntityVillager | AnyEntityVindicator | AnyEntityWanderingTrader | AnyEntityWarden | AnyEntityWitch | AnyEntityWither | AnyEntityWitherSkeleton | AnyEntityWitherSkull | AnyEntityWolf | AnyEntityZoglin | AnyEntityZombie | AnyEntityZombieHorse | AnyEntityZombieNautilus | AnyEntityZombiePigman | AnyEntityZombieVillager | AnyEntityZombifiedPiglin
+type AnyEntity = AnyEntityAcaciaBoat | AnyEntityAcaciaChestBoat | AnyEntityAllay | AnyEntityAreaEffectCloud | AnyEntityArmadillo | AnyEntityArmorStand | AnyEntityArrow | AnyEntityAxolotl | AnyEntityBambooChestRaft | AnyEntityBambooRaft | AnyEntityBat | AnyEntityBee | AnyEntityBirchBoat | AnyEntityBirchChestBoat | AnyEntityBlaze | AnyEntityBlockDisplay | AnyEntityBogged | AnyEntityBreeze | AnyEntityBreezeWindCharge | AnyEntityCamel | AnyEntityCamelHusk | AnyEntityCat | AnyEntityCaveSpider | AnyEntityCherryBoat | AnyEntityCherryChestBoat | AnyEntityChestMinecart | AnyEntityChicken | AnyEntityCod | AnyEntityCommandBlockMinecart | AnyEntityCopperGolem | AnyEntityCow | AnyEntityCreaking | AnyEntityCreeper | AnyEntityCushion | AnyEntityDarkOakBoat | AnyEntityDarkOakChestBoat | AnyEntityDolphin | AnyEntityDonkey | AnyEntityDragonFireball | AnyEntityDrowned | AnyEntityEgg | AnyEntityElderGuardian | AnyEntityEndCrystal | AnyEntityEnderDragon | AnyEntityEnderPearl | AnyEntityEnderman | AnyEntityEndermite | AnyEntityEvoker | AnyEntityEvokerFangs | AnyEntityExperienceBottle | AnyEntityExperienceOrb | AnyEntityEyeOfEnder | AnyEntityFallingBlock | AnyEntityFireball | AnyEntityFireworkRocket | AnyEntityFox | AnyEntityFrog | AnyEntityFurnaceMinecart | AnyEntityGhast | AnyEntityGiant | AnyEntityGlowItemFrame | AnyEntityGlowSquid | AnyEntityGoat | AnyEntityGuardian | AnyEntityHappyGhast | AnyEntityHoglin | AnyEntityHopperMinecart | AnyEntityHorse | AnyEntityHusk | AnyEntityIllusioner | AnyEntityInteraction | AnyEntityIronGolem | AnyEntityItem | AnyEntityItemDisplay | AnyEntityItemFrame | AnyEntityJungleBoat | AnyEntityJungleChestBoat | AnyEntityLeashKnot | AnyEntityLingeringPotion | AnyEntityLlama | AnyEntityLlamaSpit | AnyEntityMagmaCube | AnyEntityMangroveBoat | AnyEntityMangroveChestBoat | AnyEntityMannequin | AnyEntityMarker | AnyEntityMinecart | AnyEntityMooshroom | AnyEntityMule | AnyEntityNautilus | AnyEntityOakBoat | AnyEntityOakChestBoat | AnyEntityOcelot | AnyEntityOminousItemSpawner | AnyEntityPainting | AnyEntityPaleOakBoat | AnyEntityPaleOakChestBoat | AnyEntityPanda | AnyEntityParched | AnyEntityParrot | AnyEntityPhantom | AnyEntityPig | AnyEntityPiglin | AnyEntityPiglinBrute | AnyEntityPillager | AnyEntityPlayer | AnyEntityPolarBear | AnyEntityPoplarBoat | AnyEntityPopolarChestBoat | AnyEntityPotion | AnyEntityPufferfish | AnyEntityRabbit | AnyEntityRavager | AnyEntitySalmon | AnyEntitySheep | AnyEntityShulker | AnyEntityShulkerBullet | AnyEntitySilverfish | AnyEntitySkeleton | AnyEntitySkeletonHorse | AnyEntitySlime | AnyEntitySmallFireball | AnyEntitySniffer | AnyEntitySnowGolem | AnyEntitySnowball | AnyEntitySpawnerMinecart | AnyEntitySpectralArrow | AnyEntitySpider | AnyEntitySplashPotion | AnyEntitySpruceBoat | AnyEntitySpruceChestBoat | AnyEntitySquid | AnyEntityStray | AnyEntityStrider | AnyEntitySulfurCube | AnyEntityTadpole | AnyEntityTextDisplay | AnyEntityTnt | AnyEntityTntMinecart | AnyEntityTraderLlama | AnyEntityTrident | AnyEntityTropicalFish | AnyEntityTurtle | AnyEntityVex | AnyEntityVillager | AnyEntityVindicator | AnyEntityWanderingTrader | AnyEntityWarden | AnyEntityWitch | AnyEntityWither | AnyEntityWitherSkeleton | AnyEntityWitherSkull | AnyEntityWolf | AnyEntityZoglin | AnyEntityZombie | AnyEntityZombieHorse | AnyEntityZombieNautilus | AnyEntityZombieVillager | AnyEntityZombifiedPiglin
 
 
 # ~~~ MODEL DUMP ~~~

@@ -8,7 +8,6 @@ from enum import StrEnum
 
 class SpecialModelType(StrEnum):
     BANNER = "banner"
-    BED = "bed"
     BELL = "bell"
     BOOK = "book"
     CONDUIT = "conduit"
@@ -16,12 +15,10 @@ class SpecialModelType(StrEnum):
     COPPERGOLEMSTATUE = "copper_golem_statue"
     DECORATEDPOT = "decorated_pot"
     ENDCUBE = "end_cube"
-    HANGINGSIGN = "hanging_sign"
     HEAD = "head"
     PLAYERHEAD = "player_head"
     SHIELD = "shield"
     SHULKERBOX = "shulker_box"
-    STANDINGSIGN = "standing_sign"
     TRIDENT = "trident"
 
 

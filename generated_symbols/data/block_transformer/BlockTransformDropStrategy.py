@@ -1,6 +1,6 @@
 """
-Generated from symbols.json for ::java::world::component::item::BlockTransformDropStrategy
-Local link to file: generated_symbols/world/component/item/BlockTransformDropStrategy.py
+Generated from symbols.json for ::java::data::block_transformer::BlockTransformDropStrategy
+Local link to file: generated_symbols/data/block_transformer/BlockTransformDropStrategy.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum
@@ -13,7 +13,7 @@ class BlockTransformDropStrategy(StrEnum):
 
 # ~~~ MODEL DUMP ~~~
 _ = {
-    "::java::world::component::item::BlockTransformDropStrategy": {
+    "::java::data::block_transformer::BlockTransformDropStrategy": {
         "kind": "enum",
         "enumKind": "string",
         "values": [

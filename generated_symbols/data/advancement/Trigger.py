@@ -45,7 +45,6 @@ class Trigger(StrEnum):
     RECIPEUNLOCKED = "recipe_unlocked"
     RIDEENTITYINLAVA = "ride_entity_in_lava"
     SHOTCROSSBOW = "shot_crossbow"
-    SAFELYHARVESTHONEY = "safely_harvest_honey"
     SLEPTINBED = "slept_in_bed"
     SLIDEDOWNBLOCK = "slide_down_block"
     STARTEDRIDING = "started_riding"

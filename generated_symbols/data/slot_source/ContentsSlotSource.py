@@ -4,7 +4,7 @@ Local link to file: generated_symbols/data/slot_source/ContentsSlotSource.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, ClassVar
 
 if TYPE_CHECKING:
     from generated_symbols.data.loot.function.ContainerComponents import ContainerComponents
@@ -13,6 +13,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class ContentsSlotSource:
+    __resource_dir__: ClassVar[str] = 'slot_source'
+
     slot_source: SlotSource  # The slots to search.
     component: ContainerComponents  # If an item targeted by `slot_source` has this container component, selects all items inside.
 

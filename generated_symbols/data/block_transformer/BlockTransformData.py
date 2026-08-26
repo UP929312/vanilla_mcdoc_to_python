@@ -1,24 +1,26 @@
 """
-Generated from symbols.json for ::java::world::component::item::BlockTransformer
-Local link to file: generated_symbols/world/component/item/BlockTransformer.py
+Generated from symbols.json for ::java::data::block_transformer::BlockTransformData
+Local link to file: generated_symbols/data/block_transformer/BlockTransformData.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
+    from generated_symbols.data.block_transformer.BlockTransformDropStrategy import BlockTransformDropStrategy
+    from generated_symbols.data.block_transformer.BlockTransformParticle import BlockTransformParticle
+    from generated_symbols.data.block_transformer.BlockTransformType import BlockTransformType
     from generated_symbols.data.util.SoundEventRef import SoundEventRef
     from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
     from generated_symbols.util.direction.Direction import Direction
-    from generated_symbols.world.component.item.BlockTransformDropStrategy import BlockTransformDropStrategy
-    from generated_symbols.world.component.item.BlockTransformParticle import BlockTransformParticle
-    from generated_symbols.world.component.item.BlockTransformType import BlockTransformType
 
 
 @dataclass(kw_only=True)
-class BlockTransformer:
+class BlockTransformData:
+    __resource_dir__: ClassVar[str] = 'block_transformer'
+
     block_state_provider: BlockStateProvider  # If the provider returns no result, the next transformer will be attempted.
     sound: SoundEventRef | None = None  # Defaults to not playing sound.
     particle: BlockTransformParticle | None = None  # Defaults to `none`.
@@ -33,7 +35,7 @@ class BlockTransformer:
 
 # ~~~ MODEL DUMP ~~~
 _ = {
-    "::java::world::component::item::BlockTransformer": {
+    "::java::data::block_transformer::BlockTransformData": {
         "kind": "struct",
         "fields": [
             {
@@ -61,7 +63,7 @@ _ = {
                 "key": "particle",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::world::component::item::BlockTransformParticle"
+                    "path": "::java::data::block_transformer::BlockTransformParticle"
                 },
                 "optional": True
             },
@@ -105,7 +107,7 @@ _ = {
                 "key": "drop_strategy",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::world::component::item::BlockTransformDropStrategy"
+                    "path": "::java::data::block_transformer::BlockTransformDropStrategy"
                 },
                 "optional": True
             },
@@ -115,7 +117,7 @@ _ = {
                 "key": "transform_type",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::world::component::item::BlockTransformType"
+                    "path": "::java::data::block_transformer::BlockTransformType"
                 },
                 "optional": True
             },

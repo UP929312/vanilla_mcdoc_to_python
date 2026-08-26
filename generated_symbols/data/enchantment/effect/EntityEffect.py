@@ -71,12 +71,6 @@ class EntityEffectDamageEntity:
 
 
 @dataclass(kw_only=True)
-class EntityEffectDamageItem:
-    type: Literal['minecraft:damage_item']
-    amount: LevelBasedValue  # Damage to apply to the enchanted item. The damage is not applied to items held by players in creative mode.
-
-
-@dataclass(kw_only=True)
 class EntityEffectExplode:
     type: Literal['minecraft:explode']
     attribute_to_user: bool | None = None  # Whether the explosion should be attributed to the user of the enchanted tool.
@@ -156,7 +150,7 @@ class EntityEffectSummonEntity:
     join_team: bool | None = None  # Whether the summoned entity should join the team of the owner of the Enchanted Item.
 
 
-type EntityEffect = EntityEffectAllOf | EntityEffectApplyExhaustion | EntityEffectApplyImpulse | EntityEffectApplyMobEffect | EntityEffectChangeItemDamage | EntityEffectDamageEntity | EntityEffectDamageItem | EntityEffectExplode | EntityEffectIgnite | EntityEffectPlaySound | EntityEffectReplaceBlock | EntityEffectReplaceDisk | EntityEffectRunFunction | EntityEffectSetBlockProperties | EntityEffectSpawnParticles | EntityEffectSummonEntity
+type EntityEffect = EntityEffectAllOf | EntityEffectApplyExhaustion | EntityEffectApplyImpulse | EntityEffectApplyMobEffect | EntityEffectChangeItemDamage | EntityEffectDamageEntity | EntityEffectExplode | EntityEffectIgnite | EntityEffectPlaySound | EntityEffectReplaceBlock | EntityEffectReplaceDisk | EntityEffectRunFunction | EntityEffectSetBlockProperties | EntityEffectSpawnParticles | EntityEffectSummonEntity
 
 
 # ~~~ MODEL DUMP ~~~

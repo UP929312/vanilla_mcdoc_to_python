@@ -10,15 +10,11 @@ from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.assets.item_definition.BannerAttachment import BannerAttachment
-    from generated_symbols.assets.item_definition.BedPart import BedPart
     from generated_symbols.assets.item_definition.ChestType import ChestType
     from generated_symbols.assets.item_definition.CopperGolemStatuePose import CopperGolemStatuePose
     from generated_symbols.assets.item_definition.EndCubeEffectType import EndCubeEffectType
-    from generated_symbols.assets.item_definition.HangingSignAttachment import HangingSignAttachment
     from generated_symbols.assets.item_definition.HeadType import HeadType
     from generated_symbols.assets.item_definition.SpecialModelType import SpecialModelType
-    from generated_symbols.assets.item_definition.StandingSignAttachment import StandingSignAttachment
-    from generated_symbols.assets.item_definition.WoodType import WoodType
     from generated_symbols.assets.model.ModelRef import ModelRef
     from generated_symbols.util.color.DyeColor import DyeColor
     from generated_symbols.world.entity.display.Transformation import Transformation
@@ -34,13 +30,6 @@ class ModelStructBanner:
     type: Literal['minecraft:banner']
     color: DyeColor
     attachment: BannerAttachment | None = None  # Defaults to `ground`.
-
-
-@dataclass(kw_only=True)
-class ModelStructBed:
-    type: Literal['minecraft:bed']
-    texture: Annotated[str, IdSpec(registry='texture', path='entity/bed/')]
-    part: BedPart
 
 
 @dataclass(kw_only=True)
@@ -73,14 +62,6 @@ class ModelStructEndCube:
 
 
 @dataclass(kw_only=True)
-class ModelStructHangingSign:
-    type: Literal['minecraft:hanging_sign']
-    wood_type: WoodType
-    texture: Annotated[str, IdSpec(registry='texture', path='entity/signs/hanging/')] | None = None
-    attachment: HangingSignAttachment | None = None  # Defaults to `ceiling_middle`.
-
-
-@dataclass(kw_only=True)
 class ModelStructHead:
     type: Literal['minecraft:head']
     kind: HeadType
@@ -95,15 +76,7 @@ class ModelStructShulkerBox:
     openness: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
 
 
-@dataclass(kw_only=True)
-class ModelStructStandingSign:
-    type: Literal['minecraft:standing_sign']
-    wood_type: WoodType
-    texture: Annotated[str, IdSpec(registry='texture', path='entity/signs/')] | None = None
-    attachement: StandingSignAttachment | None = None  # There is an extra "e" in the field name. See MC-307498.  Defaults to `ground`.
-
-
-type ModelStruct = ModelStructUnknown | ModelStructBanner | ModelStructBed | ModelStructBook | ModelStructChest | ModelStructCopperGolemStatue | ModelStructEndCube | ModelStructHangingSign | ModelStructHead | ModelStructShulkerBox | ModelStructStandingSign
+type ModelStruct = ModelStructUnknown | ModelStructBanner | ModelStructBook | ModelStructChest | ModelStructCopperGolemStatue | ModelStructEndCube | ModelStructHead | ModelStructShulkerBox
 
 @dataclass(kw_only=True)
 class Special:

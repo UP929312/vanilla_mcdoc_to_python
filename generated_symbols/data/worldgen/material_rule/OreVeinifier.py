@@ -1,10 +1,10 @@
 """
-Generated from symbols.json for ::java::data::worldgen::noise_settings::OreVeinifier
-Local link to file: generated_symbols/data/worldgen/noise_settings/OreVeinifier.py
+Generated from symbols.json for ::java::data::worldgen::material_rule::OreVeinifier
+Local link to file: generated_symbols/data/worldgen/material_rule/OreVeinifier.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING, Annotated, ClassVar
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.density_function.DensityFunctionRef import DensityFunctionRef
@@ -13,6 +13,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class OreVeinifier:
+    __resource_dir__: ClassVar[str] = 'worldgen/material_rule'
+
     ore_block: BlockState
     raw_ore_block: BlockState
     filler_block: BlockState
@@ -24,7 +26,7 @@ class OreVeinifier:
 
 # ~~~ MODEL DUMP ~~~
 _ = {
-    "::java::data::worldgen::noise_settings::OreVeinifier": {
+    "::java::data::worldgen::material_rule::OreVeinifier": {
         "kind": "struct",
         "fields": [
             {

@@ -20,7 +20,7 @@ class SchemaGraph:
         dispatchers: dict[str, dict[str, BaseSchema]] = {}
         for name, data in symbol_maps.get("mcdoc/dispatcher", {}).items():
             dispatchers[name] = {
-                key: KIND_TO_MODEL[branch["kind"]](**branch).remove_version_data()
+                key: KIND_TO_MODEL[branch["kind"]](**branch)
                 for key, branch in data.items()
                 if key != "attribute"
             }

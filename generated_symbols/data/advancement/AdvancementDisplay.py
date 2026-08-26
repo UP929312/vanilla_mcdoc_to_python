@@ -4,9 +4,7 @@ Local link to file: generated_symbols/data/advancement/AdvancementDisplay.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
-
-from minecraft_registry import IdSpec
+from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from generated_symbols.data.advancement.AdvancementFrame import AdvancementFrame
@@ -19,7 +17,6 @@ class AdvancementDisplay:
     icon: ItemStackTemplate
     title: Text
     description: Text
-    background: Annotated[str, IdSpec(registry='texture')] | None = None  # Used for the advancement tab (root advancement only).
     frame: AdvancementFrame | None = None  # Controls the advancement tile frame. Defaults to `task`.
     show_toast: bool | None = None  # Whether to show the toast pop up after completing this advancement. Defaults to `true`.
     announce_to_chat: bool | None = None  # Whether to announce in the chat when this advancement has been completed. Defaults to `true`.
@@ -87,57 +84,6 @@ _ = {
                     "kind": "reference",
                     "path": "::java::util::text::Text"
                 }
-            },
-            {
-                "kind": "pair",
-                "desc": "Used for the advancement tab (root advancement only).",
-                "key": "background",
-                "type": {
-                    "kind": "union",
-                    "members": [
-                        {
-                            "kind": "string",
-                            "attributes": [
-                                {
-                                    "name": "until",
-                                    "value": {
-                                        "kind": "literal",
-                                        "value": {
-                                            "kind": "string",
-                                            "value": "1.21.5"
-                                        }
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "kind": "string",
-                            "attributes": [
-                                {
-                                    "name": "since",
-                                    "value": {
-                                        "kind": "literal",
-                                        "value": {
-                                            "kind": "string",
-                                            "value": "1.21.5"
-                                        }
-                                    }
-                                },
-                                {
-                                    "name": "id",
-                                    "value": {
-                                        "kind": "literal",
-                                        "value": {
-                                            "kind": "string",
-                                            "value": "texture"
-                                        }
-                                    }
-                                }
-                            ]
-                        }
-                    ]
-                },
-                "optional": True
             },
             {
                 "kind": "pair",

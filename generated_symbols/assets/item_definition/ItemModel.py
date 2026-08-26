@@ -38,7 +38,6 @@ from generated_symbols.world.component.entity.TropicalFishPattern import Tropica
 from generated_symbols.world.component.item.AdventureModePredicate import AdventureModePredicate
 from generated_symbols.world.component.item.AttackRange import AttackRange
 from generated_symbols.world.component.item.AttributeModifier import AttributeModifier
-from generated_symbols.world.component.item.BlockTransformer import BlockTransformer
 from generated_symbols.world.component.item.BrewingFuel import BrewingFuel
 from generated_symbols.world.component.item.BucketEntityData import BucketEntityData
 from generated_symbols.world.component.item.Compostable import Compostable
@@ -81,21 +80,17 @@ from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.assets.item_definition.BannerAttachment import BannerAttachment
-    from generated_symbols.assets.item_definition.BedPart import BedPart
     from generated_symbols.assets.item_definition.ChestType import ChestType
     from generated_symbols.assets.item_definition.CompassTarget import CompassTarget
     from generated_symbols.assets.item_definition.ConditionalPropertyType import ConditionalPropertyType
     from generated_symbols.assets.item_definition.CopperGolemStatuePose import CopperGolemStatuePose
     from generated_symbols.assets.item_definition.EndCubeEffectType import EndCubeEffectType
-    from generated_symbols.assets.item_definition.HangingSignAttachment import HangingSignAttachment
     from generated_symbols.assets.item_definition.HeadType import HeadType
     from generated_symbols.assets.item_definition.ModelTint import ModelTint
     from generated_symbols.assets.item_definition.NumericPropertyType import NumericPropertyType
     from generated_symbols.assets.item_definition.SelectPropertyType import SelectPropertyType
     from generated_symbols.assets.item_definition.SpecialModelType import SpecialModelType
-    from generated_symbols.assets.item_definition.StandingSignAttachment import StandingSignAttachment
     from generated_symbols.assets.item_definition.TimeSource import TimeSource
-    from generated_symbols.assets.item_definition.WoodType import WoodType
     from generated_symbols.assets.model.ModelRef import ModelRef
     from generated_symbols.data.advancement.predicate.EnchantmentPredicate import EnchantmentPredicate
     from generated_symbols.util.text.Keybind import Keybind
@@ -128,6 +123,21 @@ class DataComponentStructCreativeSlotLock:
 
 
 @dataclass(kw_only=True)
+class DataComponentStructFireResistant:
+    pass
+
+
+@dataclass(kw_only=True)
+class DataComponentStructHideAdditionalTooltip:
+    pass
+
+
+@dataclass(kw_only=True)
+class DataComponentStructWaxed:
+    pass
+
+
+@dataclass(kw_only=True)
 class ModelStructUnknown:
     type: SpecialModelType
 
@@ -137,13 +147,6 @@ class ModelStructBanner:
     type: Literal['minecraft:banner']
     color: DyeColor
     attachment: BannerAttachment | None = None  # Defaults to `ground`.
-
-
-@dataclass(kw_only=True)
-class ModelStructBed:
-    type: Literal['minecraft:bed']
-    texture: Annotated[str, IdSpec(registry='texture', path='entity/bed/')]
-    part: BedPart
 
 
 @dataclass(kw_only=True)
@@ -176,14 +179,6 @@ class ModelStructEndCube:
 
 
 @dataclass(kw_only=True)
-class ModelStructHangingSign:
-    type: Literal['minecraft:hanging_sign']
-    wood_type: WoodType
-    texture: Annotated[str, IdSpec(registry='texture', path='entity/signs/hanging/')] | None = None
-    attachment: HangingSignAttachment | None = None  # Defaults to `ceiling_middle`.
-
-
-@dataclass(kw_only=True)
 class ModelStructHead:
     type: Literal['minecraft:head']
     kind: HeadType
@@ -198,15 +193,7 @@ class ModelStructShulkerBox:
     openness: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
 
 
-@dataclass(kw_only=True)
-class ModelStructStandingSign:
-    type: Literal['minecraft:standing_sign']
-    wood_type: WoodType
-    texture: Annotated[str, IdSpec(registry='texture', path='entity/signs/')] | None = None
-    attachement: StandingSignAttachment | None = None  # There is an extra "e" in the field name. See MC-307498.  Defaults to `ground`.
-
-
-type ModelStruct = ModelStructUnknown | ModelStructBanner | ModelStructBed | ModelStructBook | ModelStructChest | ModelStructCopperGolemStatue | ModelStructEndCube | ModelStructHangingSign | ModelStructHead | ModelStructShulkerBox | ModelStructStandingSign
+type ModelStruct = ModelStructUnknown | ModelStructBanner | ModelStructBook | ModelStructChest | ModelStructCopperGolemStatue | ModelStructEndCube | ModelStructHead | ModelStructShulkerBox
 
 @dataclass(kw_only=True)
 class ItemModelBundleSelectedItem:
@@ -407,7 +394,7 @@ class ItemModelSelectChargeType(SelectCases[CrossbowChargeType]):
 
 
 @dataclass(kw_only=True)
-class ItemModelSelectComponent(SelectCases[int | SwingAnimation | AttackRange | list[AttributeModifier] | AxolotlVariant | list[BannerPatternLayer] | DyeColor | list[Occupant] | BlockEntityData | str | DataComponentStructBlockStateBlockItemStatesNone | Annotated[list[BlockTransformer], 'Length = 1-200 (both inclusive)'] | blocks_attacks | SoundEventRef | BrewingFuel | BucketEntityData | str | list[ItemStackTemplate] | AdventureModePredicate | Annotated[str, IdSpec(registry='cat_sound_variant')] | Annotated[str, IdSpec(registry='cat_variant')] | Annotated[str, IdSpec(registry='chicken_sound_variant')] | Annotated[str, IdSpec(registry='chicken_variant')] | Compostable | Consumable | Annotated[list[ContainerSlot], 'Length = up to 256 (inclusive)'] | ContainerLoot | CookingFuel | Annotated[str, IdSpec(registry='cow_sound_variant')] | Annotated[str, IdSpec(registry='cow_variant')] | DataComponentStructCreativeSlotLock | CustomData | CustomModelData | Text | Annotated[int, 'Range | Min `0` and above | inclusive'] | DamageResistant | Annotated[str, IdSpec(registry='damage_type')] | DamageType | DeathProtection | DebugStickState | RGB | Enchantable | bool | EnchantmentLevels | AnyEntity | str | Equippable | Explosion | Fireworks | Food | FoxType | Annotated[str, IdSpec(registry='frog_variant')] | HorseVariant | Annotated[str, IdSpec(registry='instrument')] | Instrument | Annotated[str, IdSpec(registry='item_definition')] | Annotated[str, IdSpec(registry='jukebox_song')] | KineticWeapon | LlamaVariant | ItemPredicate | LodestoneTracker | list[Text] | MapDecorations | Annotated[int, 'Range | Min `1` and above | inclusive'] | Annotated[int, 'Range | `1`-`99` | both inclusive'] | Annotated[float, 'Range | `0`-`1` | both inclusive'] | MobVisibility | MooshroomType | Annotated[str, IdSpec(registry='weighed_sound_event')] | Annotated[int, 'Range | `0`-`4` | both inclusive'] | Annotated[str, IdSpec(registry='painting_variant')] | ParrotVariant | PiercingWeapon | Annotated[str, IdSpec(registry='pig_sound_variant')] | Annotated[str, IdSpec(registry='pig_variant')] | PotDecorations | PotionContents | Annotated[str, IdSpec(registry='potion')] | Annotated[float, 'Range | Min `0` and above | inclusive'] | Profile | Annotated[str, IdSpec(registry='banner_pattern', tags='allowed')] | list[Annotated[str, IdSpec(registry='banner_pattern')]] | Annotated[str, IdSpec(registry='decorated_pot_pattern')] | Annotated[str, IdSpec(registry='trim_material')] | RabbitVariant | Rarity | list[Annotated[str, IdSpec(registry='recipe')]] | Repairable | SalmonType | SignText | ItemStackTemplate | list[SuspiciousStewEffect] | Tool | TooltipDisplay | Annotated[str, IdSpec()] | Trim | TropicalFishPattern | Unbreakable | UseCooldown | UseEffects | VillagerFood | Annotated[str, IdSpec(registry='villager_type')] | Weapon | Annotated[str, IdSpec(registry='wolf_sound_variant')] | Annotated[str, IdSpec(registry='wolf_variant')] | WritableBookContent | WrittenBookContent | Annotated[str, IdSpec(registry='zombie_nautilus_variant')]]):
+class ItemModelSelectComponent(SelectCases[int | SwingAnimation | AttackRange | list[AttributeModifier] | AxolotlVariant | list[BannerPatternLayer] | DyeColor | list[Occupant] | BlockEntityData | str | DataComponentStructBlockStateBlockItemStatesNone | Annotated[str, IdSpec(registry='block_transformer')] | blocks_attacks | SoundEventRef | BrewingFuel | BucketEntityData | str | list[ItemStackTemplate] | AdventureModePredicate | Annotated[str, IdSpec(registry='cat_sound_variant')] | Annotated[str, IdSpec(registry='cat_variant')] | Annotated[str, IdSpec(registry='chicken_sound_variant')] | Annotated[str, IdSpec(registry='chicken_variant')] | Compostable | Consumable | Annotated[list[ContainerSlot], 'Length = up to 256 (inclusive)'] | ContainerLoot | CookingFuel | Annotated[str, IdSpec(registry='cow_sound_variant')] | Annotated[str, IdSpec(registry='cow_variant')] | DataComponentStructCreativeSlotLock | CustomData | CustomModelData | Text | Annotated[int, 'Range | Min `0` and above | inclusive'] | DamageResistant | Annotated[str, IdSpec(registry='damage_type')] | DamageType | DeathProtection | DebugStickState | RGB | Enchantable | bool | EnchantmentLevels | AnyEntity | str | Equippable | DataComponentStructFireResistant | Explosion | Fireworks | Food | FoxType | Annotated[str, IdSpec(registry='frog_variant')] | DataComponentStructHideAdditionalTooltip | HorseVariant | Annotated[str, IdSpec(registry='instrument')] | Instrument | Annotated[str, IdSpec(registry='item_definition')] | Annotated[str, IdSpec(registry='jukebox_song')] | KineticWeapon | LlamaVariant | ItemPredicate | LodestoneTracker | list[Text] | MapDecorations | Annotated[int, 'Range | Min `1` and above | inclusive'] | Annotated[int, 'Range | `1`-`99` | both inclusive'] | Annotated[float, 'Range | `0`-`1` | both inclusive'] | MobVisibility | MooshroomType | Annotated[str, IdSpec(registry='weighed_sound_event')] | Annotated[int, 'Range | `0`-`4` | both inclusive'] | Annotated[str, IdSpec(registry='painting_variant')] | ParrotVariant | PiercingWeapon | Annotated[str, IdSpec(registry='pig_sound_variant')] | Annotated[str, IdSpec(registry='pig_variant')] | PotDecorations | PotionContents | Annotated[str, IdSpec(registry='potion')] | Annotated[float, 'Range | Min `0` and above | inclusive'] | Profile | Annotated[str, IdSpec(registry='banner_pattern', tags='allowed')] | list[Annotated[str, IdSpec(registry='banner_pattern')]] | Annotated[str, IdSpec(registry='decorated_pot_pattern')] | Annotated[str, IdSpec(registry='trim_material')] | RabbitVariant | Rarity | list[Annotated[str, IdSpec(registry='recipe')]] | Repairable | SalmonType | SignText | ItemStackTemplate | list[SuspiciousStewEffect] | Tool | TooltipDisplay | Annotated[str, IdSpec()] | Trim | TropicalFishPattern | Unbreakable | UseCooldown | UseEffects | VillagerFood | Annotated[str, IdSpec(registry='villager_type')] | DataComponentStructWaxed | Weapon | Annotated[str, IdSpec(registry='wolf_sound_variant')] | Annotated[str, IdSpec(registry='wolf_variant')] | WritableBookContent | WrittenBookContent | Annotated[str, IdSpec(registry='zombie_nautilus_variant')]]):
     type: Literal['minecraft:select']
     property: Literal['minecraft:component']
     fallback: ItemModel | None = None  # Item model to render if none of the cases matched the value.

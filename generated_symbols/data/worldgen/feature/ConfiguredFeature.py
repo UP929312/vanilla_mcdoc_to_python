@@ -18,13 +18,11 @@ if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.GeodeBlockSettings import GeodeBlockSettings
     from generated_symbols.data.worldgen.feature.GeodeCrackSettings import GeodeCrackSettings
     from generated_symbols.data.worldgen.feature.GeodeLayerSettings import GeodeLayerSettings
-    from generated_symbols.data.worldgen.feature.GrowingPlantHeight import GrowingPlantHeight
     from generated_symbols.data.worldgen.feature.MultifaceBlock import MultifaceBlock
     from generated_symbols.data.worldgen.feature.TargetBlock import TargetBlock
     from generated_symbols.data.worldgen.feature.TemplateEntry import TemplateEntry
     from generated_symbols.data.worldgen.feature.block_predicate.BlockPredicate import BlockPredicate
     from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
-    from generated_symbols.data.worldgen.feature.decorator.ConfiguredDecorator import ConfiguredDecorator
     from generated_symbols.data.worldgen.feature.placement.PlacedFeatureListRef import PlacedFeatureListRef
     from generated_symbols.data.worldgen.feature.placement.PlacedFeatureRef import PlacedFeatureRef
     from generated_symbols.data.worldgen.feature.tree.FeatureSize import FeatureSize
@@ -53,19 +51,6 @@ class ConfiguredFeatureBamboo:
 
     type: Literal['minecraft:bamboo']
     probability: Annotated[float, 'Range | `0`-`1` | both inclusive']
-
-
-@dataclass(kw_only=True)
-class ConfiguredFeatureBasaltColumns:
-    type: Literal['minecraft:basalt_columns']
-    block: BlockStateProvider
-    can_replace: BlockPredicate
-    continue_through: BlockPredicate
-    cannot_place_on: Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | list[Annotated[str, IdSpec(registry='block')] | KnownBlockId]
-    column_reach: IntProvider[Annotated[int, 'Range | `0`-`3` | both inclusive']] | Annotated[int, 'Range | `0`-`3` | both inclusive']
-    column_count: IntProvider[Annotated[int, 'Range | `1`-`150` | both inclusive']] | Annotated[int, 'Range | `1`-`150` | both inclusive']
-    height: IntProvider[Annotated[int, 'Range | `1`-`10` | both inclusive']] | Annotated[int, 'Range | `1`-`10` | both inclusive']
-    cluster_reach: IntProvider[Annotated[int, 'Range | `0`-`13` | both inclusive']] | Annotated[int, 'Range | `0`-`13` | both inclusive']  # The effective reach is limited by `height`.
 
 
 @dataclass(kw_only=True)
@@ -103,13 +88,6 @@ class ConfiguredFeatureCoralTree:
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureDecorated:
-    type: Literal['minecraft:decorated']
-    decorator: ConfiguredDecorator
-    feature: FeatureRef
-
-
-@dataclass(kw_only=True)
 class ConfiguredFeatureDeltaFeature:
     type: Literal['minecraft:delta_feature']
     contents: BlockState
@@ -125,25 +103,6 @@ class ConfiguredFeatureDisk:
     radius: IntProvider[Annotated[int, 'Range | `0`-`8` | both inclusive']] | Annotated[int, 'Range | `0`-`8` | both inclusive']
     half_height: Annotated[int, 'Range | `0`-`4` | both inclusive']
     target: BlockPredicate
-
-
-@dataclass(kw_only=True)
-class ConfiguredFeatureDripstoneCluster:
-    type: Literal['minecraft:dripstone_cluster']
-    base_block: BlockState
-    pointed_block: BlockState
-    replaceable_blocks: list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId
-    floor_to_ceiling_search_range: Annotated[int, 'Range | `1`-`512` | both inclusive']
-    height: IntProvider[Annotated[int, 'Range | `0`-`128` | both inclusive']] | Annotated[int, 'Range | `0`-`128` | both inclusive']
-    radius: IntProvider[Annotated[int, 'Range | `0`-`128` | both inclusive']] | Annotated[int, 'Range | `0`-`128` | both inclusive']
-    max_stalagmite_stalactite_height_diff: Annotated[int, 'Range | `0`-`64` | both inclusive']  # Max height difference between the stalagmite and stalactite.
-    height_deviation: Annotated[int, 'Range | `1`-`64` | both inclusive']
-    speleothem_block_layer_thickness: IntProvider[Annotated[int, 'Range | `0`-`128` | both inclusive']] | Annotated[int, 'Range | `0`-`128` | both inclusive']
-    density: FloatProvider[Annotated[float, 'Range | `0`-`2` | both inclusive']] | Annotated[float, 'Range | `0`-`2` | both inclusive']
-    wetness: FloatProvider[Annotated[float, 'Range | `0`-`2` | both inclusive']] | Annotated[float, 'Range | `0`-`2` | both inclusive']
-    chance_of_speleothem_at_max_distance_from_center: Annotated[float, 'Range | `0`-`1` | both inclusive']
-    max_distance_from_edge_affecting_chance_of_speleothem: Annotated[int, 'Range | `1`-`64` | both inclusive']
-    max_distance_from_center_affecting_height_bias: Annotated[int, 'Range | `1`-`64` | both inclusive']
 
 
 @dataclass(kw_only=True)
@@ -200,12 +159,6 @@ class ConfiguredFeatureFlower:
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureForestRock:
-    type: Literal['minecraft:forest_rock']
-    state: BlockState
-
-
-@dataclass(kw_only=True)
 class ConfiguredFeatureFossil:
     type: Literal['minecraft:fossil']
     max_empty_corners_allowed: Annotated[int, 'Range | `0`-`7` | both inclusive']  # If more corners are exposed to air, feature placement is cancelled.
@@ -243,16 +196,6 @@ class ConfiguredFeatureGlowLichen:
     can_place_on_ceiling: bool | None = None
     can_place_on_wall: bool | None = None
     can_be_placed_on: list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | None = None
-
-
-@dataclass(kw_only=True)
-class ConfiguredFeatureGrowingPlant:
-    type: Literal['minecraft:growing_plant']
-    direction: Direction
-    allow_water: bool
-    height_distribution: list[GrowingPlantHeight]
-    body_provider: BlockStateProvider
-    head_provider: BlockStateProvider
 
 
 @dataclass(kw_only=True)
@@ -337,14 +280,6 @@ class ConfiguredFeatureMultifaceGrowth:
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureNetherForestVegetation:
-    type: Literal['minecraft:nether_forest_vegetation']
-    state_provider: BlockStateProvider
-    spread_width: Annotated[int, 'Range | Min `1` and above | inclusive']
-    spread_height: Annotated[int, 'Range | Min `1` and above | inclusive']
-
-
-@dataclass(kw_only=True)
 class ConfiguredFeatureNetherrackReplaceBlobs:
     type: Literal['minecraft:netherrack_replace_blobs']
     state: BlockState
@@ -381,18 +316,6 @@ class ConfiguredFeatureOre:
 class ConfiguredFeatureOverlay:
     type: Literal['minecraft:overlay']
     features: PlacedFeatureListRef  # The features to generate, in order.  All features are placed regardless of individual placement success.
-
-
-@dataclass(kw_only=True)
-class ConfiguredFeaturePointedDripstone:
-    type: Literal['minecraft:pointed_dripstone']
-    base_block: BlockState
-    pointed_block: BlockState
-    replaceable_blocks: list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId
-    chance_of_taller_generation: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
-    chance_of_directional_spread: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
-    chance_of_spread_radius2: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
-    chance_of_spread_radius3: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
 
 
 @dataclass(kw_only=True)
@@ -483,18 +406,6 @@ class ConfiguredFeatureSculkPatch:
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureSeaPickle:
-    type: Literal['minecraft:sea_pickle']
-    count: IntProvider[Annotated[int, 'Range | `0`-`256` | both inclusive']] | Annotated[int, 'Range | `0`-`256` | both inclusive']
-
-
-@dataclass(kw_only=True)
-class ConfiguredFeatureSeagrass:
-    type: Literal['minecraft:seagrass']
-    probability: Annotated[float, 'Range | `0`-`1` | both inclusive']
-
-
-@dataclass(kw_only=True)
 class ConfiguredFeatureSequence:
     type: Literal['minecraft:sequence']
     features: PlacedFeatureListRef  # The features to generate, in order.  If any feature in the list is not placed, the following features will also be skipped.
@@ -521,15 +432,6 @@ class ConfiguredFeatureSingleBlockPillar:
     direction: VerticalDirection
     chance_to_continue: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None  # Defaults to 1.
     cap_feature: PlacedFeatureRef | None = None
-
-
-@dataclass(kw_only=True)
-class ConfiguredFeatureSmallDripstone:
-    type: Literal['minecraft:small_dripstone']
-    max_placements: Annotated[int, 'Range | `0`-`100` | both inclusive'] | None = None
-    empty_space_search_radius: Annotated[int, 'Range | `0`-`20` | both inclusive'] | None = None
-    max_offset_from_origin: Annotated[int, 'Range | `0`-`20` | both inclusive'] | None = None
-    chance_of_taller_dripstone: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
 
 
 @dataclass(kw_only=True)
@@ -616,14 +518,6 @@ class ConfiguredFeatureTree:
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureTwistingVines:
-    type: Literal['minecraft:twisting_vines']
-    spread_width: Annotated[int, 'Range | Min `1` and above | inclusive']
-    spread_height: Annotated[int, 'Range | Min `1` and above | inclusive']
-    max_height: Annotated[int, 'Range | Min `1` and above | inclusive']
-
-
-@dataclass(kw_only=True)
 class ConfiguredFeatureUnderwaterMagma:
     type: Literal['minecraft:underwater_magma']
     floor_search_range: Annotated[int, 'Range | `0`-`512` | both inclusive']
@@ -667,7 +561,7 @@ class ConfiguredFeatureWeightedRandomSelector:
     features: WeightedList[PlacedFeatureRef]
 
 
-type ConfiguredFeature = ConfiguredFeatureBamboo | ConfiguredFeatureBasaltColumns | ConfiguredFeatureBlockBlob | ConfiguredFeatureBlockColumn | ConfiguredFeatureBlockPile | ConfiguredFeatureCoralClaw | ConfiguredFeatureCoralTree | ConfiguredFeatureDecorated | ConfiguredFeatureDeltaFeature | ConfiguredFeatureDisk | ConfiguredFeatureDripstoneCluster | ConfiguredFeatureEmeraldOre | ConfiguredFeatureEndGateway | ConfiguredFeatureEndPodium | ConfiguredFeatureEndSpike | ConfiguredFeatureFallenTree | ConfiguredFeatureFillLayer | ConfiguredFeatureFlower | ConfiguredFeatureForestRock | ConfiguredFeatureFossil | ConfiguredFeatureGeode | ConfiguredFeatureGlowLichen | ConfiguredFeatureGrowingPlant | ConfiguredFeatureHugeBrownMushroom | ConfiguredFeatureHugeFungus | ConfiguredFeatureHugeRedMushroom | ConfiguredFeatureIcePatch | ConfiguredFeatureIceberg | ConfiguredFeatureLake | ConfiguredFeatureLargeDripstone | ConfiguredFeatureMultifaceGrowth | ConfiguredFeatureNetherForestVegetation | ConfiguredFeatureNetherrackReplaceBlobs | ConfiguredFeatureNoBonemealFlower | ConfiguredFeatureNoSurfaceOre | ConfiguredFeatureOre | ConfiguredFeatureOverlay | ConfiguredFeaturePointedDripstone | ConfiguredFeatureProjectedRandomPatchySquare | ConfiguredFeatureRandomBooleanSelector | ConfiguredFeatureRandomNeighborSpread | ConfiguredFeatureRandomPatch | ConfiguredFeatureRandomSelector | ConfiguredFeatureReplaceSingleBlock | ConfiguredFeatureRootSystem | ConfiguredFeatureScatteredOre | ConfiguredFeatureSculkPatch | ConfiguredFeatureSeaPickle | ConfiguredFeatureSeagrass | ConfiguredFeatureSequence | ConfiguredFeatureSimpleBlock | ConfiguredFeatureSimpleRandomSelector | ConfiguredFeatureSingleBlockPillar | ConfiguredFeatureSmallDripstone | ConfiguredFeatureSpeleothem | ConfiguredFeatureSpeleothemCluster | ConfiguredFeatureSpike | ConfiguredFeatureSpringFeature | ConfiguredFeatureSteppedColumnCluster | ConfiguredFeatureTemplate | ConfiguredFeatureTree | ConfiguredFeatureTwistingVines | ConfiguredFeatureUnderwaterMagma | ConfiguredFeatureVegetationPatch | ConfiguredFeatureWaterloggedVegetationPatch | ConfiguredFeatureWeightedRandomSelector
+type ConfiguredFeature = ConfiguredFeatureBamboo | ConfiguredFeatureBlockBlob | ConfiguredFeatureBlockColumn | ConfiguredFeatureBlockPile | ConfiguredFeatureCoralClaw | ConfiguredFeatureCoralTree | ConfiguredFeatureDeltaFeature | ConfiguredFeatureDisk | ConfiguredFeatureEmeraldOre | ConfiguredFeatureEndGateway | ConfiguredFeatureEndPodium | ConfiguredFeatureEndSpike | ConfiguredFeatureFallenTree | ConfiguredFeatureFillLayer | ConfiguredFeatureFlower | ConfiguredFeatureFossil | ConfiguredFeatureGeode | ConfiguredFeatureGlowLichen | ConfiguredFeatureHugeBrownMushroom | ConfiguredFeatureHugeFungus | ConfiguredFeatureHugeRedMushroom | ConfiguredFeatureIcePatch | ConfiguredFeatureIceberg | ConfiguredFeatureLake | ConfiguredFeatureLargeDripstone | ConfiguredFeatureMultifaceGrowth | ConfiguredFeatureNetherrackReplaceBlobs | ConfiguredFeatureNoBonemealFlower | ConfiguredFeatureNoSurfaceOre | ConfiguredFeatureOre | ConfiguredFeatureOverlay | ConfiguredFeatureProjectedRandomPatchySquare | ConfiguredFeatureRandomBooleanSelector | ConfiguredFeatureRandomNeighborSpread | ConfiguredFeatureRandomPatch | ConfiguredFeatureRandomSelector | ConfiguredFeatureReplaceSingleBlock | ConfiguredFeatureRootSystem | ConfiguredFeatureScatteredOre | ConfiguredFeatureSculkPatch | ConfiguredFeatureSequence | ConfiguredFeatureSimpleBlock | ConfiguredFeatureSimpleRandomSelector | ConfiguredFeatureSingleBlockPillar | ConfiguredFeatureSpeleothem | ConfiguredFeatureSpeleothemCluster | ConfiguredFeatureSpike | ConfiguredFeatureSpringFeature | ConfiguredFeatureSteppedColumnCluster | ConfiguredFeatureTemplate | ConfiguredFeatureTree | ConfiguredFeatureUnderwaterMagma | ConfiguredFeatureVegetationPatch | ConfiguredFeatureWaterloggedVegetationPatch | ConfiguredFeatureWeightedRandomSelector
 
 
 # ~~~ MODEL DUMP ~~~

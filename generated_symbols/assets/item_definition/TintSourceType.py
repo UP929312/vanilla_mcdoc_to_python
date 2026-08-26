@@ -12,7 +12,6 @@ class TintSourceType(StrEnum):
     DYE = "dye"
     FIREWORK = "firework"
     GRASS = "grass"
-    MAPCOLOR = "map_color"
     POTION = "potion"
     TEAM = "team"
 

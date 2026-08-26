@@ -10,7 +10,7 @@ from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.enchantment.LevelBasedValue import LevelBasedValue
-    from generated_symbols.data.number_provider.NumberProviderListRef import NumberProviderListRef
+    from generated_symbols.data.number_provider.AggregateOperands import AggregateOperands
     from generated_symbols.data.number_provider.NumberProviderRef import NumberProviderRef
     from generated_symbols.data.predicate.PredicateRef import PredicateRef
     from generated_symbols.data.util.ScoreProvider import ScoreProvider
@@ -25,12 +25,11 @@ class CasesStruct:
 
 
 @dataclass(kw_only=True)
-class NumberProviderStructNone:
+class NumberProviderStructAverage:
     __resource_dir__: ClassVar[str] = 'number_provider'
 
-    type: Annotated[str, IdSpec(registry='loot_number_provider_type')]
-    min: NumberProviderRef | None = None
-    max: NumberProviderRef | None = None
+    type: Literal['minecraft:average']
+    operands: AggregateOperands
 
 
 @dataclass(kw_only=True)
@@ -67,10 +66,28 @@ class NumberProviderStructEnvironmentAttribute:
 
 
 @dataclass(kw_only=True)
+class NumberProviderStructMaximum:
+    type: Literal['minecraft:maximum']
+    operands: AggregateOperands
+
+
+@dataclass(kw_only=True)
+class NumberProviderStructMinimum:
+    type: Literal['minecraft:minimum']
+    operands: AggregateOperands
+
+
+@dataclass(kw_only=True)
 class NumberProviderStructNumberDispatcher:
     type: Literal['minecraft:number_dispatcher']
     cases: list[CasesStruct]
     default: NumberProviderRef | None = None  # Defaults to constant 0.
+
+
+@dataclass(kw_only=True)
+class NumberProviderStructProduct:
+    type: Literal['minecraft:product']
+    operands: AggregateOperands
 
 
 @dataclass(kw_only=True)
@@ -91,7 +108,7 @@ class NumberProviderStructStorage:
 @dataclass(kw_only=True)
 class NumberProviderStructSum:
     type: Literal['minecraft:sum']
-    summands: NumberProviderListRef
+    operands: AggregateOperands
 
 
 @dataclass(kw_only=True)
@@ -107,7 +124,7 @@ class NumberProviderStructWeightedList:
     distribution: NonEmptyWeightedList[NumberProviderRef]
 
 
-type NumberProviderStruct = NumberProviderStructNone | NumberProviderStructBinomial | NumberProviderStructConditional | NumberProviderStructConstant | NumberProviderStructEnchantmentLevel | NumberProviderStructEnvironmentAttribute | NumberProviderStructNumberDispatcher | NumberProviderStructScore | NumberProviderStructStorage | NumberProviderStructSum | NumberProviderStructUniform | NumberProviderStructWeightedList
+type NumberProviderStruct = NumberProviderStructAverage | NumberProviderStructBinomial | NumberProviderStructConditional | NumberProviderStructConstant | NumberProviderStructEnchantmentLevel | NumberProviderStructEnvironmentAttribute | NumberProviderStructMaximum | NumberProviderStructMinimum | NumberProviderStructNumberDispatcher | NumberProviderStructProduct | NumberProviderStructScore | NumberProviderStructStorage | NumberProviderStructSum | NumberProviderStructUniform | NumberProviderStructWeightedList
 
 type NumberProvider = float | NumberProviderStruct
 

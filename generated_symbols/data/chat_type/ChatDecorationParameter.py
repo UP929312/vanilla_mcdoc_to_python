@@ -9,7 +9,6 @@ from enum import StrEnum
 class ChatDecorationParameter(StrEnum):
     SENDER = "sender"
     CONTENT = "content"
-    TEAMNAME = "team_name"
     TARGET = "target"
 
 

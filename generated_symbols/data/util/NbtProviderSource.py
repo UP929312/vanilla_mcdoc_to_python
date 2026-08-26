@@ -8,11 +8,8 @@ from enum import StrEnum
 
 class NbtProviderSource(StrEnum):
     THIS = "this"
-    KILLER = "killer"
     ATTACKER = "attacker"
-    DIRECTKILLER = "direct_killer"
     DIRECTATTACKER = "direct_attacker"
-    KILLERPLAYER = "killer_player"
     ATTACKINGPLAYER = "attacking_player"
     BLOCKENTITY = "block_entity"
 

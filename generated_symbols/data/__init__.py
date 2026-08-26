@@ -13,6 +13,8 @@ from generated_symbols.data.advancement.AdvancementIcon import AdvancementIcon
 from generated_symbols.data.advancement.trigger.AdvancementLocationPredicate import AdvancementLocationPredicate
 from generated_symbols.data.advancement.AdvancementRewards import AdvancementRewards
 from generated_symbols.data.dialog.AfterAction import AfterAction
+from generated_symbols.data.number_provider.AggregateNumberProvider import AggregateNumberProvider
+from generated_symbols.data.number_provider.AggregateOperands import AggregateOperands
 from generated_symbols.data.loot.condition.AllOf import AllOf
 from generated_symbols.data.enchantment.effect.AllOfEffectValue import AllOfEffectValue
 from generated_symbols.data.enchantment.effect.AllOfEntityEffect import AllOfEntityEffect
@@ -91,6 +93,10 @@ from generated_symbols.data.worldgen.processor_list.BlockStateMatch import Block
 from generated_symbols.data.loot.condition.BlockStateProperty import BlockStateProperty
 from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
 from generated_symbols.data.worldgen.feature.BlockStateRuleProviderEntry import BlockStateRuleProviderEntry
+from generated_symbols.data.block_transformer.BlockTransformData import BlockTransformData
+from generated_symbols.data.block_transformer.BlockTransformDropStrategy import BlockTransformDropStrategy
+from generated_symbols.data.block_transformer.BlockTransformParticle import BlockTransformParticle
+from generated_symbols.data.block_transformer.BlockTransformType import BlockTransformType
 from generated_symbols.data.advancement.predicate.BoatPredicate import BoatPredicate
 from generated_symbols.data.gametest.test_environment.BoolGameRule import BoolGameRule
 from generated_symbols.data.worldgen.attribute.BooleanAttribute import BooleanAttribute
@@ -237,6 +243,7 @@ from generated_symbols.data.loot.condition.DamageSourceProperties import DamageS
 from generated_symbols.data.advancement.predicate.DamageTagPredicate import DamageTagPredicate
 from generated_symbols.data.damage_type.DamageType import DamageType
 from generated_symbols.data.damage_type.DeathMessageType import DeathMessageType
+from generated_symbols.data.worldgen.noise_settings.DebugFunctionEntry import DebugFunctionEntry
 from generated_symbols.data.decorated_pot_pattern.DecoratedPotPattern import DecoratedPotPattern
 from generated_symbols.data.worldgen.DecorationStep import DecorationStep
 from generated_symbols.data.advancement.trigger.DefaultBlockInteractionTrigger import DefaultBlockInteractionTrigger
@@ -404,6 +411,7 @@ from generated_symbols.data.gametest.test_environment.IntGameRule import IntGame
 from generated_symbols.data.util.IntLimiter import IntLimiter
 from generated_symbols.data.worldgen.IntProvider import IntProvider
 from generated_symbols.data.util.IntRange import IntRange
+from generated_symbols.data.worldgen.density_function.Interpolated import Interpolated
 from generated_symbols.data.advancement.trigger.InventoryChangeTrigger import InventoryChangeTrigger
 from generated_symbols.data.advancement.trigger.InventoryChangedSlots import InventoryChangedSlots
 from generated_symbols.data.loot.condition.Inverted import Inverted
@@ -413,6 +421,8 @@ from generated_symbols.data.dialog.body.ItemBody import ItemBody
 from generated_symbols.data.enchantment.effect_component.ItemDamageEnchantmentEffect import ItemDamageEnchantmentEffect
 from generated_symbols.data.advancement.trigger.ItemDurabilityTrigger import ItemDurabilityTrigger
 from generated_symbols.data.item_modifier.ItemModifier import ItemModifier
+from generated_symbols.data.item_modifier.ItemModifierArgument import ItemModifierArgument
+from generated_symbols.data.item_modifier.ItemModifierRoot import ItemModifierRoot
 from generated_symbols.data.loot.ItemPoolEntry import ItemPoolEntry
 from generated_symbols.data.advancement.predicate.ItemPredicate import ItemPredicate
 from generated_symbols.data.recipe.ItemResult import ItemResult
@@ -559,7 +569,7 @@ from generated_symbols.data.dialog.input.Option import Option
 from generated_symbols.data.worldgen.feature.OptionalSimpleBlockConfig import OptionalSimpleBlockConfig
 from generated_symbols.data.recipe.OptionalSmithingIngredients import OptionalSmithingIngredients
 from generated_symbols.data.worldgen.feature.OreConfig import OreConfig
-from generated_symbols.data.worldgen.noise_settings.OreVeinifier import OreVeinifier
+from generated_symbols.data.worldgen.material_rule.OreVeinifier import OreVeinifier
 from generated_symbols.data.worldgen.feature.OverlayConfig import OverlayConfig
 from generated_symbols.data.worldgen.attribute.modifier.OverrideModifier import OverrideModifier
 from generated_symbols.data.advancement.predicate.PaintingPredicate import PaintingPredicate
@@ -666,6 +676,7 @@ from generated_symbols.data.loot.function.ReplaceSectionListOperation import Rep
 from generated_symbols.data.worldgen.feature.ReplaceSingleBlockConfig import ReplaceSingleBlockConfig
 from generated_symbols.data.recipe.RequiredSmithingIngredients import RequiredSmithingIngredients
 from generated_symbols.data.number_provider.ResolvableNumber import ResolvableNumber
+from generated_symbols.data.advancement.RootAdvancementDisplay import RootAdvancementDisplay
 from generated_symbols.data.worldgen.feature.tree.RootPlacer import RootPlacer
 from generated_symbols.data.worldgen.feature.RootSystemConfig import RootSystemConfig
 from generated_symbols.data.worldgen.feature.block_state_provider.RotatedStateProvider import RotatedStateProvider
@@ -736,6 +747,7 @@ from generated_symbols.data.worldgen.density_function.Slice import Slice
 from generated_symbols.data.advancement.trigger.SlideDownBlockTrigger import SlideDownBlockTrigger
 from generated_symbols.data.advancement.predicate.SlimePredicate import SlimePredicate
 from generated_symbols.data.slot_source.SlotSource import SlotSource
+from generated_symbols.data.slot_source.SlotSourceArgument import SlotSourceArgument
 from generated_symbols.data.loot.SlotsPoolEntry import SlotsPoolEntry
 from generated_symbols.data.worldgen.feature.SmallDripstoneConfig import SmallDripstoneConfig
 from generated_symbols.data.enchantment.effect_component.SmashDamagePerBlockFallenEnchantmentEffect import SmashDamagePerBlockFallenEnchantmentEffect
@@ -787,7 +799,6 @@ from generated_symbols.data.worldgen.structure_set.StructureSetElement import St
 from generated_symbols.data.worldgen.structure_set.StructureSetRef import StructureSetRef
 from generated_symbols.data.worldgen.noise_settings.StructureSettings import StructureSettings
 from generated_symbols.data.sulfur_cube_archetype.SulfurCubeArchetype import SulfurCubeArchetype
-from generated_symbols.data.number_provider.SumNumberProvider import SumNumberProvider
 from generated_symbols.data.enchantment.effect.SummonEntityEffect import SummonEntityEffect
 from generated_symbols.data.advancement.trigger.SummonedEntityTrigger import SummonedEntityTrigger
 from generated_symbols.data.worldgen.feature.placement.SurfaceRelativeThresholdFilter import SurfaceRelativeThresholdFilter
@@ -905,6 +916,8 @@ __all__ = [
     "AdvancementLocationPredicate",
     "AdvancementRewards",
     "AfterAction",
+    "AggregateNumberProvider",
+    "AggregateOperands",
     "AllOf",
     "AllOfEffectValue",
     "AllOfEntityEffect",
@@ -983,6 +996,10 @@ __all__ = [
     "BlockStateProperty",
     "BlockStateProvider",
     "BlockStateRuleProviderEntry",
+    "BlockTransformData",
+    "BlockTransformDropStrategy",
+    "BlockTransformParticle",
+    "BlockTransformType",
     "BoatPredicate",
     "BoolGameRule",
     "BooleanAttribute",
@@ -1129,6 +1146,7 @@ __all__ = [
     "DamageTagPredicate",
     "DamageType",
     "DeathMessageType",
+    "DebugFunctionEntry",
     "DecoratedPotPattern",
     "DecorationStep",
     "DefaultBlockInteractionTrigger",
@@ -1296,6 +1314,7 @@ __all__ = [
     "IntLimiter",
     "IntProvider",
     "IntRange",
+    "Interpolated",
     "InventoryChangeTrigger",
     "InventoryChangedSlots",
     "Inverted",
@@ -1305,6 +1324,8 @@ __all__ = [
     "ItemDamageEnchantmentEffect",
     "ItemDurabilityTrigger",
     "ItemModifier",
+    "ItemModifierArgument",
+    "ItemModifierRoot",
     "ItemPoolEntry",
     "ItemPredicate",
     "ItemResult",
@@ -1558,6 +1579,7 @@ __all__ = [
     "ReplaceSingleBlockConfig",
     "RequiredSmithingIngredients",
     "ResolvableNumber",
+    "RootAdvancementDisplay",
     "RootPlacer",
     "RootSystemConfig",
     "RotatedStateProvider",
@@ -1628,6 +1650,7 @@ __all__ = [
     "SlideDownBlockTrigger",
     "SlimePredicate",
     "SlotSource",
+    "SlotSourceArgument",
     "SlotsPoolEntry",
     "SmallDripstoneConfig",
     "SmashDamagePerBlockFallenEnchantmentEffect",
@@ -1679,7 +1702,6 @@ __all__ = [
     "StructureSetRef",
     "StructureSettings",
     "SulfurCubeArchetype",
-    "SumNumberProvider",
     "SummonEntityEffect",
     "SummonedEntityTrigger",
     "SurfaceRelativeThresholdFilter",

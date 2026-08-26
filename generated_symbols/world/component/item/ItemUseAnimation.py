@@ -12,7 +12,6 @@ class ItemUseAnimation(StrEnum):
     DRINK = "drink"
     BLOCK = "block"
     BOW = "bow"
-    OLDTRIDENT = "spear"  # Used for Tridents.
     TRIDENT = "trident"
     SPEAR = "spear"
     CROSSBOW = "crossbow"

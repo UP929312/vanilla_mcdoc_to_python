@@ -266,12 +266,6 @@ class EnderPearlBlockDisplay(DisplayBase):
 
 
 @dataclass(kw_only=True)
-class EnderPearlBoat(EntityBase):
-    ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:boat']  # The ID of this entity. Not present on player entities.
-
-
-@dataclass(kw_only=True)
 class EnderPearlBogged(MobBase):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
     id: Literal['minecraft:bogged']  # The ID of this entity. Not present on player entities.
@@ -360,15 +354,6 @@ class EnderPearlCherryChestBoat(Boat):
 
 
 @dataclass(kw_only=True)
-class EnderPearlChestBoat(Boat):
-    ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:chest_boat']  # The ID of this entity. Not present on player entities.
-    LootTable: Annotated[str, IdSpec(registry='loot_table', empty='allowed')] | None = None  # Loot table that will populate this chest boat.
-    LootTableSeed: int | None = None  # Seed of the loot table.
-    Items: Annotated[list[SlottedItem[Annotated[int, 'Range | `0`-`26` | both inclusive']]], 'Length = 0-27 (both inclusive)'] | None = None  # Slots from 0 to 26.
-
-
-@dataclass(kw_only=True)
 class EnderPearlChestMinecart(ContainerMinecart, Minecart):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
     id: Literal['minecraft:chest_minecart']  # The ID of this entity. Not present on player entities.
@@ -418,13 +403,6 @@ class EnderPearlCow(Breedable):
 class EnderPearlCreaking(MobBase):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
     id: Literal['minecraft:creaking']  # The ID of this entity. Not present on player entities.
-    home_pos: tuple[int, int, int] | None = None  # The creaking heart block that this is linked to.
-
-
-@dataclass(kw_only=True)
-class EnderPearlCreakingTransient(MobBase):
-    ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:creaking_transient']  # The ID of this entity. Not present on player entities.
     home_pos: tuple[int, int, int] | None = None  # The creaking heart block that this is linked to.
 
 
@@ -1558,14 +1536,6 @@ class EnderPearlZombieNautilus(Breedable):
 
 
 @dataclass(kw_only=True)
-class EnderPearlZombiePigman(MobBase, NeutralMob):
-    ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:zombie_pigman']  # The ID of this entity. Not present on player entities.
-    IsBaby: bool | None = None  # Whether it is a baby.
-    HurtBy: str | None = None  # Last player to hit a zombie pigman in this zombie pigman's detection range.
-
-
-@dataclass(kw_only=True)
 class EnderPearlZombieVillager(Zombie):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
     id: Literal['minecraft:zombie_villager']  # The ID of this entity. Not present on player entities.
@@ -1585,7 +1555,7 @@ class EnderPearlZombifiedPiglin(MobBase, NeutralMob):
     HurtBy: str | None = None  # Last player to hit a zombie pigman in this zombie pigman's detection range.
 
 
-type EnderPearl = EnderPearlAcaciaBoat | EnderPearlAcaciaChestBoat | EnderPearlAllay | EnderPearlAreaEffectCloud | EnderPearlArmadillo | EnderPearlArmorStand | EnderPearlArrow | EnderPearlAxolotl | EnderPearlBambooChestRaft | EnderPearlBambooRaft | EnderPearlBat | EnderPearlBee | EnderPearlBirchBoat | EnderPearlBirchChestBoat | EnderPearlBlaze | EnderPearlBlockDisplay | EnderPearlBoat | EnderPearlBogged | EnderPearlBreeze | EnderPearlBreezeWindCharge | EnderPearlCamel | EnderPearlCamelHusk | EnderPearlCat | EnderPearlCaveSpider | EnderPearlCherryBoat | EnderPearlCherryChestBoat | EnderPearlChestBoat | EnderPearlChestMinecart | EnderPearlChicken | EnderPearlCod | EnderPearlCommandBlockMinecart | EnderPearlCopperGolem | EnderPearlCow | EnderPearlCreaking | EnderPearlCreakingTransient | EnderPearlCreeper | EnderPearlCushion | EnderPearlDarkOakBoat | EnderPearlDarkOakChestBoat | EnderPearlDolphin | EnderPearlDonkey | EnderPearlDragonFireball | EnderPearlDrowned | EnderPearlEgg | EnderPearlElderGuardian | EnderPearlEndCrystal | EnderPearlEnderDragon | EnderPearlEnderPearl | EnderPearlEnderman | EnderPearlEndermite | EnderPearlEvoker | EnderPearlEvokerFangs | EnderPearlExperienceBottle | EnderPearlExperienceOrb | EnderPearlEyeOfEnder | EnderPearlFallingBlock | EnderPearlFireball | EnderPearlFireworkRocket | EnderPearlFox | EnderPearlFrog | EnderPearlFurnaceMinecart | EnderPearlGhast | EnderPearlGiant | EnderPearlGlowItemFrame | EnderPearlGlowSquid | EnderPearlGoat | EnderPearlGuardian | EnderPearlHappyGhast | EnderPearlHoglin | EnderPearlHopperMinecart | EnderPearlHorse | EnderPearlHusk | EnderPearlIllusioner | EnderPearlInteraction | EnderPearlIronGolem | EnderPearlItem | EnderPearlItemDisplay | EnderPearlItemFrame | EnderPearlJungleBoat | EnderPearlJungleChestBoat | EnderPearlLeashKnot | EnderPearlLingeringPotion | EnderPearlLlama | EnderPearlLlamaSpit | EnderPearlMagmaCube | EnderPearlMangroveBoat | EnderPearlMangroveChestBoat | EnderPearlMannequin | EnderPearlMarker | EnderPearlMinecart | EnderPearlMooshroom | EnderPearlMule | EnderPearlNautilus | EnderPearlOakBoat | EnderPearlOakChestBoat | EnderPearlOcelot | EnderPearlOminousItemSpawner | EnderPearlPainting | EnderPearlPaleOakBoat | EnderPearlPaleOakChestBoat | EnderPearlPanda | EnderPearlParched | EnderPearlParrot | EnderPearlPhantom | EnderPearlPig | EnderPearlPiglin | EnderPearlPiglinBrute | EnderPearlPillager | EnderPearlPlayer | EnderPearlPolarBear | EnderPearlPoplarBoat | EnderPearlPopolarChestBoat | EnderPearlPotion | EnderPearlPufferfish | EnderPearlRabbit | EnderPearlRavager | EnderPearlSalmon | EnderPearlSheep | EnderPearlShulker | EnderPearlShulkerBullet | EnderPearlSilverfish | EnderPearlSkeleton | EnderPearlSkeletonHorse | EnderPearlSlime | EnderPearlSmallFireball | EnderPearlSniffer | EnderPearlSnowGolem | EnderPearlSnowball | EnderPearlSpawnerMinecart | EnderPearlSpectralArrow | EnderPearlSpider | EnderPearlSplashPotion | EnderPearlSpruceBoat | EnderPearlSpruceChestBoat | EnderPearlSquid | EnderPearlStray | EnderPearlStrider | EnderPearlSulfurCube | EnderPearlTadpole | EnderPearlTextDisplay | EnderPearlTnt | EnderPearlTntMinecart | EnderPearlTraderLlama | EnderPearlTrident | EnderPearlTropicalFish | EnderPearlTurtle | EnderPearlVex | EnderPearlVillager | EnderPearlVindicator | EnderPearlWanderingTrader | EnderPearlWarden | EnderPearlWitch | EnderPearlWither | EnderPearlWitherSkeleton | EnderPearlWitherSkull | EnderPearlWolf | EnderPearlZoglin | EnderPearlZombie | EnderPearlZombieHorse | EnderPearlZombieNautilus | EnderPearlZombiePigman | EnderPearlZombieVillager | EnderPearlZombifiedPiglin
+type EnderPearl = EnderPearlAcaciaBoat | EnderPearlAcaciaChestBoat | EnderPearlAllay | EnderPearlAreaEffectCloud | EnderPearlArmadillo | EnderPearlArmorStand | EnderPearlArrow | EnderPearlAxolotl | EnderPearlBambooChestRaft | EnderPearlBambooRaft | EnderPearlBat | EnderPearlBee | EnderPearlBirchBoat | EnderPearlBirchChestBoat | EnderPearlBlaze | EnderPearlBlockDisplay | EnderPearlBogged | EnderPearlBreeze | EnderPearlBreezeWindCharge | EnderPearlCamel | EnderPearlCamelHusk | EnderPearlCat | EnderPearlCaveSpider | EnderPearlCherryBoat | EnderPearlCherryChestBoat | EnderPearlChestMinecart | EnderPearlChicken | EnderPearlCod | EnderPearlCommandBlockMinecart | EnderPearlCopperGolem | EnderPearlCow | EnderPearlCreaking | EnderPearlCreeper | EnderPearlCushion | EnderPearlDarkOakBoat | EnderPearlDarkOakChestBoat | EnderPearlDolphin | EnderPearlDonkey | EnderPearlDragonFireball | EnderPearlDrowned | EnderPearlEgg | EnderPearlElderGuardian | EnderPearlEndCrystal | EnderPearlEnderDragon | EnderPearlEnderPearl | EnderPearlEnderman | EnderPearlEndermite | EnderPearlEvoker | EnderPearlEvokerFangs | EnderPearlExperienceBottle | EnderPearlExperienceOrb | EnderPearlEyeOfEnder | EnderPearlFallingBlock | EnderPearlFireball | EnderPearlFireworkRocket | EnderPearlFox | EnderPearlFrog | EnderPearlFurnaceMinecart | EnderPearlGhast | EnderPearlGiant | EnderPearlGlowItemFrame | EnderPearlGlowSquid | EnderPearlGoat | EnderPearlGuardian | EnderPearlHappyGhast | EnderPearlHoglin | EnderPearlHopperMinecart | EnderPearlHorse | EnderPearlHusk | EnderPearlIllusioner | EnderPearlInteraction | EnderPearlIronGolem | EnderPearlItem | EnderPearlItemDisplay | EnderPearlItemFrame | EnderPearlJungleBoat | EnderPearlJungleChestBoat | EnderPearlLeashKnot | EnderPearlLingeringPotion | EnderPearlLlama | EnderPearlLlamaSpit | EnderPearlMagmaCube | EnderPearlMangroveBoat | EnderPearlMangroveChestBoat | EnderPearlMannequin | EnderPearlMarker | EnderPearlMinecart | EnderPearlMooshroom | EnderPearlMule | EnderPearlNautilus | EnderPearlOakBoat | EnderPearlOakChestBoat | EnderPearlOcelot | EnderPearlOminousItemSpawner | EnderPearlPainting | EnderPearlPaleOakBoat | EnderPearlPaleOakChestBoat | EnderPearlPanda | EnderPearlParched | EnderPearlParrot | EnderPearlPhantom | EnderPearlPig | EnderPearlPiglin | EnderPearlPiglinBrute | EnderPearlPillager | EnderPearlPlayer | EnderPearlPolarBear | EnderPearlPoplarBoat | EnderPearlPopolarChestBoat | EnderPearlPotion | EnderPearlPufferfish | EnderPearlRabbit | EnderPearlRavager | EnderPearlSalmon | EnderPearlSheep | EnderPearlShulker | EnderPearlShulkerBullet | EnderPearlSilverfish | EnderPearlSkeleton | EnderPearlSkeletonHorse | EnderPearlSlime | EnderPearlSmallFireball | EnderPearlSniffer | EnderPearlSnowGolem | EnderPearlSnowball | EnderPearlSpawnerMinecart | EnderPearlSpectralArrow | EnderPearlSpider | EnderPearlSplashPotion | EnderPearlSpruceBoat | EnderPearlSpruceChestBoat | EnderPearlSquid | EnderPearlStray | EnderPearlStrider | EnderPearlSulfurCube | EnderPearlTadpole | EnderPearlTextDisplay | EnderPearlTnt | EnderPearlTntMinecart | EnderPearlTraderLlama | EnderPearlTrident | EnderPearlTropicalFish | EnderPearlTurtle | EnderPearlVex | EnderPearlVillager | EnderPearlVindicator | EnderPearlWanderingTrader | EnderPearlWarden | EnderPearlWitch | EnderPearlWither | EnderPearlWitherSkeleton | EnderPearlWitherSkull | EnderPearlWolf | EnderPearlZoglin | EnderPearlZombie | EnderPearlZombieHorse | EnderPearlZombieNautilus | EnderPearlZombieVillager | EnderPearlZombifiedPiglin
 
 
 # ~~~ MODEL DUMP ~~~

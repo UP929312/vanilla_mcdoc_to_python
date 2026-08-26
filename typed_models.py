@@ -57,8 +57,14 @@ class Attribute(BaseModel):
 
 
 class ValueRange(BaseModel):
-    """Represents a numeric range, used in `int`, `float`, and array lengths."""
-    kind: Literal[0, 2] = Field(default = 0, repr=False)
+    """Represents a numeric range, used in `int`, `float`, and array lengths.
+    Kind:
+    0 = min inclusive, max inclusive
+    1 = min inclusive, max exclusive (currently not used)
+    2 = min exclusive, max inclusive  # TODO: This is used but the exclusive needs mentioning in the Annotated.
+    3 = min exclusive, max exclusive (currently not used)
+    """
+    kind: Literal[0, 1, 2, 3] = Field(default = 0, repr=False)
     min: float | int  # Min is *always* set
     max: float | int | None = None
 
@@ -101,6 +107,7 @@ class EnumValue(BaseModel):
     identifier: str
     value: str | int | float | bool
     description: str = Field(default="", repr=False, alias="desc")
+    attributes: list[Attribute] = Field(default_factory=list, repr=False)
 
     def to_annotation(self) -> str:
         return f"{repr(self.value).replace('\'', '\"')}"  # This fixes it so strings are handled properly
@@ -352,6 +359,11 @@ class EnumSchema(BaseSchema):
     kind: Literal["enum"] = Field(repr=False)
     enum_kind: Literal["byte", "int", "string"] = Field(alias="enumKind")
     values: list[EnumValue]
+
+    @model_validator(mode="after")
+    def prune_values_on_version(self) -> Self:
+        self.values = [value for value in self.values if is_valid_with_attributes(value.attributes)]
+        return self
 
     def to_python_code(self, class_name: str, ctx: SingleSymbolContext) -> list[str]:
         enum_kind = f"StrEnum" if self.enum_kind == "string" else "IntEnum"
@@ -794,6 +806,8 @@ class StructSchema(BaseSchema):
         """Resolve every registry entry into a uniquely named specialized struct."""
         variants: list[tuple[str, StructSchema]] = []
         for key, branch in ctx.schema_graph.dispatchers[dispatcher.registry].items():
+            if not is_valid_with_attributes(branch.attributes):
+                continue
             branch_structs = [schema for schema in ctx.schema_graph.resolve(branch) if isinstance(schema, StructSchema)]
             branch_structs = branch_structs or [StructSchema(kind="struct", fields=[])]
             suffix = PairSchema.nested_struct_name(key.lstrip("%").replace("/", "_")).removesuffix("Struct")
@@ -848,6 +862,9 @@ class StructSchema(BaseSchema):
         else:
             value_annotation = field.type.to_nested_annotation(ctx, value_struct_name)
         assert not isinstance(field.key, str)
+        if isinstance(field.key, DispatcherSchema):  # Annotate the registry (TODO: Make this better.)
+            ctx.require_annotated()  # generated_symbols\data\advancement\predicate\BlockPredicateState.py
+            return f"dict[Annotated[str, 'Registry(\"{field.key.registry.removeprefix('mcdoc:')}\")'], {value_annotation}]"
         return f"dict[{field.key.to_annotation(ctx)}, {value_annotation}]"
 
     def to_materialized_annotation(self, class_name: str, ctx: SingleSymbolContext) -> str:

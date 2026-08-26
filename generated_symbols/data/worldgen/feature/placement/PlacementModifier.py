@@ -7,7 +7,6 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Literal
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.CarveStep import CarveStep
     from generated_symbols.data.worldgen.HeightProvider import HeightProvider
     from generated_symbols.data.worldgen.HeightmapType import HeightmapType
     from generated_symbols.data.worldgen.IntProvider import IntProvider
@@ -19,12 +18,6 @@ if TYPE_CHECKING:
 class PlacementModifierBlockPredicateFilter:
     type: Literal['minecraft:block_predicate_filter']
     predicate: BlockPredicate
-
-
-@dataclass(kw_only=True)
-class PlacementModifierCarvingMask:
-    type: Literal['minecraft:carving_mask']
-    step: CarveStep
 
 
 @dataclass(kw_only=True)
@@ -106,13 +99,6 @@ class PlacementModifierRandomChance:
 
 
 @dataclass(kw_only=True)
-class PlacementModifierRandomOffset:
-    type: Literal['minecraft:random_offset']
-    xz_spread: IntProvider[Annotated[int, 'Range | `-16`-`16` | both inclusive']] | Annotated[int, 'Range | `-16`-`16` | both inclusive']
-    y_spread: IntProvider[Annotated[int, 'Range | `-16`-`16` | both inclusive']] | Annotated[int, 'Range | `-16`-`16` | both inclusive']
-
-
-@dataclass(kw_only=True)
 class PlacementModifierRandomlySelected:
     type: Literal['minecraft:randomly_selected']
     placements: Annotated[list[PlacementModifier], 'Length = 1 (inclusive) and above']
@@ -138,7 +124,7 @@ class PlacementModifierSurfaceWaterDepthFilter:
     max_water_depth: int
 
 
-type PlacementModifier = PlacementModifierBlockPredicateFilter | PlacementModifierCarvingMask | PlacementModifierCount | PlacementModifierCountOnEveryLayer | PlacementModifierCuboid | PlacementModifierEnvironmentScan | PlacementModifierFixedPlacement | PlacementModifierHeightRange | PlacementModifierHeightmap | PlacementModifierNoiseBasedCount | PlacementModifierNoiseThresholdCount | PlacementModifierOffset | PlacementModifierRandomChance | PlacementModifierRandomOffset | PlacementModifierRandomlySelected | PlacementModifierRarityFilter | PlacementModifierSurfaceRelativeThresholdFilter | PlacementModifierSurfaceWaterDepthFilter
+type PlacementModifier = PlacementModifierBlockPredicateFilter | PlacementModifierCount | PlacementModifierCountOnEveryLayer | PlacementModifierCuboid | PlacementModifierEnvironmentScan | PlacementModifierFixedPlacement | PlacementModifierHeightRange | PlacementModifierHeightmap | PlacementModifierNoiseBasedCount | PlacementModifierNoiseThresholdCount | PlacementModifierOffset | PlacementModifierRandomChance | PlacementModifierRandomlySelected | PlacementModifierRarityFilter | PlacementModifierSurfaceRelativeThresholdFilter | PlacementModifierSurfaceWaterDepthFilter
 
 
 # ~~~ MODEL DUMP ~~~

@@ -12,7 +12,7 @@ from minecraft_registry import IdSpec
 
 @dataclass(kw_only=True)
 class SetRandomPotion(Conditions):
-    options: Annotated[str, IdSpec(registry='potion', tags='allowed')] | Annotated[str, IdSpec(registry='potion')] | None = None  # Possible potions to select from. Defaults to all potions.
+    options: Annotated[str, IdSpec(registry='potion', tags='allowed')] | list[Annotated[str, IdSpec(registry='potion')]] | None = None  # Possible potions to select from. Defaults to all potions.
 
 
 # ~~~ MODEL DUMP ~~~
@@ -55,19 +55,22 @@ _ = {
                             ]
                         },
                         {
-                            "kind": "string",
-                            "attributes": [
-                                {
-                                    "name": "id",
-                                    "value": {
-                                        "kind": "literal",
+                            "kind": "list",
+                            "item": {
+                                "kind": "string",
+                                "attributes": [
+                                    {
+                                        "name": "id",
                                         "value": {
-                                            "kind": "string",
-                                            "value": "potion"
+                                            "kind": "literal",
+                                            "value": {
+                                                "kind": "string",
+                                                "value": "potion"
+                                            }
                                         }
                                     }
-                                }
-                            ]
+                                ]
+                            }
                         }
                     ]
                 },

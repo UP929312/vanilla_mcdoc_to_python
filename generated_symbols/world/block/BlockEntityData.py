@@ -396,15 +396,6 @@ class BlockEntityDataStructureBlock(BlockEntity):
 
 
 @dataclass(kw_only=True)
-class BlockEntityDataSuspiciousSand(BlockEntity):
-    id: Literal['minecraft:suspicious_sand']
-    LootTable: Annotated[str, IdSpec(registry='loot_table', empty='allowed')] | None = None  # Loot table that will decide the brushed loot.
-    LootTableSeed: int | None = None  # Seed of the loot table.
-    item: ItemStack | None = None  # Item that was rolled from the loot table, which is currently peeking out.
-    hit_direction: DirectionByte | None = None  # Direction of the block that was interacted with. Write-only, is not saved by the game.
-
-
-@dataclass(kw_only=True)
 class BlockEntityDataTestBlock(BlockEntity):
     id: Literal['minecraft:test_block']
     mode: TestBlockMode | None = None
@@ -449,7 +440,7 @@ class BlockEntityDataVault:
     shared_data: SharedDataStruct | None = None  # When a player is in range of the vault, the same display item will be shown to all players. This is also used for the items that are being ejected from the vault.
 
 
-type BlockEntityData = BlockEntityDataBanner | BlockEntityDataBarrel | BlockEntityDataBeacon | BlockEntityDataBeehive | BlockEntityDataBlastFurnace | BlockEntityDataBrewingStand | BlockEntityDataBrushableBlock | BlockEntityDataCalibratedSculkSensor | BlockEntityDataCampfire | BlockEntityDataChest | BlockEntityDataChiseledBookshelf | BlockEntityDataCommandBlock | BlockEntityDataComparator | BlockEntityDataConduit | BlockEntityDataCrafter | BlockEntityDataCreakingHeart | BlockEntityDataDecoratedPot | BlockEntityDataDispenser | BlockEntityDataDropper | BlockEntityDataEnchantingTable | BlockEntityDataEndGateway | BlockEntityDataFurnace | BlockEntityDataHangingSign | BlockEntityDataHopper | BlockEntityDataJigsaw | BlockEntityDataJukebox | BlockEntityDataLectern | BlockEntityDataMobSpawner | BlockEntityDataMovingPiston | BlockEntityDataPotentSulfur | BlockEntityDataSculkCatalyst | BlockEntityDataSculkSensor | BlockEntityDataSculkShrieker | BlockEntityDataShelf | BlockEntityDataShulkerBox | BlockEntityDataSign | BlockEntityDataSkull | BlockEntityDataSmoker | BlockEntityDataStructureBlock | BlockEntityDataSuspiciousSand | BlockEntityDataTestBlock | BlockEntityDataTestInstanceBlock | BlockEntityDataTrappedChest | BlockEntityDataTrialSpawner | BlockEntityDataVault
+type BlockEntityData = BlockEntityDataBanner | BlockEntityDataBarrel | BlockEntityDataBeacon | BlockEntityDataBeehive | BlockEntityDataBlastFurnace | BlockEntityDataBrewingStand | BlockEntityDataBrushableBlock | BlockEntityDataCalibratedSculkSensor | BlockEntityDataCampfire | BlockEntityDataChest | BlockEntityDataChiseledBookshelf | BlockEntityDataCommandBlock | BlockEntityDataComparator | BlockEntityDataConduit | BlockEntityDataCrafter | BlockEntityDataCreakingHeart | BlockEntityDataDecoratedPot | BlockEntityDataDispenser | BlockEntityDataDropper | BlockEntityDataEnchantingTable | BlockEntityDataEndGateway | BlockEntityDataFurnace | BlockEntityDataHangingSign | BlockEntityDataHopper | BlockEntityDataJigsaw | BlockEntityDataJukebox | BlockEntityDataLectern | BlockEntityDataMobSpawner | BlockEntityDataMovingPiston | BlockEntityDataPotentSulfur | BlockEntityDataSculkCatalyst | BlockEntityDataSculkSensor | BlockEntityDataSculkShrieker | BlockEntityDataShelf | BlockEntityDataShulkerBox | BlockEntityDataSign | BlockEntityDataSkull | BlockEntityDataSmoker | BlockEntityDataStructureBlock | BlockEntityDataTestBlock | BlockEntityDataTestInstanceBlock | BlockEntityDataTrappedChest | BlockEntityDataTrialSpawner | BlockEntityDataVault
 
 
 # ~~~ MODEL DUMP ~~~

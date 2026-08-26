@@ -8,11 +8,8 @@ from enum import StrEnum
 
 class EntityTarget(StrEnum):
     THIS = "this"
-    KILLER = "killer"
     ATTACKER = "attacker"
-    DIRECTKILLER = "direct_killer"
     DIRECTATTACKER = "direct_attacker"
-    KILLERPLAYER = "killer_player"
     ATTACKINGPLAYER = "attacking_player"
     TARGETENTITY = "target_entity"
     INTERACTINGENTITY = "interacting_entity"

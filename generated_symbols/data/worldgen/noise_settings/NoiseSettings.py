@@ -11,8 +11,6 @@ from typing import Annotated
 class NoiseSettings:
     min_y: Annotated[int, 'Range | `-2048`-`2047` | both inclusive']  # Minimum height where blocks start generating.
     height: Annotated[int, 'Range | `0`-`4096` | both inclusive']  # The total height where blocks can generate. Max Y = Min Y + Height.
-    size_horizontal: Annotated[int, 'Range | `1`-`4` | both inclusive']
-    size_vertical: Annotated[int, 'Range | `1`-`4` | both inclusive']
 
 
 # ~~~ MODEL DUMP ~~~
@@ -97,6 +95,18 @@ _ = {
             },
             {
                 "kind": "pair",
+                "attributes": [
+                    {
+                        "name": "until",
+                        "value": {
+                            "kind": "literal",
+                            "value": {
+                                "kind": "string",
+                                "value": "26.3"
+                            }
+                        }
+                    }
+                ],
                 "key": "size_horizontal",
                 "type": {
                     "kind": "int",
@@ -109,6 +119,18 @@ _ = {
             },
             {
                 "kind": "pair",
+                "attributes": [
+                    {
+                        "name": "until",
+                        "value": {
+                            "kind": "literal",
+                            "value": {
+                                "kind": "string",
+                                "value": "26.3"
+                            }
+                        }
+                    }
+                ],
                 "key": "size_vertical",
                 "type": {
                     "kind": "int",

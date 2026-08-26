@@ -13,8 +13,6 @@ from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.recipe.Ingredient import Ingredient
-    from generated_symbols.data.recipe.IngredientValue import IngredientValue
-    from generated_symbols.data.recipe.ItemResult import ItemResult
     from generated_symbols.data.recipe.PotionIngredient import PotionIngredient
     from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
     from generated_symbols.registry.KnownRecipeSerializerId import KnownRecipeSerializerId
@@ -146,14 +144,6 @@ class RecipeSmelting(CookingBookInfo, NotificationInfo):
 
 
 @dataclass(kw_only=True)
-class RecipeSmithing:
-    type: Literal['minecraft:smithing']
-    base: IngredientValue
-    addition: IngredientValue
-    result: ItemResult
-
-
-@dataclass(kw_only=True)
 class RecipeSmithingTransform(NotificationInfo):
     type: Literal['minecraft:smithing_transform']
     base: Ingredient  # Ingredient specifying an item to be transformed.
@@ -187,7 +177,7 @@ class RecipeStonecutting(NotificationInfo):
     result: ItemStackTemplate
 
 
-type Recipe = RecipeUnknown | RecipeBlasting | RecipeBrewing | RecipeCampfireCooking | RecipeCraftingDecoratedPot | RecipeCraftingDye | RecipeCraftingImbue | RecipeCraftingShaped | RecipeCraftingShapeless | RecipeCraftingSpecialBannerduplicate | RecipeCraftingSpecialBookcloning | RecipeCraftingSpecialFireworkRocket | RecipeCraftingSpecialFireworkStar | RecipeCraftingSpecialFireworkStarFade | RecipeCraftingSpecialMapextending | RecipeCraftingSpecialShielddecoration | RecipeCraftingTransmute | RecipeSmelting | RecipeSmithing | RecipeSmithingTransform | RecipeSmithingTrim | RecipeSmoking | RecipeStonecutting
+type Recipe = RecipeUnknown | RecipeBlasting | RecipeBrewing | RecipeCampfireCooking | RecipeCraftingDecoratedPot | RecipeCraftingDye | RecipeCraftingImbue | RecipeCraftingShaped | RecipeCraftingShapeless | RecipeCraftingSpecialBannerduplicate | RecipeCraftingSpecialBookcloning | RecipeCraftingSpecialFireworkRocket | RecipeCraftingSpecialFireworkStar | RecipeCraftingSpecialFireworkStarFade | RecipeCraftingSpecialMapextending | RecipeCraftingSpecialShielddecoration | RecipeCraftingTransmute | RecipeSmelting | RecipeSmithingTransform | RecipeSmithingTrim | RecipeSmoking | RecipeStonecutting
 
 
 # ~~~ MODEL DUMP ~~~

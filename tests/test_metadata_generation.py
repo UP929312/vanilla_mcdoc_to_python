@@ -255,6 +255,13 @@ class TestRuntimeImportGeneration:
         assert "class InlineStructMapValueStruct:" in content
         assert "type InlineStructMap = dict[str, InlineStructMapValueStruct]" in content
 
+    def test_dispatcher_mapping_key_preserves_registry_metadata(self) -> None:
+        path = "::java::data::advancement::predicate::BlockPredicateState"
+        content = generated_body(path, SYMBOLS_MAP["mcdoc"][path], "BlockPredicateState")
+
+        assert "from typing import TYPE_CHECKING, Annotated" in content
+        assert "type BlockPredicateState = dict[Annotated[str, 'Registry(\"block_state_keys\")'], MinMaxBounds[str]]" in content
+
     def test_discarded_spread_annotations_do_not_add_any_import(self) -> None:
         path = "::java::data::worldgen::processor_list::AppendStatic"
         content = generated_body(path, SYMBOLS_MAP["mcdoc"][path], "AppendStatic")

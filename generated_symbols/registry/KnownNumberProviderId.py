@@ -2,12 +2,16 @@
 from typing import Literal
 
 type KnownNumberProviderId = Literal[
+    'minecraft:average',
     'minecraft:binomial',
     'minecraft:conditional',
     'minecraft:constant',
     'minecraft:enchantment_level',
     'minecraft:environment_attribute',
+    'minecraft:maximum',
+    'minecraft:minimum',
     'minecraft:number_dispatcher',
+    'minecraft:product',
     'minecraft:score',
     'minecraft:storage',
     'minecraft:sum',

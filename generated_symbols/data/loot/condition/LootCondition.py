@@ -72,9 +72,6 @@ if TYPE_CHECKING:
     from generated_symbols.world.component.DataComponentPredicate import DataComponentPredicate
 
 
-type PropertiesStructBlockStatesNone = dict[str, str]
-
-
 @dataclass(kw_only=True)
 class NbtStructBlockUnknown:
     pass
@@ -87,22 +84,9 @@ class LootConditionAllOf:
 
 
 @dataclass(kw_only=True)
-class LootConditionAlternative:
-    type: Literal['minecraft:alternative']
-    terms: list[LootCondition]
-
-
-@dataclass(kw_only=True)
 class LootConditionAnyOf:
     type: Literal['minecraft:any_of']
     terms: PredicateListRef  # Passes when any of these conditions pass.
-
-
-@dataclass(kw_only=True)
-class LootConditionBlockStateProperty:
-    type: Literal['minecraft:block_state_property']
-    block: Annotated[str, IdSpec(registry='block')] | KnownBlockId
-    properties: PropertiesStructBlockStatesNone | None = None
 
 
 @dataclass(kw_only=True)
@@ -190,19 +174,6 @@ class LootConditionRandomChanceWithEnchantedBonus:
 
 
 @dataclass(kw_only=True)
-class LootConditionRandomChanceWithLooting:
-    type: Literal['minecraft:random_chance_with_looting']
-    chance: Annotated[float, 'Range | `0`-`1` | both inclusive']
-    looting_multiplier: float  # Looting adjustment to the base success rate. Formula is `chance + (looting_level * looting_multiplier)` .
-
-
-@dataclass(kw_only=True)
-class LootConditionReference:
-    type: Literal['minecraft:reference']
-    name: Annotated[str, IdSpec(registry='predicate')]  # A cyclic reference causes a parsing failure.
-
-
-@dataclass(kw_only=True)
 class LootConditionTableBonus:
     type: Literal['minecraft:table_bonus']
     enchantment: Annotated[str, IdSpec(registry='enchantment')]
@@ -231,7 +202,7 @@ class LootConditionWeatherCheck:
     thundering: bool | None = None
 
 
-type LootCondition = LootConditionAllOf | LootConditionAlternative | LootConditionAnyOf | LootConditionBlockStateProperty | LootConditionDamageSourceProperties | LootConditionEnchantmentActiveCheck | LootConditionEntityProperties | LootConditionEntityScores | LootConditionEnvironmentAttributeCheck | LootConditionInverted | LootConditionKilledByPlayer | LootConditionLocationCheck | LootConditionMatchBlock | LootConditionMatchTool | LootConditionRandomChance | LootConditionRandomChanceWithEnchantedBonus | LootConditionRandomChanceWithLooting | LootConditionReference | LootConditionTableBonus | LootConditionTimeCheck | LootConditionValueCheck | LootConditionWeatherCheck
+type LootCondition = LootConditionAllOf | LootConditionAnyOf | LootConditionDamageSourceProperties | LootConditionEnchantmentActiveCheck | LootConditionEntityProperties | LootConditionEntityScores | LootConditionEnvironmentAttributeCheck | LootConditionInverted | LootConditionKilledByPlayer | LootConditionLocationCheck | LootConditionMatchBlock | LootConditionMatchTool | LootConditionRandomChance | LootConditionRandomChanceWithEnchantedBonus | LootConditionTableBonus | LootConditionTimeCheck | LootConditionValueCheck | LootConditionWeatherCheck
 
 
 # ~~~ MODEL DUMP ~~~

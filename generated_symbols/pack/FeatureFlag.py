@@ -8,13 +8,9 @@ from enum import StrEnum
 
 class FeatureFlag(StrEnum):
     VANILLA = "vanilla"
-    UPDATE120 = "update_1_20"
-    BUNDLE = "bundle"
     TRADEREBALANCE = "trade_rebalance"
-    UPDATE121 = "update_1_21"
     REDSTONEEXPERIMENTS = "redstone_experiments"
     MINECARTIMPROVEMENTS = "minecart_improvements"
-    WINTERDROP = "winter_drop"
 
 
 # ~~~ MODEL DUMP ~~~

@@ -10,6 +10,7 @@ from typing import Annotated
 @dataclass(kw_only=True)
 class TeleportRandomlyConsumeEffect:
     diameter: Annotated[float, 'Range | Min `1` and above | inclusive'] | None = None  # Defaults to 16.
+    directional_particles: bool | None = None  # Whether to show a particle trail into the direction of teleportation.  Defaults to `true`.
 
 
 # ~~~ MODEL DUMP ~~~
@@ -27,6 +28,27 @@ _ = {
                         "kind": 0,
                         "min": 1
                     }
+                },
+                "optional": True
+            },
+            {
+                "kind": "pair",
+                "attributes": [
+                    {
+                        "name": "since",
+                        "value": {
+                            "kind": "literal",
+                            "value": {
+                                "kind": "string",
+                                "value": "26.3"
+                            }
+                        }
+                    }
+                ],
+                "desc": "Whether to show a particle trail into the direction of teleportation. \\\nDefaults to `True`.",
+                "key": "directional_particles",
+                "type": {
+                    "kind": "boolean"
                 },
                 "optional": True
             }

@@ -16,6 +16,7 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class TestData:
     environment: Annotated[str, IdSpec(registry='test_environment')] | TestEnvironment  # The test environment to run this test as part of.
+    dimension: Annotated[str, IdSpec(registry='dimension')] | None = None  # Defaults to overworld.
     structure: Annotated[str, IdSpec(registry='structure')]  # Structure NBT file to use for the test.
     max_ticks: Annotated[int, 'Range | Min `1` and above | inclusive']  # Maximum number of ticks allowed to pass before the test is considered timed out.
     setup_ticks: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # Ticks to wait after placing the structure before starting the test. Defaults to `0`.
@@ -61,6 +62,39 @@ _ = {
                         }
                     ]
                 }
+            },
+            {
+                "kind": "pair",
+                "attributes": [
+                    {
+                        "name": "since",
+                        "value": {
+                            "kind": "literal",
+                            "value": {
+                                "kind": "string",
+                                "value": "26.3"
+                            }
+                        }
+                    }
+                ],
+                "desc": "Defaults to overworld.",
+                "key": "dimension",
+                "type": {
+                    "kind": "string",
+                    "attributes": [
+                        {
+                            "name": "id",
+                            "value": {
+                                "kind": "literal",
+                                "value": {
+                                    "kind": "string",
+                                    "value": "dimension"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "optional": True
             },
             {
                 "kind": "pair",

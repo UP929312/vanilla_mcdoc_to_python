@@ -246,13 +246,6 @@ class LootFunctionCopyName(Conditions):
 
 
 @dataclass(kw_only=True)
-class LootFunctionCopyNbt(Conditions):
-    type: Literal['minecraft:copy_nbt']
-    source: NbtProvider
-    ops: list[OpsStruct]
-
-
-@dataclass(kw_only=True)
 class LootFunctionCopyState(Conditions):
     type: Literal['minecraft:copy_state']
     block: Annotated[str, IdSpec(registry='block')] | KnownBlockId
@@ -327,21 +320,10 @@ class LootFunctionLimitCount(Conditions):
 
 
 @dataclass(kw_only=True)
-class LootFunctionLootingEnchant(Conditions, EnchantedCountBase):
-    type: Literal['minecraft:looting_enchant']
-
-
-@dataclass(kw_only=True)
 class LootFunctionModifyContents(Conditions):
     type: Literal['minecraft:modify_contents']
     component: ContainerComponents  # Describes target component's items to modify.
     modifier: ItemModifier  # Applied to every item inside container.
-
-
-@dataclass(kw_only=True)
-class LootFunctionReference(Conditions):
-    type: Literal['minecraft:reference']
-    name: Annotated[str, IdSpec(registry='item_modifier')]  # Item modifier to reference.
 
 
 @dataclass(kw_only=True)
@@ -453,8 +435,7 @@ class LootFunctionSetItem(Conditions):
 @dataclass(kw_only=True)
 class LootFunctionSetLootTable(Conditions):
     type: Literal['minecraft:set_loot_table']
-    type_2: Annotated[str, IdSpec(registry='block_entity_type')]  # The block entity type of the container.
-    tag: Annotated[str, IdSpec(registry='loot_table')]  # The loot table to set to the container block item.
+    loot_table_id: Annotated[str, IdSpec(registry='loot_table')]  # The loot table to set to the container block item.
     seed: int | None = None  # The container seed to use. Defaults to a random seed.
 
 
@@ -504,12 +485,6 @@ class LootFunctionSetName(Conditions):
 
 
 @dataclass(kw_only=True)
-class LootFunctionSetNbt(Conditions):
-    type: Literal['minecraft:set_nbt']
-    tag: str
-
-
-@dataclass(kw_only=True)
 class LootFunctionSetOminousBottleAmplifier(Conditions):
     type: Literal['minecraft:set_ominous_bottle_amplifier']
     amplifier: NumberProviderRef
@@ -530,7 +505,7 @@ class LootFunctionSetRandomDyes(Conditions):
 @dataclass(kw_only=True)
 class LootFunctionSetRandomPotion(Conditions):
     type: Literal['minecraft:set_random_potion']
-    options: Annotated[str, IdSpec(registry='potion', tags='allowed')] | Annotated[str, IdSpec(registry='potion')] | None = None  # Possible potions to select from. Defaults to all potions.
+    options: Annotated[str, IdSpec(registry='potion', tags='allowed')] | list[Annotated[str, IdSpec(registry='potion')]] | None = None  # Possible potions to select from. Defaults to all potions.
 
 
 @dataclass(kw_only=True)
@@ -611,7 +586,7 @@ class LootFunctionToggleTooltips(Conditions):
     toggles: dict[Annotated[str, IdSpec(registry='data_component_type')], bool]  # Toggles which tooltips are shown.
 
 
-type LootFunction = LootFunctionApplyBonus | LootFunctionCopyComponents | LootFunctionCopyCustomData | LootFunctionCopyName | LootFunctionCopyNbt | LootFunctionCopyState | LootFunctionDiscard | LootFunctionEnchantRandomly | LootFunctionEnchantWithLevels | LootFunctionEnchantedCountIncrease | LootFunctionExplorationMap | LootFunctionExplosionDecay | LootFunctionFillPlayerHead | LootFunctionFiltered | LootFunctionFurnaceSmelt | LootFunctionLimitCount | LootFunctionLootingEnchant | LootFunctionModifyContents | LootFunctionReference | LootFunctionSequence | LootFunctionSetAttributes | LootFunctionSetBannerPattern | LootFunctionSetBookCover | LootFunctionSetComponents | LootFunctionSetContents | LootFunctionSetCount | LootFunctionSetCustomData | LootFunctionSetCustomModelData | LootFunctionSetDamage | LootFunctionSetEnchantments | LootFunctionSetFireworkExplosion | LootFunctionSetFireworks | LootFunctionSetInstrument | LootFunctionSetItem | LootFunctionSetLootTable | LootFunctionSetLore | LootFunctionSetName | LootFunctionSetNbt | LootFunctionSetOminousBottleAmplifier | LootFunctionSetPotion | LootFunctionSetRandomDyes | LootFunctionSetRandomPotion | LootFunctionSetStewEffect | LootFunctionSetWritableBookPages | LootFunctionSetWrittenBookPages | LootFunctionToggleTooltips
+type LootFunction = LootFunctionApplyBonus | LootFunctionCopyComponents | LootFunctionCopyCustomData | LootFunctionCopyName | LootFunctionCopyState | LootFunctionDiscard | LootFunctionEnchantRandomly | LootFunctionEnchantWithLevels | LootFunctionEnchantedCountIncrease | LootFunctionExplorationMap | LootFunctionExplosionDecay | LootFunctionFillPlayerHead | LootFunctionFiltered | LootFunctionFurnaceSmelt | LootFunctionLimitCount | LootFunctionModifyContents | LootFunctionSequence | LootFunctionSetAttributes | LootFunctionSetBannerPattern | LootFunctionSetBookCover | LootFunctionSetComponents | LootFunctionSetContents | LootFunctionSetCount | LootFunctionSetCustomData | LootFunctionSetCustomModelData | LootFunctionSetDamage | LootFunctionSetEnchantments | LootFunctionSetFireworkExplosion | LootFunctionSetFireworks | LootFunctionSetInstrument | LootFunctionSetItem | LootFunctionSetLootTable | LootFunctionSetLore | LootFunctionSetName | LootFunctionSetOminousBottleAmplifier | LootFunctionSetPotion | LootFunctionSetRandomDyes | LootFunctionSetRandomPotion | LootFunctionSetStewEffect | LootFunctionSetWritableBookPages | LootFunctionSetWrittenBookPages | LootFunctionToggleTooltips
 
 
 # ~~~ MODEL DUMP ~~~
