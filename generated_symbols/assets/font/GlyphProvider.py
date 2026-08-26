@@ -18,31 +18,31 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class GlyphProviderBitmap(BitmapProvider):
-    type: Literal['minecraft:bitmap']
+    type: Literal['minecraft:bitmap'] = 'minecraft:bitmap'
     filter: dict[FontOption, bool] | None = None
 
 
 @dataclass(kw_only=True)
 class GlyphProviderReference(ReferenceProvider):
-    type: Literal['minecraft:reference']
+    type: Literal['minecraft:reference'] = 'minecraft:reference'
     filter: dict[FontOption, bool] | None = None
 
 
 @dataclass(kw_only=True)
 class GlyphProviderSpace(SpaceProvider):
-    type: Literal['minecraft:space']
+    type: Literal['minecraft:space'] = 'minecraft:space'
     filter: dict[FontOption, bool] | None = None
 
 
 @dataclass(kw_only=True)
 class GlyphProviderTtf(TtfProvider):
-    type: Literal['minecraft:ttf']
+    type: Literal['minecraft:ttf'] = 'minecraft:ttf'
     filter: dict[FontOption, bool] | None = None
 
 
 @dataclass(kw_only=True)
 class GlyphProviderUnihex(UnihexProvider):
-    type: Literal['minecraft:unihex']
+    type: Literal['minecraft:unihex'] = 'minecraft:unihex'
     filter: dict[FontOption, bool] | None = None
 
 

@@ -17,32 +17,32 @@ from generated_symbols.data.slot_source.RangeSlotSource import RangeSlotSource
 class TypedSlotSourceContents(ContentsSlotSource):
     __resource_dir__: ClassVar[str] = 'slot_source'
 
-    type: Literal['minecraft:contents']
+    type: Literal['minecraft:contents'] = 'minecraft:contents'
 
 
 @dataclass(kw_only=True)
 class TypedSlotSourceEmpty:
-    type: Literal['minecraft:empty']
+    type: Literal['minecraft:empty'] = 'minecraft:empty'
 
 
 @dataclass(kw_only=True)
 class TypedSlotSourceFiltered(FilterSlotSource):
-    type: Literal['minecraft:filtered']
+    type: Literal['minecraft:filtered'] = 'minecraft:filtered'
 
 
 @dataclass(kw_only=True)
 class TypedSlotSourceGroup(GroupSlotSource):
-    type: Literal['minecraft:group']
+    type: Literal['minecraft:group'] = 'minecraft:group'
 
 
 @dataclass(kw_only=True)
 class TypedSlotSourceLimitSlots(LimitCountSlotSource):
-    type: Literal['minecraft:limit_slots']
+    type: Literal['minecraft:limit_slots'] = 'minecraft:limit_slots'
 
 
 @dataclass(kw_only=True)
 class TypedSlotSourceSlotRange(RangeSlotSource):
-    type: Literal['minecraft:slot_range']
+    type: Literal['minecraft:slot_range'] = 'minecraft:slot_range'
 
 
 type TypedSlotSource = TypedSlotSourceContents | TypedSlotSourceEmpty | TypedSlotSourceFiltered | TypedSlotSourceGroup | TypedSlotSourceLimitSlots | TypedSlotSourceSlotRange

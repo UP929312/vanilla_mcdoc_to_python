@@ -128,955 +128,955 @@ from minecraft_registry import IdSpec
 @dataclass(kw_only=True)
 class EnderPearlAcaciaBoat(Boat):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:acacia_boat']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:acacia_boat'] = 'minecraft:acacia_boat'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlAcaciaChestBoat(ChestBoat):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:acacia_chest_boat']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:acacia_chest_boat'] = 'minecraft:acacia_chest_boat'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlAllay(Allay):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:allay']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:allay'] = 'minecraft:allay'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlAreaEffectCloud(AreaEffectCloud):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:area_effect_cloud']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:area_effect_cloud'] = 'minecraft:area_effect_cloud'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlArmadillo(Armadillo):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:armadillo']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:armadillo'] = 'minecraft:armadillo'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlArmorStand(ArmorStand):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:armor_stand']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:armor_stand'] = 'minecraft:armor_stand'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlArrow(Arrow):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:arrow']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:arrow'] = 'minecraft:arrow'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlAxolotl(Axolotl):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:axolotl']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:axolotl'] = 'minecraft:axolotl'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlBambooChestRaft(ChestBoat):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:bamboo_chest_raft']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:bamboo_chest_raft'] = 'minecraft:bamboo_chest_raft'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlBambooRaft(Boat):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:bamboo_raft']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:bamboo_raft'] = 'minecraft:bamboo_raft'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlBat(Bat):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:bat']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:bat'] = 'minecraft:bat'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlBee(Bee):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:bee']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:bee'] = 'minecraft:bee'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlBirchBoat(Boat):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:birch_boat']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:birch_boat'] = 'minecraft:birch_boat'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlBirchChestBoat(ChestBoat):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:birch_chest_boat']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:birch_chest_boat'] = 'minecraft:birch_chest_boat'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlBlaze(MobBase):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:blaze']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:blaze'] = 'minecraft:blaze'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlBlockDisplay(BlockDisplay):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:block_display']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:block_display'] = 'minecraft:block_display'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlBogged(Bogged):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:bogged']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:bogged'] = 'minecraft:bogged'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlBreeze(MobBase):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:breeze']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:breeze'] = 'minecraft:breeze'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlBreezeWindCharge(AcceleratingProjectileBase):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:breeze_wind_charge']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:breeze_wind_charge'] = 'minecraft:breeze_wind_charge'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlCamel(Camel):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:camel']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:camel'] = 'minecraft:camel'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlCamelHusk(Camel):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:camel_husk']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:camel_husk'] = 'minecraft:camel_husk'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlCat(Cat):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:cat']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:cat'] = 'minecraft:cat'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlCaveSpider(MobBase):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:cave_spider']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:cave_spider'] = 'minecraft:cave_spider'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlCherryBoat(Boat):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:cherry_boat']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:cherry_boat'] = 'minecraft:cherry_boat'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlCherryChestBoat(ChestBoat):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:cherry_chest_boat']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:cherry_chest_boat'] = 'minecraft:cherry_chest_boat'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlChestMinecart(ChestMinecart):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:chest_minecart']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:chest_minecart'] = 'minecraft:chest_minecart'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlChicken(Chicken):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:chicken']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:chicken'] = 'minecraft:chicken'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlCod(Fish):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:cod']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:cod'] = 'minecraft:cod'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlCommandBlockMinecart(CommandBlockMinecart):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:command_block_minecart']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:command_block_minecart'] = 'minecraft:command_block_minecart'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlCopperGolem(CopperGolem):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:copper_golem']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:copper_golem'] = 'minecraft:copper_golem'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlCow(Cow):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:cow']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:cow'] = 'minecraft:cow'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlCreaking(Creaking):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:creaking']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:creaking'] = 'minecraft:creaking'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlCreeper(Creeper):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:creeper']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:creeper'] = 'minecraft:creeper'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlCushion(Cushion):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:cushion']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:cushion'] = 'minecraft:cushion'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlDarkOakBoat(Boat):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:dark_oak_boat']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:dark_oak_boat'] = 'minecraft:dark_oak_boat'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlDarkOakChestBoat(ChestBoat):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:dark_oak_chest_boat']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:dark_oak_chest_boat'] = 'minecraft:dark_oak_chest_boat'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlDolphin(Dolphin):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:dolphin']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:dolphin'] = 'minecraft:dolphin'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlDonkey(ChestedHorse):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:donkey']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:donkey'] = 'minecraft:donkey'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlDragonFireball(DespawnableProjectileBase):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:dragon_fireball']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:dragon_fireball'] = 'minecraft:dragon_fireball'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlDrowned(Zombie):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:drowned']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:drowned'] = 'minecraft:drowned'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlEgg(ThrowableItem):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:egg']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:egg'] = 'minecraft:egg'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlElderGuardian(MobBase):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:elder_guardian']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:elder_guardian'] = 'minecraft:elder_guardian'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlEndCrystal(EndCrystal):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:end_crystal']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:end_crystal'] = 'minecraft:end_crystal'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlEnderDragon(EnderDragon):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:ender_dragon']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:ender_dragon'] = 'minecraft:ender_dragon'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlEnderPearl(ThrowableItem):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:ender_pearl']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:ender_pearl'] = 'minecraft:ender_pearl'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlEnderman(Enderman):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:enderman']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:enderman'] = 'minecraft:enderman'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlEndermite(Endermite):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:endermite']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:endermite'] = 'minecraft:endermite'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlEvoker(Spellcaster):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:evoker']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:evoker'] = 'minecraft:evoker'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlEvokerFangs(EvokerFangs):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:evoker_fangs']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:evoker_fangs'] = 'minecraft:evoker_fangs'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlExperienceBottle(ThrowableItem):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:experience_bottle']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:experience_bottle'] = 'minecraft:experience_bottle'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlExperienceOrb(ExperienceOrb):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:experience_orb']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:experience_orb'] = 'minecraft:experience_orb'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlEyeOfEnder(EyeOfEnder):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:eye_of_ender']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:eye_of_ender'] = 'minecraft:eye_of_ender'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlFallingBlock(FallingBlock):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:falling_block']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:falling_block'] = 'minecraft:falling_block'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlFireball(LargeFireball):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:fireball']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:fireball'] = 'minecraft:fireball'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlFireworkRocket(FireWorkRocket):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:firework_rocket']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:firework_rocket'] = 'minecraft:firework_rocket'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlFox(Fox):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:fox']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:fox'] = 'minecraft:fox'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlFrog(Frog):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:frog']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:frog'] = 'minecraft:frog'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlFurnaceMinecart(FurnaceMinecart):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:furnace_minecart']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:furnace_minecart'] = 'minecraft:furnace_minecart'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlGhast(Ghast):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:ghast']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:ghast'] = 'minecraft:ghast'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlGiant(MobBase):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:giant']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:giant'] = 'minecraft:giant'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlGlowItemFrame(ItemFrame):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:glow_item_frame']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:glow_item_frame'] = 'minecraft:glow_item_frame'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlGlowSquid(GlowSquid):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:glow_squid']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:glow_squid'] = 'minecraft:glow_squid'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlGoat(Goat):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:goat']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:goat'] = 'minecraft:goat'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlGuardian(MobBase):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:guardian']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:guardian'] = 'minecraft:guardian'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlHappyGhast(HappyGhast):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:happy_ghast']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:happy_ghast'] = 'minecraft:happy_ghast'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlHoglin(Hoglin):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:hoglin']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:hoglin'] = 'minecraft:hoglin'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlHopperMinecart(HopperMinecart):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:hopper_minecart']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:hopper_minecart'] = 'minecraft:hopper_minecart'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlHorse(Horse):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:horse']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:horse'] = 'minecraft:horse'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlHusk(Zombie):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:husk']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:husk'] = 'minecraft:husk'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlIllusioner(Spellcaster):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:illusioner']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:illusioner'] = 'minecraft:illusioner'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlInteraction(Interaction):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:interaction']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:interaction'] = 'minecraft:interaction'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlIronGolem(IronGolem):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:iron_golem']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:iron_golem'] = 'minecraft:iron_golem'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlItem(Item):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:item']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:item'] = 'minecraft:item'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlItemDisplay(ItemDisplay):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:item_display']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:item_display'] = 'minecraft:item_display'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlItemFrame(ItemFrame):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:item_frame']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:item_frame'] = 'minecraft:item_frame'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlJungleBoat(Boat):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:jungle_boat']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:jungle_boat'] = 'minecraft:jungle_boat'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlJungleChestBoat(ChestBoat):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:jungle_chest_boat']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:jungle_chest_boat'] = 'minecraft:jungle_chest_boat'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlLeashKnot(BlockAttachedEntity):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:leash_knot']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:leash_knot'] = 'minecraft:leash_knot'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlLingeringPotion(Potion):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:lingering_potion']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:lingering_potion'] = 'minecraft:lingering_potion'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlLlama(Llama):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:llama']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:llama'] = 'minecraft:llama'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlLlamaSpit(LlamaSpit):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:llama_spit']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:llama_spit'] = 'minecraft:llama_spit'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlMagmaCube(Slime):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:magma_cube']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:magma_cube'] = 'minecraft:magma_cube'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlMangroveBoat(Boat):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:mangrove_boat']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:mangrove_boat'] = 'minecraft:mangrove_boat'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlMangroveChestBoat(ChestBoat):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:mangrove_chest_boat']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:mangrove_chest_boat'] = 'minecraft:mangrove_chest_boat'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlMannequin(Mannequin):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:mannequin']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:mannequin'] = 'minecraft:mannequin'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlMarker(Marker):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:marker']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:marker'] = 'minecraft:marker'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlMinecart(Minecart):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:minecart']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:minecart'] = 'minecraft:minecart'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlMooshroom(Mooshroom):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:mooshroom']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:mooshroom'] = 'minecraft:mooshroom'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlMule(ChestedHorse):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:mule']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:mule'] = 'minecraft:mule'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlNautilus(Tamable):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:nautilus']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:nautilus'] = 'minecraft:nautilus'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlOakBoat(Boat):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:oak_boat']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:oak_boat'] = 'minecraft:oak_boat'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlOakChestBoat(ChestBoat):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:oak_chest_boat']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:oak_chest_boat'] = 'minecraft:oak_chest_boat'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlOcelot(Ocelot):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:ocelot']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:ocelot'] = 'minecraft:ocelot'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlOminousItemSpawner(OminousItemSpawner):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:ominous_item_spawner']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:ominous_item_spawner'] = 'minecraft:ominous_item_spawner'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlPainting(Painting):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:painting']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:painting'] = 'minecraft:painting'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlPaleOakBoat(Boat):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:pale_oak_boat']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:pale_oak_boat'] = 'minecraft:pale_oak_boat'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlPaleOakChestBoat(ChestBoat):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:pale_oak_chest_boat']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:pale_oak_chest_boat'] = 'minecraft:pale_oak_chest_boat'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlPanda(Panda):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:panda']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:panda'] = 'minecraft:panda'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlParched(MobBase):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:parched']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:parched'] = 'minecraft:parched'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlParrot(Parrot):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:parrot']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:parrot'] = 'minecraft:parrot'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlPhantom(Phantom):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:phantom']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:phantom'] = 'minecraft:phantom'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlPig(Pig):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:pig']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:pig'] = 'minecraft:pig'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlPiglin(Piglin):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:piglin']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:piglin'] = 'minecraft:piglin'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlPiglinBrute(PiglinBase):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:piglin_brute']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:piglin_brute'] = 'minecraft:piglin_brute'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlPillager(Pillager):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:pillager']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:pillager'] = 'minecraft:pillager'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlPlayer(Player):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:player']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:player'] = 'minecraft:player'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlPolarBear(PolarBear):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:polar_bear']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:polar_bear'] = 'minecraft:polar_bear'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlPoplarBoat(Boat):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:poplar_boat']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:poplar_boat'] = 'minecraft:poplar_boat'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlPopolarChestBoat(ChestBoat):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:popolar_chest_boat']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:popolar_chest_boat'] = 'minecraft:popolar_chest_boat'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlPotion(Potion):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:potion']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:potion'] = 'minecraft:potion'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlPufferfish(Pufferfish):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:pufferfish']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:pufferfish'] = 'minecraft:pufferfish'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlRabbit(Rabbit):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:rabbit']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:rabbit'] = 'minecraft:rabbit'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlRavager(Ravager):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:ravager']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:ravager'] = 'minecraft:ravager'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlSalmon(Salmon):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:salmon']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:salmon'] = 'minecraft:salmon'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlSheep(Sheep):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:sheep']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:sheep'] = 'minecraft:sheep'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlShulker(Shulker):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:shulker']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:shulker'] = 'minecraft:shulker'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlShulkerBullet(ShulkerBullet):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:shulker_bullet']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:shulker_bullet'] = 'minecraft:shulker_bullet'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlSilverfish(MobBase):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:silverfish']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:silverfish'] = 'minecraft:silverfish'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlSkeleton(Skeleton):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:skeleton']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:skeleton'] = 'minecraft:skeleton'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlSkeletonHorse(SkeletonHorse):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:skeleton_horse']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:skeleton_horse'] = 'minecraft:skeleton_horse'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlSlime(Slime):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:slime']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:slime'] = 'minecraft:slime'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlSmallFireball(FireballBase):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:small_fireball']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:small_fireball'] = 'minecraft:small_fireball'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlSniffer(Breedable):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:sniffer']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:sniffer'] = 'minecraft:sniffer'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlSnowGolem(SnowGolem):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:snow_golem']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:snow_golem'] = 'minecraft:snow_golem'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlSnowball(ThrowableItem):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:snowball']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:snowball'] = 'minecraft:snowball'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlSpawnerMinecart(SpawnerMinecart):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:spawner_minecart']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:spawner_minecart'] = 'minecraft:spawner_minecart'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlSpectralArrow(SpectralArrow):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:spectral_arrow']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:spectral_arrow'] = 'minecraft:spectral_arrow'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlSpider(MobBase):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:spider']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:spider'] = 'minecraft:spider'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlSplashPotion(Potion):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:splash_potion']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:splash_potion'] = 'minecraft:splash_potion'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlSpruceBoat(Boat):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:spruce_boat']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:spruce_boat'] = 'minecraft:spruce_boat'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlSpruceChestBoat(ChestBoat):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:spruce_chest_boat']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:spruce_chest_boat'] = 'minecraft:spruce_chest_boat'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlSquid(Squid):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:squid']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:squid'] = 'minecraft:squid'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlStray(MobBase):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:stray']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:stray'] = 'minecraft:stray'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlStrider(Saddled):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:strider']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:strider'] = 'minecraft:strider'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlSulfurCube(SulfurCube):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:sulfur_cube']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:sulfur_cube'] = 'minecraft:sulfur_cube'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlTadpole(Tadpole):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:tadpole']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:tadpole'] = 'minecraft:tadpole'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlTextDisplay(TextDisplay):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:text_display']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:text_display'] = 'minecraft:text_display'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlTnt(Tnt):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:tnt']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:tnt'] = 'minecraft:tnt'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlTntMinecart(TntMinecart):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:tnt_minecart']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:tnt_minecart'] = 'minecraft:tnt_minecart'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlTraderLlama(TraderLlama):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:trader_llama']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:trader_llama'] = 'minecraft:trader_llama'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlTrident(Trident):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:trident']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:trident'] = 'minecraft:trident'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlTropicalFish(TropicalFish):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:tropical_fish']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:tropical_fish'] = 'minecraft:tropical_fish'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlTurtle(Turtle):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:turtle']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:turtle'] = 'minecraft:turtle'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlVex(Vex):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:vex']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:vex'] = 'minecraft:vex'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlVillager(Villager):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:villager']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:villager'] = 'minecraft:villager'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlVindicator(Vindicator):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:vindicator']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:vindicator'] = 'minecraft:vindicator'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlWanderingTrader(WanderingTrader):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:wandering_trader']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:wandering_trader'] = 'minecraft:wandering_trader'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlWarden(Warden):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:warden']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:warden'] = 'minecraft:warden'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlWitch(RaiderBase):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:witch']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:witch'] = 'minecraft:witch'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlWither(Wither):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:wither']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:wither'] = 'minecraft:wither'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlWitherSkeleton(MobBase):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:wither_skeleton']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:wither_skeleton'] = 'minecraft:wither_skeleton'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlWitherSkull(WitherSkull):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:wither_skull']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:wither_skull'] = 'minecraft:wither_skull'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlWolf(Wolf):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:wolf']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:wolf'] = 'minecraft:wolf'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlZoglin(Zoglin):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:zoglin']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:zoglin'] = 'minecraft:zoglin'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlZombie(Zombie):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:zombie']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:zombie'] = 'minecraft:zombie'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlZombieHorse(HorseBase):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:zombie_horse']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:zombie_horse'] = 'minecraft:zombie_horse'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlZombieNautilus(Tamable):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:zombie_nautilus']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:zombie_nautilus'] = 'minecraft:zombie_nautilus'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlZombieVillager(ZombieVillager):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:zombie_villager']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:zombie_villager'] = 'minecraft:zombie_villager'  # The ID of this entity. Not present on player entities.
 
 
 @dataclass(kw_only=True)
 class EnderPearlZombifiedPiglin(ZombiePigman):
     ender_pearl_dimension: Annotated[str, IdSpec(registry='dimension')]
-    id: Literal['minecraft:zombified_piglin']  # The ID of this entity. Not present on player entities.
+    id: Literal['minecraft:zombified_piglin'] = 'minecraft:zombified_piglin'  # The ID of this entity. Not present on player entities.
 
 
 type EnderPearl = EnderPearlAcaciaBoat | EnderPearlAcaciaChestBoat | EnderPearlAllay | EnderPearlAreaEffectCloud | EnderPearlArmadillo | EnderPearlArmorStand | EnderPearlArrow | EnderPearlAxolotl | EnderPearlBambooChestRaft | EnderPearlBambooRaft | EnderPearlBat | EnderPearlBee | EnderPearlBirchBoat | EnderPearlBirchChestBoat | EnderPearlBlaze | EnderPearlBlockDisplay | EnderPearlBogged | EnderPearlBreeze | EnderPearlBreezeWindCharge | EnderPearlCamel | EnderPearlCamelHusk | EnderPearlCat | EnderPearlCaveSpider | EnderPearlCherryBoat | EnderPearlCherryChestBoat | EnderPearlChestMinecart | EnderPearlChicken | EnderPearlCod | EnderPearlCommandBlockMinecart | EnderPearlCopperGolem | EnderPearlCow | EnderPearlCreaking | EnderPearlCreeper | EnderPearlCushion | EnderPearlDarkOakBoat | EnderPearlDarkOakChestBoat | EnderPearlDolphin | EnderPearlDonkey | EnderPearlDragonFireball | EnderPearlDrowned | EnderPearlEgg | EnderPearlElderGuardian | EnderPearlEndCrystal | EnderPearlEnderDragon | EnderPearlEnderPearl | EnderPearlEnderman | EnderPearlEndermite | EnderPearlEvoker | EnderPearlEvokerFangs | EnderPearlExperienceBottle | EnderPearlExperienceOrb | EnderPearlEyeOfEnder | EnderPearlFallingBlock | EnderPearlFireball | EnderPearlFireworkRocket | EnderPearlFox | EnderPearlFrog | EnderPearlFurnaceMinecart | EnderPearlGhast | EnderPearlGiant | EnderPearlGlowItemFrame | EnderPearlGlowSquid | EnderPearlGoat | EnderPearlGuardian | EnderPearlHappyGhast | EnderPearlHoglin | EnderPearlHopperMinecart | EnderPearlHorse | EnderPearlHusk | EnderPearlIllusioner | EnderPearlInteraction | EnderPearlIronGolem | EnderPearlItem | EnderPearlItemDisplay | EnderPearlItemFrame | EnderPearlJungleBoat | EnderPearlJungleChestBoat | EnderPearlLeashKnot | EnderPearlLingeringPotion | EnderPearlLlama | EnderPearlLlamaSpit | EnderPearlMagmaCube | EnderPearlMangroveBoat | EnderPearlMangroveChestBoat | EnderPearlMannequin | EnderPearlMarker | EnderPearlMinecart | EnderPearlMooshroom | EnderPearlMule | EnderPearlNautilus | EnderPearlOakBoat | EnderPearlOakChestBoat | EnderPearlOcelot | EnderPearlOminousItemSpawner | EnderPearlPainting | EnderPearlPaleOakBoat | EnderPearlPaleOakChestBoat | EnderPearlPanda | EnderPearlParched | EnderPearlParrot | EnderPearlPhantom | EnderPearlPig | EnderPearlPiglin | EnderPearlPiglinBrute | EnderPearlPillager | EnderPearlPlayer | EnderPearlPolarBear | EnderPearlPoplarBoat | EnderPearlPopolarChestBoat | EnderPearlPotion | EnderPearlPufferfish | EnderPearlRabbit | EnderPearlRavager | EnderPearlSalmon | EnderPearlSheep | EnderPearlShulker | EnderPearlShulkerBullet | EnderPearlSilverfish | EnderPearlSkeleton | EnderPearlSkeletonHorse | EnderPearlSlime | EnderPearlSmallFireball | EnderPearlSniffer | EnderPearlSnowGolem | EnderPearlSnowball | EnderPearlSpawnerMinecart | EnderPearlSpectralArrow | EnderPearlSpider | EnderPearlSplashPotion | EnderPearlSpruceBoat | EnderPearlSpruceChestBoat | EnderPearlSquid | EnderPearlStray | EnderPearlStrider | EnderPearlSulfurCube | EnderPearlTadpole | EnderPearlTextDisplay | EnderPearlTnt | EnderPearlTntMinecart | EnderPearlTraderLlama | EnderPearlTrident | EnderPearlTropicalFish | EnderPearlTurtle | EnderPearlVex | EnderPearlVillager | EnderPearlVindicator | EnderPearlWanderingTrader | EnderPearlWarden | EnderPearlWitch | EnderPearlWither | EnderPearlWitherSkeleton | EnderPearlWitherSkull | EnderPearlWolf | EnderPearlZoglin | EnderPearlZombie | EnderPearlZombieHorse | EnderPearlZombieNautilus | EnderPearlZombieVillager | EnderPearlZombifiedPiglin

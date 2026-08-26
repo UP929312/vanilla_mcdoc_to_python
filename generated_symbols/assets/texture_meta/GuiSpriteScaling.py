@@ -12,17 +12,17 @@ from generated_symbols.assets.texture_meta.TileScaling import TileScaling
 
 @dataclass(kw_only=True)
 class GuiSpriteScalingNineSlice(NineSlice):
-    type: Literal['minecraft:nine_slice']
+    type: Literal['minecraft:nine_slice'] = 'minecraft:nine_slice'
 
 
 @dataclass(kw_only=True)
 class GuiSpriteScalingStretch:
-    type: Literal['minecraft:stretch']
+    type: Literal['minecraft:stretch'] = 'minecraft:stretch'
 
 
 @dataclass(kw_only=True)
 class GuiSpriteScalingTile(TileScaling):
-    type: Literal['minecraft:tile']
+    type: Literal['minecraft:tile'] = 'minecraft:tile'
 
 
 type GuiSpriteScaling = GuiSpriteScalingNineSlice | GuiSpriteScalingStretch | GuiSpriteScalingTile

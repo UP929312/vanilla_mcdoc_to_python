@@ -14,7 +14,7 @@ from generated_symbols.data.worldgen.feature.tree.UpwardsBranchingTrunkPlacer im
 
 @dataclass(kw_only=True)
 class TrunkPlacerBendingTrunkPlacer(BendingTrunkPlacer):
-    type: Literal['minecraft:bending_trunk_placer']
+    type: Literal['minecraft:bending_trunk_placer'] = 'minecraft:bending_trunk_placer'
     base_height: Annotated[int, 'Range | `0`-`32` | both inclusive']
     height_rand_a: Annotated[int, 'Range | `0`-`24` | both inclusive']
     height_rand_b: Annotated[int, 'Range | `0`-`24` | both inclusive']
@@ -22,7 +22,7 @@ class TrunkPlacerBendingTrunkPlacer(BendingTrunkPlacer):
 
 @dataclass(kw_only=True)
 class TrunkPlacerCherryTrunkPlacer(CherryTrunkPlacer):
-    type: Literal['minecraft:cherry_trunk_placer']
+    type: Literal['minecraft:cherry_trunk_placer'] = 'minecraft:cherry_trunk_placer'
     base_height: Annotated[int, 'Range | `0`-`32` | both inclusive']
     height_rand_a: Annotated[int, 'Range | `0`-`24` | both inclusive']
     height_rand_b: Annotated[int, 'Range | `0`-`24` | both inclusive']
@@ -30,7 +30,7 @@ class TrunkPlacerCherryTrunkPlacer(CherryTrunkPlacer):
 
 @dataclass(kw_only=True)
 class TrunkPlacerDarkOakTrunkPlacer:
-    type: Literal['minecraft:dark_oak_trunk_placer']
+    type: Literal['minecraft:dark_oak_trunk_placer'] = 'minecraft:dark_oak_trunk_placer'
     base_height: Annotated[int, 'Range | `0`-`32` | both inclusive']
     height_rand_a: Annotated[int, 'Range | `0`-`24` | both inclusive']
     height_rand_b: Annotated[int, 'Range | `0`-`24` | both inclusive']
@@ -38,7 +38,7 @@ class TrunkPlacerDarkOakTrunkPlacer:
 
 @dataclass(kw_only=True)
 class TrunkPlacerFancyTrunkPlacer:
-    type: Literal['minecraft:fancy_trunk_placer']
+    type: Literal['minecraft:fancy_trunk_placer'] = 'minecraft:fancy_trunk_placer'
     base_height: Annotated[int, 'Range | `0`-`32` | both inclusive']
     height_rand_a: Annotated[int, 'Range | `0`-`24` | both inclusive']
     height_rand_b: Annotated[int, 'Range | `0`-`24` | both inclusive']
@@ -46,7 +46,7 @@ class TrunkPlacerFancyTrunkPlacer:
 
 @dataclass(kw_only=True)
 class TrunkPlacerForkingTrunkPlacer:
-    type: Literal['minecraft:forking_trunk_placer']
+    type: Literal['minecraft:forking_trunk_placer'] = 'minecraft:forking_trunk_placer'
     base_height: Annotated[int, 'Range | `0`-`32` | both inclusive']
     height_rand_a: Annotated[int, 'Range | `0`-`24` | both inclusive']
     height_rand_b: Annotated[int, 'Range | `0`-`24` | both inclusive']
@@ -54,7 +54,7 @@ class TrunkPlacerForkingTrunkPlacer:
 
 @dataclass(kw_only=True)
 class TrunkPlacerGiantTrunkPlacer:
-    type: Literal['minecraft:giant_trunk_placer']
+    type: Literal['minecraft:giant_trunk_placer'] = 'minecraft:giant_trunk_placer'
     base_height: Annotated[int, 'Range | `0`-`32` | both inclusive']
     height_rand_a: Annotated[int, 'Range | `0`-`24` | both inclusive']
     height_rand_b: Annotated[int, 'Range | `0`-`24` | both inclusive']
@@ -62,7 +62,7 @@ class TrunkPlacerGiantTrunkPlacer:
 
 @dataclass(kw_only=True)
 class TrunkPlacerMegaJungleTrunkPlacer:
-    type: Literal['minecraft:mega_jungle_trunk_placer']
+    type: Literal['minecraft:mega_jungle_trunk_placer'] = 'minecraft:mega_jungle_trunk_placer'
     base_height: Annotated[int, 'Range | `0`-`32` | both inclusive']
     height_rand_a: Annotated[int, 'Range | `0`-`24` | both inclusive']
     height_rand_b: Annotated[int, 'Range | `0`-`24` | both inclusive']
@@ -70,7 +70,7 @@ class TrunkPlacerMegaJungleTrunkPlacer:
 
 @dataclass(kw_only=True)
 class TrunkPlacerPoplarTrunkPlacer(PoplarTrunkPlacer):
-    type: Literal['minecraft:poplar_trunk_placer']
+    type: Literal['minecraft:poplar_trunk_placer'] = 'minecraft:poplar_trunk_placer'
     base_height: Annotated[int, 'Range | `0`-`32` | both inclusive']
     height_rand_a: Annotated[int, 'Range | `0`-`24` | both inclusive']
     height_rand_b: Annotated[int, 'Range | `0`-`24` | both inclusive']
@@ -78,7 +78,7 @@ class TrunkPlacerPoplarTrunkPlacer(PoplarTrunkPlacer):
 
 @dataclass(kw_only=True)
 class TrunkPlacerStraightTrunkPlacer:
-    type: Literal['minecraft:straight_trunk_placer']
+    type: Literal['minecraft:straight_trunk_placer'] = 'minecraft:straight_trunk_placer'
     base_height: Annotated[int, 'Range | `0`-`32` | both inclusive']
     height_rand_a: Annotated[int, 'Range | `0`-`24` | both inclusive']
     height_rand_b: Annotated[int, 'Range | `0`-`24` | both inclusive']
@@ -86,7 +86,7 @@ class TrunkPlacerStraightTrunkPlacer:
 
 @dataclass(kw_only=True)
 class TrunkPlacerUpwardsBranchingTrunkPlacer(UpwardsBranchingTrunkPlacer):
-    type: Literal['minecraft:upwards_branching_trunk_placer']
+    type: Literal['minecraft:upwards_branching_trunk_placer'] = 'minecraft:upwards_branching_trunk_placer'
     base_height: Annotated[int, 'Range | `0`-`32` | both inclusive']
     height_rand_a: Annotated[int, 'Range | `0`-`24` | both inclusive']
     height_rand_b: Annotated[int, 'Range | `0`-`24` | both inclusive']

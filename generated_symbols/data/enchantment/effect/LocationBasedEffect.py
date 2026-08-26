@@ -25,77 +25,77 @@ from generated_symbols.data.enchantment.effect.SummonEntityEffect import SummonE
 
 @dataclass(kw_only=True)
 class LocationBasedEffectAllOf(AllOfLocationBasedEffect):
-    type: Literal['minecraft:all_of']
+    type: Literal['minecraft:all_of'] = 'minecraft:all_of'
 
 
 @dataclass(kw_only=True)
 class LocationBasedEffectApplyExhaustion(ApplyExhaustionEntityEffect):
-    type: Literal['minecraft:apply_exhaustion']
+    type: Literal['minecraft:apply_exhaustion'] = 'minecraft:apply_exhaustion'
 
 
 @dataclass(kw_only=True)
 class LocationBasedEffectApplyImpulse(ApplyImpulseEntityEffect):
-    type: Literal['minecraft:apply_impulse']
+    type: Literal['minecraft:apply_impulse'] = 'minecraft:apply_impulse'
 
 
 @dataclass(kw_only=True)
 class LocationBasedEffectApplyMobEffect(ApplyMobEffectEntityEffect):
-    type: Literal['minecraft:apply_mob_effect']
+    type: Literal['minecraft:apply_mob_effect'] = 'minecraft:apply_mob_effect'
 
 
 @dataclass(kw_only=True)
 class LocationBasedEffectChangeItemDamage(ChangeItemDamageEffect):
-    type: Literal['minecraft:change_item_damage']
+    type: Literal['minecraft:change_item_damage'] = 'minecraft:change_item_damage'
 
 
 @dataclass(kw_only=True)
 class LocationBasedEffectDamageEntity(DamageEntityEffect):
-    type: Literal['minecraft:damage_entity']
+    type: Literal['minecraft:damage_entity'] = 'minecraft:damage_entity'
 
 
 @dataclass(kw_only=True)
 class LocationBasedEffectExplode(ExplodeEntityEffect):
-    type: Literal['minecraft:explode']
+    type: Literal['minecraft:explode'] = 'minecraft:explode'
 
 
 @dataclass(kw_only=True)
 class LocationBasedEffectIgnite(IgniteEntityEffect):
-    type: Literal['minecraft:ignite']
+    type: Literal['minecraft:ignite'] = 'minecraft:ignite'
 
 
 @dataclass(kw_only=True)
 class LocationBasedEffectPlaySound(PlaySoundEntityEffect):
-    type: Literal['minecraft:play_sound']
+    type: Literal['minecraft:play_sound'] = 'minecraft:play_sound'
 
 
 @dataclass(kw_only=True)
 class LocationBasedEffectReplaceBlock(ReplaceBlockEntityEffect):
-    type: Literal['minecraft:replace_block']
+    type: Literal['minecraft:replace_block'] = 'minecraft:replace_block'
 
 
 @dataclass(kw_only=True)
 class LocationBasedEffectReplaceDisk(ReplaceDiskEntityEffect):
-    type: Literal['minecraft:replace_disk']
+    type: Literal['minecraft:replace_disk'] = 'minecraft:replace_disk'
 
 
 @dataclass(kw_only=True)
 class LocationBasedEffectRunFunction(RunFunctionEntityEffect):
-    type: Literal['minecraft:run_function']
+    type: Literal['minecraft:run_function'] = 'minecraft:run_function'
 
 
 @dataclass(kw_only=True)
 class LocationBasedEffectSetBlockProperties(SetBlockPropertiesEntityEffect):
-    type: Literal['minecraft:set_block_properties']
+    type: Literal['minecraft:set_block_properties'] = 'minecraft:set_block_properties'
 
 
 @dataclass(kw_only=True)
 class LocationBasedEffectSpawnParticles(SpawnParticlesEntityEffect):
-    type: Literal['minecraft:spawn_particles']
+    type: Literal['minecraft:spawn_particles'] = 'minecraft:spawn_particles'
 
 
 @dataclass(kw_only=True)
 class LocationBasedEffectSummonEntity(SummonEntityEffect):
-    type: Literal['minecraft:summon_entity']
+    type: Literal['minecraft:summon_entity'] = 'minecraft:summon_entity'
 
 
 type LocationBasedEffect = LocationBasedEffectAllOf | LocationBasedEffectApplyExhaustion | LocationBasedEffectApplyImpulse | LocationBasedEffectApplyMobEffect | LocationBasedEffectChangeItemDamage | LocationBasedEffectDamageEntity | LocationBasedEffectExplode | LocationBasedEffectIgnite | LocationBasedEffectPlaySound | LocationBasedEffectReplaceBlock | LocationBasedEffectReplaceDisk | LocationBasedEffectRunFunction | LocationBasedEffectSetBlockProperties | LocationBasedEffectSpawnParticles | LocationBasedEffectSummonEntity

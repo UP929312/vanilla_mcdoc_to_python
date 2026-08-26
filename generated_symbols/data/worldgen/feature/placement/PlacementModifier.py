@@ -26,82 +26,82 @@ from generated_symbols.data.worldgen.feature.placement.SurfaceWaterDepthFilter i
 
 @dataclass(kw_only=True)
 class PlacementModifierBlockPredicateFilter(BlockPredicateFilter):
-    type: Literal['minecraft:block_predicate_filter']
+    type: Literal['minecraft:block_predicate_filter'] = 'minecraft:block_predicate_filter'
 
 
 @dataclass(kw_only=True)
 class PlacementModifierCount(CountModifier):
-    type: Literal['minecraft:count']
+    type: Literal['minecraft:count'] = 'minecraft:count'
 
 
 @dataclass(kw_only=True)
 class PlacementModifierCountOnEveryLayer(CountOnEveryLayerModifier):
-    type: Literal['minecraft:count_on_every_layer']
+    type: Literal['minecraft:count_on_every_layer'] = 'minecraft:count_on_every_layer'
 
 
 @dataclass(kw_only=True)
 class PlacementModifierCuboid(CuboidModifier):
-    type: Literal['minecraft:cuboid']
+    type: Literal['minecraft:cuboid'] = 'minecraft:cuboid'
 
 
 @dataclass(kw_only=True)
 class PlacementModifierEnvironmentScan(EnvironmentScanModifier):
-    type: Literal['minecraft:environment_scan']
+    type: Literal['minecraft:environment_scan'] = 'minecraft:environment_scan'
 
 
 @dataclass(kw_only=True)
 class PlacementModifierFixedPlacement(FixedPlacementModifier):
-    type: Literal['minecraft:fixed_placement']
+    type: Literal['minecraft:fixed_placement'] = 'minecraft:fixed_placement'
 
 
 @dataclass(kw_only=True)
 class PlacementModifierHeightRange(HeightRangeModifier):
-    type: Literal['minecraft:height_range']
+    type: Literal['minecraft:height_range'] = 'minecraft:height_range'
 
 
 @dataclass(kw_only=True)
 class PlacementModifierHeightmap(HeightmapModifier):
-    type: Literal['minecraft:heightmap']
+    type: Literal['minecraft:heightmap'] = 'minecraft:heightmap'
 
 
 @dataclass(kw_only=True)
 class PlacementModifierNoiseBasedCount(NoiseBasedCountModifier):
-    type: Literal['minecraft:noise_based_count']
+    type: Literal['minecraft:noise_based_count'] = 'minecraft:noise_based_count'
 
 
 @dataclass(kw_only=True)
 class PlacementModifierNoiseThresholdCount(NoiseThresholdCountModifier):
-    type: Literal['minecraft:noise_threshold_count']
+    type: Literal['minecraft:noise_threshold_count'] = 'minecraft:noise_threshold_count'
 
 
 @dataclass(kw_only=True)
 class PlacementModifierOffset(OffsetModifier):
-    type: Literal['minecraft:offset']
+    type: Literal['minecraft:offset'] = 'minecraft:offset'
 
 
 @dataclass(kw_only=True)
 class PlacementModifierRandomChance(RandomChanceModifier):
-    type: Literal['minecraft:random_chance']
+    type: Literal['minecraft:random_chance'] = 'minecraft:random_chance'
 
 
 @dataclass(kw_only=True)
 class PlacementModifierRandomlySelected(RandomlySelectedModifier):
-    type: Literal['minecraft:randomly_selected']
+    type: Literal['minecraft:randomly_selected'] = 'minecraft:randomly_selected'
 
 
 @dataclass(kw_only=True)
 class PlacementModifierRarityFilter(RarityFilter):
-    type: Literal['minecraft:rarity_filter']
+    type: Literal['minecraft:rarity_filter'] = 'minecraft:rarity_filter'
 
 
 @dataclass(kw_only=True)
 class PlacementModifierSurfaceRelativeThresholdFilter(SurfaceRelativeThresholdFilter):
-    type: Literal['minecraft:surface_relative_threshold_filter']
+    type: Literal['minecraft:surface_relative_threshold_filter'] = 'minecraft:surface_relative_threshold_filter'
 
 
 @dataclass(kw_only=True)
 class PlacementModifierSurfaceWaterDepthFilter(SurfaceWaterDepthFilter):
-    type: Literal['minecraft:surface_water_depth_filter']
+    type: Literal['minecraft:surface_water_depth_filter'] = 'minecraft:surface_water_depth_filter'
 
 
 type PlacementModifier = PlacementModifierBlockPredicateFilter | PlacementModifierCount | PlacementModifierCountOnEveryLayer | PlacementModifierCuboid | PlacementModifierEnvironmentScan | PlacementModifierFixedPlacement | PlacementModifierHeightRange | PlacementModifierHeightmap | PlacementModifierNoiseBasedCount | PlacementModifierNoiseThresholdCount | PlacementModifierOffset | PlacementModifierRandomChance | PlacementModifierRandomlySelected | PlacementModifierRarityFilter | PlacementModifierSurfaceRelativeThresholdFilter | PlacementModifierSurfaceWaterDepthFilter

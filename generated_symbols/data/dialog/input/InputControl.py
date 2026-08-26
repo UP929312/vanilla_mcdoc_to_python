@@ -14,25 +14,25 @@ from generated_symbols.data.dialog.input.TextInput import TextInput
 
 @dataclass(kw_only=True)
 class InputControlBoolean(BooleanInput):
-    type: Literal['minecraft:boolean']
+    type: Literal['minecraft:boolean'] = 'minecraft:boolean'
     key: Annotated[str, 'Length = 1 (inclusive) and above'] | str  # The input key, which is used to build macro command and generate custom action payload.
 
 
 @dataclass(kw_only=True)
 class InputControlNumberRange(NumberRangeInput):
-    type: Literal['minecraft:number_range']
+    type: Literal['minecraft:number_range'] = 'minecraft:number_range'
     key: Annotated[str, 'Length = 1 (inclusive) and above'] | str  # The input key, which is used to build macro command and generate custom action payload.
 
 
 @dataclass(kw_only=True)
 class InputControlSingleOption(SingleOptionInput):
-    type: Literal['minecraft:single_option']
+    type: Literal['minecraft:single_option'] = 'minecraft:single_option'
     key: Annotated[str, 'Length = 1 (inclusive) and above'] | str  # The input key, which is used to build macro command and generate custom action payload.
 
 
 @dataclass(kw_only=True)
 class InputControlText(TextInput):
-    type: Literal['minecraft:text']
+    type: Literal['minecraft:text'] = 'minecraft:text'
     key: Annotated[str, 'Length = 1 (inclusive) and above'] | str  # The input key, which is used to build macro command and generate custom action payload.
 
 

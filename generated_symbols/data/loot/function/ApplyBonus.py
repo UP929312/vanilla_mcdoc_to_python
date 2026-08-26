@@ -15,19 +15,19 @@ from minecraft_registry import IdSpec
 @dataclass(kw_only=True)
 class ApplyBonusBinomialWithBonusCount(BinomialWithBonusCountFormula, Conditions):
     enchantment: Annotated[str, IdSpec(registry='enchantment')]
-    formula: Literal['minecraft:binomial_with_bonus_count']
+    formula: Literal['minecraft:binomial_with_bonus_count'] = 'minecraft:binomial_with_bonus_count'
 
 
 @dataclass(kw_only=True)
 class ApplyBonusOreDrops(Conditions):
     enchantment: Annotated[str, IdSpec(registry='enchantment')]
-    formula: Literal['minecraft:ore_drops']
+    formula: Literal['minecraft:ore_drops'] = 'minecraft:ore_drops'
 
 
 @dataclass(kw_only=True)
 class ApplyBonusUniformBonusCount(Conditions, UniformBonusFormula):
     enchantment: Annotated[str, IdSpec(registry='enchantment')]
-    formula: Literal['minecraft:uniform_bonus_count']
+    formula: Literal['minecraft:uniform_bonus_count'] = 'minecraft:uniform_bonus_count'
 
 
 type ApplyBonus = ApplyBonusBinomialWithBonusCount | ApplyBonusOreDrops | ApplyBonusUniformBonusCount

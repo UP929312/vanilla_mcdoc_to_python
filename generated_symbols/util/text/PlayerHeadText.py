@@ -17,8 +17,8 @@ if TYPE_CHECKING:
 class PlayerHeadText(ObjectTextConfig, TextBase):
     player: Profile
     hat: bool | None = None  # Whether the head layer is rendered. Defaults to `true`.
-    object: Literal['player'] | None = None
-    type: Literal['object'] | None = None
+    object: Literal['player'] = 'player'
+    type: Literal['object'] = 'object'
 
 
 # ~~~ MODEL DUMP ~~~

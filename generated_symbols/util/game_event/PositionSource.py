@@ -12,12 +12,12 @@ from generated_symbols.util.game_event.EntityPositionSource import EntityPositio
 
 @dataclass(kw_only=True)
 class PositionSourceBlock(BlockPositionSource):
-    type: Literal['minecraft:block']
+    type: Literal['minecraft:block'] = 'minecraft:block'
 
 
 @dataclass(kw_only=True)
 class PositionSourceEntity(EntityPositionSource):
-    type: Literal['minecraft:entity']
+    type: Literal['minecraft:entity'] = 'minecraft:entity'
 
 
 type PositionSource = PositionSourceBlock | PositionSourceEntity

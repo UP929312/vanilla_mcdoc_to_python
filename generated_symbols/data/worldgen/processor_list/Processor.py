@@ -17,37 +17,37 @@ from generated_symbols.data.worldgen.processor_list.Rule import Rule
 
 @dataclass(kw_only=True)
 class ProcessorBlockAge(BlockAge):
-    processor_type: Literal['minecraft:block_age']
+    processor_type: Literal['minecraft:block_age'] = 'minecraft:block_age'
 
 
 @dataclass(kw_only=True)
 class ProcessorBlockIgnore(BlockIgnore):
-    processor_type: Literal['minecraft:block_ignore']
+    processor_type: Literal['minecraft:block_ignore'] = 'minecraft:block_ignore'
 
 
 @dataclass(kw_only=True)
 class ProcessorBlockRot(BlockRot):
-    processor_type: Literal['minecraft:block_rot']
+    processor_type: Literal['minecraft:block_rot'] = 'minecraft:block_rot'
 
 
 @dataclass(kw_only=True)
 class ProcessorCapped(Capped):
-    processor_type: Literal['minecraft:capped']
+    processor_type: Literal['minecraft:capped'] = 'minecraft:capped'
 
 
 @dataclass(kw_only=True)
 class ProcessorGravity(Gravity):
-    processor_type: Literal['minecraft:gravity']
+    processor_type: Literal['minecraft:gravity'] = 'minecraft:gravity'
 
 
 @dataclass(kw_only=True)
 class ProcessorProtectedBlocks(ProtectedBlocks):
-    processor_type: Literal['minecraft:protected_blocks']
+    processor_type: Literal['minecraft:protected_blocks'] = 'minecraft:protected_blocks'
 
 
 @dataclass(kw_only=True)
 class ProcessorRule(Rule):
-    processor_type: Literal['minecraft:rule']
+    processor_type: Literal['minecraft:rule'] = 'minecraft:rule'
 
 
 type Processor = ProcessorBlockAge | ProcessorBlockIgnore | ProcessorBlockRot | ProcessorCapped | ProcessorGravity | ProcessorProtectedBlocks | ProcessorRule

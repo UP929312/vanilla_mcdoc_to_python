@@ -28,92 +28,92 @@ from generated_symbols.data.loot.condition.WeatherCheck import WeatherCheck
 
 @dataclass(kw_only=True)
 class LootConditionAllOf(AllOf):
-    type: Literal['minecraft:all_of']
+    type: Literal['minecraft:all_of'] = 'minecraft:all_of'
 
 
 @dataclass(kw_only=True)
 class LootConditionAnyOf(AnyOf):
-    type: Literal['minecraft:any_of']
+    type: Literal['minecraft:any_of'] = 'minecraft:any_of'
 
 
 @dataclass(kw_only=True)
 class LootConditionDamageSourceProperties(DamageSourceProperties):
-    type: Literal['minecraft:damage_source_properties']
+    type: Literal['minecraft:damage_source_properties'] = 'minecraft:damage_source_properties'
 
 
 @dataclass(kw_only=True)
 class LootConditionEnchantmentActiveCheck(EnchantmentActiveCheck):
-    type: Literal['minecraft:enchantment_active_check']
+    type: Literal['minecraft:enchantment_active_check'] = 'minecraft:enchantment_active_check'
 
 
 @dataclass(kw_only=True)
 class LootConditionEntityProperties(EntityProperties):
-    type: Literal['minecraft:entity_properties']
+    type: Literal['minecraft:entity_properties'] = 'minecraft:entity_properties'
 
 
 @dataclass(kw_only=True)
 class LootConditionEntityScores(EntityScores):
-    type: Literal['minecraft:entity_scores']
+    type: Literal['minecraft:entity_scores'] = 'minecraft:entity_scores'
 
 
 @dataclass(kw_only=True)
 class LootConditionEnvironmentAttributeCheck(EnvironmentAttributeCheck):
-    type: Literal['minecraft:environment_attribute_check']
+    type: Literal['minecraft:environment_attribute_check'] = 'minecraft:environment_attribute_check'
 
 
 @dataclass(kw_only=True)
 class LootConditionInverted(Inverted):
-    type: Literal['minecraft:inverted']
+    type: Literal['minecraft:inverted'] = 'minecraft:inverted'
 
 
 @dataclass(kw_only=True)
 class LootConditionKilledByPlayer(KilledByPlayer):
-    type: Literal['minecraft:killed_by_player']
+    type: Literal['minecraft:killed_by_player'] = 'minecraft:killed_by_player'
 
 
 @dataclass(kw_only=True)
 class LootConditionLocationCheck(LocationCheck):
-    type: Literal['minecraft:location_check']
+    type: Literal['minecraft:location_check'] = 'minecraft:location_check'
 
 
 @dataclass(kw_only=True)
 class LootConditionMatchBlock(BlockPredicate):
-    type: Literal['minecraft:match_block']
+    type: Literal['minecraft:match_block'] = 'minecraft:match_block'
 
 
 @dataclass(kw_only=True)
 class LootConditionMatchTool(MatchTool):
-    type: Literal['minecraft:match_tool']
+    type: Literal['minecraft:match_tool'] = 'minecraft:match_tool'
 
 
 @dataclass(kw_only=True)
 class LootConditionRandomChance(RandomChance):
-    type: Literal['minecraft:random_chance']
+    type: Literal['minecraft:random_chance'] = 'minecraft:random_chance'
 
 
 @dataclass(kw_only=True)
 class LootConditionRandomChanceWithEnchantedBonus(RandomChanceWithEnchantedBonus):
-    type: Literal['minecraft:random_chance_with_enchanted_bonus']
+    type: Literal['minecraft:random_chance_with_enchanted_bonus'] = 'minecraft:random_chance_with_enchanted_bonus'
 
 
 @dataclass(kw_only=True)
 class LootConditionTableBonus(TableBonus):
-    type: Literal['minecraft:table_bonus']
+    type: Literal['minecraft:table_bonus'] = 'minecraft:table_bonus'
 
 
 @dataclass(kw_only=True)
 class LootConditionTimeCheck(TimeCheck):
-    type: Literal['minecraft:time_check']
+    type: Literal['minecraft:time_check'] = 'minecraft:time_check'
 
 
 @dataclass(kw_only=True)
 class LootConditionValueCheck(ValueCheck):
-    type: Literal['minecraft:value_check']
+    type: Literal['minecraft:value_check'] = 'minecraft:value_check'
 
 
 @dataclass(kw_only=True)
 class LootConditionWeatherCheck(WeatherCheck):
-    type: Literal['minecraft:weather_check']
+    type: Literal['minecraft:weather_check'] = 'minecraft:weather_check'
 
 
 type LootCondition = LootConditionAllOf | LootConditionAnyOf | LootConditionDamageSourceProperties | LootConditionEnchantmentActiveCheck | LootConditionEntityProperties | LootConditionEntityScores | LootConditionEnvironmentAttributeCheck | LootConditionInverted | LootConditionKilledByPlayer | LootConditionLocationCheck | LootConditionMatchBlock | LootConditionMatchTool | LootConditionRandomChance | LootConditionRandomChanceWithEnchantedBonus | LootConditionTableBonus | LootConditionTimeCheck | LootConditionValueCheck | LootConditionWeatherCheck

@@ -13,17 +13,17 @@ from generated_symbols.data.variants.StructureCheck import StructureCheck
 
 @dataclass(kw_only=True)
 class SpawnConditionBiome(BiomeCheck):
-    type: Literal['minecraft:biome']
+    type: Literal['minecraft:biome'] = 'minecraft:biome'
 
 
 @dataclass(kw_only=True)
 class SpawnConditionMoonBrightness(MoonBrightnessCheck):
-    type: Literal['minecraft:moon_brightness']
+    type: Literal['minecraft:moon_brightness'] = 'minecraft:moon_brightness'
 
 
 @dataclass(kw_only=True)
 class SpawnConditionStructure(StructureCheck):
-    type: Literal['minecraft:structure']
+    type: Literal['minecraft:structure'] = 'minecraft:structure'
 
 
 type SpawnCondition = SpawnConditionBiome | SpawnConditionMoonBrightness | SpawnConditionStructure

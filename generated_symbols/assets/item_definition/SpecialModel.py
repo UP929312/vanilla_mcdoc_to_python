@@ -25,37 +25,37 @@ class SpecialModelUnknown:
 
 @dataclass(kw_only=True)
 class SpecialModelBanner(Banner):
-    type: Literal['minecraft:banner']
+    type: Literal['minecraft:banner'] = 'minecraft:banner'
 
 
 @dataclass(kw_only=True)
 class SpecialModelBook(Book):
-    type: Literal['minecraft:book']
+    type: Literal['minecraft:book'] = 'minecraft:book'
 
 
 @dataclass(kw_only=True)
 class SpecialModelChest(Chest):
-    type: Literal['minecraft:chest']
+    type: Literal['minecraft:chest'] = 'minecraft:chest'
 
 
 @dataclass(kw_only=True)
 class SpecialModelCopperGolemStatue(CopperGolemStatue):
-    type: Literal['minecraft:copper_golem_statue']
+    type: Literal['minecraft:copper_golem_statue'] = 'minecraft:copper_golem_statue'
 
 
 @dataclass(kw_only=True)
 class SpecialModelEndCube(EndCube):
-    type: Literal['minecraft:end_cube']
+    type: Literal['minecraft:end_cube'] = 'minecraft:end_cube'
 
 
 @dataclass(kw_only=True)
 class SpecialModelHead(Head):
-    type: Literal['minecraft:head']
+    type: Literal['minecraft:head'] = 'minecraft:head'
 
 
 @dataclass(kw_only=True)
 class SpecialModelShulkerBox(ShulkerBox):
-    type: Literal['minecraft:shulker_box']
+    type: Literal['minecraft:shulker_box'] = 'minecraft:shulker_box'
 
 
 type SpecialModel = SpecialModelUnknown | SpecialModelBanner | SpecialModelBook | SpecialModelChest | SpecialModelCopperGolemStatue | SpecialModelEndCube | SpecialModelHead | SpecialModelShulkerBox

@@ -38,7 +38,7 @@ class KeyframesStruct:
 
 @dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct1(AttributeTrackBase):
-    modifier: Literal['override'] | None = None
+    modifier: Literal['override'] = 'override'
     keyframes: Annotated[list[KeyframesStruct], 'Length = 1 (inclusive) and above']
 
 
@@ -50,7 +50,7 @@ class KeyframesStruct2:
 
 @dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct2(AttributeTrackBase):
-    modifier: Literal['override'] | None = None
+    modifier: Literal['override'] = 'override'
     keyframes: Annotated[list[KeyframesStruct2], 'Length = 1 (inclusive) and above']
 
 
@@ -62,7 +62,7 @@ class KeyframesStruct3:
 
 @dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct3(AttributeTrackBase):
-    modifier: Literal['override'] | None = None
+    modifier: Literal['override'] = 'override'
     keyframes: Annotated[list[KeyframesStruct3], 'Length = 1 (inclusive) and above']
 
 
@@ -98,7 +98,7 @@ class KeyframesStruct6:
 
 @dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct6(AttributeTrackBase):
-    modifier: Literal['override'] | None = None
+    modifier: Literal['override'] = 'override'
     keyframes: Annotated[list[KeyframesStruct6], 'Length = 1 (inclusive) and above']
 
 
@@ -110,7 +110,7 @@ class KeyframesStruct7:
 
 @dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct7(AttributeTrackBase):
-    modifier: Literal['override'] | None = None
+    modifier: Literal['override'] = 'override'
     keyframes: Annotated[list[KeyframesStruct7], 'Length = 1 (inclusive) and above']
 
 
@@ -134,7 +134,7 @@ class KeyframesStruct9:
 
 @dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct9(AttributeTrackBase):
-    modifier: Literal['override'] | None = None
+    modifier: Literal['override'] = 'override'
     keyframes: Annotated[list[KeyframesStruct9], 'Length = 1 (inclusive) and above']
 
 
@@ -230,7 +230,7 @@ class KeyframesStruct17:
 
 @dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct17(AttributeTrackBase):
-    modifier: Literal['override'] | None = None
+    modifier: Literal['override'] = 'override'
     keyframes: Annotated[list[KeyframesStruct17], 'Length = 1 (inclusive) and above']
 
 
@@ -242,7 +242,7 @@ class KeyframesStruct18:
 
 @dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct18(AttributeTrackBase):
-    modifier: Literal['override'] | None = None
+    modifier: Literal['override'] = 'override'
     keyframes: Annotated[list[KeyframesStruct18], 'Length = 1 (inclusive) and above']
 
 

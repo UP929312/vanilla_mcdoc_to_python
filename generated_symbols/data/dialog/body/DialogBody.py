@@ -12,12 +12,12 @@ from generated_symbols.data.dialog.body.PlainMessage import PlainMessage
 
 @dataclass(kw_only=True)
 class DialogBodyItem(ItemBody):
-    type: Literal['minecraft:item']
+    type: Literal['minecraft:item'] = 'minecraft:item'
 
 
 @dataclass(kw_only=True)
 class DialogBodyPlainMessage(PlainMessage):
-    type: Literal['minecraft:plain_message']
+    type: Literal['minecraft:plain_message'] = 'minecraft:plain_message'
 
 
 type DialogBody = DialogBodyItem | DialogBodyPlainMessage

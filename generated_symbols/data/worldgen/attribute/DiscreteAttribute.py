@@ -22,7 +22,7 @@ class KeyframesStruct(Generic[T]):
 
 @dataclass(kw_only=True)
 class AttributeTrackStruct(AttributeTrackBase, Generic[T]):
-    modifier: Literal['override'] | None = None
+    modifier: Literal['override'] = 'override'
     keyframes: Annotated[list[KeyframesStruct[T]], 'Length = 1 (inclusive) and above']
 
 

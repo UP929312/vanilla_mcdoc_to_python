@@ -18,25 +18,25 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class FloatsStructAppend:
     values: list[NumberProviderRef]
-    mode: Literal['minecraft:append']  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:append'] = 'minecraft:append'  # Determines how the existing list should be modified.
 
 
 @dataclass(kw_only=True)
 class FloatsStructInsert(InsertListOperation):
     values: list[NumberProviderRef]
-    mode: Literal['minecraft:insert']  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
 
 
 @dataclass(kw_only=True)
 class FloatsStructReplaceAll:
     values: list[NumberProviderRef]
-    mode: Literal['minecraft:replace_all']  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
 
 
 @dataclass(kw_only=True)
 class FloatsStructReplaceSection(ReplaceSectionListOperation):
     values: list[NumberProviderRef]
-    mode: Literal['minecraft:replace_section']  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
 
 
 type FloatsStruct = FloatsStructAppend | FloatsStructInsert | FloatsStructReplaceAll | FloatsStructReplaceSection
@@ -44,25 +44,25 @@ type FloatsStruct = FloatsStructAppend | FloatsStructInsert | FloatsStructReplac
 @dataclass(kw_only=True)
 class FlagsStructAppend:
     values: list[bool]
-    mode: Literal['minecraft:append']  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:append'] = 'minecraft:append'  # Determines how the existing list should be modified.
 
 
 @dataclass(kw_only=True)
 class FlagsStructInsert(InsertListOperation):
     values: list[bool]
-    mode: Literal['minecraft:insert']  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
 
 
 @dataclass(kw_only=True)
 class FlagsStructReplaceAll:
     values: list[bool]
-    mode: Literal['minecraft:replace_all']  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
 
 
 @dataclass(kw_only=True)
 class FlagsStructReplaceSection(ReplaceSectionListOperation):
     values: list[bool]
-    mode: Literal['minecraft:replace_section']  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
 
 
 type FlagsStruct = FlagsStructAppend | FlagsStructInsert | FlagsStructReplaceAll | FlagsStructReplaceSection
@@ -70,25 +70,25 @@ type FlagsStruct = FlagsStructAppend | FlagsStructInsert | FlagsStructReplaceAll
 @dataclass(kw_only=True)
 class StringsStructAppend:
     values: list[str]
-    mode: Literal['minecraft:append']  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:append'] = 'minecraft:append'  # Determines how the existing list should be modified.
 
 
 @dataclass(kw_only=True)
 class StringsStructInsert(InsertListOperation):
     values: list[str]
-    mode: Literal['minecraft:insert']  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
 
 
 @dataclass(kw_only=True)
 class StringsStructReplaceAll:
     values: list[str]
-    mode: Literal['minecraft:replace_all']  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
 
 
 @dataclass(kw_only=True)
 class StringsStructReplaceSection(ReplaceSectionListOperation):
     values: list[str]
-    mode: Literal['minecraft:replace_section']  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
 
 
 type StringsStruct = StringsStructAppend | StringsStructInsert | StringsStructReplaceAll | StringsStructReplaceSection
@@ -96,25 +96,25 @@ type StringsStruct = StringsStructAppend | StringsStructInsert | StringsStructRe
 @dataclass(kw_only=True)
 class ColorsStructAppend:
     values: list[NumberProviderRef | RGB]
-    mode: Literal['minecraft:append']  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:append'] = 'minecraft:append'  # Determines how the existing list should be modified.
 
 
 @dataclass(kw_only=True)
 class ColorsStructInsert(InsertListOperation):
     values: list[NumberProviderRef | RGB]
-    mode: Literal['minecraft:insert']  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
 
 
 @dataclass(kw_only=True)
 class ColorsStructReplaceAll:
     values: list[NumberProviderRef | RGB]
-    mode: Literal['minecraft:replace_all']  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
 
 
 @dataclass(kw_only=True)
 class ColorsStructReplaceSection(ReplaceSectionListOperation):
     values: list[NumberProviderRef | RGB]
-    mode: Literal['minecraft:replace_section']  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
 
 
 type ColorsStruct = ColorsStructAppend | ColorsStructInsert | ColorsStructReplaceAll | ColorsStructReplaceSection

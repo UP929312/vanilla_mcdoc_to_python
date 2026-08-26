@@ -11,7 +11,7 @@ T = TypeVar('T')
 
 @dataclass(kw_only=True)
 class OverrideModifier(Generic[T]):
-    modifier: Literal['override']
+    modifier: Literal['override'] = 'override'
     argument: T
 
 

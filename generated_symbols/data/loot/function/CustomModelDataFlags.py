@@ -13,25 +13,25 @@ from generated_symbols.data.loot.function.ReplaceSectionListOperation import Rep
 @dataclass(kw_only=True)
 class CustomModelDataFlagsAppend:
     values: list[bool]
-    mode: Literal['minecraft:append']  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:append'] = 'minecraft:append'  # Determines how the existing list should be modified.
 
 
 @dataclass(kw_only=True)
 class CustomModelDataFlagsInsert(InsertListOperation):
     values: list[bool]
-    mode: Literal['minecraft:insert']  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
 
 
 @dataclass(kw_only=True)
 class CustomModelDataFlagsReplaceAll:
     values: list[bool]
-    mode: Literal['minecraft:replace_all']  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
 
 
 @dataclass(kw_only=True)
 class CustomModelDataFlagsReplaceSection(ReplaceSectionListOperation):
     values: list[bool]
-    mode: Literal['minecraft:replace_section']  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
 
 
 type CustomModelDataFlags = CustomModelDataFlagsAppend | CustomModelDataFlagsInsert | CustomModelDataFlagsReplaceAll | CustomModelDataFlagsReplaceSection

@@ -12,12 +12,12 @@ from generated_symbols.data.worldgen.processor_list.LinearPos import LinearPos
 
 @dataclass(kw_only=True)
 class PosRuleTestAxisAlignedLinearPos(AxisAlignedLinearPos):
-    predicate_type: Literal['minecraft:axis_aligned_linear_pos']
+    predicate_type: Literal['minecraft:axis_aligned_linear_pos'] = 'minecraft:axis_aligned_linear_pos'
 
 
 @dataclass(kw_only=True)
 class PosRuleTestLinearPos(LinearPos):
-    predicate_type: Literal['minecraft:linear_pos']
+    predicate_type: Literal['minecraft:linear_pos'] = 'minecraft:linear_pos'
 
 
 type PosRuleTest = PosRuleTestAxisAlignedLinearPos | PosRuleTestLinearPos

@@ -12,7 +12,7 @@ from generated_symbols.util.text.TextBase import TextBase
 @dataclass(kw_only=True)
 class NormalText(TextBase):
     text: str
-    type: Literal['text'] | None = None
+    type: Literal['text'] = 'text'
 
 
 # ~~~ MODEL DUMP ~~~

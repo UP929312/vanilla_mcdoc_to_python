@@ -17,25 +17,25 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class CustomModelDataColorsAppend:
     values: list[NumberProviderRef | RGB]
-    mode: Literal['minecraft:append']  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:append'] = 'minecraft:append'  # Determines how the existing list should be modified.
 
 
 @dataclass(kw_only=True)
 class CustomModelDataColorsInsert(InsertListOperation):
     values: list[NumberProviderRef | RGB]
-    mode: Literal['minecraft:insert']  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
 
 
 @dataclass(kw_only=True)
 class CustomModelDataColorsReplaceAll:
     values: list[NumberProviderRef | RGB]
-    mode: Literal['minecraft:replace_all']  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
 
 
 @dataclass(kw_only=True)
 class CustomModelDataColorsReplaceSection(ReplaceSectionListOperation):
     values: list[NumberProviderRef | RGB]
-    mode: Literal['minecraft:replace_section']  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
 
 
 type CustomModelDataColors = CustomModelDataColorsAppend | CustomModelDataColorsInsert | CustomModelDataColorsReplaceAll | CustomModelDataColorsReplaceSection

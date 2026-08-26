@@ -13,17 +13,17 @@ from generated_symbols.util.text.ShowText import ShowText
 
 @dataclass(kw_only=True)
 class HoverEventShowEntity(ShowEntity):
-    action: Literal['minecraft:show_entity']
+    action: Literal['minecraft:show_entity'] = 'minecraft:show_entity'
 
 
 @dataclass(kw_only=True)
 class HoverEventShowItem(ShowItem):
-    action: Literal['minecraft:show_item']
+    action: Literal['minecraft:show_item'] = 'minecraft:show_item'
 
 
 @dataclass(kw_only=True)
 class HoverEventShowText(ShowText):
-    action: Literal['minecraft:show_text']
+    action: Literal['minecraft:show_text'] = 'minecraft:show_text'
 
 
 type HoverEvent = HoverEventShowEntity | HoverEventShowItem | HoverEventShowText

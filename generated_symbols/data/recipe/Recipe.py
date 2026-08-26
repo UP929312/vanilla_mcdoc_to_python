@@ -31,107 +31,107 @@ class RecipeUnknown:
 
 @dataclass(kw_only=True)
 class RecipeBlasting(Smelting):
-    type: Literal['minecraft:blasting']
+    type: Literal['minecraft:blasting'] = 'minecraft:blasting'
 
 
 @dataclass(kw_only=True)
 class RecipeBrewing(Brewing):
-    type: Literal['minecraft:brewing']
+    type: Literal['minecraft:brewing'] = 'minecraft:brewing'
 
 
 @dataclass(kw_only=True)
 class RecipeCampfireCooking(Smelting):
-    type: Literal['minecraft:campfire_cooking']
+    type: Literal['minecraft:campfire_cooking'] = 'minecraft:campfire_cooking'
 
 
 @dataclass(kw_only=True)
 class RecipeCraftingDecoratedPot:
-    type: Literal['minecraft:crafting_decorated_pot']
+    type: Literal['minecraft:crafting_decorated_pot'] = 'minecraft:crafting_decorated_pot'
 
 
 @dataclass(kw_only=True)
 class RecipeCraftingDye(CraftingDye):
-    type: Literal['minecraft:crafting_dye']
+    type: Literal['minecraft:crafting_dye'] = 'minecraft:crafting_dye'
 
 
 @dataclass(kw_only=True)
 class RecipeCraftingImbue(CraftingImbue):
-    type: Literal['minecraft:crafting_imbue']
+    type: Literal['minecraft:crafting_imbue'] = 'minecraft:crafting_imbue'
 
 
 @dataclass(kw_only=True)
 class RecipeCraftingShaped(CraftingShaped):
-    type: Literal['minecraft:crafting_shaped']
+    type: Literal['minecraft:crafting_shaped'] = 'minecraft:crafting_shaped'
 
 
 @dataclass(kw_only=True)
 class RecipeCraftingShapeless(CraftingShapeless):
-    type: Literal['minecraft:crafting_shapeless']
+    type: Literal['minecraft:crafting_shapeless'] = 'minecraft:crafting_shapeless'
 
 
 @dataclass(kw_only=True)
 class RecipeCraftingSpecialBannerduplicate:
-    type: Literal['minecraft:crafting_special_bannerduplicate']
+    type: Literal['minecraft:crafting_special_bannerduplicate'] = 'minecraft:crafting_special_bannerduplicate'
 
 
 @dataclass(kw_only=True)
 class RecipeCraftingSpecialBookcloning:
-    type: Literal['minecraft:crafting_special_bookcloning']
+    type: Literal['minecraft:crafting_special_bookcloning'] = 'minecraft:crafting_special_bookcloning'
 
 
 @dataclass(kw_only=True)
 class RecipeCraftingSpecialFireworkRocket:
-    type: Literal['minecraft:crafting_special_firework_rocket']
+    type: Literal['minecraft:crafting_special_firework_rocket'] = 'minecraft:crafting_special_firework_rocket'
 
 
 @dataclass(kw_only=True)
 class RecipeCraftingSpecialFireworkStar:
-    type: Literal['minecraft:crafting_special_firework_star']
+    type: Literal['minecraft:crafting_special_firework_star'] = 'minecraft:crafting_special_firework_star'
 
 
 @dataclass(kw_only=True)
 class RecipeCraftingSpecialFireworkStarFade:
-    type: Literal['minecraft:crafting_special_firework_star_fade']
+    type: Literal['minecraft:crafting_special_firework_star_fade'] = 'minecraft:crafting_special_firework_star_fade'
 
 
 @dataclass(kw_only=True)
 class RecipeCraftingSpecialMapextending:
-    type: Literal['minecraft:crafting_special_mapextending']
+    type: Literal['minecraft:crafting_special_mapextending'] = 'minecraft:crafting_special_mapextending'
 
 
 @dataclass(kw_only=True)
 class RecipeCraftingSpecialShielddecoration:
-    type: Literal['minecraft:crafting_special_shielddecoration']
+    type: Literal['minecraft:crafting_special_shielddecoration'] = 'minecraft:crafting_special_shielddecoration'
 
 
 @dataclass(kw_only=True)
 class RecipeCraftingTransmute(CraftingTransmute):
-    type: Literal['minecraft:crafting_transmute']
+    type: Literal['minecraft:crafting_transmute'] = 'minecraft:crafting_transmute'
 
 
 @dataclass(kw_only=True)
 class RecipeSmelting(Smelting):
-    type: Literal['minecraft:smelting']
+    type: Literal['minecraft:smelting'] = 'minecraft:smelting'
 
 
 @dataclass(kw_only=True)
 class RecipeSmithingTransform(SmithingTransform):
-    type: Literal['minecraft:smithing_transform']
+    type: Literal['minecraft:smithing_transform'] = 'minecraft:smithing_transform'
 
 
 @dataclass(kw_only=True)
 class RecipeSmithingTrim(SmithingTrim):
-    type: Literal['minecraft:smithing_trim']
+    type: Literal['minecraft:smithing_trim'] = 'minecraft:smithing_trim'
 
 
 @dataclass(kw_only=True)
 class RecipeSmoking(Smelting):
-    type: Literal['minecraft:smoking']
+    type: Literal['minecraft:smoking'] = 'minecraft:smoking'
 
 
 @dataclass(kw_only=True)
 class RecipeStonecutting(Stonecutting):
-    type: Literal['minecraft:stonecutting']
+    type: Literal['minecraft:stonecutting'] = 'minecraft:stonecutting'
 
 
 type Recipe = RecipeUnknown | RecipeBlasting | RecipeBrewing | RecipeCampfireCooking | RecipeCraftingDecoratedPot | RecipeCraftingDye | RecipeCraftingImbue | RecipeCraftingShaped | RecipeCraftingShapeless | RecipeCraftingSpecialBannerduplicate | RecipeCraftingSpecialBookcloning | RecipeCraftingSpecialFireworkRocket | RecipeCraftingSpecialFireworkStar | RecipeCraftingSpecialFireworkStarFade | RecipeCraftingSpecialMapextending | RecipeCraftingSpecialShielddecoration | RecipeCraftingTransmute | RecipeSmelting | RecipeSmithingTransform | RecipeSmithingTrim | RecipeSmoking | RecipeStonecutting

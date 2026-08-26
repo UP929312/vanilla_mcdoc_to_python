@@ -12,12 +12,12 @@ from generated_symbols.data.worldgen.dimension.chunk_generator.Noise import Nois
 
 @dataclass(kw_only=True)
 class ChunkGeneratorFlat(Flat):
-    type: Literal['minecraft:flat']
+    type: Literal['minecraft:flat'] = 'minecraft:flat'
 
 
 @dataclass(kw_only=True)
 class ChunkGeneratorNoise(Noise):
-    type: Literal['minecraft:noise']
+    type: Literal['minecraft:noise'] = 'minecraft:noise'
 
 
 type ChunkGenerator = ChunkGeneratorFlat | ChunkGeneratorNoise

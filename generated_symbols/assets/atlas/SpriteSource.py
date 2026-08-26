@@ -15,27 +15,27 @@ from generated_symbols.assets.atlas.Unstitch import Unstitch
 
 @dataclass(kw_only=True)
 class SpriteSourceDirectory(Directory):
-    type: Literal['minecraft:directory']
+    type: Literal['minecraft:directory'] = 'minecraft:directory'
 
 
 @dataclass(kw_only=True)
 class SpriteSourceFilter(Filter):
-    type: Literal['minecraft:filter']
+    type: Literal['minecraft:filter'] = 'minecraft:filter'
 
 
 @dataclass(kw_only=True)
 class SpriteSourcePalettedPermutations(PalettedPermutations):
-    type: Literal['minecraft:paletted_permutations']
+    type: Literal['minecraft:paletted_permutations'] = 'minecraft:paletted_permutations'
 
 
 @dataclass(kw_only=True)
 class SpriteSourceSingle(Single):
-    type: Literal['minecraft:single']
+    type: Literal['minecraft:single'] = 'minecraft:single'
 
 
 @dataclass(kw_only=True)
 class SpriteSourceUnstitch(Unstitch):
-    type: Literal['minecraft:unstitch']
+    type: Literal['minecraft:unstitch'] = 'minecraft:unstitch'
 
 
 type SpriteSource = SpriteSourceDirectory | SpriteSourceFilter | SpriteSourcePalettedPermutations | SpriteSourceSingle | SpriteSourceUnstitch

@@ -109,6 +109,25 @@ class TestDispatcherSpreadGeneration:
         assert "class GlyphProviderSpace:" not in content
         assert "    advances: dict[" not in content.split("class GlyphProviderSpace(SpaceProvider):", 1)[1].split("\n\n", 1)[0]
 
+    def test_literal_dispatcher_fields_get_defaults(self) -> None:
+        content = generated_body(
+            "::java::world::block::BlockEntityData",
+            SYMBOLS_MAP["mcdoc"]["::java::world::block::BlockEntityData"],
+            "BlockEntityData",
+        )
+
+        assert "class BlockEntityDataBanner(Banner):" in content
+        assert "    id: Literal['minecraft:banner'] = 'minecraft:banner'" in content
+
+    def test_optional_literal_dispatcher_fields_keep_valid_annotation_order(self) -> None:
+        content = generated_body(
+            "::java::data::dialog::ButtonListDialogBase",
+            SYMBOLS_MAP["mcdoc"]["::java::data::dialog::ButtonListDialogBase"],
+            "ButtonListDialogBase",
+        )
+
+        assert "after_action: Literal['minecraft:close'] | None = 'minecraft:close'" in content
+
     def test_dynamic_spread_generates_correlated_branch_classes(self) -> None:
         content = generated_body(
             "::java::data::advancement::AdvancementCriterion",

@@ -17,7 +17,7 @@ class TranslatedText(TextBase):
     translate: str
     fallback: str | None = None
     with_: Annotated[list[Text], 'Length = 1 (inclusive) and above'] | None = None
-    type: Literal['translatable'] | None = None
+    type: Literal['translatable'] = 'translatable'
 
 
 # ~~~ MODEL DUMP ~~~

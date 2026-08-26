@@ -19,37 +19,37 @@ from generated_symbols.data.worldgen.material_condition.YAboveCondition import Y
 class MaterialConditionBiome(BiomeCondition):
     __resource_dir__: ClassVar[str] = 'worldgen/material_condition'
 
-    type: Literal['minecraft:biome']
+    type: Literal['minecraft:biome'] = 'minecraft:biome'
 
 
 @dataclass(kw_only=True)
 class MaterialConditionNoiseThreshold(NoiseThresholdCondition):
-    type: Literal['minecraft:noise_threshold']
+    type: Literal['minecraft:noise_threshold'] = 'minecraft:noise_threshold'
 
 
 @dataclass(kw_only=True)
 class MaterialConditionNot(NotCondition):
-    type: Literal['minecraft:not']
+    type: Literal['minecraft:not'] = 'minecraft:not'
 
 
 @dataclass(kw_only=True)
 class MaterialConditionStoneDepth(StoneDepthCondition):
-    type: Literal['minecraft:stone_depth']
+    type: Literal['minecraft:stone_depth'] = 'minecraft:stone_depth'
 
 
 @dataclass(kw_only=True)
 class MaterialConditionVerticalGradient(VerticalGradientCondition):
-    type: Literal['minecraft:vertical_gradient']
+    type: Literal['minecraft:vertical_gradient'] = 'minecraft:vertical_gradient'
 
 
 @dataclass(kw_only=True)
 class MaterialConditionWater(WaterCondition):
-    type: Literal['minecraft:water']
+    type: Literal['minecraft:water'] = 'minecraft:water'
 
 
 @dataclass(kw_only=True)
 class MaterialConditionYAbove(YAboveCondition):
-    type: Literal['minecraft:y_above']
+    type: Literal['minecraft:y_above'] = 'minecraft:y_above'
 
 
 type MaterialCondition = MaterialConditionBiome | MaterialConditionNoiseThreshold | MaterialConditionNot | MaterialConditionStoneDepth | MaterialConditionVerticalGradient | MaterialConditionWater | MaterialConditionYAbove

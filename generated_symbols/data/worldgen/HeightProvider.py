@@ -18,32 +18,32 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class HeightProviderStructBiasedToBottom(BottomBiasHeightProvider):
-    type: Literal['minecraft:biased_to_bottom']
+    type: Literal['minecraft:biased_to_bottom'] = 'minecraft:biased_to_bottom'
 
 
 @dataclass(kw_only=True)
 class HeightProviderStructConstant(ConstantHeightProvider):
-    type: Literal['minecraft:constant']
+    type: Literal['minecraft:constant'] = 'minecraft:constant'
 
 
 @dataclass(kw_only=True)
 class HeightProviderStructTrapezoid(TrapezoidHeightProvider):
-    type: Literal['minecraft:trapezoid']
+    type: Literal['minecraft:trapezoid'] = 'minecraft:trapezoid'
 
 
 @dataclass(kw_only=True)
 class HeightProviderStructUniform(UniformHeightProvider):
-    type: Literal['minecraft:uniform']
+    type: Literal['minecraft:uniform'] = 'minecraft:uniform'
 
 
 @dataclass(kw_only=True)
 class HeightProviderStructVeryBiasedToBottom(BottomBiasHeightProvider):
-    type: Literal['minecraft:very_biased_to_bottom']
+    type: Literal['minecraft:very_biased_to_bottom'] = 'minecraft:very_biased_to_bottom'
 
 
 @dataclass(kw_only=True)
 class HeightProviderStructWeightedList(WeightListHeightProvider):
-    type: Literal['minecraft:weighted_list']
+    type: Literal['minecraft:weighted_list'] = 'minecraft:weighted_list'
 
 
 type HeightProviderStruct = HeightProviderStructBiasedToBottom | HeightProviderStructConstant | HeightProviderStructTrapezoid | HeightProviderStructUniform | HeightProviderStructVeryBiasedToBottom | HeightProviderStructWeightedList

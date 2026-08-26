@@ -12,12 +12,12 @@ from generated_symbols.data.worldgen.feature.tree.TwoLayersFeatureSize import Tw
 
 @dataclass(kw_only=True)
 class FeatureSizeThreeLayersFeatureSize(ThreeLayersFeatureSize):
-    type: Literal['minecraft:three_layers_feature_size']
+    type: Literal['minecraft:three_layers_feature_size'] = 'minecraft:three_layers_feature_size'
 
 
 @dataclass(kw_only=True)
 class FeatureSizeTwoLayersFeatureSize(TwoLayersFeatureSize):
-    type: Literal['minecraft:two_layers_feature_size']
+    type: Literal['minecraft:two_layers_feature_size'] = 'minecraft:two_layers_feature_size'
 
 
 type FeatureSize = FeatureSizeThreeLayersFeatureSize | FeatureSizeTwoLayersFeatureSize

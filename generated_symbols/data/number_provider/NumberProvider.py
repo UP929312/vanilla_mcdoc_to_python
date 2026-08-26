@@ -23,77 +23,77 @@ from generated_symbols.data.number_provider.WeightedNumberProvider import Weight
 class NumberProviderStructAverage(AggregateNumberProvider):
     __resource_dir__: ClassVar[str] = 'number_provider'
 
-    type: Literal['minecraft:average']
+    type: Literal['minecraft:average'] = 'minecraft:average'
 
 
 @dataclass(kw_only=True)
 class NumberProviderStructBinomial(BinomialNumberProvider):
-    type: Literal['minecraft:binomial']
+    type: Literal['minecraft:binomial'] = 'minecraft:binomial'
 
 
 @dataclass(kw_only=True)
 class NumberProviderStructConditional(ConditionalNumberProvider):
-    type: Literal['minecraft:conditional']
+    type: Literal['minecraft:conditional'] = 'minecraft:conditional'
 
 
 @dataclass(kw_only=True)
 class NumberProviderStructConstant(ConstantNumberProvider):
-    type: Literal['minecraft:constant']
+    type: Literal['minecraft:constant'] = 'minecraft:constant'
 
 
 @dataclass(kw_only=True)
 class NumberProviderStructEnchantmentLevel(EnchantmentLevelProvider):
-    type: Literal['minecraft:enchantment_level']
+    type: Literal['minecraft:enchantment_level'] = 'minecraft:enchantment_level'
 
 
 @dataclass(kw_only=True)
 class NumberProviderStructEnvironmentAttribute(EnvironmentAttributeNumberProvider):
-    type: Literal['minecraft:environment_attribute']
+    type: Literal['minecraft:environment_attribute'] = 'minecraft:environment_attribute'
 
 
 @dataclass(kw_only=True)
 class NumberProviderStructMaximum(AggregateNumberProvider):
-    type: Literal['minecraft:maximum']
+    type: Literal['minecraft:maximum'] = 'minecraft:maximum'
 
 
 @dataclass(kw_only=True)
 class NumberProviderStructMinimum(AggregateNumberProvider):
-    type: Literal['minecraft:minimum']
+    type: Literal['minecraft:minimum'] = 'minecraft:minimum'
 
 
 @dataclass(kw_only=True)
 class NumberProviderStructNumberDispatcher(NumberDispatcher):
-    type: Literal['minecraft:number_dispatcher']
+    type: Literal['minecraft:number_dispatcher'] = 'minecraft:number_dispatcher'
 
 
 @dataclass(kw_only=True)
 class NumberProviderStructProduct(AggregateNumberProvider):
-    type: Literal['minecraft:product']
+    type: Literal['minecraft:product'] = 'minecraft:product'
 
 
 @dataclass(kw_only=True)
 class NumberProviderStructScore(ScoreNumberProvider):
-    type: Literal['minecraft:score']
+    type: Literal['minecraft:score'] = 'minecraft:score'
 
 
 @dataclass(kw_only=True)
 class NumberProviderStructStorage(StorageNumberProvider):
-    type: Literal['minecraft:storage']
+    type: Literal['minecraft:storage'] = 'minecraft:storage'
 
 
 @dataclass(kw_only=True)
 class NumberProviderStructSum(AggregateNumberProvider):
-    type: Literal['minecraft:sum']
+    type: Literal['minecraft:sum'] = 'minecraft:sum'
 
 
 @dataclass(kw_only=True)
 class NumberProviderStructUniform(UniformNumberProvider):
-    type: Literal['minecraft:uniform']
+    type: Literal['minecraft:uniform'] = 'minecraft:uniform'
 
 
 @dataclass(kw_only=True)
 class NumberProviderStructWeightedList(WeightedNumberProvider):
-    type: Literal['minecraft:weighted_list']
+    type: Literal['minecraft:weighted_list'] = 'minecraft:weighted_list'
 
 
 type NumberProviderStruct = NumberProviderStructAverage | NumberProviderStructBinomial | NumberProviderStructConditional | NumberProviderStructConstant | NumberProviderStructEnchantmentLevel | NumberProviderStructEnvironmentAttribute | NumberProviderStructMaximum | NumberProviderStructMinimum | NumberProviderStructNumberDispatcher | NumberProviderStructProduct | NumberProviderStructScore | NumberProviderStructStorage | NumberProviderStructSum | NumberProviderStructUniform | NumberProviderStructWeightedList

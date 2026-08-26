@@ -27,7 +27,7 @@ class StructurePlacementUnknown:
 
 @dataclass(kw_only=True)
 class StructurePlacementConcentricRings(ConcentricRingsPlacement):
-    type: Literal['minecraft:concentric_rings']
+    type: Literal['minecraft:concentric_rings'] = 'minecraft:concentric_rings'
     salt: Annotated[int, 'Range | `0` and above | inclusive']
     frequency_reduction_method: FrequencyReductionMethod | None = None
     frequency: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
@@ -37,7 +37,7 @@ class StructurePlacementConcentricRings(ConcentricRingsPlacement):
 
 @dataclass(kw_only=True)
 class StructurePlacementRandomSpread(RandomSpreadPlacement):
-    type: Literal['minecraft:random_spread']
+    type: Literal['minecraft:random_spread'] = 'minecraft:random_spread'
     salt: Annotated[int, 'Range | `0` and above | inclusive']
     frequency_reduction_method: FrequencyReductionMethod | None = None
     frequency: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None

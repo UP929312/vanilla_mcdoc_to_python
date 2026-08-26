@@ -27,37 +27,37 @@ class ModelStructUnknown:
 
 @dataclass(kw_only=True)
 class ModelStructBanner(Banner):
-    type: Literal['minecraft:banner']
+    type: Literal['minecraft:banner'] = 'minecraft:banner'
 
 
 @dataclass(kw_only=True)
 class ModelStructBook(Book):
-    type: Literal['minecraft:book']
+    type: Literal['minecraft:book'] = 'minecraft:book'
 
 
 @dataclass(kw_only=True)
 class ModelStructChest(Chest):
-    type: Literal['minecraft:chest']
+    type: Literal['minecraft:chest'] = 'minecraft:chest'
 
 
 @dataclass(kw_only=True)
 class ModelStructCopperGolemStatue(CopperGolemStatue):
-    type: Literal['minecraft:copper_golem_statue']
+    type: Literal['minecraft:copper_golem_statue'] = 'minecraft:copper_golem_statue'
 
 
 @dataclass(kw_only=True)
 class ModelStructEndCube(EndCube):
-    type: Literal['minecraft:end_cube']
+    type: Literal['minecraft:end_cube'] = 'minecraft:end_cube'
 
 
 @dataclass(kw_only=True)
 class ModelStructHead(Head):
-    type: Literal['minecraft:head']
+    type: Literal['minecraft:head'] = 'minecraft:head'
 
 
 @dataclass(kw_only=True)
 class ModelStructShulkerBox(ShulkerBox):
-    type: Literal['minecraft:shulker_box']
+    type: Literal['minecraft:shulker_box'] = 'minecraft:shulker_box'
 
 
 type ModelStruct = ModelStructUnknown | ModelStructBanner | ModelStructBook | ModelStructChest | ModelStructCopperGolemStatue | ModelStructEndCube | ModelStructHead | ModelStructShulkerBox

@@ -12,22 +12,22 @@ from generated_symbols.data.worldgen.processor_list.AppendStatic import AppendSt
 
 @dataclass(kw_only=True)
 class BlockEntityModifierAppendLoot(AppendLoot):
-    type: Literal['minecraft:append_loot']
+    type: Literal['minecraft:append_loot'] = 'minecraft:append_loot'
 
 
 @dataclass(kw_only=True)
 class BlockEntityModifierAppendStatic(AppendStatic):
-    type: Literal['minecraft:append_static']
+    type: Literal['minecraft:append_static'] = 'minecraft:append_static'
 
 
 @dataclass(kw_only=True)
 class BlockEntityModifierClear:
-    type: Literal['minecraft:clear']
+    type: Literal['minecraft:clear'] = 'minecraft:clear'
 
 
 @dataclass(kw_only=True)
 class BlockEntityModifierPassthrough:
-    type: Literal['minecraft:passthrough']
+    type: Literal['minecraft:passthrough'] = 'minecraft:passthrough'
 
 
 type BlockEntityModifier = BlockEntityModifierAppendLoot | BlockEntityModifierAppendStatic | BlockEntityModifierClear | BlockEntityModifierPassthrough

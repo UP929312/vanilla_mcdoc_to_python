@@ -13,22 +13,22 @@ from generated_symbols.data.worldgen.template_pool.SingleElement import SingleEl
 
 @dataclass(kw_only=True)
 class ElementFeaturePoolElement(FeatureElement):
-    element_type: Literal['minecraft:feature_pool_element']
+    element_type: Literal['minecraft:feature_pool_element'] = 'minecraft:feature_pool_element'
 
 
 @dataclass(kw_only=True)
 class ElementLegacySinglePoolElement(SingleElement):
-    element_type: Literal['minecraft:legacy_single_pool_element']
+    element_type: Literal['minecraft:legacy_single_pool_element'] = 'minecraft:legacy_single_pool_element'
 
 
 @dataclass(kw_only=True)
 class ElementListPoolElement(ListElement):
-    element_type: Literal['minecraft:list_pool_element']
+    element_type: Literal['minecraft:list_pool_element'] = 'minecraft:list_pool_element'
 
 
 @dataclass(kw_only=True)
 class ElementSinglePoolElement(SingleElement):
-    element_type: Literal['minecraft:single_pool_element']
+    element_type: Literal['minecraft:single_pool_element'] = 'minecraft:single_pool_element'
 
 
 type Element = ElementFeaturePoolElement | ElementLegacySinglePoolElement | ElementListPoolElement | ElementSinglePoolElement

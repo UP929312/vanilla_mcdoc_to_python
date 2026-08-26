@@ -15,12 +15,12 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class NbtProviderStructContext(ContextNbtProvider):
-    type: Literal['minecraft:context']
+    type: Literal['minecraft:context'] = 'minecraft:context'
 
 
 @dataclass(kw_only=True)
 class NbtProviderStructStorage(StorageNbtProvider):
-    type: Literal['minecraft:storage']
+    type: Literal['minecraft:storage'] = 'minecraft:storage'
 
 
 type NbtProviderStruct = NbtProviderStructContext | NbtProviderStructStorage

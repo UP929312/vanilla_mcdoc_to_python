@@ -19,37 +19,37 @@ from generated_symbols.data.gametest.test_environment.WeatherTestEnvironment imp
 class TestEnvironmentAllOf(AllOffTestEnvironment):
     __resource_dir__: ClassVar[str] = 'test_environment'
 
-    type: Literal['minecraft:all_of']
+    type: Literal['minecraft:all_of'] = 'minecraft:all_of'
 
 
 @dataclass(kw_only=True)
 class TestEnvironmentClockTime(ClockTimeTestEnvironment):
-    type: Literal['minecraft:clock_time']
+    type: Literal['minecraft:clock_time'] = 'minecraft:clock_time'
 
 
 @dataclass(kw_only=True)
 class TestEnvironmentDifficulty(DifficultyTestEnvironment):
-    type: Literal['minecraft:difficulty']
+    type: Literal['minecraft:difficulty'] = 'minecraft:difficulty'
 
 
 @dataclass(kw_only=True)
 class TestEnvironmentFunction(FunctionTestEnvironment):
-    type: Literal['minecraft:function']
+    type: Literal['minecraft:function'] = 'minecraft:function'
 
 
 @dataclass(kw_only=True)
 class TestEnvironmentGameRules(GameRulesTestEnvironment):
-    type: Literal['minecraft:game_rules']
+    type: Literal['minecraft:game_rules'] = 'minecraft:game_rules'
 
 
 @dataclass(kw_only=True)
 class TestEnvironmentTimelineAttributes(TimelineAttributesTestEnvironment):
-    type: Literal['minecraft:timeline_attributes']
+    type: Literal['minecraft:timeline_attributes'] = 'minecraft:timeline_attributes'
 
 
 @dataclass(kw_only=True)
 class TestEnvironmentWeather(WeatherTestEnvironment):
-    type: Literal['minecraft:weather']
+    type: Literal['minecraft:weather'] = 'minecraft:weather'
 
 
 type TestEnvironment = TestEnvironmentAllOf | TestEnvironmentClockTime | TestEnvironmentDifficulty | TestEnvironmentFunction | TestEnvironmentGameRules | TestEnvironmentTimelineAttributes | TestEnvironmentWeather

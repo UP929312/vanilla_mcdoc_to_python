@@ -17,25 +17,25 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class ExplosionsStructAppend:
     values: list[Explosion]
-    mode: Literal['minecraft:append']  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:append'] = 'minecraft:append'  # Determines how the existing list should be modified.
 
 
 @dataclass(kw_only=True)
 class ExplosionsStructInsert(InsertListOperation):
     values: list[Explosion]
-    mode: Literal['minecraft:insert']  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
 
 
 @dataclass(kw_only=True)
 class ExplosionsStructReplaceAll:
     values: list[Explosion]
-    mode: Literal['minecraft:replace_all']  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
 
 
 @dataclass(kw_only=True)
 class ExplosionsStructReplaceSection(ReplaceSectionListOperation):
     values: list[Explosion]
-    mode: Literal['minecraft:replace_section']  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
 
 
 type ExplosionsStruct = ExplosionsStructAppend | ExplosionsStructInsert | ExplosionsStructReplaceAll | ExplosionsStructReplaceSection

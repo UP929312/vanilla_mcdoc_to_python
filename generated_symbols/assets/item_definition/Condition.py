@@ -28,7 +28,7 @@ class ConditionUnknown:
 
 @dataclass(kw_only=True)
 class ConditionComponent(ComponentFlags):
-    property: Literal['minecraft:component']
+    property: Literal['minecraft:component'] = 'minecraft:component'
     on_true: ItemModel
     on_false: ItemModel
     transformation: Transformation | None = None
@@ -36,7 +36,7 @@ class ConditionComponent(ComponentFlags):
 
 @dataclass(kw_only=True)
 class ConditionCustomModelData(CustomModelDataFlags):
-    property: Literal['minecraft:custom_model_data']
+    property: Literal['minecraft:custom_model_data'] = 'minecraft:custom_model_data'
     on_true: ItemModel
     on_false: ItemModel
     transformation: Transformation | None = None
@@ -44,7 +44,7 @@ class ConditionCustomModelData(CustomModelDataFlags):
 
 @dataclass(kw_only=True)
 class ConditionHasComponent(HasComponent):
-    property: Literal['minecraft:has_component']
+    property: Literal['minecraft:has_component'] = 'minecraft:has_component'
     on_true: ItemModel
     on_false: ItemModel
     transformation: Transformation | None = None
@@ -52,7 +52,7 @@ class ConditionHasComponent(HasComponent):
 
 @dataclass(kw_only=True)
 class ConditionKeybindDown(KeybindDown):
-    property: Literal['minecraft:keybind_down']
+    property: Literal['minecraft:keybind_down'] = 'minecraft:keybind_down'
     on_true: ItemModel
     on_false: ItemModel
     transformation: Transformation | None = None
@@ -60,7 +60,7 @@ class ConditionKeybindDown(KeybindDown):
 
 @dataclass(kw_only=True)
 class ConditionViewEntity(ViewEntity):
-    property: Literal['minecraft:view_entity']
+    property: Literal['minecraft:view_entity'] = 'minecraft:view_entity'
     on_true: ItemModel
     on_false: ItemModel
     transformation: Transformation | None = None

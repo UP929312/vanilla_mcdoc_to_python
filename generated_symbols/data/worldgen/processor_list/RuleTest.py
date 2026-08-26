@@ -18,47 +18,47 @@ from generated_symbols.data.worldgen.processor_list.TagMatch import TagMatch
 
 @dataclass(kw_only=True)
 class RuleTestAllOf(CompositeMatch):
-    predicate_type: Literal['minecraft:all_of']
+    predicate_type: Literal['minecraft:all_of'] = 'minecraft:all_of'
 
 
 @dataclass(kw_only=True)
 class RuleTestAnyOf(CompositeMatch):
-    predicate_type: Literal['minecraft:any_of']
+    predicate_type: Literal['minecraft:any_of'] = 'minecraft:any_of'
 
 
 @dataclass(kw_only=True)
 class RuleTestBlockMatch(BlockMatch):
-    predicate_type: Literal['minecraft:block_match']
+    predicate_type: Literal['minecraft:block_match'] = 'minecraft:block_match'
 
 
 @dataclass(kw_only=True)
 class RuleTestBlockstateMatch(BlockStateMatch):
-    predicate_type: Literal['minecraft:blockstate_match']
+    predicate_type: Literal['minecraft:blockstate_match'] = 'minecraft:blockstate_match'
 
 
 @dataclass(kw_only=True)
 class RuleTestHeightMatch(HeightMatch):
-    predicate_type: Literal['minecraft:height_match']
+    predicate_type: Literal['minecraft:height_match'] = 'minecraft:height_match'
 
 
 @dataclass(kw_only=True)
 class RuleTestNot(InvertedMatch):
-    predicate_type: Literal['minecraft:not']
+    predicate_type: Literal['minecraft:not'] = 'minecraft:not'
 
 
 @dataclass(kw_only=True)
 class RuleTestRandomBlockMatch(RandomBlockMatch):
-    predicate_type: Literal['minecraft:random_block_match']
+    predicate_type: Literal['minecraft:random_block_match'] = 'minecraft:random_block_match'
 
 
 @dataclass(kw_only=True)
 class RuleTestRandomBlockstateMatch(RandomBlockStateMatch):
-    predicate_type: Literal['minecraft:random_blockstate_match']
+    predicate_type: Literal['minecraft:random_blockstate_match'] = 'minecraft:random_blockstate_match'
 
 
 @dataclass(kw_only=True)
 class RuleTestTagMatch(TagMatch):
-    predicate_type: Literal['minecraft:tag_match']
+    predicate_type: Literal['minecraft:tag_match'] = 'minecraft:tag_match'
 
 
 type RuleTest = RuleTestAllOf | RuleTestAnyOf | RuleTestBlockMatch | RuleTestBlockstateMatch | RuleTestHeightMatch | RuleTestNot | RuleTestRandomBlockMatch | RuleTestRandomBlockstateMatch | RuleTestTagMatch

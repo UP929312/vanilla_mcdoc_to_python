@@ -13,17 +13,17 @@ from generated_symbols.data.worldgen.structure.RandomPoolAlias import RandomPool
 
 @dataclass(kw_only=True)
 class PoolAliasDirect(DirectPoolAlias):
-    type: Literal['minecraft:direct']
+    type: Literal['minecraft:direct'] = 'minecraft:direct'
 
 
 @dataclass(kw_only=True)
 class PoolAliasRandom(RandomPoolAlias):
-    type: Literal['minecraft:random']
+    type: Literal['minecraft:random'] = 'minecraft:random'
 
 
 @dataclass(kw_only=True)
 class PoolAliasRandomGroup(RandomGroupPoolAlias):
-    type: Literal['minecraft:random_group']
+    type: Literal['minecraft:random_group'] = 'minecraft:random_group'
 
 
 type PoolAlias = PoolAliasDirect | PoolAliasRandom | PoolAliasRandomGroup

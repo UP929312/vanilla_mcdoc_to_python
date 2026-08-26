@@ -16,25 +16,25 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class FireworkExplosionsAppend:
     values: list[Explosion]
-    mode: Literal['minecraft:append']  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:append'] = 'minecraft:append'  # Determines how the existing list should be modified.
 
 
 @dataclass(kw_only=True)
 class FireworkExplosionsInsert(InsertListOperation):
     values: list[Explosion]
-    mode: Literal['minecraft:insert']  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
 
 
 @dataclass(kw_only=True)
 class FireworkExplosionsReplaceAll:
     values: list[Explosion]
-    mode: Literal['minecraft:replace_all']  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
 
 
 @dataclass(kw_only=True)
 class FireworkExplosionsReplaceSection(ReplaceSectionListOperation):
     values: list[Explosion]
-    mode: Literal['minecraft:replace_section']  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
 
 
 type FireworkExplosions = FireworkExplosionsAppend | FireworkExplosionsInsert | FireworkExplosionsReplaceAll | FireworkExplosionsReplaceSection

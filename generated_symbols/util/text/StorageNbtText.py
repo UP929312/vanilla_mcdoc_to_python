@@ -14,8 +14,8 @@ from minecraft_registry import IdSpec
 class StorageNbtText(TextNbtBase):
     storage: Annotated[str, IdSpec(registry='storage')]
     nbt: str
-    source: Literal['storage'] | None = None
-    type: Literal['nbt'] | None = None
+    source: Literal['storage'] = 'storage'
+    type: Literal['nbt'] = 'nbt'
 
 
 # ~~~ MODEL DUMP ~~~

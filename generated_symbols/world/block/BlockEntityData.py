@@ -45,222 +45,222 @@ from generated_symbols.world.block.vault.Vault import Vault
 
 @dataclass(kw_only=True)
 class BlockEntityDataBanner(Banner):
-    id: Literal['minecraft:banner']
+    id: Literal['minecraft:banner'] = 'minecraft:banner'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataBarrel(Container27):
-    id: Literal['minecraft:barrel']
+    id: Literal['minecraft:barrel'] = 'minecraft:barrel'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataBeacon(Beacon):
-    id: Literal['minecraft:beacon']
+    id: Literal['minecraft:beacon'] = 'minecraft:beacon'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataBeehive(Beehive):
-    id: Literal['minecraft:beehive']
+    id: Literal['minecraft:beehive'] = 'minecraft:beehive'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataBlastFurnace(Furnace):
-    id: Literal['minecraft:blast_furnace']
+    id: Literal['minecraft:blast_furnace'] = 'minecraft:blast_furnace'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataBrewingStand(BrewingStand):
-    id: Literal['minecraft:brewing_stand']
+    id: Literal['minecraft:brewing_stand'] = 'minecraft:brewing_stand'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataBrushableBlock(BrushableBlock):
-    id: Literal['minecraft:brushable_block']
+    id: Literal['minecraft:brushable_block'] = 'minecraft:brushable_block'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataCalibratedSculkSensor(SculkSensor):
-    id: Literal['minecraft:calibrated_sculk_sensor']
+    id: Literal['minecraft:calibrated_sculk_sensor'] = 'minecraft:calibrated_sculk_sensor'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataCampfire(Campfire):
-    id: Literal['minecraft:campfire']
+    id: Literal['minecraft:campfire'] = 'minecraft:campfire'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataChest(Container27):
-    id: Literal['minecraft:chest']
+    id: Literal['minecraft:chest'] = 'minecraft:chest'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataChiseledBookshelf(ChiseledBookshelf):
-    id: Literal['minecraft:chiseled_bookshelf']
+    id: Literal['minecraft:chiseled_bookshelf'] = 'minecraft:chiseled_bookshelf'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataCommandBlock(CommandBlock):
-    id: Literal['minecraft:command_block']
+    id: Literal['minecraft:command_block'] = 'minecraft:command_block'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataComparator(Comparator):
-    id: Literal['minecraft:comparator']
+    id: Literal['minecraft:comparator'] = 'minecraft:comparator'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataConduit(Conduit):
-    id: Literal['minecraft:conduit']
+    id: Literal['minecraft:conduit'] = 'minecraft:conduit'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataCrafter(Crafter):
-    id: Literal['minecraft:crafter']
+    id: Literal['minecraft:crafter'] = 'minecraft:crafter'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataCreakingHeart(CreakingHeart):
-    id: Literal['minecraft:creaking_heart']
+    id: Literal['minecraft:creaking_heart'] = 'minecraft:creaking_heart'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataDecoratedPot(DecoratedPot):
-    id: Literal['minecraft:decorated_pot']
+    id: Literal['minecraft:decorated_pot'] = 'minecraft:decorated_pot'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataDispenser(Container9):
-    id: Literal['minecraft:dispenser']
+    id: Literal['minecraft:dispenser'] = 'minecraft:dispenser'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataDropper(Container9):
-    id: Literal['minecraft:dropper']
+    id: Literal['minecraft:dropper'] = 'minecraft:dropper'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataEnchantingTable(EnchantingTable):
-    id: Literal['minecraft:enchanting_table']
+    id: Literal['minecraft:enchanting_table'] = 'minecraft:enchanting_table'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataEndGateway(EndGateway):
-    id: Literal['minecraft:end_gateway']
+    id: Literal['minecraft:end_gateway'] = 'minecraft:end_gateway'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataFurnace(Furnace):
-    id: Literal['minecraft:furnace']
+    id: Literal['minecraft:furnace'] = 'minecraft:furnace'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataHangingSign:
-    id: Literal['minecraft:hanging_sign']
+    id: Literal['minecraft:hanging_sign'] = 'minecraft:hanging_sign'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataHopper(Hopper):
-    id: Literal['minecraft:hopper']
+    id: Literal['minecraft:hopper'] = 'minecraft:hopper'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataJigsaw(Jigsaw):
-    id: Literal['minecraft:jigsaw']
+    id: Literal['minecraft:jigsaw'] = 'minecraft:jigsaw'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataJukebox(Jukebox):
-    id: Literal['minecraft:jukebox']
+    id: Literal['minecraft:jukebox'] = 'minecraft:jukebox'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataLectern(Lectern):
-    id: Literal['minecraft:lectern']
+    id: Literal['minecraft:lectern'] = 'minecraft:lectern'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataMobSpawner(Spawner):
-    id: Literal['minecraft:mob_spawner']
+    id: Literal['minecraft:mob_spawner'] = 'minecraft:mob_spawner'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataMovingPiston(MovingPiston):
-    id: Literal['minecraft:moving_piston']
+    id: Literal['minecraft:moving_piston'] = 'minecraft:moving_piston'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataPotentSulfur(PotentSulfur):
-    id: Literal['minecraft:potent_sulfur']
+    id: Literal['minecraft:potent_sulfur'] = 'minecraft:potent_sulfur'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataSculkCatalyst(SculkCatalyst):
-    id: Literal['minecraft:sculk_catalyst']
+    id: Literal['minecraft:sculk_catalyst'] = 'minecraft:sculk_catalyst'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataSculkSensor(SculkSensor):
-    id: Literal['minecraft:sculk_sensor']
+    id: Literal['minecraft:sculk_sensor'] = 'minecraft:sculk_sensor'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataSculkShrieker(SculkShrieker):
-    id: Literal['minecraft:sculk_shrieker']
+    id: Literal['minecraft:sculk_shrieker'] = 'minecraft:sculk_shrieker'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataShelf(Shelf):
-    id: Literal['minecraft:shelf']
+    id: Literal['minecraft:shelf'] = 'minecraft:shelf'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataShulkerBox(Container27):
-    id: Literal['minecraft:shulker_box']
+    id: Literal['minecraft:shulker_box'] = 'minecraft:shulker_box'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataSign:
-    id: Literal['minecraft:sign']
+    id: Literal['minecraft:sign'] = 'minecraft:sign'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataSkull(Skull):
-    id: Literal['minecraft:skull']
+    id: Literal['minecraft:skull'] = 'minecraft:skull'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataSmoker(Furnace):
-    id: Literal['minecraft:smoker']
+    id: Literal['minecraft:smoker'] = 'minecraft:smoker'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataStructureBlock(StructureBlock):
-    id: Literal['minecraft:structure_block']
+    id: Literal['minecraft:structure_block'] = 'minecraft:structure_block'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataTestBlock(TestBlock):
-    id: Literal['minecraft:test_block']
+    id: Literal['minecraft:test_block'] = 'minecraft:test_block'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataTestInstanceBlock(TestInstanceBlock):
-    id: Literal['minecraft:test_instance_block']
+    id: Literal['minecraft:test_instance_block'] = 'minecraft:test_instance_block'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataTrappedChest(Container27):
-    id: Literal['minecraft:trapped_chest']
+    id: Literal['minecraft:trapped_chest'] = 'minecraft:trapped_chest'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataTrialSpawner(TrialSpawner):
-    id: Literal['minecraft:trial_spawner']
+    id: Literal['minecraft:trial_spawner'] = 'minecraft:trial_spawner'
 
 
 @dataclass(kw_only=True)
 class BlockEntityDataVault(Vault):
-    id: Literal['minecraft:vault']
+    id: Literal['minecraft:vault'] = 'minecraft:vault'
 
 
 type BlockEntityData = BlockEntityDataBanner | BlockEntityDataBarrel | BlockEntityDataBeacon | BlockEntityDataBeehive | BlockEntityDataBlastFurnace | BlockEntityDataBrewingStand | BlockEntityDataBrushableBlock | BlockEntityDataCalibratedSculkSensor | BlockEntityDataCampfire | BlockEntityDataChest | BlockEntityDataChiseledBookshelf | BlockEntityDataCommandBlock | BlockEntityDataComparator | BlockEntityDataConduit | BlockEntityDataCrafter | BlockEntityDataCreakingHeart | BlockEntityDataDecoratedPot | BlockEntityDataDispenser | BlockEntityDataDropper | BlockEntityDataEnchantingTable | BlockEntityDataEndGateway | BlockEntityDataFurnace | BlockEntityDataHangingSign | BlockEntityDataHopper | BlockEntityDataJigsaw | BlockEntityDataJukebox | BlockEntityDataLectern | BlockEntityDataMobSpawner | BlockEntityDataMovingPiston | BlockEntityDataPotentSulfur | BlockEntityDataSculkCatalyst | BlockEntityDataSculkSensor | BlockEntityDataSculkShrieker | BlockEntityDataShelf | BlockEntityDataShulkerBox | BlockEntityDataSign | BlockEntityDataSkull | BlockEntityDataSmoker | BlockEntityDataStructureBlock | BlockEntityDataTestBlock | BlockEntityDataTestInstanceBlock | BlockEntityDataTrappedChest | BlockEntityDataTrialSpawner | BlockEntityDataVault

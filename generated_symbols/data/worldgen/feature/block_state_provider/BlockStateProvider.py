@@ -20,52 +20,52 @@ from generated_symbols.data.worldgen.feature.block_state_provider.WeightedBlockS
 
 @dataclass(kw_only=True)
 class BlockStateProviderCopyPropertiesProvider(CopyPropertiesProvider):
-    type: Literal['minecraft:copy_properties_provider']
+    type: Literal['minecraft:copy_properties_provider'] = 'minecraft:copy_properties_provider'
 
 
 @dataclass(kw_only=True)
 class BlockStateProviderDualNoiseProvider(DualNoiseProvider):
-    type: Literal['minecraft:dual_noise_provider']
+    type: Literal['minecraft:dual_noise_provider'] = 'minecraft:dual_noise_provider'
 
 
 @dataclass(kw_only=True)
 class BlockStateProviderNoiseProvider(NoiseProvider):
-    type: Literal['minecraft:noise_provider']
+    type: Literal['minecraft:noise_provider'] = 'minecraft:noise_provider'
 
 
 @dataclass(kw_only=True)
 class BlockStateProviderNoiseThresholdProvider(NoiseThresholdProvider):
-    type: Literal['minecraft:noise_threshold_provider']
+    type: Literal['minecraft:noise_threshold_provider'] = 'minecraft:noise_threshold_provider'
 
 
 @dataclass(kw_only=True)
 class BlockStateProviderRandomBlockProvider(RandomBlockStateProvider):
-    type: Literal['minecraft:random_block_provider']
+    type: Literal['minecraft:random_block_provider'] = 'minecraft:random_block_provider'
 
 
 @dataclass(kw_only=True)
 class BlockStateProviderRandomizedIntStateProvider(RandomizedIntStateProvider):
-    type: Literal['minecraft:randomized_int_state_provider']
+    type: Literal['minecraft:randomized_int_state_provider'] = 'minecraft:randomized_int_state_provider'
 
 
 @dataclass(kw_only=True)
 class BlockStateProviderRotatedBlockProvider(RotatedStateProvider):
-    type: Literal['minecraft:rotated_block_provider']
+    type: Literal['minecraft:rotated_block_provider'] = 'minecraft:rotated_block_provider'
 
 
 @dataclass(kw_only=True)
 class BlockStateProviderRuleBasedStateProvider(RuleBasedBlockStateProvider):
-    type: Literal['minecraft:rule_based_state_provider']
+    type: Literal['minecraft:rule_based_state_provider'] = 'minecraft:rule_based_state_provider'
 
 
 @dataclass(kw_only=True)
 class BlockStateProviderSimpleStateProvider(SimpleStateProvider):
-    type: Literal['minecraft:simple_state_provider']
+    type: Literal['minecraft:simple_state_provider'] = 'minecraft:simple_state_provider'
 
 
 @dataclass(kw_only=True)
 class BlockStateProviderWeightedStateProvider(WeightedBlockStateProvider):
-    type: Literal['minecraft:weighted_state_provider']
+    type: Literal['minecraft:weighted_state_provider'] = 'minecraft:weighted_state_provider'
 
 
 type BlockStateProvider = BlockStateProviderCopyPropertiesProvider | BlockStateProviderDualNoiseProvider | BlockStateProviderNoiseProvider | BlockStateProviderNoiseThresholdProvider | BlockStateProviderRandomBlockProvider | BlockStateProviderRandomizedIntStateProvider | BlockStateProviderRotatedBlockProvider | BlockStateProviderRuleBasedStateProvider | BlockStateProviderSimpleStateProvider | BlockStateProviderWeightedStateProvider

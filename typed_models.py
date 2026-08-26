@@ -633,6 +633,11 @@ class SpreadFieldSchema(BaseSchema):
             return self.type
         if isinstance(self.type, ConcreteSchema) and isinstance(self.type.child, ReferenceSchema):
             return self.type.child
+        elif isinstance(self.type, ConcreteSchema) and isinstance(self.type.child, DispatcherSchema):
+            # This will never reference one schema, instead returning a list of them in the form of a dispatcher.
+            # For now, we'll skip it and return None.
+            # parallel_indices=[DynamicIndexSchema(accessor=['type'])] registry='minecraft:int_provider'
+            pass
         return None
 
     @classmethod
@@ -640,12 +645,8 @@ class SpreadFieldSchema(BaseSchema):
         """Adds all the necessary classes to the required imports list"""
         for spread_field_schema in [fld for fld in fields if isinstance(fld, SpreadFieldSchema)]:
             reference = spread_field_schema._unravel_reference()
-            runtime_import = (
-                Import(*symbol_path_to_import_string_and_name(reference.path), False, False)
-                if reference and reference.path not in ctx.local_type_params
-                else None
-            )
-            if runtime_import is not None:
+            if reference and reference.path not in ctx.local_type_params:
+                runtime_import = Import(*symbol_path_to_import_string_and_name(reference.path), False, False)
                 ctx.required_imports.add(runtime_import)
             if isinstance(spread_field_schema.type, StructSchema):
                 SpreadFieldSchema.collect_runtime_symbol_imports(spread_field_schema.type.fields, ctx)
@@ -674,7 +675,7 @@ class SpreadFieldSchema(BaseSchema):
         for pair_field in fields:
             if isinstance(pair_field, PairSchema):
                 inlined_fields.append(pair_field)
-            if isinstance(pair_field, cls) and isinstance(pair_field.type, StructSchema):
+            if isinstance(pair_field, SpreadFieldSchema) and isinstance(pair_field.type, StructSchema):
                 inlined_fields.extend(SpreadFieldSchema.filter_fields_to_pair_schemas_only(pair_field.type.fields))
         return inlined_fields
 
@@ -821,9 +822,8 @@ class StructSchema(BaseSchema):
             if not is_valid_with_attributes(branch.attributes):
                 continue
             branch_structs = [schema for schema in ctx.schema_graph.resolve(branch) if isinstance(schema, StructSchema)]
-            branch_structs = branch_structs or [StructSchema(kind="struct", fields=[])]
             suffix = PairSchema.nested_struct_name(key.lstrip("%").replace("/", "_")).removesuffix("Struct")
-            for index, branch_struct in enumerate(branch_structs, 1):
+            for index, branch_struct in enumerate(branch_structs or [StructSchema(kind="struct", fields=[])], 1):
                 preferred = f"{class_name}{suffix}{index if len(branch_structs) > 1 else ''}"
                 variant_name = ctx.allocate_name(preferred, branch_struct.model_dump_json(by_alias=True))
                 variants.append((
@@ -922,7 +922,9 @@ class StructSchema(BaseSchema):
             if not annotation.strip() or annotation == "None":
                 continue  # Empty unions represent weird stuff - skip so parent members can remain authoritative.
 
-            line = f"    {key}: {annotation}{pair_field.optional_string_or_empty}{pair_field.description_or_empty}"
+            optional = "" if isinstance(pair_field.type, LiteralSchema) else pair_field.optional_string_or_empty
+            default = f" = {pair_field.type.value.value!r}" if isinstance(pair_field.type, LiteralSchema) else ""
+            line = f"    {key}: {annotation}{optional}{default}{pair_field.description_or_empty}"
             lines.append(line)
         return lines + [""]
 

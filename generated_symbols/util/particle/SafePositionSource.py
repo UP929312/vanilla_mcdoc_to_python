@@ -9,7 +9,7 @@ from typing import Literal
 
 @dataclass(kw_only=True)
 class SafePositionSource:
-    type: Literal['block']
+    type: Literal['block'] = 'block'
     pos: tuple[int, int, int]
 
 

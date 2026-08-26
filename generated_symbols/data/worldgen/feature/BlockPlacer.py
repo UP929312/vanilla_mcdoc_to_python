@@ -11,17 +11,17 @@ from generated_symbols.data.worldgen.feature.ColumnPlacer import ColumnPlacer
 
 @dataclass(kw_only=True)
 class BlockPlacerColumnPlacer(ColumnPlacer):
-    type: Literal['minecraft:column_placer']
+    type: Literal['minecraft:column_placer'] = 'minecraft:column_placer'
 
 
 @dataclass(kw_only=True)
 class BlockPlacerDoublePlantPlacer:
-    type: Literal['minecraft:double_plant_placer']
+    type: Literal['minecraft:double_plant_placer'] = 'minecraft:double_plant_placer'
 
 
 @dataclass(kw_only=True)
 class BlockPlacerSimpleBlockPlacer:
-    type: Literal['minecraft:simple_block_placer']
+    type: Literal['minecraft:simple_block_placer'] = 'minecraft:simple_block_placer'
 
 
 type BlockPlacer = BlockPlacerColumnPlacer | BlockPlacerDoublePlantPlacer | BlockPlacerSimpleBlockPlacer

@@ -15,12 +15,12 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class ScoreProviderStructContext(ContextScoreProvider):
-    type: Literal['minecraft:context']
+    type: Literal['minecraft:context'] = 'minecraft:context'
 
 
 @dataclass(kw_only=True)
 class ScoreProviderStructFixed(FixedScoreProvider):
-    type: Literal['minecraft:fixed']
+    type: Literal['minecraft:fixed'] = 'minecraft:fixed'
 
 
 type ScoreProviderStruct = ScoreProviderStructContext | ScoreProviderStructFixed

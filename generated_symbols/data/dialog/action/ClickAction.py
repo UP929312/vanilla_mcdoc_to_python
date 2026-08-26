@@ -19,47 +19,47 @@ from generated_symbols.util.text.SuggestCommand import SuggestCommand
 
 @dataclass(kw_only=True)
 class ClickActionChangePage(ChangePage):
-    type: Literal['minecraft:change_page']
+    type: Literal['minecraft:change_page'] = 'minecraft:change_page'
 
 
 @dataclass(kw_only=True)
 class ClickActionCopyToClipboard(CopyToClipboard):
-    type: Literal['minecraft:copy_to_clipboard']
+    type: Literal['minecraft:copy_to_clipboard'] = 'minecraft:copy_to_clipboard'
 
 
 @dataclass(kw_only=True)
 class ClickActionCustom(CustomAction):
-    type: Literal['minecraft:custom']
+    type: Literal['minecraft:custom'] = 'minecraft:custom'
 
 
 @dataclass(kw_only=True)
 class ClickActionDynamicCustom(DynamicCustomAction):
-    type: Literal['minecraft:dynamic/custom']
+    type: Literal['minecraft:dynamic/custom'] = 'minecraft:dynamic/custom'
 
 
 @dataclass(kw_only=True)
 class ClickActionDynamicRunCommand(DynamicRunCommand):
-    type: Literal['minecraft:dynamic/run_command']
+    type: Literal['minecraft:dynamic/run_command'] = 'minecraft:dynamic/run_command'
 
 
 @dataclass(kw_only=True)
 class ClickActionOpenUrl(OpenUrl):
-    type: Literal['minecraft:open_url']
+    type: Literal['minecraft:open_url'] = 'minecraft:open_url'
 
 
 @dataclass(kw_only=True)
 class ClickActionRunCommand(RunCommand):
-    type: Literal['minecraft:run_command']
+    type: Literal['minecraft:run_command'] = 'minecraft:run_command'
 
 
 @dataclass(kw_only=True)
 class ClickActionShowDialog(ShowDialog):
-    type: Literal['minecraft:show_dialog']
+    type: Literal['minecraft:show_dialog'] = 'minecraft:show_dialog'
 
 
 @dataclass(kw_only=True)
 class ClickActionSuggestCommand(SuggestCommand):
-    type: Literal['minecraft:suggest_command']
+    type: Literal['minecraft:suggest_command'] = 'minecraft:suggest_command'
 
 
 type ClickAction = ClickActionChangePage | ClickActionCopyToClipboard | ClickActionCustom | ClickActionDynamicCustom | ClickActionDynamicRunCommand | ClickActionOpenUrl | ClickActionRunCommand | ClickActionShowDialog | ClickActionSuggestCommand

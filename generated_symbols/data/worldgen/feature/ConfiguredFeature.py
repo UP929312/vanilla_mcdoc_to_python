@@ -58,277 +58,277 @@ from generated_symbols.data.worldgen.feature.tree.TreeConfig import TreeConfig
 class ConfiguredFeatureBamboo(ProbabilityConfig):
     __resource_dir__: ClassVar[str] = 'worldgen/feature'
 
-    type: Literal['minecraft:bamboo']
+    type: Literal['minecraft:bamboo'] = 'minecraft:bamboo'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureBlockBlob(BlockBlobConfig):
-    type: Literal['minecraft:block_blob']
+    type: Literal['minecraft:block_blob'] = 'minecraft:block_blob'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureBlockColumn(BlockColumnConfig):
-    type: Literal['minecraft:block_column']
+    type: Literal['minecraft:block_column'] = 'minecraft:block_column'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureBlockPile(BlockPileConfig):
-    type: Literal['minecraft:block_pile']
+    type: Literal['minecraft:block_pile'] = 'minecraft:block_pile'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureCoralClaw(CoralConfig):
-    type: Literal['minecraft:coral_claw']
+    type: Literal['minecraft:coral_claw'] = 'minecraft:coral_claw'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureCoralTree(CoralConfig):
-    type: Literal['minecraft:coral_tree']
+    type: Literal['minecraft:coral_tree'] = 'minecraft:coral_tree'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureDeltaFeature(DeltaConfig):
-    type: Literal['minecraft:delta_feature']
+    type: Literal['minecraft:delta_feature'] = 'minecraft:delta_feature'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureDisk(DiskConfig):
-    type: Literal['minecraft:disk']
+    type: Literal['minecraft:disk'] = 'minecraft:disk'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureEmeraldOre(EmeraldOreConfig):
-    type: Literal['minecraft:emerald_ore']
+    type: Literal['minecraft:emerald_ore'] = 'minecraft:emerald_ore'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureEndGateway(EndGatewayConfig):
-    type: Literal['minecraft:end_gateway']
+    type: Literal['minecraft:end_gateway'] = 'minecraft:end_gateway'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureEndPodium(EndPodiumConfig):
-    type: Literal['minecraft:end_podium']
+    type: Literal['minecraft:end_podium'] = 'minecraft:end_podium'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureEndSpike(EndSpikeConfig):
-    type: Literal['minecraft:end_spike']
+    type: Literal['minecraft:end_spike'] = 'minecraft:end_spike'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureFallenTree(FallenTreeConfig):
-    type: Literal['minecraft:fallen_tree']
+    type: Literal['minecraft:fallen_tree'] = 'minecraft:fallen_tree'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureFillLayer(FillLayerConfig):
-    type: Literal['minecraft:fill_layer']
+    type: Literal['minecraft:fill_layer'] = 'minecraft:fill_layer'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureFlower(RandomPatchConfig):
-    type: Literal['minecraft:flower']
+    type: Literal['minecraft:flower'] = 'minecraft:flower'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureFossil(FossilConfig):
-    type: Literal['minecraft:fossil']
+    type: Literal['minecraft:fossil'] = 'minecraft:fossil'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureGeode(GeodeConfig):
-    type: Literal['minecraft:geode']
+    type: Literal['minecraft:geode'] = 'minecraft:geode'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureGlowLichen(MultifaceGrowthConfig):
-    type: Literal['minecraft:glow_lichen']
+    type: Literal['minecraft:glow_lichen'] = 'minecraft:glow_lichen'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureHugeBrownMushroom(HugeMushroomConfig):
-    type: Literal['minecraft:huge_brown_mushroom']
+    type: Literal['minecraft:huge_brown_mushroom'] = 'minecraft:huge_brown_mushroom'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureHugeFungus(HugeFungusConfig):
-    type: Literal['minecraft:huge_fungus']
+    type: Literal['minecraft:huge_fungus'] = 'minecraft:huge_fungus'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureHugeRedMushroom(HugeMushroomConfig):
-    type: Literal['minecraft:huge_red_mushroom']
+    type: Literal['minecraft:huge_red_mushroom'] = 'minecraft:huge_red_mushroom'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureIcePatch(DiskConfig):
-    type: Literal['minecraft:ice_patch']
+    type: Literal['minecraft:ice_patch'] = 'minecraft:ice_patch'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureIceberg(IcebergConfig):
-    type: Literal['minecraft:iceberg']
+    type: Literal['minecraft:iceberg'] = 'minecraft:iceberg'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureLake(LakeConfig):
-    type: Literal['minecraft:lake']
+    type: Literal['minecraft:lake'] = 'minecraft:lake'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureLargeDripstone(LargeDripstoneConfig):
-    type: Literal['minecraft:large_dripstone']
+    type: Literal['minecraft:large_dripstone'] = 'minecraft:large_dripstone'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureMultifaceGrowth(MultifaceGrowthConfig):
-    type: Literal['minecraft:multiface_growth']
+    type: Literal['minecraft:multiface_growth'] = 'minecraft:multiface_growth'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureNetherrackReplaceBlobs(NetherrackReplaceBlobsConfig):
-    type: Literal['minecraft:netherrack_replace_blobs']
+    type: Literal['minecraft:netherrack_replace_blobs'] = 'minecraft:netherrack_replace_blobs'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureNoBonemealFlower(RandomPatchConfig):
-    type: Literal['minecraft:no_bonemeal_flower']
+    type: Literal['minecraft:no_bonemeal_flower'] = 'minecraft:no_bonemeal_flower'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureNoSurfaceOre(OreConfig):
-    type: Literal['minecraft:no_surface_ore']
+    type: Literal['minecraft:no_surface_ore'] = 'minecraft:no_surface_ore'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureOre(OreConfig):
-    type: Literal['minecraft:ore']
+    type: Literal['minecraft:ore'] = 'minecraft:ore'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureOverlay(OverlayConfig):
-    type: Literal['minecraft:overlay']
+    type: Literal['minecraft:overlay'] = 'minecraft:overlay'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureProjectedRandomPatchySquare(ProjectedSquareConfig):
-    type: Literal['minecraft:projected_random_patchy_square']
+    type: Literal['minecraft:projected_random_patchy_square'] = 'minecraft:projected_random_patchy_square'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureRandomBooleanSelector(RandomBooleanSelector):
-    type: Literal['minecraft:random_boolean_selector']
+    type: Literal['minecraft:random_boolean_selector'] = 'minecraft:random_boolean_selector'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureRandomNeighborSpread(RandomNeighborSpreadConfig):
-    type: Literal['minecraft:random_neighbor_spread']
+    type: Literal['minecraft:random_neighbor_spread'] = 'minecraft:random_neighbor_spread'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureRandomPatch(RandomPatchConfig):
-    type: Literal['minecraft:random_patch']
+    type: Literal['minecraft:random_patch'] = 'minecraft:random_patch'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureRandomSelector(RandomSelector):
-    type: Literal['minecraft:random_selector']
+    type: Literal['minecraft:random_selector'] = 'minecraft:random_selector'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureReplaceSingleBlock(ReplaceSingleBlockConfig):
-    type: Literal['minecraft:replace_single_block']
+    type: Literal['minecraft:replace_single_block'] = 'minecraft:replace_single_block'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureRootSystem(RootSystemConfig):
-    type: Literal['minecraft:root_system']
+    type: Literal['minecraft:root_system'] = 'minecraft:root_system'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureScatteredOre(OreConfig):
-    type: Literal['minecraft:scattered_ore']
+    type: Literal['minecraft:scattered_ore'] = 'minecraft:scattered_ore'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureSculkPatch(SculkPatchConfig):
-    type: Literal['minecraft:sculk_patch']
+    type: Literal['minecraft:sculk_patch'] = 'minecraft:sculk_patch'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureSequence(SequenceConfig):
-    type: Literal['minecraft:sequence']
+    type: Literal['minecraft:sequence'] = 'minecraft:sequence'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureSimpleBlock(SimpleBlockConfig):
-    type: Literal['minecraft:simple_block']
+    type: Literal['minecraft:simple_block'] = 'minecraft:simple_block'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureSimpleRandomSelector(SimpleRandomSelectorConfig):
-    type: Literal['minecraft:simple_random_selector']
+    type: Literal['minecraft:simple_random_selector'] = 'minecraft:simple_random_selector'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureSingleBlockPillar(SingleBlockPillarConfig):
-    type: Literal['minecraft:single_block_pillar']
+    type: Literal['minecraft:single_block_pillar'] = 'minecraft:single_block_pillar'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureSpeleothem(SpeleothemConfig):
-    type: Literal['minecraft:speleothem']
+    type: Literal['minecraft:speleothem'] = 'minecraft:speleothem'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureSpeleothemCluster(SpeleothemClusterConfig):
-    type: Literal['minecraft:speleothem_cluster']
+    type: Literal['minecraft:speleothem_cluster'] = 'minecraft:speleothem_cluster'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureSpike(SpikeConfig):
-    type: Literal['minecraft:spike']
+    type: Literal['minecraft:spike'] = 'minecraft:spike'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureSpringFeature(SpringConfig):
-    type: Literal['minecraft:spring_feature']
+    type: Literal['minecraft:spring_feature'] = 'minecraft:spring_feature'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureSteppedColumnCluster(ColumnsConfig):
-    type: Literal['minecraft:stepped_column_cluster']
+    type: Literal['minecraft:stepped_column_cluster'] = 'minecraft:stepped_column_cluster'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureTemplate(TemplateConfig):
-    type: Literal['minecraft:template']
+    type: Literal['minecraft:template'] = 'minecraft:template'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureTree(TreeConfig):
-    type: Literal['minecraft:tree']
+    type: Literal['minecraft:tree'] = 'minecraft:tree'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureUnderwaterMagma(UnderwaterMagmaConfig):
-    type: Literal['minecraft:underwater_magma']
+    type: Literal['minecraft:underwater_magma'] = 'minecraft:underwater_magma'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureVegetationPatch(VegetationPatchConfig):
-    type: Literal['minecraft:vegetation_patch']
+    type: Literal['minecraft:vegetation_patch'] = 'minecraft:vegetation_patch'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureWaterloggedVegetationPatch(VegetationPatchConfig):
-    type: Literal['minecraft:waterlogged_vegetation_patch']
+    type: Literal['minecraft:waterlogged_vegetation_patch'] = 'minecraft:waterlogged_vegetation_patch'
 
 
 @dataclass(kw_only=True)
 class ConfiguredFeatureWeightedRandomSelector(WeightedRandomFeatureConfig):
-    type: Literal['minecraft:weighted_random_selector']
+    type: Literal['minecraft:weighted_random_selector'] = 'minecraft:weighted_random_selector'
 
 
 type ConfiguredFeature = ConfiguredFeatureBamboo | ConfiguredFeatureBlockBlob | ConfiguredFeatureBlockColumn | ConfiguredFeatureBlockPile | ConfiguredFeatureCoralClaw | ConfiguredFeatureCoralTree | ConfiguredFeatureDeltaFeature | ConfiguredFeatureDisk | ConfiguredFeatureEmeraldOre | ConfiguredFeatureEndGateway | ConfiguredFeatureEndPodium | ConfiguredFeatureEndSpike | ConfiguredFeatureFallenTree | ConfiguredFeatureFillLayer | ConfiguredFeatureFlower | ConfiguredFeatureFossil | ConfiguredFeatureGeode | ConfiguredFeatureGlowLichen | ConfiguredFeatureHugeBrownMushroom | ConfiguredFeatureHugeFungus | ConfiguredFeatureHugeRedMushroom | ConfiguredFeatureIcePatch | ConfiguredFeatureIceberg | ConfiguredFeatureLake | ConfiguredFeatureLargeDripstone | ConfiguredFeatureMultifaceGrowth | ConfiguredFeatureNetherrackReplaceBlobs | ConfiguredFeatureNoBonemealFlower | ConfiguredFeatureNoSurfaceOre | ConfiguredFeatureOre | ConfiguredFeatureOverlay | ConfiguredFeatureProjectedRandomPatchySquare | ConfiguredFeatureRandomBooleanSelector | ConfiguredFeatureRandomNeighborSpread | ConfiguredFeatureRandomPatch | ConfiguredFeatureRandomSelector | ConfiguredFeatureReplaceSingleBlock | ConfiguredFeatureRootSystem | ConfiguredFeatureScatteredOre | ConfiguredFeatureSculkPatch | ConfiguredFeatureSequence | ConfiguredFeatureSimpleBlock | ConfiguredFeatureSimpleRandomSelector | ConfiguredFeatureSingleBlockPillar | ConfiguredFeatureSpeleothem | ConfiguredFeatureSpeleothemCluster | ConfiguredFeatureSpike | ConfiguredFeatureSpringFeature | ConfiguredFeatureSteppedColumnCluster | ConfiguredFeatureTemplate | ConfiguredFeatureTree | ConfiguredFeatureUnderwaterMagma | ConfiguredFeatureVegetationPatch | ConfiguredFeatureWaterloggedVegetationPatch | ConfiguredFeatureWeightedRandomSelector

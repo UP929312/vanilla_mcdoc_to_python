@@ -13,8 +13,8 @@ from generated_symbols.util.text.TextNbtBase import TextNbtBase
 class BlockNbtText(TextNbtBase):
     block: str
     nbt: str
-    source: Literal['block'] | None = None
-    type: Literal['nbt'] | None = None
+    source: Literal['block'] = 'block'
+    type: Literal['nbt'] = 'nbt'
 
 
 # ~~~ MODEL DUMP ~~~

@@ -26,7 +26,7 @@ class ScoreStruct:
 @dataclass(kw_only=True)
 class TextObjectStruct1(TextBase):
     text: str
-    type: Literal['text'] | None = None
+    type: Literal['text'] = 'text'
 
 
 @dataclass(kw_only=True)
@@ -34,66 +34,66 @@ class TextObjectStruct2(TextBase):
     translate: str
     fallback: str | None = None
     with_: Annotated[list[Text], 'Length = 1 (inclusive) and above'] | None = None
-    type: Literal['translatable'] | None = None
+    type: Literal['translatable'] = 'translatable'
 
 
 @dataclass(kw_only=True)
 class TextObjectStruct3(TextBase):
     score: ScoreStruct
-    type: Literal['score'] | None = None
+    type: Literal['score'] = 'score'
 
 
 @dataclass(kw_only=True)
 class TextObjectStruct4(TextBase):
     selector: str
     separator: Text | None = None
-    type: Literal['selector'] | None = None
+    type: Literal['selector'] = 'selector'
 
 
 @dataclass(kw_only=True)
 class TextObjectStruct5(TextBase):
     keybind: Keybind
-    type: Literal['keybind'] | None = None
+    type: Literal['keybind'] = 'keybind'
 
 
 @dataclass(kw_only=True)
 class TextObjectStruct6(TextNbtBase):
     block: str
     nbt: str
-    source: Literal['block'] | None = None
-    type: Literal['nbt'] | None = None
+    source: Literal['block'] = 'block'
+    type: Literal['nbt'] = 'nbt'
 
 
 @dataclass(kw_only=True)
 class TextObjectStruct7(TextNbtBase):
     entity: str
     nbt: str
-    source: Literal['entity'] | None = None
-    type: Literal['nbt'] | None = None
+    source: Literal['entity'] = 'entity'
+    type: Literal['nbt'] = 'nbt'
 
 
 @dataclass(kw_only=True)
 class TextObjectStruct8(TextNbtBase):
     storage: Annotated[str, IdSpec(registry='storage')]
     nbt: str
-    source: Literal['storage'] | None = None
-    type: Literal['nbt'] | None = None
+    source: Literal['storage'] = 'storage'
+    type: Literal['nbt'] = 'nbt'
 
 
 @dataclass(kw_only=True)
 class TextObjectStruct9(ObjectTextConfig, TextBase):
     atlas: Annotated[str, IdSpec(registry='atlas')] | None = None  # Defaults to `minecraft:blocks`.
     sprite: Annotated[str, IdSpec(registry='texture')]
-    object: Literal['atlas'] | None = None
-    type: Literal['object'] | None = None
+    object: Literal['atlas'] = 'atlas'
+    type: Literal['object'] = 'object'
 
 
 @dataclass(kw_only=True)
 class TextObjectStruct10(ObjectTextConfig, TextBase):
     player: Profile
     hat: bool | None = None  # Whether the head layer is rendered. Defaults to `true`.
-    object: Literal['player'] | None = None
-    type: Literal['object'] | None = None
+    object: Literal['player'] = 'player'
+    type: Literal['object'] = 'object'
 
 
 type TextObject = TextObjectStruct1 | TextObjectStruct2 | TextObjectStruct3 | TextObjectStruct4 | TextObjectStruct5 | TextObjectStruct6 | TextObjectStruct7 | TextObjectStruct8 | TextObjectStruct9 | TextObjectStruct10

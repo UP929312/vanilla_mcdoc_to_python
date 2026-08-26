@@ -16,23 +16,23 @@ from minecraft_registry import IdSpec
 
 @dataclass(kw_only=True)
 class BiomeSourceCheckerboard(Checkerboard):
-    type: Literal['minecraft:checkerboard']
+    type: Literal['minecraft:checkerboard'] = 'minecraft:checkerboard'
 
 
 @dataclass(kw_only=True)
 class BiomeSourceFixed(Fixed):
-    type: Literal['minecraft:fixed']
+    type: Literal['minecraft:fixed'] = 'minecraft:fixed'
 
 
 @dataclass(kw_only=True)
 class BiomeSourceMultiNoiseNone(DirectMultiNoise, MultiNoiseBase):
-    type: Literal['minecraft:multi_noise']
+    type: Literal['minecraft:multi_noise'] = 'minecraft:multi_noise'
     preset: Annotated[str, IdSpec(registry='worldgen/multi_noise_biome_source_parameter_list')] | None = None
 
 
 @dataclass(kw_only=True)
 class BiomeSourceMultiNoiseUnknown(MultiNoiseBase):
-    type: Literal['minecraft:multi_noise']
+    type: Literal['minecraft:multi_noise'] = 'minecraft:multi_noise'
     preset: Annotated[str, IdSpec(registry='worldgen/multi_noise_biome_source_parameter_list')] | None = None
 
 
@@ -40,7 +40,7 @@ type BiomeSourceMultiNoise = BiomeSourceMultiNoiseNone | BiomeSourceMultiNoiseUn
 
 @dataclass(kw_only=True)
 class BiomeSourceTheEnd(TheEnd):
-    type: Literal['minecraft:the_end']
+    type: Literal['minecraft:the_end'] = 'minecraft:the_end'
 
 
 type BiomeSource = BiomeSourceCheckerboard | BiomeSourceFixed | BiomeSourceMultiNoise | BiomeSourceTheEnd

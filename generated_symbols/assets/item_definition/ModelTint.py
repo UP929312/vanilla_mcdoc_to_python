@@ -18,42 +18,42 @@ from generated_symbols.assets.item_definition.TeamTint import TeamTint
 
 @dataclass(kw_only=True)
 class ModelTintConstant(ConstantTint):
-    type: Literal['minecraft:constant']
+    type: Literal['minecraft:constant'] = 'minecraft:constant'
 
 
 @dataclass(kw_only=True)
 class ModelTintCustomModelData(CustomModelDataTint):
-    type: Literal['minecraft:custom_model_data']
+    type: Literal['minecraft:custom_model_data'] = 'minecraft:custom_model_data'
 
 
 @dataclass(kw_only=True)
 class ModelTintDye(DyeTint):
-    type: Literal['minecraft:dye']
+    type: Literal['minecraft:dye'] = 'minecraft:dye'
 
 
 @dataclass(kw_only=True)
 class ModelTintFirework(FireworkTint):
-    type: Literal['minecraft:firework']
+    type: Literal['minecraft:firework'] = 'minecraft:firework'
 
 
 @dataclass(kw_only=True)
 class ModelTintGrass(GrassTint):
-    type: Literal['minecraft:grass']
+    type: Literal['minecraft:grass'] = 'minecraft:grass'
 
 
 @dataclass(kw_only=True)
 class ModelTintMapColor(MapColorTint):
-    type: Literal['minecraft:map_color']
+    type: Literal['minecraft:map_color'] = 'minecraft:map_color'
 
 
 @dataclass(kw_only=True)
 class ModelTintPotion(PotionTint):
-    type: Literal['minecraft:potion']
+    type: Literal['minecraft:potion'] = 'minecraft:potion'
 
 
 @dataclass(kw_only=True)
 class ModelTintTeam(TeamTint):
-    type: Literal['minecraft:team']
+    type: Literal['minecraft:team'] = 'minecraft:team'
 
 
 type ModelTint = ModelTintConstant | ModelTintCustomModelData | ModelTintDye | ModelTintFirework | ModelTintGrass | ModelTintMapColor | ModelTintPotion | ModelTintTeam

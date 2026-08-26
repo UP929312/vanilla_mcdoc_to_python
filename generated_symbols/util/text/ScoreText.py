@@ -18,7 +18,7 @@ class ScoreStruct:
 @dataclass(kw_only=True)
 class ScoreText(TextBase):
     score: ScoreStruct
-    type: Literal['score'] | None = None
+    type: Literal['score'] = 'score'
 
 
 # ~~~ MODEL DUMP ~~~

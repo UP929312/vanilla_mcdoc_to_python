@@ -22,22 +22,22 @@ class MaterialRuleUnknown:
 
 @dataclass(kw_only=True)
 class MaterialRuleBlock(BlockRule):
-    type: Literal['minecraft:block']
+    type: Literal['minecraft:block'] = 'minecraft:block'
 
 
 @dataclass(kw_only=True)
 class MaterialRuleCondition(ConditionRule):
-    type: Literal['minecraft:condition']
+    type: Literal['minecraft:condition'] = 'minecraft:condition'
 
 
 @dataclass(kw_only=True)
 class MaterialRuleOreVein(OreVeinifier):
-    type: Literal['minecraft:ore_vein']
+    type: Literal['minecraft:ore_vein'] = 'minecraft:ore_vein'
 
 
 @dataclass(kw_only=True)
 class MaterialRuleSequence(SequenceRule):
-    type: Literal['minecraft:sequence']
+    type: Literal['minecraft:sequence'] = 'minecraft:sequence'
 
 
 type MaterialRule = MaterialRuleUnknown | MaterialRuleBlock | MaterialRuleCondition | MaterialRuleOreVein | MaterialRuleSequence

@@ -16,32 +16,32 @@ from generated_symbols.data.enchantment.level_based_value.SquaredLevelValue impo
 
 @dataclass(kw_only=True)
 class LevelBasedValueMapClamped(ClampedLevelValue):
-    type: Literal['minecraft:clamped']
+    type: Literal['minecraft:clamped'] = 'minecraft:clamped'
 
 
 @dataclass(kw_only=True)
 class LevelBasedValueMapExponent(ExponentLevelValue):
-    type: Literal['minecraft:exponent']
+    type: Literal['minecraft:exponent'] = 'minecraft:exponent'
 
 
 @dataclass(kw_only=True)
 class LevelBasedValueMapFraction(FractionLevelValue):
-    type: Literal['minecraft:fraction']
+    type: Literal['minecraft:fraction'] = 'minecraft:fraction'
 
 
 @dataclass(kw_only=True)
 class LevelBasedValueMapLevelsSquared(SquaredLevelValue):
-    type: Literal['minecraft:levels_squared']
+    type: Literal['minecraft:levels_squared'] = 'minecraft:levels_squared'
 
 
 @dataclass(kw_only=True)
 class LevelBasedValueMapLinear(LinearLevelValue):
-    type: Literal['minecraft:linear']
+    type: Literal['minecraft:linear'] = 'minecraft:linear'
 
 
 @dataclass(kw_only=True)
 class LevelBasedValueMapLookup(LookupLevelValue):
-    type: Literal['minecraft:lookup']
+    type: Literal['minecraft:lookup'] = 'minecraft:lookup'
 
 
 type LevelBasedValueMap = LevelBasedValueMapClamped | LevelBasedValueMapExponent | LevelBasedValueMapFraction | LevelBasedValueMapLevelsSquared | LevelBasedValueMapLinear | LevelBasedValueMapLookup

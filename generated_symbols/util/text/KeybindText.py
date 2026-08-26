@@ -15,7 +15,7 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class KeybindText(TextBase):
     keybind: Keybind
-    type: Literal['keybind'] | None = None
+    type: Literal['keybind'] = 'keybind'
 
 
 # ~~~ MODEL DUMP ~~~

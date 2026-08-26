@@ -14,12 +14,12 @@ from generated_symbols.data.gametest.FunctionTestInstance import FunctionTestIns
 class TestInstanceBlockBased(BlockBasedTestInstance):
     __resource_dir__: ClassVar[str] = 'test_instance'
 
-    type: Literal['minecraft:block_based']
+    type: Literal['minecraft:block_based'] = 'minecraft:block_based'
 
 
 @dataclass(kw_only=True)
 class TestInstanceFunction(FunctionTestInstance):
-    type: Literal['minecraft:function']
+    type: Literal['minecraft:function'] = 'minecraft:function'
 
 
 type TestInstance = TestInstanceBlockBased | TestInstanceFunction

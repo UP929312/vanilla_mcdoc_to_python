@@ -11,17 +11,17 @@ from generated_symbols.world.component.item.AttributeDisplayTextOverride import 
 
 @dataclass(kw_only=True)
 class AttributeDisplayDefault:
-    type: Literal['minecraft:default']
+    type: Literal['minecraft:default'] = 'minecraft:default'
 
 
 @dataclass(kw_only=True)
 class AttributeDisplayHidden:
-    type: Literal['minecraft:hidden']
+    type: Literal['minecraft:hidden'] = 'minecraft:hidden'
 
 
 @dataclass(kw_only=True)
 class AttributeDisplayOverride(AttributeDisplayTextOverride):
-    type: Literal['minecraft:override']
+    type: Literal['minecraft:override'] = 'minecraft:override'
 
 
 type AttributeDisplay = AttributeDisplayDefault | AttributeDisplayHidden | AttributeDisplayOverride

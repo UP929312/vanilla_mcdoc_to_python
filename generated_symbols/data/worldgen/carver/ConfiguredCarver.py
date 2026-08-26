@@ -14,12 +14,12 @@ from generated_symbols.data.worldgen.carver.CaveConfig import CaveConfig
 class ConfiguredCarverCanyon(CanyonConfig):
     __resource_dir__: ClassVar[str] = 'worldgen/carver'
 
-    type: Literal['minecraft:canyon']
+    type: Literal['minecraft:canyon'] = 'minecraft:canyon'
 
 
 @dataclass(kw_only=True)
 class ConfiguredCarverCave(CaveConfig):
-    type: Literal['minecraft:cave']
+    type: Literal['minecraft:cave'] = 'minecraft:cave'
 
 
 type ConfiguredCarver = ConfiguredCarverCanyon | ConfiguredCarverCave
