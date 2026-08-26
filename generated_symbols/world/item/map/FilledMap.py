@@ -24,7 +24,7 @@ class DisplayStruct(Display):
 @dataclass(kw_only=True)
 class FilledMap(ItemBase):
     map: int | None = None  # Map number, representing the shared state holding map contents and markers.
-    map_scale_direction: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # Amount to increase the current map scale by when crafting.
+    map_scale_direction: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # Amount to increase the current map scale by when crafting.
     map_to_lock: bool | None = None  # Whether the map should be locked after being taken out of the cartography table.
     Decorations: list[DecorationsStruct] | None = None  # Decorations on the map.
     display: DisplayStruct | None = None  # Display for the item.

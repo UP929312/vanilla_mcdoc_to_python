@@ -9,8 +9,8 @@ from typing import Annotated
 
 @dataclass(kw_only=True)
 class ExplosionData:
-    fuse: Annotated[int, 'Range | Min `1` and above | inclusive']  # The fuse time in ticks when ignited.  When ignited by an explosion, the fuse will be a random value between `explosion_fuse / 8` and `3 * explosion_fuse / 8`.
-    power: Annotated[int, 'Range | Min `0` and above | inclusive']  # The explosion power.
+    fuse: Annotated[int, 'Range | `1` and above | inclusive']  # The fuse time in ticks when ignited.  When ignited by an explosion, the fuse will be a random value between `explosion_fuse / 8` and `3 * explosion_fuse / 8`.
+    power: Annotated[int, 'Range | `0` and above | inclusive']  # The explosion power.
     causes_fire: bool  # Whether the explosion causes fire.
 
 

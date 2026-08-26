@@ -9,8 +9,8 @@ from typing import Annotated
 
 @dataclass(kw_only=True)
 class DimensionPaddingConfig:
-    bottom: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None
-    top: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None
+    bottom: Annotated[int, 'Range | `0` and above | inclusive'] | None = None
+    top: Annotated[int, 'Range | `0` and above | inclusive'] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

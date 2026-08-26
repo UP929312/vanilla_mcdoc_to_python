@@ -11,7 +11,7 @@ if TYPE_CHECKING:
     from generated_symbols.data.timeline.TimeMarker import TimeMarker
 
 
-type TimeMarkerMap = dict[Annotated[str, IdSpec()], Annotated[int, 'Range | Min `0` and above | inclusive'] | TimeMarker]
+type TimeMarkerMap = dict[Annotated[str, IdSpec()], Annotated[int, 'Range | `0` and above | inclusive'] | TimeMarker]
 
 
 # ~~~ MODEL DUMP ~~~

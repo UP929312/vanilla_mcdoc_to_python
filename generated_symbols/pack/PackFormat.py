@@ -6,7 +6,7 @@ Local link to file: generated_symbols/pack/PackFormat.py
 from typing import Annotated
 
 
-type PackFormat = int | tuple[int] | tuple[int, Annotated[int, 'Range | Min `0` and above | inclusive']]
+type PackFormat = int | tuple[int] | tuple[int, Annotated[int, 'Range | `0` and above | inclusive']]
 
 
 # ~~~ MODEL DUMP ~~~

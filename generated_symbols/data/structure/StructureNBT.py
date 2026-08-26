@@ -54,22 +54,22 @@ class NbtStructBlockUnknown:
 
 @dataclass(kw_only=True)
 class BlocksStruct:
-    state: Annotated[int, 'Range | Min `0` and above | inclusive']
-    pos: tuple[Annotated[int, 'Range | Min `0` and above | inclusive'], Annotated[int, 'Range | Min `0` and above | inclusive'], Annotated[int, 'Range | Min `0` and above | inclusive']]
+    state: Annotated[int, 'Range | `0` and above | inclusive']
+    pos: tuple[Annotated[int, 'Range | `0` and above | inclusive'], Annotated[int, 'Range | `0` and above | inclusive'], Annotated[int, 'Range | `0` and above | inclusive']]
     nbt: NbtStructBlockUnknown | Sign | Shelf | Container27 | Beacon | BlockEntity | Beehive | Banner | Furnace | BrewingStand | SculkSensor | Campfire | CommandBlock | ChiseledBookshelf | Comparator | Conduit | Crafter | Skull | DecoratedPot | Container9 | EnchantingTable | EndGateway | Hopper | Jigsaw | Jukebox | Lectern | MovingPiston | PotentSulfur | SculkCatalyst | SculkShrieker | Spawner | StructureBlock | BrushableBlock | TestBlock | TestInstanceBlock | TrialSpawner | Vault | None = None
 
 
 @dataclass(kw_only=True)
 class EntitiesStruct:
-    pos: tuple[Annotated[float, 'Range | Min `0` and above | inclusive'], Annotated[float, 'Range | Min `0` and above | inclusive'], Annotated[float, 'Range | Min `0` and above | inclusive']]
-    blockPos: tuple[Annotated[int, 'Range | Min `0` and above | inclusive'], Annotated[int, 'Range | Min `0` and above | inclusive'], Annotated[int, 'Range | Min `0` and above | inclusive']]
+    pos: tuple[Annotated[float, 'Range | `0` and above | inclusive'], Annotated[float, 'Range | `0` and above | inclusive'], Annotated[float, 'Range | `0` and above | inclusive']]
+    blockPos: tuple[Annotated[int, 'Range | `0` and above | inclusive'], Annotated[int, 'Range | `0` and above | inclusive'], Annotated[int, 'Range | `0` and above | inclusive']]
     nbt: AnyEntity
 
 
 @dataclass(kw_only=True)
 class StructureNBTStruct1:
-    DataVersion: Annotated[int, 'Range | Min `0` and above | inclusive']  # [Data version](https://minecraft.wiki/w/Data_version).
-    size: tuple[Annotated[int, 'Range | Min `0` and above | inclusive'], Annotated[int, 'Range | Min `0` and above | inclusive'], Annotated[int, 'Range | Min `0` and above | inclusive']]
+    DataVersion: Annotated[int, 'Range | `0` and above | inclusive']  # [Data version](https://minecraft.wiki/w/Data_version).
+    size: tuple[Annotated[int, 'Range | `0` and above | inclusive'], Annotated[int, 'Range | `0` and above | inclusive'], Annotated[int, 'Range | `0` and above | inclusive']]
     blocks: list[BlocksStruct]
     entities: list[EntitiesStruct]
     palette: list[BlockState]
@@ -77,8 +77,8 @@ class StructureNBTStruct1:
 
 @dataclass(kw_only=True)
 class StructureNBTStruct2:
-    DataVersion: Annotated[int, 'Range | Min `0` and above | inclusive']  # [Data version](https://minecraft.wiki/w/Data_version).
-    size: tuple[Annotated[int, 'Range | Min `0` and above | inclusive'], Annotated[int, 'Range | Min `0` and above | inclusive'], Annotated[int, 'Range | Min `0` and above | inclusive']]
+    DataVersion: Annotated[int, 'Range | `0` and above | inclusive']  # [Data version](https://minecraft.wiki/w/Data_version).
+    size: tuple[Annotated[int, 'Range | `0` and above | inclusive'], Annotated[int, 'Range | `0` and above | inclusive'], Annotated[int, 'Range | `0` and above | inclusive']]
     blocks: list[BlocksStruct]
     entities: list[EntitiesStruct]
     palettes: list[list[BlockState]]  # Sets of different block states used in the structure, a random palette gets selected based on coordinates.

@@ -9,7 +9,7 @@ from typing import Annotated
 
 @dataclass(kw_only=True)
 class ChangePage:
-    page: Annotated[int, 'Range | Min `1` and above | inclusive']  # The page number to go to.
+    page: Annotated[int, 'Range | `1` and above | inclusive']  # The page number to go to.
 
 
 # ~~~ MODEL DUMP ~~~

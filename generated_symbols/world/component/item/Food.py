@@ -9,7 +9,7 @@ from typing import Annotated
 
 @dataclass(kw_only=True)
 class Food:
-    nutrition: Annotated[int, 'Range | Min `0` and above | inclusive']  # Food points/haunches restored when eaten (capped to 20.0).
+    nutrition: Annotated[int, 'Range | `0` and above | inclusive']  # Food points/haunches restored when eaten (capped to 20.0).
     saturation: float  # Exact value added to the player's saturation level, capped at whatever the [new] food points value is.
     can_always_eat: bool | None = None  # Whether the item can be eaten when the player's food points/haunches are full. Defaults to `false`
 

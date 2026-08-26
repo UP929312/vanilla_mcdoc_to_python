@@ -9,7 +9,7 @@ if TYPE_CHECKING:
     from generated_symbols.util.slot.EquipmentSlot import EquipmentSlot
 
 
-type DropChances = dict[EquipmentSlot, Annotated[float, 'Range | Min `0` and above | inclusive']]
+type DropChances = dict[EquipmentSlot, Annotated[float, 'Range | `0` and above | inclusive']]
 
 
 # ~~~ MODEL DUMP ~~~

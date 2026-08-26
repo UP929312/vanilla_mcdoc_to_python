@@ -17,7 +17,7 @@ class JukeboxSong:
 
     description: Text  # Displayed in the HUD actionbar & item tooltip.
     comparator_output: Annotated[int, 'Range | `0`-`15` | both inclusive']
-    length_in_seconds: Annotated[float, 'Range | Min `0` and above | inclusive']
+    length_in_seconds: Annotated[float, 'Range | `Above 0` | exclusive']
     sound_event: SoundEventRef
 
 

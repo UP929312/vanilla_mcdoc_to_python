@@ -15,7 +15,7 @@ class ChargeCursor:
     pos: tuple[int, int, int]
     charge: Annotated[int, 'Range | `0`-`1000` | both inclusive'] | None = None
     decay_delay: Annotated[int, 'Range | `0`-`1` | both inclusive'] | None = None
-    update_delay: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None
+    update_delay: Annotated[int, 'Range | `0` and above | inclusive'] | None = None
     facings: list[Direction] | None = None
 
 

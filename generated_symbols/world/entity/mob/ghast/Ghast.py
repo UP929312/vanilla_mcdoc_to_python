@@ -11,7 +11,7 @@ from generated_symbols.world.entity.mob.MobBase import MobBase
 
 @dataclass(kw_only=True)
 class Ghast(MobBase):
-    ExplosionPower: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # Explosion radius of fireballs that are shot from it.
+    ExplosionPower: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # Explosion radius of fireballs that are shot from it.
 
 
 # ~~~ MODEL DUMP ~~~

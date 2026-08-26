@@ -11,7 +11,7 @@ from typing import Annotated, ClassVar
 class TimeOfDayTestEnvironment:
     __resource_dir__: ClassVar[str] = 'test_environment'
 
-    time: Annotated[int, 'Range | Min `0` and above | inclusive']
+    time: Annotated[int, 'Range | `0` and above | inclusive']
 
 
 # ~~~ MODEL DUMP ~~~

@@ -98,7 +98,7 @@ class DensityFunctionStructFindTopSurface:
     density: DensityFunctionRef
     upper_bound: DensityFunctionRef
     lower_bound: Annotated[int, 'Range | `-4064`-`4062` | both inclusive']
-    cell_height: Annotated[int, 'Range | Min `1` and above | inclusive']
+    cell_height: Annotated[int, 'Range | `1` and above | inclusive']
 
 
 @dataclass(kw_only=True)
@@ -128,8 +128,8 @@ class DensityFunctionStructHalfNegative:
 @dataclass(kw_only=True)
 class DensityFunctionStructInterpolated(OneArgument):
     type: Literal['minecraft:interpolated']
-    cell_size_xz: Annotated[int, 'Range | Min `1` and above | inclusive']
-    cell_size_y: Annotated[int, 'Range | Min `1` and above | inclusive']
+    cell_size_xz: Annotated[int, 'Range | `1` and above | inclusive']
+    cell_size_y: Annotated[int, 'Range | `1` and above | inclusive']
 
 
 @dataclass(kw_only=True)

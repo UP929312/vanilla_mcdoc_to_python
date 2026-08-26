@@ -11,7 +11,7 @@ from generated_symbols.assets.item_definition.SelectCases import SelectCases
 
 @dataclass(kw_only=True)
 class CustomModelDataStrings(SelectCases[str]):
-    index: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The index of the `strings` list in the `custom_model_data` component. Defaults to 0.
+    index: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # The index of the `strings` list in the `custom_model_data` component. Defaults to 0.
 
 
 # ~~~ MODEL DUMP ~~~

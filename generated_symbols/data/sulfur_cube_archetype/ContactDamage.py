@@ -15,7 +15,7 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class ContactDamage:
     damage_type: Annotated[str, IdSpec(registry='damage_type')]
-    amount: FloatProvider[Annotated[float, 'Range | Min `0` and above | inclusive']] | Annotated[float, 'Range | Min `0` and above | inclusive']
+    amount: FloatProvider[Annotated[float, 'Range | `0` and above | inclusive']] | Annotated[float, 'Range | `0` and above | inclusive']
     attribute_to_source: bool  # Whether the damage is attributed to the sulfur cube.
 
 

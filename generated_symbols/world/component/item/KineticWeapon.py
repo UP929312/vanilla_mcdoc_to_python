@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class KineticWeapon:
-    delay_ticks: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The time in ticks required for charging. Defaults to 0
-    contact_cooldown_ticks: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The cooldown in ticks after hitting, and loosing contact with an entity before being able to hit it again Defaults to 10
+    delay_ticks: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # The time in ticks required for charging. Defaults to 0
+    contact_cooldown_ticks: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # The cooldown in ticks after hitting, and loosing contact with an entity before being able to hit it again Defaults to 10
     dismount_conditions: KineticWeaponEffectCondition | None = None
     knockback_conditions: KineticWeaponEffectCondition | None = None
     damage_conditions: KineticWeaponEffectCondition | None = None

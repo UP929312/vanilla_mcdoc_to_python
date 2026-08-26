@@ -17,7 +17,7 @@ class NumberRangeInput:
     label_format: str | None = None  # The translation to be used for building label. `%1$s` is replaced by `label`; `%2$s` is replaced by current value of the slider. Defaults to `options.generic_value`.
     start: float  # Start value, inclusive.
     end: float  # End value, inclusive.
-    step: Annotated[float, 'Range | Min `0` and above | inclusive'] | None = None  # Step size of the input. If not present, any value from range is allowed.
+    step: Annotated[float, 'Range | `Above 0` | exclusive'] | None = None  # Step size of the input. If not present, any value from range is allowed.
     initial: float | None = None  # Initial value of the slider. Rounded down nearest step. Defaults to the middle of the range.
 
 

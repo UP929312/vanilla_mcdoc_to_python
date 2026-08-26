@@ -11,7 +11,7 @@ from generated_symbols.data.loot.LootPoolEntryBase import LootPoolEntryBase
 
 @dataclass(kw_only=True)
 class SingletonPoolEntry(LootPoolEntryBase):
-    weight: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None
+    weight: Annotated[int, 'Range | `1` and above | inclusive'] | None = None
     quality: int | None = None
 
 

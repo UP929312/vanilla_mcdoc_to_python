@@ -45,7 +45,7 @@ class TypedSlotSourceGroup:
 class TypedSlotSourceLimitSlots:
     type: Literal['minecraft:limit_slots']
     slot_source: SlotSource
-    limit: Annotated[int, 'Range | Min `1` and above | inclusive']
+    limit: Annotated[int, 'Range | `1` and above | inclusive']
 
 
 @dataclass(kw_only=True)

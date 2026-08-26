@@ -15,7 +15,7 @@ if TYPE_CHECKING:
 class OldMobEffect:
     Id: EffectId | None = None
     Amplifier: int | Annotated[int, 'Range | `0`-`255` | both inclusive'] | None = None
-    Duration: Annotated[int, 'Range | Min `1` and above | inclusive'] | Literal[-1] | None = None  # Duration of the effect in ticks. Infinite is represented by `-1`.
+    Duration: Annotated[int, 'Range | `1` and above | inclusive'] | Literal[-1] | None = None  # Duration of the effect in ticks. Infinite is represented by `-1`.
     Ambient: bool | None = None  # Whether particles are semi-transparent. (like with a Beacon)
     ShowParticles: bool | None = None  # Whether particles should be shown.
     ShowIcon: bool | None = None  # Whether the effect icon should be shown.

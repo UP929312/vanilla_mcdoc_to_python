@@ -11,7 +11,7 @@ T = TypeVar('T')
 
 @dataclass(kw_only=True)
 class WeightedEntry(Generic[T]):
-    weight: Annotated[int, 'Range | Min `0` and above | inclusive']
+    weight: Annotated[int, 'Range | `0` and above | inclusive']
     data: T
 
 

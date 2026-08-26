@@ -9,7 +9,7 @@ from typing import Annotated
 
 @dataclass(kw_only=True)
 class ShriekParticle:
-    delay: Annotated[int, 'Range | Min `0` and above | inclusive']  # Ticks until the particle renders.
+    delay: Annotated[int, 'Range | `0` and above | inclusive']  # Ticks until the particle renders.
 
 
 # ~~~ MODEL DUMP ~~~

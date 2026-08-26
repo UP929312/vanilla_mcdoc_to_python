@@ -15,8 +15,8 @@ class NetherForestVegetationConfig:
     __resource_dir__: ClassVar[str] = 'worldgen/feature'
 
     state_provider: BlockStateProvider
-    spread_width: Annotated[int, 'Range | Min `1` and above | inclusive']
-    spread_height: Annotated[int, 'Range | Min `1` and above | inclusive']
+    spread_width: Annotated[int, 'Range | `1` and above | inclusive']
+    spread_height: Annotated[int, 'Range | `1` and above | inclusive']
 
 
 # ~~~ MODEL DUMP ~~~

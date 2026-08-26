@@ -18,7 +18,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class KeyframesStruct:
-    ticks: Annotated[int, 'Range | Min `0` and above | inclusive']
+    ticks: Annotated[int, 'Range | `0` and above | inclusive']
     value: StringARGB | StringRGB | BlendToGray | StringRGB | StringARGB
 
 

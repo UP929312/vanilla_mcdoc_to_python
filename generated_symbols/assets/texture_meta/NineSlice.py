@@ -12,9 +12,9 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class NineSlice:
-    width: Annotated[int, 'Range | Min `1` and above | inclusive']
-    height: Annotated[int, 'Range | Min `1` and above | inclusive']
-    border: Annotated[int, 'Range | Min `1` and above | inclusive'] | NineSliceBorder
+    width: Annotated[int, 'Range | `1` and above | inclusive']
+    height: Annotated[int, 'Range | `1` and above | inclusive']
+    border: Annotated[int, 'Range | `1` and above | inclusive'] | NineSliceBorder
     stretch_inner: bool | None = None  # Defaults to `false`.
 
 

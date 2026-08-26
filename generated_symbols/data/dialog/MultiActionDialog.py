@@ -20,7 +20,7 @@ class MultiActionDialogNone:
 
     actions: Annotated[list[Button], 'Length = 1 (inclusive) and above']
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
-    columns: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
+    columns: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None
@@ -34,7 +34,7 @@ class MultiActionDialogNone:
 class MultiActionDialogClose:
     actions: Annotated[list[Button], 'Length = 1 (inclusive) and above']
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
-    columns: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
+    columns: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None
@@ -48,7 +48,7 @@ class MultiActionDialogClose:
 class MultiActionDialogNone2:
     actions: Annotated[list[Button], 'Length = 1 (inclusive) and above']
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
-    columns: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
+    columns: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None
@@ -62,7 +62,7 @@ class MultiActionDialogNone2:
 class MultiActionDialogWaitForResponse:
     actions: Annotated[list[Button], 'Length = 1 (inclusive) and above']
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
-    columns: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
+    columns: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None

@@ -15,7 +15,7 @@ class FindTopSurface:
     density: DensityFunctionRef
     upper_bound: DensityFunctionRef
     lower_bound: Annotated[int, 'Range | `-4064`-`4062` | both inclusive']
-    cell_height: Annotated[int, 'Range | Min `1` and above | inclusive']
+    cell_height: Annotated[int, 'Range | `1` and above | inclusive']
 
 
 # ~~~ MODEL DUMP ~~~

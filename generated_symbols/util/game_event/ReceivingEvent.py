@@ -12,7 +12,7 @@ from minecraft_registry import IdSpec
 @dataclass(kw_only=True)
 class ReceivingEvent:
     game_event: Annotated[str, IdSpec(registry='game_event')]
-    distance: Annotated[float, 'Range | Min `0` and above | inclusive']  # Distance in blocks to the source
+    distance: Annotated[float, 'Range | `0` and above | inclusive']  # Distance in blocks to the source
     pos: tuple[float, float, float]  # Origin of the event
     source: tuple[int, int, int, int] | None = None  # UUID of the source entity of the event, if one exists
     projectile_owner: tuple[int, int, int, int] | None = None  # UUID of the owner of the projectile, if one exists

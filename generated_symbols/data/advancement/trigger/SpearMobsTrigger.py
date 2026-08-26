@@ -12,7 +12,7 @@ from generated_symbols.data.advancement.trigger.PlayerConditions import PlayerCo
 
 @dataclass(kw_only=True)
 class SpearMobsTriggerTypeArg(PlayerConditions):
-    count: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # Minimum mob count required.
+    count: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # Minimum mob count required.
 
 
 SpearMobsTrigger = AllOptional[SpearMobsTriggerTypeArg]

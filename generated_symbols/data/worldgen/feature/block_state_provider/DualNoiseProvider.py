@@ -18,7 +18,7 @@ if TYPE_CHECKING:
 class DualNoiseProvider(BaseNoiseProvider):
     variety: InclusiveRange[Annotated[int, 'Range | `1`-`64` | both inclusive']] | Annotated[int, 'Range | `1`-`64` | both inclusive']
     slow_noise: NoiseParameters
-    slow_scale: Annotated[float, 'Range | Min `0` and above | inclusive']
+    slow_scale: Annotated[float, 'Range | `0` and above | inclusive']
     states: list[BlockState]
 
 

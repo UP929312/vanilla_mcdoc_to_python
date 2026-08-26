@@ -9,7 +9,7 @@ from typing import Annotated
 
 @dataclass(kw_only=True)
 class CustomModelDataFloats:
-    index: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The index of the `floats` list in the `custom_model_data` component. Defaults to 0.
+    index: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # The index of the `floats` list in the `custom_model_data` component. Defaults to 0.
 
 
 # ~~~ MODEL DUMP ~~~

@@ -15,7 +15,7 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class Armadillo(Breedable):
     state: ArmadilloState | None = None
-    scute_time: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None
+    scute_time: Annotated[int, 'Range | `0` and above | inclusive'] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

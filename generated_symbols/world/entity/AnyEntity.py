@@ -153,7 +153,7 @@ class AnyEntityAreaEffectCloud(EntityBase):
 class AnyEntityArmadillo(Breedable):
     id: Literal['minecraft:armadillo']  # The ID of this entity. Not present on player entities.
     state: ArmadilloState | None = None
-    scute_time: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None
+    scute_time: Annotated[int, 'Range | `0` and above | inclusive'] | None = None
 
 
 @dataclass(kw_only=True)
@@ -357,7 +357,7 @@ class AnyEntityCommandBlockMinecart(BaseCommandBlock, Minecart):
 @dataclass(kw_only=True)
 class AnyEntityCopperGolem(MobBase):
     id: Literal['minecraft:copper_golem']  # The ID of this entity. Not present on player entities.
-    next_weather_age: Annotated[int, 'Range | Min `-2` and above | inclusive'] | None = None  # Gametime in ticks when the copper golem oxidizes.  `-2` represents "waxed"  `-1` will be replaced with a random time between 504000 and 552000 ticks later
+    next_weather_age: Annotated[int, 'Range | `-2` and above | inclusive'] | None = None  # Gametime in ticks when the copper golem oxidizes.  `-2` represents "waxed"  `-1` will be replaced with a random time between 504000 and 552000 ticks later
     weather_state: WeatherState | None = None
 
 
@@ -573,7 +573,7 @@ class AnyEntityFurnaceMinecart(Minecart):
 @dataclass(kw_only=True)
 class AnyEntityGhast(MobBase):
     id: Literal['minecraft:ghast']  # The ID of this entity. Not present on player entities.
-    ExplosionPower: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # Explosion radius of fireballs that are shot from it.
+    ExplosionPower: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # Explosion radius of fireballs that are shot from it.
 
 
 @dataclass(kw_only=True)
@@ -1091,7 +1091,7 @@ class AnyEntitySmallFireball(DespawnableProjectileBase):
 @dataclass(kw_only=True)
 class AnyEntitySniffer(AgeableMob, MobBase):
     id: Literal['minecraft:sniffer']  # The ID of this entity. Not present on player entities.
-    InLove: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # Ticks until it stops searching for a mate.
+    InLove: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # Ticks until it stops searching for a mate.
     LoveCause: tuple[int, int, int, int] | None = None  # Player that caused this mob to breed.
 
 
@@ -1191,9 +1191,9 @@ class AnyEntityStrider(Breedable):
 @dataclass(kw_only=True)
 class AnyEntitySulfurCube(AgeableMob, CubeMob, MobBase):
     id: Literal['minecraft:sulfur_cube']  # The ID of this entity. Not present on player entities.
-    pickup_timer: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None
+    pickup_timer: Annotated[int, 'Range | `0` and above | inclusive'] | None = None
     from_bucket: bool | None = None
-    fuse: Annotated[int, 'Range | Min `-1` and above | inclusive'] | None = None  # `-1` represents "not ignited".
+    fuse: Annotated[int, 'Range | `-1` and above | inclusive'] | None = None  # `-1` represents "not ignited".
 
 
 @dataclass(kw_only=True)
@@ -1207,7 +1207,7 @@ class AnyEntityTadpole(MobBase):
 class AnyEntityTextDisplay(DisplayBase):
     id: Literal['minecraft:text_display']  # The ID of this entity. Not present on player entities.
     text: Text | None = None  # Text to display. Components are resolved with the executor set to the display entity and the position set to `0 0 0`.
-    line_width: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # Line width in pixels used to split lines (note: new line can also be added with `\n` characters). Defaults to 200.
+    line_width: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # Line width in pixels used to split lines (note: new line can also be added with `\n` characters). Defaults to 200.
     text_opacity: Annotated[int, 'Range | `0`-`255` | both inclusive'] | None = None  # Opacity (alpha component) of rendered text. Defaults to 255. Interpolated.
     background: int | None = None  # Color of background. Includes alpha channel. Defaults to 0x40000000. Interpolated.  Calculated as `ALPHA << 24 | RED << 16 | GREEN << 8 | BLUE`. Each of these fields must be between 0 and 255, inclusive.
     default_background: bool | None = None  # If true, overrides `background` & rendering uses default text background color (same as in chat). Defaults to false.
@@ -1276,7 +1276,7 @@ class AnyEntityVillager(Breedable, VillagerBase):
     LastGossipDecay: int | None = None  # Last game-tick every gossip significance `Value` could have decayed.  Once this reaches 24k (20 minutes) less than the current game tick a decay occurs again.
     LastRestock: int | None = None  # Last game-tick it removed `uses` & updated `demand` of every trade offer by going to its `job_site`.
     RestocksToday: Annotated[int, 'Range | `0`-`2` | both inclusive'] | None = None  # Times it has reset the `uses` & updated `demand` of every trade offer by going to its `job_site` in the past 12k ticks (10 minutes).  Time is tracked by `LastRestock`.  When two restocks have occurred, another restock (and reset of this value to `0`) will only occur after 10 minutes.
-    Xp: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # XP it has, increases when trades are used by each trade offer's `xp` value.  After `250` the XP will continue to increase, but will do nothing more.  Trade tiers: - `0..9`     - Tier 1: Novice - `10..69`   - Tier 2: Apprentice - `70..149`  - Tier 3: Journeyman - `150..249` - Tier 4: Expert - `250..`    - Tier 5: Master
+    Xp: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # XP it has, increases when trades are used by each trade offer's `xp` value.  After `250` the XP will continue to increase, but will do nothing more.  Trade tiers: - `0..9`     - Tier 1: Novice - `10..69`   - Tier 2: Apprentice - `70..149`  - Tier 3: Journeyman - `150..249` - Tier 4: Expert - `250..`    - Tier 5: Master
 
 
 @dataclass(kw_only=True)

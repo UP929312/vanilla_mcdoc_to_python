@@ -16,9 +16,9 @@ class Instrument:
     __resource_dir__: ClassVar[str] = 'instrument'
 
     sound_event: SoundEventRef
-    range: Annotated[float, 'Range | Min `0` and above | inclusive']  # Maximum range in blocks that the sound can be heard
-    use_duration: Annotated[float, 'Range | Min `0` and above | inclusive']  # Duration of use in seconds, used as item cooldown
-    durability_damage: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None
+    range: Annotated[float, 'Range | `Above 0` | exclusive']  # Maximum range in blocks that the sound can be heard
+    use_duration: Annotated[float, 'Range | `0` and above | inclusive']  # Duration of use in seconds, used as item cooldown
+    durability_damage: Annotated[int, 'Range | `0` and above | inclusive'] | None = None
     description: Text
 
 

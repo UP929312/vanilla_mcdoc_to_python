@@ -16,7 +16,7 @@ if TYPE_CHECKING:
 class ModernMobEffect:
     id: Annotated[str, IdSpec(registry='mob_effect')]
     amplifier: int | Annotated[int, 'Range | `0`-`255` | both inclusive'] | None = None  # Level I having value 0. Defaults to 0.
-    duration: Literal[-1] | Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # Duration of the effect in ticks. Infinite is represented by `-1`.
+    duration: Literal[-1] | Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # Duration of the effect in ticks. Infinite is represented by `-1`.
     ambient: bool | None = None  # Whether the effect appears as a HUD icon in addition to in the inventory GUI (same behavior as beacons when `true`). Defaults to `false`.
     show_particles: bool | None = None  # Defaults to `true`.
     show_icon: bool | None = None  # Whether the effect appears in the inventory GUI. Defaults to `true`

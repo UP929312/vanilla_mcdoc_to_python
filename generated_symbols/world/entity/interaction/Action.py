@@ -10,7 +10,7 @@ from typing import Annotated
 @dataclass(kw_only=True)
 class Action:
     player: tuple[int, int, int, int] | None = None
-    timestamp: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # Game tick of when the event occured.
+    timestamp: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # Game tick of when the event occured.
 
 
 # ~~~ MODEL DUMP ~~~

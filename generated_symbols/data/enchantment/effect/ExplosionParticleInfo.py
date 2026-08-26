@@ -12,7 +12,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class ExplosionParticleInfo:
-    weight: Annotated[int, 'Range | Min `1` and above | inclusive']
+    weight: Annotated[int, 'Range | `1` and above | inclusive']
     particle: Particle
     scaling: float | None = None  # Defaults to 1.0. Scaling of the distance between the center of the explosion and the block
     speed: float | None = None  # Defaults to 1.0. Scaling of the speed of the particle

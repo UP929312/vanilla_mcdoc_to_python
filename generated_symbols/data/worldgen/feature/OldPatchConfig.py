@@ -17,9 +17,9 @@ class OldPatchConfig:
     can_replace: bool | None = None
     project: bool | None = None
     need_water: bool | None = None
-    xspread: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None
-    yspread: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None
-    zspread: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None
+    xspread: Annotated[int, 'Range | `0` and above | inclusive'] | None = None
+    yspread: Annotated[int, 'Range | `0` and above | inclusive'] | None = None
+    zspread: Annotated[int, 'Range | `0` and above | inclusive'] | None = None
     state_provider: BlockStateProvider
     block_placer: BlockPlacer
     whitelist: list[BlockState]

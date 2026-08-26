@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class BiomeMusic:
     sound: SoundEventRef
-    min_delay: Annotated[int, 'Range | Min `0` and above | inclusive']
-    max_delay: Annotated[int, 'Range | Min `0` and above | inclusive']
+    min_delay: Annotated[int, 'Range | `0` and above | inclusive']
+    max_delay: Annotated[int, 'Range | `0` and above | inclusive']
     replace_current_music: bool | None = None  # Defaults to `false`.
 
 

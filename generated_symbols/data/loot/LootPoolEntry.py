@@ -32,7 +32,7 @@ class LootPoolEntryDynamic(SingletonPoolEntry):
 @dataclass(kw_only=True)
 class LootPoolEntryEmpty(LootPoolEntryBase):
     type: Literal['minecraft:empty']
-    weight: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None
+    weight: Annotated[int, 'Range | `1` and above | inclusive'] | None = None
     quality: int | None = None
 
 

@@ -34,7 +34,7 @@ class GlyphProviderReference:
 class GlyphProviderSpace:
     type: Literal['minecraft:space']
     filter: dict[FontOption, bool] | None = None
-    advances: dict[Annotated[str, 'Length = 1'], float]
+    advances: dict[Annotated[str, 'Length = Exactly 1'], float]
 
 
 @dataclass(kw_only=True)

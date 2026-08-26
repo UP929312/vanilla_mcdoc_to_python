@@ -19,7 +19,7 @@ class ProjectedSquareConfig:
     block: BlockStateProvider
     project_through: BlockPredicate
     size: IntProvider[Annotated[int, 'Range | `1`-`16` | both inclusive']] | Annotated[int, 'Range | `1`-`16` | both inclusive']
-    max_projection_height: Annotated[int, 'Range | Min `0` and above | inclusive']
+    max_projection_height: Annotated[int, 'Range | `0` and above | inclusive']
 
 
 # ~~~ MODEL DUMP ~~~

@@ -9,8 +9,8 @@ from typing import Annotated
 
 @dataclass(kw_only=True)
 class TextureAnimationFrame:
-    index: Annotated[int, 'Range | Min `0` and above | inclusive']  # A number corresponding to position of a frame from the top, with the top frame being 0.
-    time: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # The time in ticks to show this frame, overriding `frametime` above.
+    index: Annotated[int, 'Range | `0` and above | inclusive']  # A number corresponding to position of a frame from the top, with the top frame being 0.
+    time: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The time in ticks to show this frame, overriding `frametime` above.
 
 
 # ~~~ MODEL DUMP ~~~

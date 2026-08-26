@@ -9,7 +9,7 @@ from typing import Annotated
 
 @dataclass(kw_only=True)
 class MultiLine:
-    max_lines: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None
+    max_lines: Annotated[int, 'Range | `1` and above | inclusive'] | None = None
     height: Annotated[int, 'Range | `1`-`512` | both inclusive'] | None = None  # Height of the input. If this field is not present: - If `max_lines` is present, the height will be chosen to fit the maximum number of lines. The chosen height is capped at 512. - If `max_lines` is also not present, the height will be chosen to fit 4 lines.
 
 

@@ -9,8 +9,8 @@ from typing import Annotated
 
 @dataclass(kw_only=True)
 class ModernNetherVegetationConfig:
-    spread_width: Annotated[int, 'Range | Min `1` and above | inclusive']
-    spread_height: Annotated[int, 'Range | Min `1` and above | inclusive']
+    spread_width: Annotated[int, 'Range | `1` and above | inclusive']
+    spread_height: Annotated[int, 'Range | `1` and above | inclusive']
 
 
 # ~~~ MODEL DUMP ~~~

@@ -14,12 +14,12 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class Recipe:
     rewardExp: bool | None = None  # Whether it should reward experience for using this trade.   Experience amount is `3 + random(0, 3)` plus `5` if the trade is causing the merchant to increase in tier.
-    maxUses: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # Maximum number of uses for this trade before the merchant has to restock.
-    uses: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # Times this trade has been used since the merchant last restocked.
+    maxUses: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # Maximum number of uses for this trade before the merchant has to restock.
+    uses: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # Times this trade has been used since the merchant last restocked.
     buy: ItemCost | None = None  # Price item required by the merchant, count is modified depending on `demand` & per-player context.
     buyB: ItemCost | None = None  # Second item required by the merchant, count does not change.
     sell: ItemStack | None = None  # Item being offered by the merchant.
-    xp: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # XP the merchant gains from the trade.
+    xp: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # XP the merchant gains from the trade.
     priceMultiplier: float | None = None  # How much demand & reputation each affect the count of the `buy` item.
     specialPrice: int | None = None  # Modifier added to the original count of the `buy` item.
     demand: int | None = None  # Count adjuster of the `buy` item based on demand.  Minus twice the number of times the villager has the trade in stock. When restocking subtract the number of possible purchases before running out of stock and add twice the number of actually made purchases. When the demand becomes positive, the count is increased by the initial count times `priceMultiplier` times the demand.

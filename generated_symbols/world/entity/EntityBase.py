@@ -24,7 +24,7 @@ class EntityBase:
     OnGround: bool | None = None  # Whether the entity is on the ground.
     NoGravity: bool | None = None  # Whether the entity should be effected by gravity.
     Invulnerable: bool | None = None  # Whether the entity is immune to damage.
-    invulnerable_time: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # Temporary immunity duration of the entity, in ticks.  The entity is immune to damage if `invulnerable_time` > 0 **or** `Invulnerable` is `true`.
+    invulnerable_time: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # Temporary immunity duration of the entity, in ticks.  The entity is immune to damage if `invulnerable_time` > 0 **or** `Invulnerable` is `true`.
     PortalCooldown: int | None = None  # How long until the entity can go through a nether portal.
     UUID: tuple[int, int, int, int] | None = None
     CustomName: Text | None = None

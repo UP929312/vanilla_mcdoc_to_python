@@ -19,7 +19,7 @@ class RuinedPortalSetup:
     vines: bool
     can_be_cold: bool
     replace_with_blackstone: bool
-    weight: Annotated[float, 'Range | Min `0` and above | inclusive']
+    weight: Annotated[float, 'Range | `0` and above | inclusive']
 
 
 # ~~~ MODEL DUMP ~~~

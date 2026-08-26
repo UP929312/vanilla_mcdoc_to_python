@@ -52,8 +52,8 @@ class NbtStructBlockUnknown:
 
 @dataclass(kw_only=True)
 class StructureBlock:
-    state: Annotated[int, 'Range | Min `0` and above | inclusive']
-    pos: tuple[Annotated[int, 'Range | Min `0` and above | inclusive'], Annotated[int, 'Range | Min `0` and above | inclusive'], Annotated[int, 'Range | Min `0` and above | inclusive']]
+    state: Annotated[int, 'Range | `0` and above | inclusive']
+    pos: tuple[Annotated[int, 'Range | `0` and above | inclusive'], Annotated[int, 'Range | `0` and above | inclusive'], Annotated[int, 'Range | `0` and above | inclusive']]
     nbt: NbtStructBlockUnknown | Sign | Shelf | Container27 | Beacon | BlockEntity | Beehive | Banner | Furnace | BrewingStand | SculkSensor | Campfire | CommandBlock | ChiseledBookshelf | Comparator | Conduit | Crafter | Skull | DecoratedPot | Container9 | EnchantingTable | EndGateway | Hopper | Jigsaw | Jukebox | Lectern | MovingPiston | PotentSulfur | SculkCatalyst | SculkShrieker | Spawner | StructureBlock2 | BrushableBlock | TestBlock | TestInstanceBlock | TrialSpawner | Vault | None = None
 
 

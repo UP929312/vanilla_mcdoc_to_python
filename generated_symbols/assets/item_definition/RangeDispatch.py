@@ -57,7 +57,7 @@ class RangeDispatchCustomModelData:
     entries: list[EntriesStruct]  # List of ranges. Will select last entry with threshold less or equal to value. Order does not matter, list will be sorted by threshold in ascending order.
     fallback: ItemModel | None = None  # Item model to render if no entries were less or equal to the value.
     transformation: Transformation | None = None
-    index: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The index of the `floats` list in the `custom_model_data` component. Defaults to 0.
+    index: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # The index of the `floats` list in the `custom_model_data` component. Defaults to 0.
 
 
 @dataclass(kw_only=True)

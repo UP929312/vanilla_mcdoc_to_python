@@ -79,9 +79,9 @@ type DialogConfirmation = DialogConfirmationNone | DialogConfirmationClose | Dia
 class DialogDialogListNone:
     type: Literal['minecraft:dialog_list']
     dialogs: DialogListRef
-    button_width: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # Width of buttons in the list. Defaults to 150.
+    button_width: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # Width of buttons in the list. Defaults to 150.
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
-    columns: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
+    columns: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None
@@ -95,9 +95,9 @@ class DialogDialogListNone:
 class DialogDialogListClose:
     type: Literal['minecraft:dialog_list']
     dialogs: DialogListRef
-    button_width: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # Width of buttons in the list. Defaults to 150.
+    button_width: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # Width of buttons in the list. Defaults to 150.
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
-    columns: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
+    columns: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None
@@ -111,9 +111,9 @@ class DialogDialogListClose:
 class DialogDialogListNone2:
     type: Literal['minecraft:dialog_list']
     dialogs: DialogListRef
-    button_width: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # Width of buttons in the list. Defaults to 150.
+    button_width: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # Width of buttons in the list. Defaults to 150.
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
-    columns: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
+    columns: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None
@@ -127,9 +127,9 @@ class DialogDialogListNone2:
 class DialogDialogListWaitForResponse:
     type: Literal['minecraft:dialog_list']
     dialogs: DialogListRef
-    button_width: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # Width of buttons in the list. Defaults to 150.
+    button_width: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # Width of buttons in the list. Defaults to 150.
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
-    columns: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
+    columns: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None
@@ -146,7 +146,7 @@ class DialogMultiActionNone:
     type: Literal['minecraft:multi_action']
     actions: Annotated[list[Button], 'Length = 1 (inclusive) and above']
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
-    columns: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
+    columns: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None
@@ -161,7 +161,7 @@ class DialogMultiActionClose:
     type: Literal['minecraft:multi_action']
     actions: Annotated[list[Button], 'Length = 1 (inclusive) and above']
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
-    columns: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
+    columns: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None
@@ -176,7 +176,7 @@ class DialogMultiActionNone2:
     type: Literal['minecraft:multi_action']
     actions: Annotated[list[Button], 'Length = 1 (inclusive) and above']
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
-    columns: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
+    columns: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None
@@ -191,7 +191,7 @@ class DialogMultiActionWaitForResponse:
     type: Literal['minecraft:multi_action']
     actions: Annotated[list[Button], 'Length = 1 (inclusive) and above']
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
-    columns: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
+    columns: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None
@@ -260,9 +260,9 @@ type DialogNotice = DialogNoticeNone | DialogNoticeClose | DialogNoticeNone2 | D
 @dataclass(kw_only=True)
 class DialogServerLinksNone:
     type: Literal['minecraft:server_links']
-    button_width: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # Width of buttons in the list. Defaults to 150.
+    button_width: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # Width of buttons in the list. Defaults to 150.
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
-    columns: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
+    columns: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None
@@ -275,9 +275,9 @@ class DialogServerLinksNone:
 @dataclass(kw_only=True)
 class DialogServerLinksClose:
     type: Literal['minecraft:server_links']
-    button_width: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # Width of buttons in the list. Defaults to 150.
+    button_width: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # Width of buttons in the list. Defaults to 150.
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
-    columns: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
+    columns: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None
@@ -290,9 +290,9 @@ class DialogServerLinksClose:
 @dataclass(kw_only=True)
 class DialogServerLinksNone2:
     type: Literal['minecraft:server_links']
-    button_width: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # Width of buttons in the list. Defaults to 150.
+    button_width: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # Width of buttons in the list. Defaults to 150.
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
-    columns: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
+    columns: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None
@@ -305,9 +305,9 @@ class DialogServerLinksNone2:
 @dataclass(kw_only=True)
 class DialogServerLinksWaitForResponse:
     type: Literal['minecraft:server_links']
-    button_width: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # Width of buttons in the list. Defaults to 150.
+    button_width: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # Width of buttons in the list. Defaults to 150.
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
-    columns: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
+    columns: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None

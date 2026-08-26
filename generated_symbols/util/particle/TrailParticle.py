@@ -14,7 +14,7 @@ if TYPE_CHECKING:
 class TrailParticle:
     target: tuple[float, float, float]
     color: RGB
-    duration: Annotated[int, 'Range | Min `1` and above | inclusive']
+    duration: Annotated[int, 'Range | `1` and above | inclusive']
 
 
 # ~~~ MODEL DUMP ~~~

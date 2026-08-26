@@ -13,7 +13,7 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class SwingAnimation:
     type: SwingAnimationType | None = None  # The animation type to play when attacking or interacting using this item. Defaults to `whack`.
-    duration: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # The animation duration in ticks. Defaults to 6
+    duration: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # The animation duration in ticks. Defaults to 6
 
 
 # ~~~ MODEL DUMP ~~~

@@ -25,7 +25,7 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class EnvironmentAttributeCheck:
     attribute: Annotated[str, IdSpec(registry='environment_attribute')] | KnownEnvironmentAttributeId
-    value: Any | AmbientSounds | BackgroundMusic | bool | Annotated[float, 'Range | `0`-`1` | both inclusive'] | Annotated[str, IdSpec(registry='activity')] | BedRule | Annotated[float, 'Range | `0`-`0.9999999` | both inclusive'] | TriState | NaturalMobSpawns | Annotated[float, 'Range | `0`-`15` | both inclusive'] | StringRGB | list[AmbientParticle] | StringARGB | Annotated[float, 'Range | Min `0` and above | inclusive'] | float | Particle | MoonPhase
+    value: Any | AmbientSounds | BackgroundMusic | bool | Annotated[float, 'Range | `0`-`1` | both inclusive'] | Annotated[str, IdSpec(registry='activity')] | BedRule | Annotated[float, 'Range | `0`-`0.9999999` | both inclusive'] | TriState | NaturalMobSpawns | Annotated[float, 'Range | `0`-`15` | both inclusive'] | StringRGB | list[AmbientParticle] | StringARGB | Annotated[float, 'Range | `0` and above | inclusive'] | float | Particle | MoonPhase
 
 
 # ~~~ MODEL DUMP ~~~

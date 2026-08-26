@@ -9,7 +9,7 @@ from typing import Annotated
 
 @dataclass(kw_only=True)
 class GeyserParticle:
-    water_blocks: Annotated[int, 'Range | Min `1` and above | inclusive']  # Scales the particle size and its burst impulse.
+    water_blocks: Annotated[int, 'Range | `1` and above | inclusive']  # Scales the particle size and its burst impulse.
 
 
 # ~~~ MODEL DUMP ~~~

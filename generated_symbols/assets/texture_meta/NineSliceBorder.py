@@ -9,10 +9,10 @@ from typing import Annotated
 
 @dataclass(kw_only=True)
 class NineSliceBorder:
-    left: Annotated[int, 'Range | Min `0` and above | inclusive']
-    top: Annotated[int, 'Range | Min `0` and above | inclusive']
-    right: Annotated[int, 'Range | Min `0` and above | inclusive']
-    bottom: Annotated[int, 'Range | Min `0` and above | inclusive']
+    left: Annotated[int, 'Range | `0` and above | inclusive']
+    top: Annotated[int, 'Range | `0` and above | inclusive']
+    right: Annotated[int, 'Range | `0` and above | inclusive']
+    bottom: Annotated[int, 'Range | `0` and above | inclusive']
 
 
 # ~~~ MODEL DUMP ~~~

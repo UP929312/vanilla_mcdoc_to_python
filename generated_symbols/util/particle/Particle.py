@@ -102,26 +102,26 @@ class ParticleFlash:
 @dataclass(kw_only=True)
 class ParticleGeyser:
     type: Literal['minecraft:geyser']
-    water_blocks: Annotated[int, 'Range | Min `1` and above | inclusive']  # Scales the particle size and its burst impulse.
+    water_blocks: Annotated[int, 'Range | `1` and above | inclusive']  # Scales the particle size and its burst impulse.
 
 
 @dataclass(kw_only=True)
 class ParticleGeyserBase:
     type: Literal['minecraft:geyser_base']
-    water_blocks: Annotated[int, 'Range | Min `1` and above | inclusive']  # Scales the particle size and its burst impulse.
+    water_blocks: Annotated[int, 'Range | `1` and above | inclusive']  # Scales the particle size and its burst impulse.
     burst_impulse_base: float  # Scales the initial burst impulse
 
 
 @dataclass(kw_only=True)
 class ParticleGeyserPlume:
     type: Literal['minecraft:geyser_plume']
-    water_blocks: Annotated[int, 'Range | Min `1` and above | inclusive']  # Scales the particle size and its burst impulse.
+    water_blocks: Annotated[int, 'Range | `1` and above | inclusive']  # Scales the particle size and its burst impulse.
 
 
 @dataclass(kw_only=True)
 class ParticleGeyserPoof:
     type: Literal['minecraft:geyser_poof']
-    water_blocks: Annotated[int, 'Range | Min `1` and above | inclusive']  # Scales the particle size and its burst impulse.
+    water_blocks: Annotated[int, 'Range | `1` and above | inclusive']  # Scales the particle size and its burst impulse.
     burst_impulse_base: float  # Scales the initial burst impulse
 
 
@@ -147,7 +147,7 @@ class ParticleSculkCharge:
 @dataclass(kw_only=True)
 class ParticleShriek:
     type: Literal['minecraft:shriek']
-    delay: Annotated[int, 'Range | Min `0` and above | inclusive']  # Ticks until the particle renders.
+    delay: Annotated[int, 'Range | `0` and above | inclusive']  # Ticks until the particle renders.
 
 
 @dataclass(kw_only=True)
@@ -161,7 +161,7 @@ class ParticleTrail:
     type: Literal['minecraft:trail']
     target: tuple[float, float, float]
     color: RGB
-    duration: Annotated[int, 'Range | Min `1` and above | inclusive']
+    duration: Annotated[int, 'Range | `1` and above | inclusive']
 
 
 @dataclass(kw_only=True)

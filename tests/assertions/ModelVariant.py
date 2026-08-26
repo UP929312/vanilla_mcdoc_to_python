@@ -16,7 +16,7 @@ from generated_symbols.assets.block_state_definition.ModelVariantBase import Mod
 
 @dataclass(kw_only=True)
 class ModelVariantStruct(ModelVariantBase):
-    weight: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None
+    weight: Annotated[int, 'Range | `1` and above | inclusive'] | None = None
 
 
 type ModelVariant = ModelVariantBase | list[ModelVariantStruct]

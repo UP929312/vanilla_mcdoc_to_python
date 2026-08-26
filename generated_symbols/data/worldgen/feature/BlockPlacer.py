@@ -13,7 +13,7 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class BlockPlacerColumnPlacer:
     type: Literal['minecraft:column_placer']
-    size: IntProvider[Annotated[int, 'Range | Min `0` and above | inclusive']] | Annotated[int, 'Range | Min `0` and above | inclusive']
+    size: IntProvider[Annotated[int, 'Range | `0` and above | inclusive']] | Annotated[int, 'Range | `0` and above | inclusive']
 
 
 @dataclass(kw_only=True)

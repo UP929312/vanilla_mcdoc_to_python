@@ -12,8 +12,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class StructureEntity:
-    pos: tuple[Annotated[float, 'Range | Min `0` and above | inclusive'], Annotated[float, 'Range | Min `0` and above | inclusive'], Annotated[float, 'Range | Min `0` and above | inclusive']]
-    blockPos: tuple[Annotated[int, 'Range | Min `0` and above | inclusive'], Annotated[int, 'Range | Min `0` and above | inclusive'], Annotated[int, 'Range | Min `0` and above | inclusive']]
+    pos: tuple[Annotated[float, 'Range | `0` and above | inclusive'], Annotated[float, 'Range | `0` and above | inclusive'], Annotated[float, 'Range | `0` and above | inclusive']]
+    blockPos: tuple[Annotated[int, 'Range | `0` and above | inclusive'], Annotated[int, 'Range | `0` and above | inclusive'], Annotated[int, 'Range | `0` and above | inclusive']]
     nbt: AnyEntity
 
 

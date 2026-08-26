@@ -14,7 +14,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class CopperGolem(MobBase):
-    next_weather_age: Annotated[int, 'Range | Min `-2` and above | inclusive'] | None = None  # Gametime in ticks when the copper golem oxidizes.  `-2` represents "waxed"  `-1` will be replaced with a random time between 504000 and 552000 ticks later
+    next_weather_age: Annotated[int, 'Range | `-2` and above | inclusive'] | None = None  # Gametime in ticks when the copper golem oxidizes.  `-2` represents "waxed"  `-1` will be replaced with a random time between 504000 and 552000 ticks later
     weather_state: WeatherState | None = None
 
 

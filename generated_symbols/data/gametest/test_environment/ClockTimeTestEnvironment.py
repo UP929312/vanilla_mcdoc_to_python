@@ -14,7 +14,7 @@ class ClockTimeTestEnvironment:
     __resource_dir__: ClassVar[str] = 'test_environment'
 
     clock: Annotated[str, IdSpec(registry='world_clock')]
-    time: Annotated[int, 'Range | Min `0` and above | inclusive']
+    time: Annotated[int, 'Range | `0` and above | inclusive']
 
 
 # ~~~ MODEL DUMP ~~~

@@ -20,7 +20,7 @@ class RandomIntGeneratorStructNone:
 @dataclass(kw_only=True)
 class RandomIntGeneratorStructBinomial:
     type: Literal['minecraft:binomial'] | None = None
-    n: Annotated[int, 'Range | Min `0` and above | inclusive']
+    n: Annotated[int, 'Range | `0` and above | inclusive']
     p: Annotated[float, 'Range | `0`-`1` | both inclusive']
 
 

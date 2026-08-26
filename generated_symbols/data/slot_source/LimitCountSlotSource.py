@@ -15,7 +15,7 @@ class LimitCountSlotSource:
     __resource_dir__: ClassVar[str] = 'slot_source'
 
     slot_source: SlotSource
-    limit: Annotated[int, 'Range | Min `1` and above | inclusive']
+    limit: Annotated[int, 'Range | `1` and above | inclusive']
 
 
 # ~~~ MODEL DUMP ~~~

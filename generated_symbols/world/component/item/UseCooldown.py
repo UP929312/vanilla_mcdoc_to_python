@@ -11,7 +11,7 @@ from minecraft_registry import IdSpec
 
 @dataclass(kw_only=True)
 class UseCooldown:
-    seconds: Annotated[float, 'Range | Min `0` and above | inclusive']  # Time the cooldown will last.
+    seconds: Annotated[float, 'Range | `Above 0` | exclusive']  # Time the cooldown will last.
     cooldown_group: Annotated[str, IdSpec(registry='cooldown_group', definition=True)] | None = None  # If present, this item will be part of a cooldown group and no longer share cooldowns with its base item type. Instead, cooldowns applied to this item will only be shared with any other items that are part of the same cooldown group.
 
 

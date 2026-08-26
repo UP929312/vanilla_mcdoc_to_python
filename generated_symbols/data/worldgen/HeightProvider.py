@@ -16,7 +16,7 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class HeightProviderStructBiasedToBottom(UniformHeightProvider):
     type: Literal['minecraft:biased_to_bottom']
-    inner: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None
+    inner: Annotated[int, 'Range | `1` and above | inclusive'] | None = None
 
 
 @dataclass(kw_only=True)
@@ -41,7 +41,7 @@ class HeightProviderStructUniform:
 @dataclass(kw_only=True)
 class HeightProviderStructVeryBiasedToBottom(UniformHeightProvider):
     type: Literal['minecraft:very_biased_to_bottom']
-    inner: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None
+    inner: Annotated[int, 'Range | `1` and above | inclusive'] | None = None
 
 
 @dataclass(kw_only=True)

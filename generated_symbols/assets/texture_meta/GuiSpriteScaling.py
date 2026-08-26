@@ -13,9 +13,9 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class GuiSpriteScalingNineSlice:
     type: Literal['minecraft:nine_slice']
-    width: Annotated[int, 'Range | Min `1` and above | inclusive']
-    height: Annotated[int, 'Range | Min `1` and above | inclusive']
-    border: Annotated[int, 'Range | Min `1` and above | inclusive'] | NineSliceBorder
+    width: Annotated[int, 'Range | `1` and above | inclusive']
+    height: Annotated[int, 'Range | `1` and above | inclusive']
+    border: Annotated[int, 'Range | `1` and above | inclusive'] | NineSliceBorder
     stretch_inner: bool | None = None  # Defaults to `false`.
 
 
@@ -27,8 +27,8 @@ class GuiSpriteScalingStretch:
 @dataclass(kw_only=True)
 class GuiSpriteScalingTile:
     type: Literal['minecraft:tile']
-    width: Annotated[int, 'Range | Min `1` and above | inclusive']
-    height: Annotated[int, 'Range | Min `1` and above | inclusive']
+    width: Annotated[int, 'Range | `1` and above | inclusive']
+    height: Annotated[int, 'Range | `1` and above | inclusive']
 
 
 type GuiSpriteScaling = GuiSpriteScalingNineSlice | GuiSpriteScalingStretch | GuiSpriteScalingTile

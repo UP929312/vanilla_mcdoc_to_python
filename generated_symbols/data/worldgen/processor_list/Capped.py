@@ -14,7 +14,7 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class Capped:
     delegate: Processor
-    limit: IntProvider[Annotated[int, 'Range | Min `0` and above | inclusive']] | Annotated[int, 'Range | Min `0` and above | inclusive']
+    limit: IntProvider[Annotated[int, 'Range | `0` and above | inclusive']] | Annotated[int, 'Range | `0` and above | inclusive']
 
 
 # ~~~ MODEL DUMP ~~~

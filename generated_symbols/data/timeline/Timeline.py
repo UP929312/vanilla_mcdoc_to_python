@@ -17,7 +17,7 @@ if TYPE_CHECKING:
 class Timeline:
     __resource_dir__: ClassVar[str] = 'timeline'
 
-    period_ticks: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # When not present, the timeline will not repeat.
+    period_ticks: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # When not present, the timeline will not repeat.
     clock: Annotated[str, IdSpec(registry='world_clock')]  # The world clock this timeline is tied to.
     time_markers: TimeMarkerMap | None = None
     tracks: EnvironmentAttributeTrackMap | None = None

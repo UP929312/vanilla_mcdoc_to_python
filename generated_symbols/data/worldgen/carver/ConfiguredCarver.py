@@ -26,8 +26,8 @@ class ConfiguredCarverCanyon(CarverConfigBase):
 @dataclass(kw_only=True)
 class ConfiguredCarverCave(CarverConfigBase):
     type: Literal['minecraft:cave']
-    count: IntProvider[Annotated[int, 'Range | Min `0` and above | inclusive']] | Annotated[int, 'Range | Min `0` and above | inclusive']
-    thickness: FloatProvider[Annotated[float, 'Range | Min `0` and above | inclusive']] | Annotated[float, 'Range | Min `0` and above | inclusive']
+    count: IntProvider[Annotated[int, 'Range | `0` and above | inclusive']] | Annotated[int, 'Range | `0` and above | inclusive']
+    thickness: FloatProvider[Annotated[float, 'Range | `0` and above | inclusive']] | Annotated[float, 'Range | `0` and above | inclusive']
     weird_thickness_bias: bool | None = None  # Defaults to `false`.
     room_vertical_radius_multiplier: FloatProvider[float] | float
     horizontal_radius_multiplier: FloatProvider[float] | float

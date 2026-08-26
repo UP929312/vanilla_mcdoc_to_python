@@ -13,8 +13,8 @@ from minecraft_registry import IdSpec
 class TextureInput:
     location: Annotated[str, IdSpec(registry='texture', path='effect/')]
     sampler_name: str
-    width: Annotated[int, 'Range | Min `1` and above | inclusive']
-    height: Annotated[int, 'Range | Min `1` and above | inclusive']
+    width: Annotated[int, 'Range | `1` and above | inclusive']
+    height: Annotated[int, 'Range | `1` and above | inclusive']
     bilinear: bool | None = None
 
 

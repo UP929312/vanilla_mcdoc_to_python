@@ -61,7 +61,7 @@ class ValueRange(BaseModel):
     Kind:
     0 = min inclusive, max inclusive
     1 = min inclusive, max exclusive (currently not used)
-    2 = min exclusive, max inclusive  # TODO: This is used but the exclusive needs mentioning in the Annotated.
+    2 = min exclusive, max inclusive
     3 = min exclusive, max exclusive (currently not used)
     """
     kind: Literal[0, 1, 2, 3] = Field(default = 0, repr=False)
@@ -70,9 +70,18 @@ class ValueRange(BaseModel):
 
     def to_annotation(self, ctx: SingleSymbolContext, value_range_type: Literal["int", "float"], attributes: list[Attribute]) -> str:
         if self.max is not None:
-            parts = ["Range", f"`{self.min or '0'}`-`{self.max or '0'}`", "both inclusive"]
-        else:
-            parts = ["Range", f"Min `{self.min or '0'}` and above", "inclusive"]
+            _INCLUSIVITY_TEXT_BOTH = {
+                0: "both inclusive",
+                1: "min inclusive, max exclusive",
+                2: "min exclusive, max inclusive",
+                3: "both exclusive",
+            }
+            parts = ["Range", f"`{self.min}`-`{self.max}`", _INCLUSIVITY_TEXT_BOTH[self.kind]]
+        # In cases where self.max _IS_ None:
+        elif self.kind in {0, 1}:  # Min is inclusive
+            parts = ["Range", f"`{self.min}` and above", "inclusive"]
+        else:  # Kind in 2, 3 - Min is exclusive
+            parts = ["Range", f"`Above {self.min}`", "exclusive"]
         if self.extract_divisible_by_value(attributes):
             parts.append(f"divisible by {self.extract_divisible_by_value(attributes)}")
         ctx.require_annotated()
@@ -94,7 +103,7 @@ class LengthRange(BaseModel):
     def to_annotation_suffix(self) -> str:
         if self.min is not None and self.max is not None:
             if self.min == self.max:
-                return f"Length = {self.min}"
+                return f"Length = Exactly {self.min}"
             return f"Length = {self.min}-{self.max} (both inclusive)"
         if self.min is not None:
             return f"Length = {self.min} (inclusive) and above"
@@ -366,7 +375,7 @@ class EnumSchema(BaseSchema):
         return self
 
     def to_python_code(self, class_name: str, ctx: SingleSymbolContext) -> list[str]:
-        enum_kind = f"StrEnum" if self.enum_kind == "string" else "IntEnum"
+        enum_kind = "StrEnum" if self.enum_kind == "string" else "IntEnum"
         ctx.required_imports.add(Import("enum", enum_kind, False, True))
         return [f"class {class_name}({enum_kind}):"] + [
             f"    {value.identifier.upper()} = {value.to_annotation()}{value.description_comment_or_empty}"

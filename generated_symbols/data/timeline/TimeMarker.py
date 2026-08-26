@@ -9,7 +9,7 @@ from typing import Annotated
 
 @dataclass(kw_only=True)
 class TimeMarker:
-    ticks: Annotated[int, 'Range | Min `0` and above | inclusive']
+    ticks: Annotated[int, 'Range | `0` and above | inclusive']
     show_in_commands: bool | None = None  # Whether the time marker shows up in command suggestions.  The time marker is still available in commands even if it is not suggested.  Defaults to `false`.
 
 

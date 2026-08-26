@@ -39,7 +39,7 @@ class ProcessorBlockRot:
 class ProcessorCapped:
     processor_type: Literal['minecraft:capped']
     delegate: Processor
-    limit: IntProvider[Annotated[int, 'Range | Min `0` and above | inclusive']] | Annotated[int, 'Range | Min `0` and above | inclusive']
+    limit: IntProvider[Annotated[int, 'Range | `0` and above | inclusive']] | Annotated[int, 'Range | `0` and above | inclusive']
 
 
 @dataclass(kw_only=True)

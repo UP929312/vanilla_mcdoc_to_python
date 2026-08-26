@@ -152,9 +152,9 @@ class ConfiguredFeatureFillLayer:
 @dataclass(kw_only=True)
 class ConfiguredFeatureFlower:
     type: Literal['minecraft:flower']
-    tries: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # How many attempts will be made to find a placement. Defaults to 128.
-    xz_spread: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # Defaults to 7.
-    y_spread: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # Defaults to 3.
+    tries: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # How many attempts will be made to find a placement. Defaults to 128.
+    xz_spread: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # Defaults to 7.
+    y_spread: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # Defaults to 3.
     feature: FeatureRef
 
 
@@ -290,9 +290,9 @@ class ConfiguredFeatureNetherrackReplaceBlobs:
 @dataclass(kw_only=True)
 class ConfiguredFeatureNoBonemealFlower:
     type: Literal['minecraft:no_bonemeal_flower']
-    tries: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # How many attempts will be made to find a placement. Defaults to 128.
-    xz_spread: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # Defaults to 7.
-    y_spread: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # Defaults to 3.
+    tries: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # How many attempts will be made to find a placement. Defaults to 128.
+    xz_spread: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # Defaults to 7.
+    y_spread: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # Defaults to 3.
     feature: FeatureRef
 
 
@@ -324,7 +324,7 @@ class ConfiguredFeatureProjectedRandomPatchySquare:
     block: BlockStateProvider
     project_through: BlockPredicate
     size: IntProvider[Annotated[int, 'Range | `1`-`16` | both inclusive']] | Annotated[int, 'Range | `1`-`16` | both inclusive']
-    max_projection_height: Annotated[int, 'Range | Min `0` and above | inclusive']
+    max_projection_height: Annotated[int, 'Range | `0` and above | inclusive']
 
 
 @dataclass(kw_only=True)
@@ -348,9 +348,9 @@ class ConfiguredFeatureRandomNeighborSpread:
 @dataclass(kw_only=True)
 class ConfiguredFeatureRandomPatch:
     type: Literal['minecraft:random_patch']
-    tries: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # How many attempts will be made to find a placement. Defaults to 128.
-    xz_spread: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # Defaults to 7.
-    y_spread: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # Defaults to 3.
+    tries: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # How many attempts will be made to find a placement. Defaults to 128.
+    xz_spread: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # Defaults to 7.
+    y_spread: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # Defaults to 3.
     feature: FeatureRef
 
 

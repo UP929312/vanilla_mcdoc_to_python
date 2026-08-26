@@ -14,7 +14,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class Consumable:
-    consume_seconds: Annotated[float, 'Range | Min `0` and above | inclusive'] | None = None  # Time taken for a player to consume the item. Defaults to 1.6.
+    consume_seconds: Annotated[float, 'Range | `0` and above | inclusive'] | None = None  # Time taken for a player to consume the item. Defaults to 1.6.
     animation: ItemUseAnimation | None = None  # View model/arms animation used during consumption of the item. Defaults to `eat`.
     sound: SoundEventRef | None = None  # Sound played during and on completion of item consumption.
     has_consume_particles: bool | None = None  # Whether the `item` particle is emitted while consuming the item. Defaults to `true`.

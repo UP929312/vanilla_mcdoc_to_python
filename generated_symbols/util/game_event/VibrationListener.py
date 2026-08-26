@@ -14,10 +14,10 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class VibrationListener:
     source: PositionSource
-    range: Annotated[int, 'Range | Min `1` and above | inclusive']  # Range in blocks where vibrations can be detected
+    range: Annotated[int, 'Range | `1` and above | inclusive']  # Range in blocks where vibrations can be detected
     event: ReceivingEvent | None = None  # Event that is being received, if any
-    event_distance: Annotated[float, 'Range | Min `0` and above | inclusive'] | None = None  # Distance in blocks to the event that is being received
-    event_delay: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # Delay in ticks until the event reaches this listener
+    event_distance: Annotated[float, 'Range | `0` and above | inclusive'] | None = None  # Distance in blocks to the event that is being received
+    event_delay: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # Delay in ticks until the event reaches this listener
 
 
 # ~~~ MODEL DUMP ~~~

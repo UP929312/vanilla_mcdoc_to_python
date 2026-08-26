@@ -13,7 +13,7 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class BendingTrunkPlacer:
     bend_length: IntProvider[Annotated[int, 'Range | `1`-`64` | both inclusive']] | Annotated[int, 'Range | `1`-`64` | both inclusive']
-    min_height_for_leaves: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None
+    min_height_for_leaves: Annotated[int, 'Range | `1` and above | inclusive'] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

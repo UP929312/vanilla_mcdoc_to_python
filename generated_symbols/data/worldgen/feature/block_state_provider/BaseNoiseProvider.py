@@ -14,7 +14,7 @@ if TYPE_CHECKING:
 class BaseNoiseProvider:
     seed: int
     noise: NoiseParameters
-    scale: Annotated[float, 'Range | Min `0` and above | inclusive']
+    scale: Annotated[float, 'Range | `0` and above | inclusive']
 
 
 # ~~~ MODEL DUMP ~~~

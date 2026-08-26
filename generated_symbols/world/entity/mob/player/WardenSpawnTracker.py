@@ -9,8 +9,8 @@ from typing import Annotated
 
 @dataclass(kw_only=True)
 class WardenSpawnTracker:
-    cooldown_ticks: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # Ticks before the `warning_level` can be increased again. Decreases by 1 every tick. It is set to 200 game ticks (10 seconds) every time the warning level is increased.
-    ticks_since_last_warning: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # Ticks since the player was warned for warden spawning. Increases by 1 every tick. After 12000 game ticks (10 minutes) it will be set back to 0, and the `warning_level` will be decreased by 1.
+    cooldown_ticks: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # Ticks before the `warning_level` can be increased again. Decreases by 1 every tick. It is set to 200 game ticks (10 seconds) every time the warning level is increased.
+    ticks_since_last_warning: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # Ticks since the player was warned for warden spawning. Increases by 1 every tick. After 12000 game ticks (10 minutes) it will be set back to 0, and the `warning_level` will be decreased by 1.
     warning_level: Annotated[int, 'Range | `0`-`4` | both inclusive'] | None = None  # The current warning level. The warden will spawn at level `4`.
 
 

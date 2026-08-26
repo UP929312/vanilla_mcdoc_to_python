@@ -28,7 +28,7 @@ class Enchantment:
     max_level: Annotated[int, 'Range | `1`-`255` | both inclusive']  # Maximum level of the enchantment.
     min_cost: EnchantmentCost  # Minimum experience cost.
     max_cost: EnchantmentCost  # Maximum experience cost.
-    anvil_cost: Annotated[int, 'Range | Min `0` and above | inclusive']  # Halved when an Enchantment is added to a book. The effective fee is multiplied by the level of the Enchantment.
+    anvil_cost: Annotated[int, 'Range | `0` and above | inclusive']  # Halved when an Enchantment is added to a book. The effective fee is multiplied by the level of the Enchantment.
     slots: list[EquipmentSlotGroup]
     effects: EnchantmentEffectComponentMap | None = None
 

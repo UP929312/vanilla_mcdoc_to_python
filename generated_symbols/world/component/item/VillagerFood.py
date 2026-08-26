@@ -9,7 +9,7 @@ from typing import Annotated
 
 @dataclass(kw_only=True)
 class VillagerFood:
-    nutrition: Annotated[int, 'Range | Min `1` and above | inclusive']  # How much hunger the item satiates in the Villager once eaten.
+    nutrition: Annotated[int, 'Range | `1` and above | inclusive']  # How much hunger the item satiates in the Villager once eaten.
 
 
 # ~~~ MODEL DUMP ~~~

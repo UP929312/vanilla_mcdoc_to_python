@@ -15,8 +15,8 @@ class ByCostWithDifficultyEnchantmentProvider:
     __resource_dir__: ClassVar[str] = 'enchantment_provider'
 
     enchantments: EnchantmentsType
-    min_cost: Annotated[int, 'Range | Min `0` and above | inclusive']  # Positive integer representing the minimum possible cost
-    max_cost_span: Annotated[int, 'Range | Min `0` and above | inclusive']  # Span of the cost randomization when the special factor is at its maximum.
+    min_cost: Annotated[int, 'Range | `0` and above | inclusive']  # Positive integer representing the minimum possible cost
+    max_cost_span: Annotated[int, 'Range | `0` and above | inclusive']  # Span of the cost randomization when the special factor is at its maximum.
 
 
 # ~~~ MODEL DUMP ~~~

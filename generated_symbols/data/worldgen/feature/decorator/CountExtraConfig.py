@@ -9,8 +9,8 @@ from typing import Annotated
 
 @dataclass(kw_only=True)
 class CountExtraConfig:
-    count: Annotated[int, 'Range | Min `0` and above | inclusive']
-    extra_count: Annotated[int, 'Range | Min `0` and above | inclusive']
+    count: Annotated[int, 'Range | `0` and above | inclusive']
+    extra_count: Annotated[int, 'Range | `0` and above | inclusive']
     extra_chance: Annotated[float, 'Range | `0`-`1` | both inclusive']
 
 

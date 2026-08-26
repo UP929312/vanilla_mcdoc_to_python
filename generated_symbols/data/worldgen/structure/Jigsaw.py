@@ -18,8 +18,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class DimensionPaddingStruct:
-    bottom: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None
-    top: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None
+    bottom: Annotated[int, 'Range | `0` and above | inclusive'] | None = None
+    top: Annotated[int, 'Range | `0` and above | inclusive'] | None = None
 
 
 @dataclass(kw_only=True)
@@ -34,7 +34,7 @@ class Jigsaw:
     max_distance_from_center: Annotated[int, 'Range | `1`-`128` | both inclusive'] | JigsawDistanceLimits[Annotated[int, 'Range | `1`-`128` | both inclusive']] | Annotated[int, 'Range | `1`-`128` | both inclusive'] | Annotated[int, 'Range | `1`-`116` | both inclusive'] | JigsawDistanceLimits[Annotated[int, 'Range | `1`-`116` | both inclusive']] | Annotated[int, 'Range | `1`-`116` | both inclusive']
     use_expansion_hack: bool
     pool_aliases: list[PoolAlias] | None = None
-    dimension_padding: Annotated[int, 'Range | Min `0` and above | inclusive'] | DimensionPaddingStruct | None = None
+    dimension_padding: Annotated[int, 'Range | `0` and above | inclusive'] | DimensionPaddingStruct | None = None
     liquid_settings: LiquidSettings | None = None
 
 

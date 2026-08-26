@@ -9,8 +9,8 @@ from typing import Annotated
 
 @dataclass(kw_only=True)
 class TileScaling:
-    width: Annotated[int, 'Range | Min `1` and above | inclusive']
-    height: Annotated[int, 'Range | Min `1` and above | inclusive']
+    width: Annotated[int, 'Range | `1` and above | inclusive']
+    height: Annotated[int, 'Range | `1` and above | inclusive']
 
 
 # ~~~ MODEL DUMP ~~~

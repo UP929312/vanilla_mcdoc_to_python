@@ -21,7 +21,7 @@ class TrunkPlacerBendingTrunkPlacer:
     height_rand_a: Annotated[int, 'Range | `0`-`24` | both inclusive']
     height_rand_b: Annotated[int, 'Range | `0`-`24` | both inclusive']
     bend_length: IntProvider[Annotated[int, 'Range | `1`-`64` | both inclusive']] | Annotated[int, 'Range | `1`-`64` | both inclusive']
-    min_height_for_leaves: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None
+    min_height_for_leaves: Annotated[int, 'Range | `1` and above | inclusive'] | None = None
 
 
 @dataclass(kw_only=True)
@@ -100,8 +100,8 @@ class TrunkPlacerUpwardsBranchingTrunkPlacer:
     base_height: Annotated[int, 'Range | `0`-`32` | both inclusive']
     height_rand_a: Annotated[int, 'Range | `0`-`24` | both inclusive']
     height_rand_b: Annotated[int, 'Range | `0`-`24` | both inclusive']
-    extra_branch_steps: IntProvider[Annotated[int, 'Range | Min `1` and above | inclusive']] | Annotated[int, 'Range | Min `1` and above | inclusive']
-    extra_branch_length: IntProvider[Annotated[int, 'Range | Min `0` and above | inclusive']] | Annotated[int, 'Range | Min `0` and above | inclusive']
+    extra_branch_steps: IntProvider[Annotated[int, 'Range | `1` and above | inclusive']] | Annotated[int, 'Range | `1` and above | inclusive']
+    extra_branch_length: IntProvider[Annotated[int, 'Range | `0` and above | inclusive']] | Annotated[int, 'Range | `0` and above | inclusive']
     place_branch_per_log_probability: Annotated[float, 'Range | `0`-`1` | both inclusive']
     can_grow_through: list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId
 

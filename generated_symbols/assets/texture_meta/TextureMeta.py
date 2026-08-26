@@ -15,17 +15,17 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class FramesStruct:
-    index: Annotated[int, 'Range | Min `0` and above | inclusive']  # A number corresponding to position of a frame from the top, with the top frame being 0.
-    time: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # The time in ticks to show this frame, overriding `frametime` above.
+    index: Annotated[int, 'Range | `0` and above | inclusive']  # A number corresponding to position of a frame from the top, with the top frame being 0.
+    time: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The time in ticks to show this frame, overriding `frametime` above.
 
 
 @dataclass(kw_only=True)
 class AnimationStruct:
     interpolate: bool | None = None  # If true, additional frames will be generated between frames with a frame time greater than 1 between them. Defaults to false.
-    width: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # The width of the tile, as a direct ratio rather than in pixels. Can be used by resource packs to have frames that are not perfect squares.
-    height: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # The height of the tile, as a direct ratio rather than in pixels. Can be used by resource packs to have frames that are not perfect squares.
-    frametime: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # Sets the default time for each frame in increments of one game tick. Defaults to 1.
-    frames: list[FramesStruct | Annotated[int, 'Range | Min `0` and above | inclusive']] | None = None  # Defaults to displaying all the frames from top to bottom.
+    width: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The width of the tile, as a direct ratio rather than in pixels. Can be used by resource packs to have frames that are not perfect squares.
+    height: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The height of the tile, as a direct ratio rather than in pixels. Can be used by resource packs to have frames that are not perfect squares.
+    frametime: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # Sets the default time for each frame in increments of one game tick. Defaults to 1.
+    frames: list[FramesStruct | Annotated[int, 'Range | `0` and above | inclusive']] | None = None  # Defaults to displaying all the frames from top to bottom.
 
 
 @dataclass(kw_only=True)

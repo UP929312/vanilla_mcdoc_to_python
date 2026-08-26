@@ -12,7 +12,7 @@ from minecraft_registry import IdSpec
 @dataclass(kw_only=True)
 class StructureSetElement:
     structure: Annotated[str, IdSpec(registry='worldgen/structure')]
-    weight: Annotated[int, 'Range | Min `1` and above | inclusive']
+    weight: Annotated[int, 'Range | `1` and above | inclusive']
 
 
 # ~~~ MODEL DUMP ~~~

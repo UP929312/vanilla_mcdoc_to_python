@@ -13,7 +13,7 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class Effect:
     EffectId: EffectId | None = None
-    EffectDuration: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # Duration in ticks.
+    EffectDuration: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # Duration in ticks.
 
 
 # ~~~ MODEL DUMP ~~~

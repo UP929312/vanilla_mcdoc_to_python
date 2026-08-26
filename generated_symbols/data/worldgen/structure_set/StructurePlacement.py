@@ -17,7 +17,7 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class StructurePlacementUnknown:
     type: Annotated[str, IdSpec(registry='worldgen/structure_placement')]
-    salt: Annotated[int, 'Range | Min `0` and above | inclusive']
+    salt: Annotated[int, 'Range | `0` and above | inclusive']
     frequency_reduction_method: FrequencyReductionMethod | None = None
     frequency: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
     exclusion_zone: ExclusionZone | None = None
@@ -27,7 +27,7 @@ class StructurePlacementUnknown:
 @dataclass(kw_only=True)
 class StructurePlacementConcentricRings:
     type: Literal['minecraft:concentric_rings']
-    salt: Annotated[int, 'Range | Min `0` and above | inclusive']
+    salt: Annotated[int, 'Range | `0` and above | inclusive']
     frequency_reduction_method: FrequencyReductionMethod | None = None
     frequency: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
     exclusion_zone: ExclusionZone | None = None
@@ -41,7 +41,7 @@ class StructurePlacementConcentricRings:
 @dataclass(kw_only=True)
 class StructurePlacementRandomSpread:
     type: Literal['minecraft:random_spread']
-    salt: Annotated[int, 'Range | Min `0` and above | inclusive']
+    salt: Annotated[int, 'Range | `0` and above | inclusive']
     frequency_reduction_method: FrequencyReductionMethod | None = None
     frequency: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
     exclusion_zone: ExclusionZone | None = None

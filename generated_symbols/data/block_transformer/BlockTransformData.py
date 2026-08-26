@@ -30,7 +30,7 @@ class BlockTransformData:
     transform_type: BlockTransformType | None = None  # How nearby blocks are affected by the transformation.  Defaults to `single_block`.
     update_from_neighbors: bool | None = None  # Whether the transformed block should update based on neighboring blocks.  Defaults to `true`.
     consume_on_use: bool | None = None  # Only has effect on stackable items.  Defaults to `true`.
-    item_damage_per_use: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # Only has effect on unstackable items.  Defauls to 1.
+    item_damage_per_use: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # Only has effect on unstackable items.  Defauls to 1.
 
 
 # ~~~ MODEL DUMP ~~~

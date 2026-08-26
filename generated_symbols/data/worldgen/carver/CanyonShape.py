@@ -14,7 +14,7 @@ if TYPE_CHECKING:
 class CanyonShape:
     distance_factor: FloatProvider[float] | float
     thickness: FloatProvider[float] | float
-    width_smoothness: Annotated[int, 'Range | Min `0` and above | inclusive']
+    width_smoothness: Annotated[int, 'Range | `0` and above | inclusive']
     horizontal_radius_factor: FloatProvider[float] | float
     vertical_radius_default_factor: float
     vertical_radius_center_factor: float

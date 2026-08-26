@@ -12,7 +12,7 @@ from minecraft_registry import IdSpec
 @dataclass(kw_only=True)
 class SuspiciousStewEffect:
     id: Annotated[str, IdSpec(registry='mob_effect')]
-    duration: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # Duration of the effect in ticks. Defaults to `160`; 8 seconds.
+    duration: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # Duration of the effect in ticks. Defaults to `160`; 8 seconds.
 
 
 # ~~~ MODEL DUMP ~~~

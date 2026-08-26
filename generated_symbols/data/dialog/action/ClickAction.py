@@ -17,7 +17,7 @@ if TYPE_CHECKING:
 @dataclass(kw_only=True)
 class ClickActionChangePage:
     type: Literal['minecraft:change_page']
-    page: Annotated[int, 'Range | Min `1` and above | inclusive']  # The page number to go to.
+    page: Annotated[int, 'Range | `1` and above | inclusive']  # The page number to go to.
 
 
 @dataclass(kw_only=True)

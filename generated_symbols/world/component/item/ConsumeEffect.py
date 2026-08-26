@@ -40,7 +40,7 @@ class ConsumeEffectRemoveEffects:
 @dataclass(kw_only=True)
 class ConsumeEffectTeleportRandomly:
     type: Literal['minecraft:teleport_randomly']
-    diameter: Annotated[float, 'Range | Min `1` and above | inclusive'] | None = None  # Defaults to 16.
+    diameter: Annotated[float, 'Range | `1` and above | inclusive'] | None = None  # Defaults to 16.
     directional_particles: bool | None = None  # Whether to show a particle trail into the direction of teleportation.  Defaults to `true`.
 
 

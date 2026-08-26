@@ -107,7 +107,7 @@ class PlacementModifierRandomlySelected:
 @dataclass(kw_only=True)
 class PlacementModifierRarityFilter:
     type: Literal['minecraft:rarity_filter']
-    chance: Annotated[int, 'Range | Min `0` and above | inclusive']
+    chance: Annotated[int, 'Range | `0` and above | inclusive']
 
 
 @dataclass(kw_only=True)

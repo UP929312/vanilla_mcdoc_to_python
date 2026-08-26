@@ -11,8 +11,8 @@ from generated_symbols.data.worldgen.density_function.OneArgument import OneArgu
 
 @dataclass(kw_only=True)
 class Interpolated(OneArgument):
-    cell_size_xz: Annotated[int, 'Range | Min `1` and above | inclusive']
-    cell_size_y: Annotated[int, 'Range | Min `1` and above | inclusive']
+    cell_size_xz: Annotated[int, 'Range | `1` and above | inclusive']
+    cell_size_y: Annotated[int, 'Range | `1` and above | inclusive']
 
 
 # ~~~ MODEL DUMP ~~~

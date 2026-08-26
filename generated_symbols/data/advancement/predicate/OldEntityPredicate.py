@@ -154,7 +154,7 @@ class OldEntityPredicate:
     effects: EntityEffectsPredicate | None = None
     slots: EntitySlotsPredicate | None = None
     movement: MovementPredicate | None = None
-    periodic_tick: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # True every `n` ticks of an entity's lifetime.
+    periodic_tick: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # True every `n` ticks of an entity's lifetime.
     movement_affected_by: LocationPredicate | None = None  # Whether the block at most 0.5 blocks below the entity is present which can affect its movement.
     components: DataComponentExactPredicate | None = None  # Match exact data component values on the entity.
     predicates: DataComponentPredicate | None = None  # Test data component values on the entity.

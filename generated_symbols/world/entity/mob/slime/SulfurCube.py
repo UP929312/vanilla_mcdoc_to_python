@@ -13,9 +13,9 @@ from generated_symbols.world.entity.mob.slime.CubeMob import CubeMob
 
 @dataclass(kw_only=True)
 class SulfurCube(AgeableMob, CubeMob, MobBase):
-    pickup_timer: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None
+    pickup_timer: Annotated[int, 'Range | `0` and above | inclusive'] | None = None
     from_bucket: bool | None = None
-    fuse: Annotated[int, 'Range | Min `-1` and above | inclusive'] | None = None  # `-1` represents "not ignited".
+    fuse: Annotated[int, 'Range | `-1` and above | inclusive'] | None = None  # `-1` represents "not ignited".
 
 
 # ~~~ MODEL DUMP ~~~

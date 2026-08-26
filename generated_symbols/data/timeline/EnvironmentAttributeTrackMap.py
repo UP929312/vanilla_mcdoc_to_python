@@ -32,7 +32,7 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class KeyframesStruct:
-    ticks: Annotated[int, 'Range | Min `0` and above | inclusive']
+    ticks: Annotated[int, 'Range | `0` and above | inclusive']
     value: Any
 
 
@@ -44,7 +44,7 @@ class EnvironmentAttributeTrackMapValueStruct1(AttributeTrackBase):
 
 @dataclass(kw_only=True)
 class KeyframesStruct2:
-    ticks: Annotated[int, 'Range | Min `0` and above | inclusive']
+    ticks: Annotated[int, 'Range | `0` and above | inclusive']
     value: AmbientSounds
 
 
@@ -56,7 +56,7 @@ class EnvironmentAttributeTrackMapValueStruct2(AttributeTrackBase):
 
 @dataclass(kw_only=True)
 class KeyframesStruct3:
-    ticks: Annotated[int, 'Range | Min `0` and above | inclusive']
+    ticks: Annotated[int, 'Range | `0` and above | inclusive']
     value: BackgroundMusic
 
 
@@ -68,7 +68,7 @@ class EnvironmentAttributeTrackMapValueStruct3(AttributeTrackBase):
 
 @dataclass(kw_only=True)
 class KeyframesStruct4:
-    ticks: Annotated[int, 'Range | Min `0` and above | inclusive']
+    ticks: Annotated[int, 'Range | `0` and above | inclusive']
     value: bool
 
 
@@ -80,7 +80,7 @@ class EnvironmentAttributeTrackMapValueStruct4(AttributeTrackBase):
 
 @dataclass(kw_only=True)
 class KeyframesStruct5:
-    ticks: Annotated[int, 'Range | Min `0` and above | inclusive']
+    ticks: Annotated[int, 'Range | `0` and above | inclusive']
     value: Annotated[float, 'Range | `0`-`1` | both inclusive'] | float | FloatWithAlpha | Annotated[float, 'Range | `0`-`1` | both inclusive']
 
 
@@ -92,7 +92,7 @@ class EnvironmentAttributeTrackMapValueStruct5(AttributeTrackBase):
 
 @dataclass(kw_only=True)
 class KeyframesStruct6:
-    ticks: Annotated[int, 'Range | Min `0` and above | inclusive']
+    ticks: Annotated[int, 'Range | `0` and above | inclusive']
     value: Annotated[str, IdSpec(registry='activity')]
 
 
@@ -104,7 +104,7 @@ class EnvironmentAttributeTrackMapValueStruct6(AttributeTrackBase):
 
 @dataclass(kw_only=True)
 class KeyframesStruct7:
-    ticks: Annotated[int, 'Range | Min `0` and above | inclusive']
+    ticks: Annotated[int, 'Range | `0` and above | inclusive']
     value: BedRule
 
 
@@ -116,7 +116,7 @@ class EnvironmentAttributeTrackMapValueStruct7(AttributeTrackBase):
 
 @dataclass(kw_only=True)
 class KeyframesStruct8:
-    ticks: Annotated[int, 'Range | Min `0` and above | inclusive']
+    ticks: Annotated[int, 'Range | `0` and above | inclusive']
     value: Annotated[float, 'Range | `0`-`0.9999999` | both inclusive'] | float | FloatWithAlpha | Annotated[float, 'Range | `0`-`0.9999999` | both inclusive']
 
 
@@ -128,7 +128,7 @@ class EnvironmentAttributeTrackMapValueStruct8(AttributeTrackBase):
 
 @dataclass(kw_only=True)
 class KeyframesStruct9:
-    ticks: Annotated[int, 'Range | Min `0` and above | inclusive']
+    ticks: Annotated[int, 'Range | `0` and above | inclusive']
     value: TriState
 
 
@@ -140,7 +140,7 @@ class EnvironmentAttributeTrackMapValueStruct9(AttributeTrackBase):
 
 @dataclass(kw_only=True)
 class KeyframesStruct10:
-    ticks: Annotated[int, 'Range | Min `0` and above | inclusive']
+    ticks: Annotated[int, 'Range | `0` and above | inclusive']
     value: NaturalMobSpawns
 
 
@@ -152,7 +152,7 @@ class EnvironmentAttributeTrackMapValueStruct10(AttributeTrackBase):
 
 @dataclass(kw_only=True)
 class KeyframesStruct11:
-    ticks: Annotated[int, 'Range | Min `0` and above | inclusive']
+    ticks: Annotated[int, 'Range | `0` and above | inclusive']
     value: Annotated[float, 'Range | `0`-`15` | both inclusive'] | float | FloatWithAlpha | Annotated[float, 'Range | `0`-`15` | both inclusive']
 
 
@@ -164,7 +164,7 @@ class EnvironmentAttributeTrackMapValueStruct11(AttributeTrackBase):
 
 @dataclass(kw_only=True)
 class KeyframesStruct12:
-    ticks: Annotated[int, 'Range | Min `0` and above | inclusive']
+    ticks: Annotated[int, 'Range | `0` and above | inclusive']
     value: StringRGB | StringARGB | BlendToGray
 
 
@@ -176,7 +176,7 @@ class EnvironmentAttributeTrackMapValueStruct12(AttributeTrackBase):
 
 @dataclass(kw_only=True)
 class KeyframesStruct13:
-    ticks: Annotated[int, 'Range | Min `0` and above | inclusive']
+    ticks: Annotated[int, 'Range | `0` and above | inclusive']
     value: list[AmbientParticle]
 
 
@@ -188,7 +188,7 @@ class EnvironmentAttributeTrackMapValueStruct13(AttributeTrackBase):
 
 @dataclass(kw_only=True)
 class KeyframesStruct14:
-    ticks: Annotated[int, 'Range | Min `0` and above | inclusive']
+    ticks: Annotated[int, 'Range | `0` and above | inclusive']
     value: StringARGB | StringRGB | BlendToGray | StringRGB | StringARGB
 
 
@@ -200,8 +200,8 @@ class EnvironmentAttributeTrackMapValueStruct14(AttributeTrackBase):
 
 @dataclass(kw_only=True)
 class KeyframesStruct15:
-    ticks: Annotated[int, 'Range | Min `0` and above | inclusive']
-    value: Annotated[float, 'Range | Min `0` and above | inclusive'] | float | FloatWithAlpha | Annotated[float, 'Range | Min `0` and above | inclusive']
+    ticks: Annotated[int, 'Range | `0` and above | inclusive']
+    value: Annotated[float, 'Range | `0` and above | inclusive'] | float | FloatWithAlpha | Annotated[float, 'Range | `0` and above | inclusive']
 
 
 @dataclass(kw_only=True)
@@ -212,7 +212,7 @@ class EnvironmentAttributeTrackMapValueStruct15(AttributeTrackBase):
 
 @dataclass(kw_only=True)
 class KeyframesStruct16:
-    ticks: Annotated[int, 'Range | Min `0` and above | inclusive']
+    ticks: Annotated[int, 'Range | `0` and above | inclusive']
     value: float | FloatWithAlpha | float
 
 
@@ -224,7 +224,7 @@ class EnvironmentAttributeTrackMapValueStruct16(AttributeTrackBase):
 
 @dataclass(kw_only=True)
 class KeyframesStruct17:
-    ticks: Annotated[int, 'Range | Min `0` and above | inclusive']
+    ticks: Annotated[int, 'Range | `0` and above | inclusive']
     value: Particle
 
 
@@ -236,7 +236,7 @@ class EnvironmentAttributeTrackMapValueStruct17(AttributeTrackBase):
 
 @dataclass(kw_only=True)
 class KeyframesStruct18:
-    ticks: Annotated[int, 'Range | Min `0` and above | inclusive']
+    ticks: Annotated[int, 'Range | `0` and above | inclusive']
     value: MoonPhase
 
 

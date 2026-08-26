@@ -12,8 +12,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class ModernPatchConfig:
-    xz_spread: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # Defaults to 7.
-    y_spread: Annotated[int, 'Range | Min `0` and above | inclusive'] | None = None  # Defaults to 3.
+    xz_spread: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # Defaults to 7.
+    y_spread: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # Defaults to 3.
     feature: FeatureRef
 
 

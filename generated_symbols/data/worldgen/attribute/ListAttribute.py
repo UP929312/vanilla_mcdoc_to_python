@@ -17,7 +17,7 @@ E = TypeVar('E')
 
 @dataclass(kw_only=True)
 class KeyframesStruct(Generic[E]):
-    ticks: Annotated[int, 'Range | Min `0` and above | inclusive']
+    ticks: Annotated[int, 'Range | `0` and above | inclusive']
     value: list[E]
 
 

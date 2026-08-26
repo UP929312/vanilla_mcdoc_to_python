@@ -11,7 +11,7 @@ from generated_symbols.data.worldgen.UniformHeightProvider import UniformHeightP
 
 @dataclass(kw_only=True)
 class BottomBiasHeightProvider(UniformHeightProvider):
-    inner: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None
+    inner: Annotated[int, 'Range | `1` and above | inclusive'] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

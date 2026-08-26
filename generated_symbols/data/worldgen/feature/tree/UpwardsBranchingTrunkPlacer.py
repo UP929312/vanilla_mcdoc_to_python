@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 
 @dataclass(kw_only=True)
 class UpwardsBranchingTrunkPlacer:
-    extra_branch_steps: IntProvider[Annotated[int, 'Range | Min `1` and above | inclusive']] | Annotated[int, 'Range | Min `1` and above | inclusive']
-    extra_branch_length: IntProvider[Annotated[int, 'Range | Min `0` and above | inclusive']] | Annotated[int, 'Range | Min `0` and above | inclusive']
+    extra_branch_steps: IntProvider[Annotated[int, 'Range | `1` and above | inclusive']] | Annotated[int, 'Range | `1` and above | inclusive']
+    extra_branch_length: IntProvider[Annotated[int, 'Range | `0` and above | inclusive']] | Annotated[int, 'Range | `0` and above | inclusive']
     place_branch_per_log_probability: Annotated[float, 'Range | `0`-`1` | both inclusive']
     can_grow_through: list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId
 

@@ -9,7 +9,7 @@ from typing import Annotated
 
 @dataclass(kw_only=True)
 class RarityFilter:
-    chance: Annotated[int, 'Range | Min `0` and above | inclusive']
+    chance: Annotated[int, 'Range | `0` and above | inclusive']
 
 
 # ~~~ MODEL DUMP ~~~

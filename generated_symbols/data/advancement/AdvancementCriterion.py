@@ -220,7 +220,7 @@ class ConditionsStruct31(PlayerConditions):
 
 @dataclass(kw_only=True)
 class ConditionsStruct32(PlayerConditions):
-    count: Annotated[int, 'Range | Min `1` and above | inclusive'] | None = None  # Minimum mob count required.
+    count: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # Minimum mob count required.
 
 
 @dataclass(kw_only=True)
