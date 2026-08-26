@@ -98,6 +98,17 @@ class TestIdMetadataGeneration:
 
 
 class TestDispatcherSpreadGeneration:
+    def test_reference_dispatcher_branch_reuses_referenced_struct(self) -> None:
+        content = generated_body(
+            "::java::assets::font::GlyphProvider",
+            SYMBOLS_MAP["mcdoc"]["::java::assets::font::GlyphProvider"],
+            "GlyphProvider",
+        )
+
+        assert "class GlyphProviderSpace(SpaceProvider):" in content
+        assert "class GlyphProviderSpace:" not in content
+        assert "    advances: dict[" not in content.split("class GlyphProviderSpace(SpaceProvider):", 1)[1].split("\n\n", 1)[0]
+
     def test_dynamic_spread_generates_correlated_branch_classes(self) -> None:
         content = generated_body(
             "::java::data::advancement::AdvancementCriterion",
@@ -105,13 +116,10 @@ class TestDispatcherSpreadGeneration:
             "AdvancementCriterion",
         )
 
-        assert "class AdvancementCriterionInventoryChanged:" in content
+        assert "class AdvancementCriterionInventoryChanged(InventoryChangeTrigger):" in content
         assert "trigger: Literal['minecraft:inventory_changed']" in content
-        assert "class ConditionsStruct21(PlayerConditions):" in content
-        assert "conditions: ConditionsStruct21 | None = None" in content
-        assert "class AdvancementCriterionTick:" in content
+        assert "class AdvancementCriterionTick(PlayerTrigger):" in content
         assert "trigger: Literal['minecraft:tick']" in content
-        assert "conditions: PlayerConditions | None = None" in content
         assert "type AdvancementCriterion = AdvancementCriterionAllayDropItemOnBlock |" in content
 
     def test_dynamic_map_branch_does_not_break_distribution(self) -> None:

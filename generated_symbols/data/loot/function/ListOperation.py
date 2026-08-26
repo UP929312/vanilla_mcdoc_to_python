@@ -4,7 +4,10 @@ Local link to file: generated_symbols/data/loot/function/ListOperation.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import Annotated, Literal
+from typing import Literal
+
+from generated_symbols.data.loot.function.InsertListOperation import InsertListOperation
+from generated_symbols.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
 
 
 @dataclass(kw_only=True)
@@ -13,9 +16,8 @@ class ListOperationAppend:
 
 
 @dataclass(kw_only=True)
-class ListOperationInsert:
+class ListOperationInsert(InsertListOperation):
     mode: Literal['minecraft:insert']  # Determines how the existing list should be modified.
-    offset: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # The offset in the list to insert into. Defaults to 0.
 
 
 @dataclass(kw_only=True)
@@ -24,10 +26,8 @@ class ListOperationReplaceAll:
 
 
 @dataclass(kw_only=True)
-class ListOperationReplaceSection:
+class ListOperationReplaceSection(ReplaceSectionListOperation):
     mode: Literal['minecraft:replace_section']  # Determines how the existing list should be modified.
-    offset: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # The offset of the section to replace. Defaults to 0.
-    size: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # The size of the section to replace. Defaults to size of the new list.
 
 
 type ListOperation = ListOperationAppend | ListOperationInsert | ListOperationReplaceAll | ListOperationReplaceSection

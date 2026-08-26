@@ -4,56 +4,50 @@ Local link to file: generated_symbols/util/text/ClickEvent.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Any, Literal
+from typing import Literal
 
-from minecraft_registry import IdSpec
-
-if TYPE_CHECKING:
-    from generated_symbols.data.dialog.Dialog import Dialog
-    from generated_symbols.registry.KnownDialogId import KnownDialogId
+from generated_symbols.util.text.ChangePage import ChangePage
+from generated_symbols.util.text.CopyToClipboard import CopyToClipboard
+from generated_symbols.util.text.CustomAction import CustomAction
+from generated_symbols.util.text.OpenUrl import OpenUrl
+from generated_symbols.util.text.RunCommand import RunCommand
+from generated_symbols.util.text.ShowDialog import ShowDialog
+from generated_symbols.util.text.SuggestCommand import SuggestCommand
 
 
 @dataclass(kw_only=True)
-class ClickEventChangePage:
+class ClickEventChangePage(ChangePage):
     action: Literal['minecraft:change_page']
-    page: Annotated[int, 'Range | `1` and above | inclusive']  # The page number to go to.
 
 
 @dataclass(kw_only=True)
-class ClickEventCopyToClipboard:
+class ClickEventCopyToClipboard(CopyToClipboard):
     action: Literal['minecraft:copy_to_clipboard']
-    value: str  # The text value to copy to the clipboard.
 
 
 @dataclass(kw_only=True)
-class ClickEventCustom:
+class ClickEventCustom(CustomAction):
     action: Literal['minecraft:custom']
-    id: Annotated[str, IdSpec()]  # ID of a custom action. Has no functionality on vanilla servers.
-    payload: Any | None = None
 
 
 @dataclass(kw_only=True)
-class ClickEventOpenUrl:
+class ClickEventOpenUrl(OpenUrl):
     action: Literal['minecraft:open_url']
-    url: str
 
 
 @dataclass(kw_only=True)
-class ClickEventRunCommand:
+class ClickEventRunCommand(RunCommand):
     action: Literal['minecraft:run_command']
-    command: str
 
 
 @dataclass(kw_only=True)
-class ClickEventShowDialog:
+class ClickEventShowDialog(ShowDialog):
     action: Literal['minecraft:show_dialog']
-    dialog: Annotated[str, IdSpec(registry='dialog')] | KnownDialogId | Dialog
 
 
 @dataclass(kw_only=True)
-class ClickEventSuggestCommand:
+class ClickEventSuggestCommand(SuggestCommand):
     action: Literal['minecraft:suggest_command']
-    command: str
 
 
 type ClickEvent = ClickEventChangePage | ClickEventCopyToClipboard | ClickEventCustom | ClickEventOpenUrl | ClickEventRunCommand | ClickEventShowDialog | ClickEventSuggestCommand

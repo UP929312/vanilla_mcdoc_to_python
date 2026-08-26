@@ -6,20 +6,21 @@ Local link to file: generated_symbols/data/util/ScoreProvider.py
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Literal
 
+from generated_symbols.data.util.ContextScoreProvider import ContextScoreProvider
+from generated_symbols.data.util.FixedScoreProvider import FixedScoreProvider
+
 if TYPE_CHECKING:
     from generated_symbols.data.loot.EntityTarget import EntityTarget
 
 
 @dataclass(kw_only=True)
-class ScoreProviderStructContext:
+class ScoreProviderStructContext(ContextScoreProvider):
     type: Literal['minecraft:context']
-    target: EntityTarget
 
 
 @dataclass(kw_only=True)
-class ScoreProviderStructFixed:
+class ScoreProviderStructFixed(FixedScoreProvider):
     type: Literal['minecraft:fixed']
-    name: str
 
 
 type ScoreProviderStruct = ScoreProviderStructContext | ScoreProviderStructFixed

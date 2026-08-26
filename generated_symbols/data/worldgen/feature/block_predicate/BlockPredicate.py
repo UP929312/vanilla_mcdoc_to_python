@@ -4,96 +4,85 @@ Local link to file: generated_symbols/data/worldgen/feature/block_predicate/Bloc
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Literal
+from typing import Literal
 
-from generated_symbols.data.worldgen.feature.block_predicate.PredicateOffset import PredicateOffset
-from minecraft_registry import IdSpec
-
-if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.VerticalAnchor import VerticalAnchor
-    from generated_symbols.registry.KnownBlockId import KnownBlockId
-    from generated_symbols.util.block_state.BlockState import BlockState
-    from generated_symbols.util.direction.Direction import Direction
+from generated_symbols.data.worldgen.feature.block_predicate.CombiningPredicate import CombiningPredicate
+from generated_symbols.data.worldgen.feature.block_predicate.HasSturdyFacePredicate import HasSturdyFacePredicate
+from generated_symbols.data.worldgen.feature.block_predicate.HeightRangePredicate import HeightRangePredicate
+from generated_symbols.data.worldgen.feature.block_predicate.InsideWorldBoundsPredicate import InsideWorldBoundsPredicate
+from generated_symbols.data.worldgen.feature.block_predicate.MatchingBiomesPredicate import MatchingBiomesPredicate
+from generated_symbols.data.worldgen.feature.block_predicate.MatchingBlockTagPredicate import MatchingBlockTagPredicate
+from generated_symbols.data.worldgen.feature.block_predicate.MatchingBlocksPredicate import MatchingBlocksPredicate
+from generated_symbols.data.worldgen.feature.block_predicate.MatchingFluidsPredicate import MatchingFluidsPredicate
+from generated_symbols.data.worldgen.feature.block_predicate.NotPredicate import NotPredicate
+from generated_symbols.data.worldgen.feature.block_predicate.UnobstructedPredicate import UnobstructedPredicate
+from generated_symbols.data.worldgen.feature.block_predicate.VolumeMatchPredicate import VolumeMatchPredicate
+from generated_symbols.data.worldgen.feature.block_predicate.WouldSurvivePredicate import WouldSurvivePredicate
 
 
 @dataclass(kw_only=True)
-class BlockPredicateAllOf:
+class BlockPredicateAllOf(CombiningPredicate):
     type: Literal['minecraft:all_of']
-    predicates: list[BlockPredicate]
 
 
 @dataclass(kw_only=True)
-class BlockPredicateAnyOf:
+class BlockPredicateAnyOf(CombiningPredicate):
     type: Literal['minecraft:any_of']
-    predicates: list[BlockPredicate]
 
 
 @dataclass(kw_only=True)
-class BlockPredicateHasSturdyFace(PredicateOffset):
+class BlockPredicateHasSturdyFace(HasSturdyFacePredicate):
     type: Literal['minecraft:has_sturdy_face']
-    direction: Direction
 
 
 @dataclass(kw_only=True)
-class BlockPredicateHeightRange:
+class BlockPredicateHeightRange(HeightRangePredicate):
     type: Literal['minecraft:height_range']
-    min_inclusive: VerticalAnchor
-    max_inclusive: VerticalAnchor
 
 
 @dataclass(kw_only=True)
-class BlockPredicateInsideWorldBounds(PredicateOffset):
+class BlockPredicateInsideWorldBounds(InsideWorldBoundsPredicate):
     type: Literal['minecraft:inside_world_bounds']
 
 
 @dataclass(kw_only=True)
-class BlockPredicateMatchingBiomes:
+class BlockPredicateMatchingBiomes(MatchingBiomesPredicate):
     type: Literal['minecraft:matching_biomes']
-    biomes: Annotated[str, IdSpec(registry='biome', tags='allowed')] | list[Annotated[str, IdSpec(registry='biome')]]
 
 
 @dataclass(kw_only=True)
-class BlockPredicateMatchingBlockTag(PredicateOffset):
+class BlockPredicateMatchingBlockTag(MatchingBlockTagPredicate):
     type: Literal['minecraft:matching_block_tag']
-    tag: Annotated[str, IdSpec(registry='block', tags='implicit')] | KnownBlockId
 
 
 @dataclass(kw_only=True)
-class BlockPredicateMatchingBlocks(PredicateOffset):
+class BlockPredicateMatchingBlocks(MatchingBlocksPredicate):
     type: Literal['minecraft:matching_blocks']
-    blocks: list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId
 
 
 @dataclass(kw_only=True)
-class BlockPredicateMatchingFluids(PredicateOffset):
+class BlockPredicateMatchingFluids(MatchingFluidsPredicate):
     type: Literal['minecraft:matching_fluids']
-    fluids: list[Annotated[str, IdSpec(registry='fluid')]] | Annotated[str, IdSpec(registry='fluid', tags='allowed')]
 
 
 @dataclass(kw_only=True)
-class BlockPredicateNot:
+class BlockPredicateNot(NotPredicate):
     type: Literal['minecraft:not']
-    predicate: BlockPredicate
 
 
 @dataclass(kw_only=True)
-class BlockPredicateUnobstructed:
+class BlockPredicateUnobstructed(UnobstructedPredicate):
     type: Literal['minecraft:unobstructed']
-    offset: tuple[int, int, int] | None = None
 
 
 @dataclass(kw_only=True)
-class BlockPredicateVolumeMatch:
+class BlockPredicateVolumeMatch(VolumeMatchPredicate):
     type: Literal['minecraft:volume_match']
-    min: tuple[Annotated[int, 'Range | `-16`-`16` | both inclusive'], Annotated[int, 'Range | `-16`-`16` | both inclusive'], Annotated[int, 'Range | `-16`-`16` | both inclusive']]
-    max: tuple[Annotated[int, 'Range | `-16`-`16` | both inclusive'], Annotated[int, 'Range | `-16`-`16` | both inclusive'], Annotated[int, 'Range | `-16`-`16` | both inclusive']]
-    match: BlockPredicate
 
 
 @dataclass(kw_only=True)
-class BlockPredicateWouldSurvive(PredicateOffset):
+class BlockPredicateWouldSurvive(WouldSurvivePredicate):
     type: Literal['minecraft:would_survive']
-    state: BlockState
 
 
 type BlockPredicate = BlockPredicateAllOf | BlockPredicateAnyOf | BlockPredicateHasSturdyFace | BlockPredicateHeightRange | BlockPredicateInsideWorldBounds | BlockPredicateMatchingBiomes | BlockPredicateMatchingBlockTag | BlockPredicateMatchingBlocks | BlockPredicateMatchingFluids | BlockPredicateNot | BlockPredicateUnobstructed | BlockPredicateVolumeMatch | BlockPredicateWouldSurvive

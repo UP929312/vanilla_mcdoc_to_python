@@ -6,94 +6,86 @@ Local link to file: generated_symbols/data/worldgen/feature/tree/FoliagePlacer.p
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Literal
 
+from generated_symbols.data.worldgen.feature.tree.CherryFoliagePlacer import CherryFoliagePlacer
+from generated_symbols.data.worldgen.feature.tree.HeightFoliagePlacer import HeightFoliagePlacer
+from generated_symbols.data.worldgen.feature.tree.MegaPineFoliagePlacer import MegaPineFoliagePlacer
+from generated_symbols.data.worldgen.feature.tree.PineFoliagePlacer import PineFoliagePlacer
+from generated_symbols.data.worldgen.feature.tree.PoplarFoliagePlacer import PoplarFoliagePlacer
+from generated_symbols.data.worldgen.feature.tree.RandomSpreadFoliagePlacer import RandomSpreadFoliagePlacer
+from generated_symbols.data.worldgen.feature.tree.SprucePineFoliagePlacer import SprucePineFoliagePlacer
+
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.IntProvider import IntProvider
 
 
 @dataclass(kw_only=True)
-class FoliagePlacerBlobFoliagePlacer:
+class FoliagePlacerBlobFoliagePlacer(HeightFoliagePlacer):
     type: Literal['minecraft:blob_foliage_placer']
     radius: IntProvider[Annotated[int, 'Range | `0`-`16` | both inclusive']] | Annotated[int, 'Range | `0`-`16` | both inclusive']
     offset: IntProvider[Annotated[int, 'Range | `0`-`16` | both inclusive']] | Annotated[int, 'Range | `0`-`16` | both inclusive']
-    height: Annotated[int, 'Range | `0`-`16` | both inclusive']
 
 
 @dataclass(kw_only=True)
-class FoliagePlacerBushFoliagePlacer:
+class FoliagePlacerBushFoliagePlacer(HeightFoliagePlacer):
     type: Literal['minecraft:bush_foliage_placer']
     radius: IntProvider[Annotated[int, 'Range | `0`-`16` | both inclusive']] | Annotated[int, 'Range | `0`-`16` | both inclusive']
     offset: IntProvider[Annotated[int, 'Range | `0`-`16` | both inclusive']] | Annotated[int, 'Range | `0`-`16` | both inclusive']
-    height: Annotated[int, 'Range | `0`-`16` | both inclusive']
 
 
 @dataclass(kw_only=True)
-class FoliagePlacerCherryFoliagePlacer:
+class FoliagePlacerCherryFoliagePlacer(CherryFoliagePlacer):
     type: Literal['minecraft:cherry_foliage_placer']
     radius: IntProvider[Annotated[int, 'Range | `0`-`16` | both inclusive']] | Annotated[int, 'Range | `0`-`16` | both inclusive']
     offset: IntProvider[Annotated[int, 'Range | `0`-`16` | both inclusive']] | Annotated[int, 'Range | `0`-`16` | both inclusive']
-    height: IntProvider[Annotated[int, 'Range | `4`-`16` | both inclusive']] | Annotated[int, 'Range | `4`-`16` | both inclusive']
-    wide_bottom_layer_hole_chance: Annotated[float, 'Range | `0`-`1` | both inclusive']
-    corner_hole_chance: Annotated[float, 'Range | `0`-`1` | both inclusive']
-    hanging_leaves_chance: Annotated[float, 'Range | `0`-`1` | both inclusive']
-    hanging_leaves_extension_chance: Annotated[float, 'Range | `0`-`1` | both inclusive']
 
 
 @dataclass(kw_only=True)
-class FoliagePlacerFancyFoliagePlacer:
+class FoliagePlacerFancyFoliagePlacer(HeightFoliagePlacer):
     type: Literal['minecraft:fancy_foliage_placer']
     radius: IntProvider[Annotated[int, 'Range | `0`-`16` | both inclusive']] | Annotated[int, 'Range | `0`-`16` | both inclusive']
     offset: IntProvider[Annotated[int, 'Range | `0`-`16` | both inclusive']] | Annotated[int, 'Range | `0`-`16` | both inclusive']
-    height: Annotated[int, 'Range | `0`-`16` | both inclusive']
 
 
 @dataclass(kw_only=True)
-class FoliagePlacerJungleFoliagePlacer:
+class FoliagePlacerJungleFoliagePlacer(HeightFoliagePlacer):
     type: Literal['minecraft:jungle_foliage_placer']
     radius: IntProvider[Annotated[int, 'Range | `0`-`16` | both inclusive']] | Annotated[int, 'Range | `0`-`16` | both inclusive']
     offset: IntProvider[Annotated[int, 'Range | `0`-`16` | both inclusive']] | Annotated[int, 'Range | `0`-`16` | both inclusive']
-    height: Annotated[int, 'Range | `0`-`16` | both inclusive']
 
 
 @dataclass(kw_only=True)
-class FoliagePlacerMegaPineFoliagePlacer:
+class FoliagePlacerMegaPineFoliagePlacer(MegaPineFoliagePlacer):
     type: Literal['minecraft:mega_pine_foliage_placer']
     radius: IntProvider[Annotated[int, 'Range | `0`-`16` | both inclusive']] | Annotated[int, 'Range | `0`-`16` | both inclusive']
     offset: IntProvider[Annotated[int, 'Range | `0`-`16` | both inclusive']] | Annotated[int, 'Range | `0`-`16` | both inclusive']
-    crown_height: IntProvider[Annotated[int, 'Range | `0`-`24` | both inclusive']] | Annotated[int, 'Range | `0`-`24` | both inclusive']
 
 
 @dataclass(kw_only=True)
-class FoliagePlacerPineFoliagePlacer:
+class FoliagePlacerPineFoliagePlacer(PineFoliagePlacer):
     type: Literal['minecraft:pine_foliage_placer']
     radius: IntProvider[Annotated[int, 'Range | `0`-`16` | both inclusive']] | Annotated[int, 'Range | `0`-`16` | both inclusive']
     offset: IntProvider[Annotated[int, 'Range | `0`-`16` | both inclusive']] | Annotated[int, 'Range | `0`-`16` | both inclusive']
-    height: IntProvider[Annotated[int, 'Range | `0`-`24` | both inclusive']] | Annotated[int, 'Range | `0`-`24` | both inclusive']
 
 
 @dataclass(kw_only=True)
-class FoliagePlacerPoplarFoliagePlacer:
+class FoliagePlacerPoplarFoliagePlacer(PoplarFoliagePlacer):
     type: Literal['minecraft:poplar_foliage_placer']
     radius: IntProvider[Annotated[int, 'Range | `0`-`16` | both inclusive']] | Annotated[int, 'Range | `0`-`16` | both inclusive']
     offset: IntProvider[Annotated[int, 'Range | `0`-`16` | both inclusive']] | Annotated[int, 'Range | `0`-`16` | both inclusive']
-    height: IntProvider[Annotated[int, 'Range | `5`-`16` | both inclusive']] | Annotated[int, 'Range | `5`-`16` | both inclusive']
-    side_hole_chance: Annotated[float, 'Range | `0`-`1` | both inclusive']
 
 
 @dataclass(kw_only=True)
-class FoliagePlacerRandomSpreadFoliagePlacer:
+class FoliagePlacerRandomSpreadFoliagePlacer(RandomSpreadFoliagePlacer):
     type: Literal['minecraft:random_spread_foliage_placer']
     radius: IntProvider[Annotated[int, 'Range | `0`-`16` | both inclusive']] | Annotated[int, 'Range | `0`-`16` | both inclusive']
     offset: IntProvider[Annotated[int, 'Range | `0`-`16` | both inclusive']] | Annotated[int, 'Range | `0`-`16` | both inclusive']
-    foliage_height: IntProvider[Annotated[int, 'Range | `1`-`512` | both inclusive']] | Annotated[int, 'Range | `1`-`512` | both inclusive']
-    leaf_placement_attempts: Annotated[int, 'Range | `0`-`256` | both inclusive']
 
 
 @dataclass(kw_only=True)
-class FoliagePlacerSpruceFoliagePlacer:
+class FoliagePlacerSpruceFoliagePlacer(SprucePineFoliagePlacer):
     type: Literal['minecraft:spruce_foliage_placer']
     radius: IntProvider[Annotated[int, 'Range | `0`-`16` | both inclusive']] | Annotated[int, 'Range | `0`-`16` | both inclusive']
     offset: IntProvider[Annotated[int, 'Range | `0`-`16` | both inclusive']] | Annotated[int, 'Range | `0`-`16` | both inclusive']
-    trunk_height: IntProvider[Annotated[int, 'Range | `0`-`24` | both inclusive']] | Annotated[int, 'Range | `0`-`24` | both inclusive']
 
 
 type FoliagePlacer = FoliagePlacerBlobFoliagePlacer | FoliagePlacerBushFoliagePlacer | FoliagePlacerCherryFoliagePlacer | FoliagePlacerFancyFoliagePlacer | FoliagePlacerJungleFoliagePlacer | FoliagePlacerMegaPineFoliagePlacer | FoliagePlacerPineFoliagePlacer | FoliagePlacerPoplarFoliagePlacer | FoliagePlacerRandomSpreadFoliagePlacer | FoliagePlacerSpruceFoliagePlacer

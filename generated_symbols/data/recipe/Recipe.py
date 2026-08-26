@@ -6,18 +6,20 @@ Local link to file: generated_symbols/data/recipe/Recipe.py
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar, Literal
 
-from generated_symbols.data.recipe.CookingBookInfo import CookingBookInfo
-from generated_symbols.data.recipe.CraftingBookInfo import CraftingBookInfo
-from generated_symbols.data.recipe.NotificationInfo import NotificationInfo
+from generated_symbols.data.recipe.Brewing import Brewing
+from generated_symbols.data.recipe.CraftingDye import CraftingDye
+from generated_symbols.data.recipe.CraftingImbue import CraftingImbue
+from generated_symbols.data.recipe.CraftingShaped import CraftingShaped
+from generated_symbols.data.recipe.CraftingShapeless import CraftingShapeless
+from generated_symbols.data.recipe.CraftingTransmute import CraftingTransmute
+from generated_symbols.data.recipe.Smelting import Smelting
+from generated_symbols.data.recipe.SmithingTransform import SmithingTransform
+from generated_symbols.data.recipe.SmithingTrim import SmithingTrim
+from generated_symbols.data.recipe.Stonecutting import Stonecutting
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.recipe.Ingredient import Ingredient
-    from generated_symbols.data.recipe.PotionIngredient import PotionIngredient
-    from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
     from generated_symbols.registry.KnownRecipeSerializerId import KnownRecipeSerializerId
-    from generated_symbols.world.item.ItemStack import ItemStack
-    from generated_symbols.world.item.ItemStackTemplate import ItemStackTemplate
 
 
 @dataclass(kw_only=True)
@@ -28,29 +30,18 @@ class RecipeUnknown:
 
 
 @dataclass(kw_only=True)
-class RecipeBlasting(CookingBookInfo, NotificationInfo):
+class RecipeBlasting(Smelting):
     type: Literal['minecraft:blasting']
-    ingredient: Ingredient
-    result: ItemStackTemplate
-    experience: float | None = None
-    cookingtime: int | None = None
 
 
 @dataclass(kw_only=True)
-class RecipeBrewing:
+class RecipeBrewing(Brewing):
     type: Literal['minecraft:brewing']
-    input: PotionIngredient  # The original potion.
-    reagent: PotionIngredient  # The ingredient.
-    output: ItemStackTemplate
 
 
 @dataclass(kw_only=True)
-class RecipeCampfireCooking(CookingBookInfo, NotificationInfo):
+class RecipeCampfireCooking(Smelting):
     type: Literal['minecraft:campfire_cooking']
-    ingredient: Ingredient
-    result: ItemStackTemplate
-    experience: float | None = None
-    cookingtime: int | None = None
 
 
 @dataclass(kw_only=True)
@@ -59,34 +50,23 @@ class RecipeCraftingDecoratedPot:
 
 
 @dataclass(kw_only=True)
-class RecipeCraftingDye(CraftingBookInfo, NotificationInfo):
+class RecipeCraftingDye(CraftingDye):
     type: Literal['minecraft:crafting_dye']
-    target: Ingredient  # The item to be dyed.  Its `dyed_color` component will be dyed. The other components are copied.
-    dye: Ingredient  # The items to provide dye color.  Colors are provided by the `dye` component.  Multiple dyes can be used at the same time.
-    result: ItemStackTemplate
 
 
 @dataclass(kw_only=True)
-class RecipeCraftingImbue(CraftingBookInfo, NotificationInfo):
+class RecipeCraftingImbue(CraftingImbue):
     type: Literal['minecraft:crafting_imbue']
-    source: Ingredient  # The item to provide potion effect.  Its `potion_contents` component will be copied.  This item is placed at the center grid.
-    material: Ingredient  # Additional ingredients.  8 `material` items are required to surroud the `source` item.
-    result: ItemStackTemplate
 
 
 @dataclass(kw_only=True)
-class RecipeCraftingShaped(CraftingBookInfo, NotificationInfo):
+class RecipeCraftingShaped(CraftingShaped):
     type: Literal['minecraft:crafting_shaped']
-    pattern: Annotated[list[Annotated[str, 'Length = 1-3 (both inclusive)']], 'Length = 1-3 (both inclusive)']
-    key: dict[str, Ingredient]
-    result: ItemStackTemplate
 
 
 @dataclass(kw_only=True)
-class RecipeCraftingShapeless(CraftingBookInfo, NotificationInfo):
+class RecipeCraftingShapeless(CraftingShapeless):
     type: Literal['minecraft:crafting_shapeless']
-    ingredients: Annotated[list[Ingredient], 'Length = 1-9 (both inclusive)']
-    result: ItemStackTemplate
 
 
 @dataclass(kw_only=True)
@@ -125,56 +105,33 @@ class RecipeCraftingSpecialShielddecoration:
 
 
 @dataclass(kw_only=True)
-class RecipeCraftingTransmute(CraftingBookInfo, NotificationInfo):
+class RecipeCraftingTransmute(CraftingTransmute):
     type: Literal['minecraft:crafting_transmute']
-    input: Ingredient  # The ingredient that will transfer its data components to the result item.
-    material: Ingredient  # An additional ingredient.
-    material_count: MinMaxBounds[Annotated[int, 'Range | `1`-`8` | both inclusive']] | Annotated[int, 'Range | `1`-`8` | both inclusive'] | None = None  # The allowed count of material. Defaults to `1`.
-    add_material_count_to_result: bool | None = None  # When true, the number of materials will be added to the result count.  Defaults to `false`.
-    result: ItemStack | Annotated[str, IdSpec(registry='item', exclude=('air',))]  # The result item that will be merged with the input ingredient.
 
 
 @dataclass(kw_only=True)
-class RecipeSmelting(CookingBookInfo, NotificationInfo):
+class RecipeSmelting(Smelting):
     type: Literal['minecraft:smelting']
-    ingredient: Ingredient
-    result: ItemStackTemplate
-    experience: float | None = None
-    cookingtime: int | None = None
 
 
 @dataclass(kw_only=True)
-class RecipeSmithingTransform(NotificationInfo):
+class RecipeSmithingTransform(SmithingTransform):
     type: Literal['minecraft:smithing_transform']
-    base: Ingredient  # Ingredient specifying an item to be transformed.
-    addition: Ingredient | None = None  # Material that will be used.
-    template: Ingredient | None = None  # Template item that will be used for the pattern.
-    result: ItemStackTemplate  # Resulting transformed item.
 
 
 @dataclass(kw_only=True)
-class RecipeSmithingTrim(NotificationInfo):
+class RecipeSmithingTrim(SmithingTrim):
     type: Literal['minecraft:smithing_trim']
-    base: Ingredient  # Ingredient specifying an item to be trimmed.
-    addition: Ingredient  # Material that will be used.
-    template: Ingredient  # Template item that will be used for the pattern.
-    pattern: Annotated[str, IdSpec(registry='trim_pattern')]  # The trim pattern to apply to the result item.
 
 
 @dataclass(kw_only=True)
-class RecipeSmoking(CookingBookInfo, NotificationInfo):
+class RecipeSmoking(Smelting):
     type: Literal['minecraft:smoking']
-    ingredient: Ingredient
-    result: ItemStackTemplate
-    experience: float | None = None
-    cookingtime: int | None = None
 
 
 @dataclass(kw_only=True)
-class RecipeStonecutting(NotificationInfo):
+class RecipeStonecutting(Stonecutting):
     type: Literal['minecraft:stonecutting']
-    ingredient: Ingredient
-    result: ItemStackTemplate
 
 
 type Recipe = RecipeUnknown | RecipeBlasting | RecipeBrewing | RecipeCampfireCooking | RecipeCraftingDecoratedPot | RecipeCraftingDye | RecipeCraftingImbue | RecipeCraftingShaped | RecipeCraftingShapeless | RecipeCraftingSpecialBannerduplicate | RecipeCraftingSpecialBookcloning | RecipeCraftingSpecialFireworkRocket | RecipeCraftingSpecialFireworkStar | RecipeCraftingSpecialFireworkStarFade | RecipeCraftingSpecialMapextending | RecipeCraftingSpecialShielddecoration | RecipeCraftingTransmute | RecipeSmelting | RecipeSmithingTransform | RecipeSmithingTrim | RecipeSmoking | RecipeStonecutting

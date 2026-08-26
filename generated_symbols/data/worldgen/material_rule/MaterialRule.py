@@ -4,15 +4,13 @@ Local link to file: generated_symbols/data/worldgen/material_rule/MaterialRule.p
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, ClassVar, Literal
+from typing import Annotated, ClassVar, Literal
 
+from generated_symbols.data.worldgen.material_rule.BlockRule import BlockRule
+from generated_symbols.data.worldgen.material_rule.ConditionRule import ConditionRule
+from generated_symbols.data.worldgen.material_rule.OreVeinifier import OreVeinifier
+from generated_symbols.data.worldgen.material_rule.SequenceRule import SequenceRule
 from minecraft_registry import IdSpec
-
-if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.density_function.DensityFunctionRef import DensityFunctionRef
-    from generated_symbols.data.worldgen.material_condition.MaterialConditionRef import MaterialConditionRef
-    from generated_symbols.data.worldgen.material_rule.MaterialRuleRef import MaterialRuleRef
-    from generated_symbols.util.block_state.BlockState import BlockState
 
 
 @dataclass(kw_only=True)
@@ -23,34 +21,23 @@ class MaterialRuleUnknown:
 
 
 @dataclass(kw_only=True)
-class MaterialRuleBlock:
+class MaterialRuleBlock(BlockRule):
     type: Literal['minecraft:block']
-    result_state: BlockState
 
 
 @dataclass(kw_only=True)
-class MaterialRuleCondition:
+class MaterialRuleCondition(ConditionRule):
     type: Literal['minecraft:condition']
-    if_true: MaterialConditionRef
-    then_run: MaterialRuleRef
 
 
 @dataclass(kw_only=True)
-class MaterialRuleOreVein:
+class MaterialRuleOreVein(OreVeinifier):
     type: Literal['minecraft:ore_vein']
-    ore_block: BlockState
-    raw_ore_block: BlockState
-    filler_block: BlockState
-    raw_ore_chance: Annotated[float, 'Range | `0`-`1` | both inclusive']
-    density: DensityFunctionRef
-    richness: DensityFunctionRef
-    filler_gap: DensityFunctionRef
 
 
 @dataclass(kw_only=True)
-class MaterialRuleSequence:
+class MaterialRuleSequence(SequenceRule):
     type: Literal['minecraft:sequence']
-    sequence: list[MaterialRuleRef]
 
 
 type MaterialRule = MaterialRuleUnknown | MaterialRuleBlock | MaterialRuleCondition | MaterialRuleOreVein | MaterialRuleSequence

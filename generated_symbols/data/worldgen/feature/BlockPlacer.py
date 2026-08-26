@@ -4,16 +4,14 @@ Local link to file: generated_symbols/data/worldgen/feature/BlockPlacer.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Literal
+from typing import Literal
 
-if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.IntProvider import IntProvider
+from generated_symbols.data.worldgen.feature.ColumnPlacer import ColumnPlacer
 
 
 @dataclass(kw_only=True)
-class BlockPlacerColumnPlacer:
+class BlockPlacerColumnPlacer(ColumnPlacer):
     type: Literal['minecraft:column_placer']
-    size: IntProvider[Annotated[int, 'Range | `0` and above | inclusive']] | Annotated[int, 'Range | `0` and above | inclusive']
 
 
 @dataclass(kw_only=True)

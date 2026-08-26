@@ -4,52 +4,38 @@ Local link to file: generated_symbols/assets/atlas/SpriteSource.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Literal
+from typing import Literal
 
-from minecraft_registry import IdSpec
-
-if TYPE_CHECKING:
-    from generated_symbols.assets.atlas.FilterPattern import FilterPattern
-    from generated_symbols.assets.atlas.PaletteTexture import PaletteTexture
-    from generated_symbols.assets.atlas.UnstitchRegion import UnstitchRegion
+from generated_symbols.assets.atlas.Directory import Directory
+from generated_symbols.assets.atlas.Filter import Filter
+from generated_symbols.assets.atlas.PalettedPermutations import PalettedPermutations
+from generated_symbols.assets.atlas.Single import Single
+from generated_symbols.assets.atlas.Unstitch import Unstitch
 
 
 @dataclass(kw_only=True)
-class SpriteSourceDirectory:
+class SpriteSourceDirectory(Directory):
     type: Literal['minecraft:directory']
-    source: str  # Directory of texture locations to include, relative to the `textures` folder, not including the trailing `/`.
-    prefix: str  # The sprite name prefix, usually ending with `/`.
 
 
 @dataclass(kw_only=True)
-class SpriteSourceFilter:
+class SpriteSourceFilter(Filter):
     type: Literal['minecraft:filter']
-    pattern: FilterPattern  # Pattern to remove sprite identifiers already in the atlas. The order of sprite sources is important.
 
 
 @dataclass(kw_only=True)
-class SpriteSourcePalettedPermutations:
+class SpriteSourcePalettedPermutations(PalettedPermutations):
     type: Literal['minecraft:paletted_permutations']
-    textures: list[Annotated[str, IdSpec(registry='texture')]]
-    palette_key: PaletteTexture
-    permutations: dict[str, PaletteTexture]
-    separator: str | None = None  # Value to use when joining the texture and permutation names to produce the sprite name. Defaults to `_`.
 
 
 @dataclass(kw_only=True)
-class SpriteSourceSingle:
+class SpriteSourceSingle(Single):
     type: Literal['minecraft:single']
-    resource: Annotated[str, IdSpec(registry='texture')]  # A single texture location of the source.
-    sprite: Annotated[str, IdSpec(registry='texture', definition=True)] | None = None  # The identifier of the sprite that can referenced. If not specified, matches `resource`.
 
 
 @dataclass(kw_only=True)
-class SpriteSourceUnstitch:
+class SpriteSourceUnstitch(Unstitch):
     type: Literal['minecraft:unstitch']
-    resource: Annotated[str, IdSpec(registry='texture')]
-    divisor_x: float | None = None  # If set to the resource width, regions will use pixel coordinates.
-    divisor_y: float | None = None  # If set to the resource height, regions will use pixel coordinates.
-    regions: list[UnstitchRegion]
 
 
 type SpriteSource = SpriteSourceDirectory | SpriteSourceFilter | SpriteSourcePalettedPermutations | SpriteSourceSingle | SpriteSourceUnstitch

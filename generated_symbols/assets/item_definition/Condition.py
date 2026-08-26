@@ -4,27 +4,17 @@ Local link to file: generated_symbols/assets/item_definition/Condition.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Literal
+from typing import TYPE_CHECKING, Literal
 
-from minecraft_registry import IdSpec
+from generated_symbols.assets.item_definition.ComponentFlags import ComponentFlags
+from generated_symbols.assets.item_definition.CustomModelDataFlags import CustomModelDataFlags
+from generated_symbols.assets.item_definition.HasComponent import HasComponent
+from generated_symbols.assets.item_definition.KeybindDown import KeybindDown
+from generated_symbols.assets.item_definition.ViewEntity import ViewEntity
 
 if TYPE_CHECKING:
     from generated_symbols.assets.item_definition.ConditionalPropertyType import ConditionalPropertyType
     from generated_symbols.assets.item_definition.ItemModel import ItemModel
-    from generated_symbols.data.advancement.predicate.EnchantmentPredicate import EnchantmentPredicate
-    from generated_symbols.util.text.Keybind import Keybind
-    from generated_symbols.world.component.CustomData import CustomData
-    from generated_symbols.world.component.predicate.AttributeModifiersPredicate import AttributeModifiersPredicate
-    from generated_symbols.world.component.predicate.BundleContentsPredicate import BundleContentsPredicate
-    from generated_symbols.world.component.predicate.ContainerPredicate import ContainerPredicate
-    from generated_symbols.world.component.predicate.FireworkExplosionPredicate import FireworkExplosionPredicate
-    from generated_symbols.world.component.predicate.FireworksPredicate import FireworksPredicate
-    from generated_symbols.world.component.predicate.ItemDamagePredicate import ItemDamagePredicate
-    from generated_symbols.world.component.predicate.JukeboxPlayablePredicate import JukeboxPlayablePredicate
-    from generated_symbols.world.component.predicate.PotionsPredicate import PotionsPredicate
-    from generated_symbols.world.component.predicate.TrimPredicate import TrimPredicate
-    from generated_symbols.world.component.predicate.WritableBookPredicate import WritableBookPredicate
-    from generated_symbols.world.component.predicate.WrittenBookPredicate import WrittenBookPredicate
     from generated_symbols.world.entity.display.Transformation import Transformation
 
 
@@ -37,45 +27,39 @@ class ConditionUnknown:
 
 
 @dataclass(kw_only=True)
-class ConditionComponent:
+class ConditionComponent(ComponentFlags):
     property: Literal['minecraft:component']
     on_true: ItemModel
     on_false: ItemModel
     transformation: Transformation | None = None
-    predicate: Annotated[str, IdSpec(registry='data_component_predicate_type')]  # The component predicate to check.
-    value: None | AttributeModifiersPredicate | BundleContentsPredicate | ContainerPredicate | CustomData | ItemDamagePredicate | list[EnchantmentPredicate] | FireworkExplosionPredicate | FireworksPredicate | JukeboxPlayablePredicate | PotionsPredicate | TrimPredicate | Annotated[str, IdSpec(registry='villager_type', tags='allowed')] | list[Annotated[str, IdSpec(registry='villager_type')]] | WritableBookPredicate | WrittenBookPredicate  # The predicate-specific value.
 
 
 @dataclass(kw_only=True)
-class ConditionCustomModelData:
+class ConditionCustomModelData(CustomModelDataFlags):
     property: Literal['minecraft:custom_model_data']
     on_true: ItemModel
     on_false: ItemModel
     transformation: Transformation | None = None
-    index: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # The index of the `flags` list in the `custom_model_data` component. Defaults to 0.
 
 
 @dataclass(kw_only=True)
-class ConditionHasComponent:
+class ConditionHasComponent(HasComponent):
     property: Literal['minecraft:has_component']
     on_true: ItemModel
     on_false: ItemModel
     transformation: Transformation | None = None
-    component: Annotated[str, IdSpec(registry='data_component_type')]
-    ignore_default: bool | None = None  # Whether the default components should be handled as "no component". Defaults to false.
 
 
 @dataclass(kw_only=True)
-class ConditionKeybindDown:
+class ConditionKeybindDown(KeybindDown):
     property: Literal['minecraft:keybind_down']
     on_true: ItemModel
     on_false: ItemModel
     transformation: Transformation | None = None
-    keybind: Keybind  # The keybind ID to check for.
 
 
 @dataclass(kw_only=True)
-class ConditionViewEntity:
+class ConditionViewEntity(ViewEntity):
     property: Literal['minecraft:view_entity']
     on_true: ItemModel
     on_false: ItemModel

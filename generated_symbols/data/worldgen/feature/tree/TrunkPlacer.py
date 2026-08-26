@@ -4,36 +4,28 @@ Local link to file: generated_symbols/data/worldgen/feature/tree/TrunkPlacer.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Literal
+from typing import Annotated, Literal
 
-from minecraft_registry import IdSpec
-
-if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.IntProvider import IntProvider
-    from generated_symbols.data.worldgen.UniformIntProvider import UniformIntProvider
-    from generated_symbols.registry.KnownBlockId import KnownBlockId
+from generated_symbols.data.worldgen.feature.tree.BendingTrunkPlacer import BendingTrunkPlacer
+from generated_symbols.data.worldgen.feature.tree.CherryTrunkPlacer import CherryTrunkPlacer
+from generated_symbols.data.worldgen.feature.tree.PoplarTrunkPlacer import PoplarTrunkPlacer
+from generated_symbols.data.worldgen.feature.tree.UpwardsBranchingTrunkPlacer import UpwardsBranchingTrunkPlacer
 
 
 @dataclass(kw_only=True)
-class TrunkPlacerBendingTrunkPlacer:
+class TrunkPlacerBendingTrunkPlacer(BendingTrunkPlacer):
     type: Literal['minecraft:bending_trunk_placer']
     base_height: Annotated[int, 'Range | `0`-`32` | both inclusive']
     height_rand_a: Annotated[int, 'Range | `0`-`24` | both inclusive']
     height_rand_b: Annotated[int, 'Range | `0`-`24` | both inclusive']
-    bend_length: IntProvider[Annotated[int, 'Range | `1`-`64` | both inclusive']] | Annotated[int, 'Range | `1`-`64` | both inclusive']
-    min_height_for_leaves: Annotated[int, 'Range | `1` and above | inclusive'] | None = None
 
 
 @dataclass(kw_only=True)
-class TrunkPlacerCherryTrunkPlacer:
+class TrunkPlacerCherryTrunkPlacer(CherryTrunkPlacer):
     type: Literal['minecraft:cherry_trunk_placer']
     base_height: Annotated[int, 'Range | `0`-`32` | both inclusive']
     height_rand_a: Annotated[int, 'Range | `0`-`24` | both inclusive']
     height_rand_b: Annotated[int, 'Range | `0`-`24` | both inclusive']
-    branch_count: IntProvider[Annotated[int, 'Range | `1`-`3` | both inclusive']] | Annotated[int, 'Range | `1`-`3` | both inclusive']
-    branch_horizontal_length: IntProvider[Annotated[int, 'Range | `2`-`16` | both inclusive']] | Annotated[int, 'Range | `2`-`16` | both inclusive']
-    branch_start_offset_from_top: UniformIntProvider[Annotated[int, 'Range | `-16`-`0` | both inclusive']] | Annotated[int, 'Range | `-16`-`0` | both inclusive']
-    branch_end_offset_from_top: IntProvider[Annotated[int, 'Range | `-16`-`16` | both inclusive']] | Annotated[int, 'Range | `-16`-`16` | both inclusive']
 
 
 @dataclass(kw_only=True)
@@ -77,13 +69,11 @@ class TrunkPlacerMegaJungleTrunkPlacer:
 
 
 @dataclass(kw_only=True)
-class TrunkPlacerPoplarTrunkPlacer:
+class TrunkPlacerPoplarTrunkPlacer(PoplarTrunkPlacer):
     type: Literal['minecraft:poplar_trunk_placer']
     base_height: Annotated[int, 'Range | `0`-`32` | both inclusive']
     height_rand_a: Annotated[int, 'Range | `0`-`24` | both inclusive']
     height_rand_b: Annotated[int, 'Range | `0`-`24` | both inclusive']
-    trunk_height_above_branches: IntProvider[Annotated[int, 'Range | `0`-`8` | both inclusive']] | Annotated[int, 'Range | `0`-`8` | both inclusive']
-    branch_amount: IntProvider[Annotated[int, 'Range | `1`-`4` | both inclusive']] | Annotated[int, 'Range | `1`-`4` | both inclusive']
 
 
 @dataclass(kw_only=True)
@@ -95,15 +85,11 @@ class TrunkPlacerStraightTrunkPlacer:
 
 
 @dataclass(kw_only=True)
-class TrunkPlacerUpwardsBranchingTrunkPlacer:
+class TrunkPlacerUpwardsBranchingTrunkPlacer(UpwardsBranchingTrunkPlacer):
     type: Literal['minecraft:upwards_branching_trunk_placer']
     base_height: Annotated[int, 'Range | `0`-`32` | both inclusive']
     height_rand_a: Annotated[int, 'Range | `0`-`24` | both inclusive']
     height_rand_b: Annotated[int, 'Range | `0`-`24` | both inclusive']
-    extra_branch_steps: IntProvider[Annotated[int, 'Range | `1` and above | inclusive']] | Annotated[int, 'Range | `1` and above | inclusive']
-    extra_branch_length: IntProvider[Annotated[int, 'Range | `0` and above | inclusive']] | Annotated[int, 'Range | `0` and above | inclusive']
-    place_branch_per_log_probability: Annotated[float, 'Range | `0`-`1` | both inclusive']
-    can_grow_through: list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId
 
 
 type TrunkPlacer = TrunkPlacerBendingTrunkPlacer | TrunkPlacerCherryTrunkPlacer | TrunkPlacerDarkOakTrunkPlacer | TrunkPlacerFancyTrunkPlacer | TrunkPlacerForkingTrunkPlacer | TrunkPlacerGiantTrunkPlacer | TrunkPlacerMegaJungleTrunkPlacer | TrunkPlacerPoplarTrunkPlacer | TrunkPlacerStraightTrunkPlacer | TrunkPlacerUpwardsBranchingTrunkPlacer

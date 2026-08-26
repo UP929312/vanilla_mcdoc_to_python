@@ -4,37 +4,28 @@ Local link to file: generated_symbols/data/enchantment/provider/EnchantmentProvi
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, ClassVar, Literal
+from typing import ClassVar, Literal
 
-from minecraft_registry import IdSpec
-
-if TYPE_CHECKING:
-    from generated_symbols.data.enchantment.provider.EnchantmentsType import EnchantmentsType
-    from generated_symbols.data.worldgen.IntProvider import IntProvider
+from generated_symbols.data.enchantment.provider.ByCostEnchantmentProvider import ByCostEnchantmentProvider
+from generated_symbols.data.enchantment.provider.ByCostWithDifficultyEnchantmentProvider import ByCostWithDifficultyEnchantmentProvider
+from generated_symbols.data.enchantment.provider.SingleProvider import SingleProvider
 
 
 @dataclass(kw_only=True)
-class EnchantmentProviderByCost:
+class EnchantmentProviderByCost(ByCostEnchantmentProvider):
     __resource_dir__: ClassVar[str] = 'enchantment_provider'
 
     type: Literal['minecraft:by_cost']
-    enchantments: EnchantmentsType
-    cost: IntProvider[int] | int  # Cost to use for the Enchanting process.
 
 
 @dataclass(kw_only=True)
-class EnchantmentProviderByCostWithDifficulty:
+class EnchantmentProviderByCostWithDifficulty(ByCostWithDifficultyEnchantmentProvider):
     type: Literal['minecraft:by_cost_with_difficulty']
-    enchantments: EnchantmentsType
-    min_cost: Annotated[int, 'Range | `0` and above | inclusive']  # Positive integer representing the minimum possible cost
-    max_cost_span: Annotated[int, 'Range | `0` and above | inclusive']  # Span of the cost randomization when the special factor is at its maximum.
 
 
 @dataclass(kw_only=True)
-class EnchantmentProviderSingle:
+class EnchantmentProviderSingle(SingleProvider):
     type: Literal['minecraft:single']
-    enchantment: Annotated[str, IdSpec(registry='enchantment')]
-    level: IntProvider[int] | int
 
 
 type EnchantmentProvider = EnchantmentProviderByCost | EnchantmentProviderByCostWithDifficulty | EnchantmentProviderSingle

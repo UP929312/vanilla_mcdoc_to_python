@@ -4,56 +4,46 @@ Local link to file: generated_symbols/assets/font/GlyphProvider.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Literal
+from typing import TYPE_CHECKING, Literal
 
-from minecraft_registry import IdSpec
+from generated_symbols.assets.font.BitmapProvider import BitmapProvider
+from generated_symbols.assets.font.ReferenceProvider import ReferenceProvider
+from generated_symbols.assets.font.SpaceProvider import SpaceProvider
+from generated_symbols.assets.font.TtfProvider import TtfProvider
+from generated_symbols.assets.font.UnihexProvider import UnihexProvider
 
 if TYPE_CHECKING:
     from generated_symbols.assets.font.FontOption import FontOption
-    from generated_symbols.assets.font.UnihexOverrideRange import UnihexOverrideRange
 
 
 @dataclass(kw_only=True)
-class GlyphProviderBitmap:
+class GlyphProviderBitmap(BitmapProvider):
     type: Literal['minecraft:bitmap']
     filter: dict[FontOption, bool] | None = None
-    file: str
-    height: int | None = None
-    ascent: int
-    chars: Annotated[list[Annotated[str, 'Length = 1 (inclusive) and above']], 'Length = 1 (inclusive) and above']
 
 
 @dataclass(kw_only=True)
-class GlyphProviderReference:
+class GlyphProviderReference(ReferenceProvider):
     type: Literal['minecraft:reference']
     filter: dict[FontOption, bool] | None = None
-    id: Annotated[str, IdSpec(registry='font')]
 
 
 @dataclass(kw_only=True)
-class GlyphProviderSpace:
+class GlyphProviderSpace(SpaceProvider):
     type: Literal['minecraft:space']
     filter: dict[FontOption, bool] | None = None
-    advances: dict[Annotated[str, 'Length = Exactly 1'], float]
 
 
 @dataclass(kw_only=True)
-class GlyphProviderTtf:
+class GlyphProviderTtf(TtfProvider):
     type: Literal['minecraft:ttf']
     filter: dict[FontOption, bool] | None = None
-    file: str
-    size: float | None = None
-    oversample: float | None = None
-    shift: tuple[float, float] | None = None
-    skip: str | list[str] | None = None
 
 
 @dataclass(kw_only=True)
-class GlyphProviderUnihex:
+class GlyphProviderUnihex(UnihexProvider):
     type: Literal['minecraft:unihex']
     filter: dict[FontOption, bool] | None = None
-    hex_file: str  # ZIP archive containing one or more *.hex files (files in archive with different extensions are ignored).
-    size_overrides: list[UnihexOverrideRange] | None = None  # List of ranges to override the size of.
 
 
 type GlyphProvider = GlyphProviderBitmap | GlyphProviderReference | GlyphProviderSpace | GlyphProviderTtf | GlyphProviderUnihex

@@ -6,20 +6,20 @@ Local link to file: generated_symbols/data/worldgen/feature/tree/RootPlacer.py
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Literal
 
+from generated_symbols.data.worldgen.feature.tree.MangroveRootPlacer import MangroveRootPlacer
+
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.IntProvider import IntProvider
     from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
     from generated_symbols.data.worldgen.feature.tree.AboveRootPlacement import AboveRootPlacement
-    from generated_symbols.data.worldgen.feature.tree.MangroveRootPlacement import MangroveRootPlacement
 
 
 @dataclass(kw_only=True)
-class RootPlacerMangroveRootPlacer:
+class RootPlacerMangroveRootPlacer(MangroveRootPlacer):
     type: Literal['minecraft:mangrove_root_placer']
     root_provider: BlockStateProvider
     trunk_offset_y: IntProvider[int] | int
     above_root_placement: AboveRootPlacement | None = None
-    mangrove_root_placement: MangroveRootPlacement
 
 
 type RootPlacer = RootPlacerMangroveRootPlacer

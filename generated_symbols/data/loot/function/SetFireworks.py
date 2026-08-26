@@ -7,6 +7,8 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Literal
 
 from generated_symbols.data.loot.function.Conditions import Conditions
+from generated_symbols.data.loot.function.InsertListOperation import InsertListOperation
+from generated_symbols.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
 
 if TYPE_CHECKING:
     from generated_symbols.world.component.item.Explosion import Explosion
@@ -19,10 +21,9 @@ class ExplosionsStructAppend:
 
 
 @dataclass(kw_only=True)
-class ExplosionsStructInsert:
+class ExplosionsStructInsert(InsertListOperation):
     values: list[Explosion]
     mode: Literal['minecraft:insert']  # Determines how the existing list should be modified.
-    offset: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # The offset in the list to insert into. Defaults to 0.
 
 
 @dataclass(kw_only=True)
@@ -32,11 +33,9 @@ class ExplosionsStructReplaceAll:
 
 
 @dataclass(kw_only=True)
-class ExplosionsStructReplaceSection:
+class ExplosionsStructReplaceSection(ReplaceSectionListOperation):
     values: list[Explosion]
     mode: Literal['minecraft:replace_section']  # Determines how the existing list should be modified.
-    offset: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # The offset of the section to replace. Defaults to 0.
-    size: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # The size of the section to replace. Defaults to size of the new list.
 
 
 type ExplosionsStruct = ExplosionsStructAppend | ExplosionsStructInsert | ExplosionsStructReplaceAll | ExplosionsStructReplaceSection

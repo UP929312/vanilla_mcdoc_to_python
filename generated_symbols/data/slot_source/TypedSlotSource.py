@@ -4,23 +4,20 @@ Local link to file: generated_symbols/data/slot_source/TypedSlotSource.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, ClassVar, Literal
+from typing import ClassVar, Literal
 
-if TYPE_CHECKING:
-    from generated_symbols.data.advancement.predicate.ItemPredicate import ItemPredicate
-    from generated_symbols.data.loot.BlockEntityTarget import BlockEntityTarget
-    from generated_symbols.data.loot.EntityTarget import EntityTarget
-    from generated_symbols.data.loot.function.ContainerComponents import ContainerComponents
-    from generated_symbols.data.slot_source.SlotSource import SlotSource
+from generated_symbols.data.slot_source.ContentsSlotSource import ContentsSlotSource
+from generated_symbols.data.slot_source.FilterSlotSource import FilterSlotSource
+from generated_symbols.data.slot_source.GroupSlotSource import GroupSlotSource
+from generated_symbols.data.slot_source.LimitCountSlotSource import LimitCountSlotSource
+from generated_symbols.data.slot_source.RangeSlotSource import RangeSlotSource
 
 
 @dataclass(kw_only=True)
-class TypedSlotSourceContents:
+class TypedSlotSourceContents(ContentsSlotSource):
     __resource_dir__: ClassVar[str] = 'slot_source'
 
     type: Literal['minecraft:contents']
-    slot_source: SlotSource  # The slots to search.
-    component: ContainerComponents  # If an item targeted by `slot_source` has this container component, selects all items inside.
 
 
 @dataclass(kw_only=True)
@@ -29,30 +26,23 @@ class TypedSlotSourceEmpty:
 
 
 @dataclass(kw_only=True)
-class TypedSlotSourceFiltered:
+class TypedSlotSourceFiltered(FilterSlotSource):
     type: Literal['minecraft:filtered']
-    slot_source: SlotSource
-    item_filter: ItemPredicate
 
 
 @dataclass(kw_only=True)
-class TypedSlotSourceGroup:
+class TypedSlotSourceGroup(GroupSlotSource):
     type: Literal['minecraft:group']
-    terms: SlotSource
 
 
 @dataclass(kw_only=True)
-class TypedSlotSourceLimitSlots:
+class TypedSlotSourceLimitSlots(LimitCountSlotSource):
     type: Literal['minecraft:limit_slots']
-    slot_source: SlotSource
-    limit: Annotated[int, 'Range | `1` and above | inclusive']
 
 
 @dataclass(kw_only=True)
-class TypedSlotSourceSlotRange:
+class TypedSlotSourceSlotRange(RangeSlotSource):
     type: Literal['minecraft:slot_range']
-    source: EntityTarget | BlockEntityTarget | Literal['container'] | None = None  # Defaults to `container`.
-    slots: str
 
 
 type TypedSlotSource = TypedSlotSourceContents | TypedSlotSourceEmpty | TypedSlotSourceFiltered | TypedSlotSourceGroup | TypedSlotSourceLimitSlots | TypedSlotSourceSlotRange

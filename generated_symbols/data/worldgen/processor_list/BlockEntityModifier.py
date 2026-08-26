@@ -4,26 +4,20 @@ Local link to file: generated_symbols/data/worldgen/processor_list/BlockEntityMo
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import Annotated, Literal
+from typing import Literal
 
-from minecraft_registry import IdSpec
-
-
-@dataclass(kw_only=True)
-class DataStruct:
-    pass
+from generated_symbols.data.worldgen.processor_list.AppendLoot import AppendLoot
+from generated_symbols.data.worldgen.processor_list.AppendStatic import AppendStatic
 
 
 @dataclass(kw_only=True)
-class BlockEntityModifierAppendLoot:
+class BlockEntityModifierAppendLoot(AppendLoot):
     type: Literal['minecraft:append_loot']
-    loot_table: Annotated[str, IdSpec(registry='loot_table')]
 
 
 @dataclass(kw_only=True)
-class BlockEntityModifierAppendStatic:
+class BlockEntityModifierAppendStatic(AppendStatic):
     type: Literal['minecraft:append_static']
-    data: DataStruct
 
 
 @dataclass(kw_only=True)

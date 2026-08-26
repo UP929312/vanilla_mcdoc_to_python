@@ -4,23 +4,22 @@ Local link to file: generated_symbols/data/gametest/TestInstance.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import Annotated, ClassVar, Literal
+from typing import ClassVar, Literal
 
-from generated_symbols.data.gametest.TestData import TestData
-from minecraft_registry import IdSpec
+from generated_symbols.data.gametest.BlockBasedTestInstance import BlockBasedTestInstance
+from generated_symbols.data.gametest.FunctionTestInstance import FunctionTestInstance
 
 
 @dataclass(kw_only=True)
-class TestInstanceBlockBased(TestData):
+class TestInstanceBlockBased(BlockBasedTestInstance):
     __resource_dir__: ClassVar[str] = 'test_instance'
 
     type: Literal['minecraft:block_based']
 
 
 @dataclass(kw_only=True)
-class TestInstanceFunction(TestData):
+class TestInstanceFunction(FunctionTestInstance):
     type: Literal['minecraft:function']
-    function: Annotated[str, IdSpec(registry='test_function')]  # Test function (Java code) to run.
 
 
 type TestInstance = TestInstanceBlockBased | TestInstanceFunction

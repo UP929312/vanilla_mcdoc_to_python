@@ -4,74 +4,60 @@ Local link to file: generated_symbols/data/loot/LootPoolEntry.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Literal
+from typing import Literal
 
-from generated_symbols.data.loot.LootPoolEntryBase import LootPoolEntryBase
+from generated_symbols.data.loot.CompositePoolEntry import CompositePoolEntry
+from generated_symbols.data.loot.DynamicPoolEntry import DynamicPoolEntry
+from generated_symbols.data.loot.ItemPoolEntry import ItemPoolEntry
+from generated_symbols.data.loot.LootTablePoolEntry import LootTablePoolEntry
 from generated_symbols.data.loot.SingletonPoolEntry import SingletonPoolEntry
-from minecraft_registry import IdSpec
-
-if TYPE_CHECKING:
-    from generated_symbols.data.loot.DynamicDrops import DynamicDrops
-    from generated_symbols.data.loot.LootTableListRef import LootTableListRef
-    from generated_symbols.data.slot_source.SlotSource import SlotSource
-    from generated_symbols.util.registry_ref.ItemListRef import ItemListRef
+from generated_symbols.data.loot.SlotsPoolEntry import SlotsPoolEntry
+from generated_symbols.data.loot.TagPoolEntry import TagPoolEntry
 
 
 @dataclass(kw_only=True)
-class LootPoolEntryAlternatives(LootPoolEntryBase):
+class LootPoolEntryAlternatives(CompositePoolEntry):
     type: Literal['minecraft:alternatives']
-    children: Annotated[list[LootPoolEntry], 'Length = 1 (inclusive) and above']
 
 
 @dataclass(kw_only=True)
-class LootPoolEntryDynamic(SingletonPoolEntry):
+class LootPoolEntryDynamic(DynamicPoolEntry):
     type: Literal['minecraft:dynamic']
-    name: DynamicDrops
 
 
 @dataclass(kw_only=True)
-class LootPoolEntryEmpty(LootPoolEntryBase):
+class LootPoolEntryEmpty(SingletonPoolEntry):
     type: Literal['minecraft:empty']
-    weight: Annotated[int, 'Range | `1` and above | inclusive'] | None = None
-    quality: int | None = None
 
 
 @dataclass(kw_only=True)
-class LootPoolEntryGroup(LootPoolEntryBase):
+class LootPoolEntryGroup(CompositePoolEntry):
     type: Literal['minecraft:group']
-    children: Annotated[list[LootPoolEntry], 'Length = 1 (inclusive) and above']
 
 
 @dataclass(kw_only=True)
-class LootPoolEntryItem(SingletonPoolEntry):
+class LootPoolEntryItem(ItemPoolEntry):
     type: Literal['minecraft:item']
-    name: Annotated[str, IdSpec(registry='item', exclude=('air',))]
 
 
 @dataclass(kw_only=True)
-class LootPoolEntryLootTable(SingletonPoolEntry):
+class LootPoolEntryLootTable(LootTablePoolEntry):
     type: Literal['minecraft:loot_table']
-    value: LootTableListRef
-    expand: bool | None = None  # If `true`, randomly selects a loot table to drop.  If `false`, drops all loot tables.  Defaults to `false`.
 
 
 @dataclass(kw_only=True)
-class LootPoolEntrySequence(LootPoolEntryBase):
+class LootPoolEntrySequence(CompositePoolEntry):
     type: Literal['minecraft:sequence']
-    children: Annotated[list[LootPoolEntry], 'Length = 1 (inclusive) and above']
 
 
 @dataclass(kw_only=True)
-class LootPoolEntrySlots(SingletonPoolEntry):
+class LootPoolEntrySlots(SlotsPoolEntry):
     type: Literal['minecraft:slots']
-    slot_source: SlotSource
 
 
 @dataclass(kw_only=True)
-class LootPoolEntryTag(SingletonPoolEntry):
+class LootPoolEntryTag(TagPoolEntry):
     type: Literal['minecraft:tag']
-    items: ItemListRef
-    expand: bool | None = None  # If `true`, randomly selects an item to drop.  If `false`, drops all items.  Defaults to `false`.
 
 
 type LootPoolEntry = LootPoolEntryAlternatives | LootPoolEntryDynamic | LootPoolEntryEmpty | LootPoolEntryGroup | LootPoolEntryItem | LootPoolEntryLootTable | LootPoolEntrySequence | LootPoolEntrySlots | LootPoolEntryTag

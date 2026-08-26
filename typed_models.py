@@ -102,8 +102,6 @@ class LengthRange(BaseModel):
 
     def to_annotation_suffix(self) -> str:
         if self.min is not None and self.max is not None:
-            if self.min == self.max:
-                return f"Length = Exactly {self.min}"
             return f"Length = {self.min}-{self.max} (both inclusive)"
         if self.min is not None:
             return f"Length = {self.min} (inclusive) and above"
@@ -771,6 +769,7 @@ class StructSchema(BaseSchema):
 
     def _dispatcher_variant(
         self, dispatcher_spread: SpreadFieldSchema, branch_struct: StructSchema, selector_field: str, registry_key: str,
+        branch_reference: ReferenceSchema | None = None,
     ) -> StructSchema:
         """Build the struct for one entry in the dispatcher's registry.
 
@@ -801,11 +800,14 @@ class StructSchema(BaseSchema):
                 )
             fields.append(copied_field)
 
-        fields.extend(
-            field.model_copy(deep=True)
-            for field in branch_struct.fields
-            if not isinstance(field, PairSchema) or isinstance(field.key, str)
-        )
+        if branch_reference is not None:
+            fields.append(SpreadFieldSchema(kind="spread", type=branch_reference.model_copy(deep=True)))
+        else:
+            fields.extend(
+                field.model_copy(deep=True)
+                for field in branch_struct.fields
+                if not isinstance(field, PairSchema) or isinstance(field.key, str)
+            )
         return StructSchema(kind="struct", fields=fields)
 
     def _dispatcher_variants(
@@ -824,7 +826,12 @@ class StructSchema(BaseSchema):
                 preferred = f"{class_name}{suffix}{index if len(branch_structs) > 1 else ''}"
                 variant_name = ctx.allocate_name(preferred, branch_struct.model_dump_json(by_alias=True))
                 variants.append((
-                    variant_name, self._dispatcher_variant(dispatcher_spread, branch_struct, selector_field, key),
+                    variant_name, self._dispatcher_variant(
+                        dispatcher_spread, branch_struct, selector_field, key,
+                        branch
+                        if isinstance(branch, ReferenceSchema) and ctx.schema_graph.is_runtime_class(branch)
+                        else None,
+                    ),
                 ))
         return variants
 
@@ -904,15 +911,8 @@ class StructSchema(BaseSchema):
         if not pair_fields:
             lines.append("    pass")
 
-        used_keys: set[str] = set()
         for pair_field in pair_fields:
             key = PairSchema.clean_key(pair_field.key)  # type: ignore[arg-type]
-            preferred = key
-            suffix = 2
-            while key in used_keys:
-                key = f"{preferred}_{suffix}"
-                suffix += 1
-            used_keys.add(key)
             if isinstance(pair_field.type, StructSchema) and pair_field.type._mapping_pair() is None:
                 nested_struct_name = PairSchema.nested_struct_name(key)
                 annotation = pair_field.type.to_materialized_annotation(nested_struct_name, ctx)

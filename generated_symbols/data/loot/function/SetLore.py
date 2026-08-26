@@ -4,9 +4,11 @@ Local link to file: generated_symbols/data/loot/function/SetLore.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Literal
+from typing import TYPE_CHECKING, Literal
 
 from generated_symbols.data.loot.function.Conditions import Conditions
+from generated_symbols.data.loot.function.InsertListOperation import InsertListOperation
+from generated_symbols.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
 
 if TYPE_CHECKING:
     from generated_symbols.data.loot.EntityTarget import EntityTarget
@@ -21,11 +23,10 @@ class SetLoreAppend(Conditions):
 
 
 @dataclass(kw_only=True)
-class SetLoreInsert(Conditions):
+class SetLoreInsert(Conditions, InsertListOperation):
     entity: EntityTarget | None = None  # The entity used to resolve the text components.
     lore: list[Text]
     mode: Literal['minecraft:insert']  # Determines how the existing list should be modified.
-    offset: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # The offset in the list to insert into. Defaults to 0.
 
 
 @dataclass(kw_only=True)
@@ -36,12 +37,10 @@ class SetLoreReplaceAll(Conditions):
 
 
 @dataclass(kw_only=True)
-class SetLoreReplaceSection(Conditions):
+class SetLoreReplaceSection(Conditions, ReplaceSectionListOperation):
     entity: EntityTarget | None = None  # The entity used to resolve the text components.
     lore: list[Text]
     mode: Literal['minecraft:replace_section']  # Determines how the existing list should be modified.
-    offset: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # The offset of the section to replace. Defaults to 0.
-    size: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # The size of the section to replace. Defaults to size of the new list.
 
 
 type SetLore = SetLoreAppend | SetLoreInsert | SetLoreReplaceAll | SetLoreReplaceSection

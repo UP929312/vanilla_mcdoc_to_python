@@ -4,39 +4,30 @@ Local link to file: generated_symbols/data/worldgen/dimension/biome_source/Biome
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Literal
+from typing import Annotated, Literal
 
+from generated_symbols.data.worldgen.dimension.biome_source.Checkerboard import Checkerboard
+from generated_symbols.data.worldgen.dimension.biome_source.DirectMultiNoise import DirectMultiNoise
+from generated_symbols.data.worldgen.dimension.biome_source.Fixed import Fixed
 from generated_symbols.data.worldgen.dimension.biome_source.MultiNoiseBase import MultiNoiseBase
+from generated_symbols.data.worldgen.dimension.biome_source.TheEnd import TheEnd
 from minecraft_registry import IdSpec
 
-if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.dimension.biome_source.ClimateParameters import ClimateParameters
-
 
 @dataclass(kw_only=True)
-class BiomesStruct:
-    biome: Annotated[str, IdSpec(registry='worldgen/biome')]
-    parameters: ClimateParameters
-
-
-@dataclass(kw_only=True)
-class BiomeSourceCheckerboard:
+class BiomeSourceCheckerboard(Checkerboard):
     type: Literal['minecraft:checkerboard']
-    scale: Annotated[int, 'Range | `0`-`62` | both inclusive'] | None = None
-    biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
 
 
 @dataclass(kw_only=True)
-class BiomeSourceFixed:
+class BiomeSourceFixed(Fixed):
     type: Literal['minecraft:fixed']
-    biome: Annotated[str, IdSpec(registry='worldgen/biome')]
 
 
 @dataclass(kw_only=True)
-class BiomeSourceMultiNoiseNone(MultiNoiseBase):
+class BiomeSourceMultiNoiseNone(DirectMultiNoise, MultiNoiseBase):
     type: Literal['minecraft:multi_noise']
     preset: Annotated[str, IdSpec(registry='worldgen/multi_noise_biome_source_parameter_list')] | None = None
-    biomes: list[BiomesStruct]
 
 
 @dataclass(kw_only=True)
@@ -48,7 +39,7 @@ class BiomeSourceMultiNoiseUnknown(MultiNoiseBase):
 type BiomeSourceMultiNoise = BiomeSourceMultiNoiseNone | BiomeSourceMultiNoiseUnknown
 
 @dataclass(kw_only=True)
-class BiomeSourceTheEnd:
+class BiomeSourceTheEnd(TheEnd):
     type: Literal['minecraft:the_end']
 
 

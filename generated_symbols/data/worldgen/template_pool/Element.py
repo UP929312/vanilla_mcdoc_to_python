@@ -4,43 +4,31 @@ Local link to file: generated_symbols/data/worldgen/template_pool/Element.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Literal
+from typing import Literal
 
-from generated_symbols.data.worldgen.template_pool.ElementBase import ElementBase
-from minecraft_registry import IdSpec
-
-if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.feature.placement.PlacedFeatureRef import PlacedFeatureRef
-    from generated_symbols.data.worldgen.processor_list.ProcessorListRef import ProcessorListRef
-    from generated_symbols.data.worldgen.structure.LiquidSettings import LiquidSettings
+from generated_symbols.data.worldgen.template_pool.FeatureElement import FeatureElement
+from generated_symbols.data.worldgen.template_pool.ListElement import ListElement
+from generated_symbols.data.worldgen.template_pool.SingleElement import SingleElement
 
 
 @dataclass(kw_only=True)
-class ElementFeaturePoolElement(ElementBase):
+class ElementFeaturePoolElement(FeatureElement):
     element_type: Literal['minecraft:feature_pool_element']
-    feature: PlacedFeatureRef
 
 
 @dataclass(kw_only=True)
-class ElementLegacySinglePoolElement(ElementBase):
+class ElementLegacySinglePoolElement(SingleElement):
     element_type: Literal['minecraft:legacy_single_pool_element']
-    location: Annotated[str, IdSpec(registry='structure')]
-    processors: ProcessorListRef
-    override_liquid_settings: LiquidSettings | None = None
 
 
 @dataclass(kw_only=True)
-class ElementListPoolElement(ElementBase):
+class ElementListPoolElement(ListElement):
     element_type: Literal['minecraft:list_pool_element']
-    elements: list[Element]
 
 
 @dataclass(kw_only=True)
-class ElementSinglePoolElement(ElementBase):
+class ElementSinglePoolElement(SingleElement):
     element_type: Literal['minecraft:single_pool_element']
-    location: Annotated[str, IdSpec(registry='structure')]
-    processors: ProcessorListRef
-    override_liquid_settings: LiquidSettings | None = None
 
 
 type Element = ElementFeaturePoolElement | ElementLegacySinglePoolElement | ElementListPoolElement | ElementSinglePoolElement

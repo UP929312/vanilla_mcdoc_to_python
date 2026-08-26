@@ -4,25 +4,16 @@ Local link to file: generated_symbols/data/worldgen/dimension/biome_source/Multi
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated
+from typing import Annotated
 
+from generated_symbols.data.worldgen.dimension.biome_source.DirectMultiNoise import DirectMultiNoise
 from generated_symbols.data.worldgen.dimension.biome_source.MultiNoiseBase import MultiNoiseBase
 from minecraft_registry import IdSpec
 
-if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.dimension.biome_source.ClimateParameters import ClimateParameters
-
 
 @dataclass(kw_only=True)
-class BiomesStruct:
-    biome: Annotated[str, IdSpec(registry='worldgen/biome')]
-    parameters: ClimateParameters
-
-
-@dataclass(kw_only=True)
-class MultiNoiseNone(MultiNoiseBase):
+class MultiNoiseNone(DirectMultiNoise, MultiNoiseBase):
     preset: Annotated[str, IdSpec(registry='worldgen/multi_noise_biome_source_parameter_list')] | None = None
-    biomes: list[BiomesStruct]
 
 
 @dataclass(kw_only=True)

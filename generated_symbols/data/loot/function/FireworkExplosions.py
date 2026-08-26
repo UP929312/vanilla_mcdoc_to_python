@@ -4,7 +4,10 @@ Local link to file: generated_symbols/data/loot/function/FireworkExplosions.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Literal
+from typing import TYPE_CHECKING, Literal
+
+from generated_symbols.data.loot.function.InsertListOperation import InsertListOperation
+from generated_symbols.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
 
 if TYPE_CHECKING:
     from generated_symbols.world.component.item.Explosion import Explosion
@@ -17,10 +20,9 @@ class FireworkExplosionsAppend:
 
 
 @dataclass(kw_only=True)
-class FireworkExplosionsInsert:
+class FireworkExplosionsInsert(InsertListOperation):
     values: list[Explosion]
     mode: Literal['minecraft:insert']  # Determines how the existing list should be modified.
-    offset: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # The offset in the list to insert into. Defaults to 0.
 
 
 @dataclass(kw_only=True)
@@ -30,11 +32,9 @@ class FireworkExplosionsReplaceAll:
 
 
 @dataclass(kw_only=True)
-class FireworkExplosionsReplaceSection:
+class FireworkExplosionsReplaceSection(ReplaceSectionListOperation):
     values: list[Explosion]
     mode: Literal['minecraft:replace_section']  # Determines how the existing list should be modified.
-    offset: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # The offset of the section to replace. Defaults to 0.
-    size: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # The size of the section to replace. Defaults to size of the new list.
 
 
 type FireworkExplosions = FireworkExplosionsAppend | FireworkExplosionsInsert | FireworkExplosionsReplaceAll | FireworkExplosionsReplaceSection

@@ -4,30 +4,20 @@ Local link to file: generated_symbols/data/dialog/body/DialogBody.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Literal
+from typing import Literal
 
-if TYPE_CHECKING:
-    from generated_symbols.data.dialog.body.PlainMessage import PlainMessage
-    from generated_symbols.util.text.Text import Text
-    from generated_symbols.world.item.ItemStackTemplate import ItemStackTemplate
+from generated_symbols.data.dialog.body.ItemBody import ItemBody
+from generated_symbols.data.dialog.body.PlainMessage import PlainMessage
 
 
 @dataclass(kw_only=True)
-class DialogBodyItem:
+class DialogBodyItem(ItemBody):
     type: Literal['minecraft:item']
-    item: ItemStackTemplate
-    description: PlainMessage | Text | None = None  # The description text rendered to the right of item.
-    show_decorations: bool | None = None  # Whether count and damage bar are rendered over the item. Defaults to `true`.
-    show_tooltip: bool | None = None  # Whether item tooltip shows up when the item is hovered. Defaults to `true`.
-    width: Annotated[int, 'Range | `1`-`256` | both inclusive'] | None = None  # Width of the item. Defaults to 16.
-    height: Annotated[int, 'Range | `1`-`256` | both inclusive'] | None = None  # Height of the item. Defaults to 16.
 
 
 @dataclass(kw_only=True)
-class DialogBodyPlainMessage:
+class DialogBodyPlainMessage(PlainMessage):
     type: Literal['minecraft:plain_message']
-    contents: Text  # A multiline label. Click events in the text trigger `after_action` like any other action.
-    width: Annotated[int, 'Range | `1`-`1024` | both inclusive'] | None = None  # Maximum width of message. Defaults to 200.
 
 
 type DialogBody = DialogBodyItem | DialogBodyPlainMessage

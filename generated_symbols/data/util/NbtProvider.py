@@ -4,24 +4,23 @@ Local link to file: generated_symbols/data/util/NbtProvider.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Literal
+from typing import TYPE_CHECKING, Literal
 
-from minecraft_registry import IdSpec
+from generated_symbols.data.util.ContextNbtProvider import ContextNbtProvider
+from generated_symbols.data.util.StorageNbtProvider import StorageNbtProvider
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.NbtContextTarget import NbtContextTarget
 
 
 @dataclass(kw_only=True)
-class NbtProviderStructContext:
+class NbtProviderStructContext(ContextNbtProvider):
     type: Literal['minecraft:context']
-    target: NbtContextTarget
 
 
 @dataclass(kw_only=True)
-class NbtProviderStructStorage:
+class NbtProviderStructStorage(StorageNbtProvider):
     type: Literal['minecraft:storage']
-    source: Annotated[str, IdSpec(registry='storage')]
 
 
 type NbtProviderStruct = NbtProviderStructContext | NbtProviderStructStorage

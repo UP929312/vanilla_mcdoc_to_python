@@ -4,47 +4,44 @@ Local link to file: generated_symbols/data/enchantment/effect/ValueEffect.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Literal
+from typing import Literal
 
-if TYPE_CHECKING:
-    from generated_symbols.data.enchantment.LevelBasedValue import LevelBasedValue
+from generated_symbols.data.enchantment.effect.AddEffectValue import AddEffectValue
+from generated_symbols.data.enchantment.effect.AllOfEffectValue import AllOfEffectValue
+from generated_symbols.data.enchantment.effect.ExponentialEffectValue import ExponentialEffectValue
+from generated_symbols.data.enchantment.effect.MultiplyEffectValue import MultiplyEffectValue
+from generated_symbols.data.enchantment.effect.ReduceBinomialEffectValue import ReduceBinomialEffectValue
+from generated_symbols.data.enchantment.effect.SetEffectValue import SetEffectValue
 
 
 @dataclass(kw_only=True)
-class ValueEffectAdd:
+class ValueEffectAdd(AddEffectValue):
     type: Literal['minecraft:add']
-    value: LevelBasedValue
 
 
 @dataclass(kw_only=True)
-class ValueEffectAllOf:
+class ValueEffectAllOf(AllOfEffectValue):
     type: Literal['minecraft:all_of']
-    effects: Annotated[list[ValueEffect], 'Length = 1 (inclusive) and above']
 
 
 @dataclass(kw_only=True)
-class ValueEffectExponential:
+class ValueEffectExponential(ExponentialEffectValue):
     type: Literal['minecraft:exponential']
-    base: LevelBasedValue
-    exponent: LevelBasedValue
 
 
 @dataclass(kw_only=True)
-class ValueEffectMultiply:
+class ValueEffectMultiply(MultiplyEffectValue):
     type: Literal['minecraft:multiply']
-    factor: LevelBasedValue  # Level-Based Value determining the factor to multiply in
 
 
 @dataclass(kw_only=True)
-class ValueEffectRemoveBinomial:
+class ValueEffectRemoveBinomial(ReduceBinomialEffectValue):
     type: Literal['minecraft:remove_binomial']
-    chance: LevelBasedValue  # Chance that an input value is dropped by 1.  The span is 0 to 1, with 0 being no chance to drop an input value and 1 dropping all input values.
 
 
 @dataclass(kw_only=True)
-class ValueEffectSet:
+class ValueEffectSet(SetEffectValue):
     type: Literal['minecraft:set']
-    value: LevelBasedValue
 
 
 type ValueEffect = ValueEffectAdd | ValueEffectAllOf | ValueEffectExponential | ValueEffectMultiply | ValueEffectRemoveBinomial | ValueEffectSet

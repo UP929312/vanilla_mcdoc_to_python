@@ -4,7 +4,10 @@ Local link to file: generated_symbols/data/loot/function/CustomModelDataFlags.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import Annotated, Literal
+from typing import Literal
+
+from generated_symbols.data.loot.function.InsertListOperation import InsertListOperation
+from generated_symbols.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
 
 
 @dataclass(kw_only=True)
@@ -14,10 +17,9 @@ class CustomModelDataFlagsAppend:
 
 
 @dataclass(kw_only=True)
-class CustomModelDataFlagsInsert:
+class CustomModelDataFlagsInsert(InsertListOperation):
     values: list[bool]
     mode: Literal['minecraft:insert']  # Determines how the existing list should be modified.
-    offset: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # The offset in the list to insert into. Defaults to 0.
 
 
 @dataclass(kw_only=True)
@@ -27,11 +29,9 @@ class CustomModelDataFlagsReplaceAll:
 
 
 @dataclass(kw_only=True)
-class CustomModelDataFlagsReplaceSection:
+class CustomModelDataFlagsReplaceSection(ReplaceSectionListOperation):
     values: list[bool]
     mode: Literal['minecraft:replace_section']  # Determines how the existing list should be modified.
-    offset: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # The offset of the section to replace. Defaults to 0.
-    size: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # The size of the section to replace. Defaults to size of the new list.
 
 
 type CustomModelDataFlags = CustomModelDataFlagsAppend | CustomModelDataFlagsInsert | CustomModelDataFlagsReplaceAll | CustomModelDataFlagsReplaceSection

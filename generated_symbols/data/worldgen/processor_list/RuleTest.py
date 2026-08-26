@@ -4,70 +4,61 @@ Local link to file: generated_symbols/data/worldgen/processor_list/RuleTest.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Literal
+from typing import Literal
 
-from minecraft_registry import IdSpec
-
-if TYPE_CHECKING:
-    from generated_symbols.registry.KnownBlockId import KnownBlockId
-    from generated_symbols.util.block_state.BlockState import BlockState
+from generated_symbols.data.worldgen.processor_list.BlockMatch import BlockMatch
+from generated_symbols.data.worldgen.processor_list.BlockStateMatch import BlockStateMatch
+from generated_symbols.data.worldgen.processor_list.CompositeMatch import CompositeMatch
+from generated_symbols.data.worldgen.processor_list.HeightMatch import HeightMatch
+from generated_symbols.data.worldgen.processor_list.InvertedMatch import InvertedMatch
+from generated_symbols.data.worldgen.processor_list.RandomBlockMatch import RandomBlockMatch
+from generated_symbols.data.worldgen.processor_list.RandomBlockStateMatch import RandomBlockStateMatch
+from generated_symbols.data.worldgen.processor_list.TagMatch import TagMatch
 
 
 @dataclass(kw_only=True)
-class RuleTestAllOf:
+class RuleTestAllOf(CompositeMatch):
     predicate_type: Literal['minecraft:all_of']
-    rules: list[RuleTest]
 
 
 @dataclass(kw_only=True)
-class RuleTestAnyOf:
+class RuleTestAnyOf(CompositeMatch):
     predicate_type: Literal['minecraft:any_of']
-    rules: list[RuleTest]
 
 
 @dataclass(kw_only=True)
-class RuleTestBlockMatch:
+class RuleTestBlockMatch(BlockMatch):
     predicate_type: Literal['minecraft:block_match']
-    block: Annotated[str, IdSpec(registry='block')] | KnownBlockId
 
 
 @dataclass(kw_only=True)
-class RuleTestBlockstateMatch:
+class RuleTestBlockstateMatch(BlockStateMatch):
     predicate_type: Literal['minecraft:blockstate_match']
-    block_state: BlockState
 
 
 @dataclass(kw_only=True)
-class RuleTestHeightMatch:
+class RuleTestHeightMatch(HeightMatch):
     predicate_type: Literal['minecraft:height_match']
-    min_inclusive: int
-    max_inclusive: int
 
 
 @dataclass(kw_only=True)
-class RuleTestNot:
+class RuleTestNot(InvertedMatch):
     predicate_type: Literal['minecraft:not']
-    rule: RuleTest
 
 
 @dataclass(kw_only=True)
-class RuleTestRandomBlockMatch:
+class RuleTestRandomBlockMatch(RandomBlockMatch):
     predicate_type: Literal['minecraft:random_block_match']
-    block: Annotated[str, IdSpec(registry='block')] | KnownBlockId
-    probability: Annotated[float, 'Range | `0`-`1` | both inclusive']
 
 
 @dataclass(kw_only=True)
-class RuleTestRandomBlockstateMatch:
+class RuleTestRandomBlockstateMatch(RandomBlockStateMatch):
     predicate_type: Literal['minecraft:random_blockstate_match']
-    block_state: BlockState
-    probability: Annotated[float, 'Range | `0`-`1` | both inclusive']
 
 
 @dataclass(kw_only=True)
-class RuleTestTagMatch:
+class RuleTestTagMatch(TagMatch):
     predicate_type: Literal['minecraft:tag_match']
-    tag: Annotated[str, IdSpec(registry='block', tags='implicit')] | KnownBlockId
 
 
 type RuleTest = RuleTestAllOf | RuleTestAnyOf | RuleTestBlockMatch | RuleTestBlockstateMatch | RuleTestHeightMatch | RuleTestNot | RuleTestRandomBlockMatch | RuleTestRandomBlockstateMatch | RuleTestTagMatch

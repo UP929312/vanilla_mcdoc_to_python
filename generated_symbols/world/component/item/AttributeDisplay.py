@@ -4,10 +4,9 @@ Local link to file: generated_symbols/world/component/item/AttributeDisplay.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Literal
+from typing import Literal
 
-if TYPE_CHECKING:
-    from generated_symbols.util.text.Text import Text
+from generated_symbols.world.component.item.AttributeDisplayTextOverride import AttributeDisplayTextOverride
 
 
 @dataclass(kw_only=True)
@@ -21,9 +20,8 @@ class AttributeDisplayHidden:
 
 
 @dataclass(kw_only=True)
-class AttributeDisplayOverride:
+class AttributeDisplayOverride(AttributeDisplayTextOverride):
     type: Literal['minecraft:override']
-    value: Text  # The text contents to show for this attribute modifer entry.
 
 
 type AttributeDisplay = AttributeDisplayDefault | AttributeDisplayHidden | AttributeDisplayOverride

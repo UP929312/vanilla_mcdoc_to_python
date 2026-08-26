@@ -4,37 +4,34 @@ Local link to file: generated_symbols/data/util/RandomIntGenerator.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Literal
+from typing import TYPE_CHECKING, Literal
+
+from generated_symbols.data.util.BinomialIntGenerator import BinomialIntGenerator
+from generated_symbols.data.util.ConstantIntGenerator import ConstantIntGenerator
+from generated_symbols.data.util.UniformIntGenerator import UniformIntGenerator
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.RandomIntGeneratorType import RandomIntGeneratorType
 
 
 @dataclass(kw_only=True)
-class RandomIntGeneratorStructNone:
+class RandomIntGeneratorStructNone(UniformIntGenerator):
     type: RandomIntGeneratorType | None = None
-    min: int | None = None
-    max: int | None = None
 
 
 @dataclass(kw_only=True)
-class RandomIntGeneratorStructBinomial:
+class RandomIntGeneratorStructBinomial(BinomialIntGenerator):
     type: Literal['minecraft:binomial'] | None = None
-    n: Annotated[int, 'Range | `0` and above | inclusive']
-    p: Annotated[float, 'Range | `0`-`1` | both inclusive']
 
 
 @dataclass(kw_only=True)
-class RandomIntGeneratorStructConstant:
+class RandomIntGeneratorStructConstant(ConstantIntGenerator):
     type: Literal['minecraft:constant'] | None = None
-    value: int
 
 
 @dataclass(kw_only=True)
-class RandomIntGeneratorStructUniform:
+class RandomIntGeneratorStructUniform(UniformIntGenerator):
     type: Literal['minecraft:uniform'] | None = None
-    min: int | None = None
-    max: int | None = None
 
 
 type RandomIntGeneratorStruct = RandomIntGeneratorStructNone | RandomIntGeneratorStructBinomial | RandomIntGeneratorStructConstant | RandomIntGeneratorStructUniform

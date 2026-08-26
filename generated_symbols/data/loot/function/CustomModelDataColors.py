@@ -4,7 +4,10 @@ Local link to file: generated_symbols/data/loot/function/CustomModelDataColors.p
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Literal
+from typing import TYPE_CHECKING, Literal
+
+from generated_symbols.data.loot.function.InsertListOperation import InsertListOperation
+from generated_symbols.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
 
 if TYPE_CHECKING:
     from generated_symbols.data.number_provider.NumberProviderRef import NumberProviderRef
@@ -18,10 +21,9 @@ class CustomModelDataColorsAppend:
 
 
 @dataclass(kw_only=True)
-class CustomModelDataColorsInsert:
+class CustomModelDataColorsInsert(InsertListOperation):
     values: list[NumberProviderRef | RGB]
     mode: Literal['minecraft:insert']  # Determines how the existing list should be modified.
-    offset: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # The offset in the list to insert into. Defaults to 0.
 
 
 @dataclass(kw_only=True)
@@ -31,11 +33,9 @@ class CustomModelDataColorsReplaceAll:
 
 
 @dataclass(kw_only=True)
-class CustomModelDataColorsReplaceSection:
+class CustomModelDataColorsReplaceSection(ReplaceSectionListOperation):
     values: list[NumberProviderRef | RGB]
     mode: Literal['minecraft:replace_section']  # Determines how the existing list should be modified.
-    offset: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # The offset of the section to replace. Defaults to 0.
-    size: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # The size of the section to replace. Defaults to size of the new list.
 
 
 type CustomModelDataColors = CustomModelDataColorsAppend | CustomModelDataColorsInsert | CustomModelDataColorsReplaceAll | CustomModelDataColorsReplaceSection

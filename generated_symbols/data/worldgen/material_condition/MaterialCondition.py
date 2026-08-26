@@ -4,70 +4,52 @@ Local link to file: generated_symbols/data/worldgen/material_condition/MaterialC
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, ClassVar, Literal
+from typing import ClassVar, Literal
 
-from minecraft_registry import IdSpec
-
-if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.CaveSurface import CaveSurface
-    from generated_symbols.data.worldgen.VerticalAnchor import VerticalAnchor
-    from generated_symbols.data.worldgen.material_condition.MaterialConditionRef import MaterialConditionRef
+from generated_symbols.data.worldgen.material_condition.BiomeCondition import BiomeCondition
+from generated_symbols.data.worldgen.material_condition.NoiseThresholdCondition import NoiseThresholdCondition
+from generated_symbols.data.worldgen.material_condition.NotCondition import NotCondition
+from generated_symbols.data.worldgen.material_condition.StoneDepthCondition import StoneDepthCondition
+from generated_symbols.data.worldgen.material_condition.VerticalGradientCondition import VerticalGradientCondition
+from generated_symbols.data.worldgen.material_condition.WaterCondition import WaterCondition
+from generated_symbols.data.worldgen.material_condition.YAboveCondition import YAboveCondition
 
 
 @dataclass(kw_only=True)
-class MaterialConditionBiome:
+class MaterialConditionBiome(BiomeCondition):
     __resource_dir__: ClassVar[str] = 'worldgen/material_condition'
 
     type: Literal['minecraft:biome']
-    biome_is: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
 
 
 @dataclass(kw_only=True)
-class MaterialConditionNoiseThreshold:
+class MaterialConditionNoiseThreshold(NoiseThresholdCondition):
     type: Literal['minecraft:noise_threshold']
-    noise: Annotated[str, IdSpec(registry='worldgen/noise')]
-    min_threshold: float
-    max_threshold: float
-    is_3d: bool | None = None  # Defaults to `false`.
 
 
 @dataclass(kw_only=True)
-class MaterialConditionNot:
+class MaterialConditionNot(NotCondition):
     type: Literal['minecraft:not']
-    invert: MaterialConditionRef
 
 
 @dataclass(kw_only=True)
-class MaterialConditionStoneDepth:
+class MaterialConditionStoneDepth(StoneDepthCondition):
     type: Literal['minecraft:stone_depth']
-    offset: int
-    surface_type: CaveSurface
-    add_surface_depth: bool
-    secondary_depth_range: int
 
 
 @dataclass(kw_only=True)
-class MaterialConditionVerticalGradient:
+class MaterialConditionVerticalGradient(VerticalGradientCondition):
     type: Literal['minecraft:vertical_gradient']
-    random_name: str
-    true_at_and_below: VerticalAnchor
-    false_at_and_above: VerticalAnchor
 
 
 @dataclass(kw_only=True)
-class MaterialConditionWater:
+class MaterialConditionWater(WaterCondition):
     type: Literal['minecraft:water']
-    offset: int
-    surface_depth_multiplier: Annotated[int, 'Range | `-20`-`20` | both inclusive']
-    add_stone_depth: bool
 
 
 @dataclass(kw_only=True)
-class MaterialConditionYAbove:
+class MaterialConditionYAbove(YAboveCondition):
     type: Literal['minecraft:y_above']
-    anchor: VerticalAnchor
-    surface_depth_multiplier: Annotated[int, 'Range | `-20`-`20` | both inclusive']
-    add_stone_depth: bool
 
 
 type MaterialCondition = MaterialConditionBiome | MaterialConditionNoiseThreshold | MaterialConditionNot | MaterialConditionStoneDepth | MaterialConditionVerticalGradient | MaterialConditionWater | MaterialConditionYAbove

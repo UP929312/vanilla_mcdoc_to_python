@@ -6,31 +6,24 @@ Local link to file: generated_symbols/data/worldgen/structure/Structure.py
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar, Literal
 
+from generated_symbols.data.worldgen.structure.BuriedTreasure import BuriedTreasure
+from generated_symbols.data.worldgen.structure.Jigsaw import Jigsaw
+from generated_symbols.data.worldgen.structure.Mineshaft import Mineshaft
+from generated_symbols.data.worldgen.structure.NetherFossil import NetherFossil
+from generated_symbols.data.worldgen.structure.OceanRuin import OceanRuin
+from generated_symbols.data.worldgen.structure.RuinedPortal import RuinedPortal
+from generated_symbols.data.worldgen.structure.Shipwreck import Shipwreck
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.DecorationStep import DecorationStep
-    from generated_symbols.data.worldgen.HeightProvider import HeightProvider
-    from generated_symbols.data.worldgen.HeightmapType import HeightmapType
     from generated_symbols.data.worldgen.biome.MobCategory import MobCategory
-    from generated_symbols.data.worldgen.structure.BiomeTemperature import BiomeTemperature
-    from generated_symbols.data.worldgen.structure.JigsawDistanceLimits import JigsawDistanceLimits
-    from generated_symbols.data.worldgen.structure.LiquidSettings import LiquidSettings
-    from generated_symbols.data.worldgen.structure.MineshaftType import MineshaftType
-    from generated_symbols.data.worldgen.structure.PoolAlias import PoolAlias
-    from generated_symbols.data.worldgen.structure.RuinedPortalSetup import RuinedPortalSetup
     from generated_symbols.data.worldgen.structure.SpawnOverride import SpawnOverride
     from generated_symbols.data.worldgen.structure.TerrainAdaptation import TerrainAdaptation
 
 
 @dataclass(kw_only=True)
-class DimensionPaddingStruct:
-    bottom: Annotated[int, 'Range | `0` and above | inclusive'] | None = None
-    top: Annotated[int, 'Range | `0` and above | inclusive'] | None = None
-
-
-@dataclass(kw_only=True)
-class StructureBastionRemnant:
+class StructureBastionRemnant(Jigsaw):
     __resource_dir__: ClassVar[str] = 'worldgen/structure'
 
     type: Literal['minecraft:bastion_remnant']
@@ -38,20 +31,10 @@ class StructureBastionRemnant:
     step: DecorationStep  # The step when the structure generates.
     terrain_adaptation: TerrainAdaptation | None = None
     spawn_overrides: dict[MobCategory, SpawnOverride]
-    start_pool: Annotated[str, IdSpec(registry='worldgen/template_pool')]
-    size: Annotated[int, 'Range | `1`-`20` | both inclusive']
-    start_height: HeightProvider
-    start_jigsaw_name: Annotated[str, IdSpec()] | None = None
-    project_start_to_heightmap: HeightmapType | None = None
-    max_distance_from_center: Annotated[int, 'Range | `1`-`128` | both inclusive'] | JigsawDistanceLimits[Annotated[int, 'Range | `1`-`128` | both inclusive']] | Annotated[int, 'Range | `1`-`128` | both inclusive'] | Annotated[int, 'Range | `1`-`116` | both inclusive'] | JigsawDistanceLimits[Annotated[int, 'Range | `1`-`116` | both inclusive']] | Annotated[int, 'Range | `1`-`116` | both inclusive']
-    use_expansion_hack: bool
-    pool_aliases: list[PoolAlias] | None = None
-    dimension_padding: Annotated[int, 'Range | `0` and above | inclusive'] | DimensionPaddingStruct | None = None
-    liquid_settings: LiquidSettings | None = None
 
 
 @dataclass(kw_only=True)
-class StructureBuriedTreasure:
+class StructureBuriedTreasure(BuriedTreasure):
     type: Literal['minecraft:buried_treasure']
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
@@ -96,22 +79,12 @@ class StructureIgloo:
 
 
 @dataclass(kw_only=True)
-class StructureJigsaw:
+class StructureJigsaw(Jigsaw):
     type: Literal['minecraft:jigsaw']
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
     terrain_adaptation: TerrainAdaptation | None = None
     spawn_overrides: dict[MobCategory, SpawnOverride]
-    start_pool: Annotated[str, IdSpec(registry='worldgen/template_pool')]
-    size: Annotated[int, 'Range | `1`-`20` | both inclusive']
-    start_height: HeightProvider
-    start_jigsaw_name: Annotated[str, IdSpec()] | None = None
-    project_start_to_heightmap: HeightmapType | None = None
-    max_distance_from_center: Annotated[int, 'Range | `1`-`128` | both inclusive'] | JigsawDistanceLimits[Annotated[int, 'Range | `1`-`128` | both inclusive']] | Annotated[int, 'Range | `1`-`128` | both inclusive'] | Annotated[int, 'Range | `1`-`116` | both inclusive'] | JigsawDistanceLimits[Annotated[int, 'Range | `1`-`116` | both inclusive']] | Annotated[int, 'Range | `1`-`116` | both inclusive']
-    use_expansion_hack: bool
-    pool_aliases: list[PoolAlias] | None = None
-    dimension_padding: Annotated[int, 'Range | `0` and above | inclusive'] | DimensionPaddingStruct | None = None
-    liquid_settings: LiquidSettings | None = None
 
 
 @dataclass(kw_only=True)
@@ -124,23 +97,21 @@ class StructureJungleTemple:
 
 
 @dataclass(kw_only=True)
-class StructureMineshaft:
+class StructureMineshaft(Mineshaft):
     type: Literal['minecraft:mineshaft']
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
     terrain_adaptation: TerrainAdaptation | None = None
     spawn_overrides: dict[MobCategory, SpawnOverride]
-    mineshaft_type: MineshaftType
 
 
 @dataclass(kw_only=True)
-class StructureNetherFossil:
+class StructureNetherFossil(NetherFossil):
     type: Literal['minecraft:nether_fossil']
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
     terrain_adaptation: TerrainAdaptation | None = None
     spawn_overrides: dict[MobCategory, SpawnOverride]
-    height: HeightProvider
 
 
 @dataclass(kw_only=True)
@@ -153,54 +124,39 @@ class StructureOceanMonument:
 
 
 @dataclass(kw_only=True)
-class StructureOceanRuin:
+class StructureOceanRuin(OceanRuin):
     type: Literal['minecraft:ocean_ruin']
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
     terrain_adaptation: TerrainAdaptation | None = None
     spawn_overrides: dict[MobCategory, SpawnOverride]
-    biome_temp: BiomeTemperature
-    large_probability: Annotated[float, 'Range | `0`-`1` | both inclusive']
-    cluster_probability: Annotated[float, 'Range | `0`-`1` | both inclusive']
 
 
 @dataclass(kw_only=True)
-class StructurePillagerOutpost:
+class StructurePillagerOutpost(Jigsaw):
     type: Literal['minecraft:pillager_outpost']
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
     terrain_adaptation: TerrainAdaptation | None = None
     spawn_overrides: dict[MobCategory, SpawnOverride]
-    start_pool: Annotated[str, IdSpec(registry='worldgen/template_pool')]
-    size: Annotated[int, 'Range | `1`-`20` | both inclusive']
-    start_height: HeightProvider
-    start_jigsaw_name: Annotated[str, IdSpec()] | None = None
-    project_start_to_heightmap: HeightmapType | None = None
-    max_distance_from_center: Annotated[int, 'Range | `1`-`128` | both inclusive'] | JigsawDistanceLimits[Annotated[int, 'Range | `1`-`128` | both inclusive']] | Annotated[int, 'Range | `1`-`128` | both inclusive'] | Annotated[int, 'Range | `1`-`116` | both inclusive'] | JigsawDistanceLimits[Annotated[int, 'Range | `1`-`116` | both inclusive']] | Annotated[int, 'Range | `1`-`116` | both inclusive']
-    use_expansion_hack: bool
-    pool_aliases: list[PoolAlias] | None = None
-    dimension_padding: Annotated[int, 'Range | `0` and above | inclusive'] | DimensionPaddingStruct | None = None
-    liquid_settings: LiquidSettings | None = None
 
 
 @dataclass(kw_only=True)
-class StructureRuinedPortal:
+class StructureRuinedPortal(RuinedPortal):
     type: Literal['minecraft:ruined_portal']
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
     terrain_adaptation: TerrainAdaptation | None = None
     spawn_overrides: dict[MobCategory, SpawnOverride]
-    setups: list[RuinedPortalSetup]
 
 
 @dataclass(kw_only=True)
-class StructureShipwreck:
+class StructureShipwreck(Shipwreck):
     type: Literal['minecraft:shipwreck']
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
     terrain_adaptation: TerrainAdaptation | None = None
     spawn_overrides: dict[MobCategory, SpawnOverride]
-    is_beached: bool | None = None
 
 
 @dataclass(kw_only=True)
@@ -222,22 +178,12 @@ class StructureSwampHut:
 
 
 @dataclass(kw_only=True)
-class StructureVillage:
+class StructureVillage(Jigsaw):
     type: Literal['minecraft:village']
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
     terrain_adaptation: TerrainAdaptation | None = None
     spawn_overrides: dict[MobCategory, SpawnOverride]
-    start_pool: Annotated[str, IdSpec(registry='worldgen/template_pool')]
-    size: Annotated[int, 'Range | `1`-`20` | both inclusive']
-    start_height: HeightProvider
-    start_jigsaw_name: Annotated[str, IdSpec()] | None = None
-    project_start_to_heightmap: HeightmapType | None = None
-    max_distance_from_center: Annotated[int, 'Range | `1`-`128` | both inclusive'] | JigsawDistanceLimits[Annotated[int, 'Range | `1`-`128` | both inclusive']] | Annotated[int, 'Range | `1`-`128` | both inclusive'] | Annotated[int, 'Range | `1`-`116` | both inclusive'] | JigsawDistanceLimits[Annotated[int, 'Range | `1`-`116` | both inclusive']] | Annotated[int, 'Range | `1`-`116` | both inclusive']
-    use_expansion_hack: bool
-    pool_aliases: list[PoolAlias] | None = None
-    dimension_padding: Annotated[int, 'Range | `0` and above | inclusive'] | DimensionPaddingStruct | None = None
-    liquid_settings: LiquidSettings | None = None
 
 
 @dataclass(kw_only=True)

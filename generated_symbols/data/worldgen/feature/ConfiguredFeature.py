@@ -4,561 +4,331 @@ Local link to file: generated_symbols/data/worldgen/feature/ConfiguredFeature.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, ClassVar, Literal
+from typing import ClassVar, Literal
 
-from minecraft_registry import IdSpec
-
-if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.CaveSurface import CaveSurface
-    from generated_symbols.data.worldgen.FloatProvider import FloatProvider
-    from generated_symbols.data.worldgen.IntProvider import IntProvider
-    from generated_symbols.data.worldgen.feature.BlockColumnLayer import BlockColumnLayer
-    from generated_symbols.data.worldgen.feature.EndSpike import EndSpike
-    from generated_symbols.data.worldgen.feature.FeatureRef import FeatureRef
-    from generated_symbols.data.worldgen.feature.GeodeBlockSettings import GeodeBlockSettings
-    from generated_symbols.data.worldgen.feature.GeodeCrackSettings import GeodeCrackSettings
-    from generated_symbols.data.worldgen.feature.GeodeLayerSettings import GeodeLayerSettings
-    from generated_symbols.data.worldgen.feature.MultifaceBlock import MultifaceBlock
-    from generated_symbols.data.worldgen.feature.TargetBlock import TargetBlock
-    from generated_symbols.data.worldgen.feature.TemplateEntry import TemplateEntry
-    from generated_symbols.data.worldgen.feature.block_predicate.BlockPredicate import BlockPredicate
-    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
-    from generated_symbols.data.worldgen.feature.placement.PlacedFeatureListRef import PlacedFeatureListRef
-    from generated_symbols.data.worldgen.feature.placement.PlacedFeatureRef import PlacedFeatureRef
-    from generated_symbols.data.worldgen.feature.tree.FeatureSize import FeatureSize
-    from generated_symbols.data.worldgen.feature.tree.FoliagePlacer import FoliagePlacer
-    from generated_symbols.data.worldgen.feature.tree.RootPlacer import RootPlacer
-    from generated_symbols.data.worldgen.feature.tree.TreeDecorator import TreeDecorator
-    from generated_symbols.data.worldgen.feature.tree.TrunkPlacer import TrunkPlacer
-    from generated_symbols.data.worldgen.processor_list.ProcessorListRef import ProcessorListRef
-    from generated_symbols.registry.KnownBlockId import KnownBlockId
-    from generated_symbols.util.WeightedList import WeightedList
-    from generated_symbols.util.block_state.BlockState import BlockState
-    from generated_symbols.util.direction.Direction import Direction
-    from generated_symbols.util.direction.VerticalDirection import VerticalDirection
-    from generated_symbols.util.fluid_state.FluidState import FluidState
+from generated_symbols.data.worldgen.feature.BlockBlobConfig import BlockBlobConfig
+from generated_symbols.data.worldgen.feature.BlockColumnConfig import BlockColumnConfig
+from generated_symbols.data.worldgen.feature.BlockPileConfig import BlockPileConfig
+from generated_symbols.data.worldgen.feature.ColumnsConfig import ColumnsConfig
+from generated_symbols.data.worldgen.feature.CoralConfig import CoralConfig
+from generated_symbols.data.worldgen.feature.DeltaConfig import DeltaConfig
+from generated_symbols.data.worldgen.feature.DiskConfig import DiskConfig
+from generated_symbols.data.worldgen.feature.EmeraldOreConfig import EmeraldOreConfig
+from generated_symbols.data.worldgen.feature.EndGatewayConfig import EndGatewayConfig
+from generated_symbols.data.worldgen.feature.EndPodiumConfig import EndPodiumConfig
+from generated_symbols.data.worldgen.feature.EndSpikeConfig import EndSpikeConfig
+from generated_symbols.data.worldgen.feature.FillLayerConfig import FillLayerConfig
+from generated_symbols.data.worldgen.feature.FossilConfig import FossilConfig
+from generated_symbols.data.worldgen.feature.GeodeConfig import GeodeConfig
+from generated_symbols.data.worldgen.feature.HugeFungusConfig import HugeFungusConfig
+from generated_symbols.data.worldgen.feature.HugeMushroomConfig import HugeMushroomConfig
+from generated_symbols.data.worldgen.feature.IcebergConfig import IcebergConfig
+from generated_symbols.data.worldgen.feature.LakeConfig import LakeConfig
+from generated_symbols.data.worldgen.feature.LargeDripstoneConfig import LargeDripstoneConfig
+from generated_symbols.data.worldgen.feature.MultifaceGrowthConfig import MultifaceGrowthConfig
+from generated_symbols.data.worldgen.feature.NetherrackReplaceBlobsConfig import NetherrackReplaceBlobsConfig
+from generated_symbols.data.worldgen.feature.OreConfig import OreConfig
+from generated_symbols.data.worldgen.feature.OverlayConfig import OverlayConfig
+from generated_symbols.data.worldgen.feature.ProbabilityConfig import ProbabilityConfig
+from generated_symbols.data.worldgen.feature.ProjectedSquareConfig import ProjectedSquareConfig
+from generated_symbols.data.worldgen.feature.RandomBooleanSelector import RandomBooleanSelector
+from generated_symbols.data.worldgen.feature.RandomNeighborSpreadConfig import RandomNeighborSpreadConfig
+from generated_symbols.data.worldgen.feature.RandomPatchConfig import RandomPatchConfig
+from generated_symbols.data.worldgen.feature.RandomSelector import RandomSelector
+from generated_symbols.data.worldgen.feature.ReplaceSingleBlockConfig import ReplaceSingleBlockConfig
+from generated_symbols.data.worldgen.feature.RootSystemConfig import RootSystemConfig
+from generated_symbols.data.worldgen.feature.SculkPatchConfig import SculkPatchConfig
+from generated_symbols.data.worldgen.feature.SequenceConfig import SequenceConfig
+from generated_symbols.data.worldgen.feature.SimpleBlockConfig import SimpleBlockConfig
+from generated_symbols.data.worldgen.feature.SimpleRandomSelectorConfig import SimpleRandomSelectorConfig
+from generated_symbols.data.worldgen.feature.SingleBlockPillarConfig import SingleBlockPillarConfig
+from generated_symbols.data.worldgen.feature.SpeleothemClusterConfig import SpeleothemClusterConfig
+from generated_symbols.data.worldgen.feature.SpeleothemConfig import SpeleothemConfig
+from generated_symbols.data.worldgen.feature.SpikeConfig import SpikeConfig
+from generated_symbols.data.worldgen.feature.SpringConfig import SpringConfig
+from generated_symbols.data.worldgen.feature.TemplateConfig import TemplateConfig
+from generated_symbols.data.worldgen.feature.UnderwaterMagmaConfig import UnderwaterMagmaConfig
+from generated_symbols.data.worldgen.feature.VegetationPatchConfig import VegetationPatchConfig
+from generated_symbols.data.worldgen.feature.WeightedRandomFeatureConfig import WeightedRandomFeatureConfig
+from generated_symbols.data.worldgen.feature.tree.FallenTreeConfig import FallenTreeConfig
+from generated_symbols.data.worldgen.feature.tree.TreeConfig import TreeConfig
 
 
 @dataclass(kw_only=True)
-class FeaturesStruct:
-    chance: Annotated[float, 'Range | `0`-`1` | both inclusive']
-    feature: FeatureRef
-
-
-@dataclass(kw_only=True)
-class ConfiguredFeatureBamboo:
+class ConfiguredFeatureBamboo(ProbabilityConfig):
     __resource_dir__: ClassVar[str] = 'worldgen/feature'
 
     type: Literal['minecraft:bamboo']
-    probability: Annotated[float, 'Range | `0`-`1` | both inclusive']
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureBlockBlob:
+class ConfiguredFeatureBlockBlob(BlockBlobConfig):
     type: Literal['minecraft:block_blob']
-    state: BlockState
-    can_place_on: BlockPredicate
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureBlockColumn:
+class ConfiguredFeatureBlockColumn(BlockColumnConfig):
     type: Literal['minecraft:block_column']
-    direction: Direction
-    allowed_placement: BlockPredicate
-    prioritize_tip: bool
-    layers: list[BlockColumnLayer]
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureBlockPile:
+class ConfiguredFeatureBlockPile(BlockPileConfig):
     type: Literal['minecraft:block_pile']
-    state_provider: BlockStateProvider
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureCoralClaw:
+class ConfiguredFeatureCoralClaw(CoralConfig):
     type: Literal['minecraft:coral_claw']
-    feature: PlacedFeatureRef
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureCoralTree:
+class ConfiguredFeatureCoralTree(CoralConfig):
     type: Literal['minecraft:coral_tree']
-    feature: PlacedFeatureRef
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureDeltaFeature:
+class ConfiguredFeatureDeltaFeature(DeltaConfig):
     type: Literal['minecraft:delta_feature']
-    contents: BlockState
-    rim: BlockState
-    size: IntProvider[Annotated[int, 'Range | `0`-`16` | both inclusive']] | Annotated[int, 'Range | `0`-`16` | both inclusive']
-    rim_size: IntProvider[Annotated[int, 'Range | `0`-`16` | both inclusive']] | Annotated[int, 'Range | `0`-`16` | both inclusive']
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureDisk:
+class ConfiguredFeatureDisk(DiskConfig):
     type: Literal['minecraft:disk']
-    state_provider: BlockStateProvider
-    radius: IntProvider[Annotated[int, 'Range | `0`-`8` | both inclusive']] | Annotated[int, 'Range | `0`-`8` | both inclusive']
-    half_height: Annotated[int, 'Range | `0`-`4` | both inclusive']
-    target: BlockPredicate
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureEmeraldOre:
+class ConfiguredFeatureEmeraldOre(EmeraldOreConfig):
     type: Literal['minecraft:emerald_ore']
-    state: BlockState
-    target: BlockState
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureEndGateway:
+class ConfiguredFeatureEndGateway(EndGatewayConfig):
     type: Literal['minecraft:end_gateway']
-    exact: bool
-    exit: tuple[int, int, int] | None = None
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureEndPodium:
+class ConfiguredFeatureEndPodium(EndPodiumConfig):
     type: Literal['minecraft:end_podium']
-    active: bool | None = None  # Defaults to `false`.
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureEndSpike:
+class ConfiguredFeatureEndSpike(EndSpikeConfig):
     type: Literal['minecraft:end_spike']
-    spikes: list[EndSpike]
-    crystal_invulnerable: bool | None = None
-    crystal_beam_target: tuple[int, int, int] | None = None
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureFallenTree:
+class ConfiguredFeatureFallenTree(FallenTreeConfig):
     type: Literal['minecraft:fallen_tree']
-    trunk_provider: BlockStateProvider
-    log_length: IntProvider[Annotated[int, 'Range | `0`-`16` | both inclusive']] | Annotated[int, 'Range | `0`-`16` | both inclusive']
-    stump_decorators: list[TreeDecorator]
-    log_decorators: list[TreeDecorator]
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureFillLayer:
+class ConfiguredFeatureFillLayer(FillLayerConfig):
     type: Literal['minecraft:fill_layer']
-    state: BlockState
-    height: Annotated[int, 'Range | `0`-`255` | both inclusive']
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureFlower:
+class ConfiguredFeatureFlower(RandomPatchConfig):
     type: Literal['minecraft:flower']
-    tries: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # How many attempts will be made to find a placement. Defaults to 128.
-    xz_spread: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # Defaults to 7.
-    y_spread: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # Defaults to 3.
-    feature: FeatureRef
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureFossil:
+class ConfiguredFeatureFossil(FossilConfig):
     type: Literal['minecraft:fossil']
-    max_empty_corners_allowed: Annotated[int, 'Range | `0`-`7` | both inclusive']  # If more corners are exposed to air, feature placement is cancelled.
-    fossil_structures: list[Annotated[str, IdSpec(registry='structure')]]
-    overlay_structures: list[Annotated[str, IdSpec(registry='structure')]]
-    fossil_processors: ProcessorListRef
-    overlay_processors: ProcessorListRef
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureGeode:
+class ConfiguredFeatureGeode(GeodeConfig):
     type: Literal['minecraft:geode']
-    blocks: GeodeBlockSettings
-    layers: GeodeLayerSettings
-    crack: GeodeCrackSettings
-    noise_multiplier: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
-    use_potential_placements_chance: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
-    use_alternate_layer0_chance: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
-    placements_require_layer0_alternate: bool | None = None
-    outer_wall_distance: IntProvider[Annotated[int, 'Range | `1`-`20` | both inclusive']] | Annotated[int, 'Range | `1`-`20` | both inclusive'] | None = None
-    distribution_points: IntProvider[Annotated[int, 'Range | `1`-`20` | both inclusive']] | Annotated[int, 'Range | `1`-`20` | both inclusive'] | None = None
-    point_offset: IntProvider[Annotated[int, 'Range | `1`-`10` | both inclusive']] | Annotated[int, 'Range | `1`-`10` | both inclusive'] | None = None
-    min_gen_offset: int | None = None
-    max_gen_offset: int | None = None
-    invalid_blocks_threshold: int
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureGlowLichen:
+class ConfiguredFeatureGlowLichen(MultifaceGrowthConfig):
     type: Literal['minecraft:glow_lichen']
-    block: MultifaceBlock
-    search_range: Annotated[int, 'Range | `1`-`64` | both inclusive'] | None = None
-    chance_of_spreading: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
-    can_place_on_floor: bool | None = None
-    can_place_on_ceiling: bool | None = None
-    can_place_on_wall: bool | None = None
-    can_be_placed_on: list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | None = None
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureHugeBrownMushroom:
+class ConfiguredFeatureHugeBrownMushroom(HugeMushroomConfig):
     type: Literal['minecraft:huge_brown_mushroom']
-    cap_provider: BlockStateProvider
-    stem_provider: BlockStateProvider
-    foliage_radius: int
-    can_place_on: BlockPredicate
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureHugeFungus:
+class ConfiguredFeatureHugeFungus(HugeFungusConfig):
     type: Literal['minecraft:huge_fungus']
-    hat_state: BlockState
-    decor_state: BlockState
-    stem_state: BlockState
-    valid_base_block: BlockState
-    planted: bool | None = None
-    replaceable_blocks: BlockPredicate
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureHugeRedMushroom:
+class ConfiguredFeatureHugeRedMushroom(HugeMushroomConfig):
     type: Literal['minecraft:huge_red_mushroom']
-    cap_provider: BlockStateProvider
-    stem_provider: BlockStateProvider
-    foliage_radius: int
-    can_place_on: BlockPredicate
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureIcePatch:
+class ConfiguredFeatureIcePatch(DiskConfig):
     type: Literal['minecraft:ice_patch']
-    state_provider: BlockStateProvider
-    radius: IntProvider[Annotated[int, 'Range | `0`-`8` | both inclusive']] | Annotated[int, 'Range | `0`-`8` | both inclusive']
-    half_height: Annotated[int, 'Range | `0`-`4` | both inclusive']
-    target: BlockPredicate
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureIceberg:
+class ConfiguredFeatureIceberg(IcebergConfig):
     type: Literal['minecraft:iceberg']
-    state: BlockState
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureLake:
+class ConfiguredFeatureLake(LakeConfig):
     type: Literal['minecraft:lake']
-    fluid: BlockStateProvider
-    barrier: BlockStateProvider
-    can_place_feature: BlockPredicate
-    can_replace_with_air_or_fluid: BlockPredicate
-    can_replace_with_barrier: BlockPredicate
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureLargeDripstone:
+class ConfiguredFeatureLargeDripstone(LargeDripstoneConfig):
     type: Literal['minecraft:large_dripstone']
-    replaceable_blocks: list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId
-    floor_to_ceiling_search_range: Annotated[int, 'Range | `1`-`512` | both inclusive'] | None = None
-    column_radius: IntProvider[Annotated[int, 'Range | `0`-`16` | both inclusive']] | Annotated[int, 'Range | `0`-`16` | both inclusive']
-    height_scale: FloatProvider[Annotated[float, 'Range | `0`-`20` | both inclusive']] | Annotated[float, 'Range | `0`-`20` | both inclusive']
-    max_column_radius_to_cave_height_ratio: Annotated[float, 'Range | `0`-`1` | both inclusive']
-    stalactite_bluntness: FloatProvider[Annotated[float, 'Range | `0.1`-`10` | both inclusive']] | Annotated[float, 'Range | `0.1`-`10` | both inclusive']
-    stalagmite_bluntness: FloatProvider[Annotated[float, 'Range | `0.1`-`10` | both inclusive']] | Annotated[float, 'Range | `0.1`-`10` | both inclusive']
-    wind_speed: FloatProvider[Annotated[float, 'Range | `0`-`2` | both inclusive']] | Annotated[float, 'Range | `0`-`2` | both inclusive']
-    min_radius_for_wind: Annotated[int, 'Range | `0`-`100` | both inclusive']
-    min_bluntness_for_wind: Annotated[float, 'Range | `0`-`1` | both inclusive']
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureMultifaceGrowth:
+class ConfiguredFeatureMultifaceGrowth(MultifaceGrowthConfig):
     type: Literal['minecraft:multiface_growth']
-    block: MultifaceBlock
-    search_range: Annotated[int, 'Range | `1`-`64` | both inclusive'] | None = None
-    chance_of_spreading: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
-    can_place_on_floor: bool | None = None
-    can_place_on_ceiling: bool | None = None
-    can_place_on_wall: bool | None = None
-    can_be_placed_on: list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | None = None
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureNetherrackReplaceBlobs:
+class ConfiguredFeatureNetherrackReplaceBlobs(NetherrackReplaceBlobsConfig):
     type: Literal['minecraft:netherrack_replace_blobs']
-    state: BlockState
-    target: BlockState
-    radius: IntProvider[Annotated[int, 'Range | `0`-`12` | both inclusive']] | Annotated[int, 'Range | `0`-`12` | both inclusive']
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureNoBonemealFlower:
+class ConfiguredFeatureNoBonemealFlower(RandomPatchConfig):
     type: Literal['minecraft:no_bonemeal_flower']
-    tries: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # How many attempts will be made to find a placement. Defaults to 128.
-    xz_spread: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # Defaults to 7.
-    y_spread: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # Defaults to 3.
-    feature: FeatureRef
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureNoSurfaceOre:
+class ConfiguredFeatureNoSurfaceOre(OreConfig):
     type: Literal['minecraft:no_surface_ore']
-    targets: list[TargetBlock]
-    size: Annotated[int, 'Range | `0`-`64` | both inclusive']
-    discard_chance_on_air_exposure: Annotated[float, 'Range | `0`-`1` | both inclusive']  # Chance that feature placement will be discarded if the ore is exposed to air blocks.
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureOre:
+class ConfiguredFeatureOre(OreConfig):
     type: Literal['minecraft:ore']
-    targets: list[TargetBlock]
-    size: Annotated[int, 'Range | `0`-`64` | both inclusive']
-    discard_chance_on_air_exposure: Annotated[float, 'Range | `0`-`1` | both inclusive']  # Chance that feature placement will be discarded if the ore is exposed to air blocks.
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureOverlay:
+class ConfiguredFeatureOverlay(OverlayConfig):
     type: Literal['minecraft:overlay']
-    features: PlacedFeatureListRef  # The features to generate, in order.  All features are placed regardless of individual placement success.
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureProjectedRandomPatchySquare:
+class ConfiguredFeatureProjectedRandomPatchySquare(ProjectedSquareConfig):
     type: Literal['minecraft:projected_random_patchy_square']
-    block: BlockStateProvider
-    project_through: BlockPredicate
-    size: IntProvider[Annotated[int, 'Range | `1`-`16` | both inclusive']] | Annotated[int, 'Range | `1`-`16` | both inclusive']
-    max_projection_height: Annotated[int, 'Range | `0` and above | inclusive']
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureRandomBooleanSelector:
+class ConfiguredFeatureRandomBooleanSelector(RandomBooleanSelector):
     type: Literal['minecraft:random_boolean_selector']
-    feature_false: FeatureRef
-    feature_true: FeatureRef
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureRandomNeighborSpread:
+class ConfiguredFeatureRandomNeighborSpread(RandomNeighborSpreadConfig):
     type: Literal['minecraft:random_neighbor_spread']
-    block: BlockStateProvider
-    accepted_neighbors: Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | list[Annotated[str, IdSpec(registry='block')] | KnownBlockId]
-    can_replace: BlockPredicate
-    attempts: IntProvider[Annotated[int, 'Range | `1`-`3000` | both inclusive']] | Annotated[int, 'Range | `1`-`3000` | both inclusive']
-    xz_offset: IntProvider[Annotated[int, 'Range | `-16`-`16` | both inclusive']] | Annotated[int, 'Range | `-16`-`16` | both inclusive']
-    y_offset: IntProvider[Annotated[int, 'Range | `-16`-`16` | both inclusive']] | Annotated[int, 'Range | `-16`-`16` | both inclusive']
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureRandomPatch:
+class ConfiguredFeatureRandomPatch(RandomPatchConfig):
     type: Literal['minecraft:random_patch']
-    tries: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # How many attempts will be made to find a placement. Defaults to 128.
-    xz_spread: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # Defaults to 7.
-    y_spread: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # Defaults to 3.
-    feature: FeatureRef
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureRandomSelector:
+class ConfiguredFeatureRandomSelector(RandomSelector):
     type: Literal['minecraft:random_selector']
-    features: list[FeaturesStruct]
-    default: FeatureRef
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureReplaceSingleBlock:
+class ConfiguredFeatureReplaceSingleBlock(ReplaceSingleBlockConfig):
     type: Literal['minecraft:replace_single_block']
-    targets: list[TargetBlock]
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureRootSystem:
+class ConfiguredFeatureRootSystem(RootSystemConfig):
     type: Literal['minecraft:root_system']
-    required_vertical_space_for_tree: Annotated[int, 'Range | `1`-`64` | both inclusive']
-    level_test_distance: Annotated[int, 'Range | `0`-`16` | both inclusive']
-    max_level_deviation: Annotated[int, 'Range | `0`-`64` | both inclusive']
-    root_radius: Annotated[int, 'Range | `1`-`64` | both inclusive']
-    root_placement_attempts: Annotated[int, 'Range | `1`-`256` | both inclusive']
-    root_column_max_height: Annotated[int, 'Range | `1`-`4096` | both inclusive']
-    hanging_root_radius: Annotated[int, 'Range | `1`-`64` | both inclusive']
-    hanging_roots_vertical_span: Annotated[int, 'Range | `1`-`16` | both inclusive']
-    hanging_root_placement_attempts: Annotated[int, 'Range | `0`-`256` | both inclusive']
-    allowed_vertical_water_for_tree: Annotated[int, 'Range | `1`-`64` | both inclusive']
-    root_replaceable: Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | list[Annotated[str, IdSpec(registry='block')] | KnownBlockId]
-    root_state_provider: BlockStateProvider
-    hanging_root_state_provider: BlockStateProvider
-    allowed_tree_position: BlockPredicate
-    feature: FeatureRef
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureScatteredOre:
+class ConfiguredFeatureScatteredOre(OreConfig):
     type: Literal['minecraft:scattered_ore']
-    targets: list[TargetBlock]
-    size: Annotated[int, 'Range | `0`-`64` | both inclusive']
-    discard_chance_on_air_exposure: Annotated[float, 'Range | `0`-`1` | both inclusive']  # Chance that feature placement will be discarded if the ore is exposed to air blocks.
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureSculkPatch:
+class ConfiguredFeatureSculkPatch(SculkPatchConfig):
     type: Literal['minecraft:sculk_patch']
-    charge_count: Annotated[int, 'Range | `1`-`32` | both inclusive']
-    amount_per_charge: Annotated[int, 'Range | `1`-`500` | both inclusive']
-    spread_attempts: Annotated[int, 'Range | `1`-`64` | both inclusive']
-    growth_rounds: Annotated[int, 'Range | `0`-`8` | both inclusive']
-    spread_rounds: Annotated[int, 'Range | `0`-`8` | both inclusive']
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureSequence:
+class ConfiguredFeatureSequence(SequenceConfig):
     type: Literal['minecraft:sequence']
-    features: PlacedFeatureListRef  # The features to generate, in order.  If any feature in the list is not placed, the following features will also be skipped.
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureSimpleBlock:
+class ConfiguredFeatureSimpleBlock(SimpleBlockConfig):
     type: Literal['minecraft:simple_block']
-    to_place: BlockStateProvider
-    schedule_tick: bool | None = None  # Whether to schedule a block update. Defaults to `false`.
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureSimpleRandomSelector:
+class ConfiguredFeatureSimpleRandomSelector(SimpleRandomSelectorConfig):
     type: Literal['minecraft:simple_random_selector']
-    features: PlacedFeatureListRef
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureSingleBlockPillar:
+class ConfiguredFeatureSingleBlockPillar(SingleBlockPillarConfig):
     type: Literal['minecraft:single_block_pillar']
-    block: BlockStateProvider
-    can_replace: BlockPredicate | None = None  # Defaults to "always true".
-    direction: VerticalDirection
-    chance_to_continue: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None  # Defaults to 1.
-    cap_feature: PlacedFeatureRef | None = None
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureSpeleothem:
+class ConfiguredFeatureSpeleothem(SpeleothemConfig):
     type: Literal['minecraft:speleothem']
-    base_block: BlockState
-    pointed_block: BlockState
-    replaceable_blocks: list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId
-    chance_of_taller_generation: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
-    chance_of_directional_spread: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
-    chance_of_spread_radius2: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
-    chance_of_spread_radius3: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureSpeleothemCluster:
+class ConfiguredFeatureSpeleothemCluster(SpeleothemClusterConfig):
     type: Literal['minecraft:speleothem_cluster']
-    base_block: BlockState
-    pointed_block: BlockState
-    replaceable_blocks: list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId
-    floor_to_ceiling_search_range: Annotated[int, 'Range | `1`-`512` | both inclusive']
-    height: IntProvider[Annotated[int, 'Range | `0`-`128` | both inclusive']] | Annotated[int, 'Range | `0`-`128` | both inclusive']
-    radius: IntProvider[Annotated[int, 'Range | `0`-`128` | both inclusive']] | Annotated[int, 'Range | `0`-`128` | both inclusive']
-    max_stalagmite_stalactite_height_diff: Annotated[int, 'Range | `0`-`64` | both inclusive']  # Max height difference between the stalagmite and stalactite.
-    height_deviation: Annotated[int, 'Range | `1`-`64` | both inclusive']
-    speleothem_block_layer_thickness: IntProvider[Annotated[int, 'Range | `0`-`128` | both inclusive']] | Annotated[int, 'Range | `0`-`128` | both inclusive']
-    density: FloatProvider[Annotated[float, 'Range | `0`-`2` | both inclusive']] | Annotated[float, 'Range | `0`-`2` | both inclusive']
-    wetness: FloatProvider[Annotated[float, 'Range | `0`-`2` | both inclusive']] | Annotated[float, 'Range | `0`-`2` | both inclusive']
-    chance_of_speleothem_at_max_distance_from_center: Annotated[float, 'Range | `0`-`1` | both inclusive']
-    max_distance_from_edge_affecting_chance_of_speleothem: Annotated[int, 'Range | `1`-`64` | both inclusive']
-    max_distance_from_center_affecting_height_bias: Annotated[int, 'Range | `1`-`64` | both inclusive']
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureSpike:
+class ConfiguredFeatureSpike(SpikeConfig):
     type: Literal['minecraft:spike']
-    state: BlockState
-    can_place_on: BlockPredicate
-    can_replace: BlockPredicate
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureSpringFeature:
+class ConfiguredFeatureSpringFeature(SpringConfig):
     type: Literal['minecraft:spring_feature']
-    state: FluidState
-    rock_count: int
-    hole_count: int
-    requires_block_below: bool
-    valid_blocks: list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureSteppedColumnCluster:
+class ConfiguredFeatureSteppedColumnCluster(ColumnsConfig):
     type: Literal['minecraft:stepped_column_cluster']
-    block: BlockStateProvider
-    can_replace: BlockPredicate
-    continue_through: BlockPredicate
-    cannot_place_on: Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | list[Annotated[str, IdSpec(registry='block')] | KnownBlockId]
-    column_reach: IntProvider[Annotated[int, 'Range | `0`-`3` | both inclusive']] | Annotated[int, 'Range | `0`-`3` | both inclusive']
-    column_count: IntProvider[Annotated[int, 'Range | `1`-`150` | both inclusive']] | Annotated[int, 'Range | `1`-`150` | both inclusive']
-    height: IntProvider[Annotated[int, 'Range | `1`-`10` | both inclusive']] | Annotated[int, 'Range | `1`-`10` | both inclusive']
-    cluster_reach: IntProvider[Annotated[int, 'Range | `0`-`13` | both inclusive']] | Annotated[int, 'Range | `0`-`13` | both inclusive']  # The effective reach is limited by `height`.
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureTemplate:
+class ConfiguredFeatureTemplate(TemplateConfig):
     type: Literal['minecraft:template']
-    templates: WeightedList[TemplateEntry]
-    processors: ProcessorListRef | None = None
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureTree:
+class ConfiguredFeatureTree(TreeConfig):
     type: Literal['minecraft:tree']
-    ignore_vines: bool | None = None
-    minimum_size: FeatureSize
-    below_trunk_provider: BlockStateProvider
-    trunk_provider: BlockStateProvider
-    foliage_provider: BlockStateProvider
-    root_placer: RootPlacer | None = None
-    trunk_placer: TrunkPlacer
-    foliage_placer: FoliagePlacer
-    decorators: list[TreeDecorator]
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureUnderwaterMagma:
+class ConfiguredFeatureUnderwaterMagma(UnderwaterMagmaConfig):
     type: Literal['minecraft:underwater_magma']
-    floor_search_range: Annotated[int, 'Range | `0`-`512` | both inclusive']
-    placement_radius_around_floor: Annotated[int, 'Range | `0`-`64` | both inclusive']
-    placement_probability_per_valid_position: Annotated[float, 'Range | `0`-`1` | both inclusive']
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureVegetationPatch:
+class ConfiguredFeatureVegetationPatch(VegetationPatchConfig):
     type: Literal['minecraft:vegetation_patch']
-    surface: CaveSurface
-    depth: IntProvider[Annotated[int, 'Range | `1`-`128` | both inclusive']] | Annotated[int, 'Range | `1`-`128` | both inclusive']
-    vertical_range: Annotated[int, 'Range | `1`-`256` | both inclusive']
-    extra_bottom_block_chance: Annotated[float, 'Range | `0`-`1` | both inclusive']
-    extra_edge_column_chance: Annotated[float, 'Range | `0`-`1` | both inclusive']
-    vegetation_chance: Annotated[float, 'Range | `0`-`1` | both inclusive']
-    xz_radius: IntProvider[int] | int
-    replaceable: Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | list[Annotated[str, IdSpec(registry='block')] | KnownBlockId]
-    ground_state: BlockStateProvider
-    vegetation_feature: FeatureRef
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureWaterloggedVegetationPatch:
+class ConfiguredFeatureWaterloggedVegetationPatch(VegetationPatchConfig):
     type: Literal['minecraft:waterlogged_vegetation_patch']
-    surface: CaveSurface
-    depth: IntProvider[Annotated[int, 'Range | `1`-`128` | both inclusive']] | Annotated[int, 'Range | `1`-`128` | both inclusive']
-    vertical_range: Annotated[int, 'Range | `1`-`256` | both inclusive']
-    extra_bottom_block_chance: Annotated[float, 'Range | `0`-`1` | both inclusive']
-    extra_edge_column_chance: Annotated[float, 'Range | `0`-`1` | both inclusive']
-    vegetation_chance: Annotated[float, 'Range | `0`-`1` | both inclusive']
-    xz_radius: IntProvider[int] | int
-    replaceable: Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | list[Annotated[str, IdSpec(registry='block')] | KnownBlockId]
-    ground_state: BlockStateProvider
-    vegetation_feature: FeatureRef
 
 
 @dataclass(kw_only=True)
-class ConfiguredFeatureWeightedRandomSelector:
+class ConfiguredFeatureWeightedRandomSelector(WeightedRandomFeatureConfig):
     type: Literal['minecraft:weighted_random_selector']
-    features: WeightedList[PlacedFeatureRef]
 
 
 type ConfiguredFeature = ConfiguredFeatureBamboo | ConfiguredFeatureBlockBlob | ConfiguredFeatureBlockColumn | ConfiguredFeatureBlockPile | ConfiguredFeatureCoralClaw | ConfiguredFeatureCoralTree | ConfiguredFeatureDeltaFeature | ConfiguredFeatureDisk | ConfiguredFeatureEmeraldOre | ConfiguredFeatureEndGateway | ConfiguredFeatureEndPodium | ConfiguredFeatureEndSpike | ConfiguredFeatureFallenTree | ConfiguredFeatureFillLayer | ConfiguredFeatureFlower | ConfiguredFeatureFossil | ConfiguredFeatureGeode | ConfiguredFeatureGlowLichen | ConfiguredFeatureHugeBrownMushroom | ConfiguredFeatureHugeFungus | ConfiguredFeatureHugeRedMushroom | ConfiguredFeatureIcePatch | ConfiguredFeatureIceberg | ConfiguredFeatureLake | ConfiguredFeatureLargeDripstone | ConfiguredFeatureMultifaceGrowth | ConfiguredFeatureNetherrackReplaceBlobs | ConfiguredFeatureNoBonemealFlower | ConfiguredFeatureNoSurfaceOre | ConfiguredFeatureOre | ConfiguredFeatureOverlay | ConfiguredFeatureProjectedRandomPatchySquare | ConfiguredFeatureRandomBooleanSelector | ConfiguredFeatureRandomNeighborSpread | ConfiguredFeatureRandomPatch | ConfiguredFeatureRandomSelector | ConfiguredFeatureReplaceSingleBlock | ConfiguredFeatureRootSystem | ConfiguredFeatureScatteredOre | ConfiguredFeatureSculkPatch | ConfiguredFeatureSequence | ConfiguredFeatureSimpleBlock | ConfiguredFeatureSimpleRandomSelector | ConfiguredFeatureSingleBlockPillar | ConfiguredFeatureSpeleothem | ConfiguredFeatureSpeleothemCluster | ConfiguredFeatureSpike | ConfiguredFeatureSpringFeature | ConfiguredFeatureSteppedColumnCluster | ConfiguredFeatureTemplate | ConfiguredFeatureTree | ConfiguredFeatureUnderwaterMagma | ConfiguredFeatureVegetationPatch | ConfiguredFeatureWaterloggedVegetationPatch | ConfiguredFeatureWeightedRandomSelector

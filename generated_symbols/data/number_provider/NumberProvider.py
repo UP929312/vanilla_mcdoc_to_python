@@ -4,124 +4,96 @@ Local link to file: generated_symbols/data/number_provider/NumberProvider.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, ClassVar, Literal
+from typing import ClassVar, Literal
 
-from minecraft_registry import IdSpec
-
-if TYPE_CHECKING:
-    from generated_symbols.data.enchantment.LevelBasedValue import LevelBasedValue
-    from generated_symbols.data.number_provider.AggregateOperands import AggregateOperands
-    from generated_symbols.data.number_provider.NumberProviderRef import NumberProviderRef
-    from generated_symbols.data.predicate.PredicateRef import PredicateRef
-    from generated_symbols.data.util.ScoreProvider import ScoreProvider
-    from generated_symbols.data.worldgen.attribute.NumericalEnvironmentAttribute import NumericalEnvironmentAttribute
-    from generated_symbols.util.NonEmptyWeightedList import NonEmptyWeightedList
-
-
-@dataclass(kw_only=True)
-class CasesStruct:
-    condition: PredicateRef
-    number_provider: NumberProviderRef
+from generated_symbols.data.number_provider.AggregateNumberProvider import AggregateNumberProvider
+from generated_symbols.data.number_provider.BinomialNumberProvider import BinomialNumberProvider
+from generated_symbols.data.number_provider.ConditionalNumberProvider import ConditionalNumberProvider
+from generated_symbols.data.number_provider.ConstantNumberProvider import ConstantNumberProvider
+from generated_symbols.data.number_provider.EnchantmentLevelProvider import EnchantmentLevelProvider
+from generated_symbols.data.number_provider.EnvironmentAttributeNumberProvider import EnvironmentAttributeNumberProvider
+from generated_symbols.data.number_provider.NumberDispatcher import NumberDispatcher
+from generated_symbols.data.number_provider.ScoreNumberProvider import ScoreNumberProvider
+from generated_symbols.data.number_provider.StorageNumberProvider import StorageNumberProvider
+from generated_symbols.data.number_provider.UniformNumberProvider import UniformNumberProvider
+from generated_symbols.data.number_provider.WeightedNumberProvider import WeightedNumberProvider
 
 
 @dataclass(kw_only=True)
-class NumberProviderStructAverage:
+class NumberProviderStructAverage(AggregateNumberProvider):
     __resource_dir__: ClassVar[str] = 'number_provider'
 
     type: Literal['minecraft:average']
-    operands: AggregateOperands
 
 
 @dataclass(kw_only=True)
-class NumberProviderStructBinomial:
+class NumberProviderStructBinomial(BinomialNumberProvider):
     type: Literal['minecraft:binomial']
-    n: NumberProviderRef
-    p: NumberProviderRef
 
 
 @dataclass(kw_only=True)
-class NumberProviderStructConditional:
+class NumberProviderStructConditional(ConditionalNumberProvider):
     type: Literal['minecraft:conditional']
-    condition: PredicateRef
-    on_true: NumberProviderRef
-    on_false: NumberProviderRef | None = None  # Defaults to constant 0.
 
 
 @dataclass(kw_only=True)
-class NumberProviderStructConstant:
+class NumberProviderStructConstant(ConstantNumberProvider):
     type: Literal['minecraft:constant']
-    value: float
 
 
 @dataclass(kw_only=True)
-class NumberProviderStructEnchantmentLevel:
+class NumberProviderStructEnchantmentLevel(EnchantmentLevelProvider):
     type: Literal['minecraft:enchantment_level']
-    amount: LevelBasedValue
 
 
 @dataclass(kw_only=True)
-class NumberProviderStructEnvironmentAttribute:
+class NumberProviderStructEnvironmentAttribute(EnvironmentAttributeNumberProvider):
     type: Literal['minecraft:environment_attribute']
-    attribute: NumericalEnvironmentAttribute
 
 
 @dataclass(kw_only=True)
-class NumberProviderStructMaximum:
+class NumberProviderStructMaximum(AggregateNumberProvider):
     type: Literal['minecraft:maximum']
-    operands: AggregateOperands
 
 
 @dataclass(kw_only=True)
-class NumberProviderStructMinimum:
+class NumberProviderStructMinimum(AggregateNumberProvider):
     type: Literal['minecraft:minimum']
-    operands: AggregateOperands
 
 
 @dataclass(kw_only=True)
-class NumberProviderStructNumberDispatcher:
+class NumberProviderStructNumberDispatcher(NumberDispatcher):
     type: Literal['minecraft:number_dispatcher']
-    cases: list[CasesStruct]
-    default: NumberProviderRef | None = None  # Defaults to constant 0.
 
 
 @dataclass(kw_only=True)
-class NumberProviderStructProduct:
+class NumberProviderStructProduct(AggregateNumberProvider):
     type: Literal['minecraft:product']
-    operands: AggregateOperands
 
 
 @dataclass(kw_only=True)
-class NumberProviderStructScore:
+class NumberProviderStructScore(ScoreNumberProvider):
     type: Literal['minecraft:score']
-    target: ScoreProvider
-    score: str
-    scale: float | None = None
 
 
 @dataclass(kw_only=True)
-class NumberProviderStructStorage:
+class NumberProviderStructStorage(StorageNumberProvider):
     type: Literal['minecraft:storage']
-    storage: Annotated[str, IdSpec(registry='storage')]
-    path: str
 
 
 @dataclass(kw_only=True)
-class NumberProviderStructSum:
+class NumberProviderStructSum(AggregateNumberProvider):
     type: Literal['minecraft:sum']
-    operands: AggregateOperands
 
 
 @dataclass(kw_only=True)
-class NumberProviderStructUniform:
+class NumberProviderStructUniform(UniformNumberProvider):
     type: Literal['minecraft:uniform']
-    min: NumberProviderRef | None = None
-    max: NumberProviderRef | None = None
 
 
 @dataclass(kw_only=True)
-class NumberProviderStructWeightedList:
+class NumberProviderStructWeightedList(WeightedNumberProvider):
     type: Literal['minecraft:weighted_list']
-    distribution: NonEmptyWeightedList[NumberProviderRef]
 
 
 type NumberProviderStruct = NumberProviderStructAverage | NumberProviderStructBinomial | NumberProviderStructConditional | NumberProviderStructConstant | NumberProviderStructEnchantmentLevel | NumberProviderStructEnvironmentAttribute | NumberProviderStructMaximum | NumberProviderStructMinimum | NumberProviderStructNumberDispatcher | NumberProviderStructProduct | NumberProviderStructScore | NumberProviderStructStorage | NumberProviderStructSum | NumberProviderStructUniform | NumberProviderStructWeightedList

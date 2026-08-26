@@ -4,52 +4,44 @@ Local link to file: generated_symbols/data/enchantment/level_based_value/LevelBa
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Literal
+from typing import Literal
 
-if TYPE_CHECKING:
-    from generated_symbols.data.enchantment.level_based_value.LevelBasedValue import LevelBasedValue
+from generated_symbols.data.enchantment.level_based_value.ClampedLevelValue import ClampedLevelValue
+from generated_symbols.data.enchantment.level_based_value.ExponentLevelValue import ExponentLevelValue
+from generated_symbols.data.enchantment.level_based_value.FractionLevelValue import FractionLevelValue
+from generated_symbols.data.enchantment.level_based_value.LinearLevelValue import LinearLevelValue
+from generated_symbols.data.enchantment.level_based_value.LookupLevelValue import LookupLevelValue
+from generated_symbols.data.enchantment.level_based_value.SquaredLevelValue import SquaredLevelValue
 
 
 @dataclass(kw_only=True)
-class LevelBasedValueMapClamped:
+class LevelBasedValueMapClamped(ClampedLevelValue):
     type: Literal['minecraft:clamped']
-    value: LevelBasedValue
-    min: float
-    max: float
 
 
 @dataclass(kw_only=True)
-class LevelBasedValueMapExponent:
+class LevelBasedValueMapExponent(ExponentLevelValue):
     type: Literal['minecraft:exponent']
-    base: LevelBasedValue
-    power: LevelBasedValue
 
 
 @dataclass(kw_only=True)
-class LevelBasedValueMapFraction:
+class LevelBasedValueMapFraction(FractionLevelValue):
     type: Literal['minecraft:fraction']
-    numerator: LevelBasedValue
-    denominator: LevelBasedValue
 
 
 @dataclass(kw_only=True)
-class LevelBasedValueMapLevelsSquared:
+class LevelBasedValueMapLevelsSquared(SquaredLevelValue):
     type: Literal['minecraft:levels_squared']
-    added: float  # Added to the result so that the result becomes `square(level) + added`.
 
 
 @dataclass(kw_only=True)
-class LevelBasedValueMapLinear:
+class LevelBasedValueMapLinear(LinearLevelValue):
     type: Literal['minecraft:linear']
-    base: float  # Base value at level 1.
-    per_level_above_first: float  # Value increase per level above 1.
 
 
 @dataclass(kw_only=True)
-class LevelBasedValueMapLookup:
+class LevelBasedValueMapLookup(LookupLevelValue):
     type: Literal['minecraft:lookup']
-    values: Annotated[list[LevelBasedValue], 'Length = 1 (inclusive) and above']  # Indexed by `level - 1` to apply, if present
-    fallback: LevelBasedValue  # Applied if the level is greater than the size of `values`.
 
 
 type LevelBasedValueMap = LevelBasedValueMapClamped | LevelBasedValueMapExponent | LevelBasedValueMapFraction | LevelBasedValueMapLevelsSquared | LevelBasedValueMapLinear | LevelBasedValueMapLookup

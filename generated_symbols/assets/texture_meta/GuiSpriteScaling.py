@@ -4,19 +4,15 @@ Local link to file: generated_symbols/assets/texture_meta/GuiSpriteScaling.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Literal
+from typing import Literal
 
-if TYPE_CHECKING:
-    from generated_symbols.assets.texture_meta.NineSliceBorder import NineSliceBorder
+from generated_symbols.assets.texture_meta.NineSlice import NineSlice
+from generated_symbols.assets.texture_meta.TileScaling import TileScaling
 
 
 @dataclass(kw_only=True)
-class GuiSpriteScalingNineSlice:
+class GuiSpriteScalingNineSlice(NineSlice):
     type: Literal['minecraft:nine_slice']
-    width: Annotated[int, 'Range | `1` and above | inclusive']
-    height: Annotated[int, 'Range | `1` and above | inclusive']
-    border: Annotated[int, 'Range | `1` and above | inclusive'] | NineSliceBorder
-    stretch_inner: bool | None = None  # Defaults to `false`.
 
 
 @dataclass(kw_only=True)
@@ -25,10 +21,8 @@ class GuiSpriteScalingStretch:
 
 
 @dataclass(kw_only=True)
-class GuiSpriteScalingTile:
+class GuiSpriteScalingTile(TileScaling):
     type: Literal['minecraft:tile']
-    width: Annotated[int, 'Range | `1` and above | inclusive']
-    height: Annotated[int, 'Range | `1` and above | inclusive']
 
 
 type GuiSpriteScaling = GuiSpriteScalingNineSlice | GuiSpriteScalingStretch | GuiSpriteScalingTile

@@ -4,124 +4,104 @@ Local link to file: generated_symbols/data/worldgen/feature/placement/PlacementM
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Literal
+from typing import Literal
 
-if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.HeightProvider import HeightProvider
-    from generated_symbols.data.worldgen.HeightmapType import HeightmapType
-    from generated_symbols.data.worldgen.IntProvider import IntProvider
-    from generated_symbols.data.worldgen.feature.block_predicate.BlockPredicate import BlockPredicate
-    from generated_symbols.util.direction.VerticalDirection import VerticalDirection
+from generated_symbols.data.worldgen.feature.placement.BlockPredicateFilter import BlockPredicateFilter
+from generated_symbols.data.worldgen.feature.placement.CountModifier import CountModifier
+from generated_symbols.data.worldgen.feature.placement.CountOnEveryLayerModifier import CountOnEveryLayerModifier
+from generated_symbols.data.worldgen.feature.placement.CuboidModifier import CuboidModifier
+from generated_symbols.data.worldgen.feature.placement.EnvironmentScanModifier import EnvironmentScanModifier
+from generated_symbols.data.worldgen.feature.placement.FixedPlacementModifier import FixedPlacementModifier
+from generated_symbols.data.worldgen.feature.placement.HeightRangeModifier import HeightRangeModifier
+from generated_symbols.data.worldgen.feature.placement.HeightmapModifier import HeightmapModifier
+from generated_symbols.data.worldgen.feature.placement.NoiseBasedCountModifier import NoiseBasedCountModifier
+from generated_symbols.data.worldgen.feature.placement.NoiseThresholdCountModifier import NoiseThresholdCountModifier
+from generated_symbols.data.worldgen.feature.placement.OffsetModifier import OffsetModifier
+from generated_symbols.data.worldgen.feature.placement.RandomChanceModifier import RandomChanceModifier
+from generated_symbols.data.worldgen.feature.placement.RandomlySelectedModifier import RandomlySelectedModifier
+from generated_symbols.data.worldgen.feature.placement.RarityFilter import RarityFilter
+from generated_symbols.data.worldgen.feature.placement.SurfaceRelativeThresholdFilter import SurfaceRelativeThresholdFilter
+from generated_symbols.data.worldgen.feature.placement.SurfaceWaterDepthFilter import SurfaceWaterDepthFilter
 
 
 @dataclass(kw_only=True)
-class PlacementModifierBlockPredicateFilter:
+class PlacementModifierBlockPredicateFilter(BlockPredicateFilter):
     type: Literal['minecraft:block_predicate_filter']
-    predicate: BlockPredicate
 
 
 @dataclass(kw_only=True)
-class PlacementModifierCount:
+class PlacementModifierCount(CountModifier):
     type: Literal['minecraft:count']
-    count: IntProvider[Annotated[int, 'Range | `0`-`4096` | both inclusive']] | Annotated[int, 'Range | `0`-`4096` | both inclusive']
 
 
 @dataclass(kw_only=True)
-class PlacementModifierCountOnEveryLayer:
+class PlacementModifierCountOnEveryLayer(CountOnEveryLayerModifier):
     type: Literal['minecraft:count_on_every_layer']
-    count: IntProvider[Annotated[int, 'Range | `0`-`256` | both inclusive']] | Annotated[int, 'Range | `0`-`256` | both inclusive']
 
 
 @dataclass(kw_only=True)
-class PlacementModifierCuboid:
+class PlacementModifierCuboid(CuboidModifier):
     type: Literal['minecraft:cuboid']
-    xz_size: IntProvider[Annotated[int, 'Range | `1`-`16` | both inclusive']] | Annotated[int, 'Range | `1`-`16` | both inclusive']
-    y_size: IntProvider[Annotated[int, 'Range | `1`-`16` | both inclusive']] | Annotated[int, 'Range | `1`-`16` | both inclusive']
-    include_interior: bool | None = None  # Defaults to `true`.
-    include_edges: bool | None = None  # Defaults to `true`.
 
 
 @dataclass(kw_only=True)
-class PlacementModifierEnvironmentScan:
+class PlacementModifierEnvironmentScan(EnvironmentScanModifier):
     type: Literal['minecraft:environment_scan']
-    direction_of_search: VerticalDirection
-    max_steps: Annotated[int, 'Range | `1`-`32` | both inclusive']
-    target_condition: BlockPredicate
-    allowed_search_condition: BlockPredicate | None = None
 
 
 @dataclass(kw_only=True)
-class PlacementModifierFixedPlacement:
+class PlacementModifierFixedPlacement(FixedPlacementModifier):
     type: Literal['minecraft:fixed_placement']
-    positions: list[tuple[int, int, int]]  # Fixed list of block positions to place the feature at.
 
 
 @dataclass(kw_only=True)
-class PlacementModifierHeightRange:
+class PlacementModifierHeightRange(HeightRangeModifier):
     type: Literal['minecraft:height_range']
-    height: HeightProvider
 
 
 @dataclass(kw_only=True)
-class PlacementModifierHeightmap:
+class PlacementModifierHeightmap(HeightmapModifier):
     type: Literal['minecraft:heightmap']
-    heightmap: HeightmapType
 
 
 @dataclass(kw_only=True)
-class PlacementModifierNoiseBasedCount:
+class PlacementModifierNoiseBasedCount(NoiseBasedCountModifier):
     type: Literal['minecraft:noise_based_count']
-    noise_to_count_ratio: int
-    noise_factor: float
-    noise_offset: float | None = None
 
 
 @dataclass(kw_only=True)
-class PlacementModifierNoiseThresholdCount:
+class PlacementModifierNoiseThresholdCount(NoiseThresholdCountModifier):
     type: Literal['minecraft:noise_threshold_count']
-    noise_level: float
-    below_noise: int
-    above_noise: int
 
 
 @dataclass(kw_only=True)
-class PlacementModifierOffset:
+class PlacementModifierOffset(OffsetModifier):
     type: Literal['minecraft:offset']
-    x: IntProvider[Annotated[int, 'Range | `-16`-`16` | both inclusive']] | Annotated[int, 'Range | `-16`-`16` | both inclusive']
-    y: IntProvider[Annotated[int, 'Range | `-16`-`16` | both inclusive']] | Annotated[int, 'Range | `-16`-`16` | both inclusive']
-    z: IntProvider[Annotated[int, 'Range | `-16`-`16` | both inclusive']] | Annotated[int, 'Range | `-16`-`16` | both inclusive']
 
 
 @dataclass(kw_only=True)
-class PlacementModifierRandomChance:
+class PlacementModifierRandomChance(RandomChanceModifier):
     type: Literal['minecraft:random_chance']
-    chance: Annotated[float, 'Range | `0`-`1` | both inclusive']
 
 
 @dataclass(kw_only=True)
-class PlacementModifierRandomlySelected:
+class PlacementModifierRandomlySelected(RandomlySelectedModifier):
     type: Literal['minecraft:randomly_selected']
-    placements: Annotated[list[PlacementModifier], 'Length = 1 (inclusive) and above']
 
 
 @dataclass(kw_only=True)
-class PlacementModifierRarityFilter:
+class PlacementModifierRarityFilter(RarityFilter):
     type: Literal['minecraft:rarity_filter']
-    chance: Annotated[int, 'Range | `0` and above | inclusive']
 
 
 @dataclass(kw_only=True)
-class PlacementModifierSurfaceRelativeThresholdFilter:
+class PlacementModifierSurfaceRelativeThresholdFilter(SurfaceRelativeThresholdFilter):
     type: Literal['minecraft:surface_relative_threshold_filter']
-    heightmap: HeightmapType
-    min_inclusive: int | None = None
-    max_inclusive: int | None = None
 
 
 @dataclass(kw_only=True)
-class PlacementModifierSurfaceWaterDepthFilter:
+class PlacementModifierSurfaceWaterDepthFilter(SurfaceWaterDepthFilter):
     type: Literal['minecraft:surface_water_depth_filter']
-    max_water_depth: int
 
 
 type PlacementModifier = PlacementModifierBlockPredicateFilter | PlacementModifierCount | PlacementModifierCountOnEveryLayer | PlacementModifierCuboid | PlacementModifierEnvironmentScan | PlacementModifierFixedPlacement | PlacementModifierHeightRange | PlacementModifierHeightmap | PlacementModifierNoiseBasedCount | PlacementModifierNoiseThresholdCount | PlacementModifierOffset | PlacementModifierRandomChance | PlacementModifierRandomlySelected | PlacementModifierRarityFilter | PlacementModifierSurfaceRelativeThresholdFilter | PlacementModifierSurfaceWaterDepthFilter

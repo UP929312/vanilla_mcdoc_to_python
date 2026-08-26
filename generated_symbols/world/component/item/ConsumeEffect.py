@@ -4,20 +4,17 @@ Local link to file: generated_symbols/world/component/item/ConsumeEffect.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Literal
+from typing import Literal
 
-from minecraft_registry import IdSpec
-
-if TYPE_CHECKING:
-    from generated_symbols.data.util.SoundEventRef import SoundEventRef
-    from generated_symbols.util.effect.MobEffectInstance import MobEffectInstance
+from generated_symbols.world.component.item.ApplyEffectsConsumeEffect import ApplyEffectsConsumeEffect
+from generated_symbols.world.component.item.PlaySoundConsumeEffect import PlaySoundConsumeEffect
+from generated_symbols.world.component.item.RemoveEffectsConsumeEffect import RemoveEffectsConsumeEffect
+from generated_symbols.world.component.item.TeleportRandomlyConsumeEffect import TeleportRandomlyConsumeEffect
 
 
 @dataclass(kw_only=True)
-class ConsumeEffectApplyEffects:
+class ConsumeEffectApplyEffects(ApplyEffectsConsumeEffect):
     type: Literal['minecraft:apply_effects']
-    effects: list[MobEffectInstance]
-    probability: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None  # Chance the effects will be applied once consumed.
 
 
 @dataclass(kw_only=True)
@@ -26,22 +23,18 @@ class ConsumeEffectClearAllEffects:
 
 
 @dataclass(kw_only=True)
-class ConsumeEffectPlaySound:
+class ConsumeEffectPlaySound(PlaySoundConsumeEffect):
     type: Literal['minecraft:play_sound']
-    sound: SoundEventRef
 
 
 @dataclass(kw_only=True)
-class ConsumeEffectRemoveEffects:
+class ConsumeEffectRemoveEffects(RemoveEffectsConsumeEffect):
     type: Literal['minecraft:remove_effects']
-    effects: Annotated[str, IdSpec(registry='mob_effect', tags='allowed')] | list[Annotated[str, IdSpec(registry='mob_effect')]]
 
 
 @dataclass(kw_only=True)
-class ConsumeEffectTeleportRandomly:
+class ConsumeEffectTeleportRandomly(TeleportRandomlyConsumeEffect):
     type: Literal['minecraft:teleport_randomly']
-    diameter: Annotated[float, 'Range | `1` and above | inclusive'] | None = None  # Defaults to 16.
-    directional_particles: bool | None = None  # Whether to show a particle trail into the direction of teleportation.  Defaults to `true`.
 
 
 type ConsumeEffect = ConsumeEffectApplyEffects | ConsumeEffectClearAllEffects | ConsumeEffectPlaySound | ConsumeEffectRemoveEffects | ConsumeEffectTeleportRandomly

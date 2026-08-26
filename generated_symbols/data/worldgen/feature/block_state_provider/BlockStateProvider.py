@@ -4,97 +4,68 @@ Local link to file: generated_symbols/data/worldgen/feature/block_state_provider
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Literal
+from typing import Literal
 
-from generated_symbols.data.worldgen.feature.block_state_provider.BaseNoiseProvider import BaseNoiseProvider
-from minecraft_registry import IdSpec
-
-if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.IntProvider import IntProvider
-    from generated_symbols.data.worldgen.dimension.biome_source.NoiseParameters import NoiseParameters
-    from generated_symbols.data.worldgen.feature.block_predicate.BlockPredicate import BlockPredicate
-    from generated_symbols.registry.KnownBlockId import KnownBlockId
-    from generated_symbols.util.InclusiveRange import InclusiveRange
-    from generated_symbols.util.NonEmptyWeightedList import NonEmptyWeightedList
-    from generated_symbols.util.block_state.BlockState import BlockState
-    from generated_symbols.util.direction.Direction import Direction
+from generated_symbols.data.worldgen.feature.RuleBasedBlockStateProvider import RuleBasedBlockStateProvider
+from generated_symbols.data.worldgen.feature.block_state_provider.CopyPropertiesProvider import CopyPropertiesProvider
+from generated_symbols.data.worldgen.feature.block_state_provider.DualNoiseProvider import DualNoiseProvider
+from generated_symbols.data.worldgen.feature.block_state_provider.NoiseProvider import NoiseProvider
+from generated_symbols.data.worldgen.feature.block_state_provider.NoiseThresholdProvider import NoiseThresholdProvider
+from generated_symbols.data.worldgen.feature.block_state_provider.RandomBlockStateProvider import RandomBlockStateProvider
+from generated_symbols.data.worldgen.feature.block_state_provider.RandomizedIntStateProvider import RandomizedIntStateProvider
+from generated_symbols.data.worldgen.feature.block_state_provider.RotatedStateProvider import RotatedStateProvider
+from generated_symbols.data.worldgen.feature.block_state_provider.SimpleStateProvider import SimpleStateProvider
+from generated_symbols.data.worldgen.feature.block_state_provider.WeightedBlockStateProvider import WeightedBlockStateProvider
 
 
 @dataclass(kw_only=True)
-class RulesStruct:
-    if_true: BlockPredicate
-    then: BlockStateProvider
-
-
-@dataclass(kw_only=True)
-class BlockStateProviderCopyPropertiesProvider:
+class BlockStateProviderCopyPropertiesProvider(CopyPropertiesProvider):
     type: Literal['minecraft:copy_properties_provider']
-    source: BlockStateProvider
 
 
 @dataclass(kw_only=True)
-class BlockStateProviderDualNoiseProvider(BaseNoiseProvider):
+class BlockStateProviderDualNoiseProvider(DualNoiseProvider):
     type: Literal['minecraft:dual_noise_provider']
-    variety: InclusiveRange[Annotated[int, 'Range | `1`-`64` | both inclusive']] | Annotated[int, 'Range | `1`-`64` | both inclusive']
-    slow_noise: NoiseParameters
-    slow_scale: Annotated[float, 'Range | `0` and above | inclusive']
-    states: list[BlockState]
 
 
 @dataclass(kw_only=True)
-class BlockStateProviderNoiseProvider(BaseNoiseProvider):
+class BlockStateProviderNoiseProvider(NoiseProvider):
     type: Literal['minecraft:noise_provider']
-    states: list[BlockState]
 
 
 @dataclass(kw_only=True)
-class BlockStateProviderNoiseThresholdProvider(BaseNoiseProvider):
+class BlockStateProviderNoiseThresholdProvider(NoiseThresholdProvider):
     type: Literal['minecraft:noise_threshold_provider']
-    threshold: Annotated[float, 'Range | `-1`-`1` | both inclusive']
-    high_chance: Annotated[float, 'Range | `0`-`1` | both inclusive']
-    default_state: BlockState
-    low_states: list[BlockState]
-    high_states: list[BlockState]
 
 
 @dataclass(kw_only=True)
-class BlockStateProviderRandomBlockProvider:
+class BlockStateProviderRandomBlockProvider(RandomBlockStateProvider):
     type: Literal['minecraft:random_block_provider']
-    blocks: Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | list[Annotated[str, IdSpec(registry='block')] | KnownBlockId]
 
 
 @dataclass(kw_only=True)
-class BlockStateProviderRandomizedIntStateProvider:
+class BlockStateProviderRandomizedIntStateProvider(RandomizedIntStateProvider):
     type: Literal['minecraft:randomized_int_state_provider']
-    property: str
-    values: IntProvider[int] | int
-    source: BlockStateProvider
 
 
 @dataclass(kw_only=True)
-class BlockStateProviderRotatedBlockProvider:
+class BlockStateProviderRotatedBlockProvider(RotatedStateProvider):
     type: Literal['minecraft:rotated_block_provider']
-    state: BlockStateProvider
-    direction: Direction | None = None
 
 
 @dataclass(kw_only=True)
-class BlockStateProviderRuleBasedStateProvider:
+class BlockStateProviderRuleBasedStateProvider(RuleBasedBlockStateProvider):
     type: Literal['minecraft:rule_based_state_provider']
-    fallback: BlockStateProvider | None = None
-    rules: list[RulesStruct]
 
 
 @dataclass(kw_only=True)
-class BlockStateProviderSimpleStateProvider:
+class BlockStateProviderSimpleStateProvider(SimpleStateProvider):
     type: Literal['minecraft:simple_state_provider']
-    state: BlockState
 
 
 @dataclass(kw_only=True)
-class BlockStateProviderWeightedStateProvider:
+class BlockStateProviderWeightedStateProvider(WeightedBlockStateProvider):
     type: Literal['minecraft:weighted_state_provider']
-    entries: NonEmptyWeightedList[BlockState]
 
 
 type BlockStateProvider = BlockStateProviderCopyPropertiesProvider | BlockStateProviderDualNoiseProvider | BlockStateProviderNoiseProvider | BlockStateProviderNoiseThresholdProvider | BlockStateProviderRandomBlockProvider | BlockStateProviderRandomizedIntStateProvider | BlockStateProviderRotatedBlockProvider | BlockStateProviderRuleBasedStateProvider | BlockStateProviderSimpleStateProvider | BlockStateProviderWeightedStateProvider

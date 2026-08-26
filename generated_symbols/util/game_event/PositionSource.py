@@ -6,18 +6,18 @@ Local link to file: generated_symbols/util/game_event/PositionSource.py
 from dataclasses import dataclass
 from typing import Literal
 
+from generated_symbols.util.game_event.BlockPositionSource import BlockPositionSource
+from generated_symbols.util.game_event.EntityPositionSource import EntityPositionSource
+
 
 @dataclass(kw_only=True)
-class PositionSourceBlock:
+class PositionSourceBlock(BlockPositionSource):
     type: Literal['minecraft:block']
-    pos: tuple[int, int, int]  # Block position
 
 
 @dataclass(kw_only=True)
-class PositionSourceEntity:
+class PositionSourceEntity(EntityPositionSource):
     type: Literal['minecraft:entity']
-    source_entity: tuple[int, int, int, int]
-    y_offset: float | None = None  # offset from the entity's feet to the source position
 
 
 type PositionSource = PositionSourceBlock | PositionSourceEntity

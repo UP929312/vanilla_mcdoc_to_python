@@ -4,9 +4,11 @@ Local link to file: generated_symbols/data/loot/function/SetWriteableBookPages.p
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Literal
+from typing import TYPE_CHECKING, Literal
 
 from generated_symbols.data.loot.function.Conditions import Conditions
+from generated_symbols.data.loot.function.InsertListOperation import InsertListOperation
+from generated_symbols.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
 
 if TYPE_CHECKING:
     from generated_symbols.util.Filterable import Filterable
@@ -19,10 +21,9 @@ class SetWriteableBookPagesAppend(Conditions):
 
 
 @dataclass(kw_only=True)
-class SetWriteableBookPagesInsert(Conditions):
+class SetWriteableBookPagesInsert(Conditions, InsertListOperation):
     pages: list[Filterable[str]]  # Sets the pages of a book and quill.
     mode: Literal['minecraft:insert']  # Determines how the existing list should be modified.
-    offset: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # The offset in the list to insert into. Defaults to 0.
 
 
 @dataclass(kw_only=True)
@@ -32,11 +33,9 @@ class SetWriteableBookPagesReplaceAll(Conditions):
 
 
 @dataclass(kw_only=True)
-class SetWriteableBookPagesReplaceSection(Conditions):
+class SetWriteableBookPagesReplaceSection(Conditions, ReplaceSectionListOperation):
     pages: list[Filterable[str]]  # Sets the pages of a book and quill.
     mode: Literal['minecraft:replace_section']  # Determines how the existing list should be modified.
-    offset: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # The offset of the section to replace. Defaults to 0.
-    size: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # The size of the section to replace. Defaults to size of the new list.
 
 
 type SetWriteableBookPages = SetWriteableBookPagesAppend | SetWriteableBookPagesInsert | SetWriteableBookPagesReplaceAll | SetWriteableBookPagesReplaceSection

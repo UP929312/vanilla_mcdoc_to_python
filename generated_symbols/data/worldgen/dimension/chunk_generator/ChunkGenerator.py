@@ -4,25 +4,20 @@ Local link to file: generated_symbols/data/worldgen/dimension/chunk_generator/Ch
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Literal
+from typing import Literal
 
-if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.dimension.biome_source.BiomeSource import BiomeSource
-    from generated_symbols.data.worldgen.dimension.chunk_generator.FlatGeneratorSettings import FlatGeneratorSettings
-    from generated_symbols.data.worldgen.noise_settings.NoiseGeneratorSettingsRef import NoiseGeneratorSettingsRef
+from generated_symbols.data.worldgen.dimension.chunk_generator.Flat import Flat
+from generated_symbols.data.worldgen.dimension.chunk_generator.Noise import Noise
 
 
 @dataclass(kw_only=True)
-class ChunkGeneratorFlat:
+class ChunkGeneratorFlat(Flat):
     type: Literal['minecraft:flat']
-    settings: FlatGeneratorSettings
 
 
 @dataclass(kw_only=True)
-class ChunkGeneratorNoise:
+class ChunkGeneratorNoise(Noise):
     type: Literal['minecraft:noise']
-    settings: NoiseGeneratorSettingsRef
-    biome_source: BiomeSource
 
 
 type ChunkGenerator = ChunkGeneratorFlat | ChunkGeneratorNoise

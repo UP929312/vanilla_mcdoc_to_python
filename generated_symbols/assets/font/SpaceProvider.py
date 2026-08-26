@@ -9,7 +9,7 @@ from typing import Annotated
 
 @dataclass(kw_only=True)
 class SpaceProvider:
-    advances: dict[Annotated[str, 'Length = Exactly 1'], float]
+    advances: dict[Annotated[str, 'Length = 1-1 (both inclusive)'], float]
 
 
 # ~~~ MODEL DUMP ~~~

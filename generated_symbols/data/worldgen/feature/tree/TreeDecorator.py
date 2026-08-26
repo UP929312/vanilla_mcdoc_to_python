@@ -4,83 +4,68 @@ Local link to file: generated_symbols/data/worldgen/feature/tree/TreeDecorator.p
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Literal
+from typing import Literal
 
-if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
-    from generated_symbols.util.direction.Direction import Direction
+from generated_symbols.data.worldgen.feature.tree.AlterGroundTreeDecorator import AlterGroundTreeDecorator
+from generated_symbols.data.worldgen.feature.tree.AttachedToLeavesTreeDecorator import AttachedToLeavesTreeDecorator
+from generated_symbols.data.worldgen.feature.tree.AttachedToLogsTreeDecorator import AttachedToLogsTreeDecorator
+from generated_symbols.data.worldgen.feature.tree.BeehiveTreeDecorator import BeehiveTreeDecorator
+from generated_symbols.data.worldgen.feature.tree.CocoaTreeDecorator import CocoaTreeDecorator
+from generated_symbols.data.worldgen.feature.tree.CreakingHeartTreeDecorator import CreakingHeartTreeDecorator
+from generated_symbols.data.worldgen.feature.tree.LeaveVineTreeDecorator import LeaveVineTreeDecorator
+from generated_symbols.data.worldgen.feature.tree.PaleMossTreeDecorator import PaleMossTreeDecorator
+from generated_symbols.data.worldgen.feature.tree.PlaceOnGroundTreeDecorator import PlaceOnGroundTreeDecorator
+from generated_symbols.data.worldgen.feature.tree.ShelfMushroomTreeDecorator import ShelfMushroomTreeDecorator
 
 
 @dataclass(kw_only=True)
-class TreeDecoratorAlterGround:
+class TreeDecoratorAlterGround(AlterGroundTreeDecorator):
     type: Literal['minecraft:alter_ground']
-    provider: BlockStateProvider
 
 
 @dataclass(kw_only=True)
-class TreeDecoratorAttachedToLeaves:
+class TreeDecoratorAttachedToLeaves(AttachedToLeavesTreeDecorator):
     type: Literal['minecraft:attached_to_leaves']
-    probability: Annotated[float, 'Range | `0`-`1` | both inclusive']
-    exclusion_radius_xz: Annotated[int, 'Range | `0`-`16` | both inclusive']
-    exclusion_radius_y: Annotated[int, 'Range | `0`-`16` | both inclusive']
-    required_empty_blocks: Annotated[int, 'Range | `1`-`16` | both inclusive']
-    block_provider: BlockStateProvider
-    directions: Annotated[list[Direction], 'Length = 1 (inclusive) and above']
 
 
 @dataclass(kw_only=True)
-class TreeDecoratorAttachedToLogs:
+class TreeDecoratorAttachedToLogs(AttachedToLogsTreeDecorator):
     type: Literal['minecraft:attached_to_logs']
-    probability: Annotated[float, 'Range | `0`-`1` | both inclusive']
-    block_provider: BlockStateProvider
-    directions: Annotated[list[Direction], 'Length = 1 (inclusive) and above']
 
 
 @dataclass(kw_only=True)
-class TreeDecoratorBeehive:
+class TreeDecoratorBeehive(BeehiveTreeDecorator):
     type: Literal['minecraft:beehive']
-    probability: Annotated[float, 'Range | `0`-`1` | both inclusive']
 
 
 @dataclass(kw_only=True)
-class TreeDecoratorCocoa:
+class TreeDecoratorCocoa(CocoaTreeDecorator):
     type: Literal['minecraft:cocoa']
-    probability: Annotated[float, 'Range | `0`-`1` | both inclusive']
 
 
 @dataclass(kw_only=True)
-class TreeDecoratorCreakingHeart:
+class TreeDecoratorCreakingHeart(CreakingHeartTreeDecorator):
     type: Literal['minecraft:creaking_heart']
-    probability: Annotated[float, 'Range | `0`-`1` | both inclusive']
 
 
 @dataclass(kw_only=True)
-class TreeDecoratorLeaveVine:
+class TreeDecoratorLeaveVine(LeaveVineTreeDecorator):
     type: Literal['minecraft:leave_vine']
-    probability: Annotated[float, 'Range | `0`-`1` | both inclusive']
 
 
 @dataclass(kw_only=True)
-class TreeDecoratorPaleMoss:
+class TreeDecoratorPaleMoss(PaleMossTreeDecorator):
     type: Literal['minecraft:pale_moss']
-    leaves_probability: Annotated[float, 'Range | `0`-`1` | both inclusive']
-    trunk_probability: Annotated[float, 'Range | `0`-`1` | both inclusive']
-    ground_probability: Annotated[float, 'Range | `0`-`1` | both inclusive']
 
 
 @dataclass(kw_only=True)
-class TreeDecoratorPlaceOnGround:
+class TreeDecoratorPlaceOnGround(PlaceOnGroundTreeDecorator):
     type: Literal['minecraft:place_on_ground']
-    tries: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # Defaults to `128`.
-    radius: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # Defaults to `2`.
-    height: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # Defaults to `1`.
-    block_state_provider: BlockStateProvider  # The block to place on the ground.
 
 
 @dataclass(kw_only=True)
-class TreeDecoratorShelfMushroom:
+class TreeDecoratorShelfMushroom(ShelfMushroomTreeDecorator):
     type: Literal['minecraft:shelf_mushroom']
-    probability: Annotated[float, 'Range | `0`-`1` | both inclusive']
 
 
 type TreeDecorator = TreeDecoratorAlterGround | TreeDecoratorAttachedToLeaves | TreeDecoratorAttachedToLogs | TreeDecoratorBeehive | TreeDecoratorCocoa | TreeDecoratorCreakingHeart | TreeDecoratorLeaveVine | TreeDecoratorPaleMoss | TreeDecoratorPlaceOnGround | TreeDecoratorShelfMushroom

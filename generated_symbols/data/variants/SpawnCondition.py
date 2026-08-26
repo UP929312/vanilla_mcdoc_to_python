@@ -4,30 +4,26 @@ Local link to file: generated_symbols/data/variants/SpawnCondition.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Literal
+from typing import Literal
 
-from minecraft_registry import IdSpec
-
-if TYPE_CHECKING:
-    from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
+from generated_symbols.data.variants.BiomeCheck import BiomeCheck
+from generated_symbols.data.variants.MoonBrightnessCheck import MoonBrightnessCheck
+from generated_symbols.data.variants.StructureCheck import StructureCheck
 
 
 @dataclass(kw_only=True)
-class SpawnConditionBiome:
+class SpawnConditionBiome(BiomeCheck):
     type: Literal['minecraft:biome']
-    biomes: Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')] | list[Annotated[str, IdSpec(registry='worldgen/biome')]]  # Checks if the entity is spawning in specific biomes.
 
 
 @dataclass(kw_only=True)
-class SpawnConditionMoonBrightness:
+class SpawnConditionMoonBrightness(MoonBrightnessCheck):
     type: Literal['minecraft:moon_brightness']
-    range: MinMaxBounds[float] | float  # Checks if the current moon brightness is within a certain range.
 
 
 @dataclass(kw_only=True)
-class SpawnConditionStructure:
+class SpawnConditionStructure(StructureCheck):
     type: Literal['minecraft:structure']
-    structures: Annotated[str, IdSpec(registry='worldgen/structure', tags='allowed')] | list[Annotated[str, IdSpec(registry='worldgen/structure')]]  # Checks if the entity is spawning in specific structures.
 
 
 type SpawnCondition = SpawnConditionBiome | SpawnConditionMoonBrightness | SpawnConditionStructure

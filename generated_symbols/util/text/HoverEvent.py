@@ -4,32 +4,26 @@ Local link to file: generated_symbols/util/text/HoverEvent.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Literal
+from typing import Literal
 
-from generated_symbols.world.item.ItemStack import ItemStack
-from minecraft_registry import IdSpec
-
-if TYPE_CHECKING:
-    from generated_symbols.util.text.Text import Text
+from generated_symbols.util.text.ShowEntity import ShowEntity
+from generated_symbols.util.text.ShowItem import ShowItem
+from generated_symbols.util.text.ShowText import ShowText
 
 
 @dataclass(kw_only=True)
-class HoverEventShowEntity:
+class HoverEventShowEntity(ShowEntity):
     action: Literal['minecraft:show_entity']
-    id: Annotated[str, IdSpec(registry='entity_type')]
-    uuid: tuple[int, int, int, int] | str
-    name: Text | None = None
 
 
 @dataclass(kw_only=True)
-class HoverEventShowItem(ItemStack):
+class HoverEventShowItem(ShowItem):
     action: Literal['minecraft:show_item']
 
 
 @dataclass(kw_only=True)
-class HoverEventShowText:
+class HoverEventShowText(ShowText):
     action: Literal['minecraft:show_text']
-    value: Text
 
 
 type HoverEvent = HoverEventShowEntity | HoverEventShowItem | HoverEventShowText

@@ -6,26 +6,16 @@ Local link to file: generated_symbols/data/loot/function/ApplyBonus.py
 from dataclasses import dataclass
 from typing import Annotated, Literal
 
+from generated_symbols.data.loot.function.BinomialWithBonusCountFormula import BinomialWithBonusCountFormula
 from generated_symbols.data.loot.function.Conditions import Conditions
+from generated_symbols.data.loot.function.UniformBonusFormula import UniformBonusFormula
 from minecraft_registry import IdSpec
 
 
 @dataclass(kw_only=True)
-class ParametersStruct:
-    extra: int
-    probability: Annotated[float, 'Range | `0`-`1` | both inclusive']
-
-
-@dataclass(kw_only=True)
-class ParametersStruct2:
-    bonusMultiplier: int
-
-
-@dataclass(kw_only=True)
-class ApplyBonusBinomialWithBonusCount(Conditions):
+class ApplyBonusBinomialWithBonusCount(BinomialWithBonusCountFormula, Conditions):
     enchantment: Annotated[str, IdSpec(registry='enchantment')]
     formula: Literal['minecraft:binomial_with_bonus_count']
-    parameters: ParametersStruct
 
 
 @dataclass(kw_only=True)
@@ -35,10 +25,9 @@ class ApplyBonusOreDrops(Conditions):
 
 
 @dataclass(kw_only=True)
-class ApplyBonusUniformBonusCount(Conditions):
+class ApplyBonusUniformBonusCount(Conditions, UniformBonusFormula):
     enchantment: Annotated[str, IdSpec(registry='enchantment')]
     formula: Literal['minecraft:uniform_bonus_count']
-    parameters: ParametersStruct2
 
 
 type ApplyBonus = ApplyBonusBinomialWithBonusCount | ApplyBonusOreDrops | ApplyBonusUniformBonusCount

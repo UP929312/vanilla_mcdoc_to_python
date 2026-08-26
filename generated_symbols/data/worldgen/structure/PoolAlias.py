@@ -4,32 +4,26 @@ Local link to file: generated_symbols/data/worldgen/structure/PoolAlias.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Literal
+from typing import Literal
 
-from minecraft_registry import IdSpec
-
-if TYPE_CHECKING:
-    from generated_symbols.util.NonEmptyWeightedList import NonEmptyWeightedList
+from generated_symbols.data.worldgen.structure.DirectPoolAlias import DirectPoolAlias
+from generated_symbols.data.worldgen.structure.RandomGroupPoolAlias import RandomGroupPoolAlias
+from generated_symbols.data.worldgen.structure.RandomPoolAlias import RandomPoolAlias
 
 
 @dataclass(kw_only=True)
-class PoolAliasDirect:
+class PoolAliasDirect(DirectPoolAlias):
     type: Literal['minecraft:direct']
-    alias: Annotated[str, IdSpec()]
-    target: Annotated[str, IdSpec(registry='worldgen/template_pool')]
 
 
 @dataclass(kw_only=True)
-class PoolAliasRandom:
+class PoolAliasRandom(RandomPoolAlias):
     type: Literal['minecraft:random']
-    alias: Annotated[str, IdSpec()]
-    targets: NonEmptyWeightedList[Annotated[str, IdSpec(registry='worldgen/template_pool')]]
 
 
 @dataclass(kw_only=True)
-class PoolAliasRandomGroup:
+class PoolAliasRandomGroup(RandomGroupPoolAlias):
     type: Literal['minecraft:random_group']
-    groups: NonEmptyWeightedList[list[PoolAlias]]
 
 
 type PoolAlias = PoolAliasDirect | PoolAliasRandom | PoolAliasRandomGroup

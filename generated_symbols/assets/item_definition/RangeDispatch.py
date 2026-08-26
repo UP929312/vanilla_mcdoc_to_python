@@ -4,13 +4,19 @@ Local link to file: generated_symbols/assets/item_definition/RangeDispatch.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Annotated, Literal
+from typing import TYPE_CHECKING, Literal
+
+from generated_symbols.assets.item_definition.Compass import Compass
+from generated_symbols.assets.item_definition.Count import Count
+from generated_symbols.assets.item_definition.CustomModelDataFloats import CustomModelDataFloats
+from generated_symbols.assets.item_definition.Damage import Damage
+from generated_symbols.assets.item_definition.Time import Time
+from generated_symbols.assets.item_definition.UseCycle import UseCycle
+from generated_symbols.assets.item_definition.UseDuration import UseDuration
 
 if TYPE_CHECKING:
-    from generated_symbols.assets.item_definition.CompassTarget import CompassTarget
     from generated_symbols.assets.item_definition.ItemModel import ItemModel
     from generated_symbols.assets.item_definition.NumericPropertyType import NumericPropertyType
-    from generated_symbols.assets.item_definition.TimeSource import TimeSource
     from generated_symbols.world.entity.display.Transformation import Transformation
 
 
@@ -30,75 +36,66 @@ class RangeDispatchUnknown:
 
 
 @dataclass(kw_only=True)
-class RangeDispatchCompass:
+class RangeDispatchCompass(Compass):
     property: Literal['minecraft:compass']
     scale: float | None = None  # Factor to multiply the property value with. Defaults to 1.
     entries: list[EntriesStruct]  # List of ranges. Will select last entry with threshold less or equal to value. Order does not matter, list will be sorted by threshold in ascending order.
     fallback: ItemModel | None = None  # Item model to render if no entries were less or equal to the value.
     transformation: Transformation | None = None
-    target: CompassTarget
-    wobble: bool | None = None  # Whether to oscillate for some time around target before settling. Defaults to true.
 
 
 @dataclass(kw_only=True)
-class RangeDispatchCount:
+class RangeDispatchCount(Count):
     property: Literal['minecraft:count']
     scale: float | None = None  # Factor to multiply the property value with. Defaults to 1.
     entries: list[EntriesStruct]  # List of ranges. Will select last entry with threshold less or equal to value. Order does not matter, list will be sorted by threshold in ascending order.
     fallback: ItemModel | None = None  # Item model to render if no entries were less or equal to the value.
     transformation: Transformation | None = None
-    normalize: bool | None = None  # If false, returns count clamped to `0..max_stack_size`. If true, returns count divided by the `max_stack_size` component, clamped to `0..1`. Defaults to true.
 
 
 @dataclass(kw_only=True)
-class RangeDispatchCustomModelData:
+class RangeDispatchCustomModelData(CustomModelDataFloats):
     property: Literal['minecraft:custom_model_data']
     scale: float | None = None  # Factor to multiply the property value with. Defaults to 1.
     entries: list[EntriesStruct]  # List of ranges. Will select last entry with threshold less or equal to value. Order does not matter, list will be sorted by threshold in ascending order.
     fallback: ItemModel | None = None  # Item model to render if no entries were less or equal to the value.
     transformation: Transformation | None = None
-    index: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # The index of the `floats` list in the `custom_model_data` component. Defaults to 0.
 
 
 @dataclass(kw_only=True)
-class RangeDispatchDamage:
+class RangeDispatchDamage(Damage):
     property: Literal['minecraft:damage']
     scale: float | None = None  # Factor to multiply the property value with. Defaults to 1.
     entries: list[EntriesStruct]  # List of ranges. Will select last entry with threshold less or equal to value. Order does not matter, list will be sorted by threshold in ascending order.
     fallback: ItemModel | None = None  # Item model to render if no entries were less or equal to the value.
     transformation: Transformation | None = None
-    normalize: bool | None = None  # If false, returns value of damage, clamped to `0..max_damage`. If true, returns value of damage divided by the `max_damage` component, clamped to `0..1`. Defaults to true.
 
 
 @dataclass(kw_only=True)
-class RangeDispatchTime:
+class RangeDispatchTime(Time):
     property: Literal['minecraft:time']
     scale: float | None = None  # Factor to multiply the property value with. Defaults to 1.
     entries: list[EntriesStruct]  # List of ranges. Will select last entry with threshold less or equal to value. Order does not matter, list will be sorted by threshold in ascending order.
     fallback: ItemModel | None = None  # Item model to render if no entries were less or equal to the value.
     transformation: Transformation | None = None
-    source: TimeSource
-    wobble: bool | None = None  # Whether to oscillate for some time around target before settling. Defaults to true.
 
 
 @dataclass(kw_only=True)
-class RangeDispatchUseCycle:
+class RangeDispatchUseCycle(UseCycle):
     property: Literal['minecraft:use_cycle']
     scale: float | None = None  # Factor to multiply the property value with. Defaults to 1.
     entries: list[EntriesStruct]  # List of ranges. Will select last entry with threshold less or equal to value. Order does not matter, list will be sorted by threshold in ascending order.
     fallback: ItemModel | None = None  # Item model to render if no entries were less or equal to the value.
     transformation: Transformation | None = None
-    period: float | None = None  # returns remaining item use ticks modulo `period`. Defaults to 1.
 
 
 @dataclass(kw_only=True)
-class RangeDispatchUseDuration:
+class RangeDispatchUseDuration(UseDuration):
     property: Literal['minecraft:use_duration']
     scale: float | None = None  # Factor to multiply the property value with. Defaults to 1.
     entries: list[EntriesStruct]  # List of ranges. Will select last entry with threshold less or equal to value. Order does not matter, list will be sorted by threshold in ascending order.
     fallback: ItemModel | None = None  # Item model to render if no entries were less or equal to the value.
     transformation: Transformation | None = None
-    remaining: bool | None = None  # If true, returns remaining item use ticks. If false, returns item use ticks so far. Defaults to false.
 
 
 type RangeDispatch = RangeDispatchUnknown | RangeDispatchCompass | RangeDispatchCount | RangeDispatchCustomModelData | RangeDispatchDamage | RangeDispatchTime | RangeDispatchUseCycle | RangeDispatchUseDuration

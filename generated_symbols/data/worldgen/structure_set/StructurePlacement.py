@@ -6,12 +6,13 @@ Local link to file: generated_symbols/data/worldgen/structure_set/StructurePlace
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Literal
 
+from generated_symbols.data.worldgen.structure_set.ConcentricRingsPlacement import ConcentricRingsPlacement
+from generated_symbols.data.worldgen.structure_set.RandomSpreadPlacement import RandomSpreadPlacement
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.structure_set.ExclusionZone import ExclusionZone
     from generated_symbols.data.worldgen.structure_set.FrequencyReductionMethod import FrequencyReductionMethod
-    from generated_symbols.data.worldgen.structure_set.SpreadType import SpreadType
 
 
 @dataclass(kw_only=True)
@@ -25,30 +26,23 @@ class StructurePlacementUnknown:
 
 
 @dataclass(kw_only=True)
-class StructurePlacementConcentricRings:
+class StructurePlacementConcentricRings(ConcentricRingsPlacement):
     type: Literal['minecraft:concentric_rings']
     salt: Annotated[int, 'Range | `0` and above | inclusive']
     frequency_reduction_method: FrequencyReductionMethod | None = None
     frequency: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
     exclusion_zone: ExclusionZone | None = None
     locate_offset: tuple[Annotated[int, 'Range | `-16`-`16` | both inclusive'], Annotated[int, 'Range | `-16`-`16` | both inclusive'], Annotated[int, 'Range | `-16`-`16` | both inclusive']] | None = None
-    distance: Annotated[int, 'Range | `0`-`1023` | both inclusive']
-    spread: Annotated[int, 'Range | `0`-`1023` | both inclusive']
-    count: Annotated[int, 'Range | `1`-`4095` | both inclusive']
-    preferred_biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
 
 
 @dataclass(kw_only=True)
-class StructurePlacementRandomSpread:
+class StructurePlacementRandomSpread(RandomSpreadPlacement):
     type: Literal['minecraft:random_spread']
     salt: Annotated[int, 'Range | `0` and above | inclusive']
     frequency_reduction_method: FrequencyReductionMethod | None = None
     frequency: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
     exclusion_zone: ExclusionZone | None = None
     locate_offset: tuple[Annotated[int, 'Range | `-16`-`16` | both inclusive'], Annotated[int, 'Range | `-16`-`16` | both inclusive'], Annotated[int, 'Range | `-16`-`16` | both inclusive']] | None = None
-    spacing: Annotated[int, 'Range | `0`-`4096` | both inclusive']  # Average distance in chunks between two structures of this type.
-    separation: Annotated[int, 'Range | `0`-`4096` | both inclusive']  # Minimum distance in chunks between two structures of this type.
-    spread_type: SpreadType | None = None
 
 
 type StructurePlacement = StructurePlacementUnknown | StructurePlacementConcentricRings | StructurePlacementRandomSpread

@@ -4,27 +4,20 @@ Local link to file: generated_symbols/data/worldgen/feature/tree/FeatureSize.py
 """
 # ~~~ CODE ~~~
 from dataclasses import dataclass
-from typing import Annotated, Literal
+from typing import Literal
+
+from generated_symbols.data.worldgen.feature.tree.ThreeLayersFeatureSize import ThreeLayersFeatureSize
+from generated_symbols.data.worldgen.feature.tree.TwoLayersFeatureSize import TwoLayersFeatureSize
 
 
 @dataclass(kw_only=True)
-class FeatureSizeThreeLayersFeatureSize:
+class FeatureSizeThreeLayersFeatureSize(ThreeLayersFeatureSize):
     type: Literal['minecraft:three_layers_feature_size']
-    min_clipped_height: Annotated[float, 'Range | `0`-`80` | both inclusive'] | None = None
-    limit: Annotated[int, 'Range | `0`-`80` | both inclusive'] | None = None
-    upper_limit: Annotated[int, 'Range | `0`-`80` | both inclusive'] | None = None
-    lower_size: Annotated[int, 'Range | `0`-`16` | both inclusive'] | None = None
-    middle_size: Annotated[int, 'Range | `0`-`16` | both inclusive'] | None = None
-    upper_size: Annotated[int, 'Range | `0`-`16` | both inclusive'] | None = None
 
 
 @dataclass(kw_only=True)
-class FeatureSizeTwoLayersFeatureSize:
+class FeatureSizeTwoLayersFeatureSize(TwoLayersFeatureSize):
     type: Literal['minecraft:two_layers_feature_size']
-    min_clipped_height: Annotated[float, 'Range | `0`-`80` | both inclusive'] | None = None
-    limit: Annotated[int, 'Range | `0`-`81` | both inclusive'] | None = None
-    lower_size: Annotated[int, 'Range | `0`-`16` | both inclusive'] | None = None
-    upper_size: Annotated[int, 'Range | `0`-`16` | both inclusive'] | None = None
 
 
 type FeatureSize = FeatureSizeThreeLayersFeatureSize | FeatureSizeTwoLayersFeatureSize
