@@ -65,6 +65,7 @@ class SingleSymbolContext:
         self.required_imports.add(Import("typing", "Annotated", type_checking_only=False, is_builtin=True))
 
     def add_dataclass(self, lines: list[str]) -> None:
+        """Adds the given dataclass declaration lines to the context, if not already emitted."""
         declaration: str = next((line for line in lines if line.startswith(("class ", "type "))), None)  # type: ignore[assignment]
         if (name := declaration.split()[1].split("(", 1)[0]) in self.emitted_declaration_names:
             return
@@ -72,6 +73,7 @@ class SingleSymbolContext:
         self.additional_dataclasses.extend(lines + [""])
 
     def allocate_name(self, preferred: str, fingerprint: str) -> str:
+        """Gives the dataclass a name that is stable across nested contexts and avoids collisions with other names in the same context."""
         key = preferred, fingerprint
         if key not in self.allocated_name_by_identity:
             used = set(self.allocated_name_by_identity.values())
@@ -96,20 +98,16 @@ class SingleSymbolContext:
         self.required_imports.add(Import(module, identifier, type_checking_only=not self.require_runtime_imports, is_builtin=False))
         return imported_name
 
-    def with_rendering_options(
-        self,
-        allow_numeric_type_arg_shortcuts: bool = True,
-        require_runtime_imports: bool | None = None,
-    ) -> SingleSymbolContext:
-        """Copy the context with new rendering flags while sharing accumulated generation state."""
+    def copy(self) -> SingleSymbolContext:
+        """Copy the context with new values while sharing accumulated generation state."""
         return SingleSymbolContext(
             required_imports=self.required_imports,
             local_type_params=self.local_type_params,
             additional_dataclasses=self.additional_dataclasses,
             current_symbol_path=self.current_symbol_path,
             schema_graph=self.schema_graph,
-            allow_numeric_type_arg_shortcuts=allow_numeric_type_arg_shortcuts,
-            require_runtime_imports=self.require_runtime_imports if require_runtime_imports is None else require_runtime_imports,
+            allow_numeric_type_arg_shortcuts=self.allow_numeric_type_arg_shortcuts,
+            require_runtime_imports=self.require_runtime_imports,
             allocated_name_by_identity=self.allocated_name_by_identity,
             emitted_declaration_names=self.emitted_declaration_names,
         )

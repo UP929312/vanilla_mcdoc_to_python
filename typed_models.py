@@ -417,7 +417,9 @@ class ConcreteSchema(BaseSchema):
     type_args: list[Annotated[ConcreteSchemaTypeArgTypes, Field(discriminator="kind")]] = Field(default_factory=list, alias="typeArgs")
 
     def to_python_code(self, class_name: str, ctx: SingleSymbolContext) -> list[str]:
-        runtime_ctx = ctx.with_rendering_options(require_runtime_imports=True)
+        runtime_ctx = ctx.copy()
+        runtime_ctx.allow_numeric_type_arg_shortcuts = True
+        runtime_ctx.require_runtime_imports = True
         # We ommit the "type" so we can bind them, and then other things can inherit this binding.
         return [f"{class_name} = {self.to_annotation(runtime_ctx, class_name)}"]
 
@@ -653,11 +655,10 @@ class SpreadFieldSchema(BaseSchema):
         """Return a list of strings representing inherited classes, e.g. class MyClass(`<x>`, `<y>`) """
         base_names: set[str] = set()
         for spread_field_schema in [fld for fld in fields if isinstance(fld, SpreadFieldSchema)]:
+            strict_ctx = ctx.copy()
+            strict_ctx.allow_numeric_type_arg_shortcuts = False  # Don't allow inherited | float, for example.
+            strict_ctx.require_runtime_imports = True
             # Keep concrete spread type arguments in inheritance, e.g. UniformIntProvider[T].
-            strict_ctx = ctx.with_rendering_options(
-                allow_numeric_type_arg_shortcuts=False,
-                require_runtime_imports=True,
-            )  # Don't allow inherited | float, for example.
             reference: ReferenceSchema | None = spread_field_schema._unravel_reference()
             if reference is not None and reference.path not in ctx.local_type_params:
                 base_names.add(spread_field_schema.type.to_annotation(strict_ctx))
