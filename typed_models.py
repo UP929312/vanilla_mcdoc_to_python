@@ -594,6 +594,8 @@ class PairSchema(BaseSchema):
 
     @property
     def optional_string_or_empty(self) -> str:
+        if isinstance(self.type, LiteralSchema):
+            return ""
         return " | None = None" if self.optional else ""
 
     @staticmethod
@@ -922,9 +924,8 @@ class StructSchema(BaseSchema):
             if not annotation.strip() or annotation == "None":
                 continue  # Empty unions represent weird stuff - skip so parent members can remain authoritative.
 
-            optional = "" if isinstance(pair_field.type, LiteralSchema) else pair_field.optional_string_or_empty
             default = f" = {pair_field.type.value.value!r}" if isinstance(pair_field.type, LiteralSchema) else ""
-            line = f"    {key}: {annotation}{optional}{default}{pair_field.description_or_empty}"
+            line = f"    {key}: {annotation}{pair_field.optional_string_or_empty}{default}{pair_field.description_or_empty}"
             lines.append(line)
         return lines + [""]
 
