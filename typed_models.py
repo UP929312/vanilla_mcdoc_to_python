@@ -894,7 +894,7 @@ class StructSchema(BaseSchema):
         type_args = f"[{', '.join(type_param_names)}]" if type_param_names else ""
         return f"{class_name}{type_args}"
 
-    def _render_dataclass(self, class_name: str, ctx: SingleSymbolContext) -> list[str]:
+    def _render_model(self, class_name: str, ctx: SingleSymbolContext) -> list[str]:
         # Collects Structs' inherrited children, e.g. class MyClass(PredicateOffset)
         inherited_names = SpreadFieldSchema.collect_inherited_base_names(self.fields, ctx)
         template_type_names = sorted({symbol_path_to_object_name(path) for path in ctx.local_type_params})
@@ -952,7 +952,7 @@ class StructSchema(BaseSchema):
                 if isinstance(child, ReferenceSchema) and child.path not in ROOT_SYMBOLS_KEYS["mcdoc"]:
                     ctx.local_type_params.add(child.path)
 
-        return self._render_dataclass(class_name, ctx)
+        return self._render_model(class_name, ctx)
 
     def to_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str = "") -> str:
         mapping_alias: str = self._mapping_alias_annotation(ctx, f"{nested_struct_name}ValueStruct")  # type: ignore[assignment]
