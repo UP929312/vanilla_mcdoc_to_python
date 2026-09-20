@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::worldgen::processor_list::Inverted
 Local link to file: generated_symbols/data/worldgen/processor_list/InvertedMatch.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.processor_list.RuleTest import RuleTest
 
 
-@dataclass(kw_only=True)
-class InvertedMatch:
+class InvertedMatch(GeneratedModel):
     rule: RuleTest
 
 

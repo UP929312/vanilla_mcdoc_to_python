@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::worldgen::ClampedNormalIntProvider
 Local link to file: generated_symbols/data/worldgen/ClampedNormalIntProvider.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Generic, TypeVar
 
 from generated_symbols.data.worldgen.UniformIntProvider import UniformIntProvider
@@ -11,7 +10,6 @@ from generated_symbols.data.worldgen.UniformIntProvider import UniformIntProvide
 
 T = TypeVar('T')
 
-@dataclass(kw_only=True)
 class ClampedNormalIntProvider(UniformIntProvider[T], Generic[T]):
     mean: float
     deviation: float

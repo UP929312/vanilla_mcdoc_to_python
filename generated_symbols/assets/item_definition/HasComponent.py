@@ -3,14 +3,13 @@ Generated from symbols.json for ::java::assets::item_definition::HasComponent
 Local link to file: generated_symbols/assets/item_definition/HasComponent.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
-class HasComponent:
+class HasComponent(GeneratedModel):
     component: Annotated[str, IdSpec(registry='data_component_type')]
     ignore_default: bool | None = None  # Whether the default components should be handled as "no component". Defaults to false.
 

@@ -3,16 +3,16 @@ Generated from symbols.json for ::java::data::enchantment::effect_component::Arm
 Local link to file: generated_symbols/data/enchantment/effect_component/ArmorEffectivenessEnchantmentEffect.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.enchantment.effect.ValueEffect import ValueEffect
     from generated_symbols.data.predicate.Predicate import Predicate
 
 
-@dataclass(kw_only=True)
-class ArmorEffectivenessEnchantmentEffect:
+class ArmorEffectivenessEnchantmentEffect(GeneratedModel):
     requirements: Predicate | None = None  # Predicate context: Damage Parameters.
     effect: ValueEffect  # Determines armor effectiveness; `0.0` for no effect, `1.0` for full effect.
 

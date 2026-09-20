@@ -3,17 +3,16 @@ Generated from symbols.json for ::java::assets::atlas::PalettedPermutations
 Local link to file: generated_symbols/assets/atlas/PalettedPermutations.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.assets.atlas.PaletteTexture import PaletteTexture
 
 
-@dataclass(kw_only=True)
-class PalettedPermutations:
+class PalettedPermutations(GeneratedModel):
     textures: list[Annotated[str, IdSpec(registry='texture')]]
     palette_key: PaletteTexture
     permutations: dict[str, PaletteTexture]

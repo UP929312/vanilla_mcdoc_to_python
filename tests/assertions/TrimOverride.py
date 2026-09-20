@@ -9,7 +9,7 @@ Generated from symbols.json for ::java::assets::equipment::TrimOverride
 Local link to file: generated_symbols/assets/equipment/TrimOverride.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from pydantic import BaseModel
 from typing import TYPE_CHECKING, Annotated
 
 from minecraft_registry import IdSpec
@@ -18,14 +18,14 @@ if TYPE_CHECKING:
     from generated_symbols.assets.atlas.PaletteRef import PaletteRef
 
 
-@dataclass(kw_only=True)
-class WhenStruct:
+class WhenStruct(BaseModel):
     pattern: Annotated[str, IdSpec(registry='trim_pattern')] | None = None
     material: Annotated[str, IdSpec(registry='trim_material')] | None = None
 
 
-@dataclass(kw_only=True)
-class TrimOverride:
+class TrimOverride(BaseModel):
     when: WhenStruct
     texture: Annotated[str, IdSpec()] | None = None  # When present, overrides the base texture provided by trim pattern.  The texture is located under `trims/entity/<layer>/`.
     palette: PaletteRef | None = None  # When present, overrides the palette texture provided by trim material.
+
+

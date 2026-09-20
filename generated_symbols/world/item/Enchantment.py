@@ -3,16 +3,16 @@ Generated from symbols.json for ::java::world::item::Enchantment
 Local link to file: generated_symbols/world/item/Enchantment.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 
-@dataclass(kw_only=True)
-class Enchantment:
+class Enchantment(GeneratedModel):
     id: Annotated[str, IdSpec(registry='enchantment')] | None = None  # Which enchantment is being described.
-    lvl: Annotated[int, 'Range | `0`-`255` | both inclusive'] | None = None  # Which level the enchantment is.
+    lvl: Annotated[int, Field(ge=0, le=255)] | None = None  # Which level the enchantment is.
 
 
 # ~~~ MODEL DUMP ~~~

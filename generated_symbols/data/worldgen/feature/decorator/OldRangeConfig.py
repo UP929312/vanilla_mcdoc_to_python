@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::feature::decorator::OldR
 Local link to file: generated_symbols/data/worldgen/feature/decorator/OldRangeConfig.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class OldRangeConfig:
+class OldRangeConfig(GeneratedModel):
     maximum: int
     bottom_offset: int
     top_offset: int

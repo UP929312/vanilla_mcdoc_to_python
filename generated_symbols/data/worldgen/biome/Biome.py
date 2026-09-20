@@ -3,10 +3,11 @@ Generated from symbols.json for ::java::data::worldgen::biome::Biome
 Local link to file: generated_symbols/data/worldgen/biome/Biome.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.attribute.PositionalEnvironmentAttributeMap import PositionalEnvironmentAttributeMap
@@ -16,8 +17,7 @@ if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.placement.PlacedFeatureRef import PlacedFeatureRef
 
 
-@dataclass(kw_only=True)
-class Biome:
+class Biome(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/biome'
 
     attributes: PositionalEnvironmentAttributeMap | None = None
@@ -27,7 +27,7 @@ class Biome:
     temperature_modifier: TemperatureModifier | None = None
     effects: BiomeEffects
     carvers: CarverListRef
-    features: Annotated[list[list[PlacedFeatureRef] | Annotated[str, IdSpec(registry='worldgen/placed_feature', tags='required')]], 'Length = up to 11 (inclusive)']
+    features: Annotated[list[list[PlacedFeatureRef] | Annotated[str, IdSpec(registry='worldgen/placed_feature', tags='required')]], Field(max_length=11)]
 
 
 # ~~~ MODEL DUMP ~~~

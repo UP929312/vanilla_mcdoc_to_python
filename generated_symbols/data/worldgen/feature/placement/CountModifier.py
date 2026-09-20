@@ -3,16 +3,17 @@ Generated from symbols.json for ::java::data::worldgen::feature::placement::Coun
 Local link to file: generated_symbols/data/worldgen/feature/placement/CountModifier.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.IntProvider import IntProvider
 
 
-@dataclass(kw_only=True)
-class CountModifier:
-    count: IntProvider[Annotated[int, 'Range | `0`-`4096` | both inclusive']] | Annotated[int, 'Range | `0`-`4096` | both inclusive']
+class CountModifier(GeneratedModel):
+    count: IntProvider[Annotated[int, Field(ge=0, le=4096)]] | Annotated[int, Field(ge=0, le=4096)]
 
 
 # ~~~ MODEL DUMP ~~~

@@ -3,16 +3,16 @@ Generated from symbols.json for ::java::data::recipe::CraftingSpecialBannerDupli
 Local link to file: generated_symbols/data/recipe/CraftingSpecialBannerDuplicate.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, ClassVar
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.recipe.Ingredient import Ingredient
     from generated_symbols.world.item.ItemStackTemplate import ItemStackTemplate
 
 
-@dataclass(kw_only=True)
-class CraftingSpecialBannerDuplicate:
+class CraftingSpecialBannerDuplicate(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'recipe'
 
     banner: Ingredient  # The banner item. The item type is required to be `BannerItem`.  Exactly 2 banners of the same color are required.  The one with patterns is viewed as "source". Its components will be copied.  The other is viewed as "target". It is required to have no patterns.   The source banner will be kept in the crafting grid.

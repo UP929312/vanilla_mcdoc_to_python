@@ -3,14 +3,14 @@ Generated from symbols.json for ::java::data::variants::SoundVariant
 Local link to file: generated_symbols/data/variants/SoundVariant.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Generic, TypeVar
+
+from generated_symbols.base import GeneratedModel
 
 
 T = TypeVar('T')
 
-@dataclass(kw_only=True)
-class SoundVariant(Generic[T]):
+class SoundVariant(GeneratedModel, Generic[T]):
     adult_sounds: T
     baby_sounds: T
 

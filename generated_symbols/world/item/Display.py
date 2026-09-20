@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::world::item::Display
 Local link to file: generated_symbols/world/item/Display.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class Display:
+class Display(GeneratedModel):
     Name: str | None = None  # A JSON text component.
     Lore: list[str] | None = None  # A list of JSON text components, each element being a lore line.
 

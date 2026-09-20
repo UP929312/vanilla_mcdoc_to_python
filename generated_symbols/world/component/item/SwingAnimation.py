@@ -3,17 +3,18 @@ Generated from symbols.json for ::java::world::component::item::SwingAnimation
 Local link to file: generated_symbols/world/component/item/SwingAnimation.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.world.component.item.SwingAnimationType import SwingAnimationType
 
 
-@dataclass(kw_only=True)
-class SwingAnimation:
+class SwingAnimation(GeneratedModel):
     type: SwingAnimationType | None = None  # The animation type to play when attacking or interacting using this item. Defaults to `whack`.
-    duration: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # The animation duration in ticks. Defaults to 6
+    duration: Annotated[int, Field(ge=0)] | None = None  # The animation duration in ticks. Defaults to 6
 
 
 # ~~~ MODEL DUMP ~~~

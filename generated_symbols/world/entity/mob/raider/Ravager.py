@@ -3,12 +3,9 @@ Generated from symbols.json for ::java::world::entity::mob::raider::Ravager
 Local link to file: generated_symbols/world/entity/mob/raider/Ravager.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.world.entity.mob.raider.RaiderBase import RaiderBase
 
 
-@dataclass(kw_only=True)
 class Ravager(RaiderBase):
     AttackTick: int | None = None  # Ticks until it can attack.
     RoarTick: int | None = None  # Ticks until it can roar.

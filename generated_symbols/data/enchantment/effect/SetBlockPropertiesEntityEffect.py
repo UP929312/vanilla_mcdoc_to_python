@@ -3,17 +3,16 @@ Generated from symbols.json for ::java::data::enchantment::effect::SetBlockPrope
 Local link to file: generated_symbols/data/enchantment/effect/SetBlockPropertiesEntityEffect.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
 type PropertiesStructDataComponentBlockStateBlockItemStatesNone = dict[str, str]
 
 
-@dataclass(kw_only=True)
-class SetBlockPropertiesEntityEffect:
+class SetBlockPropertiesEntityEffect(GeneratedModel):
     properties: PropertiesStructDataComponentBlockStateBlockItemStatesNone
     offset: tuple[int, int, int] | None = None  # Relative coordinates to offset the block by. Defaults to `[0, 0, 0]`.
     trigger_game_event: Annotated[str, IdSpec(registry='game_event')] | None = None  # Defaults to no game event dispatched.

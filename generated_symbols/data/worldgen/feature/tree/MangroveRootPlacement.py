@@ -3,21 +3,21 @@ Generated from symbols.json for ::java::data::worldgen::feature::tree::MangroveR
 Local link to file: generated_symbols/data/worldgen/feature/tree/MangroveRootPlacement.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
     from generated_symbols.registry.KnownBlockId import KnownBlockId
 
 
-@dataclass(kw_only=True)
-class MangroveRootPlacement:
-    max_root_width: Annotated[int, 'Range | `1`-`12` | both inclusive']
-    max_root_length: Annotated[int, 'Range | `1`-`64` | both inclusive']
-    random_skew_chance: Annotated[float, 'Range | `0`-`1` | both inclusive']
+class MangroveRootPlacement(GeneratedModel):
+    max_root_width: Annotated[int, Field(ge=1, le=12)]
+    max_root_length: Annotated[int, Field(ge=1, le=64)]
+    random_skew_chance: Annotated[float, Field(ge=0, le=1)]
     can_grow_through: list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId
     muddy_roots_in: list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId
     muddy_roots_provider: BlockStateProvider

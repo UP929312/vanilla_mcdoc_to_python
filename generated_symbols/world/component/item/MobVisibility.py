@@ -3,16 +3,16 @@ Generated from symbols.json for ::java::world::component::item::MobVisibility
 Local link to file: generated_symbols/world/component/item/MobVisibility.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 
-@dataclass(kw_only=True)
-class MobVisibility:
+class MobVisibility(GeneratedModel):
     targeting_entity_types: Annotated[str, IdSpec(registry='entity_type', tags='allowed')] | list[Annotated[str, IdSpec(registry='entity_type')]]  # Entities to match.
-    visibility: Annotated[float, 'Range | `0`-`10` | both inclusive']  # Visibility factor, with `0.0` reducing the range at which mobs detects the entity to `2`, while `10.0` increases the detection range tenfold. While multiple items with this component stack, the maximum vision will still never exceed `10.0`.
+    visibility: Annotated[float, Field(ge=0, le=10)]  # Visibility factor, with `0.0` reducing the range at which mobs detects the entity to `2`, while `10.0` increases the detection range tenfold. While multiple items with this component stack, the maximum vision will still never exceed `10.0`.
 
 
 # ~~~ MODEL DUMP ~~~

@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::data::recipe::NotificationInfo
 Local link to file: generated_symbols/data/recipe/NotificationInfo.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class NotificationInfo:
+class NotificationInfo(GeneratedModel):
     show_notification: bool | None = None  # Determines if a notification is shown when unlocking this recipe. Defaults to `true`.
 
 

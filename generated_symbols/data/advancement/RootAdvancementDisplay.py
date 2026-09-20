@@ -3,14 +3,12 @@ Generated from symbols.json for ::java::data::advancement::RootAdvancementDispla
 Local link to file: generated_symbols/data/advancement/RootAdvancementDisplay.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
 from generated_symbols.data.advancement.AdvancementDisplay import AdvancementDisplay
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
 class RootAdvancementDisplay(AdvancementDisplay):
     background: Annotated[str, IdSpec(registry='texture')]  # Used for the advancement tab.
 

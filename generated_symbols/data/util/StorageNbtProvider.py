@@ -3,14 +3,13 @@ Generated from symbols.json for ::java::data::util::StorageNbtProvider
 Local link to file: generated_symbols/data/util/StorageNbtProvider.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
-class StorageNbtProvider:
+class StorageNbtProvider(GeneratedModel):
     source: Annotated[str, IdSpec(registry='storage')]
 
 

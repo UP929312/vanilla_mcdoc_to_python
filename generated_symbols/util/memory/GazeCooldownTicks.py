@@ -3,12 +3,9 @@ Generated from symbols.json for ::java::util::memory::GazeCooldownTicks
 Local link to file: generated_symbols/util/memory/GazeCooldownTicks.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.util.memory.ExpirableValue import ExpirableValue
 
 
-@dataclass(kw_only=True)
 class GazeCooldownTicks(ExpirableValue):
     value: int  # Ticks before the armadillo or camel can randomly look around again.
 

@@ -3,14 +3,12 @@ Generated from symbols.json for ::java::data::loot::function::ExplorationMap
 Local link to file: generated_symbols/data/loot/function/ExplorationMap.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
 from generated_symbols.data.loot.function.Conditions import Conditions
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
 class ExplorationMap(Conditions):
     destination: Annotated[str, IdSpec(registry='worldgen/structure', tags='allowed')] | list[Annotated[str, IdSpec(registry='worldgen/structure')]]  # Generated structure to locate. Accepts any of the structure types used by the `/locate` command.
     decoration: Annotated[str, IdSpec(registry='map_decoration_type')] | None = None  # The icon used to mark the destination on the map.

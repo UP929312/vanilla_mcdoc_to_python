@@ -3,14 +3,13 @@ Generated from symbols.json for ::java::data::worldgen::feature::block_predicate
 Local link to file: generated_symbols/data/worldgen/feature/block_predicate/MatchingBiomesPredicate.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
-class MatchingBiomesPredicate:
+class MatchingBiomesPredicate(GeneratedModel):
     biomes: Annotated[str, IdSpec(registry='biome', tags='allowed')] | list[Annotated[str, IdSpec(registry='biome')]]
 
 

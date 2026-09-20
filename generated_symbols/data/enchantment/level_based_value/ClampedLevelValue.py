@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::enchantment::level_based_value::Cl
 Local link to file: generated_symbols/data/enchantment/level_based_value/ClampedLevelValue.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.enchantment.level_based_value.LevelBasedValue import LevelBasedValue
 
 
-@dataclass(kw_only=True)
-class ClampedLevelValue:
+class ClampedLevelValue(GeneratedModel):
     value: LevelBasedValue
     min: float
     max: float

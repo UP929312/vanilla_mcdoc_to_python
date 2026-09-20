@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::assets::credits::CreditsJobTitle
 Local link to file: generated_symbols/assets/credits/CreditsJobTitle.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class CreditsJobTitle:
+class CreditsJobTitle(GeneratedModel):
     title: str
     names: list[str]  # Employees with the title.
 

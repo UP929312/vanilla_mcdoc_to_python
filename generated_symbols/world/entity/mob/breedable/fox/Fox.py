@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::entity::mob::breedable::fox::Fox
 Local link to file: generated_symbols/world/entity/mob/breedable/fox/Fox.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.world.entity.mob.breedable.Breedable import Breedable
@@ -12,7 +11,6 @@ if TYPE_CHECKING:
     from generated_symbols.world.component.entity.FoxType import FoxType
 
 
-@dataclass(kw_only=True)
 class Fox(Breedable):
     Trusted: list[tuple[int, int, int, int]] | None = None  # List of trusted players.
     Sleeping: bool | None = None  # Whether it is sleeping.

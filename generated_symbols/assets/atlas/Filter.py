@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::assets::atlas::Filter
 Local link to file: generated_symbols/assets/atlas/Filter.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.assets.atlas.FilterPattern import FilterPattern
 
 
-@dataclass(kw_only=True)
-class Filter:
+class Filter(GeneratedModel):
     pattern: FilterPattern  # Pattern to remove sprite identifiers already in the atlas. The order of sprite sources is important.
 
 

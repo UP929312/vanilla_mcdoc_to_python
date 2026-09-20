@@ -3,14 +3,13 @@ Generated from symbols.json for ::java::assets::atlas::Single
 Local link to file: generated_symbols/assets/atlas/Single.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
-class Single:
+class Single(GeneratedModel):
     resource: Annotated[str, IdSpec(registry='texture')]  # A single texture location of the source.
     sprite: Annotated[str, IdSpec(registry='texture', definition=True)] | None = None  # The identifier of the sprite that can referenced. If not specified, matches `resource`.
 

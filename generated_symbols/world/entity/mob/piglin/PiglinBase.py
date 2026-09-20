@@ -3,12 +3,9 @@ Generated from symbols.json for ::java::world::entity::mob::piglin::PiglinBase
 Local link to file: generated_symbols/world/entity/mob/piglin/PiglinBase.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.world.entity.mob.MobBase import MobBase
 
 
-@dataclass(kw_only=True)
 class PiglinBase(MobBase):
     IsImmuneToZombification: bool | None = None  # Whether it will not transform to a zombified piglin when it is in the Overworld.
     TimeInOverworld: int | None = None  # Ticks it has been in the overworld.

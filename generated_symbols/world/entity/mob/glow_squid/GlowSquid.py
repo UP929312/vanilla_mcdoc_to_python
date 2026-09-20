@@ -3,13 +3,10 @@ Generated from symbols.json for ::java::world::entity::mob::glow_squid::GlowSqui
 Local link to file: generated_symbols/world/entity/mob/glow_squid/GlowSquid.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.world.entity.mob.AgeableMob import AgeableMob
 from generated_symbols.world.entity.mob.MobBase import MobBase
 
 
-@dataclass(kw_only=True)
 class GlowSquid(AgeableMob, MobBase):
     DarkTicksRemaining: int | None = None  # Ticks that it will wait before glowing.
 

@@ -3,16 +3,16 @@ Generated from symbols.json for ::java::data::worldgen::dimension::chunk_generat
 Local link to file: generated_symbols/data/worldgen/dimension/chunk_generator/Noise.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.dimension.biome_source.BiomeSource import BiomeSource
     from generated_symbols.data.worldgen.noise_settings.NoiseGeneratorSettingsRef import NoiseGeneratorSettingsRef
 
 
-@dataclass(kw_only=True)
-class Noise:
+class Noise(GeneratedModel):
     settings: NoiseGeneratorSettingsRef
     biome_source: BiomeSource
 

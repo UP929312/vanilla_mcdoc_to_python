@@ -3,16 +3,16 @@ Generated from symbols.json for ::java::data::worldgen::structure_set::Structure
 Local link to file: generated_symbols/data/worldgen/structure_set/StructureSetElement.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 
-@dataclass(kw_only=True)
-class StructureSetElement:
+class StructureSetElement(GeneratedModel):
     structure: Annotated[str, IdSpec(registry='worldgen/structure')]
-    weight: Annotated[int, 'Range | `1` and above | inclusive']
+    weight: Annotated[int, Field(ge=1)]
 
 
 # ~~~ MODEL DUMP ~~~

@@ -3,9 +3,9 @@ Generated from symbols.json for ::java::util::particle::Particle
 Local link to file: generated_symbols/util/particle/Particle.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated, Literal
 
+from generated_symbols.base import GeneratedModel
 from generated_symbols.util.particle.BlockParticle import BlockParticle
 from generated_symbols.util.particle.DragonBreathParticle import DragonBreathParticle
 from generated_symbols.util.particle.DustColorTransitionParticle import DustColorTransitionParticle
@@ -24,122 +24,98 @@ from generated_symbols.util.particle.VibrationParticle import VibrationParticle
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
-class ParticleNone:
+class ParticleNone(GeneratedModel):
     type: Annotated[str, IdSpec(registry='particle_type')]
 
 
-@dataclass(kw_only=True)
-class ParticleUnknown:
+class ParticleUnknown(GeneratedModel):
     type: Annotated[str, IdSpec(registry='particle_type')]
 
 
-@dataclass(kw_only=True)
 class ParticleBlock(BlockParticle):
     type: Literal['minecraft:block'] = 'minecraft:block'
 
 
-@dataclass(kw_only=True)
 class ParticleBlockCrumble(BlockParticle):
     type: Literal['minecraft:block_crumble'] = 'minecraft:block_crumble'
 
 
-@dataclass(kw_only=True)
 class ParticleBlockMarker(BlockParticle):
     type: Literal['minecraft:block_marker'] = 'minecraft:block_marker'
 
 
-@dataclass(kw_only=True)
 class ParticleDragonBreath(DragonBreathParticle):
     type: Literal['minecraft:dragon_breath'] = 'minecraft:dragon_breath'
 
 
-@dataclass(kw_only=True)
 class ParticleDust(DustParticle):
     type: Literal['minecraft:dust'] = 'minecraft:dust'
 
 
-@dataclass(kw_only=True)
 class ParticleDustColorTransition(DustColorTransitionParticle):
     type: Literal['minecraft:dust_color_transition'] = 'minecraft:dust_color_transition'
 
 
-@dataclass(kw_only=True)
 class ParticleDustPillar(BlockParticle):
     type: Literal['minecraft:dust_pillar'] = 'minecraft:dust_pillar'
 
 
-@dataclass(kw_only=True)
 class ParticleEffect(EffectParticle):
     type: Literal['minecraft:effect'] = 'minecraft:effect'
 
 
-@dataclass(kw_only=True)
 class ParticleEntityEffect(EntityEffectParticle):
     type: Literal['minecraft:entity_effect'] = 'minecraft:entity_effect'
 
 
-@dataclass(kw_only=True)
 class ParticleFallingDust(BlockParticle):
     type: Literal['minecraft:falling_dust'] = 'minecraft:falling_dust'
 
 
-@dataclass(kw_only=True)
 class ParticleFlash(FlashParticle):
     type: Literal['minecraft:flash'] = 'minecraft:flash'
 
 
-@dataclass(kw_only=True)
 class ParticleGeyser(GeyserParticle):
     type: Literal['minecraft:geyser'] = 'minecraft:geyser'
 
 
-@dataclass(kw_only=True)
 class ParticleGeyserBase(GeyserBaseParticle):
     type: Literal['minecraft:geyser_base'] = 'minecraft:geyser_base'
 
 
-@dataclass(kw_only=True)
 class ParticleGeyserPlume(GeyserParticle):
     type: Literal['minecraft:geyser_plume'] = 'minecraft:geyser_plume'
 
 
-@dataclass(kw_only=True)
 class ParticleGeyserPoof(GeyserBaseParticle):
     type: Literal['minecraft:geyser_poof'] = 'minecraft:geyser_poof'
 
 
-@dataclass(kw_only=True)
 class ParticleInstantEffect(EffectParticle):
     type: Literal['minecraft:instant_effect'] = 'minecraft:instant_effect'
 
 
-@dataclass(kw_only=True)
 class ParticleItem(ItemParticle):
     type: Literal['minecraft:item'] = 'minecraft:item'
 
 
-@dataclass(kw_only=True)
 class ParticleSculkCharge(SculkChargeParticle):
     type: Literal['minecraft:sculk_charge'] = 'minecraft:sculk_charge'
 
 
-@dataclass(kw_only=True)
 class ParticleShriek(ShriekParticle):
     type: Literal['minecraft:shriek'] = 'minecraft:shriek'
 
 
-@dataclass(kw_only=True)
 class ParticleTintedLeaves(TintedLeavesParticle):
     type: Literal['minecraft:tinted_leaves'] = 'minecraft:tinted_leaves'
 
 
-@dataclass(kw_only=True)
 class ParticleTrail(TrailParticle):
     type: Literal['minecraft:trail'] = 'minecraft:trail'
 
 
-@dataclass(kw_only=True)
 class ParticleVibration(VibrationParticle):
     type: Literal['minecraft:vibration'] = 'minecraft:vibration'
 

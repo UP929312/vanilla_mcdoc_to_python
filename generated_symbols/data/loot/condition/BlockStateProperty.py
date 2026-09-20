@@ -3,9 +3,9 @@ Generated from symbols.json for ::java::data::loot::condition::BlockStatePropert
 Local link to file: generated_symbols/data/loot/condition/BlockStateProperty.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
@@ -15,8 +15,7 @@ if TYPE_CHECKING:
 type PropertiesStructBlockStatesNone = dict[str, str]
 
 
-@dataclass(kw_only=True)
-class BlockStateProperty:
+class BlockStateProperty(GeneratedModel):
     block: Annotated[str, IdSpec(registry='block')] | KnownBlockId
     properties: PropertiesStructBlockStatesNone | None = None
 

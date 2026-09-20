@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::advancement::predicate::AxolotlPre
 Local link to file: generated_symbols/data/advancement/predicate/AxolotlPredicate.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.world.component.entity.AxolotlVariant import AxolotlVariant
 
 
-@dataclass(kw_only=True)
-class AxolotlPredicate:
+class AxolotlPredicate(GeneratedModel):
     variant: AxolotlVariant
 
 

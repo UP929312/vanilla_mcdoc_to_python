@@ -3,9 +3,9 @@ Generated from symbols.json for ::java::assets::shader::program::ShaderProgram
 Local link to file: generated_symbols/assets/shader/program/ShaderProgram.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
@@ -14,8 +14,7 @@ if TYPE_CHECKING:
     from generated_symbols.assets.shader.program.Uniform import Uniform
 
 
-@dataclass(kw_only=True)
-class ShaderProgram:
+class ShaderProgram(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'shader'
 
     vertex: Annotated[str, IdSpec(registry='shader/vertex')]

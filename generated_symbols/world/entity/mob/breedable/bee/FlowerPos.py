@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::world::entity::mob::breedable::bee::Flow
 Local link to file: generated_symbols/world/entity/mob/breedable/bee/FlowerPos.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class FlowerPos:
+class FlowerPos(GeneratedModel):
     X: int | None = None
     Y: int | None = None
     Z: int | None = None

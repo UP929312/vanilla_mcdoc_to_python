@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::world::entity::mob::player::EnteredNethe
 Local link to file: generated_symbols/world/entity/mob/player/EnteredNetherPosition.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class EnteredNetherPosition:
+class EnteredNetherPosition(GeneratedModel):
     x: float | None = None
     y: float | None = None
     z: float | None = None

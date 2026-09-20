@@ -3,8 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::feature::GeodeConfig
 Local link to file: generated_symbols/data/worldgen/feature/GeodeConfig.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.IntProvider import IntProvider
@@ -13,20 +15,19 @@ if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.GeodeLayerSettings import GeodeLayerSettings
 
 
-@dataclass(kw_only=True)
-class GeodeConfig:
+class GeodeConfig(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/feature'
 
     blocks: GeodeBlockSettings
     layers: GeodeLayerSettings
     crack: GeodeCrackSettings
-    noise_multiplier: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
-    use_potential_placements_chance: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
-    use_alternate_layer0_chance: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
+    noise_multiplier: Annotated[float, Field(ge=0, le=1)] | None = None
+    use_potential_placements_chance: Annotated[float, Field(ge=0, le=1)] | None = None
+    use_alternate_layer0_chance: Annotated[float, Field(ge=0, le=1)] | None = None
     placements_require_layer0_alternate: bool | None = None
-    outer_wall_distance: IntProvider[Annotated[int, 'Range | `1`-`20` | both inclusive']] | Annotated[int, 'Range | `1`-`20` | both inclusive'] | None = None
-    distribution_points: IntProvider[Annotated[int, 'Range | `1`-`20` | both inclusive']] | Annotated[int, 'Range | `1`-`20` | both inclusive'] | None = None
-    point_offset: IntProvider[Annotated[int, 'Range | `1`-`10` | both inclusive']] | Annotated[int, 'Range | `1`-`10` | both inclusive'] | None = None
+    outer_wall_distance: IntProvider[Annotated[int, Field(ge=1, le=20)]] | Annotated[int, Field(ge=1, le=20)] | None = None
+    distribution_points: IntProvider[Annotated[int, Field(ge=1, le=20)]] | Annotated[int, Field(ge=1, le=20)] | None = None
+    point_offset: IntProvider[Annotated[int, Field(ge=1, le=10)]] | Annotated[int, Field(ge=1, le=10)] | None = None
     min_gen_offset: int | None = None
     max_gen_offset: int | None = None
     invalid_blocks_threshold: int

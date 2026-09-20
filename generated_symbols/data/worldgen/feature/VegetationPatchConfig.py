@@ -3,10 +3,11 @@ Generated from symbols.json for ::java::data::worldgen::feature::VegetationPatch
 Local link to file: generated_symbols/data/worldgen/feature/VegetationPatchConfig.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.CaveSurface import CaveSurface
@@ -16,16 +17,15 @@ if TYPE_CHECKING:
     from generated_symbols.registry.KnownBlockId import KnownBlockId
 
 
-@dataclass(kw_only=True)
-class VegetationPatchConfig:
+class VegetationPatchConfig(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/feature'
 
     surface: CaveSurface
-    depth: IntProvider[Annotated[int, 'Range | `1`-`128` | both inclusive']] | Annotated[int, 'Range | `1`-`128` | both inclusive']
-    vertical_range: Annotated[int, 'Range | `1`-`256` | both inclusive']
-    extra_bottom_block_chance: Annotated[float, 'Range | `0`-`1` | both inclusive']
-    extra_edge_column_chance: Annotated[float, 'Range | `0`-`1` | both inclusive']
-    vegetation_chance: Annotated[float, 'Range | `0`-`1` | both inclusive']
+    depth: IntProvider[Annotated[int, Field(ge=1, le=128)]] | Annotated[int, Field(ge=1, le=128)]
+    vertical_range: Annotated[int, Field(ge=1, le=256)]
+    extra_bottom_block_chance: Annotated[float, Field(ge=0, le=1)]
+    extra_edge_column_chance: Annotated[float, Field(ge=0, le=1)]
+    vegetation_chance: Annotated[float, Field(ge=0, le=1)]
     xz_radius: IntProvider[int] | int
     replaceable: Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | list[Annotated[str, IdSpec(registry='block')] | KnownBlockId]
     ground_state: BlockStateProvider

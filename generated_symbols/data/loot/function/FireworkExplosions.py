@@ -3,9 +3,9 @@ Generated from symbols.json for ::java::data::loot::function::FireworkExplosions
 Local link to file: generated_symbols/data/loot/function/FireworkExplosions.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Literal
 
+from generated_symbols.base import GeneratedModel
 from generated_symbols.data.loot.function.InsertListOperation import InsertListOperation
 from generated_symbols.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
 
@@ -13,25 +13,21 @@ if TYPE_CHECKING:
     from generated_symbols.world.component.item.Explosion import Explosion
 
 
-@dataclass(kw_only=True)
-class FireworkExplosionsAppend:
+class FireworkExplosionsAppend(GeneratedModel):
     values: list[Explosion]
     mode: Literal['minecraft:append'] = 'minecraft:append'  # Determines how the existing list should be modified.
 
 
-@dataclass(kw_only=True)
 class FireworkExplosionsInsert(InsertListOperation):
     values: list[Explosion]
     mode: Literal['minecraft:insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
 
 
-@dataclass(kw_only=True)
-class FireworkExplosionsReplaceAll:
+class FireworkExplosionsReplaceAll(GeneratedModel):
     values: list[Explosion]
     mode: Literal['minecraft:replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
 
 
-@dataclass(kw_only=True)
 class FireworkExplosionsReplaceSection(ReplaceSectionListOperation):
     values: list[Explosion]
     mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.

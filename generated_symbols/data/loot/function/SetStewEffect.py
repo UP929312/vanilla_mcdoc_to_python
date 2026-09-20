@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::loot::function::SetStewEffect
 Local link to file: generated_symbols/data/loot/function/SetStewEffect.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.data.loot.function.Conditions import Conditions
@@ -12,7 +11,6 @@ if TYPE_CHECKING:
     from generated_symbols.data.loot.function.StewEffect import StewEffect
 
 
-@dataclass(kw_only=True)
 class SetStewEffect(Conditions):
     effects: list[StewEffect] | None = None  # Sets the status effects for suspicious stew.
 

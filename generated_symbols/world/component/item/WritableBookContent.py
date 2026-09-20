@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::world::component::item::WritableBookCont
 Local link to file: generated_symbols/world/component/item/WritableBookContent.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.util.Filterable import Filterable
 
 
-@dataclass(kw_only=True)
-class WritableBookContent:
+class WritableBookContent(GeneratedModel):
     pages: list[Filterable[str]]
 
 

@@ -5,13 +5,15 @@ Local link to file: generated_symbols/util/NonEmptyWeightedList.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, TypeVar
 
+from pydantic import Field
+
 if TYPE_CHECKING:
     from generated_symbols.util.WeightedEntry import WeightedEntry
 
 
 T = TypeVar('T')
 
-type NonEmptyWeightedList[T] = Annotated[list[WeightedEntry[T]], 'Length = 1 (inclusive) and above']
+type NonEmptyWeightedList[T] = Annotated[list[WeightedEntry[T]], Field(min_length=1)]
 
 
 # ~~~ MODEL DUMP ~~~

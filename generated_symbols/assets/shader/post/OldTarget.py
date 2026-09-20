@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::assets::shader::post::OldTarget
 Local link to file: generated_symbols/assets/shader/post/OldTarget.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class OldTarget:
+class OldTarget(GeneratedModel):
     name: str
     width: int | None = None
     height: int | None = None

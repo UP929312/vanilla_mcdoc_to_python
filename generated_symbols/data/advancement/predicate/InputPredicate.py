@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::data::advancement::predicate::InputPredi
 Local link to file: generated_symbols/data/advancement/predicate/InputPredicate.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class InputPredicate:
+class InputPredicate(GeneratedModel):
     forward: bool | None = None
     backward: bool | None = None
     left: bool | None = None

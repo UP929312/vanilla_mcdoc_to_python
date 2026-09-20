@@ -3,16 +3,16 @@ Generated from symbols.json for ::java::data::enchantment::effect_component::Pro
 Local link to file: generated_symbols/data/enchantment/effect_component/ProjectilePiercingEnchantmentEffect.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.enchantment.effect.ValueEffect import ValueEffect
     from generated_symbols.data.predicate.Predicate import Predicate
 
 
-@dataclass(kw_only=True)
-class ProjectilePiercingEnchantmentEffect:
+class ProjectilePiercingEnchantmentEffect(GeneratedModel):
     requirements: Predicate | None = None  # Predicate context: Item Parameters.  Tool is the ammunition item.
     effect: ValueEffect  # Amount of entities the projectile will pierce through before despawning.
 

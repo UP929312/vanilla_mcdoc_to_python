@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::feature::decorator::Coun
 Local link to file: generated_symbols/data/worldgen/feature/decorator/CountNoiseBiasedConfig.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class CountNoiseBiasedConfig:
+class CountNoiseBiasedConfig(GeneratedModel):
     noise_to_count_ratio: int
     noise_factor: float
     noise_offset: float | None = None

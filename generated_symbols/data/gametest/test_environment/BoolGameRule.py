@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::data::gametest::test_environment::BoolGa
 Local link to file: generated_symbols/data/gametest/test_environment/BoolGameRule.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class BoolGameRule:
+class BoolGameRule(GeneratedModel):
     rule: str
     value: bool
 

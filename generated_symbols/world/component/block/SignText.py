@@ -3,16 +3,16 @@ Generated from symbols.json for ::java::world::component::block::SignText
 Local link to file: generated_symbols/world/component/block/SignText.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.util.color.DyeColor import DyeColor
     from generated_symbols.world.component.block.SignLines import SignLines
 
 
-@dataclass(kw_only=True)
-class SignText:
+class SignText(GeneratedModel):
     messages: SignLines
     filtered_messages: SignLines | None = None  # Shown to players with the profanity filter enabled on Realms.
     color: DyeColor | None = None

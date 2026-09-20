@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::assets::model::ModelElementFaceMap
 Local link to file: generated_symbols/assets/model/ModelElementFaceMap.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Literal
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.util.direction.Direction import Direction
 
 
-@dataclass(kw_only=True)
-class ModelElementFaceMapValueStruct:
+class ModelElementFaceMapValueStruct(GeneratedModel):
     texture: str
     uv: tuple[float, float, float, float] | None = None
     cullface: Direction | None = None

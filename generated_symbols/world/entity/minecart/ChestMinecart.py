@@ -3,19 +3,18 @@ Generated from symbols.json for ::java::world::entity::minecart::ChestMinecart
 Local link to file: generated_symbols/world/entity/minecart/ChestMinecart.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.world.entity.minecart.ContainerMinecart import ContainerMinecart
 from generated_symbols.world.entity.minecart.Minecart import Minecart
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.slot.SlottedItem import SlottedItem
 
 
-@dataclass(kw_only=True)
 class ChestMinecart(ContainerMinecart, Minecart):
-    Items: Annotated[list[SlottedItem[Annotated[int, 'Range | `0`-`26` | both inclusive']]], 'Length = 0-27 (both inclusive)'] | None = None  # Slots from 0 to 26.
+    Items: Annotated[list[SlottedItem[Annotated[int, Field(ge=0, le=26)]]], Field(min_length=0, max_length=27)] | None = None  # Slots from 0 to 26.
 
 
 # ~~~ MODEL DUMP ~~~

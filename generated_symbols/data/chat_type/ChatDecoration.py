@@ -3,16 +3,16 @@ Generated from symbols.json for ::java::data::chat_type::ChatDecoration
 Local link to file: generated_symbols/data/chat_type/ChatDecoration.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.chat_type.ChatDecorationParameter import ChatDecorationParameter
     from generated_symbols.util.text.TextStyle import TextStyle
 
 
-@dataclass(kw_only=True)
-class ChatDecoration:
+class ChatDecoration(GeneratedModel):
     translation_key: str
     parameters: list[ChatDecorationParameter]
     style: TextStyle | None = None

@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::assets::item_definition::Time
 Local link to file: generated_symbols/assets/item_definition/Time.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.assets.item_definition.TimeSource import TimeSource
 
 
-@dataclass(kw_only=True)
-class Time:
+class Time(GeneratedModel):
     source: TimeSource
     wobble: bool | None = None  # Whether to oscillate for some time around target before settling. Defaults to true.
 

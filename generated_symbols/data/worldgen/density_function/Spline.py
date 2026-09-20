@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::worldgen::density_function::Spline
 Local link to file: generated_symbols/data/worldgen/density_function/Spline.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.density_function.CubicSpline import CubicSpline
 
 
-@dataclass(kw_only=True)
-class Spline:
+class Spline(GeneratedModel):
     spline: CubicSpline
 
 

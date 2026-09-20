@@ -3,18 +3,17 @@ Generated from symbols.json for ::java::world::block::container::Container9
 Local link to file: generated_symbols/world/block/container/Container9.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.world.block.container.ContainerBase import ContainerBase
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.slot.SlottedItem import SlottedItem
 
 
-@dataclass(kw_only=True)
 class Container9(ContainerBase):
-    Items: Annotated[list[SlottedItem[Annotated[int, 'Range | `0`-`8` | both inclusive']]], 'Length = 0-9 (both inclusive)'] | None = None  # Slots from 0 to 8.
+    Items: Annotated[list[SlottedItem[Annotated[int, Field(ge=0, le=8)]]], Field(min_length=0, max_length=9)] | None = None  # Slots from 0 to 8.
 
 
 # ~~~ MODEL DUMP ~~~

@@ -3,14 +3,13 @@ Generated from symbols.json for ::java::world::component::item::TooltipDisplay
 Local link to file: generated_symbols/world/component/item/TooltipDisplay.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
-class TooltipDisplay:
+class TooltipDisplay(GeneratedModel):
     hide_tooltip: bool | None = None  # If `true`, the item will have no tooltip when hovered. Defaults to `false`.
     hidden_components: list[Annotated[str, IdSpec(registry='data_component_type')]] | None = None  # List of components that should be hidden in the item tooltip.
 

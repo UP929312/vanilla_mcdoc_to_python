@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::gametest::test_environment::Weathe
 Local link to file: generated_symbols/data/gametest/test_environment/WeatherTestEnvironment.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, ClassVar
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.gametest.test_environment.Weather import Weather
 
 
-@dataclass(kw_only=True)
-class WeatherTestEnvironment:
+class WeatherTestEnvironment(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'test_environment'
 
     weather: Weather

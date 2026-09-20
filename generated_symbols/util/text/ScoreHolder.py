@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::util::text::ScoreHolder
 Local link to file: generated_symbols/util/text/ScoreHolder.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class ScoreHolder:
+class ScoreHolder(GeneratedModel):
     objective: str
     name: str
 

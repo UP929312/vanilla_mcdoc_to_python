@@ -3,14 +3,11 @@ Generated from symbols.json for ::java::data::advancement::trigger::DefaultBlock
 Local link to file: generated_symbols/data/advancement/trigger/DefaultBlockInteractionTrigger.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.data.advancement.trigger.AdvancementLocationPredicate import AdvancementLocationPredicate
 from generated_symbols.data.advancement.trigger.AllOptional import AllOptional
 from generated_symbols.data.advancement.trigger.PlayerConditions import PlayerConditions
 
 
-@dataclass(kw_only=True)
 class DefaultBlockInteractionTriggerTypeArg(PlayerConditions):
     location: AdvancementLocationPredicate | None = None  # Predicate context: Block Use.
 

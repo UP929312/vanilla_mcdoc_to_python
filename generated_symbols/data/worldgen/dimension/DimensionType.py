@@ -3,10 +3,11 @@ Generated from symbols.json for ::java::data::worldgen::dimension::DimensionType
 Local link to file: generated_symbols/data/worldgen/dimension/DimensionType.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.IntProvider import IntProvider
@@ -16,8 +17,7 @@ if TYPE_CHECKING:
     from generated_symbols.registry.KnownBlockId import KnownBlockId
 
 
-@dataclass(kw_only=True)
-class DimensionType:
+class DimensionType(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'dimension_type'
 
     attributes: GlobalEnvironmentAttributeMap | None = None
@@ -26,17 +26,17 @@ class DimensionType:
     has_skylight: bool  # Affects the weather, lighting engine and respawning rules.
     has_ceiling: bool  # Affects the weather, map items and respawning rules.
     has_ender_dragon_fight: bool
-    coordinate_scale: Annotated[float, 'Range | `1e-05`-`30000000` | both inclusive']
-    ambient_light: Annotated[float, 'Range | `0`-`1` | both inclusive']
+    coordinate_scale: Annotated[float, Field(ge=1e-05, le=30000000)]
+    ambient_light: Annotated[float, Field(ge=0, le=1)]
     has_fixed_time: bool | None = None  # Defaults to `false`.
-    logical_height: Annotated[int, 'Range | `0`-`4064` | both inclusive']  # Portals can't spawn and chorus fruit can't teleport players above this height.
+    logical_height: Annotated[int, Field(ge=0, le=4064)]  # Portals can't spawn and chorus fruit can't teleport players above this height.
     skybox: SkyboxType | None = None  # Skybox type. Defaults to `overworld`.
     cardinal_light: CardinalLightType | None = None  # The direction of cardinal lighting that affects blocks.
     infiniburn: Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | list[Annotated[str, IdSpec(registry='block')] | KnownBlockId]  # Defining what blocks keep fire infinitely burning.
-    min_y: Annotated[int, 'Range | `-2032`-`2031` | both inclusive | divisible by 16']  # The minimum height in which blocks can exist.
-    height: Annotated[int, 'Range | `16`-`4064` | both inclusive | divisible by 16']  # The total height in which blocks can exist. Max Y = Min Y + Height.
-    monster_spawn_light_level: IntProvider[Annotated[int, 'Range | `0`-`15` | both inclusive']] | Annotated[int, 'Range | `0`-`15` | both inclusive']
-    monster_spawn_block_light_limit: Annotated[int, 'Range | `0`-`15` | both inclusive']
+    min_y: Annotated[int, Field(ge=-2032, le=2031), Field(multiple_of=16)]  # The minimum height in which blocks can exist.
+    height: Annotated[int, Field(ge=16, le=4064), Field(multiple_of=16)]  # The total height in which blocks can exist. Max Y = Min Y + Height.
+    monster_spawn_light_level: IntProvider[Annotated[int, Field(ge=0, le=15)]] | Annotated[int, Field(ge=0, le=15)]
+    monster_spawn_block_light_limit: Annotated[int, Field(ge=0, le=15)]
 
 
 # ~~~ MODEL DUMP ~~~

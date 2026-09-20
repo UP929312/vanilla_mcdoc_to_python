@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::entity::projectile::firework_rock
 Local link to file: generated_symbols/world/entity/projectile/firework_rocket/FireWorkRocket.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.world.entity.projectile.ProjectileBase import ProjectileBase
@@ -12,7 +11,6 @@ if TYPE_CHECKING:
     from generated_symbols.world.item.ItemStack import ItemStack
 
 
-@dataclass(kw_only=True)
 class FireWorkRocket(ProjectileBase):
     Life: int | None = None  # Ticks it has existed.
     LifeTime: int | None = None  # Ticks it will exist.

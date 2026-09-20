@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::util::memory::LikedNoteblock
 Local link to file: generated_symbols/util/memory/LikedNoteblock.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.util.memory.ExpirableValue import ExpirableValue
@@ -12,7 +11,6 @@ if TYPE_CHECKING:
     from generated_symbols.util.GlobalPos import GlobalPos
 
 
-@dataclass(kw_only=True)
 class LikedNoteblock(ExpirableValue):
     value: GlobalPos  # The position and dimension of the note block that the allay likes.
 

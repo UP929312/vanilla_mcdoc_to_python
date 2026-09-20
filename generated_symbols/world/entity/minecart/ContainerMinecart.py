@@ -3,14 +3,13 @@ Generated from symbols.json for ::java::world::entity::minecart::ContainerMineca
 Local link to file: generated_symbols/world/entity/minecart/ContainerMinecart.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
-class ContainerMinecart:
+class ContainerMinecart(GeneratedModel):
     LootTable: Annotated[str, IdSpec(registry='loot_table', empty='allowed')] | None = None  # Loot table that will populate this minecart.
     LootTableSeed: int | None = None  # Seed of the loot table.
 

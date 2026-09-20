@@ -3,17 +3,18 @@ Generated from symbols.json for ::java::world::block::spawner::CustomSpawnRules
 Local link to file: generated_symbols/world/block/spawner/CustomSpawnRules.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.InclusiveRange import InclusiveRange
 
 
-@dataclass(kw_only=True)
-class CustomSpawnRules:
-    block_light_limit: InclusiveRange[Annotated[int, 'Range | `0`-`15` | both inclusive']] | Annotated[int, 'Range | `0`-`15` | both inclusive'] | None = None  # Range of block light level required for the entity to spawn.
-    sky_light_limit: InclusiveRange[Annotated[int, 'Range | `0`-`15` | both inclusive']] | Annotated[int, 'Range | `0`-`15` | both inclusive'] | None = None  # Range of sky light level required for the entity to spawn.
+class CustomSpawnRules(GeneratedModel):
+    block_light_limit: InclusiveRange[Annotated[int, Field(ge=0, le=15)]] | Annotated[int, Field(ge=0, le=15)] | None = None  # Range of block light level required for the entity to spawn.
+    sky_light_limit: InclusiveRange[Annotated[int, Field(ge=0, le=15)]] | Annotated[int, Field(ge=0, le=15)] | None = None  # Range of sky light level required for the entity to spawn.
 
 
 # ~~~ MODEL DUMP ~~~

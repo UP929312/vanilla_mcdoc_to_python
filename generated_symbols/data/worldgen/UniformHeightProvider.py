@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::worldgen::UniformHeightProvider
 Local link to file: generated_symbols/data/worldgen/UniformHeightProvider.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.VerticalAnchor import VerticalAnchor
 
 
-@dataclass(kw_only=True)
-class UniformHeightProvider:
+class UniformHeightProvider(GeneratedModel):
     min_inclusive: VerticalAnchor
     max_inclusive: VerticalAnchor
 

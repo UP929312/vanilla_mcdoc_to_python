@@ -11,14 +11,15 @@ Generated from symbols.json for ::java::data::advancement::predicate::FoodPredic
 Local link to file: generated_symbols/data/advancement/predicate/FoodPredicate.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from pydantic import BaseModel
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
 
 
-@dataclass(kw_only=True)
-class FoodPredicate:
+class FoodPredicate(BaseModel):
     level: MinMaxBounds[int] | int | None = None
     saturation: MinMaxBounds[float] | float | None = None
+
+

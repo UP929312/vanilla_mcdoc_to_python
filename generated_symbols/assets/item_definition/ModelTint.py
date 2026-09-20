@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::assets::item_definition::ModelTint
 Local link to file: generated_symbols/assets/item_definition/ModelTint.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Literal
 
 from generated_symbols.assets.item_definition.ConstantTint import ConstantTint
@@ -16,42 +15,34 @@ from generated_symbols.assets.item_definition.PotionTint import PotionTint
 from generated_symbols.assets.item_definition.TeamTint import TeamTint
 
 
-@dataclass(kw_only=True)
 class ModelTintConstant(ConstantTint):
     type: Literal['minecraft:constant'] = 'minecraft:constant'
 
 
-@dataclass(kw_only=True)
 class ModelTintCustomModelData(CustomModelDataTint):
     type: Literal['minecraft:custom_model_data'] = 'minecraft:custom_model_data'
 
 
-@dataclass(kw_only=True)
 class ModelTintDye(DyeTint):
     type: Literal['minecraft:dye'] = 'minecraft:dye'
 
 
-@dataclass(kw_only=True)
 class ModelTintFirework(FireworkTint):
     type: Literal['minecraft:firework'] = 'minecraft:firework'
 
 
-@dataclass(kw_only=True)
 class ModelTintGrass(GrassTint):
     type: Literal['minecraft:grass'] = 'minecraft:grass'
 
 
-@dataclass(kw_only=True)
 class ModelTintMapColor(MapColorTint):
     type: Literal['minecraft:map_color'] = 'minecraft:map_color'
 
 
-@dataclass(kw_only=True)
 class ModelTintPotion(PotionTint):
     type: Literal['minecraft:potion'] = 'minecraft:potion'
 
 
-@dataclass(kw_only=True)
 class ModelTintTeam(TeamTint):
     type: Literal['minecraft:team'] = 'minecraft:team'
 

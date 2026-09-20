@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::feature::decorator::Wate
 Local link to file: generated_symbols/data/worldgen/feature/decorator/WaterDepthThresholdConfig.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class WaterDepthThresholdConfig:
+class WaterDepthThresholdConfig(GeneratedModel):
     max_water_depth: int
 
 

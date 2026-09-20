@@ -3,12 +3,9 @@ Generated from symbols.json for ::java::world::entity::experience_orb::Experienc
 Local link to file: generated_symbols/world/entity/experience_orb/ExperienceOrb.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.world.entity.EntityBase import EntityBase
 
 
-@dataclass(kw_only=True)
 class ExperienceOrb(EntityBase):
     Age: int | None = None  # Ticks that it has existed.
     Health: int | None = None

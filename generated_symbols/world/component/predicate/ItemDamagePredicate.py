@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::world::component::predicate::ItemDamageP
 Local link to file: generated_symbols/world/component/predicate/ItemDamagePredicate.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
 
 
-@dataclass(kw_only=True)
-class ItemDamagePredicate:
+class ItemDamagePredicate(GeneratedModel):
     damage: MinMaxBounds[int] | int | None = None
     durability: MinMaxBounds[int] | int | None = None
 

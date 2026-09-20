@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::entity::mob::breedable::horse::Ho
 Local link to file: generated_symbols/world/entity/mob/breedable/horse/Horse.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.world.entity.mob.breedable.horse.HorseBase import HorseBase
@@ -12,7 +11,6 @@ if TYPE_CHECKING:
     from generated_symbols.world.entity.mob.breedable.horse.HorseVariantAndMarkings import HorseVariantAndMarkings
 
 
-@dataclass(kw_only=True)
 class Horse(HorseBase):
     Variant: HorseVariantAndMarkings | None = None  # Variant of the horse. Stored as `baseColor | (markings << 8)`.
 

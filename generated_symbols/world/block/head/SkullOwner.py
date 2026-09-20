@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::world::block::head::SkullOwner
 Local link to file: generated_symbols/world/block/head/SkullOwner.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.world.block.head.Properties import Properties
 
 
-@dataclass(kw_only=True)
-class SkullOwner:
+class SkullOwner(GeneratedModel):
     Id: tuple[int, int, int, int] | None = None  # Optional.
     Name: str | None = None  # Name of the owner, if missing appears as a steve head.
     Properties: Properties | None = None

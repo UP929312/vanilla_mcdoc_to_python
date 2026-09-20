@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::worldgen::feature::placement::Heig
 Local link to file: generated_symbols/data/worldgen/feature/placement/HeightmapModifier.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.HeightmapType import HeightmapType
 
 
-@dataclass(kw_only=True)
-class HeightmapModifier:
+class HeightmapModifier(GeneratedModel):
     heightmap: HeightmapType
 
 

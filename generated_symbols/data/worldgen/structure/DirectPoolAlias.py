@@ -3,14 +3,13 @@ Generated from symbols.json for ::java::data::worldgen::structure::DirectPoolAli
 Local link to file: generated_symbols/data/worldgen/structure/DirectPoolAlias.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
-class DirectPoolAlias:
+class DirectPoolAlias(GeneratedModel):
     alias: Annotated[str, IdSpec()]
     target: Annotated[str, IdSpec(registry='worldgen/template_pool')]
 

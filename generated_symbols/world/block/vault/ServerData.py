@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::world::block::vault::ServerData
 Local link to file: generated_symbols/world/block/vault/ServerData.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.world.item.ItemStack import ItemStack
 
 
-@dataclass(kw_only=True)
-class ServerData:
+class ServerData(GeneratedModel):
     state_updating_resumes_at: int | None = None  # Ticks until the loot table is ran again to update the display item.
     rewarded_players: list[tuple[int, int, int, int]] | None = None  # When a player is in this list they can no longer open the vault, but other players can.
     items_to_eject: list[ItemStack] | None = None  # Items that are being ejected from the vault when it is opened. As each item is ejected, it is removed from this list, before ejection, it is previewed as the `display_item`.

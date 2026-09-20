@@ -70,22 +70,32 @@ class ValueRange(BaseModel):
 
     def to_annotation(self, ctx: SingleSymbolContext, value_range_type: Literal["int", "float"], attributes: list[Attribute]) -> str:
         if self.max is not None:
-            _INCLUSIVITY_TEXT_BOTH = {
-                0: "both inclusive",
-                1: "min inclusive, max exclusive",
-                2: "min exclusive, max inclusive",
-                3: "both exclusive",
-            }
-            parts = ["Range", f"`{self.min}`-`{self.max}`", _INCLUSIVITY_TEXT_BOTH[self.kind]]
+            # _INCLUSIVITY_TEXT_BOTH = {
+            #     0: "both inclusive",
+            #     1: "min inclusive, max exclusive",
+            #     2: "min exclusive, max inclusive",
+            #     3: "both exclusive",
+            # }
+            ctx.required_imports.add(Import("pydantic", "Field", False, False))
+            greater_than = "ge" if self.kind in {0, 1} else "gt"
+            less_than = "le" if self.kind in {0, 2} else "lt"
+            parts = [f"Field({greater_than}={self.min}, {less_than}={self.max})"]
+            # parts = ["Range", f"`{self.min}`-`{self.max}`", _INCLUSIVITY_TEXT_BOTH[self.kind]]
         # In cases where self.max _IS_ None:
         elif self.kind in {0, 1}:  # Min is inclusive
-            parts = ["Range", f"`{self.min}` and above", "inclusive"]
+            ctx.required_imports.add(Import("pydantic", "Field", False, False))
+            parts = [f"Field(ge={self.min})"]
+            # parts = ["Range", f"`{self.min}` and above", "inclusive"]
         else:  # Kind in 2, 3 - Min is exclusive
-            parts = ["Range", f"`Above {self.min}`", "exclusive"]
+            ctx.required_imports.add(Import("pydantic", "Field", False, False))
+            parts = [f"Field(gt={self.min})"]
+            # parts = ["Range", f"`Above {self.min}`", "exclusive"]
         if self.extract_divisible_by_value(attributes):
-            parts.append(f"divisible by {self.extract_divisible_by_value(attributes)}")
+            ctx.required_imports.add(Import("pydantic", "Field", False, False))
+            parts.append(f"Field(multiple_of={self.extract_divisible_by_value(attributes)})")
+            # parts.append(f"divisible by {self.extract_divisible_by_value(attributes)}")
         ctx.require_annotated()
-        return f"Annotated[{value_range_type}, '{' | '.join(parts)}']"
+        return f"Annotated[{value_range_type}, {', '.join(parts)}]"
 
     def extract_divisible_by_value(self, attributes: list[Attribute]) -> str | None:
         attribute = next((attr for attr in attributes if attr.name == "divisible_by"), None)
@@ -100,13 +110,19 @@ class LengthRange(BaseModel):
     min: int | None = None  # Only like one of these has a max but no min...
     max: int | None = None
 
-    def to_annotation_suffix(self) -> str:
+    def to_annotation_suffix(self, ctx: SingleSymbolContext) -> str:
         if self.min is not None and self.max is not None:
-            return f"Length = {self.min}-{self.max} (both inclusive)"
+            ctx.required_imports.add(Import("pydantic", "Field", False, False))
+            return f"Field(min_length={self.min}, max_length={self.max})"
+            # return f"Length = {self.min}-{self.max} (both inclusive)"
         if self.min is not None:
-            return f"Length = {self.min} (inclusive) and above"
+            ctx.required_imports.add(Import("pydantic", "Field", False, False))
+            return f"Field(min_length={self.min})"
+            # return f"Length = {self.min} (inclusive) and above"
         if self.max is not None:
-            return f"Length = up to {self.max} (inclusive)"
+            ctx.required_imports.add(Import("pydantic", "Field", False, False))
+            return f"Field(max_length={self.max})"
+            # return f"Length = {self.max} (inclusive) and below"
         raise TypeError("Min and Max are None! LengthRange.to_annotation_suffix error")  # pragma: no cover
 
 
@@ -201,7 +217,7 @@ class StringSchema(BaseSchema):
                 # Literally only one thing - ::java::assets::credits::CreditsDiscipline
                 ctx.required_imports.add(Import("typing", "Literal", False, True))
                 return 'Literal[""]'
-            metadata.insert(0, f"'{self.length_range.to_annotation_suffix()}'")
+            metadata.insert(0, f"'{self.length_range.to_annotation_suffix(ctx)}'")
 
         if not metadata:
             return "str"
@@ -326,7 +342,7 @@ class ListSchema(BaseSchema):
         if self.length_range.min is not None and self.length_range.min == self.length_range.max:
             return f"tuple[{', '.join(item_annotation for _ in range(self.length_range.min))}]"
         ctx.require_annotated()
-        return f"Annotated[list[{item_annotation}], '{self.length_range.to_annotation_suffix()}']"
+        return f"Annotated[list[{item_annotation}], {self.length_range.to_annotation_suffix(ctx)}]"
 
     def to_python_code(self, class_name: str, ctx: SingleSymbolContext) -> list[str]:
         type_param_names = sorted({symbol_path_to_object_name(path) for path in ctx.local_type_params})
@@ -897,18 +913,18 @@ class StructSchema(BaseSchema):
     def _render_model(self, class_name: str, ctx: SingleSymbolContext) -> list[str]:
         # Collects Structs' inherrited children, e.g. class MyClass(PredicateOffset)
         inherited_names = SpreadFieldSchema.collect_inherited_base_names(self.fields, ctx)
+        base_names = inherited_names.copy()
+
         template_type_names = sorted({symbol_path_to_object_name(path) for path in ctx.local_type_params})
         if template_type_names:
             ctx.required_imports.add(Import("typing", "Generic", False, True))
-            inherited_names.append(f"Generic[{', '.join(template_type_names)}]")
+            base_names.append(f"Generic[{', '.join(template_type_names)}]")
 
-        ctx.required_imports.add(Import("dataclasses", "dataclass", False, True))
-        lines: list[str] = ["@dataclass(kw_only=True)"]
-        lines.append(
-            f"class {class_name}:"
-            if not inherited_names else
-            f"class {class_name}({', '.join(inherited_names)}):"
-        )
+        if not inherited_names:
+            ctx.required_imports.add(Import("generated_symbols.base", "GeneratedModel", False, False))
+            base_names.insert(0, "GeneratedModel")
+
+        lines: list[str] = [f"class {class_name}({', '.join(base_names)}):"]
 
         pair_fields = SpreadFieldSchema.filter_fields_to_pair_schemas_only(self.fields)
         if not pair_fields:

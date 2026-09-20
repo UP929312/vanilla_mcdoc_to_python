@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::pack::PackFeatures
 Local link to file: generated_symbols/pack/PackFeatures.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.pack.FeatureFlag import FeatureFlag
 
 
-@dataclass(kw_only=True)
-class PackFeatures:
+class PackFeatures(GeneratedModel):
     enabled: list[FeatureFlag]
 
 

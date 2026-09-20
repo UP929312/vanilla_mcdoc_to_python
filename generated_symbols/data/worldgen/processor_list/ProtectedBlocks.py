@@ -3,17 +3,16 @@ Generated from symbols.json for ::java::data::worldgen::processor_list::Protecte
 Local link to file: generated_symbols/data/worldgen/processor_list/ProtectedBlocks.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.registry.KnownBlockId import KnownBlockId
 
 
-@dataclass(kw_only=True)
-class ProtectedBlocks:
+class ProtectedBlocks(GeneratedModel):
     value: Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | list[Annotated[str, IdSpec(registry='block')] | KnownBlockId]
 
 

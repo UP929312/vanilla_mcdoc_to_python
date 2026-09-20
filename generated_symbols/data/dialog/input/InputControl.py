@@ -3,37 +3,33 @@ Generated from symbols.json for ::java::data::dialog::input::InputControl
 Local link to file: generated_symbols/data/dialog/input/InputControl.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated, Literal
 
 from generated_symbols.data.dialog.input.BooleanInput import BooleanInput
 from generated_symbols.data.dialog.input.NumberRangeInput import NumberRangeInput
 from generated_symbols.data.dialog.input.SingleOptionInput import SingleOptionInput
 from generated_symbols.data.dialog.input.TextInput import TextInput
+from pydantic import Field
 
 
-@dataclass(kw_only=True)
 class InputControlBoolean(BooleanInput):
     type: Literal['minecraft:boolean'] = 'minecraft:boolean'
-    key: Annotated[str, 'Length = 1 (inclusive) and above'] | str  # The input key, which is used to build macro command and generate custom action payload.
+    key: Annotated[str, 'Field(min_length=1)'] | str  # The input key, which is used to build macro command and generate custom action payload.
 
 
-@dataclass(kw_only=True)
 class InputControlNumberRange(NumberRangeInput):
     type: Literal['minecraft:number_range'] = 'minecraft:number_range'
-    key: Annotated[str, 'Length = 1 (inclusive) and above'] | str  # The input key, which is used to build macro command and generate custom action payload.
+    key: Annotated[str, 'Field(min_length=1)'] | str  # The input key, which is used to build macro command and generate custom action payload.
 
 
-@dataclass(kw_only=True)
 class InputControlSingleOption(SingleOptionInput):
     type: Literal['minecraft:single_option'] = 'minecraft:single_option'
-    key: Annotated[str, 'Length = 1 (inclusive) and above'] | str  # The input key, which is used to build macro command and generate custom action payload.
+    key: Annotated[str, 'Field(min_length=1)'] | str  # The input key, which is used to build macro command and generate custom action payload.
 
 
-@dataclass(kw_only=True)
 class InputControlText(TextInput):
     type: Literal['minecraft:text'] = 'minecraft:text'
-    key: Annotated[str, 'Length = 1 (inclusive) and above'] | str  # The input key, which is used to build macro command and generate custom action payload.
+    key: Annotated[str, 'Field(min_length=1)'] | str  # The input key, which is used to build macro command and generate custom action payload.
 
 
 type InputControl = InputControlBoolean | InputControlNumberRange | InputControlSingleOption | InputControlText

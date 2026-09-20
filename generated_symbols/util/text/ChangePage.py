@@ -3,13 +3,14 @@ Generated from symbols.json for ::java::util::text::ChangePage
 Local link to file: generated_symbols/util/text/ChangePage.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class ChangePage:
-    page: Annotated[int, 'Range | `1` and above | inclusive']  # The page number to go to.
+
+class ChangePage(GeneratedModel):
+    page: Annotated[int, Field(ge=1)]  # The page number to go to.
 
 
 # ~~~ MODEL DUMP ~~~

@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::feature::placement::Fixe
 Local link to file: generated_symbols/data/worldgen/feature/placement/FixedPlacementModifier.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class FixedPlacementModifier:
+class FixedPlacementModifier(GeneratedModel):
     positions: list[tuple[int, int, int]]  # Fixed list of block positions to place the feature at.
 
 

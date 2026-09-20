@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::worldgen::feature::tree::RootPlace
 Local link to file: generated_symbols/data/worldgen/feature/tree/RootPlacer.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Literal
 
 from generated_symbols.data.worldgen.feature.tree.MangroveRootPlacer import MangroveRootPlacer
@@ -14,7 +13,6 @@ if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.tree.AboveRootPlacement import AboveRootPlacement
 
 
-@dataclass(kw_only=True)
 class RootPlacerMangroveRootPlacer(MangroveRootPlacer):
     type: Literal['minecraft:mangrove_root_placer'] = 'minecraft:mangrove_root_placer'
     root_provider: BlockStateProvider

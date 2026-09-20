@@ -3,12 +3,12 @@ Generated from symbols.json for ::java::assets::lang::LangDeprecated
 Local link to file: generated_symbols/assets/lang/LangDeprecated.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import ClassVar
 
+from generated_symbols.base import GeneratedModel
 
-@dataclass(kw_only=True)
-class LangDeprecated:
+
+class LangDeprecated(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'lang/deprecated'
 
     removed: list[str]  # List of removed translation keys.

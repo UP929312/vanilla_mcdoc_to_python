@@ -3,12 +3,9 @@ Generated from symbols.json for ::java::world::item::map::IdentifiedDecoration
 Local link to file: generated_symbols/world/item/map/IdentifiedDecoration.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.world.item.map.Decoration import Decoration
 
 
-@dataclass(kw_only=True)
 class IdentifiedDecoration(Decoration):
     id: str  # An arbitrary unique string identifying the decoration.
 

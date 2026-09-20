@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::feature::placement::Nois
 Local link to file: generated_symbols/data/worldgen/feature/placement/NoiseThresholdCountModifier.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class NoiseThresholdCountModifier:
+class NoiseThresholdCountModifier(GeneratedModel):
     noise_level: float
     below_noise: int
     above_noise: int

@@ -3,32 +3,28 @@ Generated from symbols.json for ::java::data::loot::function::CustomModelDataStr
 Local link to file: generated_symbols/data/loot/function/CustomModelDataStrings.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Literal
 
+from generated_symbols.base import GeneratedModel
 from generated_symbols.data.loot.function.InsertListOperation import InsertListOperation
 from generated_symbols.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
 
 
-@dataclass(kw_only=True)
-class CustomModelDataStringsAppend:
+class CustomModelDataStringsAppend(GeneratedModel):
     values: list[str]
     mode: Literal['minecraft:append'] = 'minecraft:append'  # Determines how the existing list should be modified.
 
 
-@dataclass(kw_only=True)
 class CustomModelDataStringsInsert(InsertListOperation):
     values: list[str]
     mode: Literal['minecraft:insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
 
 
-@dataclass(kw_only=True)
-class CustomModelDataStringsReplaceAll:
+class CustomModelDataStringsReplaceAll(GeneratedModel):
     values: list[str]
     mode: Literal['minecraft:replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
 
 
-@dataclass(kw_only=True)
 class CustomModelDataStringsReplaceSection(ReplaceSectionListOperation):
     values: list[str]
     mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.

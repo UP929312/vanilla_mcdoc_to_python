@@ -3,22 +3,21 @@ Generated from symbols.json for ::java::data::recipe::CraftingShaped
 Local link to file: generated_symbols/data/recipe/CraftingShaped.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from generated_symbols.data.recipe.CraftingBookInfo import CraftingBookInfo
 from generated_symbols.data.recipe.NotificationInfo import NotificationInfo
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.recipe.Ingredient import Ingredient
     from generated_symbols.world.item.ItemStackTemplate import ItemStackTemplate
 
 
-@dataclass(kw_only=True)
 class CraftingShaped(CraftingBookInfo, NotificationInfo):
     __resource_dir__: ClassVar[str] = 'recipe'
 
-    pattern: Annotated[list[Annotated[str, 'Length = 1-3 (both inclusive)']], 'Length = 1-3 (both inclusive)']
+    pattern: Annotated[list[Annotated[str, 'Field(min_length=1, max_length=3)']], Field(min_length=1, max_length=3)]
     key: dict[str, Ingredient]
     result: ItemStackTemplate
 

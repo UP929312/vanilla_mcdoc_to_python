@@ -3,16 +3,15 @@ Generated from symbols.json for ::java::world::item::SingleItemOfComponent
 Local link to file: generated_symbols/world/item/SingleItemOfComponent.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated, Generic, TypeVar
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
 T = TypeVar('T')
 
-@dataclass(kw_only=True)
-class SingleItemOfComponent(Generic[T]):
+class SingleItemOfComponent(GeneratedModel, Generic[T]):
     id: Annotated[str, IdSpec(registry='item', exclude=('air',))]  # ID of the item.
     components: T | None = None
 

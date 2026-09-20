@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::data::enchantment::effect::ParticleVeloc
 Local link to file: generated_symbols/data/enchantment/effect/ParticleVelocity.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class ParticleVelocity:
+class ParticleVelocity(GeneratedModel):
     base: float | None = None  # Defaults to 0.
     movement_scale: float | None = None  # Scale factor applied to the given axis (`1` adds the velocity of the entity to the spawned particles). Defaults to 0.
 

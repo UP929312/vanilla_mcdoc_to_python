@@ -3,18 +3,19 @@ Generated from symbols.json for ::java::data::worldgen::feature::SmallDripstoneC
 Local link to file: generated_symbols/data/worldgen/feature/SmallDripstoneConfig.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated, ClassVar
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class SmallDripstoneConfig:
+
+class SmallDripstoneConfig(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/feature'
 
-    max_placements: Annotated[int, 'Range | `0`-`100` | both inclusive'] | None = None
-    empty_space_search_radius: Annotated[int, 'Range | `0`-`20` | both inclusive'] | None = None
-    max_offset_from_origin: Annotated[int, 'Range | `0`-`20` | both inclusive'] | None = None
-    chance_of_taller_dripstone: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
+    max_placements: Annotated[int, Field(ge=0, le=100)] | None = None
+    empty_space_search_radius: Annotated[int, Field(ge=0, le=20)] | None = None
+    max_offset_from_origin: Annotated[int, Field(ge=0, le=20)] | None = None
+    chance_of_taller_dripstone: Annotated[float, Field(ge=0, le=1)] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

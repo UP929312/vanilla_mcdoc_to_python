@@ -3,9 +3,9 @@ Generated from symbols.json for ::java::data::worldgen::noise_settings::Structur
 Local link to file: generated_symbols/data/worldgen/noise_settings/StructureSettings.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
@@ -13,8 +13,7 @@ if TYPE_CHECKING:
     from generated_symbols.data.worldgen.structure_set.RandomSpreadPlacement import RandomSpreadPlacement
 
 
-@dataclass(kw_only=True)
-class StructureSettings:
+class StructureSettings(GeneratedModel):
     stronghold: ConcentricRingsPlacement | None = None
     structures: dict[Annotated[str, IdSpec(registry='worldgen/structure_feature')], RandomSpreadPlacement]
 

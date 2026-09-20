@@ -3,10 +3,11 @@ Generated from symbols.json for ::java::data::worldgen::feature::ColumnsConfig
 Local link to file: generated_symbols/data/worldgen/feature/ColumnsConfig.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.IntProvider import IntProvider
@@ -15,18 +16,17 @@ if TYPE_CHECKING:
     from generated_symbols.registry.KnownBlockId import KnownBlockId
 
 
-@dataclass(kw_only=True)
-class ColumnsConfig:
+class ColumnsConfig(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/feature'
 
     block: BlockStateProvider
     can_replace: BlockPredicate
     continue_through: BlockPredicate
     cannot_place_on: Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | list[Annotated[str, IdSpec(registry='block')] | KnownBlockId]
-    column_reach: IntProvider[Annotated[int, 'Range | `0`-`3` | both inclusive']] | Annotated[int, 'Range | `0`-`3` | both inclusive']
-    column_count: IntProvider[Annotated[int, 'Range | `1`-`150` | both inclusive']] | Annotated[int, 'Range | `1`-`150` | both inclusive']
-    height: IntProvider[Annotated[int, 'Range | `1`-`10` | both inclusive']] | Annotated[int, 'Range | `1`-`10` | both inclusive']
-    cluster_reach: IntProvider[Annotated[int, 'Range | `0`-`13` | both inclusive']] | Annotated[int, 'Range | `0`-`13` | both inclusive']  # The effective reach is limited by `height`.
+    column_reach: IntProvider[Annotated[int, Field(ge=0, le=3)]] | Annotated[int, Field(ge=0, le=3)]
+    column_count: IntProvider[Annotated[int, Field(ge=1, le=150)]] | Annotated[int, Field(ge=1, le=150)]
+    height: IntProvider[Annotated[int, Field(ge=1, le=10)]] | Annotated[int, Field(ge=1, le=10)]
+    cluster_reach: IntProvider[Annotated[int, Field(ge=0, le=13)]] | Annotated[int, Field(ge=0, le=13)]  # The effective reach is limited by `height`.
 
 
 # ~~~ MODEL DUMP ~~~

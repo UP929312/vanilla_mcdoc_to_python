@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::worldgen::attribute::modifier::Boo
 Local link to file: generated_symbols/data/worldgen/attribute/modifier/BooleanAttributeModifier.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.attribute.modifier.BooleanModifierType import BooleanModifierType
 
 
-@dataclass(kw_only=True)
-class BooleanAttributeModifier:
+class BooleanAttributeModifier(GeneratedModel):
     modifier: BooleanModifierType
     argument: bool
 

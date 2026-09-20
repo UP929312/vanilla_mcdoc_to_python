@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::entity::mob::zombie::ZombieVillag
 Local link to file: generated_symbols/world/entity/mob/zombie/ZombieVillager.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.world.entity.mob.zombie.Zombie import Zombie
@@ -14,7 +13,6 @@ if TYPE_CHECKING:
     from generated_symbols.world.entity.mob.breedable.villager.VillagerData import VillagerData
 
 
-@dataclass(kw_only=True)
 class ZombieVillager(Zombie):
     VillagerData: VillagerData | None = None  # Villager's skin data
     VillagerDataFinalized: bool | None = None

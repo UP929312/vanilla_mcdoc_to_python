@@ -3,14 +3,14 @@ Generated from symbols.json for ::java::data::worldgen::ConstantIntProvider
 Local link to file: generated_symbols/data/worldgen/ConstantIntProvider.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Generic, TypeVar
+
+from generated_symbols.base import GeneratedModel
 
 
 T = TypeVar('T')
 
-@dataclass(kw_only=True)
-class ConstantIntProvider(Generic[T]):
+class ConstantIntProvider(GeneratedModel, Generic[T]):
     value: T
 
 

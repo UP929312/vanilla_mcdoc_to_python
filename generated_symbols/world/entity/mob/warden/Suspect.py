@@ -3,13 +3,14 @@ Generated from symbols.json for ::java::world::entity::mob::warden::Suspect
 Local link to file: generated_symbols/world/entity/mob/warden/Suspect.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class Suspect:
-    anger: Annotated[int, 'Range | `1`-`150` | both inclusive'] | None = None  # Level of anger that will decrease by 1 every second.
+
+class Suspect(GeneratedModel):
+    anger: Annotated[int, Field(ge=1, le=150)] | None = None  # Level of anger that will decrease by 1 every second.
     uuid: tuple[int, int, int, int] | None = None
 
 

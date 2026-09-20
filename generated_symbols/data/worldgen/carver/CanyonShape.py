@@ -3,18 +3,19 @@ Generated from symbols.json for ::java::data::worldgen::carver::CanyonShape
 Local link to file: generated_symbols/data/worldgen/carver/CanyonShape.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.FloatProvider import FloatProvider
 
 
-@dataclass(kw_only=True)
-class CanyonShape:
+class CanyonShape(GeneratedModel):
     distance_factor: FloatProvider[float] | float
     thickness: FloatProvider[float] | float
-    width_smoothness: Annotated[int, 'Range | `0` and above | inclusive']
+    width_smoothness: Annotated[int, Field(ge=0)]
     horizontal_radius_factor: FloatProvider[float] | float
     vertical_radius_default_factor: float
     vertical_radius_center_factor: float

@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::block::moving_piston::MovingPisto
 Local link to file: generated_symbols/world/block/moving_piston/MovingPiston.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.world.block.BlockEntity import BlockEntity
@@ -13,7 +12,6 @@ if TYPE_CHECKING:
     from generated_symbols.util.direction.DirectionByte import DirectionByte
 
 
-@dataclass(kw_only=True)
 class MovingPiston(BlockEntity):
     blockState: BlockState | None = None  # Moving block represented by the moving piston.
     facing: DirectionByte | None = None  # The direction it is moving.

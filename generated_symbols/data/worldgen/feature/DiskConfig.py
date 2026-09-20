@@ -3,8 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::feature::DiskConfig
 Local link to file: generated_symbols/data/worldgen/feature/DiskConfig.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.IntProvider import IntProvider
@@ -12,13 +14,12 @@ if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
 
 
-@dataclass(kw_only=True)
-class DiskConfig:
+class DiskConfig(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/feature'
 
     state_provider: BlockStateProvider
-    radius: IntProvider[Annotated[int, 'Range | `0`-`8` | both inclusive']] | Annotated[int, 'Range | `0`-`8` | both inclusive']
-    half_height: Annotated[int, 'Range | `0`-`4` | both inclusive']
+    radius: IntProvider[Annotated[int, Field(ge=0, le=8)]] | Annotated[int, Field(ge=0, le=8)]
+    half_height: Annotated[int, Field(ge=0, le=4)]
     target: BlockPredicate
 
 

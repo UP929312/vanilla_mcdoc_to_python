@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::util::particle::ItemParticle
 Local link to file: generated_symbols/util/particle/ItemParticle.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.world.item.ItemStackTemplate import ItemStackTemplate
 
 
-@dataclass(kw_only=True)
-class ItemParticle:
+class ItemParticle(GeneratedModel):
     item: ItemStackTemplate
 
 

@@ -3,16 +3,15 @@ Generated from symbols.json for ::java::data::worldgen::density_function::Interp
 Local link to file: generated_symbols/data/worldgen/density_function/Interpolated.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
 from generated_symbols.data.worldgen.density_function.OneArgument import OneArgument
+from pydantic import Field
 
 
-@dataclass(kw_only=True)
 class Interpolated(OneArgument):
-    cell_size_xz: Annotated[int, 'Range | `1` and above | inclusive']
-    cell_size_y: Annotated[int, 'Range | `1` and above | inclusive']
+    cell_size_xz: Annotated[int, Field(ge=1)]
+    cell_size_y: Annotated[int, Field(ge=1)]
 
 
 # ~~~ MODEL DUMP ~~~

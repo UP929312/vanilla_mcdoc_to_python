@@ -3,13 +3,14 @@ Generated from symbols.json for ::java::util::text::TextObject
 Local link to file: generated_symbols/util/text/TextObject.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Literal
 
+from generated_symbols.base import GeneratedModel
 from generated_symbols.util.text.ObjectTextConfig import ObjectTextConfig
 from generated_symbols.util.text.TextBase import TextBase
 from generated_symbols.util.text.TextNbtBase import TextNbtBase
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.avatar.Profile import Profile
@@ -17,46 +18,39 @@ if TYPE_CHECKING:
     from generated_symbols.util.text.Text import Text
 
 
-@dataclass(kw_only=True)
-class ScoreStruct:
+class ScoreStruct(GeneratedModel):
     objective: str
     name: str
 
 
-@dataclass(kw_only=True)
 class TextObjectStruct1(TextBase):
     text: str
     type: Literal['text'] = 'text'
 
 
-@dataclass(kw_only=True)
 class TextObjectStruct2(TextBase):
     translate: str
     fallback: str | None = None
-    with_: Annotated[list[Text], 'Length = 1 (inclusive) and above'] | None = None
+    with_: Annotated[list[Text], Field(min_length=1)] | None = None
     type: Literal['translatable'] = 'translatable'
 
 
-@dataclass(kw_only=True)
 class TextObjectStruct3(TextBase):
     score: ScoreStruct
     type: Literal['score'] = 'score'
 
 
-@dataclass(kw_only=True)
 class TextObjectStruct4(TextBase):
     selector: str
     separator: Text | None = None
     type: Literal['selector'] = 'selector'
 
 
-@dataclass(kw_only=True)
 class TextObjectStruct5(TextBase):
     keybind: Keybind
     type: Literal['keybind'] = 'keybind'
 
 
-@dataclass(kw_only=True)
 class TextObjectStruct6(TextNbtBase):
     block: str
     nbt: str
@@ -64,7 +58,6 @@ class TextObjectStruct6(TextNbtBase):
     type: Literal['nbt'] = 'nbt'
 
 
-@dataclass(kw_only=True)
 class TextObjectStruct7(TextNbtBase):
     entity: str
     nbt: str
@@ -72,7 +65,6 @@ class TextObjectStruct7(TextNbtBase):
     type: Literal['nbt'] = 'nbt'
 
 
-@dataclass(kw_only=True)
 class TextObjectStruct8(TextNbtBase):
     storage: Annotated[str, IdSpec(registry='storage')]
     nbt: str
@@ -80,7 +72,6 @@ class TextObjectStruct8(TextNbtBase):
     type: Literal['nbt'] = 'nbt'
 
 
-@dataclass(kw_only=True)
 class TextObjectStruct9(ObjectTextConfig, TextBase):
     atlas: Annotated[str, IdSpec(registry='atlas')] | None = None  # Defaults to `minecraft:blocks`.
     sprite: Annotated[str, IdSpec(registry='texture')]
@@ -88,7 +79,6 @@ class TextObjectStruct9(ObjectTextConfig, TextBase):
     type: Literal['object'] = 'object'
 
 
-@dataclass(kw_only=True)
 class TextObjectStruct10(ObjectTextConfig, TextBase):
     player: Profile
     hat: bool | None = None  # Whether the head layer is rendered. Defaults to `true`.

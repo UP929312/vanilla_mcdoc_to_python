@@ -3,16 +3,16 @@ Generated from symbols.json for ::java::data::worldgen::attribute::BedRule
 Local link to file: generated_symbols/data/worldgen/attribute/BedRule.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.attribute.BedRuleType import BedRuleType
     from generated_symbols.util.text.Text import Text
 
 
-@dataclass(kw_only=True)
-class BedRule:
+class BedRule(GeneratedModel):
     can_sleep: BedRuleType
     can_set_spawn: BedRuleType
     destroy_on_use: bool | None = None

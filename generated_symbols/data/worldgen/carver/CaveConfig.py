@@ -3,28 +3,27 @@ Generated from symbols.json for ::java::data::worldgen::carver::CaveConfig
 Local link to file: generated_symbols/data/worldgen/carver/CaveConfig.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from generated_symbols.data.worldgen.carver.CarverConfigBase import CarverConfigBase
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.FloatProvider import FloatProvider
     from generated_symbols.data.worldgen.IntProvider import IntProvider
 
 
-@dataclass(kw_only=True)
 class CaveConfig(CarverConfigBase):
     __resource_dir__: ClassVar[str] = 'worldgen/configured_carver'
 
-    count: IntProvider[Annotated[int, 'Range | `0` and above | inclusive']] | Annotated[int, 'Range | `0` and above | inclusive']
-    thickness: FloatProvider[Annotated[float, 'Range | `0` and above | inclusive']] | Annotated[float, 'Range | `0` and above | inclusive']
+    count: IntProvider[Annotated[int, Field(ge=0)]] | Annotated[int, Field(ge=0)]
+    thickness: FloatProvider[Annotated[float, Field(ge=0)]] | Annotated[float, Field(ge=0)]
     weird_thickness_bias: bool | None = None  # Defaults to `false`.
     room_vertical_radius_multiplier: FloatProvider[float] | float
     horizontal_radius_multiplier: FloatProvider[float] | float
     vertical_radius_multiplier: FloatProvider[float] | float
     start_vertical_radiues_multiplier: FloatProvider[float] | float | None = None  # Defaults to constant 1.0
-    floor_level: FloatProvider[Annotated[float, 'Range | `-1`-`1` | both inclusive']] | Annotated[float, 'Range | `-1`-`1` | both inclusive']
+    floor_level: FloatProvider[Annotated[float, Field(ge=-1, le=1)]] | Annotated[float, Field(ge=-1, le=1)]
 
 
 # ~~~ MODEL DUMP ~~~

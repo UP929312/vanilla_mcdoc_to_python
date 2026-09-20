@@ -3,14 +3,13 @@ Generated from symbols.json for ::java::data::worldgen::material_condition::Biom
 Local link to file: generated_symbols/data/worldgen/material_condition/BiomeCondition.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated, ClassVar
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
-class BiomeCondition:
+class BiomeCondition(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/material_condition'
 
     biome_is: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]

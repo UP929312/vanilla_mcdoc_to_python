@@ -8,7 +8,7 @@ Generated from symbols.json for ::java::world::entity::mob::MobBase
 Local link to file: generated_symbols/world/entity/mob/MobBase.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from pydantic import BaseModel
 from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.world.entity.mob.LivingEntity import LivingEntity
@@ -19,12 +19,10 @@ if TYPE_CHECKING:
     from generated_symbols.world.entity.mob.EntityEquipment import EntityEquipment
 
 
-@dataclass(kw_only=True)
-class LeashStruct:
+class LeashStruct(BaseModel):
     UUID: tuple[int, int, int, int] | None = None
 
 
-@dataclass(kw_only=True)
 class MobBase(LivingEntity):
     equipment: EntityEquipment | None = None  # The equipment items of the mob, such as armor or weapons.
     drop_chances: DropChances | None = None  # Chances of the mob dropping an equipment slot on death.
@@ -37,3 +35,5 @@ class MobBase(LivingEntity):
     leash: tuple[int, int, int] | LeashStruct | None = None  # What the leash is attached to.
     home_radius: int | None = None  # Defaults to -1, which represents "no home".
     home_pos: tuple[int, int, int] | None = None  # This field will be discarded if `home_radius` is less than 0.
+
+

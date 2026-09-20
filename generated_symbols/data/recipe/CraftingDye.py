@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::recipe::CraftingDye
 Local link to file: generated_symbols/data/recipe/CraftingDye.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, ClassVar
 
 from generated_symbols.data.recipe.CraftingBookInfo import CraftingBookInfo
@@ -14,7 +13,6 @@ if TYPE_CHECKING:
     from generated_symbols.world.item.ItemStackTemplate import ItemStackTemplate
 
 
-@dataclass(kw_only=True)
 class CraftingDye(CraftingBookInfo, NotificationInfo):
     __resource_dir__: ClassVar[str] = 'recipe'
 

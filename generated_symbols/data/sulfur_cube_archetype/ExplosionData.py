@@ -3,14 +3,15 @@ Generated from symbols.json for ::java::data::sulfur_cube_archetype::ExplosionDa
 Local link to file: generated_symbols/data/sulfur_cube_archetype/ExplosionData.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class ExplosionData:
-    fuse: Annotated[int, 'Range | `1` and above | inclusive']  # The fuse time in ticks when ignited.  When ignited by an explosion, the fuse will be a random value between `explosion_fuse / 8` and `3 * explosion_fuse / 8`.
-    power: Annotated[int, 'Range | `0` and above | inclusive']  # The explosion power.
+
+class ExplosionData(GeneratedModel):
+    fuse: Annotated[int, Field(ge=1)]  # The fuse time in ticks when ignited.  When ignited by an explosion, the fuse will be a random value between `explosion_fuse / 8` and `3 * explosion_fuse / 8`.
+    power: Annotated[int, Field(ge=0)]  # The explosion power.
     causes_fire: bool  # Whether the explosion causes fire.
 
 

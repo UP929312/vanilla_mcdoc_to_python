@@ -12,3 +12,5 @@ from generated_symbols.util.color.DyeColorInt import DyeColorInt as DyeColorInt_
 
 
 type DyeColorInt = DyeColorInt_alias
+
+

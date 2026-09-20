@@ -3,14 +3,11 @@ Generated from symbols.json for ::java::data::advancement::trigger::SlideDownBlo
 Local link to file: generated_symbols/data/advancement/trigger/SlideDownBlockTrigger.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.data.advancement.trigger.AllOptional import AllOptional
 from generated_symbols.data.advancement.trigger.BlockStateConditions import BlockStateConditions
 from generated_symbols.data.advancement.trigger.PlayerConditions import PlayerConditions
 
 
-@dataclass(kw_only=True)
 class SlideDownBlockTriggerTypeArg(BlockStateConditions, PlayerConditions):
     pass
 

@@ -3,17 +3,16 @@ Generated from symbols.json for ::java::data::advancement::AdvancementRewards
 Local link to file: generated_symbols/data/advancement/AdvancementRewards.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.loot.LootTableListRef import LootTableListRef
 
 
-@dataclass(kw_only=True)
-class AdvancementRewards:
+class AdvancementRewards(GeneratedModel):
     experience: int | None = None  # XP to add.
     loot: LootTableListRef | None = None  # Loot tables to give.
     recipes: list[Annotated[str, IdSpec(registry='recipe')]] | None = None  # Recipes to unlock.

@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::advancement::predicate::ParrotPred
 Local link to file: generated_symbols/data/advancement/predicate/ParrotPredicate.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.world.component.entity.ParrotVariant import ParrotVariant
 
 
-@dataclass(kw_only=True)
-class ParrotPredicate:
+class ParrotPredicate(GeneratedModel):
     variant: ParrotVariant
 
 

@@ -3,12 +3,12 @@ Generated from symbols.json for ::java::assets::gpu_warnlist::GpuWarnlist
 Local link to file: generated_symbols/assets/gpu_warnlist/GpuWarnlist.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import ClassVar
 
+from generated_symbols.base import GeneratedModel
 
-@dataclass(kw_only=True)
-class GpuWarnlist:
+
+class GpuWarnlist(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'gpu_warnlist'
 
     renderer: list[str] | None = None

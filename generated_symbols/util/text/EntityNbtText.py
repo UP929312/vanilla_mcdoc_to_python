@@ -3,13 +3,11 @@ Generated from symbols.json for ::java::util::text::EntityNbtText
 Local link to file: generated_symbols/util/text/EntityNbtText.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Literal
 
 from generated_symbols.util.text.TextNbtBase import TextNbtBase
 
 
-@dataclass(kw_only=True)
 class EntityNbtText(TextNbtBase):
     entity: str
     nbt: str

@@ -3,26 +3,26 @@ Generated from symbols.json for ::java::data::dialog::input::TextInput
 Local link to file: generated_symbols/data/dialog/input/TextInput.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.text.Text import Text
 
 
-@dataclass(kw_only=True)
-class MultilineStruct:
-    max_lines: Annotated[int, 'Range | `1` and above | inclusive'] | None = None
-    height: Annotated[int, 'Range | `1`-`512` | both inclusive'] | None = None  # Height of the input. If this field is not present: - If `max_lines` is present, the height will be chosen to fit the maximum number of lines. The chosen height is capped at 512. - If `max_lines` is also not present, the height will be chosen to fit 4 lines.
+class MultilineStruct(GeneratedModel):
+    max_lines: Annotated[int, Field(ge=1)] | None = None
+    height: Annotated[int, Field(ge=1, le=512)] | None = None  # Height of the input. If this field is not present: - If `max_lines` is present, the height will be chosen to fit the maximum number of lines. The chosen height is capped at 512. - If `max_lines` is also not present, the height will be chosen to fit 4 lines.
 
 
-@dataclass(kw_only=True)
-class TextInput:
-    width: Annotated[int, 'Range | `1`-`1024` | both inclusive'] | None = None  # Defaults to 200.
+class TextInput(GeneratedModel):
+    width: Annotated[int, Field(ge=1, le=1024)] | None = None  # Defaults to 200.
     label: Text  # Label displayed to the left of control.
     label_visible: bool | None = None  # Defaults to `true`.
     initial: str | None = None  # Initial contents of the text input. Defaults to `""` (empty string).
-    max_length: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # Maximum length of input Defaults to 32.
+    max_length: Annotated[int, Field(ge=1)] | None = None  # Maximum length of input Defaults to 32.
     multiline: MultilineStruct | None = None  # If present, allows users to input multiple lines.
 
 

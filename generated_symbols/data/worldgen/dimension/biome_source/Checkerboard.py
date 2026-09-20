@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::worldgen::dimension::biome_source:
 Local link to file: generated_symbols/data/worldgen/dimension/biome_source/Checkerboard.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 
-@dataclass(kw_only=True)
-class Checkerboard:
-    scale: Annotated[int, 'Range | `0`-`62` | both inclusive'] | None = None
+class Checkerboard(GeneratedModel):
+    scale: Annotated[int, Field(ge=0, le=62)] | None = None
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
 
 

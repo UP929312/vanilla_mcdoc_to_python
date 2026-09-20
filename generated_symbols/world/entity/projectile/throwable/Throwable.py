@@ -3,12 +3,9 @@ Generated from symbols.json for ::java::world::entity::projectile::throwable::Th
 Local link to file: generated_symbols/world/entity/projectile/throwable/Throwable.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.world.entity.projectile.ProjectileBase import ProjectileBase
 
 
-@dataclass(kw_only=True)
 class Throwable(ProjectileBase):
     pass
 

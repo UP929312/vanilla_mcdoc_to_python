@@ -3,20 +3,19 @@ Generated from symbols.json for ::java::world::block::brewing_stand::BrewingStan
 Local link to file: generated_symbols/world/block/brewing_stand/BrewingStand.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.world.block.BlockEntity import BlockEntity
 from generated_symbols.world.block.Lockable import Lockable
 from generated_symbols.world.block.Nameable import Nameable
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.slot.SlottedItem import SlottedItem
 
 
-@dataclass(kw_only=True)
 class BrewingStand(BlockEntity, Lockable, Nameable):
-    Items: Annotated[list[SlottedItem[Annotated[int, 'Range | `0`-`4` | both inclusive']]], 'Length = 0-5 (both inclusive)'] | None = None  # * 0: left brewing slot * 1: middle brewing slot * 2: right brewing slot * 3: ingredient slot * 4: fuel slot
+    Items: Annotated[list[SlottedItem[Annotated[int, Field(ge=0, le=4)]]], Field(min_length=0, max_length=5)] | None = None  # * 0: left brewing slot * 1: middle brewing slot * 2: right brewing slot * 3: ingredient slot * 4: fuel slot
     BrewTime: int | None = None  # Number of ticks until the brewing is complete.
     Fuel: int | None = None  # Amount of fuel the brewing stand has left.
     total_brew_time: int | None = None  # The total amount of time the current brewing process will take. Defaults to `400`.

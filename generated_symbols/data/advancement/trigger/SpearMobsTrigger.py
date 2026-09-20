@@ -3,16 +3,15 @@ Generated from symbols.json for ::java::data::advancement::trigger::SpearMobsTri
 Local link to file: generated_symbols/data/advancement/trigger/SpearMobsTrigger.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
 from generated_symbols.data.advancement.trigger.AllOptional import AllOptional
 from generated_symbols.data.advancement.trigger.PlayerConditions import PlayerConditions
+from pydantic import Field
 
 
-@dataclass(kw_only=True)
 class SpearMobsTriggerTypeArg(PlayerConditions):
-    count: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # Minimum mob count required.
+    count: Annotated[int, Field(ge=1)] | None = None  # Minimum mob count required.
 
 
 SpearMobsTrigger = AllOptional[SpearMobsTriggerTypeArg]

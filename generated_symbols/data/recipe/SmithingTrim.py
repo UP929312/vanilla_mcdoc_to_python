@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::recipe::SmithingTrim
 Local link to file: generated_symbols/data/recipe/SmithingTrim.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from generated_symbols.data.recipe.NotificationInfo import NotificationInfo
@@ -13,7 +12,6 @@ if TYPE_CHECKING:
     from generated_symbols.data.recipe.Ingredient import Ingredient
 
 
-@dataclass(kw_only=True)
 class SmithingTrim(NotificationInfo):
     __resource_dir__: ClassVar[str] = 'recipe'
 

@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::util::particle::EffectParticle
 Local link to file: generated_symbols/util/particle/EffectParticle.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.util.color.RGB import RGB
 
 
-@dataclass(kw_only=True)
-class EffectParticle:
+class EffectParticle(GeneratedModel):
     power: float | None = None  # Multiplier of initial velocity. Defaults to 1.0
     color: RGB | None = None
 

@@ -3,14 +3,13 @@ Generated from symbols.json for ::java::data::util::SoundEventRef
 Local link to file: generated_symbols/data/util/SoundEventRef.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
-class SoundEventRefStruct:
+class SoundEventRefStruct(GeneratedModel):
     sound_id: Annotated[str, IdSpec(registry='weighed_sound_event', empty='allowed')]
     range: float | None = None  # Range in blocks. If the player is further than this range from the source of the sound, the sound will be inaudible. If omitted, the sound will have a variable range.
 

@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::enchantment::level_based_value::Fr
 Local link to file: generated_symbols/data/enchantment/level_based_value/FractionLevelValue.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.enchantment.level_based_value.LevelBasedValue import LevelBasedValue
 
 
-@dataclass(kw_only=True)
-class FractionLevelValue:
+class FractionLevelValue(GeneratedModel):
     numerator: LevelBasedValue
     denominator: LevelBasedValue
 

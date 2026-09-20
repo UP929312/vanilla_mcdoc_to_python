@@ -3,14 +3,15 @@ Generated from symbols.json for ::java::data::worldgen::noise_settings::NoiseSet
 Local link to file: generated_symbols/data/worldgen/noise_settings/NoiseSettings.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class NoiseSettings:
-    min_y: Annotated[int, 'Range | `-2048`-`2047` | both inclusive']  # Minimum height where blocks start generating.
-    height: Annotated[int, 'Range | `0`-`4096` | both inclusive']  # The total height where blocks can generate. Max Y = Min Y + Height.
+
+class NoiseSettings(GeneratedModel):
+    min_y: Annotated[int, Field(ge=-2048, le=2047)]  # Minimum height where blocks start generating.
+    height: Annotated[int, Field(ge=0, le=4096)]  # The total height where blocks can generate. Max Y = Min Y + Height.
 
 
 # ~~~ MODEL DUMP ~~~

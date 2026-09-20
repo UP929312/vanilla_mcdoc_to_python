@@ -6,6 +6,7 @@ Local link to file: generated_symbols/data/worldgen/attribute/EnvironmentAttribu
 from typing import TYPE_CHECKING, Annotated, Any, TypeVar
 
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.MoonPhase import MoonPhase
@@ -29,7 +30,7 @@ if TYPE_CHECKING:
 
 K = TypeVar('K')
 
-type EnvironmentAttributeMap[K] = dict[K, Any | AmbientSounds | BackgroundMusic | bool | Annotated[float, 'Range | `0`-`1` | both inclusive'] | Annotated[str, IdSpec(registry='activity')] | BedRule | Annotated[float, 'Range | `0`-`0.9999999` | both inclusive'] | TriState | NaturalMobSpawns | Annotated[float, 'Range | `0`-`15` | both inclusive'] | StringRGB | list[AmbientParticle] | StringARGB | Annotated[float, 'Range | `0` and above | inclusive'] | float | Particle | MoonPhase | OverrideModifier[Any] | OverrideModifier[AmbientSounds] | OverrideModifier[BackgroundMusic] | BooleanAttributeModifier | FloatAttributeModifier[Annotated[float, 'Range | `0`-`1` | both inclusive']] | Annotated[float, 'Range | `0`-`1` | both inclusive'] | OverrideModifier[Annotated[str, IdSpec(registry='activity')]] | OverrideModifier[BedRule] | FloatAttributeModifier[Annotated[float, 'Range | `0`-`0.9999999` | both inclusive']] | Annotated[float, 'Range | `0`-`0.9999999` | both inclusive'] | OverrideModifier[TriState] | MergeableModifier[NaturalMobSpawns] | FloatAttributeModifier[Annotated[float, 'Range | `0`-`15` | both inclusive']] | Annotated[float, 'Range | `0`-`15` | both inclusive'] | ColorAttributeModifier | ListModifier[AmbientParticle] | TranslucentColorAttributeModifier | FloatAttributeModifier[Annotated[float, 'Range | `0` and above | inclusive']] | Annotated[float, 'Range | `0` and above | inclusive'] | FloatAttributeModifier[float] | float | OverrideModifier[Particle] | OverrideModifier[MoonPhase]]
+type EnvironmentAttributeMap[K] = dict[K, Any | AmbientSounds | BackgroundMusic | bool | Annotated[float, Field(ge=0, le=1)] | Annotated[str, IdSpec(registry='activity')] | BedRule | Annotated[float, Field(ge=0, le=0.9999999)] | TriState | NaturalMobSpawns | Annotated[float, Field(ge=0, le=15)] | StringRGB | list[AmbientParticle] | StringARGB | Annotated[float, Field(ge=0)] | float | Particle | MoonPhase | OverrideModifier[Any] | OverrideModifier[AmbientSounds] | OverrideModifier[BackgroundMusic] | BooleanAttributeModifier | FloatAttributeModifier[Annotated[float, Field(ge=0, le=1)]] | Annotated[float, Field(ge=0, le=1)] | OverrideModifier[Annotated[str, IdSpec(registry='activity')]] | OverrideModifier[BedRule] | FloatAttributeModifier[Annotated[float, Field(ge=0, le=0.9999999)]] | Annotated[float, Field(ge=0, le=0.9999999)] | OverrideModifier[TriState] | MergeableModifier[NaturalMobSpawns] | FloatAttributeModifier[Annotated[float, Field(ge=0, le=15)]] | Annotated[float, Field(ge=0, le=15)] | ColorAttributeModifier | ListModifier[AmbientParticle] | TranslucentColorAttributeModifier | FloatAttributeModifier[Annotated[float, Field(ge=0)]] | Annotated[float, Field(ge=0)] | FloatAttributeModifier[float] | float | OverrideModifier[Particle] | OverrideModifier[MoonPhase]]
 
 
 # ~~~ MODEL DUMP ~~~

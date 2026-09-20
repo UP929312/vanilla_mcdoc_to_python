@@ -3,14 +3,14 @@ Generated from symbols.json for ::java::data::advancement::trigger::ParitalRequi
 Local link to file: generated_symbols/data/advancement/trigger/ParitalRequired.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Generic, TypeVar
+
+from generated_symbols.base import GeneratedModel
 
 
 C = TypeVar('C')
 
-@dataclass(kw_only=True)
-class ParitalRequired(Generic[C]):
+class ParitalRequired(GeneratedModel, Generic[C]):
     conditions: C
 
 

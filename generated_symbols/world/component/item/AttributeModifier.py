@@ -3,9 +3,9 @@ Generated from symbols.json for ::java::world::component::item::AttributeModifie
 Local link to file: generated_symbols/world/component/item/AttributeModifier.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
@@ -14,8 +14,7 @@ if TYPE_CHECKING:
     from generated_symbols.world.component.item.AttributeDisplay import AttributeDisplay
 
 
-@dataclass(kw_only=True)
-class AttributeModifier:
+class AttributeModifier(GeneratedModel):
     type: Annotated[str, IdSpec(registry='attribute')]
     id: Annotated[str, IdSpec(registry='attribute_modifier')]  # Used when equipping and unequipping the item to identify which modifier to add or remove from the entity.
     amount: float  # Change in the attribute.

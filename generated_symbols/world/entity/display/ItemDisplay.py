@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::entity::display::ItemDisplay
 Local link to file: generated_symbols/world/entity/display/ItemDisplay.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.world.entity.display.DisplayBase import DisplayBase
@@ -13,7 +12,6 @@ if TYPE_CHECKING:
     from generated_symbols.world.item.ItemStack import ItemStack
 
 
-@dataclass(kw_only=True)
 class ItemDisplay(DisplayBase):
     item: ItemStack | None = None  # Item stack to display.
     item_display: ItemDisplayContext | None = None  # Describes item model transform applied to item (as defined in the `display` section in model JSON). Defaults to `fixed`.

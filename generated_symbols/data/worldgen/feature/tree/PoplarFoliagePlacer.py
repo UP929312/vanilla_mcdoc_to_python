@@ -3,17 +3,18 @@ Generated from symbols.json for ::java::data::worldgen::feature::tree::PoplarFol
 Local link to file: generated_symbols/data/worldgen/feature/tree/PoplarFoliagePlacer.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.IntProvider import IntProvider
 
 
-@dataclass(kw_only=True)
-class PoplarFoliagePlacer:
-    height: IntProvider[Annotated[int, 'Range | `5`-`16` | both inclusive']] | Annotated[int, 'Range | `5`-`16` | both inclusive']
-    side_hole_chance: Annotated[float, 'Range | `0`-`1` | both inclusive']
+class PoplarFoliagePlacer(GeneratedModel):
+    height: IntProvider[Annotated[int, Field(ge=5, le=16)]] | Annotated[int, Field(ge=5, le=16)]
+    side_hole_chance: Annotated[float, Field(ge=0, le=1)]
 
 
 # ~~~ MODEL DUMP ~~~

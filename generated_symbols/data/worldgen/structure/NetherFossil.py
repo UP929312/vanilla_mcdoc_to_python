@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::worldgen::structure::NetherFossil
 Local link to file: generated_symbols/data/worldgen/structure/NetherFossil.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, ClassVar
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.HeightProvider import HeightProvider
 
 
-@dataclass(kw_only=True)
-class NetherFossil:
+class NetherFossil(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/structure'
 
     height: HeightProvider

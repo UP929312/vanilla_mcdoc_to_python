@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::item::firework::FireworkStar
 Local link to file: generated_symbols/world/item/firework/FireworkStar.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.world.item.ItemBase import ItemBase
@@ -12,7 +11,6 @@ if TYPE_CHECKING:
     from generated_symbols.world.item.firework.Explosion import Explosion
 
 
-@dataclass(kw_only=True)
 class FireworkStar(ItemBase):
     Explosion: Explosion | None = None
 

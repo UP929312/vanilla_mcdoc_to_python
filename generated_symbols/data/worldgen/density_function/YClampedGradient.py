@@ -3,17 +3,18 @@ Generated from symbols.json for ::java::data::worldgen::density_function::YClamp
 Local link to file: generated_symbols/data/worldgen/density_function/YClampedGradient.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.density_function.NoiseRange import NoiseRange
 
 
-@dataclass(kw_only=True)
-class YClampedGradient:
-    from_y: Annotated[int, 'Range | `-4064`-`4062` | both inclusive']
-    to_y: Annotated[int, 'Range | `-4064`-`4062` | both inclusive']
+class YClampedGradient(GeneratedModel):
+    from_y: Annotated[int, Field(ge=-4064, le=4062)]
+    to_y: Annotated[int, Field(ge=-4064, le=4062)]
     from_value: NoiseRange
     to_value: NoiseRange
 

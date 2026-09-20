@@ -3,17 +3,18 @@ Generated from symbols.json for ::java::data::worldgen::feature::tree::PoplarTru
 Local link to file: generated_symbols/data/worldgen/feature/tree/PoplarTrunkPlacer.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.IntProvider import IntProvider
 
 
-@dataclass(kw_only=True)
-class PoplarTrunkPlacer:
-    trunk_height_above_branches: IntProvider[Annotated[int, 'Range | `0`-`8` | both inclusive']] | Annotated[int, 'Range | `0`-`8` | both inclusive']
-    branch_amount: IntProvider[Annotated[int, 'Range | `1`-`4` | both inclusive']] | Annotated[int, 'Range | `1`-`4` | both inclusive']
+class PoplarTrunkPlacer(GeneratedModel):
+    trunk_height_above_branches: IntProvider[Annotated[int, Field(ge=0, le=8)]] | Annotated[int, Field(ge=0, le=8)]
+    branch_amount: IntProvider[Annotated[int, Field(ge=1, le=4)]] | Annotated[int, Field(ge=1, le=4)]
 
 
 # ~~~ MODEL DUMP ~~~

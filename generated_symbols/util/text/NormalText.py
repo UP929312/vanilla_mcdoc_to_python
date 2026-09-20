@@ -3,13 +3,11 @@ Generated from symbols.json for ::java::util::text::NormalText
 Local link to file: generated_symbols/util/text/NormalText.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Literal
 
 from generated_symbols.util.text.TextBase import TextBase
 
 
-@dataclass(kw_only=True)
 class NormalText(TextBase):
     text: str
     type: Literal['text'] = 'text'

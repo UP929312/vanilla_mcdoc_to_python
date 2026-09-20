@@ -3,18 +3,19 @@ Generated from symbols.json for ::java::data::worldgen::feature::placement::Envi
 Local link to file: generated_symbols/data/worldgen/feature/placement/EnvironmentScanModifier.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.block_predicate.BlockPredicate import BlockPredicate
     from generated_symbols.util.direction.VerticalDirection import VerticalDirection
 
 
-@dataclass(kw_only=True)
-class EnvironmentScanModifier:
+class EnvironmentScanModifier(GeneratedModel):
     direction_of_search: VerticalDirection
-    max_steps: Annotated[int, 'Range | `1`-`32` | both inclusive']
+    max_steps: Annotated[int, Field(ge=1, le=32)]
     target_condition: BlockPredicate
     allowed_search_condition: BlockPredicate | None = None
 

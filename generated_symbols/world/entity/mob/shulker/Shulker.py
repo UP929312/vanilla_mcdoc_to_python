@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::entity::mob::shulker::Shulker
 Local link to file: generated_symbols/world/entity/mob/shulker/Shulker.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.world.entity.mob.MobBase import MobBase
@@ -14,7 +13,6 @@ if TYPE_CHECKING:
     from generated_symbols.world.entity.mob.shulker.ShulkerColor import ShulkerColor
 
 
-@dataclass(kw_only=True)
 class Shulker(MobBase):
     Peek: bool | None = None  # Whether it is peeking.
     AttachFace: DirectionByte | None = None  # Which face it is attached to.

@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::world::block::end_gateway::ExitPortal
 Local link to file: generated_symbols/world/block/end_gateway/ExitPortal.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class ExitPortal:
+class ExitPortal(GeneratedModel):
     X: int | None = None
     Y: int | None = None
     Z: int | None = None

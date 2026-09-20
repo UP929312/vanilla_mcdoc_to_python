@@ -3,15 +3,12 @@ Generated from symbols.json for ::java::data::advancement::trigger::TradeTrigger
 Local link to file: generated_symbols/data/advancement/trigger/TradeTrigger.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.data.advancement.predicate.ItemPredicate import ItemPredicate
 from generated_symbols.data.advancement.trigger.AdvancementEntityPredicate import AdvancementEntityPredicate
 from generated_symbols.data.advancement.trigger.AllOptional import AllOptional
 from generated_symbols.data.advancement.trigger.PlayerConditions import PlayerConditions
 
 
-@dataclass(kw_only=True)
 class TradeTriggerTypeArg(PlayerConditions):
     villager: AdvancementEntityPredicate | None = None  # Predicate context: Advancement Entity.
     item: ItemPredicate | None = None  # Item that was purchased.  `count` tag checks the item count from one trade, not the total amount traded for.

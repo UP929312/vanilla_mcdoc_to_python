@@ -3,8 +3,6 @@ Generated from symbols.json for ::java::data::advancement::trigger::BeeNestDestr
 Local link to file: generated_symbols/data/advancement/trigger/BeeNestDestroyedTrigger.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.data.advancement.predicate.ItemPredicate import ItemPredicate
 from generated_symbols.data.advancement.trigger.AllOptional import AllOptional
 from generated_symbols.data.advancement.trigger.PlayerConditions import PlayerConditions
@@ -14,7 +12,6 @@ from generated_symbols.util.registry_ref.BlockListRef import BlockListRef
 type StateStructBlockStatesNone = dict[str, str]
 
 
-@dataclass(kw_only=True)
 class BeeNestDestroyedTriggerTypeArg(PlayerConditions):
     blocks: BlockListRef | None = None
     state: StateStructBlockStatesNone | None = None

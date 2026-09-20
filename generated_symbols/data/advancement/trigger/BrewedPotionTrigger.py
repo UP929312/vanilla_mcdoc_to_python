@@ -3,14 +3,11 @@ Generated from symbols.json for ::java::data::advancement::trigger::BrewedPotion
 Local link to file: generated_symbols/data/advancement/trigger/BrewedPotionTrigger.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.data.advancement.trigger.AllOptional import AllOptional
 from generated_symbols.data.advancement.trigger.PlayerConditions import PlayerConditions
 from generated_symbols.world.component.predicate.PotionsPredicate import PotionsPredicate
 
 
-@dataclass(kw_only=True)
 class BrewedPotionTriggerTypeArg(PlayerConditions):
     potion: PotionsPredicate | None = None
 

@@ -3,12 +3,9 @@ Generated from symbols.json for ::java::util::memory::BreezeJumpTarget
 Local link to file: generated_symbols/util/memory/BreezeJumpTarget.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.util.memory.ExpirableValue import ExpirableValue
 
 
-@dataclass(kw_only=True)
 class BreezeJumpTarget(ExpirableValue):
     value: tuple[int, int, int]  # The block position that the breeze is jumping towards.
 

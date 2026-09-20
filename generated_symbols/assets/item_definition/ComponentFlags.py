@@ -3,9 +3,9 @@ Generated from symbols.json for ::java::assets::item_definition::ComponentFlags
 Local link to file: generated_symbols/assets/item_definition/ComponentFlags.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
@@ -24,8 +24,7 @@ if TYPE_CHECKING:
     from generated_symbols.world.component.predicate.WrittenBookPredicate import WrittenBookPredicate
 
 
-@dataclass(kw_only=True)
-class ComponentFlags:
+class ComponentFlags(GeneratedModel):
     predicate: Annotated[str, IdSpec(registry='data_component_predicate_type')]  # The component predicate to check.
     value: None | AttributeModifiersPredicate | BundleContentsPredicate | ContainerPredicate | CustomData | ItemDamagePredicate | list[EnchantmentPredicate] | FireworkExplosionPredicate | FireworksPredicate | JukeboxPlayablePredicate | PotionsPredicate | TrimPredicate | Annotated[str, IdSpec(registry='villager_type', tags='allowed')] | list[Annotated[str, IdSpec(registry='villager_type')]] | WritableBookPredicate | WrittenBookPredicate  # The predicate-specific value.
 

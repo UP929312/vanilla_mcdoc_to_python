@@ -3,17 +3,18 @@ Generated from symbols.json for ::java::world::entity::mob::breedable::villager:
 Local link to file: generated_symbols/world/entity/mob/breedable/villager/VillagerBase.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.world.entity.mob.breedable.villager.Offers import Offers
     from generated_symbols.world.item.ItemStack import ItemStack
 
 
-@dataclass(kw_only=True)
-class VillagerBase:
-    Inventory: Annotated[list[ItemStack], 'Length = 0-8 (both inclusive)'] | None = None  # Slots from 0 to 7.
+class VillagerBase(GeneratedModel):
+    Inventory: Annotated[list[ItemStack], Field(min_length=0, max_length=8)] | None = None  # Slots from 0 to 7.
     Offers: Offers | None = None  # Trade offers it has.
 
 

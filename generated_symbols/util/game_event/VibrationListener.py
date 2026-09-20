@@ -3,21 +3,22 @@ Generated from symbols.json for ::java::util::game_event::VibrationListener
 Local link to file: generated_symbols/util/game_event/VibrationListener.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.game_event.PositionSource import PositionSource
     from generated_symbols.util.game_event.ReceivingEvent import ReceivingEvent
 
 
-@dataclass(kw_only=True)
-class VibrationListener:
+class VibrationListener(GeneratedModel):
     source: PositionSource
-    range: Annotated[int, 'Range | `1` and above | inclusive']  # Range in blocks where vibrations can be detected
+    range: Annotated[int, Field(ge=1)]  # Range in blocks where vibrations can be detected
     event: ReceivingEvent | None = None  # Event that is being received, if any
-    event_distance: Annotated[float, 'Range | `0` and above | inclusive'] | None = None  # Distance in blocks to the event that is being received
-    event_delay: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # Delay in ticks until the event reaches this listener
+    event_distance: Annotated[float, Field(ge=0)] | None = None  # Distance in blocks to the event that is being received
+    event_delay: Annotated[int, Field(ge=1)] | None = None  # Delay in ticks until the event reaches this listener
 
 
 # ~~~ MODEL DUMP ~~~

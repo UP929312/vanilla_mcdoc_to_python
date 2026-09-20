@@ -3,12 +3,9 @@ Generated from symbols.json for ::java::world::entity::mob::breedable::ocelot::O
 Local link to file: generated_symbols/world/entity/mob/breedable/ocelot/Ocelot.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.world.entity.mob.breedable.Breedable import Breedable
 
 
-@dataclass(kw_only=True)
 class Ocelot(Breedable):
     Trusting: bool | None = None  # Whether it trusts players.
 

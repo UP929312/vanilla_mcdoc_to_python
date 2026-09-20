@@ -3,19 +3,20 @@ Generated from symbols.json for ::java::data::enchantment::effect::PlaySoundEnti
 Local link to file: generated_symbols/data/enchantment/effect/PlaySoundEntityEffect.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.SoundEventRef import SoundEventRef
     from generated_symbols.data.worldgen.FloatProvider import FloatProvider
 
 
-@dataclass(kw_only=True)
-class PlaySoundEntityEffect:
-    sound: SoundEventRef | Annotated[list[SoundEventRef], 'Length = 1-255 (both inclusive)']
-    volume: FloatProvider[Annotated[float, 'Range | `1e-05`-`10` | both inclusive']] | Annotated[float, 'Range | `1e-05`-`10` | both inclusive']
-    pitch: FloatProvider[Annotated[float, 'Range | `1e-05`-`2` | both inclusive']] | Annotated[float, 'Range | `1e-05`-`2` | both inclusive']
+class PlaySoundEntityEffect(GeneratedModel):
+    sound: SoundEventRef | Annotated[list[SoundEventRef], Field(min_length=1, max_length=255)]
+    volume: FloatProvider[Annotated[float, Field(ge=1e-05, le=10)]] | Annotated[float, Field(ge=1e-05, le=10)]
+    pitch: FloatProvider[Annotated[float, Field(ge=1e-05, le=2)]] | Annotated[float, Field(ge=1e-05, le=2)]
 
 
 # ~~~ MODEL DUMP ~~~

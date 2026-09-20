@@ -3,12 +3,9 @@ Generated from symbols.json for ::java::util::memory::UniversalAnger
 Local link to file: generated_symbols/util/memory/UniversalAnger.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.util.memory.ExpirableValue import ExpirableValue
 
 
-@dataclass(kw_only=True)
 class UniversalAnger(ExpirableValue):
     value: bool  # Whether the piglin is being universally angered. Only used when the `universalAnger` gamerule is enabled.
 

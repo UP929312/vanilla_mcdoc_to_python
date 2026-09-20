@@ -3,9 +3,9 @@ Generated from symbols.json for ::java::data::enchantment::effect_component::Enc
 Local link to file: generated_symbols/data/enchantment/effect_component/EnchantmentEffectComponentMap.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
@@ -39,8 +39,7 @@ if TYPE_CHECKING:
     from generated_symbols.data.util.SoundEventRef import SoundEventRef
 
 
-@dataclass(kw_only=True)
-class EnchantmentEffectComponentMapValueStructEffectComponentPreventArmorChange:
+class EnchantmentEffectComponentMapValueStructEffectComponentPreventArmorChange(GeneratedModel):
     pass
 
 

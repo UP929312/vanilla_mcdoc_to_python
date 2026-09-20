@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::loot::function::SetComponents
 Local link to file: generated_symbols/data/loot/function/SetComponents.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.data.loot.function.Conditions import Conditions
@@ -12,7 +11,6 @@ if TYPE_CHECKING:
     from generated_symbols.world.component.DataComponentPatch import DataComponentPatch
 
 
-@dataclass(kw_only=True)
 class SetComponents(Conditions):
     components: DataComponentPatch
 

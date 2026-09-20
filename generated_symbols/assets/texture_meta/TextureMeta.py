@@ -3,8 +3,10 @@ Generated from symbols.json for ::java::assets::texture_meta::TextureMeta
 Local link to file: generated_symbols/assets/texture_meta/TextureMeta.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.assets.atlas.PaletteRef import PaletteRef
@@ -13,46 +15,39 @@ if TYPE_CHECKING:
     from generated_symbols.assets.texture_meta.VillagerHatType import VillagerHatType
 
 
-@dataclass(kw_only=True)
-class FramesStruct:
-    index: Annotated[int, 'Range | `0` and above | inclusive']  # A number corresponding to position of a frame from the top, with the top frame being 0.
-    time: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The time in ticks to show this frame, overriding `frametime` above.
+class FramesStruct(GeneratedModel):
+    index: Annotated[int, Field(ge=0)]  # A number corresponding to position of a frame from the top, with the top frame being 0.
+    time: Annotated[int, Field(ge=1)] | None = None  # The time in ticks to show this frame, overriding `frametime` above.
 
 
-@dataclass(kw_only=True)
-class AnimationStruct:
+class AnimationStruct(GeneratedModel):
     interpolate: bool | None = None  # If true, additional frames will be generated between frames with a frame time greater than 1 between them. Defaults to false.
-    width: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The width of the tile, as a direct ratio rather than in pixels. Can be used by resource packs to have frames that are not perfect squares.
-    height: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The height of the tile, as a direct ratio rather than in pixels. Can be used by resource packs to have frames that are not perfect squares.
-    frametime: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # Sets the default time for each frame in increments of one game tick. Defaults to 1.
-    frames: list[FramesStruct | Annotated[int, 'Range | `0` and above | inclusive']] | None = None  # Defaults to displaying all the frames from top to bottom.
+    width: Annotated[int, Field(ge=1)] | None = None  # The width of the tile, as a direct ratio rather than in pixels. Can be used by resource packs to have frames that are not perfect squares.
+    height: Annotated[int, Field(ge=1)] | None = None  # The height of the tile, as a direct ratio rather than in pixels. Can be used by resource packs to have frames that are not perfect squares.
+    frametime: Annotated[int, Field(ge=1)] | None = None  # Sets the default time for each frame in increments of one game tick. Defaults to 1.
+    frames: list[FramesStruct | Annotated[int, Field(ge=0)]] | None = None  # Defaults to displaying all the frames from top to bottom.
 
 
-@dataclass(kw_only=True)
-class GuiStruct:
+class GuiStruct(GeneratedModel):
     scaling: GuiSpriteScaling | None = None  # Configures how the GUI texture should be scaled. Defaults to `stretch`.
 
 
-@dataclass(kw_only=True)
-class VillagerStruct:
+class VillagerStruct(GeneratedModel):
     hat: VillagerHatType | None = None  # Determines whether the villager's 'profession' hat layer should allow the 'type' hat layer to render or not.  Defaults to `none`.
 
 
-@dataclass(kw_only=True)
-class TextureStruct:
+class TextureStruct(GeneratedModel):
     blur: bool | None = None  # Causes the texture to blur when viewed from close up. Defaults to false.
     clamp: bool | None = None  # Causes the texture to stretch instead of tiling in cases where it otherwise would, such as on the shadow. Defaults to false.
     mipmap_strategy: MipmapStrategy | None = None  # Defaults to `auto`.
-    alpha_cutoff_bias: Annotated[float, 'Range | `-1`-`1` | both inclusive'] | None = None  # The alpha bias for cutout textures.  Positive values make the texture more opaque at distance. Negative values make the texture more transparent at distance.  Defaults to 0.0
+    alpha_cutoff_bias: Annotated[float, Field(ge=-1, le=1)] | None = None  # The alpha bias for cutout textures.  Positive values make the texture more opaque at distance. Negative values make the texture more transparent at distance.  Defaults to 0.0
 
 
-@dataclass(kw_only=True)
-class PaletteStruct:
+class PaletteStruct(GeneratedModel):
     base_palette: PaletteRef
 
 
-@dataclass(kw_only=True)
-class TextureMeta:
+class TextureMeta(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'texture_meta'
 
     animation: AnimationStruct | None = None

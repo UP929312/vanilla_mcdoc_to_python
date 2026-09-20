@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::assets::font::GlyphProvider
 Local link to file: generated_symbols/assets/font/GlyphProvider.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Literal
 
 from generated_symbols.assets.font.BitmapProvider import BitmapProvider
@@ -16,31 +15,26 @@ if TYPE_CHECKING:
     from generated_symbols.assets.font.FontOption import FontOption
 
 
-@dataclass(kw_only=True)
 class GlyphProviderBitmap(BitmapProvider):
     type: Literal['minecraft:bitmap'] = 'minecraft:bitmap'
     filter: dict[FontOption, bool] | None = None
 
 
-@dataclass(kw_only=True)
 class GlyphProviderReference(ReferenceProvider):
     type: Literal['minecraft:reference'] = 'minecraft:reference'
     filter: dict[FontOption, bool] | None = None
 
 
-@dataclass(kw_only=True)
 class GlyphProviderSpace(SpaceProvider):
     type: Literal['minecraft:space'] = 'minecraft:space'
     filter: dict[FontOption, bool] | None = None
 
 
-@dataclass(kw_only=True)
 class GlyphProviderTtf(TtfProvider):
     type: Literal['minecraft:ttf'] = 'minecraft:ttf'
     filter: dict[FontOption, bool] | None = None
 
 
-@dataclass(kw_only=True)
 class GlyphProviderUnihex(UnihexProvider):
     type: Literal['minecraft:unihex'] = 'minecraft:unihex'
     filter: dict[FontOption, bool] | None = None

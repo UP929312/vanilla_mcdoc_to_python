@@ -3,22 +3,22 @@ Generated from symbols.json for ::java::world::block::spawner::SpawnEquipment
 Local link to file: generated_symbols/world/block/spawner/SpawnEquipment.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.slot.EquipmentSlot import EquipmentSlot
 
 
-type SlotDropChancesStruct = dict[EquipmentSlot, Annotated[float, 'Range | `0`-`1` | both inclusive']]
+type SlotDropChancesStruct = dict[EquipmentSlot, Annotated[float, Field(ge=0, le=1)]]
 
 
-@dataclass(kw_only=True)
-class SpawnEquipment:
+class SpawnEquipment(GeneratedModel):
     loot_table: Annotated[str, IdSpec(registry='loot_table')]  # Generates the equipment.
-    slot_drop_chances: Annotated[float, 'Range | `0`-`1` | both inclusive'] | SlotDropChancesStruct  # Chance the mob will drop the equipment on death.
+    slot_drop_chances: Annotated[float, Field(ge=0, le=1)] | SlotDropChancesStruct  # Chance the mob will drop the equipment on death.
 
 
 # ~~~ MODEL DUMP ~~~

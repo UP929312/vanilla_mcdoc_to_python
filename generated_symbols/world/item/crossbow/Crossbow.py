@@ -3,18 +3,17 @@ Generated from symbols.json for ::java::world::item::crossbow::Crossbow
 Local link to file: generated_symbols/world/item/crossbow/Crossbow.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.world.item.ItemBase import ItemBase
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.world.item.ItemStack import ItemStack
 
 
-@dataclass(kw_only=True)
 class Crossbow(ItemBase):
-    ChargedProjectiles: Annotated[list[ItemStack], 'Length = 0-3 (both inclusive)'] | None = None  # Projectiles that are loaded.
+    ChargedProjectiles: Annotated[list[ItemStack], Field(min_length=0, max_length=3)] | None = None  # Projectiles that are loaded.
     Charged: bool | None = None  # Whether the crossbow is charged.
 
 

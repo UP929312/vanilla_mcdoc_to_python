@@ -3,17 +3,16 @@ Generated from symbols.json for ::java::world::entity::minecart::TntMinecart
 Local link to file: generated_symbols/world/entity/minecart/TntMinecart.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
 from generated_symbols.world.entity.minecart.Minecart import Minecart
+from pydantic import Field
 
 
-@dataclass(kw_only=True)
 class TntMinecart(Minecart):
     fuse: int | None = None  # Ticks until it explodes.
-    explosion_power: Annotated[float, 'Range | `0`-`128` | both inclusive'] | None = None
-    explosion_speed_factor: Annotated[float, 'Range | `0`-`128` | both inclusive'] | None = None  # Controls the amount of added damage depending on the speed of the minecart.
+    explosion_power: Annotated[float, Field(ge=0, le=128)] | None = None
+    explosion_speed_factor: Annotated[float, Field(ge=0, le=128)] | None = None  # Controls the amount of added damage depending on the speed of the minecart.
 
 
 # ~~~ MODEL DUMP ~~~

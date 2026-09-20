@@ -3,16 +3,17 @@ Generated from symbols.json for ::java::data::worldgen::material_condition::Wate
 Local link to file: generated_symbols/data/worldgen/material_condition/WaterCondition.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated, ClassVar
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class WaterCondition:
+
+class WaterCondition(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/material_condition'
 
     offset: int
-    surface_depth_multiplier: Annotated[int, 'Range | `-20`-`20` | both inclusive']
+    surface_depth_multiplier: Annotated[int, Field(ge=-20, le=20)]
     add_stone_depth: bool
 
 

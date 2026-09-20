@@ -3,10 +3,11 @@ Generated from symbols.json for ::java::data::worldgen::attribute::DiscreteAttri
 Local link to file: generated_symbols/data/worldgen/attribute/DiscreteAttribute.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Generic, Literal, TypeVar
 
+from generated_symbols.base import GeneratedModel
 from generated_symbols.data.timeline.AttributeTrackBase import AttributeTrackBase
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.attribute.modifier.OverrideModifier import OverrideModifier
@@ -14,20 +15,17 @@ if TYPE_CHECKING:
 
 T = TypeVar('T')
 
-@dataclass(kw_only=True)
-class KeyframesStruct(Generic[T]):
-    ticks: Annotated[int, 'Range | `0` and above | inclusive']
+class KeyframesStruct(GeneratedModel, Generic[T]):
+    ticks: Annotated[int, Field(ge=0)]
     value: T
 
 
-@dataclass(kw_only=True)
 class AttributeTrackStruct(AttributeTrackBase, Generic[T]):
     modifier: Literal['override'] = 'override'
-    keyframes: Annotated[list[KeyframesStruct[T]], 'Length = 1 (inclusive) and above']
+    keyframes: Annotated[list[KeyframesStruct[T]], Field(min_length=1)]
 
 
-@dataclass(kw_only=True)
-class DiscreteAttribute(Generic[T]):
+class DiscreteAttribute(GeneratedModel, Generic[T]):
     value: T
     modifier: OverrideModifier[T]
     attribute_track: AttributeTrackStruct[T]

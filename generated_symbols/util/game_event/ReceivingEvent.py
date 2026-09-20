@@ -3,16 +3,16 @@ Generated from symbols.json for ::java::util::game_event::ReceivingEvent
 Local link to file: generated_symbols/util/game_event/ReceivingEvent.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 
-@dataclass(kw_only=True)
-class ReceivingEvent:
+class ReceivingEvent(GeneratedModel):
     game_event: Annotated[str, IdSpec(registry='game_event')]
-    distance: Annotated[float, 'Range | `0` and above | inclusive']  # Distance in blocks to the source
+    distance: Annotated[float, Field(ge=0)]  # Distance in blocks to the source
     pos: tuple[float, float, float]  # Origin of the event
     source: tuple[int, int, int, int] | None = None  # UUID of the source entity of the event, if one exists
     projectile_owner: tuple[int, int, int, int] | None = None  # UUID of the owner of the projectile, if one exists

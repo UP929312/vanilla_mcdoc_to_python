@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::assets::shader::post::FullScreenTarget
 Local link to file: generated_symbols/assets/shader/post/FullScreenTarget.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class FullScreenTarget:
+class FullScreenTarget(GeneratedModel):
     pass
 
 

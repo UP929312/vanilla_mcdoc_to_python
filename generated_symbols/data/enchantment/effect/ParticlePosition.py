@@ -3,12 +3,12 @@ Generated from symbols.json for ::java::data::enchantment::effect::ParticlePosit
 Local link to file: generated_symbols/data/enchantment/effect/ParticlePosition.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Literal
 
+from generated_symbols.base import GeneratedModel
 
-@dataclass(kw_only=True)
-class ParticlePosition:
+
+class ParticlePosition(GeneratedModel):
     type: Literal['entity_position'] | Literal['in_bounding_box']
     offset: float | None = None  # Defaults to 0.
     scale: float | None = None  # Defaults to 1.

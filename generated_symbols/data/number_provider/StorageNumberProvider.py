@@ -3,14 +3,13 @@ Generated from symbols.json for ::java::data::number_provider::StorageNumberProv
 Local link to file: generated_symbols/data/number_provider/StorageNumberProvider.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
-class StorageNumberProvider:
+class StorageNumberProvider(GeneratedModel):
     storage: Annotated[str, IdSpec(registry='storage')]
     path: str
 

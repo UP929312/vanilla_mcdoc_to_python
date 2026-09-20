@@ -3,21 +3,21 @@ Generated from symbols.json for ::java::data::timeline::Timeline
 Local link to file: generated_symbols/data/timeline/Timeline.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.timeline.EnvironmentAttributeTrackMap import EnvironmentAttributeTrackMap
     from generated_symbols.data.timeline.TimeMarkerMap import TimeMarkerMap
 
 
-@dataclass(kw_only=True)
-class Timeline:
+class Timeline(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'timeline'
 
-    period_ticks: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # When not present, the timeline will not repeat.
+    period_ticks: Annotated[int, Field(ge=1)] | None = None  # When not present, the timeline will not repeat.
     clock: Annotated[str, IdSpec(registry='world_clock')]  # The world clock this timeline is tied to.
     time_markers: TimeMarkerMap | None = None
     tracks: EnvironmentAttributeTrackMap | None = None

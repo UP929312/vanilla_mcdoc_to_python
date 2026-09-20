@@ -3,16 +3,16 @@ Generated from symbols.json for ::java::world::item::shield::BlockEntityTag
 Local link to file: generated_symbols/world/item/shield/BlockEntityTag.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.util.color.DyeColorInt import DyeColorInt
     from generated_symbols.world.block.banner.BannerPatternLayer import BannerPatternLayer
 
 
-@dataclass(kw_only=True)
-class BlockEntityTag:
+class BlockEntityTag(GeneratedModel):
     Base: DyeColorInt | None = None  # Base color.
     Patterns: list[BannerPatternLayer] | None = None
 

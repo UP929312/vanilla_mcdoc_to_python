@@ -3,15 +3,12 @@ Generated from symbols.json for ::java::data::advancement::trigger::TargetBlockT
 Local link to file: generated_symbols/data/advancement/trigger/TargetBlockTrigger.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.data.advancement.trigger.AdvancementEntityPredicate import AdvancementEntityPredicate
 from generated_symbols.data.advancement.trigger.AllOptional import AllOptional
 from generated_symbols.data.advancement.trigger.PlayerConditions import PlayerConditions
 from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
 
 
-@dataclass(kw_only=True)
 class TargetBlockTriggerTypeArg(PlayerConditions):
     projectile: AdvancementEntityPredicate | None = None  # Predicate context: Advancement Entity.
     signal_strength: MinMaxBounds[int] | int | None = None

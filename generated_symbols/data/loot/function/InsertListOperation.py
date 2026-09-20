@@ -3,13 +3,14 @@ Generated from symbols.json for ::java::data::loot::function::InsertListOperatio
 Local link to file: generated_symbols/data/loot/function/InsertListOperation.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class InsertListOperation:
-    offset: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # The offset in the list to insert into. Defaults to 0.
+
+class InsertListOperation(GeneratedModel):
+    offset: Annotated[int, Field(ge=0)] | None = None  # The offset in the list to insert into. Defaults to 0.
 
 
 # ~~~ MODEL DUMP ~~~

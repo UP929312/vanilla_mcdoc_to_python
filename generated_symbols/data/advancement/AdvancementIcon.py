@@ -3,17 +3,16 @@ Generated from symbols.json for ::java::data::advancement::AdvancementIcon
 Local link to file: generated_symbols/data/advancement/AdvancementIcon.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.registry.KnownItemId import KnownItemId
 
 
-@dataclass(kw_only=True)
-class AdvancementIcon:
+class AdvancementIcon(GeneratedModel):
     item: Annotated[str, IdSpec(registry='item')] | KnownItemId
     nbt: str | None = None
 

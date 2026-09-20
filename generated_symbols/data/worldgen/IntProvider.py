@@ -3,16 +3,15 @@ Generated from symbols.json for ::java::data::worldgen::IntProvider
 Local link to file: generated_symbols/data/worldgen/IntProvider.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated, Generic, TypeVar
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
 T = TypeVar('T')
 
-@dataclass(kw_only=True)
-class IntProvider(Generic[T]):
+class IntProvider(GeneratedModel, Generic[T]):
     type: Annotated[str, IdSpec(registry='int_provider_type')]
 
 

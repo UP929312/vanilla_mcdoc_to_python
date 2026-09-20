@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::loot::function::EnchantedCountIncr
 Local link to file: generated_symbols/data/loot/function/EnchantedCountIncrease.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
 from generated_symbols.data.loot.function.Conditions import Conditions
@@ -11,7 +10,6 @@ from generated_symbols.data.loot.function.EnchantedCountBase import EnchantedCou
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
 class EnchantedCountIncrease(Conditions, EnchantedCountBase):
     enchantment: Annotated[str, IdSpec(registry='enchantment')]  # Enchantment that increases yields.
 

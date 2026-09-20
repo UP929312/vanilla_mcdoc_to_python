@@ -3,12 +3,9 @@ Generated from symbols.json for ::java::world::entity::mob::endermite::Endermite
 Local link to file: generated_symbols/world/entity/mob/endermite/Endermite.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.world.entity.mob.MobBase import MobBase
 
 
-@dataclass(kw_only=True)
 class Endermite(MobBase):
     Lifetime: int | None = None  # How long it has existed.
     PlayerSpawned: bool | None = None  # Whether enderman should attack it.

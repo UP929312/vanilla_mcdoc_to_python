@@ -3,9 +3,9 @@ Generated from symbols.json for ::java::world::component::predicate::AttributeMo
 Local link to file: generated_symbols/world/component/predicate/AttributeModifiersPredicateEntry.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
@@ -14,8 +14,7 @@ if TYPE_CHECKING:
     from generated_symbols.util.slot.EquipmentSlotGroup import EquipmentSlotGroup
 
 
-@dataclass(kw_only=True)
-class AttributeModifiersPredicateEntry:
+class AttributeModifiersPredicateEntry(GeneratedModel):
     attribute: Annotated[str, IdSpec(registry='attribute', tags='allowed')] | list[Annotated[str, IdSpec(registry='attribute')]] | None = None
     id: Annotated[str, IdSpec(registry='attribute_modifier')] | None = None
     amount: MinMaxBounds[float] | float | None = None

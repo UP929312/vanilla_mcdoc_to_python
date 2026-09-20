@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::world::entity::display::AxisAngle
 Local link to file: generated_symbols/world/entity/display/AxisAngle.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class AxisAngle:
+class AxisAngle(GeneratedModel):
     axis: tuple[float, float, float]  # Local position of the axis in [x, y, z].
     angle: float  # Angle to rotate around the axis in radians.
 

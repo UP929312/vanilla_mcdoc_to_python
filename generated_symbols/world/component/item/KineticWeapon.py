@@ -3,18 +3,19 @@ Generated from symbols.json for ::java::world::component::item::KineticWeapon
 Local link to file: generated_symbols/world/component/item/KineticWeapon.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.SoundEventRef import SoundEventRef
     from generated_symbols.world.component.item.KineticWeaponEffectCondition import KineticWeaponEffectCondition
 
 
-@dataclass(kw_only=True)
-class KineticWeapon:
-    delay_ticks: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # The time in ticks required for charging. Defaults to 0
-    contact_cooldown_ticks: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # The cooldown in ticks after hitting, and loosing contact with an entity before being able to hit it again Defaults to 10
+class KineticWeapon(GeneratedModel):
+    delay_ticks: Annotated[int, Field(ge=0)] | None = None  # The time in ticks required for charging. Defaults to 0
+    contact_cooldown_ticks: Annotated[int, Field(ge=0)] | None = None  # The cooldown in ticks after hitting, and loosing contact with an entity before being able to hit it again Defaults to 10
     dismount_conditions: KineticWeaponEffectCondition | None = None
     knockback_conditions: KineticWeaponEffectCondition | None = None
     damage_conditions: KineticWeaponEffectCondition | None = None

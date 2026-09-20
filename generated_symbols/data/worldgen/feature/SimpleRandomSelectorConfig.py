@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::worldgen::feature::SimpleRandomSel
 Local link to file: generated_symbols/data/worldgen/feature/SimpleRandomSelectorConfig.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, ClassVar
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.placement.PlacedFeatureListRef import PlacedFeatureListRef
 
 
-@dataclass(kw_only=True)
-class SimpleRandomSelectorConfig:
+class SimpleRandomSelectorConfig(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/feature'
 
     features: PlacedFeatureListRef

@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::worldgen::feature::GrowingPlantHei
 Local link to file: generated_symbols/data/worldgen/feature/GrowingPlantHeight.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.IntProvider import IntProvider
 
 
-@dataclass(kw_only=True)
-class GrowingPlantHeight:
+class GrowingPlantHeight(GeneratedModel):
     weight: int
     data: IntProvider[int] | int
 

@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::enchantment::effect::ChangeItemDam
 Local link to file: generated_symbols/data/enchantment/effect/ChangeItemDamageEffect.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.enchantment.LevelBasedValue import LevelBasedValue
 
 
-@dataclass(kw_only=True)
-class ChangeItemDamageEffect:
+class ChangeItemDamageEffect(GeneratedModel):
     amount: LevelBasedValue  # Damage to apply to the enchanted item. Negative values will repair the item. The change is not applied to items held by players in creative mode.
 
 

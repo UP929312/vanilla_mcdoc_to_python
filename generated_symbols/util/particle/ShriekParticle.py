@@ -3,13 +3,14 @@ Generated from symbols.json for ::java::util::particle::ShriekParticle
 Local link to file: generated_symbols/util/particle/ShriekParticle.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class ShriekParticle:
-    delay: Annotated[int, 'Range | `0` and above | inclusive']  # Ticks until the particle renders.
+
+class ShriekParticle(GeneratedModel):
+    delay: Annotated[int, Field(ge=0)]  # Ticks until the particle renders.
 
 
 # ~~~ MODEL DUMP ~~~

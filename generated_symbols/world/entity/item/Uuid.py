@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::world::entity::item::Uuid
 Local link to file: generated_symbols/world/entity/item/Uuid.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class Uuid:
+class Uuid(GeneratedModel):
     L: int | None = None  # Lower bits of the target player's UUID
     M: int | None = None  # Upper bits of the target player's UUID
 

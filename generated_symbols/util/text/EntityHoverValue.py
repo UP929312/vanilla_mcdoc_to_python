@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::util::text::EntityHoverValue
 Local link to file: generated_symbols/util/text/EntityHoverValue.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class EntityHoverValue:
+class EntityHoverValue(GeneratedModel):
     name: str | None = None
     type: str | None = None
     id: str | None = None

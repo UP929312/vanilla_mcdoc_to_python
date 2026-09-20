@@ -3,16 +3,15 @@ Generated from symbols.json for ::java::world::entity::mob::phantom::Phantom
 Local link to file: generated_symbols/world/entity/mob/phantom/Phantom.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
 from generated_symbols.world.entity.mob.MobBase import MobBase
+from pydantic import Field
 
 
-@dataclass(kw_only=True)
 class Phantom(MobBase):
     anchor_pos: tuple[int, int, int] | None = None  # Approximate circle coordinates.
-    size: Annotated[int, 'Range | `0`-`64` | both inclusive'] | None = None
+    size: Annotated[int, Field(ge=0, le=64)] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::world::block::conduit::TargetUuid
 Local link to file: generated_symbols/world/block/conduit/TargetUuid.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class TargetUuid:
+class TargetUuid(GeneratedModel):
     M: int | None = None  # Upper bits of the target's UUID
     L: int | None = None  # Lower bits of the target's UUID
 

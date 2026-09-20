@@ -3,14 +3,13 @@ Generated from symbols.json for ::java::data::advancement::predicate::WolfPredic
 Local link to file: generated_symbols/data/advancement/predicate/WolfPredicate.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
-class WolfPredicate:
+class WolfPredicate(GeneratedModel):
     variant: Annotated[str, IdSpec(registry='wolf_variant', tags='allowed')] | list[Annotated[str, IdSpec(registry='wolf_variant')]]
 
 

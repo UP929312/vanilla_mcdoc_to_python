@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::enchantment::effect::ValueEffect
 Local link to file: generated_symbols/data/enchantment/effect/ValueEffect.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Literal
 
 from generated_symbols.data.enchantment.effect.AddEffectValue import AddEffectValue
@@ -14,32 +13,26 @@ from generated_symbols.data.enchantment.effect.ReduceBinomialEffectValue import 
 from generated_symbols.data.enchantment.effect.SetEffectValue import SetEffectValue
 
 
-@dataclass(kw_only=True)
 class ValueEffectAdd(AddEffectValue):
     type: Literal['minecraft:add'] = 'minecraft:add'
 
 
-@dataclass(kw_only=True)
 class ValueEffectAllOf(AllOfEffectValue):
     type: Literal['minecraft:all_of'] = 'minecraft:all_of'
 
 
-@dataclass(kw_only=True)
 class ValueEffectExponential(ExponentialEffectValue):
     type: Literal['minecraft:exponential'] = 'minecraft:exponential'
 
 
-@dataclass(kw_only=True)
 class ValueEffectMultiply(MultiplyEffectValue):
     type: Literal['minecraft:multiply'] = 'minecraft:multiply'
 
 
-@dataclass(kw_only=True)
 class ValueEffectRemoveBinomial(ReduceBinomialEffectValue):
     type: Literal['minecraft:remove_binomial'] = 'minecraft:remove_binomial'
 
 
-@dataclass(kw_only=True)
 class ValueEffectSet(SetEffectValue):
     type: Literal['minecraft:set'] = 'minecraft:set'
 

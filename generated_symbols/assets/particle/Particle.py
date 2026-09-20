@@ -3,14 +3,13 @@ Generated from symbols.json for ::java::assets::particle::Particle
 Local link to file: generated_symbols/assets/particle/Particle.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated, ClassVar
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
-class Particle:
+class Particle(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'particle'
 
     textures: list[Annotated[str, IdSpec(registry='texture', path='particle/')]]

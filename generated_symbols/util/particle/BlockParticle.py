@@ -3,9 +3,9 @@ Generated from symbols.json for ::java::util::particle::BlockParticle
 Local link to file: generated_symbols/util/particle/BlockParticle.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
@@ -13,8 +13,7 @@ if TYPE_CHECKING:
     from generated_symbols.util.block_state.BlockState import BlockState
 
 
-@dataclass(kw_only=True)
-class BlockParticle:
+class BlockParticle(GeneratedModel):
     block_state: Annotated[str, IdSpec(registry='block')] | KnownBlockId | BlockState
 
 

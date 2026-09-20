@@ -3,16 +3,17 @@ Generated from symbols.json for ::java::data::worldgen::structure::JigsawDistanc
 Local link to file: generated_symbols/data/worldgen/structure/JigsawDistanceLimits.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated, Generic, TypeVar
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 
 T = TypeVar('T')
 
-@dataclass(kw_only=True)
-class JigsawDistanceLimits(Generic[T]):
+class JigsawDistanceLimits(GeneratedModel, Generic[T]):
     horizontal: T
-    vertical: Annotated[int, 'Range | `1`-`4064` | both inclusive'] | None = None  # Defaults to 4064
+    vertical: Annotated[int, Field(ge=1, le=4064)] | None = None  # Defaults to 4064
 
 
 # ~~~ MODEL DUMP ~~~

@@ -3,15 +3,12 @@ Generated from symbols.json for ::java::data::advancement::trigger::ItemDurabili
 Local link to file: generated_symbols/data/advancement/trigger/ItemDurabilityTrigger.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.data.advancement.predicate.ItemPredicate import ItemPredicate
 from generated_symbols.data.advancement.trigger.AllOptional import AllOptional
 from generated_symbols.data.advancement.trigger.PlayerConditions import PlayerConditions
 from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
 
 
-@dataclass(kw_only=True)
 class ItemDurabilityTriggerTypeArg(PlayerConditions):
     delta: MinMaxBounds[int] | int | None = None  # Change in durability (negative numbers are used to indicate a decrease in durability).
     durability: MinMaxBounds[int] | int | None = None  # The resulting durability.

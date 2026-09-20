@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::entity::mob::breedable::tamable::
 Local link to file: generated_symbols/world/entity/mob/breedable/tamable/Wolf.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.world.entity.mob.NeutralMob import NeutralMob
@@ -14,7 +13,6 @@ if TYPE_CHECKING:
     from generated_symbols.util.DyeColorByte import DyeColorByte
 
 
-@dataclass(kw_only=True)
 class Wolf(NeutralMob, Tamable):
     CollarColor: DyeColorByte | None = None  # Collar color, present for wild wolfs. Defaults to 14 (red).
     variant: Annotated[str, IdSpec(registry='wolf_variant')] | None = None

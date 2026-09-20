@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::assets::item_definition::RangeDispatch
 Local link to file: generated_symbols/assets/item_definition/RangeDispatch.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Literal
 
 from generated_symbols.assets.item_definition.Compass import Compass
@@ -13,6 +12,7 @@ from generated_symbols.assets.item_definition.Damage import Damage
 from generated_symbols.assets.item_definition.Time import Time
 from generated_symbols.assets.item_definition.UseCycle import UseCycle
 from generated_symbols.assets.item_definition.UseDuration import UseDuration
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.assets.item_definition.ItemModel import ItemModel
@@ -20,14 +20,12 @@ if TYPE_CHECKING:
     from generated_symbols.world.entity.display.Transformation import Transformation
 
 
-@dataclass(kw_only=True)
-class EntriesStruct:
+class EntriesStruct(GeneratedModel):
     threshold: float
     model: ItemModel
 
 
-@dataclass(kw_only=True)
-class RangeDispatchUnknown:
+class RangeDispatchUnknown(GeneratedModel):
     property: NumericPropertyType
     scale: float | None = None  # Factor to multiply the property value with. Defaults to 1.
     entries: list[EntriesStruct]  # List of ranges. Will select last entry with threshold less or equal to value. Order does not matter, list will be sorted by threshold in ascending order.
@@ -35,7 +33,6 @@ class RangeDispatchUnknown:
     transformation: Transformation | None = None
 
 
-@dataclass(kw_only=True)
 class RangeDispatchCompass(Compass):
     property: Literal['minecraft:compass'] = 'minecraft:compass'
     scale: float | None = None  # Factor to multiply the property value with. Defaults to 1.
@@ -44,7 +41,6 @@ class RangeDispatchCompass(Compass):
     transformation: Transformation | None = None
 
 
-@dataclass(kw_only=True)
 class RangeDispatchCount(Count):
     property: Literal['minecraft:count'] = 'minecraft:count'
     scale: float | None = None  # Factor to multiply the property value with. Defaults to 1.
@@ -53,7 +49,6 @@ class RangeDispatchCount(Count):
     transformation: Transformation | None = None
 
 
-@dataclass(kw_only=True)
 class RangeDispatchCustomModelData(CustomModelDataFloats):
     property: Literal['minecraft:custom_model_data'] = 'minecraft:custom_model_data'
     scale: float | None = None  # Factor to multiply the property value with. Defaults to 1.
@@ -62,7 +57,6 @@ class RangeDispatchCustomModelData(CustomModelDataFloats):
     transformation: Transformation | None = None
 
 
-@dataclass(kw_only=True)
 class RangeDispatchDamage(Damage):
     property: Literal['minecraft:damage'] = 'minecraft:damage'
     scale: float | None = None  # Factor to multiply the property value with. Defaults to 1.
@@ -71,7 +65,6 @@ class RangeDispatchDamage(Damage):
     transformation: Transformation | None = None
 
 
-@dataclass(kw_only=True)
 class RangeDispatchTime(Time):
     property: Literal['minecraft:time'] = 'minecraft:time'
     scale: float | None = None  # Factor to multiply the property value with. Defaults to 1.
@@ -80,7 +73,6 @@ class RangeDispatchTime(Time):
     transformation: Transformation | None = None
 
 
-@dataclass(kw_only=True)
 class RangeDispatchUseCycle(UseCycle):
     property: Literal['minecraft:use_cycle'] = 'minecraft:use_cycle'
     scale: float | None = None  # Factor to multiply the property value with. Defaults to 1.
@@ -89,7 +81,6 @@ class RangeDispatchUseCycle(UseCycle):
     transformation: Transformation | None = None
 
 
-@dataclass(kw_only=True)
 class RangeDispatchUseDuration(UseDuration):
     property: Literal['minecraft:use_duration'] = 'minecraft:use_duration'
     scale: float | None = None  # Factor to multiply the property value with. Defaults to 1.

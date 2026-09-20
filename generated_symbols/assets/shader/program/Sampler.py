@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::assets::shader::program::Sampler
 Local link to file: generated_symbols/assets/shader/program/Sampler.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class Sampler:
+class Sampler(GeneratedModel):
     name: str
 
 

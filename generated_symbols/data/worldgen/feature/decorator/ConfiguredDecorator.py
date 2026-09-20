@@ -3,9 +3,9 @@ Generated from symbols.json for ::java::data::worldgen::feature::decorator::Conf
 Local link to file: generated_symbols/data/worldgen/feature/decorator/ConfiguredDecorator.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
@@ -24,13 +24,11 @@ if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.decorator.WaterDepthThresholdConfig import WaterDepthThresholdConfig
 
 
-@dataclass(kw_only=True)
-class ConfigStructDecoratorConfigDarkOakTree:
+class ConfigStructDecoratorConfigDarkOakTree(GeneratedModel):
     pass
 
 
-@dataclass(kw_only=True)
-class ConfiguredDecorator:
+class ConfiguredDecorator(GeneratedModel):
     type: Annotated[str, IdSpec(registry='worldgen/decorator')]
     config: CarvingMaskConfig | CaveSurface | ChanceConfig | CountConfig | CountExtraConfig | CountNoiseConfig | CountNoiseBiasedConfig | ConfigStructDecoratorConfigDarkOakTree | DecoratedConfig | DepthAverageConfig | HeightmapConfig | RangeConfig | OldRangeConfig | WaterDepthThresholdConfig
 

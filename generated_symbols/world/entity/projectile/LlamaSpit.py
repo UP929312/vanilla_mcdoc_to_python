@@ -3,12 +3,9 @@ Generated from symbols.json for ::java::world::entity::projectile::LlamaSpit
 Local link to file: generated_symbols/world/entity/projectile/LlamaSpit.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.world.entity.projectile.ProjectileBase import ProjectileBase
 
 
-@dataclass(kw_only=True)
 class LlamaSpit(ProjectileBase):
     pass
 

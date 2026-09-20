@@ -3,23 +3,20 @@ Generated from symbols.json for ::java::world::component::item::AttributeDisplay
 Local link to file: generated_symbols/world/component/item/AttributeDisplay.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Literal
 
+from generated_symbols.base import GeneratedModel
 from generated_symbols.world.component.item.AttributeDisplayTextOverride import AttributeDisplayTextOverride
 
 
-@dataclass(kw_only=True)
-class AttributeDisplayDefault:
+class AttributeDisplayDefault(GeneratedModel):
     type: Literal['minecraft:default'] = 'minecraft:default'
 
 
-@dataclass(kw_only=True)
-class AttributeDisplayHidden:
+class AttributeDisplayHidden(GeneratedModel):
     type: Literal['minecraft:hidden'] = 'minecraft:hidden'
 
 
-@dataclass(kw_only=True)
 class AttributeDisplayOverride(AttributeDisplayTextOverride):
     type: Literal['minecraft:override'] = 'minecraft:override'
 

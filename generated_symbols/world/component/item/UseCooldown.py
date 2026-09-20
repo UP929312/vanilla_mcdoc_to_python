@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::world::component::item::UseCooldown
 Local link to file: generated_symbols/world/component/item/UseCooldown.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 
-@dataclass(kw_only=True)
-class UseCooldown:
-    seconds: Annotated[float, 'Range | `Above 0` | exclusive']  # Time the cooldown will last.
+class UseCooldown(GeneratedModel):
+    seconds: Annotated[float, Field(gt=0)]  # Time the cooldown will last.
     cooldown_group: Annotated[str, IdSpec(registry='cooldown_group', definition=True)] | None = None  # If present, this item will be part of a cooldown group and no longer share cooldowns with its base item type. Instead, cooldowns applied to this item will only be shared with any other items that are part of the same cooldown group.
 
 

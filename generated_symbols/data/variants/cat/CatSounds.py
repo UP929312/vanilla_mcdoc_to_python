@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::variants::cat::CatSounds
 Local link to file: generated_symbols/data/variants/cat/CatSounds.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, ClassVar
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.SoundEventRef import SoundEventRef
 
 
-@dataclass(kw_only=True)
-class CatSounds:
+class CatSounds(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'cat_sound_variant'
 
     ambient_sound: SoundEventRef

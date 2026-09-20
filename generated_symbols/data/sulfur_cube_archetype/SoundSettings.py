@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::sulfur_cube_archetype::SoundSettin
 Local link to file: generated_symbols/data/sulfur_cube_archetype/SoundSettings.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.SoundEventRef import SoundEventRef
 
 
-@dataclass(kw_only=True)
-class SoundSettings:
+class SoundSettings(GeneratedModel):
     hit_sound: SoundEventRef
     push_sound: SoundEventRef
     push_sound_impulse_threshold: float  # Minimum impact speed required to trigger the sound.

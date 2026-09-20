@@ -3,14 +3,12 @@ Generated from symbols.json for ::java::data::loot::function::SetLootTable
 Local link to file: generated_symbols/data/loot/function/SetLootTable.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
 from generated_symbols.data.loot.function.Conditions import Conditions
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
 class SetLootTable(Conditions):
     loot_table_id: Annotated[str, IdSpec(registry='loot_table')]  # The loot table to set to the container block item.
     seed: int | None = None  # The container seed to use. Defaults to a random seed.

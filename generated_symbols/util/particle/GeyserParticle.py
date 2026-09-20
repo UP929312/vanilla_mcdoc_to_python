@@ -3,13 +3,14 @@ Generated from symbols.json for ::java::util::particle::GeyserParticle
 Local link to file: generated_symbols/util/particle/GeyserParticle.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class GeyserParticle:
-    water_blocks: Annotated[int, 'Range | `1` and above | inclusive']  # Scales the particle size and its burst impulse.
+
+class GeyserParticle(GeneratedModel):
+    water_blocks: Annotated[int, Field(ge=1)]  # Scales the particle size and its burst impulse.
 
 
 # ~~~ MODEL DUMP ~~~

@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::advancement::trigger::ChangeDimens
 Local link to file: generated_symbols/data/advancement/trigger/ChangeDimensionTrigger.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
 from generated_symbols.data.advancement.trigger.AllOptional import AllOptional
@@ -11,7 +10,6 @@ from generated_symbols.data.advancement.trigger.PlayerConditions import PlayerCo
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
 class ChangeDimensionTriggerTypeArg(PlayerConditions):
     from_: Annotated[str, IdSpec(registry='dimension')] | None = None
     to: Annotated[str, IdSpec(registry='dimension')] | None = None

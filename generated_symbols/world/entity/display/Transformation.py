@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::world::entity::display::Transformation
 Local link to file: generated_symbols/world/entity/display/Transformation.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.world.entity.display.Rotation import Rotation
 
 
-@dataclass(kw_only=True)
-class TransformationStruct:
+class TransformationStruct(GeneratedModel):
     translation: tuple[float, float, float]  # Translation in [x, y, z].
     left_rotation: Rotation  # Using this rotation is enough for most transformations.
     right_rotation: Rotation  # For more complex transformations. Applied **before** scaling.

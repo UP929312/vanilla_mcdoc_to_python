@@ -3,20 +3,19 @@ Generated from symbols.json for ::java::data::loot::function::SetBookCover
 Local link to file: generated_symbols/data/loot/function/SetBookCover.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.data.loot.function.Conditions import Conditions
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.Filterable import Filterable
 
 
-@dataclass(kw_only=True)
 class SetBookCover(Conditions):
-    title: Filterable[Annotated[str, 'Length = 0-32 (both inclusive)']] | None = None  # If omitted, the original title is kept (or an empty string is used if there was no component)
+    title: Filterable[Annotated[str, 'Field(min_length=0, max_length=32)']] | None = None  # If omitted, the original title is kept (or an empty string is used if there was no component)
     author: str | None = None  # If omitted, the original author is kept (or an empty string is used if there was no component)
-    generation: Annotated[int, 'Range | `0`-`3` | both inclusive'] | None = None  # If omitted, the original generation is kept (or 0 is used if there was no component)
+    generation: Annotated[int, Field(ge=0, le=3)] | None = None  # If omitted, the original generation is kept (or 0 is used if there was no component)
 
 
 # ~~~ MODEL DUMP ~~~

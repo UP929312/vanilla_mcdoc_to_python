@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::block::sign::Sign
 Local link to file: generated_symbols/world/block/sign/Sign.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.world.block.BlockEntity import BlockEntity
@@ -12,7 +11,6 @@ if TYPE_CHECKING:
     from generated_symbols.world.component.block.SignText import SignText
 
 
-@dataclass(kw_only=True)
 class Sign(BlockEntity):
     back_text: SignText | None = None
     front_text: SignText | None = None

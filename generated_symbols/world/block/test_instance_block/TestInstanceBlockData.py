@@ -3,9 +3,9 @@ Generated from symbols.json for ::java::world::block::test_instance_block::TestI
 Local link to file: generated_symbols/world/block/test_instance_block/TestInstanceBlockData.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
@@ -15,8 +15,7 @@ if TYPE_CHECKING:
     from generated_symbols.world.block.test_instance_block.TestInstanceBlockStatus import TestInstanceBlockStatus
 
 
-@dataclass(kw_only=True)
-class TestInstanceBlockData:
+class TestInstanceBlockData(GeneratedModel):
     test: Annotated[str, IdSpec(registry='test_instance')] | KnownTestInstanceId | None = None
     size: tuple[int, int, int]
     rotation: Rotation

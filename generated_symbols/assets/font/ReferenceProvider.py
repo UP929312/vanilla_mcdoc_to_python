@@ -3,14 +3,13 @@ Generated from symbols.json for ::java::assets::font::ReferenceProvider
 Local link to file: generated_symbols/assets/font/ReferenceProvider.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
-class ReferenceProvider:
+class ReferenceProvider(GeneratedModel):
     id: Annotated[str, IdSpec(registry='font')]
 
 

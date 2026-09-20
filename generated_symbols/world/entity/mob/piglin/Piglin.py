@@ -3,20 +3,19 @@ Generated from symbols.json for ::java::world::entity::mob::piglin::Piglin
 Local link to file: generated_symbols/world/entity/mob/piglin/Piglin.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.world.entity.mob.piglin.PiglinBase import PiglinBase
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.world.item.ItemStack import ItemStack
 
 
-@dataclass(kw_only=True)
 class Piglin(PiglinBase):
     IsBaby: bool | None = None  # Whether it is a baby.
     CannotHunt: bool | None = None  # Whether it does not hunt hoglins.
-    Inventory: Annotated[list[ItemStack], 'Length = 0-8 (both inclusive)'] | None = None
+    Inventory: Annotated[list[ItemStack], Field(min_length=0, max_length=8)] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

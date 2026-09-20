@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::recipe::RequiredSmithingIngredient
 Local link to file: generated_symbols/data/recipe/RequiredSmithingIngredients.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.recipe.Ingredient import Ingredient
 
 
-@dataclass(kw_only=True)
-class RequiredSmithingIngredients:
+class RequiredSmithingIngredients(GeneratedModel):
     base: Ingredient  # Ingredient specifying an item to be trimmed. (eg. `{ "tag": "minecraft:trimmable_armor" }`)
     addition: Ingredient  # Material that will be used. (eg. `{ "tag": "minecraft:trim_materials" }`)
     template: Ingredient  # Template item that will be used for the pattern.

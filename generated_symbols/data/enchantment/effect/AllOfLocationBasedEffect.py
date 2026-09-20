@@ -3,16 +3,17 @@ Generated from symbols.json for ::java::data::enchantment::effect::AllOfLocation
 Local link to file: generated_symbols/data/enchantment/effect/AllOfLocationBasedEffect.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.enchantment.effect.LocationBasedEffect import LocationBasedEffect
 
 
-@dataclass(kw_only=True)
-class AllOfLocationBasedEffect:
-    effects: Annotated[list[LocationBasedEffect], 'Length = 1 (inclusive) and above']
+class AllOfLocationBasedEffect(GeneratedModel):
+    effects: Annotated[list[LocationBasedEffect], Field(min_length=1)]
 
 
 # ~~~ MODEL DUMP ~~~

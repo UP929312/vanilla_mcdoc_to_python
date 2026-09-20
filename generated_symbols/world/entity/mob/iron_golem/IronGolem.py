@@ -3,13 +3,10 @@ Generated from symbols.json for ::java::world::entity::mob::iron_golem::IronGole
 Local link to file: generated_symbols/world/entity/mob/iron_golem/IronGolem.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.world.entity.mob.MobBase import MobBase
 from generated_symbols.world.entity.mob.NeutralMob import NeutralMob
 
 
-@dataclass(kw_only=True)
 class IronGolem(MobBase, NeutralMob):
     PlayerCreated: bool | None = None  # Whether a player created it.
 

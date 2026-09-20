@@ -3,16 +3,17 @@ Generated from symbols.json for ::java::world::block::sculk_sensor::SculkSensor
 Local link to file: generated_symbols/world/block/sculk_sensor/SculkSensor.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.game_event.VibrationListener import VibrationListener
 
 
-@dataclass(kw_only=True)
-class SculkSensor:
-    last_vibration_frequency: Annotated[int, 'Range | `1`-`15` | both inclusive'] | None = None
+class SculkSensor(GeneratedModel):
+    last_vibration_frequency: Annotated[int, Field(ge=1, le=15)] | None = None
     listener: VibrationListener | None = None  # Vibration listener
 
 

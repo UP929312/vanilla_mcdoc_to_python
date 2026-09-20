@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::assets::item_definition::Compass
 Local link to file: generated_symbols/assets/item_definition/Compass.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.assets.item_definition.CompassTarget import CompassTarget
 
 
-@dataclass(kw_only=True)
-class Compass:
+class Compass(GeneratedModel):
     target: CompassTarget
     wobble: bool | None = None  # Whether to oscillate for some time around target before settling. Defaults to true.
 

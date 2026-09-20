@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::pack::BlockPattern
 Local link to file: generated_symbols/pack/BlockPattern.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class BlockPattern:
+class BlockPattern(GeneratedModel):
     namespace: str | None = None
     path: str | None = None
 

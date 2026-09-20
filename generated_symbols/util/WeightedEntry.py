@@ -3,15 +3,16 @@ Generated from symbols.json for ::java::util::WeightedEntry
 Local link to file: generated_symbols/util/WeightedEntry.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated, Generic, TypeVar
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 
 T = TypeVar('T')
 
-@dataclass(kw_only=True)
-class WeightedEntry(Generic[T]):
-    weight: Annotated[int, 'Range | `0` and above | inclusive']
+class WeightedEntry(GeneratedModel, Generic[T]):
+    weight: Annotated[int, Field(ge=0)]
     data: T
 
 

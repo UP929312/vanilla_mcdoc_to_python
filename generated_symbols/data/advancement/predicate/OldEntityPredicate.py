@@ -3,8 +3,10 @@ Generated from symbols.json for ::java::data::advancement::predicate::OldEntityP
 Local link to file: generated_symbols/data/advancement/predicate/OldEntityPredicate.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.advancement.predicate.DistancePredicate import DistancePredicate
@@ -137,8 +139,7 @@ if TYPE_CHECKING:
     from generated_symbols.world.entity.tnt.Tnt import Tnt
 
 
-@dataclass(kw_only=True)
-class OldEntityPredicate:
+class OldEntityPredicate(GeneratedModel):
     type: EntityTypePredicate | None = None
     type_specific: EntitySubPredicate | None = None
     team: str | None = None
@@ -154,7 +155,7 @@ class OldEntityPredicate:
     effects: EntityEffectsPredicate | None = None
     slots: EntitySlotsPredicate | None = None
     movement: MovementPredicate | None = None
-    periodic_tick: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # True every `n` ticks of an entity's lifetime.
+    periodic_tick: Annotated[int, Field(ge=1)] | None = None  # True every `n` ticks of an entity's lifetime.
     movement_affected_by: LocationPredicate | None = None  # Whether the block at most 0.5 blocks below the entity is present which can affect its movement.
     components: DataComponentExactPredicate | None = None  # Match exact data component values on the entity.
     predicates: DataComponentPredicate | None = None  # Test data component values on the entity.

@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::world::component::item::CookingFuel
 Local link to file: generated_symbols/world/component/item/CookingFuel.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.number_provider.ResolvableNumber import ResolvableNumber
 
 
-@dataclass(kw_only=True)
-class CookingFuel:
+class CookingFuel(GeneratedModel):
     burn_time: ResolvableNumber
     speed_multiplier: ResolvableNumber
 

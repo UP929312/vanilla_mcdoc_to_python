@@ -3,20 +3,21 @@ Generated from symbols.json for ::java::data::worldgen::feature::tree::CherryTru
 Local link to file: generated_symbols/data/worldgen/feature/tree/CherryTrunkPlacer.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.IntProvider import IntProvider
     from generated_symbols.data.worldgen.UniformIntProvider import UniformIntProvider
 
 
-@dataclass(kw_only=True)
-class CherryTrunkPlacer:
-    branch_count: IntProvider[Annotated[int, 'Range | `1`-`3` | both inclusive']] | Annotated[int, 'Range | `1`-`3` | both inclusive']
-    branch_horizontal_length: IntProvider[Annotated[int, 'Range | `2`-`16` | both inclusive']] | Annotated[int, 'Range | `2`-`16` | both inclusive']
-    branch_start_offset_from_top: UniformIntProvider[Annotated[int, 'Range | `-16`-`0` | both inclusive']] | Annotated[int, 'Range | `-16`-`0` | both inclusive']
-    branch_end_offset_from_top: IntProvider[Annotated[int, 'Range | `-16`-`16` | both inclusive']] | Annotated[int, 'Range | `-16`-`16` | both inclusive']
+class CherryTrunkPlacer(GeneratedModel):
+    branch_count: IntProvider[Annotated[int, Field(ge=1, le=3)]] | Annotated[int, Field(ge=1, le=3)]
+    branch_horizontal_length: IntProvider[Annotated[int, Field(ge=2, le=16)]] | Annotated[int, Field(ge=2, le=16)]
+    branch_start_offset_from_top: UniformIntProvider[Annotated[int, Field(ge=-16, le=0)]] | Annotated[int, Field(ge=-16, le=0)]
+    branch_end_offset_from_top: IntProvider[Annotated[int, Field(ge=-16, le=16)]] | Annotated[int, Field(ge=-16, le=16)]
 
 
 # ~~~ MODEL DUMP ~~~

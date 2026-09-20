@@ -3,23 +3,24 @@ Generated from symbols.json for ::java::data::worldgen::structure::RuinedPortalS
 Local link to file: generated_symbols/data/worldgen/structure/RuinedPortalSetup.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.structure.RuinedPortalPlacement import RuinedPortalPlacement
 
 
-@dataclass(kw_only=True)
-class RuinedPortalSetup:
+class RuinedPortalSetup(GeneratedModel):
     placement: RuinedPortalPlacement
-    air_pocket_probability: Annotated[float, 'Range | `0`-`1` | both inclusive']
-    mossiness: Annotated[float, 'Range | `0`-`1` | both inclusive']
+    air_pocket_probability: Annotated[float, Field(ge=0, le=1)]
+    mossiness: Annotated[float, Field(ge=0, le=1)]
     overgrown: bool
     vines: bool
     can_be_cold: bool
     replace_with_blackstone: bool
-    weight: Annotated[float, 'Range | `0` and above | inclusive']
+    weight: Annotated[float, Field(ge=0)]
 
 
 # ~~~ MODEL DUMP ~~~

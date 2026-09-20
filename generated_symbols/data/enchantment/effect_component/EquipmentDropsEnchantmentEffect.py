@@ -3,16 +3,16 @@ Generated from symbols.json for ::java::data::enchantment::effect_component::Equ
 Local link to file: generated_symbols/data/enchantment/effect_component/EquipmentDropsEnchantmentEffect.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Literal
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.enchantment.effect.ValueEffect import ValueEffect
     from generated_symbols.data.predicate.Predicate import Predicate
 
 
-@dataclass(kw_only=True)
-class EquipmentDropsEnchantmentEffect:
+class EquipmentDropsEnchantmentEffect(GeneratedModel):
     requirements: Predicate | None = None  # Predicate context: Damage Parameters.
     effect: ValueEffect  # Chance between `0.0` and `1.0` of an equipped piece dropping.  If the drop chance on mob is 0, the chance will not be affected by this effect.
     enchanted: Literal['attacker'] | Literal['victim']  # Which subject needs to be enchanted for the effect to apply.

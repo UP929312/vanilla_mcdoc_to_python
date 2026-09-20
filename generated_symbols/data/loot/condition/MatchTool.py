@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::loot::condition::MatchTool
 Local link to file: generated_symbols/data/loot/condition/MatchTool.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.advancement.predicate.ItemPredicate import ItemPredicate
 
 
-@dataclass(kw_only=True)
-class MatchTool:
+class MatchTool(GeneratedModel):
     predicate: ItemPredicate
 
 

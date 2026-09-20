@@ -3,16 +3,17 @@ Generated from symbols.json for ::java::assets::font::BitmapProvider
 Local link to file: generated_symbols/assets/font/BitmapProvider.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class BitmapProvider:
+
+class BitmapProvider(GeneratedModel):
     file: str
     height: int | None = None
     ascent: int
-    chars: Annotated[list[Annotated[str, 'Length = 1 (inclusive) and above']], 'Length = 1 (inclusive) and above']
+    chars: Annotated[list[Annotated[str, 'Field(min_length=1)']], Field(min_length=1)]
 
 
 # ~~~ MODEL DUMP ~~~

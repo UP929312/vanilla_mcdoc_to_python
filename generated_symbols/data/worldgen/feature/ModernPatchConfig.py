@@ -3,17 +3,18 @@ Generated from symbols.json for ::java::data::worldgen::feature::ModernPatchConf
 Local link to file: generated_symbols/data/worldgen/feature/ModernPatchConfig.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.FeatureRef import FeatureRef
 
 
-@dataclass(kw_only=True)
-class ModernPatchConfig:
-    xz_spread: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # Defaults to 7.
-    y_spread: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # Defaults to 3.
+class ModernPatchConfig(GeneratedModel):
+    xz_spread: Annotated[int, Field(ge=0)] | None = None  # Defaults to 7.
+    y_spread: Annotated[int, Field(ge=0)] | None = None  # Defaults to 3.
     feature: FeatureRef
 
 

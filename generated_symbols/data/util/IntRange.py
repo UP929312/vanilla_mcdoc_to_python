@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::util::IntRange
 Local link to file: generated_symbols/data/util/IntRange.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.number_provider.NumberProviderRef import NumberProviderRef
 
 
-@dataclass(kw_only=True)
-class IntRangeStruct:
+class IntRangeStruct(GeneratedModel):
     min: NumberProviderRef | None = None  # Clamps to an integer.
     max: NumberProviderRef | None = None  # Clamps to an integer.
 

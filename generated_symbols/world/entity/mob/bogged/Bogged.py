@@ -3,12 +3,9 @@ Generated from symbols.json for ::java::world::entity::mob::bogged::Bogged
 Local link to file: generated_symbols/world/entity/mob/bogged/Bogged.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.world.entity.mob.MobBase import MobBase
 
 
-@dataclass(kw_only=True)
 class Bogged(MobBase):
     sheared: bool | None = None  # Whether the mushrooms on this bogged have been sheared.
 

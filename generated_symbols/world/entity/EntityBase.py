@@ -3,8 +3,10 @@ Generated from symbols.json for ::java::world::entity::EntityBase
 Local link to file: generated_symbols/world/entity/EntityBase.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.text.Text import Text
@@ -12,8 +14,7 @@ if TYPE_CHECKING:
     from generated_symbols.world.entity.AnyEntity import AnyEntity
 
 
-@dataclass(kw_only=True)
-class EntityBase:
+class EntityBase(GeneratedModel):
     Pos: tuple[float, float, float] | None = None
     Motion: tuple[float, float, float] | None = None
     Rotation: tuple[float, float] | None = None  # Rotation in [y-rotation, x-rotation]
@@ -24,7 +25,7 @@ class EntityBase:
     OnGround: bool | None = None  # Whether the entity is on the ground.
     NoGravity: bool | None = None  # Whether the entity should be effected by gravity.
     Invulnerable: bool | None = None  # Whether the entity is immune to damage.
-    invulnerable_time: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # Temporary immunity duration of the entity, in ticks.  The entity is immune to damage if `invulnerable_time` > 0 **or** `Invulnerable` is `true`.
+    invulnerable_time: Annotated[int, Field(ge=0)] | None = None  # Temporary immunity duration of the entity, in ticks.  The entity is immune to damage if `invulnerable_time` > 0 **or** `Invulnerable` is `true`.
     PortalCooldown: int | None = None  # How long until the entity can go through a nether portal.
     UUID: tuple[int, int, int, int] | None = None
     CustomName: Text | None = None

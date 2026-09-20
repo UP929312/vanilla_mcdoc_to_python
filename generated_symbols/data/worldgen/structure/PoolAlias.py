@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::worldgen::structure::PoolAlias
 Local link to file: generated_symbols/data/worldgen/structure/PoolAlias.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Literal
 
 from generated_symbols.data.worldgen.structure.DirectPoolAlias import DirectPoolAlias
@@ -11,17 +10,14 @@ from generated_symbols.data.worldgen.structure.RandomGroupPoolAlias import Rando
 from generated_symbols.data.worldgen.structure.RandomPoolAlias import RandomPoolAlias
 
 
-@dataclass(kw_only=True)
 class PoolAliasDirect(DirectPoolAlias):
     type: Literal['minecraft:direct'] = 'minecraft:direct'
 
 
-@dataclass(kw_only=True)
 class PoolAliasRandom(RandomPoolAlias):
     type: Literal['minecraft:random'] = 'minecraft:random'
 
 
-@dataclass(kw_only=True)
 class PoolAliasRandomGroup(RandomGroupPoolAlias):
     type: Literal['minecraft:random_group'] = 'minecraft:random_group'
 

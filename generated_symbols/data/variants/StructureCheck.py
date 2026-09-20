@@ -3,14 +3,13 @@ Generated from symbols.json for ::java::data::variants::StructureCheck
 Local link to file: generated_symbols/data/variants/StructureCheck.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
-class StructureCheck:
+class StructureCheck(GeneratedModel):
     structures: Annotated[str, IdSpec(registry='worldgen/structure', tags='allowed')] | list[Annotated[str, IdSpec(registry='worldgen/structure')]]  # Checks if the entity is spawning in specific structures.
 
 

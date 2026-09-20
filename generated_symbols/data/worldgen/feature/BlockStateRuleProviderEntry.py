@@ -3,16 +3,16 @@ Generated from symbols.json for ::java::data::worldgen::feature::BlockStateRuleP
 Local link to file: generated_symbols/data/worldgen/feature/BlockStateRuleProviderEntry.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.block_predicate.BlockPredicate import BlockPredicate
     from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
 
 
-@dataclass(kw_only=True)
-class BlockStateRuleProviderEntry:
+class BlockStateRuleProviderEntry(GeneratedModel):
     if_true: BlockPredicate
     then: BlockStateProvider
 

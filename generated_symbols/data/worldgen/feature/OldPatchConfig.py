@@ -3,8 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::feature::OldPatchConfig
 Local link to file: generated_symbols/data/worldgen/feature/OldPatchConfig.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.BlockPlacer import BlockPlacer
@@ -12,14 +14,13 @@ if TYPE_CHECKING:
     from generated_symbols.util.block_state.BlockState import BlockState
 
 
-@dataclass(kw_only=True)
-class OldPatchConfig:
+class OldPatchConfig(GeneratedModel):
     can_replace: bool | None = None
     project: bool | None = None
     need_water: bool | None = None
-    xspread: Annotated[int, 'Range | `0` and above | inclusive'] | None = None
-    yspread: Annotated[int, 'Range | `0` and above | inclusive'] | None = None
-    zspread: Annotated[int, 'Range | `0` and above | inclusive'] | None = None
+    xspread: Annotated[int, Field(ge=0)] | None = None
+    yspread: Annotated[int, Field(ge=0)] | None = None
+    zspread: Annotated[int, Field(ge=0)] | None = None
     state_provider: BlockStateProvider
     block_placer: BlockPlacer
     whitelist: list[BlockState]

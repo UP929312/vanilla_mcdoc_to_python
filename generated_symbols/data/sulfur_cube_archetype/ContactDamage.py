@@ -3,19 +3,19 @@ Generated from symbols.json for ::java::data::sulfur_cube_archetype::ContactDama
 Local link to file: generated_symbols/data/sulfur_cube_archetype/ContactDamage.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.FloatProvider import FloatProvider
 
 
-@dataclass(kw_only=True)
-class ContactDamage:
+class ContactDamage(GeneratedModel):
     damage_type: Annotated[str, IdSpec(registry='damage_type')]
-    amount: FloatProvider[Annotated[float, 'Range | `0` and above | inclusive']] | Annotated[float, 'Range | `0` and above | inclusive']
+    amount: FloatProvider[Annotated[float, Field(ge=0)]] | Annotated[float, Field(ge=0)]
     attribute_to_source: bool  # Whether the damage is attributed to the sulfur cube.
 
 

@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::advancement::trigger::PlacedBlockC
 Local link to file: generated_symbols/data/advancement/trigger/PlacedBlockConditions.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.data.advancement.trigger.BlockStateConditions import BlockStateConditions
@@ -14,7 +13,6 @@ if TYPE_CHECKING:
     from generated_symbols.data.advancement.predicate.LocationPredicate import LocationPredicate
 
 
-@dataclass(kw_only=True)
 class PlacedBlockConditions(BlockStateConditions, PlayerConditions):
     item: ItemPredicate | None = None  # Item that was used to place the block before the item was consumed.
     location: LocationPredicate | None = None  # Predicate context: Advancement Location.

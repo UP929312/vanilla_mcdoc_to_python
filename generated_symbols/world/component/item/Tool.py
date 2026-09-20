@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::world::component::item::Tool
 Local link to file: generated_symbols/world/component/item/Tool.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.world.component.item.ToolRule import ToolRule
 
 
-@dataclass(kw_only=True)
-class Tool:
+class Tool(GeneratedModel):
     rules: list[ToolRule]  # Blocks that this tool has a special behavior with.
     default_mining_speed: float | None = None  # Used if no rules override it. Defaults to 1.0.
     damage_per_block: int | None = None  # Amount of durability to remove each time a block is broken with this tool. Must be a non-negative integer.

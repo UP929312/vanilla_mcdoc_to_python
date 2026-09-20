@@ -3,16 +3,16 @@ Generated from symbols.json for ::java::data::advancement::predicate::DamageSour
 Local link to file: generated_symbols/data/advancement/predicate/DamageSourcePredicate.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.advancement.predicate.DamageTagPredicate import DamageTagPredicate
     from generated_symbols.data.advancement.predicate.EntityPredicate import EntityPredicate
 
 
-@dataclass(kw_only=True)
-class DamageSourcePredicate:
+class DamageSourcePredicate(GeneratedModel):
     tags: list[DamageTagPredicate] | None = None  # Damage type tags that the damage type is in.
     source_entity: EntityPredicate | None = None  # Source of the damage (eg: a skeleton shooting an arrow or player igniting tnt).
     direct_entity: EntityPredicate | None = None  # Direct entity responsible for the damage (eg: the arrow or tnt).

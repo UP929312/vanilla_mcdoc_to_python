@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::advancement::predicate::SlimePredi
 Local link to file: generated_symbols/data/advancement/predicate/SlimePredicate.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
 
 
-@dataclass(kw_only=True)
-class SlimePredicate:
+class SlimePredicate(GeneratedModel):
     size: MinMaxBounds[int] | int | None = None
 
 

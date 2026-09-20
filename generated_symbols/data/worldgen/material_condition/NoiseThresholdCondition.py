@@ -3,14 +3,13 @@ Generated from symbols.json for ::java::data::worldgen::material_condition::Nois
 Local link to file: generated_symbols/data/worldgen/material_condition/NoiseThresholdCondition.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated, ClassVar
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
-class NoiseThresholdCondition:
+class NoiseThresholdCondition(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/material_condition'
 
     noise: Annotated[str, IdSpec(registry='worldgen/noise')]

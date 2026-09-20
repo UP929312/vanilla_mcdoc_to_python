@@ -3,9 +3,9 @@ Generated from symbols.json for ::java::world::component::item::Equippable
 Local link to file: generated_symbols/world/component/item/Equippable.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
@@ -13,8 +13,7 @@ if TYPE_CHECKING:
     from generated_symbols.util.slot.EquipmentSlot import EquipmentSlot
 
 
-@dataclass(kw_only=True)
-class Equippable:
+class Equippable(GeneratedModel):
     slot: EquipmentSlot
     equip_sound: SoundEventRef | None = None  # Sound event to play when the item is equipped. If not specified, the default armor equip sound will be played.
     asset_id: Annotated[str, IdSpec(registry='equipment')] | None = None

@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::variants::chicken::ChickenSounds
 Local link to file: generated_symbols/data/variants/chicken/ChickenSounds.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, ClassVar
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.SoundEventRef import SoundEventRef
 
 
-@dataclass(kw_only=True)
-class ChickenSounds:
+class ChickenSounds(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'chicken_sound_variant'
 
     ambient_sound: SoundEventRef

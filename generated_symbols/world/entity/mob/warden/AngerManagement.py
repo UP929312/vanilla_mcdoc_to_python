@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::world::entity::mob::warden::AngerManagem
 Local link to file: generated_symbols/world/entity/mob/warden/AngerManagement.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.world.entity.mob.warden.Suspect import Suspect
 
 
-@dataclass(kw_only=True)
-class AngerManagement:
+class AngerManagement(GeneratedModel):
     suspects: list[Suspect] | None = None  # Suspects that have angered the warden.
 
 

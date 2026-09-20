@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::world::component::item::KineticWeaponEff
 Local link to file: generated_symbols/world/component/item/KineticWeaponEffectCondition.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class KineticWeaponEffectCondition:
+class KineticWeaponEffectCondition(GeneratedModel):
     max_duration_ticks: int  # The duration in ticks this condition can pass. Starts counting after charged.
     min_speed: float | None = None  # The minimum attacker speed required. Defaults to 0.0
     min_relative_speed: float | None = None  # The minimum relative speed required. Defaults to 0.0

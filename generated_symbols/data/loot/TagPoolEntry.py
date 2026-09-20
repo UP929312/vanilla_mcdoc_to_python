@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::loot::TagPoolEntry
 Local link to file: generated_symbols/data/loot/TagPoolEntry.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.data.loot.SingletonPoolEntry import SingletonPoolEntry
@@ -12,7 +11,6 @@ if TYPE_CHECKING:
     from generated_symbols.util.registry_ref.ItemListRef import ItemListRef
 
 
-@dataclass(kw_only=True)
 class TagPoolEntry(SingletonPoolEntry):
     items: ItemListRef
     expand: bool | None = None  # If `true`, randomly selects an item to drop.  If `false`, drops all items.  Defaults to `false`.

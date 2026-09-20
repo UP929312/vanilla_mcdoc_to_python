@@ -3,13 +3,10 @@ Generated from symbols.json for ::java::world::entity::mob::zombified_piglin::Zo
 Local link to file: generated_symbols/world/entity/mob/zombified_piglin/ZombiePigman.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.world.entity.mob.MobBase import MobBase
 from generated_symbols.world.entity.mob.NeutralMob import NeutralMob
 
 
-@dataclass(kw_only=True)
 class ZombiePigman(MobBase, NeutralMob):
     IsBaby: bool | None = None  # Whether it is a baby.
     HurtBy: str | None = None  # Last player to hit a zombie pigman in this zombie pigman's detection range.

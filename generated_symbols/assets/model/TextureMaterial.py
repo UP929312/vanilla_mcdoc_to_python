@@ -3,14 +3,13 @@ Generated from symbols.json for ::java::assets::model::TextureMaterial
 Local link to file: generated_symbols/assets/model/TextureMaterial.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
-class TextureMaterial:
+class TextureMaterial(GeneratedModel):
     sprite: Annotated[str, IdSpec(registry='texture')]
     force_translucent: bool | None = None  # Whether the texture should be forced into the translucent render pass.  Textures without any translucent pixels are not assigned to the translucent pass by default.  Defaults to `false`.
 

@@ -3,13 +3,14 @@ Generated from symbols.json for ::java::world::component::item::VillagerFood
 Local link to file: generated_symbols/world/component/item/VillagerFood.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class VillagerFood:
-    nutrition: Annotated[int, 'Range | `1` and above | inclusive']  # How much hunger the item satiates in the Villager once eaten.
+
+class VillagerFood(GeneratedModel):
+    nutrition: Annotated[int, Field(ge=1)]  # How much hunger the item satiates in the Villager once eaten.
 
 
 # ~~~ MODEL DUMP ~~~

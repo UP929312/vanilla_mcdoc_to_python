@@ -3,8 +3,10 @@ Generated from symbols.json for ::java::data::dialog::Dialog
 Local link to file: generated_symbols/data/dialog/Dialog.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar, Literal
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.dialog.AfterAction import AfterAction
@@ -15,8 +17,7 @@ if TYPE_CHECKING:
     from generated_symbols.util.text.Text import Text
 
 
-@dataclass(kw_only=True)
-class DialogConfirmationNone:
+class DialogConfirmationNone(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'dialog'
 
     type: Literal['minecraft:confirmation'] = 'minecraft:confirmation'
@@ -31,8 +32,7 @@ class DialogConfirmationNone:
     pause: bool | None = None  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.
 
 
-@dataclass(kw_only=True)
-class DialogConfirmationClose:
+class DialogConfirmationClose(GeneratedModel):
     type: Literal['minecraft:confirmation'] = 'minecraft:confirmation'
     yes: Button
     no: Button  # This action is also used for ESC-triggered exit.
@@ -45,8 +45,7 @@ class DialogConfirmationClose:
     pause: bool | None = None  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.
 
 
-@dataclass(kw_only=True)
-class DialogConfirmationNone2:
+class DialogConfirmationNone2(GeneratedModel):
     type: Literal['minecraft:confirmation'] = 'minecraft:confirmation'
     yes: Button
     no: Button  # This action is also used for ESC-triggered exit.
@@ -59,8 +58,7 @@ class DialogConfirmationNone2:
     pause: Literal[False] = False  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.  The currently selected `after_action` only supports the value `false`
 
 
-@dataclass(kw_only=True)
-class DialogConfirmationWaitForResponse:
+class DialogConfirmationWaitForResponse(GeneratedModel):
     type: Literal['minecraft:confirmation'] = 'minecraft:confirmation'
     yes: Button
     no: Button  # This action is also used for ESC-triggered exit.
@@ -75,13 +73,12 @@ class DialogConfirmationWaitForResponse:
 
 type DialogConfirmation = DialogConfirmationNone | DialogConfirmationClose | DialogConfirmationNone2 | DialogConfirmationWaitForResponse
 
-@dataclass(kw_only=True)
-class DialogDialogListNone:
+class DialogDialogListNone(GeneratedModel):
     type: Literal['minecraft:dialog_list'] = 'minecraft:dialog_list'
     dialogs: DialogListRef
-    button_width: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # Width of buttons in the list. Defaults to 150.
+    button_width: Annotated[int, Field(ge=1)] | None = None  # Width of buttons in the list. Defaults to 150.
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
-    columns: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
+    columns: Annotated[int, Field(ge=1)] | None = None  # The number of columns. Defaults to 2.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None
@@ -91,13 +88,12 @@ class DialogDialogListNone:
     pause: bool | None = None  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.
 
 
-@dataclass(kw_only=True)
-class DialogDialogListClose:
+class DialogDialogListClose(GeneratedModel):
     type: Literal['minecraft:dialog_list'] = 'minecraft:dialog_list'
     dialogs: DialogListRef
-    button_width: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # Width of buttons in the list. Defaults to 150.
+    button_width: Annotated[int, Field(ge=1)] | None = None  # Width of buttons in the list. Defaults to 150.
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
-    columns: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
+    columns: Annotated[int, Field(ge=1)] | None = None  # The number of columns. Defaults to 2.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None
@@ -107,13 +103,12 @@ class DialogDialogListClose:
     pause: bool | None = None  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.
 
 
-@dataclass(kw_only=True)
-class DialogDialogListNone2:
+class DialogDialogListNone2(GeneratedModel):
     type: Literal['minecraft:dialog_list'] = 'minecraft:dialog_list'
     dialogs: DialogListRef
-    button_width: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # Width of buttons in the list. Defaults to 150.
+    button_width: Annotated[int, Field(ge=1)] | None = None  # Width of buttons in the list. Defaults to 150.
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
-    columns: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
+    columns: Annotated[int, Field(ge=1)] | None = None  # The number of columns. Defaults to 2.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None
@@ -123,13 +118,12 @@ class DialogDialogListNone2:
     pause: Literal[False] = False  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.  The currently selected `after_action` only supports the value `false`
 
 
-@dataclass(kw_only=True)
-class DialogDialogListWaitForResponse:
+class DialogDialogListWaitForResponse(GeneratedModel):
     type: Literal['minecraft:dialog_list'] = 'minecraft:dialog_list'
     dialogs: DialogListRef
-    button_width: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # Width of buttons in the list. Defaults to 150.
+    button_width: Annotated[int, Field(ge=1)] | None = None  # Width of buttons in the list. Defaults to 150.
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
-    columns: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
+    columns: Annotated[int, Field(ge=1)] | None = None  # The number of columns. Defaults to 2.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None
@@ -141,12 +135,11 @@ class DialogDialogListWaitForResponse:
 
 type DialogDialogList = DialogDialogListNone | DialogDialogListClose | DialogDialogListNone2 | DialogDialogListWaitForResponse
 
-@dataclass(kw_only=True)
-class DialogMultiActionNone:
+class DialogMultiActionNone(GeneratedModel):
     type: Literal['minecraft:multi_action'] = 'minecraft:multi_action'
-    actions: Annotated[list[Button], 'Length = 1 (inclusive) and above']
+    actions: Annotated[list[Button], Field(min_length=1)]
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
-    columns: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
+    columns: Annotated[int, Field(ge=1)] | None = None  # The number of columns. Defaults to 2.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None
@@ -156,12 +149,11 @@ class DialogMultiActionNone:
     pause: bool | None = None  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.
 
 
-@dataclass(kw_only=True)
-class DialogMultiActionClose:
+class DialogMultiActionClose(GeneratedModel):
     type: Literal['minecraft:multi_action'] = 'minecraft:multi_action'
-    actions: Annotated[list[Button], 'Length = 1 (inclusive) and above']
+    actions: Annotated[list[Button], Field(min_length=1)]
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
-    columns: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
+    columns: Annotated[int, Field(ge=1)] | None = None  # The number of columns. Defaults to 2.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None
@@ -171,12 +163,11 @@ class DialogMultiActionClose:
     pause: bool | None = None  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.
 
 
-@dataclass(kw_only=True)
-class DialogMultiActionNone2:
+class DialogMultiActionNone2(GeneratedModel):
     type: Literal['minecraft:multi_action'] = 'minecraft:multi_action'
-    actions: Annotated[list[Button], 'Length = 1 (inclusive) and above']
+    actions: Annotated[list[Button], Field(min_length=1)]
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
-    columns: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
+    columns: Annotated[int, Field(ge=1)] | None = None  # The number of columns. Defaults to 2.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None
@@ -186,12 +177,11 @@ class DialogMultiActionNone2:
     pause: Literal[False] = False  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.  The currently selected `after_action` only supports the value `false`
 
 
-@dataclass(kw_only=True)
-class DialogMultiActionWaitForResponse:
+class DialogMultiActionWaitForResponse(GeneratedModel):
     type: Literal['minecraft:multi_action'] = 'minecraft:multi_action'
-    actions: Annotated[list[Button], 'Length = 1 (inclusive) and above']
+    actions: Annotated[list[Button], Field(min_length=1)]
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
-    columns: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
+    columns: Annotated[int, Field(ge=1)] | None = None  # The number of columns. Defaults to 2.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None
@@ -203,8 +193,7 @@ class DialogMultiActionWaitForResponse:
 
 type DialogMultiAction = DialogMultiActionNone | DialogMultiActionClose | DialogMultiActionNone2 | DialogMultiActionWaitForResponse
 
-@dataclass(kw_only=True)
-class DialogNoticeNone:
+class DialogNoticeNone(GeneratedModel):
     type: Literal['minecraft:notice'] = 'minecraft:notice'
     action: Button | None = None  # The only action in footer. Defaults to `gui.ok` label with no action or tooltip.
     title: Text
@@ -216,8 +205,7 @@ class DialogNoticeNone:
     pause: bool | None = None  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.
 
 
-@dataclass(kw_only=True)
-class DialogNoticeClose:
+class DialogNoticeClose(GeneratedModel):
     type: Literal['minecraft:notice'] = 'minecraft:notice'
     action: Button | None = None  # The only action in footer. Defaults to `gui.ok` label with no action or tooltip.
     title: Text
@@ -229,8 +217,7 @@ class DialogNoticeClose:
     pause: bool | None = None  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.
 
 
-@dataclass(kw_only=True)
-class DialogNoticeNone2:
+class DialogNoticeNone2(GeneratedModel):
     type: Literal['minecraft:notice'] = 'minecraft:notice'
     action: Button | None = None  # The only action in footer. Defaults to `gui.ok` label with no action or tooltip.
     title: Text
@@ -242,8 +229,7 @@ class DialogNoticeNone2:
     pause: Literal[False] = False  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.  The currently selected `after_action` only supports the value `false`
 
 
-@dataclass(kw_only=True)
-class DialogNoticeWaitForResponse:
+class DialogNoticeWaitForResponse(GeneratedModel):
     type: Literal['minecraft:notice'] = 'minecraft:notice'
     action: Button | None = None  # The only action in footer. Defaults to `gui.ok` label with no action or tooltip.
     title: Text
@@ -257,12 +243,11 @@ class DialogNoticeWaitForResponse:
 
 type DialogNotice = DialogNoticeNone | DialogNoticeClose | DialogNoticeNone2 | DialogNoticeWaitForResponse
 
-@dataclass(kw_only=True)
-class DialogServerLinksNone:
+class DialogServerLinksNone(GeneratedModel):
     type: Literal['minecraft:server_links'] = 'minecraft:server_links'
-    button_width: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # Width of buttons in the list. Defaults to 150.
+    button_width: Annotated[int, Field(ge=1)] | None = None  # Width of buttons in the list. Defaults to 150.
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
-    columns: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
+    columns: Annotated[int, Field(ge=1)] | None = None  # The number of columns. Defaults to 2.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None
@@ -272,12 +257,11 @@ class DialogServerLinksNone:
     pause: bool | None = None  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.
 
 
-@dataclass(kw_only=True)
-class DialogServerLinksClose:
+class DialogServerLinksClose(GeneratedModel):
     type: Literal['minecraft:server_links'] = 'minecraft:server_links'
-    button_width: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # Width of buttons in the list. Defaults to 150.
+    button_width: Annotated[int, Field(ge=1)] | None = None  # Width of buttons in the list. Defaults to 150.
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
-    columns: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
+    columns: Annotated[int, Field(ge=1)] | None = None  # The number of columns. Defaults to 2.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None
@@ -287,12 +271,11 @@ class DialogServerLinksClose:
     pause: bool | None = None  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.
 
 
-@dataclass(kw_only=True)
-class DialogServerLinksNone2:
+class DialogServerLinksNone2(GeneratedModel):
     type: Literal['minecraft:server_links'] = 'minecraft:server_links'
-    button_width: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # Width of buttons in the list. Defaults to 150.
+    button_width: Annotated[int, Field(ge=1)] | None = None  # Width of buttons in the list. Defaults to 150.
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
-    columns: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
+    columns: Annotated[int, Field(ge=1)] | None = None  # The number of columns. Defaults to 2.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None
@@ -302,12 +285,11 @@ class DialogServerLinksNone2:
     pause: Literal[False] = False  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.  The currently selected `after_action` only supports the value `false`
 
 
-@dataclass(kw_only=True)
-class DialogServerLinksWaitForResponse:
+class DialogServerLinksWaitForResponse(GeneratedModel):
     type: Literal['minecraft:server_links'] = 'minecraft:server_links'
-    button_width: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # Width of buttons in the list. Defaults to 150.
+    button_width: Annotated[int, Field(ge=1)] | None = None  # Width of buttons in the list. Defaults to 150.
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
-    columns: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
+    columns: Annotated[int, Field(ge=1)] | None = None  # The number of columns. Defaults to 2.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None

@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::worldgen::template_pool::ListEleme
 Local link to file: generated_symbols/data/worldgen/template_pool/ListElement.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.data.worldgen.template_pool.ElementBase import ElementBase
@@ -12,7 +11,6 @@ if TYPE_CHECKING:
     from generated_symbols.data.worldgen.template_pool.Element import Element
 
 
-@dataclass(kw_only=True)
 class ListElement(ElementBase):
     elements: list[Element]
 

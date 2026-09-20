@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::world::entity::mob::player::RootVehicle
 Local link to file: generated_symbols/world/entity/mob/player/RootVehicle.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.world.entity.AnyEntity import AnyEntity
 
 
-@dataclass(kw_only=True)
-class RootVehicle:
+class RootVehicle(GeneratedModel):
     Attach: tuple[int, int, int, int] | None = None  # Ridden entity's UUID.
     Entity: AnyEntity | None = None  # The ridden entity.
 

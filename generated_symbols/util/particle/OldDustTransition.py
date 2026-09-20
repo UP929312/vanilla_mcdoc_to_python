@@ -3,18 +3,19 @@ Generated from symbols.json for ::java::util::particle::OldDustTransition
 Local link to file: generated_symbols/util/particle/OldDustTransition.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.particle.DustColor import DustColor
 
 
-@dataclass(kw_only=True)
-class OldDustTransition:
+class OldDustTransition(GeneratedModel):
     fromColor: DustColor
     toColor: DustColor
-    scale: Annotated[float, 'Range | `0.01`-`4` | both inclusive']
+    scale: Annotated[float, Field(ge=0.01, le=4)]
 
 
 # ~~~ MODEL DUMP ~~~

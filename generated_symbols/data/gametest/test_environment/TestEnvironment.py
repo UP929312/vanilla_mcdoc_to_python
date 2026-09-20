@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::gametest::test_environment::TestEn
 Local link to file: generated_symbols/data/gametest/test_environment/TestEnvironment.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import ClassVar, Literal
 
 from generated_symbols.data.gametest.test_environment.AllOffTestEnvironment import AllOffTestEnvironment
@@ -15,39 +14,32 @@ from generated_symbols.data.gametest.test_environment.TimelineAttributesTestEnvi
 from generated_symbols.data.gametest.test_environment.WeatherTestEnvironment import WeatherTestEnvironment
 
 
-@dataclass(kw_only=True)
 class TestEnvironmentAllOf(AllOffTestEnvironment):
     __resource_dir__: ClassVar[str] = 'test_environment'
 
     type: Literal['minecraft:all_of'] = 'minecraft:all_of'
 
 
-@dataclass(kw_only=True)
 class TestEnvironmentClockTime(ClockTimeTestEnvironment):
     type: Literal['minecraft:clock_time'] = 'minecraft:clock_time'
 
 
-@dataclass(kw_only=True)
 class TestEnvironmentDifficulty(DifficultyTestEnvironment):
     type: Literal['minecraft:difficulty'] = 'minecraft:difficulty'
 
 
-@dataclass(kw_only=True)
 class TestEnvironmentFunction(FunctionTestEnvironment):
     type: Literal['minecraft:function'] = 'minecraft:function'
 
 
-@dataclass(kw_only=True)
 class TestEnvironmentGameRules(GameRulesTestEnvironment):
     type: Literal['minecraft:game_rules'] = 'minecraft:game_rules'
 
 
-@dataclass(kw_only=True)
 class TestEnvironmentTimelineAttributes(TimelineAttributesTestEnvironment):
     type: Literal['minecraft:timeline_attributes'] = 'minecraft:timeline_attributes'
 
 
-@dataclass(kw_only=True)
 class TestEnvironmentWeather(WeatherTestEnvironment):
     type: Literal['minecraft:weather'] = 'minecraft:weather'
 

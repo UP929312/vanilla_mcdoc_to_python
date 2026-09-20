@@ -3,9 +3,9 @@ Generated from symbols.json for ::java::world::component::item::Trim
 Local link to file: generated_symbols/world/component/item/Trim.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
@@ -13,8 +13,7 @@ if TYPE_CHECKING:
     from generated_symbols.data.trim.TrimPattern import TrimPattern
 
 
-@dataclass(kw_only=True)
-class Trim:
+class Trim(GeneratedModel):
     material: Annotated[str, IdSpec(registry='trim_material')] | TrimMaterial  # The trim material of this item..
     pattern: Annotated[str, IdSpec(registry='trim_pattern')] | TrimPattern  # The trim pattern of this item.
 

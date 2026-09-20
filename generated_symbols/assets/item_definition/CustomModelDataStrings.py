@@ -3,15 +3,14 @@ Generated from symbols.json for ::java::assets::item_definition::CustomModelData
 Local link to file: generated_symbols/assets/item_definition/CustomModelDataStrings.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
 from generated_symbols.assets.item_definition.SelectCases import SelectCases
+from pydantic import Field
 
 
-@dataclass(kw_only=True)
 class CustomModelDataStrings(SelectCases[str]):
-    index: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # The index of the `strings` list in the `custom_model_data` component. Defaults to 0.
+    index: Annotated[int, Field(ge=0)] | None = None  # The index of the `strings` list in the `custom_model_data` component. Defaults to 0.
 
 
 # ~~~ MODEL DUMP ~~~

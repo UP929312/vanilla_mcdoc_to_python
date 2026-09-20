@@ -3,13 +3,11 @@ Generated from symbols.json for ::java::data::advancement::trigger::ImpossibleTr
 Local link to file: generated_symbols/data/advancement/trigger/ImpossibleTrigger.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
+from generated_symbols.base import GeneratedModel
 from generated_symbols.data.advancement.trigger.AllOptional import AllOptional
 
 
-@dataclass(kw_only=True)
-class ImpossibleTriggerTypeArg:
+class ImpossibleTriggerTypeArg(GeneratedModel):
     pass
 
 

@@ -3,14 +3,11 @@ Generated from symbols.json for ::java::data::advancement::trigger::LootTableTri
 Local link to file: generated_symbols/data/advancement/trigger/LootTableTrigger.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.data.advancement.trigger.ParitalRequired import ParitalRequired
 from generated_symbols.data.advancement.trigger.PlayerConditions import PlayerConditions
 from generated_symbols.data.loot.LootTableListRef import LootTableListRef
 
 
-@dataclass(kw_only=True)
 class LootTableTriggerTypeArg(PlayerConditions):
     loot_tables: LootTableListRef
 

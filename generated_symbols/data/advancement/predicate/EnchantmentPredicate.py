@@ -3,17 +3,16 @@ Generated from symbols.json for ::java::data::advancement::predicate::Enchantmen
 Local link to file: generated_symbols/data/advancement/predicate/EnchantmentPredicate.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
 
 
-@dataclass(kw_only=True)
-class EnchantmentPredicate:
+class EnchantmentPredicate(GeneratedModel):
     enchantments: Annotated[str, IdSpec(registry='enchantment', tags='allowed')] | list[Annotated[str, IdSpec(registry='enchantment')]] | None = None
     levels: MinMaxBounds[int] | int | None = None
 

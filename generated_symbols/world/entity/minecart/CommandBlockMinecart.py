@@ -3,13 +3,10 @@ Generated from symbols.json for ::java::world::entity::minecart::CommandBlockMin
 Local link to file: generated_symbols/world/entity/minecart/CommandBlockMinecart.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.world.block.command_block.BaseCommandBlock import BaseCommandBlock
 from generated_symbols.world.entity.minecart.Minecart import Minecart
 
 
-@dataclass(kw_only=True)
 class CommandBlockMinecart(BaseCommandBlock, Minecart):
     pass
 

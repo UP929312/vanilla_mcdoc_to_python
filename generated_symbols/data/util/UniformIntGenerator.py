@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::data::util::UniformIntGenerator
 Local link to file: generated_symbols/data/util/UniformIntGenerator.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class UniformIntGenerator:
+class UniformIntGenerator(GeneratedModel):
     min: int | None = None
     max: int | None = None
 

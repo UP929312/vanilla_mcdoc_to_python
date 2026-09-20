@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::world::component::item::DeathProtection
 Local link to file: generated_symbols/world/component/item/DeathProtection.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.world.component.item.ConsumeEffect import ConsumeEffect
 
 
-@dataclass(kw_only=True)
-class DeathProtection:
+class DeathProtection(GeneratedModel):
     death_effects: list[ConsumeEffect] | None = None  # Effects applied when the item protects the holder.
 
 

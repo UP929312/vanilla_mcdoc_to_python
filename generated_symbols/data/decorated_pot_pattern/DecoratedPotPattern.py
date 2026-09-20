@@ -3,14 +3,13 @@ Generated from symbols.json for ::java::data::decorated_pot_pattern::DecoratedPo
 Local link to file: generated_symbols/data/decorated_pot_pattern/DecoratedPotPattern.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated, ClassVar
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
-class DecoratedPotPattern:
+class DecoratedPotPattern(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'decorated_pot_pattern'
 
     asset_id: Annotated[str, IdSpec(registry='texture', path='entity/decorated_pot/')]

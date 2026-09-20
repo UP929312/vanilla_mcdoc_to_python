@@ -3,14 +3,11 @@ Generated from symbols.json for ::java::data::advancement::trigger::EnterBlockTr
 Local link to file: generated_symbols/data/advancement/trigger/EnterBlockTrigger.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.data.advancement.trigger.AllOptional import AllOptional
 from generated_symbols.data.advancement.trigger.BlockStateConditions import BlockStateConditions
 from generated_symbols.data.advancement.trigger.PlayerConditions import PlayerConditions
 
 
-@dataclass(kw_only=True)
 class EnterBlockTriggerTypeArg(BlockStateConditions, PlayerConditions):
     pass
 

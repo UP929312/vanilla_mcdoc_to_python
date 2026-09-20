@@ -3,16 +3,16 @@ Generated from symbols.json for ::java::assets::equipment::Equipment
 Local link to file: generated_symbols/assets/equipment/Equipment.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, ClassVar
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.assets.equipment.Layers import Layers
     from generated_symbols.assets.equipment.TrimOverride import TrimOverride
 
 
-@dataclass(kw_only=True)
-class Equipment:
+class Equipment(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'equipment'
 
     layers: Layers  # List of layers for each model layer type.

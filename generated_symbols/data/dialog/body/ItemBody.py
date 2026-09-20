@@ -3,8 +3,10 @@ Generated from symbols.json for ::java::data::dialog::body::ItemBody
 Local link to file: generated_symbols/data/dialog/body/ItemBody.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.dialog.body.PlainMessage import PlainMessage
@@ -12,14 +14,13 @@ if TYPE_CHECKING:
     from generated_symbols.world.item.ItemStackTemplate import ItemStackTemplate
 
 
-@dataclass(kw_only=True)
-class ItemBody:
+class ItemBody(GeneratedModel):
     item: ItemStackTemplate
     description: PlainMessage | Text | None = None  # The description text rendered to the right of item.
     show_decorations: bool | None = None  # Whether count and damage bar are rendered over the item. Defaults to `true`.
     show_tooltip: bool | None = None  # Whether item tooltip shows up when the item is hovered. Defaults to `true`.
-    width: Annotated[int, 'Range | `1`-`256` | both inclusive'] | None = None  # Width of the item. Defaults to 16.
-    height: Annotated[int, 'Range | `1`-`256` | both inclusive'] | None = None  # Height of the item. Defaults to 16.
+    width: Annotated[int, Field(ge=1, le=256)] | None = None  # Width of the item. Defaults to 16.
+    height: Annotated[int, Field(ge=1, le=256)] | None = None  # Height of the item. Defaults to 16.
 
 
 # ~~~ MODEL DUMP ~~~

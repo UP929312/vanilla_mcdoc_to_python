@@ -3,17 +3,16 @@ Generated from symbols.json for ::java::assets::item_definition::Head
 Local link to file: generated_symbols/assets/item_definition/Head.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.assets.item_definition.HeadType import HeadType
 
 
-@dataclass(kw_only=True)
-class Head:
+class Head(GeneratedModel):
     kind: HeadType
     texture: Annotated[str, IdSpec(registry='texture', path='entity/')] | None = None  # Texture to use instead of the texture from `kind`.
     animation: float | None = None  # Controls the animation time for piglin and dragon heads. Defaults to `0`.

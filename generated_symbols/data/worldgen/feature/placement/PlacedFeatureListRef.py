@@ -6,12 +6,13 @@ Local link to file: generated_symbols/data/worldgen/feature/placement/PlacedFeat
 from typing import TYPE_CHECKING, Annotated
 
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.placement.PlacedFeature import PlacedFeature
 
 
-type PlacedFeatureListRef = PlacedFeature | Annotated[str, IdSpec(registry='worldgen/placed_feature', tags='allowed')] | Annotated[list[Annotated[str, IdSpec(registry='worldgen/placed_feature')] | PlacedFeature], 'Length = 1 (inclusive) and above']
+type PlacedFeatureListRef = PlacedFeature | Annotated[str, IdSpec(registry='worldgen/placed_feature', tags='allowed')] | Annotated[list[Annotated[str, IdSpec(registry='worldgen/placed_feature')] | PlacedFeature], Field(min_length=1)]
 
 
 # ~~~ MODEL DUMP ~~~

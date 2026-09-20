@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::loot::function::EnchantWithLevels
 Local link to file: generated_symbols/data/loot/function/EnchantWithLevels.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.data.loot.function.Conditions import Conditions
@@ -13,7 +12,6 @@ if TYPE_CHECKING:
     from generated_symbols.data.number_provider.NumberProviderRef import NumberProviderRef
 
 
-@dataclass(kw_only=True)
 class EnchantWithLevels(Conditions):
     levels: NumberProviderRef  # The levels to enchant this item with.
     options: Annotated[str, IdSpec(registry='enchantment', tags='allowed')] | list[Annotated[str, IdSpec(registry='enchantment')]] | None = None  # The allowed enchantments. If omitted, all enchantments applicable to the item are possible.

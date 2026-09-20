@@ -3,12 +3,9 @@ Generated from symbols.json for ::java::world::entity::projectile::fireball::Wit
 Local link to file: generated_symbols/world/entity/projectile/fireball/WitherSkull.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.world.entity.projectile.fireball.DespawnableProjectileBase import DespawnableProjectileBase
 
 
-@dataclass(kw_only=True)
 class WitherSkull(DespawnableProjectileBase):
     dangerous: bool | None = None
 

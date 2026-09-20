@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::block::sculk_catalyst::SculkCatal
 Local link to file: generated_symbols/world/block/sculk_catalyst/SculkCatalyst.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.world.block.BlockEntity import BlockEntity
@@ -12,7 +11,6 @@ if TYPE_CHECKING:
     from generated_symbols.world.block.sculk_catalyst.ChargeCursor import ChargeCursor
 
 
-@dataclass(kw_only=True)
 class SculkCatalyst(BlockEntity):
     cursors: list[ChargeCursor] | None = None
 

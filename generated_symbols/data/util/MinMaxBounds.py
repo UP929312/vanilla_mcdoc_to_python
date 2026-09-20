@@ -3,14 +3,14 @@ Generated from symbols.json for ::java::data::util::MinMaxBounds
 Local link to file: generated_symbols/data/util/MinMaxBounds.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Generic, TypeVar
+
+from generated_symbols.base import GeneratedModel
 
 
 T = TypeVar('T')
 
-@dataclass(kw_only=True)
-class MinMaxBounds(Generic[T]):
+class MinMaxBounds(GeneratedModel, Generic[T]):
     min: T | None = None
     max: T | None = None
 

@@ -3,17 +3,16 @@ Generated from symbols.json for ::java::data::worldgen::template_pool::TemplateP
 Local link to file: generated_symbols/data/worldgen/template_pool/TemplatePool.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.template_pool.WeightedElement import WeightedElement
 
 
-@dataclass(kw_only=True)
-class TemplatePool:
+class TemplatePool(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/template_pool'
 
     name: str | None = None

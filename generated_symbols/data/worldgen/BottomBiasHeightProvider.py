@@ -3,15 +3,14 @@ Generated from symbols.json for ::java::data::worldgen::BottomBiasHeightProvider
 Local link to file: generated_symbols/data/worldgen/BottomBiasHeightProvider.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
 from generated_symbols.data.worldgen.UniformHeightProvider import UniformHeightProvider
+from pydantic import Field
 
 
-@dataclass(kw_only=True)
 class BottomBiasHeightProvider(UniformHeightProvider):
-    inner: Annotated[int, 'Range | `1` and above | inclusive'] | None = None
+    inner: Annotated[int, Field(ge=1)] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

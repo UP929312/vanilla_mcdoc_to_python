@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::world::block::Lockable
 Local link to file: generated_symbols/world/block/Lockable.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.advancement.predicate.ItemPredicate import ItemPredicate
 
 
-@dataclass(kw_only=True)
-class Lockable:
+class Lockable(GeneratedModel):
     lock: ItemPredicate | None = None  # Item predicate testing the item that a player has to be holding to open this container.
 
 

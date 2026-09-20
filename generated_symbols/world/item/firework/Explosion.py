@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::world::item::firework::Explosion
 Local link to file: generated_symbols/world/item/firework/Explosion.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.world.item.firework.ExplosionType import ExplosionType
 
 
-@dataclass(kw_only=True)
-class Explosion:
+class Explosion(GeneratedModel):
     Flicker: bool | None = None  # Whether the explosion should flicker.
     Trail: bool | None = None  # Whether the explosion should have a trail.
     Type: ExplosionType | None = None

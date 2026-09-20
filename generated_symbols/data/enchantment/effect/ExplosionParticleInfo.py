@@ -3,16 +3,17 @@ Generated from symbols.json for ::java::data::enchantment::effect::ExplosionPart
 Local link to file: generated_symbols/data/enchantment/effect/ExplosionParticleInfo.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.particle.Particle import Particle
 
 
-@dataclass(kw_only=True)
-class ExplosionParticleInfo:
-    weight: Annotated[int, 'Range | `1` and above | inclusive']
+class ExplosionParticleInfo(GeneratedModel):
+    weight: Annotated[int, Field(ge=1)]
     particle: Particle
     scaling: float | None = None  # Defaults to 1.0. Scaling of the distance between the center of the explosion and the block
     speed: float | None = None  # Defaults to 1.0. Scaling of the speed of the particle

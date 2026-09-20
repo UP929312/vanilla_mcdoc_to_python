@@ -3,10 +3,11 @@ Generated from symbols.json for ::java::data::worldgen::feature::RandomNeighborS
 Local link to file: generated_symbols/data/worldgen/feature/RandomNeighborSpreadConfig.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.IntProvider import IntProvider
@@ -15,16 +16,15 @@ if TYPE_CHECKING:
     from generated_symbols.registry.KnownBlockId import KnownBlockId
 
 
-@dataclass(kw_only=True)
-class RandomNeighborSpreadConfig:
+class RandomNeighborSpreadConfig(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/feature'
 
     block: BlockStateProvider
     accepted_neighbors: Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | list[Annotated[str, IdSpec(registry='block')] | KnownBlockId]
     can_replace: BlockPredicate
-    attempts: IntProvider[Annotated[int, 'Range | `1`-`3000` | both inclusive']] | Annotated[int, 'Range | `1`-`3000` | both inclusive']
-    xz_offset: IntProvider[Annotated[int, 'Range | `-16`-`16` | both inclusive']] | Annotated[int, 'Range | `-16`-`16` | both inclusive']
-    y_offset: IntProvider[Annotated[int, 'Range | `-16`-`16` | both inclusive']] | Annotated[int, 'Range | `-16`-`16` | both inclusive']
+    attempts: IntProvider[Annotated[int, Field(ge=1, le=3000)]] | Annotated[int, Field(ge=1, le=3000)]
+    xz_offset: IntProvider[Annotated[int, Field(ge=-16, le=16)]] | Annotated[int, Field(ge=-16, le=16)]
+    y_offset: IntProvider[Annotated[int, Field(ge=-16, le=16)]] | Annotated[int, Field(ge=-16, le=16)]
 
 
 # ~~~ MODEL DUMP ~~~

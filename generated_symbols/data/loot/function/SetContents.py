@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::loot::function::SetContents
 Local link to file: generated_symbols/data/loot/function/SetContents.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.data.loot.function.Conditions import Conditions
@@ -13,7 +12,6 @@ if TYPE_CHECKING:
     from generated_symbols.data.loot.function.ContainerComponents import ContainerComponents
 
 
-@dataclass(kw_only=True)
 class SetContents(Conditions):
     component: ContainerComponents  # Describes target component to be filled with items.
     entries: list[LootPoolEntry]

@@ -3,20 +3,21 @@ Generated from symbols.json for ::java::data::enchantment::provider::ByCostWithD
 Local link to file: generated_symbols/data/enchantment/provider/ByCostWithDifficultyEnchantmentProvider.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.enchantment.provider.EnchantmentsType import EnchantmentsType
 
 
-@dataclass(kw_only=True)
-class ByCostWithDifficultyEnchantmentProvider:
+class ByCostWithDifficultyEnchantmentProvider(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'enchantment_provider'
 
     enchantments: EnchantmentsType
-    min_cost: Annotated[int, 'Range | `0` and above | inclusive']  # Positive integer representing the minimum possible cost
-    max_cost_span: Annotated[int, 'Range | `0` and above | inclusive']  # Span of the cost randomization when the special factor is at its maximum.
+    min_cost: Annotated[int, Field(ge=0)]  # Positive integer representing the minimum possible cost
+    max_cost_span: Annotated[int, Field(ge=0)]  # Span of the cost randomization when the special factor is at its maximum.
 
 
 # ~~~ MODEL DUMP ~~~

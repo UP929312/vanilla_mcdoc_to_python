@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::item::BlockItem
 Local link to file: generated_symbols/world/item/BlockItem.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.world.item.ItemBase import ItemBase
@@ -15,7 +14,6 @@ if TYPE_CHECKING:
 type BlockStateTagStructBlockItemStatesNone = dict[str, str]
 
 
-@dataclass(kw_only=True)
 class BlockItem(ItemBase):
     BlockEntityTag: BlockEntityData | None = None
     BlockStateTag: BlockStateTagStructBlockItemStatesNone | None = None  # Blockstate that the placed block will have.

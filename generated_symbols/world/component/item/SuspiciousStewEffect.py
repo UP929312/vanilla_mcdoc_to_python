@@ -3,16 +3,16 @@ Generated from symbols.json for ::java::world::component::item::SuspiciousStewEf
 Local link to file: generated_symbols/world/component/item/SuspiciousStewEffect.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 
-@dataclass(kw_only=True)
-class SuspiciousStewEffect:
+class SuspiciousStewEffect(GeneratedModel):
     id: Annotated[str, IdSpec(registry='mob_effect')]
-    duration: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # Duration of the effect in ticks. Defaults to `160`; 8 seconds.
+    duration: Annotated[int, Field(ge=1)] | None = None  # Duration of the effect in ticks. Defaults to `160`; 8 seconds.
 
 
 # ~~~ MODEL DUMP ~~~

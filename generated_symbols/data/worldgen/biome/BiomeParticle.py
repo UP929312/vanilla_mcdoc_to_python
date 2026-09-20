@@ -3,17 +3,18 @@ Generated from symbols.json for ::java::data::worldgen::biome::BiomeParticle
 Local link to file: generated_symbols/data/worldgen/biome/BiomeParticle.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.particle.Particle import Particle
 
 
-@dataclass(kw_only=True)
-class BiomeParticle:
+class BiomeParticle(GeneratedModel):
     options: Particle
-    probability: Annotated[float, 'Range | `0`-`1` | both inclusive']
+    probability: Annotated[float, Field(ge=0, le=1)]
 
 
 # ~~~ MODEL DUMP ~~~

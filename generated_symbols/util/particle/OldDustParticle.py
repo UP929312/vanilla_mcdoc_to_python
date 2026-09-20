@@ -3,16 +3,17 @@ Generated from symbols.json for ::java::util::particle::OldDustParticle
 Local link to file: generated_symbols/util/particle/OldDustParticle.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class OldDustParticle:
+
+class OldDustParticle(GeneratedModel):
     r: float
     g: float
     b: float
-    scale: Annotated[float, 'Range | `0.01`-`4` | both inclusive']
+    scale: Annotated[float, Field(ge=0.01, le=4)]
 
 
 # ~~~ MODEL DUMP ~~~

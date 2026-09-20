@@ -3,16 +3,16 @@ Generated from symbols.json for ::java::data::enchantment::effect_component::Amm
 Local link to file: generated_symbols/data/enchantment/effect_component/AmmoUseEnchantmentEffect.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.enchantment.effect.ValueEffect import ValueEffect
     from generated_symbols.data.predicate.Predicate import Predicate
 
 
-@dataclass(kw_only=True)
-class AmmoUseEnchantmentEffect:
+class AmmoUseEnchantmentEffect(GeneratedModel):
     requirements: Predicate | None = None  # Predicate context: Item Parameters.
     effect: ValueEffect  # Amount of ammunition being used up.  `0` has a side effect of applying `intangible_projectile` component to the projectile item.
 

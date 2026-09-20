@@ -3,16 +3,17 @@ Generated from symbols.json for ::java::data::worldgen::noise_settings::NoiseSam
 Local link to file: generated_symbols/data/worldgen/noise_settings/NoiseSamplingSettings.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class NoiseSamplingSettings:
-    xz_scale: Annotated[float, 'Range | `0.001`-`1000` | both inclusive']
-    y_scale: Annotated[float, 'Range | `0.001`-`1000` | both inclusive']
-    xz_factor: Annotated[float, 'Range | `0.001`-`1000` | both inclusive']
-    y_factor: Annotated[float, 'Range | `0.001`-`1000` | both inclusive']
+
+class NoiseSamplingSettings(GeneratedModel):
+    xz_scale: Annotated[float, Field(ge=0.001, le=1000)]
+    y_scale: Annotated[float, Field(ge=0.001, le=1000)]
+    xz_factor: Annotated[float, Field(ge=0.001, le=1000)]
+    y_factor: Annotated[float, Field(ge=0.001, le=1000)]
 
 
 # ~~~ MODEL DUMP ~~~

@@ -3,14 +3,13 @@ Generated from symbols.json for ::java::world::component::item::DamageResistant
 Local link to file: generated_symbols/world/component/item/DamageResistant.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
-class DamageResistant:
+class DamageResistant(GeneratedModel):
     types: Annotated[str, IdSpec(registry='damage_type', tags='allowed')] | list[Annotated[str, IdSpec(registry='damage_type')]]  # The damage types which the item is resistant to when in entity form. Additionally, this also affects whether the equipped item will be damaged when the wearer is hurt by a specified damage type.
 
 

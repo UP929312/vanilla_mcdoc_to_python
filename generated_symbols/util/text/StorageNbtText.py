@@ -3,14 +3,12 @@ Generated from symbols.json for ::java::util::text::StorageNbtText
 Local link to file: generated_symbols/util/text/StorageNbtText.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated, Literal
 
 from generated_symbols.util.text.TextNbtBase import TextNbtBase
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
 class StorageNbtText(TextNbtBase):
     storage: Annotated[str, IdSpec(registry='storage')]
     nbt: str

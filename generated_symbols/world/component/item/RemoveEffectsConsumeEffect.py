@@ -3,14 +3,13 @@ Generated from symbols.json for ::java::world::component::item::RemoveEffectsCon
 Local link to file: generated_symbols/world/component/item/RemoveEffectsConsumeEffect.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
-class RemoveEffectsConsumeEffect:
+class RemoveEffectsConsumeEffect(GeneratedModel):
     effects: Annotated[str, IdSpec(registry='mob_effect', tags='allowed')] | list[Annotated[str, IdSpec(registry='mob_effect')]]
 
 

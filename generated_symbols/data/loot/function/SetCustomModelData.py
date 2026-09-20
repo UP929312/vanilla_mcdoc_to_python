@@ -3,9 +3,9 @@ Generated from symbols.json for ::java::data::loot::function::SetCustomModelData
 Local link to file: generated_symbols/data/loot/function/SetCustomModelData.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Literal
 
+from generated_symbols.base import GeneratedModel
 from generated_symbols.data.loot.function.Conditions import Conditions
 from generated_symbols.data.loot.function.InsertListOperation import InsertListOperation
 from generated_symbols.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
@@ -15,25 +15,21 @@ if TYPE_CHECKING:
     from generated_symbols.util.color.RGB import RGB
 
 
-@dataclass(kw_only=True)
-class FloatsStructAppend:
+class FloatsStructAppend(GeneratedModel):
     values: list[NumberProviderRef]
     mode: Literal['minecraft:append'] = 'minecraft:append'  # Determines how the existing list should be modified.
 
 
-@dataclass(kw_only=True)
 class FloatsStructInsert(InsertListOperation):
     values: list[NumberProviderRef]
     mode: Literal['minecraft:insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
 
 
-@dataclass(kw_only=True)
-class FloatsStructReplaceAll:
+class FloatsStructReplaceAll(GeneratedModel):
     values: list[NumberProviderRef]
     mode: Literal['minecraft:replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
 
 
-@dataclass(kw_only=True)
 class FloatsStructReplaceSection(ReplaceSectionListOperation):
     values: list[NumberProviderRef]
     mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
@@ -41,25 +37,21 @@ class FloatsStructReplaceSection(ReplaceSectionListOperation):
 
 type FloatsStruct = FloatsStructAppend | FloatsStructInsert | FloatsStructReplaceAll | FloatsStructReplaceSection
 
-@dataclass(kw_only=True)
-class FlagsStructAppend:
+class FlagsStructAppend(GeneratedModel):
     values: list[bool]
     mode: Literal['minecraft:append'] = 'minecraft:append'  # Determines how the existing list should be modified.
 
 
-@dataclass(kw_only=True)
 class FlagsStructInsert(InsertListOperation):
     values: list[bool]
     mode: Literal['minecraft:insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
 
 
-@dataclass(kw_only=True)
-class FlagsStructReplaceAll:
+class FlagsStructReplaceAll(GeneratedModel):
     values: list[bool]
     mode: Literal['minecraft:replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
 
 
-@dataclass(kw_only=True)
 class FlagsStructReplaceSection(ReplaceSectionListOperation):
     values: list[bool]
     mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
@@ -67,25 +59,21 @@ class FlagsStructReplaceSection(ReplaceSectionListOperation):
 
 type FlagsStruct = FlagsStructAppend | FlagsStructInsert | FlagsStructReplaceAll | FlagsStructReplaceSection
 
-@dataclass(kw_only=True)
-class StringsStructAppend:
+class StringsStructAppend(GeneratedModel):
     values: list[str]
     mode: Literal['minecraft:append'] = 'minecraft:append'  # Determines how the existing list should be modified.
 
 
-@dataclass(kw_only=True)
 class StringsStructInsert(InsertListOperation):
     values: list[str]
     mode: Literal['minecraft:insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
 
 
-@dataclass(kw_only=True)
-class StringsStructReplaceAll:
+class StringsStructReplaceAll(GeneratedModel):
     values: list[str]
     mode: Literal['minecraft:replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
 
 
-@dataclass(kw_only=True)
 class StringsStructReplaceSection(ReplaceSectionListOperation):
     values: list[str]
     mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
@@ -93,25 +81,21 @@ class StringsStructReplaceSection(ReplaceSectionListOperation):
 
 type StringsStruct = StringsStructAppend | StringsStructInsert | StringsStructReplaceAll | StringsStructReplaceSection
 
-@dataclass(kw_only=True)
-class ColorsStructAppend:
+class ColorsStructAppend(GeneratedModel):
     values: list[NumberProviderRef | RGB]
     mode: Literal['minecraft:append'] = 'minecraft:append'  # Determines how the existing list should be modified.
 
 
-@dataclass(kw_only=True)
 class ColorsStructInsert(InsertListOperation):
     values: list[NumberProviderRef | RGB]
     mode: Literal['minecraft:insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
 
 
-@dataclass(kw_only=True)
-class ColorsStructReplaceAll:
+class ColorsStructReplaceAll(GeneratedModel):
     values: list[NumberProviderRef | RGB]
     mode: Literal['minecraft:replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
 
 
-@dataclass(kw_only=True)
 class ColorsStructReplaceSection(ReplaceSectionListOperation):
     values: list[NumberProviderRef | RGB]
     mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
@@ -119,7 +103,6 @@ class ColorsStructReplaceSection(ReplaceSectionListOperation):
 
 type ColorsStruct = ColorsStructAppend | ColorsStructInsert | ColorsStructReplaceAll | ColorsStructReplaceSection
 
-@dataclass(kw_only=True)
 class SetCustomModelData(Conditions):
     floats: FloatsStruct | None = None
     flags: FlagsStruct | None = None

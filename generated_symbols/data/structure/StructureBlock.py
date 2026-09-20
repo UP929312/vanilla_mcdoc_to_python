@@ -3,8 +3,10 @@ Generated from symbols.json for ::java::data::structure::StructureBlock
 Local link to file: generated_symbols/data/structure/StructureBlock.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.world.block.BlockEntity import BlockEntity
@@ -45,15 +47,13 @@ if TYPE_CHECKING:
     from generated_symbols.world.block.vault.Vault import Vault
 
 
-@dataclass(kw_only=True)
-class NbtStructBlockUnknown:
+class NbtStructBlockUnknown(GeneratedModel):
     pass
 
 
-@dataclass(kw_only=True)
-class StructureBlock:
-    state: Annotated[int, 'Range | `0` and above | inclusive']
-    pos: tuple[Annotated[int, 'Range | `0` and above | inclusive'], Annotated[int, 'Range | `0` and above | inclusive'], Annotated[int, 'Range | `0` and above | inclusive']]
+class StructureBlock(GeneratedModel):
+    state: Annotated[int, Field(ge=0)]
+    pos: tuple[Annotated[int, Field(ge=0)], Annotated[int, Field(ge=0)], Annotated[int, Field(ge=0)]]
     nbt: NbtStructBlockUnknown | Sign | Shelf | Container27 | Beacon | BlockEntity | Beehive | Banner | Furnace | BrewingStand | SculkSensor | Campfire | CommandBlock | ChiseledBookshelf | Comparator | Conduit | Crafter | Skull | DecoratedPot | Container9 | EnchantingTable | EndGateway | Hopper | Jigsaw | Jukebox | Lectern | MovingPiston | PotentSulfur | SculkCatalyst | SculkShrieker | Spawner | StructureBlock2 | BrushableBlock | TestBlock | TestInstanceBlock | TrialSpawner | Vault | None = None
 
 

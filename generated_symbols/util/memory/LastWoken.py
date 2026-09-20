@@ -3,12 +3,9 @@ Generated from symbols.json for ::java::util::memory::LastWoken
 Local link to file: generated_symbols/util/memory/LastWoken.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.util.memory.ExpirableValue import ExpirableValue
 
 
-@dataclass(kw_only=True)
 class LastWoken(ExpirableValue):
     value: int  # The gametime tick that the villager last woke up from a bed.
 

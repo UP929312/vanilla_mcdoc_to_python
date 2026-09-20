@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::feature::placement::Surf
 Local link to file: generated_symbols/data/worldgen/feature/placement/SurfaceWaterDepthFilter.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class SurfaceWaterDepthFilter:
+class SurfaceWaterDepthFilter(GeneratedModel):
     max_water_depth: int
 
 

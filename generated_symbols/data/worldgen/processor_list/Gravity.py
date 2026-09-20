@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::worldgen::processor_list::Gravity
 Local link to file: generated_symbols/data/worldgen/processor_list/Gravity.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.HeightmapType import HeightmapType
 
 
-@dataclass(kw_only=True)
-class Gravity:
+class Gravity(GeneratedModel):
     heightmap: HeightmapType
     offset: int
 

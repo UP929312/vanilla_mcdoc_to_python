@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::loot::function::Filtered
 Local link to file: generated_symbols/data/loot/function/Filtered.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.data.loot.function.Conditions import Conditions
@@ -13,7 +12,6 @@ if TYPE_CHECKING:
     from generated_symbols.data.item_modifier.ItemModifier import ItemModifier
 
 
-@dataclass(kw_only=True)
 class Filtered(Conditions):
     item_filter: ItemPredicate  # Item predicate to select items to modify.
     on_pass: ItemModifier | None = None  # Loot function to apply to the item when `item_filter` passes.

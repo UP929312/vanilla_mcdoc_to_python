@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::util::particle::SculkChargeParticle
 Local link to file: generated_symbols/util/particle/SculkChargeParticle.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class SculkChargeParticle:
+class SculkChargeParticle(GeneratedModel):
     roll: float  # Angle the particle texture is rotated to, measured in radians (π ~ 3.14 for 180° clockwise, negative for counter clockwise).
 
 

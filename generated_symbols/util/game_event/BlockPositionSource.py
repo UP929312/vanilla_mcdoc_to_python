@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::util::game_event::BlockPositionSource
 Local link to file: generated_symbols/util/game_event/BlockPositionSource.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class BlockPositionSource:
+class BlockPositionSource(GeneratedModel):
     pos: tuple[int, int, int]  # Block position
 
 

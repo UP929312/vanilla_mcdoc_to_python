@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::world::block::vault::SharedData
 Local link to file: generated_symbols/world/block/vault/SharedData.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.world.item.ItemStack import ItemStack
 
 
-@dataclass(kw_only=True)
-class SharedData:
+class SharedData(GeneratedModel):
     display_item: ItemStack | None = None  # Item that is displayed to players when they are in range of the vault.
     connected_players: list[tuple[int, int, int, int]] | None = None
     connected_particles_range: float | None = None

@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::assets::item_definition::Count
 Local link to file: generated_symbols/assets/item_definition/Count.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class Count:
+class Count(GeneratedModel):
     normalize: bool | None = None  # If false, returns count clamped to `0..max_stack_size`. If true, returns count divided by the `max_stack_size` component, clamped to `0..1`. Defaults to true.
 
 

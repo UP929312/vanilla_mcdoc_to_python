@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::data::loot::condition::KilledByPlayer
 Local link to file: generated_symbols/data/loot/condition/KilledByPlayer.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class KilledByPlayer:
+class KilledByPlayer(GeneratedModel):
     inverse: bool | None = None
 
 

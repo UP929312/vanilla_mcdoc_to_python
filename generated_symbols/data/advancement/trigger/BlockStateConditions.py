@@ -3,8 +3,9 @@ Generated from symbols.json for ::java::data::advancement::trigger::BlockStateCo
 Local link to file: generated_symbols/data/advancement/trigger/BlockStateConditions.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.util.registry_ref.BlockListRef import BlockListRef
@@ -13,8 +14,7 @@ if TYPE_CHECKING:
 type StateStructBlockStatesNone = dict[str, str]
 
 
-@dataclass(kw_only=True)
-class BlockStateConditions:
+class BlockStateConditions(GeneratedModel):
     blocks: BlockListRef | None = None
     state: StateStructBlockStatesNone | None = None
 

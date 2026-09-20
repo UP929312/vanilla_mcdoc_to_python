@@ -3,14 +3,15 @@ Generated from symbols.json for ::java::world::entity::mob::FallDamageLogicData
 Local link to file: generated_symbols/world/entity/mob/FallDamageLogicData.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class FallDamageLogicData:
+
+class FallDamageLogicData(GeneratedModel):
     current_explosion_impact_pos: tuple[float, float, float] | None = None  # Added mid-air after being hit by an explosion.
-    current_impulse_context_reset_grace_time: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # Used by fall damage logic. Decreases by 1 every tick.
+    current_impulse_context_reset_grace_time: Annotated[int, Field(ge=0)] | None = None  # Used by fall damage logic. Decreases by 1 every tick.
 
 
 # ~~~ MODEL DUMP ~~~

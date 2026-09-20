@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::item::compass::Compass
 Local link to file: generated_symbols/world/item/compass/Compass.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.world.item.ItemBase import ItemBase
@@ -13,7 +12,6 @@ if TYPE_CHECKING:
     from generated_symbols.world.item.compass.LodestonePos import LodestonePos
 
 
-@dataclass(kw_only=True)
 class Compass(ItemBase):
     LodestoneDimension: Annotated[str, IdSpec(registry='dimension')] | None = None
     LodestonePos: LodestonePos | None = None

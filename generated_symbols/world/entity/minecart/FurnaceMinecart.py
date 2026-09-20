@@ -3,12 +3,9 @@ Generated from symbols.json for ::java::world::entity::minecart::FurnaceMinecart
 Local link to file: generated_symbols/world/entity/minecart/FurnaceMinecart.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.world.entity.minecart.Minecart import Minecart
 
 
-@dataclass(kw_only=True)
 class FurnaceMinecart(Minecart):
     PushX: float | None = None  # Acceleration in x axis.
     PushZ: float | None = None  # Acceleration in z axis.

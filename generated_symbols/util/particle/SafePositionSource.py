@@ -3,12 +3,12 @@ Generated from symbols.json for ::java::util::particle::SafePositionSource
 Local link to file: generated_symbols/util/particle/SafePositionSource.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Literal
 
+from generated_symbols.base import GeneratedModel
 
-@dataclass(kw_only=True)
-class SafePositionSource:
+
+class SafePositionSource(GeneratedModel):
     type: Literal['block'] = 'block'
     pos: tuple[int, int, int]
 

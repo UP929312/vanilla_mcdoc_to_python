@@ -3,17 +3,16 @@ Generated from symbols.json for ::java::data::loot::condition::TimeCheck
 Local link to file: generated_symbols/data/loot/condition/TimeCheck.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.IntRange import IntRange
 
 
-@dataclass(kw_only=True)
-class TimeCheck:
+class TimeCheck(GeneratedModel):
     clock: Annotated[str, IdSpec(registry='world_clock')]  # The world clock to check.
     value: IntRange  # Check the current game tick.
     period: int | None = None  # Game tick supplied to `value` check gets modulo-divided by this. For example, if set to 24000, `value` operates on a time period of days.

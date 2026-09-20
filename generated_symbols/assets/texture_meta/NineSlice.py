@@ -3,18 +3,19 @@ Generated from symbols.json for ::java::assets::texture_meta::NineSlice
 Local link to file: generated_symbols/assets/texture_meta/NineSlice.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.assets.texture_meta.NineSliceBorder import NineSliceBorder
 
 
-@dataclass(kw_only=True)
-class NineSlice:
-    width: Annotated[int, 'Range | `1` and above | inclusive']
-    height: Annotated[int, 'Range | `1` and above | inclusive']
-    border: Annotated[int, 'Range | `1` and above | inclusive'] | NineSliceBorder
+class NineSlice(GeneratedModel):
+    width: Annotated[int, Field(ge=1)]
+    height: Annotated[int, Field(ge=1)]
+    border: Annotated[int, Field(ge=1)] | NineSliceBorder
     stretch_inner: bool | None = None  # Defaults to `false`.
 
 

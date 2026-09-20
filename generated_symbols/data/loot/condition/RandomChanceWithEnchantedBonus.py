@@ -3,18 +3,18 @@ Generated from symbols.json for ::java::data::loot::condition::RandomChanceWithE
 Local link to file: generated_symbols/data/loot/condition/RandomChanceWithEnchantedBonus.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.enchantment.LevelBasedValue import LevelBasedValue
 
 
-@dataclass(kw_only=True)
-class RandomChanceWithEnchantedBonus:
-    unenchanted_chance: Annotated[float, 'Range | `0`-`1` | both inclusive']
+class RandomChanceWithEnchantedBonus(GeneratedModel):
+    unenchanted_chance: Annotated[float, Field(ge=0, le=1)]
     enchanted_chance: LevelBasedValue
     enchantment: Annotated[str, IdSpec(registry='enchantment')]
 

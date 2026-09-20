@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::util::ScoreProvider
 Local link to file: generated_symbols/data/util/ScoreProvider.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Literal
 
 from generated_symbols.data.util.ContextScoreProvider import ContextScoreProvider
@@ -13,12 +12,10 @@ if TYPE_CHECKING:
     from generated_symbols.data.loot.EntityTarget import EntityTarget
 
 
-@dataclass(kw_only=True)
 class ScoreProviderStructContext(ContextScoreProvider):
     type: Literal['minecraft:context'] = 'minecraft:context'
 
 
-@dataclass(kw_only=True)
 class ScoreProviderStructFixed(FixedScoreProvider):
     type: Literal['minecraft:fixed'] = 'minecraft:fixed'
 

@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::loot::function::SetCount
 Local link to file: generated_symbols/data/loot/function/SetCount.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.data.loot.function.Conditions import Conditions
@@ -12,7 +11,6 @@ if TYPE_CHECKING:
     from generated_symbols.data.number_provider.NumberProviderRef import NumberProviderRef
 
 
-@dataclass(kw_only=True)
 class SetCount(Conditions):
     count: NumberProviderRef
     add: bool | None = None  # Whether to add to the existing count. Defaults to `false`.

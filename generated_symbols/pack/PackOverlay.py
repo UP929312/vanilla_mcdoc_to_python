@@ -3,17 +3,18 @@ Generated from symbols.json for ::java::pack::PackOverlay
 Local link to file: generated_symbols/pack/PackOverlay.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.pack.PackFormat import PackFormat
     from generated_symbols.util.InclusiveRange import InclusiveRange
 
 
-@dataclass(kw_only=True)
-class PackOverlay:
-    directory: Annotated[str, 'Length = 1 (inclusive) and above']
+class PackOverlay(GeneratedModel):
+    directory: Annotated[str, 'Field(min_length=1)']
     formats: InclusiveRange[int] | int | None = None
     min_format: PackFormat | None = None
     max_format: PackFormat | None = None

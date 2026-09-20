@@ -3,8 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::feature::tree::FallenTre
 Local link to file: generated_symbols/data/worldgen/feature/tree/FallenTreeConfig.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.IntProvider import IntProvider
@@ -12,12 +14,11 @@ if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.tree.TreeDecorator import TreeDecorator
 
 
-@dataclass(kw_only=True)
-class FallenTreeConfig:
+class FallenTreeConfig(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/feature'
 
     trunk_provider: BlockStateProvider
-    log_length: IntProvider[Annotated[int, 'Range | `0`-`16` | both inclusive']] | Annotated[int, 'Range | `0`-`16` | both inclusive']
+    log_length: IntProvider[Annotated[int, Field(ge=0, le=16)]] | Annotated[int, Field(ge=0, le=16)]
     stump_decorators: list[TreeDecorator]
     log_decorators: list[TreeDecorator]
 

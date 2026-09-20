@@ -3,14 +3,12 @@ Generated from symbols.json for ::java::data::loot::function::Reference
 Local link to file: generated_symbols/data/loot/function/Reference.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
 from generated_symbols.data.loot.function.Conditions import Conditions
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
 class Reference(Conditions):
     name: Annotated[str, IdSpec(registry='item_modifier')]  # Item modifier to reference.
 

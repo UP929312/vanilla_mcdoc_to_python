@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::loot::function::Sequence
 Local link to file: generated_symbols/data/loot/function/Sequence.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.data.loot.function.Conditions import Conditions
@@ -12,7 +11,6 @@ if TYPE_CHECKING:
     from generated_symbols.data.item_modifier.ItemModifier import ItemModifier
 
 
-@dataclass(kw_only=True)
 class Sequence(Conditions):
     functions: ItemModifier  # List of functions to apply to this item.
 

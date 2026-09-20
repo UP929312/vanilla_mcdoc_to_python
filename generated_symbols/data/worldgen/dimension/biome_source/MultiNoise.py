@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::worldgen::dimension::biome_source:
 Local link to file: generated_symbols/data/worldgen/dimension/biome_source/MultiNoise.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
 from generated_symbols.data.worldgen.dimension.biome_source.DirectMultiNoise import DirectMultiNoise
@@ -11,12 +10,10 @@ from generated_symbols.data.worldgen.dimension.biome_source.MultiNoiseBase impor
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
 class MultiNoiseNone(DirectMultiNoise, MultiNoiseBase):
     preset: Annotated[str, IdSpec(registry='worldgen/multi_noise_biome_source_parameter_list')] | None = None
 
 
-@dataclass(kw_only=True)
 class MultiNoiseUnknown(MultiNoiseBase):
     preset: Annotated[str, IdSpec(registry='worldgen/multi_noise_biome_source_parameter_list')] | None = None
 

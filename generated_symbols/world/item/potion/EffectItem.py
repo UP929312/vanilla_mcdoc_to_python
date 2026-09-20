@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::item::potion::EffectItem
 Local link to file: generated_symbols/world/item/potion/EffectItem.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.world.item.ItemBase import ItemBase
@@ -13,7 +12,6 @@ if TYPE_CHECKING:
     from generated_symbols.util.effect.MobEffectInstance import MobEffectInstance
 
 
-@dataclass(kw_only=True)
 class EffectItem(ItemBase):
     custom_potion_effects: list[MobEffectInstance] | None = None  # List of the effects that will be applied with this item.
     Potion: Annotated[str, IdSpec(registry='potion')] | None = None  # Default potion effect

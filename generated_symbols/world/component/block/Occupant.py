@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::world::component::block::Occupant
 Local link to file: generated_symbols/world/component/block/Occupant.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.world.entity.AnyEntity import AnyEntity
 
 
-@dataclass(kw_only=True)
-class Occupant:
+class Occupant(GeneratedModel):
     entity_data: AnyEntity
     min_ticks_in_hive: int
     ticks_in_hive: int

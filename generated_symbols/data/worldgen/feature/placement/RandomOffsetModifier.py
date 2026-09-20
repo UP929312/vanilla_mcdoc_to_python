@@ -3,17 +3,18 @@ Generated from symbols.json for ::java::data::worldgen::feature::placement::Rand
 Local link to file: generated_symbols/data/worldgen/feature/placement/RandomOffsetModifier.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.IntProvider import IntProvider
 
 
-@dataclass(kw_only=True)
-class RandomOffsetModifier:
-    xz_spread: IntProvider[Annotated[int, 'Range | `-16`-`16` | both inclusive']] | Annotated[int, 'Range | `-16`-`16` | both inclusive']
-    y_spread: IntProvider[Annotated[int, 'Range | `-16`-`16` | both inclusive']] | Annotated[int, 'Range | `-16`-`16` | both inclusive']
+class RandomOffsetModifier(GeneratedModel):
+    xz_spread: IntProvider[Annotated[int, Field(ge=-16, le=16)]] | Annotated[int, Field(ge=-16, le=16)]
+    y_spread: IntProvider[Annotated[int, Field(ge=-16, le=16)]] | Annotated[int, Field(ge=-16, le=16)]
 
 
 # ~~~ MODEL DUMP ~~~

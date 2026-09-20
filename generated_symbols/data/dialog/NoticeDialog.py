@@ -3,8 +3,9 @@ Generated from symbols.json for ::java::data::dialog::NoticeDialog
 Local link to file: generated_symbols/data/dialog/NoticeDialog.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, ClassVar, Literal
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.dialog.AfterAction import AfterAction
@@ -14,8 +15,7 @@ if TYPE_CHECKING:
     from generated_symbols.util.text.Text import Text
 
 
-@dataclass(kw_only=True)
-class NoticeDialogNone:
+class NoticeDialogNone(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'dialog'
 
     action: Button | None = None  # The only action in footer. Defaults to `gui.ok` label with no action or tooltip.
@@ -28,8 +28,7 @@ class NoticeDialogNone:
     pause: bool | None = None  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.
 
 
-@dataclass(kw_only=True)
-class NoticeDialogClose:
+class NoticeDialogClose(GeneratedModel):
     action: Button | None = None  # The only action in footer. Defaults to `gui.ok` label with no action or tooltip.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
@@ -40,8 +39,7 @@ class NoticeDialogClose:
     pause: bool | None = None  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.
 
 
-@dataclass(kw_only=True)
-class NoticeDialogNone2:
+class NoticeDialogNone2(GeneratedModel):
     action: Button | None = None  # The only action in footer. Defaults to `gui.ok` label with no action or tooltip.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
@@ -52,8 +50,7 @@ class NoticeDialogNone2:
     pause: Literal[False] = False  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.  The currently selected `after_action` only supports the value `false`
 
 
-@dataclass(kw_only=True)
-class NoticeDialogWaitForResponse:
+class NoticeDialogWaitForResponse(GeneratedModel):
     action: Button | None = None  # The only action in footer. Defaults to `gui.ok` label with no action or tooltip.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.

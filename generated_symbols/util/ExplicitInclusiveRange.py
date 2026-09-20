@@ -3,14 +3,14 @@ Generated from symbols.json for ::java::util::ExplicitInclusiveRange
 Local link to file: generated_symbols/util/ExplicitInclusiveRange.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Generic, TypeVar
+
+from generated_symbols.base import GeneratedModel
 
 
 T = TypeVar('T')
 
-@dataclass(kw_only=True)
-class ExplicitInclusiveRange(Generic[T]):
+class ExplicitInclusiveRange(GeneratedModel, Generic[T]):
     min_inclusive: T
     max_inclusive: T
 

@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::world::component::item::Enchantments
 Local link to file: generated_symbols/world/component/item/Enchantments.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.world.component.item.EnchantmentLevels import EnchantmentLevels
 
 
-@dataclass(kw_only=True)
-class Enchantments:
+class Enchantments(GeneratedModel):
     levels: EnchantmentLevels
     show_in_tooltip: bool | None = None
 

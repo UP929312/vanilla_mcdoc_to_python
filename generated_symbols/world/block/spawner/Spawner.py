@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::block::spawner::Spawner
 Local link to file: generated_symbols/world/block/spawner/Spawner.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.world.block.BlockEntity import BlockEntity
@@ -13,7 +12,6 @@ if TYPE_CHECKING:
     from generated_symbols.world.block.spawner.SpawnerEntry import SpawnerEntry
 
 
-@dataclass(kw_only=True)
 class Spawner(BlockEntity):
     SpawnPotentials: list[SpawnPotential] | None = None  # Entities that can be placed.
     SpawnData: SpawnerEntry | None = None  # Data for the next mob to spawn. Overwritten by `SpawnPotentials`.

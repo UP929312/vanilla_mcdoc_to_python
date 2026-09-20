@@ -3,14 +3,12 @@ Generated from symbols.json for ::java::data::loot::function::SetPotion
 Local link to file: generated_symbols/data/loot/function/SetPotion.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
 from generated_symbols.data.loot.function.Conditions import Conditions
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
 class SetPotion(Conditions):
     id: Annotated[str, IdSpec(registry='potion')]  # The potion identifier.
 

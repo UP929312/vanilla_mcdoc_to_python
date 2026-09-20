@@ -3,8 +3,9 @@ Generated from symbols.json for ::java::pack::Pack
 Local link to file: generated_symbols/pack/Pack.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.pack.PackFeatures import PackFeatures
@@ -15,8 +16,7 @@ if TYPE_CHECKING:
     from generated_symbols.util.text.Text import Text
 
 
-@dataclass(kw_only=True)
-class PackStruct:
+class PackStruct(GeneratedModel):
     description: Text
     pack_format: int | None = None  # Optional since 1.21.9. Define it if you want older versions to recognize your pack with a “made for a newer version” warning message.  Because of backwards compatibility, only the main pack format can be used here. Minor formats can only be specified in min and max format.
     supported_formats: InclusiveRange[int] | int | None = None  # Must not be specified in case min_format indicates a format version for 1.21.9 and later.
@@ -24,8 +24,7 @@ class PackStruct:
     max_format: PackFormat | None = None  # The maximum format that is supported. To specify a minor version, use a list of two integers.
 
 
-@dataclass(kw_only=True)
-class Pack:
+class Pack(GeneratedModel):
     pack: PackStruct
     filter: PackFilter | None = None
     features: PackFeatures | None = None

@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::pack::PackFilter
 Local link to file: generated_symbols/pack/PackFilter.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.pack.BlockPattern import BlockPattern
 
 
-@dataclass(kw_only=True)
-class PackFilter:
+class PackFilter(GeneratedModel):
     block: list[BlockPattern]
 
 

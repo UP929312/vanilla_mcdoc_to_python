@@ -3,9 +3,9 @@ Generated from symbols.json for ::java::util::text::TextStyle
 Local link to file: generated_symbols/util/text/TextStyle.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
@@ -15,8 +15,7 @@ if TYPE_CHECKING:
     from generated_symbols.util.text.TextColor import TextColor
 
 
-@dataclass(kw_only=True)
-class TextStyle:
+class TextStyle(GeneratedModel):
     color: str | TextColor | None = None
     shadow_color: RGBA | None = None  # Overrides the shadow properties of the text. If specified as 0, the shadow will never be displayed.
     font: Annotated[str, IdSpec(registry='font')] | None = None

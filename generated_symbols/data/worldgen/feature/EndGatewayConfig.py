@@ -3,12 +3,12 @@ Generated from symbols.json for ::java::data::worldgen::feature::EndGatewayConfi
 Local link to file: generated_symbols/data/worldgen/feature/EndGatewayConfig.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import ClassVar
 
+from generated_symbols.base import GeneratedModel
 
-@dataclass(kw_only=True)
-class EndGatewayConfig:
+
+class EndGatewayConfig(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/feature'
 
     exact: bool

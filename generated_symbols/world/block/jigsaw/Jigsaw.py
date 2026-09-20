@@ -3,17 +3,16 @@ Generated from symbols.json for ::java::world::block::jigsaw::Jigsaw
 Local link to file: generated_symbols/world/block/jigsaw/Jigsaw.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.world.block.jigsaw.JointType import JointType
 
 
-@dataclass(kw_only=True)
-class Jigsaw:
+class Jigsaw(GeneratedModel):
     joint: JointType | None = None  # How the resultant structure can be transformed.
     pool: Annotated[str, IdSpec(registry='worldgen/template_pool')] | None = None  # Structure pool this will "spawn" in.
     name: str | None = None  # ID this will "spawn" in.

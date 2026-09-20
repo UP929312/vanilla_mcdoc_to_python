@@ -3,10 +3,11 @@ Generated from symbols.json for ::java::data::worldgen::feature::LargeDripstoneC
 Local link to file: generated_symbols/data/worldgen/feature/LargeDripstoneConfig.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.FloatProvider import FloatProvider
@@ -14,20 +15,19 @@ if TYPE_CHECKING:
     from generated_symbols.registry.KnownBlockId import KnownBlockId
 
 
-@dataclass(kw_only=True)
-class LargeDripstoneConfig:
+class LargeDripstoneConfig(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/feature'
 
     replaceable_blocks: list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId
-    floor_to_ceiling_search_range: Annotated[int, 'Range | `1`-`512` | both inclusive'] | None = None
-    column_radius: IntProvider[Annotated[int, 'Range | `0`-`16` | both inclusive']] | Annotated[int, 'Range | `0`-`16` | both inclusive']
-    height_scale: FloatProvider[Annotated[float, 'Range | `0`-`20` | both inclusive']] | Annotated[float, 'Range | `0`-`20` | both inclusive']
-    max_column_radius_to_cave_height_ratio: Annotated[float, 'Range | `0`-`1` | both inclusive']
-    stalactite_bluntness: FloatProvider[Annotated[float, 'Range | `0.1`-`10` | both inclusive']] | Annotated[float, 'Range | `0.1`-`10` | both inclusive']
-    stalagmite_bluntness: FloatProvider[Annotated[float, 'Range | `0.1`-`10` | both inclusive']] | Annotated[float, 'Range | `0.1`-`10` | both inclusive']
-    wind_speed: FloatProvider[Annotated[float, 'Range | `0`-`2` | both inclusive']] | Annotated[float, 'Range | `0`-`2` | both inclusive']
-    min_radius_for_wind: Annotated[int, 'Range | `0`-`100` | both inclusive']
-    min_bluntness_for_wind: Annotated[float, 'Range | `0`-`1` | both inclusive']
+    floor_to_ceiling_search_range: Annotated[int, Field(ge=1, le=512)] | None = None
+    column_radius: IntProvider[Annotated[int, Field(ge=0, le=16)]] | Annotated[int, Field(ge=0, le=16)]
+    height_scale: FloatProvider[Annotated[float, Field(ge=0, le=20)]] | Annotated[float, Field(ge=0, le=20)]
+    max_column_radius_to_cave_height_ratio: Annotated[float, Field(ge=0, le=1)]
+    stalactite_bluntness: FloatProvider[Annotated[float, Field(ge=0.1, le=10)]] | Annotated[float, Field(ge=0.1, le=10)]
+    stalagmite_bluntness: FloatProvider[Annotated[float, Field(ge=0.1, le=10)]] | Annotated[float, Field(ge=0.1, le=10)]
+    wind_speed: FloatProvider[Annotated[float, Field(ge=0, le=2)]] | Annotated[float, Field(ge=0, le=2)]
+    min_radius_for_wind: Annotated[int, Field(ge=0, le=100)]
+    min_bluntness_for_wind: Annotated[float, Field(ge=0, le=1)]
 
 
 # ~~~ MODEL DUMP ~~~

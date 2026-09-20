@@ -3,16 +3,16 @@ Generated from symbols.json for ::java::data::advancement::predicate::LightningB
 Local link to file: generated_symbols/data/advancement/predicate/LightningBoltPredicate.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.advancement.predicate.EntityPredicate import EntityPredicate
     from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
 
 
-@dataclass(kw_only=True)
-class LightningBoltPredicate:
+class LightningBoltPredicate(GeneratedModel):
     blocks_set_on_fire: MinMaxBounds[int] | int | None = None
     entity_struck: EntityPredicate | None = None
 

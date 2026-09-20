@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::util::text::PlayerHeadText
 Local link to file: generated_symbols/util/text/PlayerHeadText.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Literal
 
 from generated_symbols.util.text.ObjectTextConfig import ObjectTextConfig
@@ -13,7 +12,6 @@ if TYPE_CHECKING:
     from generated_symbols.util.avatar.Profile import Profile
 
 
-@dataclass(kw_only=True)
 class PlayerHeadText(ObjectTextConfig, TextBase):
     player: Profile
     hat: bool | None = None  # Whether the head layer is rendered. Defaults to `true`.

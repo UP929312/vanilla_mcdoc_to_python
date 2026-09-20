@@ -3,24 +3,23 @@ Generated from symbols.json for ::java::assets::credits::CreditsCompanySegment
 Local link to file: generated_symbols/assets/credits/CreditsCompanySegment.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated, Literal
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class TitlesStruct:
+
+class TitlesStruct(GeneratedModel):
     title: str
     names: list[str]  # Employees with the title.
 
 
-@dataclass(kw_only=True)
-class DisciplinesStruct:
-    discipline: Annotated[str, 'Length = 1 (inclusive) and above'] | Literal[""]
+class DisciplinesStruct(GeneratedModel):
+    discipline: Annotated[str, 'Field(min_length=1)'] | Literal[""]
     titles: list[TitlesStruct]
 
 
-@dataclass(kw_only=True)
-class CreditsCompanySegment:
+class CreditsCompanySegment(GeneratedModel):
     section: str  # Company segment.
     disciplines: list[DisciplinesStruct]
 

@@ -3,14 +3,12 @@ Generated from symbols.json for ::java::data::gametest::FunctionTestInstance
 Local link to file: generated_symbols/data/gametest/FunctionTestInstance.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated, ClassVar
 
 from generated_symbols.data.gametest.TestData import TestData
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
 class FunctionTestInstance(TestData):
     __resource_dir__: ClassVar[str] = 'test_instance'
 

@@ -3,8 +3,9 @@ Generated from symbols.json for ::java::data::dialog::DialogBase
 Local link to file: generated_symbols/data/dialog/DialogBase.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Literal
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.dialog.AfterAction import AfterAction
@@ -13,8 +14,7 @@ if TYPE_CHECKING:
     from generated_symbols.util.text.Text import Text
 
 
-@dataclass(kw_only=True)
-class DialogBaseNone:
+class DialogBaseNone(GeneratedModel):
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None
@@ -24,8 +24,7 @@ class DialogBaseNone:
     pause: bool | None = None  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.
 
 
-@dataclass(kw_only=True)
-class DialogBaseClose:
+class DialogBaseClose(GeneratedModel):
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None
@@ -35,8 +34,7 @@ class DialogBaseClose:
     pause: bool | None = None  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.
 
 
-@dataclass(kw_only=True)
-class DialogBaseNone2:
+class DialogBaseNone2(GeneratedModel):
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None
@@ -46,8 +44,7 @@ class DialogBaseNone2:
     pause: Literal[False] = False  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.  The currently selected `after_action` only supports the value `false`
 
 
-@dataclass(kw_only=True)
-class DialogBaseWaitForResponse:
+class DialogBaseWaitForResponse(GeneratedModel):
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None

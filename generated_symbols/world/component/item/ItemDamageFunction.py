@@ -3,13 +3,14 @@ Generated from symbols.json for ::java::world::component::item::ItemDamageFuncti
 Local link to file: generated_symbols/world/component/item/ItemDamageFunction.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class ItemDamageFunction:
-    threshold: Annotated[float, 'Range | `0` and above | inclusive']  # Minimum amount of damage dealt by the attack before this item damage is applied to the item.
+
+class ItemDamageFunction(GeneratedModel):
+    threshold: Annotated[float, Field(ge=0)]  # Minimum amount of damage dealt by the attack before this item damage is applied to the item.
     base: float  # Constant amount of damage applied to the item, if `threshold` is passed.
     factor: float  # Fraction of the dealt damage that should be applied to the item, if `threshold` is passed.
 

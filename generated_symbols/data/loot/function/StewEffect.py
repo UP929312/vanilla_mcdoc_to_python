@@ -3,17 +3,16 @@ Generated from symbols.json for ::java::data::loot::function::StewEffect
 Local link to file: generated_symbols/data/loot/function/StewEffect.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.number_provider.NumberProviderRef import NumberProviderRef
 
 
-@dataclass(kw_only=True)
-class StewEffect:
+class StewEffect(GeneratedModel):
     type: Annotated[str, IdSpec(registry='mob_effect')]  # The status effect of this stew effect.
     duration: NumberProviderRef  # The duration of this stew effect, in seconds.
 

@@ -3,10 +3,11 @@ Generated from symbols.json for ::java::data::worldgen::attribute::ListAttribute
 Local link to file: generated_symbols/data/worldgen/attribute/ListAttribute.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Generic, TypeVar
 
+from generated_symbols.base import GeneratedModel
 from generated_symbols.data.timeline.AttributeTrackBase import AttributeTrackBase
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.attribute.modifier.ListModifier import ListModifier
@@ -15,20 +16,17 @@ if TYPE_CHECKING:
 
 E = TypeVar('E')
 
-@dataclass(kw_only=True)
-class KeyframesStruct(Generic[E]):
-    ticks: Annotated[int, 'Range | `0` and above | inclusive']
+class KeyframesStruct(GeneratedModel, Generic[E]):
+    ticks: Annotated[int, Field(ge=0)]
     value: list[E]
 
 
-@dataclass(kw_only=True)
 class AttributeTrackStruct(AttributeTrackBase, Generic[E]):
     modifier: ListModifierType | None = None
-    keyframes: Annotated[list[KeyframesStruct[E]], 'Length = 1 (inclusive) and above']
+    keyframes: Annotated[list[KeyframesStruct[E]], Field(min_length=1)]
 
 
-@dataclass(kw_only=True)
-class ListAttribute(Generic[E]):
+class ListAttribute(GeneratedModel, Generic[E]):
     value: list[E]
     modifier: ListModifier[E]
     attribute_track: AttributeTrackStruct[E]

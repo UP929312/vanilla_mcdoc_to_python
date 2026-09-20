@@ -3,16 +3,14 @@ Generated from symbols.json for ::java::assets::block_state_definition::MultiPar
 Local link to file: generated_symbols/assets/block_state_definition/MultiPartCondition.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class MultiPartConditionStruct1:
+class MultiPartConditionStruct1(GeneratedModel):
     OR: list[MultiPartCondition]
 
 
-@dataclass(kw_only=True)
-class MultiPartConditionStruct2:
+class MultiPartConditionStruct2(GeneratedModel):
     AND: list[MultiPartCondition]
 
 

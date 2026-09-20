@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::entity::mob::breedable::axolotl::
 Local link to file: generated_symbols/world/entity/mob/breedable/axolotl/Axolotl.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.world.entity.mob.breedable.Breedable import Breedable
@@ -12,7 +11,6 @@ if TYPE_CHECKING:
     from generated_symbols.world.entity.mob.breedable.axolotl.AxolotlVariantInt import AxolotlVariantInt
 
 
-@dataclass(kw_only=True)
 class Axolotl(Breedable):
     Variant: AxolotlVariantInt | None = None  # The variant of the axolotl.
     FromBucket: bool | None = None  # If this axolotl was released from a bucket.

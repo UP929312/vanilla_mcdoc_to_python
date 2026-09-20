@@ -3,8 +3,9 @@ Generated from symbols.json for ::java::data::worldgen::attribute::AmbientSounds
 Local link to file: generated_symbols/data/worldgen/attribute/AmbientSounds.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.SoundEventRef import SoundEventRef
@@ -12,8 +13,7 @@ if TYPE_CHECKING:
     from generated_symbols.data.worldgen.biome.MoodSound import MoodSound
 
 
-@dataclass(kw_only=True)
-class AmbientSounds:
+class AmbientSounds(GeneratedModel):
     loop: SoundEventRef | None = None
     mood: MoodSound | None = None
     additions: BiomeSoundAdditions | list[BiomeSoundAdditions] | None = None

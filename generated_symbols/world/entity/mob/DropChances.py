@@ -5,11 +5,13 @@ Local link to file: generated_symbols/world/entity/mob/DropChances.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
+from pydantic import Field
+
 if TYPE_CHECKING:
     from generated_symbols.util.slot.EquipmentSlot import EquipmentSlot
 
 
-type DropChances = dict[EquipmentSlot, Annotated[float, 'Range | `0` and above | inclusive']]
+type DropChances = dict[EquipmentSlot, Annotated[float, Field(ge=0)]]
 
 
 # ~~~ MODEL DUMP ~~~

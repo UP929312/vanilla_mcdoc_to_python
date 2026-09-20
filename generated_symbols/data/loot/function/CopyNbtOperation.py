@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::loot::function::CopyNbtOperation
 Local link to file: generated_symbols/data/loot/function/CopyNbtOperation.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.loot.function.CopyNbtStrategy import CopyNbtStrategy
 
 
-@dataclass(kw_only=True)
-class CopyNbtOperation:
+class CopyNbtOperation(GeneratedModel):
     source: str
     target: str
     op: CopyNbtStrategy

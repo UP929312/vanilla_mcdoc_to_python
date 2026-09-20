@@ -3,8 +3,9 @@ Generated from symbols.json for ::java::data::worldgen::attribute::modifier::Flo
 Local link to file: generated_symbols/data/worldgen/attribute/modifier/FloatAttributeModifier.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Generic, TypeVar
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.attribute.modifier.FloatModifierType import FloatModifierType
@@ -13,8 +14,7 @@ if TYPE_CHECKING:
 
 T = TypeVar('T')
 
-@dataclass(kw_only=True)
-class FloatAttributeModifier(Generic[T]):
+class FloatAttributeModifier(GeneratedModel, Generic[T]):
     modifier: FloatModifierType
     argument: T | float | FloatWithAlpha
 

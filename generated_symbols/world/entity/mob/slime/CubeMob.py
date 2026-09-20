@@ -3,13 +3,14 @@ Generated from symbols.json for ::java::world::entity::mob::slime::CubeMob
 Local link to file: generated_symbols/world/entity/mob/slime/CubeMob.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class CubeMob:
-    Size: Annotated[int, 'Range | `0`-`126` | both inclusive'] | None = None
+
+class CubeMob(GeneratedModel):
+    Size: Annotated[int, Field(ge=0, le=126)] | None = None
     wasOnGround: bool | None = None  # Whether it is on the ground.
 
 

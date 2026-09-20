@@ -3,14 +3,15 @@ Generated from symbols.json for ::java::world::entity::display::Brightness
 Local link to file: generated_symbols/world/entity/display/Brightness.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class Brightness:
-    sky: Annotated[int, 'Range | `0`-`15` | both inclusive']  # Value of skylight.
-    block: Annotated[int, 'Range | `0`-`15` | both inclusive']  # Value of block light.
+
+class Brightness(GeneratedModel):
+    sky: Annotated[int, Field(ge=0, le=15)]  # Value of skylight.
+    block: Annotated[int, Field(ge=0, le=15)]  # Value of block light.
 
 
 # ~~~ MODEL DUMP ~~~

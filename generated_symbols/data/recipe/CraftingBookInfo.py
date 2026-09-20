@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::recipe::CraftingBookInfo
 Local link to file: generated_symbols/data/recipe/CraftingBookInfo.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.recipe.CraftingBookCategory import CraftingBookCategory
 
 
-@dataclass(kw_only=True)
-class CraftingBookInfo:
+class CraftingBookInfo(GeneratedModel):
     group: str | None = None  # Identifier to group multiple recipes in the recipe book.
     category: CraftingBookCategory | None = None  # Identifier for the category this goes in the recipe book.
 

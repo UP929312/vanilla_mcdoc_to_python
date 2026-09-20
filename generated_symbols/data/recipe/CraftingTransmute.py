@@ -3,12 +3,12 @@ Generated from symbols.json for ::java::data::recipe::CraftingTransmute
 Local link to file: generated_symbols/data/recipe/CraftingTransmute.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from generated_symbols.data.recipe.CraftingBookInfo import CraftingBookInfo
 from generated_symbols.data.recipe.NotificationInfo import NotificationInfo
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.recipe.Ingredient import Ingredient
@@ -16,13 +16,12 @@ if TYPE_CHECKING:
     from generated_symbols.world.item.ItemStack import ItemStack
 
 
-@dataclass(kw_only=True)
 class CraftingTransmute(CraftingBookInfo, NotificationInfo):
     __resource_dir__: ClassVar[str] = 'recipe'
 
     input: Ingredient  # The ingredient that will transfer its data components to the result item.
     material: Ingredient  # An additional ingredient.
-    material_count: MinMaxBounds[Annotated[int, 'Range | `1`-`8` | both inclusive']] | Annotated[int, 'Range | `1`-`8` | both inclusive'] | None = None  # The allowed count of material. Defaults to `1`.
+    material_count: MinMaxBounds[Annotated[int, Field(ge=1, le=8)]] | Annotated[int, Field(ge=1, le=8)] | None = None  # The allowed count of material. Defaults to `1`.
     add_material_count_to_result: bool | None = None  # When true, the number of materials will be added to the result count.  Defaults to `false`.
     result: ItemStack | Annotated[str, IdSpec(registry='item', exclude=('air',))]  # The result item that will be merged with the input ingredient.
 

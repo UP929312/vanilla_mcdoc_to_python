@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::assets::model::ModelElementRotationBase
 Local link to file: generated_symbols/assets/model/ModelElementRotationBase.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class ModelElementRotationBase:
+class ModelElementRotationBase(GeneratedModel):
     origin: tuple[float, float, float]
     rescale: bool | None = None  # Defaults to `false`.
 

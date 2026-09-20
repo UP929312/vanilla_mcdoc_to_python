@@ -3,12 +3,9 @@ Generated from symbols.json for ::java::world::entity::mob::fish::TropicalFish
 Local link to file: generated_symbols/world/entity/mob/fish/TropicalFish.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.world.entity.mob.fish.Fish import Fish
 
 
-@dataclass(kw_only=True)
 class TropicalFish(Fish):
     Variant: int | None = None
 

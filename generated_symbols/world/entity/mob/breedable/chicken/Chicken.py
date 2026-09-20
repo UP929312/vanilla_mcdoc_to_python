@@ -3,14 +3,12 @@ Generated from symbols.json for ::java::world::entity::mob::breedable::chicken::
 Local link to file: generated_symbols/world/entity/mob/breedable/chicken/Chicken.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
 from generated_symbols.world.entity.mob.breedable.Breedable import Breedable
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
 class Chicken(Breedable):
     IsChickenJockey: bool | None = None  # Whether it is from a chicken jockey. If true it will despawn and will drop more experience.
     EggLayTime: int | None = None  # Time until it lays another egg.

@@ -3,13 +3,14 @@ Generated from symbols.json for ::java::world::component::item::Enchantable
 Local link to file: generated_symbols/world/component/item/Enchantable.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class Enchantable:
-    value: Annotated[int, 'Range | `1` and above | inclusive']
+
+class Enchantable(GeneratedModel):
+    value: Annotated[int, Field(ge=1)]
 
 
 # ~~~ MODEL DUMP ~~~

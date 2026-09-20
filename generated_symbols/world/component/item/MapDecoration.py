@@ -3,14 +3,13 @@ Generated from symbols.json for ::java::world::component::item::MapDecoration
 Local link to file: generated_symbols/world/component/item/MapDecoration.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
-class MapDecoration:
+class MapDecoration(GeneratedModel):
     type: Annotated[str, IdSpec(registry='map_decoration_type')]  # Decoration type.
     x: float  # World x position.
     z: float  # World z position.

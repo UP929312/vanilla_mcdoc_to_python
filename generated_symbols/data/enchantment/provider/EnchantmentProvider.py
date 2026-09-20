@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::enchantment::provider::Enchantment
 Local link to file: generated_symbols/data/enchantment/provider/EnchantmentProvider.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import ClassVar, Literal
 
 from generated_symbols.data.enchantment.provider.ByCostEnchantmentProvider import ByCostEnchantmentProvider
@@ -11,19 +10,16 @@ from generated_symbols.data.enchantment.provider.ByCostWithDifficultyEnchantment
 from generated_symbols.data.enchantment.provider.SingleProvider import SingleProvider
 
 
-@dataclass(kw_only=True)
 class EnchantmentProviderByCost(ByCostEnchantmentProvider):
     __resource_dir__: ClassVar[str] = 'enchantment_provider'
 
     type: Literal['minecraft:by_cost'] = 'minecraft:by_cost'
 
 
-@dataclass(kw_only=True)
 class EnchantmentProviderByCostWithDifficulty(ByCostWithDifficultyEnchantmentProvider):
     type: Literal['minecraft:by_cost_with_difficulty'] = 'minecraft:by_cost_with_difficulty'
 
 
-@dataclass(kw_only=True)
 class EnchantmentProviderSingle(SingleProvider):
     type: Literal['minecraft:single'] = 'minecraft:single'
 

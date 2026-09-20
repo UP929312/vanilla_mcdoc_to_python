@@ -3,8 +3,10 @@ Generated from symbols.json for ::java::data::structure::StructureNBT
 Local link to file: generated_symbols/data/structure/StructureNBT.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.block_state.BlockState import BlockState
@@ -47,38 +49,33 @@ if TYPE_CHECKING:
     from generated_symbols.world.entity.AnyEntity import AnyEntity
 
 
-@dataclass(kw_only=True)
-class NbtStructBlockUnknown:
+class NbtStructBlockUnknown(GeneratedModel):
     pass
 
 
-@dataclass(kw_only=True)
-class BlocksStruct:
-    state: Annotated[int, 'Range | `0` and above | inclusive']
-    pos: tuple[Annotated[int, 'Range | `0` and above | inclusive'], Annotated[int, 'Range | `0` and above | inclusive'], Annotated[int, 'Range | `0` and above | inclusive']]
+class BlocksStruct(GeneratedModel):
+    state: Annotated[int, Field(ge=0)]
+    pos: tuple[Annotated[int, Field(ge=0)], Annotated[int, Field(ge=0)], Annotated[int, Field(ge=0)]]
     nbt: NbtStructBlockUnknown | Sign | Shelf | Container27 | Beacon | BlockEntity | Beehive | Banner | Furnace | BrewingStand | SculkSensor | Campfire | CommandBlock | ChiseledBookshelf | Comparator | Conduit | Crafter | Skull | DecoratedPot | Container9 | EnchantingTable | EndGateway | Hopper | Jigsaw | Jukebox | Lectern | MovingPiston | PotentSulfur | SculkCatalyst | SculkShrieker | Spawner | StructureBlock | BrushableBlock | TestBlock | TestInstanceBlock | TrialSpawner | Vault | None = None
 
 
-@dataclass(kw_only=True)
-class EntitiesStruct:
-    pos: tuple[Annotated[float, 'Range | `0` and above | inclusive'], Annotated[float, 'Range | `0` and above | inclusive'], Annotated[float, 'Range | `0` and above | inclusive']]
-    blockPos: tuple[Annotated[int, 'Range | `0` and above | inclusive'], Annotated[int, 'Range | `0` and above | inclusive'], Annotated[int, 'Range | `0` and above | inclusive']]
+class EntitiesStruct(GeneratedModel):
+    pos: tuple[Annotated[float, Field(ge=0)], Annotated[float, Field(ge=0)], Annotated[float, Field(ge=0)]]
+    blockPos: tuple[Annotated[int, Field(ge=0)], Annotated[int, Field(ge=0)], Annotated[int, Field(ge=0)]]
     nbt: AnyEntity
 
 
-@dataclass(kw_only=True)
-class StructureNBTStruct1:
-    DataVersion: Annotated[int, 'Range | `0` and above | inclusive']  # [Data version](https://minecraft.wiki/w/Data_version).
-    size: tuple[Annotated[int, 'Range | `0` and above | inclusive'], Annotated[int, 'Range | `0` and above | inclusive'], Annotated[int, 'Range | `0` and above | inclusive']]
+class StructureNBTStruct1(GeneratedModel):
+    DataVersion: Annotated[int, Field(ge=0)]  # [Data version](https://minecraft.wiki/w/Data_version).
+    size: tuple[Annotated[int, Field(ge=0)], Annotated[int, Field(ge=0)], Annotated[int, Field(ge=0)]]
     blocks: list[BlocksStruct]
     entities: list[EntitiesStruct]
     palette: list[BlockState]
 
 
-@dataclass(kw_only=True)
-class StructureNBTStruct2:
-    DataVersion: Annotated[int, 'Range | `0` and above | inclusive']  # [Data version](https://minecraft.wiki/w/Data_version).
-    size: tuple[Annotated[int, 'Range | `0` and above | inclusive'], Annotated[int, 'Range | `0` and above | inclusive'], Annotated[int, 'Range | `0` and above | inclusive']]
+class StructureNBTStruct2(GeneratedModel):
+    DataVersion: Annotated[int, Field(ge=0)]  # [Data version](https://minecraft.wiki/w/Data_version).
+    size: tuple[Annotated[int, Field(ge=0)], Annotated[int, Field(ge=0)], Annotated[int, Field(ge=0)]]
     blocks: list[BlocksStruct]
     entities: list[EntitiesStruct]
     palettes: list[list[BlockState]]  # Sets of different block states used in the structure, a random palette gets selected based on coordinates.

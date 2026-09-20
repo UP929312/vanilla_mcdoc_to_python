@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::loot::function::LimitCount
 Local link to file: generated_symbols/data/loot/function/LimitCount.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.data.loot.function.Conditions import Conditions
@@ -12,7 +11,6 @@ if TYPE_CHECKING:
     from generated_symbols.data.util.IntRange import IntRange
 
 
-@dataclass(kw_only=True)
 class LimitCount(Conditions):
     limit: IntRange  # Limits the count of the item to a range.
 

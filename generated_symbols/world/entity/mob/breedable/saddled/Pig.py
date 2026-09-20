@@ -3,14 +3,12 @@ Generated from symbols.json for ::java::world::entity::mob::breedable::saddled::
 Local link to file: generated_symbols/world/entity/mob/breedable/saddled/Pig.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
 from generated_symbols.world.entity.mob.breedable.saddled.Saddled import Saddled
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
 class Pig(Saddled):
     variant: Annotated[str, IdSpec(registry='pig_variant')] | None = None
     sound_variant: Annotated[str, IdSpec(registry='pig_sound_variant')] | None = None

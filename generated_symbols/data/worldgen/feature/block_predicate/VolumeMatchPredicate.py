@@ -3,17 +3,18 @@ Generated from symbols.json for ::java::data::worldgen::feature::block_predicate
 Local link to file: generated_symbols/data/worldgen/feature/block_predicate/VolumeMatchPredicate.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.block_predicate.BlockPredicate import BlockPredicate
 
 
-@dataclass(kw_only=True)
-class VolumeMatchPredicate:
-    min: tuple[Annotated[int, 'Range | `-16`-`16` | both inclusive'], Annotated[int, 'Range | `-16`-`16` | both inclusive'], Annotated[int, 'Range | `-16`-`16` | both inclusive']]
-    max: tuple[Annotated[int, 'Range | `-16`-`16` | both inclusive'], Annotated[int, 'Range | `-16`-`16` | both inclusive'], Annotated[int, 'Range | `-16`-`16` | both inclusive']]
+class VolumeMatchPredicate(GeneratedModel):
+    min: tuple[Annotated[int, Field(ge=-16, le=16)], Annotated[int, Field(ge=-16, le=16)], Annotated[int, Field(ge=-16, le=16)]]
+    max: tuple[Annotated[int, Field(ge=-16, le=16)], Annotated[int, Field(ge=-16, le=16)], Annotated[int, Field(ge=-16, le=16)]]
     match: BlockPredicate
 
 

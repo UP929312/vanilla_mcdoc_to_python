@@ -3,14 +3,14 @@ Generated from symbols.json for ::java::data::advancement::trigger::AllOptional
 Local link to file: generated_symbols/data/advancement/trigger/AllOptional.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Generic, TypeVar
+
+from generated_symbols.base import GeneratedModel
 
 
 C = TypeVar('C')
 
-@dataclass(kw_only=True)
-class AllOptional(Generic[C]):
+class AllOptional(GeneratedModel, Generic[C]):
     conditions: C | None = None
 
 

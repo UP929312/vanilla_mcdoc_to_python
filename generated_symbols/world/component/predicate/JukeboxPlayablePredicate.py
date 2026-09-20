@@ -3,14 +3,13 @@ Generated from symbols.json for ::java::world::component::predicate::JukeboxPlay
 Local link to file: generated_symbols/world/component/predicate/JukeboxPlayablePredicate.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
-class JukeboxPlayablePredicate:
+class JukeboxPlayablePredicate(GeneratedModel):
     song: Annotated[str, IdSpec(registry='jukebox_song', tags='allowed')] | list[Annotated[str, IdSpec(registry='jukebox_song')]] | None = None
 
 

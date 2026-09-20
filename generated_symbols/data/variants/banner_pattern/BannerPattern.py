@@ -3,14 +3,13 @@ Generated from symbols.json for ::java::data::variants::banner_pattern::BannerPa
 Local link to file: generated_symbols/data/variants/banner_pattern/BannerPattern.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated, ClassVar
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
-class BannerPattern:
+class BannerPattern(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'banner_pattern'
 
     asset_id: Annotated[str, IdSpec(registry='texture', path='entity/banner/')]  # Also resolves to `assets/<namespace>/textures/entity/shield/<name>.png`.

@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::advancement::predicate::HorsePredi
 Local link to file: generated_symbols/data/advancement/predicate/HorsePredicate.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.world.component.entity.HorseVariant import HorseVariant
 
 
-@dataclass(kw_only=True)
-class HorsePredicate:
+class HorsePredicate(GeneratedModel):
     variant: HorseVariant
 
 

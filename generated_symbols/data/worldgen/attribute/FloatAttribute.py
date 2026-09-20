@@ -3,10 +3,11 @@ Generated from symbols.json for ::java::data::worldgen::attribute::FloatAttribut
 Local link to file: generated_symbols/data/worldgen/attribute/FloatAttribute.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Generic, TypeVar
 
+from generated_symbols.base import GeneratedModel
 from generated_symbols.data.timeline.AttributeTrackBase import AttributeTrackBase
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.attribute.modifier.FloatAttributeModifier import FloatAttributeModifier
@@ -16,20 +17,17 @@ if TYPE_CHECKING:
 
 T = TypeVar('T')
 
-@dataclass(kw_only=True)
-class KeyframesStruct(Generic[T]):
-    ticks: Annotated[int, 'Range | `0` and above | inclusive']
+class KeyframesStruct(GeneratedModel, Generic[T]):
+    ticks: Annotated[int, Field(ge=0)]
     value: T | float | FloatWithAlpha
 
 
-@dataclass(kw_only=True)
 class AttributeTrackStruct(AttributeTrackBase, Generic[T]):
     modifier: FloatModifierType | None = None
-    keyframes: Annotated[list[KeyframesStruct[T]], 'Length = 1 (inclusive) and above']
+    keyframes: Annotated[list[KeyframesStruct[T]], Field(min_length=1)]
 
 
-@dataclass(kw_only=True)
-class FloatAttribute(Generic[T]):
+class FloatAttribute(GeneratedModel, Generic[T]):
     value: T
     modifier: FloatAttributeModifier[T]
     attribute_track: AttributeTrackStruct[T]

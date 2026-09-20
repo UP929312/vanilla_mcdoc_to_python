@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::enchantment::effect::AddEffectValu
 Local link to file: generated_symbols/data/enchantment/effect/AddEffectValue.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.enchantment.LevelBasedValue import LevelBasedValue
 
 
-@dataclass(kw_only=True)
-class AddEffectValue:
+class AddEffectValue(GeneratedModel):
     value: LevelBasedValue
 
 

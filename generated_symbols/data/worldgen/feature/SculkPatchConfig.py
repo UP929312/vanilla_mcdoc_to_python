@@ -3,19 +3,20 @@ Generated from symbols.json for ::java::data::worldgen::feature::SculkPatchConfi
 Local link to file: generated_symbols/data/worldgen/feature/SculkPatchConfig.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated, ClassVar
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class SculkPatchConfig:
+
+class SculkPatchConfig(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/feature'
 
-    charge_count: Annotated[int, 'Range | `1`-`32` | both inclusive']
-    amount_per_charge: Annotated[int, 'Range | `1`-`500` | both inclusive']
-    spread_attempts: Annotated[int, 'Range | `1`-`64` | both inclusive']
-    growth_rounds: Annotated[int, 'Range | `0`-`8` | both inclusive']
-    spread_rounds: Annotated[int, 'Range | `0`-`8` | both inclusive']
+    charge_count: Annotated[int, Field(ge=1, le=32)]
+    amount_per_charge: Annotated[int, Field(ge=1, le=500)]
+    spread_attempts: Annotated[int, Field(ge=1, le=64)]
+    growth_rounds: Annotated[int, Field(ge=0, le=8)]
+    spread_rounds: Annotated[int, Field(ge=0, le=8)]
 
 
 # ~~~ MODEL DUMP ~~~

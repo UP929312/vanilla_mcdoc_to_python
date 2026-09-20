@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::enchantment::effect_component::Cro
 Local link to file: generated_symbols/data/enchantment/effect_component/CrossbowChargeSoundsEnchantmentEffect.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.SoundEventRef import SoundEventRef
 
 
-@dataclass(kw_only=True)
-class CrossbowChargeSoundsEnchantmentEffect:
+class CrossbowChargeSoundsEnchantmentEffect(GeneratedModel):
     start: SoundEventRef | None = None  # Start of charging.
     mid: SoundEventRef | None = None  # Middle of charging.
     end: SoundEventRef | None = None  # End of charging.

@@ -17,3 +17,5 @@ from minecraft_registry import IdSpec
 
 
 GlobalEnvironmentAttributeMap = EnvironmentAttributeMap[Annotated[str, IdSpec(registry='environment_attribute')] | KnownEnvironmentAttributeId]
+
+

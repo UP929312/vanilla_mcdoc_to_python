@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::worldgen::feature::placement::Bloc
 Local link to file: generated_symbols/data/worldgen/feature/placement/BlockPredicateFilter.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.block_predicate.BlockPredicate import BlockPredicate
 
 
-@dataclass(kw_only=True)
-class BlockPredicateFilter:
+class BlockPredicateFilter(GeneratedModel):
     predicate: BlockPredicate
 
 

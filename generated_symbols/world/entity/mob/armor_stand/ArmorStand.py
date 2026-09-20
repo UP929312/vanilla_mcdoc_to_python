@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::entity::mob::armor_stand::ArmorSt
 Local link to file: generated_symbols/world/entity/mob/armor_stand/ArmorStand.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.world.entity.mob.LivingEntity import LivingEntity
@@ -13,7 +12,6 @@ if TYPE_CHECKING:
     from generated_symbols.world.entity.mob.armor_stand.Pose import Pose
 
 
-@dataclass(kw_only=True)
 class ArmorStand(LivingEntity):
     equipment: EntityEquipment | None = None  # The equipment items of the armor stand.
     Invisible: bool | None = None  # Whether it should be invisible.

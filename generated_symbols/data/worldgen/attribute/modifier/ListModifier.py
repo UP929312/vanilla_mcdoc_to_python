@@ -3,8 +3,9 @@ Generated from symbols.json for ::java::data::worldgen::attribute::modifier::Lis
 Local link to file: generated_symbols/data/worldgen/attribute/modifier/ListModifier.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Generic, TypeVar
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.attribute.modifier.ListModifierType import ListModifierType
@@ -12,8 +13,7 @@ if TYPE_CHECKING:
 
 E = TypeVar('E')
 
-@dataclass(kw_only=True)
-class ListModifier(Generic[E]):
+class ListModifier(GeneratedModel, Generic[E]):
     modifier: ListModifierType
     argument: list[E]
 

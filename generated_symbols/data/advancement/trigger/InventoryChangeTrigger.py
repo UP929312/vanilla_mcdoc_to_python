@@ -3,22 +3,19 @@ Generated from symbols.json for ::java::data::advancement::trigger::InventoryCha
 Local link to file: generated_symbols/data/advancement/trigger/InventoryChangeTrigger.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
+from generated_symbols.base import GeneratedModel
 from generated_symbols.data.advancement.predicate.ItemPredicate import ItemPredicate
 from generated_symbols.data.advancement.trigger.AllOptional import AllOptional
 from generated_symbols.data.advancement.trigger.PlayerConditions import PlayerConditions
 from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
 
 
-@dataclass(kw_only=True)
-class SlotsStruct:
+class SlotsStruct(GeneratedModel):
     empty: MinMaxBounds[int] | int | None = None  # Amount of empty slots.
     occupied: MinMaxBounds[int] | int | None = None  # Amount of occupied slots.
     full: MinMaxBounds[int] | int | None = None  # Amount of slots that are a full stack.
 
 
-@dataclass(kw_only=True)
 class InventoryChangeTriggerTypeArg(PlayerConditions):
     slots: SlotsStruct | None = None
     items: list[ItemPredicate] | None = None

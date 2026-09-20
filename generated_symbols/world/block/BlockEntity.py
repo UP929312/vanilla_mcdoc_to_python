@@ -3,17 +3,16 @@ Generated from symbols.json for ::java::world::block::BlockEntity
 Local link to file: generated_symbols/world/block/BlockEntity.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.world.component.DataComponentPatch import DataComponentPatch
 
 
-@dataclass(kw_only=True)
-class BlockEntity:
+class BlockEntity(GeneratedModel):
     id: Annotated[str, IdSpec(registry='block_entity_type')] | None = None
     x: int | None = None
     y: int | None = None

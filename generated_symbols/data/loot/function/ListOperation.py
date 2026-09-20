@@ -3,29 +3,25 @@ Generated from symbols.json for ::java::data::loot::function::ListOperation
 Local link to file: generated_symbols/data/loot/function/ListOperation.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Literal
 
+from generated_symbols.base import GeneratedModel
 from generated_symbols.data.loot.function.InsertListOperation import InsertListOperation
 from generated_symbols.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
 
 
-@dataclass(kw_only=True)
-class ListOperationAppend:
+class ListOperationAppend(GeneratedModel):
     mode: Literal['minecraft:append'] = 'minecraft:append'  # Determines how the existing list should be modified.
 
 
-@dataclass(kw_only=True)
 class ListOperationInsert(InsertListOperation):
     mode: Literal['minecraft:insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
 
 
-@dataclass(kw_only=True)
-class ListOperationReplaceAll:
+class ListOperationReplaceAll(GeneratedModel):
     mode: Literal['minecraft:replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
 
 
-@dataclass(kw_only=True)
 class ListOperationReplaceSection(ReplaceSectionListOperation):
     mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
 

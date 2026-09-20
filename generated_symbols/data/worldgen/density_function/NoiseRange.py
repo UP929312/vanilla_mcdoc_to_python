@@ -5,8 +5,10 @@ Local link to file: generated_symbols/data/worldgen/density_function/NoiseRange.
 # ~~~ CODE ~~~
 from typing import Annotated
 
+from pydantic import Field
 
-type NoiseRange = Annotated[float, 'Range | `-1000000`-`1000000` | both inclusive']
+
+type NoiseRange = Annotated[float, Field(ge=-1000000, le=1000000)]
 
 
 # ~~~ MODEL DUMP ~~~

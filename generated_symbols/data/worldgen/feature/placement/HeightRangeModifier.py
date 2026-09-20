@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::worldgen::feature::placement::Heig
 Local link to file: generated_symbols/data/worldgen/feature/placement/HeightRangeModifier.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.HeightProvider import HeightProvider
 
 
-@dataclass(kw_only=True)
-class HeightRangeModifier:
+class HeightRangeModifier(GeneratedModel):
     height: HeightProvider
 
 

@@ -3,19 +3,16 @@ Generated from symbols.json for ::java::data::worldgen::dimension::chunk_generat
 Local link to file: generated_symbols/data/worldgen/dimension/chunk_generator/ChunkGenerator.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Literal
 
 from generated_symbols.data.worldgen.dimension.chunk_generator.Flat import Flat
 from generated_symbols.data.worldgen.dimension.chunk_generator.Noise import Noise
 
 
-@dataclass(kw_only=True)
 class ChunkGeneratorFlat(Flat):
     type: Literal['minecraft:flat'] = 'minecraft:flat'
 
 
-@dataclass(kw_only=True)
 class ChunkGeneratorNoise(Noise):
     type: Literal['minecraft:noise'] = 'minecraft:noise'
 

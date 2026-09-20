@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::item::book::WrittenBook
 Local link to file: generated_symbols/world/item/book/WrittenBook.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.world.item.ItemBase import ItemBase
@@ -13,7 +12,6 @@ if TYPE_CHECKING:
     from generated_symbols.world.component.item.BookGeneration import BookGeneration
 
 
-@dataclass(kw_only=True)
 class WrittenBook(ItemBase):
     resolved: bool | None = None  # Whether the dynamic content on the pages has been resolved.
     pages: list[Filterable[str]] | None = None  # Pages of the book as JSON text components.

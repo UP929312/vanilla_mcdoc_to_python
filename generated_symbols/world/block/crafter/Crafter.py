@@ -3,16 +3,15 @@ Generated from symbols.json for ::java::world::block::crafter::Crafter
 Local link to file: generated_symbols/world/block/crafter/Crafter.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated, Literal
 
 from generated_symbols.world.block.container.Container9 import Container9
+from pydantic import Field
 
 
-@dataclass(kw_only=True)
 class Crafter(Container9):
     crafting_ticks_remaining: int | None = None
-    disabled_slots: Annotated[list[Annotated[int, 'Range | `0`-`8` | both inclusive']], 'Length = up to 9 (inclusive)'] | None = None
+    disabled_slots: Annotated[list[Annotated[int, Field(ge=0, le=8)]], Field(max_length=9)] | None = None
     triggered: Literal[0] | Literal[1] | None = None
 
 

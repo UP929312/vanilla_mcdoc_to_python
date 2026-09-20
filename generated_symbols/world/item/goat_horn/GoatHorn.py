@@ -3,14 +3,12 @@ Generated from symbols.json for ::java::world::item::goat_horn::GoatHorn
 Local link to file: generated_symbols/world/item/goat_horn/GoatHorn.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
 from generated_symbols.world.item.ItemBase import ItemBase
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
 class GoatHorn(ItemBase):
     instrument: Annotated[str, IdSpec(registry='instrument')] | None = None
 

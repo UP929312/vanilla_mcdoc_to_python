@@ -3,13 +3,14 @@ Generated from symbols.json for ::java::world::component::item::TeleportRandomly
 Local link to file: generated_symbols/world/component/item/TeleportRandomlyConsumeEffect.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class TeleportRandomlyConsumeEffect:
-    diameter: Annotated[float, 'Range | `1` and above | inclusive'] | None = None  # Defaults to 16.
+
+class TeleportRandomlyConsumeEffect(GeneratedModel):
+    diameter: Annotated[float, Field(ge=1)] | None = None  # Defaults to 16.
     directional_particles: bool | None = None  # Whether to show a particle trail into the direction of teleportation.  Defaults to `true`.
 
 

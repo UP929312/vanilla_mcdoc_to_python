@@ -3,12 +3,9 @@ Generated from symbols.json for ::java::util::memory::IsPanicking
 Local link to file: generated_symbols/util/memory/IsPanicking.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.util.memory.ExpirableValue import ExpirableValue
 
 
-@dataclass(kw_only=True)
 class IsPanicking(ExpirableValue):
     value: bool  # Whether the mob is currently panicking.
 

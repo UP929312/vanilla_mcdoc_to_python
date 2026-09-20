@@ -3,22 +3,23 @@ Generated from symbols.json for ::java::data::worldgen::material_rule::OreVeinif
 Local link to file: generated_symbols/data/worldgen/material_rule/OreVeinifier.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.density_function.DensityFunctionRef import DensityFunctionRef
     from generated_symbols.util.block_state.BlockState import BlockState
 
 
-@dataclass(kw_only=True)
-class OreVeinifier:
+class OreVeinifier(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/material_rule'
 
     ore_block: BlockState
     raw_ore_block: BlockState
     filler_block: BlockState
-    raw_ore_chance: Annotated[float, 'Range | `0`-`1` | both inclusive']
+    raw_ore_chance: Annotated[float, Field(ge=0, le=1)]
     density: DensityFunctionRef
     richness: DensityFunctionRef
     filler_gap: DensityFunctionRef

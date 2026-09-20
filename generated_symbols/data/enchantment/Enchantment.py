@@ -3,10 +3,11 @@ Generated from symbols.json for ::java::data::enchantment::Enchantment
 Local link to file: generated_symbols/data/enchantment/Enchantment.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.enchantment.EnchantmentCost import EnchantmentCost
@@ -16,19 +17,18 @@ if TYPE_CHECKING:
     from generated_symbols.util.text.Text import Text
 
 
-@dataclass(kw_only=True)
-class Enchantment:
+class Enchantment(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'enchantment'
 
     description: Text
     exclusive_set: Annotated[str, IdSpec(registry='enchantment', tags='allowed')] | list[Annotated[str, IdSpec(registry='enchantment')]] | None = None
     supported_items: Annotated[str, IdSpec(registry='item', tags='allowed')] | KnownItemId | list[Annotated[str, IdSpec(registry='item')] | KnownItemId]
     primary_items: Annotated[str, IdSpec(registry='item', tags='allowed')] | KnownItemId | list[Annotated[str, IdSpec(registry='item')] | KnownItemId] | None = None  # Item types for which this Enchantment shows up in Enchanting Tables and on traded equipment.  Must be a subset of `supported_items`.
-    weight: Annotated[int, 'Range | `1`-`1024` | both inclusive']  # How commonly the Enchantment appears, compared to the total combined `weight` of all available Enchantments.
-    max_level: Annotated[int, 'Range | `1`-`255` | both inclusive']  # Maximum level of the enchantment.
+    weight: Annotated[int, Field(ge=1, le=1024)]  # How commonly the Enchantment appears, compared to the total combined `weight` of all available Enchantments.
+    max_level: Annotated[int, Field(ge=1, le=255)]  # Maximum level of the enchantment.
     min_cost: EnchantmentCost  # Minimum experience cost.
     max_cost: EnchantmentCost  # Maximum experience cost.
-    anvil_cost: Annotated[int, 'Range | `0` and above | inclusive']  # Halved when an Enchantment is added to a book. The effective fee is multiplied by the level of the Enchantment.
+    anvil_cost: Annotated[int, Field(ge=0)]  # Halved when an Enchantment is added to a book. The effective fee is multiplied by the level of the Enchantment.
     slots: list[EquipmentSlotGroup]
     effects: EnchantmentEffectComponentMap | None = None
 

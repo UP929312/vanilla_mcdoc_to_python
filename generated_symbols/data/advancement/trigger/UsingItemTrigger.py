@@ -3,14 +3,11 @@ Generated from symbols.json for ::java::data::advancement::trigger::UsingItemTri
 Local link to file: generated_symbols/data/advancement/trigger/UsingItemTrigger.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.data.advancement.predicate.ItemPredicate import ItemPredicate
 from generated_symbols.data.advancement.trigger.AllOptional import AllOptional
 from generated_symbols.data.advancement.trigger.PlayerConditions import PlayerConditions
 
 
-@dataclass(kw_only=True)
 class UsingItemTriggerTypeArg(PlayerConditions):
     item: ItemPredicate | None = None
 

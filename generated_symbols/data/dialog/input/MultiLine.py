@@ -3,14 +3,15 @@ Generated from symbols.json for ::java::data::dialog::input::MultiLine
 Local link to file: generated_symbols/data/dialog/input/MultiLine.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class MultiLine:
-    max_lines: Annotated[int, 'Range | `1` and above | inclusive'] | None = None
-    height: Annotated[int, 'Range | `1`-`512` | both inclusive'] | None = None  # Height of the input. If this field is not present: - If `max_lines` is present, the height will be chosen to fit the maximum number of lines. The chosen height is capped at 512. - If `max_lines` is also not present, the height will be chosen to fit 4 lines.
+
+class MultiLine(GeneratedModel):
+    max_lines: Annotated[int, Field(ge=1)] | None = None
+    height: Annotated[int, Field(ge=1, le=512)] | None = None  # Height of the input. If this field is not present: - If `max_lines` is present, the height will be chosen to fit the maximum number of lines. The chosen height is capped at 512. - If `max_lines` is also not present, the height will be chosen to fit 4 lines.
 
 
 # ~~~ MODEL DUMP ~~~

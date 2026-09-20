@@ -3,12 +3,9 @@ Generated from symbols.json for ::java::world::entity::BlockAttachedEntity
 Local link to file: generated_symbols/world/entity/BlockAttachedEntity.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.world.entity.EntityBase import EntityBase
 
 
-@dataclass(kw_only=True)
 class BlockAttachedEntity(EntityBase):
     block_pos: tuple[int, int, int] | None = None
 

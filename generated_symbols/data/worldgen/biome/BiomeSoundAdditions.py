@@ -3,17 +3,18 @@ Generated from symbols.json for ::java::data::worldgen::biome::BiomeSoundAdditio
 Local link to file: generated_symbols/data/worldgen/biome/BiomeSoundAdditions.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.SoundEventRef import SoundEventRef
 
 
-@dataclass(kw_only=True)
-class BiomeSoundAdditions:
+class BiomeSoundAdditions(GeneratedModel):
     sound: SoundEventRef
-    tick_chance: Annotated[float, 'Range | `0`-`1` | both inclusive']
+    tick_chance: Annotated[float, Field(ge=0, le=1)]
 
 
 # ~~~ MODEL DUMP ~~~

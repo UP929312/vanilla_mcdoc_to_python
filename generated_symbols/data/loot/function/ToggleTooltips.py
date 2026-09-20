@@ -3,14 +3,12 @@ Generated from symbols.json for ::java::data::loot::function::ToggleTooltips
 Local link to file: generated_symbols/data/loot/function/ToggleTooltips.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
 from generated_symbols.data.loot.function.Conditions import Conditions
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
 class ToggleTooltips(Conditions):
     toggles: dict[Annotated[str, IdSpec(registry='data_component_type')], bool]  # Toggles which tooltips are shown.
 

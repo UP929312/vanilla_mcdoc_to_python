@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::entity::mob::allay::Allay
 Local link to file: generated_symbols/world/entity/mob/allay/Allay.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.world.entity.mob.MobBase import MobBase
@@ -13,7 +12,6 @@ if TYPE_CHECKING:
     from generated_symbols.world.item.ItemStack import ItemStack
 
 
-@dataclass(kw_only=True)
 class Allay(MobBase):
     DuplicationCooldown: int | None = None  # Ticks until the allay can duplicate. This is set to 6000 game ticks (5 minutes) when the allay duplicates.
     Inventory: tuple[ItemStack] | None = None  # Items it has picked up. Note that the item given by the player is in the allay's `HandItems[0]` tag, not here.

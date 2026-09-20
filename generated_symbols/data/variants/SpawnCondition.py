@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::variants::SpawnCondition
 Local link to file: generated_symbols/data/variants/SpawnCondition.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Literal
 
 from generated_symbols.data.variants.BiomeCheck import BiomeCheck
@@ -11,17 +10,14 @@ from generated_symbols.data.variants.MoonBrightnessCheck import MoonBrightnessCh
 from generated_symbols.data.variants.StructureCheck import StructureCheck
 
 
-@dataclass(kw_only=True)
 class SpawnConditionBiome(BiomeCheck):
     type: Literal['minecraft:biome'] = 'minecraft:biome'
 
 
-@dataclass(kw_only=True)
 class SpawnConditionMoonBrightness(MoonBrightnessCheck):
     type: Literal['minecraft:moon_brightness'] = 'minecraft:moon_brightness'
 
 
-@dataclass(kw_only=True)
 class SpawnConditionStructure(StructureCheck):
     type: Literal['minecraft:structure'] = 'minecraft:structure'
 

@@ -3,14 +3,13 @@ Generated from symbols.json for ::java::util::text::CustomAction
 Local link to file: generated_symbols/util/text/CustomAction.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated, Any
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
-class CustomAction:
+class CustomAction(GeneratedModel):
     id: Annotated[str, IdSpec()]  # ID of a custom action. Has no functionality on vanilla servers.
     payload: Any | None = None
 

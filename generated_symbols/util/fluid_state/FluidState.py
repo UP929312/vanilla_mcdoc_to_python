@@ -3,17 +3,16 @@ Generated from symbols.json for ::java::util::fluid_state::FluidState
 Local link to file: generated_symbols/util/fluid_state/FluidState.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
 type PropertiesStructFluidStatesNone = dict[str, str]
 
 
-@dataclass(kw_only=True)
-class FluidStateStruct:
+class FluidStateStruct(GeneratedModel):
     id: Annotated[str, IdSpec(registry='fluid')]
     properties: PropertiesStructFluidStatesNone | None = None
 

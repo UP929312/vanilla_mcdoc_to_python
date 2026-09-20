@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::entity::mob::breedable::tamable::
 Local link to file: generated_symbols/world/entity/mob/breedable/tamable/Cat.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.world.entity.mob.breedable.tamable.Tamable import Tamable
@@ -13,7 +12,6 @@ if TYPE_CHECKING:
     from generated_symbols.util.DyeColorByte import DyeColorByte
 
 
-@dataclass(kw_only=True)
 class Cat(Tamable):
     CollarColor: DyeColorByte | None = None  # Collar color, present for stray cats. Defaults to 14 (red).
     variant: Annotated[str, IdSpec(registry='cat_variant')] | None = None

@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::world::entity::evoker_fangs::Owner
 Local link to file: generated_symbols/world/entity/evoker_fangs/Owner.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class Owner:
+class Owner(GeneratedModel):
     OwnerUUIDMost: int | None = None  # Upper bits of the owner's UUID.
     OwnerUUIDLeast: int | None = None  # Lower bits of the owner's UUID.
 

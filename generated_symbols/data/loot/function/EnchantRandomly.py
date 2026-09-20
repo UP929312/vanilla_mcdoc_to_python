@@ -3,14 +3,12 @@ Generated from symbols.json for ::java::data::loot::function::EnchantRandomly
 Local link to file: generated_symbols/data/loot/function/EnchantRandomly.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
 from generated_symbols.data.loot.function.Conditions import Conditions
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
 class EnchantRandomly(Conditions):
     options: Annotated[str, IdSpec(registry='enchantment', tags='allowed')] | list[Annotated[str, IdSpec(registry='enchantment')]] | None = None  # The allowed enchantments. If omitted, all enchantments applicable to the item are possible.
     only_compatible: bool | None = None  # Whether to only enchant with item-compatible enchantments. Defaults to `true`.  Note: Books are considered compatible with all Enchantments.

@@ -3,16 +3,16 @@ Generated from symbols.json for ::java::data::loot::condition::EntityScores
 Local link to file: generated_symbols/data/loot/condition/EntityScores.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.loot.EntityTarget import EntityTarget
     from generated_symbols.data.util.IntRange import IntRange
 
 
-@dataclass(kw_only=True)
-class EntityScores:
+class EntityScores(GeneratedModel):
     entity: EntityTarget
     scores: dict[str, IntRange]
 

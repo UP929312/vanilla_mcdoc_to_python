@@ -3,14 +3,14 @@ Generated from symbols.json for ::java::data::tag::TagEntry
 Local link to file: generated_symbols/data/tag/TagEntry.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Generic, TypeVar
+
+from generated_symbols.base import GeneratedModel
 
 
 E = TypeVar('E')
 
-@dataclass(kw_only=True)
-class TagEntry(Generic[E]):
+class TagEntry(GeneratedModel, Generic[E]):
     id: E
     required: bool | None = None
 

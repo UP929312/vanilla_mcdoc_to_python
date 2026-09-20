@@ -3,15 +3,12 @@ Generated from symbols.json for ::java::data::advancement::trigger::DistanceTrig
 Local link to file: generated_symbols/data/advancement/trigger/DistanceTrigger.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.data.advancement.predicate.DistancePredicate import DistancePredicate
 from generated_symbols.data.advancement.predicate.LocationPredicate import LocationPredicate
 from generated_symbols.data.advancement.trigger.AllOptional import AllOptional
 from generated_symbols.data.advancement.trigger.PlayerConditions import PlayerConditions
 
 
-@dataclass(kw_only=True)
 class DistanceTriggerTypeArg(PlayerConditions):
     start_position: LocationPredicate | None = None  # Where the player started to travel.
     distance: DistancePredicate | None = None  # How far the player travels.

@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::worldgen::template_pool::SingleEle
 Local link to file: generated_symbols/data/worldgen/template_pool/SingleElement.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.data.worldgen.template_pool.ElementBase import ElementBase
@@ -14,7 +13,6 @@ if TYPE_CHECKING:
     from generated_symbols.data.worldgen.structure.LiquidSettings import LiquidSettings
 
 
-@dataclass(kw_only=True)
 class SingleElement(ElementBase):
     location: Annotated[str, IdSpec(registry='structure')]
     processors: ProcessorListRef

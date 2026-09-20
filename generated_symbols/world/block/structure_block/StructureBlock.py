@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::block::structure_block::Structure
 Local link to file: generated_symbols/world/block/structure_block/StructureBlock.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.world.block.BlockEntity import BlockEntity
@@ -15,7 +14,6 @@ if TYPE_CHECKING:
     from generated_symbols.world.block.structure_block.Rotation import Rotation
 
 
-@dataclass(kw_only=True)
 class StructureBlock(BlockEntity):
     name: Annotated[str, IdSpec(registry='structure', empty='allowed')] | None = None
     author: str | None = None  # Author of the structure.

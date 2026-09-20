@@ -3,8 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::feature::SingleBlockPill
 Local link to file: generated_symbols/data/worldgen/feature/SingleBlockPillarConfig.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.block_predicate.BlockPredicate import BlockPredicate
@@ -13,14 +15,13 @@ if TYPE_CHECKING:
     from generated_symbols.util.direction.VerticalDirection import VerticalDirection
 
 
-@dataclass(kw_only=True)
-class SingleBlockPillarConfig:
+class SingleBlockPillarConfig(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/feature'
 
     block: BlockStateProvider
     can_replace: BlockPredicate | None = None  # Defaults to "always true".
     direction: VerticalDirection
-    chance_to_continue: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None  # Defaults to 1.
+    chance_to_continue: Annotated[float, Field(ge=0, le=1)] | None = None  # Defaults to 1.
     cap_feature: PlacedFeatureRef | None = None
 
 

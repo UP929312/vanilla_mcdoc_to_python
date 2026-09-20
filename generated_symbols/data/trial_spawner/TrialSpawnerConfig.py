@@ -3,21 +3,21 @@ Generated from symbols.json for ::java::data::trial_spawner::TrialSpawnerConfig
 Local link to file: generated_symbols/data/trial_spawner/TrialSpawnerConfig.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.WeightedList import WeightedList
     from generated_symbols.world.block.spawner.SpawnPotential import SpawnPotential
 
 
-@dataclass(kw_only=True)
-class TrialSpawnerConfig:
+class TrialSpawnerConfig(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'trial_spawner'
 
-    spawn_range: Annotated[int, 'Range | `1`-`128` | both inclusive'] | None = None  # Maximum distance from the spawner that en entity can spawn
+    spawn_range: Annotated[int, Field(ge=1, le=128)] | None = None  # Maximum distance from the spawner that en entity can spawn
     total_mobs: float | None = None  # Total amount of entities that are spawned during one activation, when 1 player is nearby
     total_mobs_added_per_player: float | None = None  # Number added to `total_mobs` for each additional player
     simultaneous_mobs: float | None = None  # Number of entities that that can be present at once, when 1 player is nearby

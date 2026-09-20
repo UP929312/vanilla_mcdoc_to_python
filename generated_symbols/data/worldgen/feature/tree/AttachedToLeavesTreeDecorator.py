@@ -3,22 +3,23 @@ Generated from symbols.json for ::java::data::worldgen::feature::tree::AttachedT
 Local link to file: generated_symbols/data/worldgen/feature/tree/AttachedToLeavesTreeDecorator.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
     from generated_symbols.util.direction.Direction import Direction
 
 
-@dataclass(kw_only=True)
-class AttachedToLeavesTreeDecorator:
-    probability: Annotated[float, 'Range | `0`-`1` | both inclusive']
-    exclusion_radius_xz: Annotated[int, 'Range | `0`-`16` | both inclusive']
-    exclusion_radius_y: Annotated[int, 'Range | `0`-`16` | both inclusive']
-    required_empty_blocks: Annotated[int, 'Range | `1`-`16` | both inclusive']
+class AttachedToLeavesTreeDecorator(GeneratedModel):
+    probability: Annotated[float, Field(ge=0, le=1)]
+    exclusion_radius_xz: Annotated[int, Field(ge=0, le=16)]
+    exclusion_radius_y: Annotated[int, Field(ge=0, le=16)]
+    required_empty_blocks: Annotated[int, Field(ge=1, le=16)]
     block_provider: BlockStateProvider
-    directions: Annotated[list[Direction], 'Length = 1 (inclusive) and above']
+    directions: Annotated[list[Direction], Field(min_length=1)]
 
 
 # ~~~ MODEL DUMP ~~~

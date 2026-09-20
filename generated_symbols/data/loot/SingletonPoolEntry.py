@@ -3,15 +3,14 @@ Generated from symbols.json for ::java::data::loot::SingletonPoolEntry
 Local link to file: generated_symbols/data/loot/SingletonPoolEntry.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
 from generated_symbols.data.loot.LootPoolEntryBase import LootPoolEntryBase
+from pydantic import Field
 
 
-@dataclass(kw_only=True)
 class SingletonPoolEntry(LootPoolEntryBase):
-    weight: Annotated[int, 'Range | `1` and above | inclusive'] | None = None
+    weight: Annotated[int, Field(ge=1)] | None = None
     quality: int | None = None
 
 

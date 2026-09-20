@@ -3,14 +3,15 @@ Generated from symbols.json for ::java::world::entity::interaction::Action
 Local link to file: generated_symbols/world/entity/interaction/Action.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class Action:
+
+class Action(GeneratedModel):
     player: tuple[int, int, int, int] | None = None
-    timestamp: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # Game tick of when the event occured.
+    timestamp: Annotated[int, Field(ge=0)] | None = None  # Game tick of when the event occured.
 
 
 # ~~~ MODEL DUMP ~~~

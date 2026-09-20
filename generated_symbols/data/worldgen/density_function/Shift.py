@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::worldgen::density_function::Shift
 Local link to file: generated_symbols/data/worldgen/density_function/Shift.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.density_function.NoiseParametersRef import NoiseParametersRef
 
 
-@dataclass(kw_only=True)
-class Shift:
+class Shift(GeneratedModel):
     noise: NoiseParametersRef
 
 

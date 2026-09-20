@@ -3,17 +3,18 @@ Generated from symbols.json for ::java::world::item::suspicious_stew::Effect
 Local link to file: generated_symbols/world/item/suspicious_stew/Effect.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.EffectId import EffectId
 
 
-@dataclass(kw_only=True)
-class Effect:
+class Effect(GeneratedModel):
     EffectId: EffectId | None = None
-    EffectDuration: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # Duration in ticks.
+    EffectDuration: Annotated[int, Field(ge=1)] | None = None  # Duration in ticks.
 
 
 # ~~~ MODEL DUMP ~~~

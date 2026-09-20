@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::util::particle::EntityEffectParticle
 Local link to file: generated_symbols/util/particle/EntityEffectParticle.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.util.particle.TranslucentParticle import TranslucentParticle
 
 
-@dataclass(kw_only=True)
-class EntityEffectParticle:
+class EntityEffectParticle(GeneratedModel):
     color: TranslucentParticle
 
 

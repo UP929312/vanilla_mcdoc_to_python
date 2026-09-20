@@ -3,17 +3,16 @@ Generated from symbols.json for ::java::data::enchantment::effect::DamageEntityE
 Local link to file: generated_symbols/data/enchantment/effect/DamageEntityEffect.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.enchantment.LevelBasedValue import LevelBasedValue
 
 
-@dataclass(kw_only=True)
-class DamageEntityEffect:
+class DamageEntityEffect(GeneratedModel):
     damage_type: Annotated[str, IdSpec(registry='damage_type')]
     min_damage: LevelBasedValue  # Amount of damage is randomized within the given min/max span.
     max_damage: LevelBasedValue

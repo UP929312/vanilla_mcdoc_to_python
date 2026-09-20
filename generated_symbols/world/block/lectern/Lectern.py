@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::block::lectern::Lectern
 Local link to file: generated_symbols/world/block/lectern/Lectern.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.world.block.BlockEntity import BlockEntity
@@ -12,7 +11,6 @@ if TYPE_CHECKING:
     from generated_symbols.world.item.ItemStack import ItemStack
 
 
-@dataclass(kw_only=True)
 class Lectern(BlockEntity):
     Book: ItemStack | None = None
     Page: int | None = None  # Current page the book is on.

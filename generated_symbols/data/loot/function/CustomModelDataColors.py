@@ -3,9 +3,9 @@ Generated from symbols.json for ::java::data::loot::function::CustomModelDataCol
 Local link to file: generated_symbols/data/loot/function/CustomModelDataColors.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Literal
 
+from generated_symbols.base import GeneratedModel
 from generated_symbols.data.loot.function.InsertListOperation import InsertListOperation
 from generated_symbols.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
 
@@ -14,25 +14,21 @@ if TYPE_CHECKING:
     from generated_symbols.util.color.RGB import RGB
 
 
-@dataclass(kw_only=True)
-class CustomModelDataColorsAppend:
+class CustomModelDataColorsAppend(GeneratedModel):
     values: list[NumberProviderRef | RGB]
     mode: Literal['minecraft:append'] = 'minecraft:append'  # Determines how the existing list should be modified.
 
 
-@dataclass(kw_only=True)
 class CustomModelDataColorsInsert(InsertListOperation):
     values: list[NumberProviderRef | RGB]
     mode: Literal['minecraft:insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
 
 
-@dataclass(kw_only=True)
-class CustomModelDataColorsReplaceAll:
+class CustomModelDataColorsReplaceAll(GeneratedModel):
     values: list[NumberProviderRef | RGB]
     mode: Literal['minecraft:replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
 
 
-@dataclass(kw_only=True)
 class CustomModelDataColorsReplaceSection(ReplaceSectionListOperation):
     values: list[NumberProviderRef | RGB]
     mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.

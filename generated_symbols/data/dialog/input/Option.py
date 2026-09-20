@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::dialog::input::Option
 Local link to file: generated_symbols/data/dialog/input/Option.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.util.text.Text import Text
 
 
-@dataclass(kw_only=True)
-class Option:
+class Option(GeneratedModel):
     id: str  # String to send on submit.
     display: Text | None = None  # Label displayed on the button. When not present, `id` will be used instead.
     initial: bool | None = None  # Whether this option is the initial value. Only one option can have this field set to `true`.

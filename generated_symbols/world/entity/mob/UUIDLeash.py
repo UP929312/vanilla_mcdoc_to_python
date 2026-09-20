@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::world::entity::mob::UUIDLeash
 Local link to file: generated_symbols/world/entity/mob/UUIDLeash.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class UUIDLeash:
+class UUIDLeash(GeneratedModel):
     UUIDMost: int | None = None  # Upper bits of the other entity's UUID.
     UUIDLeast: int | None = None  # Lower bits of the other entity's UUID.
 

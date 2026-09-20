@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::item::debug_stick::DebugStick
 Local link to file: generated_symbols/world/item/debug_stick/DebugStick.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.world.item.ItemBase import ItemBase
@@ -12,7 +11,6 @@ if TYPE_CHECKING:
     from generated_symbols.world.component.item.DebugStickState import DebugStickState
 
 
-@dataclass(kw_only=True)
 class DebugStick(ItemBase):
     DebugProperty: DebugStickState | None = None
 

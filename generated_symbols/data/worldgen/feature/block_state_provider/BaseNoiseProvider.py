@@ -3,18 +3,19 @@ Generated from symbols.json for ::java::data::worldgen::feature::block_state_pro
 Local link to file: generated_symbols/data/worldgen/feature/block_state_provider/BaseNoiseProvider.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.dimension.biome_source.NoiseParameters import NoiseParameters
 
 
-@dataclass(kw_only=True)
-class BaseNoiseProvider:
+class BaseNoiseProvider(GeneratedModel):
     seed: int
     noise: NoiseParameters
-    scale: Annotated[float, 'Range | `0` and above | inclusive']
+    scale: Annotated[float, Field(ge=0)]
 
 
 # ~~~ MODEL DUMP ~~~

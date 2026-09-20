@@ -6,9 +6,10 @@ Local link to file: generated_symbols/world/component/item/EnchantmentLevels.py
 from typing import Annotated
 
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 
-type EnchantmentLevels = dict[Annotated[str, IdSpec(registry='enchantment')], Annotated[int, 'Range | `1`-`255` | both inclusive']]
+type EnchantmentLevels = dict[Annotated[str, IdSpec(registry='enchantment')], Annotated[int, Field(ge=1, le=255)]]
 
 
 # ~~~ MODEL DUMP ~~~

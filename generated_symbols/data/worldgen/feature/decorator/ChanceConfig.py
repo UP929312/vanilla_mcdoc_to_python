@@ -3,13 +3,14 @@ Generated from symbols.json for ::java::data::worldgen::feature::decorator::Chan
 Local link to file: generated_symbols/data/worldgen/feature/decorator/ChanceConfig.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class ChanceConfig:
-    chance: Annotated[int, 'Range | `0` and above | inclusive']
+
+class ChanceConfig(GeneratedModel):
+    chance: Annotated[int, Field(ge=0)]
 
 
 # ~~~ MODEL DUMP ~~~

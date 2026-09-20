@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::data::util::RandomValueBounds
 Local link to file: generated_symbols/data/util/RandomValueBounds.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class RandomValueBoundsStruct:
+class RandomValueBoundsStruct(GeneratedModel):
     min: float
     max: float
 

@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::block::sign::OldSign
 Local link to file: generated_symbols/world/block/sign/OldSign.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.world.block.BlockEntity import BlockEntity
@@ -12,7 +11,6 @@ if TYPE_CHECKING:
     from generated_symbols.util.color.DyeColor import DyeColor
 
 
-@dataclass(kw_only=True)
 class OldSign(BlockEntity):
     Color: DyeColor | None = None  # Color the text has been dyed.
     GlowingText: bool | None = None

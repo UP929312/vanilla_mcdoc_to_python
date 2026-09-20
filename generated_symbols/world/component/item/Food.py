@@ -3,13 +3,14 @@ Generated from symbols.json for ::java::world::component::item::Food
 Local link to file: generated_symbols/world/component/item/Food.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class Food:
-    nutrition: Annotated[int, 'Range | `0` and above | inclusive']  # Food points/haunches restored when eaten (capped to 20.0).
+
+class Food(GeneratedModel):
+    nutrition: Annotated[int, Field(ge=0)]  # Food points/haunches restored when eaten (capped to 20.0).
     saturation: float  # Exact value added to the player's saturation level, capped at whatever the [new] food points value is.
     can_always_eat: bool | None = None  # Whether the item can be eaten when the player's food points/haunches are full. Defaults to `false`
 

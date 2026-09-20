@@ -3,8 +3,9 @@ Generated from symbols.json for ::java::data::worldgen::density_function::Gradie
 Local link to file: generated_symbols/data/worldgen/density_function/Gradient.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.density_function.NoiseRange import NoiseRange
@@ -12,8 +13,7 @@ if TYPE_CHECKING:
     from generated_symbols.util.direction.Axis import Axis
 
 
-@dataclass(kw_only=True)
-class Gradient:
+class Gradient(GeneratedModel):
     axis: Axis
     tiling: TilingMode | None = None  # Defaults to `clamp_to_edge`.
     from_coordinate: int

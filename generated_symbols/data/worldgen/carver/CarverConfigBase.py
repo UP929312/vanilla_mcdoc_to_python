@@ -3,16 +3,17 @@ Generated from symbols.json for ::java::data::worldgen::carver::CarverConfigBase
 Local link to file: generated_symbols/data/worldgen/carver/CarverConfigBase.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.HeightProvider import HeightProvider
 
 
-@dataclass(kw_only=True)
-class CarverConfigBase:
-    probability: Annotated[float, 'Range | `0`-`1` | both inclusive']
+class CarverConfigBase(GeneratedModel):
+    probability: Annotated[float, Field(ge=0, le=1)]
     y: HeightProvider
 
 

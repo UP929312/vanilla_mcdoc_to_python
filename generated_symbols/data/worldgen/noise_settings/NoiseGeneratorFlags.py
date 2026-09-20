@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::noise_settings::NoiseGen
 Local link to file: generated_symbols/data/worldgen/noise_settings/NoiseGeneratorFlags.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class NoiseGeneratorFlags:
+class NoiseGeneratorFlags(GeneratedModel):
     aquifers_enabled: bool
     ore_veins_enabled: bool
 

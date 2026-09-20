@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::worldgen::template_pool::FeatureEl
 Local link to file: generated_symbols/data/worldgen/template_pool/FeatureElement.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.data.worldgen.template_pool.ElementBase import ElementBase
@@ -12,7 +11,6 @@ if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.placement.PlacedFeatureRef import PlacedFeatureRef
 
 
-@dataclass(kw_only=True)
 class FeatureElement(ElementBase):
     feature: PlacedFeatureRef
 

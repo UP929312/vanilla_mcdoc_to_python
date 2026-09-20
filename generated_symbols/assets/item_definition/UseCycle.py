@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::assets::item_definition::UseCycle
 Local link to file: generated_symbols/assets/item_definition/UseCycle.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class UseCycle:
+class UseCycle(GeneratedModel):
     period: float | None = None  # returns remaining item use ticks modulo `period`. Defaults to 1.
 
 

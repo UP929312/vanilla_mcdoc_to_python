@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::data::enchantment::level_based_value::Sq
 Local link to file: generated_symbols/data/enchantment/level_based_value/SquaredLevelValue.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class SquaredLevelValue:
+class SquaredLevelValue(GeneratedModel):
     added: float  # Added to the result so that the result becomes `square(level) + added`.
 
 

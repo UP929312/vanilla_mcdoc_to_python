@@ -3,8 +3,9 @@ Generated from symbols.json for ::java::data::worldgen::feature::GrowingPlantCon
 Local link to file: generated_symbols/data/worldgen/feature/GrowingPlantConfig.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, ClassVar
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.GrowingPlantHeight import GrowingPlantHeight
@@ -12,8 +13,7 @@ if TYPE_CHECKING:
     from generated_symbols.util.direction.Direction import Direction
 
 
-@dataclass(kw_only=True)
-class GrowingPlantConfig:
+class GrowingPlantConfig(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/feature'
 
     direction: Direction

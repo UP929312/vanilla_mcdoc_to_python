@@ -3,12 +3,9 @@ Generated from symbols.json for ::java::world::entity::mob::breedable::horse::Ca
 Local link to file: generated_symbols/world/entity/mob/breedable/horse/Camel.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.world.entity.mob.breedable.horse.HorseBase import HorseBase
 
 
-@dataclass(kw_only=True)
 class Camel(HorseBase):
     IsSitting: bool | None = None  # Whether it is sitting.
     LastPoseTick: int | None = None  # The tick when it started changing its pose.

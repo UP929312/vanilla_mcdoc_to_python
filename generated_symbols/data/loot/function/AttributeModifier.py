@@ -3,9 +3,9 @@ Generated from symbols.json for ::java::data::loot::function::AttributeModifier
 Local link to file: generated_symbols/data/loot/function/AttributeModifier.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
@@ -14,8 +14,7 @@ if TYPE_CHECKING:
     from generated_symbols.util.slot.EquipmentSlotGroup import EquipmentSlotGroup
 
 
-@dataclass(kw_only=True)
-class AttributeModifier:
+class AttributeModifier(GeneratedModel):
     attribute: Annotated[str, IdSpec(registry='attribute')]  # Attribute type to modify.
     id: Annotated[str, IdSpec(registry='attribute_modifier')]  # The unique identifier of this attribute modifier.
     amount: NumberProviderRef

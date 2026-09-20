@@ -15,3 +15,5 @@ if TYPE_CHECKING:
 
 
 type Text = str | TextObject | Annotated[list[Text], 'Length = 1 (inclusive) and above']
+
+

@@ -3,19 +3,18 @@ Generated from symbols.json for ::java::data::advancement::trigger::RecipeCrafte
 Local link to file: generated_symbols/data/advancement/trigger/RecipeCraftedTrigger.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
 from generated_symbols.data.advancement.predicate.ItemPredicate import ItemPredicate
 from generated_symbols.data.advancement.trigger.ParitalRequired import ParitalRequired
 from generated_symbols.data.advancement.trigger.PlayerConditions import PlayerConditions
 from generated_symbols.data.recipe.RecipeListRef import RecipeListRef
+from pydantic import Field
 
 
-@dataclass(kw_only=True)
 class RecipeCraftedTriggerTypeArg(PlayerConditions):
     recipes: RecipeListRef
-    ingredients: Annotated[list[ItemPredicate], 'Length = 1-9 (both inclusive)'] | None = None
+    ingredients: Annotated[list[ItemPredicate], Field(min_length=1, max_length=9)] | None = None
 
 
 RecipeCraftedTrigger = ParitalRequired[RecipeCraftedTriggerTypeArg]

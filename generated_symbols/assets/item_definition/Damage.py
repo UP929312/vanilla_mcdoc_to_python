@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::assets::item_definition::Damage
 Local link to file: generated_symbols/assets/item_definition/Damage.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class Damage:
+class Damage(GeneratedModel):
     normalize: bool | None = None  # If false, returns value of damage, clamped to `0..max_damage`. If true, returns value of damage divided by the `max_damage` component, clamped to `0..1`. Defaults to true.
 
 

@@ -3,12 +3,9 @@ Generated from symbols.json for ::java::world::entity::projectile::fireball::Des
 Local link to file: generated_symbols/world/entity/projectile/fireball/DespawnableProjectileBase.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.world.entity.projectile.fireball.AcceleratingProjectileBase import AcceleratingProjectileBase
 
 
-@dataclass(kw_only=True)
 class DespawnableProjectileBase(AcceleratingProjectileBase):
     pass
 

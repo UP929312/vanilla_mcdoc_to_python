@@ -3,17 +3,16 @@ Generated from symbols.json for ::java::world::component::item::PotionContents
 Local link to file: generated_symbols/world/component/item/PotionContents.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.util.effect.MobEffectInstance import MobEffectInstance
 
 
-@dataclass(kw_only=True)
-class PotionContents:
+class PotionContents(GeneratedModel):
     potion: Annotated[str, IdSpec(registry='potion')] | None = None
     custom_color: int | None = None  # Calculated as `RED << 16 | GREEN << 8 | BLUE`. Each of these fields must be between 0 and 255, inclusive.
     custom_name: str | None = None  # If present, is used to generate the item name using the translation key `item.minecraft.<potion_type>.effect.<custom_name>`.

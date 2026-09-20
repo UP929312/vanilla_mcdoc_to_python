@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::entity::mob::ender_dragon::EnderD
 Local link to file: generated_symbols/world/entity/mob/ender_dragon/EnderDragon.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.world.entity.mob.MobBase import MobBase
@@ -12,7 +11,6 @@ if TYPE_CHECKING:
     from generated_symbols.world.entity.mob.ender_dragon.DragonPhase import DragonPhase
 
 
-@dataclass(kw_only=True)
 class EnderDragon(MobBase):
     DragonPhase: DragonPhase | None = None  # Fighting phase it is in.
 

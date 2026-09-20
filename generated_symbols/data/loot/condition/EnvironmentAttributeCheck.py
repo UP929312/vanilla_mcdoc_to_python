@@ -3,10 +3,11 @@ Generated from symbols.json for ::java::data::loot::condition::EnvironmentAttrib
 Local link to file: generated_symbols/data/loot/condition/EnvironmentAttributeCheck.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Any
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.MoonPhase import MoonPhase
@@ -22,10 +23,9 @@ if TYPE_CHECKING:
     from generated_symbols.util.particle.Particle import Particle
 
 
-@dataclass(kw_only=True)
-class EnvironmentAttributeCheck:
+class EnvironmentAttributeCheck(GeneratedModel):
     attribute: Annotated[str, IdSpec(registry='environment_attribute')] | KnownEnvironmentAttributeId
-    value: Any | AmbientSounds | BackgroundMusic | bool | Annotated[float, 'Range | `0`-`1` | both inclusive'] | Annotated[str, IdSpec(registry='activity')] | BedRule | Annotated[float, 'Range | `0`-`0.9999999` | both inclusive'] | TriState | NaturalMobSpawns | Annotated[float, 'Range | `0`-`15` | both inclusive'] | StringRGB | list[AmbientParticle] | StringARGB | Annotated[float, 'Range | `0` and above | inclusive'] | float | Particle | MoonPhase
+    value: Any | AmbientSounds | BackgroundMusic | bool | Annotated[float, Field(ge=0, le=1)] | Annotated[str, IdSpec(registry='activity')] | BedRule | Annotated[float, Field(ge=0, le=0.9999999)] | TriState | NaturalMobSpawns | Annotated[float, Field(ge=0, le=15)] | StringRGB | list[AmbientParticle] | StringARGB | Annotated[float, Field(ge=0)] | float | Particle | MoonPhase
 
 
 # ~~~ MODEL DUMP ~~~

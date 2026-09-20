@@ -3,14 +3,15 @@ Generated from symbols.json for ::java::data::worldgen::structure::DimensionPadd
 Local link to file: generated_symbols/data/worldgen/structure/DimensionPaddingConfig.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class DimensionPaddingConfig:
-    bottom: Annotated[int, 'Range | `0` and above | inclusive'] | None = None
-    top: Annotated[int, 'Range | `0` and above | inclusive'] | None = None
+
+class DimensionPaddingConfig(GeneratedModel):
+    bottom: Annotated[int, Field(ge=0)] | None = None
+    top: Annotated[int, Field(ge=0)] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

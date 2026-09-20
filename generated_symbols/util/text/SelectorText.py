@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::util::text::SelectorText
 Local link to file: generated_symbols/util/text/SelectorText.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Literal
 
 from generated_symbols.util.text.TextBase import TextBase
@@ -12,7 +11,6 @@ if TYPE_CHECKING:
     from generated_symbols.util.text.Text import Text
 
 
-@dataclass(kw_only=True)
 class SelectorText(TextBase):
     selector: str
     separator: Text | None = None

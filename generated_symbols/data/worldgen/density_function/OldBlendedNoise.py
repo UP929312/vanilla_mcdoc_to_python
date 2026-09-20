@@ -3,17 +3,18 @@ Generated from symbols.json for ::java::data::worldgen::density_function::OldBle
 Local link to file: generated_symbols/data/worldgen/density_function/OldBlendedNoise.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class OldBlendedNoise:
+
+class OldBlendedNoise(GeneratedModel):
     xz_scale: float
     y_scale: float
     xz_factor: float
     y_factor: float
-    smear_scale_multiplier: Annotated[float, 'Range | `1`-`8` | both inclusive']
+    smear_scale_multiplier: Annotated[float, Field(ge=1, le=8)]
 
 
 # ~~~ MODEL DUMP ~~~

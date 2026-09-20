@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::data::dialog::action::DynamicRunCommand
 Local link to file: generated_symbols/data/dialog/action/DynamicRunCommand.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class DynamicRunCommand:
+class DynamicRunCommand(GeneratedModel):
     template: str  # A macro template to be interpred as a command. Special characters (including both `'` and `"`) from text input will be escaped to fit in SNBT literal.
 
 

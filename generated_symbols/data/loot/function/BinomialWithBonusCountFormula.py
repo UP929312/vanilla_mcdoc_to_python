@@ -3,18 +3,18 @@ Generated from symbols.json for ::java::data::loot::function::BinomialWithBonusC
 Local link to file: generated_symbols/data/loot/function/BinomialWithBonusCountFormula.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class ParametersStruct:
+
+class ParametersStruct(GeneratedModel):
     extra: int
-    probability: Annotated[float, 'Range | `0`-`1` | both inclusive']
+    probability: Annotated[float, Field(ge=0, le=1)]
 
 
-@dataclass(kw_only=True)
-class BinomialWithBonusCountFormula:
+class BinomialWithBonusCountFormula(GeneratedModel):
     parameters: ParametersStruct
 
 

@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::assets::item_definition::Select
 Local link to file: generated_symbols/assets/item_definition/Select.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Literal
 
 from generated_symbols.assets.item_definition.BlockState import BlockState
@@ -24,77 +23,66 @@ if TYPE_CHECKING:
     from generated_symbols.world.entity.display.Transformation import Transformation
 
 
-@dataclass(kw_only=True)
 class SelectUnknown(SelectCases[str]):
     property: SelectPropertyType
     fallback: ItemModel | None = None  # Item model to render if none of the cases matched the value.
     transformation: Transformation | None = None
 
 
-@dataclass(kw_only=True)
 class SelectBlockState(BlockState):
     property: Literal['minecraft:block_state'] = 'minecraft:block_state'
     fallback: ItemModel | None = None  # Item model to render if none of the cases matched the value.
     transformation: Transformation | None = None
 
 
-@dataclass(kw_only=True)
 class SelectChargeType(ChargeType):
     property: Literal['minecraft:charge_type'] = 'minecraft:charge_type'
     fallback: ItemModel | None = None  # Item model to render if none of the cases matched the value.
     transformation: Transformation | None = None
 
 
-@dataclass(kw_only=True)
 class SelectComponent(ComponentStrings):
     property: Literal['minecraft:component'] = 'minecraft:component'
     fallback: ItemModel | None = None  # Item model to render if none of the cases matched the value.
     transformation: Transformation | None = None
 
 
-@dataclass(kw_only=True)
 class SelectContextDimension(ContextDimension):
     property: Literal['minecraft:context_dimension'] = 'minecraft:context_dimension'
     fallback: ItemModel | None = None  # Item model to render if none of the cases matched the value.
     transformation: Transformation | None = None
 
 
-@dataclass(kw_only=True)
 class SelectContextEntityType(ContextEntityType):
     property: Literal['minecraft:context_entity_type'] = 'minecraft:context_entity_type'
     fallback: ItemModel | None = None  # Item model to render if none of the cases matched the value.
     transformation: Transformation | None = None
 
 
-@dataclass(kw_only=True)
 class SelectCustomModelData(CustomModelDataStrings):
     property: Literal['minecraft:custom_model_data'] = 'minecraft:custom_model_data'
     fallback: ItemModel | None = None  # Item model to render if none of the cases matched the value.
     transformation: Transformation | None = None
 
 
-@dataclass(kw_only=True)
 class SelectDisplayContext(DisplayContext):
     property: Literal['minecraft:display_context'] = 'minecraft:display_context'
     fallback: ItemModel | None = None  # Item model to render if none of the cases matched the value.
     transformation: Transformation | None = None
 
 
-@dataclass(kw_only=True)
 class SelectLocalTime(LocalTime):
     property: Literal['minecraft:local_time'] = 'minecraft:local_time'
     fallback: ItemModel | None = None  # Item model to render if none of the cases matched the value.
     transformation: Transformation | None = None
 
 
-@dataclass(kw_only=True)
 class SelectMainHand(MainHand):
     property: Literal['minecraft:main_hand'] = 'minecraft:main_hand'
     fallback: ItemModel | None = None  # Item model to render if none of the cases matched the value.
     transformation: Transformation | None = None
 
 
-@dataclass(kw_only=True)
 class SelectTrimMaterial(TrimMaterial):
     property: Literal['minecraft:trim_material'] = 'minecraft:trim_material'
     fallback: ItemModel | None = None  # Item model to render if none of the cases matched the value.

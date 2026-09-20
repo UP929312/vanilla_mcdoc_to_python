@@ -3,16 +3,16 @@ Generated from symbols.json for ::java::data::loot::condition::TableBonus
 Local link to file: generated_symbols/data/loot/condition/TableBonus.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 
-@dataclass(kw_only=True)
-class TableBonus:
+class TableBonus(GeneratedModel):
     enchantment: Annotated[str, IdSpec(registry='enchantment')]
-    chances: list[Annotated[float, 'Range | `0`-`1` | both inclusive']]  # Probabilities for each enchantment level
+    chances: list[Annotated[float, Field(ge=0, le=1)]]  # Probabilities for each enchantment level
 
 
 # ~~~ MODEL DUMP ~~~

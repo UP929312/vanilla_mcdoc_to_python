@@ -3,17 +3,18 @@ Generated from symbols.json for ::java::data::worldgen::feature::placement::Cubo
 Local link to file: generated_symbols/data/worldgen/feature/placement/CuboidModifier.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.IntProvider import IntProvider
 
 
-@dataclass(kw_only=True)
-class CuboidModifier:
-    xz_size: IntProvider[Annotated[int, 'Range | `1`-`16` | both inclusive']] | Annotated[int, 'Range | `1`-`16` | both inclusive']
-    y_size: IntProvider[Annotated[int, 'Range | `1`-`16` | both inclusive']] | Annotated[int, 'Range | `1`-`16` | both inclusive']
+class CuboidModifier(GeneratedModel):
+    xz_size: IntProvider[Annotated[int, Field(ge=1, le=16)]] | Annotated[int, Field(ge=1, le=16)]
+    y_size: IntProvider[Annotated[int, Field(ge=1, le=16)]] | Annotated[int, Field(ge=1, le=16)]
     include_interior: bool | None = None  # Defaults to `true`.
     include_edges: bool | None = None  # Defaults to `true`.
 

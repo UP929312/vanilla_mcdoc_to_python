@@ -3,16 +3,17 @@ Generated from symbols.json for ::java::assets::font::UnihexOverrideRange
 Local link to file: generated_symbols/assets/font/UnihexOverrideRange.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class UnihexOverrideRange:
+
+class UnihexOverrideRange(GeneratedModel):
     from_: str  # Minimum in codepoint range (inclusive).
     to: str  # Maximum in codepoint range (inclusive).
-    left: Annotated[int, 'Range | `0`-`255` | both inclusive']  # Position of left-most column of the glyph.
-    right: Annotated[int, 'Range | `0`-`255` | both inclusive']  # Position of right-most column of the glyph.
+    left: Annotated[int, Field(ge=0, le=255)]  # Position of left-most column of the glyph.
+    right: Annotated[int, Field(ge=0, le=255)]  # Position of right-most column of the glyph.
 
 
 # ~~~ MODEL DUMP ~~~

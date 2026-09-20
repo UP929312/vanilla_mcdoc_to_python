@@ -3,10 +3,11 @@ Generated from symbols.json for ::java::data::advancement::predicate::LocationPr
 Local link to file: generated_symbols/data/advancement/predicate/LocationPredicate.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.advancement.predicate.BlockPredicate import BlockPredicate
@@ -14,20 +15,17 @@ if TYPE_CHECKING:
     from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
 
 
-@dataclass(kw_only=True)
-class PositionStruct:
+class PositionStruct(GeneratedModel):
     x: MinMaxBounds[float] | float | None = None
     y: MinMaxBounds[float] | float | None = None
     z: MinMaxBounds[float] | float | None = None
 
 
-@dataclass(kw_only=True)
-class LightStruct:
-    light: MinMaxBounds[Annotated[int, 'Range | `0`-`15` | both inclusive']] | Annotated[int, 'Range | `0`-`15` | both inclusive'] | None = None
+class LightStruct(GeneratedModel):
+    light: MinMaxBounds[Annotated[int, Field(ge=0, le=15)]] | Annotated[int, Field(ge=0, le=15)] | None = None
 
 
-@dataclass(kw_only=True)
-class LocationPredicate:
+class LocationPredicate(GeneratedModel):
     position: PositionStruct | None = None
     biomes: Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')] | list[Annotated[str, IdSpec(registry='worldgen/biome')]] | None = None
     structures: Annotated[str, IdSpec(registry='worldgen/structure', tags='allowed')] | list[Annotated[str, IdSpec(registry='worldgen/structure')]] | None = None

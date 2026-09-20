@@ -3,23 +3,24 @@ Generated from symbols.json for ::java::world::entity::mob::breedable::villager:
 Local link to file: generated_symbols/world/entity/mob/breedable/villager/Recipe.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.world.item.ItemCost import ItemCost
     from generated_symbols.world.item.ItemStack import ItemStack
 
 
-@dataclass(kw_only=True)
-class Recipe:
+class Recipe(GeneratedModel):
     rewardExp: bool | None = None  # Whether it should reward experience for using this trade.   Experience amount is `3 + random(0, 3)` plus `5` if the trade is causing the merchant to increase in tier.
-    maxUses: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # Maximum number of uses for this trade before the merchant has to restock.
-    uses: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # Times this trade has been used since the merchant last restocked.
+    maxUses: Annotated[int, Field(ge=0)] | None = None  # Maximum number of uses for this trade before the merchant has to restock.
+    uses: Annotated[int, Field(ge=0)] | None = None  # Times this trade has been used since the merchant last restocked.
     buy: ItemCost | None = None  # Price item required by the merchant, count is modified depending on `demand` & per-player context.
     buyB: ItemCost | None = None  # Second item required by the merchant, count does not change.
     sell: ItemStack | None = None  # Item being offered by the merchant.
-    xp: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # XP the merchant gains from the trade.
+    xp: Annotated[int, Field(ge=0)] | None = None  # XP the merchant gains from the trade.
     priceMultiplier: float | None = None  # How much demand & reputation each affect the count of the `buy` item.
     specialPrice: int | None = None  # Modifier added to the original count of the `buy` item.
     demand: int | None = None  # Count adjuster of the `buy` item based on demand.  Minus twice the number of times the villager has the trade in stock. When restocking subtract the number of possible purchases before running out of stock and add twice the number of actually made purchases. When the demand becomes positive, the count is increased by the initial count times `priceMultiplier` times the demand.

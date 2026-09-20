@@ -5,8 +5,10 @@ Local link to file: generated_symbols/pack/PackFormat.py
 # ~~~ CODE ~~~
 from typing import Annotated
 
+from pydantic import Field
 
-type PackFormat = int | tuple[int] | tuple[int, Annotated[int, 'Range | `0` and above | inclusive']]
+
+type PackFormat = int | tuple[int] | tuple[int, Annotated[int, Field(ge=0)]]
 
 
 # ~~~ MODEL DUMP ~~~

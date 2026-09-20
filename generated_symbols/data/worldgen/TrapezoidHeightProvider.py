@@ -3,12 +3,9 @@ Generated from symbols.json for ::java::data::worldgen::TrapezoidHeightProvider
 Local link to file: generated_symbols/data/worldgen/TrapezoidHeightProvider.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.data.worldgen.UniformHeightProvider import UniformHeightProvider
 
 
-@dataclass(kw_only=True)
 class TrapezoidHeightProvider(UniformHeightProvider):
     plateau: int | None = None
 

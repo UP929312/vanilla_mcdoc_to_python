@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::world::component::item::PiercingWeapon
 Local link to file: generated_symbols/world/component/item/PiercingWeapon.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.SoundEventRef import SoundEventRef
 
 
-@dataclass(kw_only=True)
-class PiercingWeapon:
+class PiercingWeapon(GeneratedModel):
     deals_knockback: bool | None = None  # Whether the attack deals knockback. Defaults to `true`.
     dismounts: bool | None = None  # Whether the attack dismounts the target. Defaults to `false`.
     sound: SoundEventRef | None = None  # Sound to play when using the weapon to attack.

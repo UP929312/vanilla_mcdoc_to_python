@@ -3,13 +3,14 @@ Generated from symbols.json for ::java::data::worldgen::feature::tree::LeaveVine
 Local link to file: generated_symbols/data/worldgen/feature/tree/LeaveVineTreeDecorator.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class LeaveVineTreeDecorator:
-    probability: Annotated[float, 'Range | `0`-`1` | both inclusive']
+
+class LeaveVineTreeDecorator(GeneratedModel):
+    probability: Annotated[float, Field(ge=0, le=1)]
 
 
 # ~~~ MODEL DUMP ~~~

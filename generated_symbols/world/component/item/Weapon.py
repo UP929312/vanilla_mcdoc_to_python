@@ -3,14 +3,15 @@ Generated from symbols.json for ::java::world::component::item::Weapon
 Local link to file: generated_symbols/world/component/item/Weapon.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class Weapon:
-    item_damage_per_attack: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # The amount to damage to the weapon item for each attack performed. Defaults to `1`.
-    disable_blocking_for_seconds: Annotated[float, 'Range | `0` and above | inclusive'] | None = None  # If non-zero, will disable a blocking shield on successful attack for the specified amount of seconds.
+
+class Weapon(GeneratedModel):
+    item_damage_per_attack: Annotated[int, Field(ge=0)] | None = None  # The amount to damage to the weapon item for each attack performed. Defaults to `1`.
+    disable_blocking_for_seconds: Annotated[float, Field(ge=0)] | None = None  # If non-zero, will disable a blocking shield on successful attack for the specified amount of seconds.
 
 
 # ~~~ MODEL DUMP ~~~

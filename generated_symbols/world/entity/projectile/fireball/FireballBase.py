@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::entity::projectile::fireball::Fir
 Local link to file: generated_symbols/world/entity/projectile/fireball/FireballBase.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.world.entity.projectile.fireball.DespawnableProjectileBase import DespawnableProjectileBase
@@ -12,7 +11,6 @@ if TYPE_CHECKING:
     from generated_symbols.world.item.ItemStack import ItemStack
 
 
-@dataclass(kw_only=True)
 class FireballBase(DespawnableProjectileBase):
     Item: ItemStack | None = None  # Item it should render as.
 

@@ -3,19 +3,19 @@ Generated from symbols.json for ::java::assets::credits::CreditsDiscipline
 Local link to file: generated_symbols/assets/credits/CreditsDiscipline.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated, Literal
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class TitlesStruct:
+
+class TitlesStruct(GeneratedModel):
     title: str
     names: list[str]  # Employees with the title.
 
 
-@dataclass(kw_only=True)
-class CreditsDiscipline:
-    discipline: Annotated[str, 'Length = 1 (inclusive) and above'] | Literal[""]
+class CreditsDiscipline(GeneratedModel):
+    discipline: Annotated[str, 'Field(min_length=1)'] | Literal[""]
     titles: list[TitlesStruct]
 
 

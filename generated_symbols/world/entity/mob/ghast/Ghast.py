@@ -3,15 +3,14 @@ Generated from symbols.json for ::java::world::entity::mob::ghast::Ghast
 Local link to file: generated_symbols/world/entity/mob/ghast/Ghast.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
 from generated_symbols.world.entity.mob.MobBase import MobBase
+from pydantic import Field
 
 
-@dataclass(kw_only=True)
 class Ghast(MobBase):
-    ExplosionPower: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # Explosion radius of fireballs that are shot from it.
+    ExplosionPower: Annotated[int, Field(ge=0)] | None = None  # Explosion radius of fireballs that are shot from it.
 
 
 # ~~~ MODEL DUMP ~~~

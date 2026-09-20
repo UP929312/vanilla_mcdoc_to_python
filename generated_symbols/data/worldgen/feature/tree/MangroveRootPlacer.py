@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::worldgen::feature::tree::MangroveR
 Local link to file: generated_symbols/data/worldgen/feature/tree/MangroveRootPlacer.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.tree.MangroveRootPlacement import MangroveRootPlacement
 
 
-@dataclass(kw_only=True)
-class MangroveRootPlacer:
+class MangroveRootPlacer(GeneratedModel):
     mangrove_root_placement: MangroveRootPlacement
 
 

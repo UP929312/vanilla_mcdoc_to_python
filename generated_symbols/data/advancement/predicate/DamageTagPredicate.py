@@ -3,14 +3,13 @@ Generated from symbols.json for ::java::data::advancement::predicate::DamageTagP
 Local link to file: generated_symbols/data/advancement/predicate/DamageTagPredicate.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
-class DamageTagPredicate:
+class DamageTagPredicate(GeneratedModel):
     id: Annotated[str, IdSpec(registry='damage_type', tags='allowed')] | list[Annotated[str, IdSpec(registry='damage_type')]]
     expected: bool  # Whether the damage is expected to have or not have the tag.
 

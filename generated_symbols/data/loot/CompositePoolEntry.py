@@ -3,18 +3,17 @@ Generated from symbols.json for ::java::data::loot::CompositePoolEntry
 Local link to file: generated_symbols/data/loot/CompositePoolEntry.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.data.loot.LootPoolEntryBase import LootPoolEntryBase
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.loot.LootPoolEntry import LootPoolEntry
 
 
-@dataclass(kw_only=True)
 class CompositePoolEntry(LootPoolEntryBase):
-    children: Annotated[list[LootPoolEntry], 'Length = 1 (inclusive) and above']
+    children: Annotated[list[LootPoolEntry], Field(min_length=1)]
 
 
 # ~~~ MODEL DUMP ~~~

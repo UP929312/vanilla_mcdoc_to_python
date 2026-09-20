@@ -3,36 +3,33 @@ Generated from symbols.json for ::java::data::loot::function::SetFireworks
 Local link to file: generated_symbols/data/loot/function/SetFireworks.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Literal
 
+from generated_symbols.base import GeneratedModel
 from generated_symbols.data.loot.function.Conditions import Conditions
 from generated_symbols.data.loot.function.InsertListOperation import InsertListOperation
 from generated_symbols.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.world.component.item.Explosion import Explosion
 
 
-@dataclass(kw_only=True)
-class ExplosionsStructAppend:
+class ExplosionsStructAppend(GeneratedModel):
     values: list[Explosion]
     mode: Literal['minecraft:append'] = 'minecraft:append'  # Determines how the existing list should be modified.
 
 
-@dataclass(kw_only=True)
 class ExplosionsStructInsert(InsertListOperation):
     values: list[Explosion]
     mode: Literal['minecraft:insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
 
 
-@dataclass(kw_only=True)
-class ExplosionsStructReplaceAll:
+class ExplosionsStructReplaceAll(GeneratedModel):
     values: list[Explosion]
     mode: Literal['minecraft:replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
 
 
-@dataclass(kw_only=True)
 class ExplosionsStructReplaceSection(ReplaceSectionListOperation):
     values: list[Explosion]
     mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
@@ -40,9 +37,8 @@ class ExplosionsStructReplaceSection(ReplaceSectionListOperation):
 
 type ExplosionsStruct = ExplosionsStructAppend | ExplosionsStructInsert | ExplosionsStructReplaceAll | ExplosionsStructReplaceSection
 
-@dataclass(kw_only=True)
 class SetFireworks(Conditions):
-    flight_duration: Annotated[int, 'Range | `0`-`255` | both inclusive'] | None = None  # If omitted, the flight duration of the item is left untouched - or set to 0 if the component did not exist before.
+    flight_duration: Annotated[int, Field(ge=0, le=255)] | None = None  # If omitted, the flight duration of the item is left untouched - or set to 0 if the component did not exist before.
     explosions: ExplosionsStruct | None = None
 
 

@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::world::entity::projectile::shulker_bulle
 Local link to file: generated_symbols/world/entity/projectile/shulker_bullet/BulletTarget.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class BulletTarget:
+class BulletTarget(GeneratedModel):
     UUID: tuple[int, int, int, int] | None = None
     X: int | None = None  # X block coordinate of the it.
     Y: int | None = None  # Y block coordinate of the it.

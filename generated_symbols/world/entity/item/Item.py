@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::entity::item::Item
 Local link to file: generated_symbols/world/entity/item/Item.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.world.entity.EntityBase import EntityBase
@@ -12,7 +11,6 @@ if TYPE_CHECKING:
     from generated_symbols.world.item.ItemStack import ItemStack
 
 
-@dataclass(kw_only=True)
 class Item(EntityBase):
     Age: int | None = None  # Ticks it has existed.
     Health: int | None = None

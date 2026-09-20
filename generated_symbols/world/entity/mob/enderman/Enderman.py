@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::entity::mob::enderman::Enderman
 Local link to file: generated_symbols/world/entity/mob/enderman/Enderman.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.world.entity.mob.MobBase import MobBase
@@ -13,7 +12,6 @@ if TYPE_CHECKING:
     from generated_symbols.util.BlockState import BlockState
 
 
-@dataclass(kw_only=True)
 class Enderman(MobBase, NeutralMob):
     carriedBlockState: BlockState | None = None  # Block it is carrying.
 

@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::world::entity::projectile::throwable::Ow
 Local link to file: generated_symbols/world/entity/projectile/throwable/Owner.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class Owner:
+class Owner(GeneratedModel):
     M: int | None = None  # Upper bits of the owner's UUID.
     L: int | None = None  # Lower bits of the owner's UUID.
 

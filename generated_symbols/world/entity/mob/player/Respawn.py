@@ -3,14 +3,13 @@ Generated from symbols.json for ::java::world::entity::mob::player::Respawn
 Local link to file: generated_symbols/world/entity/mob/player/Respawn.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
-class Respawn:
+class Respawn(GeneratedModel):
     pos: tuple[int, int, int]  # The block coordinates of the player's respawn point
     yaw: float  # The Y-rotation of the player's respawn point
     pitch: float  # The X-rotation of the player's respawn point

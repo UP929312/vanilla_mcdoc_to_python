@@ -3,12 +3,9 @@ Generated from symbols.json for ::java::world::block::potent_sulfur::PotentSulfu
 Local link to file: generated_symbols/world/block/potent_sulfur/PotentSulfur.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.world.block.BlockEntity import BlockEntity
 
 
-@dataclass(kw_only=True)
 class PotentSulfur(BlockEntity):
     countdown: int | None = None  # Time in seconds until the next state switch (between dormant and erupting).  The timer only counts down when the potent sulfur creates a valid geyser.  Negative values will be replaced with a new duration of the current state.
 

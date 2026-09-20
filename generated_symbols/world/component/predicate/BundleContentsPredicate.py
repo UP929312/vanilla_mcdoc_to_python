@@ -3,16 +3,16 @@ Generated from symbols.json for ::java::world::component::predicate::BundleConte
 Local link to file: generated_symbols/world/component/predicate/BundleContentsPredicate.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.advancement.predicate.ItemPredicate import ItemPredicate
     from generated_symbols.world.component.predicate.CollectionPredicate import CollectionPredicate
 
 
-@dataclass(kw_only=True)
-class BundleContentsPredicate:
+class BundleContentsPredicate(GeneratedModel):
     items: CollectionPredicate[ItemPredicate] | None = None
 
 

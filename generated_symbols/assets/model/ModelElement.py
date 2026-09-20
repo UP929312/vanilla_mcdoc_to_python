@@ -3,16 +3,17 @@ Generated from symbols.json for ::java::assets::model::ModelElement
 Local link to file: generated_symbols/assets/model/ModelElement.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Literal
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.assets.model.ModelElementRotation import ModelElementRotation
     from generated_symbols.util.direction.Direction import Direction
 
 
-@dataclass(kw_only=True)
-class FacesStructValueStruct:
+class FacesStructValueStruct(GeneratedModel):
     texture: str
     uv: tuple[float, float, float, float] | None = None
     cullface: Direction | None = None
@@ -20,14 +21,13 @@ class FacesStructValueStruct:
     tintindex: int | None = None
 
 
-@dataclass(kw_only=True)
-class ModelElement:
-    from_: tuple[Annotated[float, 'Range | `-16`-`32` | both inclusive'], Annotated[float, 'Range | `-16`-`32` | both inclusive'], Annotated[float, 'Range | `-16`-`32` | both inclusive']]
-    to: tuple[Annotated[float, 'Range | `-16`-`32` | both inclusive'], Annotated[float, 'Range | `-16`-`32` | both inclusive'], Annotated[float, 'Range | `-16`-`32` | both inclusive']]
+class ModelElement(GeneratedModel):
+    from_: tuple[Annotated[float, Field(ge=-16, le=32)], Annotated[float, Field(ge=-16, le=32)], Annotated[float, Field(ge=-16, le=32)]]
+    to: tuple[Annotated[float, Field(ge=-16, le=32)], Annotated[float, Field(ge=-16, le=32)], Annotated[float, Field(ge=-16, le=32)]]
     faces: dict[Direction, FacesStructValueStruct]
     rotation: ModelElementRotation | None = None
     shade_direction_override: Direction | None = None
-    light_emission: Annotated[int, 'Range | `0`-`15` | both inclusive'] | None = None
+    light_emission: Annotated[int, Field(ge=0, le=15)] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

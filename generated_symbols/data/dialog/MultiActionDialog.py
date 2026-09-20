@@ -3,8 +3,10 @@ Generated from symbols.json for ::java::data::dialog::MultiActionDialog
 Local link to file: generated_symbols/data/dialog/MultiActionDialog.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar, Literal
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.dialog.AfterAction import AfterAction
@@ -14,13 +16,12 @@ if TYPE_CHECKING:
     from generated_symbols.util.text.Text import Text
 
 
-@dataclass(kw_only=True)
-class MultiActionDialogNone:
+class MultiActionDialogNone(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'dialog'
 
-    actions: Annotated[list[Button], 'Length = 1 (inclusive) and above']
+    actions: Annotated[list[Button], Field(min_length=1)]
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
-    columns: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
+    columns: Annotated[int, Field(ge=1)] | None = None  # The number of columns. Defaults to 2.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None
@@ -30,11 +31,10 @@ class MultiActionDialogNone:
     pause: bool | None = None  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.
 
 
-@dataclass(kw_only=True)
-class MultiActionDialogClose:
-    actions: Annotated[list[Button], 'Length = 1 (inclusive) and above']
+class MultiActionDialogClose(GeneratedModel):
+    actions: Annotated[list[Button], Field(min_length=1)]
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
-    columns: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
+    columns: Annotated[int, Field(ge=1)] | None = None  # The number of columns. Defaults to 2.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None
@@ -44,11 +44,10 @@ class MultiActionDialogClose:
     pause: bool | None = None  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.
 
 
-@dataclass(kw_only=True)
-class MultiActionDialogNone2:
-    actions: Annotated[list[Button], 'Length = 1 (inclusive) and above']
+class MultiActionDialogNone2(GeneratedModel):
+    actions: Annotated[list[Button], Field(min_length=1)]
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
-    columns: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
+    columns: Annotated[int, Field(ge=1)] | None = None  # The number of columns. Defaults to 2.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None
@@ -58,11 +57,10 @@ class MultiActionDialogNone2:
     pause: Literal[False] = False  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.  The currently selected `after_action` only supports the value `false`
 
 
-@dataclass(kw_only=True)
-class MultiActionDialogWaitForResponse:
-    actions: Annotated[list[Button], 'Length = 1 (inclusive) and above']
+class MultiActionDialogWaitForResponse(GeneratedModel):
+    actions: Annotated[list[Button], Field(min_length=1)]
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
-    columns: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
+    columns: Annotated[int, Field(ge=1)] | None = None  # The number of columns. Defaults to 2.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None

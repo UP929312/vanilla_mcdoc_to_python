@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::loot::function::EnchantedCountBase
 Local link to file: generated_symbols/data/loot/function/EnchantedCountBase.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.number_provider.NumberProviderRef import NumberProviderRef
 
 
-@dataclass(kw_only=True)
-class EnchantedCountBase:
+class EnchantedCountBase(GeneratedModel):
     count: NumberProviderRef  # If the number is fractional the result is rounded *after* the number was multiplied by the looting level.
     limit: int | None = None  # Limits the count of the item to a range.
 

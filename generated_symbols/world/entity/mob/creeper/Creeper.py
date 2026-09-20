@@ -3,12 +3,9 @@ Generated from symbols.json for ::java::world::entity::mob::creeper::Creeper
 Local link to file: generated_symbols/world/entity/mob/creeper/Creeper.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.world.entity.mob.MobBase import MobBase
 
 
-@dataclass(kw_only=True)
 class Creeper(MobBase):
     powered: bool | None = None  # Whether it is being struck by lightning.
     ExplosionRadius: int | None = None  # Radius of the explosion.

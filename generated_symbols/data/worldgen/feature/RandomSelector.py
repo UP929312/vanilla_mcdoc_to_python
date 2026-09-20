@@ -3,21 +3,21 @@ Generated from symbols.json for ::java::data::worldgen::feature::RandomSelector
 Local link to file: generated_symbols/data/worldgen/feature/RandomSelector.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.FeatureRef import FeatureRef
 
 
-@dataclass(kw_only=True)
-class FeaturesStruct:
-    chance: Annotated[float, 'Range | `0`-`1` | both inclusive']
+class FeaturesStruct(GeneratedModel):
+    chance: Annotated[float, Field(ge=0, le=1)]
     feature: FeatureRef
 
 
-@dataclass(kw_only=True)
-class RandomSelector:
+class RandomSelector(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/feature'
 
     features: list[FeaturesStruct]

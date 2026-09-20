@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::assets::texture_meta::GuiMeta
 Local link to file: generated_symbols/assets/texture_meta/GuiMeta.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.assets.texture_meta.GuiSpriteScaling import GuiSpriteScaling
 
 
-@dataclass(kw_only=True)
-class GuiMeta:
+class GuiMeta(GeneratedModel):
     scaling: GuiSpriteScaling | None = None  # Configures how the GUI texture should be scaled. Defaults to `stretch`.
 
 

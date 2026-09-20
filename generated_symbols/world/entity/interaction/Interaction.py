@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::entity::interaction::Interaction
 Local link to file: generated_symbols/world/entity/interaction/Interaction.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.world.entity.EntityBase import EntityBase
@@ -12,7 +11,6 @@ if TYPE_CHECKING:
     from generated_symbols.world.entity.interaction.Action import Action
 
 
-@dataclass(kw_only=True)
 class Interaction(EntityBase):
     width: float | None = None  # Cube hitbox width centered on the entity. Negative values are effectively `| x |`.
     height: float | None = None  # Cube hitbox height stretching up from the entity position. Negative values stretch the hitbox down.

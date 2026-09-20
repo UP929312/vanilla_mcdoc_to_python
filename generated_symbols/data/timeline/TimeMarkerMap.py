@@ -6,12 +6,13 @@ Local link to file: generated_symbols/data/timeline/TimeMarkerMap.py
 from typing import TYPE_CHECKING, Annotated
 
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.timeline.TimeMarker import TimeMarker
 
 
-type TimeMarkerMap = dict[Annotated[str, IdSpec()], Annotated[int, 'Range | `0` and above | inclusive'] | TimeMarker]
+type TimeMarkerMap = dict[Annotated[str, IdSpec()], Annotated[int, Field(ge=0)] | TimeMarker]
 
 
 # ~~~ MODEL DUMP ~~~

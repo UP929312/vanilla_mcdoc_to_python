@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::worldgen::feature::decorator::Carv
 Local link to file: generated_symbols/data/worldgen/feature/decorator/CarvingMaskConfig.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.CarveStep import CarveStep
 
 
-@dataclass(kw_only=True)
-class CarvingMaskConfig:
+class CarvingMaskConfig(GeneratedModel):
     step: CarveStep
 
 

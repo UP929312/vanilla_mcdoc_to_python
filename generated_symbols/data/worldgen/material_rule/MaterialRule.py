@@ -3,9 +3,9 @@ Generated from symbols.json for ::java::data::worldgen::material_rule::MaterialR
 Local link to file: generated_symbols/data/worldgen/material_rule/MaterialRule.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated, ClassVar, Literal
 
+from generated_symbols.base import GeneratedModel
 from generated_symbols.data.worldgen.material_rule.BlockRule import BlockRule
 from generated_symbols.data.worldgen.material_rule.ConditionRule import ConditionRule
 from generated_symbols.data.worldgen.material_rule.OreVeinifier import OreVeinifier
@@ -13,29 +13,24 @@ from generated_symbols.data.worldgen.material_rule.SequenceRule import SequenceR
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
-class MaterialRuleUnknown:
+class MaterialRuleUnknown(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/material_rule'
 
     type: Annotated[str, IdSpec(registry='worldgen/material_rule_type')]
 
 
-@dataclass(kw_only=True)
 class MaterialRuleBlock(BlockRule):
     type: Literal['minecraft:block'] = 'minecraft:block'
 
 
-@dataclass(kw_only=True)
 class MaterialRuleCondition(ConditionRule):
     type: Literal['minecraft:condition'] = 'minecraft:condition'
 
 
-@dataclass(kw_only=True)
 class MaterialRuleOreVein(OreVeinifier):
     type: Literal['minecraft:ore_vein'] = 'minecraft:ore_vein'
 
 
-@dataclass(kw_only=True)
 class MaterialRuleSequence(SequenceRule):
     type: Literal['minecraft:sequence'] = 'minecraft:sequence'
 

@@ -3,16 +3,17 @@ Generated from symbols.json for ::java::assets::texture_meta::NineSliceBorder
 Local link to file: generated_symbols/assets/texture_meta/NineSliceBorder.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class NineSliceBorder:
-    left: Annotated[int, 'Range | `0` and above | inclusive']
-    top: Annotated[int, 'Range | `0` and above | inclusive']
-    right: Annotated[int, 'Range | `0` and above | inclusive']
-    bottom: Annotated[int, 'Range | `0` and above | inclusive']
+
+class NineSliceBorder(GeneratedModel):
+    left: Annotated[int, Field(ge=0)]
+    top: Annotated[int, Field(ge=0)]
+    right: Annotated[int, Field(ge=0)]
+    bottom: Annotated[int, Field(ge=0)]
 
 
 # ~~~ MODEL DUMP ~~~

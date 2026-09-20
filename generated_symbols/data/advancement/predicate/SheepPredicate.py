@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::data::advancement::predicate::SheepPredi
 Local link to file: generated_symbols/data/advancement/predicate/SheepPredicate.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class SheepPredicate:
+class SheepPredicate(GeneratedModel):
     sheared: bool | None = None
 
 

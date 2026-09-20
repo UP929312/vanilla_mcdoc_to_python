@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::worldgen::dimension::biome_source:
 Local link to file: generated_symbols/data/worldgen/dimension/biome_source/MultiNoiseBiomeSourceParameterList.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, ClassVar
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.dimension.biome_source.MultiNoisePreset import MultiNoisePreset
 
 
-@dataclass(kw_only=True)
-class MultiNoiseBiomeSourceParameterList:
+class MultiNoiseBiomeSourceParameterList(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/multi_noise_biome_source_parameter_list'
 
     preset: MultiNoisePreset

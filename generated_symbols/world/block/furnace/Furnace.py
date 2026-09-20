@@ -3,21 +3,20 @@ Generated from symbols.json for ::java::world::block::furnace::Furnace
 Local link to file: generated_symbols/world/block/furnace/Furnace.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.world.block.BlockEntity import BlockEntity
 from generated_symbols.world.block.Lockable import Lockable
 from generated_symbols.world.block.Nameable import Nameable
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.slot.SlottedItem import SlottedItem
 
 
-@dataclass(kw_only=True)
 class Furnace(BlockEntity, Lockable, Nameable):
-    Items: Annotated[list[SlottedItem[Annotated[int, 'Range | `0`-`2` | both inclusive']]], 'Length = 0-3 (both inclusive)'] | None = None  # The items in this furnace, with slots: * 0: Item being smelted * 1: Fuel * 2: Output
+    Items: Annotated[list[SlottedItem[Annotated[int, Field(ge=0, le=2)]]], Field(min_length=0, max_length=3)] | None = None  # The items in this furnace, with slots: * 0: Item being smelted * 1: Fuel * 2: Output
     cooking_total_time: int | None = None  # The total amount of time the current cooking process will take. Defaults to `0`.
     cooking_time_spent: int | None = None  # The amount of time that the current cooking process has taken so far. Defaults to `0`.
     lit_time_remaining: int | None = None  # The amount of burn time remaining. Defaults to `0`.

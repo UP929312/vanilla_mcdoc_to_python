@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::worldgen::processor_list::AxisAlig
 Local link to file: generated_symbols/data/worldgen/processor_list/AxisAlignedLinearPos.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.data.worldgen.processor_list.LinearPos import LinearPos
@@ -12,7 +11,6 @@ if TYPE_CHECKING:
     from generated_symbols.util.direction.Axis import Axis
 
 
-@dataclass(kw_only=True)
 class AxisAlignedLinearPos(LinearPos):
     axis: Axis
 

@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::worldgen::carver::CarverDebugSetti
 Local link to file: generated_symbols/data/worldgen/carver/CarverDebugSettings.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.util.block_state.BlockState import BlockState
 
 
-@dataclass(kw_only=True)
-class CarverDebugSettings:
+class CarverDebugSettings(GeneratedModel):
     debug_mode: bool | None = None
     air_state: BlockState
     water_state: BlockState

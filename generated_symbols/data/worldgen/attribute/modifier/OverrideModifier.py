@@ -3,14 +3,14 @@ Generated from symbols.json for ::java::data::worldgen::attribute::modifier::Ove
 Local link to file: generated_symbols/data/worldgen/attribute/modifier/OverrideModifier.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Generic, Literal, TypeVar
+
+from generated_symbols.base import GeneratedModel
 
 
 T = TypeVar('T')
 
-@dataclass(kw_only=True)
-class OverrideModifier(Generic[T]):
+class OverrideModifier(GeneratedModel, Generic[T]):
     modifier: Literal['override'] = 'override'
     argument: T
 

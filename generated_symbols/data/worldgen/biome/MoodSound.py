@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::worldgen::biome::MoodSound
 Local link to file: generated_symbols/data/worldgen/biome/MoodSound.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.SoundEventRef import SoundEventRef
 
 
-@dataclass(kw_only=True)
-class MoodSound:
+class MoodSound(GeneratedModel):
     sound: SoundEventRef
     tick_delay: int
     block_search_extent: int

@@ -3,17 +3,18 @@ Generated from symbols.json for ::java::data::worldgen::feature::BlockColumnLaye
 Local link to file: generated_symbols/data/worldgen/feature/BlockColumnLayer.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.IntProvider import IntProvider
     from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
 
 
-@dataclass(kw_only=True)
-class BlockColumnLayer:
-    height: IntProvider[Annotated[int, 'Range | `0` and above | inclusive']] | Annotated[int, 'Range | `0` and above | inclusive']
+class BlockColumnLayer(GeneratedModel):
+    height: IntProvider[Annotated[int, Field(ge=0)]] | Annotated[int, Field(ge=0)]
     provider: BlockStateProvider
 
 

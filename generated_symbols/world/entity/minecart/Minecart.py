@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::entity::minecart::Minecart
 Local link to file: generated_symbols/world/entity/minecart/Minecart.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.world.entity.EntityBase import EntityBase
@@ -12,7 +11,6 @@ if TYPE_CHECKING:
     from generated_symbols.util.BlockState import BlockState
 
 
-@dataclass(kw_only=True)
 class Minecart(EntityBase):
     DisplayState: BlockState | None = None  # Custom block to display.
     DisplayOffset: int | None = None  # Vertical offset of the block display.

@@ -3,14 +3,15 @@ Generated from symbols.json for ::java::assets::texture_meta::TileScaling
 Local link to file: generated_symbols/assets/texture_meta/TileScaling.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class TileScaling:
-    width: Annotated[int, 'Range | `1` and above | inclusive']
-    height: Annotated[int, 'Range | `1` and above | inclusive']
+
+class TileScaling(GeneratedModel):
+    width: Annotated[int, Field(ge=1)]
+    height: Annotated[int, Field(ge=1)]
 
 
 # ~~~ MODEL DUMP ~~~

@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::block::decorated_pot::DecoratedPo
 Local link to file: generated_symbols/world/block/decorated_pot/DecoratedPot.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.world.block.BlockEntity import BlockEntity
@@ -14,7 +13,6 @@ if TYPE_CHECKING:
     from generated_symbols.world.item.ItemStack import ItemStack
 
 
-@dataclass(kw_only=True)
 class DecoratedPot(BlockEntity):
     sherds: PotDecorations | None = None  # Item ID of what was used for each side of the pot.  Decoration textures are determined by `provides_pottery_pattern` component on the sherd items.
     LootTable: Annotated[str, IdSpec(registry='loot_table', empty='allowed')] | None = None  # Loot table that will populate this container.

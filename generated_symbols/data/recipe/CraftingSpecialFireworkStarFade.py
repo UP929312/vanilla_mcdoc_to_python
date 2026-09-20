@@ -3,16 +3,16 @@ Generated from symbols.json for ::java::data::recipe::CraftingSpecialFireworkSta
 Local link to file: generated_symbols/data/recipe/CraftingSpecialFireworkStarFade.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, ClassVar
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.recipe.Ingredient import Ingredient
     from generated_symbols.world.item.ItemStackTemplate import ItemStackTemplate
 
 
-@dataclass(kw_only=True)
-class CraftingSpecialFireworkStarFade:
+class CraftingSpecialFireworkStarFade(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'recipe'
 
     target: Ingredient  # The firework star item.  The fade effect of its `firework_explosion` will be changed.  The other components are copied.

@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::entity::mob::fish::Salmon
 Local link to file: generated_symbols/world/entity/mob/fish/Salmon.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.world.entity.mob.fish.Fish import Fish
@@ -12,7 +11,6 @@ if TYPE_CHECKING:
     from generated_symbols.world.component.entity.SalmonType import SalmonType
 
 
-@dataclass(kw_only=True)
 class Salmon(Fish):
     type: SalmonType | None = None  # The size variant of the salmon.
 

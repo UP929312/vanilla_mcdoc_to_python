@@ -3,18 +3,19 @@ Generated from symbols.json for ::java::assets::model::ModelDisplay
 Local link to file: generated_symbols/assets/model/ModelDisplay.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.assets.model.CustomizableItemDisplayContext import CustomizableItemDisplayContext
 
 
-@dataclass(kw_only=True)
-class ModelDisplayValueStruct:
+class ModelDisplayValueStruct(GeneratedModel):
     rotation: tuple[float, float, float] | None = None
-    translation: tuple[Annotated[float, 'Range | `-80`-`80` | both inclusive'], Annotated[float, 'Range | `-80`-`80` | both inclusive'], Annotated[float, 'Range | `-80`-`80` | both inclusive']] | None = None
-    scale: tuple[Annotated[float, 'Range | `-4`-`4` | both inclusive'], Annotated[float, 'Range | `-4`-`4` | both inclusive'], Annotated[float, 'Range | `-4`-`4` | both inclusive']] | None = None
+    translation: tuple[Annotated[float, Field(ge=-80, le=80)], Annotated[float, Field(ge=-80, le=80)], Annotated[float, Field(ge=-80, le=80)]] | None = None
+    scale: tuple[Annotated[float, Field(ge=-4, le=4)], Annotated[float, Field(ge=-4, le=4)], Annotated[float, Field(ge=-4, le=4)]] | None = None
 
 
 type ModelDisplay = dict[CustomizableItemDisplayContext, ModelDisplayValueStruct]

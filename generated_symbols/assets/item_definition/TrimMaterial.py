@@ -3,14 +3,12 @@ Generated from symbols.json for ::java::assets::item_definition::TrimMaterial
 Local link to file: generated_symbols/assets/item_definition/TrimMaterial.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
 from generated_symbols.assets.item_definition.SelectCases import SelectCases
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
 class TrimMaterial(SelectCases[Annotated[str, IdSpec(registry='trim_material')]]):
     pass
 

@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::item::TradeCost
 Local link to file: generated_symbols/world/item/TradeCost.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.world.component.DataComponentExactPredicate import DataComponentExactPredicate
@@ -13,7 +12,6 @@ if TYPE_CHECKING:
     from generated_symbols.data.number_provider.NumberProvider import NumberProvider
 
 
-@dataclass(kw_only=True)
 class TradeCost(SingleItemOfComponent[DataComponentExactPredicate]):
     count: NumberProvider | None = None  # Number of items in the stack. Defaults to `1`.
 

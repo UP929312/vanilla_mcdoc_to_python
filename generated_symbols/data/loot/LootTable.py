@@ -3,9 +3,9 @@ Generated from symbols.json for ::java::data::loot::LootTable
 Local link to file: generated_symbols/data/loot/LootTable.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
@@ -14,8 +14,7 @@ if TYPE_CHECKING:
     from generated_symbols.data.loot.LootPool import LootPool
 
 
-@dataclass(kw_only=True)
-class LootTable:
+class LootTable(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'loot_table'
 
     type: LootContextParamSets | None = None

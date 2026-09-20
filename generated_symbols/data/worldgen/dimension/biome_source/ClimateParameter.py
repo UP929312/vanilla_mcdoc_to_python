@@ -5,8 +5,10 @@ Local link to file: generated_symbols/data/worldgen/dimension/biome_source/Clima
 # ~~~ CODE ~~~
 from typing import Annotated
 
+from pydantic import Field
 
-type ClimateParameter = Annotated[float, 'Range | `-2`-`2` | both inclusive'] | tuple[Annotated[float, 'Range | `-2`-`2` | both inclusive'], Annotated[float, 'Range | `-2`-`2` | both inclusive']]
+
+type ClimateParameter = Annotated[float, Field(ge=-2, le=2)] | tuple[Annotated[float, Field(ge=-2, le=2)], Annotated[float, Field(ge=-2, le=2)]]
 
 
 # ~~~ MODEL DUMP ~~~

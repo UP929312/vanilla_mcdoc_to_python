@@ -3,14 +3,12 @@ Generated from symbols.json for ::java::world::entity::mob::breedable::cow::Cow
 Local link to file: generated_symbols/world/entity/mob/breedable/cow/Cow.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
 from generated_symbols.world.entity.mob.breedable.Breedable import Breedable
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
 class Cow(Breedable):
     variant: Annotated[str, IdSpec(registry='cow_variant')] | None = None
     sound_variant: Annotated[str, IdSpec(registry='cow_sound_variant')] | None = None

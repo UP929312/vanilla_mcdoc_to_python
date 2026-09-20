@@ -3,19 +3,18 @@ Generated from symbols.json for ::java::world::entity::mob::slime::SulfurCube
 Local link to file: generated_symbols/world/entity/mob/slime/SulfurCube.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
 from generated_symbols.world.entity.mob.AgeableMob import AgeableMob
 from generated_symbols.world.entity.mob.MobBase import MobBase
 from generated_symbols.world.entity.mob.slime.CubeMob import CubeMob
+from pydantic import Field
 
 
-@dataclass(kw_only=True)
 class SulfurCube(AgeableMob, CubeMob, MobBase):
-    pickup_timer: Annotated[int, 'Range | `0` and above | inclusive'] | None = None
+    pickup_timer: Annotated[int, Field(ge=0)] | None = None
     from_bucket: bool | None = None
-    fuse: Annotated[int, 'Range | `-1` and above | inclusive'] | None = None  # `-1` represents "not ignited".
+    fuse: Annotated[int, Field(ge=-1)] | None = None  # `-1` represents "not ignited".
 
 
 # ~~~ MODEL DUMP ~~~

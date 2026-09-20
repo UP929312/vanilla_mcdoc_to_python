@@ -3,24 +3,21 @@ Generated from symbols.json for ::java::data::worldgen::feature::BlockPlacer
 Local link to file: generated_symbols/data/worldgen/feature/BlockPlacer.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Literal
 
+from generated_symbols.base import GeneratedModel
 from generated_symbols.data.worldgen.feature.ColumnPlacer import ColumnPlacer
 
 
-@dataclass(kw_only=True)
 class BlockPlacerColumnPlacer(ColumnPlacer):
     type: Literal['minecraft:column_placer'] = 'minecraft:column_placer'
 
 
-@dataclass(kw_only=True)
-class BlockPlacerDoublePlantPlacer:
+class BlockPlacerDoublePlantPlacer(GeneratedModel):
     type: Literal['minecraft:double_plant_placer'] = 'minecraft:double_plant_placer'
 
 
-@dataclass(kw_only=True)
-class BlockPlacerSimpleBlockPlacer:
+class BlockPlacerSimpleBlockPlacer(GeneratedModel):
     type: Literal['minecraft:simple_block_placer'] = 'minecraft:simple_block_placer'
 
 

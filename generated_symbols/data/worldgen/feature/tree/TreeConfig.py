@@ -3,8 +3,9 @@ Generated from symbols.json for ::java::data::worldgen::feature::tree::TreeConfi
 Local link to file: generated_symbols/data/worldgen/feature/tree/TreeConfig.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, ClassVar
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
@@ -15,8 +16,7 @@ if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.tree.TrunkPlacer import TrunkPlacer
 
 
-@dataclass(kw_only=True)
-class TreeConfig:
+class TreeConfig(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/feature'
 
     ignore_vines: bool | None = None

@@ -3,9 +3,9 @@ Generated from symbols.json for ::java::data::loot::function::CopyNbt
 Local link to file: generated_symbols/data/loot/function/CopyNbt.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
+from generated_symbols.base import GeneratedModel
 from generated_symbols.data.loot.function.Conditions import Conditions
 
 if TYPE_CHECKING:
@@ -13,14 +13,12 @@ if TYPE_CHECKING:
     from generated_symbols.data.util.NbtProvider import NbtProvider
 
 
-@dataclass(kw_only=True)
-class OpsStruct:
+class OpsStruct(GeneratedModel):
     source: str
     target: str
     op: CopyNbtStrategy
 
 
-@dataclass(kw_only=True)
 class CopyNbt(Conditions):
     source: NbtProvider
     ops: list[OpsStruct]

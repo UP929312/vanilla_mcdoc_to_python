@@ -3,20 +3,21 @@ Generated from symbols.json for ::java::data::worldgen::feature::RandomPatchConf
 Local link to file: generated_symbols/data/worldgen/feature/RandomPatchConfig.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.FeatureRef import FeatureRef
 
 
-@dataclass(kw_only=True)
-class RandomPatchConfig:
+class RandomPatchConfig(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/feature'
 
-    tries: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # How many attempts will be made to find a placement. Defaults to 128.
-    xz_spread: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # Defaults to 7.
-    y_spread: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # Defaults to 3.
+    tries: Annotated[int, Field(ge=1)] | None = None  # How many attempts will be made to find a placement. Defaults to 128.
+    xz_spread: Annotated[int, Field(ge=0)] | None = None  # Defaults to 7.
+    y_spread: Annotated[int, Field(ge=0)] | None = None  # Defaults to 3.
     feature: FeatureRef
 
 

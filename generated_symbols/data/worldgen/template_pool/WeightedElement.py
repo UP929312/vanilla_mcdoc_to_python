@@ -3,16 +3,17 @@ Generated from symbols.json for ::java::data::worldgen::template_pool::WeightedE
 Local link to file: generated_symbols/data/worldgen/template_pool/WeightedElement.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.template_pool.Element import Element
 
 
-@dataclass(kw_only=True)
-class WeightedElement:
-    weight: Annotated[int, 'Range | `1`-`150` | both inclusive']
+class WeightedElement(GeneratedModel):
+    weight: Annotated[int, Field(ge=1, le=150)]
     element: Element
 
 

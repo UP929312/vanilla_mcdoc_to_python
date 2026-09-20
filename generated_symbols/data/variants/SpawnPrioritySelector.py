@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::variants::SpawnPrioritySelector
 Local link to file: generated_symbols/data/variants/SpawnPrioritySelector.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.variants.SpawnCondition import SpawnCondition
 
 
-@dataclass(kw_only=True)
-class SpawnPrioritySelector:
+class SpawnPrioritySelector(GeneratedModel):
     condition: SpawnCondition | None = None  # The spawn condition to check. If not present, the condition always matches.
     priority: int  # The spawn priority to use.
 

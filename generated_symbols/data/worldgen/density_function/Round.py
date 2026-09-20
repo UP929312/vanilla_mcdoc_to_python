@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::worldgen::density_function::Round
 Local link to file: generated_symbols/data/worldgen/density_function/Round.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.density_function.DensityFunctionRef import DensityFunctionRef
 
 
-@dataclass(kw_only=True)
-class Round:
+class Round(GeneratedModel):
     input: DensityFunctionRef
     multiple: DensityFunctionRef | None = None  # Defaults to constant 1.
 

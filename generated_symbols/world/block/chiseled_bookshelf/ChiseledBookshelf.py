@@ -3,19 +3,18 @@ Generated from symbols.json for ::java::world::block::chiseled_bookshelf::Chisel
 Local link to file: generated_symbols/world/block/chiseled_bookshelf/ChiseledBookshelf.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.world.block.BlockEntity import BlockEntity
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.slot.SlottedItem import SlottedItem
 
 
-@dataclass(kw_only=True)
 class ChiseledBookshelf(BlockEntity):
-    Items: Annotated[list[SlottedItem[Annotated[int, 'Range | `0`-`5` | both inclusive']]], 'Length = 0-6 (both inclusive)'] | None = None  # Slots from 0 to 5.
-    last_interacted_slot: Annotated[int, 'Range | `0`-`5` | both inclusive'] | None = None
+    Items: Annotated[list[SlottedItem[Annotated[int, Field(ge=0, le=5)]]], Field(min_length=0, max_length=6)] | None = None  # Slots from 0 to 5.
+    last_interacted_slot: Annotated[int, Field(ge=0, le=5)] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

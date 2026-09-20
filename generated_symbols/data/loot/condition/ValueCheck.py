@@ -3,16 +3,16 @@ Generated from symbols.json for ::java::data::loot::condition::ValueCheck
 Local link to file: generated_symbols/data/loot/condition/ValueCheck.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.number_provider.NumberProviderRef import NumberProviderRef
     from generated_symbols.data.util.IntRange import IntRange
 
 
-@dataclass(kw_only=True)
-class ValueCheck:
+class ValueCheck(GeneratedModel):
     value: NumberProviderRef  # Clamps to an integer.
     range: IntRange  # Passes when `value` is within this range.
 

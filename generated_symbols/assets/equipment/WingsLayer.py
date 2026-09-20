@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::assets::equipment::WingsLayer
 Local link to file: generated_symbols/assets/equipment/WingsLayer.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Generic, TypeVar
 
 from generated_symbols.assets.equipment.Layer import Layer
@@ -11,7 +10,6 @@ from generated_symbols.assets.equipment.Layer import Layer
 
 T = TypeVar('T')
 
-@dataclass(kw_only=True)
 class WingsLayer(Layer[T], Generic[T]):
     use_player_texture: bool | None = None  # Whether this layer texture should be overridden by the player's custom elytra texture.  Defaults to `false`.
 

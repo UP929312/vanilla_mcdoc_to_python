@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::number_provider::ScoreNumberProvid
 Local link to file: generated_symbols/data/number_provider/ScoreNumberProvider.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.ScoreProvider import ScoreProvider
 
 
-@dataclass(kw_only=True)
-class ScoreNumberProvider:
+class ScoreNumberProvider(GeneratedModel):
     target: ScoreProvider
     score: str
     scale: float | None = None

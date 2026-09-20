@@ -3,19 +3,16 @@ Generated from symbols.json for ::java::util::game_event::PositionSource
 Local link to file: generated_symbols/util/game_event/PositionSource.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Literal
 
 from generated_symbols.util.game_event.BlockPositionSource import BlockPositionSource
 from generated_symbols.util.game_event.EntityPositionSource import EntityPositionSource
 
 
-@dataclass(kw_only=True)
 class PositionSourceBlock(BlockPositionSource):
     type: Literal['minecraft:block'] = 'minecraft:block'
 
 
-@dataclass(kw_only=True)
 class PositionSourceEntity(EntityPositionSource):
     type: Literal['minecraft:entity'] = 'minecraft:entity'
 

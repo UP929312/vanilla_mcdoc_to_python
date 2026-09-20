@@ -3,8 +3,9 @@ Generated from symbols.json for ::java::data::worldgen::attribute::modifier::Mer
 Local link to file: generated_symbols/data/worldgen/attribute/modifier/MergeableModifier.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Generic, TypeVar
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.attribute.modifier.MergeableModifierType import MergeableModifierType
@@ -12,8 +13,7 @@ if TYPE_CHECKING:
 
 T = TypeVar('T')
 
-@dataclass(kw_only=True)
-class MergeableModifier(Generic[T]):
+class MergeableModifier(GeneratedModel, Generic[T]):
     modifier: MergeableModifierType
     argument: T
 

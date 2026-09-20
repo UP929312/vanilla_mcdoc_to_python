@@ -3,17 +3,18 @@ Generated from symbols.json for ::java::data::worldgen::feature::tree::RandomSpr
 Local link to file: generated_symbols/data/worldgen/feature/tree/RandomSpreadFoliagePlacer.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.IntProvider import IntProvider
 
 
-@dataclass(kw_only=True)
-class RandomSpreadFoliagePlacer:
-    foliage_height: IntProvider[Annotated[int, 'Range | `1`-`512` | both inclusive']] | Annotated[int, 'Range | `1`-`512` | both inclusive']
-    leaf_placement_attempts: Annotated[int, 'Range | `0`-`256` | both inclusive']
+class RandomSpreadFoliagePlacer(GeneratedModel):
+    foliage_height: IntProvider[Annotated[int, Field(ge=1, le=512)]] | Annotated[int, Field(ge=1, le=512)]
+    leaf_placement_attempts: Annotated[int, Field(ge=0, le=256)]
 
 
 # ~~~ MODEL DUMP ~~~

@@ -3,16 +3,16 @@ Generated from symbols.json for ::java::data::worldgen::density_function::Slice
 Local link to file: generated_symbols/data/worldgen/density_function/Slice.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.density_function.DensityFunctionRef import DensityFunctionRef
     from generated_symbols.util.direction.Axis import Axis
 
 
-@dataclass(kw_only=True)
-class Slice:
+class Slice(GeneratedModel):
     axis: Axis
     coordinate: int
     input: DensityFunctionRef

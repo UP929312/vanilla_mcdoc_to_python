@@ -3,12 +3,9 @@ Generated from symbols.json for ::java::world::entity::mob::vex::Vex
 Local link to file: generated_symbols/world/entity/mob/vex/Vex.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.world.entity.mob.MobBase import MobBase
 
 
-@dataclass(kw_only=True)
 class Vex(MobBase):
     bound_pos: tuple[int, int, int] | None = None  # Coordinates of the center of its wander bounds.
     life_ticks: int | None = None  # Ticks until it starts to die.

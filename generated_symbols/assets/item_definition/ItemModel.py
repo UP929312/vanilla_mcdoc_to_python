@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::assets::item_definition::ItemModel
 Local link to file: generated_symbols/assets/item_definition/ItemModel.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Literal
 
 from generated_symbols.assets.item_definition.BlockState import BlockState
@@ -32,6 +31,7 @@ from generated_symbols.assets.item_definition.TrimMaterial import TrimMaterial
 from generated_symbols.assets.item_definition.UseCycle import UseCycle
 from generated_symbols.assets.item_definition.UseDuration import UseDuration
 from generated_symbols.assets.item_definition.ViewEntity import ViewEntity
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.assets.item_definition.ConditionalPropertyType import ConditionalPropertyType
@@ -40,24 +40,20 @@ if TYPE_CHECKING:
     from generated_symbols.world.entity.display.Transformation import Transformation
 
 
-@dataclass(kw_only=True)
-class EntriesStruct:
+class EntriesStruct(GeneratedModel):
     threshold: float
     model: ItemModel
 
 
-@dataclass(kw_only=True)
-class ItemModelBundleSelectedItem:
+class ItemModelBundleSelectedItem(GeneratedModel):
     type: Literal['minecraft:bundle/selected_item'] = 'minecraft:bundle/selected_item'
 
 
-@dataclass(kw_only=True)
 class ItemModelComposite(Composite):
     type: Literal['minecraft:composite'] = 'minecraft:composite'
 
 
-@dataclass(kw_only=True)
-class ItemModelConditionUnknown:
+class ItemModelConditionUnknown(GeneratedModel):
     type: Literal['minecraft:condition'] = 'minecraft:condition'
     property: ConditionalPropertyType
     on_true: ItemModel
@@ -65,7 +61,6 @@ class ItemModelConditionUnknown:
     transformation: Transformation | None = None
 
 
-@dataclass(kw_only=True)
 class ItemModelConditionComponent(ComponentFlags):
     type: Literal['minecraft:condition'] = 'minecraft:condition'
     property: Literal['minecraft:component'] = 'minecraft:component'
@@ -74,7 +69,6 @@ class ItemModelConditionComponent(ComponentFlags):
     transformation: Transformation | None = None
 
 
-@dataclass(kw_only=True)
 class ItemModelConditionCustomModelData(CustomModelDataFlags):
     type: Literal['minecraft:condition'] = 'minecraft:condition'
     property: Literal['minecraft:custom_model_data'] = 'minecraft:custom_model_data'
@@ -83,7 +77,6 @@ class ItemModelConditionCustomModelData(CustomModelDataFlags):
     transformation: Transformation | None = None
 
 
-@dataclass(kw_only=True)
 class ItemModelConditionHasComponent(HasComponent):
     type: Literal['minecraft:condition'] = 'minecraft:condition'
     property: Literal['minecraft:has_component'] = 'minecraft:has_component'
@@ -92,7 +85,6 @@ class ItemModelConditionHasComponent(HasComponent):
     transformation: Transformation | None = None
 
 
-@dataclass(kw_only=True)
 class ItemModelConditionKeybindDown(KeybindDown):
     type: Literal['minecraft:condition'] = 'minecraft:condition'
     property: Literal['minecraft:keybind_down'] = 'minecraft:keybind_down'
@@ -101,7 +93,6 @@ class ItemModelConditionKeybindDown(KeybindDown):
     transformation: Transformation | None = None
 
 
-@dataclass(kw_only=True)
 class ItemModelConditionViewEntity(ViewEntity):
     type: Literal['minecraft:condition'] = 'minecraft:condition'
     property: Literal['minecraft:view_entity'] = 'minecraft:view_entity'
@@ -112,13 +103,11 @@ class ItemModelConditionViewEntity(ViewEntity):
 
 type ItemModelCondition = ItemModelConditionUnknown | ItemModelConditionComponent | ItemModelConditionCustomModelData | ItemModelConditionHasComponent | ItemModelConditionKeybindDown | ItemModelConditionViewEntity
 
-@dataclass(kw_only=True)
 class ItemModelModel(Model):
     type: Literal['minecraft:model'] = 'minecraft:model'
 
 
-@dataclass(kw_only=True)
-class ItemModelRangeDispatchUnknown:
+class ItemModelRangeDispatchUnknown(GeneratedModel):
     type: Literal['minecraft:range_dispatch'] = 'minecraft:range_dispatch'
     property: NumericPropertyType
     scale: float | None = None  # Factor to multiply the property value with. Defaults to 1.
@@ -127,7 +116,6 @@ class ItemModelRangeDispatchUnknown:
     transformation: Transformation | None = None
 
 
-@dataclass(kw_only=True)
 class ItemModelRangeDispatchCompass(Compass):
     type: Literal['minecraft:range_dispatch'] = 'minecraft:range_dispatch'
     property: Literal['minecraft:compass'] = 'minecraft:compass'
@@ -137,7 +125,6 @@ class ItemModelRangeDispatchCompass(Compass):
     transformation: Transformation | None = None
 
 
-@dataclass(kw_only=True)
 class ItemModelRangeDispatchCount(Count):
     type: Literal['minecraft:range_dispatch'] = 'minecraft:range_dispatch'
     property: Literal['minecraft:count'] = 'minecraft:count'
@@ -147,7 +134,6 @@ class ItemModelRangeDispatchCount(Count):
     transformation: Transformation | None = None
 
 
-@dataclass(kw_only=True)
 class ItemModelRangeDispatchCustomModelData(CustomModelDataFloats):
     type: Literal['minecraft:range_dispatch'] = 'minecraft:range_dispatch'
     property: Literal['minecraft:custom_model_data'] = 'minecraft:custom_model_data'
@@ -157,7 +143,6 @@ class ItemModelRangeDispatchCustomModelData(CustomModelDataFloats):
     transformation: Transformation | None = None
 
 
-@dataclass(kw_only=True)
 class ItemModelRangeDispatchDamage(Damage):
     type: Literal['minecraft:range_dispatch'] = 'minecraft:range_dispatch'
     property: Literal['minecraft:damage'] = 'minecraft:damage'
@@ -167,7 +152,6 @@ class ItemModelRangeDispatchDamage(Damage):
     transformation: Transformation | None = None
 
 
-@dataclass(kw_only=True)
 class ItemModelRangeDispatchTime(Time):
     type: Literal['minecraft:range_dispatch'] = 'minecraft:range_dispatch'
     property: Literal['minecraft:time'] = 'minecraft:time'
@@ -177,7 +161,6 @@ class ItemModelRangeDispatchTime(Time):
     transformation: Transformation | None = None
 
 
-@dataclass(kw_only=True)
 class ItemModelRangeDispatchUseCycle(UseCycle):
     type: Literal['minecraft:range_dispatch'] = 'minecraft:range_dispatch'
     property: Literal['minecraft:use_cycle'] = 'minecraft:use_cycle'
@@ -187,7 +170,6 @@ class ItemModelRangeDispatchUseCycle(UseCycle):
     transformation: Transformation | None = None
 
 
-@dataclass(kw_only=True)
 class ItemModelRangeDispatchUseDuration(UseDuration):
     type: Literal['minecraft:range_dispatch'] = 'minecraft:range_dispatch'
     property: Literal['minecraft:use_duration'] = 'minecraft:use_duration'
@@ -199,7 +181,6 @@ class ItemModelRangeDispatchUseDuration(UseDuration):
 
 type ItemModelRangeDispatch = ItemModelRangeDispatchUnknown | ItemModelRangeDispatchCompass | ItemModelRangeDispatchCount | ItemModelRangeDispatchCustomModelData | ItemModelRangeDispatchDamage | ItemModelRangeDispatchTime | ItemModelRangeDispatchUseCycle | ItemModelRangeDispatchUseDuration
 
-@dataclass(kw_only=True)
 class ItemModelSelectUnknown(SelectCases[str]):
     type: Literal['minecraft:select'] = 'minecraft:select'
     property: SelectPropertyType
@@ -207,7 +188,6 @@ class ItemModelSelectUnknown(SelectCases[str]):
     transformation: Transformation | None = None
 
 
-@dataclass(kw_only=True)
 class ItemModelSelectBlockState(BlockState):
     type: Literal['minecraft:select'] = 'minecraft:select'
     property: Literal['minecraft:block_state'] = 'minecraft:block_state'
@@ -215,7 +195,6 @@ class ItemModelSelectBlockState(BlockState):
     transformation: Transformation | None = None
 
 
-@dataclass(kw_only=True)
 class ItemModelSelectChargeType(ChargeType):
     type: Literal['minecraft:select'] = 'minecraft:select'
     property: Literal['minecraft:charge_type'] = 'minecraft:charge_type'
@@ -223,7 +202,6 @@ class ItemModelSelectChargeType(ChargeType):
     transformation: Transformation | None = None
 
 
-@dataclass(kw_only=True)
 class ItemModelSelectComponent(ComponentStrings):
     type: Literal['minecraft:select'] = 'minecraft:select'
     property: Literal['minecraft:component'] = 'minecraft:component'
@@ -231,7 +209,6 @@ class ItemModelSelectComponent(ComponentStrings):
     transformation: Transformation | None = None
 
 
-@dataclass(kw_only=True)
 class ItemModelSelectContextDimension(ContextDimension):
     type: Literal['minecraft:select'] = 'minecraft:select'
     property: Literal['minecraft:context_dimension'] = 'minecraft:context_dimension'
@@ -239,7 +216,6 @@ class ItemModelSelectContextDimension(ContextDimension):
     transformation: Transformation | None = None
 
 
-@dataclass(kw_only=True)
 class ItemModelSelectContextEntityType(ContextEntityType):
     type: Literal['minecraft:select'] = 'minecraft:select'
     property: Literal['minecraft:context_entity_type'] = 'minecraft:context_entity_type'
@@ -247,7 +223,6 @@ class ItemModelSelectContextEntityType(ContextEntityType):
     transformation: Transformation | None = None
 
 
-@dataclass(kw_only=True)
 class ItemModelSelectCustomModelData(CustomModelDataStrings):
     type: Literal['minecraft:select'] = 'minecraft:select'
     property: Literal['minecraft:custom_model_data'] = 'minecraft:custom_model_data'
@@ -255,7 +230,6 @@ class ItemModelSelectCustomModelData(CustomModelDataStrings):
     transformation: Transformation | None = None
 
 
-@dataclass(kw_only=True)
 class ItemModelSelectDisplayContext(DisplayContext):
     type: Literal['minecraft:select'] = 'minecraft:select'
     property: Literal['minecraft:display_context'] = 'minecraft:display_context'
@@ -263,7 +237,6 @@ class ItemModelSelectDisplayContext(DisplayContext):
     transformation: Transformation | None = None
 
 
-@dataclass(kw_only=True)
 class ItemModelSelectLocalTime(LocalTime):
     type: Literal['minecraft:select'] = 'minecraft:select'
     property: Literal['minecraft:local_time'] = 'minecraft:local_time'
@@ -271,7 +244,6 @@ class ItemModelSelectLocalTime(LocalTime):
     transformation: Transformation | None = None
 
 
-@dataclass(kw_only=True)
 class ItemModelSelectMainHand(MainHand):
     type: Literal['minecraft:select'] = 'minecraft:select'
     property: Literal['minecraft:main_hand'] = 'minecraft:main_hand'
@@ -279,7 +251,6 @@ class ItemModelSelectMainHand(MainHand):
     transformation: Transformation | None = None
 
 
-@dataclass(kw_only=True)
 class ItemModelSelectTrimMaterial(TrimMaterial):
     type: Literal['minecraft:select'] = 'minecraft:select'
     property: Literal['minecraft:trim_material'] = 'minecraft:trim_material'
@@ -289,7 +260,6 @@ class ItemModelSelectTrimMaterial(TrimMaterial):
 
 type ItemModelSelect = ItemModelSelectUnknown | ItemModelSelectBlockState | ItemModelSelectChargeType | ItemModelSelectComponent | ItemModelSelectContextDimension | ItemModelSelectContextEntityType | ItemModelSelectCustomModelData | ItemModelSelectDisplayContext | ItemModelSelectLocalTime | ItemModelSelectMainHand | ItemModelSelectTrimMaterial
 
-@dataclass(kw_only=True)
 class ItemModelSpecial(Special):
     type: Literal['minecraft:special'] = 'minecraft:special'
 

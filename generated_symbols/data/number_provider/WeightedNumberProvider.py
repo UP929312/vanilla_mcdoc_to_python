@@ -3,16 +3,16 @@ Generated from symbols.json for ::java::data::number_provider::WeightedNumberPro
 Local link to file: generated_symbols/data/number_provider/WeightedNumberProvider.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.number_provider.NumberProviderRef import NumberProviderRef
     from generated_symbols.util.NonEmptyWeightedList import NonEmptyWeightedList
 
 
-@dataclass(kw_only=True)
-class WeightedNumberProvider:
+class WeightedNumberProvider(GeneratedModel):
     distribution: NonEmptyWeightedList[NumberProviderRef]
 
 

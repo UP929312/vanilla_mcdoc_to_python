@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::number_provider::EnchantmentLevelP
 Local link to file: generated_symbols/data/number_provider/EnchantmentLevelProvider.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.enchantment.LevelBasedValue import LevelBasedValue
 
 
-@dataclass(kw_only=True)
-class EnchantmentLevelProvider:
+class EnchantmentLevelProvider(GeneratedModel):
     amount: LevelBasedValue
 
 

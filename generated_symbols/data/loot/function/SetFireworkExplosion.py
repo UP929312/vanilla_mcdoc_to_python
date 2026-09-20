@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::loot::function::SetFireworkExplosi
 Local link to file: generated_symbols/data/loot/function/SetFireworkExplosion.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.data.loot.function.Conditions import Conditions
@@ -12,7 +11,6 @@ if TYPE_CHECKING:
     from generated_symbols.world.component.item.FireworkShape import FireworkShape
 
 
-@dataclass(kw_only=True)
 class SetFireworkExplosion(Conditions):
     shape: FireworkShape | None = None  # If omitted, the original shape is kept (or `small_ball` is used if there was no component).
     colors: list[int] | None = None  # If omitted, the original colors are kept (or `[]` is used if there was no component). Calculated as `RED << 16 | GREEN << 8 | BLUE`. Each of these fields must be between 0 and 255, inclusive.

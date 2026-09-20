@@ -3,20 +3,20 @@ Generated from symbols.json for ::java::data::gametest::test_environment::GameRu
 Local link to file: generated_symbols/data/gametest/test_environment/GameRulesTestEnvironment.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.registry.KnownGameRuleId import KnownGameRuleId
 
 
-@dataclass(kw_only=True)
-class GameRulesTestEnvironment:
+class GameRulesTestEnvironment(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'test_environment'
 
-    rules: dict[Annotated[str, IdSpec(registry='game_rule')] | KnownGameRuleId, bool | Annotated[int, 'Range | `-1` and above | inclusive'] | Annotated[int, 'Range | `1` and above | inclusive'] | Annotated[int, 'Range | `0` and above | inclusive'] | Annotated[int, 'Range | `1`-`1000` | both inclusive'] | Annotated[int, 'Range | `0`-`8` | both inclusive']]
+    rules: dict[Annotated[str, IdSpec(registry='game_rule')] | KnownGameRuleId, bool | Annotated[int, Field(ge=-1)] | Annotated[int, Field(ge=1)] | Annotated[int, Field(ge=0)] | Annotated[int, Field(ge=1, le=1000)] | Annotated[int, Field(ge=0, le=8)]]
 
 
 # ~~~ MODEL DUMP ~~~

@@ -3,16 +3,16 @@ Generated from symbols.json for ::java::data::worldgen::biome::BiomeEffects
 Local link to file: generated_symbols/data/worldgen/biome/BiomeEffects.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.biome.GrassColorModifier import GrassColorModifier
     from generated_symbols.util.color.StringRGB import StringRGB
 
 
-@dataclass(kw_only=True)
-class BiomeEffects:
+class BiomeEffects(GeneratedModel):
     water_color: StringRGB
     grass_color: StringRGB | None = None
     foliage_color: StringRGB | None = None

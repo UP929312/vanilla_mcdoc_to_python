@@ -3,12 +3,9 @@ Generated from symbols.json for ::java::world::entity::mob::wither::Wither
 Local link to file: generated_symbols/world/entity/mob/wither/Wither.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.world.entity.mob.MobBase import MobBase
 
 
-@dataclass(kw_only=True)
 class Wither(MobBase):
     Invul: int | None = None  # Ticks it is invulnerable for.
 

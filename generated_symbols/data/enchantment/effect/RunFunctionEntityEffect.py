@@ -3,14 +3,13 @@ Generated from symbols.json for ::java::data::enchantment::effect::RunFunctionEn
 Local link to file: generated_symbols/data/enchantment/effect/RunFunctionEntityEffect.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
-class RunFunctionEntityEffect:
+class RunFunctionEntityEffect(GeneratedModel):
     function: Annotated[str, IdSpec(registry='function')]
 
 

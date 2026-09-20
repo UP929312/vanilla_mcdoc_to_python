@@ -3,14 +3,15 @@ Generated from symbols.json for ::java::world::component::item::UseEffects
 Local link to file: generated_symbols/world/component/item/UseEffects.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class UseEffects:
+
+class UseEffects(GeneratedModel):
     can_sprint: bool | None = None  # Whether the player can sprint while using this item. Defaults to `false`.
-    speed_multiplier: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None  # The speed multiplier applied to the player while using this item. Defaults to 0.2
+    speed_multiplier: Annotated[float, Field(ge=0, le=1)] | None = None  # The speed multiplier applied to the player while using this item. Defaults to 0.2
     interact_vibrations: bool | None = None  # Whether using this item emits game events (`item_interact_start` and `item_interact_finish`). Defaults to `true`.
 
 

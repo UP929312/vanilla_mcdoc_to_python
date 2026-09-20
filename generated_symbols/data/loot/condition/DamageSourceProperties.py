@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::loot::condition::DamageSourcePrope
 Local link to file: generated_symbols/data/loot/condition/DamageSourceProperties.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.advancement.predicate.DamageSourcePredicate import DamageSourcePredicate
 
 
-@dataclass(kw_only=True)
-class DamageSourceProperties:
+class DamageSourceProperties(GeneratedModel):
     predicate: DamageSourcePredicate
 
 

@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::world::entity::mob::BlockLeash
 Local link to file: generated_symbols/world/entity/mob/BlockLeash.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class BlockLeash:
+class BlockLeash(GeneratedModel):
     X: int | None = None  # X coordiante of leash knot.
     Y: int | None = None  # Y coordiante of leash knot.
     Z: int | None = None  # Z coordiante of leash knot.

@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::data::util::ConstantIntGenerator
 Local link to file: generated_symbols/data/util/ConstantIntGenerator.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class ConstantIntGenerator:
+class ConstantIntGenerator(GeneratedModel):
     value: int
 
 

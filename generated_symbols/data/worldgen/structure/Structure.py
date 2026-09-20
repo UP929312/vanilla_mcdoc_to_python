@@ -3,9 +3,9 @@ Generated from symbols.json for ::java::data::worldgen::structure::Structure
 Local link to file: generated_symbols/data/worldgen/structure/Structure.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar, Literal
 
+from generated_symbols.base import GeneratedModel
 from generated_symbols.data.worldgen.structure.BuriedTreasure import BuriedTreasure
 from generated_symbols.data.worldgen.structure.Jigsaw import Jigsaw
 from generated_symbols.data.worldgen.structure.Mineshaft import Mineshaft
@@ -22,7 +22,6 @@ if TYPE_CHECKING:
     from generated_symbols.data.worldgen.structure.TerrainAdaptation import TerrainAdaptation
 
 
-@dataclass(kw_only=True)
 class StructureBastionRemnant(Jigsaw):
     __resource_dir__: ClassVar[str] = 'worldgen/structure'
 
@@ -33,7 +32,6 @@ class StructureBastionRemnant(Jigsaw):
     spawn_overrides: dict[MobCategory, SpawnOverride]
 
 
-@dataclass(kw_only=True)
 class StructureBuriedTreasure(BuriedTreasure):
     type: Literal['minecraft:buried_treasure'] = 'minecraft:buried_treasure'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
@@ -42,8 +40,7 @@ class StructureBuriedTreasure(BuriedTreasure):
     spawn_overrides: dict[MobCategory, SpawnOverride]
 
 
-@dataclass(kw_only=True)
-class StructureDesertPyramid:
+class StructureDesertPyramid(GeneratedModel):
     type: Literal['minecraft:desert_pyramid'] = 'minecraft:desert_pyramid'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
@@ -51,8 +48,7 @@ class StructureDesertPyramid:
     spawn_overrides: dict[MobCategory, SpawnOverride]
 
 
-@dataclass(kw_only=True)
-class StructureEndCity:
+class StructureEndCity(GeneratedModel):
     type: Literal['minecraft:end_city'] = 'minecraft:end_city'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
@@ -60,8 +56,7 @@ class StructureEndCity:
     spawn_overrides: dict[MobCategory, SpawnOverride]
 
 
-@dataclass(kw_only=True)
-class StructureFortress:
+class StructureFortress(GeneratedModel):
     type: Literal['minecraft:fortress'] = 'minecraft:fortress'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
@@ -69,8 +64,7 @@ class StructureFortress:
     spawn_overrides: dict[MobCategory, SpawnOverride]
 
 
-@dataclass(kw_only=True)
-class StructureIgloo:
+class StructureIgloo(GeneratedModel):
     type: Literal['minecraft:igloo'] = 'minecraft:igloo'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
@@ -78,7 +72,6 @@ class StructureIgloo:
     spawn_overrides: dict[MobCategory, SpawnOverride]
 
 
-@dataclass(kw_only=True)
 class StructureJigsaw(Jigsaw):
     type: Literal['minecraft:jigsaw'] = 'minecraft:jigsaw'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
@@ -87,8 +80,7 @@ class StructureJigsaw(Jigsaw):
     spawn_overrides: dict[MobCategory, SpawnOverride]
 
 
-@dataclass(kw_only=True)
-class StructureJungleTemple:
+class StructureJungleTemple(GeneratedModel):
     type: Literal['minecraft:jungle_temple'] = 'minecraft:jungle_temple'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
@@ -96,7 +88,6 @@ class StructureJungleTemple:
     spawn_overrides: dict[MobCategory, SpawnOverride]
 
 
-@dataclass(kw_only=True)
 class StructureMineshaft(Mineshaft):
     type: Literal['minecraft:mineshaft'] = 'minecraft:mineshaft'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
@@ -105,7 +96,6 @@ class StructureMineshaft(Mineshaft):
     spawn_overrides: dict[MobCategory, SpawnOverride]
 
 
-@dataclass(kw_only=True)
 class StructureNetherFossil(NetherFossil):
     type: Literal['minecraft:nether_fossil'] = 'minecraft:nether_fossil'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
@@ -114,8 +104,7 @@ class StructureNetherFossil(NetherFossil):
     spawn_overrides: dict[MobCategory, SpawnOverride]
 
 
-@dataclass(kw_only=True)
-class StructureOceanMonument:
+class StructureOceanMonument(GeneratedModel):
     type: Literal['minecraft:ocean_monument'] = 'minecraft:ocean_monument'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
@@ -123,7 +112,6 @@ class StructureOceanMonument:
     spawn_overrides: dict[MobCategory, SpawnOverride]
 
 
-@dataclass(kw_only=True)
 class StructureOceanRuin(OceanRuin):
     type: Literal['minecraft:ocean_ruin'] = 'minecraft:ocean_ruin'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
@@ -132,7 +120,6 @@ class StructureOceanRuin(OceanRuin):
     spawn_overrides: dict[MobCategory, SpawnOverride]
 
 
-@dataclass(kw_only=True)
 class StructurePillagerOutpost(Jigsaw):
     type: Literal['minecraft:pillager_outpost'] = 'minecraft:pillager_outpost'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
@@ -141,7 +128,6 @@ class StructurePillagerOutpost(Jigsaw):
     spawn_overrides: dict[MobCategory, SpawnOverride]
 
 
-@dataclass(kw_only=True)
 class StructureRuinedPortal(RuinedPortal):
     type: Literal['minecraft:ruined_portal'] = 'minecraft:ruined_portal'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
@@ -150,7 +136,6 @@ class StructureRuinedPortal(RuinedPortal):
     spawn_overrides: dict[MobCategory, SpawnOverride]
 
 
-@dataclass(kw_only=True)
 class StructureShipwreck(Shipwreck):
     type: Literal['minecraft:shipwreck'] = 'minecraft:shipwreck'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
@@ -159,8 +144,7 @@ class StructureShipwreck(Shipwreck):
     spawn_overrides: dict[MobCategory, SpawnOverride]
 
 
-@dataclass(kw_only=True)
-class StructureStronghold:
+class StructureStronghold(GeneratedModel):
     type: Literal['minecraft:stronghold'] = 'minecraft:stronghold'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
@@ -168,8 +152,7 @@ class StructureStronghold:
     spawn_overrides: dict[MobCategory, SpawnOverride]
 
 
-@dataclass(kw_only=True)
-class StructureSwampHut:
+class StructureSwampHut(GeneratedModel):
     type: Literal['minecraft:swamp_hut'] = 'minecraft:swamp_hut'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
@@ -177,7 +160,6 @@ class StructureSwampHut:
     spawn_overrides: dict[MobCategory, SpawnOverride]
 
 
-@dataclass(kw_only=True)
 class StructureVillage(Jigsaw):
     type: Literal['minecraft:village'] = 'minecraft:village'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
@@ -186,8 +168,7 @@ class StructureVillage(Jigsaw):
     spawn_overrides: dict[MobCategory, SpawnOverride]
 
 
-@dataclass(kw_only=True)
-class StructureWoodlandMansion:
+class StructureWoodlandMansion(GeneratedModel):
     type: Literal['minecraft:woodland_mansion'] = 'minecraft:woodland_mansion'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.

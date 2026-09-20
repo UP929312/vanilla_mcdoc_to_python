@@ -3,30 +3,28 @@ Generated from symbols.json for ::java::data::worldgen::attribute::BooleanAttrib
 Local link to file: generated_symbols/data/worldgen/attribute/BooleanAttribute.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from generated_symbols.data.timeline.AttributeTrackBase import AttributeTrackBase
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.attribute.modifier.BooleanAttributeModifier import BooleanAttributeModifier
     from generated_symbols.data.worldgen.attribute.modifier.BooleanModifierType import BooleanModifierType
 
 
-@dataclass(kw_only=True)
-class KeyframesStruct:
-    ticks: Annotated[int, 'Range | `0` and above | inclusive']
+class KeyframesStruct(GeneratedModel):
+    ticks: Annotated[int, Field(ge=0)]
     value: bool
 
 
-@dataclass(kw_only=True)
 class AttributeTrackStruct(AttributeTrackBase):
     modifier: BooleanModifierType | None = None
-    keyframes: Annotated[list[KeyframesStruct], 'Length = 1 (inclusive) and above']
+    keyframes: Annotated[list[KeyframesStruct], Field(min_length=1)]
 
 
-@dataclass(kw_only=True)
-class BooleanAttribute:
+class BooleanAttribute(GeneratedModel):
     value: bool
     modifier: BooleanAttributeModifier
     attribute_track: AttributeTrackStruct

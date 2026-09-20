@@ -3,24 +3,21 @@ Generated from symbols.json for ::java::assets::texture_meta::GuiSpriteScaling
 Local link to file: generated_symbols/assets/texture_meta/GuiSpriteScaling.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Literal
 
 from generated_symbols.assets.texture_meta.NineSlice import NineSlice
 from generated_symbols.assets.texture_meta.TileScaling import TileScaling
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
 class GuiSpriteScalingNineSlice(NineSlice):
     type: Literal['minecraft:nine_slice'] = 'minecraft:nine_slice'
 
 
-@dataclass(kw_only=True)
-class GuiSpriteScalingStretch:
+class GuiSpriteScalingStretch(GeneratedModel):
     type: Literal['minecraft:stretch'] = 'minecraft:stretch'
 
 
-@dataclass(kw_only=True)
 class GuiSpriteScalingTile(TileScaling):
     type: Literal['minecraft:tile'] = 'minecraft:tile'
 

@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::entity::projectile::ProjectileBas
 Local link to file: generated_symbols/world/entity/projectile/ProjectileBase.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.world.entity.EntityBase import EntityBase
@@ -12,7 +11,6 @@ if TYPE_CHECKING:
     from generated_symbols.world.component.item.AdventureModePredicate import AdventureModePredicate
 
 
-@dataclass(kw_only=True)
 class ProjectileBase(EntityBase):
     HasBeenShot: bool | None = None  # Whether it has been shot. This is set to true when it exists for at least one tick, and is used by the game to ensure it only triggers the projectile_shoot game event once.
     Owner: tuple[int, int, int, int] | None = None

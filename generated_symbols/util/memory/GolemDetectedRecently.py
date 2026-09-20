@@ -3,12 +3,9 @@ Generated from symbols.json for ::java::util::memory::GolemDetectedRecently
 Local link to file: generated_symbols/util/memory/GolemDetectedRecently.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.util.memory.ExpirableValue import ExpirableValue
 
 
-@dataclass(kw_only=True)
 class GolemDetectedRecently(ExpirableValue):
     value: bool  # Whether the villager has detected an iron golem recently.
 

@@ -3,16 +3,15 @@ Generated from symbols.json for ::java::data::worldgen::FloatProvider
 Local link to file: generated_symbols/data/worldgen/FloatProvider.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated, Generic, TypeVar
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
 T = TypeVar('T')
 
-@dataclass(kw_only=True)
-class FloatProvider(Generic[T]):
+class FloatProvider(GeneratedModel, Generic[T]):
     type: Annotated[str, IdSpec(registry='float_provider_type')]
 
 

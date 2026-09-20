@@ -3,18 +3,17 @@ Generated from symbols.json for ::java::world::entity::mob::raider::Pillager
 Local link to file: generated_symbols/world/entity/mob/raider/Pillager.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.world.entity.mob.raider.RaiderBase import RaiderBase
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.world.item.ItemStack import ItemStack
 
 
-@dataclass(kw_only=True)
 class Pillager(RaiderBase):
-    Inventory: Annotated[list[ItemStack], 'Length = 0-5 (both inclusive)'] | None = None
+    Inventory: Annotated[list[ItemStack], Field(min_length=0, max_length=5)] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

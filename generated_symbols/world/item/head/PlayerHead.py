@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::item::head::PlayerHead
 Local link to file: generated_symbols/world/item/head/PlayerHead.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.world.item.ItemBase import ItemBase
@@ -12,7 +11,6 @@ if TYPE_CHECKING:
     from generated_symbols.world.block.head.SkullOwner import SkullOwner
 
 
-@dataclass(kw_only=True)
 class PlayerHead(ItemBase):
     SkullOwner: SkullOwner | str | None = None
 

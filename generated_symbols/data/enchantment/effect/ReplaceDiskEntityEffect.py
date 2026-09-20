@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::enchantment::effect::ReplaceDiskEn
 Local link to file: generated_symbols/data/enchantment/effect/ReplaceDiskEntityEffect.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.data.enchantment.effect.ReplaceBlockEntityEffect import ReplaceBlockEntityEffect
@@ -12,7 +11,6 @@ if TYPE_CHECKING:
     from generated_symbols.data.enchantment.LevelBasedValue import LevelBasedValue
 
 
-@dataclass(kw_only=True)
 class ReplaceDiskEntityEffect(ReplaceBlockEntityEffect):
     offset: tuple[int, int, int] | None = None  # Relative coordinates to offset the center of the cylinder by. Defaults to `[0, 0, 0]`.
     radius: LevelBasedValue

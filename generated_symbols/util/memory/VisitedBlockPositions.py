@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::util::memory::VisitedBlockPositions
 Local link to file: generated_symbols/util/memory/VisitedBlockPositions.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.util.memory.ExpirableValue import ExpirableValue
@@ -12,7 +11,6 @@ if TYPE_CHECKING:
     from generated_symbols.util.GlobalPos import GlobalPos
 
 
-@dataclass(kw_only=True)
 class VisitedBlockPositions(ExpirableValue):
     value: list[GlobalPos]  # A list of container positions that the copper golem has visited, whether successful or not.
 

@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::variants::zombie_nautilus::ZombieN
 Local link to file: generated_symbols/data/variants/zombie_nautilus/ZombieNautilusVariant.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from generated_symbols.data.variants.SpawnPrioritySelectors import SpawnPrioritySelectors
@@ -13,7 +12,6 @@ if TYPE_CHECKING:
     from generated_symbols.data.variants.zombie_nautilus.ZombieNautilusModelType import ZombieNautilusModelType
 
 
-@dataclass(kw_only=True)
 class ZombieNautilusVariant(SpawnPrioritySelectors):
     __resource_dir__: ClassVar[str] = 'zombie_nautilus_variant'
 

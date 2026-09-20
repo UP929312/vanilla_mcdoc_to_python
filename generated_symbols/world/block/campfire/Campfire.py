@@ -3,18 +3,17 @@ Generated from symbols.json for ::java::world::block::campfire::Campfire
 Local link to file: generated_symbols/world/block/campfire/Campfire.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.world.block.BlockEntity import BlockEntity
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.slot.SlottedItem import SlottedItem
 
 
-@dataclass(kw_only=True)
 class Campfire(BlockEntity):
-    Items: Annotated[list[SlottedItem[Annotated[int, 'Range | `0`-`3` | both inclusive']]], 'Length = 0-4 (both inclusive)'] | None = None
+    Items: Annotated[list[SlottedItem[Annotated[int, Field(ge=0, le=3)]]], Field(min_length=0, max_length=4)] | None = None
     CookingTimes: tuple[int, int, int, int] | None = None  # Ticks each item has been cooking. Index is according to item slot.
     CookingTotalTimes: tuple[int, int, int, int] | None = None  # Ticks each item still has to cook. Index is according to item slot.
 

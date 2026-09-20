@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::assets::block_state_definition::ModelVar
 Local link to file: generated_symbols/assets/block_state_definition/ModelVariantBase.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Literal
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.assets.model.ModelRef import ModelRef
 
 
-@dataclass(kw_only=True)
-class ModelVariantBase:
+class ModelVariantBase(GeneratedModel):
     model: ModelRef
     x: Literal[0] | Literal[90] | Literal[180] | Literal[270] | None = None
     y: Literal[0] | Literal[90] | Literal[180] | Literal[270] | None = None

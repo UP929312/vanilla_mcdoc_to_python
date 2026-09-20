@@ -3,16 +3,16 @@ Generated from symbols.json for ::java::data::worldgen::structure_set::Structure
 Local link to file: generated_symbols/data/worldgen/structure_set/StructureSet.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, ClassVar
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.structure_set.StructurePlacement import StructurePlacement
     from generated_symbols.data.worldgen.structure_set.StructureSetElement import StructureSetElement
 
 
-@dataclass(kw_only=True)
-class StructureSet:
+class StructureSet(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/structure_set'
 
     structures: list[StructureSetElement]

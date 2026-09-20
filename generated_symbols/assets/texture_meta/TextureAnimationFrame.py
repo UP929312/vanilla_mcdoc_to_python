@@ -3,14 +3,15 @@ Generated from symbols.json for ::java::assets::texture_meta::TextureAnimationFr
 Local link to file: generated_symbols/assets/texture_meta/TextureAnimationFrame.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class TextureAnimationFrame:
-    index: Annotated[int, 'Range | `0` and above | inclusive']  # A number corresponding to position of a frame from the top, with the top frame being 0.
-    time: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The time in ticks to show this frame, overriding `frametime` above.
+
+class TextureAnimationFrame(GeneratedModel):
+    index: Annotated[int, Field(ge=0)]  # A number corresponding to position of a frame from the top, with the top frame being 0.
+    time: Annotated[int, Field(ge=1)] | None = None  # The time in ticks to show this frame, overriding `frametime` above.
 
 
 # ~~~ MODEL DUMP ~~~

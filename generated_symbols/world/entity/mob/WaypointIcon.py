@@ -3,17 +3,16 @@ Generated from symbols.json for ::java::world::entity::mob::WaypointIcon
 Local link to file: generated_symbols/world/entity/mob/WaypointIcon.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.util.color.RGB import RGB
 
 
-@dataclass(kw_only=True)
-class WaypointIcon:
+class WaypointIcon(GeneratedModel):
     style: Annotated[str, IdSpec(registry='waypoint_style')]
     color: RGB | None = None
 

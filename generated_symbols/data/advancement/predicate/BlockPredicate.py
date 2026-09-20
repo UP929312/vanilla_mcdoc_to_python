@@ -3,9 +3,9 @@ Generated from symbols.json for ::java::data::advancement::predicate::BlockPredi
 Local link to file: generated_symbols/data/advancement/predicate/BlockPredicate.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
@@ -51,13 +51,11 @@ if TYPE_CHECKING:
     from generated_symbols.world.component.DataComponentPredicate import DataComponentPredicate
 
 
-@dataclass(kw_only=True)
-class NbtStructBlockUnknown:
+class NbtStructBlockUnknown(GeneratedModel):
     pass
 
 
-@dataclass(kw_only=True)
-class BlockPredicate:
+class BlockPredicate(GeneratedModel):
     blocks: Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | None = None
     state: BlockPredicateState | None = None
     nbt: str | NbtStructBlockUnknown | Sign | Shelf | Container27 | Beacon | BlockEntity | Beehive | Banner | Furnace | BrewingStand | SculkSensor | Campfire | CommandBlock | ChiseledBookshelf | Comparator | Conduit | Crafter | Skull | DecoratedPot | Container9 | EnchantingTable | EndGateway | Hopper | Jigsaw | Jukebox | Lectern | MovingPiston | PotentSulfur | SculkCatalyst | SculkShrieker | Spawner | StructureBlock | BrushableBlock | TestBlock | TestInstanceBlock | TrialSpawner | Vault | None = None

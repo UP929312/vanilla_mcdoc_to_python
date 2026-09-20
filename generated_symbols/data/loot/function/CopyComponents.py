@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::loot::function::CopyComponents
 Local link to file: generated_symbols/data/loot/function/CopyComponents.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.data.loot.function.Conditions import Conditions
@@ -15,7 +14,6 @@ if TYPE_CHECKING:
     from generated_symbols.data.loot.ItemStackTarget import ItemStackTarget
 
 
-@dataclass(kw_only=True)
 class CopyComponents(Conditions):
     source: BlockEntityTarget | EntityTarget | ItemStackTarget
     include: list[Annotated[str, IdSpec(registry='data_component_type')]] | None = None  # If omitted, all components present are included

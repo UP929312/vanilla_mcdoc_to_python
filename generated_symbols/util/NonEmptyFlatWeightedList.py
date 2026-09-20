@@ -5,13 +5,15 @@ Local link to file: generated_symbols/util/NonEmptyFlatWeightedList.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, TypeVar
 
+from pydantic import Field
+
 if TYPE_CHECKING:
     from generated_symbols.util.FlatWeightedEntry import FlatWeightedEntry
 
 
 T = TypeVar('T')
 
-type NonEmptyFlatWeightedList[T] = Annotated[list[FlatWeightedEntry[T]], 'Length = 1 (inclusive) and above']
+type NonEmptyFlatWeightedList[T] = Annotated[list[FlatWeightedEntry[T]], Field(min_length=1)]
 
 
 # ~~~ MODEL DUMP ~~~

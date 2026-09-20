@@ -3,12 +3,9 @@ Generated from symbols.json for ::java::assets::item_definition::LocalTime
 Local link to file: generated_symbols/assets/item_definition/LocalTime.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.assets.item_definition.SelectCases import SelectCases
 
 
-@dataclass(kw_only=True)
 class LocalTime(SelectCases[str]):
     pattern: str  # Format to use for time formatting. Examples: `yyyy-MM-dd`, `HH:mm:ss`.
     locale: str | None = None  # Defaults to the root locale. Examples: `en_US`, `cs_AU@numbers=thai;calendar=japanese`.

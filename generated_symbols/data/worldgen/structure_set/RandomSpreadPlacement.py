@@ -3,17 +3,18 @@ Generated from symbols.json for ::java::data::worldgen::structure_set::RandomSpr
 Local link to file: generated_symbols/data/worldgen/structure_set/RandomSpreadPlacement.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.structure_set.SpreadType import SpreadType
 
 
-@dataclass(kw_only=True)
-class RandomSpreadPlacement:
-    spacing: Annotated[int, 'Range | `0`-`4096` | both inclusive']  # Average distance in chunks between two structures of this type.
-    separation: Annotated[int, 'Range | `0`-`4096` | both inclusive']  # Minimum distance in chunks between two structures of this type.
+class RandomSpreadPlacement(GeneratedModel):
+    spacing: Annotated[int, Field(ge=0, le=4096)]  # Average distance in chunks between two structures of this type.
+    separation: Annotated[int, Field(ge=0, le=4096)]  # Minimum distance in chunks between two structures of this type.
     spread_type: SpreadType | None = None
 
 

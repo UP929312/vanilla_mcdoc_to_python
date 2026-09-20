@@ -3,14 +3,13 @@ Generated from symbols.json for ::java::data::variants::wolf::WolfVariantAssetIn
 Local link to file: generated_symbols/data/variants/wolf/WolfVariantAssetInfo.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
-class WolfVariantAssetInfo:
+class WolfVariantAssetInfo(GeneratedModel):
     wild: Annotated[str, IdSpec(registry='texture')]
     tame: Annotated[str, IdSpec(registry='texture')]
     angry: Annotated[str, IdSpec(registry='texture')]

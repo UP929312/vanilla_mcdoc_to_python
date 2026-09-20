@@ -3,15 +3,16 @@ Generated from symbols.json for ::java::data::worldgen::feature::ProbabilityConf
 Local link to file: generated_symbols/data/worldgen/feature/ProbabilityConfig.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated, ClassVar
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class ProbabilityConfig:
+
+class ProbabilityConfig(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/feature'
 
-    probability: Annotated[float, 'Range | `0`-`1` | both inclusive']
+    probability: Annotated[float, Field(ge=0, le=1)]
 
 
 # ~~~ MODEL DUMP ~~~

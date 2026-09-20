@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::worldgen::feature::decorator::Heig
 Local link to file: generated_symbols/data/worldgen/feature/decorator/HeightmapConfig.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.HeightmapType import HeightmapType
 
 
-@dataclass(kw_only=True)
-class HeightmapConfig:
+class HeightmapConfig(GeneratedModel):
     heightmap: HeightmapType
 
 

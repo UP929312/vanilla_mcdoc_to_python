@@ -3,17 +3,16 @@ Generated from symbols.json for ::java::data::enchantment::effect::ApplyMobEffec
 Local link to file: generated_symbols/data/enchantment/effect/ApplyMobEffectEntityEffect.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.enchantment.LevelBasedValue import LevelBasedValue
 
 
-@dataclass(kw_only=True)
-class ApplyMobEffectEntityEffect:
+class ApplyMobEffectEntityEffect(GeneratedModel):
     to_apply: Annotated[str, IdSpec(registry='mob_effect', tags='allowed')] | list[Annotated[str, IdSpec(registry='mob_effect')]]  # If multiple mob effects are specified, a random effect is selected.
     min_duration: LevelBasedValue
     max_duration: LevelBasedValue

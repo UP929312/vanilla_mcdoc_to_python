@@ -3,14 +3,15 @@ Generated from symbols.json for ::java::data::worldgen::noise_settings::NoiseSli
 Local link to file: generated_symbols/data/worldgen/noise_settings/NoiseSlideSettings.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class NoiseSlideSettings:
+
+class NoiseSlideSettings(GeneratedModel):
     target: float  # The target density. Positive values add terrain and negative values remove terrain.
-    size: Annotated[int, 'Range | `0`-`256` | both inclusive']  # Defines a range of 'Size * Size vertical * 4' blocks where the existing density and target are interpolated.
+    size: Annotated[int, Field(ge=0, le=256)]  # Defines a range of 'Size * Size vertical * 4' blocks where the existing density and target are interpolated.
     offset: int  # Defines an range of 'Offset * Size vertical * 4' blocks where the density is set to the target.
 
 

@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::data::enchantment::EnchantmentCost
 Local link to file: generated_symbols/data/enchantment/EnchantmentCost.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class EnchantmentCost:
+class EnchantmentCost(GeneratedModel):
     base: int  # Base cost at level 1.
     per_level_above_first: int  # Cost increase per level above 1.
 

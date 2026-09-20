@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::assets::item_definition::KeybindDown
 Local link to file: generated_symbols/assets/item_definition/KeybindDown.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.util.text.Keybind import Keybind
 
 
-@dataclass(kw_only=True)
-class KeybindDown:
+class KeybindDown(GeneratedModel):
     keybind: Keybind  # The keybind ID to check for.
 
 

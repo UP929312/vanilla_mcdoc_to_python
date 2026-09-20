@@ -3,22 +3,20 @@ Generated from symbols.json for ::java::data::recipe::IngredientValue
 Local link to file: generated_symbols/data/recipe/IngredientValue.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.registry.KnownItemId import KnownItemId
 
 
-@dataclass(kw_only=True)
-class IngredientValueStruct1:
+class IngredientValueStruct1(GeneratedModel):
     item: Annotated[str, IdSpec(registry='item')] | KnownItemId
 
 
-@dataclass(kw_only=True)
-class IngredientValueStruct2:
+class IngredientValueStruct2(GeneratedModel):
     tag: Annotated[str, IdSpec(registry='item', tags='implicit')] | KnownItemId
 
 

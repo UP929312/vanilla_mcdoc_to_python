@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::block::beacon::Beacon
 Local link to file: generated_symbols/world/block/beacon/Beacon.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
 from generated_symbols.world.block.BlockEntity import BlockEntity
@@ -12,7 +11,6 @@ from generated_symbols.world.block.Nameable import Nameable
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
 class Beacon(BlockEntity, Lockable, Nameable):
     Levels: int | None = None  # Number of levels from the pyramid.
     primary_effect: Annotated[str, IdSpec(registry='mob_effect')] | None = None

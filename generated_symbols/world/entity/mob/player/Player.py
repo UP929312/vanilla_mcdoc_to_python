@@ -3,11 +3,11 @@ Generated from symbols.json for ::java::world::entity::mob::player::Player
 Local link to file: generated_symbols/world/entity/mob/player/Player.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.world.entity.mob.LivingEntity import LivingEntity
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.GlobalPos import GlobalPos
@@ -24,7 +24,6 @@ if TYPE_CHECKING:
     from generated_symbols.world.entity.mob.player.WardenSpawnTracker import WardenSpawnTracker
 
 
-@dataclass(kw_only=True)
 class Player(LivingEntity):
     DataVersion: int | None = None  # Version of the player NBT structure
     Dimension: Annotated[str, IdSpec(registry='dimension')] | None = None
@@ -32,8 +31,8 @@ class Player(LivingEntity):
     playerGameType: Gamemode | None = None  # Game mode that the player is in.
     previousPlayerGameType: Gamemode | None = None  # Previous game mode that the player was in.
     Score: int | None = None  # Score to display upon death.
-    SelectedItemSlot: Annotated[int, 'Range | `0`-`8` | both inclusive'] | None = None  # Hotbar slot the player has selected.
-    SelectedItem: SlottedItem[Annotated[int, 'Range | `0`-`8` | both inclusive']] | None = None  # Item in the hotbar slot the player has selected.
+    SelectedItemSlot: Annotated[int, Field(ge=0, le=8)] | None = None  # Hotbar slot the player has selected.
+    SelectedItem: SlottedItem[Annotated[int, Field(ge=0, le=8)]] | None = None  # Item in the hotbar slot the player has selected.
     equipment: PlayerEquipment | None = None
     respawn: Respawn | None = None
     SleepTimer: int | None = None  # Ticks the player has been in bed.
@@ -45,8 +44,8 @@ class Player(LivingEntity):
     XpP: float | None = None  # Percentage the experience bar is filled up.
     XpTotal: int | None = None  # Total experience the player has.
     XpSeed: int | None = None  # Seed for enchantments.
-    Inventory: Annotated[list[SlottedItem[PlayerSlot]], 'Length = 0-41 (both inclusive)'] | None = None
-    EnderItems: Annotated[list[SlottedItem[Annotated[int, 'Range | `0`-`26` | both inclusive']]], 'Length = 0-27 (both inclusive)'] | None = None  # The player's enderchest inventory.
+    Inventory: Annotated[list[SlottedItem[PlayerSlot]], Field(min_length=0, max_length=41)] | None = None
+    EnderItems: Annotated[list[SlottedItem[Annotated[int, Field(ge=0, le=26)]]], Field(min_length=0, max_length=27)] | None = None  # The player's enderchest inventory.
     abilities: Abilities | None = None  # Abilities of the player.
     entered_nether_pos: tuple[float, float, float] | None = None  # Position that the player entered the nether at.
     raid_omen_position: tuple[int, int, int] | None = None

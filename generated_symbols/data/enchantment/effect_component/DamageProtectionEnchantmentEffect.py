@@ -3,16 +3,16 @@ Generated from symbols.json for ::java::data::enchantment::effect_component::Dam
 Local link to file: generated_symbols/data/enchantment/effect_component/DamageProtectionEnchantmentEffect.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.enchantment.effect.ValueEffect import ValueEffect
     from generated_symbols.data.predicate.Predicate import Predicate
 
 
-@dataclass(kw_only=True)
-class DamageProtectionEnchantmentEffect:
+class DamageProtectionEnchantmentEffect(GeneratedModel):
     requirements: Predicate | None = None  # Predicate context: Damage Parameters.
     effect: ValueEffect  # Damage reduction factor.  Provides `factor * 4%` of damage reduction, capped at 80%.
 

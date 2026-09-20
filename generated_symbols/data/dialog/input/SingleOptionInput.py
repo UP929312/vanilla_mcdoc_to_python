@@ -3,20 +3,21 @@ Generated from symbols.json for ::java::data::dialog::input::SingleOptionInput
 Local link to file: generated_symbols/data/dialog/input/SingleOptionInput.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.dialog.input.Option import Option
     from generated_symbols.util.text.Text import Text
 
 
-@dataclass(kw_only=True)
-class SingleOptionInput:
-    width: Annotated[int, 'Range | `1`-`1024` | both inclusive'] | None = None  # Defaults to 200.
+class SingleOptionInput(GeneratedModel):
+    width: Annotated[int, Field(ge=1, le=1024)] | None = None  # Defaults to 200.
     label: Text  # Label displayed on the button.
     label_visible: bool | None = None  # Defaults to `true`.
-    options: Annotated[list[Option | str], 'Length = 1 (inclusive) and above']
+    options: Annotated[list[Option | str], Field(min_length=1)]
 
 
 # ~~~ MODEL DUMP ~~~

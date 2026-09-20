@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::biome::MobSpawnCost
 Local link to file: generated_symbols/data/worldgen/biome/MobSpawnCost.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class MobSpawnCost:
+class MobSpawnCost(GeneratedModel):
     energy_budget: float
     charge: float
 

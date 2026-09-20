@@ -3,17 +3,16 @@ Generated from symbols.json for ::java::data::worldgen::world_preset::WorldPrese
 Local link to file: generated_symbols/data/worldgen/world_preset/WorldPreset.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.dimension.Dimension import Dimension
 
 
-@dataclass(kw_only=True)
-class WorldPreset:
+class WorldPreset(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/world_preset'
 
     dimensions: dict[Annotated[str, IdSpec(registry='dimension', definition=True)], Dimension]

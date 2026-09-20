@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::assets::atlas::SpriteSource
 Local link to file: generated_symbols/assets/atlas/SpriteSource.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Literal
 
 from generated_symbols.assets.atlas.Directory import Directory
@@ -13,27 +12,22 @@ from generated_symbols.assets.atlas.Single import Single
 from generated_symbols.assets.atlas.Unstitch import Unstitch
 
 
-@dataclass(kw_only=True)
 class SpriteSourceDirectory(Directory):
     type: Literal['minecraft:directory'] = 'minecraft:directory'
 
 
-@dataclass(kw_only=True)
 class SpriteSourceFilter(Filter):
     type: Literal['minecraft:filter'] = 'minecraft:filter'
 
 
-@dataclass(kw_only=True)
 class SpriteSourcePalettedPermutations(PalettedPermutations):
     type: Literal['minecraft:paletted_permutations'] = 'minecraft:paletted_permutations'
 
 
-@dataclass(kw_only=True)
 class SpriteSourceSingle(Single):
     type: Literal['minecraft:single'] = 'minecraft:single'
 
 
-@dataclass(kw_only=True)
 class SpriteSourceUnstitch(Unstitch):
     type: Literal['minecraft:unstitch'] = 'minecraft:unstitch'
 

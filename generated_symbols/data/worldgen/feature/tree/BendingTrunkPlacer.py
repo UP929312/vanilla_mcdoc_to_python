@@ -3,17 +3,18 @@ Generated from symbols.json for ::java::data::worldgen::feature::tree::BendingTr
 Local link to file: generated_symbols/data/worldgen/feature/tree/BendingTrunkPlacer.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.IntProvider import IntProvider
 
 
-@dataclass(kw_only=True)
-class BendingTrunkPlacer:
-    bend_length: IntProvider[Annotated[int, 'Range | `1`-`64` | both inclusive']] | Annotated[int, 'Range | `1`-`64` | both inclusive']
-    min_height_for_leaves: Annotated[int, 'Range | `1` and above | inclusive'] | None = None
+class BendingTrunkPlacer(GeneratedModel):
+    bend_length: IntProvider[Annotated[int, Field(ge=1, le=64)]] | Annotated[int, Field(ge=1, le=64)]
+    min_height_for_leaves: Annotated[int, Field(ge=1)] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

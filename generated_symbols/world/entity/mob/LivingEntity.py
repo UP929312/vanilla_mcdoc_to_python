@@ -3,11 +3,12 @@ Generated from symbols.json for ::java::world::entity::mob::LivingEntity
 Local link to file: generated_symbols/world/entity/mob/LivingEntity.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from generated_symbols.world.entity.EntityBase import EntityBase
 from generated_symbols.world.entity.mob.FallDamageLogicData import FallDamageLogicData
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.effect.MobEffectInstance import MobEffectInstance
@@ -16,12 +17,10 @@ if TYPE_CHECKING:
     from generated_symbols.world.entity.mob.WaypointIcon import WaypointIcon
 
 
-@dataclass(kw_only=True)
-class BrainStruct:
+class BrainStruct(GeneratedModel):
     memories: Memories | None = None
 
 
-@dataclass(kw_only=True)
 class LivingEntity(EntityBase, FallDamageLogicData):
     Health: float | None = None
     AbsorptionAmount: float | None = None  # How much absorption health it has.
@@ -33,9 +32,9 @@ class LivingEntity(EntityBase, FallDamageLogicData):
     attributes: list[Attribute] | None = None
     active_effects: list[MobEffectInstance] | None = None
     last_hurt_by_player: tuple[int, int, int, int] | None = None  # The UUID of the player that last hurt this entity. Stored for 100 ticks.
-    last_hurt_by_player_memory_time: Annotated[int, 'Range | `0`-`100` | both inclusive'] | None = None  # Amount of ticks that this entity will remember the player that last hurt this entity. Counts down from 100 to 0.
+    last_hurt_by_player_memory_time: Annotated[int, Field(ge=0, le=100)] | None = None  # Amount of ticks that this entity will remember the player that last hurt this entity. Counts down from 100 to 0.
     last_hurt_by_mob: tuple[int, int, int, int] | None = None  # The UUID of the mob that last hurt this entity. Stored for 100 ticks.
-    ticks_since_last_hurt_by_mob: Annotated[int, 'Range | `0`-`100` | both inclusive'] | None = None  # Amount of ticks since this entity was last hurt by a mob. Counts up from 0 to 100.
+    ticks_since_last_hurt_by_mob: Annotated[int, Field(ge=0, le=100)] | None = None  # Amount of ticks since this entity was last hurt by a mob. Counts up from 0 to 100.
     locator_bar_icon: WaypointIcon | None = None
 
 

@@ -3,9 +3,9 @@ Generated from symbols.json for ::java::data::enchantment::effect::AttributeEffe
 Local link to file: generated_symbols/data/enchantment/effect/AttributeEffect.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
@@ -13,8 +13,7 @@ if TYPE_CHECKING:
     from generated_symbols.util.attribute.AttributeOperation import AttributeOperation
 
 
-@dataclass(kw_only=True)
-class AttributeEffect:
+class AttributeEffect(GeneratedModel):
     attribute: Annotated[str, IdSpec(registry='attribute')]
     id: Annotated[str, IdSpec(registry='attribute_modifier')]  # Used when equipping and unequipping the item to identify which modifier to add or remove from the entity.  Postfixed with the slot name when the enchanted item is equipped.
     amount: LevelBasedValue  # Change in the attribute.

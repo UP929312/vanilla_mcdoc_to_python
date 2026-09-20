@@ -3,16 +3,16 @@ Generated from symbols.json for ::java::data::worldgen::feature::block_state_pro
 Local link to file: generated_symbols/data/worldgen/feature/block_state_provider/RandomizedIntStateProvider.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.IntProvider import IntProvider
     from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
 
 
-@dataclass(kw_only=True)
-class RandomizedIntStateProvider:
+class RandomizedIntStateProvider(GeneratedModel):
     property: str
     values: IntProvider[int] | int
     source: BlockStateProvider

@@ -3,14 +3,15 @@ Generated from symbols.json for ::java::data::worldgen::feature::ModernNetherVeg
 Local link to file: generated_symbols/data/worldgen/feature/ModernNetherVegetationConfig.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class ModernNetherVegetationConfig:
-    spread_width: Annotated[int, 'Range | `1` and above | inclusive']
-    spread_height: Annotated[int, 'Range | `1` and above | inclusive']
+
+class ModernNetherVegetationConfig(GeneratedModel):
+    spread_width: Annotated[int, Field(ge=1)]
+    spread_height: Annotated[int, Field(ge=1)]
 
 
 # ~~~ MODEL DUMP ~~~

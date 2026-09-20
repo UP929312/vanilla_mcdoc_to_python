@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::number_provider::UniformNumberProv
 Local link to file: generated_symbols/data/number_provider/UniformNumberProvider.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.number_provider.NumberProviderRef import NumberProviderRef
 
 
-@dataclass(kw_only=True)
-class UniformNumberProvider:
+class UniformNumberProvider(GeneratedModel):
     min: NumberProviderRef | None = None
     max: NumberProviderRef | None = None
 

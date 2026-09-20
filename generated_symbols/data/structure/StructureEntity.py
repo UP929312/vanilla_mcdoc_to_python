@@ -3,17 +3,18 @@ Generated from symbols.json for ::java::data::structure::StructureEntity
 Local link to file: generated_symbols/data/structure/StructureEntity.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.world.entity.AnyEntity import AnyEntity
 
 
-@dataclass(kw_only=True)
-class StructureEntity:
-    pos: tuple[Annotated[float, 'Range | `0` and above | inclusive'], Annotated[float, 'Range | `0` and above | inclusive'], Annotated[float, 'Range | `0` and above | inclusive']]
-    blockPos: tuple[Annotated[int, 'Range | `0` and above | inclusive'], Annotated[int, 'Range | `0` and above | inclusive'], Annotated[int, 'Range | `0` and above | inclusive']]
+class StructureEntity(GeneratedModel):
+    pos: tuple[Annotated[float, Field(ge=0)], Annotated[float, Field(ge=0)], Annotated[float, Field(ge=0)]]
+    blockPos: tuple[Annotated[int, Field(ge=0)], Annotated[int, Field(ge=0)], Annotated[int, Field(ge=0)]]
     nbt: AnyEntity
 
 

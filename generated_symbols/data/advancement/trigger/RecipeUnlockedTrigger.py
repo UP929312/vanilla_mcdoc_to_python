@@ -3,14 +3,11 @@ Generated from symbols.json for ::java::data::advancement::trigger::RecipeUnlock
 Local link to file: generated_symbols/data/advancement/trigger/RecipeUnlockedTrigger.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.data.advancement.trigger.ParitalRequired import ParitalRequired
 from generated_symbols.data.advancement.trigger.PlayerConditions import PlayerConditions
 from generated_symbols.data.recipe.RecipeListRef import RecipeListRef
 
 
-@dataclass(kw_only=True)
 class RecipeUnlockedTriggerTypeArg(PlayerConditions):
     recipes: RecipeListRef
 

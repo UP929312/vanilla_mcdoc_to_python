@@ -3,18 +3,17 @@ Generated from symbols.json for ::java::world::block::container::Hopper
 Local link to file: generated_symbols/world/block/container/Hopper.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.world.block.container.ContainerBase import ContainerBase
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.slot.SlottedItem import SlottedItem
 
 
-@dataclass(kw_only=True)
 class Hopper(ContainerBase):
-    Items: Annotated[list[SlottedItem[Annotated[int, 'Range | `0`-`4` | both inclusive']]], 'Length = 0-5 (both inclusive)'] | None = None  # Slots from 0 to 4.
+    Items: Annotated[list[SlottedItem[Annotated[int, Field(ge=0, le=4)]]], Field(min_length=0, max_length=5)] | None = None  # Slots from 0 to 4.
     TransferCooldown: int | None = None  # Ticks until an item can be transferred.
 
 

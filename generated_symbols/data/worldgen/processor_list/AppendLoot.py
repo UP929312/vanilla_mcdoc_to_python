@@ -3,14 +3,13 @@ Generated from symbols.json for ::java::data::worldgen::processor_list::AppendLo
 Local link to file: generated_symbols/data/worldgen/processor_list/AppendLoot.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
-class AppendLoot:
+class AppendLoot(GeneratedModel):
     loot_table: Annotated[str, IdSpec(registry='loot_table')]
 
 

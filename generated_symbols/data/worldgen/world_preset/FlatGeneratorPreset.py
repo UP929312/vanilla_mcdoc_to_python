@@ -3,17 +3,16 @@ Generated from symbols.json for ::java::data::worldgen::world_preset::FlatGenera
 Local link to file: generated_symbols/data/worldgen/world_preset/FlatGeneratorPreset.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.dimension.chunk_generator.FlatGeneratorSettings import FlatGeneratorSettings
 
 
-@dataclass(kw_only=True)
-class FlatGeneratorPreset:
+class FlatGeneratorPreset(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/flat_level_generator_preset'
 
     display: Annotated[str, IdSpec(registry='item', exclude=('air',))]

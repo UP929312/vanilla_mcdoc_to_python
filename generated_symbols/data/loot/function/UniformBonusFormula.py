@@ -3,16 +3,14 @@ Generated from symbols.json for ::java::data::loot::function::UniformBonusFormul
 Local link to file: generated_symbols/data/loot/function/UniformBonusFormula.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class ParametersStruct:
+class ParametersStruct(GeneratedModel):
     bonusMultiplier: int
 
 
-@dataclass(kw_only=True)
-class UniformBonusFormula:
+class UniformBonusFormula(GeneratedModel):
     parameters: ParametersStruct
 
 

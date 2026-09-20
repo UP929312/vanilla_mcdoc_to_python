@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::data::enchantment::level_based_value::Li
 Local link to file: generated_symbols/data/enchantment/level_based_value/LinearLevelValue.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class LinearLevelValue:
+class LinearLevelValue(GeneratedModel):
     base: float  # Base value at level 1.
     per_level_above_first: float  # Value increase per level above 1.
 

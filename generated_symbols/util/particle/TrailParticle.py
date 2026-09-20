@@ -3,18 +3,19 @@ Generated from symbols.json for ::java::util::particle::TrailParticle
 Local link to file: generated_symbols/util/particle/TrailParticle.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.color.RGB import RGB
 
 
-@dataclass(kw_only=True)
-class TrailParticle:
+class TrailParticle(GeneratedModel):
     target: tuple[float, float, float]
     color: RGB
-    duration: Annotated[int, 'Range | `1` and above | inclusive']
+    duration: Annotated[int, Field(ge=1)]
 
 
 # ~~~ MODEL DUMP ~~~

@@ -3,21 +3,22 @@ Generated from symbols.json for ::java::data::worldgen::feature::NetherrackRepla
 Local link to file: generated_symbols/data/worldgen/feature/NetherrackReplaceBlobsConfig.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.IntProvider import IntProvider
     from generated_symbols.util.block_state.BlockState import BlockState
 
 
-@dataclass(kw_only=True)
-class NetherrackReplaceBlobsConfig:
+class NetherrackReplaceBlobsConfig(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/feature'
 
     state: BlockState
     target: BlockState
-    radius: IntProvider[Annotated[int, 'Range | `0`-`12` | both inclusive']] | Annotated[int, 'Range | `0`-`12` | both inclusive']
+    radius: IntProvider[Annotated[int, Field(ge=0, le=12)]] | Annotated[int, Field(ge=0, le=12)]
 
 
 # ~~~ MODEL DUMP ~~~

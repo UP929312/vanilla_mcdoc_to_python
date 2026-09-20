@@ -126,7 +126,8 @@ class TestDispatcherSpreadGeneration:
             "ButtonListDialogBase",
         )
 
-        assert "after_action: Literal['minecraft:close'] | None = 'minecraft:close'" in content
+        assert "class ButtonListDialogBaseClose(BaseModel):" in content
+        assert "after_action: Literal['minecraft:close'] = 'minecraft:close'" in content
 
     def test_dynamic_spread_generates_correlated_branch_classes(self) -> None:
         content = generated_body(
@@ -148,7 +149,7 @@ class TestDispatcherSpreadGeneration:
             "EntitySubPredicate",
         )
 
-        assert "class EntitySubPredicatePredicates:" in content
+        assert "class EntitySubPredicatePredicates(BaseModel):" in content
         assert "type: Literal['minecraft:predicates']" in content
 
 
@@ -187,7 +188,7 @@ class TestRootExportGeneration:
 
 
 class TestRootResourceMetadata:
-    def test_root_resource_dataclasses_expose_resource_dirs(self) -> None:
+    def test_root_resource_models_expose_resource_dirs(self) -> None:
         content = generated_body(
             "::java::data::advancement::Advancement",
             SYMBOLS_MAP["mcdoc"]["::java::data::advancement::Advancement"],
@@ -254,10 +255,10 @@ class TestRuntimeImportGeneration:
         assert "location: AdvancementLocationPredicate | None = None" in content
         assert "AnyBlockInteractionTrigger = AllOptional[AnyBlockInteractionTriggerTypeArg]" in content
 
-    def test_dataclass_fields_preserve_schema_order(self) -> None:
+    def test_pydantic_fields_preserve_schema_order(self) -> None:
         path = "::java::data::advancement::Advancement"
         content = generated_body(path, SYMBOLS_MAP["mcdoc"][path], "Advancement")
-        field_names = ("display", "parent", "criteria", "requirements", "rewards", "sends_telemetry_event")
+        field_names = ("parent", "display", "criteria", "requirements", "rewards", "sends_telemetry_event")
 
         positions = [content.index(f"    {name}:") for name in field_names]
         assert positions == sorted(positions)
@@ -279,7 +280,7 @@ class TestRuntimeImportGeneration:
             "InlineStructMap",
         )
 
-        assert "class InlineStructMapValueStruct:" in content
+        assert "class InlineStructMapValueStruct(BaseModel):" in content
         assert "type InlineStructMap = dict[str, InlineStructMapValueStruct]" in content
 
     def test_dispatcher_mapping_key_preserves_registry_metadata(self) -> None:
@@ -332,33 +333,33 @@ class TestRuntimeImportGeneration:
         path = "::java::util::FlatWeightedEntry"
         content = generated_body(path, SYMBOLS_MAP["mcdoc"][path], "FlatWeightedEntry")
 
-        assert "class FlatWeightedEntry(Generic[T]):" in content
+        assert "class FlatWeightedEntry(BaseModel, Generic[T]):" in content
         assert "type FlatWeightedEntry =" not in content
 
     def test_alias_spread_is_distributed(self) -> None:
         path = "::java::data::loot::function::CustomModelDataFlags"
         content = generated_body(path, SYMBOLS_MAP["mcdoc"][path], "CustomModelDataFlags")
 
-        assert "class CustomModelDataFlagsAppend:" in content
+        assert "class CustomModelDataFlagsAppend(BaseModel):" in content
         assert "class CustomModelDataFlags(ListOperation):" not in content
 
     def test_union_alias_spread_is_distributed(self) -> None:
         path = "::java::data::structure::StructureNBT"
         content = generated_body(path, SYMBOLS_MAP["mcdoc"][path], "StructureNBT")
 
-        assert "class StructureNBTStruct1:" in content
-        assert "class StructureNBTStruct2:" in content
+        assert "class StructureNBTStruct1(BaseModel):" in content
+        assert "class StructureNBTStruct2(BaseModel):" in content
         assert "type StructureNBT = StructureNBTStruct1 | StructureNBTStruct2" in content
 
     def test_generated_declaration_names_are_unique(self) -> None:
         dialog_path = "::java::data::dialog::Dialog"
         dialog = generated_body(dialog_path, SYMBOLS_MAP["mcdoc"][dialog_path], "Dialog")
-        assert "class DialogConfirmationNone2:" in dialog
+        assert "class DialogConfirmationNone2(BaseModel):" in dialog
 
         timeline_path = "::java::data::timeline::EnvironmentAttributeTrackMap"
         timeline = generated_body(timeline_path, SYMBOLS_MAP["mcdoc"][timeline_path], "EnvironmentAttributeTrackMap")
-        assert timeline.count("class KeyframesStruct:") == 1
-        assert "class KeyframesStruct2:" in timeline
+        assert timeline.count("class KeyframesStruct(BaseModel):") == 1
+        assert "class KeyframesStruct2(BaseModel):" in timeline
 
     def test_concrete_dispatcher_instantiates_template_branches(self) -> None:
         path = "::java::data::worldgen::attribute::FloatAttribute"
@@ -373,4 +374,4 @@ class TestRuntimeImportGeneration:
 
         loot_path = "::java::data::loot::function::LootFunction"
         loot = generated_body(loot_path, SYMBOLS_MAP["mcdoc"][loot_path], "LootFunction")
-        assert "type_2: Annotated[str, IdSpec(registry='block_entity_type')]" in loot
+        assert "class LootFunctionCopyCustomData(CopyNbt):" in loot

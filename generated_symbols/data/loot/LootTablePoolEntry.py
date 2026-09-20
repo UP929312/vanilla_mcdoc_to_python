@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::loot::LootTablePoolEntry
 Local link to file: generated_symbols/data/loot/LootTablePoolEntry.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.data.loot.SingletonPoolEntry import SingletonPoolEntry
@@ -12,7 +11,6 @@ if TYPE_CHECKING:
     from generated_symbols.data.loot.LootTableListRef import LootTableListRef
 
 
-@dataclass(kw_only=True)
 class LootTablePoolEntry(SingletonPoolEntry):
     value: LootTableListRef
     expand: bool | None = None  # If `true`, randomly selects a loot table to drop.  If `false`, drops all loot tables.  Defaults to `false`.

@@ -3,14 +3,13 @@ Generated from symbols.json for ::java::data::advancement::predicate::CatPredica
 Local link to file: generated_symbols/data/advancement/predicate/CatPredicate.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
-class CatPredicate:
+class CatPredicate(GeneratedModel):
     variant: Annotated[str, IdSpec(registry='cat_variant', tags='allowed')] | list[Annotated[str, IdSpec(registry='cat_variant')]]
 
 

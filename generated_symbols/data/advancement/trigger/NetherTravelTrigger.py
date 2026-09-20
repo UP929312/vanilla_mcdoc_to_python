@@ -3,15 +3,12 @@ Generated from symbols.json for ::java::data::advancement::trigger::NetherTravel
 Local link to file: generated_symbols/data/advancement/trigger/NetherTravelTrigger.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.data.advancement.predicate.DistancePredicate import DistancePredicate
 from generated_symbols.data.advancement.predicate.LocationPredicate import LocationPredicate
 from generated_symbols.data.advancement.trigger.AllOptional import AllOptional
 from generated_symbols.data.advancement.trigger.PlayerConditions import PlayerConditions
 
 
-@dataclass(kw_only=True)
 class NetherTravelTriggerTypeArg(PlayerConditions):
     start_position: LocationPredicate | None = None  # Where in the Overworld the player was when they travelled to the Nether.
     distance: DistancePredicate | None = None  # How far the player now is from the coordinate they started at in the Overworld before travelling.

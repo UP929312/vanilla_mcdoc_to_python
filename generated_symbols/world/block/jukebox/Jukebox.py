@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::block::jukebox::Jukebox
 Local link to file: generated_symbols/world/block/jukebox/Jukebox.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.world.block.BlockEntity import BlockEntity
@@ -12,7 +11,6 @@ if TYPE_CHECKING:
     from generated_symbols.world.item.ItemStack import ItemStack
 
 
-@dataclass(kw_only=True)
 class Jukebox(BlockEntity):
     RecordItem: ItemStack | None = None
     ticks_since_song_started: int | None = None

@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::util::NbtProvider
 Local link to file: generated_symbols/data/util/NbtProvider.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Literal
 
 from generated_symbols.data.util.ContextNbtProvider import ContextNbtProvider
@@ -13,12 +12,10 @@ if TYPE_CHECKING:
     from generated_symbols.data.util.NbtContextTarget import NbtContextTarget
 
 
-@dataclass(kw_only=True)
 class NbtProviderStructContext(ContextNbtProvider):
     type: Literal['minecraft:context'] = 'minecraft:context'
 
 
-@dataclass(kw_only=True)
 class NbtProviderStructStorage(StorageNbtProvider):
     type: Literal['minecraft:storage'] = 'minecraft:storage'
 

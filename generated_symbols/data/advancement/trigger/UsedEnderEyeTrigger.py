@@ -3,14 +3,11 @@ Generated from symbols.json for ::java::data::advancement::trigger::UsedEnderEye
 Local link to file: generated_symbols/data/advancement/trigger/UsedEnderEyeTrigger.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.data.advancement.trigger.AllOptional import AllOptional
 from generated_symbols.data.advancement.trigger.PlayerConditions import PlayerConditions
 from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
 
 
-@dataclass(kw_only=True)
 class UsedEnderEyeTriggerTypeArg(PlayerConditions):
     distance: MinMaxBounds[float] | float | None = None  # Horizontal distance between the player and the stronghold.
 

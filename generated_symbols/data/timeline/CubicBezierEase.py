@@ -3,13 +3,14 @@ Generated from symbols.json for ::java::data::timeline::CubicBezierEase
 Local link to file: generated_symbols/data/timeline/CubicBezierEase.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class CubicBezierEase:
-    cubic_bezier: tuple[Annotated[float, 'Range | `0`-`1` | both inclusive'], float, Annotated[float, 'Range | `0`-`1` | both inclusive'], float]  # `[x1, y1, x2, y2]` For an easy GUI, check out: https://cubic-bezier.com/
+
+class CubicBezierEase(GeneratedModel):
+    cubic_bezier: tuple[Annotated[float, Field(ge=0, le=1)], float, Annotated[float, Field(ge=0, le=1)], float]  # `[x1, y1, x2, y2]` For an easy GUI, check out: https://cubic-bezier.com/
 
 
 # ~~~ MODEL DUMP ~~~

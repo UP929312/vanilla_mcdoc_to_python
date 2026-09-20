@@ -3,16 +3,17 @@ Generated from symbols.json for ::java::assets::item_definition::CustomModelData
 Local link to file: generated_symbols/assets/item_definition/CustomModelDataTint.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.color.RGB import RGB
 
 
-@dataclass(kw_only=True)
-class CustomModelDataTint:
-    index: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # The index of the `colors` list in the `custom_model_data` component. Defaults to 0.
+class CustomModelDataTint(GeneratedModel):
+    index: Annotated[int, Field(ge=0)] | None = None  # The index of the `colors` list in the `custom_model_data` component. Defaults to 0.
     default: RGB  # Tint to apply when the `custom_model_data` component is not present, or when it doesn't have a color in the specified index.
 
 

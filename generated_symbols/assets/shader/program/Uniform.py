@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::assets::shader::program::Uniform
 Local link to file: generated_symbols/assets/shader/program/Uniform.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.assets.shader.program.UniformType import UniformType
 
 
-@dataclass(kw_only=True)
-class Uniform:
+class Uniform(GeneratedModel):
     name: str
     type: UniformType
     count: int

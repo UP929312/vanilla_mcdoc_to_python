@@ -3,26 +3,22 @@ Generated from symbols.json for ::java::data::worldgen::VerticalAnchor
 Local link to file: generated_symbols/data/worldgen/VerticalAnchor.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class VerticalAnchorStruct1:
+class VerticalAnchorStruct1(GeneratedModel):
     absolute: int
 
 
-@dataclass(kw_only=True)
-class VerticalAnchorStruct2:
+class VerticalAnchorStruct2(GeneratedModel):
     above_bottom: int
 
 
-@dataclass(kw_only=True)
-class VerticalAnchorStruct3:
+class VerticalAnchorStruct3(GeneratedModel):
     below_top: int
 
 
-@dataclass(kw_only=True)
-class VerticalAnchorStruct4:
+class VerticalAnchorStruct4(GeneratedModel):
     relative_to_sea_level: int
 
 

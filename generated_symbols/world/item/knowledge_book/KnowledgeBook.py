@@ -3,14 +3,12 @@ Generated from symbols.json for ::java::world::item::knowledge_book::KnowledgeBo
 Local link to file: generated_symbols/world/item/knowledge_book/KnowledgeBook.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
 from generated_symbols.world.item.ItemBase import ItemBase
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
 class KnowledgeBook(ItemBase):
     Recipes: list[Annotated[str, IdSpec(registry='recipe')]] | None = None
 

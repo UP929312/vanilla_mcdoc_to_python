@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::assets::item_definition::Special
 Local link to file: generated_symbols/assets/item_definition/Special.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Literal
 
 from generated_symbols.assets.item_definition.Banner import Banner
@@ -13,6 +12,7 @@ from generated_symbols.assets.item_definition.CopperGolemStatue import CopperGol
 from generated_symbols.assets.item_definition.EndCube import EndCube
 from generated_symbols.assets.item_definition.Head import Head
 from generated_symbols.assets.item_definition.ShulkerBox import ShulkerBox
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.assets.item_definition.SpecialModelType import SpecialModelType
@@ -20,50 +20,41 @@ if TYPE_CHECKING:
     from generated_symbols.world.entity.display.Transformation import Transformation
 
 
-@dataclass(kw_only=True)
-class ModelStructUnknown:
+class ModelStructUnknown(GeneratedModel):
     type: SpecialModelType
 
 
-@dataclass(kw_only=True)
 class ModelStructBanner(Banner):
     type: Literal['minecraft:banner'] = 'minecraft:banner'
 
 
-@dataclass(kw_only=True)
 class ModelStructBook(Book):
     type: Literal['minecraft:book'] = 'minecraft:book'
 
 
-@dataclass(kw_only=True)
 class ModelStructChest(Chest):
     type: Literal['minecraft:chest'] = 'minecraft:chest'
 
 
-@dataclass(kw_only=True)
 class ModelStructCopperGolemStatue(CopperGolemStatue):
     type: Literal['minecraft:copper_golem_statue'] = 'minecraft:copper_golem_statue'
 
 
-@dataclass(kw_only=True)
 class ModelStructEndCube(EndCube):
     type: Literal['minecraft:end_cube'] = 'minecraft:end_cube'
 
 
-@dataclass(kw_only=True)
 class ModelStructHead(Head):
     type: Literal['minecraft:head'] = 'minecraft:head'
 
 
-@dataclass(kw_only=True)
 class ModelStructShulkerBox(ShulkerBox):
     type: Literal['minecraft:shulker_box'] = 'minecraft:shulker_box'
 
 
 type ModelStruct = ModelStructUnknown | ModelStructBanner | ModelStructBook | ModelStructChest | ModelStructCopperGolemStatue | ModelStructEndCube | ModelStructHead | ModelStructShulkerBox
 
-@dataclass(kw_only=True)
-class Special:
+class Special(GeneratedModel):
     model: ModelStruct  # Renders a special hardcoded model.
     base: ModelRef  # Base model, providing transformations, particle texture and GUI light.
     transformation: Transformation | None = None

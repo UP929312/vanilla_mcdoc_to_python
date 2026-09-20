@@ -3,12 +3,9 @@ Generated from symbols.json for ::java::util::memory::RamCooldownTicks
 Local link to file: generated_symbols/util/memory/RamCooldownTicks.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.util.memory.ExpirableValue import ExpirableValue
 
 
-@dataclass(kw_only=True)
 class RamCooldownTicks(ExpirableValue):
     value: int  # Ticks before the goat can ram again.
 

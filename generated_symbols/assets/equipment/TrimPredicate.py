@@ -3,14 +3,13 @@ Generated from symbols.json for ::java::assets::equipment::TrimPredicate
 Local link to file: generated_symbols/assets/equipment/TrimPredicate.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
-class TrimPredicate:
+class TrimPredicate(GeneratedModel):
     pattern: Annotated[str, IdSpec(registry='trim_pattern')] | None = None
     material: Annotated[str, IdSpec(registry='trim_material')] | None = None
 

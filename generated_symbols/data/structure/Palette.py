@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::structure::Palette
 Local link to file: generated_symbols/data/structure/Palette.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.util.block_state.BlockState import BlockState
 
 
-@dataclass(kw_only=True)
-class Palette:
+class Palette(GeneratedModel):
     palette: list[BlockState]
 
 

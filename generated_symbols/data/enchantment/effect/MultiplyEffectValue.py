@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::enchantment::effect::MultiplyEffec
 Local link to file: generated_symbols/data/enchantment/effect/MultiplyEffectValue.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.enchantment.LevelBasedValue import LevelBasedValue
 
 
-@dataclass(kw_only=True)
-class MultiplyEffectValue:
+class MultiplyEffectValue(GeneratedModel):
     factor: LevelBasedValue  # Level-Based Value determining the factor to multiply in
 
 

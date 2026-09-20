@@ -3,22 +3,21 @@ Generated from symbols.json for ::java::world::entity::item_frame::ItemFrame
 Local link to file: generated_symbols/world/entity/item_frame/ItemFrame.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.world.entity.BlockAttachedEntity import BlockAttachedEntity
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.direction.DirectionByte import DirectionByte
     from generated_symbols.world.item.ItemStack import ItemStack
 
 
-@dataclass(kw_only=True)
 class ItemFrame(BlockAttachedEntity):
     Facing: DirectionByte | None = None  # Direction it is facing.
     Item: ItemStack | None = None
     ItemDropChance: float | None = None  # Chance the item has to drop.
-    ItemRotation: Annotated[int, 'Range | `0`-`7` | both inclusive'] | None = None  # Rotation of the item.
+    ItemRotation: Annotated[int, Field(ge=0, le=7)] | None = None  # Rotation of the item.
     Invisible: bool | None = None  # Whether the item frame should be invisible. The item inside the frame is not effected.
     Fixed: bool | None = None  # Whether the item frame should not be able to be broken and should disallow the item to be moved.
 

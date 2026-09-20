@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::data::advancement::predicate::RaiderPred
 Local link to file: generated_symbols/data/advancement/predicate/RaiderPredicate.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class RaiderPredicate:
+class RaiderPredicate(GeneratedModel):
     has_raid: bool | None = None
     is_captain: bool | None = None
 

@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::entity::area_effect_cloud::AreaEf
 Local link to file: generated_symbols/world/entity/area_effect_cloud/AreaEffectCloud.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.world.entity.EntityBase import EntityBase
@@ -14,7 +13,6 @@ if TYPE_CHECKING:
     from generated_symbols.world.component.item.PotionContents import PotionContents
 
 
-@dataclass(kw_only=True)
 class AreaEffectCloud(EntityBase):
     Age: int | None = None  # Number of ticks it has existed. Controls when it will despawn; when greater than `Duration + WaitTime`.
     Color: int | None = None  # Color of the particles. calculated as `RED << 16 | GREEN << 8 | BLUE`. Each of these fields must be between 0 and 255, inclusive

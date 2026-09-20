@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::assets::font::TtfProvider
 Local link to file: generated_symbols/assets/font/TtfProvider.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class TtfProvider:
+class TtfProvider(GeneratedModel):
     file: str
     size: float | None = None
     oversample: float | None = None

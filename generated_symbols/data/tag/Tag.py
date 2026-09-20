@@ -3,8 +3,9 @@ Generated from symbols.json for ::java::data::tag::Tag
 Local link to file: generated_symbols/data/tag/Tag.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Generic, TypeVar
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.tag.TagEntry import TagEntry
@@ -12,8 +13,7 @@ if TYPE_CHECKING:
 
 E = TypeVar('E')
 
-@dataclass(kw_only=True)
-class Tag(Generic[E]):
+class Tag(GeneratedModel, Generic[E]):
     replace: bool | None = None
     values: list[TagEntry[E]]
 

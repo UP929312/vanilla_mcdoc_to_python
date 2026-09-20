@@ -3,8 +3,9 @@ Generated from symbols.json for ::java::world::component::predicate::WrittenBook
 Local link to file: generated_symbols/world/component/predicate/WrittenBookPredicate.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
@@ -12,8 +13,7 @@ if TYPE_CHECKING:
     from generated_symbols.world.component.predicate.CollectionPredicate import CollectionPredicate
 
 
-@dataclass(kw_only=True)
-class WrittenBookPredicate:
+class WrittenBookPredicate(GeneratedModel):
     pages: CollectionPredicate[Text] | None = None  # Matches the raw text, instead of filtered.
     author: str | None = None
     title: str | None = None

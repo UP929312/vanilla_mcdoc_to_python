@@ -3,17 +3,18 @@ Generated from symbols.json for ::java::world::component::item::FoodEffect
 Local link to file: generated_symbols/world/component/item/FoodEffect.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.effect.MobEffectInstance import MobEffectInstance
 
 
-@dataclass(kw_only=True)
-class FoodEffect:
+class FoodEffect(GeneratedModel):
     effect: MobEffectInstance
-    probability: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None  # Chance for the effect to be applied. Defaults to 1.
+    probability: Annotated[float, Field(ge=0, le=1)] | None = None  # Chance for the effect to be applied. Defaults to 1.
 
 
 # ~~~ MODEL DUMP ~~~

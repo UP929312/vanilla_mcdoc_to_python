@@ -3,21 +3,22 @@ Generated from symbols.json for ::java::data::variants::jukebox_song::JukeboxSon
 Local link to file: generated_symbols/data/variants/jukebox_song/JukeboxSong.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.SoundEventRef import SoundEventRef
     from generated_symbols.util.text.Text import Text
 
 
-@dataclass(kw_only=True)
-class JukeboxSong:
+class JukeboxSong(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'jukebox_song'
 
     description: Text  # Displayed in the HUD actionbar & item tooltip.
-    comparator_output: Annotated[int, 'Range | `0`-`15` | both inclusive']
-    length_in_seconds: Annotated[float, 'Range | `Above 0` | exclusive']
+    comparator_output: Annotated[int, Field(ge=0, le=15)]
+    length_in_seconds: Annotated[float, Field(gt=0)]
     sound_event: SoundEventRef
 
 

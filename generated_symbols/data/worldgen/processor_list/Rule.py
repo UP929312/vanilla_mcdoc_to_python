@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::worldgen::processor_list::Rule
 Local link to file: generated_symbols/data/worldgen/processor_list/Rule.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.processor_list.ProcessorRule import ProcessorRule
 
 
-@dataclass(kw_only=True)
-class Rule:
+class Rule(GeneratedModel):
     rules: list[ProcessorRule]
 
 

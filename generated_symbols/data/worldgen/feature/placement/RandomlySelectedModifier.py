@@ -3,16 +3,17 @@ Generated from symbols.json for ::java::data::worldgen::feature::placement::Rand
 Local link to file: generated_symbols/data/worldgen/feature/placement/RandomlySelectedModifier.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.placement.PlacementModifier import PlacementModifier
 
 
-@dataclass(kw_only=True)
-class RandomlySelectedModifier:
-    placements: Annotated[list[PlacementModifier], 'Length = 1 (inclusive) and above']
+class RandomlySelectedModifier(GeneratedModel):
+    placements: Annotated[list[PlacementModifier], Field(min_length=1)]
 
 
 # ~~~ MODEL DUMP ~~~

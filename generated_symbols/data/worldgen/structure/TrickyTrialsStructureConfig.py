@@ -3,22 +3,22 @@ Generated from symbols.json for ::java::data::worldgen::structure::TrickyTrialsS
 Local link to file: generated_symbols/data/worldgen/structure/TrickyTrialsStructureConfig.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.structure.LiquidSettings import LiquidSettings
 
 
-@dataclass(kw_only=True)
-class DimensionPaddingStruct:
-    bottom: Annotated[int, 'Range | `0` and above | inclusive'] | None = None
-    top: Annotated[int, 'Range | `0` and above | inclusive'] | None = None
+class DimensionPaddingStruct(GeneratedModel):
+    bottom: Annotated[int, Field(ge=0)] | None = None
+    top: Annotated[int, Field(ge=0)] | None = None
 
 
-@dataclass(kw_only=True)
-class TrickyTrialsStructureConfig:
-    dimension_padding: Annotated[int, 'Range | `0` and above | inclusive'] | DimensionPaddingStruct | None = None
+class TrickyTrialsStructureConfig(GeneratedModel):
+    dimension_padding: Annotated[int, Field(ge=0)] | DimensionPaddingStruct | None = None
     liquid_settings: LiquidSettings | None = None
 
 

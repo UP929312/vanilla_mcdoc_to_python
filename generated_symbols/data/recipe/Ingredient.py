@@ -6,9 +6,10 @@ Local link to file: generated_symbols/data/recipe/Ingredient.py
 from typing import Annotated
 
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 
-type Ingredient = Annotated[list[Annotated[str, IdSpec(registry='item', exclude=('air',))]], 'Length = 1 (inclusive) and above'] | Annotated[str, IdSpec(registry='item', tags='allowed', exclude=('air',))]
+type Ingredient = Annotated[list[Annotated[str, IdSpec(registry='item', exclude=('air',))]], Field(min_length=1)] | Annotated[str, IdSpec(registry='item', tags='allowed', exclude=('air',))]
 
 
 # ~~~ MODEL DUMP ~~~

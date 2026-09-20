@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::util::particle::OldEntityEffect
 Local link to file: generated_symbols/util/particle/OldEntityEffect.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class OldEntityEffect:
+class OldEntityEffect(GeneratedModel):
     r: float
     g: float
     b: float

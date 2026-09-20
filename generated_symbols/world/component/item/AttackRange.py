@@ -3,18 +3,19 @@ Generated from symbols.json for ::java::world::component::item::AttackRange
 Local link to file: generated_symbols/world/component/item/AttackRange.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class AttackRange:
-    min_reach: Annotated[float, 'Range | `0`-`64` | both inclusive'] | None = None  # Minimum distance to the target to be considered valid. Defaults to 0.0
-    max_reach: Annotated[float, 'Range | `0`-`64` | both inclusive'] | None = None  # Maximum distance to the target to be considered valid. Defaults to 3.0
-    min_creative_reach: Annotated[float, 'Range | `0`-`64` | both inclusive'] | None = None  # Minimum distance from the creative mode attacker to the target to be considered valid. Defaults to 0.0
-    max_creative_reach: Annotated[float, 'Range | `0`-`64` | both inclusive'] | None = None  # Maximum distance from the creative mode attacker to the target to be considered valid. Defaults to 5.0
-    hitbox_margin: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None  # The margin applied to the target bounding box when checking for valid hitbox collision. Defaults to 0.3
-    mob_factor: Annotated[float, 'Range | `0`-`2` | both inclusive'] | None = None  # The multiplier applied to `min_reach` and `max_reach` when the user is a mob.
+
+class AttackRange(GeneratedModel):
+    min_reach: Annotated[float, Field(ge=0, le=64)] | None = None  # Minimum distance to the target to be considered valid. Defaults to 0.0
+    max_reach: Annotated[float, Field(ge=0, le=64)] | None = None  # Maximum distance to the target to be considered valid. Defaults to 3.0
+    min_creative_reach: Annotated[float, Field(ge=0, le=64)] | None = None  # Minimum distance from the creative mode attacker to the target to be considered valid. Defaults to 0.0
+    max_creative_reach: Annotated[float, Field(ge=0, le=64)] | None = None  # Maximum distance from the creative mode attacker to the target to be considered valid. Defaults to 5.0
+    hitbox_margin: Annotated[float, Field(ge=0, le=1)] | None = None  # The margin applied to the target bounding box when checking for valid hitbox collision. Defaults to 0.3
+    mob_factor: Annotated[float, Field(ge=0, le=2)] | None = None  # The multiplier applied to `min_reach` and `max_reach` when the user is a mob.
 
 
 # ~~~ MODEL DUMP ~~~

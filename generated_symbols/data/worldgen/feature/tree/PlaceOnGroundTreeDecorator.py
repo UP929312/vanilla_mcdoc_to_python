@@ -3,18 +3,19 @@ Generated from symbols.json for ::java::data::worldgen::feature::tree::PlaceOnGr
 Local link to file: generated_symbols/data/worldgen/feature/tree/PlaceOnGroundTreeDecorator.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
 
 
-@dataclass(kw_only=True)
-class PlaceOnGroundTreeDecorator:
-    tries: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # Defaults to `128`.
-    radius: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # Defaults to `2`.
-    height: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # Defaults to `1`.
+class PlaceOnGroundTreeDecorator(GeneratedModel):
+    tries: Annotated[int, Field(ge=1)] | None = None  # Defaults to `128`.
+    radius: Annotated[int, Field(ge=0)] | None = None  # Defaults to `2`.
+    height: Annotated[int, Field(ge=0)] | None = None  # Defaults to `1`.
     block_state_provider: BlockStateProvider  # The block to place on the ground.
 
 

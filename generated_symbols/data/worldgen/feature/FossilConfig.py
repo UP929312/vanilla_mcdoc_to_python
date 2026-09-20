@@ -3,20 +3,20 @@ Generated from symbols.json for ::java::data::worldgen::feature::FossilConfig
 Local link to file: generated_symbols/data/worldgen/feature/FossilConfig.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.processor_list.ProcessorListRef import ProcessorListRef
 
 
-@dataclass(kw_only=True)
-class FossilConfig:
+class FossilConfig(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/feature'
 
-    max_empty_corners_allowed: Annotated[int, 'Range | `0`-`7` | both inclusive']  # If more corners are exposed to air, feature placement is cancelled.
+    max_empty_corners_allowed: Annotated[int, Field(ge=0, le=7)]  # If more corners are exposed to air, feature placement is cancelled.
     fossil_structures: list[Annotated[str, IdSpec(registry='structure')]]
     overlay_structures: list[Annotated[str, IdSpec(registry='structure')]]
     fossil_processors: ProcessorListRef

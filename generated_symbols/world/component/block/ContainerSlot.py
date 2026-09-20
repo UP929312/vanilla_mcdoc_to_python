@@ -3,16 +3,17 @@ Generated from symbols.json for ::java::world::component::block::ContainerSlot
 Local link to file: generated_symbols/world/component/block/ContainerSlot.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.world.item.ItemStackTemplate import ItemStackTemplate
 
 
-@dataclass(kw_only=True)
-class ContainerSlot:
-    slot: Annotated[int, 'Range | `0`-`255` | both inclusive']  # The slot ID of the container.
+class ContainerSlot(GeneratedModel):
+    slot: Annotated[int, Field(ge=0, le=255)]  # The slot ID of the container.
     item: ItemStackTemplate  # The item stack in this container slot.
 
 

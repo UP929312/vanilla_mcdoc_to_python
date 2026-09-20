@@ -3,8 +3,9 @@ Generated from symbols.json for ::java::world::component::predicate::CollectionC
 Local link to file: generated_symbols/world/component/predicate/CollectionCountPredicate.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Generic, TypeVar
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
@@ -12,8 +13,7 @@ if TYPE_CHECKING:
 
 P = TypeVar('P')
 
-@dataclass(kw_only=True)
-class CollectionCountPredicate(Generic[P]):
+class CollectionCountPredicate(GeneratedModel, Generic[P]):
     test: P  # The contents an entry's text must match exactly.
     count: MinMaxBounds[int] | int  # The number of entries that must match the test.
 

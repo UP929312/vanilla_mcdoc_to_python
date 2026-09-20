@@ -3,16 +3,16 @@ Generated from symbols.json for ::java::data::enchantment::effect_component::Pro
 Local link to file: generated_symbols/data/enchantment/effect_component/ProjectileSpreadEnchantmentEffect.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.enchantment.effect.ValueEffect import ValueEffect
     from generated_symbols.data.predicate.Predicate import Predicate
 
 
-@dataclass(kw_only=True)
-class ProjectileSpreadEnchantmentEffect:
+class ProjectileSpreadEnchantmentEffect(GeneratedModel):
     requirements: Predicate | None = None  # Predicate context: Entity Parameters.  `this` is the entity shooting the projectile.
     effect: ValueEffect  # Maximum spread of projectiles measured in degrees from the aim line.
 

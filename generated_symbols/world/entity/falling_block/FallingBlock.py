@@ -3,21 +3,19 @@ Generated from symbols.json for ::java::world::entity::falling_block::FallingBlo
 Local link to file: generated_symbols/world/entity/falling_block/FallingBlock.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
+from generated_symbols.base import GeneratedModel
 from generated_symbols.world.entity.EntityBase import EntityBase
 
 if TYPE_CHECKING:
     from generated_symbols.util.BlockState import BlockState
 
 
-@dataclass(kw_only=True)
-class TileEntityDataStruct:
+class TileEntityDataStruct(GeneratedModel):
     pass
 
 
-@dataclass(kw_only=True)
 class FallingBlock(EntityBase):
     TileEntityData: TileEntityDataStruct | None = None  # NBT data for the placed block.
     BlockState: BlockState | None = None  # Block state for the placed block. Defaults to sand.

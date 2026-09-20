@@ -3,18 +3,19 @@ Generated from symbols.json for ::java::data::worldgen::feature::tree::ThreeLaye
 Local link to file: generated_symbols/data/worldgen/feature/tree/ThreeLayersFeatureSize.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class ThreeLayersFeatureSize:
-    min_clipped_height: Annotated[float, 'Range | `0`-`80` | both inclusive'] | None = None
-    limit: Annotated[int, 'Range | `0`-`80` | both inclusive'] | None = None
-    upper_limit: Annotated[int, 'Range | `0`-`80` | both inclusive'] | None = None
-    lower_size: Annotated[int, 'Range | `0`-`16` | both inclusive'] | None = None
-    middle_size: Annotated[int, 'Range | `0`-`16` | both inclusive'] | None = None
-    upper_size: Annotated[int, 'Range | `0`-`16` | both inclusive'] | None = None
+
+class ThreeLayersFeatureSize(GeneratedModel):
+    min_clipped_height: Annotated[float, Field(ge=0, le=80)] | None = None
+    limit: Annotated[int, Field(ge=0, le=80)] | None = None
+    upper_limit: Annotated[int, Field(ge=0, le=80)] | None = None
+    lower_size: Annotated[int, Field(ge=0, le=16)] | None = None
+    middle_size: Annotated[int, Field(ge=0, le=16)] | None = None
+    upper_size: Annotated[int, Field(ge=0, le=16)] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

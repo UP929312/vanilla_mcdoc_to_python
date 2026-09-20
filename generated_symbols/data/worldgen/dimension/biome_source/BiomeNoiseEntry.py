@@ -3,17 +3,16 @@ Generated from symbols.json for ::java::data::worldgen::dimension::biome_source:
 Local link to file: generated_symbols/data/worldgen/dimension/biome_source/BiomeNoiseEntry.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.dimension.biome_source.ClimateParameters import ClimateParameters
 
 
-@dataclass(kw_only=True)
-class BiomeNoiseEntry:
+class BiomeNoiseEntry(GeneratedModel):
     biome: Annotated[str, IdSpec(registry='worldgen/biome')]
     parameters: ClimateParameters
 

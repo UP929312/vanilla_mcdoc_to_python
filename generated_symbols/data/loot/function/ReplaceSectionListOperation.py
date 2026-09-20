@@ -3,14 +3,15 @@ Generated from symbols.json for ::java::data::loot::function::ReplaceSectionList
 Local link to file: generated_symbols/data/loot/function/ReplaceSectionListOperation.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class ReplaceSectionListOperation:
-    offset: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # The offset of the section to replace. Defaults to 0.
-    size: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # The size of the section to replace. Defaults to size of the new list.
+
+class ReplaceSectionListOperation(GeneratedModel):
+    offset: Annotated[int, Field(ge=0)] | None = None  # The offset of the section to replace. Defaults to 0.
+    size: Annotated[int, Field(ge=0)] | None = None  # The size of the section to replace. Defaults to size of the new list.
 
 
 # ~~~ MODEL DUMP ~~~

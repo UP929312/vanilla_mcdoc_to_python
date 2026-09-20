@@ -3,16 +3,17 @@ Generated from symbols.json for ::java::data::worldgen::processor_list::LinearPo
 Local link to file: generated_symbols/data/worldgen/processor_list/LinearPos.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class LinearPos:
-    min_dist: Annotated[int, 'Range | `0`-`255` | both inclusive'] | None = None
-    max_dist: Annotated[int, 'Range | `0`-`255` | both inclusive'] | None = None
-    min_chance: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
-    max_chance: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
+
+class LinearPos(GeneratedModel):
+    min_dist: Annotated[int, Field(ge=0, le=255)] | None = None
+    max_dist: Annotated[int, Field(ge=0, le=255)] | None = None
+    min_chance: Annotated[float, Field(ge=0, le=1)] | None = None
+    max_chance: Annotated[float, Field(ge=0, le=1)] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

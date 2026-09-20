@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::processor_list::BlockAge
 Local link to file: generated_symbols/data/worldgen/processor_list/BlockAge.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class BlockAge:
+class BlockAge(GeneratedModel):
     mossiness: float
 
 

@@ -3,17 +3,17 @@ Generated from symbols.json for ::java::data::worldgen::structure_set::Concentri
 Local link to file: generated_symbols/data/worldgen/structure_set/ConcentricRingsPlacement.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 
-@dataclass(kw_only=True)
-class ConcentricRingsPlacement:
-    distance: Annotated[int, 'Range | `0`-`1023` | both inclusive']
-    spread: Annotated[int, 'Range | `0`-`1023` | both inclusive']
-    count: Annotated[int, 'Range | `1`-`4095` | both inclusive']
+class ConcentricRingsPlacement(GeneratedModel):
+    distance: Annotated[int, Field(ge=0, le=1023)]
+    spread: Annotated[int, Field(ge=0, le=1023)]
+    count: Annotated[int, Field(ge=1, le=4095)]
     preferred_biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
 
 

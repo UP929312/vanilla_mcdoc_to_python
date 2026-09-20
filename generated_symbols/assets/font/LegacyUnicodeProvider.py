@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::assets::font::LegacyUnicodeProvider
 Local link to file: generated_symbols/assets/font/LegacyUnicodeProvider.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class LegacyUnicodeProvider:
+class LegacyUnicodeProvider(GeneratedModel):
     sizes: str
     template: str
 

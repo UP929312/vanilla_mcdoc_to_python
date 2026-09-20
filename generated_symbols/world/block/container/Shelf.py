@@ -3,18 +3,17 @@ Generated from symbols.json for ::java::world::block::container::Shelf
 Local link to file: generated_symbols/world/block/container/Shelf.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.world.block.container.ContainerBase import ContainerBase
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.slot.SlottedItem import SlottedItem
 
 
-@dataclass(kw_only=True)
 class Shelf(ContainerBase):
-    Items: Annotated[list[SlottedItem[Annotated[int, 'Range | `0`-`2` | both inclusive']]], 'Length = 0-3 (both inclusive)'] | None = None  # Slots from 0 to 2.
+    Items: Annotated[list[SlottedItem[Annotated[int, Field(ge=0, le=2)]]], Field(min_length=0, max_length=3)] | None = None  # Slots from 0 to 2.
     align_items_to_bottom: bool | None = None  # Defaults to `false`.
 
 

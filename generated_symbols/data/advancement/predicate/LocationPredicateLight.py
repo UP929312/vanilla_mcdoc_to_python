@@ -3,16 +3,17 @@ Generated from symbols.json for ::java::data::advancement::predicate::LocationPr
 Local link to file: generated_symbols/data/advancement/predicate/LocationPredicateLight.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
 
 
-@dataclass(kw_only=True)
-class LocationPredicateLight:
-    light: MinMaxBounds[Annotated[int, 'Range | `0`-`15` | both inclusive']] | Annotated[int, 'Range | `0`-`15` | both inclusive'] | None = None
+class LocationPredicateLight(GeneratedModel):
+    light: MinMaxBounds[Annotated[int, Field(ge=0, le=15)]] | Annotated[int, Field(ge=0, le=15)] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

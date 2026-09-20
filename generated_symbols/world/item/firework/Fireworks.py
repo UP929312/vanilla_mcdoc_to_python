@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::world::item::firework::Fireworks
 Local link to file: generated_symbols/world/item/firework/Fireworks.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.world.item.firework.Explosion import Explosion
 
 
-@dataclass(kw_only=True)
-class Fireworks:
+class Fireworks(GeneratedModel):
     Flight: int | None = None  # Duration of flight.
     Explosions: list[Explosion] | None = None
 

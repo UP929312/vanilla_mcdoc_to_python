@@ -3,12 +3,12 @@ Generated from symbols.json for ::java::data::worldgen::feature::decorator::Cave
 Local link to file: generated_symbols/data/worldgen/feature/decorator/CaveSurface.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Literal
 
+from generated_symbols.base import GeneratedModel
 
-@dataclass(kw_only=True)
-class CaveSurface:
+
+class CaveSurface(GeneratedModel):
     surface: Literal['floor'] | Literal['ceiling']
     floor_to_ceiling_search_range: int
 

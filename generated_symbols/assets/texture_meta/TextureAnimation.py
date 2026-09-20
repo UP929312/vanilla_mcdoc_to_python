@@ -3,23 +3,23 @@ Generated from symbols.json for ::java::assets::texture_meta::TextureAnimation
 Local link to file: generated_symbols/assets/texture_meta/TextureAnimation.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
-
-@dataclass(kw_only=True)
-class FramesStruct:
-    index: Annotated[int, 'Range | `0` and above | inclusive']  # A number corresponding to position of a frame from the top, with the top frame being 0.
-    time: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The time in ticks to show this frame, overriding `frametime` above.
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 
-@dataclass(kw_only=True)
-class TextureAnimation:
+class FramesStruct(GeneratedModel):
+    index: Annotated[int, Field(ge=0)]  # A number corresponding to position of a frame from the top, with the top frame being 0.
+    time: Annotated[int, Field(ge=1)] | None = None  # The time in ticks to show this frame, overriding `frametime` above.
+
+
+class TextureAnimation(GeneratedModel):
     interpolate: bool | None = None  # If true, additional frames will be generated between frames with a frame time greater than 1 between them. Defaults to false.
-    width: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The width of the tile, as a direct ratio rather than in pixels. Can be used by resource packs to have frames that are not perfect squares.
-    height: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The height of the tile, as a direct ratio rather than in pixels. Can be used by resource packs to have frames that are not perfect squares.
-    frametime: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # Sets the default time for each frame in increments of one game tick. Defaults to 1.
-    frames: list[FramesStruct | Annotated[int, 'Range | `0` and above | inclusive']] | None = None  # Defaults to displaying all the frames from top to bottom.
+    width: Annotated[int, Field(ge=1)] | None = None  # The width of the tile, as a direct ratio rather than in pixels. Can be used by resource packs to have frames that are not perfect squares.
+    height: Annotated[int, Field(ge=1)] | None = None  # The height of the tile, as a direct ratio rather than in pixels. Can be used by resource packs to have frames that are not perfect squares.
+    frametime: Annotated[int, Field(ge=1)] | None = None  # Sets the default time for each frame in increments of one game tick. Defaults to 1.
+    frames: list[FramesStruct | Annotated[int, Field(ge=0)]] | None = None  # Defaults to displaying all the frames from top to bottom.
 
 
 # ~~~ MODEL DUMP ~~~

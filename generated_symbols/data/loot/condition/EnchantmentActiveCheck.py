@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::data::loot::condition::EnchantmentActive
 Local link to file: generated_symbols/data/loot/condition/EnchantmentActiveCheck.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class EnchantmentActiveCheck:
+class EnchantmentActiveCheck(GeneratedModel):
     active: bool
 
 

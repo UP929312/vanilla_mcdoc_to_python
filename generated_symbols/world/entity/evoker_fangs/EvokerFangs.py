@@ -3,12 +3,9 @@ Generated from symbols.json for ::java::world::entity::evoker_fangs::EvokerFangs
 Local link to file: generated_symbols/world/entity/evoker_fangs/EvokerFangs.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.world.entity.EntityBase import EntityBase
 
 
-@dataclass(kw_only=True)
 class EvokerFangs(EntityBase):
     Warmup: int | None = None  # Ticks until the fangs pop out of the ground.
     Owner: tuple[int, int, int, int] | None = None

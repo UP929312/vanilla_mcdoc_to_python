@@ -3,18 +3,17 @@ Generated from symbols.json for ::java::world::entity::mob::copper_golem::Copper
 Local link to file: generated_symbols/world/entity/mob/copper_golem/CopperGolem.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.world.entity.mob.MobBase import MobBase
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.world.entity.mob.copper_golem.WeatherState import WeatherState
 
 
-@dataclass(kw_only=True)
 class CopperGolem(MobBase):
-    next_weather_age: Annotated[int, 'Range | `-2` and above | inclusive'] | None = None  # Gametime in ticks when the copper golem oxidizes.  `-2` represents "waxed"  `-1` will be replaced with a random time between 504000 and 552000 ticks later
+    next_weather_age: Annotated[int, Field(ge=-2)] | None = None  # Gametime in ticks when the copper golem oxidizes.  `-2` represents "waxed"  `-1` will be replaced with a random time between 504000 and 552000 ticks later
     weather_state: WeatherState | None = None
 
 

@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::data::advancement::predicate::EntityTagP
 Local link to file: generated_symbols/data/advancement/predicate/EntityTagPredicate.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class EntityTagPredicate:
+class EntityTagPredicate(GeneratedModel):
     any_of: list[str] | None = None  # Must have at least one of the listed tags.
     all_of: list[str] | None = None  # Must have all the listed tags.
     none_of: list[str] | None = None  # Must have none of the listed tags.

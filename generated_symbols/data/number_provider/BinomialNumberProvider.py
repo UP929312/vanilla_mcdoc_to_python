@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::number_provider::BinomialNumberPro
 Local link to file: generated_symbols/data/number_provider/BinomialNumberProvider.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.number_provider.NumberProviderRef import NumberProviderRef
 
 
-@dataclass(kw_only=True)
-class BinomialNumberProvider:
+class BinomialNumberProvider(GeneratedModel):
     n: NumberProviderRef
     p: NumberProviderRef
 

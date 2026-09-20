@@ -3,14 +3,11 @@ Generated from symbols.json for ::java::data::advancement::trigger::AnyBlockInte
 Local link to file: generated_symbols/data/advancement/trigger/AnyBlockInteractionTrigger.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.data.advancement.trigger.AdvancementLocationPredicate import AdvancementLocationPredicate
 from generated_symbols.data.advancement.trigger.AllOptional import AllOptional
 from generated_symbols.data.advancement.trigger.PlayerConditions import PlayerConditions
 
 
-@dataclass(kw_only=True)
 class AnyBlockInteractionTriggerTypeArg(PlayerConditions):
     location: AdvancementLocationPredicate | None = None  # Predicate context: Advancement Location.
 

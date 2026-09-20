@@ -3,8 +3,10 @@ Generated from symbols.json for ::java::world::component::item::Consumable
 Local link to file: generated_symbols/world/component/item/Consumable.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.SoundEventRef import SoundEventRef
@@ -12,9 +14,8 @@ if TYPE_CHECKING:
     from generated_symbols.world.component.item.ItemUseAnimation import ItemUseAnimation
 
 
-@dataclass(kw_only=True)
-class Consumable:
-    consume_seconds: Annotated[float, 'Range | `0` and above | inclusive'] | None = None  # Time taken for a player to consume the item. Defaults to 1.6.
+class Consumable(GeneratedModel):
+    consume_seconds: Annotated[float, Field(ge=0)] | None = None  # Time taken for a player to consume the item. Defaults to 1.6.
     animation: ItemUseAnimation | None = None  # View model/arms animation used during consumption of the item. Defaults to `eat`.
     sound: SoundEventRef | None = None  # Sound played during and on completion of item consumption.
     has_consume_particles: bool | None = None  # Whether the `item` particle is emitted while consuming the item. Defaults to `true`.

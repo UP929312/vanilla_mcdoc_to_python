@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::world::component::item::BucketEntityData
 Local link to file: generated_symbols/world/component/item/BucketEntityData.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class BucketEntityData:
+class BucketEntityData(GeneratedModel):
     NoAI: bool | None = None  # Whether it should have an AI.
     Silent: bool | None = None  # Whether the entity should make any sound.
     NoGravity: bool | None = None  # Whether the entity should be effected by gravity.

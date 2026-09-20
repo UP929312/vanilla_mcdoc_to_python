@@ -3,9 +3,9 @@ Generated from symbols.json for ::java::data::advancement::predicate::EntitySubP
 Local link to file: generated_symbols/data/advancement/predicate/EntitySubPredicate.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Literal
 
+from generated_symbols.base import GeneratedModel
 from generated_symbols.data.advancement.predicate.DistancePredicate import DistancePredicate
 from generated_symbols.data.advancement.predicate.EntityFlagsPredicate import EntityFlagsPredicate
 from generated_symbols.data.advancement.predicate.EntityTagPredicate import EntityTagPredicate
@@ -19,128 +19,103 @@ from generated_symbols.data.advancement.predicate.SheepPredicate import SheepPre
 from generated_symbols.data.advancement.predicate.SlimePredicate import SlimePredicate
 
 
-@dataclass(kw_only=True)
-class EntitySubPredicateComponents:
+class EntitySubPredicateComponents(GeneratedModel):
     type: Literal['minecraft:components'] = 'minecraft:components'
 
 
-@dataclass(kw_only=True)
 class EntitySubPredicateDistance(DistancePredicate):
     type: Literal['minecraft:distance'] = 'minecraft:distance'
 
 
-@dataclass(kw_only=True)
-class EntitySubPredicateEffects:
+class EntitySubPredicateEffects(GeneratedModel):
     type: Literal['minecraft:effects'] = 'minecraft:effects'
 
 
-@dataclass(kw_only=True)
 class EntitySubPredicateEntityTags(EntityTagPredicate):
     type: Literal['minecraft:entity_tags'] = 'minecraft:entity_tags'
 
 
-@dataclass(kw_only=True)
-class EntitySubPredicateEntityType:
+class EntitySubPredicateEntityType(GeneratedModel):
     type: Literal['minecraft:entity_type'] = 'minecraft:entity_type'
 
 
-@dataclass(kw_only=True)
-class EntitySubPredicateEquipment:
+class EntitySubPredicateEquipment(GeneratedModel):
     type: Literal['minecraft:equipment'] = 'minecraft:equipment'
 
 
-@dataclass(kw_only=True)
 class EntitySubPredicateFlags(EntityFlagsPredicate):
     type: Literal['minecraft:flags'] = 'minecraft:flags'
 
 
-@dataclass(kw_only=True)
 class EntitySubPredicateLocation(LocationPredicate):
     type: Literal['minecraft:location'] = 'minecraft:location'
 
 
-@dataclass(kw_only=True)
 class EntitySubPredicateMovement(MovementPredicate):
     type: Literal['minecraft:movement'] = 'minecraft:movement'
 
 
-@dataclass(kw_only=True)
 class EntitySubPredicateMovementAffectedBy(LocationPredicate):
     type: Literal['minecraft:movement_affected_by'] = 'minecraft:movement_affected_by'
 
 
-@dataclass(kw_only=True)
-class EntitySubPredicateNbt:
+class EntitySubPredicateNbt(GeneratedModel):
     type: Literal['minecraft:nbt'] = 'minecraft:nbt'
 
 
-@dataclass(kw_only=True)
-class EntitySubPredicatePassenger:
+class EntitySubPredicatePassenger(GeneratedModel):
     type: Literal['minecraft:passenger'] = 'minecraft:passenger'
 
 
-@dataclass(kw_only=True)
-class EntitySubPredicatePeriodicTick:
+class EntitySubPredicatePeriodicTick(GeneratedModel):
     type: Literal['minecraft:periodic_tick'] = 'minecraft:periodic_tick'
 
 
-@dataclass(kw_only=True)
-class EntitySubPredicatePredicates:
+class EntitySubPredicatePredicates(GeneratedModel):
     type: Literal['minecraft:predicates'] = 'minecraft:predicates'
 
 
-@dataclass(kw_only=True)
-class EntitySubPredicateSlots:
+class EntitySubPredicateSlots(GeneratedModel):
     type: Literal['minecraft:slots'] = 'minecraft:slots'
 
 
-@dataclass(kw_only=True)
 class EntitySubPredicateSteppingOn(LocationPredicate):
     type: Literal['minecraft:stepping_on'] = 'minecraft:stepping_on'
 
 
-@dataclass(kw_only=True)
-class EntitySubPredicateTargetedEntity:
+class EntitySubPredicateTargetedEntity(GeneratedModel):
     type: Literal['minecraft:targeted_entity'] = 'minecraft:targeted_entity'
 
 
-@dataclass(kw_only=True)
-class EntitySubPredicateTeam:
+class EntitySubPredicateTeam(GeneratedModel):
     type: Literal['minecraft:team'] = 'minecraft:team'
 
 
-@dataclass(kw_only=True)
 class EntitySubPredicateTypeSpecificCubeMob(SlimePredicate):
     type: Literal['minecraft:type_specific/cube_mob'] = 'minecraft:type_specific/cube_mob'
 
 
-@dataclass(kw_only=True)
 class EntitySubPredicateTypeSpecificFishingHook(FishingHookPredicate):
     type: Literal['minecraft:type_specific/fishing_hook'] = 'minecraft:type_specific/fishing_hook'
 
 
-@dataclass(kw_only=True)
 class EntitySubPredicateTypeSpecificLightning(LightningBoltPredicate):
     type: Literal['minecraft:type_specific/lightning'] = 'minecraft:type_specific/lightning'
 
 
-@dataclass(kw_only=True)
 class EntitySubPredicateTypeSpecificPlayer(PlayerPredicate):
     type: Literal['minecraft:type_specific/player'] = 'minecraft:type_specific/player'
 
 
-@dataclass(kw_only=True)
 class EntitySubPredicateTypeSpecificRaider(RaiderPredicate):
     type: Literal['minecraft:type_specific/raider'] = 'minecraft:type_specific/raider'
 
 
-@dataclass(kw_only=True)
 class EntitySubPredicateTypeSpecificSheep(SheepPredicate):
     type: Literal['minecraft:type_specific/sheep'] = 'minecraft:type_specific/sheep'
 
 
-@dataclass(kw_only=True)
-class EntitySubPredicateVehicle:
+class EntitySubPredicateVehicle(GeneratedModel):
     type: Literal['minecraft:vehicle'] = 'minecraft:vehicle'
 
 

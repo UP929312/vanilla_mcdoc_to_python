@@ -3,16 +3,16 @@ Generated from symbols.json for ::java::world::component::predicate::AttributeMo
 Local link to file: generated_symbols/world/component/predicate/AttributeModifiersPredicate.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.world.component.predicate.AttributeModifiersPredicateEntry import AttributeModifiersPredicateEntry
     from generated_symbols.world.component.predicate.CollectionPredicate import CollectionPredicate
 
 
-@dataclass(kw_only=True)
-class AttributeModifiersPredicate:
+class AttributeModifiersPredicate(GeneratedModel):
     modifiers: CollectionPredicate[AttributeModifiersPredicateEntry] | None = None
 
 

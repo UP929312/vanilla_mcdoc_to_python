@@ -3,12 +3,9 @@ Generated from symbols.json for ::java::data::loot::function::SetNbt
 Local link to file: generated_symbols/data/loot/function/SetNbt.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.data.loot.function.Conditions import Conditions
 
 
-@dataclass(kw_only=True)
 class SetNbt(Conditions):
     tag: str
 

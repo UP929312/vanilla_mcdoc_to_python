@@ -3,8 +3,9 @@ Generated from symbols.json for ::java::data::dialog::ConfirmationDialog
 Local link to file: generated_symbols/data/dialog/ConfirmationDialog.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, ClassVar, Literal
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.dialog.AfterAction import AfterAction
@@ -14,8 +15,7 @@ if TYPE_CHECKING:
     from generated_symbols.util.text.Text import Text
 
 
-@dataclass(kw_only=True)
-class ConfirmationDialogNone:
+class ConfirmationDialogNone(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'dialog'
 
     yes: Button
@@ -29,8 +29,7 @@ class ConfirmationDialogNone:
     pause: bool | None = None  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.
 
 
-@dataclass(kw_only=True)
-class ConfirmationDialogClose:
+class ConfirmationDialogClose(GeneratedModel):
     yes: Button
     no: Button  # This action is also used for ESC-triggered exit.
     title: Text
@@ -42,8 +41,7 @@ class ConfirmationDialogClose:
     pause: bool | None = None  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.
 
 
-@dataclass(kw_only=True)
-class ConfirmationDialogNone2:
+class ConfirmationDialogNone2(GeneratedModel):
     yes: Button
     no: Button  # This action is also used for ESC-triggered exit.
     title: Text
@@ -55,8 +53,7 @@ class ConfirmationDialogNone2:
     pause: Literal[False] = False  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.  The currently selected `after_action` only supports the value `false`
 
 
-@dataclass(kw_only=True)
-class ConfirmationDialogWaitForResponse:
+class ConfirmationDialogWaitForResponse(GeneratedModel):
     yes: Button
     no: Button  # This action is also used for ESC-triggered exit.
     title: Text

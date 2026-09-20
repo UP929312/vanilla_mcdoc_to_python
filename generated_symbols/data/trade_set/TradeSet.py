@@ -3,17 +3,16 @@ Generated from symbols.json for ::java::data::trade_set::TradeSet
 Local link to file: generated_symbols/data/trade_set/TradeSet.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.number_provider.NumberProvider import NumberProvider
 
 
-@dataclass(kw_only=True)
-class TradeSet:
+class TradeSet(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'trade_set'
 
     trades: Annotated[str, IdSpec(registry='villager_trade', tags='allowed')] | list[Annotated[str, IdSpec(registry='villager_trade')]]  # Possible trade generators.

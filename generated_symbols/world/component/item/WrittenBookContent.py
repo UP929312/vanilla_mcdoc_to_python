@@ -3,8 +3,10 @@ Generated from symbols.json for ::java::world::component::item::WrittenBookConte
 Local link to file: generated_symbols/world/component/item/WrittenBookContent.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.Filterable import Filterable
@@ -12,10 +14,9 @@ if TYPE_CHECKING:
     from generated_symbols.world.component.item.BookGeneration import BookGeneration
 
 
-@dataclass(kw_only=True)
-class WrittenBookContent:
+class WrittenBookContent(GeneratedModel):
     pages: list[Filterable[Text]] | None = None
-    title: Filterable[Annotated[str, 'Length = up to 32 (inclusive)']]
+    title: Filterable[Annotated[str, 'Field(max_length=32)']]
     author: str
     generation: BookGeneration | None = None  # Number of times this written book has been copied. Defaults to 0. If the value is greater than 1, the book cannot be copied.
     resolved: bool | None = None  # Whether the dynamic content on the pages has been resolved.

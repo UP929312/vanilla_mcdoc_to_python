@@ -3,17 +3,16 @@ Generated from symbols.json for ::java::data::advancement::predicate::FluidPredi
 Local link to file: generated_symbols/data/advancement/predicate/FluidPredicate.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
 
 
-@dataclass(kw_only=True)
-class FluidPredicate:
+class FluidPredicate(GeneratedModel):
     fluids: Annotated[str, IdSpec(registry='fluid', tags='allowed')] | list[Annotated[str, IdSpec(registry='fluid')]] | None = None
     state: dict[str, MinMaxBounds[int] | int | bool | str] | None = None
 

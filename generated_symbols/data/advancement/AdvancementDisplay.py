@@ -3,8 +3,9 @@ Generated from symbols.json for ::java::data::advancement::AdvancementDisplay
 Local link to file: generated_symbols/data/advancement/AdvancementDisplay.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.advancement.AdvancementFrame import AdvancementFrame
@@ -12,8 +13,7 @@ if TYPE_CHECKING:
     from generated_symbols.world.item.ItemStackTemplate import ItemStackTemplate
 
 
-@dataclass(kw_only=True)
-class AdvancementDisplay:
+class AdvancementDisplay(GeneratedModel):
     icon: ItemStackTemplate
     title: Text
     description: Text

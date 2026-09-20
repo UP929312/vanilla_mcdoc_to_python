@@ -3,21 +3,20 @@ Generated from symbols.json for ::java::world::entity::display::TextDisplay
 Local link to file: generated_symbols/world/entity/display/TextDisplay.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.world.entity.display.DisplayBase import DisplayBase
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.text.Text import Text
     from generated_symbols.world.entity.display.TextAlignment import TextAlignment
 
 
-@dataclass(kw_only=True)
 class TextDisplay(DisplayBase):
     text: Text | None = None  # Text to display. Components are resolved with the executor set to the display entity and the position set to `0 0 0`.
-    line_width: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # Line width in pixels used to split lines (note: new line can also be added with `\n` characters). Defaults to 200.
-    text_opacity: Annotated[int, 'Range | `0`-`255` | both inclusive'] | None = None  # Opacity (alpha component) of rendered text. Defaults to 255. Interpolated.
+    line_width: Annotated[int, Field(ge=0)] | None = None  # Line width in pixels used to split lines (note: new line can also be added with `\n` characters). Defaults to 200.
+    text_opacity: Annotated[int, Field(ge=0, le=255)] | None = None  # Opacity (alpha component) of rendered text. Defaults to 255. Interpolated.
     background: int | None = None  # Color of background. Includes alpha channel. Defaults to 0x40000000. Interpolated.  Calculated as `ALPHA << 24 | RED << 16 | GREEN << 8 | BLUE`. Each of these fields must be between 0 and 255, inclusive.
     default_background: bool | None = None  # If true, overrides `background` & rendering uses default text background color (same as in chat). Defaults to false.
     shadow: bool | None = None  # Whether to display the text with shadows. Defaults to false.

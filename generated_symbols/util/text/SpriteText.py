@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::util::text::SpriteText
 Local link to file: generated_symbols/util/text/SpriteText.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated, Literal
 
 from generated_symbols.util.text.ObjectTextConfig import ObjectTextConfig
@@ -11,7 +10,6 @@ from generated_symbols.util.text.TextBase import TextBase
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
 class SpriteText(ObjectTextConfig, TextBase):
     atlas: Annotated[str, IdSpec(registry='atlas')] | None = None  # Defaults to `minecraft:blocks`.
     sprite: Annotated[str, IdSpec(registry='texture')]

@@ -3,8 +3,9 @@ Generated from symbols.json for ::java::data::worldgen::structure::SpawnOverride
 Local link to file: generated_symbols/data/worldgen/structure/SpawnOverride.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.biome.SpawnerData import SpawnerData
@@ -12,8 +13,7 @@ if TYPE_CHECKING:
     from generated_symbols.util.FlatWeightedList import FlatWeightedList
 
 
-@dataclass(kw_only=True)
-class SpawnOverride:
+class SpawnOverride(GeneratedModel):
     bounding_box: BoundingBox
     spawns: FlatWeightedList[SpawnerData]
 

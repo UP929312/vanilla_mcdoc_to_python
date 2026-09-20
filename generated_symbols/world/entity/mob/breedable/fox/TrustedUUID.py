@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::world::entity::mob::breedable::fox::Trus
 Local link to file: generated_symbols/world/entity/mob/breedable/fox/TrustedUUID.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class TrustedUUID:
+class TrustedUUID(GeneratedModel):
     L: int | None = None  # Lower bits of the trusted player's UUID.
     M: int | None = None  # Upper bits of the trusted player's UUID.
 

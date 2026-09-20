@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::entity::projectile::arrow::ArrowB
 Local link to file: generated_symbols/world/entity/projectile/arrow/ArrowBase.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.world.entity.projectile.ProjectileBase import ProjectileBase
@@ -15,7 +14,6 @@ if TYPE_CHECKING:
     from generated_symbols.world.item.ItemStack import ItemStack
 
 
-@dataclass(kw_only=True)
 class ArrowBase(ProjectileBase):
     shake: int | None = None  # Shake it creates.
     pickup: Pickup | None = None  # How players can pick up it.

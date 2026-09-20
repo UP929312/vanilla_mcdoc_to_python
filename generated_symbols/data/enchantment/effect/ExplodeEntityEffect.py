@@ -3,9 +3,9 @@ Generated from symbols.json for ::java::data::enchantment::effect::ExplodeEntity
 Local link to file: generated_symbols/data/enchantment/effect/ExplodeEntityEffect.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
@@ -17,8 +17,7 @@ if TYPE_CHECKING:
     from generated_symbols.util.particle.Particle import Particle
 
 
-@dataclass(kw_only=True)
-class ExplodeEntityEffect:
+class ExplodeEntityEffect(GeneratedModel):
     attribute_to_user: bool | None = None  # Whether the explosion should be attributed to the user of the enchanted tool.
     damage_type: Annotated[str, IdSpec(registry='damage_type')] | None = None  # If omitted, no damage is dealt by the explosion.
     immune_blocks: Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | None = None  # List of Blocks or hash-prefixed Block Tag specifying which blocks fully block the explosion.

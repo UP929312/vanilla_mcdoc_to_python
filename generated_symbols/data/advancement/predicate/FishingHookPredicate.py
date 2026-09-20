@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::data::advancement::predicate::FishingHoo
 Local link to file: generated_symbols/data/advancement/predicate/FishingHookPredicate.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class FishingHookPredicate:
+class FishingHookPredicate(GeneratedModel):
     in_open_water: bool | None = None
 
 

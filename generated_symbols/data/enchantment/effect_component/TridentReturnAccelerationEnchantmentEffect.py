@@ -3,16 +3,16 @@ Generated from symbols.json for ::java::data::enchantment::effect_component::Tri
 Local link to file: generated_symbols/data/enchantment/effect_component/TridentReturnAccelerationEnchantmentEffect.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.enchantment.effect.ValueEffect import ValueEffect
     from generated_symbols.data.predicate.Predicate import Predicate
 
 
-@dataclass(kw_only=True)
-class TridentReturnAccelerationEnchantmentEffect:
+class TridentReturnAccelerationEnchantmentEffect(GeneratedModel):
     requirements: Predicate | None = None  # Predicate context: Entity Parameters.  `this` is the trident entity.
     effect: ValueEffect  # Amount of acceleration applied to the returning trident.
 

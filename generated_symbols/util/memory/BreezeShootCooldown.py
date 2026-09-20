@@ -3,17 +3,14 @@ Generated from symbols.json for ::java::util::memory::BreezeShootCooldown
 Local link to file: generated_symbols/util/memory/BreezeShootCooldown.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
+from generated_symbols.base import GeneratedModel
 from generated_symbols.util.memory.ExpirableValue import ExpirableValue
 
 
-@dataclass(kw_only=True)
-class ValueStruct:
+class ValueStruct(GeneratedModel):
     pass
 
 
-@dataclass(kw_only=True)
 class BreezeShootCooldown(ExpirableValue):
     value: ValueStruct  # If present, the breeze will not shoot a wind charge. Set after shooting
 

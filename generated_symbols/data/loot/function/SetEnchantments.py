@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::loot::function::SetEnchantments
 Local link to file: generated_symbols/data/loot/function/SetEnchantments.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.data.loot.function.Conditions import Conditions
@@ -13,7 +12,6 @@ if TYPE_CHECKING:
     from generated_symbols.data.number_provider.NumberProviderRef import NumberProviderRef
 
 
-@dataclass(kw_only=True)
 class SetEnchantments(Conditions):
     enchantments: dict[Annotated[str, IdSpec(registry='enchantment')], NumberProviderRef]  # A map of enchantments to levels. Setting an enchantment to `0` removes it from the item.  Each level is clamped to a positive integer.
     add: bool | None = None  # Whether to add to the level of each enchantment. Defaults to `false`.

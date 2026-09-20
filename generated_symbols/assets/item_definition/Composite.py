@@ -3,16 +3,16 @@ Generated from symbols.json for ::java::assets::item_definition::Composite
 Local link to file: generated_symbols/assets/item_definition/Composite.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.assets.item_definition.ItemModel import ItemModel
     from generated_symbols.world.entity.display.Transformation import Transformation
 
 
-@dataclass(kw_only=True)
-class Composite:
+class Composite(GeneratedModel):
     models: list[ItemModel]
     transformation: Transformation | None = None
 

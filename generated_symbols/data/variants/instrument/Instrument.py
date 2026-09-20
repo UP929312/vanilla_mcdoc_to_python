@@ -3,22 +3,23 @@ Generated from symbols.json for ::java::data::variants::instrument::Instrument
 Local link to file: generated_symbols/data/variants/instrument/Instrument.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.SoundEventRef import SoundEventRef
     from generated_symbols.util.text.Text import Text
 
 
-@dataclass(kw_only=True)
-class Instrument:
+class Instrument(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'instrument'
 
     sound_event: SoundEventRef
-    range: Annotated[float, 'Range | `Above 0` | exclusive']  # Maximum range in blocks that the sound can be heard
-    use_duration: Annotated[float, 'Range | `0` and above | inclusive']  # Duration of use in seconds, used as item cooldown
-    durability_damage: Annotated[int, 'Range | `0` and above | inclusive'] | None = None
+    range: Annotated[float, Field(gt=0)]  # Maximum range in blocks that the sound can be heard
+    use_duration: Annotated[float, Field(ge=0)]  # Duration of use in seconds, used as item cooldown
+    durability_damage: Annotated[int, Field(ge=0)] | None = None
     description: Text
 
 

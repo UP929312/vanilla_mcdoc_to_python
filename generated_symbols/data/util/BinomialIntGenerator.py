@@ -3,14 +3,15 @@ Generated from symbols.json for ::java::data::util::BinomialIntGenerator
 Local link to file: generated_symbols/data/util/BinomialIntGenerator.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class BinomialIntGenerator:
-    n: Annotated[int, 'Range | `0` and above | inclusive']
-    p: Annotated[float, 'Range | `0`-`1` | both inclusive']
+
+class BinomialIntGenerator(GeneratedModel):
+    n: Annotated[int, Field(ge=0)]
+    p: Annotated[float, Field(ge=0, le=1)]
 
 
 # ~~~ MODEL DUMP ~~~

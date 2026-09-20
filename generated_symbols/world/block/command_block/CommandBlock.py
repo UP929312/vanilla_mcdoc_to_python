@@ -3,14 +3,11 @@ Generated from symbols.json for ::java::world::block::command_block::CommandBloc
 Local link to file: generated_symbols/world/block/command_block/CommandBlock.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.world.block.BlockEntity import BlockEntity
 from generated_symbols.world.block.Nameable import Nameable
 from generated_symbols.world.block.command_block.BaseCommandBlock import BaseCommandBlock
 
 
-@dataclass(kw_only=True)
 class CommandBlock(BaseCommandBlock, BlockEntity, Nameable):
     powered: bool | None = None  # Whether it is powered by redstone.
     auto: bool | None = None  # Whether it is automatically powered.

@@ -3,9 +3,9 @@ Generated from symbols.json for ::java::world::entity::mob::MobBase
 Local link to file: generated_symbols/world/entity/mob/MobBase.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from generated_symbols.world.entity.mob.LivingEntity import LivingEntity
 from minecraft_registry import IdSpec
 
@@ -14,12 +14,10 @@ if TYPE_CHECKING:
     from generated_symbols.world.entity.mob.EntityEquipment import EntityEquipment
 
 
-@dataclass(kw_only=True)
-class LeashStruct:
+class LeashStruct(GeneratedModel):
     UUID: tuple[int, int, int, int] | None = None
 
 
-@dataclass(kw_only=True)
 class MobBase(LivingEntity):
     equipment: EntityEquipment | None = None  # The equipment items of the mob, such as armor or weapons.
     drop_chances: DropChances | None = None  # Chances of the mob dropping an equipment slot on death.

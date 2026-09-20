@@ -3,10 +3,11 @@ Generated from symbols.json for ::java::world::component::DataComponentPatch
 Local link to file: generated_symbols/world/component/DataComponentPatch.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.advancement.predicate.ItemPredicate import ItemPredicate
@@ -80,34 +81,28 @@ if TYPE_CHECKING:
 type PersistentDataComponentStructDataComponentBlockStateBlockItemStatesNone = dict[str, str]
 
 
-@dataclass(kw_only=True)
-class PersistentDataComponentStructDataComponentCreativeSlotLock:
+class PersistentDataComponentStructDataComponentCreativeSlotLock(GeneratedModel):
     pass
 
 
-@dataclass(kw_only=True)
-class PersistentDataComponentStructDataComponentFireResistant:
+class PersistentDataComponentStructDataComponentFireResistant(GeneratedModel):
     pass
 
 
-@dataclass(kw_only=True)
-class PersistentDataComponentStructDataComponentHideAdditionalTooltip:
+class PersistentDataComponentStructDataComponentHideAdditionalTooltip(GeneratedModel):
     pass
 
 
-@dataclass(kw_only=True)
-class PersistentDataComponentStructDataComponentWaxed:
+class PersistentDataComponentStructDataComponentWaxed(GeneratedModel):
     pass
 
 
-@dataclass(kw_only=True)
-class KeyNameStruct:
+class KeyNameStruct(GeneratedModel):
     pass
 
 
-@dataclass(kw_only=True)
-class DataComponentPatch:
-    PersistentDataComponent: int | SwingAnimation | AttackRange | list[AttributeModifier] | AxolotlVariant | list[BannerPatternLayer] | DyeColor | list[Occupant] | BlockEntityData | str | PersistentDataComponentStructDataComponentBlockStateBlockItemStatesNone | Annotated[str, IdSpec(registry='block_transformer')] | blocks_attacks | SoundEventRef | BrewingFuel | BucketEntityData | str | list[ItemStackTemplate] | AdventureModePredicate | Annotated[str, IdSpec(registry='cat_sound_variant')] | Annotated[str, IdSpec(registry='cat_variant')] | Annotated[str, IdSpec(registry='chicken_sound_variant')] | Annotated[str, IdSpec(registry='chicken_variant')] | Compostable | Consumable | Annotated[list[ContainerSlot], 'Length = up to 256 (inclusive)'] | ContainerLoot | CookingFuel | Annotated[str, IdSpec(registry='cow_sound_variant')] | Annotated[str, IdSpec(registry='cow_variant')] | PersistentDataComponentStructDataComponentCreativeSlotLock | CustomData | CustomModelData | Text | Annotated[int, 'Range | `0` and above | inclusive'] | DamageResistant | Annotated[str, IdSpec(registry='damage_type')] | DamageType | DeathProtection | DebugStickState | RGB | Enchantable | bool | EnchantmentLevels | AnyEntity | str | Equippable | PersistentDataComponentStructDataComponentFireResistant | Explosion | Fireworks | Food | FoxType | Annotated[str, IdSpec(registry='frog_variant')] | PersistentDataComponentStructDataComponentHideAdditionalTooltip | HorseVariant | Annotated[str, IdSpec(registry='instrument')] | Instrument | Annotated[str, IdSpec(registry='item_definition')] | Annotated[str, IdSpec(registry='jukebox_song')] | KineticWeapon | LlamaVariant | ItemPredicate | LodestoneTracker | list[Text] | MapDecorations | Annotated[int, 'Range | `1` and above | inclusive'] | Annotated[int, 'Range | `1`-`99` | both inclusive'] | Annotated[float, 'Range | `0`-`1` | both inclusive'] | MobVisibility | MooshroomType | Annotated[str, IdSpec(registry='weighed_sound_event')] | Annotated[int, 'Range | `0`-`4` | both inclusive'] | Annotated[str, IdSpec(registry='painting_variant')] | ParrotVariant | PiercingWeapon | Annotated[str, IdSpec(registry='pig_sound_variant')] | Annotated[str, IdSpec(registry='pig_variant')] | PotDecorations | PotionContents | Annotated[str, IdSpec(registry='potion')] | Annotated[float, 'Range | `0` and above | inclusive'] | Profile | Annotated[str, IdSpec(registry='banner_pattern', tags='allowed')] | list[Annotated[str, IdSpec(registry='banner_pattern')]] | Annotated[str, IdSpec(registry='decorated_pot_pattern')] | Annotated[str, IdSpec(registry='trim_material')] | RabbitVariant | Rarity | list[Annotated[str, IdSpec(registry='recipe')]] | Repairable | SalmonType | SignText | ItemStackTemplate | list[SuspiciousStewEffect] | Tool | TooltipDisplay | Annotated[str, IdSpec()] | Trim | TropicalFishPattern | Unbreakable | UseCooldown | UseEffects | VillagerFood | Annotated[str, IdSpec(registry='villager_type')] | PersistentDataComponentStructDataComponentWaxed | Weapon | Annotated[str, IdSpec(registry='wolf_sound_variant')] | Annotated[str, IdSpec(registry='wolf_variant')] | WritableBookContent | WrittenBookContent | Annotated[str, IdSpec(registry='zombie_nautilus_variant')]
+class DataComponentPatch(GeneratedModel):
+    PersistentDataComponent: int | SwingAnimation | AttackRange | list[AttributeModifier] | AxolotlVariant | list[BannerPatternLayer] | DyeColor | list[Occupant] | BlockEntityData | str | PersistentDataComponentStructDataComponentBlockStateBlockItemStatesNone | Annotated[str, IdSpec(registry='block_transformer')] | blocks_attacks | SoundEventRef | BrewingFuel | BucketEntityData | str | list[ItemStackTemplate] | AdventureModePredicate | Annotated[str, IdSpec(registry='cat_sound_variant')] | Annotated[str, IdSpec(registry='cat_variant')] | Annotated[str, IdSpec(registry='chicken_sound_variant')] | Annotated[str, IdSpec(registry='chicken_variant')] | Compostable | Consumable | Annotated[list[ContainerSlot], Field(max_length=256)] | ContainerLoot | CookingFuel | Annotated[str, IdSpec(registry='cow_sound_variant')] | Annotated[str, IdSpec(registry='cow_variant')] | PersistentDataComponentStructDataComponentCreativeSlotLock | CustomData | CustomModelData | Text | Annotated[int, Field(ge=0)] | DamageResistant | Annotated[str, IdSpec(registry='damage_type')] | DamageType | DeathProtection | DebugStickState | RGB | Enchantable | bool | EnchantmentLevels | AnyEntity | str | Equippable | PersistentDataComponentStructDataComponentFireResistant | Explosion | Fireworks | Food | FoxType | Annotated[str, IdSpec(registry='frog_variant')] | PersistentDataComponentStructDataComponentHideAdditionalTooltip | HorseVariant | Annotated[str, IdSpec(registry='instrument')] | Instrument | Annotated[str, IdSpec(registry='item_definition')] | Annotated[str, IdSpec(registry='jukebox_song')] | KineticWeapon | LlamaVariant | ItemPredicate | LodestoneTracker | list[Text] | MapDecorations | Annotated[int, Field(ge=1)] | Annotated[int, Field(ge=1, le=99)] | Annotated[float, Field(ge=0, le=1)] | MobVisibility | MooshroomType | Annotated[str, IdSpec(registry='weighed_sound_event')] | Annotated[int, Field(ge=0, le=4)] | Annotated[str, IdSpec(registry='painting_variant')] | ParrotVariant | PiercingWeapon | Annotated[str, IdSpec(registry='pig_sound_variant')] | Annotated[str, IdSpec(registry='pig_variant')] | PotDecorations | PotionContents | Annotated[str, IdSpec(registry='potion')] | Annotated[float, Field(ge=0)] | Profile | Annotated[str, IdSpec(registry='banner_pattern', tags='allowed')] | list[Annotated[str, IdSpec(registry='banner_pattern')]] | Annotated[str, IdSpec(registry='decorated_pot_pattern')] | Annotated[str, IdSpec(registry='trim_material')] | RabbitVariant | Rarity | list[Annotated[str, IdSpec(registry='recipe')]] | Repairable | SalmonType | SignText | ItemStackTemplate | list[SuspiciousStewEffect] | Tool | TooltipDisplay | Annotated[str, IdSpec()] | Trim | TropicalFishPattern | Unbreakable | UseCooldown | UseEffects | VillagerFood | Annotated[str, IdSpec(registry='villager_type')] | PersistentDataComponentStructDataComponentWaxed | Weapon | Annotated[str, IdSpec(registry='wolf_sound_variant')] | Annotated[str, IdSpec(registry='wolf_variant')] | WritableBookContent | WrittenBookContent | Annotated[str, IdSpec(registry='zombie_nautilus_variant')]
     key_name: KeyNameStruct
 
 

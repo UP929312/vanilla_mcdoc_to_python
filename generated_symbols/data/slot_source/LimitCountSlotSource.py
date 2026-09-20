@@ -3,19 +3,20 @@ Generated from symbols.json for ::java::data::slot_source::LimitCountSlotSource
 Local link to file: generated_symbols/data/slot_source/LimitCountSlotSource.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.slot_source.SlotSource import SlotSource
 
 
-@dataclass(kw_only=True)
-class LimitCountSlotSource:
+class LimitCountSlotSource(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'slot_source'
 
     slot_source: SlotSource
-    limit: Annotated[int, 'Range | `1` and above | inclusive']
+    limit: Annotated[int, Field(ge=1)]
 
 
 # ~~~ MODEL DUMP ~~~

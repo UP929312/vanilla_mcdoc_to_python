@@ -3,27 +3,27 @@ Generated from symbols.json for ::java::data::worldgen::feature::SpeleothemConfi
 Local link to file: generated_symbols/data/worldgen/feature/SpeleothemConfig.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.registry.KnownBlockId import KnownBlockId
     from generated_symbols.util.block_state.BlockState import BlockState
 
 
-@dataclass(kw_only=True)
-class SpeleothemConfig:
+class SpeleothemConfig(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/feature'
 
     base_block: BlockState
     pointed_block: BlockState
     replaceable_blocks: list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId
-    chance_of_taller_generation: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
-    chance_of_directional_spread: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
-    chance_of_spread_radius2: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
-    chance_of_spread_radius3: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
+    chance_of_taller_generation: Annotated[float, Field(ge=0, le=1)] | None = None
+    chance_of_directional_spread: Annotated[float, Field(ge=0, le=1)] | None = None
+    chance_of_spread_radius2: Annotated[float, Field(ge=0, le=1)] | None = None
+    chance_of_spread_radius3: Annotated[float, Field(ge=0, le=1)] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

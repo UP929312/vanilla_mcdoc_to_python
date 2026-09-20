@@ -3,17 +3,16 @@ Generated from symbols.json for ::java::world::block::vault::Config
 Local link to file: generated_symbols/world/block/vault/Config.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.world.item.ItemStack import ItemStack
 
 
-@dataclass(kw_only=True)
-class Config:
+class Config(GeneratedModel):
     key_item: ItemStack | None = None  # Item required to open the vault.
     loot_table: Annotated[str, IdSpec(registry='loot_table')] | None = None  # Defaults to "minecraft:chests/trial_chambers/reward".
     override_loot_table_to_display: Annotated[str, IdSpec(registry='loot_table')] | None = None  # The loot table to display items in the vault. Defaults to use the value in `loot_table` field.

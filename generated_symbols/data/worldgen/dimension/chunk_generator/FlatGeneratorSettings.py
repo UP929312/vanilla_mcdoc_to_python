@@ -3,17 +3,16 @@ Generated from symbols.json for ::java::data::worldgen::dimension::chunk_generat
 Local link to file: generated_symbols/data/worldgen/dimension/chunk_generator/FlatGeneratorSettings.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.dimension.chunk_generator.FlatGeneratorLayer import FlatGeneratorLayer
 
 
-@dataclass(kw_only=True)
-class FlatGeneratorSettings:
+class FlatGeneratorSettings(GeneratedModel):
     biome: Annotated[str, IdSpec(registry='worldgen/biome')] | None = None
     lakes: bool | None = None
     features: bool | None = None

@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::worldgen::material_condition::Mate
 Local link to file: generated_symbols/data/worldgen/material_condition/MaterialCondition.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import ClassVar, Literal
 
 from generated_symbols.data.worldgen.material_condition.BiomeCondition import BiomeCondition
@@ -15,39 +14,32 @@ from generated_symbols.data.worldgen.material_condition.WaterCondition import Wa
 from generated_symbols.data.worldgen.material_condition.YAboveCondition import YAboveCondition
 
 
-@dataclass(kw_only=True)
 class MaterialConditionBiome(BiomeCondition):
     __resource_dir__: ClassVar[str] = 'worldgen/material_condition'
 
     type: Literal['minecraft:biome'] = 'minecraft:biome'
 
 
-@dataclass(kw_only=True)
 class MaterialConditionNoiseThreshold(NoiseThresholdCondition):
     type: Literal['minecraft:noise_threshold'] = 'minecraft:noise_threshold'
 
 
-@dataclass(kw_only=True)
 class MaterialConditionNot(NotCondition):
     type: Literal['minecraft:not'] = 'minecraft:not'
 
 
-@dataclass(kw_only=True)
 class MaterialConditionStoneDepth(StoneDepthCondition):
     type: Literal['minecraft:stone_depth'] = 'minecraft:stone_depth'
 
 
-@dataclass(kw_only=True)
 class MaterialConditionVerticalGradient(VerticalGradientCondition):
     type: Literal['minecraft:vertical_gradient'] = 'minecraft:vertical_gradient'
 
 
-@dataclass(kw_only=True)
 class MaterialConditionWater(WaterCondition):
     type: Literal['minecraft:water'] = 'minecraft:water'
 
 
-@dataclass(kw_only=True)
 class MaterialConditionYAbove(YAboveCondition):
     type: Literal['minecraft:y_above'] = 'minecraft:y_above'
 

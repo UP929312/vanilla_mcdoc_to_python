@@ -3,22 +3,22 @@ Generated from symbols.json for ::java::data::variants::painting::PaintingVarian
 Local link to file: generated_symbols/data/variants/painting/PaintingVariant.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.text.Text import Text
 
 
-@dataclass(kw_only=True)
-class PaintingVariant:
+class PaintingVariant(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'painting_variant'
 
     asset_id: Annotated[str, IdSpec(registry='texture', path='painting/')]
-    width: Annotated[int, 'Range | `1`-`16` | both inclusive']  # Dimension in blocks.
-    height: Annotated[int, 'Range | `1`-`16` | both inclusive']  # Dimension in blocks.
+    width: Annotated[int, Field(ge=1, le=16)]  # Dimension in blocks.
+    height: Annotated[int, Field(ge=1, le=16)]  # Dimension in blocks.
     title: Text | None = None
     author: Text | None = None
 

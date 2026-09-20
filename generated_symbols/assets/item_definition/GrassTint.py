@@ -3,14 +3,15 @@ Generated from symbols.json for ::java::assets::item_definition::GrassTint
 Local link to file: generated_symbols/assets/item_definition/GrassTint.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class GrassTint:
-    temperature: Annotated[float, 'Range | `0`-`1` | both inclusive']
-    downfall: Annotated[float, 'Range | `0`-`1` | both inclusive']
+
+class GrassTint(GeneratedModel):
+    temperature: Annotated[float, Field(ge=0, le=1)]
+    downfall: Annotated[float, Field(ge=0, le=1)]
 
 
 # ~~~ MODEL DUMP ~~~

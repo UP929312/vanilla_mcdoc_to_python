@@ -3,19 +3,20 @@ Generated from symbols.json for ::java::data::worldgen::feature::FillLayerConfig
 Local link to file: generated_symbols/data/worldgen/feature/FillLayerConfig.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.block_state.BlockState import BlockState
 
 
-@dataclass(kw_only=True)
-class FillLayerConfig:
+class FillLayerConfig(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/feature'
 
     state: BlockState
-    height: Annotated[int, 'Range | `0`-`255` | both inclusive']
+    height: Annotated[int, Field(ge=0, le=255)]
 
 
 # ~~~ MODEL DUMP ~~~

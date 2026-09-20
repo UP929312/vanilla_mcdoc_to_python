@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::enchantment::effect::ExponentialEf
 Local link to file: generated_symbols/data/enchantment/effect/ExponentialEffectValue.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.enchantment.LevelBasedValue import LevelBasedValue
 
 
-@dataclass(kw_only=True)
-class ExponentialEffectValue:
+class ExponentialEffectValue(GeneratedModel):
     base: LevelBasedValue
     exponent: LevelBasedValue
 

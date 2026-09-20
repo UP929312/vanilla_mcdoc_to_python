@@ -3,14 +3,13 @@ Generated from symbols.json for ::java::data::worldgen::dimension::biome_source:
 Local link to file: generated_symbols/data/worldgen/dimension/biome_source/Fixed.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
-class Fixed:
+class Fixed(GeneratedModel):
     biome: Annotated[str, IdSpec(registry='worldgen/biome')]
 
 

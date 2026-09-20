@@ -3,13 +3,10 @@ Generated from symbols.json for ::java::world::entity::mob::happy_ghast::HappyGh
 Local link to file: generated_symbols/world/entity/mob/happy_ghast/HappyGhast.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.world.entity.mob.AgeableMob import AgeableMob
 from generated_symbols.world.entity.mob.MobBase import MobBase
 
 
-@dataclass(kw_only=True)
 class HappyGhast(AgeableMob, MobBase):
     still_timeout: int | None = None
 

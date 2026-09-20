@@ -3,16 +3,15 @@ Generated from symbols.json for ::java::world::entity::mob::breedable::Breedable
 Local link to file: generated_symbols/world/entity/mob/breedable/Breedable.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
 from generated_symbols.world.entity.mob.AgeableMob import AgeableMob
 from generated_symbols.world.entity.mob.MobBase import MobBase
+from pydantic import Field
 
 
-@dataclass(kw_only=True)
 class Breedable(AgeableMob, MobBase):
-    InLove: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # Ticks until it stops searching for a mate.
+    InLove: Annotated[int, Field(ge=0)] | None = None  # Ticks until it stops searching for a mate.
     LoveCause: tuple[int, int, int, int] | None = None  # Player that caused this mob to breed.
 
 

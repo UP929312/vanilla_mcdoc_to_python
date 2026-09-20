@@ -3,8 +3,9 @@ Generated from symbols.json for ::java::data::worldgen::processor_list::Processo
 Local link to file: generated_symbols/data/worldgen/processor_list/ProcessorRule.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.processor_list.BlockEntityModifier import BlockEntityModifier
@@ -13,8 +14,7 @@ if TYPE_CHECKING:
     from generated_symbols.util.block_state.BlockState import BlockState
 
 
-@dataclass(kw_only=True)
-class ProcessorRule:
+class ProcessorRule(GeneratedModel):
     position_predicate: PosRuleTest | None = None
     location_predicate: RuleTest
     input_predicate: RuleTest

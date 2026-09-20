@@ -3,16 +3,17 @@ Generated from symbols.json for ::java::data::worldgen::feature::tree::PineFolia
 Local link to file: generated_symbols/data/worldgen/feature/tree/PineFoliagePlacer.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.IntProvider import IntProvider
 
 
-@dataclass(kw_only=True)
-class PineFoliagePlacer:
-    height: IntProvider[Annotated[int, 'Range | `0`-`24` | both inclusive']] | Annotated[int, 'Range | `0`-`24` | both inclusive']
+class PineFoliagePlacer(GeneratedModel):
+    height: IntProvider[Annotated[int, Field(ge=0, le=24)]] | Annotated[int, Field(ge=0, le=24)]
 
 
 # ~~~ MODEL DUMP ~~~

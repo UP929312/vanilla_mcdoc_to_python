@@ -3,14 +3,12 @@ Generated from symbols.json for ::java::data::loot::ItemPoolEntry
 Local link to file: generated_symbols/data/loot/ItemPoolEntry.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
 from generated_symbols.data.loot.SingletonPoolEntry import SingletonPoolEntry
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
 class ItemPoolEntry(SingletonPoolEntry):
     name: Annotated[str, IdSpec(registry='item', exclude=('air',))]
 

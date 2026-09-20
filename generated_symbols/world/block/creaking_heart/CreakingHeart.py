@@ -3,12 +3,9 @@ Generated from symbols.json for ::java::world::block::creaking_heart::CreakingHe
 Local link to file: generated_symbols/world/block/creaking_heart/CreakingHeart.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.world.block.BlockEntity import BlockEntity
 
 
-@dataclass(kw_only=True)
 class CreakingHeart(BlockEntity):
     creaking: tuple[int, int, int, int] | None = None  # The creaking mob that is linked to this heart.
 

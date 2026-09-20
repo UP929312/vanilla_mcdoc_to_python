@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::assets::shader::program::Defines
 Local link to file: generated_symbols/assets/shader/program/Defines.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class Defines:
+class Defines(GeneratedModel):
     values: dict[str, str] | None = None  # Values that will be injected as `#define <key> <value>` at the top of the file.
     flags: list[str] | None = None  # Flags that will be injected as `#define <key>` at the top of the file.
 

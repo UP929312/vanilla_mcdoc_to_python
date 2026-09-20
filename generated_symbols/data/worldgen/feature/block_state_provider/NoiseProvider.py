@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::worldgen::feature::block_state_pro
 Local link to file: generated_symbols/data/worldgen/feature/block_state_provider/NoiseProvider.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.data.worldgen.feature.block_state_provider.BaseNoiseProvider import BaseNoiseProvider
@@ -12,7 +11,6 @@ if TYPE_CHECKING:
     from generated_symbols.util.block_state.BlockState import BlockState
 
 
-@dataclass(kw_only=True)
 class NoiseProvider(BaseNoiseProvider):
     states: list[BlockState]
 

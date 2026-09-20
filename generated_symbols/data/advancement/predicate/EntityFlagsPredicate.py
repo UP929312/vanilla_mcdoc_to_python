@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::data::advancement::predicate::EntityFlag
 Local link to file: generated_symbols/data/advancement/predicate/EntityFlagsPredicate.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class EntityFlagsPredicate:
+class EntityFlagsPredicate(GeneratedModel):
     is_on_fire: bool | None = None
     is_sneaking: bool | None = None
     is_sprinting: bool | None = None

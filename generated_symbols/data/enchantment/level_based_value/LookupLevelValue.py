@@ -3,16 +3,17 @@ Generated from symbols.json for ::java::data::enchantment::level_based_value::Lo
 Local link to file: generated_symbols/data/enchantment/level_based_value/LookupLevelValue.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.enchantment.level_based_value.LevelBasedValue import LevelBasedValue
 
 
-@dataclass(kw_only=True)
-class LookupLevelValue:
-    values: Annotated[list[LevelBasedValue], 'Length = 1 (inclusive) and above']  # Indexed by `level - 1` to apply, if present
+class LookupLevelValue(GeneratedModel):
+    values: Annotated[list[LevelBasedValue], Field(min_length=1)]  # Indexed by `level - 1` to apply, if present
     fallback: LevelBasedValue  # Applied if the level is greater than the size of `values`.
 
 

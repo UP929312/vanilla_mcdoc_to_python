@@ -3,16 +3,16 @@ Generated from symbols.json for ::java::assets::shader::program::BlendMode
 Local link to file: generated_symbols/assets/shader/program/BlendMode.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.assets.shader.program.BlendFactor import BlendFactor
     from generated_symbols.assets.shader.program.BlendFunc import BlendFunc
 
 
-@dataclass(kw_only=True)
-class BlendMode:
+class BlendMode(GeneratedModel):
     func: BlendFunc | None = None
     srcrgb: BlendFactor | None = None
     dstrgb: BlendFactor | None = None

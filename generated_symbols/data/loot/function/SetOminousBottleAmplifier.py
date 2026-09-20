@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::loot::function::SetOminousBottleAm
 Local link to file: generated_symbols/data/loot/function/SetOminousBottleAmplifier.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.data.loot.function.Conditions import Conditions
@@ -12,7 +11,6 @@ if TYPE_CHECKING:
     from generated_symbols.data.number_provider.NumberProviderRef import NumberProviderRef
 
 
-@dataclass(kw_only=True)
 class SetOminousBottleAmplifier(Conditions):
     amplifier: NumberProviderRef
 

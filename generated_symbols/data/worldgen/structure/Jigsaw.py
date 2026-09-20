@@ -3,10 +3,11 @@ Generated from symbols.json for ::java::data::worldgen::structure::Jigsaw
 Local link to file: generated_symbols/data/worldgen/structure/Jigsaw.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.HeightProvider import HeightProvider
@@ -16,25 +17,23 @@ if TYPE_CHECKING:
     from generated_symbols.data.worldgen.structure.PoolAlias import PoolAlias
 
 
-@dataclass(kw_only=True)
-class DimensionPaddingStruct:
-    bottom: Annotated[int, 'Range | `0` and above | inclusive'] | None = None
-    top: Annotated[int, 'Range | `0` and above | inclusive'] | None = None
+class DimensionPaddingStruct(GeneratedModel):
+    bottom: Annotated[int, Field(ge=0)] | None = None
+    top: Annotated[int, Field(ge=0)] | None = None
 
 
-@dataclass(kw_only=True)
-class Jigsaw:
+class Jigsaw(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/structure'
 
     start_pool: Annotated[str, IdSpec(registry='worldgen/template_pool')]
-    size: Annotated[int, 'Range | `1`-`20` | both inclusive']
+    size: Annotated[int, Field(ge=1, le=20)]
     start_height: HeightProvider
     start_jigsaw_name: Annotated[str, IdSpec()] | None = None
     project_start_to_heightmap: HeightmapType | None = None
-    max_distance_from_center: Annotated[int, 'Range | `1`-`128` | both inclusive'] | JigsawDistanceLimits[Annotated[int, 'Range | `1`-`128` | both inclusive']] | Annotated[int, 'Range | `1`-`128` | both inclusive'] | Annotated[int, 'Range | `1`-`116` | both inclusive'] | JigsawDistanceLimits[Annotated[int, 'Range | `1`-`116` | both inclusive']] | Annotated[int, 'Range | `1`-`116` | both inclusive']
+    max_distance_from_center: Annotated[int, Field(ge=1, le=128)] | JigsawDistanceLimits[Annotated[int, Field(ge=1, le=128)]] | Annotated[int, Field(ge=1, le=128)] | Annotated[int, Field(ge=1, le=116)] | JigsawDistanceLimits[Annotated[int, Field(ge=1, le=116)]] | Annotated[int, Field(ge=1, le=116)]
     use_expansion_hack: bool
     pool_aliases: list[PoolAlias] | None = None
-    dimension_padding: Annotated[int, 'Range | `0` and above | inclusive'] | DimensionPaddingStruct | None = None
+    dimension_padding: Annotated[int, Field(ge=0)] | DimensionPaddingStruct | None = None
     liquid_settings: LiquidSettings | None = None
 
 

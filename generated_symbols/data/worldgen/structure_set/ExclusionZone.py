@@ -3,17 +3,18 @@ Generated from symbols.json for ::java::data::worldgen::structure_set::Exclusion
 Local link to file: generated_symbols/data/worldgen/structure_set/ExclusionZone.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.structure_set.StructureSetRef import StructureSetRef
 
 
-@dataclass(kw_only=True)
-class ExclusionZone:
+class ExclusionZone(GeneratedModel):
     other_set: StructureSetRef
-    chunk_count: Annotated[int, 'Range | `1`-`16` | both inclusive']
+    chunk_count: Annotated[int, Field(ge=1, le=16)]
 
 
 # ~~~ MODEL DUMP ~~~

@@ -3,16 +3,17 @@ Generated from symbols.json for ::java::data::worldgen::feature::GeodeLayerSetti
 Local link to file: generated_symbols/data/worldgen/feature/GeodeLayerSettings.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class GeodeLayerSettings:
-    filling: Annotated[float, 'Range | `0.01`-`50` | both inclusive'] | None = None
-    inner_layer: Annotated[float, 'Range | `0.01`-`50` | both inclusive'] | None = None
-    middle_layer: Annotated[float, 'Range | `0.01`-`50` | both inclusive'] | None = None
-    outer_layer: Annotated[float, 'Range | `0.01`-`50` | both inclusive'] | None = None
+
+class GeodeLayerSettings(GeneratedModel):
+    filling: Annotated[float, Field(ge=0.01, le=50)] | None = None
+    inner_layer: Annotated[float, Field(ge=0.01, le=50)] | None = None
+    middle_layer: Annotated[float, Field(ge=0.01, le=50)] | None = None
+    outer_layer: Annotated[float, Field(ge=0.01, le=50)] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

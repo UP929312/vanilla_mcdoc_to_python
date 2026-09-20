@@ -3,10 +3,11 @@ Generated from symbols.json for ::java::data::worldgen::feature::SpeleothemClust
 Local link to file: generated_symbols/data/worldgen/feature/SpeleothemClusterConfig.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.FloatProvider import FloatProvider
@@ -15,24 +16,23 @@ if TYPE_CHECKING:
     from generated_symbols.util.block_state.BlockState import BlockState
 
 
-@dataclass(kw_only=True)
-class SpeleothemClusterConfig:
+class SpeleothemClusterConfig(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/feature'
 
     base_block: BlockState
     pointed_block: BlockState
     replaceable_blocks: list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId
-    floor_to_ceiling_search_range: Annotated[int, 'Range | `1`-`512` | both inclusive']
-    height: IntProvider[Annotated[int, 'Range | `0`-`128` | both inclusive']] | Annotated[int, 'Range | `0`-`128` | both inclusive']
-    radius: IntProvider[Annotated[int, 'Range | `0`-`128` | both inclusive']] | Annotated[int, 'Range | `0`-`128` | both inclusive']
-    max_stalagmite_stalactite_height_diff: Annotated[int, 'Range | `0`-`64` | both inclusive']  # Max height difference between the stalagmite and stalactite.
-    height_deviation: Annotated[int, 'Range | `1`-`64` | both inclusive']
-    speleothem_block_layer_thickness: IntProvider[Annotated[int, 'Range | `0`-`128` | both inclusive']] | Annotated[int, 'Range | `0`-`128` | both inclusive']
-    density: FloatProvider[Annotated[float, 'Range | `0`-`2` | both inclusive']] | Annotated[float, 'Range | `0`-`2` | both inclusive']
-    wetness: FloatProvider[Annotated[float, 'Range | `0`-`2` | both inclusive']] | Annotated[float, 'Range | `0`-`2` | both inclusive']
-    chance_of_speleothem_at_max_distance_from_center: Annotated[float, 'Range | `0`-`1` | both inclusive']
-    max_distance_from_edge_affecting_chance_of_speleothem: Annotated[int, 'Range | `1`-`64` | both inclusive']
-    max_distance_from_center_affecting_height_bias: Annotated[int, 'Range | `1`-`64` | both inclusive']
+    floor_to_ceiling_search_range: Annotated[int, Field(ge=1, le=512)]
+    height: IntProvider[Annotated[int, Field(ge=0, le=128)]] | Annotated[int, Field(ge=0, le=128)]
+    radius: IntProvider[Annotated[int, Field(ge=0, le=128)]] | Annotated[int, Field(ge=0, le=128)]
+    max_stalagmite_stalactite_height_diff: Annotated[int, Field(ge=0, le=64)]  # Max height difference between the stalagmite and stalactite.
+    height_deviation: Annotated[int, Field(ge=1, le=64)]
+    speleothem_block_layer_thickness: IntProvider[Annotated[int, Field(ge=0, le=128)]] | Annotated[int, Field(ge=0, le=128)]
+    density: FloatProvider[Annotated[float, Field(ge=0, le=2)]] | Annotated[float, Field(ge=0, le=2)]
+    wetness: FloatProvider[Annotated[float, Field(ge=0, le=2)]] | Annotated[float, Field(ge=0, le=2)]
+    chance_of_speleothem_at_max_distance_from_center: Annotated[float, Field(ge=0, le=1)]
+    max_distance_from_edge_affecting_chance_of_speleothem: Annotated[int, Field(ge=1, le=64)]
+    max_distance_from_center_affecting_height_bias: Annotated[int, Field(ge=1, le=64)]
 
 
 # ~~~ MODEL DUMP ~~~

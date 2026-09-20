@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::entity::mob::breedable::tamable::
 Local link to file: generated_symbols/world/entity/mob/breedable/tamable/Parrot.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.world.entity.mob.breedable.tamable.Tamable import Tamable
@@ -12,7 +11,6 @@ if TYPE_CHECKING:
     from generated_symbols.world.entity.mob.breedable.tamable.ParrotVariantInt import ParrotVariantInt
 
 
-@dataclass(kw_only=True)
 class Parrot(Tamable):
     Variant: ParrotVariantInt | None = None
 

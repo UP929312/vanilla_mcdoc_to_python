@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::util::text::ShowText
 Local link to file: generated_symbols/util/text/ShowText.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.util.text.Text import Text
 
 
-@dataclass(kw_only=True)
-class ShowText:
+class ShowText(GeneratedModel):
     value: Text
 
 

@@ -3,14 +3,15 @@ Generated from symbols.json for ::java::data::worldgen::attribute::modifier::Ble
 Local link to file: generated_symbols/data/worldgen/attribute/modifier/BlendToGray.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class BlendToGray:
-    brightness: Annotated[float, 'Range | `0`-`1` | both inclusive']  # The gray color is `brightness * (0.3 * r + 0.59 * g + 0.11 * b)`.
-    factor: Annotated[float, 'Range | `0`-`1` | both inclusive']  # The factor to mix with.
+
+class BlendToGray(GeneratedModel):
+    brightness: Annotated[float, Field(ge=0, le=1)]  # The gray color is `brightness * (0.3 * r + 0.59 * g + 0.11 * b)`.
+    factor: Annotated[float, Field(ge=0, le=1)]  # The factor to mix with.
 
 
 # ~~~ MODEL DUMP ~~~

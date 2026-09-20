@@ -3,14 +3,13 @@ Generated from symbols.json for ::java::assets::atlas::UnstitchRegion
 Local link to file: generated_symbols/assets/atlas/UnstitchRegion.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
-class UnstitchRegion:
+class UnstitchRegion(GeneratedModel):
     sprite: Annotated[str, IdSpec(registry='texture', definition=True)]
     x: float
     y: float

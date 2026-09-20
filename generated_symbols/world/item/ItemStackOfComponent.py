@@ -3,17 +3,16 @@ Generated from symbols.json for ::java::world::item::ItemStackOfComponent
 Local link to file: generated_symbols/world/item/ItemStackOfComponent.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated, Generic, TypeVar
 
 from generated_symbols.world.item.SingleItemOfComponent import SingleItemOfComponent
+from pydantic import Field
 
 
 T = TypeVar('T')
 
-@dataclass(kw_only=True)
 class ItemStackOfComponent(SingleItemOfComponent[T], Generic[T]):
-    count: Annotated[int, 'Range | `1`-`99` | both inclusive'] | None = None  # Number of items in the stack. Defaults to `1`.
+    count: Annotated[int, Field(ge=1, le=99)] | None = None  # Number of items in the stack. Defaults to `1`.
 
 
 # ~~~ MODEL DUMP ~~~

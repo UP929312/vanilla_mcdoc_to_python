@@ -3,11 +3,12 @@ Generated from symbols.json for ::java::data::timeline::EnvironmentAttributeTrac
 Local link to file: generated_symbols/data/timeline/EnvironmentAttributeTrackMap.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Any, Literal
 
+from generated_symbols.base import GeneratedModel
 from generated_symbols.data.timeline.AttributeTrackBase import AttributeTrackBase
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.MoonPhase import MoonPhase
@@ -30,220 +31,184 @@ if TYPE_CHECKING:
     from generated_symbols.util.particle.Particle import Particle
 
 
-@dataclass(kw_only=True)
-class KeyframesStruct:
-    ticks: Annotated[int, 'Range | `0` and above | inclusive']
+class KeyframesStruct(GeneratedModel):
+    ticks: Annotated[int, Field(ge=0)]
     value: Any
 
 
-@dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct1(AttributeTrackBase):
     modifier: Literal['override'] = 'override'
-    keyframes: Annotated[list[KeyframesStruct], 'Length = 1 (inclusive) and above']
+    keyframes: Annotated[list[KeyframesStruct], Field(min_length=1)]
 
 
-@dataclass(kw_only=True)
-class KeyframesStruct2:
-    ticks: Annotated[int, 'Range | `0` and above | inclusive']
+class KeyframesStruct2(GeneratedModel):
+    ticks: Annotated[int, Field(ge=0)]
     value: AmbientSounds
 
 
-@dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct2(AttributeTrackBase):
     modifier: Literal['override'] = 'override'
-    keyframes: Annotated[list[KeyframesStruct2], 'Length = 1 (inclusive) and above']
+    keyframes: Annotated[list[KeyframesStruct2], Field(min_length=1)]
 
 
-@dataclass(kw_only=True)
-class KeyframesStruct3:
-    ticks: Annotated[int, 'Range | `0` and above | inclusive']
+class KeyframesStruct3(GeneratedModel):
+    ticks: Annotated[int, Field(ge=0)]
     value: BackgroundMusic
 
 
-@dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct3(AttributeTrackBase):
     modifier: Literal['override'] = 'override'
-    keyframes: Annotated[list[KeyframesStruct3], 'Length = 1 (inclusive) and above']
+    keyframes: Annotated[list[KeyframesStruct3], Field(min_length=1)]
 
 
-@dataclass(kw_only=True)
-class KeyframesStruct4:
-    ticks: Annotated[int, 'Range | `0` and above | inclusive']
+class KeyframesStruct4(GeneratedModel):
+    ticks: Annotated[int, Field(ge=0)]
     value: bool
 
 
-@dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct4(AttributeTrackBase):
     modifier: BooleanModifierType | None = None
-    keyframes: Annotated[list[KeyframesStruct4], 'Length = 1 (inclusive) and above']
+    keyframes: Annotated[list[KeyframesStruct4], Field(min_length=1)]
 
 
-@dataclass(kw_only=True)
-class KeyframesStruct5:
-    ticks: Annotated[int, 'Range | `0` and above | inclusive']
-    value: Annotated[float, 'Range | `0`-`1` | both inclusive'] | float | FloatWithAlpha | Annotated[float, 'Range | `0`-`1` | both inclusive']
+class KeyframesStruct5(GeneratedModel):
+    ticks: Annotated[int, Field(ge=0)]
+    value: Annotated[float, Field(ge=0, le=1)] | float | FloatWithAlpha | Annotated[float, Field(ge=0, le=1)]
 
 
-@dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct5(AttributeTrackBase):
     modifier: FloatModifierType | None = None
-    keyframes: Annotated[list[KeyframesStruct5], 'Length = 1 (inclusive) and above']
+    keyframes: Annotated[list[KeyframesStruct5], Field(min_length=1)]
 
 
-@dataclass(kw_only=True)
-class KeyframesStruct6:
-    ticks: Annotated[int, 'Range | `0` and above | inclusive']
+class KeyframesStruct6(GeneratedModel):
+    ticks: Annotated[int, Field(ge=0)]
     value: Annotated[str, IdSpec(registry='activity')]
 
 
-@dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct6(AttributeTrackBase):
     modifier: Literal['override'] = 'override'
-    keyframes: Annotated[list[KeyframesStruct6], 'Length = 1 (inclusive) and above']
+    keyframes: Annotated[list[KeyframesStruct6], Field(min_length=1)]
 
 
-@dataclass(kw_only=True)
-class KeyframesStruct7:
-    ticks: Annotated[int, 'Range | `0` and above | inclusive']
+class KeyframesStruct7(GeneratedModel):
+    ticks: Annotated[int, Field(ge=0)]
     value: BedRule
 
 
-@dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct7(AttributeTrackBase):
     modifier: Literal['override'] = 'override'
-    keyframes: Annotated[list[KeyframesStruct7], 'Length = 1 (inclusive) and above']
+    keyframes: Annotated[list[KeyframesStruct7], Field(min_length=1)]
 
 
-@dataclass(kw_only=True)
-class KeyframesStruct8:
-    ticks: Annotated[int, 'Range | `0` and above | inclusive']
-    value: Annotated[float, 'Range | `0`-`0.9999999` | both inclusive'] | float | FloatWithAlpha | Annotated[float, 'Range | `0`-`0.9999999` | both inclusive']
+class KeyframesStruct8(GeneratedModel):
+    ticks: Annotated[int, Field(ge=0)]
+    value: Annotated[float, Field(ge=0, le=0.9999999)] | float | FloatWithAlpha | Annotated[float, Field(ge=0, le=0.9999999)]
 
 
-@dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct8(AttributeTrackBase):
     modifier: FloatModifierType | None = None
-    keyframes: Annotated[list[KeyframesStruct8], 'Length = 1 (inclusive) and above']
+    keyframes: Annotated[list[KeyframesStruct8], Field(min_length=1)]
 
 
-@dataclass(kw_only=True)
-class KeyframesStruct9:
-    ticks: Annotated[int, 'Range | `0` and above | inclusive']
+class KeyframesStruct9(GeneratedModel):
+    ticks: Annotated[int, Field(ge=0)]
     value: TriState
 
 
-@dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct9(AttributeTrackBase):
     modifier: Literal['override'] = 'override'
-    keyframes: Annotated[list[KeyframesStruct9], 'Length = 1 (inclusive) and above']
+    keyframes: Annotated[list[KeyframesStruct9], Field(min_length=1)]
 
 
-@dataclass(kw_only=True)
-class KeyframesStruct10:
-    ticks: Annotated[int, 'Range | `0` and above | inclusive']
+class KeyframesStruct10(GeneratedModel):
+    ticks: Annotated[int, Field(ge=0)]
     value: NaturalMobSpawns
 
 
-@dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct10(AttributeTrackBase):
     modifier: MergeableModifierType | None = None
-    keyframes: Annotated[list[KeyframesStruct10], 'Length = 1 (inclusive) and above']
+    keyframes: Annotated[list[KeyframesStruct10], Field(min_length=1)]
 
 
-@dataclass(kw_only=True)
-class KeyframesStruct11:
-    ticks: Annotated[int, 'Range | `0` and above | inclusive']
-    value: Annotated[float, 'Range | `0`-`15` | both inclusive'] | float | FloatWithAlpha | Annotated[float, 'Range | `0`-`15` | both inclusive']
+class KeyframesStruct11(GeneratedModel):
+    ticks: Annotated[int, Field(ge=0)]
+    value: Annotated[float, Field(ge=0, le=15)] | float | FloatWithAlpha | Annotated[float, Field(ge=0, le=15)]
 
 
-@dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct11(AttributeTrackBase):
     modifier: FloatModifierType | None = None
-    keyframes: Annotated[list[KeyframesStruct11], 'Length = 1 (inclusive) and above']
+    keyframes: Annotated[list[KeyframesStruct11], Field(min_length=1)]
 
 
-@dataclass(kw_only=True)
-class KeyframesStruct12:
-    ticks: Annotated[int, 'Range | `0` and above | inclusive']
+class KeyframesStruct12(GeneratedModel):
+    ticks: Annotated[int, Field(ge=0)]
     value: StringRGB | StringARGB | BlendToGray
 
 
-@dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct12(AttributeTrackBase):
     modifier: ColorModifierType | None = None
-    keyframes: Annotated[list[KeyframesStruct12], 'Length = 1 (inclusive) and above']
+    keyframes: Annotated[list[KeyframesStruct12], Field(min_length=1)]
 
 
-@dataclass(kw_only=True)
-class KeyframesStruct13:
-    ticks: Annotated[int, 'Range | `0` and above | inclusive']
+class KeyframesStruct13(GeneratedModel):
+    ticks: Annotated[int, Field(ge=0)]
     value: list[AmbientParticle]
 
 
-@dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct13(AttributeTrackBase):
     modifier: ListModifierType | None = None
-    keyframes: Annotated[list[KeyframesStruct13], 'Length = 1 (inclusive) and above']
+    keyframes: Annotated[list[KeyframesStruct13], Field(min_length=1)]
 
 
-@dataclass(kw_only=True)
-class KeyframesStruct14:
-    ticks: Annotated[int, 'Range | `0` and above | inclusive']
+class KeyframesStruct14(GeneratedModel):
+    ticks: Annotated[int, Field(ge=0)]
     value: StringARGB | StringRGB | BlendToGray | StringRGB | StringARGB
 
 
-@dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct14(AttributeTrackBase):
     modifier: ColorModifierType | None = None
-    keyframes: Annotated[list[KeyframesStruct14], 'Length = 1 (inclusive) and above']
+    keyframes: Annotated[list[KeyframesStruct14], Field(min_length=1)]
 
 
-@dataclass(kw_only=True)
-class KeyframesStruct15:
-    ticks: Annotated[int, 'Range | `0` and above | inclusive']
-    value: Annotated[float, 'Range | `0` and above | inclusive'] | float | FloatWithAlpha | Annotated[float, 'Range | `0` and above | inclusive']
+class KeyframesStruct15(GeneratedModel):
+    ticks: Annotated[int, Field(ge=0)]
+    value: Annotated[float, Field(ge=0)] | float | FloatWithAlpha | Annotated[float, Field(ge=0)]
 
 
-@dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct15(AttributeTrackBase):
     modifier: FloatModifierType | None = None
-    keyframes: Annotated[list[KeyframesStruct15], 'Length = 1 (inclusive) and above']
+    keyframes: Annotated[list[KeyframesStruct15], Field(min_length=1)]
 
 
-@dataclass(kw_only=True)
-class KeyframesStruct16:
-    ticks: Annotated[int, 'Range | `0` and above | inclusive']
+class KeyframesStruct16(GeneratedModel):
+    ticks: Annotated[int, Field(ge=0)]
     value: float | FloatWithAlpha | float
 
 
-@dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct16(AttributeTrackBase):
     modifier: FloatModifierType | None = None
-    keyframes: Annotated[list[KeyframesStruct16], 'Length = 1 (inclusive) and above']
+    keyframes: Annotated[list[KeyframesStruct16], Field(min_length=1)]
 
 
-@dataclass(kw_only=True)
-class KeyframesStruct17:
-    ticks: Annotated[int, 'Range | `0` and above | inclusive']
+class KeyframesStruct17(GeneratedModel):
+    ticks: Annotated[int, Field(ge=0)]
     value: Particle
 
 
-@dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct17(AttributeTrackBase):
     modifier: Literal['override'] = 'override'
-    keyframes: Annotated[list[KeyframesStruct17], 'Length = 1 (inclusive) and above']
+    keyframes: Annotated[list[KeyframesStruct17], Field(min_length=1)]
 
 
-@dataclass(kw_only=True)
-class KeyframesStruct18:
-    ticks: Annotated[int, 'Range | `0` and above | inclusive']
+class KeyframesStruct18(GeneratedModel):
+    ticks: Annotated[int, Field(ge=0)]
     value: MoonPhase
 
 
-@dataclass(kw_only=True)
 class EnvironmentAttributeTrackMapValueStruct18(AttributeTrackBase):
     modifier: Literal['override'] = 'override'
-    keyframes: Annotated[list[KeyframesStruct18], 'Length = 1 (inclusive) and above']
+    keyframes: Annotated[list[KeyframesStruct18], Field(min_length=1)]
 
 
 type EnvironmentAttributeTrackMap = dict[Annotated[str, IdSpec(registry='environment_attribute')] | KnownEnvironmentAttributeId, EnvironmentAttributeTrackMapValueStruct1 | EnvironmentAttributeTrackMapValueStruct2 | EnvironmentAttributeTrackMapValueStruct3 | EnvironmentAttributeTrackMapValueStruct4 | EnvironmentAttributeTrackMapValueStruct5 | EnvironmentAttributeTrackMapValueStruct6 | EnvironmentAttributeTrackMapValueStruct7 | EnvironmentAttributeTrackMapValueStruct8 | EnvironmentAttributeTrackMapValueStruct9 | EnvironmentAttributeTrackMapValueStruct10 | EnvironmentAttributeTrackMapValueStruct11 | EnvironmentAttributeTrackMapValueStruct12 | EnvironmentAttributeTrackMapValueStruct13 | EnvironmentAttributeTrackMapValueStruct14 | EnvironmentAttributeTrackMapValueStruct15 | EnvironmentAttributeTrackMapValueStruct16 | EnvironmentAttributeTrackMapValueStruct17 | EnvironmentAttributeTrackMapValueStruct18]

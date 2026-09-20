@@ -3,27 +3,26 @@ Generated from symbols.json for ::java::world::entity::mob::breedable::villager:
 Local link to file: generated_symbols/world/entity/mob/breedable/villager/Villager.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.world.entity.mob.breedable.Breedable import Breedable
 from generated_symbols.world.entity.mob.breedable.villager.VillagerBase import VillagerBase
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.world.entity.mob.breedable.villager.PlayerReputationPart import PlayerReputationPart
     from generated_symbols.world.entity.mob.breedable.villager.VillagerData import VillagerData
 
 
-@dataclass(kw_only=True)
 class Villager(Breedable, VillagerBase):
     VillagerData: VillagerData | None = None
     VillagerDataFinalized: bool | None = None
-    FoodLevel: Annotated[int, 'Range | `0`-`12` | both inclusive'] | None = None  # Determines whether the villager will be available to reproduce.  When the value is `12` the villager can reproduce.  After reproducing, the value is reset to `0`.  To increase this value villagers will pick up food that is in range.  Foods: Potatoes, Carrots, & Beetroots increase the level by `1`. Bread increases the level by `4`.
+    FoodLevel: Annotated[int, Field(ge=0, le=12)] | None = None  # Determines whether the villager will be available to reproduce.  When the value is `12` the villager can reproduce.  After reproducing, the value is reset to `0`.  To increase this value villagers will pick up food that is in range.  Foods: Potatoes, Carrots, & Beetroots increase the level by `1`. Bread increases the level by `4`.
     Gossips: list[PlayerReputationPart] | None = None  # Affects per-player reputation which affects trade offer pricing and iron golem behavior.  Reputation is assembled through events the villager has witnessed (within 16 blocks) or heard about from other villagers through gossip.  All reputation parts decay over time except `major_positive` which is only ever increased (when the villager is cured).  Decay occurs every 24k ticks (20 minutes), tracked by `LastGossipDecay`.  Once a reputation part decays to zero it is removed from the list.
     LastGossipDecay: int | None = None  # Last game-tick every gossip significance `Value` could have decayed.  Once this reaches 24k (20 minutes) less than the current game tick a decay occurs again.
     LastRestock: int | None = None  # Last game-tick it removed `uses` & updated `demand` of every trade offer by going to its `job_site`.
-    RestocksToday: Annotated[int, 'Range | `0`-`2` | both inclusive'] | None = None  # Times it has reset the `uses` & updated `demand` of every trade offer by going to its `job_site` in the past 12k ticks (10 minutes).  Time is tracked by `LastRestock`.  When two restocks have occurred, another restock (and reset of this value to `0`) will only occur after 10 minutes.
-    Xp: Annotated[int, 'Range | `0` and above | inclusive'] | None = None  # XP it has, increases when trades are used by each trade offer's `xp` value.  After `250` the XP will continue to increase, but will do nothing more.  Trade tiers: - `0..9`     - Tier 1: Novice - `10..69`   - Tier 2: Apprentice - `70..149`  - Tier 3: Journeyman - `150..249` - Tier 4: Expert - `250..`    - Tier 5: Master
+    RestocksToday: Annotated[int, Field(ge=0, le=2)] | None = None  # Times it has reset the `uses` & updated `demand` of every trade offer by going to its `job_site` in the past 12k ticks (10 minutes).  Time is tracked by `LastRestock`.  When two restocks have occurred, another restock (and reset of this value to `0`) will only occur after 10 minutes.
+    Xp: Annotated[int, Field(ge=0)] | None = None  # XP it has, increases when trades are used by each trade offer's `xp` value.  After `250` the XP will continue to increase, but will do nothing more.  Trade tiers: - `0..9`     - Tier 1: Novice - `10..69`   - Tier 2: Apprentice - `70..149`  - Tier 3: Journeyman - `150..249` - Tier 4: Expert - `250..`    - Tier 5: Master
 
 
 # ~~~ MODEL DUMP ~~~

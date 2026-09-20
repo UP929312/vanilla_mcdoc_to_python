@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::assets::font::UnihexProvider
 Local link to file: generated_symbols/assets/font/UnihexProvider.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.assets.font.UnihexOverrideRange import UnihexOverrideRange
 
 
-@dataclass(kw_only=True)
-class UnihexProvider:
+class UnihexProvider(GeneratedModel):
     hex_file: str  # ZIP archive containing one or more *.hex files (files in archive with different extensions are ignored).
     size_overrides: list[UnihexOverrideRange] | None = None  # List of ranges to override the size of.
 

@@ -3,14 +3,12 @@ Generated from symbols.json for ::java::assets::item_definition::ContextDimensio
 Local link to file: generated_symbols/assets/item_definition/ContextDimension.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
 from generated_symbols.assets.item_definition.SelectCases import SelectCases
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
 class ContextDimension(SelectCases[Annotated[str, IdSpec(registry='dimension')]]):
     pass
 

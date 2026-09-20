@@ -3,15 +3,16 @@ Generated from symbols.json for ::java::util::FlatWeightedEntry
 Local link to file: generated_symbols/util/FlatWeightedEntry.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated, Generic, TypeVar
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 
 T = TypeVar('T')
 
-@dataclass(kw_only=True)
-class FlatWeightedEntry(Generic[T]):
-    weight: Annotated[int, 'Range | `0` and above | inclusive']
+class FlatWeightedEntry(GeneratedModel, Generic[T]):
+    weight: Annotated[int, Field(ge=0)]
 
 
 # ~~~ MODEL DUMP ~~~

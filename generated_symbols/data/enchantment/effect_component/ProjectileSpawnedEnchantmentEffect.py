@@ -3,16 +3,16 @@ Generated from symbols.json for ::java::data::enchantment::effect_component::Pro
 Local link to file: generated_symbols/data/enchantment/effect_component/ProjectileSpawnedEnchantmentEffect.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.enchantment.effect.EntityEffect import EntityEffect
     from generated_symbols.data.predicate.Predicate import Predicate
 
 
-@dataclass(kw_only=True)
-class ProjectileSpawnedEnchantmentEffect:
+class ProjectileSpawnedEnchantmentEffect(GeneratedModel):
     requirements: Predicate | None = None  # Predicate context: Entity Parameters.  `this` is the newly spawned projectile.
     effect: EntityEffect  # On the newly spawned projectile.
 

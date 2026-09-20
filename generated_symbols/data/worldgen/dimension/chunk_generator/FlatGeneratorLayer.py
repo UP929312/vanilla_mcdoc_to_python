@@ -3,18 +3,18 @@ Generated from symbols.json for ::java::data::worldgen::dimension::chunk_generat
 Local link to file: generated_symbols/data/worldgen/dimension/chunk_generator/FlatGeneratorLayer.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.registry.KnownBlockId import KnownBlockId
 
 
-@dataclass(kw_only=True)
-class FlatGeneratorLayer:
-    height: Annotated[int, 'Range | `0`-`4096` | both inclusive']
+class FlatGeneratorLayer(GeneratedModel):
+    height: Annotated[int, Field(ge=0, le=4096)]
     block: Annotated[str, IdSpec(registry='block')] | KnownBlockId
 
 

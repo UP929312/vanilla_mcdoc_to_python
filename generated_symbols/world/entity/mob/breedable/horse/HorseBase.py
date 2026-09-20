@@ -3,18 +3,17 @@ Generated from symbols.json for ::java::world::entity::mob::breedable::horse::Ho
 Local link to file: generated_symbols/world/entity/mob/breedable/horse/HorseBase.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
 from generated_symbols.world.entity.mob.breedable.Breedable import Breedable
+from pydantic import Field
 
 
-@dataclass(kw_only=True)
 class HorseBase(Breedable):
     Bred: bool | None = None  # Unknown use. Remains `0` even if it was bred.
     EatingHaystack: bool | None = None  # Whether it is eating a haystack.
     Tame: bool | None = None  # Whether it has been tamed.
-    Temper: Annotated[int, 'Range | `0`-`100` | both inclusive'] | None = None  # Higher values make it easier to tame. Increases with feeding.
+    Temper: Annotated[int, Field(ge=0, le=100)] | None = None  # Higher values make it easier to tame. Increases with feeding.
     Owner: tuple[int, int, int, int] | None = None  # Player who tamed it.
 
 

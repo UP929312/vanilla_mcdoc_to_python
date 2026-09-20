@@ -3,14 +3,13 @@ Generated from symbols.json for ::java::data::advancement::predicate::PaintingPr
 Local link to file: generated_symbols/data/advancement/predicate/PaintingPredicate.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
-class PaintingPredicate:
+class PaintingPredicate(GeneratedModel):
     variant: Annotated[str, IdSpec(registry='painting_variant', tags='allowed')] | list[Annotated[str, IdSpec(registry='painting_variant')]]
 
 

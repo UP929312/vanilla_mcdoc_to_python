@@ -3,14 +3,13 @@ Generated from symbols.json for ::java::util::GlobalPos
 Local link to file: generated_symbols/util/GlobalPos.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
-class GlobalPos:
+class GlobalPos(GeneratedModel):
     pos: tuple[int, int, int]  # Coordinates of the location in [x, y, z]
     dimension: Annotated[str, IdSpec(registry='dimension')]  # Dimension of the location
 

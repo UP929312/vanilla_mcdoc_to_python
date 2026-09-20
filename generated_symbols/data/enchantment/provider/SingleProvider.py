@@ -3,17 +3,16 @@ Generated from symbols.json for ::java::data::enchantment::provider::SingleProvi
 Local link to file: generated_symbols/data/enchantment/provider/SingleProvider.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.IntProvider import IntProvider
 
 
-@dataclass(kw_only=True)
-class SingleProvider:
+class SingleProvider(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'enchantment_provider'
 
     enchantment: Annotated[str, IdSpec(registry='enchantment')]

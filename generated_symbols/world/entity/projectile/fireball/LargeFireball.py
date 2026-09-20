@@ -3,12 +3,9 @@ Generated from symbols.json for ::java::world::entity::projectile::fireball::Lar
 Local link to file: generated_symbols/world/entity/projectile/fireball/LargeFireball.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.world.entity.projectile.fireball.FireballBase import FireballBase
 
 
-@dataclass(kw_only=True)
 class LargeFireball(FireballBase):
     ExplosionPower: int | None = None  # Explosion radius.
 

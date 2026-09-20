@@ -3,9 +3,9 @@ Generated from symbols.json for ::java::data::advancement::predicate::PlayerPred
 Local link to file: generated_symbols/data/advancement/predicate/PlayerPredicate.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
@@ -18,8 +18,7 @@ if TYPE_CHECKING:
 type AdvancementsStructValueStruct = dict[str, bool]
 
 
-@dataclass(kw_only=True)
-class InputStruct:
+class InputStruct(GeneratedModel):
     forward: bool | None = None
     backward: bool | None = None
     left: bool | None = None
@@ -29,14 +28,12 @@ class InputStruct:
     sprint: bool | None = None
 
 
-@dataclass(kw_only=True)
-class FoodStruct:
+class FoodStruct(GeneratedModel):
     level: MinMaxBounds[int] | int | None = None
     saturation: MinMaxBounds[float] | float | None = None
 
 
-@dataclass(kw_only=True)
-class PlayerPredicate:
+class PlayerPredicate(GeneratedModel):
     advancements: dict[Annotated[str, IdSpec(registry='advancement')], bool | AdvancementsStructValueStruct] | None = None
     gamemode: list[GameMode] | None = None
     level: MinMaxBounds[int] | int | None = None  # Experience/XP level.

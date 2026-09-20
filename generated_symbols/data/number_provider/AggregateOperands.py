@@ -6,13 +6,14 @@ Local link to file: generated_symbols/data/number_provider/AggregateOperands.py
 from typing import TYPE_CHECKING, Annotated
 
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.number_provider.NumberProvider import NumberProvider
     from generated_symbols.registry.KnownNumberProviderId import KnownNumberProviderId
 
 
-type AggregateOperands = NumberProvider | Annotated[str, IdSpec(registry='number_provider', tags='allowed')] | KnownNumberProviderId | Annotated[list[Annotated[str, IdSpec(registry='number_provider')] | KnownNumberProviderId | NumberProvider], 'Length = 1 (inclusive) and above']
+type AggregateOperands = NumberProvider | Annotated[str, IdSpec(registry='number_provider', tags='allowed')] | KnownNumberProviderId | Annotated[list[Annotated[str, IdSpec(registry='number_provider')] | KnownNumberProviderId | NumberProvider], Field(min_length=1)]
 
 
 # ~~~ MODEL DUMP ~~~

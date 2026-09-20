@@ -3,13 +3,14 @@ Generated from symbols.json for ::java::data::loot::condition::RandomChanceWithL
 Local link to file: generated_symbols/data/loot/condition/RandomChanceWithLooting.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class RandomChanceWithLooting:
-    chance: Annotated[float, 'Range | `0`-`1` | both inclusive']
+
+class RandomChanceWithLooting(GeneratedModel):
+    chance: Annotated[float, Field(ge=0, le=1)]
     looting_multiplier: float  # Looting adjustment to the base success rate. Formula is `chance + (looting_level * looting_multiplier)` .
 
 

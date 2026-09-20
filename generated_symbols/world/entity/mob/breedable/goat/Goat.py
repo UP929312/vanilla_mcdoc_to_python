@@ -3,12 +3,9 @@ Generated from symbols.json for ::java::world::entity::mob::breedable::goat::Goa
 Local link to file: generated_symbols/world/entity/mob/breedable/goat/Goat.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.world.entity.mob.breedable.Breedable import Breedable
 
 
-@dataclass(kw_only=True)
 class Goat(Breedable):
     HasLeftHorn: bool | None = None  # Whether it has its left horn.
     HasRightHorn: bool | None = None  # Whether it has its right horn.

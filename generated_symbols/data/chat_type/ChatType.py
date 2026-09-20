@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::chat_type::ChatType
 Local link to file: generated_symbols/data/chat_type/ChatType.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, ClassVar
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.chat_type.ChatDecoration import ChatDecoration
 
 
-@dataclass(kw_only=True)
-class ChatType:
+class ChatType(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'chat_type'
 
     chat: ChatDecoration

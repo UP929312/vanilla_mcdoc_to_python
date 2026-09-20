@@ -3,18 +3,17 @@ Generated from symbols.json for ::java::util::text::TextBase
 Local link to file: generated_symbols/util/text/TextBase.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.util.text.TextStyle import TextStyle
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.text.Text import Text
 
 
-@dataclass(kw_only=True)
 class TextBase(TextStyle):
-    extra: Annotated[list[Text], 'Length = 1 (inclusive) and above'] | None = None
+    extra: Annotated[list[Text], Field(min_length=1)] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

@@ -3,19 +3,18 @@ Generated from symbols.json for ::java::data::worldgen::feature::block_state_pro
 Local link to file: generated_symbols/data/worldgen/feature/block_state_provider/NoiseThresholdProvider.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.data.worldgen.feature.block_state_provider.BaseNoiseProvider import BaseNoiseProvider
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.block_state.BlockState import BlockState
 
 
-@dataclass(kw_only=True)
 class NoiseThresholdProvider(BaseNoiseProvider):
-    threshold: Annotated[float, 'Range | `-1`-`1` | both inclusive']
-    high_chance: Annotated[float, 'Range | `0`-`1` | both inclusive']
+    threshold: Annotated[float, Field(ge=-1, le=1)]
+    high_chance: Annotated[float, Field(ge=0, le=1)]
     default_state: BlockState
     low_states: list[BlockState]
     high_states: list[BlockState]

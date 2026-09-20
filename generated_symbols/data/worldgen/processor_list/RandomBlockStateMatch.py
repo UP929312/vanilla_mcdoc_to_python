@@ -3,17 +3,18 @@ Generated from symbols.json for ::java::data::worldgen::processor_list::RandomBl
 Local link to file: generated_symbols/data/worldgen/processor_list/RandomBlockStateMatch.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.block_state.BlockState import BlockState
 
 
-@dataclass(kw_only=True)
-class RandomBlockStateMatch:
+class RandomBlockStateMatch(GeneratedModel):
     block_state: BlockState
-    probability: Annotated[float, 'Range | `0`-`1` | both inclusive']
+    probability: Annotated[float, Field(ge=0, le=1)]
 
 
 # ~~~ MODEL DUMP ~~~

@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::loot::function::SetWriteableBookPa
 Local link to file: generated_symbols/data/loot/function/SetWriteableBookPages.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Literal
 
 from generated_symbols.data.loot.function.Conditions import Conditions
@@ -14,25 +13,21 @@ if TYPE_CHECKING:
     from generated_symbols.util.Filterable import Filterable
 
 
-@dataclass(kw_only=True)
 class SetWriteableBookPagesAppend(Conditions):
     pages: list[Filterable[str]]  # Sets the pages of a book and quill.
     mode: Literal['minecraft:append'] = 'minecraft:append'  # Determines how the existing list should be modified.
 
 
-@dataclass(kw_only=True)
 class SetWriteableBookPagesInsert(Conditions, InsertListOperation):
     pages: list[Filterable[str]]  # Sets the pages of a book and quill.
     mode: Literal['minecraft:insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
 
 
-@dataclass(kw_only=True)
 class SetWriteableBookPagesReplaceAll(Conditions):
     pages: list[Filterable[str]]  # Sets the pages of a book and quill.
     mode: Literal['minecraft:replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
 
 
-@dataclass(kw_only=True)
 class SetWriteableBookPagesReplaceSection(Conditions, ReplaceSectionListOperation):
     pages: list[Filterable[str]]  # Sets the pages of a book and quill.
     mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.

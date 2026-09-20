@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::data::sulfur_cube_archetype::KnockbackMo
 Local link to file: generated_symbols/data/sulfur_cube_archetype/KnockbackModifiers.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class KnockbackModifiers:
+class KnockbackModifiers(GeneratedModel):
     horizontal_power: float  # The horizontal power of the knockback.
     vertical_power: float  # The vertical power of the knockback.
 

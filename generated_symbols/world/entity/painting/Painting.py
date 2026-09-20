@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::entity::painting::Painting
 Local link to file: generated_symbols/world/entity/painting/Painting.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.world.entity.BlockAttachedEntity import BlockAttachedEntity
@@ -13,7 +12,6 @@ if TYPE_CHECKING:
     from generated_symbols.util.direction.HorizontalDirectionByte import HorizontalDirectionByte
 
 
-@dataclass(kw_only=True)
 class Painting(BlockAttachedEntity):
     facing: HorizontalDirectionByte | None = None  # Direction it is facing.
     variant: Annotated[str, IdSpec(registry='painting_variant')] | None = None  # Type of painting.

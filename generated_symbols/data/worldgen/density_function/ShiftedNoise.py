@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::worldgen::density_function::Shifte
 Local link to file: generated_symbols/data/worldgen/density_function/ShiftedNoise.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.data.worldgen.density_function.Noise import Noise
@@ -12,7 +11,6 @@ if TYPE_CHECKING:
     from generated_symbols.data.worldgen.density_function.DensityFunctionRef import DensityFunctionRef
 
 
-@dataclass(kw_only=True)
 class ShiftedNoise(Noise):
     shift_x: DensityFunctionRef
     shift_y: DensityFunctionRef

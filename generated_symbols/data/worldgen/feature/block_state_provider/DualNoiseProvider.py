@@ -3,10 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::feature::block_state_pro
 Local link to file: generated_symbols/data/worldgen/feature/block_state_provider/DualNoiseProvider.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.data.worldgen.feature.block_state_provider.BaseNoiseProvider import BaseNoiseProvider
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.dimension.biome_source.NoiseParameters import NoiseParameters
@@ -14,11 +14,10 @@ if TYPE_CHECKING:
     from generated_symbols.util.block_state.BlockState import BlockState
 
 
-@dataclass(kw_only=True)
 class DualNoiseProvider(BaseNoiseProvider):
-    variety: InclusiveRange[Annotated[int, 'Range | `1`-`64` | both inclusive']] | Annotated[int, 'Range | `1`-`64` | both inclusive']
+    variety: InclusiveRange[Annotated[int, Field(ge=1, le=64)]] | Annotated[int, Field(ge=1, le=64)]
     slow_noise: NoiseParameters
-    slow_scale: Annotated[float, 'Range | `0` and above | inclusive']
+    slow_scale: Annotated[float, Field(ge=0)]
     states: list[BlockState]
 
 

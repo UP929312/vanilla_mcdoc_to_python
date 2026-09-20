@@ -3,12 +3,9 @@ Generated from symbols.json for ::java::world::item::book::WritableBook
 Local link to file: generated_symbols/world/item/book/WritableBook.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.world.item.ItemBase import ItemBase
 
 
-@dataclass(kw_only=True)
 class WritableBook(ItemBase):
     pages: list[str] | None = None
 

@@ -3,15 +3,12 @@ Generated from symbols.json for ::java::data::advancement::trigger::EnchantedIte
 Local link to file: generated_symbols/data/advancement/trigger/EnchantedItemTrigger.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.data.advancement.predicate.ItemPredicate import ItemPredicate
 from generated_symbols.data.advancement.trigger.AllOptional import AllOptional
 from generated_symbols.data.advancement.trigger.PlayerConditions import PlayerConditions
 from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
 
 
-@dataclass(kw_only=True)
 class EnchantedItemTriggerTypeArg(PlayerConditions):
     item: ItemPredicate | None = None
     levels: MinMaxBounds[int] | int | None = None

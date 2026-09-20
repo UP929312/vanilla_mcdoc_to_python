@@ -3,22 +3,23 @@ Generated from symbols.json for ::java::data::worldgen::dimension::biome_source:
 Local link to file: generated_symbols/data/worldgen/dimension/biome_source/ClimateParameters.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.dimension.biome_source.ClimateParameter import ClimateParameter
 
 
-@dataclass(kw_only=True)
-class ClimateParameters:
+class ClimateParameters(GeneratedModel):
     temperature: ClimateParameter
     humidity: ClimateParameter
     continentalness: ClimateParameter
     erosion: ClimateParameter
     weirdness: ClimateParameter
     depth: ClimateParameter
-    offset: Annotated[float, 'Range | `0`-`1` | both inclusive']
+    offset: Annotated[float, Field(ge=0, le=1)]
 
 
 # ~~~ MODEL DUMP ~~~

@@ -3,14 +3,13 @@ Generated from symbols.json for ::java::world::component::item::JukeboxPlayable
 Local link to file: generated_symbols/world/component/item/JukeboxPlayable.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
-class JukeboxPlayable:
+class JukeboxPlayable(GeneratedModel):
     song: Annotated[str, IdSpec(registry='jukebox_song')]
     show_in_tooltip: bool | None = None
 

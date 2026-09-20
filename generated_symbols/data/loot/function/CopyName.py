@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::loot::function::CopyName
 Local link to file: generated_symbols/data/loot/function/CopyName.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.data.loot.function.Conditions import Conditions
@@ -13,7 +12,6 @@ if TYPE_CHECKING:
     from generated_symbols.data.loot.EntityTarget import EntityTarget
 
 
-@dataclass(kw_only=True)
 class CopyName(Conditions):
     source: EntityTarget | BlockEntityTarget
 

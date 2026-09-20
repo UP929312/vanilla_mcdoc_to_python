@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::block::container::ContainerBase
 Local link to file: generated_symbols/world/block/container/ContainerBase.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
 from generated_symbols.world.block.BlockEntity import BlockEntity
@@ -12,7 +11,6 @@ from generated_symbols.world.block.Nameable import Nameable
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
 class ContainerBase(BlockEntity, Lockable, Nameable):
     LootTable: Annotated[str, IdSpec(registry='loot_table', empty='allowed')] | None = None  # Loot table that will populate this container.
     LootTableSeed: int | None = None  # Seed of the loot table.

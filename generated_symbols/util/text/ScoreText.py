@@ -3,19 +3,17 @@ Generated from symbols.json for ::java::util::text::ScoreText
 Local link to file: generated_symbols/util/text/ScoreText.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Literal
 
+from generated_symbols.base import GeneratedModel
 from generated_symbols.util.text.TextBase import TextBase
 
 
-@dataclass(kw_only=True)
-class ScoreStruct:
+class ScoreStruct(GeneratedModel):
     objective: str
     name: str
 
 
-@dataclass(kw_only=True)
 class ScoreText(TextBase):
     score: ScoreStruct
     type: Literal['score'] = 'score'

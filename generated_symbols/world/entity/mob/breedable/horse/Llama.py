@@ -3,18 +3,17 @@ Generated from symbols.json for ::java::world::entity::mob::breedable::horse::Ll
 Local link to file: generated_symbols/world/entity/mob/breedable/horse/Llama.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.world.entity.mob.breedable.horse.ChestedHorse import ChestedHorse
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.world.entity.mob.breedable.horse.LlamaVariantInt import LlamaVariantInt
 
 
-@dataclass(kw_only=True)
 class Llama(ChestedHorse):
-    Strength: Annotated[int, 'Range | `1`-`5` | both inclusive'] | None = None  # Determines both the number of items it can carry and how likely it is for wolves to run away.
+    Strength: Annotated[int, Field(ge=1, le=5)] | None = None  # Determines both the number of items it can carry and how likely it is for wolves to run away.
     Variant: LlamaVariantInt | None = None  # The variant of this llama.
 
 

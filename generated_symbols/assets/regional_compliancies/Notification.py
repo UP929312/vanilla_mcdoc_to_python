@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::assets::regional_compliancies::Notificat
 Local link to file: generated_symbols/assets/regional_compliancies/Notification.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class Notification:
+class Notification(GeneratedModel):
     delay: int | None = None
     period: int
     title: str

@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::feature::block_predicate
 Local link to file: generated_symbols/data/worldgen/feature/block_predicate/UnobstructedPredicate.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class UnobstructedPredicate:
+class UnobstructedPredicate(GeneratedModel):
     offset: tuple[int, int, int] | None = None
 
 

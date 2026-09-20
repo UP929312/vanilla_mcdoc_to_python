@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::util::particle::DragonBreathParticle
 Local link to file: generated_symbols/util/particle/DragonBreathParticle.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class DragonBreathParticle:
+class DragonBreathParticle(GeneratedModel):
     power: float | None = None  # Multiplier of initial velocity. Defaults to 1.0
 
 

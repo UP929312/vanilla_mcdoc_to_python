@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::entity::minecart::SpawnerMinecart
 Local link to file: generated_symbols/world/entity/minecart/SpawnerMinecart.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.world.entity.minecart.Minecart import Minecart
@@ -13,7 +12,6 @@ if TYPE_CHECKING:
     from generated_symbols.world.block.spawner.SpawnerEntry import SpawnerEntry
 
 
-@dataclass(kw_only=True)
 class SpawnerMinecart(Minecart):
     SpawnPotentials: list[SpawnPotential] | None = None  # List of potential entities to place next.
     SpawnData: SpawnerEntry | None = None  # Data for the next mob to place. Will be overwritten by `SpawnPotentials`.

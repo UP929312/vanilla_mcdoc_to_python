@@ -3,9 +3,9 @@ Generated from symbols.json for ::java::data::advancement::predicate::PreCompone
 Local link to file: generated_symbols/data/advancement/predicate/PreComponentsItemPredicate.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
@@ -14,8 +14,7 @@ if TYPE_CHECKING:
     from generated_symbols.registry.KnownItemId import KnownItemId
 
 
-@dataclass(kw_only=True)
-class PreComponentsItemPredicate:
+class PreComponentsItemPredicate(GeneratedModel):
     items: list[Annotated[str, IdSpec(registry='item')] | KnownItemId] | None = None
     tag: Annotated[str, IdSpec(registry='item', tags='implicit')] | KnownItemId | None = None
     durability: MinMaxBounds[int] | int | None = None

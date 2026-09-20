@@ -3,18 +3,19 @@ Generated from symbols.json for ::java::data::worldgen::processor_list::Capped
 Local link to file: generated_symbols/data/worldgen/processor_list/Capped.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.IntProvider import IntProvider
     from generated_symbols.data.worldgen.processor_list.Processor import Processor
 
 
-@dataclass(kw_only=True)
-class Capped:
+class Capped(GeneratedModel):
     delegate: Processor
-    limit: IntProvider[Annotated[int, 'Range | `0` and above | inclusive']] | Annotated[int, 'Range | `0` and above | inclusive']
+    limit: IntProvider[Annotated[int, Field(ge=0)]] | Annotated[int, Field(ge=0)]
 
 
 # ~~~ MODEL DUMP ~~~

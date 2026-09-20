@@ -3,17 +3,18 @@ Generated from symbols.json for ::java::world::component::item::ApplyEffectsCons
 Local link to file: generated_symbols/world/component/item/ApplyEffectsConsumeEffect.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.effect.MobEffectInstance import MobEffectInstance
 
 
-@dataclass(kw_only=True)
-class ApplyEffectsConsumeEffect:
+class ApplyEffectsConsumeEffect(GeneratedModel):
     effects: list[MobEffectInstance]
-    probability: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None  # Chance the effects will be applied once consumed.
+    probability: Annotated[float, Field(ge=0, le=1)] | None = None  # Chance the effects will be applied once consumed.
 
 
 # ~~~ MODEL DUMP ~~~

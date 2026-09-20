@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::worldgen::attribute::BackgroundMus
 Local link to file: generated_symbols/data/worldgen/attribute/BackgroundMusic.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.biome.BiomeMusic import BiomeMusic
 
 
-@dataclass(kw_only=True)
-class BackgroundMusic:
+class BackgroundMusic(GeneratedModel):
     default: BiomeMusic | None = None  # Default music to play
     underwater: BiomeMusic | None = None  # Overrides default music when underwater
     creative: BiomeMusic | None = None  # Overrides default music when in creative mode

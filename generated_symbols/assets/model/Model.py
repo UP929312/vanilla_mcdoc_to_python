@@ -3,10 +3,11 @@ Generated from symbols.json for ::java::assets::model::Model
 Local link to file: generated_symbols/assets/model/Model.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar, Literal
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.assets.model.CustomizableItemDisplayContext import CustomizableItemDisplayContext
@@ -14,15 +15,13 @@ if TYPE_CHECKING:
     from generated_symbols.assets.model.TextureMaterial import TextureMaterial
 
 
-@dataclass(kw_only=True)
-class DisplayStructValueStruct:
+class DisplayStructValueStruct(GeneratedModel):
     rotation: tuple[float, float, float] | None = None
-    translation: tuple[Annotated[float, 'Range | `-80`-`80` | both inclusive'], Annotated[float, 'Range | `-80`-`80` | both inclusive'], Annotated[float, 'Range | `-80`-`80` | both inclusive']] | None = None
-    scale: tuple[Annotated[float, 'Range | `-4`-`4` | both inclusive'], Annotated[float, 'Range | `-4`-`4` | both inclusive'], Annotated[float, 'Range | `-4`-`4` | both inclusive']] | None = None
+    translation: tuple[Annotated[float, Field(ge=-80, le=80)], Annotated[float, Field(ge=-80, le=80)], Annotated[float, Field(ge=-80, le=80)]] | None = None
+    scale: tuple[Annotated[float, Field(ge=-4, le=4)], Annotated[float, Field(ge=-4, le=4)], Annotated[float, Field(ge=-4, le=4)]] | None = None
 
 
-@dataclass(kw_only=True)
-class Model:
+class Model(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'model'
 
     parent: Annotated[str, IdSpec(registry='model')] | None = None

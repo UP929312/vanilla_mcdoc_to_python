@@ -3,15 +3,14 @@ Generated from symbols.json for ::java::util::memory::SnifferExploredPositions
 Local link to file: generated_symbols/util/memory/SnifferExploredPositions.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
 from generated_symbols.util.memory.ExpirableValue import ExpirableValue
+from pydantic import Field
 
 
-@dataclass(kw_only=True)
 class SnifferExploredPositions(ExpirableValue):
-    value: Annotated[list[tuple[int, int, int]], 'Length = up to 20 (inclusive)']  # Last 20 block positions that the sniffer has dug up. The sniffer will not dig in these positions.
+    value: Annotated[list[tuple[int, int, int]], Field(max_length=20)]  # Last 20 block positions that the sniffer has dug up. The sniffer will not dig in these positions.
 
 
 # ~~~ MODEL DUMP ~~~

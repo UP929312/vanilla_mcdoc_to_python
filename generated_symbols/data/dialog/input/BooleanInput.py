@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::dialog::input::BooleanInput
 Local link to file: generated_symbols/data/dialog/input/BooleanInput.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.util.text.Text import Text
 
 
-@dataclass(kw_only=True)
-class BooleanInput:
+class BooleanInput(GeneratedModel):
     label: Text  # Label displayed to the right of control.
     initial: bool | None = None  # Initial value of the control. Defaults to `false` (unchecked).
     on_true: str | None = None  # String to send when the control is checked. Defaults to `"true"`.

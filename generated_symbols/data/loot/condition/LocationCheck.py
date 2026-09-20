@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::loot::condition::LocationCheck
 Local link to file: generated_symbols/data/loot/condition/LocationCheck.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.advancement.predicate.LocationPredicate import LocationPredicate
 
 
-@dataclass(kw_only=True)
-class LocationCheck:
+class LocationCheck(GeneratedModel):
     offsetX: int | None = None
     offsetY: int | None = None
     offsetZ: int | None = None

@@ -3,10 +3,11 @@ Generated from symbols.json for ::java::data::worldgen::feature::RootSystemConfi
 Local link to file: generated_symbols/data/worldgen/feature/RootSystemConfig.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.FeatureRef import FeatureRef
@@ -15,20 +16,19 @@ if TYPE_CHECKING:
     from generated_symbols.registry.KnownBlockId import KnownBlockId
 
 
-@dataclass(kw_only=True)
-class RootSystemConfig:
+class RootSystemConfig(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/feature'
 
-    required_vertical_space_for_tree: Annotated[int, 'Range | `1`-`64` | both inclusive']
-    level_test_distance: Annotated[int, 'Range | `0`-`16` | both inclusive']
-    max_level_deviation: Annotated[int, 'Range | `0`-`64` | both inclusive']
-    root_radius: Annotated[int, 'Range | `1`-`64` | both inclusive']
-    root_placement_attempts: Annotated[int, 'Range | `1`-`256` | both inclusive']
-    root_column_max_height: Annotated[int, 'Range | `1`-`4096` | both inclusive']
-    hanging_root_radius: Annotated[int, 'Range | `1`-`64` | both inclusive']
-    hanging_roots_vertical_span: Annotated[int, 'Range | `1`-`16` | both inclusive']
-    hanging_root_placement_attempts: Annotated[int, 'Range | `0`-`256` | both inclusive']
-    allowed_vertical_water_for_tree: Annotated[int, 'Range | `1`-`64` | both inclusive']
+    required_vertical_space_for_tree: Annotated[int, Field(ge=1, le=64)]
+    level_test_distance: Annotated[int, Field(ge=0, le=16)]
+    max_level_deviation: Annotated[int, Field(ge=0, le=64)]
+    root_radius: Annotated[int, Field(ge=1, le=64)]
+    root_placement_attempts: Annotated[int, Field(ge=1, le=256)]
+    root_column_max_height: Annotated[int, Field(ge=1, le=4096)]
+    hanging_root_radius: Annotated[int, Field(ge=1, le=64)]
+    hanging_roots_vertical_span: Annotated[int, Field(ge=1, le=16)]
+    hanging_root_placement_attempts: Annotated[int, Field(ge=0, le=256)]
+    allowed_vertical_water_for_tree: Annotated[int, Field(ge=1, le=64)]
     root_replaceable: Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | list[Annotated[str, IdSpec(registry='block')] | KnownBlockId]
     root_state_provider: BlockStateProvider
     hanging_root_state_provider: BlockStateProvider

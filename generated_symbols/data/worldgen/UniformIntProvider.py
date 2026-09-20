@@ -3,14 +3,14 @@ Generated from symbols.json for ::java::data::worldgen::UniformIntProvider
 Local link to file: generated_symbols/data/worldgen/UniformIntProvider.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Generic, TypeVar
+
+from generated_symbols.base import GeneratedModel
 
 
 T = TypeVar('T')
 
-@dataclass(kw_only=True)
-class UniformIntProvider(Generic[T]):
+class UniformIntProvider(GeneratedModel, Generic[T]):
     min_inclusive: T
     max_inclusive: T
 

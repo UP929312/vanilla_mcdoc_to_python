@@ -3,15 +3,16 @@ Generated from symbols.json for ::java::data::worldgen::feature::GeodeCrackSetti
 Local link to file: generated_symbols/data/worldgen/feature/GeodeCrackSettings.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class GeodeCrackSettings:
-    generate_crack_chance: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None
-    base_crack_size: Annotated[float, 'Range | `0`-`5` | both inclusive'] | None = None
-    crack_point_offset: Annotated[int, 'Range | `0`-`10` | both inclusive'] | None = None
+
+class GeodeCrackSettings(GeneratedModel):
+    generate_crack_chance: Annotated[float, Field(ge=0, le=1)] | None = None
+    base_crack_size: Annotated[float, Field(ge=0, le=5)] | None = None
+    crack_point_offset: Annotated[int, Field(ge=0, le=10)] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

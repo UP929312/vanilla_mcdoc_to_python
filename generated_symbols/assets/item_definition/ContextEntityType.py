@@ -3,14 +3,12 @@ Generated from symbols.json for ::java::assets::item_definition::ContextEntityTy
 Local link to file: generated_symbols/assets/item_definition/ContextEntityType.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
 from generated_symbols.assets.item_definition.SelectCases import SelectCases
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
 class ContextEntityType(SelectCases[Annotated[str, IdSpec(registry='entity_type')]]):
     pass
 

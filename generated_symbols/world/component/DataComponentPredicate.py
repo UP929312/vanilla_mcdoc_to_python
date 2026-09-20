@@ -3,9 +3,9 @@ Generated from symbols.json for ::java::world::component::DataComponentPredicate
 Local link to file: generated_symbols/world/component/DataComponentPredicate.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
@@ -24,8 +24,7 @@ if TYPE_CHECKING:
     from generated_symbols.world.component.predicate.WrittenBookPredicate import WrittenBookPredicate
 
 
-@dataclass(kw_only=True)
-class DataComponentPredicateValueStructDataComponentExistencePredicateUnknown:
+class DataComponentPredicateValueStructDataComponentExistencePredicateUnknown(GeneratedModel):
     pass
 
 

@@ -5,8 +5,10 @@ Local link to file: generated_symbols/world/entity/mob/player/PlayerSlot.py
 # ~~~ CODE ~~~
 from typing import Annotated
 
+from pydantic import Field
 
-type PlayerSlot = Annotated[int, 'Range | `0`-`35` | both inclusive']
+
+type PlayerSlot = Annotated[int, Field(ge=0, le=35)]
 
 
 # ~~~ MODEL DUMP ~~~

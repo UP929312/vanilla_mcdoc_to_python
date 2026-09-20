@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::variants::chicken::ChickenVariant
 Local link to file: generated_symbols/data/variants/chicken/ChickenVariant.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from generated_symbols.data.variants.SpawnPrioritySelectors import SpawnPrioritySelectors
@@ -13,7 +12,6 @@ if TYPE_CHECKING:
     from generated_symbols.data.variants.chicken.ChickenModelType import ChickenModelType
 
 
-@dataclass(kw_only=True)
 class ChickenVariant(SpawnPrioritySelectors):
     __resource_dir__: ClassVar[str] = 'chicken_variant'
 

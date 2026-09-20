@@ -3,13 +3,14 @@ Generated from symbols.json for ::java::data::timeline::TimeMarker
 Local link to file: generated_symbols/data/timeline/TimeMarker.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class TimeMarker:
-    ticks: Annotated[int, 'Range | `0` and above | inclusive']
+
+class TimeMarker(GeneratedModel):
+    ticks: Annotated[int, Field(ge=0)]
     show_in_commands: bool | None = None  # Whether the time marker shows up in command suggestions.  The time marker is still available in commands even if it is not suggested.  Defaults to `false`.
 
 

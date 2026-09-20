@@ -3,19 +3,20 @@ Generated from symbols.json for ::java::data::worldgen::density_function::Inverv
 Local link to file: generated_symbols/data/worldgen/density_function/InvervalSelect.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.density_function.DensityFunctionRef import DensityFunctionRef
     from generated_symbols.data.worldgen.density_function.NoiseRange import NoiseRange
 
 
-@dataclass(kw_only=True)
-class InvervalSelect:
+class InvervalSelect(GeneratedModel):
     input: DensityFunctionRef
-    thresholds: Annotated[list[NoiseRange], 'Length = 1 (inclusive) and above']  # Must have exactly one fewer element than `functions`.
-    functions: Annotated[list[DensityFunctionRef], 'Length = 2 (inclusive) and above']  # Must have exactly one more element than `thresholds`.
+    thresholds: Annotated[list[NoiseRange], Field(min_length=1)]  # Must have exactly one fewer element than `functions`.
+    functions: Annotated[list[DensityFunctionRef], Field(min_length=2)]  # Must have exactly one more element than `thresholds`.
 
 
 # ~~~ MODEL DUMP ~~~

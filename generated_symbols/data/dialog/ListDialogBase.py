@@ -3,8 +3,10 @@ Generated from symbols.json for ::java::data::dialog::ListDialogBase
 Local link to file: generated_symbols/data/dialog/ListDialogBase.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Literal
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.dialog.AfterAction import AfterAction
@@ -14,10 +16,9 @@ if TYPE_CHECKING:
     from generated_symbols.util.text.Text import Text
 
 
-@dataclass(kw_only=True)
-class ListDialogBaseNone:
+class ListDialogBaseNone(GeneratedModel):
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
-    columns: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
+    columns: Annotated[int, Field(ge=1)] | None = None  # The number of columns. Defaults to 2.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None
@@ -27,10 +28,9 @@ class ListDialogBaseNone:
     pause: bool | None = None  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.
 
 
-@dataclass(kw_only=True)
-class ListDialogBaseClose:
+class ListDialogBaseClose(GeneratedModel):
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
-    columns: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
+    columns: Annotated[int, Field(ge=1)] | None = None  # The number of columns. Defaults to 2.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None
@@ -40,10 +40,9 @@ class ListDialogBaseClose:
     pause: bool | None = None  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.
 
 
-@dataclass(kw_only=True)
-class ListDialogBaseNone2:
+class ListDialogBaseNone2(GeneratedModel):
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
-    columns: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
+    columns: Annotated[int, Field(ge=1)] | None = None  # The number of columns. Defaults to 2.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None
@@ -53,10 +52,9 @@ class ListDialogBaseNone2:
     pause: Literal[False] = False  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.  The currently selected `after_action` only supports the value `false`
 
 
-@dataclass(kw_only=True)
-class ListDialogBaseWaitForResponse:
+class ListDialogBaseWaitForResponse(GeneratedModel):
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
-    columns: Annotated[int, 'Range | `1` and above | inclusive'] | None = None  # The number of columns. Defaults to 2.
+    columns: Annotated[int, Field(ge=1)] | None = None  # The number of columns. Defaults to 2.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None

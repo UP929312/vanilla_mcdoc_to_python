@@ -3,15 +3,14 @@ Generated from symbols.json for ::java::assets::block_state_definition::Weighted
 Local link to file: generated_symbols/assets/block_state_definition/WeightedModelVariant.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
 from generated_symbols.assets.block_state_definition.ModelVariantBase import ModelVariantBase
+from pydantic import Field
 
 
-@dataclass(kw_only=True)
 class WeightedModelVariant(ModelVariantBase):
-    weight: Annotated[int, 'Range | `1` and above | inclusive'] | None = None
+    weight: Annotated[int, Field(ge=1)] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

@@ -3,16 +3,17 @@ Generated from symbols.json for ::java::world::component::item::Fireworks
 Local link to file: generated_symbols/world/component/item/Fireworks.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.world.component.item.Explosion import Explosion
 
 
-@dataclass(kw_only=True)
-class Fireworks:
-    explosions: Annotated[list[Explosion], 'Length = 0-256 (both inclusive)'] | None = None
+class Fireworks(GeneratedModel):
+    explosions: Annotated[list[Explosion], Field(min_length=0, max_length=256)] | None = None
     flight_duration: int | None = None
 
 

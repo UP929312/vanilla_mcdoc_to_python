@@ -3,12 +3,9 @@ Generated from symbols.json for ::java::assets::item_definition::BlockState
 Local link to file: generated_symbols/assets/item_definition/BlockState.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.assets.item_definition.SelectCases import SelectCases
 
 
-@dataclass(kw_only=True)
 class BlockState(SelectCases[str]):
     block_state_property: str
 

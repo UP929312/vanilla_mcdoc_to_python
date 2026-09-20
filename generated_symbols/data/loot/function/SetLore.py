@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::loot::function::SetLore
 Local link to file: generated_symbols/data/loot/function/SetLore.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Literal
 
 from generated_symbols.data.loot.function.Conditions import Conditions
@@ -15,28 +14,24 @@ if TYPE_CHECKING:
     from generated_symbols.util.text.Text import Text
 
 
-@dataclass(kw_only=True)
 class SetLoreAppend(Conditions):
     entity: EntityTarget | None = None  # The entity used to resolve the text components.
     lore: list[Text]
     mode: Literal['minecraft:append'] = 'minecraft:append'  # Determines how the existing list should be modified.
 
 
-@dataclass(kw_only=True)
 class SetLoreInsert(Conditions, InsertListOperation):
     entity: EntityTarget | None = None  # The entity used to resolve the text components.
     lore: list[Text]
     mode: Literal['minecraft:insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
 
 
-@dataclass(kw_only=True)
 class SetLoreReplaceAll(Conditions):
     entity: EntityTarget | None = None  # The entity used to resolve the text components.
     lore: list[Text]
     mode: Literal['minecraft:replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
 
 
-@dataclass(kw_only=True)
 class SetLoreReplaceSection(Conditions, ReplaceSectionListOperation):
     entity: EntityTarget | None = None  # The entity used to resolve the text components.
     lore: list[Text]

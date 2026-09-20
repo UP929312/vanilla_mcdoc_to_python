@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::assets::model::SingleAxisModelElementRot
 Local link to file: generated_symbols/assets/model/SingleAxisModelElementRotation.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.assets.model.ModelElementRotationBase import ModelElementRotationBase
@@ -12,7 +11,6 @@ if TYPE_CHECKING:
     from generated_symbols.util.direction.Axis import Axis
 
 
-@dataclass(kw_only=True)
 class SingleAxisModelElementRotation(ModelElementRotationBase):
     axis: Axis
     angle: float

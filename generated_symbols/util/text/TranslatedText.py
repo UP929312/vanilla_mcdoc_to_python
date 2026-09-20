@@ -3,20 +3,19 @@ Generated from symbols.json for ::java::util::text::TranslatedText
 Local link to file: generated_symbols/util/text/TranslatedText.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Literal
 
 from generated_symbols.util.text.TextBase import TextBase
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.text.Text import Text
 
 
-@dataclass(kw_only=True)
 class TranslatedText(TextBase):
     translate: str
     fallback: str | None = None
-    with_: Annotated[list[Text], 'Length = 1 (inclusive) and above'] | None = None
+    with_: Annotated[list[Text], Field(min_length=1)] | None = None
     type: Literal['translatable'] = 'translatable'
 
 

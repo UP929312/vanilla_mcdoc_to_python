@@ -3,9 +3,9 @@ Generated from symbols.json for ::java::data::worldgen::biome::NaturalMobSpawns
 Local link to file: generated_symbols/data/worldgen/biome/NaturalMobSpawns.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
@@ -14,8 +14,7 @@ if TYPE_CHECKING:
     from generated_symbols.registry.KnownEntityId import KnownEntityId
 
 
-@dataclass(kw_only=True)
-class NaturalMobSpawns:
+class NaturalMobSpawns(GeneratedModel):
     spawns_by_category: SpawnerDataMap
     spawn_costs: dict[Annotated[str, IdSpec(registry='entity')] | KnownEntityId, MobSpawnCost]
 

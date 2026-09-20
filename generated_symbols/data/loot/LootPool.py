@@ -3,8 +3,9 @@ Generated from symbols.json for ::java::data::loot::LootPool
 Local link to file: generated_symbols/data/loot/LootPool.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.item_modifier.ItemModifier import ItemModifier
@@ -13,8 +14,7 @@ if TYPE_CHECKING:
     from generated_symbols.data.predicate.PredicateRef import PredicateRef
 
 
-@dataclass(kw_only=True)
-class LootPool:
+class LootPool(GeneratedModel):
     rolls: NumberProviderRef
     bonus_rolls: NumberProviderRef | None = None
     entries: list[LootPoolEntry]

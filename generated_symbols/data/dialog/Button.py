@@ -3,19 +3,20 @@ Generated from symbols.json for ::java::data::dialog::Button
 Local link to file: generated_symbols/data/dialog/Button.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.dialog.action.ClickAction import ClickAction
     from generated_symbols.util.text.Text import Text
 
 
-@dataclass(kw_only=True)
-class Button:
+class Button(GeneratedModel):
     label: Text
     tooltip: Text | None = None
-    width: Annotated[int, 'Range | `1`-`1024` | both inclusive'] | None = None  # Width of the button. Defaults to 150.
+    width: Annotated[int, Field(ge=1, le=1024)] | None = None  # Width of the button. Defaults to 150.
     action: ClickAction | None = None  # If not present, clicking button will simply close dialog without any action.
 
 

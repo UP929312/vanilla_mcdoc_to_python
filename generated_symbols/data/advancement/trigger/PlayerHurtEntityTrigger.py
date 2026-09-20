@@ -3,15 +3,12 @@ Generated from symbols.json for ::java::data::advancement::trigger::PlayerHurtEn
 Local link to file: generated_symbols/data/advancement/trigger/PlayerHurtEntityTrigger.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.data.advancement.predicate.DamagePredicate import DamagePredicate
 from generated_symbols.data.advancement.trigger.AdvancementEntityPredicate import AdvancementEntityPredicate
 from generated_symbols.data.advancement.trigger.AllOptional import AllOptional
 from generated_symbols.data.advancement.trigger.PlayerConditions import PlayerConditions
 
 
-@dataclass(kw_only=True)
 class PlayerHurtEntityTriggerTypeArg(PlayerConditions):
     damage: DamagePredicate | None = None
     entity: AdvancementEntityPredicate | None = None  # Predicate context: Advancement Entity.

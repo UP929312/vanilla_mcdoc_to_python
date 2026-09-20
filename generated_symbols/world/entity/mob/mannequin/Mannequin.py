@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::world::entity::mob::mannequin::Mannequin
 Local link to file: generated_symbols/world/entity/mob/mannequin/Mannequin.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from generated_symbols.world.entity.mob.LivingEntity import LivingEntity
@@ -17,7 +16,6 @@ if TYPE_CHECKING:
     from generated_symbols.world.entity.mob.mannequin.MannequinPose import MannequinPose
 
 
-@dataclass(kw_only=True)
 class Mannequin(LivingEntity):
     profile: Profile | None = None
     hidden_layers: list[PlayerModelPart] | None = None

@@ -3,8 +3,9 @@ Generated from symbols.json for ::java::data::worldgen::density_function::Terrai
 Local link to file: generated_symbols/data/worldgen/density_function/TerrainShaperSpline.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.density_function.DensityFunctionRef import DensityFunctionRef
@@ -12,8 +13,7 @@ if TYPE_CHECKING:
     from generated_symbols.data.worldgen.density_function.SplineType import SplineType
 
 
-@dataclass(kw_only=True)
-class TerrainShaperSpline:
+class TerrainShaperSpline(GeneratedModel):
     spline: SplineType
     min_value: NoiseRange
     max_value: NoiseRange

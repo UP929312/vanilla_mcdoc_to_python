@@ -3,8 +3,9 @@ Generated from symbols.json for ::java::world::item::ItemBase
 Local link to file: generated_symbols/world/item/ItemBase.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Any
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.world.component.item.Trim import Trim
@@ -13,8 +14,7 @@ if TYPE_CHECKING:
     from generated_symbols.world.item.Enchantment import Enchantment
 
 
-@dataclass(kw_only=True)
-class ItemBase:
+class ItemBase(GeneratedModel):
     Damage: int | None = None  # Damage that an item has. Only used for tools, armor, etc.
     Unbreakable: bool | None = None  # Whether the item should be unbreakable. Only used for tools, armor, etc.
     CanDestroy: list[str] | None = None  # List of the block states that can be destroyed by this item when holding it in adventure mode.

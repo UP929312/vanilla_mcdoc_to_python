@@ -3,17 +3,18 @@ Generated from symbols.json for ::java::data::worldgen::feature::tree::AboveRoot
 Local link to file: generated_symbols/data/worldgen/feature/tree/AboveRootPlacement.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
 
 
-@dataclass(kw_only=True)
-class AboveRootPlacement:
+class AboveRootPlacement(GeneratedModel):
     above_root_provider: BlockStateProvider
-    above_root_placement_chance: Annotated[float, 'Range | `0`-`1` | both inclusive']
+    above_root_placement_chance: Annotated[float, Field(ge=0, le=1)]
 
 
 # ~~~ MODEL DUMP ~~~

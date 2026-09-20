@@ -3,12 +3,9 @@ Generated from symbols.json for ::java::world::entity::mob::tadpole::Tadpole
 Local link to file: generated_symbols/world/entity/mob/tadpole/Tadpole.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.world.entity.mob.MobBase import MobBase
 
 
-@dataclass(kw_only=True)
 class Tadpole(MobBase):
     Age: int | None = None  # Age of it in ticks. When greater than or equal to 24000, it grows into a frog.
     FromBucket: bool | None = None  # If it was released from a bucket.

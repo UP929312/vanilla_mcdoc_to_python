@@ -3,16 +3,16 @@ Generated from symbols.json for ::java::data::number_provider::ConditionalNumber
 Local link to file: generated_symbols/data/number_provider/ConditionalNumberProvider.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.number_provider.NumberProviderRef import NumberProviderRef
     from generated_symbols.data.predicate.PredicateRef import PredicateRef
 
 
-@dataclass(kw_only=True)
-class ConditionalNumberProvider:
+class ConditionalNumberProvider(GeneratedModel):
     condition: PredicateRef
     on_true: NumberProviderRef
     on_false: NumberProviderRef | None = None  # Defaults to constant 0.

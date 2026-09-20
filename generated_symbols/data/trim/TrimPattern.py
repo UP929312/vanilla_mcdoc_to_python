@@ -3,17 +3,16 @@ Generated from symbols.json for ::java::data::trim::TrimPattern
 Local link to file: generated_symbols/data/trim/TrimPattern.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.util.text.Text import Text
 
 
-@dataclass(kw_only=True)
-class TrimPattern:
+class TrimPattern(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'trim_pattern'
 
     asset_id: Annotated[str, IdSpec()]  # ID of the pattern that will be used in the resource pack as an overlay on the armor.  The texture is located under `trims/entity/<layer>/`.

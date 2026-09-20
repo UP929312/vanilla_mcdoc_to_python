@@ -3,7 +3,6 @@ Generated from symbols.json for ::java::data::dialog::action::ClickAction
 Local link to file: generated_symbols/data/dialog/action/ClickAction.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Literal
 
 from generated_symbols.data.dialog.action.DynamicCustomAction import DynamicCustomAction
@@ -17,47 +16,38 @@ from generated_symbols.util.text.ShowDialog import ShowDialog
 from generated_symbols.util.text.SuggestCommand import SuggestCommand
 
 
-@dataclass(kw_only=True)
 class ClickActionChangePage(ChangePage):
     type: Literal['minecraft:change_page'] = 'minecraft:change_page'
 
 
-@dataclass(kw_only=True)
 class ClickActionCopyToClipboard(CopyToClipboard):
     type: Literal['minecraft:copy_to_clipboard'] = 'minecraft:copy_to_clipboard'
 
 
-@dataclass(kw_only=True)
 class ClickActionCustom(CustomAction):
     type: Literal['minecraft:custom'] = 'minecraft:custom'
 
 
-@dataclass(kw_only=True)
 class ClickActionDynamicCustom(DynamicCustomAction):
     type: Literal['minecraft:dynamic/custom'] = 'minecraft:dynamic/custom'
 
 
-@dataclass(kw_only=True)
 class ClickActionDynamicRunCommand(DynamicRunCommand):
     type: Literal['minecraft:dynamic/run_command'] = 'minecraft:dynamic/run_command'
 
 
-@dataclass(kw_only=True)
 class ClickActionOpenUrl(OpenUrl):
     type: Literal['minecraft:open_url'] = 'minecraft:open_url'
 
 
-@dataclass(kw_only=True)
 class ClickActionRunCommand(RunCommand):
     type: Literal['minecraft:run_command'] = 'minecraft:run_command'
 
 
-@dataclass(kw_only=True)
 class ClickActionShowDialog(ShowDialog):
     type: Literal['minecraft:show_dialog'] = 'minecraft:show_dialog'
 
 
-@dataclass(kw_only=True)
 class ClickActionSuggestCommand(SuggestCommand):
     type: Literal['minecraft:suggest_command'] = 'minecraft:suggest_command'
 

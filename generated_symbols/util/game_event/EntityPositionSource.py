@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::util::game_event::EntityPositionSource
 Local link to file: generated_symbols/util/game_event/EntityPositionSource.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class EntityPositionSource:
+class EntityPositionSource(GeneratedModel):
     source_entity: tuple[int, int, int, int]
     y_offset: float | None = None  # offset from the entity's feet to the source position
 

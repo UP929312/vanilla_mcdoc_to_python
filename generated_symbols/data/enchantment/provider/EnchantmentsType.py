@@ -6,9 +6,10 @@ Local link to file: generated_symbols/data/enchantment/provider/EnchantmentsType
 from typing import Annotated
 
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 
-type EnchantmentsType = Annotated[str, IdSpec(registry='enchantment', tags='allowed')] | Annotated[list[Annotated[str, IdSpec(registry='enchantment')]], 'Length = 1 (inclusive) and above']
+type EnchantmentsType = Annotated[str, IdSpec(registry='enchantment', tags='allowed')] | Annotated[list[Annotated[str, IdSpec(registry='enchantment')]], Field(min_length=1)]
 
 
 # ~~~ MODEL DUMP ~~~

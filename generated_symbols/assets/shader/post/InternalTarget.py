@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::assets::shader::post::InternalTarget
 Local link to file: generated_symbols/assets/shader/post/InternalTarget.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.util.color.RGBA import RGBA
 
 
-@dataclass(kw_only=True)
-class InternalTarget:
+class InternalTarget(GeneratedModel):
     width: int | None = None
     height: int | None = None
     persistent: bool | None = None  # If `true`, target will be persistent across frames. Defaults to `false`. The contents of the target will be cleared when the screen is resized.

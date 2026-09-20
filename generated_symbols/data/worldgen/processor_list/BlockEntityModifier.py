@@ -3,30 +3,26 @@ Generated from symbols.json for ::java::data::worldgen::processor_list::BlockEnt
 Local link to file: generated_symbols/data/worldgen/processor_list/BlockEntityModifier.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Literal
 
+from generated_symbols.base import GeneratedModel
 from generated_symbols.data.worldgen.processor_list.AppendLoot import AppendLoot
 from generated_symbols.data.worldgen.processor_list.AppendStatic import AppendStatic
 
 
-@dataclass(kw_only=True)
 class BlockEntityModifierAppendLoot(AppendLoot):
     type: Literal['minecraft:append_loot'] = 'minecraft:append_loot'
 
 
-@dataclass(kw_only=True)
 class BlockEntityModifierAppendStatic(AppendStatic):
     type: Literal['minecraft:append_static'] = 'minecraft:append_static'
 
 
-@dataclass(kw_only=True)
-class BlockEntityModifierClear:
+class BlockEntityModifierClear(GeneratedModel):
     type: Literal['minecraft:clear'] = 'minecraft:clear'
 
 
-@dataclass(kw_only=True)
-class BlockEntityModifierPassthrough:
+class BlockEntityModifierPassthrough(GeneratedModel):
     type: Literal['minecraft:passthrough'] = 'minecraft:passthrough'
 
 

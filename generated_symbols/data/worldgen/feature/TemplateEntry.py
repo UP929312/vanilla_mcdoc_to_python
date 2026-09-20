@@ -3,17 +3,16 @@ Generated from symbols.json for ::java::data::worldgen::feature::TemplateEntry
 Local link to file: generated_symbols/data/worldgen/feature/TemplateEntry.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.util.Rotation import Rotation
 
 
-@dataclass(kw_only=True)
-class TemplateEntry:
+class TemplateEntry(GeneratedModel):
     id: Annotated[str, IdSpec(registry='structure')]  # The structure template to place.
     rotations: list[Rotation] | None = None  # Rotations to choose from and apply to this template, centered around the origin. If not specified, defaults to all allowed rotations.
 

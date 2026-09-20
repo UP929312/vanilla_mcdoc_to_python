@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::world::component::item::LodestoneTracker
 Local link to file: generated_symbols/world/component/item/LodestoneTracker.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.util.GlobalPos import GlobalPos
 
 
-@dataclass(kw_only=True)
-class LodestoneTracker:
+class LodestoneTracker(GeneratedModel):
     target: GlobalPos | None = None  # Location of the lodestone. Optional. If not set, the compass will spin randomly.
     tracked: bool | None = None  # When `true`, the component is removed when the lodestone is broken. When `false`, the component is kept. Defaults to true.
 

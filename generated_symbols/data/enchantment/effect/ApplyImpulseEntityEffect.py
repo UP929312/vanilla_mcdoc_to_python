@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::enchantment::effect::ApplyImpulseE
 Local link to file: generated_symbols/data/enchantment/effect/ApplyImpulseEntityEffect.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.enchantment.LevelBasedValue import LevelBasedValue
 
 
-@dataclass(kw_only=True)
-class ApplyImpulseEntityEffect:
+class ApplyImpulseEntityEffect(GeneratedModel):
     direction: tuple[float, float, float]  # Impulse direction in local coordinates (the same used by `tp @s ^ ^ ^`).  `[left, upward, forward]`
     coordinate_scale: tuple[float, float, float]  # The multipler to apply to the computed impulse direction.  `[x, y, z]`
     magnitude: LevelBasedValue  # The scale of the impulse.

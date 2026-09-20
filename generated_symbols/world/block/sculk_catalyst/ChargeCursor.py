@@ -3,19 +3,20 @@ Generated from symbols.json for ::java::world::block::sculk_catalyst::ChargeCurs
 Local link to file: generated_symbols/world/block/sculk_catalyst/ChargeCursor.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.direction.Direction import Direction
 
 
-@dataclass(kw_only=True)
-class ChargeCursor:
+class ChargeCursor(GeneratedModel):
     pos: tuple[int, int, int]
-    charge: Annotated[int, 'Range | `0`-`1000` | both inclusive'] | None = None
-    decay_delay: Annotated[int, 'Range | `0`-`1` | both inclusive'] | None = None
-    update_delay: Annotated[int, 'Range | `0` and above | inclusive'] | None = None
+    charge: Annotated[int, Field(ge=0, le=1000)] | None = None
+    decay_delay: Annotated[int, Field(ge=0, le=1)] | None = None
+    update_delay: Annotated[int, Field(ge=0)] | None = None
     facings: list[Direction] | None = None
 
 

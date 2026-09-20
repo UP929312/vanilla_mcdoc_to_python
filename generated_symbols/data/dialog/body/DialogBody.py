@@ -3,19 +3,16 @@ Generated from symbols.json for ::java::data::dialog::body::DialogBody
 Local link to file: generated_symbols/data/dialog/body/DialogBody.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Literal
 
 from generated_symbols.data.dialog.body.ItemBody import ItemBody
 from generated_symbols.data.dialog.body.PlainMessage import PlainMessage
 
 
-@dataclass(kw_only=True)
 class DialogBodyItem(ItemBody):
     type: Literal['minecraft:item'] = 'minecraft:item'
 
 
-@dataclass(kw_only=True)
 class DialogBodyPlainMessage(PlainMessage):
     type: Literal['minecraft:plain_message'] = 'minecraft:plain_message'
 

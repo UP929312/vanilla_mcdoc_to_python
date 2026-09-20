@@ -3,13 +3,14 @@ Generated from symbols.json for ::java::data::worldgen::feature::tree::CreakingH
 Local link to file: generated_symbols/data/worldgen/feature/tree/CreakingHeartTreeDecorator.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class CreakingHeartTreeDecorator:
-    probability: Annotated[float, 'Range | `0`-`1` | both inclusive']
+
+class CreakingHeartTreeDecorator(GeneratedModel):
+    probability: Annotated[float, Field(ge=0, le=1)]
 
 
 # ~~~ MODEL DUMP ~~~

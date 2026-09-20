@@ -3,19 +3,20 @@ Generated from symbols.json for ::java::util::effect::OldMobEffect
 Local link to file: generated_symbols/util/effect/OldMobEffect.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, Literal
+
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.effect.EffectId import EffectId
     from generated_symbols.util.effect.MobEffectInstance import MobEffectInstance
 
 
-@dataclass(kw_only=True)
-class OldMobEffect:
+class OldMobEffect(GeneratedModel):
     Id: EffectId | None = None
-    Amplifier: int | Annotated[int, 'Range | `0`-`255` | both inclusive'] | None = None
-    Duration: Annotated[int, 'Range | `1` and above | inclusive'] | Literal[-1] | None = None  # Duration of the effect in ticks. Infinite is represented by `-1`.
+    Amplifier: int | Annotated[int, Field(ge=0, le=255)] | None = None
+    Duration: Annotated[int, Field(ge=1)] | Literal[-1] | None = None  # Duration of the effect in ticks. Infinite is represented by `-1`.
     Ambient: bool | None = None  # Whether particles are semi-transparent. (like with a Beacon)
     ShowParticles: bool | None = None  # Whether particles should be shown.
     ShowIcon: bool | None = None  # Whether the effect icon should be shown.

@@ -3,19 +3,16 @@ Generated from symbols.json for ::java::data::worldgen::processor_list::PosRuleT
 Local link to file: generated_symbols/data/worldgen/processor_list/PosRuleTest.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Literal
 
 from generated_symbols.data.worldgen.processor_list.AxisAlignedLinearPos import AxisAlignedLinearPos
 from generated_symbols.data.worldgen.processor_list.LinearPos import LinearPos
 
 
-@dataclass(kw_only=True)
 class PosRuleTestAxisAlignedLinearPos(AxisAlignedLinearPos):
     predicate_type: Literal['minecraft:axis_aligned_linear_pos'] = 'minecraft:axis_aligned_linear_pos'
 
 
-@dataclass(kw_only=True)
 class PosRuleTestLinearPos(LinearPos):
     predicate_type: Literal['minecraft:linear_pos'] = 'minecraft:linear_pos'
 

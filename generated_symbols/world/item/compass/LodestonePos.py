@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::world::item::compass::LodestonePos
 Local link to file: generated_symbols/world/item/compass/LodestonePos.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class LodestonePos:
+class LodestonePos(GeneratedModel):
     X: int | None = None
     Y: int | None = None
     Z: int | None = None

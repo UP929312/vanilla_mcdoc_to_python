@@ -3,16 +3,16 @@ Generated from symbols.json for ::java::data::worldgen::density_function::Noise
 Local link to file: generated_symbols/data/worldgen/density_function/Noise.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.density_function.DensityFunctionRef import DensityFunctionRef
     from generated_symbols.data.worldgen.density_function.NoiseParametersRef import NoiseParametersRef
 
 
-@dataclass(kw_only=True)
-class Noise:
+class Noise(GeneratedModel):
     noise: NoiseParametersRef
     xz_scale: float
     y_scale: float

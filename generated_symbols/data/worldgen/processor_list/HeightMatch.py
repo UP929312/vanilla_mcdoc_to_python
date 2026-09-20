@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::processor_list::HeightMa
 Local link to file: generated_symbols/data/worldgen/processor_list/HeightMatch.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class HeightMatch:
+class HeightMatch(GeneratedModel):
     min_inclusive: int
     max_inclusive: int
 

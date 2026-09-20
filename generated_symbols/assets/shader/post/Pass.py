@@ -3,9 +3,9 @@ Generated from symbols.json for ::java::assets::shader::post::Pass
 Local link to file: generated_symbols/assets/shader/post/Pass.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
@@ -14,8 +14,7 @@ if TYPE_CHECKING:
     from generated_symbols.assets.shader.post.UniformBlocks import UniformBlocks
 
 
-@dataclass(kw_only=True)
-class Pass:
+class Pass(GeneratedModel):
     vertex_shader: Annotated[str, IdSpec(registry='shader/vertex')]
     fragment_shader: Annotated[str, IdSpec(registry='shader/fragment')]
     inputs: list[TargetInput | TextureInput] | None = None

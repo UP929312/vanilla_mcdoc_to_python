@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::advancement::predicate::LocationPr
 Local link to file: generated_symbols/data/advancement/predicate/LocationPredicatePosition.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
 
 
-@dataclass(kw_only=True)
-class LocationPredicatePosition:
+class LocationPredicatePosition(GeneratedModel):
     x: MinMaxBounds[float] | float | None = None
     y: MinMaxBounds[float] | float | None = None
     z: MinMaxBounds[float] | float | None = None

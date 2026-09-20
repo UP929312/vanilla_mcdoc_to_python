@@ -3,12 +3,9 @@ Generated from symbols.json for ::java::world::entity::mob::breedable::hoglin::H
 Local link to file: generated_symbols/world/entity/mob/breedable/hoglin/Hoglin.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-
 from generated_symbols.world.entity.mob.breedable.Breedable import Breedable
 
 
-@dataclass(kw_only=True)
 class Hoglin(Breedable):
     IsImmuneToZombification: bool | None = None  # Whether it will not transform to a zoglin when it is in the Overword.
     CannotBeHunted: bool | None = None  # Whether it cannot be hunted by piglins

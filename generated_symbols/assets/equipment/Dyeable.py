@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::assets::equipment::Dyeable
 Local link to file: generated_symbols/assets/equipment/Dyeable.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.util.color.RGB import RGB
 
 
-@dataclass(kw_only=True)
-class Dyeable:
+class Dyeable(GeneratedModel):
     color_when_undyed: RGB | None = None  # If the item is not dyed, this color is used instead.  If not specified and the item is not dyed, this layer will be hidden.
 
 

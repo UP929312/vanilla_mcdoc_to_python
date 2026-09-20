@@ -3,9 +3,9 @@ Generated from symbols.json for ::java::data::sulfur_cube_archetype::SulfurCubeA
 Local link to file: generated_symbols/data/sulfur_cube_archetype/SulfurCubeArchetype.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
@@ -17,8 +17,7 @@ if TYPE_CHECKING:
     from generated_symbols.registry.KnownItemId import KnownItemId
 
 
-@dataclass(kw_only=True)
-class SulfurCubeArchetype:
+class SulfurCubeArchetype(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'sulfur_cube_archetype'
 
     items: Annotated[str, IdSpec(registry='item', tags='allowed')] | KnownItemId | list[Annotated[str, IdSpec(registry='item')] | KnownItemId]

@@ -23,3 +23,5 @@ class DecorationStep(StrEnum):
     FLUIDSPRINGS = "fluid_springs"
     VEGETALDECORATION = "vegetal_decoration"
     TOPLAYERMODIFICATION = "top_layer_modification"
+
+

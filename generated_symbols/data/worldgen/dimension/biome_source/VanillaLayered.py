@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::data::worldgen::dimension::biome_source:
 Local link to file: generated_symbols/data/worldgen/dimension/biome_source/VanillaLayered.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class VanillaLayered:
+class VanillaLayered(GeneratedModel):
     seed: int
     large_biomes: bool | None = None
     legacy_biome_init_layer: bool | None = None

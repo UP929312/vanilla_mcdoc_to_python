@@ -3,14 +3,12 @@ Generated from symbols.json for ::java::data::worldgen::noise_settings::NoiseGen
 Local link to file: generated_symbols/data/worldgen/noise_settings/NoiseGeneratorSettingsRef.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
 from generated_symbols.data.worldgen.noise_settings.NoiseGeneratorSettings import NoiseGeneratorSettings
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
 class NoiseGeneratorSettingsRefStruct(NoiseGeneratorSettings):
     name: Annotated[str, IdSpec(registry='worldgen/noise_settings', definition=True)]
 

@@ -3,9 +3,9 @@ Generated from symbols.json for ::java::data::advancement::predicate::StatisticP
 Local link to file: generated_symbols/data/advancement/predicate/StatisticPredicate.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
@@ -14,8 +14,7 @@ if TYPE_CHECKING:
     from generated_symbols.registry.KnownItemId import KnownItemId
 
 
-@dataclass(kw_only=True)
-class StatisticPredicate:
+class StatisticPredicate(GeneratedModel):
     type: Annotated[str, IdSpec(registry='stat_type')]
     stat: str | Annotated[str, IdSpec(registry='item')] | KnownItemId | Annotated[str, IdSpec(registry='custom_stat')] | Annotated[str, IdSpec(registry='entity_type')] | Annotated[str, IdSpec(registry='block')] | KnownBlockId
     value: MinMaxBounds[int] | int

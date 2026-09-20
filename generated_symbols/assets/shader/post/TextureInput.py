@@ -3,18 +3,18 @@ Generated from symbols.json for ::java::assets::shader::post::TextureInput
 Local link to file: generated_symbols/assets/shader/post/TextureInput.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 
-@dataclass(kw_only=True)
-class TextureInput:
+class TextureInput(GeneratedModel):
     location: Annotated[str, IdSpec(registry='texture', path='effect/')]
     sampler_name: str
-    width: Annotated[int, 'Range | `1` and above | inclusive']
-    height: Annotated[int, 'Range | `1` and above | inclusive']
+    width: Annotated[int, Field(ge=1)]
+    height: Annotated[int, Field(ge=1)]
     bilinear: bool | None = None
 
 

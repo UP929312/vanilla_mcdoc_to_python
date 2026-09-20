@@ -3,14 +3,12 @@ Generated from symbols.json for ::java::data::variants::frog::FrogVariant
 Local link to file: generated_symbols/data/variants/frog/FrogVariant.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated, ClassVar
 
 from generated_symbols.data.variants.SpawnPrioritySelectors import SpawnPrioritySelectors
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
 class FrogVariant(SpawnPrioritySelectors):
     __resource_dir__: ClassVar[str] = 'frog_variant'
 

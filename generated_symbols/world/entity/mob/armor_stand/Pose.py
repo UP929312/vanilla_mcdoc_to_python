@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::world::entity::mob::armor_stand::Pose
 Local link to file: generated_symbols/world/entity/mob/armor_stand/Pose.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class Pose:
+class Pose(GeneratedModel):
     Body: tuple[float, float, float] | None = None
     LeftArm: tuple[float, float, float] | None = None
     RightArm: tuple[float, float, float] | None = None

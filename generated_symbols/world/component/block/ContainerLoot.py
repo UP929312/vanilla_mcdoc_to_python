@@ -3,14 +3,13 @@ Generated from symbols.json for ::java::world::component::block::ContainerLoot
 Local link to file: generated_symbols/world/component/block/ContainerLoot.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
-class ContainerLoot:
+class ContainerLoot(GeneratedModel):
     loot_table: Annotated[str, IdSpec(registry='loot_table')]
     seed: int | None = None
 

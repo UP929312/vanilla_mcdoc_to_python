@@ -3,17 +3,16 @@ Generated from symbols.json for ::java::data::loot::function::BannerPatternLayer
 Local link to file: generated_symbols/data/loot/function/BannerPatternLayer.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.util.color.DyeColor import DyeColor
 
 
-@dataclass(kw_only=True)
-class BannerPatternLayer:
+class BannerPatternLayer(GeneratedModel):
     pattern: Annotated[str, IdSpec(registry='banner_pattern')]
     color: DyeColor
 

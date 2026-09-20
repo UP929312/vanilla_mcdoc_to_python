@@ -3,14 +3,12 @@ Generated from symbols.json for ::java::world::entity::mob::breedable::frog::Fro
 Local link to file: generated_symbols/world/entity/mob/breedable/frog/Frog.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
 from generated_symbols.world.entity.mob.breedable.Breedable import Breedable
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
 class Frog(Breedable):
     variant: Annotated[str, IdSpec(registry='frog_variant')] | None = None
 

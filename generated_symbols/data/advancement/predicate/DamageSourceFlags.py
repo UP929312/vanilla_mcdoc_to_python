@@ -3,11 +3,10 @@ Generated from symbols.json for ::java::data::advancement::predicate::DamageSour
 Local link to file: generated_symbols/data/advancement/predicate/DamageSourceFlags.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
+from generated_symbols.base import GeneratedModel
 
 
-@dataclass(kw_only=True)
-class DamageSourceFlags:
+class DamageSourceFlags(GeneratedModel):
     is_explosion: bool | None = None
     is_fire: bool | None = None
     is_magic: bool | None = None

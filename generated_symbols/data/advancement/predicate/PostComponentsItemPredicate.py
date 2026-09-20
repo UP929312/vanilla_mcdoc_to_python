@@ -3,9 +3,9 @@ Generated from symbols.json for ::java::data::advancement::predicate::PostCompon
 Local link to file: generated_symbols/data/advancement/predicate/PostComponentsItemPredicate.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
@@ -15,8 +15,7 @@ if TYPE_CHECKING:
     from generated_symbols.world.component.DataComponentPredicate import DataComponentPredicate
 
 
-@dataclass(kw_only=True)
-class PostComponentsItemPredicate:
+class PostComponentsItemPredicate(GeneratedModel):
     items: Annotated[str, IdSpec(registry='item', tags='allowed')] | KnownItemId | list[Annotated[str, IdSpec(registry='item')] | KnownItemId] | None = None
     count: MinMaxBounds[int] | int | None = None
     components: DataComponentExactPredicate | None = None

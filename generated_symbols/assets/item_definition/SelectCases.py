@@ -3,8 +3,9 @@ Generated from symbols.json for ::java::assets::item_definition::SelectCases
 Local link to file: generated_symbols/assets/item_definition/SelectCases.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, Generic, TypeVar
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.assets.item_definition.SelectCase import SelectCase
@@ -12,8 +13,7 @@ if TYPE_CHECKING:
 
 T = TypeVar('T')
 
-@dataclass(kw_only=True)
-class SelectCases(Generic[T]):
+class SelectCases(GeneratedModel, Generic[T]):
     cases: list[SelectCase[T]]
 
 

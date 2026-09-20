@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::enchantment::effect::ApplyExhausti
 Local link to file: generated_symbols/data/enchantment/effect/ApplyExhaustionEntityEffect.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.enchantment.LevelBasedValue import LevelBasedValue
 
 
-@dataclass(kw_only=True)
-class ApplyExhaustionEntityEffect:
+class ApplyExhaustionEntityEffect(GeneratedModel):
     amount: LevelBasedValue  # The amount of exhaustion to apply to player.
 
 

@@ -3,8 +3,9 @@ Generated from symbols.json for ::java::world::component::predicate::PotionsPred
 Local link to file: generated_symbols/world/component/predicate/PotionsPredicate.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.advancement.predicate.EntityEffectsPredicate import EntityEffectsPredicate
@@ -12,8 +13,7 @@ if TYPE_CHECKING:
     from generated_symbols.world.component.predicate.PotionTypeMatch import PotionTypeMatch
 
 
-@dataclass(kw_only=True)
-class PotionsPredicate:
+class PotionsPredicate(GeneratedModel):
     potions: PotionTypeMatch | None = None
     effects: CollectionPredicate[EntityEffectsPredicate] | None = None
 

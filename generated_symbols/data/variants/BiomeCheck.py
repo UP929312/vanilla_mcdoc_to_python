@@ -3,14 +3,13 @@ Generated from symbols.json for ::java::data::variants::BiomeCheck
 Local link to file: generated_symbols/data/variants/BiomeCheck.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
-@dataclass(kw_only=True)
-class BiomeCheck:
+class BiomeCheck(GeneratedModel):
     biomes: Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')] | list[Annotated[str, IdSpec(registry='worldgen/biome')]]  # Checks if the entity is spawning in specific biomes.
 
 

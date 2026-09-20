@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::world::entity::mob::Brain
 Local link to file: generated_symbols/world/entity/mob/Brain.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.util.memory.Memories import Memories
 
 
-@dataclass(kw_only=True)
-class Brain:
+class Brain(GeneratedModel):
     memories: Memories | None = None
 
 

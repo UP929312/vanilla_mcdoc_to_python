@@ -3,15 +3,15 @@ Generated from symbols.json for ::java::data::worldgen::UniformInt
 Local link to file: generated_symbols/data/worldgen/UniformInt.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Generic, TypeVar
+
+from generated_symbols.base import GeneratedModel
 
 
 Base = TypeVar('Base')
 Spread = TypeVar('Spread')
 
-@dataclass(kw_only=True)
-class UniformInt(Generic[Base, Spread]):
+class UniformInt(GeneratedModel, Generic[Base, Spread]):
     base: Base
     spread: Spread
 

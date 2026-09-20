@@ -3,14 +3,15 @@ Generated from symbols.json for ::java::data::worldgen::attribute::modifier::Flo
 Local link to file: generated_symbols/data/worldgen/attribute/modifier/FloatWithAlpha.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated
 
+from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class FloatWithAlpha:
+
+class FloatWithAlpha(GeneratedModel):
     value: float
-    alpha: Annotated[float, 'Range | `0`-`1` | both inclusive'] | None = None  # Defaults to 1.0
+    alpha: Annotated[float, Field(ge=0, le=1)] | None = None  # Defaults to 1.0
 
 
 # ~~~ MODEL DUMP ~~~
