@@ -8,11 +8,11 @@ from typing import TYPE_CHECKING
 from generated_symbols.data.loot.function.Conditions import Conditions
 
 if TYPE_CHECKING:
-    from generated_symbols.data.number_provider.NumberProviderRef import NumberProviderRef
+    from generated_symbols.data.number_provider.IntNumberProviderRef import IntNumberProviderRef
 
 
 class SetCount(Conditions):
-    count: NumberProviderRef
+    count: IntNumberProviderRef
     add: bool | None = None  # Whether to add to the existing count. Defaults to `false`.
 
 
@@ -45,7 +45,7 @@ _ = {
                         },
                         {
                             "kind": "reference",
-                            "path": "::java::data::number_provider::NumberProviderRef",
+                            "path": "::java::data::number_provider::IntNumberProviderRef",
                             "attributes": [
                                 {
                                     "name": "since",

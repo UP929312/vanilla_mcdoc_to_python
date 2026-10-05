@@ -12,14 +12,14 @@ from pydantic import Field
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.IntProvider import IntProvider
     from generated_symbols.data.worldgen.feature.block_predicate.BlockPredicate import BlockPredicate
-    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
+    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProviderRef import BlockStateProviderRef
     from generated_symbols.registry.KnownBlockId import KnownBlockId
 
 
 class RandomNeighborSpreadConfig(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/feature'
 
-    block: BlockStateProvider
+    block: BlockStateProviderRef
     accepted_neighbors: Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | list[Annotated[str, IdSpec(registry='block')] | KnownBlockId]
     can_replace: BlockPredicate
     attempts: IntProvider[Annotated[int, Field(ge=1, le=3000)]] | Annotated[int, Field(ge=1, le=3000)]
@@ -37,7 +37,7 @@ _ = {
                 "key": "block",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider"
+                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef"
                 }
             },
             {

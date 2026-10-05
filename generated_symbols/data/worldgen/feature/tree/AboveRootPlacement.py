@@ -9,11 +9,11 @@ from generated_symbols.base import GeneratedModel
 from pydantic import Field
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
+    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProviderRef import BlockStateProviderRef
 
 
 class AboveRootPlacement(GeneratedModel):
-    above_root_provider: BlockStateProvider
+    above_root_provider: BlockStateProviderRef
     above_root_placement_chance: Annotated[float, Field(ge=0, le=1)]
 
 
@@ -27,7 +27,7 @@ _ = {
                 "key": "above_root_provider",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider"
+                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef"
                 }
             },
             {

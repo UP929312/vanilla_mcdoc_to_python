@@ -9,12 +9,12 @@ from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.number_provider.NumberProviderRef import NumberProviderRef
+    from generated_symbols.data.number_provider.IntNumberProviderRef import IntNumberProviderRef
 
 
 class StewEffect(GeneratedModel):
     type: Annotated[str, IdSpec(registry='mob_effect')]  # The status effect of this stew effect.
-    duration: NumberProviderRef  # The duration of this stew effect, in seconds.
+    duration: IntNumberProviderRef  # The duration of this stew effect, in seconds.
 
 
 # ~~~ MODEL DUMP ~~~
@@ -50,16 +50,8 @@ _ = {
                     "kind": "union",
                     "members": [
                         {
-                            "kind": "concrete",
-                            "child": {
-                                "kind": "reference",
-                                "path": "::java::data::util::MinMaxBounds"
-                            },
-                            "typeArgs": [
-                                {
-                                    "kind": "float"
-                                }
-                            ],
+                            "kind": "reference",
+                            "path": "::java::data::util::RandomValueBounds",
                             "attributes": [
                                 {
                                     "name": "until",
@@ -75,7 +67,7 @@ _ = {
                         },
                         {
                             "kind": "reference",
-                            "path": "::java::data::number_provider::NumberProviderRef",
+                            "path": "::java::data::number_provider::IntNumberProviderRef",
                             "attributes": [
                                 {
                                     "name": "since",

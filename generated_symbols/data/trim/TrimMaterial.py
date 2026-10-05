@@ -15,7 +15,7 @@ if TYPE_CHECKING:
 class TrimMaterial(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'trim_material'
 
-    palette: PaletteRef  # Palette ID which will be used in the resource pack.
+    palette_id: PaletteRef  # Palette ID which will be used in the resource pack.
     description: Text  # Text displayed in the item tooltip.
 
 
@@ -59,7 +59,7 @@ _ = {
                     }
                 ],
                 "desc": "Palette ID which will be used in the resource pack.",
-                "key": "palette",
+                "key": "palette_id",
                 "type": {
                     "kind": "reference",
                     "path": "::java::assets::atlas::PaletteRef"

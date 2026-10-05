@@ -13,7 +13,7 @@ if TYPE_CHECKING:
 
 class TagPoolEntry(SingletonPoolEntry):
     items: ItemListRef
-    expand: bool | None = None  # If `true`, randomly selects an item to drop.  If `false`, drops all items.  Defaults to `false`.
+    expand: bool | None = None  # If `true`, each of the items becomes an independent entry in the pool with the same `weight` and `quality`.  If `false`, drops all items in the tag.  Defaults to `false`.
 
 
 # ~~~ MODEL DUMP ~~~
@@ -103,7 +103,7 @@ _ = {
                     "fields": [
                         {
                             "kind": "pair",
-                            "desc": "If `True`, drops a random item from the tag. \\\nIf `False`, drops all items in the tag.",
+                            "desc": "If `True`, each of the items becomes an independent entry in the pool with the same `weight` and `quality`. \\\nIf `False`, drops all items in the tag.",
                             "key": "expand",
                             "type": {
                                 "kind": "boolean"
@@ -131,7 +131,7 @@ _ = {
                     "fields": [
                         {
                             "kind": "pair",
-                            "desc": "If `True`, randomly selects an item to drop. \\\nIf `False`, drops all items. \\\nDefaults to `False`.",
+                            "desc": "If `True`, each of the items becomes an independent entry in the pool with the same `weight` and `quality`. \\\nIf `False`, drops all items in the tag. \\\nDefaults to `False`.",
                             "key": "expand",
                             "type": {
                                 "kind": "boolean"

@@ -8,11 +8,11 @@ from typing import TYPE_CHECKING
 from generated_symbols.data.loot.function.Conditions import Conditions
 
 if TYPE_CHECKING:
-    from generated_symbols.data.number_provider.NumberProviderRef import NumberProviderRef
+    from generated_symbols.data.number_provider.FloatNumberProviderRef import FloatNumberProviderRef
 
 
 class SetDamage(Conditions):
-    damage: NumberProviderRef  # Decimal percentage. Can be negative when used in combination with `add`.  Clamps to a float between `-1` & `1` (inclusive).
+    damage: FloatNumberProviderRef  # Decimal percentage. Can be negative when used in combination with `add`.  Accepts a value between `-1` & `1` (inclusive).
     add: bool | None = None  # Whether to add to the existing damage of the item. Defaults to `false`.
 
 
@@ -23,7 +23,7 @@ _ = {
         "fields": [
             {
                 "kind": "pair",
-                "desc": "Decimal percentage. Can be negative when used in combination with `add`. \\\nClamps to a float between `-1` & `1` (inclusive).",
+                "desc": "Decimal percentage. Can be negative when used in combination with `add`. \\\nAccepts a value between `-1` & `1` (inclusive).",
                 "key": "damage",
                 "type": {
                     "kind": "union",
@@ -46,7 +46,7 @@ _ = {
                         },
                         {
                             "kind": "reference",
-                            "path": "::java::data::number_provider::NumberProviderRef",
+                            "path": "::java::data::number_provider::FloatNumberProviderRef",
                             "attributes": [
                                 {
                                     "name": "since",

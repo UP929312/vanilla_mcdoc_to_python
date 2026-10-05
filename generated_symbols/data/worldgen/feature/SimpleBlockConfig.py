@@ -8,13 +8,13 @@ from typing import TYPE_CHECKING, ClassVar
 from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
+    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProviderRef import BlockStateProviderRef
 
 
 class SimpleBlockConfig(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/feature'
 
-    to_place: BlockStateProvider
+    to_place: BlockStateProviderRef
     schedule_tick: bool | None = None  # Whether to schedule a block update. Defaults to `false`.
 
 
@@ -47,7 +47,7 @@ _ = {
                         },
                         {
                             "kind": "reference",
-                            "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider",
+                            "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef",
                             "attributes": [
                                 {
                                     "name": "since",

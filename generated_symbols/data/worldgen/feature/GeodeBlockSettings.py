@@ -10,17 +10,17 @@ from minecraft_registry import IdSpec
 from pydantic import Field
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
+    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProviderRef import BlockStateProviderRef
     from generated_symbols.registry.KnownBlockId import KnownBlockId
     from generated_symbols.util.block_state.BlockState import BlockState
 
 
 class GeodeBlockSettings(GeneratedModel):
-    filling_provider: BlockStateProvider
-    inner_layer_provider: BlockStateProvider
-    alternate_inner_layer_provider: BlockStateProvider
-    middle_layer_provider: BlockStateProvider
-    outer_layer_provider: BlockStateProvider
+    filling_provider: BlockStateProviderRef
+    inner_layer_provider: BlockStateProviderRef
+    alternate_inner_layer_provider: BlockStateProviderRef
+    middle_layer_provider: BlockStateProviderRef
+    outer_layer_provider: BlockStateProviderRef
     inner_placements: Annotated[list[BlockState], Field(min_length=1)]
     cannot_replace: Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | list[Annotated[str, IdSpec(registry='block')] | KnownBlockId]  # Blocks that will not be replaced by the geode.
     invalid_blocks: Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | list[Annotated[str, IdSpec(registry='block')] | KnownBlockId]  # When encountering an invalid block, feature placement is cancelled.
@@ -36,7 +36,7 @@ _ = {
                 "key": "filling_provider",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider"
+                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef"
                 }
             },
             {
@@ -44,7 +44,7 @@ _ = {
                 "key": "inner_layer_provider",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider"
+                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef"
                 }
             },
             {
@@ -52,7 +52,7 @@ _ = {
                 "key": "alternate_inner_layer_provider",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider"
+                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef"
                 }
             },
             {
@@ -60,7 +60,7 @@ _ = {
                 "key": "middle_layer_provider",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider"
+                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef"
                 }
             },
             {
@@ -68,7 +68,7 @@ _ = {
                 "key": "outer_layer_provider",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider"
+                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef"
                 }
             },
             {

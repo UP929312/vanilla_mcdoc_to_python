@@ -9,14 +9,14 @@ from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.block_predicate.BlockPredicate import BlockPredicate
-    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
+    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProviderRef import BlockStateProviderRef
 
 
 class HugeMushroomConfig(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/feature'
 
-    cap_provider: BlockStateProvider
-    stem_provider: BlockStateProvider
+    cap_provider: BlockStateProviderRef
+    stem_provider: BlockStateProviderRef
     foliage_radius: int
     can_place_on: BlockPredicate
 
@@ -31,7 +31,7 @@ _ = {
                 "key": "cap_provider",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider"
+                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef"
                 }
             },
             {
@@ -39,7 +39,7 @@ _ = {
                 "key": "stem_provider",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider"
+                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef"
                 }
             },
             {

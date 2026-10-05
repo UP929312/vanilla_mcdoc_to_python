@@ -9,12 +9,12 @@ from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.block_predicate.BlockPredicate import BlockPredicate
-    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
+    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProviderRef import BlockStateProviderRef
 
 
 class BlockStateRuleProviderEntry(GeneratedModel):
     if_true: BlockPredicate
-    then: BlockStateProvider
+    then: BlockStateProviderRef
 
 
 # ~~~ MODEL DUMP ~~~
@@ -35,7 +35,7 @@ _ = {
                 "key": "then",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider"
+                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef"
                 }
             }
         ]

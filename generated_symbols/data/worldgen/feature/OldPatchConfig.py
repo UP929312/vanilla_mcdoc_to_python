@@ -10,7 +10,7 @@ from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.BlockPlacer import BlockPlacer
-    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
+    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProviderRef import BlockStateProviderRef
     from generated_symbols.util.block_state.BlockState import BlockState
 
 
@@ -21,7 +21,7 @@ class OldPatchConfig(GeneratedModel):
     xspread: Annotated[int, Field(ge=0)] | None = None
     yspread: Annotated[int, Field(ge=0)] | None = None
     zspread: Annotated[int, Field(ge=0)] | None = None
-    state_provider: BlockStateProvider
+    state_provider: BlockStateProviderRef
     block_placer: BlockPlacer
     whitelist: list[BlockState]
     blacklist: list[BlockState]
@@ -193,7 +193,7 @@ _ = {
                 "key": "state_provider",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider"
+                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef"
                 }
             },
             {

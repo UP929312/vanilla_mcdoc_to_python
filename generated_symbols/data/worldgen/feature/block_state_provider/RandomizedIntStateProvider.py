@@ -9,13 +9,13 @@ from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.IntProvider import IntProvider
-    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
+    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProviderRef import BlockStateProviderRef
 
 
 class RandomizedIntStateProvider(GeneratedModel):
     property: str
     values: IntProvider[int] | int
-    source: BlockStateProvider
+    source: BlockStateProviderRef
 
 
 # ~~~ MODEL DUMP ~~~
@@ -51,7 +51,7 @@ _ = {
                 "key": "source",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider"
+                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef"
                 }
             }
         ]

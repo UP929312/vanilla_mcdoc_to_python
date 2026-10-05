@@ -10,26 +10,26 @@ from generated_symbols.data.loot.function.InsertListOperation import InsertListO
 from generated_symbols.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
 
 if TYPE_CHECKING:
-    from generated_symbols.data.number_provider.NumberProviderRef import NumberProviderRef
+    from generated_symbols.data.number_provider.FloatNumberProviderRef import FloatNumberProviderRef
 
 
 class CustomModelDataFloatsAppend(GeneratedModel):
-    values: list[NumberProviderRef]
+    values: list[FloatNumberProviderRef]
     mode: Literal['minecraft:append'] = 'minecraft:append'  # Determines how the existing list should be modified.
 
 
 class CustomModelDataFloatsInsert(InsertListOperation):
-    values: list[NumberProviderRef]
+    values: list[FloatNumberProviderRef]
     mode: Literal['minecraft:insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
 
 
 class CustomModelDataFloatsReplaceAll(GeneratedModel):
-    values: list[NumberProviderRef]
+    values: list[FloatNumberProviderRef]
     mode: Literal['minecraft:replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
 
 
 class CustomModelDataFloatsReplaceSection(ReplaceSectionListOperation):
-    values: list[NumberProviderRef]
+    values: list[FloatNumberProviderRef]
     mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
 
 
@@ -48,7 +48,7 @@ _ = {
                     "kind": "list",
                     "item": {
                         "kind": "reference",
-                        "path": "::java::data::number_provider::NumberProviderRef"
+                        "path": "::java::data::number_provider::FloatNumberProviderRef"
                     }
                 }
             },

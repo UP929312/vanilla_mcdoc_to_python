@@ -9,13 +9,13 @@ from generated_symbols.data.worldgen.feature.tree.MangroveRootPlacer import Mang
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.IntProvider import IntProvider
-    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
+    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProviderRef import BlockStateProviderRef
     from generated_symbols.data.worldgen.feature.tree.AboveRootPlacement import AboveRootPlacement
 
 
 class RootPlacerMangroveRootPlacer(MangroveRootPlacer):
     type: Literal['minecraft:mangrove_root_placer'] = 'minecraft:mangrove_root_placer'
-    root_provider: BlockStateProvider
+    root_provider: BlockStateProviderRef
     trunk_offset_y: IntProvider[int] | int
     above_root_placement: AboveRootPlacement | None = None
 
@@ -52,7 +52,7 @@ _ = {
                 "key": "root_provider",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider"
+                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef"
                 }
             },
             {

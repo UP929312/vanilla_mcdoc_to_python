@@ -10,7 +10,7 @@ from minecraft_registry import IdSpec
 from pydantic import Field
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
+    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProviderRef import BlockStateProviderRef
     from generated_symbols.registry.KnownBlockId import KnownBlockId
 
 
@@ -20,7 +20,7 @@ class MangroveRootPlacement(GeneratedModel):
     random_skew_chance: Annotated[float, Field(ge=0, le=1)]
     can_grow_through: list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId
     muddy_roots_in: list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId
-    muddy_roots_provider: BlockStateProvider
+    muddy_roots_provider: BlockStateProviderRef
 
 
 # ~~~ MODEL DUMP ~~~
@@ -177,7 +177,7 @@ _ = {
                 "key": "muddy_roots_provider",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider"
+                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef"
                 }
             }
         ]

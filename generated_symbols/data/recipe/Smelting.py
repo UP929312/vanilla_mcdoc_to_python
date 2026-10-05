@@ -19,7 +19,7 @@ class Smelting(CookingBookInfo, NotificationInfo):
     ingredient: Ingredient
     result: ItemStackTemplate
     experience: float | None = None
-    cookingtime: int | None = None
+    cookingtime: int  # Hint: The "Normal" value for this is `200`.
 
 
 # ~~~ MODEL DUMP ~~~
@@ -146,12 +146,61 @@ _ = {
                 "optional": True
             },
             {
-                "kind": "pair",
-                "key": "cookingtime",
+                "kind": "spread",
+                "attributes": [
+                    {
+                        "name": "until",
+                        "value": {
+                            "kind": "literal",
+                            "value": {
+                                "kind": "string",
+                                "value": "26.3"
+                            }
+                        }
+                    }
+                ],
                 "type": {
-                    "kind": "int"
-                },
-                "optional": True
+                    "kind": "struct",
+                    "fields": [
+                        {
+                            "kind": "pair",
+                            "desc": "Defaults to `200`.",
+                            "key": "cookingtime",
+                            "type": {
+                                "kind": "int"
+                            },
+                            "optional": True
+                        }
+                    ]
+                }
+            },
+            {
+                "kind": "spread",
+                "attributes": [
+                    {
+                        "name": "since",
+                        "value": {
+                            "kind": "literal",
+                            "value": {
+                                "kind": "string",
+                                "value": "26.3"
+                            }
+                        }
+                    }
+                ],
+                "type": {
+                    "kind": "struct",
+                    "fields": [
+                        {
+                            "kind": "pair",
+                            "desc": "Hint: The \"Normal\" value for this is `200`.",
+                            "key": "cookingtime",
+                            "type": {
+                                "kind": "int"
+                            }
+                        }
+                    ]
+                }
             }
         ]
     }

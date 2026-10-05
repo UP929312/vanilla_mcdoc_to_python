@@ -3,18 +3,16 @@ Generated from symbols.json for ::java::util::particle::BlockParticle
 Local link to file: generated_symbols/util/particle/BlockParticle.py
 """
 # ~~~ CODE ~~~
-from typing import TYPE_CHECKING, Annotated
+from typing import TYPE_CHECKING
 
 from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.registry.KnownBlockId import KnownBlockId
     from generated_symbols.util.block_state.BlockState import BlockState
 
 
 class BlockParticle(GeneratedModel):
-    block_state: Annotated[str, IdSpec(registry='block')] | KnownBlockId | BlockState
+    block_state: BlockState
 
 
 # ~~~ MODEL DUMP ~~~
@@ -63,6 +61,16 @@ _ = {
                         {
                             "kind": "string",
                             "attributes": [
+                                {
+                                    "name": "until",
+                                    "value": {
+                                        "kind": "literal",
+                                        "value": {
+                                            "kind": "string",
+                                            "value": "26.3"
+                                        }
+                                    }
+                                },
                                 {
                                     "name": "id",
                                     "value": {

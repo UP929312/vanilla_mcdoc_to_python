@@ -12,7 +12,7 @@ from pydantic import Field
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.FeatureRef import FeatureRef
     from generated_symbols.data.worldgen.feature.block_predicate.BlockPredicate import BlockPredicate
-    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
+    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProviderRef import BlockStateProviderRef
     from generated_symbols.registry.KnownBlockId import KnownBlockId
 
 
@@ -30,8 +30,8 @@ class RootSystemConfig(GeneratedModel):
     hanging_root_placement_attempts: Annotated[int, Field(ge=0, le=256)]
     allowed_vertical_water_for_tree: Annotated[int, Field(ge=1, le=64)]
     root_replaceable: Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | list[Annotated[str, IdSpec(registry='block')] | KnownBlockId]
-    root_state_provider: BlockStateProvider
-    hanging_root_state_provider: BlockStateProvider
+    root_state_provider: BlockStateProviderRef
+    hanging_root_state_provider: BlockStateProviderRef
     allowed_tree_position: BlockPredicate
     feature: FeatureRef
 
@@ -350,7 +350,7 @@ _ = {
                 "key": "root_state_provider",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider"
+                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef"
                 }
             },
             {
@@ -358,7 +358,7 @@ _ = {
                 "key": "hanging_root_state_provider",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider"
+                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef"
                 }
             },
             {

@@ -8,12 +8,12 @@ from typing import TYPE_CHECKING
 from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
+    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProviderRef import BlockStateProviderRef
     from generated_symbols.util.direction.Direction import Direction
 
 
 class RotatedStateProvider(GeneratedModel):
-    state: BlockStateProvider
+    state: BlockStateProviderRef
     direction: Direction | None = None
 
 
@@ -46,7 +46,7 @@ _ = {
                         },
                         {
                             "kind": "reference",
-                            "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider",
+                            "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef",
                             "attributes": [
                                 {
                                     "name": "since",

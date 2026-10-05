@@ -13,7 +13,7 @@ if TYPE_CHECKING:
     from generated_symbols.data.worldgen.CaveSurface import CaveSurface
     from generated_symbols.data.worldgen.IntProvider import IntProvider
     from generated_symbols.data.worldgen.feature.FeatureRef import FeatureRef
-    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
+    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProviderRef import BlockStateProviderRef
     from generated_symbols.registry.KnownBlockId import KnownBlockId
 
 
@@ -28,7 +28,7 @@ class VegetationPatchConfig(GeneratedModel):
     vegetation_chance: Annotated[float, Field(ge=0, le=1)]
     xz_radius: IntProvider[int] | int
     replaceable: Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | list[Annotated[str, IdSpec(registry='block')] | KnownBlockId]
-    ground_state: BlockStateProvider
+    ground_state: BlockStateProviderRef
     vegetation_feature: FeatureRef
 
 
@@ -295,7 +295,7 @@ _ = {
                 "key": "ground_state",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider"
+                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef"
                 }
             },
             {

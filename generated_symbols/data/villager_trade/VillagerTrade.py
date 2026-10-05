@@ -9,11 +9,12 @@ from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.item_modifier.ItemModifier import ItemModifier
-    from generated_symbols.data.number_provider.NumberProvider import NumberProvider
+    from generated_symbols.data.item_modifier.ItemModifierWithoutRootRef import ItemModifierWithoutRootRef
+    from generated_symbols.data.number_provider.FloatNumberProvider import FloatNumberProvider
+    from generated_symbols.data.number_provider.IntNumberProvider import IntNumberProvider
     from generated_symbols.data.predicate.Predicate import Predicate
+    from generated_symbols.data.villager_trade.TradeCost import TradeCost
     from generated_symbols.world.item.ItemStackTemplate import ItemStackTemplate
-    from generated_symbols.world.item.TradeCost import TradeCost
 
 
 class VillagerTrade(GeneratedModel):
@@ -22,10 +23,10 @@ class VillagerTrade(GeneratedModel):
     wants: TradeCost  # Price item required by the merchant.  The count is affected by various factors, including offered item, demand and player reputation.
     additional_wants: TradeCost | None = None  # Second item required by the merchant.  The count is not affected by any factors.
     gives: ItemStackTemplate  # Item being offered by the merchant.
-    given_item_modifier: ItemModifier | None = None  # Modifiers applied to the `gives` item.  Does **not** support `reference` item modifier.  Some modifiers can affect the price through the `additional_trade_cost` transient component.  The `additional_trade_cost` component is not saved on the offered item.  ID reference is not allowed here.
-    max_uses: NumberProvider | None = None  # Maximum number of uses of this trade before the villager has to restock. Defaults to `4`.  Clamps to a positive integer.
-    reputation_discount: NumberProvider | None = None  # How much demand & reputation each affect the price, is serialized as `priceMultiplier`. Defaults to `0.0`.  Clamps to a non-negative float.
-    xp: NumberProvider | None = None  # Amount to increase the merchant's XP score by that determines their trade tier. Defaults to `1`.  Clamps to a non-negative integer.
+    given_item_modifier: ItemModifierWithoutRootRef | None = None  # Modifiers applied to the `gives` item.  Does **not** support `reference` item modifier.  Some modifiers can affect the price through the `additional_trade_cost` transient component.  The `additional_trade_cost` component is not saved on the offered item.  ID reference is not allowed here.
+    max_uses: IntNumberProvider | None = None  # Maximum number of uses of this trade before the villager has to restock. Defaults to `4`.
+    reputation_discount: FloatNumberProvider | None = None  # How much demand & reputation each affect the price, is serialized as `priceMultiplier`. Defaults to `0.0`.
+    xp: IntNumberProvider | None = None  # Amount to increase the merchant's XP score by that determines their trade tier. Defaults to `1`.
     merchant_predicate: Predicate | None = None  # Check whether the trade should be offered by the merchant.  Does **not** support the `reference` predicate.
     double_trade_price_enchantments: Annotated[str, IdSpec(registry='enchantment', tags='allowed')] | list[Annotated[str, IdSpec(registry='enchantment')]] | None = None  # If the offered enchanted book has the specified enchantments, the price will be affected by doubling the `additional_trade_cost` transient component.
 
@@ -41,7 +42,7 @@ _ = {
                 "key": "wants",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::world::item::TradeCost"
+                    "path": "::java::data::villager_trade::TradeCost"
                 }
             },
             {
@@ -50,7 +51,7 @@ _ = {
                 "key": "additional_wants",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::world::item::TradeCost"
+                    "path": "::java::data::villager_trade::TradeCost"
                 },
                 "optional": True
             },
@@ -106,37 +107,37 @@ _ = {
                 "key": "given_item_modifier",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::item_modifier::ItemModifier"
+                    "path": "::java::data::item_modifier::ItemModifierWithoutRootRef"
                 },
                 "optional": True
             },
             {
                 "kind": "pair",
-                "desc": "Maximum number of uses of this trade before the villager has to restock. Defaults to `4`. \\\nClamps to a positive integer.",
+                "desc": "Maximum number of uses of this trade before the villager has to restock. Defaults to `4`.",
                 "key": "max_uses",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::number_provider::NumberProvider"
+                    "path": "::java::data::number_provider::IntNumberProvider"
                 },
                 "optional": True
             },
             {
                 "kind": "pair",
-                "desc": "How much demand & reputation each affect the price, is serialized as `priceMultiplier`. Defaults to `0.0`. \\\nClamps to a non-negative float.",
+                "desc": "How much demand & reputation each affect the price, is serialized as `priceMultiplier`. Defaults to `0.0`.",
                 "key": "reputation_discount",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::number_provider::NumberProvider"
+                    "path": "::java::data::number_provider::FloatNumberProvider"
                 },
                 "optional": True
             },
             {
                 "kind": "pair",
-                "desc": "Amount to increase the merchant's XP score by that determines their trade tier. Defaults to `1`. \\\nClamps to a non-negative integer.",
+                "desc": "Amount to increase the merchant's XP score by that determines their trade tier. Defaults to `1`.",
                 "key": "xp",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::number_provider::NumberProvider"
+                    "path": "::java::data::number_provider::IntNumberProvider"
                 },
                 "optional": True
             },

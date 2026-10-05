@@ -8,11 +8,11 @@ from typing import TYPE_CHECKING
 from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.number_provider.NumberProviderRef import NumberProviderRef
+    from generated_symbols.data.number_provider.FloatNumberProviderRef import FloatNumberProviderRef
 
 
 class EnchantedCountBase(GeneratedModel):
-    count: NumberProviderRef  # If the number is fractional the result is rounded *after* the number was multiplied by the looting level.
+    count: FloatNumberProviderRef  # Rounded *after* the number was multiplied by the looting level.
     limit: int | None = None  # Limits the count of the item to a range.
 
 
@@ -23,22 +23,14 @@ _ = {
         "fields": [
             {
                 "kind": "pair",
-                "desc": "If the number is fractional the result is rounded *after* the number was multiplied by the looting level.",
+                "desc": "Rounded *after* the number was multiplied by the looting level.",
                 "key": "count",
                 "type": {
                     "kind": "union",
                     "members": [
                         {
-                            "kind": "concrete",
-                            "child": {
-                                "kind": "reference",
-                                "path": "::java::data::util::MinMaxBounds"
-                            },
-                            "typeArgs": [
-                                {
-                                    "kind": "float"
-                                }
-                            ],
+                            "kind": "reference",
+                            "path": "::java::data::util::RandomValueBounds",
                             "attributes": [
                                 {
                                     "name": "until",
@@ -54,7 +46,7 @@ _ = {
                         },
                         {
                             "kind": "reference",
-                            "path": "::java::data::number_provider::NumberProviderRef",
+                            "path": "::java::data::number_provider::FloatNumberProviderRef",
                             "attributes": [
                                 {
                                     "name": "since",

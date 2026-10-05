@@ -9,7 +9,7 @@ from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.loot.EntityTarget import EntityTarget
-    from generated_symbols.data.util.IntRange import IntRange
+    from generated_symbols.data.loot.IntRange import IntRange
 
 
 class EntityScores(GeneratedModel):
@@ -67,7 +67,7 @@ _ = {
                                     },
                                     {
                                         "kind": "reference",
-                                        "path": "::java::data::util::IntRange",
+                                        "path": "::java::data::loot::IntRange",
                                         "attributes": [
                                             {
                                                 "name": "since",

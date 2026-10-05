@@ -8,11 +8,11 @@ from typing import TYPE_CHECKING
 from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.number_provider.NumberProviderRef import NumberProviderRef
+    from generated_symbols.data.number_provider.FloatNumberProviderRef import FloatNumberProviderRef
 
 
 class RandomChance(GeneratedModel):
-    chance: NumberProviderRef  # Clamps to a float between `0` & `1` (inclusive).
+    chance: FloatNumberProviderRef  # Accepts a value between `0` & `1` (inclusive).
 
 
 # ~~~ MODEL DUMP ~~~
@@ -22,7 +22,7 @@ _ = {
         "fields": [
             {
                 "kind": "pair",
-                "desc": "Clamps to a float between `0` & `1` (inclusive).",
+                "desc": "Accepts a value between `0` & `1` (inclusive).",
                 "key": "chance",
                 "type": {
                     "kind": "union",
@@ -49,7 +49,7 @@ _ = {
                         },
                         {
                             "kind": "reference",
-                            "path": "::java::data::number_provider::NumberProviderRef",
+                            "path": "::java::data::number_provider::FloatNumberProviderRef",
                             "attributes": [
                                 {
                                     "name": "since",

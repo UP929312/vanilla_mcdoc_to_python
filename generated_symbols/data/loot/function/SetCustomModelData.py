@@ -11,27 +11,28 @@ from generated_symbols.data.loot.function.InsertListOperation import InsertListO
 from generated_symbols.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
 
 if TYPE_CHECKING:
-    from generated_symbols.data.number_provider.NumberProviderRef import NumberProviderRef
+    from generated_symbols.data.number_provider.FloatNumberProviderRef import FloatNumberProviderRef
+    from generated_symbols.data.number_provider.IntNumberProviderRef import IntNumberProviderRef
     from generated_symbols.util.color.RGB import RGB
 
 
 class FloatsStructAppend(GeneratedModel):
-    values: list[NumberProviderRef]
+    values: list[FloatNumberProviderRef]
     mode: Literal['minecraft:append'] = 'minecraft:append'  # Determines how the existing list should be modified.
 
 
 class FloatsStructInsert(InsertListOperation):
-    values: list[NumberProviderRef]
+    values: list[FloatNumberProviderRef]
     mode: Literal['minecraft:insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
 
 
 class FloatsStructReplaceAll(GeneratedModel):
-    values: list[NumberProviderRef]
+    values: list[FloatNumberProviderRef]
     mode: Literal['minecraft:replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
 
 
 class FloatsStructReplaceSection(ReplaceSectionListOperation):
-    values: list[NumberProviderRef]
+    values: list[FloatNumberProviderRef]
     mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
 
 
@@ -82,22 +83,22 @@ class StringsStructReplaceSection(ReplaceSectionListOperation):
 type StringsStruct = StringsStructAppend | StringsStructInsert | StringsStructReplaceAll | StringsStructReplaceSection
 
 class ColorsStructAppend(GeneratedModel):
-    values: list[NumberProviderRef | RGB]
+    values: list[RGB | IntNumberProviderRef]
     mode: Literal['minecraft:append'] = 'minecraft:append'  # Determines how the existing list should be modified.
 
 
 class ColorsStructInsert(InsertListOperation):
-    values: list[NumberProviderRef | RGB]
+    values: list[RGB | IntNumberProviderRef]
     mode: Literal['minecraft:insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
 
 
 class ColorsStructReplaceAll(GeneratedModel):
-    values: list[NumberProviderRef | RGB]
+    values: list[RGB | IntNumberProviderRef]
     mode: Literal['minecraft:replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
 
 
 class ColorsStructReplaceSection(ReplaceSectionListOperation):
-    values: list[NumberProviderRef | RGB]
+    values: list[RGB | IntNumberProviderRef]
     mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
 
 
@@ -133,7 +134,7 @@ _ = {
                 "key": "value",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::number_provider::NumberProviderRef"
+                    "path": "::java::data::number_provider::LegacyNumberProvider"
                 }
             },
             {
@@ -166,7 +167,7 @@ _ = {
                                             "kind": "list",
                                             "item": {
                                                 "kind": "reference",
-                                                "path": "::java::data::number_provider::NumberProviderRef"
+                                                "path": "::java::data::number_provider::FloatNumberProviderRef"
                                             }
                                         }
                                     },
@@ -251,11 +252,11 @@ _ = {
                                                 "members": [
                                                     {
                                                         "kind": "reference",
-                                                        "path": "::java::data::number_provider::NumberProviderRef"
+                                                        "path": "::java::util::color::RGB"
                                                     },
                                                     {
                                                         "kind": "reference",
-                                                        "path": "::java::util::color::RGB"
+                                                        "path": "::java::data::number_provider::IntNumberProviderRef"
                                                     }
                                                 ]
                                             }

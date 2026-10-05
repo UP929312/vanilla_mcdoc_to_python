@@ -9,16 +9,16 @@ from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.block_predicate.BlockPredicate import BlockPredicate
-    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
+    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProviderRef import BlockStateProviderRef
 
 
 class RulesStruct(GeneratedModel):
     if_true: BlockPredicate
-    then: BlockStateProvider
+    then: BlockStateProviderRef
 
 
 class RuleBasedBlockStateProvider(GeneratedModel):
-    fallback: BlockStateProvider | None = None
+    fallback: BlockStateProviderRef | None = None
     rules: list[RulesStruct]
 
 
@@ -49,7 +49,7 @@ _ = {
                             "key": "fallback",
                             "type": {
                                 "kind": "reference",
-                                "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider"
+                                "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef"
                             }
                         }
                     ]
@@ -77,7 +77,7 @@ _ = {
                             "key": "fallback",
                             "type": {
                                 "kind": "reference",
-                                "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider"
+                                "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef"
                             },
                             "optional": True
                         }
@@ -105,7 +105,7 @@ _ = {
                                 "key": "then",
                                 "type": {
                                     "kind": "reference",
-                                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider"
+                                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef"
                                 }
                             }
                         ]

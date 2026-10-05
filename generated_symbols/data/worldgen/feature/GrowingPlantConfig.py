@@ -8,8 +8,9 @@ from typing import TYPE_CHECKING, ClassVar
 from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.feature.GrowingPlantHeight import GrowingPlantHeight
-    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
+    from generated_symbols.data.worldgen.IntProvider import IntProvider
+    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProviderRef import BlockStateProviderRef
+    from generated_symbols.util.WeightedList import WeightedList
     from generated_symbols.util.direction.Direction import Direction
 
 
@@ -18,9 +19,9 @@ class GrowingPlantConfig(GeneratedModel):
 
     direction: Direction
     allow_water: bool
-    height_distribution: list[GrowingPlantHeight]
-    body_provider: BlockStateProvider
-    head_provider: BlockStateProvider
+    height_distribution: WeightedList[IntProvider[int] | int]
+    body_provider: BlockStateProviderRef
+    head_provider: BlockStateProviderRef
 
 
 # ~~~ MODEL DUMP ~~~
@@ -47,11 +48,25 @@ _ = {
                 "kind": "pair",
                 "key": "height_distribution",
                 "type": {
-                    "kind": "list",
-                    "item": {
+                    "kind": "concrete",
+                    "child": {
                         "kind": "reference",
-                        "path": "::java::data::worldgen::feature::GrowingPlantHeight"
-                    }
+                        "path": "::java::util::WeightedList"
+                    },
+                    "typeArgs": [
+                        {
+                            "kind": "concrete",
+                            "child": {
+                                "kind": "reference",
+                                "path": "::java::data::worldgen::IntProvider"
+                            },
+                            "typeArgs": [
+                                {
+                                    "kind": "int"
+                                }
+                            ]
+                        }
+                    ]
                 }
             },
             {
@@ -59,7 +74,7 @@ _ = {
                 "key": "body_provider",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider"
+                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef"
                 }
             },
             {
@@ -67,7 +82,7 @@ _ = {
                 "key": "head_provider",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider"
+                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef"
                 }
             }
         ]

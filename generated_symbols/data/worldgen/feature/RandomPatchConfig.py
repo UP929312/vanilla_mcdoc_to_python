@@ -249,7 +249,7 @@ _ = {
                             "key": "state_provider",
                             "type": {
                                 "kind": "reference",
-                                "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider"
+                                "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef"
                             }
                         },
                         {

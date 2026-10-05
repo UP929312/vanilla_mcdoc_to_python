@@ -9,11 +9,11 @@ from generated_symbols.data.loot.function.Conditions import Conditions
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.number_provider.NumberProviderRef import NumberProviderRef
+    from generated_symbols.data.number_provider.IntNumberProviderRef import IntNumberProviderRef
 
 
 class SetEnchantments(Conditions):
-    enchantments: dict[Annotated[str, IdSpec(registry='enchantment')], NumberProviderRef]  # A map of enchantments to levels. Setting an enchantment to `0` removes it from the item.  Each level is clamped to a positive integer.
+    enchantments: dict[Annotated[str, IdSpec(registry='enchantment')], IntNumberProviderRef]  # A map of enchantments to levels. Setting an enchantment to `0` removes it from the item.
     add: bool | None = None  # Whether to add to the level of each enchantment. Defaults to `false`.
 
 
@@ -24,7 +24,7 @@ _ = {
         "fields": [
             {
                 "kind": "pair",
-                "desc": "A map of enchantments to levels. Setting an enchantment to `0` removes it from the item. \\\nEach level is clamped to a positive integer.",
+                "desc": "A map of enchantments to levels. Setting an enchantment to `0` removes it from the item.",
                 "key": "enchantments",
                 "type": {
                     "kind": "struct",
@@ -48,7 +48,7 @@ _ = {
                             },
                             "type": {
                                 "kind": "reference",
-                                "path": "::java::data::number_provider::NumberProviderRef"
+                                "path": "::java::data::number_provider::IntNumberProviderRef"
                             }
                         }
                     ]

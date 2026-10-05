@@ -9,14 +9,14 @@ from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.number_provider.NumberProvider import NumberProvider
+    from generated_symbols.data.number_provider.IntNumberProvider import IntNumberProvider
 
 
 class TradeSet(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'trade_set'
 
     trades: Annotated[str, IdSpec(registry='villager_trade', tags='allowed')] | list[Annotated[str, IdSpec(registry='villager_trade')]]  # Possible trade generators.
-    amount: NumberProvider  # Amount of trades to be generated.  Clamps to an integer of at least `1`.
+    amount: IntNumberProvider  # Amount of trades to be generated.
     allow_duplicates: bool | None = None  # Whether the trade set can use the same generator multiple times and generate duplicate trades. Defaults to `false`.
     random_sequence: Annotated[str, IdSpec(registry='random_sequence', definition=True)] | None = None
 
@@ -83,11 +83,11 @@ _ = {
             },
             {
                 "kind": "pair",
-                "desc": "Amount of trades to be generated. \\\nClamps to an integer of at least `1`.",
+                "desc": "Amount of trades to be generated.",
                 "key": "amount",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::number_provider::NumberProvider"
+                    "path": "::java::data::number_provider::IntNumberProvider"
                 }
             },
             {

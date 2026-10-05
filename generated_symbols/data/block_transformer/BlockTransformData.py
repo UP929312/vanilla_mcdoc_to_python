@@ -14,14 +14,14 @@ if TYPE_CHECKING:
     from generated_symbols.data.block_transformer.BlockTransformParticle import BlockTransformParticle
     from generated_symbols.data.block_transformer.BlockTransformType import BlockTransformType
     from generated_symbols.data.util.SoundEventRef import SoundEventRef
-    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
+    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProviderRef import BlockStateProviderRef
     from generated_symbols.util.direction.Direction import Direction
 
 
 class BlockTransformData(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'block_transformer'
 
-    block_state_provider: BlockStateProvider  # If the provider returns no result, the next transformer will be attempted.
+    block_state_provider: BlockStateProviderRef  # If the provider returns no result, the next transformer will be attempted.
     sound: SoundEventRef | None = None  # Defaults to not playing sound.
     particle: BlockTransformParticle | None = None  # Defaults to `none`.
     disallowed_faces: list[Direction] | None = None  # If a disallowed face is interacted with, the next transformer will be attempted.  Defaults to empty (allowing all faces).
@@ -44,7 +44,7 @@ _ = {
                 "key": "block_state_provider",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider"
+                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef"
                 }
             },
             {

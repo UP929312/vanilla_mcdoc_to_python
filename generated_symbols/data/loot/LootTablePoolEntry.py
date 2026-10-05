@@ -13,7 +13,7 @@ if TYPE_CHECKING:
 
 class LootTablePoolEntry(SingletonPoolEntry):
     value: LootTableListRef
-    expand: bool | None = None  # If `true`, randomly selects a loot table to drop.  If `false`, drops all loot tables.  Defaults to `false`.
+    expand: bool | None = None  # If `true`, each of the loot tables becomes an independent entry in the pool with the same `weight` and `quality`.  If `false`, drops all loot tables.  Defaults to `false`.
 
 
 # ~~~ MODEL DUMP ~~~
@@ -144,7 +144,7 @@ _ = {
                         }
                     }
                 ],
-                "desc": "If `True`, randomly selects a loot table to drop. \\\nIf `False`, drops all loot tables. \\\nDefaults to `False`.",
+                "desc": "If `True`, each of the loot tables becomes an independent entry in the pool with the same `weight` and `quality`. \\\nIf `False`, drops all loot tables. \\\nDefaults to `False`.",
                 "key": "expand",
                 "type": {
                     "kind": "boolean"

@@ -10,14 +10,14 @@ from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.IntProvider import IntProvider
-    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
+    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProviderRef import BlockStateProviderRef
     from generated_symbols.data.worldgen.feature.tree.TreeDecorator import TreeDecorator
 
 
 class FallenTreeConfig(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/feature'
 
-    trunk_provider: BlockStateProvider
+    trunk_provider: BlockStateProviderRef
     log_length: IntProvider[Annotated[int, Field(ge=0, le=16)]] | Annotated[int, Field(ge=0, le=16)]
     stump_decorators: list[TreeDecorator]
     log_decorators: list[TreeDecorator]
@@ -33,7 +33,7 @@ _ = {
                 "key": "trunk_provider",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider"
+                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef"
                 }
             },
             {

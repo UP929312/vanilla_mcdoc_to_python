@@ -9,7 +9,7 @@ from generated_symbols.base import GeneratedModel
 from pydantic import Field
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
+    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProviderRef import BlockStateProviderRef
     from generated_symbols.util.direction.Direction import Direction
 
 
@@ -18,7 +18,7 @@ class AttachedToLeavesTreeDecorator(GeneratedModel):
     exclusion_radius_xz: Annotated[int, Field(ge=0, le=16)]
     exclusion_radius_y: Annotated[int, Field(ge=0, le=16)]
     required_empty_blocks: Annotated[int, Field(ge=1, le=16)]
-    block_provider: BlockStateProvider
+    block_provider: BlockStateProviderRef
     directions: Annotated[list[Direction], Field(min_length=1)]
 
 
@@ -80,7 +80,7 @@ _ = {
                 "key": "block_provider",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider"
+                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef"
                 }
             },
             {

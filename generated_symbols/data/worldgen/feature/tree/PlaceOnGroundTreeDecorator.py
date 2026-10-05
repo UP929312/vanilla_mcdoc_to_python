@@ -9,14 +9,14 @@ from generated_symbols.base import GeneratedModel
 from pydantic import Field
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
+    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProviderRef import BlockStateProviderRef
 
 
 class PlaceOnGroundTreeDecorator(GeneratedModel):
     tries: Annotated[int, Field(ge=1)] | None = None  # Defaults to `128`.
     radius: Annotated[int, Field(ge=0)] | None = None  # Defaults to `2`.
     height: Annotated[int, Field(ge=0)] | None = None  # Defaults to `1`.
-    block_state_provider: BlockStateProvider  # The block to place on the ground.
+    block_state_provider: BlockStateProviderRef  # The block to place on the ground.
 
 
 # ~~~ MODEL DUMP ~~~
@@ -69,7 +69,7 @@ _ = {
                 "key": "block_state_provider",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider"
+                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef"
                 }
             }
         ]

@@ -10,7 +10,7 @@ from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.block_predicate.BlockPredicate import BlockPredicate
-    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
+    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProviderRef import BlockStateProviderRef
     from generated_symbols.data.worldgen.feature.placement.PlacedFeatureRef import PlacedFeatureRef
     from generated_symbols.util.direction.VerticalDirection import VerticalDirection
 
@@ -18,7 +18,7 @@ if TYPE_CHECKING:
 class SingleBlockPillarConfig(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/feature'
 
-    block: BlockStateProvider
+    block: BlockStateProviderRef
     can_replace: BlockPredicate | None = None  # Defaults to "always true".
     direction: VerticalDirection
     chance_to_continue: Annotated[float, Field(ge=0, le=1)] | None = None  # Defaults to 1.
@@ -35,7 +35,7 @@ _ = {
                 "key": "block",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider"
+                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef"
                 }
             },
             {

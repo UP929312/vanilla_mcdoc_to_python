@@ -5,14 +5,20 @@ Local link to file: generated_symbols/data/loot/function/LimitCount.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
+from generated_symbols.base import GeneratedModel
 from generated_symbols.data.loot.function.Conditions import Conditions
 
 if TYPE_CHECKING:
-    from generated_symbols.data.util.IntRange import IntRange
+    from generated_symbols.data.number_provider.IntNumberProviderRef import IntNumberProviderRef
+
+
+class LimitStruct(GeneratedModel):
+    min: IntNumberProviderRef | None = None
+    max: IntNumberProviderRef | None = None
 
 
 class LimitCount(Conditions):
-    limit: IntRange  # Limits the count of the item to a range.
+    limit: LimitStruct  # Limits the count of the item to a range.
 
 
 # ~~~ MODEL DUMP ~~~
@@ -45,7 +51,7 @@ _ = {
                         },
                         {
                             "kind": "reference",
-                            "path": "::java::data::util::IntRange",
+                            "path": "::java::data::loot::IntRange",
                             "attributes": [
                                 {
                                     "name": "since",
@@ -54,6 +60,51 @@ _ = {
                                         "value": {
                                             "kind": "string",
                                             "value": "1.17"
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "until",
+                                    "value": {
+                                        "kind": "literal",
+                                        "value": {
+                                            "kind": "string",
+                                            "value": "26.3"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "kind": "struct",
+                            "fields": [
+                                {
+                                    "kind": "pair",
+                                    "key": "min",
+                                    "type": {
+                                        "kind": "reference",
+                                        "path": "::java::data::number_provider::IntNumberProviderRef"
+                                    },
+                                    "optional": True
+                                },
+                                {
+                                    "kind": "pair",
+                                    "key": "max",
+                                    "type": {
+                                        "kind": "reference",
+                                        "path": "::java::data::number_provider::IntNumberProviderRef"
+                                    },
+                                    "optional": True
+                                }
+                            ],
+                            "attributes": [
+                                {
+                                    "name": "since",
+                                    "value": {
+                                        "kind": "literal",
+                                        "value": {
+                                            "kind": "string",
+                                            "value": "26.3"
                                         }
                                     }
                                 }

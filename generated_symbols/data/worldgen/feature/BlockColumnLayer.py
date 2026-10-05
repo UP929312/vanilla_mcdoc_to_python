@@ -10,12 +10,12 @@ from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.IntProvider import IntProvider
-    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
+    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProviderRef import BlockStateProviderRef
 
 
 class BlockColumnLayer(GeneratedModel):
     height: IntProvider[Annotated[int, Field(ge=0)]] | Annotated[int, Field(ge=0)]
-    provider: BlockStateProvider
+    provider: BlockStateProviderRef
 
 
 # ~~~ MODEL DUMP ~~~
@@ -48,7 +48,7 @@ _ = {
                 "key": "provider",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider"
+                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef"
                 }
             }
         ]

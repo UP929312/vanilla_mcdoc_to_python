@@ -20,7 +20,6 @@ if TYPE_CHECKING:
 class NoiseGeneratorSettings(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/noise_settings'
 
-    default_block: BlockState
     default_fluid: BlockState
     sea_level: int
     disable_mob_generation: bool  # If true, mobs will not spawn during generation.
@@ -40,6 +39,18 @@ _ = {
         "fields": [
             {
                 "kind": "pair",
+                "attributes": [
+                    {
+                        "name": "until",
+                        "value": {
+                            "kind": "literal",
+                            "value": {
+                                "kind": "string",
+                                "value": "26.4"
+                            }
+                        }
+                    }
+                ],
                 "key": "default_block",
                 "type": {
                     "kind": "reference",

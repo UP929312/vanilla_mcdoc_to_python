@@ -6,11 +6,11 @@ Local link to file: generated_symbols/data/advancement/predicate/EntityEquipment
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+    from generated_symbols.data.advancement.predicate.EquipmentPredicateSlot import EquipmentPredicateSlot
     from generated_symbols.data.advancement.predicate.ItemPredicate import ItemPredicate
-    from generated_symbols.util.slot.EquipmentSlot import EquipmentSlot
 
 
-type EntityEquipmentPredicate = dict[EquipmentSlot, ItemPredicate]
+type EntityEquipmentPredicate = dict[EquipmentPredicateSlot, ItemPredicate]
 
 
 # ~~~ MODEL DUMP ~~~
@@ -22,7 +22,7 @@ _ = {
                 "kind": "pair",
                 "key": {
                     "kind": "reference",
-                    "path": "::java::util::slot::EquipmentSlot"
+                    "path": "::java::data::advancement::predicate::EquipmentPredicateSlot"
                 },
                 "type": {
                     "kind": "reference",

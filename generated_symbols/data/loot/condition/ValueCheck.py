@@ -8,12 +8,12 @@ from typing import TYPE_CHECKING
 from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.number_provider.NumberProviderRef import NumberProviderRef
-    from generated_symbols.data.util.IntRange import IntRange
+    from generated_symbols.data.loot.IntRange import IntRange
+    from generated_symbols.data.number_provider.LegacyNumberProvider import LegacyNumberProvider
 
 
 class ValueCheck(GeneratedModel):
-    value: NumberProviderRef  # Clamps to an integer.
+    value: LegacyNumberProvider  # Clamps to an integer.
     range: IntRange  # Passes when `value` is within this range.
 
 
@@ -28,7 +28,7 @@ _ = {
                 "key": "value",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::number_provider::NumberProviderRef"
+                    "path": "::java::data::number_provider::LegacyNumberProvider"
                 }
             },
             {
@@ -37,7 +37,7 @@ _ = {
                 "key": "range",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::util::IntRange"
+                    "path": "::java::data::loot::IntRange"
                 }
             }
         ]

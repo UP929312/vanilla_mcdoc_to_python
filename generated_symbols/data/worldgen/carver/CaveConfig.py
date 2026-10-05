@@ -22,7 +22,7 @@ class CaveConfig(CarverConfigBase):
     room_vertical_radius_multiplier: FloatProvider[float] | float
     horizontal_radius_multiplier: FloatProvider[float] | float
     vertical_radius_multiplier: FloatProvider[float] | float
-    start_vertical_radiues_multiplier: FloatProvider[float] | float | None = None  # Defaults to constant 1.0
+    start_vertical_radius_multiplier: FloatProvider[float] | float | None = None  # Defaults to constant 1.0
     floor_level: FloatProvider[Annotated[float, Field(ge=-1, le=1)]] | Annotated[float, Field(ge=-1, le=1)]
 
 
@@ -198,7 +198,7 @@ _ = {
                     }
                 ],
                 "desc": "Defaults to constant 1.0",
-                "key": "start_vertical_radiues_multiplier",
+                "key": "start_vertical_radius_multiplier",
                 "type": {
                     "kind": "concrete",
                     "child": {

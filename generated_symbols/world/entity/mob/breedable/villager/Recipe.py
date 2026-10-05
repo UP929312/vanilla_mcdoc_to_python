@@ -9,12 +9,12 @@ from generated_symbols.base import GeneratedModel
 from pydantic import Field
 
 if TYPE_CHECKING:
-    from generated_symbols.world.item.ItemCost import ItemCost
+    from generated_symbols.world.entity.mob.breedable.villager.ItemCost import ItemCost
     from generated_symbols.world.item.ItemStack import ItemStack
 
 
 class Recipe(GeneratedModel):
-    rewardExp: bool | None = None  # Whether it should reward experience for using this trade.   Experience amount is `3 + random(0, 3)` plus `5` if the trade is causing the merchant to increase in tier.
+    rewardExp: bool | None = None  # Whether it should reward experience for using this trade.  Experience amount is `3 + random(0, 3)` plus `5` if the trade is causing the merchant to increase in tier.
     maxUses: Annotated[int, Field(ge=0)] | None = None  # Maximum number of uses for this trade before the merchant has to restock.
     uses: Annotated[int, Field(ge=0)] | None = None  # Times this trade has been used since the merchant last restocked.
     buy: ItemCost | None = None  # Price item required by the merchant, count is modified depending on `demand` & per-player context.
@@ -33,7 +33,7 @@ _ = {
         "fields": [
             {
                 "kind": "pair",
-                "desc": "Whether it should reward experience for using this trade. \n\nExperience amount is `3 + random(0, 3)` plus `5` if the trade is causing the merchant to increase in tier.",
+                "desc": "Whether it should reward experience for using this trade.\n\nExperience amount is `3 + random(0, 3)` plus `5` if the trade is causing the merchant to increase in tier.",
                 "key": "rewardExp",
                 "type": {
                     "kind": "boolean"
@@ -72,7 +72,7 @@ _ = {
                 "key": "buy",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::world::item::ItemCost"
+                    "path": "::java::world::entity::mob::breedable::villager::ItemCost"
                 },
                 "optional": True
             },
@@ -82,7 +82,7 @@ _ = {
                 "key": "buyB",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::world::item::ItemCost"
+                    "path": "::java::world::entity::mob::breedable::villager::ItemCost"
                 },
                 "optional": True
             },

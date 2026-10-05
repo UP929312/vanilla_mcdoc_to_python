@@ -10,13 +10,14 @@ from generated_symbols.base import GeneratedModel
 if TYPE_CHECKING:
     from generated_symbols.data.item_modifier.ItemModifier import ItemModifier
     from generated_symbols.data.loot.LootPoolEntry import LootPoolEntry
-    from generated_symbols.data.number_provider.NumberProviderRef import NumberProviderRef
+    from generated_symbols.data.number_provider.FloatNumberProviderRef import FloatNumberProviderRef
+    from generated_symbols.data.number_provider.IntNumberProviderRef import IntNumberProviderRef
     from generated_symbols.data.predicate.PredicateRef import PredicateRef
 
 
 class LootPool(GeneratedModel):
-    rolls: NumberProviderRef
-    bonus_rolls: NumberProviderRef | None = None
+    rolls: IntNumberProviderRef
+    bonus_rolls: FloatNumberProviderRef | None = None
     entries: list[LootPoolEntry]
     modifier: ItemModifier | None = None
     condition: PredicateRef | None = None
@@ -51,7 +52,7 @@ _ = {
                         },
                         {
                             "kind": "reference",
-                            "path": "::java::data::number_provider::NumberProviderRef",
+                            "path": "::java::data::number_provider::IntNumberProviderRef",
                             "attributes": [
                                 {
                                     "name": "since",
@@ -75,16 +76,8 @@ _ = {
                     "kind": "union",
                     "members": [
                         {
-                            "kind": "concrete",
-                            "child": {
-                                "kind": "reference",
-                                "path": "::java::data::util::MinMaxBounds"
-                            },
-                            "typeArgs": [
-                                {
-                                    "kind": "float"
-                                }
-                            ],
+                            "kind": "reference",
+                            "path": "::java::data::util::RandomValueBounds",
                             "attributes": [
                                 {
                                     "name": "until",
@@ -100,7 +93,7 @@ _ = {
                         },
                         {
                             "kind": "reference",
-                            "path": "::java::data::number_provider::NumberProviderRef",
+                            "path": "::java::data::number_provider::FloatNumberProviderRef",
                             "attributes": [
                                 {
                                     "name": "since",

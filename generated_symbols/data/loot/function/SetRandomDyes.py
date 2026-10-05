@@ -8,11 +8,11 @@ from typing import TYPE_CHECKING
 from generated_symbols.data.loot.function.Conditions import Conditions
 
 if TYPE_CHECKING:
-    from generated_symbols.data.number_provider.NumberProviderRef import NumberProviderRef
+    from generated_symbols.data.number_provider.IntNumberProviderRef import IntNumberProviderRef
 
 
 class SetRandomDyes(Conditions):
-    number_of_dyes: NumberProviderRef  # Applies specified number of random dyes to the item.  For example, one possible outcome of `"number_of_dyes": 2` is `#2C3065`, which is the combination of a blue dye and a black dye.  The same dye color can be selected multiple times.
+    number_of_dyes: IntNumberProviderRef  # Applies specified number of random dyes to the item.  For example, one possible outcome of `"number_of_dyes": 2` is `#2C3065`, which is the combination of a blue dye and a black dye.  The same dye color can be selected multiple times.
 
 
 # ~~~ MODEL DUMP ~~~
@@ -26,7 +26,7 @@ _ = {
                 "key": "number_of_dyes",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::number_provider::NumberProviderRef"
+                    "path": "::java::data::number_provider::IntNumberProviderRef"
                 }
             },
             {

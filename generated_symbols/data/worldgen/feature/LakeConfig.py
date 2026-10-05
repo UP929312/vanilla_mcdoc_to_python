@@ -9,14 +9,14 @@ from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.block_predicate.BlockPredicate import BlockPredicate
-    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
+    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProviderRef import BlockStateProviderRef
 
 
 class LakeConfig(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/feature'
 
-    fluid: BlockStateProvider
-    barrier: BlockStateProvider
+    fluid: BlockStateProviderRef
+    barrier: BlockStateProviderRef
     can_place_feature: BlockPredicate
     can_replace_with_air_or_fluid: BlockPredicate
     can_replace_with_barrier: BlockPredicate
@@ -64,7 +64,7 @@ _ = {
                 "key": "fluid",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider"
+                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef"
                 }
             },
             {
@@ -84,7 +84,7 @@ _ = {
                 "key": "barrier",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider"
+                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef"
                 }
             },
             {

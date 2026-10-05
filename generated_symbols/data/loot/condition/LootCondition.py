@@ -13,6 +13,8 @@ from generated_symbols.data.loot.condition.EnchantmentActiveCheck import Enchant
 from generated_symbols.data.loot.condition.EntityProperties import EntityProperties
 from generated_symbols.data.loot.condition.EntityScores import EntityScores
 from generated_symbols.data.loot.condition.EnvironmentAttributeCheck import EnvironmentAttributeCheck
+from generated_symbols.data.loot.condition.FloatValueCheck import FloatValueCheck
+from generated_symbols.data.loot.condition.IntegerValueCheck import IntegerValueCheck
 from generated_symbols.data.loot.condition.Inverted import Inverted
 from generated_symbols.data.loot.condition.KilledByPlayer import KilledByPlayer
 from generated_symbols.data.loot.condition.LocationCheck import LocationCheck
@@ -21,7 +23,6 @@ from generated_symbols.data.loot.condition.RandomChance import RandomChance
 from generated_symbols.data.loot.condition.RandomChanceWithEnchantedBonus import RandomChanceWithEnchantedBonus
 from generated_symbols.data.loot.condition.TableBonus import TableBonus
 from generated_symbols.data.loot.condition.TimeCheck import TimeCheck
-from generated_symbols.data.loot.condition.ValueCheck import ValueCheck
 from generated_symbols.data.loot.condition.WeatherCheck import WeatherCheck
 
 
@@ -51,6 +52,14 @@ class LootConditionEntityScores(EntityScores):
 
 class LootConditionEnvironmentAttributeCheck(EnvironmentAttributeCheck):
     type: Literal['minecraft:environment_attribute_check'] = 'minecraft:environment_attribute_check'
+
+
+class LootConditionFloatValueCheck(FloatValueCheck):
+    type: Literal['minecraft:float_value_check'] = 'minecraft:float_value_check'
+
+
+class LootConditionIntValueCheck(IntegerValueCheck):
+    type: Literal['minecraft:int_value_check'] = 'minecraft:int_value_check'
 
 
 class LootConditionInverted(Inverted):
@@ -89,15 +98,11 @@ class LootConditionTimeCheck(TimeCheck):
     type: Literal['minecraft:time_check'] = 'minecraft:time_check'
 
 
-class LootConditionValueCheck(ValueCheck):
-    type: Literal['minecraft:value_check'] = 'minecraft:value_check'
-
-
 class LootConditionWeatherCheck(WeatherCheck):
     type: Literal['minecraft:weather_check'] = 'minecraft:weather_check'
 
 
-type LootCondition = LootConditionAllOf | LootConditionAnyOf | LootConditionDamageSourceProperties | LootConditionEnchantmentActiveCheck | LootConditionEntityProperties | LootConditionEntityScores | LootConditionEnvironmentAttributeCheck | LootConditionInverted | LootConditionKilledByPlayer | LootConditionLocationCheck | LootConditionMatchBlock | LootConditionMatchTool | LootConditionRandomChance | LootConditionRandomChanceWithEnchantedBonus | LootConditionTableBonus | LootConditionTimeCheck | LootConditionValueCheck | LootConditionWeatherCheck
+type LootCondition = LootConditionAllOf | LootConditionAnyOf | LootConditionDamageSourceProperties | LootConditionEnchantmentActiveCheck | LootConditionEntityProperties | LootConditionEntityScores | LootConditionEnvironmentAttributeCheck | LootConditionFloatValueCheck | LootConditionIntValueCheck | LootConditionInverted | LootConditionKilledByPlayer | LootConditionLocationCheck | LootConditionMatchBlock | LootConditionMatchTool | LootConditionRandomChance | LootConditionRandomChanceWithEnchantedBonus | LootConditionTableBonus | LootConditionTimeCheck | LootConditionWeatherCheck
 
 
 # ~~~ MODEL DUMP ~~~

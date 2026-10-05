@@ -14,6 +14,7 @@ if TYPE_CHECKING:
     from generated_symbols.data.enchantment.effect.ExplosionParticleInfo import ExplosionParticleInfo
     from generated_symbols.data.util.SoundEventRef import SoundEventRef
     from generated_symbols.registry.KnownBlockId import KnownBlockId
+    from generated_symbols.util.FlatWeightedList import FlatWeightedList
     from generated_symbols.util.particle.Particle import Particle
 
 
@@ -28,7 +29,7 @@ class ExplodeEntityEffect(GeneratedModel):
     block_interaction: BlockInteraction  # Whether the explosion has special effects on blocks.
     small_particle: Particle
     large_particle: Particle
-    block_particles: list[ExplosionParticleInfo] | None = None
+    block_particles: FlatWeightedList[ExplosionParticleInfo] | None = None
     sound: SoundEventRef
 
 
@@ -208,11 +209,17 @@ _ = {
                 ],
                 "key": "block_particles",
                 "type": {
-                    "kind": "list",
-                    "item": {
+                    "kind": "concrete",
+                    "child": {
                         "kind": "reference",
-                        "path": "::java::data::enchantment::effect::ExplosionParticleInfo"
-                    }
+                        "path": "::java::util::FlatWeightedList"
+                    },
+                    "typeArgs": [
+                        {
+                            "kind": "reference",
+                            "path": "::java::data::enchantment::effect::ExplosionParticleInfo"
+                        }
+                    ]
                 },
                 "optional": True
             },

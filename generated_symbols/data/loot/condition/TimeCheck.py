@@ -9,7 +9,7 @@ from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.util.IntRange import IntRange
+    from generated_symbols.data.loot.IntRange import IntRange
 
 
 class TimeCheck(GeneratedModel):
@@ -80,7 +80,7 @@ _ = {
                         },
                         {
                             "kind": "reference",
-                            "path": "::java::data::util::IntRange",
+                            "path": "::java::data::loot::IntRange",
                             "attributes": [
                                 {
                                     "name": "since",

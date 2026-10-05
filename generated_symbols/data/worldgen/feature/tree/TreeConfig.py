@@ -8,7 +8,7 @@ from typing import TYPE_CHECKING, ClassVar
 from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
+    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProviderRef import BlockStateProviderRef
     from generated_symbols.data.worldgen.feature.tree.FeatureSize import FeatureSize
     from generated_symbols.data.worldgen.feature.tree.FoliagePlacer import FoliagePlacer
     from generated_symbols.data.worldgen.feature.tree.RootPlacer import RootPlacer
@@ -21,9 +21,9 @@ class TreeConfig(GeneratedModel):
 
     ignore_vines: bool | None = None
     minimum_size: FeatureSize
-    below_trunk_provider: BlockStateProvider
-    trunk_provider: BlockStateProvider
-    foliage_provider: BlockStateProvider
+    below_trunk_provider: BlockStateProviderRef
+    trunk_provider: BlockStateProviderRef
+    foliage_provider: BlockStateProviderRef
     root_placer: RootPlacer | None = None
     trunk_placer: TrunkPlacer
     foliage_placer: FoliagePlacer
@@ -148,7 +148,7 @@ _ = {
                 "key": "dirt_provider",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider"
+                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef"
                 }
             },
             {
@@ -183,7 +183,7 @@ _ = {
                             "key": "below_trunk_provider",
                             "type": {
                                 "kind": "reference",
-                                "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider"
+                                "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef"
                             },
                             "optional": True
                         }
@@ -212,7 +212,7 @@ _ = {
                             "key": "below_trunk_provider",
                             "type": {
                                 "kind": "reference",
-                                "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider"
+                                "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef"
                             }
                         }
                     ]
@@ -245,7 +245,7 @@ _ = {
                 "key": "sapling_provider",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider"
+                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef"
                 }
             },
             {
@@ -253,7 +253,7 @@ _ = {
                 "key": "trunk_provider",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider"
+                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef"
                 }
             },
             {
@@ -273,7 +273,7 @@ _ = {
                 "key": "leaves_provider",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider"
+                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef"
                 }
             },
             {
@@ -293,7 +293,7 @@ _ = {
                 "key": "foliage_provider",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider"
+                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef"
                 }
             },
             {

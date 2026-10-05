@@ -39,6 +39,7 @@ type KnownEnvironmentAttributeId = Literal[
     'minecraft:visual/fog_color',
     'minecraft:visual/fog_end_distance',
     'minecraft:visual/fog_start_distance',
+    'minecraft:visual/has_sky_occluder',
     'minecraft:visual/moon_angle',
     'minecraft:visual/moon_phase',
     'minecraft:visual/night_vision_color',

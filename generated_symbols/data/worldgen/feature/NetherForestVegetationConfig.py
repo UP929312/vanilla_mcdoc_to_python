@@ -9,13 +9,13 @@ from generated_symbols.base import GeneratedModel
 from pydantic import Field
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
+    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProviderRef import BlockStateProviderRef
 
 
 class NetherForestVegetationConfig(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/feature'
 
-    state_provider: BlockStateProvider
+    state_provider: BlockStateProviderRef
     spread_width: Annotated[int, Field(ge=1)]
     spread_height: Annotated[int, Field(ge=1)]
 
@@ -30,7 +30,7 @@ _ = {
                 "key": "state_provider",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider"
+                    "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef"
                 }
             },
             {

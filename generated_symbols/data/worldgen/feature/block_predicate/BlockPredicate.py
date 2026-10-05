@@ -5,6 +5,7 @@ Local link to file: generated_symbols/data/worldgen/feature/block_predicate/Bloc
 # ~~~ CODE ~~~
 from typing import Literal
 
+from generated_symbols.data.worldgen.feature.block_predicate.BelowHeightmapPredicate import BelowHeightmapPredicate
 from generated_symbols.data.worldgen.feature.block_predicate.CombiningPredicate import CombiningPredicate
 from generated_symbols.data.worldgen.feature.block_predicate.HasSturdyFacePredicate import HasSturdyFacePredicate
 from generated_symbols.data.worldgen.feature.block_predicate.HeightRangePredicate import HeightRangePredicate
@@ -25,6 +26,10 @@ class BlockPredicateAllOf(CombiningPredicate):
 
 class BlockPredicateAnyOf(CombiningPredicate):
     type: Literal['minecraft:any_of'] = 'minecraft:any_of'
+
+
+class BlockPredicateBelowHeightmap(BelowHeightmapPredicate):
+    type: Literal['minecraft:below_heightmap'] = 'minecraft:below_heightmap'
 
 
 class BlockPredicateHasSturdyFace(HasSturdyFacePredicate):
@@ -71,7 +76,7 @@ class BlockPredicateWouldSurvive(WouldSurvivePredicate):
     type: Literal['minecraft:would_survive'] = 'minecraft:would_survive'
 
 
-type BlockPredicate = BlockPredicateAllOf | BlockPredicateAnyOf | BlockPredicateHasSturdyFace | BlockPredicateHeightRange | BlockPredicateInsideWorldBounds | BlockPredicateMatchingBiomes | BlockPredicateMatchingBlockTag | BlockPredicateMatchingBlocks | BlockPredicateMatchingFluids | BlockPredicateNot | BlockPredicateUnobstructed | BlockPredicateVolumeMatch | BlockPredicateWouldSurvive
+type BlockPredicate = BlockPredicateAllOf | BlockPredicateAnyOf | BlockPredicateBelowHeightmap | BlockPredicateHasSturdyFace | BlockPredicateHeightRange | BlockPredicateInsideWorldBounds | BlockPredicateMatchingBiomes | BlockPredicateMatchingBlockTag | BlockPredicateMatchingBlocks | BlockPredicateMatchingFluids | BlockPredicateNot | BlockPredicateUnobstructed | BlockPredicateVolumeMatch | BlockPredicateWouldSurvive
 
 
 # ~~~ MODEL DUMP ~~~

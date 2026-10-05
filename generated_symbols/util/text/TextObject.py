@@ -16,6 +16,7 @@ if TYPE_CHECKING:
     from generated_symbols.util.avatar.Profile import Profile
     from generated_symbols.util.text.Keybind import Keybind
     from generated_symbols.util.text.Text import Text
+    from generated_symbols.util.text.TranslationArg import TranslationArg
 
 
 class ScoreStruct(GeneratedModel):
@@ -31,7 +32,7 @@ class TextObjectStruct1(TextBase):
 class TextObjectStruct2(TextBase):
     translate: str
     fallback: str | None = None
-    with_: Annotated[list[Text], Field(min_length=1)] | None = None
+    with_: Annotated[list[TranslationArg], Field(min_length=1)] | None = None
     type: Literal['translatable'] = 'translatable'
 
 
@@ -184,7 +185,7 @@ _ = {
                             "kind": "list",
                             "item": {
                                 "kind": "reference",
-                                "path": "::java::util::text::Text"
+                                "path": "::java::util::text::TranslationArg"
                             },
                             "lengthRange": {
                                 "kind": 0,

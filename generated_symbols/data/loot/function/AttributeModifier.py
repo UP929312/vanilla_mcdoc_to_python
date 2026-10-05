@@ -9,7 +9,7 @@ from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.number_provider.NumberProviderRef import NumberProviderRef
+    from generated_symbols.data.number_provider.FloatNumberProviderRef import FloatNumberProviderRef
     from generated_symbols.util.attribute.AttributeOperation import AttributeOperation
     from generated_symbols.util.slot.EquipmentSlotGroup import EquipmentSlotGroup
 
@@ -17,7 +17,7 @@ if TYPE_CHECKING:
 class AttributeModifier(GeneratedModel):
     attribute: Annotated[str, IdSpec(registry='attribute')]  # Attribute type to modify.
     id: Annotated[str, IdSpec(registry='attribute_modifier')]  # The unique identifier of this attribute modifier.
-    amount: NumberProviderRef
+    amount: FloatNumberProviderRef
     operation: AttributeOperation  # The operation used for this modifier.
     slot: EquipmentSlotGroup | list[EquipmentSlotGroup]  # If a list, one of the listed slots will be chosen randomly.
 
@@ -163,7 +163,7 @@ _ = {
                         },
                         {
                             "kind": "reference",
-                            "path": "::java::data::number_provider::NumberProviderRef",
+                            "path": "::java::data::number_provider::FloatNumberProviderRef",
                             "attributes": [
                                 {
                                     "name": "since",

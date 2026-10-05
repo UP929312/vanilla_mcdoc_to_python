@@ -3,7 +3,7 @@ Generated from symbols.json for ::java::data::worldgen::feature::tree::TrunkPlac
 Local link to file: generated_symbols/data/worldgen/feature/tree/TrunkPlacer.py
 """
 # ~~~ CODE ~~~
-from typing import Annotated, Literal
+from typing import TYPE_CHECKING, Annotated, Literal
 
 from generated_symbols.base import GeneratedModel
 from generated_symbols.data.worldgen.feature.tree.BendingTrunkPlacer import BendingTrunkPlacer
@@ -11,6 +11,9 @@ from generated_symbols.data.worldgen.feature.tree.CherryTrunkPlacer import Cherr
 from generated_symbols.data.worldgen.feature.tree.PoplarTrunkPlacer import PoplarTrunkPlacer
 from generated_symbols.data.worldgen.feature.tree.UpwardsBranchingTrunkPlacer import UpwardsBranchingTrunkPlacer
 from pydantic import Field
+
+if TYPE_CHECKING:
+    from generated_symbols.data.worldgen.IntProvider import IntProvider
 
 
 class TrunkPlacerBendingTrunkPlacer(BendingTrunkPlacer):
@@ -74,6 +77,7 @@ class TrunkPlacerStraightTrunkPlacer(GeneratedModel):
     base_height: Annotated[int, Field(ge=0, le=32)]
     height_rand_a: Annotated[int, Field(ge=0, le=24)]
     height_rand_b: Annotated[int, Field(ge=0, le=24)]
+    trunk_width: IntProvider[Annotated[int, Field(ge=1)]] | Annotated[int, Field(ge=1)] | None = None
 
 
 class TrunkPlacerUpwardsBranchingTrunkPlacer(UpwardsBranchingTrunkPlacer):

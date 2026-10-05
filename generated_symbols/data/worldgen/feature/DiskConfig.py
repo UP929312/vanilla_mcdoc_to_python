@@ -11,13 +11,13 @@ from pydantic import Field
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.IntProvider import IntProvider
     from generated_symbols.data.worldgen.feature.block_predicate.BlockPredicate import BlockPredicate
-    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
+    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProviderRef import BlockStateProviderRef
 
 
 class DiskConfig(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/feature'
 
-    state_provider: BlockStateProvider
+    state_provider: BlockStateProviderRef
     radius: IntProvider[Annotated[int, Field(ge=0, le=8)]] | Annotated[int, Field(ge=0, le=8)]
     half_height: Annotated[int, Field(ge=0, le=4)]
     target: BlockPredicate
@@ -84,7 +84,7 @@ _ = {
                         },
                         {
                             "kind": "reference",
-                            "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProvider",
+                            "path": "::java::data::worldgen::feature::block_state_provider::BlockStateProviderRef",
                             "attributes": [
                                 {
                                     "name": "since",

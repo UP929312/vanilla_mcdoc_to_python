@@ -112,6 +112,26 @@ _ = {
                 "optional": True
             },
             {
+                "kind": "pair",
+                "attributes": [
+                    {
+                        "name": "since",
+                        "value": {
+                            "kind": "literal",
+                            "value": {
+                                "kind": "string",
+                                "value": "1.17"
+                            }
+                        }
+                    }
+                ],
+                "key": "y",
+                "type": {
+                    "kind": "reference",
+                    "path": "::java::data::worldgen::HeightProvider"
+                }
+            },
+            {
                 "kind": "spread",
                 "attributes": [
                     {
@@ -138,14 +158,6 @@ _ = {
                 "type": {
                     "kind": "struct",
                     "fields": [
-                        {
-                            "kind": "pair",
-                            "key": "y",
-                            "type": {
-                                "kind": "reference",
-                                "path": "::java::data::worldgen::HeightProvider"
-                            }
-                        },
                         {
                             "kind": "pair",
                             "key": "yScale",
@@ -199,26 +211,6 @@ _ = {
                             "optional": True
                         }
                     ]
-                }
-            },
-            {
-                "kind": "pair",
-                "attributes": [
-                    {
-                        "name": "since",
-                        "value": {
-                            "kind": "literal",
-                            "value": {
-                                "kind": "string",
-                                "value": "26.3"
-                            }
-                        }
-                    }
-                ],
-                "key": "y",
-                "type": {
-                    "kind": "reference",
-                    "path": "::java::data::worldgen::HeightProvider"
                 }
             }
         ]

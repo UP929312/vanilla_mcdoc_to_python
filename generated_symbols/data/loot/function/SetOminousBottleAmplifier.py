@@ -8,11 +8,11 @@ from typing import TYPE_CHECKING
 from generated_symbols.data.loot.function.Conditions import Conditions
 
 if TYPE_CHECKING:
-    from generated_symbols.data.number_provider.NumberProviderRef import NumberProviderRef
+    from generated_symbols.data.number_provider.IntNumberProviderRef import IntNumberProviderRef
 
 
 class SetOminousBottleAmplifier(Conditions):
-    amplifier: NumberProviderRef
+    amplifier: IntNumberProviderRef
 
 
 # ~~~ MODEL DUMP ~~~
@@ -25,7 +25,7 @@ _ = {
                 "key": "amplifier",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::number_provider::NumberProviderRef"
+                    "path": "::java::data::number_provider::IntNumberProviderRef"
                 }
             },
             {
