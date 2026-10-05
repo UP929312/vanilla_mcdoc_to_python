@@ -391,10 +391,11 @@ class EnumSchema(BaseSchema):
     def to_python_code(self, class_name: str, ctx: SingleSymbolContext) -> list[str]:
         enum_kind = "StrEnum" if self.enum_kind == "string" else "IntEnum"
         ctx.required_imports.add(Import("enum", enum_kind, False, True))
-        return [f"class {class_name}({enum_kind}):"] + [
+        lines = [f"class {class_name}({enum_kind}):"] + [
             f"    {value.identifier.upper()} = {value.to_annotation()}{value.description_comment_or_empty}"
             for value in self.values
         ]
+        return lines if self.values else lines + ["    pass"]
 
 
 # ==================================================================================================================================
@@ -587,7 +588,21 @@ class UnionSchema(BaseSchema):
 
         # Materialize struct members as concrete sibling symbols so the union alias can reference them.
         declarations, annotations = self._render_members(f"{class_name}Struct", ctx, declare_structs=True)
-        return declarations + [f"type {class_name} = {' | '.join(annotations)}"]
+        try:
+            resolved_members = [ctx.schema_graph.resolve(member) for member in self.members]
+        except KeyError:
+            resolved_members = []
+        struct_members = [
+            resolved[0]
+            for resolved in resolved_members
+            if len(resolved) == 1 and isinstance(resolved[0], StructSchema)
+        ]
+        discriminator = (  # Optimisation
+            _literal_discriminator_field(struct_members)
+            if len(struct_members) == len(self.members) == len(annotations)
+            else None
+        )
+        return declarations + [_render_union_alias(class_name, annotations, discriminator, ctx)]
 
 
 type PairSchemaTypes = (
@@ -863,7 +878,8 @@ class StructSchema(BaseSchema):
         rendered: list[str] = []
         for variant_name, variant in variants:
             rendered.extend(variant.to_python_code(variant_name, ctx) + [""])
-        return rendered + [f"type {class_name} = {' | '.join(name for name, _ in variants)}"]
+        discriminator = _literal_discriminator_field([variant for _, variant in variants])
+        return rendered + [_render_union_alias(class_name, [name for name, _ in variants], discriminator, ctx)]
 
     def _render_alias_spread(self, class_name: str, ctx: SingleSymbolContext) -> list[str] | None:
         for spread in (field for field in self.fields if isinstance(field, SpreadFieldSchema)):
@@ -974,6 +990,54 @@ class StructSchema(BaseSchema):
     def to_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str = "") -> str:
         mapping_alias: str = self._mapping_alias_annotation(ctx, f"{nested_struct_name}ValueStruct")  # type: ignore[assignment]
         return mapping_alias
+
+
+def _literal_discriminator_field(schemas: list[StructSchema]) -> str | None:
+    """Find a shared string-literal field whose value uniquely identifies each model."""
+    if len(schemas) < 2:
+        return None
+
+    candidate_fields = [
+        PairSchema.clean_key(field.key)
+        for field in schemas[0].fields
+        if isinstance(field, PairSchema)
+        and isinstance(field.key, str)
+        and isinstance(field.type, LiteralSchema)
+        and isinstance(field.type.value.value, str)
+    ]
+    for field_name in candidate_fields:
+        values: list[str] = []
+        for schema in schemas:
+            field = next((
+                item for item in schema.fields
+                if isinstance(item, PairSchema)
+                and isinstance(item.key, str)
+                and PairSchema.clean_key(item.key) == field_name
+            ), None)
+            if not isinstance(field, PairSchema) or not isinstance(field.type, LiteralSchema):
+                break
+            value = field.type.value.value
+            if not isinstance(value, str):
+                break
+            values.append(value)
+        if len(values) == len(schemas) and len(set(values)) == len(values):
+            return field_name
+    return None
+
+
+def _render_union_alias(class_name: str, annotations: list[str], discriminator: str | None, ctx: SingleSymbolContext) -> str:
+    union_annotation = " | ".join(annotations)
+    if discriminator is None:
+        return f"type {class_name} = {union_annotation}"
+
+    ctx.require_annotated()
+    ctx.required_imports.add(Import("pydantic", "Field", False, False))
+    return (
+        f"type {class_name} = Annotated[\n"
+        f"    {union_annotation},\n"
+        f"    Field(discriminator={discriminator!r}),\n"
+        "]"
+    )
 
 
 # ==================================================================================================================================

@@ -7,7 +7,7 @@ from code_generation import SCHEMA_GRAPH, make_init_content, make_python_file_co
 from context import SingleSymbolContext
 from minecraft_registry import IdSpec, make_registry_id_file_content, make_registry_id_files, make_root_resource_registry_content, used_registry_names
 from schema_resolution import SchemaGraph
-from typed_models import IntSchema, UnionSchema
+from typed_models import IntSchema, ReferenceSchema, UnionSchema
 from utils import LATEST_VERSION, SYMBOLS_MAP
 
 
@@ -16,6 +16,15 @@ def generated_body(resource_type: str, resource_data: dict[str, object], class_n
 
 
 class TestIdMetadataGeneration:
+    def test_empty_enum_generates_valid_class_body(self) -> None:
+        content = generated_body(
+            "::test::EmptyEnum",
+            {"kind": "enum", "enumKind": "string", "values": []},
+            "EmptyEnum",
+        )
+
+        assert "class EmptyEnum(StrEnum):\n    pass" in content
+
     def test_literal_id_attribute(self) -> None:
         content = generated_body(
             "::test::ItemId",
@@ -140,7 +149,48 @@ class TestDispatcherSpreadGeneration:
         assert "trigger: Literal['minecraft:inventory_changed']" in content
         assert "class AdvancementCriterionTick(PlayerTrigger):" in content
         assert "trigger: Literal['minecraft:tick']" in content
-        assert "type AdvancementCriterion = AdvancementCriterionAllayDropItemOnBlock |" in content
+        assert "type AdvancementCriterion = Annotated[\n    AdvancementCriterionAllayDropItemOnBlock |" in content
+        assert "Field(discriminator='trigger')" in content
+
+    def test_union_schema_uses_shared_unique_string_literal_discriminator(self) -> None:
+        content = generated_body(
+            "::test::TaggedUnion",
+            {
+                "kind": "union",
+                "members": [
+                    {"kind": "struct", "fields": [{
+                        "kind": "pair",
+                        "key": "kind",
+                        "type": {"kind": "literal", "value": {"kind": "string", "value": "first"}},
+                    }]},
+                    {"kind": "struct", "fields": [{
+                        "kind": "pair",
+                        "key": "kind",
+                        "type": {"kind": "literal", "value": {"kind": "string", "value": "second"}},
+                    }]},
+                ],
+            },
+            "TaggedUnion",
+        )
+
+        assert "Field(discriminator='kind')" in content
+
+    def test_union_without_discriminator_remains_plain_union(self) -> None:
+        path = "::java::data::structure::StructureNBT"
+        content = generated_body(path, SYMBOLS_MAP["mcdoc"][path], "StructureNBT")
+
+        assert "type StructureNBT = StructureNBTStruct1 | StructureNBTStruct2" in content
+        assert "Field(discriminator=" not in content
+
+    def test_union_with_unresolved_type_parameter_remains_plain_union(self) -> None:
+        context = SingleSymbolContext(schema_graph=SCHEMA_GRAPH)
+        context.local_type_params.add("::test::T")
+        schema = UnionSchema(kind="union", members=[
+            ReferenceSchema(kind="reference", path="::test::T"),
+            IntSchema(kind="int"),
+        ])
+
+        assert schema.to_python_code("GenericUnion", context) == ["type GenericUnion = T | int"]
 
     def test_dynamic_map_branch_does_not_break_distribution(self) -> None:
         content = generated_body(
