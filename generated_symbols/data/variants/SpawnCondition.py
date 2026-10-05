@@ -3,11 +3,12 @@ Generated from symbols.json for ::java::data::variants::SpawnCondition
 Local link to file: generated_symbols/data/variants/SpawnCondition.py
 """
 # ~~~ CODE ~~~
-from typing import Literal
+from typing import Annotated, Literal
 
 from generated_symbols.data.variants.BiomeCheck import BiomeCheck
 from generated_symbols.data.variants.MoonBrightnessCheck import MoonBrightnessCheck
 from generated_symbols.data.variants.StructureCheck import StructureCheck
+from pydantic import Field
 
 
 class SpawnConditionBiome(BiomeCheck):
@@ -22,7 +23,10 @@ class SpawnConditionStructure(StructureCheck):
     type: Literal['minecraft:structure'] = 'minecraft:structure'
 
 
-type SpawnCondition = SpawnConditionBiome | SpawnConditionMoonBrightness | SpawnConditionStructure
+type SpawnCondition = Annotated[
+    SpawnConditionBiome | SpawnConditionMoonBrightness | SpawnConditionStructure,
+    Field(discriminator='type'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

@@ -3,11 +3,12 @@ Generated from symbols.json for ::java::data::loot::function::ListOperation
 Local link to file: generated_symbols/data/loot/function/ListOperation.py
 """
 # ~~~ CODE ~~~
-from typing import Literal
+from typing import Annotated, Literal
 
 from generated_symbols.base import GeneratedModel
 from generated_symbols.data.loot.function.InsertListOperation import InsertListOperation
 from generated_symbols.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
+from pydantic import Field
 
 
 class ListOperationAppend(GeneratedModel):
@@ -26,7 +27,10 @@ class ListOperationReplaceSection(ReplaceSectionListOperation):
     mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
 
 
-type ListOperation = ListOperationAppend | ListOperationInsert | ListOperationReplaceAll | ListOperationReplaceSection
+type ListOperation = Annotated[
+    ListOperationAppend | ListOperationInsert | ListOperationReplaceAll | ListOperationReplaceSection,
+    Field(discriminator='mode'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

@@ -3,11 +3,12 @@ Generated from symbols.json for ::java::data::enchantment::provider::Enchantment
 Local link to file: generated_symbols/data/enchantment/provider/EnchantmentProvider.py
 """
 # ~~~ CODE ~~~
-from typing import ClassVar, Literal
+from typing import Annotated, ClassVar, Literal
 
 from generated_symbols.data.enchantment.provider.ByCostEnchantmentProvider import ByCostEnchantmentProvider
 from generated_symbols.data.enchantment.provider.ByCostWithDifficultyEnchantmentProvider import ByCostWithDifficultyEnchantmentProvider
 from generated_symbols.data.enchantment.provider.SingleProvider import SingleProvider
+from pydantic import Field
 
 
 class EnchantmentProviderByCost(ByCostEnchantmentProvider):
@@ -24,7 +25,10 @@ class EnchantmentProviderSingle(SingleProvider):
     type: Literal['minecraft:single'] = 'minecraft:single'
 
 
-type EnchantmentProvider = EnchantmentProviderByCost | EnchantmentProviderByCostWithDifficulty | EnchantmentProviderSingle
+type EnchantmentProvider = Annotated[
+    EnchantmentProviderByCost | EnchantmentProviderByCostWithDifficulty | EnchantmentProviderSingle,
+    Field(discriminator='type'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

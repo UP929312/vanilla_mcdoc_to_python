@@ -3,10 +3,11 @@ Generated from symbols.json for ::java::data::worldgen::carver::ConfiguredCarver
 Local link to file: generated_symbols/data/worldgen/carver/ConfiguredCarver.py
 """
 # ~~~ CODE ~~~
-from typing import ClassVar, Literal
+from typing import Annotated, ClassVar, Literal
 
 from generated_symbols.data.worldgen.carver.CanyonConfig import CanyonConfig
 from generated_symbols.data.worldgen.carver.CaveConfig import CaveConfig
+from pydantic import Field
 
 
 class ConfiguredCarverCanyon(CanyonConfig):
@@ -19,7 +20,10 @@ class ConfiguredCarverCave(CaveConfig):
     type: Literal['minecraft:cave'] = 'minecraft:cave'
 
 
-type ConfiguredCarver = ConfiguredCarverCanyon | ConfiguredCarverCave
+type ConfiguredCarver = Annotated[
+    ConfiguredCarverCanyon | ConfiguredCarverCave,
+    Field(discriminator='type'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

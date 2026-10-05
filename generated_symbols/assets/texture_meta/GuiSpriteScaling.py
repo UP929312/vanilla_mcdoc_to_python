@@ -3,11 +3,12 @@ Generated from symbols.json for ::java::assets::texture_meta::GuiSpriteScaling
 Local link to file: generated_symbols/assets/texture_meta/GuiSpriteScaling.py
 """
 # ~~~ CODE ~~~
-from typing import Literal
+from typing import Annotated, Literal
 
 from generated_symbols.assets.texture_meta.NineSlice import NineSlice
 from generated_symbols.assets.texture_meta.TileScaling import TileScaling
 from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 
 class GuiSpriteScalingNineSlice(NineSlice):
@@ -22,7 +23,10 @@ class GuiSpriteScalingTile(TileScaling):
     type: Literal['minecraft:tile'] = 'minecraft:tile'
 
 
-type GuiSpriteScaling = GuiSpriteScalingNineSlice | GuiSpriteScalingStretch | GuiSpriteScalingTile
+type GuiSpriteScaling = Annotated[
+    GuiSpriteScalingNineSlice | GuiSpriteScalingStretch | GuiSpriteScalingTile,
+    Field(discriminator='type'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

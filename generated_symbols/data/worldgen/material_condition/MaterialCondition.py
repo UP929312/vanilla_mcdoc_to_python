@@ -3,7 +3,7 @@ Generated from symbols.json for ::java::data::worldgen::material_condition::Mate
 Local link to file: generated_symbols/data/worldgen/material_condition/MaterialCondition.py
 """
 # ~~~ CODE ~~~
-from typing import ClassVar, Literal
+from typing import Annotated, ClassVar, Literal
 
 from generated_symbols.data.worldgen.material_condition.BiomeCondition import BiomeCondition
 from generated_symbols.data.worldgen.material_condition.NoiseThresholdCondition import NoiseThresholdCondition
@@ -12,6 +12,7 @@ from generated_symbols.data.worldgen.material_condition.StoneDepthCondition impo
 from generated_symbols.data.worldgen.material_condition.VerticalGradientCondition import VerticalGradientCondition
 from generated_symbols.data.worldgen.material_condition.WaterCondition import WaterCondition
 from generated_symbols.data.worldgen.material_condition.YAboveCondition import YAboveCondition
+from pydantic import Field
 
 
 class MaterialConditionBiome(BiomeCondition):
@@ -44,7 +45,10 @@ class MaterialConditionYAbove(YAboveCondition):
     type: Literal['minecraft:y_above'] = 'minecraft:y_above'
 
 
-type MaterialCondition = MaterialConditionBiome | MaterialConditionNoiseThreshold | MaterialConditionNot | MaterialConditionStoneDepth | MaterialConditionVerticalGradient | MaterialConditionWater | MaterialConditionYAbove
+type MaterialCondition = Annotated[
+    MaterialConditionBiome | MaterialConditionNoiseThreshold | MaterialConditionNot | MaterialConditionStoneDepth | MaterialConditionVerticalGradient | MaterialConditionWater | MaterialConditionYAbove,
+    Field(discriminator='type'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

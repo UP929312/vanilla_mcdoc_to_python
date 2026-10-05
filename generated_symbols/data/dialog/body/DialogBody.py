@@ -3,10 +3,11 @@ Generated from symbols.json for ::java::data::dialog::body::DialogBody
 Local link to file: generated_symbols/data/dialog/body/DialogBody.py
 """
 # ~~~ CODE ~~~
-from typing import Literal
+from typing import Annotated, Literal
 
 from generated_symbols.data.dialog.body.ItemBody import ItemBody
 from generated_symbols.data.dialog.body.PlainMessage import PlainMessage
+from pydantic import Field
 
 
 class DialogBodyItem(ItemBody):
@@ -17,7 +18,10 @@ class DialogBodyPlainMessage(PlainMessage):
     type: Literal['minecraft:plain_message'] = 'minecraft:plain_message'
 
 
-type DialogBody = DialogBodyItem | DialogBodyPlainMessage
+type DialogBody = Annotated[
+    DialogBodyItem | DialogBodyPlainMessage,
+    Field(discriminator='type'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

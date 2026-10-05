@@ -3,7 +3,7 @@ Generated from symbols.json for ::java::data::dialog::action::ClickAction
 Local link to file: generated_symbols/data/dialog/action/ClickAction.py
 """
 # ~~~ CODE ~~~
-from typing import Literal
+from typing import Annotated, Literal
 
 from generated_symbols.data.dialog.action.DynamicCustomAction import DynamicCustomAction
 from generated_symbols.data.dialog.action.DynamicRunCommand import DynamicRunCommand
@@ -14,6 +14,7 @@ from generated_symbols.util.text.OpenUrl import OpenUrl
 from generated_symbols.util.text.RunCommand import RunCommand
 from generated_symbols.util.text.ShowDialog import ShowDialog
 from generated_symbols.util.text.SuggestCommand import SuggestCommand
+from pydantic import Field
 
 
 class ClickActionChangePage(ChangePage):
@@ -52,7 +53,10 @@ class ClickActionSuggestCommand(SuggestCommand):
     type: Literal['minecraft:suggest_command'] = 'minecraft:suggest_command'
 
 
-type ClickAction = ClickActionChangePage | ClickActionCopyToClipboard | ClickActionCustom | ClickActionDynamicCustom | ClickActionDynamicRunCommand | ClickActionOpenUrl | ClickActionRunCommand | ClickActionShowDialog | ClickActionSuggestCommand
+type ClickAction = Annotated[
+    ClickActionChangePage | ClickActionCopyToClipboard | ClickActionCustom | ClickActionDynamicCustom | ClickActionDynamicRunCommand | ClickActionOpenUrl | ClickActionRunCommand | ClickActionShowDialog | ClickActionSuggestCommand,
+    Field(discriminator='type'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

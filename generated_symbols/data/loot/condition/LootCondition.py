@@ -3,7 +3,7 @@ Generated from symbols.json for ::java::data::loot::condition::LootCondition
 Local link to file: generated_symbols/data/loot/condition/LootCondition.py
 """
 # ~~~ CODE ~~~
-from typing import Literal
+from typing import Annotated, Literal
 
 from generated_symbols.data.advancement.predicate.BlockPredicate import BlockPredicate
 from generated_symbols.data.loot.condition.AllOf import AllOf
@@ -24,6 +24,7 @@ from generated_symbols.data.loot.condition.RandomChanceWithEnchantedBonus import
 from generated_symbols.data.loot.condition.TableBonus import TableBonus
 from generated_symbols.data.loot.condition.TimeCheck import TimeCheck
 from generated_symbols.data.loot.condition.WeatherCheck import WeatherCheck
+from pydantic import Field
 
 
 class LootConditionAllOf(AllOf):
@@ -102,7 +103,10 @@ class LootConditionWeatherCheck(WeatherCheck):
     type: Literal['minecraft:weather_check'] = 'minecraft:weather_check'
 
 
-type LootCondition = LootConditionAllOf | LootConditionAnyOf | LootConditionDamageSourceProperties | LootConditionEnchantmentActiveCheck | LootConditionEntityProperties | LootConditionEntityScores | LootConditionEnvironmentAttributeCheck | LootConditionFloatValueCheck | LootConditionIntValueCheck | LootConditionInverted | LootConditionKilledByPlayer | LootConditionLocationCheck | LootConditionMatchBlock | LootConditionMatchTool | LootConditionRandomChance | LootConditionRandomChanceWithEnchantedBonus | LootConditionTableBonus | LootConditionTimeCheck | LootConditionWeatherCheck
+type LootCondition = Annotated[
+    LootConditionAllOf | LootConditionAnyOf | LootConditionDamageSourceProperties | LootConditionEnchantmentActiveCheck | LootConditionEntityProperties | LootConditionEntityScores | LootConditionEnvironmentAttributeCheck | LootConditionFloatValueCheck | LootConditionIntValueCheck | LootConditionInverted | LootConditionKilledByPlayer | LootConditionLocationCheck | LootConditionMatchBlock | LootConditionMatchTool | LootConditionRandomChance | LootConditionRandomChanceWithEnchantedBonus | LootConditionTableBonus | LootConditionTimeCheck | LootConditionWeatherCheck,
+    Field(discriminator='type'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

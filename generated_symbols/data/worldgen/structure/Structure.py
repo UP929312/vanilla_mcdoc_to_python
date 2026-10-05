@@ -14,6 +14,7 @@ from generated_symbols.data.worldgen.structure.OceanRuin import OceanRuin
 from generated_symbols.data.worldgen.structure.RuinedPortal import RuinedPortal
 from generated_symbols.data.worldgen.structure.Shipwreck import Shipwreck
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.DecorationStep import DecorationStep
@@ -176,7 +177,10 @@ class StructureWoodlandMansion(GeneratedModel):
     spawn_overrides: dict[MobCategory, SpawnOverride]
 
 
-type Structure = StructureBastionRemnant | StructureBuriedTreasure | StructureDesertPyramid | StructureEndCity | StructureFortress | StructureIgloo | StructureJigsaw | StructureJungleTemple | StructureMineshaft | StructureNetherFossil | StructureOceanMonument | StructureOceanRuin | StructurePillagerOutpost | StructureRuinedPortal | StructureShipwreck | StructureStronghold | StructureSwampHut | StructureVillage | StructureWoodlandMansion
+type Structure = Annotated[
+    StructureBastionRemnant | StructureBuriedTreasure | StructureDesertPyramid | StructureEndCity | StructureFortress | StructureIgloo | StructureJigsaw | StructureJungleTemple | StructureMineshaft | StructureNetherFossil | StructureOceanMonument | StructureOceanRuin | StructurePillagerOutpost | StructureRuinedPortal | StructureShipwreck | StructureStronghold | StructureSwampHut | StructureVillage | StructureWoodlandMansion,
+    Field(discriminator='type'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

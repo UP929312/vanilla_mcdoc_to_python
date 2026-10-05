@@ -3,7 +3,7 @@ Generated from symbols.json for ::java::data::slot_source::TypedSlotSource
 Local link to file: generated_symbols/data/slot_source/TypedSlotSource.py
 """
 # ~~~ CODE ~~~
-from typing import ClassVar, Literal
+from typing import Annotated, ClassVar, Literal
 
 from generated_symbols.base import GeneratedModel
 from generated_symbols.data.slot_source.ContentsSlotSource import ContentsSlotSource
@@ -11,6 +11,7 @@ from generated_symbols.data.slot_source.FilterSlotSource import FilterSlotSource
 from generated_symbols.data.slot_source.GroupSlotSource import GroupSlotSource
 from generated_symbols.data.slot_source.LimitCountSlotSource import LimitCountSlotSource
 from generated_symbols.data.slot_source.RangeSlotSource import RangeSlotSource
+from pydantic import Field
 
 
 class TypedSlotSourceContents(ContentsSlotSource):
@@ -39,7 +40,10 @@ class TypedSlotSourceSlotRange(RangeSlotSource):
     type: Literal['minecraft:slot_range'] = 'minecraft:slot_range'
 
 
-type TypedSlotSource = TypedSlotSourceContents | TypedSlotSourceEmpty | TypedSlotSourceFiltered | TypedSlotSourceGroup | TypedSlotSourceLimitSlots | TypedSlotSourceSlotRange
+type TypedSlotSource = Annotated[
+    TypedSlotSourceContents | TypedSlotSourceEmpty | TypedSlotSourceFiltered | TypedSlotSourceGroup | TypedSlotSourceLimitSlots | TypedSlotSourceSlotRange,
+    Field(discriminator='type'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

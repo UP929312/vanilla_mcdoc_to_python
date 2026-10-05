@@ -3,11 +3,12 @@ Generated from symbols.json for ::java::data::worldgen::structure::PoolAlias
 Local link to file: generated_symbols/data/worldgen/structure/PoolAlias.py
 """
 # ~~~ CODE ~~~
-from typing import Literal
+from typing import Annotated, Literal
 
 from generated_symbols.data.worldgen.structure.DirectPoolAlias import DirectPoolAlias
 from generated_symbols.data.worldgen.structure.RandomGroupPoolAlias import RandomGroupPoolAlias
 from generated_symbols.data.worldgen.structure.RandomPoolAlias import RandomPoolAlias
+from pydantic import Field
 
 
 class PoolAliasDirect(DirectPoolAlias):
@@ -22,7 +23,10 @@ class PoolAliasRandomGroup(RandomGroupPoolAlias):
     type: Literal['minecraft:random_group'] = 'minecraft:random_group'
 
 
-type PoolAlias = PoolAliasDirect | PoolAliasRandom | PoolAliasRandomGroup
+type PoolAlias = Annotated[
+    PoolAliasDirect | PoolAliasRandom | PoolAliasRandomGroup,
+    Field(discriminator='type'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

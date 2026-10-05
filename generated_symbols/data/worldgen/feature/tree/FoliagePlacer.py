@@ -78,7 +78,10 @@ class FoliagePlacerSpruceFoliagePlacer(SprucePineFoliagePlacer):
     offset: IntProvider[Annotated[int, Field(ge=0, le=16)]] | Annotated[int, Field(ge=0, le=16)]
 
 
-type FoliagePlacer = FoliagePlacerBlobFoliagePlacer | FoliagePlacerBushFoliagePlacer | FoliagePlacerCherryFoliagePlacer | FoliagePlacerFancyFoliagePlacer | FoliagePlacerJungleFoliagePlacer | FoliagePlacerMegaPineFoliagePlacer | FoliagePlacerPineFoliagePlacer | FoliagePlacerPoplarFoliagePlacer | FoliagePlacerRandomSpreadFoliagePlacer | FoliagePlacerSpruceFoliagePlacer
+type FoliagePlacer = Annotated[
+    FoliagePlacerBlobFoliagePlacer | FoliagePlacerBushFoliagePlacer | FoliagePlacerCherryFoliagePlacer | FoliagePlacerFancyFoliagePlacer | FoliagePlacerJungleFoliagePlacer | FoliagePlacerMegaPineFoliagePlacer | FoliagePlacerPineFoliagePlacer | FoliagePlacerPoplarFoliagePlacer | FoliagePlacerRandomSpreadFoliagePlacer | FoliagePlacerSpruceFoliagePlacer,
+    Field(discriminator='type'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

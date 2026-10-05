@@ -46,6 +46,7 @@ from generated_symbols.data.loot.function.SetStewEffect import SetStewEffect
 from generated_symbols.data.loot.function.ToggleTooltips import ToggleTooltips
 from generated_symbols.data.loot.function.UniformBonusFormula import UniformBonusFormula
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.loot.EntityTarget import EntityTarget
@@ -71,7 +72,10 @@ class LootFunctionApplyBonusUniformBonusCount(Conditions, UniformBonusFormula):
     formula: Literal['minecraft:uniform_bonus_count'] = 'minecraft:uniform_bonus_count'
 
 
-type LootFunctionApplyBonus = LootFunctionApplyBonusBinomialWithBonusCount | LootFunctionApplyBonusOreDrops | LootFunctionApplyBonusUniformBonusCount
+type LootFunctionApplyBonus = Annotated[
+    LootFunctionApplyBonusBinomialWithBonusCount | LootFunctionApplyBonusOreDrops | LootFunctionApplyBonusUniformBonusCount,
+    Field(discriminator='formula'),
+]
 
 class LootFunctionCopyComponents(CopyComponents):
     type: Literal['minecraft:copy_components'] = 'minecraft:copy_components'
@@ -225,7 +229,10 @@ class LootFunctionSetLoreReplaceSection(Conditions, ReplaceSectionListOperation)
     mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
 
 
-type LootFunctionSetLore = LootFunctionSetLoreAppend | LootFunctionSetLoreInsert | LootFunctionSetLoreReplaceAll | LootFunctionSetLoreReplaceSection
+type LootFunctionSetLore = Annotated[
+    LootFunctionSetLoreAppend | LootFunctionSetLoreInsert | LootFunctionSetLoreReplaceAll | LootFunctionSetLoreReplaceSection,
+    Field(discriminator='mode'),
+]
 
 class LootFunctionSetName(SetName):
     type: Literal['minecraft:set_name'] = 'minecraft:set_name'
@@ -275,7 +282,10 @@ class LootFunctionSetWritableBookPagesReplaceSection(Conditions, ReplaceSectionL
     mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
 
 
-type LootFunctionSetWritableBookPages = LootFunctionSetWritableBookPagesAppend | LootFunctionSetWritableBookPagesInsert | LootFunctionSetWritableBookPagesReplaceAll | LootFunctionSetWritableBookPagesReplaceSection
+type LootFunctionSetWritableBookPages = Annotated[
+    LootFunctionSetWritableBookPagesAppend | LootFunctionSetWritableBookPagesInsert | LootFunctionSetWritableBookPagesReplaceAll | LootFunctionSetWritableBookPagesReplaceSection,
+    Field(discriminator='mode'),
+]
 
 class LootFunctionSetWrittenBookPagesAppend(Conditions):
     type: Literal['minecraft:set_written_book_pages'] = 'minecraft:set_written_book_pages'
@@ -301,13 +311,19 @@ class LootFunctionSetWrittenBookPagesReplaceSection(Conditions, ReplaceSectionLi
     mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
 
 
-type LootFunctionSetWrittenBookPages = LootFunctionSetWrittenBookPagesAppend | LootFunctionSetWrittenBookPagesInsert | LootFunctionSetWrittenBookPagesReplaceAll | LootFunctionSetWrittenBookPagesReplaceSection
+type LootFunctionSetWrittenBookPages = Annotated[
+    LootFunctionSetWrittenBookPagesAppend | LootFunctionSetWrittenBookPagesInsert | LootFunctionSetWrittenBookPagesReplaceAll | LootFunctionSetWrittenBookPagesReplaceSection,
+    Field(discriminator='mode'),
+]
 
 class LootFunctionToggleTooltips(ToggleTooltips):
     type: Literal['minecraft:toggle_tooltips'] = 'minecraft:toggle_tooltips'
 
 
-type LootFunction = LootFunctionApplyBonus | LootFunctionCopyComponents | LootFunctionCopyCustomData | LootFunctionCopyName | LootFunctionCopyState | LootFunctionDiscard | LootFunctionEnchantRandomly | LootFunctionEnchantWithLevels | LootFunctionEnchantedCountIncrease | LootFunctionExplorationMap | LootFunctionExplosionDecay | LootFunctionFillPlayerHead | LootFunctionFiltered | LootFunctionFurnaceSmelt | LootFunctionLimitCount | LootFunctionModifyContents | LootFunctionSequence | LootFunctionSetAttributes | LootFunctionSetBannerPattern | LootFunctionSetBookCover | LootFunctionSetComponents | LootFunctionSetContents | LootFunctionSetCount | LootFunctionSetCustomData | LootFunctionSetCustomModelData | LootFunctionSetDamage | LootFunctionSetEnchantments | LootFunctionSetFireworkExplosion | LootFunctionSetFireworks | LootFunctionSetInstrument | LootFunctionSetItem | LootFunctionSetLootTable | LootFunctionSetLore | LootFunctionSetName | LootFunctionSetOminousBottleAmplifier | LootFunctionSetPotion | LootFunctionSetRandomDyes | LootFunctionSetRandomPotion | LootFunctionSetStewEffect | LootFunctionSetWritableBookPages | LootFunctionSetWrittenBookPages | LootFunctionToggleTooltips
+type LootFunction = Annotated[
+    LootFunctionApplyBonus | LootFunctionCopyComponents | LootFunctionCopyCustomData | LootFunctionCopyName | LootFunctionCopyState | LootFunctionDiscard | LootFunctionEnchantRandomly | LootFunctionEnchantWithLevels | LootFunctionEnchantedCountIncrease | LootFunctionExplorationMap | LootFunctionExplosionDecay | LootFunctionFillPlayerHead | LootFunctionFiltered | LootFunctionFurnaceSmelt | LootFunctionLimitCount | LootFunctionModifyContents | LootFunctionSequence | LootFunctionSetAttributes | LootFunctionSetBannerPattern | LootFunctionSetBookCover | LootFunctionSetComponents | LootFunctionSetContents | LootFunctionSetCount | LootFunctionSetCustomData | LootFunctionSetCustomModelData | LootFunctionSetDamage | LootFunctionSetEnchantments | LootFunctionSetFireworkExplosion | LootFunctionSetFireworks | LootFunctionSetInstrument | LootFunctionSetItem | LootFunctionSetLootTable | LootFunctionSetLore | LootFunctionSetName | LootFunctionSetOminousBottleAmplifier | LootFunctionSetPotion | LootFunctionSetRandomDyes | LootFunctionSetRandomPotion | LootFunctionSetStewEffect | LootFunctionSetWritableBookPages | LootFunctionSetWrittenBookPages | LootFunctionToggleTooltips,
+    Field(discriminator='type'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

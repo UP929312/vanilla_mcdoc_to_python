@@ -3,7 +3,7 @@ Generated from symbols.json for ::java::data::worldgen::feature::tree::TreeDecor
 Local link to file: generated_symbols/data/worldgen/feature/tree/TreeDecorator.py
 """
 # ~~~ CODE ~~~
-from typing import Literal
+from typing import Annotated, Literal
 
 from generated_symbols.data.worldgen.feature.tree.AlterGroundTreeDecorator import AlterGroundTreeDecorator
 from generated_symbols.data.worldgen.feature.tree.AttachedToLeavesTreeDecorator import AttachedToLeavesTreeDecorator
@@ -15,6 +15,7 @@ from generated_symbols.data.worldgen.feature.tree.LeaveVineTreeDecorator import 
 from generated_symbols.data.worldgen.feature.tree.PaleMossTreeDecorator import PaleMossTreeDecorator
 from generated_symbols.data.worldgen.feature.tree.PlaceOnGroundTreeDecorator import PlaceOnGroundTreeDecorator
 from generated_symbols.data.worldgen.feature.tree.ShelfMushroomTreeDecorator import ShelfMushroomTreeDecorator
+from pydantic import Field
 
 
 class TreeDecoratorAlterGround(AlterGroundTreeDecorator):
@@ -57,7 +58,10 @@ class TreeDecoratorShelfMushroom(ShelfMushroomTreeDecorator):
     type: Literal['minecraft:shelf_mushroom'] = 'minecraft:shelf_mushroom'
 
 
-type TreeDecorator = TreeDecoratorAlterGround | TreeDecoratorAttachedToLeaves | TreeDecoratorAttachedToLogs | TreeDecoratorBeehive | TreeDecoratorCocoa | TreeDecoratorCreakingHeart | TreeDecoratorLeaveVine | TreeDecoratorPaleMoss | TreeDecoratorPlaceOnGround | TreeDecoratorShelfMushroom
+type TreeDecorator = Annotated[
+    TreeDecoratorAlterGround | TreeDecoratorAttachedToLeaves | TreeDecoratorAttachedToLogs | TreeDecoratorBeehive | TreeDecoratorCocoa | TreeDecoratorCreakingHeart | TreeDecoratorLeaveVine | TreeDecoratorPaleMoss | TreeDecoratorPlaceOnGround | TreeDecoratorShelfMushroom,
+    Field(discriminator='type'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

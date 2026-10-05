@@ -301,7 +301,10 @@ class DialogServerLinksWaitForResponse(GeneratedModel):
 
 type DialogServerLinks = DialogServerLinksNone | DialogServerLinksClose | DialogServerLinksNone2 | DialogServerLinksWaitForResponse
 
-type Dialog = DialogConfirmation | DialogDialogList | DialogMultiAction | DialogNotice | DialogServerLinks
+type Dialog = Annotated[
+    DialogConfirmation | DialogDialogList | DialogMultiAction | DialogNotice | DialogServerLinks,
+    Field(discriminator='type'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

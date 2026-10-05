@@ -3,7 +3,7 @@ Generated from symbols.json for ::java::data::loot::LootPoolEntry
 Local link to file: generated_symbols/data/loot/LootPoolEntry.py
 """
 # ~~~ CODE ~~~
-from typing import Literal
+from typing import Annotated, Literal
 
 from generated_symbols.data.loot.CompositePoolEntry import CompositePoolEntry
 from generated_symbols.data.loot.DynamicPoolEntry import DynamicPoolEntry
@@ -12,6 +12,7 @@ from generated_symbols.data.loot.LootTablePoolEntry import LootTablePoolEntry
 from generated_symbols.data.loot.SingletonPoolEntry import SingletonPoolEntry
 from generated_symbols.data.loot.SlotsPoolEntry import SlotsPoolEntry
 from generated_symbols.data.loot.TagPoolEntry import TagPoolEntry
+from pydantic import Field
 
 
 class LootPoolEntryAlternatives(CompositePoolEntry):
@@ -50,7 +51,10 @@ class LootPoolEntryTag(TagPoolEntry):
     type: Literal['minecraft:tag'] = 'minecraft:tag'
 
 
-type LootPoolEntry = LootPoolEntryAlternatives | LootPoolEntryDynamic | LootPoolEntryEmpty | LootPoolEntryGroup | LootPoolEntryItem | LootPoolEntryLootTable | LootPoolEntrySequence | LootPoolEntrySlots | LootPoolEntryTag
+type LootPoolEntry = Annotated[
+    LootPoolEntryAlternatives | LootPoolEntryDynamic | LootPoolEntryEmpty | LootPoolEntryGroup | LootPoolEntryItem | LootPoolEntryLootTable | LootPoolEntrySequence | LootPoolEntrySlots | LootPoolEntryTag,
+    Field(discriminator='type'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

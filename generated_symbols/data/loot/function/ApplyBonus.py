@@ -9,6 +9,7 @@ from generated_symbols.data.loot.function.BinomialWithBonusCountFormula import B
 from generated_symbols.data.loot.function.Conditions import Conditions
 from generated_symbols.data.loot.function.UniformBonusFormula import UniformBonusFormula
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 
 class ApplyBonusBinomialWithBonusCount(BinomialWithBonusCountFormula, Conditions):
@@ -26,7 +27,10 @@ class ApplyBonusUniformBonusCount(Conditions, UniformBonusFormula):
     formula: Literal['minecraft:uniform_bonus_count'] = 'minecraft:uniform_bonus_count'
 
 
-type ApplyBonus = ApplyBonusBinomialWithBonusCount | ApplyBonusOreDrops | ApplyBonusUniformBonusCount
+type ApplyBonus = Annotated[
+    ApplyBonusBinomialWithBonusCount | ApplyBonusOreDrops | ApplyBonusUniformBonusCount,
+    Field(discriminator='formula'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

@@ -3,7 +3,7 @@ Generated from symbols.json for ::java::data::enchantment::effect::ValueEffect
 Local link to file: generated_symbols/data/enchantment/effect/ValueEffect.py
 """
 # ~~~ CODE ~~~
-from typing import Literal
+from typing import Annotated, Literal
 
 from generated_symbols.data.enchantment.effect.AddEffectValue import AddEffectValue
 from generated_symbols.data.enchantment.effect.AllOfEffectValue import AllOfEffectValue
@@ -11,6 +11,7 @@ from generated_symbols.data.enchantment.effect.ExponentialEffectValue import Exp
 from generated_symbols.data.enchantment.effect.MultiplyEffectValue import MultiplyEffectValue
 from generated_symbols.data.enchantment.effect.ReduceBinomialEffectValue import ReduceBinomialEffectValue
 from generated_symbols.data.enchantment.effect.SetEffectValue import SetEffectValue
+from pydantic import Field
 
 
 class ValueEffectAdd(AddEffectValue):
@@ -37,7 +38,10 @@ class ValueEffectSet(SetEffectValue):
     type: Literal['minecraft:set'] = 'minecraft:set'
 
 
-type ValueEffect = ValueEffectAdd | ValueEffectAllOf | ValueEffectExponential | ValueEffectMultiply | ValueEffectRemoveBinomial | ValueEffectSet
+type ValueEffect = Annotated[
+    ValueEffectAdd | ValueEffectAllOf | ValueEffectExponential | ValueEffectMultiply | ValueEffectRemoveBinomial | ValueEffectSet,
+    Field(discriminator='type'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

@@ -3,13 +3,14 @@ Generated from symbols.json for ::java::world::component::item::ConsumeEffect
 Local link to file: generated_symbols/world/component/item/ConsumeEffect.py
 """
 # ~~~ CODE ~~~
-from typing import Literal
+from typing import Annotated, Literal
 
 from generated_symbols.base import GeneratedModel
 from generated_symbols.world.component.item.ApplyEffectsConsumeEffect import ApplyEffectsConsumeEffect
 from generated_symbols.world.component.item.PlaySoundConsumeEffect import PlaySoundConsumeEffect
 from generated_symbols.world.component.item.RemoveEffectsConsumeEffect import RemoveEffectsConsumeEffect
 from generated_symbols.world.component.item.TeleportRandomlyConsumeEffect import TeleportRandomlyConsumeEffect
+from pydantic import Field
 
 
 class ConsumeEffectApplyEffects(ApplyEffectsConsumeEffect):
@@ -32,7 +33,10 @@ class ConsumeEffectTeleportRandomly(TeleportRandomlyConsumeEffect):
     type: Literal['minecraft:teleport_randomly'] = 'minecraft:teleport_randomly'
 
 
-type ConsumeEffect = ConsumeEffectApplyEffects | ConsumeEffectClearAllEffects | ConsumeEffectPlaySound | ConsumeEffectRemoveEffects | ConsumeEffectTeleportRandomly
+type ConsumeEffect = Annotated[
+    ConsumeEffectApplyEffects | ConsumeEffectClearAllEffects | ConsumeEffectPlaySound | ConsumeEffectRemoveEffects | ConsumeEffectTeleportRandomly,
+    Field(discriminator='type'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

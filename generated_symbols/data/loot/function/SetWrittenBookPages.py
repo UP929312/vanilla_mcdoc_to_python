@@ -3,11 +3,12 @@ Generated from symbols.json for ::java::data::loot::function::SetWrittenBookPage
 Local link to file: generated_symbols/data/loot/function/SetWrittenBookPages.py
 """
 # ~~~ CODE ~~~
-from typing import TYPE_CHECKING, Literal
+from typing import TYPE_CHECKING, Annotated, Literal
 
 from generated_symbols.data.loot.function.Conditions import Conditions
 from generated_symbols.data.loot.function.InsertListOperation import InsertListOperation
 from generated_symbols.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.Filterable import Filterable
@@ -34,7 +35,10 @@ class SetWrittenBookPagesReplaceSection(Conditions, ReplaceSectionListOperation)
     mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
 
 
-type SetWrittenBookPages = SetWrittenBookPagesAppend | SetWrittenBookPagesInsert | SetWrittenBookPagesReplaceAll | SetWrittenBookPagesReplaceSection
+type SetWrittenBookPages = Annotated[
+    SetWrittenBookPagesAppend | SetWrittenBookPagesInsert | SetWrittenBookPagesReplaceAll | SetWrittenBookPagesReplaceSection,
+    Field(discriminator='mode'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

@@ -7,6 +7,7 @@ from enum import StrEnum
 
 
 class IntegerEnvironmentAttribute(StrEnum):
+    pass
 
 
 # ~~~ MODEL DUMP ~~~

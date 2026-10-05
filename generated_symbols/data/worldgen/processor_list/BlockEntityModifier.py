@@ -3,11 +3,12 @@ Generated from symbols.json for ::java::data::worldgen::processor_list::BlockEnt
 Local link to file: generated_symbols/data/worldgen/processor_list/BlockEntityModifier.py
 """
 # ~~~ CODE ~~~
-from typing import Literal
+from typing import Annotated, Literal
 
 from generated_symbols.base import GeneratedModel
 from generated_symbols.data.worldgen.processor_list.AppendLoot import AppendLoot
 from generated_symbols.data.worldgen.processor_list.AppendStatic import AppendStatic
+from pydantic import Field
 
 
 class BlockEntityModifierAppendLoot(AppendLoot):
@@ -26,7 +27,10 @@ class BlockEntityModifierPassthrough(GeneratedModel):
     type: Literal['minecraft:passthrough'] = 'minecraft:passthrough'
 
 
-type BlockEntityModifier = BlockEntityModifierAppendLoot | BlockEntityModifierAppendStatic | BlockEntityModifierClear | BlockEntityModifierPassthrough
+type BlockEntityModifier = Annotated[
+    BlockEntityModifierAppendLoot | BlockEntityModifierAppendStatic | BlockEntityModifierClear | BlockEntityModifierPassthrough,
+    Field(discriminator='type'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

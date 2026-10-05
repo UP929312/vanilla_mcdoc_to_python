@@ -3,7 +3,7 @@ Generated from symbols.json for ::java::assets::item_definition::ItemModel
 Local link to file: generated_symbols/assets/item_definition/ItemModel.py
 """
 # ~~~ CODE ~~~
-from typing import TYPE_CHECKING, Literal
+from typing import TYPE_CHECKING, Annotated, Literal
 
 from generated_symbols.assets.item_definition.BlockState import BlockState
 from generated_symbols.assets.item_definition.ChargeType import ChargeType
@@ -32,6 +32,7 @@ from generated_symbols.assets.item_definition.UseCycle import UseCycle
 from generated_symbols.assets.item_definition.UseDuration import UseDuration
 from generated_symbols.assets.item_definition.ViewEntity import ViewEntity
 from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.assets.item_definition.ConditionalPropertyType import ConditionalPropertyType
@@ -264,7 +265,10 @@ class ItemModelSpecial(Special):
     type: Literal['minecraft:special'] = 'minecraft:special'
 
 
-type ItemModel = ItemModelBundleSelectedItem | ItemModelComposite | ItemModelCondition | ItemModelModel | ItemModelRangeDispatch | ItemModelSelect | ItemModelSpecial
+type ItemModel = Annotated[
+    ItemModelBundleSelectedItem | ItemModelComposite | ItemModelCondition | ItemModelModel | ItemModelRangeDispatch | ItemModelSelect | ItemModelSpecial,
+    Field(discriminator='type'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

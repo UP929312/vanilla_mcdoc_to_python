@@ -3,7 +3,7 @@ Generated from symbols.json for ::java::assets::item_definition::ModelTint
 Local link to file: generated_symbols/assets/item_definition/ModelTint.py
 """
 # ~~~ CODE ~~~
-from typing import Literal
+from typing import Annotated, Literal
 
 from generated_symbols.assets.item_definition.ConstantTint import ConstantTint
 from generated_symbols.assets.item_definition.CustomModelDataTint import CustomModelDataTint
@@ -13,6 +13,7 @@ from generated_symbols.assets.item_definition.GrassTint import GrassTint
 from generated_symbols.assets.item_definition.MapColorTint import MapColorTint
 from generated_symbols.assets.item_definition.PotionTint import PotionTint
 from generated_symbols.assets.item_definition.TeamTint import TeamTint
+from pydantic import Field
 
 
 class ModelTintConstant(ConstantTint):
@@ -47,7 +48,10 @@ class ModelTintTeam(TeamTint):
     type: Literal['minecraft:team'] = 'minecraft:team'
 
 
-type ModelTint = ModelTintConstant | ModelTintCustomModelData | ModelTintDye | ModelTintFirework | ModelTintGrass | ModelTintMapColor | ModelTintPotion | ModelTintTeam
+type ModelTint = Annotated[
+    ModelTintConstant | ModelTintCustomModelData | ModelTintDye | ModelTintFirework | ModelTintGrass | ModelTintMapColor | ModelTintPotion | ModelTintTeam,
+    Field(discriminator='type'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

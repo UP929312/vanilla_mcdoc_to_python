@@ -3,10 +3,11 @@ Generated from symbols.json for ::java::data::util::NbtProvider
 Local link to file: generated_symbols/data/util/NbtProvider.py
 """
 # ~~~ CODE ~~~
-from typing import TYPE_CHECKING, Literal
+from typing import TYPE_CHECKING, Annotated, Literal
 
 from generated_symbols.data.util.ContextNbtProvider import ContextNbtProvider
 from generated_symbols.data.util.StorageNbtProvider import StorageNbtProvider
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.NbtContextTarget import NbtContextTarget
@@ -20,7 +21,10 @@ class NbtProviderStructStorage(StorageNbtProvider):
     type: Literal['minecraft:storage'] = 'minecraft:storage'
 
 
-type NbtProviderStruct = NbtProviderStructContext | NbtProviderStructStorage
+type NbtProviderStruct = Annotated[
+    NbtProviderStructContext | NbtProviderStructStorage,
+    Field(discriminator='type'),
+]
 
 type NbtProvider = NbtContextTarget | NbtProviderStruct
 

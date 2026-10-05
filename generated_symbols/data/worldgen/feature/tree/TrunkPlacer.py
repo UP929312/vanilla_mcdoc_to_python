@@ -87,7 +87,10 @@ class TrunkPlacerUpwardsBranchingTrunkPlacer(UpwardsBranchingTrunkPlacer):
     height_rand_b: Annotated[int, Field(ge=0, le=24)]
 
 
-type TrunkPlacer = TrunkPlacerBendingTrunkPlacer | TrunkPlacerCherryTrunkPlacer | TrunkPlacerDarkOakTrunkPlacer | TrunkPlacerFancyTrunkPlacer | TrunkPlacerForkingTrunkPlacer | TrunkPlacerGiantTrunkPlacer | TrunkPlacerMegaJungleTrunkPlacer | TrunkPlacerPoplarTrunkPlacer | TrunkPlacerStraightTrunkPlacer | TrunkPlacerUpwardsBranchingTrunkPlacer
+type TrunkPlacer = Annotated[
+    TrunkPlacerBendingTrunkPlacer | TrunkPlacerCherryTrunkPlacer | TrunkPlacerDarkOakTrunkPlacer | TrunkPlacerFancyTrunkPlacer | TrunkPlacerForkingTrunkPlacer | TrunkPlacerGiantTrunkPlacer | TrunkPlacerMegaJungleTrunkPlacer | TrunkPlacerPoplarTrunkPlacer | TrunkPlacerStraightTrunkPlacer | TrunkPlacerUpwardsBranchingTrunkPlacer,
+    Field(discriminator='type'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

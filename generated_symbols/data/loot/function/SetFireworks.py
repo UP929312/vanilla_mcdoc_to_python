@@ -35,7 +35,10 @@ class ExplosionsStructReplaceSection(ReplaceSectionListOperation):
     mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
 
 
-type ExplosionsStruct = ExplosionsStructAppend | ExplosionsStructInsert | ExplosionsStructReplaceAll | ExplosionsStructReplaceSection
+type ExplosionsStruct = Annotated[
+    ExplosionsStructAppend | ExplosionsStructInsert | ExplosionsStructReplaceAll | ExplosionsStructReplaceSection,
+    Field(discriminator='mode'),
+]
 
 class SetFireworks(Conditions):
     flight_duration: Annotated[int, Field(ge=0, le=255)] | None = None  # If omitted, the flight duration of the item is left untouched - or set to 0 if the component did not exist before.

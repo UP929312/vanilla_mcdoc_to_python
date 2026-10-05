@@ -3,10 +3,11 @@ Generated from symbols.json for ::java::world::component::item::AttributeDisplay
 Local link to file: generated_symbols/world/component/item/AttributeDisplay.py
 """
 # ~~~ CODE ~~~
-from typing import Literal
+from typing import Annotated, Literal
 
 from generated_symbols.base import GeneratedModel
 from generated_symbols.world.component.item.AttributeDisplayTextOverride import AttributeDisplayTextOverride
+from pydantic import Field
 
 
 class AttributeDisplayDefault(GeneratedModel):
@@ -21,7 +22,10 @@ class AttributeDisplayOverride(AttributeDisplayTextOverride):
     type: Literal['minecraft:override'] = 'minecraft:override'
 
 
-type AttributeDisplay = AttributeDisplayDefault | AttributeDisplayHidden | AttributeDisplayOverride
+type AttributeDisplay = Annotated[
+    AttributeDisplayDefault | AttributeDisplayHidden | AttributeDisplayOverride,
+    Field(discriminator='type'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

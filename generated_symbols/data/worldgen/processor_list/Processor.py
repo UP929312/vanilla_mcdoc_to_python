@@ -3,7 +3,7 @@ Generated from symbols.json for ::java::data::worldgen::processor_list::Processo
 Local link to file: generated_symbols/data/worldgen/processor_list/Processor.py
 """
 # ~~~ CODE ~~~
-from typing import Literal
+from typing import Annotated, Literal
 
 from generated_symbols.data.worldgen.processor_list.BlockAge import BlockAge
 from generated_symbols.data.worldgen.processor_list.BlockIgnore import BlockIgnore
@@ -12,6 +12,7 @@ from generated_symbols.data.worldgen.processor_list.Capped import Capped
 from generated_symbols.data.worldgen.processor_list.Gravity import Gravity
 from generated_symbols.data.worldgen.processor_list.ProtectedBlocks import ProtectedBlocks
 from generated_symbols.data.worldgen.processor_list.Rule import Rule
+from pydantic import Field
 
 
 class ProcessorBlockAge(BlockAge):
@@ -42,7 +43,10 @@ class ProcessorRule(Rule):
     processor_type: Literal['minecraft:rule'] = 'minecraft:rule'
 
 
-type Processor = ProcessorBlockAge | ProcessorBlockIgnore | ProcessorBlockRot | ProcessorCapped | ProcessorGravity | ProcessorProtectedBlocks | ProcessorRule
+type Processor = Annotated[
+    ProcessorBlockAge | ProcessorBlockIgnore | ProcessorBlockRot | ProcessorCapped | ProcessorGravity | ProcessorProtectedBlocks | ProcessorRule,
+    Field(discriminator='processor_type'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

@@ -3,7 +3,7 @@ Generated from symbols.json for ::java::data::enchantment::effect::EntityEffect
 Local link to file: generated_symbols/data/enchantment/effect/EntityEffect.py
 """
 # ~~~ CODE ~~~
-from typing import Literal
+from typing import Annotated, Literal
 
 from generated_symbols.data.enchantment.effect.AllOfEntityEffect import AllOfEntityEffect
 from generated_symbols.data.enchantment.effect.ApplyExhaustionEntityEffect import ApplyExhaustionEntityEffect
@@ -20,6 +20,7 @@ from generated_symbols.data.enchantment.effect.RunFunctionEntityEffect import Ru
 from generated_symbols.data.enchantment.effect.SetBlockPropertiesEntityEffect import SetBlockPropertiesEntityEffect
 from generated_symbols.data.enchantment.effect.SpawnParticlesEntityEffect import SpawnParticlesEntityEffect
 from generated_symbols.data.enchantment.effect.SummonEntityEffect import SummonEntityEffect
+from pydantic import Field
 
 
 class EntityEffectAllOf(AllOfEntityEffect):
@@ -82,7 +83,10 @@ class EntityEffectSummonEntity(SummonEntityEffect):
     type: Literal['minecraft:summon_entity'] = 'minecraft:summon_entity'
 
 
-type EntityEffect = EntityEffectAllOf | EntityEffectApplyExhaustion | EntityEffectApplyImpulse | EntityEffectApplyMobEffect | EntityEffectChangeItemDamage | EntityEffectDamageEntity | EntityEffectExplode | EntityEffectIgnite | EntityEffectPlaySound | EntityEffectReplaceBlock | EntityEffectReplaceDisk | EntityEffectRunFunction | EntityEffectSetBlockProperties | EntityEffectSpawnParticles | EntityEffectSummonEntity
+type EntityEffect = Annotated[
+    EntityEffectAllOf | EntityEffectApplyExhaustion | EntityEffectApplyImpulse | EntityEffectApplyMobEffect | EntityEffectChangeItemDamage | EntityEffectDamageEntity | EntityEffectExplode | EntityEffectIgnite | EntityEffectPlaySound | EntityEffectReplaceBlock | EntityEffectReplaceDisk | EntityEffectRunFunction | EntityEffectSetBlockProperties | EntityEffectSpawnParticles | EntityEffectSummonEntity,
+    Field(discriminator='type'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

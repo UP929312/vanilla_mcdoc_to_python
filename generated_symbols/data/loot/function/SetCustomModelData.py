@@ -3,12 +3,13 @@ Generated from symbols.json for ::java::data::loot::function::SetCustomModelData
 Local link to file: generated_symbols/data/loot/function/SetCustomModelData.py
 """
 # ~~~ CODE ~~~
-from typing import TYPE_CHECKING, Literal
+from typing import TYPE_CHECKING, Annotated, Literal
 
 from generated_symbols.base import GeneratedModel
 from generated_symbols.data.loot.function.Conditions import Conditions
 from generated_symbols.data.loot.function.InsertListOperation import InsertListOperation
 from generated_symbols.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.number_provider.FloatNumberProviderRef import FloatNumberProviderRef
@@ -36,7 +37,10 @@ class FloatsStructReplaceSection(ReplaceSectionListOperation):
     mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
 
 
-type FloatsStruct = FloatsStructAppend | FloatsStructInsert | FloatsStructReplaceAll | FloatsStructReplaceSection
+type FloatsStruct = Annotated[
+    FloatsStructAppend | FloatsStructInsert | FloatsStructReplaceAll | FloatsStructReplaceSection,
+    Field(discriminator='mode'),
+]
 
 class FlagsStructAppend(GeneratedModel):
     values: list[bool]
@@ -58,7 +62,10 @@ class FlagsStructReplaceSection(ReplaceSectionListOperation):
     mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
 
 
-type FlagsStruct = FlagsStructAppend | FlagsStructInsert | FlagsStructReplaceAll | FlagsStructReplaceSection
+type FlagsStruct = Annotated[
+    FlagsStructAppend | FlagsStructInsert | FlagsStructReplaceAll | FlagsStructReplaceSection,
+    Field(discriminator='mode'),
+]
 
 class StringsStructAppend(GeneratedModel):
     values: list[str]
@@ -80,7 +87,10 @@ class StringsStructReplaceSection(ReplaceSectionListOperation):
     mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
 
 
-type StringsStruct = StringsStructAppend | StringsStructInsert | StringsStructReplaceAll | StringsStructReplaceSection
+type StringsStruct = Annotated[
+    StringsStructAppend | StringsStructInsert | StringsStructReplaceAll | StringsStructReplaceSection,
+    Field(discriminator='mode'),
+]
 
 class ColorsStructAppend(GeneratedModel):
     values: list[RGB | IntNumberProviderRef]
@@ -102,7 +112,10 @@ class ColorsStructReplaceSection(ReplaceSectionListOperation):
     mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
 
 
-type ColorsStruct = ColorsStructAppend | ColorsStructInsert | ColorsStructReplaceAll | ColorsStructReplaceSection
+type ColorsStruct = Annotated[
+    ColorsStructAppend | ColorsStructInsert | ColorsStructReplaceAll | ColorsStructReplaceSection,
+    Field(discriminator='mode'),
+]
 
 class SetCustomModelData(Conditions):
     floats: FloatsStruct | None = None

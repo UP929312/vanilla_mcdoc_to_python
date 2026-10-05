@@ -11,6 +11,7 @@ from generated_symbols.data.worldgen.dimension.biome_source.Fixed import Fixed
 from generated_symbols.data.worldgen.dimension.biome_source.MultiNoiseBase import MultiNoiseBase
 from generated_symbols.data.worldgen.dimension.biome_source.TheEnd import TheEnd
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 
 class BiomeSourceCheckerboard(Checkerboard):
@@ -37,7 +38,10 @@ class BiomeSourceTheEnd(TheEnd):
     type: Literal['minecraft:the_end'] = 'minecraft:the_end'
 
 
-type BiomeSource = BiomeSourceCheckerboard | BiomeSourceFixed | BiomeSourceMultiNoise | BiomeSourceTheEnd
+type BiomeSource = Annotated[
+    BiomeSourceCheckerboard | BiomeSourceFixed | BiomeSourceMultiNoise | BiomeSourceTheEnd,
+    Field(discriminator='type'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

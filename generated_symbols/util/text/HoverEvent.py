@@ -3,11 +3,12 @@ Generated from symbols.json for ::java::util::text::HoverEvent
 Local link to file: generated_symbols/util/text/HoverEvent.py
 """
 # ~~~ CODE ~~~
-from typing import Literal
+from typing import Annotated, Literal
 
 from generated_symbols.util.text.ShowEntity import ShowEntity
 from generated_symbols.util.text.ShowItem import ShowItem
 from generated_symbols.util.text.ShowText import ShowText
+from pydantic import Field
 
 
 class HoverEventShowEntity(ShowEntity):
@@ -22,7 +23,10 @@ class HoverEventShowText(ShowText):
     action: Literal['minecraft:show_text'] = 'minecraft:show_text'
 
 
-type HoverEvent = HoverEventShowEntity | HoverEventShowItem | HoverEventShowText
+type HoverEvent = Annotated[
+    HoverEventShowEntity | HoverEventShowItem | HoverEventShowText,
+    Field(discriminator='action'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

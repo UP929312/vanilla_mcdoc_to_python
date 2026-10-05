@@ -3,13 +3,14 @@ Generated from symbols.json for ::java::assets::atlas::SpriteSource
 Local link to file: generated_symbols/assets/atlas/SpriteSource.py
 """
 # ~~~ CODE ~~~
-from typing import Literal
+from typing import Annotated, Literal
 
 from generated_symbols.assets.atlas.Directory import Directory
 from generated_symbols.assets.atlas.Filter import Filter
 from generated_symbols.assets.atlas.PalettedPermutations import PalettedPermutations
 from generated_symbols.assets.atlas.Single import Single
 from generated_symbols.assets.atlas.Unstitch import Unstitch
+from pydantic import Field
 
 
 class SpriteSourceDirectory(Directory):
@@ -32,7 +33,10 @@ class SpriteSourceUnstitch(Unstitch):
     type: Literal['minecraft:unstitch'] = 'minecraft:unstitch'
 
 
-type SpriteSource = SpriteSourceDirectory | SpriteSourceFilter | SpriteSourcePalettedPermutations | SpriteSourceSingle | SpriteSourceUnstitch
+type SpriteSource = Annotated[
+    SpriteSourceDirectory | SpriteSourceFilter | SpriteSourcePalettedPermutations | SpriteSourceSingle | SpriteSourceUnstitch,
+    Field(discriminator='type'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

@@ -3,11 +3,12 @@ Generated from symbols.json for ::java::data::loot::function::CustomModelDataStr
 Local link to file: generated_symbols/data/loot/function/CustomModelDataStrings.py
 """
 # ~~~ CODE ~~~
-from typing import Literal
+from typing import Annotated, Literal
 
 from generated_symbols.base import GeneratedModel
 from generated_symbols.data.loot.function.InsertListOperation import InsertListOperation
 from generated_symbols.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
+from pydantic import Field
 
 
 class CustomModelDataStringsAppend(GeneratedModel):
@@ -30,7 +31,10 @@ class CustomModelDataStringsReplaceSection(ReplaceSectionListOperation):
     mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
 
 
-type CustomModelDataStrings = CustomModelDataStringsAppend | CustomModelDataStringsInsert | CustomModelDataStringsReplaceAll | CustomModelDataStringsReplaceSection
+type CustomModelDataStrings = Annotated[
+    CustomModelDataStringsAppend | CustomModelDataStringsInsert | CustomModelDataStringsReplaceAll | CustomModelDataStringsReplaceSection,
+    Field(discriminator='mode'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

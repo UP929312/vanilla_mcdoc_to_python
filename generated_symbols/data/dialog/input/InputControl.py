@@ -32,7 +32,10 @@ class InputControlText(TextInput):
     key: Annotated[str, 'Field(min_length=1)'] | str  # The input key, which is used to build macro command and generate custom action payload.
 
 
-type InputControl = InputControlBoolean | InputControlNumberRange | InputControlSingleOption | InputControlText
+type InputControl = Annotated[
+    InputControlBoolean | InputControlNumberRange | InputControlSingleOption | InputControlText,
+    Field(discriminator='type'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

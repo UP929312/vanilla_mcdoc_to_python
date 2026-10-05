@@ -3,10 +3,11 @@ Generated from symbols.json for ::java::data::worldgen::feature::BlockPlacer
 Local link to file: generated_symbols/data/worldgen/feature/BlockPlacer.py
 """
 # ~~~ CODE ~~~
-from typing import Literal
+from typing import Annotated, Literal
 
 from generated_symbols.base import GeneratedModel
 from generated_symbols.data.worldgen.feature.ColumnPlacer import ColumnPlacer
+from pydantic import Field
 
 
 class BlockPlacerColumnPlacer(ColumnPlacer):
@@ -21,7 +22,10 @@ class BlockPlacerSimpleBlockPlacer(GeneratedModel):
     type: Literal['minecraft:simple_block_placer'] = 'minecraft:simple_block_placer'
 
 
-type BlockPlacer = BlockPlacerColumnPlacer | BlockPlacerDoublePlantPlacer | BlockPlacerSimpleBlockPlacer
+type BlockPlacer = Annotated[
+    BlockPlacerColumnPlacer | BlockPlacerDoublePlantPlacer | BlockPlacerSimpleBlockPlacer,
+    Field(discriminator='type'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

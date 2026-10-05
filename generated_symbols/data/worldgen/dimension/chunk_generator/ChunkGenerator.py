@@ -3,10 +3,11 @@ Generated from symbols.json for ::java::data::worldgen::dimension::chunk_generat
 Local link to file: generated_symbols/data/worldgen/dimension/chunk_generator/ChunkGenerator.py
 """
 # ~~~ CODE ~~~
-from typing import Literal
+from typing import Annotated, Literal
 
 from generated_symbols.data.worldgen.dimension.chunk_generator.Flat import Flat
 from generated_symbols.data.worldgen.dimension.chunk_generator.Noise import Noise
+from pydantic import Field
 
 
 class ChunkGeneratorFlat(Flat):
@@ -17,7 +18,10 @@ class ChunkGeneratorNoise(Noise):
     type: Literal['minecraft:noise'] = 'minecraft:noise'
 
 
-type ChunkGenerator = ChunkGeneratorFlat | ChunkGeneratorNoise
+type ChunkGenerator = Annotated[
+    ChunkGeneratorFlat | ChunkGeneratorNoise,
+    Field(discriminator='type'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

@@ -3,11 +3,12 @@ Generated from symbols.json for ::java::data::worldgen::template_pool::Element
 Local link to file: generated_symbols/data/worldgen/template_pool/Element.py
 """
 # ~~~ CODE ~~~
-from typing import Literal
+from typing import Annotated, Literal
 
 from generated_symbols.data.worldgen.template_pool.FeatureElement import FeatureElement
 from generated_symbols.data.worldgen.template_pool.ListElement import ListElement
 from generated_symbols.data.worldgen.template_pool.SingleElement import SingleElement
+from pydantic import Field
 
 
 class ElementFeaturePoolElement(FeatureElement):
@@ -26,7 +27,10 @@ class ElementSinglePoolElement(SingleElement):
     element_type: Literal['minecraft:single_pool_element'] = 'minecraft:single_pool_element'
 
 
-type Element = ElementFeaturePoolElement | ElementLegacySinglePoolElement | ElementListPoolElement | ElementSinglePoolElement
+type Element = Annotated[
+    ElementFeaturePoolElement | ElementLegacySinglePoolElement | ElementListPoolElement | ElementSinglePoolElement,
+    Field(discriminator='element_type'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

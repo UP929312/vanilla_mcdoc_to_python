@@ -3,10 +3,11 @@ Generated from symbols.json for ::java::data::util::ScoreProvider
 Local link to file: generated_symbols/data/util/ScoreProvider.py
 """
 # ~~~ CODE ~~~
-from typing import TYPE_CHECKING, Literal
+from typing import TYPE_CHECKING, Annotated, Literal
 
 from generated_symbols.data.util.ContextScoreProvider import ContextScoreProvider
 from generated_symbols.data.util.FixedScoreProvider import FixedScoreProvider
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.loot.EntityTarget import EntityTarget
@@ -20,7 +21,10 @@ class ScoreProviderStructFixed(FixedScoreProvider):
     type: Literal['minecraft:fixed'] = 'minecraft:fixed'
 
 
-type ScoreProviderStruct = ScoreProviderStructContext | ScoreProviderStructFixed
+type ScoreProviderStruct = Annotated[
+    ScoreProviderStructContext | ScoreProviderStructFixed,
+    Field(discriminator='type'),
+]
 
 type ScoreProvider = EntityTarget | ScoreProviderStruct
 

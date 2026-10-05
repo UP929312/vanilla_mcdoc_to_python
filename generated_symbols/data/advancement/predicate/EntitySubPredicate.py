@@ -3,7 +3,7 @@ Generated from symbols.json for ::java::data::advancement::predicate::EntitySubP
 Local link to file: generated_symbols/data/advancement/predicate/EntitySubPredicate.py
 """
 # ~~~ CODE ~~~
-from typing import Literal
+from typing import Annotated, Literal
 
 from generated_symbols.base import GeneratedModel
 from generated_symbols.data.advancement.predicate.DistancePredicate import DistancePredicate
@@ -17,6 +17,7 @@ from generated_symbols.data.advancement.predicate.PlayerPredicate import PlayerP
 from generated_symbols.data.advancement.predicate.RaiderPredicate import RaiderPredicate
 from generated_symbols.data.advancement.predicate.SheepPredicate import SheepPredicate
 from generated_symbols.data.advancement.predicate.SlimePredicate import SlimePredicate
+from pydantic import Field
 
 
 class EntitySubPredicateComponents(GeneratedModel):
@@ -119,7 +120,10 @@ class EntitySubPredicateVehicle(GeneratedModel):
     type: Literal['minecraft:vehicle'] = 'minecraft:vehicle'
 
 
-type EntitySubPredicate = EntitySubPredicateComponents | EntitySubPredicateDistance | EntitySubPredicateEffects | EntitySubPredicateEntityTags | EntitySubPredicateEntityType | EntitySubPredicateEquipment | EntitySubPredicateFlags | EntitySubPredicateLocation | EntitySubPredicateMovement | EntitySubPredicateMovementAffectedBy | EntitySubPredicateNbt | EntitySubPredicatePassenger | EntitySubPredicatePeriodicTick | EntitySubPredicatePredicates | EntitySubPredicateSlots | EntitySubPredicateSteppingOn | EntitySubPredicateTargetedEntity | EntitySubPredicateTeam | EntitySubPredicateTypeSpecificCubeMob | EntitySubPredicateTypeSpecificFishingHook | EntitySubPredicateTypeSpecificLightning | EntitySubPredicateTypeSpecificPlayer | EntitySubPredicateTypeSpecificRaider | EntitySubPredicateTypeSpecificSheep | EntitySubPredicateVehicle
+type EntitySubPredicate = Annotated[
+    EntitySubPredicateComponents | EntitySubPredicateDistance | EntitySubPredicateEffects | EntitySubPredicateEntityTags | EntitySubPredicateEntityType | EntitySubPredicateEquipment | EntitySubPredicateFlags | EntitySubPredicateLocation | EntitySubPredicateMovement | EntitySubPredicateMovementAffectedBy | EntitySubPredicateNbt | EntitySubPredicatePassenger | EntitySubPredicatePeriodicTick | EntitySubPredicatePredicates | EntitySubPredicateSlots | EntitySubPredicateSteppingOn | EntitySubPredicateTargetedEntity | EntitySubPredicateTeam | EntitySubPredicateTypeSpecificCubeMob | EntitySubPredicateTypeSpecificFishingHook | EntitySubPredicateTypeSpecificLightning | EntitySubPredicateTypeSpecificPlayer | EntitySubPredicateTypeSpecificRaider | EntitySubPredicateTypeSpecificSheep | EntitySubPredicateVehicle,
+    Field(discriminator='type'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

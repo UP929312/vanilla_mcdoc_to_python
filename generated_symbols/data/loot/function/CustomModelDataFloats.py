@@ -3,11 +3,12 @@ Generated from symbols.json for ::java::data::loot::function::CustomModelDataFlo
 Local link to file: generated_symbols/data/loot/function/CustomModelDataFloats.py
 """
 # ~~~ CODE ~~~
-from typing import TYPE_CHECKING, Literal
+from typing import TYPE_CHECKING, Annotated, Literal
 
 from generated_symbols.base import GeneratedModel
 from generated_symbols.data.loot.function.InsertListOperation import InsertListOperation
 from generated_symbols.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.number_provider.FloatNumberProviderRef import FloatNumberProviderRef
@@ -33,7 +34,10 @@ class CustomModelDataFloatsReplaceSection(ReplaceSectionListOperation):
     mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
 
 
-type CustomModelDataFloats = CustomModelDataFloatsAppend | CustomModelDataFloatsInsert | CustomModelDataFloatsReplaceAll | CustomModelDataFloatsReplaceSection
+type CustomModelDataFloats = Annotated[
+    CustomModelDataFloatsAppend | CustomModelDataFloatsInsert | CustomModelDataFloatsReplaceAll | CustomModelDataFloatsReplaceSection,
+    Field(discriminator='mode'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

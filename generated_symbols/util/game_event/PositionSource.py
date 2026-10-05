@@ -3,10 +3,11 @@ Generated from symbols.json for ::java::util::game_event::PositionSource
 Local link to file: generated_symbols/util/game_event/PositionSource.py
 """
 # ~~~ CODE ~~~
-from typing import Literal
+from typing import Annotated, Literal
 
 from generated_symbols.util.game_event.BlockPositionSource import BlockPositionSource
 from generated_symbols.util.game_event.EntityPositionSource import EntityPositionSource
+from pydantic import Field
 
 
 class PositionSourceBlock(BlockPositionSource):
@@ -17,7 +18,10 @@ class PositionSourceEntity(EntityPositionSource):
     type: Literal['minecraft:entity'] = 'minecraft:entity'
 
 
-type PositionSource = PositionSourceBlock | PositionSourceEntity
+type PositionSource = Annotated[
+    PositionSourceBlock | PositionSourceEntity,
+    Field(discriminator='type'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

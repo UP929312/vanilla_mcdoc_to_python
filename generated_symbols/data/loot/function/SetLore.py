@@ -3,11 +3,12 @@ Generated from symbols.json for ::java::data::loot::function::SetLore
 Local link to file: generated_symbols/data/loot/function/SetLore.py
 """
 # ~~~ CODE ~~~
-from typing import TYPE_CHECKING, Literal
+from typing import TYPE_CHECKING, Annotated, Literal
 
 from generated_symbols.data.loot.function.Conditions import Conditions
 from generated_symbols.data.loot.function.InsertListOperation import InsertListOperation
 from generated_symbols.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.loot.EntityTarget import EntityTarget
@@ -38,7 +39,10 @@ class SetLoreReplaceSection(Conditions, ReplaceSectionListOperation):
     mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
 
 
-type SetLore = SetLoreAppend | SetLoreInsert | SetLoreReplaceAll | SetLoreReplaceSection
+type SetLore = Annotated[
+    SetLoreAppend | SetLoreInsert | SetLoreReplaceAll | SetLoreReplaceSection,
+    Field(discriminator='mode'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

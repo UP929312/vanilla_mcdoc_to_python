@@ -3,7 +3,7 @@ Generated from symbols.json for ::java::util::text::ClickEvent
 Local link to file: generated_symbols/util/text/ClickEvent.py
 """
 # ~~~ CODE ~~~
-from typing import Literal
+from typing import Annotated, Literal
 
 from generated_symbols.util.text.ChangePage import ChangePage
 from generated_symbols.util.text.CopyToClipboard import CopyToClipboard
@@ -12,6 +12,7 @@ from generated_symbols.util.text.OpenUrl import OpenUrl
 from generated_symbols.util.text.RunCommand import RunCommand
 from generated_symbols.util.text.ShowDialog import ShowDialog
 from generated_symbols.util.text.SuggestCommand import SuggestCommand
+from pydantic import Field
 
 
 class ClickEventChangePage(ChangePage):
@@ -42,7 +43,10 @@ class ClickEventSuggestCommand(SuggestCommand):
     action: Literal['minecraft:suggest_command'] = 'minecraft:suggest_command'
 
 
-type ClickEvent = ClickEventChangePage | ClickEventCopyToClipboard | ClickEventCustom | ClickEventOpenUrl | ClickEventRunCommand | ClickEventShowDialog | ClickEventSuggestCommand
+type ClickEvent = Annotated[
+    ClickEventChangePage | ClickEventCopyToClipboard | ClickEventCustom | ClickEventOpenUrl | ClickEventRunCommand | ClickEventShowDialog | ClickEventSuggestCommand,
+    Field(discriminator='action'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

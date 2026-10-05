@@ -3,7 +3,7 @@ Generated from symbols.json for ::java::data::enchantment::effect::LocationBased
 Local link to file: generated_symbols/data/enchantment/effect/LocationBasedEffect.py
 """
 # ~~~ CODE ~~~
-from typing import Literal
+from typing import Annotated, Literal
 
 from generated_symbols.data.enchantment.effect.AllOfLocationBasedEffect import AllOfLocationBasedEffect
 from generated_symbols.data.enchantment.effect.ApplyExhaustionEntityEffect import ApplyExhaustionEntityEffect
@@ -20,6 +20,7 @@ from generated_symbols.data.enchantment.effect.RunFunctionEntityEffect import Ru
 from generated_symbols.data.enchantment.effect.SetBlockPropertiesEntityEffect import SetBlockPropertiesEntityEffect
 from generated_symbols.data.enchantment.effect.SpawnParticlesEntityEffect import SpawnParticlesEntityEffect
 from generated_symbols.data.enchantment.effect.SummonEntityEffect import SummonEntityEffect
+from pydantic import Field
 
 
 class LocationBasedEffectAllOf(AllOfLocationBasedEffect):
@@ -82,7 +83,10 @@ class LocationBasedEffectSummonEntity(SummonEntityEffect):
     type: Literal['minecraft:summon_entity'] = 'minecraft:summon_entity'
 
 
-type LocationBasedEffect = LocationBasedEffectAllOf | LocationBasedEffectApplyExhaustion | LocationBasedEffectApplyImpulse | LocationBasedEffectApplyMobEffect | LocationBasedEffectChangeItemDamage | LocationBasedEffectDamageEntity | LocationBasedEffectExplode | LocationBasedEffectIgnite | LocationBasedEffectPlaySound | LocationBasedEffectReplaceBlock | LocationBasedEffectReplaceDisk | LocationBasedEffectRunFunction | LocationBasedEffectSetBlockProperties | LocationBasedEffectSpawnParticles | LocationBasedEffectSummonEntity
+type LocationBasedEffect = Annotated[
+    LocationBasedEffectAllOf | LocationBasedEffectApplyExhaustion | LocationBasedEffectApplyImpulse | LocationBasedEffectApplyMobEffect | LocationBasedEffectChangeItemDamage | LocationBasedEffectDamageEntity | LocationBasedEffectExplode | LocationBasedEffectIgnite | LocationBasedEffectPlaySound | LocationBasedEffectReplaceBlock | LocationBasedEffectReplaceDisk | LocationBasedEffectRunFunction | LocationBasedEffectSetBlockProperties | LocationBasedEffectSpawnParticles | LocationBasedEffectSummonEntity,
+    Field(discriminator='type'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

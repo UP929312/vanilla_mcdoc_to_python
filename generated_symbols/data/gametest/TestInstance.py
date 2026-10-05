@@ -3,10 +3,11 @@ Generated from symbols.json for ::java::data::gametest::TestInstance
 Local link to file: generated_symbols/data/gametest/TestInstance.py
 """
 # ~~~ CODE ~~~
-from typing import ClassVar, Literal
+from typing import Annotated, ClassVar, Literal
 
 from generated_symbols.data.gametest.BlockBasedTestInstance import BlockBasedTestInstance
 from generated_symbols.data.gametest.FunctionTestInstance import FunctionTestInstance
+from pydantic import Field
 
 
 class TestInstanceBlockBased(BlockBasedTestInstance):
@@ -19,7 +20,10 @@ class TestInstanceFunction(FunctionTestInstance):
     type: Literal['minecraft:function'] = 'minecraft:function'
 
 
-type TestInstance = TestInstanceBlockBased | TestInstanceFunction
+type TestInstance = Annotated[
+    TestInstanceBlockBased | TestInstanceFunction,
+    Field(discriminator='type'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

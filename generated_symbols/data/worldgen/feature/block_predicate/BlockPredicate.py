@@ -3,7 +3,7 @@ Generated from symbols.json for ::java::data::worldgen::feature::block_predicate
 Local link to file: generated_symbols/data/worldgen/feature/block_predicate/BlockPredicate.py
 """
 # ~~~ CODE ~~~
-from typing import Literal
+from typing import Annotated, Literal
 
 from generated_symbols.data.worldgen.feature.block_predicate.BelowHeightmapPredicate import BelowHeightmapPredicate
 from generated_symbols.data.worldgen.feature.block_predicate.CombiningPredicate import CombiningPredicate
@@ -18,6 +18,7 @@ from generated_symbols.data.worldgen.feature.block_predicate.NotPredicate import
 from generated_symbols.data.worldgen.feature.block_predicate.UnobstructedPredicate import UnobstructedPredicate
 from generated_symbols.data.worldgen.feature.block_predicate.VolumeMatchPredicate import VolumeMatchPredicate
 from generated_symbols.data.worldgen.feature.block_predicate.WouldSurvivePredicate import WouldSurvivePredicate
+from pydantic import Field
 
 
 class BlockPredicateAllOf(CombiningPredicate):
@@ -76,7 +77,10 @@ class BlockPredicateWouldSurvive(WouldSurvivePredicate):
     type: Literal['minecraft:would_survive'] = 'minecraft:would_survive'
 
 
-type BlockPredicate = BlockPredicateAllOf | BlockPredicateAnyOf | BlockPredicateBelowHeightmap | BlockPredicateHasSturdyFace | BlockPredicateHeightRange | BlockPredicateInsideWorldBounds | BlockPredicateMatchingBiomes | BlockPredicateMatchingBlockTag | BlockPredicateMatchingBlocks | BlockPredicateMatchingFluids | BlockPredicateNot | BlockPredicateUnobstructed | BlockPredicateVolumeMatch | BlockPredicateWouldSurvive
+type BlockPredicate = Annotated[
+    BlockPredicateAllOf | BlockPredicateAnyOf | BlockPredicateBelowHeightmap | BlockPredicateHasSturdyFace | BlockPredicateHeightRange | BlockPredicateInsideWorldBounds | BlockPredicateMatchingBiomes | BlockPredicateMatchingBlockTag | BlockPredicateMatchingBlocks | BlockPredicateMatchingFluids | BlockPredicateNot | BlockPredicateUnobstructed | BlockPredicateVolumeMatch | BlockPredicateWouldSurvive,
+    Field(discriminator='type'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

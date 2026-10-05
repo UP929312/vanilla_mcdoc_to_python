@@ -3,7 +3,7 @@ Generated from symbols.json for ::java::data::worldgen::feature::placement::Plac
 Local link to file: generated_symbols/data/worldgen/feature/placement/PlacementModifier.py
 """
 # ~~~ CODE ~~~
-from typing import Literal
+from typing import Annotated, Literal
 
 from generated_symbols.data.worldgen.feature.placement.BlockPredicateFilter import BlockPredicateFilter
 from generated_symbols.data.worldgen.feature.placement.CountModifier import CountModifier
@@ -21,6 +21,7 @@ from generated_symbols.data.worldgen.feature.placement.RandomlySelectedModifier 
 from generated_symbols.data.worldgen.feature.placement.RarityFilter import RarityFilter
 from generated_symbols.data.worldgen.feature.placement.SurfaceRelativeThresholdFilter import SurfaceRelativeThresholdFilter
 from generated_symbols.data.worldgen.feature.placement.SurfaceWaterDepthFilter import SurfaceWaterDepthFilter
+from pydantic import Field
 
 
 class PlacementModifierBlockPredicateFilter(BlockPredicateFilter):
@@ -87,7 +88,10 @@ class PlacementModifierSurfaceWaterDepthFilter(SurfaceWaterDepthFilter):
     type: Literal['minecraft:surface_water_depth_filter'] = 'minecraft:surface_water_depth_filter'
 
 
-type PlacementModifier = PlacementModifierBlockPredicateFilter | PlacementModifierCount | PlacementModifierCountOnEveryLayer | PlacementModifierCuboid | PlacementModifierEnvironmentScan | PlacementModifierFixedPlacement | PlacementModifierHeightRange | PlacementModifierHeightmap | PlacementModifierNoiseBasedCount | PlacementModifierNoiseThresholdCount | PlacementModifierOffset | PlacementModifierRandomChance | PlacementModifierRandomlySelected | PlacementModifierRarityFilter | PlacementModifierSurfaceRelativeThresholdFilter | PlacementModifierSurfaceWaterDepthFilter
+type PlacementModifier = Annotated[
+    PlacementModifierBlockPredicateFilter | PlacementModifierCount | PlacementModifierCountOnEveryLayer | PlacementModifierCuboid | PlacementModifierEnvironmentScan | PlacementModifierFixedPlacement | PlacementModifierHeightRange | PlacementModifierHeightmap | PlacementModifierNoiseBasedCount | PlacementModifierNoiseThresholdCount | PlacementModifierOffset | PlacementModifierRandomChance | PlacementModifierRandomlySelected | PlacementModifierRarityFilter | PlacementModifierSurfaceRelativeThresholdFilter | PlacementModifierSurfaceWaterDepthFilter,
+    Field(discriminator='type'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

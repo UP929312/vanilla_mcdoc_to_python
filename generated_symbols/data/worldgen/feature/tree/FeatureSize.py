@@ -3,10 +3,11 @@ Generated from symbols.json for ::java::data::worldgen::feature::tree::FeatureSi
 Local link to file: generated_symbols/data/worldgen/feature/tree/FeatureSize.py
 """
 # ~~~ CODE ~~~
-from typing import Literal
+from typing import Annotated, Literal
 
 from generated_symbols.data.worldgen.feature.tree.ThreeLayersFeatureSize import ThreeLayersFeatureSize
 from generated_symbols.data.worldgen.feature.tree.TwoLayersFeatureSize import TwoLayersFeatureSize
+from pydantic import Field
 
 
 class FeatureSizeThreeLayersFeatureSize(ThreeLayersFeatureSize):
@@ -17,7 +18,10 @@ class FeatureSizeTwoLayersFeatureSize(TwoLayersFeatureSize):
     type: Literal['minecraft:two_layers_feature_size'] = 'minecraft:two_layers_feature_size'
 
 
-type FeatureSize = FeatureSizeThreeLayersFeatureSize | FeatureSizeTwoLayersFeatureSize
+type FeatureSize = Annotated[
+    FeatureSizeThreeLayersFeatureSize | FeatureSizeTwoLayersFeatureSize,
+    Field(discriminator='type'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

@@ -3,10 +3,11 @@ Generated from symbols.json for ::java::data::worldgen::processor_list::PosRuleT
 Local link to file: generated_symbols/data/worldgen/processor_list/PosRuleTest.py
 """
 # ~~~ CODE ~~~
-from typing import Literal
+from typing import Annotated, Literal
 
 from generated_symbols.data.worldgen.processor_list.AxisAlignedLinearPos import AxisAlignedLinearPos
 from generated_symbols.data.worldgen.processor_list.LinearPos import LinearPos
+from pydantic import Field
 
 
 class PosRuleTestAxisAlignedLinearPos(AxisAlignedLinearPos):
@@ -17,7 +18,10 @@ class PosRuleTestLinearPos(LinearPos):
     predicate_type: Literal['minecraft:linear_pos'] = 'minecraft:linear_pos'
 
 
-type PosRuleTest = PosRuleTestAxisAlignedLinearPos | PosRuleTestLinearPos
+type PosRuleTest = Annotated[
+    PosRuleTestAxisAlignedLinearPos | PosRuleTestLinearPos,
+    Field(discriminator='predicate_type'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

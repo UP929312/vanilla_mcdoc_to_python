@@ -3,7 +3,7 @@ Generated from symbols.json for ::java::data::enchantment::level_based_value::Le
 Local link to file: generated_symbols/data/enchantment/level_based_value/LevelBasedValueMap.py
 """
 # ~~~ CODE ~~~
-from typing import Literal
+from typing import Annotated, Literal
 
 from generated_symbols.data.enchantment.level_based_value.ClampedLevelValue import ClampedLevelValue
 from generated_symbols.data.enchantment.level_based_value.ExponentLevelValue import ExponentLevelValue
@@ -11,6 +11,7 @@ from generated_symbols.data.enchantment.level_based_value.FractionLevelValue imp
 from generated_symbols.data.enchantment.level_based_value.LinearLevelValue import LinearLevelValue
 from generated_symbols.data.enchantment.level_based_value.LookupLevelValue import LookupLevelValue
 from generated_symbols.data.enchantment.level_based_value.SquaredLevelValue import SquaredLevelValue
+from pydantic import Field
 
 
 class LevelBasedValueMapClamped(ClampedLevelValue):
@@ -37,7 +38,10 @@ class LevelBasedValueMapLookup(LookupLevelValue):
     type: Literal['minecraft:lookup'] = 'minecraft:lookup'
 
 
-type LevelBasedValueMap = LevelBasedValueMapClamped | LevelBasedValueMapExponent | LevelBasedValueMapFraction | LevelBasedValueMapLevelsSquared | LevelBasedValueMapLinear | LevelBasedValueMapLookup
+type LevelBasedValueMap = Annotated[
+    LevelBasedValueMapClamped | LevelBasedValueMapExponent | LevelBasedValueMapFraction | LevelBasedValueMapLevelsSquared | LevelBasedValueMapLinear | LevelBasedValueMapLookup,
+    Field(discriminator='type'),
+]
 
 
 # ~~~ MODEL DUMP ~~~

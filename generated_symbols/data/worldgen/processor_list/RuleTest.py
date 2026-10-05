@@ -3,7 +3,7 @@ Generated from symbols.json for ::java::data::worldgen::processor_list::RuleTest
 Local link to file: generated_symbols/data/worldgen/processor_list/RuleTest.py
 """
 # ~~~ CODE ~~~
-from typing import Literal
+from typing import Annotated, Literal
 
 from generated_symbols.data.worldgen.processor_list.BlockMatch import BlockMatch
 from generated_symbols.data.worldgen.processor_list.BlockStateMatch import BlockStateMatch
@@ -13,6 +13,7 @@ from generated_symbols.data.worldgen.processor_list.InvertedMatch import Inverte
 from generated_symbols.data.worldgen.processor_list.RandomBlockMatch import RandomBlockMatch
 from generated_symbols.data.worldgen.processor_list.RandomBlockStateMatch import RandomBlockStateMatch
 from generated_symbols.data.worldgen.processor_list.TagMatch import TagMatch
+from pydantic import Field
 
 
 class RuleTestAllOf(CompositeMatch):
@@ -51,7 +52,10 @@ class RuleTestTagMatch(TagMatch):
     predicate_type: Literal['minecraft:tag_match'] = 'minecraft:tag_match'
 
 
-type RuleTest = RuleTestAllOf | RuleTestAnyOf | RuleTestBlockMatch | RuleTestBlockstateMatch | RuleTestHeightMatch | RuleTestNot | RuleTestRandomBlockMatch | RuleTestRandomBlockstateMatch | RuleTestTagMatch
+type RuleTest = Annotated[
+    RuleTestAllOf | RuleTestAnyOf | RuleTestBlockMatch | RuleTestBlockstateMatch | RuleTestHeightMatch | RuleTestNot | RuleTestRandomBlockMatch | RuleTestRandomBlockstateMatch | RuleTestTagMatch,
+    Field(discriminator='predicate_type'),
+]
 
 
 # ~~~ MODEL DUMP ~~~
