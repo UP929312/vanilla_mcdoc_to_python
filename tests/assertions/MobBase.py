@@ -8,9 +8,9 @@ Generated from symbols.json for ::java::world::entity::mob::MobBase
 Local link to file: generated_symbols/world/entity/mob/MobBase.py
 """
 # ~~~ CODE ~~~
-from pydantic import BaseModel
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.base import GeneratedModel
 from generated_symbols.world.entity.mob.LivingEntity import LivingEntity
 from minecraft_registry import IdSpec
 
@@ -19,7 +19,7 @@ if TYPE_CHECKING:
     from generated_symbols.world.entity.mob.EntityEquipment import EntityEquipment
 
 
-class LeashStruct(BaseModel):
+class LeashStruct(GeneratedModel):
     UUID: tuple[int, int, int, int] | None = None
 
 
@@ -35,5 +35,3 @@ class MobBase(LivingEntity):
     leash: tuple[int, int, int] | LeashStruct | None = None  # What the leash is attached to.
     home_radius: int | None = None  # Defaults to -1, which represents "no home".
     home_pos: tuple[int, int, int] | None = None  # This field will be discarded if `home_radius` is less than 0.
-
-

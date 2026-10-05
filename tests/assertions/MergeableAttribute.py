@@ -8,10 +8,11 @@ Generated from symbols.json for ::java::data::worldgen::attribute::MergeableAttr
 Local link to file: generated_symbols/data/worldgen/attribute/MergeableAttribute.py
 """
 # ~~~ CODE ~~~
-from pydantic import BaseModel
 from typing import TYPE_CHECKING, Annotated, Generic, TypeVar
 
+from generated_symbols.base import GeneratedModel
 from generated_symbols.data.timeline.AttributeTrackBase import AttributeTrackBase
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.attribute.modifier.MergeableModifier import MergeableModifier
@@ -20,19 +21,17 @@ if TYPE_CHECKING:
 
 T = TypeVar('T')
 
-class KeyframesStruct(BaseModel, Generic[T]):
-    ticks: Annotated[int, 'Range | `0` and above | inclusive']
+class KeyframesStruct(GeneratedModel, Generic[T]):
+    ticks: Annotated[int, Field(ge=0)]
     value: T
 
 
 class AttributeTrackStruct(AttributeTrackBase, Generic[T]):
     modifier: MergeableModifierType | None = None
-    keyframes: Annotated[list[KeyframesStruct[T]], 'Length = 1 (inclusive) and above']
+    keyframes: Annotated[list[KeyframesStruct[T]], Field(min_length=1)]
 
 
-class MergeableAttribute(BaseModel, Generic[T]):
+class MergeableAttribute(GeneratedModel, Generic[T]):
     value: T
     modifier: MergeableModifier[T]
     attribute_track: AttributeTrackStruct[T]
-
-

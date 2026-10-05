@@ -8,14 +8,15 @@ Generated from symbols.json for ::java::assets::model::ModelElementFaceMap
 Local link to file: generated_symbols/assets/model/ModelElementFaceMap.py
 """
 # ~~~ CODE ~~~
-from pydantic import BaseModel
 from typing import TYPE_CHECKING, Literal
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.util.direction.Direction import Direction
 
 
-class ModelElementFaceMapValueStruct(BaseModel):
+class ModelElementFaceMapValueStruct(GeneratedModel):
     texture: str
     uv: tuple[float, float, float, float] | None = None
     cullface: Direction | None = None
@@ -24,5 +25,3 @@ class ModelElementFaceMapValueStruct(BaseModel):
 
 
 type ModelElementFaceMap = dict[Direction, ModelElementFaceMapValueStruct]
-
-

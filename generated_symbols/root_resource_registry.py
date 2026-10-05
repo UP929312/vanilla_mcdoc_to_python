@@ -30,7 +30,8 @@ from generated_symbols.data.gametest.test_environment.TimelineAttributesTestEnvi
 from generated_symbols.data.gametest.test_environment.WeatherTestEnvironment import WeatherTestEnvironment
 from generated_symbols.data.item_modifier.ItemModifierRoot import ItemModifierRoot
 from generated_symbols.data.loot.LootTable import LootTable
-from generated_symbols.data.number_provider.NumberProvider import NumberProvider
+from generated_symbols.data.number_provider.context_float.ContextFloatProvider import ContextFloatProvider
+from generated_symbols.data.number_provider.context_int.ContextIntProvider import ContextIntProvider
 from generated_symbols.data.predicate.Predicate import Predicate
 from generated_symbols.data.recipe.Brewing import Brewing
 from generated_symbols.data.recipe.CraftingDecoratedPot import CraftingDecoratedPot
@@ -142,6 +143,7 @@ from generated_symbols.data.worldgen.feature.TwistingVinesConfig import Twisting
 from generated_symbols.data.worldgen.feature.UnderwaterMagmaConfig import UnderwaterMagmaConfig
 from generated_symbols.data.worldgen.feature.VegetationPatchConfig import VegetationPatchConfig
 from generated_symbols.data.worldgen.feature.WeightedRandomFeatureConfig import WeightedRandomFeatureConfig
+from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
 from generated_symbols.data.worldgen.feature.placement.PlacedFeature import PlacedFeature
 from generated_symbols.data.worldgen.feature.tree.FallenTreeConfig import FallenTreeConfig
 from generated_symbols.data.worldgen.feature.tree.TreeConfig import TreeConfig
@@ -221,7 +223,8 @@ root_datapack_classes = (
     WeatherTestEnvironment,
     ItemModifierRoot,
     LootTable,
-    NumberProvider,
+    ContextFloatProvider,
+    ContextIntProvider,
     Predicate,
     Brewing,
     CraftingDecoratedPot,
@@ -333,6 +336,7 @@ root_datapack_classes = (
     UnderwaterMagmaConfig,
     VegetationPatchConfig,
     WeightedRandomFeatureConfig,
+    BlockStateProvider,
     PlacedFeature,
     FallenTreeConfig,
     TreeConfig,

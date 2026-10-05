@@ -11,12 +11,11 @@ Local link to file: generated_symbols/assets/block_state_definition/ModelVariant
 from typing import Annotated
 
 from generated_symbols.assets.block_state_definition.ModelVariantBase import ModelVariantBase
+from pydantic import Field
 
 
 class ModelVariantStruct(ModelVariantBase):
-    weight: Annotated[int, 'Range | `1` and above | inclusive'] | None = None
+    weight: Annotated[int, Field(ge=1)] | None = None
 
 
 type ModelVariant = ModelVariantBase | list[ModelVariantStruct]
-
-

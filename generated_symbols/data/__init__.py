@@ -13,8 +13,6 @@ from generated_symbols.data.advancement.AdvancementIcon import AdvancementIcon
 from generated_symbols.data.advancement.trigger.AdvancementLocationPredicate import AdvancementLocationPredicate
 from generated_symbols.data.advancement.AdvancementRewards import AdvancementRewards
 from generated_symbols.data.dialog.AfterAction import AfterAction
-from generated_symbols.data.number_provider.AggregateNumberProvider import AggregateNumberProvider
-from generated_symbols.data.number_provider.AggregateOperands import AggregateOperands
 from generated_symbols.data.loot.condition.AllOf import AllOf
 from generated_symbols.data.enchantment.effect.AllOfEffectValue import AllOfEffectValue
 from generated_symbols.data.enchantment.effect.AllOfEntityEffect import AllOfEntityEffect
@@ -54,9 +52,11 @@ from generated_symbols.data.worldgen.attribute.BedRule import BedRule
 from generated_symbols.data.worldgen.attribute.BedRuleType import BedRuleType
 from generated_symbols.data.advancement.trigger.BeeNestDestroyedTrigger import BeeNestDestroyedTrigger
 from generated_symbols.data.worldgen.feature.tree.BeehiveTreeDecorator import BeehiveTreeDecorator
+from generated_symbols.data.worldgen.feature.block_predicate.BelowHeightmapPredicate import BelowHeightmapPredicate
 from generated_symbols.data.worldgen.feature.tree.BendingTrunkPlacer import BendingTrunkPlacer
+from generated_symbols.data.number_provider.context_int.BinomialDistributionGenerator import BinomialDistributionGenerator
 from generated_symbols.data.util.BinomialIntGenerator import BinomialIntGenerator
-from generated_symbols.data.number_provider.BinomialNumberProvider import BinomialNumberProvider
+from generated_symbols.data.number_provider.legacy.BinomialNumberProvider import BinomialNumberProvider
 from generated_symbols.data.loot.function.BinomialWithBonusCountFormula import BinomialWithBonusCountFormula
 from generated_symbols.data.worldgen.biome.Biome import Biome
 from generated_symbols.data.worldgen.biome.BiomeCategory import BiomeCategory
@@ -92,6 +92,7 @@ from generated_symbols.data.advancement.trigger.BlockStateConditions import Bloc
 from generated_symbols.data.worldgen.processor_list.BlockStateMatch import BlockStateMatch
 from generated_symbols.data.loot.condition.BlockStateProperty import BlockStateProperty
 from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
+from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProviderRef import BlockStateProviderRef
 from generated_symbols.data.worldgen.feature.BlockStateRuleProviderEntry import BlockStateRuleProviderEntry
 from generated_symbols.data.block_transformer.BlockTransformData import BlockTransformData
 from generated_symbols.data.block_transformer.BlockTransformDropStrategy import BlockTransformDropStrategy
@@ -161,7 +162,7 @@ from generated_symbols.data.worldgen.processor_list.CompositeMatch import Compos
 from generated_symbols.data.loot.CompositePoolEntry import CompositePoolEntry
 from generated_symbols.data.worldgen.structure_set.ConcentricRingsPlacement import ConcentricRingsPlacement
 from generated_symbols.data.worldgen.material_rule.ConditionRule import ConditionRule
-from generated_symbols.data.number_provider.ConditionalNumberProvider import ConditionalNumberProvider
+from generated_symbols.data.number_provider.ConditionalProvider import ConditionalProvider
 from generated_symbols.data.loot.function.Conditions import Conditions
 from generated_symbols.data.worldgen.surface_builder.Config import Config
 from generated_symbols.data.worldgen.carver.ConfiguredCarver import ConfiguredCarver
@@ -175,12 +176,15 @@ from generated_symbols.data.worldgen.density_function.Constant import Constant
 from generated_symbols.data.worldgen.ConstantHeightProvider import ConstantHeightProvider
 from generated_symbols.data.util.ConstantIntGenerator import ConstantIntGenerator
 from generated_symbols.data.worldgen.ConstantIntProvider import ConstantIntProvider
-from generated_symbols.data.number_provider.ConstantNumberProvider import ConstantNumberProvider
+from generated_symbols.data.number_provider.legacy.ConstantNumberProvider import ConstantNumberProvider
+from generated_symbols.data.number_provider.ConstantValue import ConstantValue
 from generated_symbols.data.advancement.trigger.ConstructBeaconTrigger import ConstructBeaconTrigger
 from generated_symbols.data.advancement.trigger.ConsumeItemTrigger import ConsumeItemTrigger
 from generated_symbols.data.sulfur_cube_archetype.ContactDamage import ContactDamage
 from generated_symbols.data.loot.function.ContainerComponents import ContainerComponents
 from generated_symbols.data.slot_source.ContentsSlotSource import ContentsSlotSource
+from generated_symbols.data.number_provider.context_float.ContextFloatProvider import ContextFloatProvider
+from generated_symbols.data.number_provider.context_int.ContextIntProvider import ContextIntProvider
 from generated_symbols.data.util.ContextNbtProvider import ContextNbtProvider
 from generated_symbols.data.util.ContextScoreProvider import ContextScoreProvider
 from generated_symbols.data.recipe.CookingBookCategory import CookingBookCategory
@@ -242,6 +246,7 @@ from generated_symbols.data.advancement.predicate.DamageSourcePredicate import D
 from generated_symbols.data.loot.condition.DamageSourceProperties import DamageSourceProperties
 from generated_symbols.data.advancement.predicate.DamageTagPredicate import DamageTagPredicate
 from generated_symbols.data.damage_type.DamageType import DamageType
+from generated_symbols.data.number_provider.DataStorageProvider import DataStorageProvider
 from generated_symbols.data.damage_type.DeathMessageType import DeathMessageType
 from generated_symbols.data.worldgen.noise_settings.DebugFunctionEntry import DebugFunctionEntry
 from generated_symbols.data.decorated_pot_pattern.DecoratedPotPattern import DecoratedPotPattern
@@ -266,10 +271,12 @@ from generated_symbols.data.worldgen.dimension.biome_source.DirectMultiNoise imp
 from generated_symbols.data.worldgen.structure.DirectPoolAlias import DirectPoolAlias
 from generated_symbols.data.worldgen.attribute.DiscreteAttribute import DiscreteAttribute
 from generated_symbols.data.worldgen.feature.DiskConfig import DiskConfig
+from generated_symbols.data.number_provider.DispatcherProvider import DispatcherProvider
 from generated_symbols.data.worldgen.density_function.DistanceMetric import DistanceMetric
 from generated_symbols.data.advancement.predicate.DistancePredicate import DistancePredicate
 from generated_symbols.data.worldgen.density_function.DistanceToPoint import DistanceToPoint
 from generated_symbols.data.advancement.trigger.DistanceTrigger import DistanceTrigger
+from generated_symbols.data.number_provider.DistributionProvider import DistributionProvider
 from generated_symbols.data.worldgen.feature.block_state_provider.DualNoiseProvider import DualNoiseProvider
 from generated_symbols.data.dialog.action.DynamicCustomAction import DynamicCustomAction
 from generated_symbols.data.loot.DynamicDrops import DynamicDrops
@@ -289,7 +296,6 @@ from generated_symbols.data.enchantment.Enchantment import Enchantment
 from generated_symbols.data.loot.condition.EnchantmentActiveCheck import EnchantmentActiveCheck
 from generated_symbols.data.enchantment.EnchantmentCost import EnchantmentCost
 from generated_symbols.data.enchantment.effect_component.EnchantmentEffectComponentMap import EnchantmentEffectComponentMap
-from generated_symbols.data.number_provider.EnchantmentLevelProvider import EnchantmentLevelProvider
 from generated_symbols.data.advancement.predicate.EnchantmentPredicate import EnchantmentPredicate
 from generated_symbols.data.enchantment.provider.EnchantmentProvider import EnchantmentProvider
 from generated_symbols.data.enchantment.provider.EnchantmentsType import EnchantmentsType
@@ -314,10 +320,12 @@ from generated_symbols.data.loot.EntityTarget import EntityTarget
 from generated_symbols.data.advancement.predicate.EntityTypePredicate import EntityTypePredicate
 from generated_symbols.data.loot.condition.EnvironmentAttributeCheck import EnvironmentAttributeCheck
 from generated_symbols.data.worldgen.attribute.EnvironmentAttributeMap import EnvironmentAttributeMap
-from generated_symbols.data.number_provider.EnvironmentAttributeNumberProvider import EnvironmentAttributeNumberProvider
+from generated_symbols.data.number_provider.legacy.EnvironmentAttributeNumberProvider import EnvironmentAttributeNumberProvider
+from generated_symbols.data.number_provider.EnvironmentAttributeProvider import EnvironmentAttributeProvider
 from generated_symbols.data.timeline.EnvironmentAttributeTrackMap import EnvironmentAttributeTrackMap
 from generated_symbols.data.worldgen.feature.placement.EnvironmentScanModifier import EnvironmentScanModifier
 from generated_symbols.data.enchantment.effect_component.EquipmentDropsEnchantmentEffect import EquipmentDropsEnchantmentEffect
+from generated_symbols.data.advancement.predicate.EquipmentPredicateSlot import EquipmentPredicateSlot
 from generated_symbols.data.worldgen.structure_set.ExclusionZone import ExclusionZone
 from generated_symbols.data.tag.ExplicitTagEntry import ExplicitTagEntry
 from generated_symbols.data.enchantment.effect.ExplodeEntityEffect import ExplodeEntityEffect
@@ -353,7 +361,12 @@ from generated_symbols.data.worldgen.dimension.chunk_generator.FlatGeneratorSett
 from generated_symbols.data.worldgen.attribute.FloatAttribute import FloatAttribute
 from generated_symbols.data.worldgen.attribute.modifier.FloatAttributeModifier import FloatAttributeModifier
 from generated_symbols.data.worldgen.attribute.modifier.FloatModifierType import FloatModifierType
+from generated_symbols.data.number_provider.FloatNumberProvider import FloatNumberProvider
+from generated_symbols.data.number_provider.FloatNumberProviderRef import FloatNumberProviderRef
 from generated_symbols.data.worldgen.FloatProvider import FloatProvider
+from generated_symbols.data.loot.FloatRange import FloatRange
+from generated_symbols.data.number_provider.context_float.FloatRef import FloatRef
+from generated_symbols.data.loot.condition.FloatValueCheck import FloatValueCheck
 from generated_symbols.data.worldgen.attribute.modifier.FloatWithAlpha import FloatWithAlpha
 from generated_symbols.data.advancement.predicate.FluidPredicate import FluidPredicate
 from generated_symbols.data.advancement.predicate.FluidPredicateState import FluidPredicateState
@@ -381,7 +394,6 @@ from generated_symbols.data.worldgen.biome.GrassColorModifier import GrassColorM
 from generated_symbols.data.worldgen.processor_list.Gravity import Gravity
 from generated_symbols.data.slot_source.GroupSlotSource import GroupSlotSource
 from generated_symbols.data.worldgen.feature.GrowingPlantConfig import GrowingPlantConfig
-from generated_symbols.data.worldgen.feature.GrowingPlantHeight import GrowingPlantHeight
 from generated_symbols.data.worldgen.feature.block_predicate.HasSturdyFacePredicate import HasSturdyFacePredicate
 from generated_symbols.data.worldgen.feature.tree.HeightFoliagePlacer import HeightFoliagePlacer
 from generated_symbols.data.worldgen.processor_list.HeightMatch import HeightMatch
@@ -409,8 +421,13 @@ from generated_symbols.data.worldgen.feature.block_predicate.InsideWorldBoundsPr
 from generated_symbols.data.variants.instrument.Instrument import Instrument
 from generated_symbols.data.gametest.test_environment.IntGameRule import IntGameRule
 from generated_symbols.data.util.IntLimiter import IntLimiter
+from generated_symbols.data.number_provider.IntNumberProvider import IntNumberProvider
+from generated_symbols.data.number_provider.IntNumberProviderRef import IntNumberProviderRef
 from generated_symbols.data.worldgen.IntProvider import IntProvider
-from generated_symbols.data.util.IntRange import IntRange
+from generated_symbols.data.loot.IntRange import IntRange
+from generated_symbols.data.number_provider.context_int.IntRef import IntRef
+from generated_symbols.data.worldgen.attribute.IntegerEnvironmentAttribute import IntegerEnvironmentAttribute
+from generated_symbols.data.loot.condition.IntegerValueCheck import IntegerValueCheck
 from generated_symbols.data.worldgen.density_function.Interpolated import Interpolated
 from generated_symbols.data.advancement.trigger.InventoryChangeTrigger import InventoryChangeTrigger
 from generated_symbols.data.advancement.trigger.InventoryChangedSlots import InventoryChangedSlots
@@ -423,6 +440,7 @@ from generated_symbols.data.advancement.trigger.ItemDurabilityTrigger import Ite
 from generated_symbols.data.item_modifier.ItemModifier import ItemModifier
 from generated_symbols.data.item_modifier.ItemModifierArgument import ItemModifierArgument
 from generated_symbols.data.item_modifier.ItemModifierRoot import ItemModifierRoot
+from generated_symbols.data.item_modifier.ItemModifierWithoutRootRef import ItemModifierWithoutRootRef
 from generated_symbols.data.loot.ItemPoolEntry import ItemPoolEntry
 from generated_symbols.data.advancement.predicate.ItemPredicate import ItemPredicate
 from generated_symbols.data.recipe.ItemResult import ItemResult
@@ -549,10 +567,6 @@ from generated_symbols.data.worldgen.material_condition.NotCondition import NotC
 from generated_symbols.data.worldgen.feature.block_predicate.NotPredicate import NotPredicate
 from generated_symbols.data.dialog.NoticeDialog import NoticeDialog
 from generated_symbols.data.recipe.NotificationInfo import NotificationInfo
-from generated_symbols.data.number_provider.NumberDispatcher import NumberDispatcher
-from generated_symbols.data.number_provider.NumberProvider import NumberProvider
-from generated_symbols.data.number_provider.NumberProviderListRef import NumberProviderListRef
-from generated_symbols.data.number_provider.NumberProviderRef import NumberProviderRef
 from generated_symbols.data.dialog.input.NumberRangeInput import NumberRangeInput
 from generated_symbols.data.worldgen.attribute.NumericalEnvironmentAttribute import NumericalEnvironmentAttribute
 from generated_symbols.data.worldgen.structure.OceanRuin import OceanRuin
@@ -613,6 +627,7 @@ from generated_symbols.data.advancement.predicate.PostComponentsItemPredicate im
 from generated_symbols.data.enchantment.effect_component.PostPiercingAttackEnchantmentEffect import PostPiercingAttackEnchantmentEffect
 from generated_symbols.data.recipe.PotionIngredient import PotionIngredient
 from generated_symbols.data.worldgen.density_function.Pow import Pow
+from generated_symbols.data.number_provider.PowerProvider import PowerProvider
 from generated_symbols.data.advancement.predicate.PreComponentsItemPredicate import PreComponentsItemPredicate
 from generated_symbols.data.worldgen.biome.Precipitation import Precipitation
 from generated_symbols.data.predicate.Predicate import Predicate
@@ -651,6 +666,7 @@ from generated_symbols.data.worldgen.feature.RandomNeighborSpreadConfig import R
 from generated_symbols.data.worldgen.feature.placement.RandomOffsetModifier import RandomOffsetModifier
 from generated_symbols.data.worldgen.feature.RandomPatchConfig import RandomPatchConfig
 from generated_symbols.data.worldgen.structure.RandomPoolAlias import RandomPoolAlias
+from generated_symbols.data.number_provider.RandomProvider import RandomProvider
 from generated_symbols.data.worldgen.feature.RandomSelector import RandomSelector
 from generated_symbols.data.worldgen.feature.tree.RandomSpreadFoliagePlacer import RandomSpreadFoliagePlacer
 from generated_symbols.data.worldgen.structure_set.RandomSpreadPlacement import RandomSpreadPlacement
@@ -675,7 +691,6 @@ from generated_symbols.data.enchantment.effect.ReplaceDiskEntityEffect import Re
 from generated_symbols.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
 from generated_symbols.data.worldgen.feature.ReplaceSingleBlockConfig import ReplaceSingleBlockConfig
 from generated_symbols.data.recipe.RequiredSmithingIngredients import RequiredSmithingIngredients
-from generated_symbols.data.number_provider.ResolvableNumber import ResolvableNumber
 from generated_symbols.data.advancement.RootAdvancementDisplay import RootAdvancementDisplay
 from generated_symbols.data.worldgen.feature.tree.RootPlacer import RootPlacer
 from generated_symbols.data.worldgen.feature.RootSystemConfig import RootSystemConfig
@@ -691,8 +706,9 @@ from generated_symbols.data.worldgen.processor_list.RuleTest import RuleTest
 from generated_symbols.data.enchantment.effect.RunFunctionEntityEffect import RunFunctionEntityEffect
 from generated_symbols.data.advancement.predicate.SalmonPredicate import SalmonPredicate
 from generated_symbols.data.advancement.predicate.SalmonVariant import SalmonVariant
-from generated_symbols.data.number_provider.ScoreNumberProvider import ScoreNumberProvider
+from generated_symbols.data.number_provider.legacy.ScoreNumberProvider import ScoreNumberProvider
 from generated_symbols.data.util.ScoreProvider import ScoreProvider
+from generated_symbols.data.number_provider.context_int.ScoreboardValue import ScoreboardValue
 from generated_symbols.data.worldgen.feature.SculkPatchConfig import SculkPatchConfig
 from generated_symbols.data.worldgen.feature.SeaPickleConfig import SeaPickleConfig
 from generated_symbols.data.loot.function.Sequence import Sequence
@@ -740,7 +756,6 @@ from generated_symbols.data.worldgen.feature.block_state_provider.SimpleStatePro
 from generated_symbols.data.worldgen.feature.SingleBlockPillarConfig import SingleBlockPillarConfig
 from generated_symbols.data.worldgen.template_pool.SingleElement import SingleElement
 from generated_symbols.data.dialog.input.SingleOptionInput import SingleOptionInput
-from generated_symbols.data.enchantment.provider.SingleProvider import SingleProvider
 from generated_symbols.data.loot.SingletonPoolEntry import SingletonPoolEntry
 from generated_symbols.data.worldgen.dimension.SkyboxType import SkyboxType
 from generated_symbols.data.worldgen.density_function.Slice import Slice
@@ -786,7 +801,7 @@ from generated_symbols.data.loot.function.StewEffect import StewEffect
 from generated_symbols.data.worldgen.material_condition.StoneDepthCondition import StoneDepthCondition
 from generated_symbols.data.recipe.Stonecutting import Stonecutting
 from generated_symbols.data.util.StorageNbtProvider import StorageNbtProvider
-from generated_symbols.data.number_provider.StorageNumberProvider import StorageNumberProvider
+from generated_symbols.data.number_provider.legacy.StorageNumberProvider import StorageNumberProvider
 from generated_symbols.data.worldgen.structure.Structure import Structure
 from generated_symbols.data.structure.StructureBlock import StructureBlock
 from generated_symbols.data.variants.StructureCheck import StructureCheck
@@ -799,6 +814,7 @@ from generated_symbols.data.worldgen.structure_set.StructureSetElement import St
 from generated_symbols.data.worldgen.structure_set.StructureSetRef import StructureSetRef
 from generated_symbols.data.worldgen.noise_settings.StructureSettings import StructureSettings
 from generated_symbols.data.sulfur_cube_archetype.SulfurCubeArchetype import SulfurCubeArchetype
+from generated_symbols.data.number_provider.legacy.SumNumberProvider import SumNumberProvider
 from generated_symbols.data.enchantment.effect.SummonEntityEffect import SummonEntityEffect
 from generated_symbols.data.advancement.trigger.SummonedEntityTrigger import SummonedEntityTrigger
 from generated_symbols.data.worldgen.feature.placement.SurfaceRelativeThresholdFilter import SurfaceRelativeThresholdFilter
@@ -836,6 +852,7 @@ from generated_symbols.data.timeline.Timeline import Timeline
 from generated_symbols.data.gametest.test_environment.TimelineAttributesTestEnvironment import TimelineAttributesTestEnvironment
 from generated_symbols.data.loot.function.ToggleTooltips import ToggleTooltips
 from generated_symbols.data.loot.function.ToggleableDataComponent import ToggleableDataComponent
+from generated_symbols.data.villager_trade.TradeCost import TradeCost
 from generated_symbols.data.trade_set.TradeSet import TradeSet
 from generated_symbols.data.advancement.trigger.TradeTrigger import TradeTrigger
 from generated_symbols.data.worldgen.attribute.modifier.TranslucentColorAttributeModifier import TranslucentColorAttributeModifier
@@ -855,6 +872,7 @@ from generated_symbols.data.worldgen.feature.tree.TrunkPlacer import TrunkPlacer
 from generated_symbols.data.worldgen.feature.TwistingVinesConfig import TwistingVinesConfig
 from generated_symbols.data.worldgen.density_function.TwoArguments import TwoArguments
 from generated_symbols.data.worldgen.feature.tree.TwoLayersFeatureSize import TwoLayersFeatureSize
+from generated_symbols.data.worldgen.feature.block_state_provider.TypedBlockStateProvider import TypedBlockStateProvider
 from generated_symbols.data.slot_source.TypedSlotSource import TypedSlotSource
 from generated_symbols.data.worldgen.feature.UnderwaterMagmaConfig import UnderwaterMagmaConfig
 from generated_symbols.data.loot.function.UniformBonusFormula import UniformBonusFormula
@@ -862,7 +880,7 @@ from generated_symbols.data.worldgen.UniformHeightProvider import UniformHeightP
 from generated_symbols.data.worldgen.UniformInt import UniformInt
 from generated_symbols.data.util.UniformIntGenerator import UniformIntGenerator
 from generated_symbols.data.worldgen.UniformIntProvider import UniformIntProvider
-from generated_symbols.data.number_provider.UniformNumberProvider import UniformNumberProvider
+from generated_symbols.data.number_provider.legacy.UniformNumberProvider import UniformNumberProvider
 from generated_symbols.data.storage.UnknownStorage import UnknownStorage
 from generated_symbols.data.worldgen.feature.block_predicate.UnobstructedPredicate import UnobstructedPredicate
 from generated_symbols.data.worldgen.feature.tree.UpwardsBranchingTrunkPlacer import UpwardsBranchingTrunkPlacer
@@ -886,7 +904,6 @@ from generated_symbols.data.gametest.test_environment.WeatherTestEnvironment imp
 from generated_symbols.data.worldgen.WeightListHeightProvider import WeightListHeightProvider
 from generated_symbols.data.worldgen.feature.block_state_provider.WeightedBlockStateProvider import WeightedBlockStateProvider
 from generated_symbols.data.worldgen.template_pool.WeightedElement import WeightedElement
-from generated_symbols.data.number_provider.WeightedNumberProvider import WeightedNumberProvider
 from generated_symbols.data.worldgen.feature.WeightedRandomFeatureConfig import WeightedRandomFeatureConfig
 from generated_symbols.data.util.WeightedSoundEvent import WeightedSoundEvent
 from generated_symbols.data.worldgen.density_function.WeirdScaledSampler import WeirdScaledSampler
@@ -916,8 +933,6 @@ __all__ = [
     "AdvancementLocationPredicate",
     "AdvancementRewards",
     "AfterAction",
-    "AggregateNumberProvider",
-    "AggregateOperands",
     "AllOf",
     "AllOfEffectValue",
     "AllOfEntityEffect",
@@ -957,7 +972,9 @@ __all__ = [
     "BedRuleType",
     "BeeNestDestroyedTrigger",
     "BeehiveTreeDecorator",
+    "BelowHeightmapPredicate",
     "BendingTrunkPlacer",
+    "BinomialDistributionGenerator",
     "BinomialIntGenerator",
     "BinomialNumberProvider",
     "BinomialWithBonusCountFormula",
@@ -995,6 +1012,7 @@ __all__ = [
     "BlockStateMatch",
     "BlockStateProperty",
     "BlockStateProvider",
+    "BlockStateProviderRef",
     "BlockStateRuleProviderEntry",
     "BlockTransformData",
     "BlockTransformDropStrategy",
@@ -1064,7 +1082,7 @@ __all__ = [
     "CompositePoolEntry",
     "ConcentricRingsPlacement",
     "ConditionRule",
-    "ConditionalNumberProvider",
+    "ConditionalProvider",
     "Conditions",
     "Config",
     "ConfiguredCarver",
@@ -1079,11 +1097,14 @@ __all__ = [
     "ConstantIntGenerator",
     "ConstantIntProvider",
     "ConstantNumberProvider",
+    "ConstantValue",
     "ConstructBeaconTrigger",
     "ConsumeItemTrigger",
     "ContactDamage",
     "ContainerComponents",
     "ContentsSlotSource",
+    "ContextFloatProvider",
+    "ContextIntProvider",
     "ContextNbtProvider",
     "ContextScoreProvider",
     "CookingBookCategory",
@@ -1145,6 +1166,7 @@ __all__ = [
     "DamageSourceProperties",
     "DamageTagPredicate",
     "DamageType",
+    "DataStorageProvider",
     "DeathMessageType",
     "DebugFunctionEntry",
     "DecoratedPotPattern",
@@ -1169,10 +1191,12 @@ __all__ = [
     "DirectPoolAlias",
     "DiscreteAttribute",
     "DiskConfig",
+    "DispatcherProvider",
     "DistanceMetric",
     "DistancePredicate",
     "DistanceToPoint",
     "DistanceTrigger",
+    "DistributionProvider",
     "DualNoiseProvider",
     "DynamicCustomAction",
     "DynamicDrops",
@@ -1192,7 +1216,6 @@ __all__ = [
     "EnchantmentActiveCheck",
     "EnchantmentCost",
     "EnchantmentEffectComponentMap",
-    "EnchantmentLevelProvider",
     "EnchantmentPredicate",
     "EnchantmentProvider",
     "EnchantmentsType",
@@ -1218,9 +1241,11 @@ __all__ = [
     "EnvironmentAttributeCheck",
     "EnvironmentAttributeMap",
     "EnvironmentAttributeNumberProvider",
+    "EnvironmentAttributeProvider",
     "EnvironmentAttributeTrackMap",
     "EnvironmentScanModifier",
     "EquipmentDropsEnchantmentEffect",
+    "EquipmentPredicateSlot",
     "ExclusionZone",
     "ExplicitTagEntry",
     "ExplodeEntityEffect",
@@ -1256,7 +1281,12 @@ __all__ = [
     "FloatAttribute",
     "FloatAttributeModifier",
     "FloatModifierType",
+    "FloatNumberProvider",
+    "FloatNumberProviderRef",
     "FloatProvider",
+    "FloatRange",
+    "FloatRef",
+    "FloatValueCheck",
     "FloatWithAlpha",
     "FluidPredicate",
     "FluidPredicateState",
@@ -1284,7 +1314,6 @@ __all__ = [
     "Gravity",
     "GroupSlotSource",
     "GrowingPlantConfig",
-    "GrowingPlantHeight",
     "HasSturdyFacePredicate",
     "HeightFoliagePlacer",
     "HeightMatch",
@@ -1312,8 +1341,13 @@ __all__ = [
     "Instrument",
     "IntGameRule",
     "IntLimiter",
+    "IntNumberProvider",
+    "IntNumberProviderRef",
     "IntProvider",
     "IntRange",
+    "IntRef",
+    "IntegerEnvironmentAttribute",
+    "IntegerValueCheck",
     "Interpolated",
     "InventoryChangeTrigger",
     "InventoryChangedSlots",
@@ -1326,6 +1360,7 @@ __all__ = [
     "ItemModifier",
     "ItemModifierArgument",
     "ItemModifierRoot",
+    "ItemModifierWithoutRootRef",
     "ItemPoolEntry",
     "ItemPredicate",
     "ItemResult",
@@ -1452,10 +1487,6 @@ __all__ = [
     "NotPredicate",
     "NoticeDialog",
     "NotificationInfo",
-    "NumberDispatcher",
-    "NumberProvider",
-    "NumberProviderListRef",
-    "NumberProviderRef",
     "NumberRangeInput",
     "NumericalEnvironmentAttribute",
     "OceanRuin",
@@ -1516,6 +1547,7 @@ __all__ = [
     "PostPiercingAttackEnchantmentEffect",
     "PotionIngredient",
     "Pow",
+    "PowerProvider",
     "PreComponentsItemPredicate",
     "Precipitation",
     "Predicate",
@@ -1554,6 +1586,7 @@ __all__ = [
     "RandomOffsetModifier",
     "RandomPatchConfig",
     "RandomPoolAlias",
+    "RandomProvider",
     "RandomSelector",
     "RandomSpreadFoliagePlacer",
     "RandomSpreadPlacement",
@@ -1578,7 +1611,6 @@ __all__ = [
     "ReplaceSectionListOperation",
     "ReplaceSingleBlockConfig",
     "RequiredSmithingIngredients",
-    "ResolvableNumber",
     "RootAdvancementDisplay",
     "RootPlacer",
     "RootSystemConfig",
@@ -1596,6 +1628,7 @@ __all__ = [
     "SalmonVariant",
     "ScoreNumberProvider",
     "ScoreProvider",
+    "ScoreboardValue",
     "SculkPatchConfig",
     "SeaPickleConfig",
     "Sequence",
@@ -1643,7 +1676,6 @@ __all__ = [
     "SingleBlockPillarConfig",
     "SingleElement",
     "SingleOptionInput",
-    "SingleProvider",
     "SingletonPoolEntry",
     "SkyboxType",
     "Slice",
@@ -1702,6 +1734,7 @@ __all__ = [
     "StructureSetRef",
     "StructureSettings",
     "SulfurCubeArchetype",
+    "SumNumberProvider",
     "SummonEntityEffect",
     "SummonedEntityTrigger",
     "SurfaceRelativeThresholdFilter",
@@ -1739,6 +1772,7 @@ __all__ = [
     "TimelineAttributesTestEnvironment",
     "ToggleTooltips",
     "ToggleableDataComponent",
+    "TradeCost",
     "TradeSet",
     "TradeTrigger",
     "TranslucentColorAttributeModifier",
@@ -1758,6 +1792,7 @@ __all__ = [
     "TwistingVinesConfig",
     "TwoArguments",
     "TwoLayersFeatureSize",
+    "TypedBlockStateProvider",
     "TypedSlotSource",
     "UnderwaterMagmaConfig",
     "UniformBonusFormula",
@@ -1789,7 +1824,6 @@ __all__ = [
     "WeightListHeightProvider",
     "WeightedBlockStateProvider",
     "WeightedElement",
-    "WeightedNumberProvider",
     "WeightedRandomFeatureConfig",
     "WeightedSoundEvent",
     "WeirdScaledSampler",

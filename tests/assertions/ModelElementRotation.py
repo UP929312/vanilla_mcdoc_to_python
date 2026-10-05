@@ -15,5 +15,3 @@ if TYPE_CHECKING:
 
 
 type ModelElementRotation = dict[Axis, float]
-
-

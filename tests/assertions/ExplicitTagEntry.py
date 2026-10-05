@@ -8,14 +8,13 @@ Generated from symbols.json for ::java::data::tag::ExplicitTagEntry
 Local link to file: generated_symbols/data/tag/ExplicitTagEntry.py
 """
 # ~~~ CODE ~~~
-from pydantic import BaseModel
 from typing import Generic, TypeVar
+
+from generated_symbols.base import GeneratedModel
 
 
 E = TypeVar('E')
 
-class ExplicitTagEntry(BaseModel, Generic[E]):
+class ExplicitTagEntry(GeneratedModel, Generic[E]):
     id: E
     required: bool | None = None
-
-

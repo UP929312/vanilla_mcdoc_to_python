@@ -8,11 +8,13 @@ from typed_models import (
     DispatcherSchema,
     FloatSchema,
     IndexedSchema,
+    LongSchema,
     PairSchema,
     ReferenceSchema,
     SpreadFieldSchema,
     StringSchema,
     StructSchema,
+    UnionSchema,
 )
 from utils import SYMBOLS_MAP
 
@@ -20,6 +22,12 @@ from utils import SYMBOLS_MAP
 @pytest.fixture(scope="module")
 def graph() -> SchemaGraph:
     return SchemaGraph.from_symbol_maps(SYMBOLS_MAP)
+
+
+def test_union_accepts_long_schema() -> None:
+    schema = UnionSchema(kind="union", members=[LongSchema(kind="long")])
+
+    assert isinstance(schema.members[0], LongSchema)
 
 
 def test_dynamic_dispatcher_candidates_from_sprite_source(graph: SchemaGraph) -> None:

@@ -529,6 +529,7 @@ class ReferenceSchema(BaseSchema):
 type UnionSchemaMemberTypes = (
     PairSchema | ListSchema | StringSchema | ReferenceSchema | DispatcherSchema | ConcreteSchema | BooleanSchema | StructSchema
     | UnionSchema | LiteralSchema | IntSchema | IndexedSchema | FloatSchema | IntArraySchema | TupleSchema | ByteSchema | ShortSchema
+    | LongSchema
 )
 
 
