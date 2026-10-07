@@ -111,18 +111,13 @@ class LengthRange(BaseModel):
     max: int | None = None
 
     def to_annotation_suffix(self, ctx: SingleSymbolContext) -> str:
+        ctx.required_imports.add(Import("pydantic", "Field", False, False))
         if self.min is not None and self.max is not None:
-            ctx.required_imports.add(Import("pydantic", "Field", False, False))
             return f"Field(min_length={self.min}, max_length={self.max})"
-            # return f"Length = {self.min}-{self.max} (both inclusive)"
         if self.min is not None:
-            ctx.required_imports.add(Import("pydantic", "Field", False, False))
             return f"Field(min_length={self.min})"
-            # return f"Length = {self.min} (inclusive) and above"
         if self.max is not None:
-            ctx.required_imports.add(Import("pydantic", "Field", False, False))
             return f"Field(max_length={self.max})"
-            # return f"Length = {self.max} (inclusive) and below"
         raise TypeError("Min and Max are None! LengthRange.to_annotation_suffix error")  # pragma: no cover
 
 
@@ -603,10 +598,7 @@ class UnionSchema(BaseSchema):
 
         # Materialize struct members as concrete sibling symbols so the union alias can reference them.
         declarations, annotations = self._render_members(f"{class_name}Struct", ctx, declare_structs=True)
-        try:
-            resolved_members = [ctx.schema_graph.resolve(member) for member in self.members]
-        except KeyError:
-            resolved_members = []
+        resolved_members = [ctx.schema_graph.resolve(member) for member in self.members]
         struct_members = [
             resolved[0]
             for resolved in resolved_members
@@ -936,6 +928,9 @@ class StructSchema(BaseSchema):
 
     def to_materialized_annotation(self, class_name: str, ctx: SingleSymbolContext) -> str:
         """Both adds itself to the list of created dataclasses, plus returns the annotation materialized."""
+        mapping_alias = self._mapping_alias_annotation(ctx, f"{class_name}ValueStruct")
+        if mapping_alias is not None:  # Mappings are just dict[<x>, <x>], so inline them rather than making a type alias.
+            return mapping_alias
         class_name = ctx.allocate_name(class_name, self.model_dump_json(by_alias=True))
         ctx.add_dataclass(self.to_python_code(class_name, ctx))
         type_param_names = sorted({symbol_path_to_object_name(path) for path in ctx.local_type_params})
@@ -1009,6 +1004,7 @@ class StructSchema(BaseSchema):
 
 def _literal_discriminator_field(schemas: list[StructSchema]) -> str | None:
     """Find a shared string-literal field whose value uniquely identifies each model."""
+    # TODO: Move to LiteralSchema?
     if len(schemas) < 2:
         return None
 
@@ -1137,6 +1133,9 @@ type KindOption = Literal[
 ]
 
 KIND_TO_MODEL: dict[KindOption, type[BaseSchema]] = {
+    # TODO: We can probably make this a list of type[BaseSchema], then iterate over them and generate this by doing model.__fields__["kind"].default for each model.
+    # That way we don't have to maintain this list manually.
+    # Just have to make double it's own thing first.
     "struct": StructSchema,
     "enum": EnumSchema,
     "union": UnionSchema,

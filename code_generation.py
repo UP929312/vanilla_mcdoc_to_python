@@ -63,6 +63,7 @@ def make_python_file_content(resource_type: str, resource_data: dict[str, Any], 
     body_lines = current_model.to_python_code(class_name, ctx)
 
     if (resource_key := get_resource_lookup_map().get(resource_type)) is not None:
+        # TODO: I hate this, it's gross. I really wished we added this to the StructSchema, and then we don't have to do loop over.
         class_line_index = next((i for i, line in enumerate(body_lines) if line.startswith(f"class {class_name}")), None)
         if class_line_index is not None:
             ctx.required_imports.add(Import("typing", "ClassVar", False, True))
@@ -97,8 +98,6 @@ def make_python_file_content(resource_type: str, resource_data: dict[str, Any], 
 
 
 def make_python_file_of_model(resource_type: str, resource_data: dict[str, Any]) -> None:
-    # Converts something like: `::java::data::loot::LootTablePoolEntry`
-    # Into `generated_symbols/data/loot/LootTablePoolEntry`
     path, name = symbol_path_to_import_string_and_name(resource_type)
     output_path = GENERATED_SYMBOLS_DIRECTORY.joinpath(*path.split(".")[1:-1], name).with_suffix(".py")
     manage_directory_and_inits(output_path.parent)

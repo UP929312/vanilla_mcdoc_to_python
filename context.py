@@ -99,7 +99,11 @@ class SingleSymbolContext:
         return imported_name
 
     def copy(self) -> SingleSymbolContext:
-        """Copy the context with new values while sharing accumulated generation state."""
+        """Copy the context with new values while sharing accumulated generation state.
+        This is normally so we can temporarily disable attributes like:
+        - allow_numeric_type_arg_shortcuts
+        - require_runtime_imports
+        """
         return SingleSymbolContext(
             required_imports=self.required_imports,
             local_type_params=self.local_type_params,
