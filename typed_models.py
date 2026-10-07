@@ -212,7 +212,7 @@ class StringSchema(BaseSchema):
                 # Literally only one thing - ::java::assets::credits::CreditsDiscipline
                 ctx.required_imports.add(Import("typing", "Literal", False, True))
                 return 'Literal[""]'
-            metadata.insert(0, f"'{self.length_range.to_annotation_suffix(ctx)}'")
+            metadata.insert(0, self.length_range.to_annotation_suffix(ctx))
 
         if not metadata:
             return "str"
@@ -352,7 +352,7 @@ class TupleSchema(BaseSchema):
     Length is either 2 or 4.
     """
     kind: Literal["tuple"] = Field(repr=False)
-    items: list[IntSchema] | list[FloatSchema]
+    items: list[IntSchema] | list[FloatSchema]  # Make this use discriminator="kind".
     attributes: list[Attribute] = Field(default_factory=list, repr=False)
 
     def to_annotation(self, ctx: SingleSymbolContext) -> str:
@@ -463,7 +463,7 @@ class ConcreteSchema(BaseSchema):
         # Optionally allow passing numeric primitive kind(s) directly alongside the concrete wrapper.
         shortcut_annotations = [
             type_arg.to_annotation(ctx) for type_arg in self.type_args if isinstance(type_arg, (IntSchema, FloatSchema))
-        ]
+        ] if ctx.allow_numeric_type_arg_shortcuts else []
         # This allows you to omit "MinMaxBounds" and such, which generates `MinMaxBounds[int] | int`, QoL
         return " | ".join([concrete_annotation] + shortcut_annotations)
 
@@ -618,7 +618,7 @@ class UnionSchema(BaseSchema):
 type PairSchemaTypes = (
     IntSchema | FloatSchema | ConcreteSchema | ListSchema | UnionSchema | ReferenceSchema | BooleanSchema | AnySchema | TupleSchema
     | IndexedSchema | StringSchema | StructSchema | ByteSchema | DispatcherSchema | IntArraySchema | ShortSchema | LongSchema
-    | LiteralSchema | ShortSchema
+    | LiteralSchema
 )
 
 
