@@ -11,12 +11,9 @@ if TYPE_CHECKING:
     from generated_symbols.util.registry_ref.BlockListRef import BlockListRef
 
 
-type StateStructBlockStatesNone = dict[str, str]
-
-
 class BlockStateConditions(GeneratedModel):
     blocks: BlockListRef | None = None
-    state: StateStructBlockStatesNone | None = None
+    state: dict[str, str] | None = None
 
 
 # ~~~ MODEL DUMP ~~~

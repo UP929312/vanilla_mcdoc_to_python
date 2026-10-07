@@ -598,7 +598,10 @@ class UnionSchema(BaseSchema):
 
         # Materialize struct members as concrete sibling symbols so the union alias can reference them.
         declarations, annotations = self._render_members(f"{class_name}Struct", ctx, declare_structs=True)
-        resolved_members = [ctx.schema_graph.resolve(member) for member in self.members]
+        try:
+            resolved_members = [ctx.schema_graph.resolve(member) for member in self.members]
+        except KeyError:
+            resolved_members = []
         struct_members = [
             resolved[0]
             for resolved in resolved_members

@@ -9,11 +9,8 @@ from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
-type PropertiesStructDataComponentBlockStateBlockItemStatesNone = dict[str, str]
-
-
 class SetBlockPropertiesEntityEffect(GeneratedModel):
-    properties: PropertiesStructDataComponentBlockStateBlockItemStatesNone
+    properties: dict[str, str]
     offset: tuple[int, int, int] | None = None  # Relative coordinates to offset the block by. Defaults to `[0, 0, 0]`.
     trigger_game_event: Annotated[str, IdSpec(registry='game_event')] | None = None  # Defaults to no game event dispatched.
 

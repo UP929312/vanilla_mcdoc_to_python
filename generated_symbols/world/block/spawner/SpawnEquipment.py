@@ -13,12 +13,9 @@ if TYPE_CHECKING:
     from generated_symbols.util.slot.EquipmentSlot import EquipmentSlot
 
 
-type SlotDropChancesStruct = dict[EquipmentSlot, Annotated[float, Field(ge=0, le=1)]]
-
-
 class SpawnEquipment(GeneratedModel):
     loot_table: Annotated[str, IdSpec(registry='loot_table')]  # Generates the equipment.
-    slot_drop_chances: Annotated[float, Field(ge=0, le=1)] | SlotDropChancesStruct  # Chance the mob will drop the equipment on death.
+    slot_drop_chances: Annotated[float, Field(ge=0, le=1)] | dict[EquipmentSlot, Annotated[float, Field(ge=0, le=1)]]  # Chance the mob will drop the equipment on death.
 
 
 # ~~~ MODEL DUMP ~~~

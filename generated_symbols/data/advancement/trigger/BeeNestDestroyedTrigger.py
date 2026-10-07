@@ -9,12 +9,9 @@ from generated_symbols.data.advancement.trigger.PlayerConditions import PlayerCo
 from generated_symbols.util.registry_ref.BlockListRef import BlockListRef
 
 
-type StateStructBlockStatesNone = dict[str, str]
-
-
 class BeeNestDestroyedTriggerTypeArg(PlayerConditions):
     blocks: BlockListRef | None = None
-    state: StateStructBlockStatesNone | None = None
+    state: dict[str, str] | None = None
     num_bees_inside: int | None = None  # Number of bees that were inside the bee nest/beehive before it was broken.
     item: ItemPredicate | None = None  # Item used to break the block.
 

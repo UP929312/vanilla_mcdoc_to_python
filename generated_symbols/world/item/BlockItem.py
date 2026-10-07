@@ -11,12 +11,9 @@ if TYPE_CHECKING:
     from generated_symbols.world.block.BlockEntityData import BlockEntityData
 
 
-type BlockStateTagStructBlockItemStatesNone = dict[str, str]
-
-
 class BlockItem(ItemBase):
     BlockEntityTag: BlockEntityData | None = None
-    BlockStateTag: BlockStateTagStructBlockItemStatesNone | None = None  # Blockstate that the placed block will have.
+    BlockStateTag: dict[str, str] | None = None  # Blockstate that the placed block will have.
 
 
 # ~~~ MODEL DUMP ~~~

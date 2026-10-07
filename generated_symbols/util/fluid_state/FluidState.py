@@ -9,12 +9,9 @@ from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
 
 
-type PropertiesStructFluidStatesNone = dict[str, str]
-
-
 class FluidStateStruct(GeneratedModel):
     id: Annotated[str, IdSpec(registry='fluid')]
-    properties: PropertiesStructFluidStatesNone | None = None
+    properties: dict[str, str] | None = None
 
 
 type FluidState = Annotated[str, IdSpec(registry='fluid')] | FluidStateStruct

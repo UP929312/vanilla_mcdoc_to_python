@@ -8,10 +8,7 @@ from typing import Annotated
 from minecraft_registry import IdSpec
 
 
-type PlayerAdvancementsValueStruct = dict[str, bool]
-
-
-type PlayerAdvancements = dict[Annotated[str, IdSpec(registry='advancement')], bool | PlayerAdvancementsValueStruct]
+type PlayerAdvancements = dict[Annotated[str, IdSpec(registry='advancement')], bool | dict[str, bool]]
 
 
 # ~~~ MODEL DUMP ~~~

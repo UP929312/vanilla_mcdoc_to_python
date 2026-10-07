@@ -12,12 +12,9 @@ if TYPE_CHECKING:
     from generated_symbols.registry.KnownBlockId import KnownBlockId
 
 
-type PropertiesStructBlockStatesNone = dict[str, str]
-
-
 class BlockStateProperty(GeneratedModel):
     block: Annotated[str, IdSpec(registry='block')] | KnownBlockId
-    properties: PropertiesStructBlockStatesNone | None = None
+    properties: dict[str, str] | None = None
 
 
 # ~~~ MODEL DUMP ~~~
