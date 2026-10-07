@@ -17,7 +17,7 @@ if TYPE_CHECKING:
 class CraftingShaped(CraftingBookInfo, NotificationInfo):
     __resource_dir__: ClassVar[str] = 'recipe'
 
-    pattern: Annotated[list[Annotated[str, 'Field(min_length=1, max_length=3)']], Field(min_length=1, max_length=3)]
+    pattern: Annotated[list[Annotated[str, Field(min_length=1, max_length=3)]], Field(min_length=1, max_length=3)]
     key: dict[str, Ingredient]
     result: ItemStackTemplate
 

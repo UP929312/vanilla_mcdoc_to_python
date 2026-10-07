@@ -10,7 +10,7 @@ from pydantic import Field
 
 
 class SpaceProvider(GeneratedModel):
-    advances: dict[Annotated[str, 'Field(min_length=1, max_length=1)'], float]
+    advances: dict[Annotated[str, Field(min_length=1, max_length=1)], float]
 
 
 # ~~~ MODEL DUMP ~~~

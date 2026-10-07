@@ -16,7 +16,7 @@ if TYPE_CHECKING:
 
 class WrittenBookContent(GeneratedModel):
     pages: list[Filterable[Text]] | None = None
-    title: Filterable[Annotated[str, 'Field(max_length=32)']]
+    title: Filterable[Annotated[str, Field(max_length=32)]]
     author: str
     generation: BookGeneration | None = None  # Number of times this written book has been copied. Defaults to 0. If the value is greater than 1, the book cannot be copied.
     resolved: bool | None = None  # Whether the dynamic content on the pages has been resolved.
