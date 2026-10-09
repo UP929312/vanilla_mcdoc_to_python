@@ -32,7 +32,6 @@ run_assertions()
 
 
 HANDY_LINKS = [
-    "",
     r"generated_symbols\data\advancement\predicate\FoodPredicate.py",  # MinMaxBounds[T]
     r"generated_symbols\data\worldgen\attribute\GlobalEnvironmentAttributeMap.py",  # ConcreteSchema (Base, not struct)
     r"generated_symbols\data\worldgen\DecorationStep.py",  # Enum
@@ -52,8 +51,3 @@ HANDY_LINKS = [
     r"generated_symbols\data\advancement\Advancement.py",  # Super weird attributes.
     r"generated_symbols\data\advancement\predicate\BlockPredicateState.py",  # Complicated Key (for now we do Annotated, need to smarten this up.)
 ]
-
-# Would be nice to have a wrapper type for the registry references
-# ResourceLocation[WolfVariant] for example
-
-# print(f"Handy links:\n{'\n- '.join(HANDY_LINKS)}")
