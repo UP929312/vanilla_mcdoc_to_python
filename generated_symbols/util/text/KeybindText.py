@@ -13,7 +13,7 @@ if TYPE_CHECKING:
 
 class KeybindText(TextBase):
     keybind: Keybind
-    type: Literal['keybind'] = 'keybind'
+    type: Literal['keybind'] | None = 'keybind'
 
 
 # ~~~ MODEL DUMP ~~~

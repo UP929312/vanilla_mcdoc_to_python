@@ -49,7 +49,7 @@ class Player(LivingEntity):
     abilities: Abilities | None = None  # Abilities of the player.
     entered_nether_pos: tuple[float, float, float] | None = None  # Position that the player entered the nether at.
     raid_omen_position: tuple[int, int, int] | None = None
-    RootVehicle: RootVehicle | None = None  # Entity that the player is riding.
+    RootVehicle_: RootVehicle | None = Field(default=None, alias='RootVehicle')  # Entity that the player is riding.
     ShoulderEntityLeft: AnyEntity | None = None  # Entity that is on the player's left shoulder.
     ShoulderEntityRight: AnyEntity | None = None  # Entity that is on the player's right shoulder.
     seenCredits: bool | None = None  # Whether the player has gone to the overworld after defeating the Ender Dragon.

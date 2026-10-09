@@ -11,11 +11,11 @@ from pydantic import Field
 
 
 class PosRuleTestAxisAlignedLinearPos(AxisAlignedLinearPos):
-    predicate_type: Literal['minecraft:axis_aligned_linear_pos'] = 'minecraft:axis_aligned_linear_pos'
+    predicate_type: Literal['minecraft:axis_aligned_linear_pos', 'axis_aligned_linear_pos'] = 'minecraft:axis_aligned_linear_pos'
 
 
 class PosRuleTestLinearPos(LinearPos):
-    predicate_type: Literal['minecraft:linear_pos'] = 'minecraft:linear_pos'
+    predicate_type: Literal['minecraft:linear_pos', 'linear_pos'] = 'minecraft:linear_pos'
 
 
 type PosRuleTest = Annotated[

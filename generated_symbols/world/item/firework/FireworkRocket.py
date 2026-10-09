@@ -6,13 +6,14 @@ Local link to file: generated_symbols/world/item/firework/FireworkRocket.py
 from typing import TYPE_CHECKING
 
 from generated_symbols.world.item.ItemBase import ItemBase
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.world.item.firework.Fireworks import Fireworks
 
 
 class FireworkRocket(ItemBase):
-    Fireworks: Fireworks | None = None
+    Fireworks_: Fireworks | None = Field(default=None, alias='Fireworks')
 
 
 # ~~~ MODEL DUMP ~~~

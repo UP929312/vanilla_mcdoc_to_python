@@ -13,8 +13,8 @@ from minecraft_registry import IdSpec
 class SpriteText(ObjectTextConfig, TextBase):
     atlas: Annotated[str, IdSpec(registry='atlas')] | None = None  # Defaults to `minecraft:blocks`.
     sprite: Annotated[str, IdSpec(registry='texture')]
-    object: Literal['atlas'] = 'atlas'
-    type: Literal['object'] = 'object'
+    object: Literal['atlas'] | None = 'atlas'
+    type: Literal['object'] | None = 'object'
 
 
 # ~~~ MODEL DUMP ~~~

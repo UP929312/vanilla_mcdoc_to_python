@@ -6,6 +6,7 @@ Local link to file: generated_symbols/world/entity/mob/armor_stand/ArmorStand.py
 from typing import TYPE_CHECKING
 
 from generated_symbols.world.entity.mob.LivingEntity import LivingEntity
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.world.entity.mob.EntityEquipment import EntityEquipment
@@ -20,7 +21,7 @@ class ArmorStand(LivingEntity):
     ShowArms: bool | None = None  # Whether it should show its arms.
     Small: bool | None = None  # Whether it is small.
     DisabledSlots: int | None = None  # A bitfield of the slots that cannot be used.
-    Pose: Pose | None = None  # Body part rotations.
+    Pose_: Pose | None = Field(default=None, alias='Pose')  # Body part rotations.
 
 
 # ~~~ MODEL DUMP ~~~

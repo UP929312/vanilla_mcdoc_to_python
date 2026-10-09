@@ -13,11 +13,11 @@ from pydantic import Field
 class TestInstanceBlockBased(BlockBasedTestInstance):
     __resource_dir__: ClassVar[str] = 'test_instance'
 
-    type: Literal['minecraft:block_based'] = 'minecraft:block_based'
+    type: Literal['minecraft:block_based', 'block_based'] = 'minecraft:block_based'
 
 
 class TestInstanceFunction(FunctionTestInstance):
-    type: Literal['minecraft:function'] = 'minecraft:function'
+    type: Literal['minecraft:function', 'function'] = 'minecraft:function'
 
 
 type TestInstance = Annotated[

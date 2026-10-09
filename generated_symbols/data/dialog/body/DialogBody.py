@@ -11,11 +11,11 @@ from pydantic import Field
 
 
 class DialogBodyItem(ItemBody):
-    type: Literal['minecraft:item'] = 'minecraft:item'
+    type: Literal['minecraft:item', 'item'] = 'minecraft:item'
 
 
 class DialogBodyPlainMessage(PlainMessage):
-    type: Literal['minecraft:plain_message'] = 'minecraft:plain_message'
+    type: Literal['minecraft:plain_message', 'plain_message'] = 'minecraft:plain_message'
 
 
 type DialogBody = Annotated[

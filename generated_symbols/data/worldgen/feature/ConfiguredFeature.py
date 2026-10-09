@@ -57,223 +57,223 @@ from pydantic import Field
 class ConfiguredFeatureBamboo(ProbabilityConfig):
     __resource_dir__: ClassVar[str] = 'worldgen/feature'
 
-    type: Literal['minecraft:bamboo'] = 'minecraft:bamboo'
+    type: Literal['minecraft:bamboo', 'bamboo'] = 'minecraft:bamboo'
 
 
 class ConfiguredFeatureBlockBlob(BlockBlobConfig):
-    type: Literal['minecraft:block_blob'] = 'minecraft:block_blob'
+    type: Literal['minecraft:block_blob', 'block_blob'] = 'minecraft:block_blob'
 
 
 class ConfiguredFeatureBlockColumn(BlockColumnConfig):
-    type: Literal['minecraft:block_column'] = 'minecraft:block_column'
+    type: Literal['minecraft:block_column', 'block_column'] = 'minecraft:block_column'
 
 
 class ConfiguredFeatureBlockPile(BlockPileConfig):
-    type: Literal['minecraft:block_pile'] = 'minecraft:block_pile'
+    type: Literal['minecraft:block_pile', 'block_pile'] = 'minecraft:block_pile'
 
 
 class ConfiguredFeatureCoralClaw(CoralConfig):
-    type: Literal['minecraft:coral_claw'] = 'minecraft:coral_claw'
+    type: Literal['minecraft:coral_claw', 'coral_claw'] = 'minecraft:coral_claw'
 
 
 class ConfiguredFeatureCoralTree(CoralConfig):
-    type: Literal['minecraft:coral_tree'] = 'minecraft:coral_tree'
+    type: Literal['minecraft:coral_tree', 'coral_tree'] = 'minecraft:coral_tree'
 
 
 class ConfiguredFeatureDeltaFeature(DeltaConfig):
-    type: Literal['minecraft:delta_feature'] = 'minecraft:delta_feature'
+    type: Literal['minecraft:delta_feature', 'delta_feature'] = 'minecraft:delta_feature'
 
 
 class ConfiguredFeatureDisk(DiskConfig):
-    type: Literal['minecraft:disk'] = 'minecraft:disk'
+    type: Literal['minecraft:disk', 'disk'] = 'minecraft:disk'
 
 
 class ConfiguredFeatureEmeraldOre(EmeraldOreConfig):
-    type: Literal['minecraft:emerald_ore'] = 'minecraft:emerald_ore'
+    type: Literal['minecraft:emerald_ore', 'emerald_ore'] = 'minecraft:emerald_ore'
 
 
 class ConfiguredFeatureEndGateway(EndGatewayConfig):
-    type: Literal['minecraft:end_gateway'] = 'minecraft:end_gateway'
+    type: Literal['minecraft:end_gateway', 'end_gateway'] = 'minecraft:end_gateway'
 
 
 class ConfiguredFeatureEndPodium(EndPodiumConfig):
-    type: Literal['minecraft:end_podium'] = 'minecraft:end_podium'
+    type: Literal['minecraft:end_podium', 'end_podium'] = 'minecraft:end_podium'
 
 
 class ConfiguredFeatureEndSpike(EndSpikeConfig):
-    type: Literal['minecraft:end_spike'] = 'minecraft:end_spike'
+    type: Literal['minecraft:end_spike', 'end_spike'] = 'minecraft:end_spike'
 
 
 class ConfiguredFeatureFallenTree(FallenTreeConfig):
-    type: Literal['minecraft:fallen_tree'] = 'minecraft:fallen_tree'
+    type: Literal['minecraft:fallen_tree', 'fallen_tree'] = 'minecraft:fallen_tree'
 
 
 class ConfiguredFeatureFillLayer(FillLayerConfig):
-    type: Literal['minecraft:fill_layer'] = 'minecraft:fill_layer'
+    type: Literal['minecraft:fill_layer', 'fill_layer'] = 'minecraft:fill_layer'
 
 
 class ConfiguredFeatureFlower(RandomPatchConfig):
-    type: Literal['minecraft:flower'] = 'minecraft:flower'
+    type: Literal['minecraft:flower', 'flower'] = 'minecraft:flower'
 
 
 class ConfiguredFeatureFossil(FossilConfig):
-    type: Literal['minecraft:fossil'] = 'minecraft:fossil'
+    type: Literal['minecraft:fossil', 'fossil'] = 'minecraft:fossil'
 
 
 class ConfiguredFeatureGeode(GeodeConfig):
-    type: Literal['minecraft:geode'] = 'minecraft:geode'
+    type: Literal['minecraft:geode', 'geode'] = 'minecraft:geode'
 
 
 class ConfiguredFeatureGlowLichen(MultifaceGrowthConfig):
-    type: Literal['minecraft:glow_lichen'] = 'minecraft:glow_lichen'
+    type: Literal['minecraft:glow_lichen', 'glow_lichen'] = 'minecraft:glow_lichen'
 
 
 class ConfiguredFeatureHugeBrownMushroom(HugeMushroomConfig):
-    type: Literal['minecraft:huge_brown_mushroom'] = 'minecraft:huge_brown_mushroom'
+    type: Literal['minecraft:huge_brown_mushroom', 'huge_brown_mushroom'] = 'minecraft:huge_brown_mushroom'
 
 
 class ConfiguredFeatureHugeFungus(HugeFungusConfig):
-    type: Literal['minecraft:huge_fungus'] = 'minecraft:huge_fungus'
+    type: Literal['minecraft:huge_fungus', 'huge_fungus'] = 'minecraft:huge_fungus'
 
 
 class ConfiguredFeatureHugeRedMushroom(HugeMushroomConfig):
-    type: Literal['minecraft:huge_red_mushroom'] = 'minecraft:huge_red_mushroom'
+    type: Literal['minecraft:huge_red_mushroom', 'huge_red_mushroom'] = 'minecraft:huge_red_mushroom'
 
 
 class ConfiguredFeatureIcePatch(DiskConfig):
-    type: Literal['minecraft:ice_patch'] = 'minecraft:ice_patch'
+    type: Literal['minecraft:ice_patch', 'ice_patch'] = 'minecraft:ice_patch'
 
 
 class ConfiguredFeatureIceberg(IcebergConfig):
-    type: Literal['minecraft:iceberg'] = 'minecraft:iceberg'
+    type: Literal['minecraft:iceberg', 'iceberg'] = 'minecraft:iceberg'
 
 
 class ConfiguredFeatureLake(LakeConfig):
-    type: Literal['minecraft:lake'] = 'minecraft:lake'
+    type: Literal['minecraft:lake', 'lake'] = 'minecraft:lake'
 
 
 class ConfiguredFeatureLargeSpeleothem(LargeSpeleothemConfig):
-    type: Literal['minecraft:large_speleothem'] = 'minecraft:large_speleothem'
+    type: Literal['minecraft:large_speleothem', 'large_speleothem'] = 'minecraft:large_speleothem'
 
 
 class ConfiguredFeatureMultifaceGrowth(MultifaceGrowthConfig):
-    type: Literal['minecraft:multiface_growth'] = 'minecraft:multiface_growth'
+    type: Literal['minecraft:multiface_growth', 'multiface_growth'] = 'minecraft:multiface_growth'
 
 
 class ConfiguredFeatureNetherrackReplaceBlobs(NetherrackReplaceBlobsConfig):
-    type: Literal['minecraft:netherrack_replace_blobs'] = 'minecraft:netherrack_replace_blobs'
+    type: Literal['minecraft:netherrack_replace_blobs', 'netherrack_replace_blobs'] = 'minecraft:netherrack_replace_blobs'
 
 
 class ConfiguredFeatureNoBonemealFlower(RandomPatchConfig):
-    type: Literal['minecraft:no_bonemeal_flower'] = 'minecraft:no_bonemeal_flower'
+    type: Literal['minecraft:no_bonemeal_flower', 'no_bonemeal_flower'] = 'minecraft:no_bonemeal_flower'
 
 
 class ConfiguredFeatureNoSurfaceOre(OreConfig):
-    type: Literal['minecraft:no_surface_ore'] = 'minecraft:no_surface_ore'
+    type: Literal['minecraft:no_surface_ore', 'no_surface_ore'] = 'minecraft:no_surface_ore'
 
 
 class ConfiguredFeatureOre(OreConfig):
-    type: Literal['minecraft:ore'] = 'minecraft:ore'
+    type: Literal['minecraft:ore', 'ore'] = 'minecraft:ore'
 
 
 class ConfiguredFeatureOverlay(OverlayConfig):
-    type: Literal['minecraft:overlay'] = 'minecraft:overlay'
+    type: Literal['minecraft:overlay', 'overlay'] = 'minecraft:overlay'
 
 
 class ConfiguredFeatureProjectedRandomPatchySquare(ProjectedSquareConfig):
-    type: Literal['minecraft:projected_random_patchy_square'] = 'minecraft:projected_random_patchy_square'
+    type: Literal['minecraft:projected_random_patchy_square', 'projected_random_patchy_square'] = 'minecraft:projected_random_patchy_square'
 
 
 class ConfiguredFeatureRandomBooleanSelector(RandomBooleanSelector):
-    type: Literal['minecraft:random_boolean_selector'] = 'minecraft:random_boolean_selector'
+    type: Literal['minecraft:random_boolean_selector', 'random_boolean_selector'] = 'minecraft:random_boolean_selector'
 
 
 class ConfiguredFeatureRandomNeighborSpread(RandomNeighborSpreadConfig):
-    type: Literal['minecraft:random_neighbor_spread'] = 'minecraft:random_neighbor_spread'
+    type: Literal['minecraft:random_neighbor_spread', 'random_neighbor_spread'] = 'minecraft:random_neighbor_spread'
 
 
 class ConfiguredFeatureRandomPatch(RandomPatchConfig):
-    type: Literal['minecraft:random_patch'] = 'minecraft:random_patch'
+    type: Literal['minecraft:random_patch', 'random_patch'] = 'minecraft:random_patch'
 
 
 class ConfiguredFeatureRandomSelector(RandomSelector):
-    type: Literal['minecraft:random_selector'] = 'minecraft:random_selector'
+    type: Literal['minecraft:random_selector', 'random_selector'] = 'minecraft:random_selector'
 
 
 class ConfiguredFeatureReplaceSingleBlock(ReplaceSingleBlockConfig):
-    type: Literal['minecraft:replace_single_block'] = 'minecraft:replace_single_block'
+    type: Literal['minecraft:replace_single_block', 'replace_single_block'] = 'minecraft:replace_single_block'
 
 
 class ConfiguredFeatureRootSystem(RootSystemConfig):
-    type: Literal['minecraft:root_system'] = 'minecraft:root_system'
+    type: Literal['minecraft:root_system', 'root_system'] = 'minecraft:root_system'
 
 
 class ConfiguredFeatureScatteredOre(OreConfig):
-    type: Literal['minecraft:scattered_ore'] = 'minecraft:scattered_ore'
+    type: Literal['minecraft:scattered_ore', 'scattered_ore'] = 'minecraft:scattered_ore'
 
 
 class ConfiguredFeatureSculkPatch(SculkPatchConfig):
-    type: Literal['minecraft:sculk_patch'] = 'minecraft:sculk_patch'
+    type: Literal['minecraft:sculk_patch', 'sculk_patch'] = 'minecraft:sculk_patch'
 
 
 class ConfiguredFeatureSequence(SequenceConfig):
-    type: Literal['minecraft:sequence'] = 'minecraft:sequence'
+    type: Literal['minecraft:sequence', 'sequence'] = 'minecraft:sequence'
 
 
 class ConfiguredFeatureSimpleBlock(SimpleBlockConfig):
-    type: Literal['minecraft:simple_block'] = 'minecraft:simple_block'
+    type: Literal['minecraft:simple_block', 'simple_block'] = 'minecraft:simple_block'
 
 
 class ConfiguredFeatureSimpleRandomSelector(SimpleRandomSelectorConfig):
-    type: Literal['minecraft:simple_random_selector'] = 'minecraft:simple_random_selector'
+    type: Literal['minecraft:simple_random_selector', 'simple_random_selector'] = 'minecraft:simple_random_selector'
 
 
 class ConfiguredFeatureSingleBlockPillar(SingleBlockPillarConfig):
-    type: Literal['minecraft:single_block_pillar'] = 'minecraft:single_block_pillar'
+    type: Literal['minecraft:single_block_pillar', 'single_block_pillar'] = 'minecraft:single_block_pillar'
 
 
 class ConfiguredFeatureSpeleothem(SpeleothemConfig):
-    type: Literal['minecraft:speleothem'] = 'minecraft:speleothem'
+    type: Literal['minecraft:speleothem', 'speleothem'] = 'minecraft:speleothem'
 
 
 class ConfiguredFeatureSpeleothemCluster(SpeleothemClusterConfig):
-    type: Literal['minecraft:speleothem_cluster'] = 'minecraft:speleothem_cluster'
+    type: Literal['minecraft:speleothem_cluster', 'speleothem_cluster'] = 'minecraft:speleothem_cluster'
 
 
 class ConfiguredFeatureSpike(SpikeConfig):
-    type: Literal['minecraft:spike'] = 'minecraft:spike'
+    type: Literal['minecraft:spike', 'spike'] = 'minecraft:spike'
 
 
 class ConfiguredFeatureSpringFeature(SpringConfig):
-    type: Literal['minecraft:spring_feature'] = 'minecraft:spring_feature'
+    type: Literal['minecraft:spring_feature', 'spring_feature'] = 'minecraft:spring_feature'
 
 
 class ConfiguredFeatureSteppedColumnCluster(ColumnsConfig):
-    type: Literal['minecraft:stepped_column_cluster'] = 'minecraft:stepped_column_cluster'
+    type: Literal['minecraft:stepped_column_cluster', 'stepped_column_cluster'] = 'minecraft:stepped_column_cluster'
 
 
 class ConfiguredFeatureTemplate(TemplateConfig):
-    type: Literal['minecraft:template'] = 'minecraft:template'
+    type: Literal['minecraft:template', 'template'] = 'minecraft:template'
 
 
 class ConfiguredFeatureTree(TreeConfig):
-    type: Literal['minecraft:tree'] = 'minecraft:tree'
+    type: Literal['minecraft:tree', 'tree'] = 'minecraft:tree'
 
 
 class ConfiguredFeatureUnderwaterMagma(UnderwaterMagmaConfig):
-    type: Literal['minecraft:underwater_magma'] = 'minecraft:underwater_magma'
+    type: Literal['minecraft:underwater_magma', 'underwater_magma'] = 'minecraft:underwater_magma'
 
 
 class ConfiguredFeatureVegetationPatch(VegetationPatchConfig):
-    type: Literal['minecraft:vegetation_patch'] = 'minecraft:vegetation_patch'
+    type: Literal['minecraft:vegetation_patch', 'vegetation_patch'] = 'minecraft:vegetation_patch'
 
 
 class ConfiguredFeatureWaterloggedVegetationPatch(VegetationPatchConfig):
-    type: Literal['minecraft:waterlogged_vegetation_patch'] = 'minecraft:waterlogged_vegetation_patch'
+    type: Literal['minecraft:waterlogged_vegetation_patch', 'waterlogged_vegetation_patch'] = 'minecraft:waterlogged_vegetation_patch'
 
 
 class ConfiguredFeatureWeightedRandomSelector(WeightedRandomFeatureConfig):
-    type: Literal['minecraft:weighted_random_selector'] = 'minecraft:weighted_random_selector'
+    type: Literal['minecraft:weighted_random_selector', 'weighted_random_selector'] = 'minecraft:weighted_random_selector'
 
 
 type ConfiguredFeature = Annotated[

@@ -16,11 +16,11 @@ class StructurePlacementUnknown(GeneratedModel):
 
 
 class StructurePlacementConcentricRings(ConcentricRingsPlacement):
-    type: Literal['minecraft:concentric_rings'] = 'minecraft:concentric_rings'
+    type: Literal['minecraft:concentric_rings', 'concentric_rings'] = 'minecraft:concentric_rings'
 
 
 class StructurePlacementRandomSpread(RandomSpreadPlacement):
-    type: Literal['minecraft:random_spread'] = 'minecraft:random_spread'
+    type: Literal['minecraft:random_spread', 'random_spread'] = 'minecraft:random_spread'
 
 
 type StructurePlacement = StructurePlacementUnknown | StructurePlacementConcentricRings | StructurePlacementRandomSpread

@@ -16,31 +16,31 @@ from pydantic import Field
 
 
 class ClickEventChangePage(ChangePage):
-    action: Literal['minecraft:change_page'] = 'minecraft:change_page'
+    action: Literal['minecraft:change_page', 'change_page'] = 'minecraft:change_page'
 
 
 class ClickEventCopyToClipboard(CopyToClipboard):
-    action: Literal['minecraft:copy_to_clipboard'] = 'minecraft:copy_to_clipboard'
+    action: Literal['minecraft:copy_to_clipboard', 'copy_to_clipboard'] = 'minecraft:copy_to_clipboard'
 
 
 class ClickEventCustom(CustomAction):
-    action: Literal['minecraft:custom'] = 'minecraft:custom'
+    action: Literal['minecraft:custom', 'custom'] = 'minecraft:custom'
 
 
 class ClickEventOpenUrl(OpenUrl):
-    action: Literal['minecraft:open_url'] = 'minecraft:open_url'
+    action: Literal['minecraft:open_url', 'open_url'] = 'minecraft:open_url'
 
 
 class ClickEventRunCommand(RunCommand):
-    action: Literal['minecraft:run_command'] = 'minecraft:run_command'
+    action: Literal['minecraft:run_command', 'run_command'] = 'minecraft:run_command'
 
 
 class ClickEventShowDialog(ShowDialog):
-    action: Literal['minecraft:show_dialog'] = 'minecraft:show_dialog'
+    action: Literal['minecraft:show_dialog', 'show_dialog'] = 'minecraft:show_dialog'
 
 
 class ClickEventSuggestCommand(SuggestCommand):
-    action: Literal['minecraft:suggest_command'] = 'minecraft:suggest_command'
+    action: Literal['minecraft:suggest_command', 'suggest_command'] = 'minecraft:suggest_command'
 
 
 type ClickEvent = Annotated[

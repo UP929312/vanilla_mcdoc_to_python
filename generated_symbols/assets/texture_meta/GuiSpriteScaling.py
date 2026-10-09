@@ -12,15 +12,15 @@ from pydantic import Field
 
 
 class GuiSpriteScalingNineSlice(NineSlice):
-    type: Literal['minecraft:nine_slice'] = 'minecraft:nine_slice'
+    type: Literal['minecraft:nine_slice', 'nine_slice'] = 'minecraft:nine_slice'
 
 
 class GuiSpriteScalingStretch(GeneratedModel):
-    type: Literal['minecraft:stretch'] = 'minecraft:stretch'
+    type: Literal['minecraft:stretch', 'stretch'] = 'minecraft:stretch'
 
 
 class GuiSpriteScalingTile(TileScaling):
-    type: Literal['minecraft:tile'] = 'minecraft:tile'
+    type: Literal['minecraft:tile', 'tile'] = 'minecraft:tile'
 
 
 type GuiSpriteScaling = Annotated[

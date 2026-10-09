@@ -26,7 +26,7 @@ if TYPE_CHECKING:
 class StructureBastionRemnant(Jigsaw):
     __resource_dir__: ClassVar[str] = 'worldgen/structure'
 
-    type: Literal['minecraft:bastion_remnant'] = 'minecraft:bastion_remnant'
+    type: Literal['minecraft:bastion_remnant', 'bastion_remnant'] = 'minecraft:bastion_remnant'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
     terrain_adaptation: TerrainAdaptation | None = None
@@ -34,7 +34,7 @@ class StructureBastionRemnant(Jigsaw):
 
 
 class StructureBuriedTreasure(BuriedTreasure):
-    type: Literal['minecraft:buried_treasure'] = 'minecraft:buried_treasure'
+    type: Literal['minecraft:buried_treasure', 'buried_treasure'] = 'minecraft:buried_treasure'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
     terrain_adaptation: TerrainAdaptation | None = None
@@ -42,7 +42,7 @@ class StructureBuriedTreasure(BuriedTreasure):
 
 
 class StructureDesertPyramid(GeneratedModel):
-    type: Literal['minecraft:desert_pyramid'] = 'minecraft:desert_pyramid'
+    type: Literal['minecraft:desert_pyramid', 'desert_pyramid'] = 'minecraft:desert_pyramid'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
     terrain_adaptation: TerrainAdaptation | None = None
@@ -50,7 +50,7 @@ class StructureDesertPyramid(GeneratedModel):
 
 
 class StructureEndCity(GeneratedModel):
-    type: Literal['minecraft:end_city'] = 'minecraft:end_city'
+    type: Literal['minecraft:end_city', 'end_city'] = 'minecraft:end_city'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
     terrain_adaptation: TerrainAdaptation | None = None
@@ -58,7 +58,7 @@ class StructureEndCity(GeneratedModel):
 
 
 class StructureFortress(GeneratedModel):
-    type: Literal['minecraft:fortress'] = 'minecraft:fortress'
+    type: Literal['minecraft:fortress', 'fortress'] = 'minecraft:fortress'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
     terrain_adaptation: TerrainAdaptation | None = None
@@ -66,7 +66,7 @@ class StructureFortress(GeneratedModel):
 
 
 class StructureIgloo(GeneratedModel):
-    type: Literal['minecraft:igloo'] = 'minecraft:igloo'
+    type: Literal['minecraft:igloo', 'igloo'] = 'minecraft:igloo'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
     terrain_adaptation: TerrainAdaptation | None = None
@@ -74,7 +74,7 @@ class StructureIgloo(GeneratedModel):
 
 
 class StructureJigsaw(Jigsaw):
-    type: Literal['minecraft:jigsaw'] = 'minecraft:jigsaw'
+    type: Literal['minecraft:jigsaw', 'jigsaw'] = 'minecraft:jigsaw'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
     terrain_adaptation: TerrainAdaptation | None = None
@@ -82,7 +82,7 @@ class StructureJigsaw(Jigsaw):
 
 
 class StructureJungleTemple(GeneratedModel):
-    type: Literal['minecraft:jungle_temple'] = 'minecraft:jungle_temple'
+    type: Literal['minecraft:jungle_temple', 'jungle_temple'] = 'minecraft:jungle_temple'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
     terrain_adaptation: TerrainAdaptation | None = None
@@ -90,7 +90,7 @@ class StructureJungleTemple(GeneratedModel):
 
 
 class StructureMineshaft(Mineshaft):
-    type: Literal['minecraft:mineshaft'] = 'minecraft:mineshaft'
+    type: Literal['minecraft:mineshaft', 'mineshaft'] = 'minecraft:mineshaft'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
     terrain_adaptation: TerrainAdaptation | None = None
@@ -98,7 +98,7 @@ class StructureMineshaft(Mineshaft):
 
 
 class StructureNetherFossil(NetherFossil):
-    type: Literal['minecraft:nether_fossil'] = 'minecraft:nether_fossil'
+    type: Literal['minecraft:nether_fossil', 'nether_fossil'] = 'minecraft:nether_fossil'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
     terrain_adaptation: TerrainAdaptation | None = None
@@ -106,7 +106,7 @@ class StructureNetherFossil(NetherFossil):
 
 
 class StructureOceanMonument(GeneratedModel):
-    type: Literal['minecraft:ocean_monument'] = 'minecraft:ocean_monument'
+    type: Literal['minecraft:ocean_monument', 'ocean_monument'] = 'minecraft:ocean_monument'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
     terrain_adaptation: TerrainAdaptation | None = None
@@ -114,7 +114,7 @@ class StructureOceanMonument(GeneratedModel):
 
 
 class StructureOceanRuin(OceanRuin):
-    type: Literal['minecraft:ocean_ruin'] = 'minecraft:ocean_ruin'
+    type: Literal['minecraft:ocean_ruin', 'ocean_ruin'] = 'minecraft:ocean_ruin'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
     terrain_adaptation: TerrainAdaptation | None = None
@@ -122,7 +122,7 @@ class StructureOceanRuin(OceanRuin):
 
 
 class StructurePillagerOutpost(Jigsaw):
-    type: Literal['minecraft:pillager_outpost'] = 'minecraft:pillager_outpost'
+    type: Literal['minecraft:pillager_outpost', 'pillager_outpost'] = 'minecraft:pillager_outpost'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
     terrain_adaptation: TerrainAdaptation | None = None
@@ -130,7 +130,7 @@ class StructurePillagerOutpost(Jigsaw):
 
 
 class StructureRuinedPortal(RuinedPortal):
-    type: Literal['minecraft:ruined_portal'] = 'minecraft:ruined_portal'
+    type: Literal['minecraft:ruined_portal', 'ruined_portal'] = 'minecraft:ruined_portal'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
     terrain_adaptation: TerrainAdaptation | None = None
@@ -138,7 +138,7 @@ class StructureRuinedPortal(RuinedPortal):
 
 
 class StructureShipwreck(Shipwreck):
-    type: Literal['minecraft:shipwreck'] = 'minecraft:shipwreck'
+    type: Literal['minecraft:shipwreck', 'shipwreck'] = 'minecraft:shipwreck'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
     terrain_adaptation: TerrainAdaptation | None = None
@@ -146,7 +146,7 @@ class StructureShipwreck(Shipwreck):
 
 
 class StructureStronghold(GeneratedModel):
-    type: Literal['minecraft:stronghold'] = 'minecraft:stronghold'
+    type: Literal['minecraft:stronghold', 'stronghold'] = 'minecraft:stronghold'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
     terrain_adaptation: TerrainAdaptation | None = None
@@ -154,7 +154,7 @@ class StructureStronghold(GeneratedModel):
 
 
 class StructureSwampHut(GeneratedModel):
-    type: Literal['minecraft:swamp_hut'] = 'minecraft:swamp_hut'
+    type: Literal['minecraft:swamp_hut', 'swamp_hut'] = 'minecraft:swamp_hut'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
     terrain_adaptation: TerrainAdaptation | None = None
@@ -162,7 +162,7 @@ class StructureSwampHut(GeneratedModel):
 
 
 class StructureVillage(Jigsaw):
-    type: Literal['minecraft:village'] = 'minecraft:village'
+    type: Literal['minecraft:village', 'village'] = 'minecraft:village'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
     terrain_adaptation: TerrainAdaptation | None = None
@@ -170,7 +170,7 @@ class StructureVillage(Jigsaw):
 
 
 class StructureWoodlandMansion(GeneratedModel):
-    type: Literal['minecraft:woodland_mansion'] = 'minecraft:woodland_mansion'
+    type: Literal['minecraft:woodland_mansion', 'woodland_mansion'] = 'minecraft:woodland_mansion'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
     terrain_adaptation: TerrainAdaptation | None = None

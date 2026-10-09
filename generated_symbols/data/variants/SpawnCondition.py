@@ -12,15 +12,15 @@ from pydantic import Field
 
 
 class SpawnConditionBiome(BiomeCheck):
-    type: Literal['minecraft:biome'] = 'minecraft:biome'
+    type: Literal['minecraft:biome', 'biome'] = 'minecraft:biome'
 
 
 class SpawnConditionMoonBrightness(MoonBrightnessCheck):
-    type: Literal['minecraft:moon_brightness'] = 'minecraft:moon_brightness'
+    type: Literal['minecraft:moon_brightness', 'moon_brightness'] = 'minecraft:moon_brightness'
 
 
 class SpawnConditionStructure(StructureCheck):
-    type: Literal['minecraft:structure'] = 'minecraft:structure'
+    type: Literal['minecraft:structure', 'structure'] = 'minecraft:structure'
 
 
 type SpawnCondition = Annotated[

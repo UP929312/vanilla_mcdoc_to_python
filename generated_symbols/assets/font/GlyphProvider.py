@@ -17,27 +17,27 @@ if TYPE_CHECKING:
 
 
 class GlyphProviderBitmap(BitmapProvider):
-    type: Literal['minecraft:bitmap'] = 'minecraft:bitmap'
+    type: Literal['minecraft:bitmap', 'bitmap'] = 'minecraft:bitmap'
     filter: dict[FontOption, bool] | None = None
 
 
 class GlyphProviderReference(ReferenceProvider):
-    type: Literal['minecraft:reference'] = 'minecraft:reference'
+    type: Literal['minecraft:reference', 'reference'] = 'minecraft:reference'
     filter: dict[FontOption, bool] | None = None
 
 
 class GlyphProviderSpace(SpaceProvider):
-    type: Literal['minecraft:space'] = 'minecraft:space'
+    type: Literal['minecraft:space', 'space'] = 'minecraft:space'
     filter: dict[FontOption, bool] | None = None
 
 
 class GlyphProviderTtf(TtfProvider):
-    type: Literal['minecraft:ttf'] = 'minecraft:ttf'
+    type: Literal['minecraft:ttf', 'ttf'] = 'minecraft:ttf'
     filter: dict[FontOption, bool] | None = None
 
 
 class GlyphProviderUnihex(UnihexProvider):
-    type: Literal['minecraft:unihex'] = 'minecraft:unihex'
+    type: Literal['minecraft:unihex', 'unihex'] = 'minecraft:unihex'
     filter: dict[FontOption, bool] | None = None
 
 

@@ -45,179 +45,179 @@ from pydantic import Field
 
 
 class BlockEntityDataBanner(Banner):
-    id: Literal['minecraft:banner'] = 'minecraft:banner'
+    id: Literal['minecraft:banner', 'banner'] = 'minecraft:banner'
 
 
 class BlockEntityDataBarrel(Container27):
-    id: Literal['minecraft:barrel'] = 'minecraft:barrel'
+    id: Literal['minecraft:barrel', 'barrel'] = 'minecraft:barrel'
 
 
 class BlockEntityDataBeacon(Beacon):
-    id: Literal['minecraft:beacon'] = 'minecraft:beacon'
+    id: Literal['minecraft:beacon', 'beacon'] = 'minecraft:beacon'
 
 
 class BlockEntityDataBeehive(Beehive):
-    id: Literal['minecraft:beehive'] = 'minecraft:beehive'
+    id: Literal['minecraft:beehive', 'beehive'] = 'minecraft:beehive'
 
 
 class BlockEntityDataBlastFurnace(Furnace):
-    id: Literal['minecraft:blast_furnace'] = 'minecraft:blast_furnace'
+    id: Literal['minecraft:blast_furnace', 'blast_furnace'] = 'minecraft:blast_furnace'
 
 
 class BlockEntityDataBrewingStand(BrewingStand):
-    id: Literal['minecraft:brewing_stand'] = 'minecraft:brewing_stand'
+    id: Literal['minecraft:brewing_stand', 'brewing_stand'] = 'minecraft:brewing_stand'
 
 
 class BlockEntityDataBrushableBlock(BrushableBlock):
-    id: Literal['minecraft:brushable_block'] = 'minecraft:brushable_block'
+    id: Literal['minecraft:brushable_block', 'brushable_block'] = 'minecraft:brushable_block'
 
 
 class BlockEntityDataCalibratedSculkSensor(SculkSensor):
-    id: Literal['minecraft:calibrated_sculk_sensor'] = 'minecraft:calibrated_sculk_sensor'
+    id: Literal['minecraft:calibrated_sculk_sensor', 'calibrated_sculk_sensor'] = 'minecraft:calibrated_sculk_sensor'
 
 
 class BlockEntityDataCampfire(Campfire):
-    id: Literal['minecraft:campfire'] = 'minecraft:campfire'
+    id: Literal['minecraft:campfire', 'campfire'] = 'minecraft:campfire'
 
 
 class BlockEntityDataChest(Container27):
-    id: Literal['minecraft:chest'] = 'minecraft:chest'
+    id: Literal['minecraft:chest', 'chest'] = 'minecraft:chest'
 
 
 class BlockEntityDataChiseledBookshelf(ChiseledBookshelf):
-    id: Literal['minecraft:chiseled_bookshelf'] = 'minecraft:chiseled_bookshelf'
+    id: Literal['minecraft:chiseled_bookshelf', 'chiseled_bookshelf'] = 'minecraft:chiseled_bookshelf'
 
 
 class BlockEntityDataCommandBlock(CommandBlock):
-    id: Literal['minecraft:command_block'] = 'minecraft:command_block'
+    id: Literal['minecraft:command_block', 'command_block'] = 'minecraft:command_block'
 
 
 class BlockEntityDataComparator(Comparator):
-    id: Literal['minecraft:comparator'] = 'minecraft:comparator'
+    id: Literal['minecraft:comparator', 'comparator'] = 'minecraft:comparator'
 
 
 class BlockEntityDataConduit(Conduit):
-    id: Literal['minecraft:conduit'] = 'minecraft:conduit'
+    id: Literal['minecraft:conduit', 'conduit'] = 'minecraft:conduit'
 
 
 class BlockEntityDataCrafter(Crafter):
-    id: Literal['minecraft:crafter'] = 'minecraft:crafter'
+    id: Literal['minecraft:crafter', 'crafter'] = 'minecraft:crafter'
 
 
 class BlockEntityDataCreakingHeart(CreakingHeart):
-    id: Literal['minecraft:creaking_heart'] = 'minecraft:creaking_heart'
+    id: Literal['minecraft:creaking_heart', 'creaking_heart'] = 'minecraft:creaking_heart'
 
 
 class BlockEntityDataDecoratedPot(DecoratedPot):
-    id: Literal['minecraft:decorated_pot'] = 'minecraft:decorated_pot'
+    id: Literal['minecraft:decorated_pot', 'decorated_pot'] = 'minecraft:decorated_pot'
 
 
 class BlockEntityDataDispenser(Container9):
-    id: Literal['minecraft:dispenser'] = 'minecraft:dispenser'
+    id: Literal['minecraft:dispenser', 'dispenser'] = 'minecraft:dispenser'
 
 
 class BlockEntityDataDropper(Container9):
-    id: Literal['minecraft:dropper'] = 'minecraft:dropper'
+    id: Literal['minecraft:dropper', 'dropper'] = 'minecraft:dropper'
 
 
 class BlockEntityDataEnchantingTable(EnchantingTable):
-    id: Literal['minecraft:enchanting_table'] = 'minecraft:enchanting_table'
+    id: Literal['minecraft:enchanting_table', 'enchanting_table'] = 'minecraft:enchanting_table'
 
 
 class BlockEntityDataEndGateway(EndGateway):
-    id: Literal['minecraft:end_gateway'] = 'minecraft:end_gateway'
+    id: Literal['minecraft:end_gateway', 'end_gateway'] = 'minecraft:end_gateway'
 
 
 class BlockEntityDataFurnace(Furnace):
-    id: Literal['minecraft:furnace'] = 'minecraft:furnace'
+    id: Literal['minecraft:furnace', 'furnace'] = 'minecraft:furnace'
 
 
 class BlockEntityDataHangingSign(GeneratedModel):
-    id: Literal['minecraft:hanging_sign'] = 'minecraft:hanging_sign'
+    id: Literal['minecraft:hanging_sign', 'hanging_sign'] = 'minecraft:hanging_sign'
 
 
 class BlockEntityDataHopper(Hopper):
-    id: Literal['minecraft:hopper'] = 'minecraft:hopper'
+    id: Literal['minecraft:hopper', 'hopper'] = 'minecraft:hopper'
 
 
 class BlockEntityDataJigsaw(Jigsaw):
-    id: Literal['minecraft:jigsaw'] = 'minecraft:jigsaw'
+    id: Literal['minecraft:jigsaw', 'jigsaw'] = 'minecraft:jigsaw'
 
 
 class BlockEntityDataJukebox(Jukebox):
-    id: Literal['minecraft:jukebox'] = 'minecraft:jukebox'
+    id: Literal['minecraft:jukebox', 'jukebox'] = 'minecraft:jukebox'
 
 
 class BlockEntityDataLectern(Lectern):
-    id: Literal['minecraft:lectern'] = 'minecraft:lectern'
+    id: Literal['minecraft:lectern', 'lectern'] = 'minecraft:lectern'
 
 
 class BlockEntityDataMobSpawner(Spawner):
-    id: Literal['minecraft:mob_spawner'] = 'minecraft:mob_spawner'
+    id: Literal['minecraft:mob_spawner', 'mob_spawner'] = 'minecraft:mob_spawner'
 
 
 class BlockEntityDataMovingPiston(MovingPiston):
-    id: Literal['minecraft:moving_piston'] = 'minecraft:moving_piston'
+    id: Literal['minecraft:moving_piston', 'moving_piston'] = 'minecraft:moving_piston'
 
 
 class BlockEntityDataPotentSulfur(PotentSulfur):
-    id: Literal['minecraft:potent_sulfur'] = 'minecraft:potent_sulfur'
+    id: Literal['minecraft:potent_sulfur', 'potent_sulfur'] = 'minecraft:potent_sulfur'
 
 
 class BlockEntityDataSculkCatalyst(SculkCatalyst):
-    id: Literal['minecraft:sculk_catalyst'] = 'minecraft:sculk_catalyst'
+    id: Literal['minecraft:sculk_catalyst', 'sculk_catalyst'] = 'minecraft:sculk_catalyst'
 
 
 class BlockEntityDataSculkSensor(SculkSensor):
-    id: Literal['minecraft:sculk_sensor'] = 'minecraft:sculk_sensor'
+    id: Literal['minecraft:sculk_sensor', 'sculk_sensor'] = 'minecraft:sculk_sensor'
 
 
 class BlockEntityDataSculkShrieker(SculkShrieker):
-    id: Literal['minecraft:sculk_shrieker'] = 'minecraft:sculk_shrieker'
+    id: Literal['minecraft:sculk_shrieker', 'sculk_shrieker'] = 'minecraft:sculk_shrieker'
 
 
 class BlockEntityDataShelf(Shelf):
-    id: Literal['minecraft:shelf'] = 'minecraft:shelf'
+    id: Literal['minecraft:shelf', 'shelf'] = 'minecraft:shelf'
 
 
 class BlockEntityDataShulkerBox(Container27):
-    id: Literal['minecraft:shulker_box'] = 'minecraft:shulker_box'
+    id: Literal['minecraft:shulker_box', 'shulker_box'] = 'minecraft:shulker_box'
 
 
 class BlockEntityDataSign(GeneratedModel):
-    id: Literal['minecraft:sign'] = 'minecraft:sign'
+    id: Literal['minecraft:sign', 'sign'] = 'minecraft:sign'
 
 
 class BlockEntityDataSkull(Skull):
-    id: Literal['minecraft:skull'] = 'minecraft:skull'
+    id: Literal['minecraft:skull', 'skull'] = 'minecraft:skull'
 
 
 class BlockEntityDataSmoker(Furnace):
-    id: Literal['minecraft:smoker'] = 'minecraft:smoker'
+    id: Literal['minecraft:smoker', 'smoker'] = 'minecraft:smoker'
 
 
 class BlockEntityDataStructureBlock(StructureBlock):
-    id: Literal['minecraft:structure_block'] = 'minecraft:structure_block'
+    id: Literal['minecraft:structure_block', 'structure_block'] = 'minecraft:structure_block'
 
 
 class BlockEntityDataTestBlock(TestBlock):
-    id: Literal['minecraft:test_block'] = 'minecraft:test_block'
+    id: Literal['minecraft:test_block', 'test_block'] = 'minecraft:test_block'
 
 
 class BlockEntityDataTestInstanceBlock(TestInstanceBlock):
-    id: Literal['minecraft:test_instance_block'] = 'minecraft:test_instance_block'
+    id: Literal['minecraft:test_instance_block', 'test_instance_block'] = 'minecraft:test_instance_block'
 
 
 class BlockEntityDataTrappedChest(Container27):
-    id: Literal['minecraft:trapped_chest'] = 'minecraft:trapped_chest'
+    id: Literal['minecraft:trapped_chest', 'trapped_chest'] = 'minecraft:trapped_chest'
 
 
 class BlockEntityDataTrialSpawner(TrialSpawner):
-    id: Literal['minecraft:trial_spawner'] = 'minecraft:trial_spawner'
+    id: Literal['minecraft:trial_spawner', 'trial_spawner'] = 'minecraft:trial_spawner'
 
 
 class BlockEntityDataVault(Vault):
-    id: Literal['minecraft:vault'] = 'minecraft:vault'
+    id: Literal['minecraft:vault', 'vault'] = 'minecraft:vault'
 
 
 type BlockEntityData = Annotated[

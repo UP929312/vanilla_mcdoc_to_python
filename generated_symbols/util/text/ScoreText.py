@@ -16,7 +16,7 @@ class ScoreStruct(GeneratedModel):
 
 class ScoreText(TextBase):
     score: ScoreStruct
-    type: Literal['score'] = 'score'
+    type: Literal['score'] | None = 'score'
 
 
 # ~~~ MODEL DUMP ~~~

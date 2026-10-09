@@ -13,22 +13,22 @@ from pydantic import Field
 
 class CustomModelDataStringsAppend(GeneratedModel):
     values: list[str]
-    mode: Literal['minecraft:append'] = 'minecraft:append'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:append', 'append'] = 'minecraft:append'  # Determines how the existing list should be modified.
 
 
 class CustomModelDataStringsInsert(InsertListOperation):
     values: list[str]
-    mode: Literal['minecraft:insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:insert', 'insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
 
 
 class CustomModelDataStringsReplaceAll(GeneratedModel):
     values: list[str]
-    mode: Literal['minecraft:replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:replace_all', 'replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
 
 
 class CustomModelDataStringsReplaceSection(ReplaceSectionListOperation):
     values: list[str]
-    mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:replace_section', 'replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
 
 
 type CustomModelDataStrings = Annotated[

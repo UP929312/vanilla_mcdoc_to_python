@@ -14,7 +14,7 @@ if TYPE_CHECKING:
 class SelectorText(TextBase):
     selector: str
     separator: Text | None = None
-    type: Literal['selector'] = 'selector'
+    type: Literal['selector'] | None = 'selector'
 
 
 # ~~~ MODEL DUMP ~~~

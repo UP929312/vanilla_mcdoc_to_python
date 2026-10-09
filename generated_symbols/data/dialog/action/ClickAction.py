@@ -18,39 +18,39 @@ from pydantic import Field
 
 
 class ClickActionChangePage(ChangePage):
-    type: Literal['minecraft:change_page'] = 'minecraft:change_page'
+    type: Literal['minecraft:change_page', 'change_page'] = 'minecraft:change_page'
 
 
 class ClickActionCopyToClipboard(CopyToClipboard):
-    type: Literal['minecraft:copy_to_clipboard'] = 'minecraft:copy_to_clipboard'
+    type: Literal['minecraft:copy_to_clipboard', 'copy_to_clipboard'] = 'minecraft:copy_to_clipboard'
 
 
 class ClickActionCustom(CustomAction):
-    type: Literal['minecraft:custom'] = 'minecraft:custom'
+    type: Literal['minecraft:custom', 'custom'] = 'minecraft:custom'
 
 
 class ClickActionDynamicCustom(DynamicCustomAction):
-    type: Literal['minecraft:dynamic/custom'] = 'minecraft:dynamic/custom'
+    type: Literal['minecraft:dynamic/custom', 'dynamic/custom'] = 'minecraft:dynamic/custom'
 
 
 class ClickActionDynamicRunCommand(DynamicRunCommand):
-    type: Literal['minecraft:dynamic/run_command'] = 'minecraft:dynamic/run_command'
+    type: Literal['minecraft:dynamic/run_command', 'dynamic/run_command'] = 'minecraft:dynamic/run_command'
 
 
 class ClickActionOpenUrl(OpenUrl):
-    type: Literal['minecraft:open_url'] = 'minecraft:open_url'
+    type: Literal['minecraft:open_url', 'open_url'] = 'minecraft:open_url'
 
 
 class ClickActionRunCommand(RunCommand):
-    type: Literal['minecraft:run_command'] = 'minecraft:run_command'
+    type: Literal['minecraft:run_command', 'run_command'] = 'minecraft:run_command'
 
 
 class ClickActionShowDialog(ShowDialog):
-    type: Literal['minecraft:show_dialog'] = 'minecraft:show_dialog'
+    type: Literal['minecraft:show_dialog', 'show_dialog'] = 'minecraft:show_dialog'
 
 
 class ClickActionSuggestCommand(SuggestCommand):
-    type: Literal['minecraft:suggest_command'] = 'minecraft:suggest_command'
+    type: Literal['minecraft:suggest_command', 'suggest_command'] = 'minecraft:suggest_command'
 
 
 type ClickAction = Annotated[

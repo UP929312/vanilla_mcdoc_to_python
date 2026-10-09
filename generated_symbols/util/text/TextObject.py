@@ -26,65 +26,65 @@ class ScoreStruct(GeneratedModel):
 
 class TextObjectStruct1(TextBase):
     text: str
-    type: Literal['text'] = 'text'
+    type: Literal['text'] | None = 'text'
 
 
 class TextObjectStruct2(TextBase):
     translate: str
     fallback: str | None = None
-    with_: Annotated[list[TranslationArg], Field(min_length=1)] | None = None
-    type: Literal['translatable'] = 'translatable'
+    with_: Annotated[list[TranslationArg], Field(min_length=1)] | None = Field(default=None, alias='with')
+    type: Literal['translatable'] | None = 'translatable'
 
 
 class TextObjectStruct3(TextBase):
     score: ScoreStruct
-    type: Literal['score'] = 'score'
+    type: Literal['score'] | None = 'score'
 
 
 class TextObjectStruct4(TextBase):
     selector: str
     separator: Text | None = None
-    type: Literal['selector'] = 'selector'
+    type: Literal['selector'] | None = 'selector'
 
 
 class TextObjectStruct5(TextBase):
     keybind: Keybind
-    type: Literal['keybind'] = 'keybind'
+    type: Literal['keybind'] | None = 'keybind'
 
 
 class TextObjectStruct6(TextNbtBase):
     block: str
     nbt: str
-    source: Literal['block'] = 'block'
-    type: Literal['nbt'] = 'nbt'
+    source: Literal['block'] | None = 'block'
+    type: Literal['nbt'] | None = 'nbt'
 
 
 class TextObjectStruct7(TextNbtBase):
     entity: str
     nbt: str
-    source: Literal['entity'] = 'entity'
-    type: Literal['nbt'] = 'nbt'
+    source: Literal['entity'] | None = 'entity'
+    type: Literal['nbt'] | None = 'nbt'
 
 
 class TextObjectStruct8(TextNbtBase):
     storage: Annotated[str, IdSpec(registry='storage')]
     nbt: str
-    source: Literal['storage'] = 'storage'
-    type: Literal['nbt'] = 'nbt'
+    source: Literal['storage'] | None = 'storage'
+    type: Literal['nbt'] | None = 'nbt'
 
 
 class TextObjectStruct9(ObjectTextConfig, TextBase):
     atlas: Annotated[str, IdSpec(registry='atlas')] | None = None  # Defaults to `minecraft:blocks`.
     sprite: Annotated[str, IdSpec(registry='texture')]
-    object: Literal['atlas'] = 'atlas'
-    type: Literal['object'] = 'object'
+    object: Literal['atlas'] | None = 'atlas'
+    type: Literal['object'] | None = 'object'
 
 
 class TextObjectStruct10(ObjectTextConfig, TextBase):
     player: Profile
     hat: bool | None = None  # Whether the head layer is rendered. Defaults to `true`.
-    object: Literal['player'] = 'player'
-    type: Literal['object'] = 'object'
+    object: Literal['player'] | None = 'player'
+    type: Literal['object'] | None = 'object'
 
 
 type TextObject = TextObjectStruct1 | TextObjectStruct2 | TextObjectStruct3 | TextObjectStruct4 | TextObjectStruct5 | TextObjectStruct6 | TextObjectStruct7 | TextObjectStruct8 | TextObjectStruct9 | TextObjectStruct10

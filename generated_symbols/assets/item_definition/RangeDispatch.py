@@ -34,7 +34,7 @@ class RangeDispatchUnknown(GeneratedModel):
 
 
 class RangeDispatchCompass(Compass):
-    property: Literal['minecraft:compass'] = 'minecraft:compass'
+    property: Literal['minecraft:compass', 'compass'] = 'minecraft:compass'
     scale: float | None = None  # Factor to multiply the property value with. Defaults to 1.
     entries: list[EntriesStruct]  # List of ranges. Will select last entry with threshold less or equal to value. Order does not matter, list will be sorted by threshold in ascending order.
     fallback: ItemModel | None = None  # Item model to render if no entries were less or equal to the value.
@@ -42,7 +42,7 @@ class RangeDispatchCompass(Compass):
 
 
 class RangeDispatchCount(Count):
-    property: Literal['minecraft:count'] = 'minecraft:count'
+    property: Literal['minecraft:count', 'count'] = 'minecraft:count'
     scale: float | None = None  # Factor to multiply the property value with. Defaults to 1.
     entries: list[EntriesStruct]  # List of ranges. Will select last entry with threshold less or equal to value. Order does not matter, list will be sorted by threshold in ascending order.
     fallback: ItemModel | None = None  # Item model to render if no entries were less or equal to the value.
@@ -50,7 +50,7 @@ class RangeDispatchCount(Count):
 
 
 class RangeDispatchCustomModelData(CustomModelDataFloats):
-    property: Literal['minecraft:custom_model_data'] = 'minecraft:custom_model_data'
+    property: Literal['minecraft:custom_model_data', 'custom_model_data'] = 'minecraft:custom_model_data'
     scale: float | None = None  # Factor to multiply the property value with. Defaults to 1.
     entries: list[EntriesStruct]  # List of ranges. Will select last entry with threshold less or equal to value. Order does not matter, list will be sorted by threshold in ascending order.
     fallback: ItemModel | None = None  # Item model to render if no entries were less or equal to the value.
@@ -58,7 +58,7 @@ class RangeDispatchCustomModelData(CustomModelDataFloats):
 
 
 class RangeDispatchDamage(Damage):
-    property: Literal['minecraft:damage'] = 'minecraft:damage'
+    property: Literal['minecraft:damage', 'damage'] = 'minecraft:damage'
     scale: float | None = None  # Factor to multiply the property value with. Defaults to 1.
     entries: list[EntriesStruct]  # List of ranges. Will select last entry with threshold less or equal to value. Order does not matter, list will be sorted by threshold in ascending order.
     fallback: ItemModel | None = None  # Item model to render if no entries were less or equal to the value.
@@ -66,7 +66,7 @@ class RangeDispatchDamage(Damage):
 
 
 class RangeDispatchTime(Time):
-    property: Literal['minecraft:time'] = 'minecraft:time'
+    property: Literal['minecraft:time', 'time'] = 'minecraft:time'
     scale: float | None = None  # Factor to multiply the property value with. Defaults to 1.
     entries: list[EntriesStruct]  # List of ranges. Will select last entry with threshold less or equal to value. Order does not matter, list will be sorted by threshold in ascending order.
     fallback: ItemModel | None = None  # Item model to render if no entries were less or equal to the value.
@@ -74,7 +74,7 @@ class RangeDispatchTime(Time):
 
 
 class RangeDispatchUseCycle(UseCycle):
-    property: Literal['minecraft:use_cycle'] = 'minecraft:use_cycle'
+    property: Literal['minecraft:use_cycle', 'use_cycle'] = 'minecraft:use_cycle'
     scale: float | None = None  # Factor to multiply the property value with. Defaults to 1.
     entries: list[EntriesStruct]  # List of ranges. Will select last entry with threshold less or equal to value. Order does not matter, list will be sorted by threshold in ascending order.
     fallback: ItemModel | None = None  # Item model to render if no entries were less or equal to the value.
@@ -82,7 +82,7 @@ class RangeDispatchUseCycle(UseCycle):
 
 
 class RangeDispatchUseDuration(UseDuration):
-    property: Literal['minecraft:use_duration'] = 'minecraft:use_duration'
+    property: Literal['minecraft:use_duration', 'use_duration'] = 'minecraft:use_duration'
     scale: float | None = None  # Factor to multiply the property value with. Defaults to 1.
     entries: list[EntriesStruct]  # List of ranges. Will select last entry with threshold less or equal to value. Order does not matter, list will be sorted by threshold in ascending order.
     fallback: ItemModel | None = None  # Item model to render if no entries were less or equal to the value.

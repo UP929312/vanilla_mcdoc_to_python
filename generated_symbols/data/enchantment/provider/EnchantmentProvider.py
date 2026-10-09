@@ -14,15 +14,15 @@ from pydantic import Field
 class EnchantmentProviderByCost(ByCostEnchantmentProvider):
     __resource_dir__: ClassVar[str] = 'enchantment_provider'
 
-    type: Literal['minecraft:by_cost'] = 'minecraft:by_cost'
+    type: Literal['minecraft:by_cost', 'by_cost'] = 'minecraft:by_cost'
 
 
 class EnchantmentProviderByCostWithDifficulty(ByCostWithDifficultyEnchantmentProvider):
-    type: Literal['minecraft:by_cost_with_difficulty'] = 'minecraft:by_cost_with_difficulty'
+    type: Literal['minecraft:by_cost_with_difficulty', 'by_cost_with_difficulty'] = 'minecraft:by_cost_with_difficulty'
 
 
 class EnchantmentProviderSingle(SingleProvider):
-    type: Literal['minecraft:single'] = 'minecraft:single'
+    type: Literal['minecraft:single', 'single'] = 'minecraft:single'
 
 
 type EnchantmentProvider = Annotated[

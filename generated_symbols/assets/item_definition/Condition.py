@@ -26,35 +26,35 @@ class ConditionUnknown(GeneratedModel):
 
 
 class ConditionComponent(ComponentFlags):
-    property: Literal['minecraft:component'] = 'minecraft:component'
+    property: Literal['minecraft:component', 'component'] = 'minecraft:component'
     on_true: ItemModel
     on_false: ItemModel
     transformation: Transformation | None = None
 
 
 class ConditionCustomModelData(CustomModelDataFlags):
-    property: Literal['minecraft:custom_model_data'] = 'minecraft:custom_model_data'
+    property: Literal['minecraft:custom_model_data', 'custom_model_data'] = 'minecraft:custom_model_data'
     on_true: ItemModel
     on_false: ItemModel
     transformation: Transformation | None = None
 
 
 class ConditionHasComponent(HasComponent):
-    property: Literal['minecraft:has_component'] = 'minecraft:has_component'
+    property: Literal['minecraft:has_component', 'has_component'] = 'minecraft:has_component'
     on_true: ItemModel
     on_false: ItemModel
     transformation: Transformation | None = None
 
 
 class ConditionKeybindDown(KeybindDown):
-    property: Literal['minecraft:keybind_down'] = 'minecraft:keybind_down'
+    property: Literal['minecraft:keybind_down', 'keybind_down'] = 'minecraft:keybind_down'
     on_true: ItemModel
     on_false: ItemModel
     transformation: Transformation | None = None
 
 
 class ConditionViewEntity(ViewEntity):
-    property: Literal['minecraft:view_entity'] = 'minecraft:view_entity'
+    property: Literal['minecraft:view_entity', 'view_entity'] = 'minecraft:view_entity'
     on_true: ItemModel
     on_false: ItemModel
     transformation: Transformation | None = None

@@ -17,63 +17,63 @@ if TYPE_CHECKING:
 
 
 class TrunkPlacerBendingTrunkPlacer(BendingTrunkPlacer):
-    type: Literal['minecraft:bending_trunk_placer'] = 'minecraft:bending_trunk_placer'
+    type: Literal['minecraft:bending_trunk_placer', 'bending_trunk_placer'] = 'minecraft:bending_trunk_placer'
     base_height: Annotated[int, Field(ge=0, le=32)]
     height_rand_a: Annotated[int, Field(ge=0, le=24)]
     height_rand_b: Annotated[int, Field(ge=0, le=24)]
 
 
 class TrunkPlacerCherryTrunkPlacer(CherryTrunkPlacer):
-    type: Literal['minecraft:cherry_trunk_placer'] = 'minecraft:cherry_trunk_placer'
+    type: Literal['minecraft:cherry_trunk_placer', 'cherry_trunk_placer'] = 'minecraft:cherry_trunk_placer'
     base_height: Annotated[int, Field(ge=0, le=32)]
     height_rand_a: Annotated[int, Field(ge=0, le=24)]
     height_rand_b: Annotated[int, Field(ge=0, le=24)]
 
 
 class TrunkPlacerDarkOakTrunkPlacer(GeneratedModel):
-    type: Literal['minecraft:dark_oak_trunk_placer'] = 'minecraft:dark_oak_trunk_placer'
+    type: Literal['minecraft:dark_oak_trunk_placer', 'dark_oak_trunk_placer'] = 'minecraft:dark_oak_trunk_placer'
     base_height: Annotated[int, Field(ge=0, le=32)]
     height_rand_a: Annotated[int, Field(ge=0, le=24)]
     height_rand_b: Annotated[int, Field(ge=0, le=24)]
 
 
 class TrunkPlacerFancyTrunkPlacer(GeneratedModel):
-    type: Literal['minecraft:fancy_trunk_placer'] = 'minecraft:fancy_trunk_placer'
+    type: Literal['minecraft:fancy_trunk_placer', 'fancy_trunk_placer'] = 'minecraft:fancy_trunk_placer'
     base_height: Annotated[int, Field(ge=0, le=32)]
     height_rand_a: Annotated[int, Field(ge=0, le=24)]
     height_rand_b: Annotated[int, Field(ge=0, le=24)]
 
 
 class TrunkPlacerForkingTrunkPlacer(GeneratedModel):
-    type: Literal['minecraft:forking_trunk_placer'] = 'minecraft:forking_trunk_placer'
+    type: Literal['minecraft:forking_trunk_placer', 'forking_trunk_placer'] = 'minecraft:forking_trunk_placer'
     base_height: Annotated[int, Field(ge=0, le=32)]
     height_rand_a: Annotated[int, Field(ge=0, le=24)]
     height_rand_b: Annotated[int, Field(ge=0, le=24)]
 
 
 class TrunkPlacerGiantTrunkPlacer(GeneratedModel):
-    type: Literal['minecraft:giant_trunk_placer'] = 'minecraft:giant_trunk_placer'
+    type: Literal['minecraft:giant_trunk_placer', 'giant_trunk_placer'] = 'minecraft:giant_trunk_placer'
     base_height: Annotated[int, Field(ge=0, le=32)]
     height_rand_a: Annotated[int, Field(ge=0, le=24)]
     height_rand_b: Annotated[int, Field(ge=0, le=24)]
 
 
 class TrunkPlacerMegaJungleTrunkPlacer(GeneratedModel):
-    type: Literal['minecraft:mega_jungle_trunk_placer'] = 'minecraft:mega_jungle_trunk_placer'
+    type: Literal['minecraft:mega_jungle_trunk_placer', 'mega_jungle_trunk_placer'] = 'minecraft:mega_jungle_trunk_placer'
     base_height: Annotated[int, Field(ge=0, le=32)]
     height_rand_a: Annotated[int, Field(ge=0, le=24)]
     height_rand_b: Annotated[int, Field(ge=0, le=24)]
 
 
 class TrunkPlacerPoplarTrunkPlacer(PoplarTrunkPlacer):
-    type: Literal['minecraft:poplar_trunk_placer'] = 'minecraft:poplar_trunk_placer'
+    type: Literal['minecraft:poplar_trunk_placer', 'poplar_trunk_placer'] = 'minecraft:poplar_trunk_placer'
     base_height: Annotated[int, Field(ge=0, le=32)]
     height_rand_a: Annotated[int, Field(ge=0, le=24)]
     height_rand_b: Annotated[int, Field(ge=0, le=24)]
 
 
 class TrunkPlacerStraightTrunkPlacer(GeneratedModel):
-    type: Literal['minecraft:straight_trunk_placer'] = 'minecraft:straight_trunk_placer'
+    type: Literal['minecraft:straight_trunk_placer', 'straight_trunk_placer'] = 'minecraft:straight_trunk_placer'
     base_height: Annotated[int, Field(ge=0, le=32)]
     height_rand_a: Annotated[int, Field(ge=0, le=24)]
     height_rand_b: Annotated[int, Field(ge=0, le=24)]
@@ -81,7 +81,7 @@ class TrunkPlacerStraightTrunkPlacer(GeneratedModel):
 
 
 class TrunkPlacerUpwardsBranchingTrunkPlacer(UpwardsBranchingTrunkPlacer):
-    type: Literal['minecraft:upwards_branching_trunk_placer'] = 'minecraft:upwards_branching_trunk_placer'
+    type: Literal['minecraft:upwards_branching_trunk_placer', 'upwards_branching_trunk_placer'] = 'minecraft:upwards_branching_trunk_placer'
     base_height: Annotated[int, Field(ge=0, le=32)]
     height_rand_a: Annotated[int, Field(ge=0, le=24)]
     height_rand_b: Annotated[int, Field(ge=0, le=24)]

@@ -18,31 +18,31 @@ from pydantic import Field
 class MaterialConditionBiome(BiomeCondition):
     __resource_dir__: ClassVar[str] = 'worldgen/material_condition'
 
-    type: Literal['minecraft:biome'] = 'minecraft:biome'
+    type: Literal['minecraft:biome', 'biome'] = 'minecraft:biome'
 
 
 class MaterialConditionNoiseThreshold(NoiseThresholdCondition):
-    type: Literal['minecraft:noise_threshold'] = 'minecraft:noise_threshold'
+    type: Literal['minecraft:noise_threshold', 'noise_threshold'] = 'minecraft:noise_threshold'
 
 
 class MaterialConditionNot(NotCondition):
-    type: Literal['minecraft:not'] = 'minecraft:not'
+    type: Literal['minecraft:not', 'not'] = 'minecraft:not'
 
 
 class MaterialConditionStoneDepth(StoneDepthCondition):
-    type: Literal['minecraft:stone_depth'] = 'minecraft:stone_depth'
+    type: Literal['minecraft:stone_depth', 'stone_depth'] = 'minecraft:stone_depth'
 
 
 class MaterialConditionVerticalGradient(VerticalGradientCondition):
-    type: Literal['minecraft:vertical_gradient'] = 'minecraft:vertical_gradient'
+    type: Literal['minecraft:vertical_gradient', 'vertical_gradient'] = 'minecraft:vertical_gradient'
 
 
 class MaterialConditionWater(WaterCondition):
-    type: Literal['minecraft:water'] = 'minecraft:water'
+    type: Literal['minecraft:water', 'water'] = 'minecraft:water'
 
 
 class MaterialConditionYAbove(YAboveCondition):
-    type: Literal['minecraft:y_above'] = 'minecraft:y_above'
+    type: Literal['minecraft:y_above', 'y_above'] = 'minecraft:y_above'
 
 
 type MaterialCondition = Annotated[

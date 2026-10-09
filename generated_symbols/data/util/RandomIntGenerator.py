@@ -18,15 +18,15 @@ class RandomIntGeneratorStructNone(UniformIntGenerator):
 
 
 class RandomIntGeneratorStructBinomial(BinomialIntGenerator):
-    type: Literal['minecraft:binomial'] = 'minecraft:binomial'
+    type: Literal['minecraft:binomial', 'binomial'] | None = 'minecraft:binomial'
 
 
 class RandomIntGeneratorStructConstant(ConstantIntGenerator):
-    type: Literal['minecraft:constant'] = 'minecraft:constant'
+    type: Literal['minecraft:constant', 'constant'] | None = 'minecraft:constant'
 
 
 class RandomIntGeneratorStructUniform(UniformIntGenerator):
-    type: Literal['minecraft:uniform'] = 'minecraft:uniform'
+    type: Literal['minecraft:uniform', 'uniform'] | None = 'minecraft:uniform'
 
 
 type RandomIntGeneratorStruct = RandomIntGeneratorStructNone | RandomIntGeneratorStructBinomial | RandomIntGeneratorStructConstant | RandomIntGeneratorStructUniform

@@ -14,11 +14,11 @@ if TYPE_CHECKING:
 
 
 class NbtProviderStructContext(ContextNbtProvider):
-    type: Literal['minecraft:context'] = 'minecraft:context'
+    type: Literal['minecraft:context', 'context'] = 'minecraft:context'
 
 
 class NbtProviderStructStorage(StorageNbtProvider):
-    type: Literal['minecraft:storage'] = 'minecraft:storage'
+    type: Literal['minecraft:storage', 'storage'] = 'minecraft:storage'
 
 
 type NbtProviderStruct = Annotated[

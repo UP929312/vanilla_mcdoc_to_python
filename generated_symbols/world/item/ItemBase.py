@@ -6,6 +6,7 @@ Local link to file: generated_symbols/world/item/ItemBase.py
 from typing import TYPE_CHECKING, Any
 
 from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.world.component.item.Trim import Trim
@@ -25,7 +26,7 @@ class ItemBase(GeneratedModel):
     AttributeModifiers: list[AttributeModifier] | None = None  # Applied to an entity that has equipped the item.
     display: Display | None = None  # Display settings.
     HideFlags: int | None = None  # Bitfield for which flags to hide on an item.
-    Trim: Trim | None = None  # Trim to apply to the item & armor when worn.
+    Trim_: Trim | None = Field(default=None, alias='Trim')  # Trim to apply to the item & armor when worn.
     key_name: Any  # Custom item NBT tags
 
 

@@ -13,11 +13,11 @@ from pydantic import Field
 class ConfiguredCarverCanyon(CanyonConfig):
     __resource_dir__: ClassVar[str] = 'worldgen/carver'
 
-    type: Literal['minecraft:canyon'] = 'minecraft:canyon'
+    type: Literal['minecraft:canyon', 'canyon'] = 'minecraft:canyon'
 
 
 class ConfiguredCarverCave(CaveConfig):
-    type: Literal['minecraft:cave'] = 'minecraft:cave'
+    type: Literal['minecraft:cave', 'cave'] = 'minecraft:cave'
 
 
 type ConfiguredCarver = Annotated[

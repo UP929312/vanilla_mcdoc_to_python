@@ -6,6 +6,7 @@ Local link to file: generated_symbols/world/entity/mob/zombie/ZombieVillager.py
 from typing import TYPE_CHECKING
 
 from generated_symbols.world.entity.mob.zombie.Zombie import Zombie
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.world.entity.mob.breedable.villager.Offers import Offers
@@ -14,10 +15,10 @@ if TYPE_CHECKING:
 
 
 class ZombieVillager(Zombie):
-    VillagerData: VillagerData | None = None  # Villager's skin data
+    VillagerData_: VillagerData | None = Field(default=None, alias='VillagerData')  # Villager's skin data
     VillagerDataFinalized: bool | None = None
     Gossips: list[PlayerReputationPart] | None = None  # Villager's gossips
-    Offers: Offers | None = None  # Villager's offers
+    Offers_: Offers | None = Field(default=None, alias='Offers')  # Villager's offers
     ConversionTime: int | None = None  # Ticks until the it is converted.
     ConversionPlayer: tuple[int, int, int, int] | None = None  # Player who triggered the conversion.
 

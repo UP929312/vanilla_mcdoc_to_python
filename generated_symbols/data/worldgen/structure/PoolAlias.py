@@ -12,15 +12,15 @@ from pydantic import Field
 
 
 class PoolAliasDirect(DirectPoolAlias):
-    type: Literal['minecraft:direct'] = 'minecraft:direct'
+    type: Literal['minecraft:direct', 'direct'] = 'minecraft:direct'
 
 
 class PoolAliasRandom(RandomPoolAlias):
-    type: Literal['minecraft:random'] = 'minecraft:random'
+    type: Literal['minecraft:random', 'random'] = 'minecraft:random'
 
 
 class PoolAliasRandomGroup(RandomGroupPoolAlias):
-    type: Literal['minecraft:random_group'] = 'minecraft:random_group'
+    type: Literal['minecraft:random_group', 'random_group'] = 'minecraft:random_group'
 
 
 type PoolAlias = Annotated[

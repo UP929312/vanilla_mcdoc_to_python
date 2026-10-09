@@ -12,15 +12,15 @@ from pydantic import Field
 
 
 class HoverEventShowEntity(ShowEntity):
-    action: Literal['minecraft:show_entity'] = 'minecraft:show_entity'
+    action: Literal['minecraft:show_entity', 'show_entity'] = 'minecraft:show_entity'
 
 
 class HoverEventShowItem(ShowItem):
-    action: Literal['minecraft:show_item'] = 'minecraft:show_item'
+    action: Literal['minecraft:show_item', 'show_item'] = 'minecraft:show_item'
 
 
 class HoverEventShowText(ShowText):
-    action: Literal['minecraft:show_text'] = 'minecraft:show_text'
+    action: Literal['minecraft:show_text', 'show_text'] = 'minecraft:show_text'
 
 
 type HoverEvent = Annotated[

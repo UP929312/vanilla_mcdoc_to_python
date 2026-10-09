@@ -126,7 +126,7 @@ class TestDispatcherSpreadGeneration:
         )
 
         assert "class BlockEntityDataBanner(Banner):" in content
-        assert "    id: Literal['minecraft:banner'] = 'minecraft:banner'" in content
+        assert "    id: Literal['minecraft:banner', 'banner'] = 'minecraft:banner'" in content
 
     def test_optional_literal_dispatcher_fields_keep_valid_annotation_order(self) -> None:
         content = generated_body(
@@ -136,7 +136,7 @@ class TestDispatcherSpreadGeneration:
         )
 
         assert "class ButtonListDialogBaseClose(BaseModel):" in content
-        assert "after_action: Literal['minecraft:close'] = 'minecraft:close'" in content
+        assert "after_action: Literal['minecraft:close', 'close'] = 'minecraft:close'" in content
 
     def test_dynamic_spread_generates_correlated_branch_classes(self) -> None:
         content = generated_body(
@@ -146,9 +146,9 @@ class TestDispatcherSpreadGeneration:
         )
 
         assert "class AdvancementCriterionInventoryChanged(InventoryChangeTrigger):" in content
-        assert "trigger: Literal['minecraft:inventory_changed']" in content
+        assert "trigger: Literal['minecraft:inventory_changed', 'inventory_changed']" in content
         assert "class AdvancementCriterionTick(PlayerTrigger):" in content
-        assert "trigger: Literal['minecraft:tick']" in content
+        assert "trigger: Literal['minecraft:tick', 'tick']" in content
         assert "type AdvancementCriterion = Annotated[\n    AdvancementCriterionAllayDropItemOnBlock |" in content
         assert "Field(discriminator='trigger')" in content
 
@@ -200,7 +200,7 @@ class TestDispatcherSpreadGeneration:
         )
 
         assert "class EntitySubPredicatePredicates(BaseModel):" in content
-        assert "type: Literal['minecraft:predicates']" in content
+        assert "type: Literal['minecraft:predicates', 'predicates']" in content
 
 
 class TestRootExportGeneration:

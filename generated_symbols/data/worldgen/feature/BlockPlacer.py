@@ -11,15 +11,15 @@ from pydantic import Field
 
 
 class BlockPlacerColumnPlacer(ColumnPlacer):
-    type: Literal['minecraft:column_placer'] = 'minecraft:column_placer'
+    type: Literal['minecraft:column_placer', 'column_placer'] = 'minecraft:column_placer'
 
 
 class BlockPlacerDoublePlantPlacer(GeneratedModel):
-    type: Literal['minecraft:double_plant_placer'] = 'minecraft:double_plant_placer'
+    type: Literal['minecraft:double_plant_placer', 'double_plant_placer'] = 'minecraft:double_plant_placer'
 
 
 class BlockPlacerSimpleBlockPlacer(GeneratedModel):
-    type: Literal['minecraft:simple_block_placer'] = 'minecraft:simple_block_placer'
+    type: Literal['minecraft:simple_block_placer', 'simple_block_placer'] = 'minecraft:simple_block_placer'
 
 
 type BlockPlacer = Annotated[

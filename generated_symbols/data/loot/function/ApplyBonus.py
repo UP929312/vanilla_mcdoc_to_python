@@ -14,17 +14,17 @@ from pydantic import Field
 
 class ApplyBonusBinomialWithBonusCount(BinomialWithBonusCountFormula, Conditions):
     enchantment: Annotated[str, IdSpec(registry='enchantment')]
-    formula: Literal['minecraft:binomial_with_bonus_count'] = 'minecraft:binomial_with_bonus_count'
+    formula: Literal['minecraft:binomial_with_bonus_count', 'binomial_with_bonus_count'] = 'minecraft:binomial_with_bonus_count'
 
 
 class ApplyBonusOreDrops(Conditions):
     enchantment: Annotated[str, IdSpec(registry='enchantment')]
-    formula: Literal['minecraft:ore_drops'] = 'minecraft:ore_drops'
+    formula: Literal['minecraft:ore_drops', 'ore_drops'] = 'minecraft:ore_drops'
 
 
 class ApplyBonusUniformBonusCount(Conditions, UniformBonusFormula):
     enchantment: Annotated[str, IdSpec(registry='enchantment')]
-    formula: Literal['minecraft:uniform_bonus_count'] = 'minecraft:uniform_bonus_count'
+    formula: Literal['minecraft:uniform_bonus_count', 'uniform_bonus_count'] = 'minecraft:uniform_bonus_count'
 
 
 type ApplyBonus = Annotated[

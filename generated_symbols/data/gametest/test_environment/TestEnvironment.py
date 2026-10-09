@@ -18,31 +18,31 @@ from pydantic import Field
 class TestEnvironmentAllOf(AllOffTestEnvironment):
     __resource_dir__: ClassVar[str] = 'test_environment'
 
-    type: Literal['minecraft:all_of'] = 'minecraft:all_of'
+    type: Literal['minecraft:all_of', 'all_of'] = 'minecraft:all_of'
 
 
 class TestEnvironmentClockTime(ClockTimeTestEnvironment):
-    type: Literal['minecraft:clock_time'] = 'minecraft:clock_time'
+    type: Literal['minecraft:clock_time', 'clock_time'] = 'minecraft:clock_time'
 
 
 class TestEnvironmentDifficulty(DifficultyTestEnvironment):
-    type: Literal['minecraft:difficulty'] = 'minecraft:difficulty'
+    type: Literal['minecraft:difficulty', 'difficulty'] = 'minecraft:difficulty'
 
 
 class TestEnvironmentFunction(FunctionTestEnvironment):
-    type: Literal['minecraft:function'] = 'minecraft:function'
+    type: Literal['minecraft:function', 'function'] = 'minecraft:function'
 
 
 class TestEnvironmentGameRules(GameRulesTestEnvironment):
-    type: Literal['minecraft:game_rules'] = 'minecraft:game_rules'
+    type: Literal['minecraft:game_rules', 'game_rules'] = 'minecraft:game_rules'
 
 
 class TestEnvironmentTimelineAttributes(TimelineAttributesTestEnvironment):
-    type: Literal['minecraft:timeline_attributes'] = 'minecraft:timeline_attributes'
+    type: Literal['minecraft:timeline_attributes', 'timeline_attributes'] = 'minecraft:timeline_attributes'
 
 
 class TestEnvironmentWeather(WeatherTestEnvironment):
-    type: Literal['minecraft:weather'] = 'minecraft:weather'
+    type: Literal['minecraft:weather', 'weather'] = 'minecraft:weather'
 
 
 type TestEnvironment = Annotated[

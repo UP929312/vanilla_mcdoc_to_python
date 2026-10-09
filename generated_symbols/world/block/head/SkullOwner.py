@@ -6,6 +6,7 @@ Local link to file: generated_symbols/world/block/head/SkullOwner.py
 from typing import TYPE_CHECKING
 
 from generated_symbols.base import GeneratedModel
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.world.block.head.Properties import Properties
@@ -14,7 +15,7 @@ if TYPE_CHECKING:
 class SkullOwner(GeneratedModel):
     Id: tuple[int, int, int, int] | None = None  # Optional.
     Name: str | None = None  # Name of the owner, if missing appears as a steve head.
-    Properties: Properties | None = None
+    Properties_: Properties | None = Field(default=None, alias='Properties')
 
 
 # ~~~ MODEL DUMP ~~~

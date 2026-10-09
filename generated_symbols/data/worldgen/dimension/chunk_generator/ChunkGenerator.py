@@ -11,11 +11,11 @@ from pydantic import Field
 
 
 class ChunkGeneratorFlat(Flat):
-    type: Literal['minecraft:flat'] = 'minecraft:flat'
+    type: Literal['minecraft:flat', 'flat'] = 'minecraft:flat'
 
 
 class ChunkGeneratorNoise(Noise):
-    type: Literal['minecraft:noise'] = 'minecraft:noise'
+    type: Literal['minecraft:noise', 'noise'] = 'minecraft:noise'
 
 
 type ChunkGenerator = Annotated[

@@ -22,7 +22,7 @@ class FacesStructValueStruct(GeneratedModel):
 
 
 class ModelElement(GeneratedModel):
-    from_: tuple[Annotated[float, Field(ge=-16, le=32)], Annotated[float, Field(ge=-16, le=32)], Annotated[float, Field(ge=-16, le=32)]]
+    from_: tuple[Annotated[float, Field(ge=-16, le=32)], Annotated[float, Field(ge=-16, le=32)], Annotated[float, Field(ge=-16, le=32)]] = Field(alias='from')
     to: tuple[Annotated[float, Field(ge=-16, le=32)], Annotated[float, Field(ge=-16, le=32)], Annotated[float, Field(ge=-16, le=32)]]
     faces: dict[Direction, FacesStructValueStruct]
     rotation: ModelElementRotation | None = None

@@ -10,7 +10,7 @@ from generated_symbols.util.text.TextBase import TextBase
 
 class NormalText(TextBase):
     text: str
-    type: Literal['text'] = 'text'
+    type: Literal['text'] | None = 'text'
 
 
 # ~~~ MODEL DUMP ~~~

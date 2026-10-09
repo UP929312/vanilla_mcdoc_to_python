@@ -43,7 +43,7 @@ class RedirectDialogClose(GeneratedModel):
     body: DialogBody | list[DialogBody] | None = None
     inputs: list[InputControl] | None = None
     can_close_with_escape: bool | None = None  # Whether the dialog can be closed with ESC key. Defaults to `true`.
-    after_action: Literal['minecraft:close'] = 'minecraft:close'  # An additional operation performed on dialog after click or submit actions. Defaults to `close`.  Value `none` requires `pause` set to `false`.
+    after_action: Literal['minecraft:close', 'close'] | None = 'minecraft:close'  # An additional operation performed on dialog after click or submit actions. Defaults to `close`.  Value `none` requires `pause` set to `false`.
     pause: bool | None = None  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.
 
 
@@ -57,7 +57,7 @@ class RedirectDialogNone2(GeneratedModel):
     body: DialogBody | list[DialogBody] | None = None
     inputs: list[InputControl] | None = None
     can_close_with_escape: bool | None = None  # Whether the dialog can be closed with ESC key. Defaults to `true`.
-    after_action: Literal['minecraft:none'] = 'minecraft:none'  # An additional operation performed on dialog after click or submit actions. Defaults to `close`.  Value `none` requires `pause` set to `false`.
+    after_action: Literal['minecraft:none', 'none'] | None = 'minecraft:none'  # An additional operation performed on dialog after click or submit actions. Defaults to `close`.  Value `none` requires `pause` set to `false`.
     pause: Literal[False] = False  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.  The currently selected `after_action` only supports the value `false`
 
 
@@ -71,7 +71,7 @@ class RedirectDialogWaitForResponse(GeneratedModel):
     body: DialogBody | list[DialogBody] | None = None
     inputs: list[InputControl] | None = None
     can_close_with_escape: bool | None = None  # Whether the dialog can be closed with ESC key. Defaults to `true`.
-    after_action: Literal['minecraft:wait_for_response'] = 'minecraft:wait_for_response'  # An additional operation performed on dialog after click or submit actions. Defaults to `close`.  Value `none` requires `pause` set to `false`.
+    after_action: Literal['minecraft:wait_for_response', 'wait_for_response'] | None = 'minecraft:wait_for_response'  # An additional operation performed on dialog after click or submit actions. Defaults to `close`.  Value `none` requires `pause` set to `false`.
     pause: bool | None = None  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.
 
 

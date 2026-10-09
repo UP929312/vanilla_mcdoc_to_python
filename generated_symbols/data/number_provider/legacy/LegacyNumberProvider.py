@@ -21,35 +21,35 @@ class LegacyNumberProviderStructNone(UniformNumberProvider):
 
 
 class LegacyNumberProviderStructBinomial(BinomialNumberProvider):
-    type: Literal['minecraft:binomial'] = 'minecraft:binomial'  # Defaults to `minecraft:uniform`.
+    type: Literal['minecraft:binomial', 'binomial'] | None = 'minecraft:binomial'  # Defaults to `minecraft:uniform`.
 
 
 class LegacyNumberProviderStructConstant(ConstantNumberProvider):
-    type: Literal['minecraft:constant'] = 'minecraft:constant'  # Defaults to `minecraft:uniform`.
+    type: Literal['minecraft:constant', 'constant'] | None = 'minecraft:constant'  # Defaults to `minecraft:uniform`.
 
 
 class LegacyNumberProviderStructEnchantmentLevel(EnchantmentLevelProvider):
-    type: Literal['minecraft:enchantment_level'] = 'minecraft:enchantment_level'  # Defaults to `minecraft:uniform`.
+    type: Literal['minecraft:enchantment_level', 'enchantment_level'] | None = 'minecraft:enchantment_level'  # Defaults to `minecraft:uniform`.
 
 
 class LegacyNumberProviderStructEnvironmentAttribute(EnvironmentAttributeNumberProvider):
-    type: Literal['minecraft:environment_attribute'] = 'minecraft:environment_attribute'  # Defaults to `minecraft:uniform`.
+    type: Literal['minecraft:environment_attribute', 'environment_attribute'] | None = 'minecraft:environment_attribute'  # Defaults to `minecraft:uniform`.
 
 
 class LegacyNumberProviderStructScore(ScoreNumberProvider):
-    type: Literal['minecraft:score'] = 'minecraft:score'  # Defaults to `minecraft:uniform`.
+    type: Literal['minecraft:score', 'score'] | None = 'minecraft:score'  # Defaults to `minecraft:uniform`.
 
 
 class LegacyNumberProviderStructStorage(StorageNumberProvider):
-    type: Literal['minecraft:storage'] = 'minecraft:storage'  # Defaults to `minecraft:uniform`.
+    type: Literal['minecraft:storage', 'storage'] | None = 'minecraft:storage'  # Defaults to `minecraft:uniform`.
 
 
 class LegacyNumberProviderStructSum(SumNumberProvider):
-    type: Literal['minecraft:sum'] = 'minecraft:sum'  # Defaults to `minecraft:uniform`.
+    type: Literal['minecraft:sum', 'sum'] | None = 'minecraft:sum'  # Defaults to `minecraft:uniform`.
 
 
 class LegacyNumberProviderStructUniform(UniformNumberProvider):
-    type: Literal['minecraft:uniform'] = 'minecraft:uniform'  # Defaults to `minecraft:uniform`.
+    type: Literal['minecraft:uniform', 'uniform'] | None = 'minecraft:uniform'  # Defaults to `minecraft:uniform`.
 
 
 type LegacyNumberProviderStruct = LegacyNumberProviderStructNone | LegacyNumberProviderStructBinomial | LegacyNumberProviderStructConstant | LegacyNumberProviderStructEnchantmentLevel | LegacyNumberProviderStructEnvironmentAttribute | LegacyNumberProviderStructScore | LegacyNumberProviderStructStorage | LegacyNumberProviderStructSum | LegacyNumberProviderStructUniform

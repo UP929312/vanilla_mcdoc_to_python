@@ -12,19 +12,19 @@ from pydantic import Field
 
 
 class BlockEntityModifierAppendLoot(AppendLoot):
-    type: Literal['minecraft:append_loot'] = 'minecraft:append_loot'
+    type: Literal['minecraft:append_loot', 'append_loot'] = 'minecraft:append_loot'
 
 
 class BlockEntityModifierAppendStatic(AppendStatic):
-    type: Literal['minecraft:append_static'] = 'minecraft:append_static'
+    type: Literal['minecraft:append_static', 'append_static'] = 'minecraft:append_static'
 
 
 class BlockEntityModifierClear(GeneratedModel):
-    type: Literal['minecraft:clear'] = 'minecraft:clear'
+    type: Literal['minecraft:clear', 'clear'] = 'minecraft:clear'
 
 
 class BlockEntityModifierPassthrough(GeneratedModel):
-    type: Literal['minecraft:passthrough'] = 'minecraft:passthrough'
+    type: Literal['minecraft:passthrough', 'passthrough'] = 'minecraft:passthrough'
 
 
 type BlockEntityModifier = Annotated[

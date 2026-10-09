@@ -20,19 +20,19 @@ class MaterialRuleUnknown(GeneratedModel):
 
 
 class MaterialRuleBlock(BlockRule):
-    type: Literal['minecraft:block'] = 'minecraft:block'
+    type: Literal['minecraft:block', 'block'] = 'minecraft:block'
 
 
 class MaterialRuleCondition(ConditionRule):
-    type: Literal['minecraft:condition'] = 'minecraft:condition'
+    type: Literal['minecraft:condition', 'condition'] = 'minecraft:condition'
 
 
 class MaterialRuleOreVein(OreVeinifier):
-    type: Literal['minecraft:ore_vein'] = 'minecraft:ore_vein'
+    type: Literal['minecraft:ore_vein', 'ore_vein'] = 'minecraft:ore_vein'
 
 
 class MaterialRuleSequence(SequenceRule):
-    type: Literal['minecraft:sequence'] = 'minecraft:sequence'
+    type: Literal['minecraft:sequence', 'sequence'] = 'minecraft:sequence'
 
 
 type MaterialRule = MaterialRuleUnknown | MaterialRuleBlock | MaterialRuleCondition | MaterialRuleOreVein | MaterialRuleSequence

@@ -19,22 +19,22 @@ if TYPE_CHECKING:
 
 class FloatsStructAppend(GeneratedModel):
     values: list[FloatNumberProviderRef]
-    mode: Literal['minecraft:append'] = 'minecraft:append'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:append', 'append'] = 'minecraft:append'  # Determines how the existing list should be modified.
 
 
 class FloatsStructInsert(InsertListOperation):
     values: list[FloatNumberProviderRef]
-    mode: Literal['minecraft:insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:insert', 'insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
 
 
 class FloatsStructReplaceAll(GeneratedModel):
     values: list[FloatNumberProviderRef]
-    mode: Literal['minecraft:replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:replace_all', 'replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
 
 
 class FloatsStructReplaceSection(ReplaceSectionListOperation):
     values: list[FloatNumberProviderRef]
-    mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:replace_section', 'replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
 
 
 type FloatsStruct = Annotated[
@@ -44,22 +44,22 @@ type FloatsStruct = Annotated[
 
 class FlagsStructAppend(GeneratedModel):
     values: list[bool]
-    mode: Literal['minecraft:append'] = 'minecraft:append'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:append', 'append'] = 'minecraft:append'  # Determines how the existing list should be modified.
 
 
 class FlagsStructInsert(InsertListOperation):
     values: list[bool]
-    mode: Literal['minecraft:insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:insert', 'insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
 
 
 class FlagsStructReplaceAll(GeneratedModel):
     values: list[bool]
-    mode: Literal['minecraft:replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:replace_all', 'replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
 
 
 class FlagsStructReplaceSection(ReplaceSectionListOperation):
     values: list[bool]
-    mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:replace_section', 'replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
 
 
 type FlagsStruct = Annotated[
@@ -69,22 +69,22 @@ type FlagsStruct = Annotated[
 
 class StringsStructAppend(GeneratedModel):
     values: list[str]
-    mode: Literal['minecraft:append'] = 'minecraft:append'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:append', 'append'] = 'minecraft:append'  # Determines how the existing list should be modified.
 
 
 class StringsStructInsert(InsertListOperation):
     values: list[str]
-    mode: Literal['minecraft:insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:insert', 'insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
 
 
 class StringsStructReplaceAll(GeneratedModel):
     values: list[str]
-    mode: Literal['minecraft:replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:replace_all', 'replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
 
 
 class StringsStructReplaceSection(ReplaceSectionListOperation):
     values: list[str]
-    mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:replace_section', 'replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
 
 
 type StringsStruct = Annotated[
@@ -94,22 +94,22 @@ type StringsStruct = Annotated[
 
 class ColorsStructAppend(GeneratedModel):
     values: list[RGB | IntNumberProviderRef]
-    mode: Literal['minecraft:append'] = 'minecraft:append'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:append', 'append'] = 'minecraft:append'  # Determines how the existing list should be modified.
 
 
 class ColorsStructInsert(InsertListOperation):
     values: list[RGB | IntNumberProviderRef]
-    mode: Literal['minecraft:insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:insert', 'insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
 
 
 class ColorsStructReplaceAll(GeneratedModel):
     values: list[RGB | IntNumberProviderRef]
-    mode: Literal['minecraft:replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:replace_all', 'replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
 
 
 class ColorsStructReplaceSection(ReplaceSectionListOperation):
     values: list[RGB | IntNumberProviderRef]
-    mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:replace_section', 'replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
 
 
 type ColorsStruct = Annotated[

@@ -11,11 +11,11 @@ from pydantic import Field
 
 
 class PositionSourceBlock(BlockPositionSource):
-    type: Literal['minecraft:block'] = 'minecraft:block'
+    type: Literal['minecraft:block', 'block'] = 'minecraft:block'
 
 
 class PositionSourceEntity(EntityPositionSource):
-    type: Literal['minecraft:entity'] = 'minecraft:entity'
+    type: Literal['minecraft:entity', 'entity'] = 'minecraft:entity'
 
 
 type PositionSource = Annotated[

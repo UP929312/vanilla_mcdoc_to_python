@@ -19,43 +19,43 @@ from pydantic import Field
 
 
 class TreeDecoratorAlterGround(AlterGroundTreeDecorator):
-    type: Literal['minecraft:alter_ground'] = 'minecraft:alter_ground'
+    type: Literal['minecraft:alter_ground', 'alter_ground'] = 'minecraft:alter_ground'
 
 
 class TreeDecoratorAttachedToLeaves(AttachedToLeavesTreeDecorator):
-    type: Literal['minecraft:attached_to_leaves'] = 'minecraft:attached_to_leaves'
+    type: Literal['minecraft:attached_to_leaves', 'attached_to_leaves'] = 'minecraft:attached_to_leaves'
 
 
 class TreeDecoratorAttachedToLogs(AttachedToLogsTreeDecorator):
-    type: Literal['minecraft:attached_to_logs'] = 'minecraft:attached_to_logs'
+    type: Literal['minecraft:attached_to_logs', 'attached_to_logs'] = 'minecraft:attached_to_logs'
 
 
 class TreeDecoratorBeehive(BeehiveTreeDecorator):
-    type: Literal['minecraft:beehive'] = 'minecraft:beehive'
+    type: Literal['minecraft:beehive', 'beehive'] = 'minecraft:beehive'
 
 
 class TreeDecoratorCocoa(CocoaTreeDecorator):
-    type: Literal['minecraft:cocoa'] = 'minecraft:cocoa'
+    type: Literal['minecraft:cocoa', 'cocoa'] = 'minecraft:cocoa'
 
 
 class TreeDecoratorCreakingHeart(CreakingHeartTreeDecorator):
-    type: Literal['minecraft:creaking_heart'] = 'minecraft:creaking_heart'
+    type: Literal['minecraft:creaking_heart', 'creaking_heart'] = 'minecraft:creaking_heart'
 
 
 class TreeDecoratorLeaveVine(LeaveVineTreeDecorator):
-    type: Literal['minecraft:leave_vine'] = 'minecraft:leave_vine'
+    type: Literal['minecraft:leave_vine', 'leave_vine'] = 'minecraft:leave_vine'
 
 
 class TreeDecoratorPaleMoss(PaleMossTreeDecorator):
-    type: Literal['minecraft:pale_moss'] = 'minecraft:pale_moss'
+    type: Literal['minecraft:pale_moss', 'pale_moss'] = 'minecraft:pale_moss'
 
 
 class TreeDecoratorPlaceOnGround(PlaceOnGroundTreeDecorator):
-    type: Literal['minecraft:place_on_ground'] = 'minecraft:place_on_ground'
+    type: Literal['minecraft:place_on_ground', 'place_on_ground'] = 'minecraft:place_on_ground'
 
 
 class TreeDecoratorShelfMushroom(ShelfMushroomTreeDecorator):
-    type: Literal['minecraft:shelf_mushroom'] = 'minecraft:shelf_mushroom'
+    type: Literal['minecraft:shelf_mushroom', 'shelf_mushroom'] = 'minecraft:shelf_mushroom'
 
 
 type TreeDecorator = Annotated[

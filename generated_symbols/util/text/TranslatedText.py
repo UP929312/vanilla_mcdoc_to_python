@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 class TranslatedText(TextBase):
     translate: str
     fallback: str | None = None
-    with_: Annotated[list[TranslationArg], Field(min_length=1)] | None = None
-    type: Literal['translatable'] = 'translatable'
+    with_: Annotated[list[TranslationArg], Field(min_length=1)] | None = Field(default=None, alias='with')
+    type: Literal['translatable'] | None = 'translatable'
 
 
 # ~~~ MODEL DUMP ~~~

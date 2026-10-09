@@ -13,7 +13,7 @@ if TYPE_CHECKING:
 
 
 class Effect(GeneratedModel):
-    EffectId: EffectId | None = None
+    EffectId_: EffectId | None = Field(default=None, alias='EffectId')
     EffectDuration: Annotated[int, Field(ge=1)] | None = None  # Duration in ticks.
 
 

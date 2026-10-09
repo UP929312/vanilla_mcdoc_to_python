@@ -14,11 +14,11 @@ if TYPE_CHECKING:
 
 
 class ScoreProviderStructContext(ContextScoreProvider):
-    type: Literal['minecraft:context'] = 'minecraft:context'
+    type: Literal['minecraft:context', 'context'] = 'minecraft:context'
 
 
 class ScoreProviderStructFixed(FixedScoreProvider):
-    type: Literal['minecraft:fixed'] = 'minecraft:fixed'
+    type: Literal['minecraft:fixed', 'fixed'] = 'minecraft:fixed'
 
 
 type ScoreProviderStruct = Annotated[

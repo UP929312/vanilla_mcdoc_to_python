@@ -6,13 +6,14 @@ Local link to file: generated_symbols/world/entity/mob/breedable/rabbit/Rabbit.p
 from typing import TYPE_CHECKING
 
 from generated_symbols.world.entity.mob.breedable.Breedable import Breedable
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.world.entity.mob.breedable.rabbit.RabbitType import RabbitType
 
 
 class Rabbit(Breedable):
-    RabbitType: RabbitType | None = None
+    RabbitType_: RabbitType | None = Field(default=None, alias='RabbitType')
     MoreCarrotTicks: int | None = None  # Ticks down once a carrot crop is eaten
 
 

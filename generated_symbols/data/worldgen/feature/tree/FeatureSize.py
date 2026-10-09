@@ -11,11 +11,11 @@ from pydantic import Field
 
 
 class FeatureSizeThreeLayersFeatureSize(ThreeLayersFeatureSize):
-    type: Literal['minecraft:three_layers_feature_size'] = 'minecraft:three_layers_feature_size'
+    type: Literal['minecraft:three_layers_feature_size', 'three_layers_feature_size'] = 'minecraft:three_layers_feature_size'
 
 
 class FeatureSizeTwoLayersFeatureSize(TwoLayersFeatureSize):
-    type: Literal['minecraft:two_layers_feature_size'] = 'minecraft:two_layers_feature_size'
+    type: Literal['minecraft:two_layers_feature_size', 'two_layers_feature_size'] = 'minecraft:two_layers_feature_size'
 
 
 type FeatureSize = Annotated[

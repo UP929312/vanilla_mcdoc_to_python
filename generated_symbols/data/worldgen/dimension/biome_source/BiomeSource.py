@@ -15,27 +15,27 @@ from pydantic import Field
 
 
 class BiomeSourceCheckerboard(Checkerboard):
-    type: Literal['minecraft:checkerboard'] = 'minecraft:checkerboard'
+    type: Literal['minecraft:checkerboard', 'checkerboard'] = 'minecraft:checkerboard'
 
 
 class BiomeSourceFixed(Fixed):
-    type: Literal['minecraft:fixed'] = 'minecraft:fixed'
+    type: Literal['minecraft:fixed', 'fixed'] = 'minecraft:fixed'
 
 
 class BiomeSourceMultiNoiseNone(DirectMultiNoise, MultiNoiseBase):
-    type: Literal['minecraft:multi_noise'] = 'minecraft:multi_noise'
+    type: Literal['minecraft:multi_noise', 'multi_noise'] = 'minecraft:multi_noise'
     preset: Annotated[str, IdSpec(registry='worldgen/multi_noise_biome_source_parameter_list')] | None = None
 
 
 class BiomeSourceMultiNoiseUnknown(MultiNoiseBase):
-    type: Literal['minecraft:multi_noise'] = 'minecraft:multi_noise'
+    type: Literal['minecraft:multi_noise', 'multi_noise'] = 'minecraft:multi_noise'
     preset: Annotated[str, IdSpec(registry='worldgen/multi_noise_biome_source_parameter_list')] | None = None
 
 
 type BiomeSourceMultiNoise = BiomeSourceMultiNoiseNone | BiomeSourceMultiNoiseUnknown
 
 class BiomeSourceTheEnd(TheEnd):
-    type: Literal['minecraft:the_end'] = 'minecraft:the_end'
+    type: Literal['minecraft:the_end', 'the_end'] = 'minecraft:the_end'
 
 
 type BiomeSource = Annotated[

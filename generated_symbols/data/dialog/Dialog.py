@@ -20,7 +20,7 @@ if TYPE_CHECKING:
 class DialogConfirmationNone(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'dialog'
 
-    type: Literal['minecraft:confirmation'] = 'minecraft:confirmation'
+    type: Literal['minecraft:confirmation', 'confirmation'] = 'minecraft:confirmation'
     yes: Button
     no: Button  # This action is also used for ESC-triggered exit.
     title: Text
@@ -33,7 +33,7 @@ class DialogConfirmationNone(GeneratedModel):
 
 
 class DialogConfirmationClose(GeneratedModel):
-    type: Literal['minecraft:confirmation'] = 'minecraft:confirmation'
+    type: Literal['minecraft:confirmation', 'confirmation'] = 'minecraft:confirmation'
     yes: Button
     no: Button  # This action is also used for ESC-triggered exit.
     title: Text
@@ -41,12 +41,12 @@ class DialogConfirmationClose(GeneratedModel):
     body: DialogBody | list[DialogBody] | None = None
     inputs: list[InputControl] | None = None
     can_close_with_escape: bool | None = None  # Whether the dialog can be closed with ESC key. Defaults to `true`.
-    after_action: Literal['minecraft:close'] = 'minecraft:close'  # An additional operation performed on dialog after click or submit actions. Defaults to `close`.  Value `none` requires `pause` set to `false`.
+    after_action: Literal['minecraft:close', 'close'] | None = 'minecraft:close'  # An additional operation performed on dialog after click or submit actions. Defaults to `close`.  Value `none` requires `pause` set to `false`.
     pause: bool | None = None  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.
 
 
 class DialogConfirmationNone2(GeneratedModel):
-    type: Literal['minecraft:confirmation'] = 'minecraft:confirmation'
+    type: Literal['minecraft:confirmation', 'confirmation'] = 'minecraft:confirmation'
     yes: Button
     no: Button  # This action is also used for ESC-triggered exit.
     title: Text
@@ -54,12 +54,12 @@ class DialogConfirmationNone2(GeneratedModel):
     body: DialogBody | list[DialogBody] | None = None
     inputs: list[InputControl] | None = None
     can_close_with_escape: bool | None = None  # Whether the dialog can be closed with ESC key. Defaults to `true`.
-    after_action: Literal['minecraft:none'] = 'minecraft:none'  # An additional operation performed on dialog after click or submit actions. Defaults to `close`.  Value `none` requires `pause` set to `false`.
+    after_action: Literal['minecraft:none', 'none'] | None = 'minecraft:none'  # An additional operation performed on dialog after click or submit actions. Defaults to `close`.  Value `none` requires `pause` set to `false`.
     pause: Literal[False] = False  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.  The currently selected `after_action` only supports the value `false`
 
 
 class DialogConfirmationWaitForResponse(GeneratedModel):
-    type: Literal['minecraft:confirmation'] = 'minecraft:confirmation'
+    type: Literal['minecraft:confirmation', 'confirmation'] = 'minecraft:confirmation'
     yes: Button
     no: Button  # This action is also used for ESC-triggered exit.
     title: Text
@@ -67,14 +67,14 @@ class DialogConfirmationWaitForResponse(GeneratedModel):
     body: DialogBody | list[DialogBody] | None = None
     inputs: list[InputControl] | None = None
     can_close_with_escape: bool | None = None  # Whether the dialog can be closed with ESC key. Defaults to `true`.
-    after_action: Literal['minecraft:wait_for_response'] = 'minecraft:wait_for_response'  # An additional operation performed on dialog after click or submit actions. Defaults to `close`.  Value `none` requires `pause` set to `false`.
+    after_action: Literal['minecraft:wait_for_response', 'wait_for_response'] | None = 'minecraft:wait_for_response'  # An additional operation performed on dialog after click or submit actions. Defaults to `close`.  Value `none` requires `pause` set to `false`.
     pause: bool | None = None  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.
 
 
 type DialogConfirmation = DialogConfirmationNone | DialogConfirmationClose | DialogConfirmationNone2 | DialogConfirmationWaitForResponse
 
 class DialogDialogListNone(GeneratedModel):
-    type: Literal['minecraft:dialog_list'] = 'minecraft:dialog_list'
+    type: Literal['minecraft:dialog_list', 'dialog_list'] = 'minecraft:dialog_list'
     dialogs: DialogListRef
     button_width: Annotated[int, Field(ge=1)] | None = None  # Width of buttons in the list. Defaults to 150.
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
@@ -89,7 +89,7 @@ class DialogDialogListNone(GeneratedModel):
 
 
 class DialogDialogListClose(GeneratedModel):
-    type: Literal['minecraft:dialog_list'] = 'minecraft:dialog_list'
+    type: Literal['minecraft:dialog_list', 'dialog_list'] = 'minecraft:dialog_list'
     dialogs: DialogListRef
     button_width: Annotated[int, Field(ge=1)] | None = None  # Width of buttons in the list. Defaults to 150.
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
@@ -99,12 +99,12 @@ class DialogDialogListClose(GeneratedModel):
     body: DialogBody | list[DialogBody] | None = None
     inputs: list[InputControl] | None = None
     can_close_with_escape: bool | None = None  # Whether the dialog can be closed with ESC key. Defaults to `true`.
-    after_action: Literal['minecraft:close'] = 'minecraft:close'  # An additional operation performed on dialog after click or submit actions. Defaults to `close`.  Value `none` requires `pause` set to `false`.
+    after_action: Literal['minecraft:close', 'close'] | None = 'minecraft:close'  # An additional operation performed on dialog after click or submit actions. Defaults to `close`.  Value `none` requires `pause` set to `false`.
     pause: bool | None = None  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.
 
 
 class DialogDialogListNone2(GeneratedModel):
-    type: Literal['minecraft:dialog_list'] = 'minecraft:dialog_list'
+    type: Literal['minecraft:dialog_list', 'dialog_list'] = 'minecraft:dialog_list'
     dialogs: DialogListRef
     button_width: Annotated[int, Field(ge=1)] | None = None  # Width of buttons in the list. Defaults to 150.
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
@@ -114,12 +114,12 @@ class DialogDialogListNone2(GeneratedModel):
     body: DialogBody | list[DialogBody] | None = None
     inputs: list[InputControl] | None = None
     can_close_with_escape: bool | None = None  # Whether the dialog can be closed with ESC key. Defaults to `true`.
-    after_action: Literal['minecraft:none'] = 'minecraft:none'  # An additional operation performed on dialog after click or submit actions. Defaults to `close`.  Value `none` requires `pause` set to `false`.
+    after_action: Literal['minecraft:none', 'none'] | None = 'minecraft:none'  # An additional operation performed on dialog after click or submit actions. Defaults to `close`.  Value `none` requires `pause` set to `false`.
     pause: Literal[False] = False  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.  The currently selected `after_action` only supports the value `false`
 
 
 class DialogDialogListWaitForResponse(GeneratedModel):
-    type: Literal['minecraft:dialog_list'] = 'minecraft:dialog_list'
+    type: Literal['minecraft:dialog_list', 'dialog_list'] = 'minecraft:dialog_list'
     dialogs: DialogListRef
     button_width: Annotated[int, Field(ge=1)] | None = None  # Width of buttons in the list. Defaults to 150.
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
@@ -129,14 +129,14 @@ class DialogDialogListWaitForResponse(GeneratedModel):
     body: DialogBody | list[DialogBody] | None = None
     inputs: list[InputControl] | None = None
     can_close_with_escape: bool | None = None  # Whether the dialog can be closed with ESC key. Defaults to `true`.
-    after_action: Literal['minecraft:wait_for_response'] = 'minecraft:wait_for_response'  # An additional operation performed on dialog after click or submit actions. Defaults to `close`.  Value `none` requires `pause` set to `false`.
+    after_action: Literal['minecraft:wait_for_response', 'wait_for_response'] | None = 'minecraft:wait_for_response'  # An additional operation performed on dialog after click or submit actions. Defaults to `close`.  Value `none` requires `pause` set to `false`.
     pause: bool | None = None  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.
 
 
 type DialogDialogList = DialogDialogListNone | DialogDialogListClose | DialogDialogListNone2 | DialogDialogListWaitForResponse
 
 class DialogMultiActionNone(GeneratedModel):
-    type: Literal['minecraft:multi_action'] = 'minecraft:multi_action'
+    type: Literal['minecraft:multi_action', 'multi_action'] = 'minecraft:multi_action'
     actions: Annotated[list[Button], Field(min_length=1)]
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
     columns: Annotated[int, Field(ge=1)] | None = None  # The number of columns. Defaults to 2.
@@ -150,7 +150,7 @@ class DialogMultiActionNone(GeneratedModel):
 
 
 class DialogMultiActionClose(GeneratedModel):
-    type: Literal['minecraft:multi_action'] = 'minecraft:multi_action'
+    type: Literal['minecraft:multi_action', 'multi_action'] = 'minecraft:multi_action'
     actions: Annotated[list[Button], Field(min_length=1)]
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
     columns: Annotated[int, Field(ge=1)] | None = None  # The number of columns. Defaults to 2.
@@ -159,12 +159,12 @@ class DialogMultiActionClose(GeneratedModel):
     body: DialogBody | list[DialogBody] | None = None
     inputs: list[InputControl] | None = None
     can_close_with_escape: bool | None = None  # Whether the dialog can be closed with ESC key. Defaults to `true`.
-    after_action: Literal['minecraft:close'] = 'minecraft:close'  # An additional operation performed on dialog after click or submit actions. Defaults to `close`.  Value `none` requires `pause` set to `false`.
+    after_action: Literal['minecraft:close', 'close'] | None = 'minecraft:close'  # An additional operation performed on dialog after click or submit actions. Defaults to `close`.  Value `none` requires `pause` set to `false`.
     pause: bool | None = None  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.
 
 
 class DialogMultiActionNone2(GeneratedModel):
-    type: Literal['minecraft:multi_action'] = 'minecraft:multi_action'
+    type: Literal['minecraft:multi_action', 'multi_action'] = 'minecraft:multi_action'
     actions: Annotated[list[Button], Field(min_length=1)]
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
     columns: Annotated[int, Field(ge=1)] | None = None  # The number of columns. Defaults to 2.
@@ -173,12 +173,12 @@ class DialogMultiActionNone2(GeneratedModel):
     body: DialogBody | list[DialogBody] | None = None
     inputs: list[InputControl] | None = None
     can_close_with_escape: bool | None = None  # Whether the dialog can be closed with ESC key. Defaults to `true`.
-    after_action: Literal['minecraft:none'] = 'minecraft:none'  # An additional operation performed on dialog after click or submit actions. Defaults to `close`.  Value `none` requires `pause` set to `false`.
+    after_action: Literal['minecraft:none', 'none'] | None = 'minecraft:none'  # An additional operation performed on dialog after click or submit actions. Defaults to `close`.  Value `none` requires `pause` set to `false`.
     pause: Literal[False] = False  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.  The currently selected `after_action` only supports the value `false`
 
 
 class DialogMultiActionWaitForResponse(GeneratedModel):
-    type: Literal['minecraft:multi_action'] = 'minecraft:multi_action'
+    type: Literal['minecraft:multi_action', 'multi_action'] = 'minecraft:multi_action'
     actions: Annotated[list[Button], Field(min_length=1)]
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
     columns: Annotated[int, Field(ge=1)] | None = None  # The number of columns. Defaults to 2.
@@ -187,14 +187,14 @@ class DialogMultiActionWaitForResponse(GeneratedModel):
     body: DialogBody | list[DialogBody] | None = None
     inputs: list[InputControl] | None = None
     can_close_with_escape: bool | None = None  # Whether the dialog can be closed with ESC key. Defaults to `true`.
-    after_action: Literal['minecraft:wait_for_response'] = 'minecraft:wait_for_response'  # An additional operation performed on dialog after click or submit actions. Defaults to `close`.  Value `none` requires `pause` set to `false`.
+    after_action: Literal['minecraft:wait_for_response', 'wait_for_response'] | None = 'minecraft:wait_for_response'  # An additional operation performed on dialog after click or submit actions. Defaults to `close`.  Value `none` requires `pause` set to `false`.
     pause: bool | None = None  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.
 
 
 type DialogMultiAction = DialogMultiActionNone | DialogMultiActionClose | DialogMultiActionNone2 | DialogMultiActionWaitForResponse
 
 class DialogNoticeNone(GeneratedModel):
-    type: Literal['minecraft:notice'] = 'minecraft:notice'
+    type: Literal['minecraft:notice', 'notice'] = 'minecraft:notice'
     action: Button | None = None  # The only action in footer. Defaults to `gui.ok` label with no action or tooltip.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
@@ -206,45 +206,45 @@ class DialogNoticeNone(GeneratedModel):
 
 
 class DialogNoticeClose(GeneratedModel):
-    type: Literal['minecraft:notice'] = 'minecraft:notice'
+    type: Literal['minecraft:notice', 'notice'] = 'minecraft:notice'
     action: Button | None = None  # The only action in footer. Defaults to `gui.ok` label with no action or tooltip.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None
     inputs: list[InputControl] | None = None
     can_close_with_escape: bool | None = None  # Whether the dialog can be closed with ESC key. Defaults to `true`.
-    after_action: Literal['minecraft:close'] = 'minecraft:close'  # An additional operation performed on dialog after click or submit actions. Defaults to `close`.  Value `none` requires `pause` set to `false`.
+    after_action: Literal['minecraft:close', 'close'] | None = 'minecraft:close'  # An additional operation performed on dialog after click or submit actions. Defaults to `close`.  Value `none` requires `pause` set to `false`.
     pause: bool | None = None  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.
 
 
 class DialogNoticeNone2(GeneratedModel):
-    type: Literal['minecraft:notice'] = 'minecraft:notice'
+    type: Literal['minecraft:notice', 'notice'] = 'minecraft:notice'
     action: Button | None = None  # The only action in footer. Defaults to `gui.ok` label with no action or tooltip.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None
     inputs: list[InputControl] | None = None
     can_close_with_escape: bool | None = None  # Whether the dialog can be closed with ESC key. Defaults to `true`.
-    after_action: Literal['minecraft:none'] = 'minecraft:none'  # An additional operation performed on dialog after click or submit actions. Defaults to `close`.  Value `none` requires `pause` set to `false`.
+    after_action: Literal['minecraft:none', 'none'] | None = 'minecraft:none'  # An additional operation performed on dialog after click or submit actions. Defaults to `close`.  Value `none` requires `pause` set to `false`.
     pause: Literal[False] = False  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.  The currently selected `after_action` only supports the value `false`
 
 
 class DialogNoticeWaitForResponse(GeneratedModel):
-    type: Literal['minecraft:notice'] = 'minecraft:notice'
+    type: Literal['minecraft:notice', 'notice'] = 'minecraft:notice'
     action: Button | None = None  # The only action in footer. Defaults to `gui.ok` label with no action or tooltip.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
     body: DialogBody | list[DialogBody] | None = None
     inputs: list[InputControl] | None = None
     can_close_with_escape: bool | None = None  # Whether the dialog can be closed with ESC key. Defaults to `true`.
-    after_action: Literal['minecraft:wait_for_response'] = 'minecraft:wait_for_response'  # An additional operation performed on dialog after click or submit actions. Defaults to `close`.  Value `none` requires `pause` set to `false`.
+    after_action: Literal['minecraft:wait_for_response', 'wait_for_response'] | None = 'minecraft:wait_for_response'  # An additional operation performed on dialog after click or submit actions. Defaults to `close`.  Value `none` requires `pause` set to `false`.
     pause: bool | None = None  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.
 
 
 type DialogNotice = DialogNoticeNone | DialogNoticeClose | DialogNoticeNone2 | DialogNoticeWaitForResponse
 
 class DialogServerLinksNone(GeneratedModel):
-    type: Literal['minecraft:server_links'] = 'minecraft:server_links'
+    type: Literal['minecraft:server_links', 'server_links'] = 'minecraft:server_links'
     button_width: Annotated[int, Field(ge=1)] | None = None  # Width of buttons in the list. Defaults to 150.
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
     columns: Annotated[int, Field(ge=1)] | None = None  # The number of columns. Defaults to 2.
@@ -258,7 +258,7 @@ class DialogServerLinksNone(GeneratedModel):
 
 
 class DialogServerLinksClose(GeneratedModel):
-    type: Literal['minecraft:server_links'] = 'minecraft:server_links'
+    type: Literal['minecraft:server_links', 'server_links'] = 'minecraft:server_links'
     button_width: Annotated[int, Field(ge=1)] | None = None  # Width of buttons in the list. Defaults to 150.
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
     columns: Annotated[int, Field(ge=1)] | None = None  # The number of columns. Defaults to 2.
@@ -267,12 +267,12 @@ class DialogServerLinksClose(GeneratedModel):
     body: DialogBody | list[DialogBody] | None = None
     inputs: list[InputControl] | None = None
     can_close_with_escape: bool | None = None  # Whether the dialog can be closed with ESC key. Defaults to `true`.
-    after_action: Literal['minecraft:close'] = 'minecraft:close'  # An additional operation performed on dialog after click or submit actions. Defaults to `close`.  Value `none` requires `pause` set to `false`.
+    after_action: Literal['minecraft:close', 'close'] | None = 'minecraft:close'  # An additional operation performed on dialog after click or submit actions. Defaults to `close`.  Value `none` requires `pause` set to `false`.
     pause: bool | None = None  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.
 
 
 class DialogServerLinksNone2(GeneratedModel):
-    type: Literal['minecraft:server_links'] = 'minecraft:server_links'
+    type: Literal['minecraft:server_links', 'server_links'] = 'minecraft:server_links'
     button_width: Annotated[int, Field(ge=1)] | None = None  # Width of buttons in the list. Defaults to 150.
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
     columns: Annotated[int, Field(ge=1)] | None = None  # The number of columns. Defaults to 2.
@@ -281,12 +281,12 @@ class DialogServerLinksNone2(GeneratedModel):
     body: DialogBody | list[DialogBody] | None = None
     inputs: list[InputControl] | None = None
     can_close_with_escape: bool | None = None  # Whether the dialog can be closed with ESC key. Defaults to `true`.
-    after_action: Literal['minecraft:none'] = 'minecraft:none'  # An additional operation performed on dialog after click or submit actions. Defaults to `close`.  Value `none` requires `pause` set to `false`.
+    after_action: Literal['minecraft:none', 'none'] | None = 'minecraft:none'  # An additional operation performed on dialog after click or submit actions. Defaults to `close`.  Value `none` requires `pause` set to `false`.
     pause: Literal[False] = False  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.  The currently selected `after_action` only supports the value `false`
 
 
 class DialogServerLinksWaitForResponse(GeneratedModel):
-    type: Literal['minecraft:server_links'] = 'minecraft:server_links'
+    type: Literal['minecraft:server_links', 'server_links'] = 'minecraft:server_links'
     button_width: Annotated[int, Field(ge=1)] | None = None  # Width of buttons in the list. Defaults to 150.
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
     columns: Annotated[int, Field(ge=1)] | None = None  # The number of columns. Defaults to 2.
@@ -295,7 +295,7 @@ class DialogServerLinksWaitForResponse(GeneratedModel):
     body: DialogBody | list[DialogBody] | None = None
     inputs: list[InputControl] | None = None
     can_close_with_escape: bool | None = None  # Whether the dialog can be closed with ESC key. Defaults to `true`.
-    after_action: Literal['minecraft:wait_for_response'] = 'minecraft:wait_for_response'  # An additional operation performed on dialog after click or submit actions. Defaults to `close`.  Value `none` requires `pause` set to `false`.
+    after_action: Literal['minecraft:wait_for_response', 'wait_for_response'] | None = 'minecraft:wait_for_response'  # An additional operation performed on dialog after click or submit actions. Defaults to `close`.  Value `none` requires `pause` set to `false`.
     pause: bool | None = None  # Whether the dialog should pause the game in single-player mode. Defaults to `true`.
 
 

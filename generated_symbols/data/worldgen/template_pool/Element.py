@@ -12,19 +12,19 @@ from pydantic import Field
 
 
 class ElementFeaturePoolElement(FeatureElement):
-    element_type: Literal['minecraft:feature_pool_element'] = 'minecraft:feature_pool_element'
+    element_type: Literal['minecraft:feature_pool_element', 'feature_pool_element'] = 'minecraft:feature_pool_element'
 
 
 class ElementLegacySinglePoolElement(SingleElement):
-    element_type: Literal['minecraft:legacy_single_pool_element'] = 'minecraft:legacy_single_pool_element'
+    element_type: Literal['minecraft:legacy_single_pool_element', 'legacy_single_pool_element'] = 'minecraft:legacy_single_pool_element'
 
 
 class ElementListPoolElement(ListElement):
-    element_type: Literal['minecraft:list_pool_element'] = 'minecraft:list_pool_element'
+    element_type: Literal['minecraft:list_pool_element', 'list_pool_element'] = 'minecraft:list_pool_element'
 
 
 class ElementSinglePoolElement(SingleElement):
-    element_type: Literal['minecraft:single_pool_element'] = 'minecraft:single_pool_element'
+    element_type: Literal['minecraft:single_pool_element', 'single_pool_element'] = 'minecraft:single_pool_element'
 
 
 type Element = Annotated[

@@ -21,103 +21,103 @@ from pydantic import Field
 
 
 class EntitySubPredicateComponents(GeneratedModel):
-    type: Literal['minecraft:components'] = 'minecraft:components'
+    type: Literal['minecraft:components', 'components'] = 'minecraft:components'
 
 
 class EntitySubPredicateDistance(DistancePredicate):
-    type: Literal['minecraft:distance'] = 'minecraft:distance'
+    type: Literal['minecraft:distance', 'distance'] = 'minecraft:distance'
 
 
 class EntitySubPredicateEffects(GeneratedModel):
-    type: Literal['minecraft:effects'] = 'minecraft:effects'
+    type: Literal['minecraft:effects', 'effects'] = 'minecraft:effects'
 
 
 class EntitySubPredicateEntityTags(EntityTagPredicate):
-    type: Literal['minecraft:entity_tags'] = 'minecraft:entity_tags'
+    type: Literal['minecraft:entity_tags', 'entity_tags'] = 'minecraft:entity_tags'
 
 
 class EntitySubPredicateEntityType(GeneratedModel):
-    type: Literal['minecraft:entity_type'] = 'minecraft:entity_type'
+    type: Literal['minecraft:entity_type', 'entity_type'] = 'minecraft:entity_type'
 
 
 class EntitySubPredicateEquipment(GeneratedModel):
-    type: Literal['minecraft:equipment'] = 'minecraft:equipment'
+    type: Literal['minecraft:equipment', 'equipment'] = 'minecraft:equipment'
 
 
 class EntitySubPredicateFlags(EntityFlagsPredicate):
-    type: Literal['minecraft:flags'] = 'minecraft:flags'
+    type: Literal['minecraft:flags', 'flags'] = 'minecraft:flags'
 
 
 class EntitySubPredicateLocation(LocationPredicate):
-    type: Literal['minecraft:location'] = 'minecraft:location'
+    type: Literal['minecraft:location', 'location'] = 'minecraft:location'
 
 
 class EntitySubPredicateMovement(MovementPredicate):
-    type: Literal['minecraft:movement'] = 'minecraft:movement'
+    type: Literal['minecraft:movement', 'movement'] = 'minecraft:movement'
 
 
 class EntitySubPredicateMovementAffectedBy(LocationPredicate):
-    type: Literal['minecraft:movement_affected_by'] = 'minecraft:movement_affected_by'
+    type: Literal['minecraft:movement_affected_by', 'movement_affected_by'] = 'minecraft:movement_affected_by'
 
 
 class EntitySubPredicateNbt(GeneratedModel):
-    type: Literal['minecraft:nbt'] = 'minecraft:nbt'
+    type: Literal['minecraft:nbt', 'nbt'] = 'minecraft:nbt'
 
 
 class EntitySubPredicatePassenger(GeneratedModel):
-    type: Literal['minecraft:passenger'] = 'minecraft:passenger'
+    type: Literal['minecraft:passenger', 'passenger'] = 'minecraft:passenger'
 
 
 class EntitySubPredicatePeriodicTick(GeneratedModel):
-    type: Literal['minecraft:periodic_tick'] = 'minecraft:periodic_tick'
+    type: Literal['minecraft:periodic_tick', 'periodic_tick'] = 'minecraft:periodic_tick'
 
 
 class EntitySubPredicatePredicates(GeneratedModel):
-    type: Literal['minecraft:predicates'] = 'minecraft:predicates'
+    type: Literal['minecraft:predicates', 'predicates'] = 'minecraft:predicates'
 
 
 class EntitySubPredicateSlots(GeneratedModel):
-    type: Literal['minecraft:slots'] = 'minecraft:slots'
+    type: Literal['minecraft:slots', 'slots'] = 'minecraft:slots'
 
 
 class EntitySubPredicateSteppingOn(LocationPredicate):
-    type: Literal['minecraft:stepping_on'] = 'minecraft:stepping_on'
+    type: Literal['minecraft:stepping_on', 'stepping_on'] = 'minecraft:stepping_on'
 
 
 class EntitySubPredicateTargetedEntity(GeneratedModel):
-    type: Literal['minecraft:targeted_entity'] = 'minecraft:targeted_entity'
+    type: Literal['minecraft:targeted_entity', 'targeted_entity'] = 'minecraft:targeted_entity'
 
 
 class EntitySubPredicateTeam(GeneratedModel):
-    type: Literal['minecraft:team'] = 'minecraft:team'
+    type: Literal['minecraft:team', 'team'] = 'minecraft:team'
 
 
 class EntitySubPredicateTypeSpecificCubeMob(SlimePredicate):
-    type: Literal['minecraft:type_specific/cube_mob'] = 'minecraft:type_specific/cube_mob'
+    type: Literal['minecraft:type_specific/cube_mob', 'type_specific/cube_mob'] = 'minecraft:type_specific/cube_mob'
 
 
 class EntitySubPredicateTypeSpecificFishingHook(FishingHookPredicate):
-    type: Literal['minecraft:type_specific/fishing_hook'] = 'minecraft:type_specific/fishing_hook'
+    type: Literal['minecraft:type_specific/fishing_hook', 'type_specific/fishing_hook'] = 'minecraft:type_specific/fishing_hook'
 
 
 class EntitySubPredicateTypeSpecificLightning(LightningBoltPredicate):
-    type: Literal['minecraft:type_specific/lightning'] = 'minecraft:type_specific/lightning'
+    type: Literal['minecraft:type_specific/lightning', 'type_specific/lightning'] = 'minecraft:type_specific/lightning'
 
 
 class EntitySubPredicateTypeSpecificPlayer(PlayerPredicate):
-    type: Literal['minecraft:type_specific/player'] = 'minecraft:type_specific/player'
+    type: Literal['minecraft:type_specific/player', 'type_specific/player'] = 'minecraft:type_specific/player'
 
 
 class EntitySubPredicateTypeSpecificRaider(RaiderPredicate):
-    type: Literal['minecraft:type_specific/raider'] = 'minecraft:type_specific/raider'
+    type: Literal['minecraft:type_specific/raider', 'type_specific/raider'] = 'minecraft:type_specific/raider'
 
 
 class EntitySubPredicateTypeSpecificSheep(SheepPredicate):
-    type: Literal['minecraft:type_specific/sheep'] = 'minecraft:type_specific/sheep'
+    type: Literal['minecraft:type_specific/sheep', 'type_specific/sheep'] = 'minecraft:type_specific/sheep'
 
 
 class EntitySubPredicateVehicle(GeneratedModel):
-    type: Literal['minecraft:vehicle'] = 'minecraft:vehicle'
+    type: Literal['minecraft:vehicle', 'vehicle'] = 'minecraft:vehicle'
 
 
 type EntitySubPredicate = Annotated[

@@ -25,67 +25,67 @@ from pydantic import Field
 
 
 class PlacementModifierBlockPredicateFilter(BlockPredicateFilter):
-    type: Literal['minecraft:block_predicate_filter'] = 'minecraft:block_predicate_filter'
+    type: Literal['minecraft:block_predicate_filter', 'block_predicate_filter'] = 'minecraft:block_predicate_filter'
 
 
 class PlacementModifierCount(CountModifier):
-    type: Literal['minecraft:count'] = 'minecraft:count'
+    type: Literal['minecraft:count', 'count'] = 'minecraft:count'
 
 
 class PlacementModifierCountOnEveryLayer(CountOnEveryLayerModifier):
-    type: Literal['minecraft:count_on_every_layer'] = 'minecraft:count_on_every_layer'
+    type: Literal['minecraft:count_on_every_layer', 'count_on_every_layer'] = 'minecraft:count_on_every_layer'
 
 
 class PlacementModifierCuboid(CuboidModifier):
-    type: Literal['minecraft:cuboid'] = 'minecraft:cuboid'
+    type: Literal['minecraft:cuboid', 'cuboid'] = 'minecraft:cuboid'
 
 
 class PlacementModifierEnvironmentScan(EnvironmentScanModifier):
-    type: Literal['minecraft:environment_scan'] = 'minecraft:environment_scan'
+    type: Literal['minecraft:environment_scan', 'environment_scan'] = 'minecraft:environment_scan'
 
 
 class PlacementModifierFixedPlacement(FixedPlacementModifier):
-    type: Literal['minecraft:fixed_placement'] = 'minecraft:fixed_placement'
+    type: Literal['minecraft:fixed_placement', 'fixed_placement'] = 'minecraft:fixed_placement'
 
 
 class PlacementModifierHeightRange(HeightRangeModifier):
-    type: Literal['minecraft:height_range'] = 'minecraft:height_range'
+    type: Literal['minecraft:height_range', 'height_range'] = 'minecraft:height_range'
 
 
 class PlacementModifierHeightmap(HeightmapModifier):
-    type: Literal['minecraft:heightmap'] = 'minecraft:heightmap'
+    type: Literal['minecraft:heightmap', 'heightmap'] = 'minecraft:heightmap'
 
 
 class PlacementModifierNoiseBasedCount(NoiseBasedCountModifier):
-    type: Literal['minecraft:noise_based_count'] = 'minecraft:noise_based_count'
+    type: Literal['minecraft:noise_based_count', 'noise_based_count'] = 'minecraft:noise_based_count'
 
 
 class PlacementModifierNoiseThresholdCount(NoiseThresholdCountModifier):
-    type: Literal['minecraft:noise_threshold_count'] = 'minecraft:noise_threshold_count'
+    type: Literal['minecraft:noise_threshold_count', 'noise_threshold_count'] = 'minecraft:noise_threshold_count'
 
 
 class PlacementModifierOffset(OffsetModifier):
-    type: Literal['minecraft:offset'] = 'minecraft:offset'
+    type: Literal['minecraft:offset', 'offset'] = 'minecraft:offset'
 
 
 class PlacementModifierRandomChance(RandomChanceModifier):
-    type: Literal['minecraft:random_chance'] = 'minecraft:random_chance'
+    type: Literal['minecraft:random_chance', 'random_chance'] = 'minecraft:random_chance'
 
 
 class PlacementModifierRandomlySelected(RandomlySelectedModifier):
-    type: Literal['minecraft:randomly_selected'] = 'minecraft:randomly_selected'
+    type: Literal['minecraft:randomly_selected', 'randomly_selected'] = 'minecraft:randomly_selected'
 
 
 class PlacementModifierRarityFilter(RarityFilter):
-    type: Literal['minecraft:rarity_filter'] = 'minecraft:rarity_filter'
+    type: Literal['minecraft:rarity_filter', 'rarity_filter'] = 'minecraft:rarity_filter'
 
 
 class PlacementModifierSurfaceRelativeThresholdFilter(SurfaceRelativeThresholdFilter):
-    type: Literal['minecraft:surface_relative_threshold_filter'] = 'minecraft:surface_relative_threshold_filter'
+    type: Literal['minecraft:surface_relative_threshold_filter', 'surface_relative_threshold_filter'] = 'minecraft:surface_relative_threshold_filter'
 
 
 class PlacementModifierSurfaceWaterDepthFilter(SurfaceWaterDepthFilter):
-    type: Literal['minecraft:surface_water_depth_filter'] = 'minecraft:surface_water_depth_filter'
+    type: Literal['minecraft:surface_water_depth_filter', 'surface_water_depth_filter'] = 'minecraft:surface_water_depth_filter'
 
 
 type PlacementModifier = Annotated[

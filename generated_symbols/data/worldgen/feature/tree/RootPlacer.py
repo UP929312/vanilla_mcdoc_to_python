@@ -14,7 +14,7 @@ if TYPE_CHECKING:
 
 
 class RootPlacerMangroveRootPlacer(MangroveRootPlacer):
-    type: Literal['minecraft:mangrove_root_placer'] = 'minecraft:mangrove_root_placer'
+    type: Literal['minecraft:mangrove_root_placer', 'mangrove_root_placer'] = 'minecraft:mangrove_root_placer'
     root_provider: BlockStateProviderRef
     trunk_offset_y: IntProvider[int] | int
     above_root_placement: AboveRootPlacement | None = None

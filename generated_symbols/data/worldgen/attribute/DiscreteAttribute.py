@@ -21,7 +21,7 @@ class KeyframesStruct(GeneratedModel, Generic[T]):
 
 
 class AttributeTrackStruct(AttributeTrackBase, Generic[T]):
-    modifier: Literal['override'] = 'override'
+    modifier: Literal['override'] | None = 'override'
     keyframes: Annotated[list[KeyframesStruct[T]], Field(min_length=1)]
 
 

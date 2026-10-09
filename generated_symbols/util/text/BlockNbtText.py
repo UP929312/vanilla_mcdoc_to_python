@@ -11,8 +11,8 @@ from generated_symbols.util.text.TextNbtBase import TextNbtBase
 class BlockNbtText(TextNbtBase):
     block: str
     nbt: str
-    source: Literal['block'] = 'block'
-    type: Literal['nbt'] = 'nbt'
+    source: Literal['block'] | None = 'block'
+    type: Literal['nbt'] | None = 'nbt'
 
 
 # ~~~ MODEL DUMP ~~~

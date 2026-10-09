@@ -11,15 +11,15 @@ from pydantic import Field
 
 
 class AttributeDisplayDefault(GeneratedModel):
-    type: Literal['minecraft:default'] = 'minecraft:default'
+    type: Literal['minecraft:default', 'default'] = 'minecraft:default'
 
 
 class AttributeDisplayHidden(GeneratedModel):
-    type: Literal['minecraft:hidden'] = 'minecraft:hidden'
+    type: Literal['minecraft:hidden', 'hidden'] = 'minecraft:hidden'
 
 
 class AttributeDisplayOverride(AttributeDisplayTextOverride):
-    type: Literal['minecraft:override'] = 'minecraft:override'
+    type: Literal['minecraft:override', 'override'] = 'minecraft:override'
 
 
 type AttributeDisplay = Annotated[

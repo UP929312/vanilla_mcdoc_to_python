@@ -14,23 +14,23 @@ from pydantic import Field
 
 
 class SpriteSourceDirectory(Directory):
-    type: Literal['minecraft:directory'] = 'minecraft:directory'
+    type: Literal['minecraft:directory', 'directory'] = 'minecraft:directory'
 
 
 class SpriteSourceFilter(Filter):
-    type: Literal['minecraft:filter'] = 'minecraft:filter'
+    type: Literal['minecraft:filter', 'filter'] = 'minecraft:filter'
 
 
 class SpriteSourcePalettedPermutations(PalettedPermutations):
-    type: Literal['minecraft:paletted_permutations'] = 'minecraft:paletted_permutations'
+    type: Literal['minecraft:paletted_permutations', 'paletted_permutations'] = 'minecraft:paletted_permutations'
 
 
 class SpriteSourceSingle(Single):
-    type: Literal['minecraft:single'] = 'minecraft:single'
+    type: Literal['minecraft:single', 'single'] = 'minecraft:single'
 
 
 class SpriteSourceUnstitch(Unstitch):
-    type: Literal['minecraft:unstitch'] = 'minecraft:unstitch'
+    type: Literal['minecraft:unstitch', 'unstitch'] = 'minecraft:unstitch'
 
 
 type SpriteSource = Annotated[

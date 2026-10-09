@@ -17,22 +17,22 @@ if TYPE_CHECKING:
 
 class SetWrittenBookPagesAppend(Conditions):
     pages: list[Filterable[Text]]  # Sets the pages of a written book.
-    mode: Literal['minecraft:append'] = 'minecraft:append'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:append', 'append'] = 'minecraft:append'  # Determines how the existing list should be modified.
 
 
 class SetWrittenBookPagesInsert(Conditions, InsertListOperation):
     pages: list[Filterable[Text]]  # Sets the pages of a written book.
-    mode: Literal['minecraft:insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:insert', 'insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
 
 
 class SetWrittenBookPagesReplaceAll(Conditions):
     pages: list[Filterable[Text]]  # Sets the pages of a written book.
-    mode: Literal['minecraft:replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:replace_all', 'replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
 
 
 class SetWrittenBookPagesReplaceSection(Conditions, ReplaceSectionListOperation):
     pages: list[Filterable[Text]]  # Sets the pages of a written book.
-    mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:replace_section', 'replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
 
 
 type SetWrittenBookPages = Annotated[

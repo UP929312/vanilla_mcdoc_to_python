@@ -6,13 +6,14 @@ Local link to file: generated_symbols/world/item/head/PlayerHead.py
 from typing import TYPE_CHECKING
 
 from generated_symbols.world.item.ItemBase import ItemBase
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.world.block.head.SkullOwner import SkullOwner
 
 
 class PlayerHead(ItemBase):
-    SkullOwner: SkullOwner | str | None = None
+    SkullOwner_: SkullOwner | str | None = Field(default=None, alias='SkullOwner')
 
 
 # ~~~ MODEL DUMP ~~~

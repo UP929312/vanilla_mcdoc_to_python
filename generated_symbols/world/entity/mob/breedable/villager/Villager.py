@@ -15,7 +15,7 @@ if TYPE_CHECKING:
 
 
 class Villager(Breedable, VillagerBase):
-    VillagerData: VillagerData | None = None
+    VillagerData_: VillagerData | None = Field(default=None, alias='VillagerData')
     VillagerDataFinalized: bool | None = None
     FoodLevel: Annotated[int, Field(ge=0, le=12)] | None = None  # Determines whether the villager will be available to reproduce.  When the value is `12` the villager can reproduce.  After reproducing, the value is reset to `0`.  To increase this value villagers will pick up food that is in range.  Foods: Potatoes, Carrots, & Beetroots increase the level by `1`. Bread increases the level by `4`.
     Gossips: list[PlayerReputationPart] | None = None  # Affects per-player reputation which affects trade offer pricing and iron golem behavior.  Reputation is assembled through events the villager has witnessed (within 16 blocks) or heard about from other villagers through gossip.  All reputation parts decay over time except `major_positive` which is only ever increased (when the villager is cured).  Decay occurs every 24k ticks (20 minutes), tracked by `LastGossipDecay`.  Once a reputation part decays to zero it is removed from the list.

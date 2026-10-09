@@ -16,39 +16,39 @@ from pydantic import Field
 
 
 class LootPoolEntryAlternatives(CompositePoolEntry):
-    type: Literal['minecraft:alternatives'] = 'minecraft:alternatives'
+    type: Literal['minecraft:alternatives', 'alternatives'] = 'minecraft:alternatives'
 
 
 class LootPoolEntryDynamic(DynamicPoolEntry):
-    type: Literal['minecraft:dynamic'] = 'minecraft:dynamic'
+    type: Literal['minecraft:dynamic', 'dynamic'] = 'minecraft:dynamic'
 
 
 class LootPoolEntryEmpty(SingletonPoolEntry):
-    type: Literal['minecraft:empty'] = 'minecraft:empty'
+    type: Literal['minecraft:empty', 'empty'] = 'minecraft:empty'
 
 
 class LootPoolEntryGroup(CompositePoolEntry):
-    type: Literal['minecraft:group'] = 'minecraft:group'
+    type: Literal['minecraft:group', 'group'] = 'minecraft:group'
 
 
 class LootPoolEntryItem(ItemPoolEntry):
-    type: Literal['minecraft:item'] = 'minecraft:item'
+    type: Literal['minecraft:item', 'item'] = 'minecraft:item'
 
 
 class LootPoolEntryLootTable(LootTablePoolEntry):
-    type: Literal['minecraft:loot_table'] = 'minecraft:loot_table'
+    type: Literal['minecraft:loot_table', 'loot_table'] = 'minecraft:loot_table'
 
 
 class LootPoolEntrySequence(CompositePoolEntry):
-    type: Literal['minecraft:sequence'] = 'minecraft:sequence'
+    type: Literal['minecraft:sequence', 'sequence'] = 'minecraft:sequence'
 
 
 class LootPoolEntrySlots(SlotsPoolEntry):
-    type: Literal['minecraft:slots'] = 'minecraft:slots'
+    type: Literal['minecraft:slots', 'slots'] = 'minecraft:slots'
 
 
 class LootPoolEntryTag(TagPoolEntry):
-    type: Literal['minecraft:tag'] = 'minecraft:tag'
+    type: Literal['minecraft:tag', 'tag'] = 'minecraft:tag'
 
 
 type LootPoolEntry = Annotated[

@@ -16,31 +16,31 @@ from pydantic import Field
 
 
 class ProcessorBlockAge(BlockAge):
-    processor_type: Literal['minecraft:block_age'] = 'minecraft:block_age'
+    processor_type: Literal['minecraft:block_age', 'block_age'] = 'minecraft:block_age'
 
 
 class ProcessorBlockIgnore(BlockIgnore):
-    processor_type: Literal['minecraft:block_ignore'] = 'minecraft:block_ignore'
+    processor_type: Literal['minecraft:block_ignore', 'block_ignore'] = 'minecraft:block_ignore'
 
 
 class ProcessorBlockRot(BlockRot):
-    processor_type: Literal['minecraft:block_rot'] = 'minecraft:block_rot'
+    processor_type: Literal['minecraft:block_rot', 'block_rot'] = 'minecraft:block_rot'
 
 
 class ProcessorCapped(Capped):
-    processor_type: Literal['minecraft:capped'] = 'minecraft:capped'
+    processor_type: Literal['minecraft:capped', 'capped'] = 'minecraft:capped'
 
 
 class ProcessorGravity(Gravity):
-    processor_type: Literal['minecraft:gravity'] = 'minecraft:gravity'
+    processor_type: Literal['minecraft:gravity', 'gravity'] = 'minecraft:gravity'
 
 
 class ProcessorProtectedBlocks(ProtectedBlocks):
-    processor_type: Literal['minecraft:protected_blocks'] = 'minecraft:protected_blocks'
+    processor_type: Literal['minecraft:protected_blocks', 'protected_blocks'] = 'minecraft:protected_blocks'
 
 
 class ProcessorRule(Rule):
-    processor_type: Literal['minecraft:rule'] = 'minecraft:rule'
+    processor_type: Literal['minecraft:rule', 'rule'] = 'minecraft:rule'
 
 
 type Processor = Annotated[

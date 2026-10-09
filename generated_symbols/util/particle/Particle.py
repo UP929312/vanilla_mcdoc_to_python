@@ -33,91 +33,91 @@ class ParticleUnknown(GeneratedModel):
 
 
 class ParticleBlock(BlockParticle):
-    type: Literal['minecraft:block'] = 'minecraft:block'
+    type: Literal['minecraft:block', 'block'] = 'minecraft:block'
 
 
 class ParticleBlockCrumble(BlockParticle):
-    type: Literal['minecraft:block_crumble'] = 'minecraft:block_crumble'
+    type: Literal['minecraft:block_crumble', 'block_crumble'] = 'minecraft:block_crumble'
 
 
 class ParticleBlockMarker(BlockParticle):
-    type: Literal['minecraft:block_marker'] = 'minecraft:block_marker'
+    type: Literal['minecraft:block_marker', 'block_marker'] = 'minecraft:block_marker'
 
 
 class ParticleDragonBreath(DragonBreathParticle):
-    type: Literal['minecraft:dragon_breath'] = 'minecraft:dragon_breath'
+    type: Literal['minecraft:dragon_breath', 'dragon_breath'] = 'minecraft:dragon_breath'
 
 
 class ParticleDust(DustParticle):
-    type: Literal['minecraft:dust'] = 'minecraft:dust'
+    type: Literal['minecraft:dust', 'dust'] = 'minecraft:dust'
 
 
 class ParticleDustColorTransition(DustColorTransitionParticle):
-    type: Literal['minecraft:dust_color_transition'] = 'minecraft:dust_color_transition'
+    type: Literal['minecraft:dust_color_transition', 'dust_color_transition'] = 'minecraft:dust_color_transition'
 
 
 class ParticleDustPillar(BlockParticle):
-    type: Literal['minecraft:dust_pillar'] = 'minecraft:dust_pillar'
+    type: Literal['minecraft:dust_pillar', 'dust_pillar'] = 'minecraft:dust_pillar'
 
 
 class ParticleEffect(EffectParticle):
-    type: Literal['minecraft:effect'] = 'minecraft:effect'
+    type: Literal['minecraft:effect', 'effect'] = 'minecraft:effect'
 
 
 class ParticleEntityEffect(EntityEffectParticle):
-    type: Literal['minecraft:entity_effect'] = 'minecraft:entity_effect'
+    type: Literal['minecraft:entity_effect', 'entity_effect'] = 'minecraft:entity_effect'
 
 
 class ParticleFallingDust(BlockParticle):
-    type: Literal['minecraft:falling_dust'] = 'minecraft:falling_dust'
+    type: Literal['minecraft:falling_dust', 'falling_dust'] = 'minecraft:falling_dust'
 
 
 class ParticleFlash(FlashParticle):
-    type: Literal['minecraft:flash'] = 'minecraft:flash'
+    type: Literal['minecraft:flash', 'flash'] = 'minecraft:flash'
 
 
 class ParticleGeyser(GeyserParticle):
-    type: Literal['minecraft:geyser'] = 'minecraft:geyser'
+    type: Literal['minecraft:geyser', 'geyser'] = 'minecraft:geyser'
 
 
 class ParticleGeyserBase(GeyserBaseParticle):
-    type: Literal['minecraft:geyser_base'] = 'minecraft:geyser_base'
+    type: Literal['minecraft:geyser_base', 'geyser_base'] = 'minecraft:geyser_base'
 
 
 class ParticleGeyserPlume(GeyserParticle):
-    type: Literal['minecraft:geyser_plume'] = 'minecraft:geyser_plume'
+    type: Literal['minecraft:geyser_plume', 'geyser_plume'] = 'minecraft:geyser_plume'
 
 
 class ParticleGeyserPoof(GeyserBaseParticle):
-    type: Literal['minecraft:geyser_poof'] = 'minecraft:geyser_poof'
+    type: Literal['minecraft:geyser_poof', 'geyser_poof'] = 'minecraft:geyser_poof'
 
 
 class ParticleInstantEffect(EffectParticle):
-    type: Literal['minecraft:instant_effect'] = 'minecraft:instant_effect'
+    type: Literal['minecraft:instant_effect', 'instant_effect'] = 'minecraft:instant_effect'
 
 
 class ParticleItem(ItemParticle):
-    type: Literal['minecraft:item'] = 'minecraft:item'
+    type: Literal['minecraft:item', 'item'] = 'minecraft:item'
 
 
 class ParticleSculkCharge(SculkChargeParticle):
-    type: Literal['minecraft:sculk_charge'] = 'minecraft:sculk_charge'
+    type: Literal['minecraft:sculk_charge', 'sculk_charge'] = 'minecraft:sculk_charge'
 
 
 class ParticleShriek(ShriekParticle):
-    type: Literal['minecraft:shriek'] = 'minecraft:shriek'
+    type: Literal['minecraft:shriek', 'shriek'] = 'minecraft:shriek'
 
 
 class ParticleTintedLeaves(TintedLeavesParticle):
-    type: Literal['minecraft:tinted_leaves'] = 'minecraft:tinted_leaves'
+    type: Literal['minecraft:tinted_leaves', 'tinted_leaves'] = 'minecraft:tinted_leaves'
 
 
 class ParticleTrail(TrailParticle):
-    type: Literal['minecraft:trail'] = 'minecraft:trail'
+    type: Literal['minecraft:trail', 'trail'] = 'minecraft:trail'
 
 
 class ParticleVibration(VibrationParticle):
-    type: Literal['minecraft:vibration'] = 'minecraft:vibration'
+    type: Literal['minecraft:vibration', 'vibration'] = 'minecraft:vibration'
 
 
 type Particle = ParticleNone | ParticleUnknown | ParticleBlock | ParticleBlockCrumble | ParticleBlockMarker | ParticleDragonBreath | ParticleDust | ParticleDustColorTransition | ParticleDustPillar | ParticleEffect | ParticleEntityEffect | ParticleFallingDust | ParticleFlash | ParticleGeyser | ParticleGeyserBase | ParticleGeyserPlume | ParticleGeyserPoof | ParticleInstantEffect | ParticleItem | ParticleSculkCharge | ParticleShriek | ParticleTintedLeaves | ParticleTrail | ParticleVibration

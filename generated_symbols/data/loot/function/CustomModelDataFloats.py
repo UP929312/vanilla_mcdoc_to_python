@@ -16,22 +16,22 @@ if TYPE_CHECKING:
 
 class CustomModelDataFloatsAppend(GeneratedModel):
     values: list[FloatNumberProviderRef]
-    mode: Literal['minecraft:append'] = 'minecraft:append'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:append', 'append'] = 'minecraft:append'  # Determines how the existing list should be modified.
 
 
 class CustomModelDataFloatsInsert(InsertListOperation):
     values: list[FloatNumberProviderRef]
-    mode: Literal['minecraft:insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:insert', 'insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
 
 
 class CustomModelDataFloatsReplaceAll(GeneratedModel):
     values: list[FloatNumberProviderRef]
-    mode: Literal['minecraft:replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:replace_all', 'replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
 
 
 class CustomModelDataFloatsReplaceSection(ReplaceSectionListOperation):
     values: list[FloatNumberProviderRef]
-    mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:replace_section', 'replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
 
 
 type CustomModelDataFloats = Annotated[

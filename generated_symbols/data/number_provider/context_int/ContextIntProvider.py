@@ -33,110 +33,110 @@ class ContextIntProviderStructNone(GeneratedModel):
 
 
 class ContextIntProviderStructAbs(SingleProvider):
-    type: Literal['minecraft:abs'] = 'minecraft:abs'
+    type: Literal['minecraft:abs', 'abs'] = 'minecraft:abs'
 
 
 class ContextIntProviderStructAdd(AggregateProvider):
-    type: Literal['minecraft:add'] = 'minecraft:add'
+    type: Literal['minecraft:add', 'add'] = 'minecraft:add'
 
 
 class ContextIntProviderStructAvg(AggregateProvider):
-    type: Literal['minecraft:avg'] = 'minecraft:avg'
+    type: Literal['minecraft:avg', 'avg'] = 'minecraft:avg'
 
 
 class ContextIntProviderStructBinomial(BinomialDistributionGenerator):
-    type: Literal['minecraft:binomial'] = 'minecraft:binomial'
+    type: Literal['minecraft:binomial', 'binomial'] = 'minecraft:binomial'
 
 
 class ContextIntProviderStructConditional(GeneratedModel):
-    type: Literal['minecraft:conditional'] = 'minecraft:conditional'
+    type: Literal['minecraft:conditional', 'conditional'] = 'minecraft:conditional'
     condition: PredicateRef
     on_true: IntRef
     on_false: IntRef | None = None  # Defaults to constant 0.
 
 
 class ContextIntProviderStructConstant(GeneratedModel):
-    type: Literal['minecraft:constant'] = 'minecraft:constant'
+    type: Literal['minecraft:constant', 'constant'] = 'minecraft:constant'
     value: int
 
 
 class ContextIntProviderStructDiv(BinaryProvider):
-    type: Literal['minecraft:div'] = 'minecraft:div'
+    type: Literal['minecraft:div', 'div'] = 'minecraft:div'
 
 
 class ContextIntProviderStructEnvironmentAttribute(GeneratedModel):
-    type: Literal['minecraft:environment_attribute'] = 'minecraft:environment_attribute'
+    type: Literal['minecraft:environment_attribute', 'environment_attribute'] = 'minecraft:environment_attribute'
     attribute: IntegerEnvironmentAttribute
 
 
 class ContextIntProviderStructFloorDiv(BinaryProvider):
-    type: Literal['minecraft:floor_div'] = 'minecraft:floor_div'
+    type: Literal['minecraft:floor_div', 'floor_div'] = 'minecraft:floor_div'
 
 
 class ContextIntProviderStructFloorMod(BinaryProvider):
-    type: Literal['minecraft:floor_mod'] = 'minecraft:floor_mod'
+    type: Literal['minecraft:floor_mod', 'floor_mod'] = 'minecraft:floor_mod'
 
 
 class ContextIntProviderStructFromFloat(GeneratedModel):
-    type: Literal['minecraft:from_float'] = 'minecraft:from_float'
+    type: Literal['minecraft:from_float', 'from_float'] = 'minecraft:from_float'
     input: FloatRef
 
 
 class ContextIntProviderStructMax(AggregateProvider):
-    type: Literal['minecraft:max'] = 'minecraft:max'
+    type: Literal['minecraft:max', 'max'] = 'minecraft:max'
 
 
 class ContextIntProviderStructMin(AggregateProvider):
-    type: Literal['minecraft:min'] = 'minecraft:min'
+    type: Literal['minecraft:min', 'min'] = 'minecraft:min'
 
 
 class ContextIntProviderStructMod(BinaryProvider):
-    type: Literal['minecraft:mod'] = 'minecraft:mod'
+    type: Literal['minecraft:mod', 'mod'] = 'minecraft:mod'
 
 
 class ContextIntProviderStructMul(AggregateProvider):
-    type: Literal['minecraft:mul'] = 'minecraft:mul'
+    type: Literal['minecraft:mul', 'mul'] = 'minecraft:mul'
 
 
 class ContextIntProviderStructNegate(SingleProvider):
-    type: Literal['minecraft:negate'] = 'minecraft:negate'
+    type: Literal['minecraft:negate', 'negate'] = 'minecraft:negate'
 
 
 class ContextIntProviderStructNumberDispatcher(GeneratedModel):
-    type: Literal['minecraft:number_dispatcher'] = 'minecraft:number_dispatcher'
+    type: Literal['minecraft:number_dispatcher', 'number_dispatcher'] = 'minecraft:number_dispatcher'
     cases: list[CasesStruct]  # Each condition is tested in order, the first in the list that passes is used.
     default: IntRef | None = None  # Defaults to constant 0.
 
 
 class ContextIntProviderStructPow(GeneratedModel):
-    type: Literal['minecraft:pow'] = 'minecraft:pow'
+    type: Literal['minecraft:pow', 'pow'] = 'minecraft:pow'
     base: IntRef
     exponent: IntRef
 
 
 class ContextIntProviderStructScore(ScoreboardValue):
-    type: Literal['minecraft:score'] = 'minecraft:score'
+    type: Literal['minecraft:score', 'score'] = 'minecraft:score'
 
 
 class ContextIntProviderStructStorage(GeneratedModel):
-    type: Literal['minecraft:storage'] = 'minecraft:storage'
+    type: Literal['minecraft:storage', 'storage'] = 'minecraft:storage'
     storage: Annotated[str, IdSpec(registry='storage')]
     path: str
     fallback: IntRef | None = None  # Defaults to constant 0.
 
 
 class ContextIntProviderStructSub(BinaryProvider):
-    type: Literal['minecraft:sub'] = 'minecraft:sub'
+    type: Literal['minecraft:sub', 'sub'] = 'minecraft:sub'
 
 
 class ContextIntProviderStructUniform(GeneratedModel):
-    type: Literal['minecraft:uniform'] = 'minecraft:uniform'
+    type: Literal['minecraft:uniform', 'uniform'] = 'minecraft:uniform'
     min: IntRef
     max: IntRef
 
 
 class ContextIntProviderStructWeightedList(GeneratedModel):
-    type: Literal['minecraft:weighted_list'] = 'minecraft:weighted_list'
+    type: Literal['minecraft:weighted_list', 'weighted_list'] = 'minecraft:weighted_list'
     distribution: NonEmptyWeightedList[IntRef]
 
 

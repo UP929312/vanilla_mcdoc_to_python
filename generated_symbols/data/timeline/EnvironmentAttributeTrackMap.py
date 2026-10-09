@@ -37,7 +37,7 @@ class KeyframesStruct(GeneratedModel):
 
 
 class EnvironmentAttributeTrackMapValueStruct1(AttributeTrackBase):
-    modifier: Literal['override'] = 'override'
+    modifier: Literal['override'] | None = 'override'
     keyframes: Annotated[list[KeyframesStruct], Field(min_length=1)]
 
 
@@ -47,7 +47,7 @@ class KeyframesStruct2(GeneratedModel):
 
 
 class EnvironmentAttributeTrackMapValueStruct2(AttributeTrackBase):
-    modifier: Literal['override'] = 'override'
+    modifier: Literal['override'] | None = 'override'
     keyframes: Annotated[list[KeyframesStruct2], Field(min_length=1)]
 
 
@@ -57,7 +57,7 @@ class KeyframesStruct3(GeneratedModel):
 
 
 class EnvironmentAttributeTrackMapValueStruct3(AttributeTrackBase):
-    modifier: Literal['override'] = 'override'
+    modifier: Literal['override'] | None = 'override'
     keyframes: Annotated[list[KeyframesStruct3], Field(min_length=1)]
 
 
@@ -87,7 +87,7 @@ class KeyframesStruct6(GeneratedModel):
 
 
 class EnvironmentAttributeTrackMapValueStruct6(AttributeTrackBase):
-    modifier: Literal['override'] = 'override'
+    modifier: Literal['override'] | None = 'override'
     keyframes: Annotated[list[KeyframesStruct6], Field(min_length=1)]
 
 
@@ -97,7 +97,7 @@ class KeyframesStruct7(GeneratedModel):
 
 
 class EnvironmentAttributeTrackMapValueStruct7(AttributeTrackBase):
-    modifier: Literal['override'] = 'override'
+    modifier: Literal['override'] | None = 'override'
     keyframes: Annotated[list[KeyframesStruct7], Field(min_length=1)]
 
 
@@ -117,7 +117,7 @@ class KeyframesStruct9(GeneratedModel):
 
 
 class EnvironmentAttributeTrackMapValueStruct9(AttributeTrackBase):
-    modifier: Literal['override'] = 'override'
+    modifier: Literal['override'] | None = 'override'
     keyframes: Annotated[list[KeyframesStruct9], Field(min_length=1)]
 
 
@@ -197,7 +197,7 @@ class KeyframesStruct17(GeneratedModel):
 
 
 class EnvironmentAttributeTrackMapValueStruct17(AttributeTrackBase):
-    modifier: Literal['override'] = 'override'
+    modifier: Literal['override'] | None = 'override'
     keyframes: Annotated[list[KeyframesStruct17], Field(min_length=1)]
 
 
@@ -207,7 +207,7 @@ class KeyframesStruct18(GeneratedModel):
 
 
 class EnvironmentAttributeTrackMapValueStruct18(AttributeTrackBase):
-    modifier: Literal['override'] = 'override'
+    modifier: Literal['override'] | None = 'override'
     keyframes: Annotated[list[KeyframesStruct18], Field(min_length=1)]
 
 

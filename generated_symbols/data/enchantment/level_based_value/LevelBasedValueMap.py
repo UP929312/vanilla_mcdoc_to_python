@@ -15,27 +15,27 @@ from pydantic import Field
 
 
 class LevelBasedValueMapClamped(ClampedLevelValue):
-    type: Literal['minecraft:clamped'] = 'minecraft:clamped'
+    type: Literal['minecraft:clamped', 'clamped'] = 'minecraft:clamped'
 
 
 class LevelBasedValueMapExponent(ExponentLevelValue):
-    type: Literal['minecraft:exponent'] = 'minecraft:exponent'
+    type: Literal['minecraft:exponent', 'exponent'] = 'minecraft:exponent'
 
 
 class LevelBasedValueMapFraction(FractionLevelValue):
-    type: Literal['minecraft:fraction'] = 'minecraft:fraction'
+    type: Literal['minecraft:fraction', 'fraction'] = 'minecraft:fraction'
 
 
 class LevelBasedValueMapLevelsSquared(SquaredLevelValue):
-    type: Literal['minecraft:levels_squared'] = 'minecraft:levels_squared'
+    type: Literal['minecraft:levels_squared', 'levels_squared'] = 'minecraft:levels_squared'
 
 
 class LevelBasedValueMapLinear(LinearLevelValue):
-    type: Literal['minecraft:linear'] = 'minecraft:linear'
+    type: Literal['minecraft:linear', 'linear'] = 'minecraft:linear'
 
 
 class LevelBasedValueMapLookup(LookupLevelValue):
-    type: Literal['minecraft:lookup'] = 'minecraft:lookup'
+    type: Literal['minecraft:lookup', 'lookup'] = 'minecraft:lookup'
 
 
 type LevelBasedValueMap = Annotated[

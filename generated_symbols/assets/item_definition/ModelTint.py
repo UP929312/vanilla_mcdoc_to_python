@@ -17,35 +17,35 @@ from pydantic import Field
 
 
 class ModelTintConstant(ConstantTint):
-    type: Literal['minecraft:constant'] = 'minecraft:constant'
+    type: Literal['minecraft:constant', 'constant'] = 'minecraft:constant'
 
 
 class ModelTintCustomModelData(CustomModelDataTint):
-    type: Literal['minecraft:custom_model_data'] = 'minecraft:custom_model_data'
+    type: Literal['minecraft:custom_model_data', 'custom_model_data'] = 'minecraft:custom_model_data'
 
 
 class ModelTintDye(DyeTint):
-    type: Literal['minecraft:dye'] = 'minecraft:dye'
+    type: Literal['minecraft:dye', 'dye'] = 'minecraft:dye'
 
 
 class ModelTintFirework(FireworkTint):
-    type: Literal['minecraft:firework'] = 'minecraft:firework'
+    type: Literal['minecraft:firework', 'firework'] = 'minecraft:firework'
 
 
 class ModelTintGrass(GrassTint):
-    type: Literal['minecraft:grass'] = 'minecraft:grass'
+    type: Literal['minecraft:grass', 'grass'] = 'minecraft:grass'
 
 
 class ModelTintMapColor(MapColorTint):
-    type: Literal['minecraft:map_color'] = 'minecraft:map_color'
+    type: Literal['minecraft:map_color', 'map_color'] = 'minecraft:map_color'
 
 
 class ModelTintPotion(PotionTint):
-    type: Literal['minecraft:potion'] = 'minecraft:potion'
+    type: Literal['minecraft:potion', 'potion'] = 'minecraft:potion'
 
 
 class ModelTintTeam(TeamTint):
-    type: Literal['minecraft:team'] = 'minecraft:team'
+    type: Literal['minecraft:team', 'team'] = 'minecraft:team'
 
 
 type ModelTint = Annotated[

@@ -17,39 +17,39 @@ from pydantic import Field
 
 
 class RuleTestAllOf(CompositeMatch):
-    predicate_type: Literal['minecraft:all_of'] = 'minecraft:all_of'
+    predicate_type: Literal['minecraft:all_of', 'all_of'] = 'minecraft:all_of'
 
 
 class RuleTestAnyOf(CompositeMatch):
-    predicate_type: Literal['minecraft:any_of'] = 'minecraft:any_of'
+    predicate_type: Literal['minecraft:any_of', 'any_of'] = 'minecraft:any_of'
 
 
 class RuleTestBlockMatch(BlockMatch):
-    predicate_type: Literal['minecraft:block_match'] = 'minecraft:block_match'
+    predicate_type: Literal['minecraft:block_match', 'block_match'] = 'minecraft:block_match'
 
 
 class RuleTestBlockstateMatch(BlockStateMatch):
-    predicate_type: Literal['minecraft:blockstate_match'] = 'minecraft:blockstate_match'
+    predicate_type: Literal['minecraft:blockstate_match', 'blockstate_match'] = 'minecraft:blockstate_match'
 
 
 class RuleTestHeightMatch(HeightMatch):
-    predicate_type: Literal['minecraft:height_match'] = 'minecraft:height_match'
+    predicate_type: Literal['minecraft:height_match', 'height_match'] = 'minecraft:height_match'
 
 
 class RuleTestNot(InvertedMatch):
-    predicate_type: Literal['minecraft:not'] = 'minecraft:not'
+    predicate_type: Literal['minecraft:not', 'not'] = 'minecraft:not'
 
 
 class RuleTestRandomBlockMatch(RandomBlockMatch):
-    predicate_type: Literal['minecraft:random_block_match'] = 'minecraft:random_block_match'
+    predicate_type: Literal['minecraft:random_block_match', 'random_block_match'] = 'minecraft:random_block_match'
 
 
 class RuleTestRandomBlockstateMatch(RandomBlockStateMatch):
-    predicate_type: Literal['minecraft:random_blockstate_match'] = 'minecraft:random_blockstate_match'
+    predicate_type: Literal['minecraft:random_blockstate_match', 'random_blockstate_match'] = 'minecraft:random_blockstate_match'
 
 
 class RuleTestTagMatch(TagMatch):
-    predicate_type: Literal['minecraft:tag_match'] = 'minecraft:tag_match'
+    predicate_type: Literal['minecraft:tag_match', 'tag_match'] = 'minecraft:tag_match'
 
 
 type RuleTest = Annotated[

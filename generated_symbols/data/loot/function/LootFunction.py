@@ -55,21 +55,21 @@ if TYPE_CHECKING:
 
 
 class LootFunctionApplyBonusBinomialWithBonusCount(BinomialWithBonusCountFormula, Conditions):
-    type: Literal['minecraft:apply_bonus'] = 'minecraft:apply_bonus'
+    type: Literal['minecraft:apply_bonus', 'apply_bonus'] = 'minecraft:apply_bonus'
     enchantment: Annotated[str, IdSpec(registry='enchantment')]
-    formula: Literal['minecraft:binomial_with_bonus_count'] = 'minecraft:binomial_with_bonus_count'
+    formula: Literal['minecraft:binomial_with_bonus_count', 'binomial_with_bonus_count'] = 'minecraft:binomial_with_bonus_count'
 
 
 class LootFunctionApplyBonusOreDrops(Conditions):
-    type: Literal['minecraft:apply_bonus'] = 'minecraft:apply_bonus'
+    type: Literal['minecraft:apply_bonus', 'apply_bonus'] = 'minecraft:apply_bonus'
     enchantment: Annotated[str, IdSpec(registry='enchantment')]
-    formula: Literal['minecraft:ore_drops'] = 'minecraft:ore_drops'
+    formula: Literal['minecraft:ore_drops', 'ore_drops'] = 'minecraft:ore_drops'
 
 
 class LootFunctionApplyBonusUniformBonusCount(Conditions, UniformBonusFormula):
-    type: Literal['minecraft:apply_bonus'] = 'minecraft:apply_bonus'
+    type: Literal['minecraft:apply_bonus', 'apply_bonus'] = 'minecraft:apply_bonus'
     enchantment: Annotated[str, IdSpec(registry='enchantment')]
-    formula: Literal['minecraft:uniform_bonus_count'] = 'minecraft:uniform_bonus_count'
+    formula: Literal['minecraft:uniform_bonus_count', 'uniform_bonus_count'] = 'minecraft:uniform_bonus_count'
 
 
 type LootFunctionApplyBonus = Annotated[
@@ -78,155 +78,155 @@ type LootFunctionApplyBonus = Annotated[
 ]
 
 class LootFunctionCopyComponents(CopyComponents):
-    type: Literal['minecraft:copy_components'] = 'minecraft:copy_components'
+    type: Literal['minecraft:copy_components', 'copy_components'] = 'minecraft:copy_components'
 
 
 class LootFunctionCopyCustomData(CopyNbt):
-    type: Literal['minecraft:copy_custom_data'] = 'minecraft:copy_custom_data'
+    type: Literal['minecraft:copy_custom_data', 'copy_custom_data'] = 'minecraft:copy_custom_data'
 
 
 class LootFunctionCopyName(CopyName):
-    type: Literal['minecraft:copy_name'] = 'minecraft:copy_name'
+    type: Literal['minecraft:copy_name', 'copy_name'] = 'minecraft:copy_name'
 
 
 class LootFunctionCopyState(CopyState):
-    type: Literal['minecraft:copy_state'] = 'minecraft:copy_state'
+    type: Literal['minecraft:copy_state', 'copy_state'] = 'minecraft:copy_state'
 
 
 class LootFunctionDiscard(Conditions):
-    type: Literal['minecraft:discard'] = 'minecraft:discard'
+    type: Literal['minecraft:discard', 'discard'] = 'minecraft:discard'
 
 
 class LootFunctionEnchantRandomly(EnchantRandomly):
-    type: Literal['minecraft:enchant_randomly'] = 'minecraft:enchant_randomly'
+    type: Literal['minecraft:enchant_randomly', 'enchant_randomly'] = 'minecraft:enchant_randomly'
 
 
 class LootFunctionEnchantWithLevels(EnchantWithLevels):
-    type: Literal['minecraft:enchant_with_levels'] = 'minecraft:enchant_with_levels'
+    type: Literal['minecraft:enchant_with_levels', 'enchant_with_levels'] = 'minecraft:enchant_with_levels'
 
 
 class LootFunctionEnchantedCountIncrease(EnchantedCountIncrease):
-    type: Literal['minecraft:enchanted_count_increase'] = 'minecraft:enchanted_count_increase'
+    type: Literal['minecraft:enchanted_count_increase', 'enchanted_count_increase'] = 'minecraft:enchanted_count_increase'
 
 
 class LootFunctionExplorationMap(ExplorationMap):
-    type: Literal['minecraft:exploration_map'] = 'minecraft:exploration_map'
+    type: Literal['minecraft:exploration_map', 'exploration_map'] = 'minecraft:exploration_map'
 
 
 class LootFunctionExplosionDecay(Conditions):
-    type: Literal['minecraft:explosion_decay'] = 'minecraft:explosion_decay'
+    type: Literal['minecraft:explosion_decay', 'explosion_decay'] = 'minecraft:explosion_decay'
 
 
 class LootFunctionFillPlayerHead(FillPlayerHead):
-    type: Literal['minecraft:fill_player_head'] = 'minecraft:fill_player_head'
+    type: Literal['minecraft:fill_player_head', 'fill_player_head'] = 'minecraft:fill_player_head'
 
 
 class LootFunctionFiltered(Filtered):
-    type: Literal['minecraft:filtered'] = 'minecraft:filtered'
+    type: Literal['minecraft:filtered', 'filtered'] = 'minecraft:filtered'
 
 
 class LootFunctionFurnaceSmelt(Conditions):
-    type: Literal['minecraft:furnace_smelt'] = 'minecraft:furnace_smelt'
+    type: Literal['minecraft:furnace_smelt', 'furnace_smelt'] = 'minecraft:furnace_smelt'
 
 
 class LootFunctionLimitCount(LimitCount):
-    type: Literal['minecraft:limit_count'] = 'minecraft:limit_count'
+    type: Literal['minecraft:limit_count', 'limit_count'] = 'minecraft:limit_count'
 
 
 class LootFunctionModifyContents(ModifyContents):
-    type: Literal['minecraft:modify_contents'] = 'minecraft:modify_contents'
+    type: Literal['minecraft:modify_contents', 'modify_contents'] = 'minecraft:modify_contents'
 
 
 class LootFunctionSequence(Sequence):
-    type: Literal['minecraft:sequence'] = 'minecraft:sequence'
+    type: Literal['minecraft:sequence', 'sequence'] = 'minecraft:sequence'
 
 
 class LootFunctionSetAttributes(SetAttributes):
-    type: Literal['minecraft:set_attributes'] = 'minecraft:set_attributes'
+    type: Literal['minecraft:set_attributes', 'set_attributes'] = 'minecraft:set_attributes'
 
 
 class LootFunctionSetBannerPattern(SetBannerPattern):
-    type: Literal['minecraft:set_banner_pattern'] = 'minecraft:set_banner_pattern'
+    type: Literal['minecraft:set_banner_pattern', 'set_banner_pattern'] = 'minecraft:set_banner_pattern'
 
 
 class LootFunctionSetBookCover(SetBookCover):
-    type: Literal['minecraft:set_book_cover'] = 'minecraft:set_book_cover'
+    type: Literal['minecraft:set_book_cover', 'set_book_cover'] = 'minecraft:set_book_cover'
 
 
 class LootFunctionSetComponents(SetComponents):
-    type: Literal['minecraft:set_components'] = 'minecraft:set_components'
+    type: Literal['minecraft:set_components', 'set_components'] = 'minecraft:set_components'
 
 
 class LootFunctionSetContents(SetContents):
-    type: Literal['minecraft:set_contents'] = 'minecraft:set_contents'
+    type: Literal['minecraft:set_contents', 'set_contents'] = 'minecraft:set_contents'
 
 
 class LootFunctionSetCount(SetCount):
-    type: Literal['minecraft:set_count'] = 'minecraft:set_count'
+    type: Literal['minecraft:set_count', 'set_count'] = 'minecraft:set_count'
 
 
 class LootFunctionSetCustomData(SetCustomData):
-    type: Literal['minecraft:set_custom_data'] = 'minecraft:set_custom_data'
+    type: Literal['minecraft:set_custom_data', 'set_custom_data'] = 'minecraft:set_custom_data'
 
 
 class LootFunctionSetCustomModelData(SetCustomModelData):
-    type: Literal['minecraft:set_custom_model_data'] = 'minecraft:set_custom_model_data'
+    type: Literal['minecraft:set_custom_model_data', 'set_custom_model_data'] = 'minecraft:set_custom_model_data'
 
 
 class LootFunctionSetDamage(SetDamage):
-    type: Literal['minecraft:set_damage'] = 'minecraft:set_damage'
+    type: Literal['minecraft:set_damage', 'set_damage'] = 'minecraft:set_damage'
 
 
 class LootFunctionSetEnchantments(SetEnchantments):
-    type: Literal['minecraft:set_enchantments'] = 'minecraft:set_enchantments'
+    type: Literal['minecraft:set_enchantments', 'set_enchantments'] = 'minecraft:set_enchantments'
 
 
 class LootFunctionSetFireworkExplosion(SetFireworkExplosion):
-    type: Literal['minecraft:set_firework_explosion'] = 'minecraft:set_firework_explosion'
+    type: Literal['minecraft:set_firework_explosion', 'set_firework_explosion'] = 'minecraft:set_firework_explosion'
 
 
 class LootFunctionSetFireworks(SetFireworks):
-    type: Literal['minecraft:set_fireworks'] = 'minecraft:set_fireworks'
+    type: Literal['minecraft:set_fireworks', 'set_fireworks'] = 'minecraft:set_fireworks'
 
 
 class LootFunctionSetInstrument(SetInstrument):
-    type: Literal['minecraft:set_instrument'] = 'minecraft:set_instrument'
+    type: Literal['minecraft:set_instrument', 'set_instrument'] = 'minecraft:set_instrument'
 
 
 class LootFunctionSetItem(SetItem):
-    type: Literal['minecraft:set_item'] = 'minecraft:set_item'
+    type: Literal['minecraft:set_item', 'set_item'] = 'minecraft:set_item'
 
 
 class LootFunctionSetLootTable(SetLootTable):
-    type: Literal['minecraft:set_loot_table'] = 'minecraft:set_loot_table'
+    type: Literal['minecraft:set_loot_table', 'set_loot_table'] = 'minecraft:set_loot_table'
 
 
 class LootFunctionSetLoreAppend(Conditions):
-    type: Literal['minecraft:set_lore'] = 'minecraft:set_lore'
+    type: Literal['minecraft:set_lore', 'set_lore'] = 'minecraft:set_lore'
     entity: EntityTarget | None = None  # The entity used to resolve the text components.
     lore: list[Text]
-    mode: Literal['minecraft:append'] = 'minecraft:append'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:append', 'append'] = 'minecraft:append'  # Determines how the existing list should be modified.
 
 
 class LootFunctionSetLoreInsert(Conditions, InsertListOperation):
-    type: Literal['minecraft:set_lore'] = 'minecraft:set_lore'
+    type: Literal['minecraft:set_lore', 'set_lore'] = 'minecraft:set_lore'
     entity: EntityTarget | None = None  # The entity used to resolve the text components.
     lore: list[Text]
-    mode: Literal['minecraft:insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:insert', 'insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
 
 
 class LootFunctionSetLoreReplaceAll(Conditions):
-    type: Literal['minecraft:set_lore'] = 'minecraft:set_lore'
+    type: Literal['minecraft:set_lore', 'set_lore'] = 'minecraft:set_lore'
     entity: EntityTarget | None = None  # The entity used to resolve the text components.
     lore: list[Text]
-    mode: Literal['minecraft:replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:replace_all', 'replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
 
 
 class LootFunctionSetLoreReplaceSection(Conditions, ReplaceSectionListOperation):
-    type: Literal['minecraft:set_lore'] = 'minecraft:set_lore'
+    type: Literal['minecraft:set_lore', 'set_lore'] = 'minecraft:set_lore'
     entity: EntityTarget | None = None  # The entity used to resolve the text components.
     lore: list[Text]
-    mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:replace_section', 'replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
 
 
 type LootFunctionSetLore = Annotated[
@@ -235,51 +235,51 @@ type LootFunctionSetLore = Annotated[
 ]
 
 class LootFunctionSetName(SetName):
-    type: Literal['minecraft:set_name'] = 'minecraft:set_name'
+    type: Literal['minecraft:set_name', 'set_name'] = 'minecraft:set_name'
 
 
 class LootFunctionSetOminousBottleAmplifier(SetOminousBottleAmplifier):
-    type: Literal['minecraft:set_ominous_bottle_amplifier'] = 'minecraft:set_ominous_bottle_amplifier'
+    type: Literal['minecraft:set_ominous_bottle_amplifier', 'set_ominous_bottle_amplifier'] = 'minecraft:set_ominous_bottle_amplifier'
 
 
 class LootFunctionSetPotion(SetPotion):
-    type: Literal['minecraft:set_potion'] = 'minecraft:set_potion'
+    type: Literal['minecraft:set_potion', 'set_potion'] = 'minecraft:set_potion'
 
 
 class LootFunctionSetRandomDyes(SetRandomDyes):
-    type: Literal['minecraft:set_random_dyes'] = 'minecraft:set_random_dyes'
+    type: Literal['minecraft:set_random_dyes', 'set_random_dyes'] = 'minecraft:set_random_dyes'
 
 
 class LootFunctionSetRandomPotion(SetRandomPotion):
-    type: Literal['minecraft:set_random_potion'] = 'minecraft:set_random_potion'
+    type: Literal['minecraft:set_random_potion', 'set_random_potion'] = 'minecraft:set_random_potion'
 
 
 class LootFunctionSetStewEffect(SetStewEffect):
-    type: Literal['minecraft:set_stew_effect'] = 'minecraft:set_stew_effect'
+    type: Literal['minecraft:set_stew_effect', 'set_stew_effect'] = 'minecraft:set_stew_effect'
 
 
 class LootFunctionSetWritableBookPagesAppend(Conditions):
-    type: Literal['minecraft:set_writable_book_pages'] = 'minecraft:set_writable_book_pages'
+    type: Literal['minecraft:set_writable_book_pages', 'set_writable_book_pages'] = 'minecraft:set_writable_book_pages'
     pages: list[Filterable[str]]  # Sets the pages of a book and quill.
-    mode: Literal['minecraft:append'] = 'minecraft:append'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:append', 'append'] = 'minecraft:append'  # Determines how the existing list should be modified.
 
 
 class LootFunctionSetWritableBookPagesInsert(Conditions, InsertListOperation):
-    type: Literal['minecraft:set_writable_book_pages'] = 'minecraft:set_writable_book_pages'
+    type: Literal['minecraft:set_writable_book_pages', 'set_writable_book_pages'] = 'minecraft:set_writable_book_pages'
     pages: list[Filterable[str]]  # Sets the pages of a book and quill.
-    mode: Literal['minecraft:insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:insert', 'insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
 
 
 class LootFunctionSetWritableBookPagesReplaceAll(Conditions):
-    type: Literal['minecraft:set_writable_book_pages'] = 'minecraft:set_writable_book_pages'
+    type: Literal['minecraft:set_writable_book_pages', 'set_writable_book_pages'] = 'minecraft:set_writable_book_pages'
     pages: list[Filterable[str]]  # Sets the pages of a book and quill.
-    mode: Literal['minecraft:replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:replace_all', 'replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
 
 
 class LootFunctionSetWritableBookPagesReplaceSection(Conditions, ReplaceSectionListOperation):
-    type: Literal['minecraft:set_writable_book_pages'] = 'minecraft:set_writable_book_pages'
+    type: Literal['minecraft:set_writable_book_pages', 'set_writable_book_pages'] = 'minecraft:set_writable_book_pages'
     pages: list[Filterable[str]]  # Sets the pages of a book and quill.
-    mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:replace_section', 'replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
 
 
 type LootFunctionSetWritableBookPages = Annotated[
@@ -288,27 +288,27 @@ type LootFunctionSetWritableBookPages = Annotated[
 ]
 
 class LootFunctionSetWrittenBookPagesAppend(Conditions):
-    type: Literal['minecraft:set_written_book_pages'] = 'minecraft:set_written_book_pages'
+    type: Literal['minecraft:set_written_book_pages', 'set_written_book_pages'] = 'minecraft:set_written_book_pages'
     pages: list[Filterable[Text]]  # Sets the pages of a written book.
-    mode: Literal['minecraft:append'] = 'minecraft:append'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:append', 'append'] = 'minecraft:append'  # Determines how the existing list should be modified.
 
 
 class LootFunctionSetWrittenBookPagesInsert(Conditions, InsertListOperation):
-    type: Literal['minecraft:set_written_book_pages'] = 'minecraft:set_written_book_pages'
+    type: Literal['minecraft:set_written_book_pages', 'set_written_book_pages'] = 'minecraft:set_written_book_pages'
     pages: list[Filterable[Text]]  # Sets the pages of a written book.
-    mode: Literal['minecraft:insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:insert', 'insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
 
 
 class LootFunctionSetWrittenBookPagesReplaceAll(Conditions):
-    type: Literal['minecraft:set_written_book_pages'] = 'minecraft:set_written_book_pages'
+    type: Literal['minecraft:set_written_book_pages', 'set_written_book_pages'] = 'minecraft:set_written_book_pages'
     pages: list[Filterable[Text]]  # Sets the pages of a written book.
-    mode: Literal['minecraft:replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:replace_all', 'replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
 
 
 class LootFunctionSetWrittenBookPagesReplaceSection(Conditions, ReplaceSectionListOperation):
-    type: Literal['minecraft:set_written_book_pages'] = 'minecraft:set_written_book_pages'
+    type: Literal['minecraft:set_written_book_pages', 'set_written_book_pages'] = 'minecraft:set_written_book_pages'
     pages: list[Filterable[Text]]  # Sets the pages of a written book.
-    mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:replace_section', 'replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
 
 
 type LootFunctionSetWrittenBookPages = Annotated[
@@ -317,7 +317,7 @@ type LootFunctionSetWrittenBookPages = Annotated[
 ]
 
 class LootFunctionToggleTooltips(ToggleTooltips):
-    type: Literal['minecraft:toggle_tooltips'] = 'minecraft:toggle_tooltips'
+    type: Literal['minecraft:toggle_tooltips', 'toggle_tooltips'] = 'minecraft:toggle_tooltips'
 
 
 type LootFunction = Annotated[

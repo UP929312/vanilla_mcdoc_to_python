@@ -14,23 +14,23 @@ from pydantic import Field
 
 
 class ConsumeEffectApplyEffects(ApplyEffectsConsumeEffect):
-    type: Literal['minecraft:apply_effects'] = 'minecraft:apply_effects'
+    type: Literal['minecraft:apply_effects', 'apply_effects'] = 'minecraft:apply_effects'
 
 
 class ConsumeEffectClearAllEffects(GeneratedModel):
-    type: Literal['minecraft:clear_all_effects'] = 'minecraft:clear_all_effects'
+    type: Literal['minecraft:clear_all_effects', 'clear_all_effects'] = 'minecraft:clear_all_effects'
 
 
 class ConsumeEffectPlaySound(PlaySoundConsumeEffect):
-    type: Literal['minecraft:play_sound'] = 'minecraft:play_sound'
+    type: Literal['minecraft:play_sound', 'play_sound'] = 'minecraft:play_sound'
 
 
 class ConsumeEffectRemoveEffects(RemoveEffectsConsumeEffect):
-    type: Literal['minecraft:remove_effects'] = 'minecraft:remove_effects'
+    type: Literal['minecraft:remove_effects', 'remove_effects'] = 'minecraft:remove_effects'
 
 
 class ConsumeEffectTeleportRandomly(TeleportRandomlyConsumeEffect):
-    type: Literal['minecraft:teleport_randomly'] = 'minecraft:teleport_randomly'
+    type: Literal['minecraft:teleport_randomly', 'teleport_randomly'] = 'minecraft:teleport_randomly'
 
 
 type ConsumeEffect = Annotated[

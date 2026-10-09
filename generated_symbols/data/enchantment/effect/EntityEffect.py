@@ -24,63 +24,63 @@ from pydantic import Field
 
 
 class EntityEffectAllOf(AllOfEntityEffect):
-    type: Literal['minecraft:all_of'] = 'minecraft:all_of'
+    type: Literal['minecraft:all_of', 'all_of'] = 'minecraft:all_of'
 
 
 class EntityEffectApplyExhaustion(ApplyExhaustionEntityEffect):
-    type: Literal['minecraft:apply_exhaustion'] = 'minecraft:apply_exhaustion'
+    type: Literal['minecraft:apply_exhaustion', 'apply_exhaustion'] = 'minecraft:apply_exhaustion'
 
 
 class EntityEffectApplyImpulse(ApplyImpulseEntityEffect):
-    type: Literal['minecraft:apply_impulse'] = 'minecraft:apply_impulse'
+    type: Literal['minecraft:apply_impulse', 'apply_impulse'] = 'minecraft:apply_impulse'
 
 
 class EntityEffectApplyMobEffect(ApplyMobEffectEntityEffect):
-    type: Literal['minecraft:apply_mob_effect'] = 'minecraft:apply_mob_effect'
+    type: Literal['minecraft:apply_mob_effect', 'apply_mob_effect'] = 'minecraft:apply_mob_effect'
 
 
 class EntityEffectChangeItemDamage(ChangeItemDamageEffect):
-    type: Literal['minecraft:change_item_damage'] = 'minecraft:change_item_damage'
+    type: Literal['minecraft:change_item_damage', 'change_item_damage'] = 'minecraft:change_item_damage'
 
 
 class EntityEffectDamageEntity(DamageEntityEffect):
-    type: Literal['minecraft:damage_entity'] = 'minecraft:damage_entity'
+    type: Literal['minecraft:damage_entity', 'damage_entity'] = 'minecraft:damage_entity'
 
 
 class EntityEffectExplode(ExplodeEntityEffect):
-    type: Literal['minecraft:explode'] = 'minecraft:explode'
+    type: Literal['minecraft:explode', 'explode'] = 'minecraft:explode'
 
 
 class EntityEffectIgnite(IgniteEntityEffect):
-    type: Literal['minecraft:ignite'] = 'minecraft:ignite'
+    type: Literal['minecraft:ignite', 'ignite'] = 'minecraft:ignite'
 
 
 class EntityEffectPlaySound(PlaySoundEntityEffect):
-    type: Literal['minecraft:play_sound'] = 'minecraft:play_sound'
+    type: Literal['minecraft:play_sound', 'play_sound'] = 'minecraft:play_sound'
 
 
 class EntityEffectReplaceBlock(ReplaceBlockEntityEffect):
-    type: Literal['minecraft:replace_block'] = 'minecraft:replace_block'
+    type: Literal['minecraft:replace_block', 'replace_block'] = 'minecraft:replace_block'
 
 
 class EntityEffectReplaceDisk(ReplaceDiskEntityEffect):
-    type: Literal['minecraft:replace_disk'] = 'minecraft:replace_disk'
+    type: Literal['minecraft:replace_disk', 'replace_disk'] = 'minecraft:replace_disk'
 
 
 class EntityEffectRunFunction(RunFunctionEntityEffect):
-    type: Literal['minecraft:run_function'] = 'minecraft:run_function'
+    type: Literal['minecraft:run_function', 'run_function'] = 'minecraft:run_function'
 
 
 class EntityEffectSetBlockProperties(SetBlockPropertiesEntityEffect):
-    type: Literal['minecraft:set_block_properties'] = 'minecraft:set_block_properties'
+    type: Literal['minecraft:set_block_properties', 'set_block_properties'] = 'minecraft:set_block_properties'
 
 
 class EntityEffectSpawnParticles(SpawnParticlesEntityEffect):
-    type: Literal['minecraft:spawn_particles'] = 'minecraft:spawn_particles'
+    type: Literal['minecraft:spawn_particles', 'spawn_particles'] = 'minecraft:spawn_particles'
 
 
 class EntityEffectSummonEntity(SummonEntityEffect):
-    type: Literal['minecraft:summon_entity'] = 'minecraft:summon_entity'
+    type: Literal['minecraft:summon_entity', 'summon_entity'] = 'minecraft:summon_entity'
 
 
 type EntityEffect = Annotated[

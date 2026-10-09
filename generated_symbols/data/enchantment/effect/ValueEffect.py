@@ -15,27 +15,27 @@ from pydantic import Field
 
 
 class ValueEffectAdd(AddEffectValue):
-    type: Literal['minecraft:add'] = 'minecraft:add'
+    type: Literal['minecraft:add', 'add'] = 'minecraft:add'
 
 
 class ValueEffectAllOf(AllOfEffectValue):
-    type: Literal['minecraft:all_of'] = 'minecraft:all_of'
+    type: Literal['minecraft:all_of', 'all_of'] = 'minecraft:all_of'
 
 
 class ValueEffectExponential(ExponentialEffectValue):
-    type: Literal['minecraft:exponential'] = 'minecraft:exponential'
+    type: Literal['minecraft:exponential', 'exponential'] = 'minecraft:exponential'
 
 
 class ValueEffectMultiply(MultiplyEffectValue):
-    type: Literal['minecraft:multiply'] = 'minecraft:multiply'
+    type: Literal['minecraft:multiply', 'multiply'] = 'minecraft:multiply'
 
 
 class ValueEffectRemoveBinomial(ReduceBinomialEffectValue):
-    type: Literal['minecraft:remove_binomial'] = 'minecraft:remove_binomial'
+    type: Literal['minecraft:remove_binomial', 'remove_binomial'] = 'minecraft:remove_binomial'
 
 
 class ValueEffectSet(SetEffectValue):
-    type: Literal['minecraft:set'] = 'minecraft:set'
+    type: Literal['minecraft:set', 'set'] = 'minecraft:set'
 
 
 type ValueEffect = Annotated[

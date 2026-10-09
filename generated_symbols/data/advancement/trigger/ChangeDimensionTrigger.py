@@ -8,10 +8,11 @@ from typing import Annotated
 from generated_symbols.data.advancement.trigger.AllOptional import AllOptional
 from generated_symbols.data.advancement.trigger.PlayerConditions import PlayerConditions
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 
 class ChangeDimensionTriggerTypeArg(PlayerConditions):
-    from_: Annotated[str, IdSpec(registry='dimension')] | None = None
+    from_: Annotated[str, IdSpec(registry='dimension')] | None = Field(default=None, alias='from')
     to: Annotated[str, IdSpec(registry='dimension')] | None = None
 
 

@@ -7,6 +7,7 @@ from typing import TYPE_CHECKING
 
 from generated_symbols.base import GeneratedModel
 from generated_symbols.world.entity.EntityBase import EntityBase
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.BlockState import BlockState
@@ -18,7 +19,7 @@ class TileEntityDataStruct(GeneratedModel):
 
 class FallingBlock(EntityBase):
     TileEntityData: TileEntityDataStruct | None = None  # NBT data for the placed block.
-    BlockState: BlockState | None = None  # Block state for the placed block. Defaults to sand.
+    BlockState_: BlockState | None = Field(default=None, alias='BlockState')  # Block state for the placed block. Defaults to sand.
     Time: int | None = None  # Ticks it has existed.
     DropItem: bool | None = None  # Whether it should drop as a block when destroyed.
     HurtEntities: bool | None = None  # Whether this it should hurt entities.

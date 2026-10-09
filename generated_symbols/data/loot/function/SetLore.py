@@ -18,25 +18,25 @@ if TYPE_CHECKING:
 class SetLoreAppend(Conditions):
     entity: EntityTarget | None = None  # The entity used to resolve the text components.
     lore: list[Text]
-    mode: Literal['minecraft:append'] = 'minecraft:append'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:append', 'append'] = 'minecraft:append'  # Determines how the existing list should be modified.
 
 
 class SetLoreInsert(Conditions, InsertListOperation):
     entity: EntityTarget | None = None  # The entity used to resolve the text components.
     lore: list[Text]
-    mode: Literal['minecraft:insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:insert', 'insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
 
 
 class SetLoreReplaceAll(Conditions):
     entity: EntityTarget | None = None  # The entity used to resolve the text components.
     lore: list[Text]
-    mode: Literal['minecraft:replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:replace_all', 'replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
 
 
 class SetLoreReplaceSection(Conditions, ReplaceSectionListOperation):
     entity: EntityTarget | None = None  # The entity used to resolve the text components.
     lore: list[Text]
-    mode: Literal['minecraft:replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
+    mode: Literal['minecraft:replace_section', 'replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
 
 
 type SetLore = Annotated[

@@ -7,6 +7,7 @@ from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.world.item.ItemBase import ItemBase
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.world.item.compass.LodestonePos import LodestonePos
@@ -14,7 +15,7 @@ if TYPE_CHECKING:
 
 class Compass(ItemBase):
     LodestoneDimension: Annotated[str, IdSpec(registry='dimension')] | None = None
-    LodestonePos: LodestonePos | None = None
+    LodestonePos_: LodestonePos | None = Field(default=None, alias='LodestonePos')
     LodestoneTracked: bool | None = None  # Whether the compass should be linked to a lodestone. When true, the compass will reset if the lodestone at the position is removed.
 
 

@@ -24,43 +24,43 @@ class TypedBlockStateProviderNone(GeneratedModel):
 
 
 class TypedBlockStateProviderCopyProperties(CopyPropertiesProvider):
-    type: Literal['minecraft:copy_properties'] = 'minecraft:copy_properties'
+    type: Literal['minecraft:copy_properties', 'copy_properties'] = 'minecraft:copy_properties'
 
 
 class TypedBlockStateProviderDualNoise(DualNoiseProvider):
-    type: Literal['minecraft:dual_noise'] = 'minecraft:dual_noise'
+    type: Literal['minecraft:dual_noise', 'dual_noise'] = 'minecraft:dual_noise'
 
 
 class TypedBlockStateProviderNoise(NoiseProvider):
-    type: Literal['minecraft:noise'] = 'minecraft:noise'
+    type: Literal['minecraft:noise', 'noise'] = 'minecraft:noise'
 
 
 class TypedBlockStateProviderNoiseThreshold(NoiseThresholdProvider):
-    type: Literal['minecraft:noise_threshold'] = 'minecraft:noise_threshold'
+    type: Literal['minecraft:noise_threshold', 'noise_threshold'] = 'minecraft:noise_threshold'
 
 
 class TypedBlockStateProviderRandomBlock(RandomBlockStateProvider):
-    type: Literal['minecraft:random_block'] = 'minecraft:random_block'
+    type: Literal['minecraft:random_block', 'random_block'] = 'minecraft:random_block'
 
 
 class TypedBlockStateProviderRandomizedInt(RandomizedIntStateProvider):
-    type: Literal['minecraft:randomized_int'] = 'minecraft:randomized_int'
+    type: Literal['minecraft:randomized_int', 'randomized_int'] = 'minecraft:randomized_int'
 
 
 class TypedBlockStateProviderRotated(RotatedStateProvider):
-    type: Literal['minecraft:rotated'] = 'minecraft:rotated'
+    type: Literal['minecraft:rotated', 'rotated'] = 'minecraft:rotated'
 
 
 class TypedBlockStateProviderRuleBased(RuleBasedBlockStateProvider):
-    type: Literal['minecraft:rule_based'] = 'minecraft:rule_based'
+    type: Literal['minecraft:rule_based', 'rule_based'] = 'minecraft:rule_based'
 
 
 class TypedBlockStateProviderSimple(SimpleStateProvider):
-    type: Literal['minecraft:simple'] = 'minecraft:simple'
+    type: Literal['minecraft:simple', 'simple'] = 'minecraft:simple'
 
 
 class TypedBlockStateProviderWeighted(WeightedBlockStateProvider):
-    type: Literal['minecraft:weighted'] = 'minecraft:weighted'
+    type: Literal['minecraft:weighted', 'weighted'] = 'minecraft:weighted'
 
 
 type TypedBlockStateProvider = TypedBlockStateProviderNone | TypedBlockStateProviderCopyProperties | TypedBlockStateProviderDualNoise | TypedBlockStateProviderNoise | TypedBlockStateProviderNoiseThreshold | TypedBlockStateProviderRandomBlock | TypedBlockStateProviderRandomizedInt | TypedBlockStateProviderRotated | TypedBlockStateProviderRuleBased | TypedBlockStateProviderSimple | TypedBlockStateProviderWeighted
