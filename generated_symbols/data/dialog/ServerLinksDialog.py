@@ -32,6 +32,8 @@ class ServerLinksDialogNone(GeneratedModel):
 
 
 class ServerLinksDialogClose(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'dialog'
+
     button_width: Annotated[int, Field(ge=1)] | None = None  # Width of buttons in the list. Defaults to 150.
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
     columns: Annotated[int, Field(ge=1)] | None = None  # The number of columns. Defaults to 2.
@@ -45,6 +47,8 @@ class ServerLinksDialogClose(GeneratedModel):
 
 
 class ServerLinksDialogNone2(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'dialog'
+
     button_width: Annotated[int, Field(ge=1)] | None = None  # Width of buttons in the list. Defaults to 150.
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
     columns: Annotated[int, Field(ge=1)] | None = None  # The number of columns. Defaults to 2.
@@ -58,6 +62,8 @@ class ServerLinksDialogNone2(GeneratedModel):
 
 
 class ServerLinksDialogWaitForResponse(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'dialog'
+
     button_width: Annotated[int, Field(ge=1)] | None = None  # Width of buttons in the list. Defaults to 150.
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
     columns: Annotated[int, Field(ge=1)] | None = None  # The number of columns. Defaults to 2.

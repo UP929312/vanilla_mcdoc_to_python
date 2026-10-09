@@ -22,26 +22,38 @@ class TestEnvironmentAllOf(AllOffTestEnvironment):
 
 
 class TestEnvironmentClockTime(ClockTimeTestEnvironment):
+    __resource_dir__: ClassVar[str] = 'test_environment'
+
     type: Literal['minecraft:clock_time', 'clock_time'] = 'minecraft:clock_time'
 
 
 class TestEnvironmentDifficulty(DifficultyTestEnvironment):
+    __resource_dir__: ClassVar[str] = 'test_environment'
+
     type: Literal['minecraft:difficulty', 'difficulty'] = 'minecraft:difficulty'
 
 
 class TestEnvironmentFunction(FunctionTestEnvironment):
+    __resource_dir__: ClassVar[str] = 'test_environment'
+
     type: Literal['minecraft:function', 'function'] = 'minecraft:function'
 
 
 class TestEnvironmentGameRules(GameRulesTestEnvironment):
+    __resource_dir__: ClassVar[str] = 'test_environment'
+
     type: Literal['minecraft:game_rules', 'game_rules'] = 'minecraft:game_rules'
 
 
 class TestEnvironmentTimelineAttributes(TimelineAttributesTestEnvironment):
+    __resource_dir__: ClassVar[str] = 'test_environment'
+
     type: Literal['minecraft:timeline_attributes', 'timeline_attributes'] = 'minecraft:timeline_attributes'
 
 
 class TestEnvironmentWeather(WeatherTestEnvironment):
+    __resource_dir__: ClassVar[str] = 'test_environment'
+
     type: Literal['minecraft:weather', 'weather'] = 'minecraft:weather'
 
 

@@ -7,6 +7,7 @@ from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
+from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.color.RGBA import RGBA
@@ -16,7 +17,7 @@ if TYPE_CHECKING:
 
 
 class TextStyle(GeneratedModel):
-    color: str | TextColor | None = None
+    color: Annotated[str, Field(pattern='^#')] | TextColor | None = None
     shadow_color: RGBA | None = None  # Overrides the shadow properties of the text. If specified as 0, the shadow will never be displayed.
     font: Annotated[str, IdSpec(registry='font')] | None = None
     bold: bool | None = None

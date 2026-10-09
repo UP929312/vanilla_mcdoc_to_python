@@ -33,6 +33,8 @@ class DialogConfirmationNone(GeneratedModel):
 
 
 class DialogConfirmationClose(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'dialog'
+
     type: Literal['minecraft:confirmation', 'confirmation'] = 'minecraft:confirmation'
     yes: Button
     no: Button  # This action is also used for ESC-triggered exit.
@@ -46,6 +48,8 @@ class DialogConfirmationClose(GeneratedModel):
 
 
 class DialogConfirmationNone2(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'dialog'
+
     type: Literal['minecraft:confirmation', 'confirmation'] = 'minecraft:confirmation'
     yes: Button
     no: Button  # This action is also used for ESC-triggered exit.
@@ -59,6 +63,8 @@ class DialogConfirmationNone2(GeneratedModel):
 
 
 class DialogConfirmationWaitForResponse(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'dialog'
+
     type: Literal['minecraft:confirmation', 'confirmation'] = 'minecraft:confirmation'
     yes: Button
     no: Button  # This action is also used for ESC-triggered exit.
@@ -74,6 +80,8 @@ class DialogConfirmationWaitForResponse(GeneratedModel):
 type DialogConfirmation = DialogConfirmationNone | DialogConfirmationClose | DialogConfirmationNone2 | DialogConfirmationWaitForResponse
 
 class DialogDialogListNone(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'dialog'
+
     type: Literal['minecraft:dialog_list', 'dialog_list'] = 'minecraft:dialog_list'
     dialogs: DialogListRef
     button_width: Annotated[int, Field(ge=1)] | None = None  # Width of buttons in the list. Defaults to 150.
@@ -89,6 +97,8 @@ class DialogDialogListNone(GeneratedModel):
 
 
 class DialogDialogListClose(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'dialog'
+
     type: Literal['minecraft:dialog_list', 'dialog_list'] = 'minecraft:dialog_list'
     dialogs: DialogListRef
     button_width: Annotated[int, Field(ge=1)] | None = None  # Width of buttons in the list. Defaults to 150.
@@ -104,6 +114,8 @@ class DialogDialogListClose(GeneratedModel):
 
 
 class DialogDialogListNone2(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'dialog'
+
     type: Literal['minecraft:dialog_list', 'dialog_list'] = 'minecraft:dialog_list'
     dialogs: DialogListRef
     button_width: Annotated[int, Field(ge=1)] | None = None  # Width of buttons in the list. Defaults to 150.
@@ -119,6 +131,8 @@ class DialogDialogListNone2(GeneratedModel):
 
 
 class DialogDialogListWaitForResponse(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'dialog'
+
     type: Literal['minecraft:dialog_list', 'dialog_list'] = 'minecraft:dialog_list'
     dialogs: DialogListRef
     button_width: Annotated[int, Field(ge=1)] | None = None  # Width of buttons in the list. Defaults to 150.
@@ -136,6 +150,8 @@ class DialogDialogListWaitForResponse(GeneratedModel):
 type DialogDialogList = DialogDialogListNone | DialogDialogListClose | DialogDialogListNone2 | DialogDialogListWaitForResponse
 
 class DialogMultiActionNone(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'dialog'
+
     type: Literal['minecraft:multi_action', 'multi_action'] = 'minecraft:multi_action'
     actions: Annotated[list[Button], Field(min_length=1)]
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
@@ -150,6 +166,8 @@ class DialogMultiActionNone(GeneratedModel):
 
 
 class DialogMultiActionClose(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'dialog'
+
     type: Literal['minecraft:multi_action', 'multi_action'] = 'minecraft:multi_action'
     actions: Annotated[list[Button], Field(min_length=1)]
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
@@ -164,6 +182,8 @@ class DialogMultiActionClose(GeneratedModel):
 
 
 class DialogMultiActionNone2(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'dialog'
+
     type: Literal['minecraft:multi_action', 'multi_action'] = 'minecraft:multi_action'
     actions: Annotated[list[Button], Field(min_length=1)]
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
@@ -178,6 +198,8 @@ class DialogMultiActionNone2(GeneratedModel):
 
 
 class DialogMultiActionWaitForResponse(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'dialog'
+
     type: Literal['minecraft:multi_action', 'multi_action'] = 'minecraft:multi_action'
     actions: Annotated[list[Button], Field(min_length=1)]
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
@@ -194,6 +216,8 @@ class DialogMultiActionWaitForResponse(GeneratedModel):
 type DialogMultiAction = DialogMultiActionNone | DialogMultiActionClose | DialogMultiActionNone2 | DialogMultiActionWaitForResponse
 
 class DialogNoticeNone(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'dialog'
+
     type: Literal['minecraft:notice', 'notice'] = 'minecraft:notice'
     action: Button | None = None  # The only action in footer. Defaults to `gui.ok` label with no action or tooltip.
     title: Text
@@ -206,6 +230,8 @@ class DialogNoticeNone(GeneratedModel):
 
 
 class DialogNoticeClose(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'dialog'
+
     type: Literal['minecraft:notice', 'notice'] = 'minecraft:notice'
     action: Button | None = None  # The only action in footer. Defaults to `gui.ok` label with no action or tooltip.
     title: Text
@@ -218,6 +244,8 @@ class DialogNoticeClose(GeneratedModel):
 
 
 class DialogNoticeNone2(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'dialog'
+
     type: Literal['minecraft:notice', 'notice'] = 'minecraft:notice'
     action: Button | None = None  # The only action in footer. Defaults to `gui.ok` label with no action or tooltip.
     title: Text
@@ -230,6 +258,8 @@ class DialogNoticeNone2(GeneratedModel):
 
 
 class DialogNoticeWaitForResponse(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'dialog'
+
     type: Literal['minecraft:notice', 'notice'] = 'minecraft:notice'
     action: Button | None = None  # The only action in footer. Defaults to `gui.ok` label with no action or tooltip.
     title: Text
@@ -244,6 +274,8 @@ class DialogNoticeWaitForResponse(GeneratedModel):
 type DialogNotice = DialogNoticeNone | DialogNoticeClose | DialogNoticeNone2 | DialogNoticeWaitForResponse
 
 class DialogServerLinksNone(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'dialog'
+
     type: Literal['minecraft:server_links', 'server_links'] = 'minecraft:server_links'
     button_width: Annotated[int, Field(ge=1)] | None = None  # Width of buttons in the list. Defaults to 150.
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
@@ -258,6 +290,8 @@ class DialogServerLinksNone(GeneratedModel):
 
 
 class DialogServerLinksClose(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'dialog'
+
     type: Literal['minecraft:server_links', 'server_links'] = 'minecraft:server_links'
     button_width: Annotated[int, Field(ge=1)] | None = None  # Width of buttons in the list. Defaults to 150.
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
@@ -272,6 +306,8 @@ class DialogServerLinksClose(GeneratedModel):
 
 
 class DialogServerLinksNone2(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'dialog'
+
     type: Literal['minecraft:server_links', 'server_links'] = 'minecraft:server_links'
     button_width: Annotated[int, Field(ge=1)] | None = None  # Width of buttons in the list. Defaults to 150.
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
@@ -286,6 +322,8 @@ class DialogServerLinksNone2(GeneratedModel):
 
 
 class DialogServerLinksWaitForResponse(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'dialog'
+
     type: Literal['minecraft:server_links', 'server_links'] = 'minecraft:server_links'
     button_width: Annotated[int, Field(ge=1)] | None = None  # Width of buttons in the list. Defaults to 150.
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.

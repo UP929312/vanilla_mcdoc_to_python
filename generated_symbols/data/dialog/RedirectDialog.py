@@ -34,6 +34,8 @@ class RedirectDialogNone(GeneratedModel):
 
 
 class RedirectDialogClose(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'dialog'
+
     dialogs: DialogListRef
     button_width: Annotated[int, Field(ge=1)] | None = None  # Width of buttons in the list. Defaults to 150.
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
@@ -48,6 +50,8 @@ class RedirectDialogClose(GeneratedModel):
 
 
 class RedirectDialogNone2(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'dialog'
+
     dialogs: DialogListRef
     button_width: Annotated[int, Field(ge=1)] | None = None  # Width of buttons in the list. Defaults to 150.
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
@@ -62,6 +66,8 @@ class RedirectDialogNone2(GeneratedModel):
 
 
 class RedirectDialogWaitForResponse(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'dialog'
+
     dialogs: DialogListRef
     button_width: Annotated[int, Field(ge=1)] | None = None  # Width of buttons in the list. Defaults to 150.
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.

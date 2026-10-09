@@ -17,6 +17,8 @@ class ConfiguredCarverCanyon(CanyonConfig):
 
 
 class ConfiguredCarverCave(CaveConfig):
+    __resource_dir__: ClassVar[str] = 'worldgen/carver'
+
     type: Literal['minecraft:cave', 'cave'] = 'minecraft:cave'
 
 

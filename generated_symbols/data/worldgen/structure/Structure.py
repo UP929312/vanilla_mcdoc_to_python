@@ -34,6 +34,8 @@ class StructureBastionRemnant(Jigsaw):
 
 
 class StructureBuriedTreasure(BuriedTreasure):
+    __resource_dir__: ClassVar[str] = 'worldgen/structure'
+
     type: Literal['minecraft:buried_treasure', 'buried_treasure'] = 'minecraft:buried_treasure'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
@@ -42,6 +44,8 @@ class StructureBuriedTreasure(BuriedTreasure):
 
 
 class StructureDesertPyramid(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'worldgen/structure'
+
     type: Literal['minecraft:desert_pyramid', 'desert_pyramid'] = 'minecraft:desert_pyramid'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
@@ -50,6 +54,8 @@ class StructureDesertPyramid(GeneratedModel):
 
 
 class StructureEndCity(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'worldgen/structure'
+
     type: Literal['minecraft:end_city', 'end_city'] = 'minecraft:end_city'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
@@ -58,6 +64,8 @@ class StructureEndCity(GeneratedModel):
 
 
 class StructureFortress(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'worldgen/structure'
+
     type: Literal['minecraft:fortress', 'fortress'] = 'minecraft:fortress'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
@@ -66,6 +74,8 @@ class StructureFortress(GeneratedModel):
 
 
 class StructureIgloo(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'worldgen/structure'
+
     type: Literal['minecraft:igloo', 'igloo'] = 'minecraft:igloo'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
@@ -74,6 +84,8 @@ class StructureIgloo(GeneratedModel):
 
 
 class StructureJigsaw(Jigsaw):
+    __resource_dir__: ClassVar[str] = 'worldgen/structure'
+
     type: Literal['minecraft:jigsaw', 'jigsaw'] = 'minecraft:jigsaw'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
@@ -82,6 +94,8 @@ class StructureJigsaw(Jigsaw):
 
 
 class StructureJungleTemple(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'worldgen/structure'
+
     type: Literal['minecraft:jungle_temple', 'jungle_temple'] = 'minecraft:jungle_temple'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
@@ -90,6 +104,8 @@ class StructureJungleTemple(GeneratedModel):
 
 
 class StructureMineshaft(Mineshaft):
+    __resource_dir__: ClassVar[str] = 'worldgen/structure'
+
     type: Literal['minecraft:mineshaft', 'mineshaft'] = 'minecraft:mineshaft'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
@@ -98,6 +114,8 @@ class StructureMineshaft(Mineshaft):
 
 
 class StructureNetherFossil(NetherFossil):
+    __resource_dir__: ClassVar[str] = 'worldgen/structure'
+
     type: Literal['minecraft:nether_fossil', 'nether_fossil'] = 'minecraft:nether_fossil'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
@@ -106,6 +124,8 @@ class StructureNetherFossil(NetherFossil):
 
 
 class StructureOceanMonument(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'worldgen/structure'
+
     type: Literal['minecraft:ocean_monument', 'ocean_monument'] = 'minecraft:ocean_monument'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
@@ -114,6 +134,8 @@ class StructureOceanMonument(GeneratedModel):
 
 
 class StructureOceanRuin(OceanRuin):
+    __resource_dir__: ClassVar[str] = 'worldgen/structure'
+
     type: Literal['minecraft:ocean_ruin', 'ocean_ruin'] = 'minecraft:ocean_ruin'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
@@ -122,6 +144,8 @@ class StructureOceanRuin(OceanRuin):
 
 
 class StructurePillagerOutpost(Jigsaw):
+    __resource_dir__: ClassVar[str] = 'worldgen/structure'
+
     type: Literal['minecraft:pillager_outpost', 'pillager_outpost'] = 'minecraft:pillager_outpost'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
@@ -130,6 +154,8 @@ class StructurePillagerOutpost(Jigsaw):
 
 
 class StructureRuinedPortal(RuinedPortal):
+    __resource_dir__: ClassVar[str] = 'worldgen/structure'
+
     type: Literal['minecraft:ruined_portal', 'ruined_portal'] = 'minecraft:ruined_portal'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
@@ -138,6 +164,8 @@ class StructureRuinedPortal(RuinedPortal):
 
 
 class StructureShipwreck(Shipwreck):
+    __resource_dir__: ClassVar[str] = 'worldgen/structure'
+
     type: Literal['minecraft:shipwreck', 'shipwreck'] = 'minecraft:shipwreck'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
@@ -146,6 +174,8 @@ class StructureShipwreck(Shipwreck):
 
 
 class StructureStronghold(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'worldgen/structure'
+
     type: Literal['minecraft:stronghold', 'stronghold'] = 'minecraft:stronghold'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
@@ -154,6 +184,8 @@ class StructureStronghold(GeneratedModel):
 
 
 class StructureSwampHut(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'worldgen/structure'
+
     type: Literal['minecraft:swamp_hut', 'swamp_hut'] = 'minecraft:swamp_hut'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
@@ -162,6 +194,8 @@ class StructureSwampHut(GeneratedModel):
 
 
 class StructureVillage(Jigsaw):
+    __resource_dir__: ClassVar[str] = 'worldgen/structure'
+
     type: Literal['minecraft:village', 'village'] = 'minecraft:village'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.
@@ -170,6 +204,8 @@ class StructureVillage(Jigsaw):
 
 
 class StructureWoodlandMansion(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'worldgen/structure'
+
     type: Literal['minecraft:woodland_mansion', 'woodland_mansion'] = 'minecraft:woodland_mansion'
     biomes: list[Annotated[str, IdSpec(registry='worldgen/biome')]] | Annotated[str, IdSpec(registry='worldgen/biome', tags='allowed')]
     step: DecorationStep  # The step when the structure generates.

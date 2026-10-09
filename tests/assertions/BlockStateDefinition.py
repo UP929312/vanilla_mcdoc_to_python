@@ -29,6 +29,8 @@ class BlockStateDefinitionStruct1(GeneratedModel):
 
 
 class BlockStateDefinitionStruct2(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'block_definition'
+
     multipart: list[MultipartStruct]
 
 

@@ -18,10 +18,14 @@ class EnchantmentProviderByCost(ByCostEnchantmentProvider):
 
 
 class EnchantmentProviderByCostWithDifficulty(ByCostWithDifficultyEnchantmentProvider):
+    __resource_dir__: ClassVar[str] = 'enchantment_provider'
+
     type: Literal['minecraft:by_cost_with_difficulty', 'by_cost_with_difficulty'] = 'minecraft:by_cost_with_difficulty'
 
 
 class EnchantmentProviderSingle(SingleProvider):
+    __resource_dir__: ClassVar[str] = 'enchantment_provider'
+
     type: Literal['minecraft:single', 'single'] = 'minecraft:single'
 
 

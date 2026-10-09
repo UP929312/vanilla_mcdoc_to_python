@@ -20,18 +20,26 @@ class MaterialRuleUnknown(GeneratedModel):
 
 
 class MaterialRuleBlock(BlockRule):
+    __resource_dir__: ClassVar[str] = 'worldgen/material_rule'
+
     type: Literal['minecraft:block', 'block'] = 'minecraft:block'
 
 
 class MaterialRuleCondition(ConditionRule):
+    __resource_dir__: ClassVar[str] = 'worldgen/material_rule'
+
     type: Literal['minecraft:condition', 'condition'] = 'minecraft:condition'
 
 
 class MaterialRuleOreVein(OreVeinifier):
+    __resource_dir__: ClassVar[str] = 'worldgen/material_rule'
+
     type: Literal['minecraft:ore_vein', 'ore_vein'] = 'minecraft:ore_vein'
 
 
 class MaterialRuleSequence(SequenceRule):
+    __resource_dir__: ClassVar[str] = 'worldgen/material_rule'
+
     type: Literal['minecraft:sequence', 'sequence'] = 'minecraft:sequence'
 
 

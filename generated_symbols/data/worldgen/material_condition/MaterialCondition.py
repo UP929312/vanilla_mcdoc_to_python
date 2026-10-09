@@ -22,26 +22,38 @@ class MaterialConditionBiome(BiomeCondition):
 
 
 class MaterialConditionNoiseThreshold(NoiseThresholdCondition):
+    __resource_dir__: ClassVar[str] = 'worldgen/material_condition'
+
     type: Literal['minecraft:noise_threshold', 'noise_threshold'] = 'minecraft:noise_threshold'
 
 
 class MaterialConditionNot(NotCondition):
+    __resource_dir__: ClassVar[str] = 'worldgen/material_condition'
+
     type: Literal['minecraft:not', 'not'] = 'minecraft:not'
 
 
 class MaterialConditionStoneDepth(StoneDepthCondition):
+    __resource_dir__: ClassVar[str] = 'worldgen/material_condition'
+
     type: Literal['minecraft:stone_depth', 'stone_depth'] = 'minecraft:stone_depth'
 
 
 class MaterialConditionVerticalGradient(VerticalGradientCondition):
+    __resource_dir__: ClassVar[str] = 'worldgen/material_condition'
+
     type: Literal['minecraft:vertical_gradient', 'vertical_gradient'] = 'minecraft:vertical_gradient'
 
 
 class MaterialConditionWater(WaterCondition):
+    __resource_dir__: ClassVar[str] = 'worldgen/material_condition'
+
     type: Literal['minecraft:water', 'water'] = 'minecraft:water'
 
 
 class MaterialConditionYAbove(YAboveCondition):
+    __resource_dir__: ClassVar[str] = 'worldgen/material_condition'
+
     type: Literal['minecraft:y_above', 'y_above'] = 'minecraft:y_above'
 
 

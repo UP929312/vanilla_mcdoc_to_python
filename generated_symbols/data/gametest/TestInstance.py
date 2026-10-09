@@ -17,6 +17,8 @@ class TestInstanceBlockBased(BlockBasedTestInstance):
 
 
 class TestInstanceFunction(FunctionTestInstance):
+    __resource_dir__: ClassVar[str] = 'test_instance'
+
     type: Literal['minecraft:function', 'function'] = 'minecraft:function'
 
 

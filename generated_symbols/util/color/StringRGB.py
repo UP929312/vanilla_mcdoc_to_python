@@ -8,7 +8,7 @@ from typing import Annotated
 from pydantic import Field
 
 
-type StringRGB = int | tuple[Annotated[float, Field(ge=0, le=1)], Annotated[float, Field(ge=0, le=1)], Annotated[float, Field(ge=0, le=1)]] | str
+type StringRGB = int | tuple[Annotated[float, Field(ge=0, le=1)], Annotated[float, Field(ge=0, le=1)], Annotated[float, Field(ge=0, le=1)]] | Annotated[str, Field(pattern='^#')]
 
 
 # ~~~ MODEL DUMP ~~~

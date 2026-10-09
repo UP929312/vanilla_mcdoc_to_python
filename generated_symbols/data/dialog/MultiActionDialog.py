@@ -32,6 +32,8 @@ class MultiActionDialogNone(GeneratedModel):
 
 
 class MultiActionDialogClose(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'dialog'
+
     actions: Annotated[list[Button], Field(min_length=1)]
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
     columns: Annotated[int, Field(ge=1)] | None = None  # The number of columns. Defaults to 2.
@@ -45,6 +47,8 @@ class MultiActionDialogClose(GeneratedModel):
 
 
 class MultiActionDialogNone2(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'dialog'
+
     actions: Annotated[list[Button], Field(min_length=1)]
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
     columns: Annotated[int, Field(ge=1)] | None = None  # The number of columns. Defaults to 2.
@@ -58,6 +62,8 @@ class MultiActionDialogNone2(GeneratedModel):
 
 
 class MultiActionDialogWaitForResponse(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'dialog'
+
     actions: Annotated[list[Button], Field(min_length=1)]
     exit_action: Button | None = None  # The button in footer. The action is also used for ESC-triggered exit.
     columns: Annotated[int, Field(ge=1)] | None = None  # The number of columns. Defaults to 2.

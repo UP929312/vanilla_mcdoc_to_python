@@ -21,22 +21,32 @@ class TypedSlotSourceContents(ContentsSlotSource):
 
 
 class TypedSlotSourceEmpty(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'slot_source'
+
     type: Literal['minecraft:empty', 'empty'] = 'minecraft:empty'
 
 
 class TypedSlotSourceFiltered(FilterSlotSource):
+    __resource_dir__: ClassVar[str] = 'slot_source'
+
     type: Literal['minecraft:filtered', 'filtered'] = 'minecraft:filtered'
 
 
 class TypedSlotSourceGroup(GroupSlotSource):
+    __resource_dir__: ClassVar[str] = 'slot_source'
+
     type: Literal['minecraft:group', 'group'] = 'minecraft:group'
 
 
 class TypedSlotSourceLimitSlots(LimitCountSlotSource):
+    __resource_dir__: ClassVar[str] = 'slot_source'
+
     type: Literal['minecraft:limit_slots', 'limit_slots'] = 'minecraft:limit_slots'
 
 
 class TypedSlotSourceSlotRange(RangeSlotSource):
+    __resource_dir__: ClassVar[str] = 'slot_source'
+
     type: Literal['minecraft:slot_range', 'slot_range'] = 'minecraft:slot_range'
 
 

@@ -29,6 +29,8 @@ class NoticeDialogNone(GeneratedModel):
 
 
 class NoticeDialogClose(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'dialog'
+
     action: Button | None = None  # The only action in footer. Defaults to `gui.ok` label with no action or tooltip.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
@@ -40,6 +42,8 @@ class NoticeDialogClose(GeneratedModel):
 
 
 class NoticeDialogNone2(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'dialog'
+
     action: Button | None = None  # The only action in footer. Defaults to `gui.ok` label with no action or tooltip.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.
@@ -51,6 +55,8 @@ class NoticeDialogNone2(GeneratedModel):
 
 
 class NoticeDialogWaitForResponse(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'dialog'
+
     action: Button | None = None  # The only action in footer. Defaults to `gui.ok` label with no action or tooltip.
     title: Text
     external_title: Text | None = None  # Name to be used for a button leading to this dialog. If not present, `title` will be used instead.

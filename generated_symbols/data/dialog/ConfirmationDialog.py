@@ -30,6 +30,8 @@ class ConfirmationDialogNone(GeneratedModel):
 
 
 class ConfirmationDialogClose(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'dialog'
+
     yes: Button
     no: Button  # This action is also used for ESC-triggered exit.
     title: Text
@@ -42,6 +44,8 @@ class ConfirmationDialogClose(GeneratedModel):
 
 
 class ConfirmationDialogNone2(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'dialog'
+
     yes: Button
     no: Button  # This action is also used for ESC-triggered exit.
     title: Text
@@ -54,6 +58,8 @@ class ConfirmationDialogNone2(GeneratedModel):
 
 
 class ConfirmationDialogWaitForResponse(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'dialog'
+
     yes: Button
     no: Button  # This action is also used for ESC-triggered exit.
     title: Text
