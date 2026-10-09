@@ -12,8 +12,16 @@ from pydantic import Field
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.FloatProvider import FloatProvider
     from generated_symbols.data.worldgen.IntProvider import IntProvider
+    from generated_symbols.data.worldgen.feature.SpeleothemBaseBlockTransformer import SpeleothemBaseBlockTransformer
+    from generated_symbols.data.worldgen.feature.SpeleothemClusterPlacementMode import SpeleothemClusterPlacementMode
     from generated_symbols.registry.KnownBlockId import KnownBlockId
     from generated_symbols.util.block_state.BlockState import BlockState
+
+
+class PlacementOptionsStruct(GeneratedModel):
+    placement_mode: SpeleothemClusterPlacementMode
+    base_block_transformer: SpeleothemBaseBlockTransformer
+    allow_water_placement: bool
 
 
 class SpeleothemClusterConfig(GeneratedModel):
@@ -33,6 +41,7 @@ class SpeleothemClusterConfig(GeneratedModel):
     chance_of_speleothem_at_max_distance_from_center: Annotated[float, Field(ge=0, le=1)]
     max_distance_from_edge_affecting_chance_of_speleothem: Annotated[int, Field(ge=1, le=64)]
     max_distance_from_center_affecting_height_bias: Annotated[int, Field(ge=1, le=64)]
+    placement_options: PlacementOptionsStruct | None = None
 
 
 # ~~~ MODEL DUMP ~~~
@@ -440,6 +449,51 @@ _ = {
                         "max": 64
                     }
                 }
+            },
+            {
+                "kind": "pair",
+                "attributes": [
+                    {
+                        "name": "since",
+                        "value": {
+                            "kind": "literal",
+                            "value": {
+                                "kind": "string",
+                                "value": "26.4"
+                            }
+                        }
+                    }
+                ],
+                "key": "placement_options",
+                "type": {
+                    "kind": "struct",
+                    "fields": [
+                        {
+                            "kind": "pair",
+                            "key": "placement_mode",
+                            "type": {
+                                "kind": "reference",
+                                "path": "::java::data::worldgen::feature::SpeleothemClusterPlacementMode"
+                            }
+                        },
+                        {
+                            "kind": "pair",
+                            "key": "base_block_transformer",
+                            "type": {
+                                "kind": "reference",
+                                "path": "::java::data::worldgen::feature::SpeleothemBaseBlockTransformer"
+                            }
+                        },
+                        {
+                            "kind": "pair",
+                            "key": "allow_water_placement",
+                            "type": {
+                                "kind": "boolean"
+                            }
+                        }
+                    ]
+                },
+                "optional": True
             }
         ]
     }

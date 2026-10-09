@@ -88,6 +88,7 @@ from generated_symbols.data.worldgen.feature.placement.BlockPredicateFilter impo
 from generated_symbols.data.advancement.predicate.BlockPredicateState import BlockPredicateState
 from generated_symbols.data.worldgen.processor_list.BlockRot import BlockRot
 from generated_symbols.data.worldgen.material_rule.BlockRule import BlockRule
+from generated_symbols.data.block_sound_set.BlockSoundSet import BlockSoundSet
 from generated_symbols.data.advancement.trigger.BlockStateConditions import BlockStateConditions
 from generated_symbols.data.worldgen.processor_list.BlockStateMatch import BlockStateMatch
 from generated_symbols.data.loot.condition.BlockStateProperty import BlockStateProperty
@@ -456,7 +457,7 @@ from generated_symbols.data.advancement.trigger.KilledTrigger import KilledTrigg
 from generated_symbols.data.enchantment.effect_component.KnockbackEnchantmentEffect import KnockbackEnchantmentEffect
 from generated_symbols.data.sulfur_cube_archetype.KnockbackModifiers import KnockbackModifiers
 from generated_symbols.data.worldgen.feature.LakeConfig import LakeConfig
-from generated_symbols.data.worldgen.feature.LargeDripstoneConfig import LargeDripstoneConfig
+from generated_symbols.data.worldgen.feature.LargeSpeleothemConfig import LargeSpeleothemConfig
 from generated_symbols.data.worldgen.feature.tree.LeaveVineTreeDecorator import LeaveVineTreeDecorator
 from generated_symbols.data.loot.function.LegacyExplorationMapDestination import LegacyExplorationMapDestination
 from generated_symbols.data.worldgen.density_function.Lerp import Lerp
@@ -785,13 +786,17 @@ from generated_symbols.data.worldgen.biome.SpawnerData import SpawnerData
 from generated_symbols.data.worldgen.biome.SpawnerDataMap import SpawnerDataMap
 from generated_symbols.data.advancement.trigger.SpearMobsTrigger import SpearMobsTrigger
 from generated_symbols.data.advancement.predicate.SpecificType import SpecificType
+from generated_symbols.data.worldgen.feature.SpeleothemBaseBlockTransformer import SpeleothemBaseBlockTransformer
 from generated_symbols.data.worldgen.feature.SpeleothemClusterConfig import SpeleothemClusterConfig
+from generated_symbols.data.worldgen.feature.SpeleothemClusterPlacementMode import SpeleothemClusterPlacementMode
+from generated_symbols.data.worldgen.feature.SpeleothemClusterPlacementOptions import SpeleothemClusterPlacementOptions
 from generated_symbols.data.worldgen.feature.SpeleothemConfig import SpeleothemConfig
 from generated_symbols.data.worldgen.feature.SpikeConfig import SpikeConfig
 from generated_symbols.data.worldgen.density_function.Spline import Spline
 from generated_symbols.data.worldgen.density_function.SplinePoint import SplinePoint
 from generated_symbols.data.worldgen.density_function.SplineType import SplineType
 from generated_symbols.data.worldgen.structure_set.SpreadType import SpreadType
+from generated_symbols.data.worldgen.structure_set.SpreadingPlacementBase import SpreadingPlacementBase
 from generated_symbols.data.worldgen.feature.SpringConfig import SpringConfig
 from generated_symbols.data.worldgen.feature.tree.SprucePineFoliagePlacer import SprucePineFoliagePlacer
 from generated_symbols.data.enchantment.level_based_value.SquaredLevelValue import SquaredLevelValue
@@ -1008,6 +1013,7 @@ __all__ = [
     "BlockPredicateState",
     "BlockRot",
     "BlockRule",
+    "BlockSoundSet",
     "BlockStateConditions",
     "BlockStateMatch",
     "BlockStateProperty",
@@ -1376,7 +1382,7 @@ __all__ = [
     "KnockbackEnchantmentEffect",
     "KnockbackModifiers",
     "LakeConfig",
-    "LargeDripstoneConfig",
+    "LargeSpeleothemConfig",
     "LeaveVineTreeDecorator",
     "LegacyExplorationMapDestination",
     "Lerp",
@@ -1705,13 +1711,17 @@ __all__ = [
     "SpawnerDataMap",
     "SpearMobsTrigger",
     "SpecificType",
+    "SpeleothemBaseBlockTransformer",
     "SpeleothemClusterConfig",
+    "SpeleothemClusterPlacementMode",
+    "SpeleothemClusterPlacementOptions",
     "SpeleothemConfig",
     "SpikeConfig",
     "Spline",
     "SplinePoint",
     "SplineType",
     "SpreadType",
+    "SpreadingPlacementBase",
     "SpringConfig",
     "SprucePineFoliagePlacer",
     "SquaredLevelValue",

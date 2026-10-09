@@ -23,7 +23,7 @@ from generated_symbols.data.worldgen.feature.HugeFungusConfig import HugeFungusC
 from generated_symbols.data.worldgen.feature.HugeMushroomConfig import HugeMushroomConfig
 from generated_symbols.data.worldgen.feature.IcebergConfig import IcebergConfig
 from generated_symbols.data.worldgen.feature.LakeConfig import LakeConfig
-from generated_symbols.data.worldgen.feature.LargeDripstoneConfig import LargeDripstoneConfig
+from generated_symbols.data.worldgen.feature.LargeSpeleothemConfig import LargeSpeleothemConfig
 from generated_symbols.data.worldgen.feature.MultifaceGrowthConfig import MultifaceGrowthConfig
 from generated_symbols.data.worldgen.feature.NetherrackReplaceBlobsConfig import NetherrackReplaceBlobsConfig
 from generated_symbols.data.worldgen.feature.OreConfig import OreConfig
@@ -152,8 +152,8 @@ class ConfiguredFeatureLake(LakeConfig):
     type: Literal['minecraft:lake'] = 'minecraft:lake'
 
 
-class ConfiguredFeatureLargeDripstone(LargeDripstoneConfig):
-    type: Literal['minecraft:large_dripstone'] = 'minecraft:large_dripstone'
+class ConfiguredFeatureLargeSpeleothem(LargeSpeleothemConfig):
+    type: Literal['minecraft:large_speleothem'] = 'minecraft:large_speleothem'
 
 
 class ConfiguredFeatureMultifaceGrowth(MultifaceGrowthConfig):
@@ -277,7 +277,7 @@ class ConfiguredFeatureWeightedRandomSelector(WeightedRandomFeatureConfig):
 
 
 type ConfiguredFeature = Annotated[
-    ConfiguredFeatureBamboo | ConfiguredFeatureBlockBlob | ConfiguredFeatureBlockColumn | ConfiguredFeatureBlockPile | ConfiguredFeatureCoralClaw | ConfiguredFeatureCoralTree | ConfiguredFeatureDeltaFeature | ConfiguredFeatureDisk | ConfiguredFeatureEmeraldOre | ConfiguredFeatureEndGateway | ConfiguredFeatureEndPodium | ConfiguredFeatureEndSpike | ConfiguredFeatureFallenTree | ConfiguredFeatureFillLayer | ConfiguredFeatureFlower | ConfiguredFeatureFossil | ConfiguredFeatureGeode | ConfiguredFeatureGlowLichen | ConfiguredFeatureHugeBrownMushroom | ConfiguredFeatureHugeFungus | ConfiguredFeatureHugeRedMushroom | ConfiguredFeatureIcePatch | ConfiguredFeatureIceberg | ConfiguredFeatureLake | ConfiguredFeatureLargeDripstone | ConfiguredFeatureMultifaceGrowth | ConfiguredFeatureNetherrackReplaceBlobs | ConfiguredFeatureNoBonemealFlower | ConfiguredFeatureNoSurfaceOre | ConfiguredFeatureOre | ConfiguredFeatureOverlay | ConfiguredFeatureProjectedRandomPatchySquare | ConfiguredFeatureRandomBooleanSelector | ConfiguredFeatureRandomNeighborSpread | ConfiguredFeatureRandomPatch | ConfiguredFeatureRandomSelector | ConfiguredFeatureReplaceSingleBlock | ConfiguredFeatureRootSystem | ConfiguredFeatureScatteredOre | ConfiguredFeatureSculkPatch | ConfiguredFeatureSequence | ConfiguredFeatureSimpleBlock | ConfiguredFeatureSimpleRandomSelector | ConfiguredFeatureSingleBlockPillar | ConfiguredFeatureSpeleothem | ConfiguredFeatureSpeleothemCluster | ConfiguredFeatureSpike | ConfiguredFeatureSpringFeature | ConfiguredFeatureSteppedColumnCluster | ConfiguredFeatureTemplate | ConfiguredFeatureTree | ConfiguredFeatureUnderwaterMagma | ConfiguredFeatureVegetationPatch | ConfiguredFeatureWaterloggedVegetationPatch | ConfiguredFeatureWeightedRandomSelector,
+    ConfiguredFeatureBamboo | ConfiguredFeatureBlockBlob | ConfiguredFeatureBlockColumn | ConfiguredFeatureBlockPile | ConfiguredFeatureCoralClaw | ConfiguredFeatureCoralTree | ConfiguredFeatureDeltaFeature | ConfiguredFeatureDisk | ConfiguredFeatureEmeraldOre | ConfiguredFeatureEndGateway | ConfiguredFeatureEndPodium | ConfiguredFeatureEndSpike | ConfiguredFeatureFallenTree | ConfiguredFeatureFillLayer | ConfiguredFeatureFlower | ConfiguredFeatureFossil | ConfiguredFeatureGeode | ConfiguredFeatureGlowLichen | ConfiguredFeatureHugeBrownMushroom | ConfiguredFeatureHugeFungus | ConfiguredFeatureHugeRedMushroom | ConfiguredFeatureIcePatch | ConfiguredFeatureIceberg | ConfiguredFeatureLake | ConfiguredFeatureLargeSpeleothem | ConfiguredFeatureMultifaceGrowth | ConfiguredFeatureNetherrackReplaceBlobs | ConfiguredFeatureNoBonemealFlower | ConfiguredFeatureNoSurfaceOre | ConfiguredFeatureOre | ConfiguredFeatureOverlay | ConfiguredFeatureProjectedRandomPatchySquare | ConfiguredFeatureRandomBooleanSelector | ConfiguredFeatureRandomNeighborSpread | ConfiguredFeatureRandomPatch | ConfiguredFeatureRandomSelector | ConfiguredFeatureReplaceSingleBlock | ConfiguredFeatureRootSystem | ConfiguredFeatureScatteredOre | ConfiguredFeatureSculkPatch | ConfiguredFeatureSequence | ConfiguredFeatureSimpleBlock | ConfiguredFeatureSimpleRandomSelector | ConfiguredFeatureSingleBlockPillar | ConfiguredFeatureSpeleothem | ConfiguredFeatureSpeleothemCluster | ConfiguredFeatureSpike | ConfiguredFeatureSpringFeature | ConfiguredFeatureSteppedColumnCluster | ConfiguredFeatureTemplate | ConfiguredFeatureTree | ConfiguredFeatureUnderwaterMagma | ConfiguredFeatureVegetationPatch | ConfiguredFeatureWaterloggedVegetationPatch | ConfiguredFeatureWeightedRandomSelector,
     Field(discriminator='type'),
 ]
 

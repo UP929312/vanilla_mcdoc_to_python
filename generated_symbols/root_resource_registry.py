@@ -1,6 +1,7 @@
 """Generated root-resource registry for datapack and resource-pack classes."""
 
 from generated_symbols.data.advancement.Advancement import Advancement
+from generated_symbols.data.block_sound_set.BlockSoundSet import BlockSoundSet
 from generated_symbols.data.block_transformer.BlockTransformData import BlockTransformData
 from generated_symbols.data.chat_type.ChatType import ChatType
 from generated_symbols.data.damage_type.DamageType import DamageType
@@ -113,7 +114,7 @@ from generated_symbols.data.worldgen.feature.HugeFungusConfig import HugeFungusC
 from generated_symbols.data.worldgen.feature.HugeMushroomConfig import HugeMushroomConfig
 from generated_symbols.data.worldgen.feature.IcebergConfig import IcebergConfig
 from generated_symbols.data.worldgen.feature.LakeConfig import LakeConfig
-from generated_symbols.data.worldgen.feature.LargeDripstoneConfig import LargeDripstoneConfig
+from generated_symbols.data.worldgen.feature.LargeSpeleothemConfig import LargeSpeleothemConfig
 from generated_symbols.data.worldgen.feature.MultifaceGrowthConfig import MultifaceGrowthConfig
 from generated_symbols.data.worldgen.feature.NetherForestVegetationConfig import NetherForestVegetationConfig
 from generated_symbols.data.worldgen.feature.NetherrackReplaceBlobsConfig import NetherrackReplaceBlobsConfig
@@ -194,6 +195,7 @@ from generated_symbols.assets.waypoint_style.WaypointStyle import WaypointStyle
 
 root_datapack_classes = (
     Advancement,
+    BlockSoundSet,
     BlockTransformData,
     ChatType,
     DamageType,
@@ -306,7 +308,7 @@ root_datapack_classes = (
     HugeMushroomConfig,
     IcebergConfig,
     LakeConfig,
-    LargeDripstoneConfig,
+    LargeSpeleothemConfig,
     MultifaceGrowthConfig,
     NetherForestVegetationConfig,
     NetherrackReplaceBlobsConfig,

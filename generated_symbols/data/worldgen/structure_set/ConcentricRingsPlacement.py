@@ -5,12 +5,12 @@ Local link to file: generated_symbols/data/worldgen/structure_set/ConcentricRing
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from generated_symbols.base import GeneratedModel
+from generated_symbols.data.worldgen.structure_set.SpreadingPlacementBase import SpreadingPlacementBase
 from minecraft_registry import IdSpec
 from pydantic import Field
 
 
-class ConcentricRingsPlacement(GeneratedModel):
+class ConcentricRingsPlacement(SpreadingPlacementBase):
     distance: Annotated[int, Field(ge=0, le=1023)]
     spread: Annotated[int, Field(ge=0, le=1023)]
     count: Annotated[int, Field(ge=1, le=4095)]
@@ -22,6 +22,13 @@ _ = {
     "::java::data::worldgen::structure_set::ConcentricRingsPlacement": {
         "kind": "struct",
         "fields": [
+            {
+                "kind": "spread",
+                "type": {
+                    "kind": "reference",
+                    "path": "::java::data::worldgen::structure_set::SpreadingPlacementBase"
+                }
+            },
             {
                 "kind": "pair",
                 "key": "distance",

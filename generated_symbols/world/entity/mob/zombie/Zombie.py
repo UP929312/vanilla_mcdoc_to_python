@@ -11,6 +11,8 @@ class Zombie(MobBase):
     CanBreakDoors: bool | None = None  # Whether it can break doors.
     DrownedConversionTime: int | None = None  # Ticks until it converts.
     InWaterTime: int | None = None  # Ticks it has been in the water.
+    FrostbiteConversionTime: int | None = None  # Ticks until it converts.
+    FreezingTime: int | None = None  # Ticks it has been in the powdered snow.
 
 
 # ~~~ MODEL DUMP ~~~
@@ -56,6 +58,48 @@ _ = {
                 "kind": "pair",
                 "desc": "Ticks it has been in the water.",
                 "key": "InWaterTime",
+                "type": {
+                    "kind": "int"
+                },
+                "optional": True
+            },
+            {
+                "kind": "pair",
+                "attributes": [
+                    {
+                        "name": "since",
+                        "value": {
+                            "kind": "literal",
+                            "value": {
+                                "kind": "string",
+                                "value": "26.4"
+                            }
+                        }
+                    }
+                ],
+                "desc": "Ticks until it converts.",
+                "key": "FrostbiteConversionTime",
+                "type": {
+                    "kind": "int"
+                },
+                "optional": True
+            },
+            {
+                "kind": "pair",
+                "attributes": [
+                    {
+                        "name": "since",
+                        "value": {
+                            "kind": "literal",
+                            "value": {
+                                "kind": "string",
+                                "value": "26.4"
+                            }
+                        }
+                    }
+                ],
+                "desc": "Ticks it has been in the powdered snow.",
+                "key": "FreezingTime",
                 "type": {
                     "kind": "int"
                 },

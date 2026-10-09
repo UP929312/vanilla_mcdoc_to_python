@@ -1,66 +1,36 @@
 """
-Generated from symbols.json for ::java::data::worldgen::structure_set::RandomSpreadPlacement
-Local link to file: generated_symbols/data/worldgen/structure_set/RandomSpreadPlacement.py
+Generated from symbols.json for ::java::data::worldgen::structure_set::SpreadingPlacementBase
+Local link to file: generated_symbols/data/worldgen/structure_set/SpreadingPlacementBase.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.data.worldgen.structure_set.SpreadingPlacementBase import SpreadingPlacementBase
+from generated_symbols.base import GeneratedModel
 from pydantic import Field
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.structure_set.SpreadType import SpreadType
+    from generated_symbols.data.worldgen.structure_set.ExclusionZone import ExclusionZone
+    from generated_symbols.data.worldgen.structure_set.FrequencyReductionMethod import FrequencyReductionMethod
 
 
-class RandomSpreadPlacement(SpreadingPlacementBase):
-    spacing: Annotated[int, Field(ge=0, le=4096)]  # Average distance in chunks between two structures of this type.
-    separation: Annotated[int, Field(ge=0, le=4096)]  # Minimum distance in chunks between two structures of this type.
-    spread_type: SpreadType | None = None
+class SpreadingPlacementBase(GeneratedModel):
+    salt: Annotated[int, Field(ge=0)]
+    frequency_reduction_method: FrequencyReductionMethod | None = None
+    frequency: Annotated[float, Field(ge=0, le=1)] | None = None
+    exclusion_zone: ExclusionZone | None = None
+    locate_offset: tuple[Annotated[int, Field(ge=-16, le=16)], Annotated[int, Field(ge=-16, le=16)], Annotated[int, Field(ge=-16, le=16)]] | None = None
 
 
 # ~~~ MODEL DUMP ~~~
 _ = {
-    "::java::data::worldgen::structure_set::RandomSpreadPlacement": {
+    "::java::data::worldgen::structure_set::SpreadingPlacementBase": {
         "kind": "struct",
         "fields": [
-            {
-                "kind": "spread",
-                "type": {
-                    "kind": "reference",
-                    "path": "::java::data::worldgen::structure_set::SpreadingPlacementBase"
-                }
-            },
-            {
-                "kind": "pair",
-                "desc": "Average distance in chunks between two structures of this type.",
-                "key": "spacing",
-                "type": {
-                    "kind": "int",
-                    "valueRange": {
-                        "kind": 0,
-                        "min": 0,
-                        "max": 4096
-                    }
-                }
-            },
-            {
-                "kind": "pair",
-                "desc": "Minimum distance in chunks between two structures of this type.",
-                "key": "separation",
-                "type": {
-                    "kind": "int",
-                    "valueRange": {
-                        "kind": 0,
-                        "min": 0,
-                        "max": 4096
-                    }
-                }
-            },
             {
                 "kind": "pair",
                 "attributes": [
                     {
-                        "name": "until",
+                        "name": "since",
                         "value": {
                             "kind": "literal",
                             "value": {
@@ -88,15 +58,15 @@ _ = {
                             "kind": "literal",
                             "value": {
                                 "kind": "string",
-                                "value": "1.18.2"
+                                "value": "1.19"
                             }
                         }
                     }
                 ],
-                "key": "spread_type",
+                "key": "frequency_reduction_method",
                 "type": {
                     "kind": "reference",
-                    "path": "::java::data::worldgen::structure_set::SpreadType"
+                    "path": "::java::data::worldgen::structure_set::FrequencyReductionMethod"
                 },
                 "optional": True
             },
@@ -109,21 +79,33 @@ _ = {
                             "kind": "literal",
                             "value": {
                                 "kind": "string",
-                                "value": "1.18.2"
-                            }
-                        }
-                    },
-                    {
-                        "name": "until",
-                        "value": {
-                            "kind": "literal",
-                            "value": {
-                                "kind": "string",
                                 "value": "1.19"
                             }
                         }
                     }
                 ],
+                "key": "frequency",
+                "type": {
+                    "kind": "float",
+                    "valueRange": {
+                        "kind": 0,
+                        "min": 0,
+                        "max": 1
+                    }
+                },
+                "optional": True
+            },
+            {
+                "kind": "pair",
+                "key": "exclusion_zone",
+                "type": {
+                    "kind": "reference",
+                    "path": "::java::data::worldgen::structure_set::ExclusionZone"
+                },
+                "optional": True
+            },
+            {
+                "kind": "pair",
                 "key": "locate_offset",
                 "type": {
                     "kind": "list",
