@@ -69,24 +69,20 @@ class SchemaGraph:
 
     def _dispatcher_candidates(self, schema: DispatcherSchema) -> tuple[BaseSchema, ...]:
         registry = self.dispatchers.get(schema.registry, {})
-        candidates: list[BaseSchema] = []
-        for index in schema.parallel_indices:
-            assert isinstance(index, DynamicIndexSchema) or index.value == "%fallback"
-            candidates.extend(registry.values())
-        return self._deduplicate(candidates)
+        assert isinstance(schema.parallel_indices[0], DynamicIndexSchema) or schema.parallel_indices[0].value == "%fallback"
+        return self._deduplicate(list(registry.values()))
 
     def _indexed_candidates(self, schema: IndexedSchema) -> tuple[BaseSchema, ...]:
         candidates: list[BaseSchema] = []
         for branch in self.annotation_candidates(schema.child):
             resolved = self.resolve(branch)
             assert isinstance(resolved, StructSchema)
-            for index in schema.parallelIndices:
-                fields = (
-                    [field for field in resolved.fields if isinstance(field, PairSchema)]
-                    if isinstance(index, DynamicIndexSchema)
-                    else [self._find_struct_field(resolved, index.value.removeprefix("minecraft:"))]
-                )
-                candidates.extend(field.type for field in fields)
+            fields = (
+                [field for field in resolved.fields if isinstance(field, PairSchema)]
+                if isinstance(schema.parallel_indices[0], DynamicIndexSchema)
+                else [self._find_struct_field(resolved, schema.parallel_indices[0].value.removeprefix("minecraft:"))]
+            )
+            candidates.extend(field.type for field in fields)
         return self._deduplicate(candidates)
 
     @staticmethod

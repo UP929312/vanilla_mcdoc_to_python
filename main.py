@@ -3,7 +3,7 @@ from minecraft_registry import make_registry_id_files, make_root_resource_regist
 from utils import SYMBOLS_MAP
 from tests.assertions import run_assertions
 
-SYMBOLS_MAP_NO_ANONYMOUS = {key: value for key, value in SYMBOLS_MAP["mcdoc"].items() if "anonymous" not in key}  # TODO: Figure what is going on here?
+SYMBOLS_MAP_NO_ANONYMOUS = {key: value for key, value in SYMBOLS_MAP["mcdoc"].items() if "anonymous" not in key}
 
 make_registry_id_files(SCHEMA_GRAPH)
 

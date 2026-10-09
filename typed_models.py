@@ -142,7 +142,10 @@ class LiteralSchema(BaseSchema):
 
     def to_annotation(self, ctx: SingleSymbolContext) -> str:
         ctx.required_imports.add(Import("typing", "Literal", False, True))
-        return f"Literal[{self.value.value!r}]"
+        value = self.value.value
+        if isinstance(value, str) and value.startswith("minecraft:"):  # Resource locations work with or without the namespace
+            return f"Literal[{value!r}, {value.removeprefix('minecraft:')!r}]"
+        return f"Literal[{value!r}]"
 
 
 # ==================================================================================================================================
@@ -463,7 +466,7 @@ class IndexedSchema(BaseSchema):
     """Is an index into a registry, with presets for defaults, fallbacks, etc."""
     kind: Literal["indexed"] = Field(repr=False)
     child: DispatcherSchema
-    parallelIndices: list[StaticIndexSchema | DynamicIndexSchema]
+    parallel_indices: list[StaticIndexSchema | DynamicIndexSchema] = Field(default_factory=list, alias="parallelIndices")
 
     def to_nested_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None) -> str:
         return self.to_annotation(ctx, nested_struct_name)
@@ -639,12 +642,6 @@ class PairSchema(BaseSchema):
     def description_or_empty(self) -> str:
         return f"  # {self.description.replace('\\\n', '\n').replace('\n', ' ').strip()}" if self.description else ""
 
-    @property
-    def optional_string_or_empty(self) -> str:
-        if isinstance(self.type, LiteralSchema):
-            return ""
-        return " | None = None" if self.optional else ""
-
     @staticmethod
     def clean_key(key: str | StringSchema | ReferenceSchema) -> str:
         # These two isinstance checks aren't perfect, but there's only 3 tiny cases in the whole of symbols.json
@@ -662,18 +659,36 @@ class PairSchema(BaseSchema):
             key = "".join(part[:1].upper() + part[1:] for part in key.split("_") if part)
         return f"{key}Struct"
 
+    @property
+    def formatted_default_value(self) -> str | None:
+        """Return a string representing the default value for this field, or None if there is no default."""
+        if isinstance(self.type, LiteralSchema):
+            return repr(self.type.value.value)
+        if self.optional:
+            return "None"
+        return None
+
     def to_field_line(self, ctx: SingleSymbolContext) -> str | None:
         """Render this pair as a class field, e.g. `    count: int | None = None  # How many`.
         Returns None for empty unions, which represent weird stuff - skip so parent members can remain authoritative."""
-        key = PairSchema.clean_key(self.key)  # type: ignore[arg-type]
+        name = PairSchema.clean_key(self.key)  # type: ignore[arg-type]
         if isinstance(self.type, StructSchema):
-            annotation = self.type.to_materialized_annotation(PairSchema.nested_struct_name(key), ctx)
+            annotation = self.type.to_materialized_annotation(PairSchema.nested_struct_name(name), ctx)
         else:
-            annotation = self.type.to_nested_annotation(ctx, PairSchema.nested_struct_name(key))
+            annotation = self.type.to_nested_annotation(ctx, PairSchema.nested_struct_name(name))
         if annotation == "None":
+            # This is a weird case where the union is empty, only for CustomName and CustomNameVisible, it's weird.
             return None
-        default = f" = {self.type.value.value!r}" if isinstance(self.type, LiteralSchema) else ""
-        return f"    {key}: {annotation}{self.optional_string_or_empty}{default}{self.description_or_empty}"
+
+        default: str | None = self.formatted_default_value
+        # === A field named after a type in this file (e.g. `BlockState: BlockState`) would shadow that type, so rename it.
+        if name in ctx.allocated_name_by_identity.values():
+            name += "_"
+        if isinstance(self.key, str) and name != self.key:  # Renamed (e.g. `from_`), so alias it back to the real JSON key
+            ctx.required_imports.add(Import("pydantic", "Field", False, False))
+            default = f"Field({'' if default is None else f'default={default}, '}alias={self.key!r})"
+        # ===
+        return f"    {name}: {annotation if not self.optional else annotation+' | None'}{'' if default is None else f' = {default}'}{self.description_or_empty}"
 
 
 class SpreadFieldSchema(BaseSchema):
@@ -805,6 +820,8 @@ class StructSchema(BaseSchema):
             return None
         spread = dispatcher_spreads[0]
         assert isinstance(spread.type, DispatcherSchema)
+        if spread.type.dynamic_selector_field is None:  # Not selected by one of our own fields
+            return None
         return spread, spread.type, spread.type.dynamic_selector_field
 
     def _dispatcher_variant(
@@ -987,24 +1004,26 @@ class DispatcherSchema(BaseSchema):
         return self.to_annotation(ctx, nested_struct_name)
 
     @property
-    def dynamic_selector_field(self) -> str:
-        """Return the field selected by the supported single direct accessor."""
-        accessor = next(index.accessor for index in self.parallel_indices if isinstance(index, DynamicIndexSchema))
-        assert isinstance(accessor[0], str)
-        return accessor[0]
+    def dynamic_selector_field(self) -> str | None:
+        """Return the sibling field that selects the branch (e.g. `type`), or None if it's selected some other way,
+        e.g. via the parent (`[%parent, "BlockState"]`) or a nested field (`["output_state", "id"]`)."""
+        index = self.parallel_indices[0]
+        if not isinstance(index, DynamicIndexSchema):
+            return None
+        return index.accessor[0] if len(index.accessor) == 1 and isinstance(index.accessor[0], str) else None
 
     def to_annotation(
         self, ctx: SingleSymbolContext, nested_struct_name: str | None = None, type_args: list[ConcreteSchemaTypeArgTypes] | None = None,
     ) -> str:
         registry = ctx.schema_graph.dispatchers[self.registry]
-        candidates: list[tuple[str, BaseSchema]] = []
-        for index in self.parallel_indices:
-            if isinstance(index, DynamicIndexSchema) or index.value == "%fallback":
-                candidates.extend(registry.items())
-            else:
-                key = index.value.removeprefix("minecraft:")
-                branch = registry[key]
-                candidates.append((key, branch))
+        if len(self.parallel_indices) != 1:
+            raise ValueError(f"Dispatcher {self.registry} has {len(self.parallel_indices)} parallel indices, which is not supported.")
+        index = self.parallel_indices[0]
+        if isinstance(index, DynamicIndexSchema) or index.value == "%fallback":
+            candidates = list(registry.items())
+        else:
+            key = index.value.removeprefix("minecraft:")
+            candidates = [(key, registry[key])]
 
         registry_name = PairSchema.nested_struct_name(self.registry.split(":")[-1]).removesuffix("Struct")
         base_name = f"{nested_struct_name}{registry_name}" if nested_struct_name else f"{registry_name}Struct"
