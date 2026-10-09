@@ -1,4 +1,4 @@
-﻿from typing import Annotated, Literal, Self
+﻿from typing import Annotated, Literal, Self, get_args
 
 from pydantic import BaseModel, Field, model_validator
 
@@ -138,7 +138,7 @@ class LiteralSchema(BaseSchema):
     Also normally used to just set until/since version (80% + of cases)
     """
     kind: Literal["literal"] = Field(repr=False)
-    value: Annotated[StringSchema | IntSchema | BooleanSchema | FloatSchema, Field(discriminator="kind")]
+    value: Annotated[StringSchema | IntSchema | BooleanSchema | DoubleSchema, Field(discriminator="kind")]
 
     def to_annotation(self, ctx: SingleSymbolContext) -> str:
         ctx.required_imports.add(Import("typing", "Literal", False, True))
@@ -216,26 +216,36 @@ class StringSchema(BaseSchema):
 
 
 class FloatSchema(BaseSchema):
-    """
-    Float - A 32-bit, single-precision floating-point number, ranging from -3.4E38 to +3.4E38.
-    Double - A 64-bit, double-precision floating-point, ranging from -1.79E308 to +1.79E308.
-    """
-    kind: Literal["float", "double"] = Field(repr=False)
+    """A 32-bit, single-precision floating-point number, ranging from -3.4E38 to +3.4E38."""
+    kind: Literal["float"] = Field(repr=False)
     value_range: ValueRange | None = Field(default=None, alias="valueRange")
     value: float | None = None  # For literal floats (not used in the symbols yet)
 
-    min_value_internally: tuple[float, float] = (-3.4E38, -1.79E308)
-    max_value_internally: tuple[float, float] = (3.4E38, 1.79E308)
+    min_value_internally: float = -3.4E38
+    max_value_internally: float = 3.4E38
 
     def to_annotation(self, ctx: SingleSymbolContext) -> str:
         if self.value_range:
             return self.value_range.to_annotation(ctx, "float", self.attributes)
         if SAFE_GUARD_JAVA_NUMBERS:  # pragma: no cover
-            min_value, max_value = (
-                self.min_value_internally[0 if self.kind == "float" else 1],
-                self.max_value_internally[0 if self.kind == "float" else 1],
-            )
-            return self.model_copy(update={"valueRange": ValueRange(min=min_value, max=max_value)}).to_annotation(ctx)
+            return self.model_copy(update={"value_range": ValueRange(min=self.min_value_internally, max=self.max_value_internally)}).to_annotation(ctx)
+        return "float"
+
+
+class DoubleSchema(BaseSchema):
+    """A 64-bit, double-precision floating-point, ranging from -1.79E308 to +1.79E308."""
+    kind: Literal["double"] = Field(repr=False)
+    value_range: ValueRange | None = Field(default=None, alias="valueRange")
+    value: float | None = None  # For literal doubles
+
+    min_value_internally: float = -1.79E308
+    max_value_internally: float = 1.79E308
+
+    def to_annotation(self, ctx: SingleSymbolContext) -> str:
+        if self.value_range:
+            return self.value_range.to_annotation(ctx, "float", self.attributes)
+        if SAFE_GUARD_JAVA_NUMBERS:  # pragma: no cover
+            return self.model_copy(update={"value_range": ValueRange(min=self.min_value_internally, max=self.max_value_internally)}).to_annotation(ctx)
         return "float"
 
 
@@ -245,6 +255,19 @@ class BooleanSchema(BaseSchema):
 
     def to_annotation(self, ctx: SingleSymbolContext) -> str:
         return "bool"
+
+
+class ByteSchema(BaseSchema):
+    """A signed 8-bit integer, ranging from -128 to 127 (inclusive)."""
+    kind: Literal["byte"] = Field(repr=False)
+    value_range: ValueRange | None = Field(default=None, alias="valueRange")
+    value: bool | int | None = None  # For literal bytes (not used in the symbols yet)
+
+    min_value_internally: int = -128
+    max_value_internally: int = 127
+
+    def to_annotation(self, ctx: SingleSymbolContext) -> str:
+        return IntSchema._to_annotation_with_bounds(ctx, self, self.min_value_internally, self.max_value_internally)
 
 
 class ShortSchema(BaseSchema):
@@ -273,19 +296,6 @@ class LongSchema(BaseSchema):
         return IntSchema._to_annotation_with_bounds(ctx, self, self.min_value_internally, self.max_value_internally)
 
 
-class ByteSchema(BaseSchema):
-    """A signed 8-bit integer, ranging from -128 to 127 (inclusive)."""
-    kind: Literal["byte"] = Field(repr=False)
-    value_range: ValueRange | None = Field(default=None, alias="valueRange")
-    value: bool | int | None = None  # For literal bytes (not used in the symbols yet)
-
-    min_value_internally: int = -128
-    max_value_internally: int = 127
-
-    def to_annotation(self, ctx: SingleSymbolContext) -> str:
-        return IntSchema._to_annotation_with_bounds(ctx, self, self.min_value_internally, self.max_value_internally)
-
-
 class AnySchema(BaseSchema):
     kind: Literal["any"] = Field(repr=False)
 
@@ -298,7 +308,7 @@ class AnySchema(BaseSchema):
 # Iterable Schemas (list, tuple, array, etc.)
 
 type ListSchemaItemTypes = (
-    IntSchema | StringSchema | FloatSchema | BooleanSchema | ConcreteSchema | DispatcherSchema
+    IntSchema | StringSchema | FloatSchema | DoubleSchema | BooleanSchema | ConcreteSchema | DispatcherSchema
     | IntArraySchema | ListSchema | ReferenceSchema | StructSchema | UnionSchema
 )
 
@@ -385,7 +395,7 @@ class EnumSchema(BaseSchema):
 
 
 type ConcreteSchemaTypeArgTypes = (
-    AnySchema | ByteSchema | ConcreteSchema | DispatcherSchema | FloatSchema | IndexedSchema
+    AnySchema | ByteSchema | ConcreteSchema | DispatcherSchema | FloatSchema | DoubleSchema | IndexedSchema
     | IntSchema | ListSchema | ReferenceSchema | StringSchema | StructSchema | UnionSchema
 )
 
@@ -443,7 +453,7 @@ class ConcreteSchema(BaseSchema):
         )
         # Optionally allow passing numeric primitive kind(s) directly alongside the concrete wrapper.
         shortcut_annotations = [
-            type_arg.to_annotation(ctx) for type_arg in self.type_args if isinstance(type_arg, (IntSchema, FloatSchema))
+            type_arg.to_annotation(ctx) for type_arg in self.type_args if isinstance(type_arg, (IntSchema, FloatSchema, DoubleSchema))
         ] if ctx.allow_numeric_type_arg_shortcuts else []
         # This allows you to omit "MinMaxBounds" and such, which generates `MinMaxBounds[int] | int`, QoL
         return " | ".join([concrete_annotation] + shortcut_annotations)
@@ -501,7 +511,7 @@ class ReferenceSchema(BaseSchema):
 
 type UnionSchemaMemberTypes = (
     ListSchema | StringSchema | ReferenceSchema | DispatcherSchema | ConcreteSchema | BooleanSchema | StructSchema
-    | UnionSchema | LiteralSchema | IntSchema | IndexedSchema | FloatSchema | IntArraySchema | TupleSchema | ByteSchema | ShortSchema
+    | UnionSchema | LiteralSchema | IntSchema | IndexedSchema | FloatSchema | DoubleSchema | IntArraySchema | TupleSchema | ByteSchema | ShortSchema
     | LongSchema
 )
 
@@ -513,7 +523,7 @@ class UnionSchema(BaseSchema):
 
     @model_validator(mode="after")
     def prune_members_on_version(self) -> Self:
-        # Remove members that are invalid for the current CURRENT_VERSION or are empty wrappers
+        # Remove members that aren't valid for the current version
         self.members = [member for member in self.members if is_valid_with_attributes(member.attributes)]
         return self
 
@@ -545,7 +555,7 @@ class UnionSchema(BaseSchema):
             declarations.extend(member_declarations)
             annotations.append(annotation)
 
-        return declarations, list(dict.fromkeys(annotations)) or ["None"]
+        return declarations, list(dict.fromkeys(annotations)) or ["None"]  # De-duplicated, and an empty union is just None
 
     def to_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None = None) -> str:
         _, annotations = self._render_members(nested_struct_name, ctx, declare_structs=False)
@@ -556,6 +566,7 @@ class UnionSchema(BaseSchema):
 
     @staticmethod
     def _render_union_alias(class_name: str, annotations: list[str], discriminator: str | None, ctx: SingleSymbolContext) -> str:
+        """`type <class_name> = A | B`, wrapped in `Annotated[..., Field(discriminator=...)]` when there's a discriminator."""
         union_annotation = " | ".join(annotations)
         if discriminator is None:
             return f"type {class_name} = {union_annotation}"
@@ -569,6 +580,29 @@ class UnionSchema(BaseSchema):
             "]"
         )
 
+    @staticmethod
+    def _literal_discriminator_field(schemas: list[StructSchema]) -> str | None:
+        """Find a shared string-literal field whose value uniquely identifies each model."""
+        if len(schemas) < 2:
+            return None
+
+        string_literals_per_schema = [
+            {
+                PairSchema.clean_key(field.key): field.type.value.value
+                for field in schema.fields
+                if isinstance(field, PairSchema)
+                and isinstance(field.key, str)
+                and isinstance(field.type, LiteralSchema)
+                and isinstance(field.type.value.value, str)
+            }
+            for schema in schemas
+        ]
+        for field_name in string_literals_per_schema[0]:
+            values = [string_literals[field_name] for string_literals in string_literals_per_schema]
+            if len(set(values)) == len(values):  # They're all unique
+                return field_name
+        return None
+
     def to_python_code(self, class_name: str, ctx: SingleSymbolContext) -> list[str]:
         if len(self.members) == 1:  # Some objects are (since, A) | (until, B) - collapse into just A
             return self.members[0].to_python_code(class_name, ctx)
@@ -577,19 +611,17 @@ class UnionSchema(BaseSchema):
         declarations, annotations = self._render_members(f"{class_name}Struct", ctx, declare_structs=True)
         try:
             resolved_members = [ctx.schema_graph.resolve(member) for member in self.members]
-        except KeyError:
+        except KeyError:  # A member is an unresolved type param (e.g. T), so it can't be a struct
             resolved_members = []
         struct_members = [resolved for resolved in resolved_members if isinstance(resolved, StructSchema)]
-        discriminator = (  # Optimisation
-            _literal_discriminator_field(struct_members)
-            if len(struct_members) == len(self.members) == len(annotations)
-            else None
-        )
+        # Only discriminate when every member is a struct, and none of them got merged as duplicates
+        all_distinct_structs = len(struct_members) == len(self.members) == len(annotations)
+        discriminator = self._literal_discriminator_field(struct_members) if all_distinct_structs else None
         return declarations + [self._render_union_alias(class_name, annotations, discriminator, ctx)]
 
 
 type PairSchemaTypes = (
-    IntSchema | FloatSchema | ConcreteSchema | ListSchema | UnionSchema | ReferenceSchema | BooleanSchema | AnySchema | TupleSchema
+    IntSchema | FloatSchema | DoubleSchema | ConcreteSchema | ListSchema | UnionSchema | ReferenceSchema | BooleanSchema | AnySchema | TupleSchema
     | IndexedSchema | StringSchema | StructSchema | ByteSchema | DispatcherSchema | IntArraySchema | ShortSchema | LongSchema
     | LiteralSchema
 )
@@ -835,7 +867,7 @@ class StructSchema(BaseSchema):
         if (dispatcher_spread := self._dispatcher_spread()) is None:
             return None
         variants = self._dispatcher_variants(class_name, *dispatcher_spread, ctx)
-        discriminator = _literal_discriminator_field([variant for _, variant in variants])
+        discriminator = UnionSchema._literal_discriminator_field([variant for _, variant in variants])
         return self._render_variants(class_name, variants, discriminator, ctx)
 
     def _render_alias_spread(self, class_name: str, ctx: SingleSymbolContext) -> list[str] | None:
@@ -925,30 +957,6 @@ class StructSchema(BaseSchema):
         return self._render_model(class_name, ctx)
 
 
-def _literal_discriminator_field(schemas: list[StructSchema]) -> str | None:
-    """Find a shared string-literal field whose value uniquely identifies each model."""
-    # TODO: Move to LiteralSchema?
-    if len(schemas) < 2:
-        return None
-
-    string_literals_per_schema = [
-        {
-            PairSchema.clean_key(field.key): field.type.value.value
-            for field in schema.fields
-            if isinstance(field, PairSchema)
-            and isinstance(field.key, str)
-            and isinstance(field.type, LiteralSchema)
-            and isinstance(field.type.value.value, str)
-        }
-        for schema in schemas
-    ]
-    for field_name in string_literals_per_schema[0]:
-        values = [string_literals[field_name] for string_literals in string_literals_per_schema]
-        if len(set(values)) == len(values):  # They're all unique
-            return field_name
-    return None
-
-
 # ==================================================================================================================================
 # Grossness
 
@@ -1033,25 +1041,13 @@ class TreeSchema(BaseSchema):
 # ==================================================================================================================================
 # ==================================================================================================================================
 
-type KindOption = Literal[
-    "int", "string", "float", "double", "boolean", "short", "long", "byte", "literal", "any",
-    "list", "tuple", "int_array", "enum",
-    "concrete", "indexed", "reference", "union", "pair", "spread",
-    "template", "struct", "dynamic", "static", "dispatcher", "tree",
+SCHEMA_MODELS: list[type[BaseSchema]] = [
+    LiteralSchema, IntSchema, StringSchema, FloatSchema, DoubleSchema, BooleanSchema, ShortSchema, LongSchema, ByteSchema, AnySchema,
+    ListSchema, TupleSchema, IntArraySchema, EnumSchema,
+    ConcreteSchema, IndexedSchema, ReferenceSchema, UnionSchema, PairSchema, SpreadFieldSchema, TemplateSchema, StructSchema,
+    DynamicIndexSchema, StaticIndexSchema, DispatcherSchema, TreeSchema,
 ]
 
-KIND_TO_MODEL: dict[KindOption, type[BaseSchema]] = {
-    # TODO: We can probably make this a list of type[BaseSchema], then iterate over them and generate this by doing model.__fields__["kind"].default for each model.
-    # That way we don't have to maintain this list manually.
-    # Just have to make double it's own thing first.
-    "struct": StructSchema,
-    "enum": EnumSchema,
-    "union": UnionSchema,
-    "template": TemplateSchema, "reference": ReferenceSchema, "literal": LiteralSchema, "pair": PairSchema, "concrete": ConcreteSchema, "string": StringSchema,
-    "float": FloatSchema, "list": ListSchema, "tuple": TupleSchema, "int": IntSchema, "short": ShortSchema, "long": LongSchema, "boolean": BooleanSchema,
-    "byte": ByteSchema, "int_array": IntArraySchema,
-    "dispatcher": DispatcherSchema, "any": AnySchema, "indexed": IndexedSchema, "dynamic": DynamicIndexSchema,
-    "tree": TreeSchema,
-    "spread": SpreadFieldSchema,
-    "static": StaticIndexSchema, "double": FloatSchema,
-}
+# Each model's `kind` is a single Literal (e.g. Literal["int"]), so get_args gives us ("int",).
+# e.g. {"literal": LiteralSchema, "int": IntSchema, ...}
+KIND_TO_MODEL: dict[str, type[BaseSchema]] = {get_args(model.model_fields["kind"].annotation)[0]: model for model in SCHEMA_MODELS}
