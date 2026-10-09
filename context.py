@@ -56,6 +56,8 @@ class SingleSymbolContext:
     current_symbol_path: str = ""
     allow_numeric_type_arg_shortcuts: bool = True
     require_runtime_imports: bool = False
+    # The datapack/resourcepack directory (e.g. "recipe") if this symbol is a root resource, for its __resource_dir__.
+    resource_dir: str | None = None
     # Stable names per (preferred name, schema/path fingerprint), shared by nested contexts.
     allocated_name_by_identity: dict[tuple[str, str], str] = field(default_factory=dict)
     # Helper class/type names already appended to additional_dataclasses.
@@ -107,6 +109,7 @@ class SingleSymbolContext:
         This is normally so we can temporarily disable attributes like:
         - allow_numeric_type_arg_shortcuts
         - require_runtime_imports
+        - resource_dir
         """
         return SingleSymbolContext(
             required_imports=self.required_imports,
@@ -116,6 +119,7 @@ class SingleSymbolContext:
             schema_graph=self.schema_graph,
             allow_numeric_type_arg_shortcuts=self.allow_numeric_type_arg_shortcuts,
             require_runtime_imports=self.require_runtime_imports,
+            resource_dir=self.resource_dir,
             allocated_name_by_identity=self.allocated_name_by_identity,
             emitted_declaration_names=self.emitted_declaration_names,
         )

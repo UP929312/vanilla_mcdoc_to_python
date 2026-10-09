@@ -44,6 +44,17 @@ class Attribute(BaseModel):
         value: str | dict | None = self._attribute_value(self.value)  # type: ignore[assignment, type-arg]
         return IdSpec.from_value(value)
 
+    def to_string_pattern(self) -> str | None:
+        """The regex a string with this attribute must contain, matching how Spyglass validates them, e.g.
+        #[match_regex="^[A-Za-z0-9_]*$"], #[integer] (a string of digits) or #[color="hex_rgb"] (starts with a #)"""
+        if self.name == "match_regex":
+            return str(self._attribute_value(self.value))
+        if self.name == "integer":
+            return r"^-?\d+$"
+        if self.name == "color" and self._attribute_value(self.value) == "hex_rgb":
+            return "^#"
+        return None
+
     @classmethod
     def _attribute_value(cls, schema: LiteralSchema | TreeSchema | DispatcherSchema | ReferenceSchema | None) -> object:
         if schema is None:
@@ -198,6 +209,10 @@ class StringSchema(BaseSchema):
         if id_spec is not None:
             ctx.required_imports.add(Import("minecraft_registry", "IdSpec", False, False))
             metadata.append(id_spec.to_annotation())  # Adds IdSpec(registry=...), for example
+        # For regex patterns, we add a Field(pattern=...) to the Annotated[str, ...] type, so that pydantic can validate it.
+        for pattern in (pattern for attribute in self.attributes if (pattern := attribute.to_string_pattern()) is not None):
+            ctx.required_imports.add(Import("pydantic", "Field", False, False))
+            metadata.append(f"Field(pattern={pattern!r})")
 
         # Return Annotated[str, <x>] if length range present:
         if self.length_range is not None:
@@ -932,7 +947,9 @@ class StructSchema(BaseSchema):
         if mapping_alias is not None:  # Mappings are just dict[<x>, <x>], so inline them rather than making a type alias.
             return mapping_alias
         class_name = ctx.allocate_name(class_name, self.model_dump_json(by_alias=True))
-        ctx.add_dataclass(self.to_python_code(class_name, ctx))
+        helper_ctx = ctx.copy()
+        helper_ctx.resource_dir = None  # Helper structs (e.g. a field's struct) aren't the resource itself
+        ctx.add_dataclass(self.to_python_code(class_name, helper_ctx))
         return f"{class_name}{ctx.type_params_suffix()}"
 
     def _render_model(self, class_name: str, ctx: SingleSymbolContext) -> list[str]:
@@ -946,6 +963,9 @@ class StructSchema(BaseSchema):
             base_names.append(f"Generic{type_params}")
 
         lines = [f"class {class_name}({', '.join(base_names)}):"]
+        if ctx.resource_dir is not None:  # A root resource (or one of its variants), e.g. a recipe, knows its pack directory
+            ctx.required_imports.add(Import("typing", "ClassVar", False, True))
+            lines.append(f"    __resource_dir__: ClassVar[str] = {ctx.resource_dir!r}\n")
         pair_fields = SpreadFieldSchema.filter_fields_to_pair_schemas_only(self.fields)
         if not pair_fields:
             lines.append("    pass")

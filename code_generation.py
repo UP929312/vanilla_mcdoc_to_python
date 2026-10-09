@@ -59,15 +59,8 @@ def make_python_file_content(resource_type: str, resource_data: dict[str, Any], 
     current_model = class_type(**resource_data).remove_version_data()
 
     signature_lines: list[str] = []
-    ctx = SingleSymbolContext(current_symbol_path=resource_type, schema_graph=SCHEMA_GRAPH)
+    ctx = SingleSymbolContext(current_symbol_path=resource_type, schema_graph=SCHEMA_GRAPH, resource_dir=get_resource_lookup_map().get(resource_type))
     body_lines = current_model.to_python_code(class_name, ctx)
-
-    if (resource_key := get_resource_lookup_map().get(resource_type)) is not None:
-        # TODO: I hate this, it's gross. I really wished we added this to the StructSchema, and then we don't have to do loop over.
-        class_line_index = next((i for i, line in enumerate(body_lines) if line.startswith(f"class {class_name}")), None)
-        if class_line_index is not None:
-            ctx.required_imports.add(Import("typing", "ClassVar", False, True))
-            body_lines.insert(class_line_index + 1, f"    __resource_dir__: ClassVar[str] = {resource_key!r}\n")
 
     # Add TypeVar declarations after rendering so discovered local type params are included.
     if ctx.local_type_params:
