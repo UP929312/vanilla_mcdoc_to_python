@@ -20,7 +20,7 @@ class TitlesStruct(GeneratedModel):
 
 
 class DisciplinesStruct(GeneratedModel):
-    discipline: Annotated[str, 'Field(min_length=1)'] | Literal[""]
+    discipline: Annotated[str, Field(min_length=1)] | Literal[""]
     titles: list[TitlesStruct]
 
 

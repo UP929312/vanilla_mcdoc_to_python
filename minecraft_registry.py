@@ -29,7 +29,7 @@ class IdSpec:
             return cls(registry=value)
         options = dict(value)
         if exclude := options.get("exclude"):
-            options["exclude"] = (exclude,) if isinstance(exclude, str) else tuple(exclude)
+            options["exclude"] = tuple(exclude)
         return cls(**options)
 
     def to_annotation(self) -> str:

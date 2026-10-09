@@ -64,10 +64,14 @@ class SingleSymbolContext:
     def require_annotated(self) -> None:
         self.required_imports.add(Import("typing", "Annotated", type_checking_only=False, is_builtin=True))
 
+    def type_params_suffix(self) -> str:
+        """The local type params to put after a generic name, e.g. `[K, V]`, or "" if there aren't any."""
+        type_param_names = sorted({symbol_path_to_object_name(path) for path in self.local_type_params})
+        return f"[{', '.join(type_param_names)}]" if type_param_names else ""
+
     def add_dataclass(self, lines: list[str]) -> None:
         """Adds the given dataclass declaration lines to the context, if not already emitted."""
-        declaration: str = next((line for line in lines if line.startswith(("class ", "type "))), None)  # type: ignore[assignment]
-        if (name := declaration.split()[1].split("(", 1)[0]) in self.emitted_declaration_names:
+        if (name := lines[0].split()[1].split("(", 1)[0]) in self.emitted_declaration_names:
             return
         self.emitted_declaration_names.add(name)
         self.additional_dataclasses.extend(lines + [""])

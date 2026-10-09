@@ -1,8 +1,8 @@
 from typing import Any
 
 from typed_models import (
-    BaseSchema, ConcreteSchema, DispatcherSchema, DynamicIndexSchema, IndexedSchema,
-    KIND_TO_MODEL, PairSchema, ReferenceSchema, SpreadFieldSchema, StringSchema, StructSchema, TemplateSchema,
+    BaseSchema, ConcreteSchema, ConcreteSchemaTypeArgTypes, DispatcherSchema, DynamicIndexSchema, IndexedSchema,
+    KIND_TO_MODEL, PairSchema, ReferenceSchema, SpreadFieldSchema, StructSchema, TemplateSchema,
 )
 
 
@@ -26,7 +26,7 @@ class SchemaGraph:
             }
         return cls(symbols, dispatchers)
 
-    def resolve(self, schema: BaseSchema) -> tuple[BaseSchema, ...]:
+    def resolve(self, schema: BaseSchema) -> BaseSchema:
         """Resolve references and instantiate concrete template applications."""
         if isinstance(schema, ReferenceSchema):
             return self.resolve(schema=self.symbols[schema.path])
@@ -37,24 +37,23 @@ class SchemaGraph:
                     (parameter.path for parameter in target.type_params),
                     schema.type_args,
                 ))
-                return self.resolve(self._substitute(target.child, arguments))  # type: ignore[arg-type]
+                return self.resolve(self._substitute(target.child, arguments))
             return self.resolve(schema.child)
-        return (schema, )
+        return schema
 
-    def is_runtime_class(self, schema: BaseSchema, seen: set[str] | None = None) -> bool:
+    def is_runtime_class(self, schema: BaseSchema) -> bool:
         """Whether a schema renders as one class that can be inherited."""
         if isinstance(schema, ConcreteSchema):
-            resolved = self.resolve(schema)
-            return len(resolved) == 1 and self.is_runtime_class(resolved[0], seen)
+            return self.is_runtime_class(self.resolve(schema))
         if isinstance(schema, ReferenceSchema):
             target = self.symbols.get(schema.path)
-            return target is None or self.is_runtime_class(target, (seen or set()) | {schema.path})
+            return target is None or self.is_runtime_class(target)
         if not isinstance(schema, StructSchema):
             return False
         if schema._mapping_pair() is not None or schema._dispatcher_spread() is not None:
             return False
         return all(
-            not isinstance(field, SpreadFieldSchema) or self.is_runtime_class(field.type, seen)
+            not isinstance(field, SpreadFieldSchema) or self.is_runtime_class(field.type)
             for field in schema.fields
         )
 
@@ -64,7 +63,7 @@ class SchemaGraph:
             return self._dispatcher_candidates(schema)
         return self._indexed_candidates(schema)
 
-    def instantiate(self, schema: TemplateSchema, arguments: list[BaseSchema]) -> BaseSchema:
+    def instantiate(self, schema: TemplateSchema, arguments: list[ConcreteSchemaTypeArgTypes]) -> BaseSchema:
         mapping = dict(zip((parameter.path for parameter in schema.type_params), arguments, strict=False))
         return self._substitute(schema.child, mapping)
 
@@ -79,30 +78,20 @@ class SchemaGraph:
     def _indexed_candidates(self, schema: IndexedSchema) -> tuple[BaseSchema, ...]:
         candidates: list[BaseSchema] = []
         for branch in self.annotation_candidates(schema.child):
-            for resolved in self.resolve(branch):
-                assert isinstance(resolved, StructSchema)
-                for index in schema.parallelIndices:
-                    fields = (
-                        [field for field in resolved.fields if isinstance(field, PairSchema)]
-                        if isinstance(index, DynamicIndexSchema)
-                        else [self._find_struct_field(resolved, index.value.removeprefix("minecraft:"))]  # type: ignore[list-item]
-                    )
-                    candidates.extend(field.type for field in fields if field is not None)
+            resolved = self.resolve(branch)
+            assert isinstance(resolved, StructSchema)
+            for index in schema.parallelIndices:
+                fields = (
+                    [field for field in resolved.fields if isinstance(field, PairSchema)]
+                    if isinstance(index, DynamicIndexSchema)
+                    else [self._find_struct_field(resolved, index.value.removeprefix("minecraft:"))]
+                )
+                candidates.extend(field.type for field in fields)
         return self._deduplicate(candidates)
 
     @staticmethod
-    def _find_struct_field(schema: StructSchema, key: str) -> PairSchema | None:
-        return next(
-            (
-                field for field in schema.fields
-                if isinstance(field, PairSchema)
-                and (
-                    isinstance(field.key, str) and field.key == key
-                    or isinstance(field.key, StringSchema) and (field.key.value is None or field.key.value == key)
-                )
-            ),
-            None,
-        )
+    def _find_struct_field(schema: StructSchema, key: str) -> PairSchema:
+        return next(field for field in schema.fields if isinstance(field, PairSchema) and field.key == key)
 
     @staticmethod
     def _deduplicate(schemas: list[BaseSchema]) -> tuple[BaseSchema, ...]:
@@ -116,7 +105,7 @@ class SchemaGraph:
         return tuple(unique)
 
     @staticmethod
-    def _substitute(schema: BaseSchema, mapping: dict[str, BaseSchema]) -> BaseSchema:
+    def _substitute(schema: BaseSchema, mapping: dict[str, ConcreteSchemaTypeArgTypes]) -> BaseSchema:
         """Recursively replace references to type parameters with concrete types."""
         def replace(value: object) -> object:
             if isinstance(value, dict):

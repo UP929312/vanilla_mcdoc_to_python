@@ -84,8 +84,7 @@ def test_real_reference_resolution(graph: SchemaGraph) -> None:
 
     resolved = graph.resolve(reference)
 
-    assert len(resolved) == 1
-    assert not isinstance(resolved[0], ReferenceSchema)
+    assert not isinstance(resolved, ReferenceSchema)
 
 
 def test_real_dynamic_dispatch_and_template_index(graph: SchemaGraph) -> None:
