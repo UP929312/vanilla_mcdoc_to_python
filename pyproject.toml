@@ -3,12 +3,13 @@
 name = "vanilla-mcdoc"
 dynamic = ["version"]  # The Minecraft version it was generated for, e.g. 26.4-snapshot-3 -> 26.4.0a3
 description = "Pydantic models for Minecraft's data packs and resource packs, generated from Spyglass's vanilla-mcdoc"
+readme = "README.md"  # The PyPI page
 requires-python = ">=3.14"  # Generated classes use annotations that are only imported under TYPE_CHECKING (needs PEP 649)
 dependencies = ["pydantic>=2.11"]  # For validate_by_name and serialize_by_alias
 
 [dependency-groups]
 # What the generator and its checks need: `pip install --group dev` (pip 25.1+)
-dev = ["pydantic>=2.11", "pytest", "coverage", "mypy", "ruff", "flake8", "pylint", "build"]
+dev = ["pydantic>=2.11", "pytest", "coverage", "mypy", "ruff==0.17.*", "flake8", "pylint", "build"]  # ruff is pinned, as new versions turn on new rules
 
 [build-system]
 requires = ["hatchling"]
@@ -25,7 +26,7 @@ exclude = ["__pycache__", "*.pyc"]
 packages = ["vanilla_mcdoc"]
 
 [tool.hatch.build.targets.sdist]
-include = ["vanilla_mcdoc"]
+include = ["vanilla_mcdoc", "README.md"]
 
 [tool.mypy]
 python_version = "3.14"
@@ -58,6 +59,14 @@ implicit_reexport = false        # We allow this here, we don't allow it in vani
 disallow_any_decorated = true
 strict_optional = true
 strict_bytes = true
+
+[tool.ruff]
+line-length = 220  # Same as pylint's (it's used when sorting imports)
+extend-exclude = ["tests/assertions"]  # Snapshots of generated code (vanilla_mcdoc/ itself is left out by .gitignore)
+
+[tool.ruff.lint.isort]
+split-on-trailing-comma = false  # Keep imports on one line where they fit, like the rest of the code
+known-first-party = ["vanilla_mcdoc"]  # It's ours (just generated, and gitignored), as pylint sees it too
 
 [tool.ruff.lint]
 ignore = ["F821"]  # F821 is some noise for undefined name.
