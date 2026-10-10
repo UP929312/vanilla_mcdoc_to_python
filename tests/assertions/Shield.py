@@ -1,29 +1,27 @@
 # ~~~ WHAT ARE WE TESTING ~~~
 
-# Inline pair structs are materialized as sibling dataclasses instead of degrading to Any.
+# Inline pair structs are materialized as sibling models instead of degrading to Any.
 
 # ~~~ FILE CONTENT ~~~
 """
 Generated from symbols.json for ::java::world::item::shield::Shield
-Local link to file: generated_symbols/world/item/shield/Shield.py
+Local link to file: vanilla_mcdoc/world/item/shield/Shield.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
-from generated_symbols.world.item.ItemBase import ItemBase
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.world.item.ItemBase import ItemBase
 
 if TYPE_CHECKING:
-    from generated_symbols.util.color.DyeColorInt import DyeColorInt
-    from generated_symbols.world.block.banner.BannerPatternLayer import BannerPatternLayer
+    from vanilla_mcdoc.util.color.DyeColorInt import DyeColorInt
+    from vanilla_mcdoc.world.block.banner.BannerPatternLayer import BannerPatternLayer
 
 
-@dataclass(kw_only=True)
-class BlockEntityTagStruct:
+class BlockEntityTagStruct(GeneratedModel):
     Base: DyeColorInt | None = None  # Base color.
     Patterns: list[BannerPatternLayer] | None = None
 
 
-@dataclass(kw_only=True)
 class Shield(ItemBase):
     BlockEntityTag: BlockEntityTagStruct | None = None  # Banner Data.

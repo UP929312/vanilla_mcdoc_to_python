@@ -5,17 +5,17 @@
 # ~~~ FILE CONTENT ~~~
 """
 Generated from symbols.json for ::java::world::block::test_instance_block::ErrorMarker
-Local link to file: generated_symbols/world/block/test_instance_block/ErrorMarker.py
+Local link to file: vanilla_mcdoc/world/block/test_instance_block/ErrorMarker.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
+from vanilla_mcdoc.base import GeneratedModel
+
 if TYPE_CHECKING:
-    from generated_symbols.util.text.Text import Text
+    from vanilla_mcdoc.util.text.Text import Text
 
 
-@dataclass(kw_only=True)
-class ErrorMarker:
+class ErrorMarker(GeneratedModel):
     pos: tuple[int, int, int]
     text: Text

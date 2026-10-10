@@ -10,5 +10,5 @@ def run_assertions() -> None:
         expected_file_contents = file.read_text().split(TEST_DIVIDER)[1]
         metadata, expected_code = expected_file_contents.split(CODE_DIVIDER)
         generated_file_path = Path(metadata.split("Local link to file: ")[1].split("\n")[0])
-        generated_file_contents = generated_file_path.read_text().split(DUMP_DIVIDER)[0].split(CODE_DIVIDER)[1]
+        generated_file_contents = generated_file_path.read_text(encoding="utf-8").split(DUMP_DIVIDER)[0].split(CODE_DIVIDER)[1]
         assert generated_file_contents.strip().strip("\n") == expected_code.strip().strip("\n"), f"{generated_file_path} was different!"

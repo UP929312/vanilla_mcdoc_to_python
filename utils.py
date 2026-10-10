@@ -1,5 +1,6 @@
-import dataclasses
 import json
+import re
+from dataclasses import dataclass, is_dataclass, asdict
 from typing import Any, TYPE_CHECKING
 from pathlib import Path
 
@@ -10,42 +11,42 @@ if TYPE_CHECKING:
 
 
 INDENT = 4
-GENERATED_SYMBOLS_DIRECTORY = Path("generated_symbols")
+STATIC_SYMBOLS_DIRECTORY = Path("static_symbols")
+GENERATED_SYMBOLS_DIRECTORY = Path("vanilla_mcdoc")
 SAFE_GUARD_JAVA_NUMBERS = False  # Do we annotate, say, ints to have bounds (e.g. <=2147483647), or just mark them as "int"
 
-REFETCH_SYMBOLS = False
-REFETCH_VERSIONS = False
-
-if REFETCH_SYMBOLS:  # pragma: no cover
-    import requests  # type: ignore[import-untyped]
-
-    print("Fetching latest symbols.json from https://raw.githubusercontent.com/SpyglassMC/vanilla-mcdoc/refs/heads/generated/symbols.json")
-    response = requests.get("https://raw.githubusercontent.com/SpyglassMC/vanilla-mcdoc/refs/heads/generated/symbols.json")
-    response.raise_for_status()
-    SYMBOLS_MAP: dict[str, dict[str, Any]] = response.json()
-
-    with open('symbols.json', 'w', encoding='utf-8') as file:
-        json.dump(SYMBOLS_MAP, file, indent=4)
-else:
-    with open('symbols.json', 'r', encoding='utf-8') as file:
-        SYMBOLS_MAP = json.load(file)
-
-if REFETCH_VERSIONS:  # pragma: no cover
-    import requests
-
-    print("Fetching latest version.json from https://raw.githubusercontent.com/misode/mcmeta/summary/versions/data.min.json")
-    response = requests.get("https://raw.githubusercontent.com/misode/mcmeta/summary/versions/data.min.json")
-    response.raise_for_status()
-    VERSION_IDS: list[str] = [item["id"] for item in response.json()]
-
-    with open('versions.json', 'w', encoding='utf-8') as file:
-        json.dump(VERSION_IDS, file, indent=4)
-else:
-    with open('versions.json', 'r', encoding='utf-8') as file:
-        VERSION_IDS = json.load(file)
+# To get the latest of these (pinned to exact upstream commits, which go in upstream.json), run `python ci.py fetch`
+with open('symbols.json', 'r', encoding='utf-8') as file:
+    SYMBOLS_MAP: dict[str, dict[str, Any]] = json.load(file)
+with open('versions.json', 'r', encoding='utf-8') as file:
+    VERSION_IDS: list[str] = json.load(file)
+# The vanilla-mcdoc and mcmeta commits the two files above came from, if they were fetched by ci.py
+UPSTREAM_COMMITS: dict[str, str] = json.loads(Path("upstream.json").read_text(encoding="utf-8")) if Path("upstream.json").exists() else {}
 
 LATEST_VERSION = VERSION_IDS[0]
 ROOT_SYMBOLS_KEYS = dict({object_type: set(keys) for object_type, keys in SYMBOLS_MAP.items()})
+
+
+@dataclass
+class Settings:
+    """Options for one generation run. main.py sets these from its command line arguments, before anything gets parsed."""
+    minecraft_version: str = LATEST_VERSION  # Which version to generate for, symbols.json has since/until attributes for every version
+    include_model_dump: bool = True  # The raw symbols.json data at the bottom of each file, handy for development
+
+
+SETTINGS = Settings()
+
+
+def minecraft_to_python_version(version: str) -> str:
+    """Turn a Minecraft version into a Python package version (PEP 440), so pip orders them like Minecraft does, e.g.
+    26.3 -> 26.3.0, 26.4-snapshot-3 -> 26.4.0a3, 26.4-pre-1 -> 26.4.0b1, 26.4-rc-1 -> 26.4.0rc1 (pip skips the last 3 unless --pre)"""
+    match = re.fullmatch(r"(\d+)\.(\d+)(?:\.(\d+))?(?:-(snapshot|pre|rc)-?(\d+))?", version)
+    if match is None:
+        raise ValueError(f"Can't turn {version} into a Python package version (old style snapshots like 25w14a aren't supported)")
+    major, minor, patch, stage, number = match.groups()
+    stage_letters = {"snapshot": "a", "pre": "b", "rc": "rc"}  # i.e. alpha, beta, release candidate
+    suffix = f"{stage_letters[stage]}{number}" if stage else ""
+    return f"{major}.{minor}.{patch or 0}{suffix}"
 
 
 def get_version_index(version: str) -> int:
@@ -70,15 +71,15 @@ def symbol_path_to_import_string_and_name(path: str) -> tuple[str, str]:
     return module, identifier
 
 
-def is_valid_with_attributes(attributes: list[Attribute], current_version: str = LATEST_VERSION) -> bool:
+def is_valid_with_attributes(attributes: list[Attribute], current_version: str | None = None) -> bool:
     """
     Checks if an object is valid based on its 'since' and 'until' attributes compared to the current_version.
     If the object has no attributes, it is considered valid.
     If the object has a 'since' attribute, it is valid if the current_version is greater than or equal to the 'since' version.
     If the object has an 'until' attribute, it is valid if the current_version is less than or equal to the 'until' version.
     """
-    current_index = get_version_index(current_version)
-    for attr in attributes or []:
+    current_index = get_version_index(current_version or SETTINGS.minecraft_version)
+    for attr in attributes:
         if attr.name == "until":
             until_version: str = attr.value.value.value  # type: ignore[union-attr, assignment]
             if until_version is not None and current_index <= get_version_index(until_version):  # pragma: no cover
@@ -95,10 +96,10 @@ def is_valid_with_attributes(attributes: list[Attribute], current_version: str =
 
 
 def iter_child_schemas(value: object) -> Generator[BaseSchema]:
-    from typed_models import BaseSchema
+    from typed_models import BaseSchema  # pylint: disable=C0415
     if isinstance(value, BaseSchema):
         yield value
-    elif isinstance(value, list):
+    if isinstance(value, list):
         for item in value:
             yield from iter_child_schemas(item)
 
@@ -111,8 +112,8 @@ def to_json(obj: object) -> str:
 
 def _convert(value: object) -> object:
     """Gets everything into a JSON serializable format, recursively removing None values."""
-    if dataclasses.is_dataclass(value) and not isinstance(value, type):
-        return _convert(dataclasses.asdict(value))
+    if is_dataclass(value) and not isinstance(value, type):
+        return _convert(asdict(value))
     if isinstance(value, dict):
         return {k: _convert(v) for k, v in value.items() if v is not None}
     if isinstance(value, (list, tuple)):
@@ -123,10 +124,9 @@ def _convert(value: object) -> object:
 def recursively_remove_none(value: object) -> object:
     if isinstance(value, dict):
         return {k: recursively_remove_none(v) for k, v in value.items() if v is not None}
-    elif isinstance(value, list):
+    if isinstance(value, list):
         return [recursively_remove_none(item) for item in value if item is not None]
-    else:
-        return value
+    return value
 
 
 def resource_path_to_python_path(resource_path: str) -> str:

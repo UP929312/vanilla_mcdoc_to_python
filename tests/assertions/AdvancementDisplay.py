@@ -5,20 +5,20 @@
 # ~~~ FILE CONTENT ~~~
 """
 Generated from symbols.json for ::java::data::advancement::AdvancementDisplay
-Local link to file: generated_symbols/data/advancement/AdvancementDisplay.py
+Local link to file: vanilla_mcdoc/data/advancement/AdvancementDisplay.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
+from vanilla_mcdoc.base import GeneratedModel
+
 if TYPE_CHECKING:
-    from generated_symbols.data.advancement.AdvancementFrame import AdvancementFrame
-    from generated_symbols.util.text.Text import Text
-    from generated_symbols.world.item.ItemStackTemplate import ItemStackTemplate
+    from vanilla_mcdoc.data.advancement.AdvancementFrame import AdvancementFrame
+    from vanilla_mcdoc.util.text.Text import Text
+    from vanilla_mcdoc.world.item.ItemStackTemplate import ItemStackTemplate
 
 
-@dataclass(kw_only=True)
-class AdvancementDisplay:
+class AdvancementDisplay(GeneratedModel):
     icon: ItemStackTemplate
     title: Text
     description: Text

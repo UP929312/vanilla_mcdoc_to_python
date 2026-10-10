@@ -5,10 +5,12 @@
 # ~~~ FILE CONTENT ~~~
 """
 Generated from symbols.json for ::java::util::DyeColorInt
-Local link to file: generated_symbols/util/DyeColorInt.py
+Local link to file: vanilla_mcdoc/util/DyeColorInt.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.util.color.DyeColorInt import DyeColorInt as DyeColorInt_alias
+from vanilla_mcdoc.util.color.DyeColorInt import DyeColorInt as DyeColorInt_alias
 
 
 type DyeColorInt = DyeColorInt_alias
+
+

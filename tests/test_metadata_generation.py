@@ -1,13 +1,14 @@
 from pathlib import Path
 
-import minecraft_registry
 from pytest import MonkeyPatch
 
-from code_generation import SCHEMA_GRAPH, make_init_content, make_python_file_content
+import minecraft_registry
+from code_generation import make_init_content, make_python_file_content
 from context import SingleSymbolContext
-from minecraft_registry import IdSpec, make_registry_id_file_content, make_registry_id_files, make_root_resource_registry_content, used_registry_names
-from schema_resolution import SchemaGraph
-from typed_models import IntSchema, UnionSchema
+from minecraft_registry import make_registry_id_file_content, make_registry_id_files, make_root_resource_registry_content, used_registry_names
+from schema_resolution import SchemaGraph, get_schema_graph
+from static_symbols.minecraft_types import IdSpec
+from typed_models import IntSchema, ReferenceSchema, UnionSchema
 from utils import LATEST_VERSION, SYMBOLS_MAP
 
 
@@ -16,6 +17,15 @@ def generated_body(resource_type: str, resource_data: dict[str, object], class_n
 
 
 class TestIdMetadataGeneration:
+    def test_empty_enum_generates_valid_class_body(self) -> None:
+        content = generated_body(
+            "::test::EmptyEnum",
+            {"kind": "enum", "enumKind": "string", "values": []},
+            "EmptyEnum",
+        )
+
+        assert "class EmptyEnum(StrEnum):\n    pass" in content
+
     def test_literal_id_attribute(self) -> None:
         content = generated_body(
             "::test::ItemId",
@@ -29,7 +39,7 @@ class TestIdMetadataGeneration:
             "ItemId",
         )
 
-        assert "from minecraft_registry import IdSpec" in content
+        assert "from vanilla_mcdoc.minecraft_types import IdSpec" in content
         assert "type ItemId = Annotated[str, IdSpec(registry='item')] | KnownItemId" in content
 
     def test_bare_id_attribute(self) -> None:
@@ -54,7 +64,7 @@ class TestIdMetadataGeneration:
         path = "::java::data::loot::condition::EnvironmentAttributeCheck"
         content = generated_body(path, SYMBOLS_MAP["mcdoc"][path], "EnvironmentAttributeCheck")
 
-        assert "from generated_symbols.registry.KnownEnvironmentAttributeId import KnownEnvironmentAttributeId" in content
+        assert "from vanilla_mcdoc.registry.KnownEnvironmentAttributeId import KnownEnvironmentAttributeId" in content
         assert "attribute: Annotated[str, IdSpec(registry='environment_attribute')] | KnownEnvironmentAttributeId" in content
 
         registry_content = make_registry_id_file_content("environment_attribute", [
@@ -72,13 +82,13 @@ class TestIdMetadataGeneration:
         assert spec.to_annotation() == "IdSpec(registry='texture', tags='allowed', definition=True, path='entity/')"
 
     def test_used_registry_names_are_discovered_from_nested_schemas(self) -> None:
-        registries = used_registry_names(SCHEMA_GRAPH)
+        registries = used_registry_names(get_schema_graph())
 
         assert "block" in registries
         assert "environment_attribute" in registries
 
     def test_registry_files_skip_dispatchers_without_public_ids(self, tmp_path: Path, monkeypatch: MonkeyPatch) -> None:
-        output_directory = tmp_path / "generated_symbols"
+        output_directory = tmp_path / "vanilla_mcdoc"
 
         def make_directory(path: Path) -> None:
             path.mkdir(parents=True, exist_ok=True)
@@ -89,7 +99,7 @@ class TestIdMetadataGeneration:
         monkeypatch.setattr(minecraft_registry, "GENERATED_SYMBOLS_DIRECTORY", output_directory)
         monkeypatch.setattr(minecraft_registry, "manage_directory_and_inits", make_directory)
         monkeypatch.setattr(minecraft_registry, "used_registry_names", registry_names)
-        make_registry_id_files(SCHEMA_GRAPH)
+        make_registry_id_files(get_schema_graph())
 
         block_file = output_directory / "registry" / "KnownBlockId.py"
         assert block_file.exists()
@@ -117,7 +127,7 @@ class TestDispatcherSpreadGeneration:
         )
 
         assert "class BlockEntityDataBanner(Banner):" in content
-        assert "    id: Literal['minecraft:banner'] = 'minecraft:banner'" in content
+        assert "    id: Literal['minecraft:banner', 'banner'] = 'minecraft:banner'" in content
 
     def test_optional_literal_dispatcher_fields_keep_valid_annotation_order(self) -> None:
         content = generated_body(
@@ -126,7 +136,8 @@ class TestDispatcherSpreadGeneration:
             "ButtonListDialogBase",
         )
 
-        assert "after_action: Literal['minecraft:close'] | None = 'minecraft:close'" in content
+        assert "class ButtonListDialogBaseClose(GeneratedModel):" in content
+        assert "after_action: Literal['minecraft:close', 'close'] | None = 'minecraft:close'" in content
 
     def test_dynamic_spread_generates_correlated_branch_classes(self) -> None:
         content = generated_body(
@@ -136,10 +147,51 @@ class TestDispatcherSpreadGeneration:
         )
 
         assert "class AdvancementCriterionInventoryChanged(InventoryChangeTrigger):" in content
-        assert "trigger: Literal['minecraft:inventory_changed']" in content
+        assert "trigger: Literal['minecraft:inventory_changed', 'inventory_changed']" in content
         assert "class AdvancementCriterionTick(PlayerTrigger):" in content
-        assert "trigger: Literal['minecraft:tick']" in content
-        assert "type AdvancementCriterion = AdvancementCriterionAllayDropItemOnBlock |" in content
+        assert "trigger: Literal['minecraft:tick', 'tick']" in content
+        assert "type AdvancementCriterion = Annotated[\n    AdvancementCriterionAllayDropItemOnBlock |" in content
+        assert "Field(discriminator='trigger')" in content
+
+    def test_union_schema_uses_shared_unique_string_literal_discriminator(self) -> None:
+        content = generated_body(
+            "::test::TaggedUnion",
+            {
+                "kind": "union",
+                "members": [
+                    {"kind": "struct", "fields": [{
+                        "kind": "pair",
+                        "key": "kind",
+                        "type": {"kind": "literal", "value": {"kind": "string", "value": "first"}},
+                    }]},
+                    {"kind": "struct", "fields": [{
+                        "kind": "pair",
+                        "key": "kind",
+                        "type": {"kind": "literal", "value": {"kind": "string", "value": "second"}},
+                    }]},
+                ],
+            },
+            "TaggedUnion",
+        )
+
+        assert "Field(discriminator='kind')" in content
+
+    def test_union_without_discriminator_remains_plain_union(self) -> None:
+        path = "::java::data::structure::StructureNBT"
+        content = generated_body(path, SYMBOLS_MAP["mcdoc"][path], "StructureNBT")
+
+        assert "type StructureNBT = StructureNBTStruct1 | StructureNBTStruct2" in content
+        assert "Field(discriminator=" not in content
+
+    def test_union_with_unresolved_type_parameter_remains_plain_union(self) -> None:
+        context = SingleSymbolContext(schema_graph=get_schema_graph())
+        context.local_type_params.add("::test::T")
+        schema = UnionSchema(kind="union", members=[
+            ReferenceSchema(kind="reference", path="::test::T"),
+            IntSchema(kind="int"),
+        ])
+
+        assert schema.to_python_code("GenericUnion", context) == ["type GenericUnion = T | int"]
 
     def test_dynamic_map_branch_does_not_break_distribution(self) -> None:
         content = generated_body(
@@ -148,8 +200,8 @@ class TestDispatcherSpreadGeneration:
             "EntitySubPredicate",
         )
 
-        assert "class EntitySubPredicatePredicates:" in content
-        assert "type: Literal['minecraft:predicates']" in content
+        assert "class EntitySubPredicatePredicates(GeneratedModel):" in content
+        assert "type: Literal['minecraft:predicates', 'predicates']" in content
 
 
 class TestRootExportGeneration:
@@ -164,11 +216,11 @@ class TestRootExportGeneration:
             "::java::data::anonymous::Ignored",
         ], ("::java::data::",))
 
-        assert "from generated_symbols.data.advancement.Advancement import Advancement" in content
-        assert "from generated_symbols.data.worldgen.DecorationStep import DecorationStep" in content
+        assert "from vanilla_mcdoc.data.advancement.Advancement import Advancement" in content
+        assert "from vanilla_mcdoc.data.worldgen.DecorationStep import DecorationStep" in content
         assert '"Model",' not in content
         assert '"Entity",' not in content
-        assert "from generated_symbols.data.anonymous.Ignored import Ignored" in content
+        assert "from vanilla_mcdoc.data.anonymous.Ignored import Ignored" in content
         assert '"Conditions",' not in content
         assert "import_module" not in content
         assert "def __getattr__" not in content
@@ -181,13 +233,13 @@ class TestRootExportGeneration:
             "::java::data::advancement::Advancement",
         ], ("::java::data::loot::",))
 
-        assert "from generated_symbols.data.loot.function.Conditions import Conditions" in content
+        assert "from vanilla_mcdoc.data.loot.function.Conditions import Conditions" in content
         assert '"Reference",' not in content
         assert '"Advancement",' not in content
 
 
 class TestRootResourceMetadata:
-    def test_root_resource_dataclasses_expose_resource_dirs(self) -> None:
+    def test_root_resource_models_expose_resource_dirs(self) -> None:
         content = generated_body(
             "::java::data::advancement::Advancement",
             SYMBOLS_MAP["mcdoc"]["::java::data::advancement::Advancement"],
@@ -237,10 +289,10 @@ class TestRootResourceMetadata:
             "::java::data::advancement::predicate::FoodPredicate",
         ])
 
-        assert "root_datapack_classes" in content
+        assert "ROOT_DATAPACK_CLASSES" in content
         assert "Advancement" in content
         assert "Recipe" in content
-        assert "root_resource_pack_classes" in content
+        assert "ROOT_RESOURCE_PACK_CLASSES" in content
         assert "Atlas" in content
         assert "FoodPredicate" not in content
 
@@ -254,10 +306,10 @@ class TestRuntimeImportGeneration:
         assert "location: AdvancementLocationPredicate | None = None" in content
         assert "AnyBlockInteractionTrigger = AllOptional[AnyBlockInteractionTriggerTypeArg]" in content
 
-    def test_dataclass_fields_preserve_schema_order(self) -> None:
+    def test_pydantic_fields_preserve_schema_order(self) -> None:
         path = "::java::data::advancement::Advancement"
         content = generated_body(path, SYMBOLS_MAP["mcdoc"][path], "Advancement")
-        field_names = ("display", "parent", "criteria", "requirements", "rewards", "sends_telemetry_event")
+        field_names = ("parent", "display", "criteria", "requirements", "rewards", "sends_telemetry_event")
 
         positions = [content.index(f"    {name}:") for name in field_names]
         assert positions == sorted(positions)
@@ -279,7 +331,7 @@ class TestRuntimeImportGeneration:
             "InlineStructMap",
         )
 
-        assert "class InlineStructMapValueStruct:" in content
+        assert "class InlineStructMapValueStruct(GeneratedModel):" in content
         assert "type InlineStructMap = dict[str, InlineStructMapValueStruct]" in content
 
     def test_dispatcher_mapping_key_preserves_registry_metadata(self) -> None:
@@ -308,7 +360,7 @@ class TestRuntimeImportGeneration:
 
         assert len(schema.members) == 1
         assert isinstance(schema.members[0], IntSchema)
-        assert schema.to_python_code("CurrentValue", SingleSymbolContext(current_symbol_path="CurrentValue", schema_graph=SCHEMA_GRAPH)) == [
+        assert schema.to_python_code("CurrentValue", SingleSymbolContext(current_symbol_path="CurrentValue", schema_graph=get_schema_graph())) == [
             "type CurrentValue = int",
         ]
 
@@ -316,7 +368,7 @@ class TestRuntimeImportGeneration:
         path = "::java::data::worldgen::attribute::GlobalEnvironmentAttributeMap"
         content = generated_body(path, SYMBOLS_MAP["mcdoc"][path], "GlobalEnvironmentAttributeMap")
 
-        runtime_import = "from generated_symbols.data.worldgen.attribute.EnvironmentAttributeMap import EnvironmentAttributeMap"
+        runtime_import = "from vanilla_mcdoc.data.worldgen.attribute.EnvironmentAttributeMap import EnvironmentAttributeMap"
         assert runtime_import in content
         assert f"if TYPE_CHECKING:\n    {runtime_import}" not in content
 
@@ -332,33 +384,35 @@ class TestRuntimeImportGeneration:
         path = "::java::util::FlatWeightedEntry"
         content = generated_body(path, SYMBOLS_MAP["mcdoc"][path], "FlatWeightedEntry")
 
-        assert "class FlatWeightedEntry(Generic[T]):" in content
+        assert "class FlatWeightedEntry(GeneratedModel, Generic[T]):" in content
         assert "type FlatWeightedEntry =" not in content
 
     def test_alias_spread_is_distributed(self) -> None:
         path = "::java::data::loot::function::CustomModelDataFlags"
         content = generated_body(path, SYMBOLS_MAP["mcdoc"][path], "CustomModelDataFlags")
 
-        assert "class CustomModelDataFlagsAppend:" in content
+        assert "class CustomModelDataFlagsAppend(GeneratedModel):" in content
         assert "class CustomModelDataFlags(ListOperation):" not in content
 
     def test_union_alias_spread_is_distributed(self) -> None:
         path = "::java::data::structure::StructureNBT"
         content = generated_body(path, SYMBOLS_MAP["mcdoc"][path], "StructureNBT")
 
-        assert "class StructureNBTStruct1:" in content
-        assert "class StructureNBTStruct2:" in content
+        assert "class StructureNBTStruct1(GeneratedModel):" in content
+        assert "class StructureNBTStruct2(GeneratedModel):" in content
         assert "type StructureNBT = StructureNBTStruct1 | StructureNBTStruct2" in content
 
     def test_generated_declaration_names_are_unique(self) -> None:
         dialog_path = "::java::data::dialog::Dialog"
         dialog = generated_body(dialog_path, SYMBOLS_MAP["mcdoc"][dialog_path], "Dialog")
-        assert "class DialogConfirmationNone2:" in dialog
+        # The `%none` branch (after_action not given) and the real `none` value used to clash, as DialogConfirmationNone(2)
+        assert "class DialogConfirmationDefault(GeneratedModel):" in dialog
+        assert "class DialogConfirmationNone(GeneratedModel):" in dialog
 
         timeline_path = "::java::data::timeline::EnvironmentAttributeTrackMap"
         timeline = generated_body(timeline_path, SYMBOLS_MAP["mcdoc"][timeline_path], "EnvironmentAttributeTrackMap")
-        assert timeline.count("class KeyframesStruct:") == 1
-        assert "class KeyframesStruct2:" in timeline
+        assert timeline.count("class KeyframesStruct(GeneratedModel):") == 1
+        assert "class KeyframesStruct2(GeneratedModel):" in timeline
 
     def test_concrete_dispatcher_instantiates_template_branches(self) -> None:
         path = "::java::data::worldgen::attribute::FloatAttribute"
@@ -373,4 +427,4 @@ class TestRuntimeImportGeneration:
 
         loot_path = "::java::data::loot::function::LootFunction"
         loot = generated_body(loot_path, SYMBOLS_MAP["mcdoc"][loot_path], "LootFunction")
-        assert "type_2: Annotated[str, IdSpec(registry='block_entity_type')]" in loot
+        assert "class LootFunctionCopyCustomData(CopyNbt):" in loot

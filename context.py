@@ -1,7 +1,8 @@
+import sys
 from dataclasses import dataclass, field
 from typing import TYPE_CHECKING
 
-from utils import symbol_path_to_import_string_and_name, symbol_path_to_object_name
+from utils import GENERATED_SYMBOLS_DIRECTORY, symbol_path_to_import_string_and_name, symbol_path_to_object_name
 
 if TYPE_CHECKING:
     from schema_resolution import SchemaGraph
@@ -12,15 +13,32 @@ class Import:
     relative_module: str
     identifier: str
     type_checking_only: bool
-    is_builtin: bool
+
+    @property
+    def is_builtin(self) -> bool:
+        """Python's standard library (e.g. typing, enum), as opposed to third party packages like pydantic."""
+        return self.relative_module.split(".")[0] in sys.stdlib_module_names
+
+    @property
+    def is_local(self) -> bool:
+        """Our own modules, as opposed to third party packages like pydantic (each gets its own group of imports)."""
+        return self.relative_module.split(".")[0] == GENERATED_SYMBOLS_DIRECTORY.name
+
+    @staticmethod
+    def only_under_type_checking(entries: set[Import]) -> set[Import]:
+        """The imports that only go under `if TYPE_CHECKING:` (i.e. not ones that are also needed at runtime)."""
+        runtime_keys = {(entry.relative_module, entry.identifier) for entry in entries if not entry.type_checking_only}
+        return {entry for entry in entries if entry.type_checking_only and (entry.relative_module, entry.identifier) not in runtime_keys}
+
+    def local_name_and_attribute(self) -> tuple[str, str]:
+        """The name this import is known by in the module, and what it's called where it's from, e.g. for
+        `from x import Effect as Effect2` that's ("Effect2", "Effect")."""
+        attribute, _, alias = self.identifier.partition(" as ")
+        return alias or attribute, attribute
 
     @staticmethod
     def to_python_code(entries: set[Import]) -> list[str]:
-        runtime_keys = {(entry.relative_module, entry.identifier) for entry in entries if not entry.type_checking_only}
-        entries = {
-            entry for entry in entries
-            if not entry.type_checking_only or (entry.relative_module, entry.identifier) not in runtime_keys
-        }
+        entries = {entry for entry in entries if not entry.type_checking_only} | Import.only_under_type_checking(entries)
 
         def build_lines(group: set[Import]) -> list[str]:
             modules = {entry.relative_module for entry in group}
@@ -29,16 +47,21 @@ class Import:
                 for module in sorted(modules)
             ]
 
-        builtins = {entry for entry in entries if entry.is_builtin and not entry.type_checking_only}
-        regular = {entry for entry in entries if not entry.is_builtin and not entry.type_checking_only}
+        runtime = {entry for entry in entries if not entry.type_checking_only}
+        builtins = {entry for entry in runtime if entry.is_builtin}
         type_checking = {entry for entry in entries if entry.type_checking_only}
         if type_checking:
-            builtins.add(Import("typing", "TYPE_CHECKING", False, True))
-
-        lines = build_lines(builtins)
-        if lines and regular:
-            lines.append("")
-        lines.extend(build_lines(regular))
+            builtins.add(Import("typing", "TYPE_CHECKING", False))
+        # Builtins, then third party packages, then local imports, with a blank line between each group
+        lines: list[str] = []
+        groups = [
+            build_lines(builtins),
+            build_lines({entry for entry in runtime if not entry.is_builtin and not entry.is_local}),  # Third party (e.g. pydantic)
+            build_lines({entry for entry in runtime if entry.is_local}),  # Local
+        ]
+        for group_lines in groups:
+            if group_lines:
+                lines.extend(([""] if lines else []) + group_lines)
         if type_checking:
             lines.append("\nif TYPE_CHECKING:")
             lines.extend(f"    {line}" for line in build_lines(type_checking))
@@ -52,24 +75,52 @@ class SingleSymbolContext:
     required_imports: set[Import] = field(default_factory=set)
     local_type_params: set[str] = field(default_factory=set)
     additional_dataclasses: list[str] = field(default_factory=list)
-    schema_graph: SchemaGraph = field(default_factory=lambda: SchemaGraph.from_symbol_maps({}))
+    schema_graph: SchemaGraph = field(default_factory=lambda: SchemaGraph.from_symbol_maps({}))  # pylint: disable=E0601
     current_symbol_path: str = ""
     allow_numeric_type_arg_shortcuts: bool = True
     require_runtime_imports: bool = False
+    # The datapack/resourcepack directory (e.g. "recipe") if this symbol is a root resource, for its __resource_dir__.
+    resource_dir: str | None = None
     # Stable names per (preferred name, schema/path fingerprint), shared by nested contexts.
     allocated_name_by_identity: dict[tuple[str, str], str] = field(default_factory=dict)
     # Helper class/type names already appended to additional_dataclasses.
     emitted_declaration_names: set[str] = field(default_factory=set)
 
     def require_annotated(self) -> None:
-        self.required_imports.add(Import("typing", "Annotated", type_checking_only=False, is_builtin=True))
+        self.required_imports.add(Import("typing", "Annotated", type_checking_only=False))
+
+    def type_param_names(self) -> list[str]:
+        """The local type params' names, e.g. ["K", "V"]: a template's declared ones, plus any unresolved references."""
+        return sorted({symbol_path_to_object_name(path) for path in self.local_type_params})
+
+    def type_params_suffix(self) -> str:
+        """The local type params to put after a generic name, e.g. `[K, V]`, or "" if there aren't any."""
+        type_param_names = self.type_param_names()
+        return f"[{', '.join(type_param_names)}]" if type_param_names else ""
+
+    def type_checking_import_sources(self) -> dict[str, tuple[str, str]]:
+        """For each name only imported under TYPE_CHECKING, where it's from, e.g. {"Effect2": ("vanilla_mcdoc.x.Effect", "Effect")}."""
+        sources = {}
+        for entry in Import.only_under_type_checking(self.required_imports):
+            name, attribute = entry.local_name_and_attribute()
+            sources[name] = (entry.relative_module, attribute)
+        return sources
+
+    def to_python_code(self, body_lines: list[str]) -> list[str]:
+        """The file's code around the symbol's own `body_lines`: its imports, TypeVars and helper classes (e.g. a field's
+        struct). Call it after rendering the body, because rendering is what fills these in."""
+        type_var_lines: list[str] = []
+        if type_param_names := self.type_param_names():
+            self.required_imports.add(Import("typing", "TypeVar", False))
+            type_var_lines = [f"{name} = TypeVar('{name}')" for name in type_param_names] + ["\n"]  # Two blank lines before the classes, like the imports
+        return Import.to_python_code(self.required_imports) + type_var_lines + self.additional_dataclasses + body_lines
 
     def add_dataclass(self, lines: list[str]) -> None:
         """Adds the given dataclass declaration lines to the context, if not already emitted."""
-        declaration: str = next((line for line in lines if line.startswith(("class ", "type "))), None)  # type: ignore[assignment]
-        if (name := declaration.split()[1].split("(", 1)[0]) in self.emitted_declaration_names:
+        dataclass_name = lines[0].split()[1].split("(", 1)[0]
+        if dataclass_name in self.emitted_declaration_names:
             return
-        self.emitted_declaration_names.add(name)
+        self.emitted_declaration_names.add(dataclass_name)
         self.additional_dataclasses.extend(lines + [""])
 
     def allocate_name(self, preferred: str, fingerprint: str) -> str:
@@ -78,7 +129,7 @@ class SingleSymbolContext:
         if key not in self.allocated_name_by_identity:
             used = set(self.allocated_name_by_identity.values())
             used.add(symbol_path_to_object_name(self.current_symbol_path))
-            suffix = 2
+            suffix = 2  # TODO: Remind myself why it starts at 2
             name = preferred
             while name in used:
                 name = f"{preferred}{suffix}"
@@ -89,17 +140,20 @@ class SingleSymbolContext:
     def add_import_by_symbol_path(self, path: str) -> str:
         """Add the referenced symbol's import and return its collision-safe local name."""
         module, name = symbol_path_to_import_string_and_name(path)
-        if path == self.current_symbol_path:
-            return name
-        if path in self.local_type_params:
+        if path == self.current_symbol_path or path in self.local_type_params:
             return name
         imported_name = self.allocate_name(name, path)
         identifier = name if imported_name == name else f"{name} as {imported_name}"
-        self.required_imports.add(Import(module, identifier, type_checking_only=not self.require_runtime_imports, is_builtin=False))
+        self.required_imports.add(Import(module, identifier, type_checking_only=not self.require_runtime_imports))
         return imported_name
 
     def copy(self) -> SingleSymbolContext:
-        """Copy the context with new values while sharing accumulated generation state."""
+        """Copy the context with new values while sharing accumulated generation state.
+        This is normally so we can temporarily disable attributes like:
+        - allow_numeric_type_arg_shortcuts
+        - require_runtime_imports
+        - resource_dir
+        """
         return SingleSymbolContext(
             required_imports=self.required_imports,
             local_type_params=self.local_type_params,
@@ -108,6 +162,7 @@ class SingleSymbolContext:
             schema_graph=self.schema_graph,
             allow_numeric_type_arg_shortcuts=self.allow_numeric_type_arg_shortcuts,
             require_runtime_imports=self.require_runtime_imports,
+            resource_dir=self.resource_dir,
             allocated_name_by_identity=self.allocated_name_by_identity,
             emitted_declaration_names=self.emitted_declaration_names,
         )

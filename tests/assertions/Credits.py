@@ -5,27 +5,27 @@
 # ~~~ FILE CONTENT ~~~
 """
 Generated from symbols.json for ::java::assets::credits::Credits
-Local link to file: generated_symbols/assets/credits/Credits.py
+Local link to file: vanilla_mcdoc/assets/credits/Credits.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import Annotated, Literal
 
+from pydantic import Field
 
-@dataclass(kw_only=True)
-class TitlesStruct:
+from vanilla_mcdoc.base import GeneratedModel
+
+
+class TitlesStruct(GeneratedModel):
     title: str
     names: list[str]  # Employees with the title.
 
 
-@dataclass(kw_only=True)
-class DisciplinesStruct:
-    discipline: Annotated[str, 'Length = 1 (inclusive) and above'] | Literal[""]
+class DisciplinesStruct(GeneratedModel):
+    discipline: Annotated[str, Field(min_length=1)] | Literal[""]
     titles: list[TitlesStruct]
 
 
-@dataclass(kw_only=True)
-class CreditsStruct:
+class CreditsStruct(GeneratedModel):
     section: str  # Company segment.
     disciplines: list[DisciplinesStruct]
 

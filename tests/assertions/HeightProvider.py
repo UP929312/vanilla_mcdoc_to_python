@@ -5,52 +5,51 @@
 # ~~~ FILE CONTENT ~~~
 """
 Generated from symbols.json for ::java::data::worldgen::HeightProvider
-Local link to file: generated_symbols/data/worldgen/HeightProvider.py
+Local link to file: vanilla_mcdoc/data/worldgen/HeightProvider.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
-from typing import TYPE_CHECKING, Literal
+from typing import TYPE_CHECKING, Annotated, Literal
 
-from generated_symbols.data.worldgen.BottomBiasHeightProvider import BottomBiasHeightProvider
-from generated_symbols.data.worldgen.ConstantHeightProvider import ConstantHeightProvider
-from generated_symbols.data.worldgen.TrapezoidHeightProvider import TrapezoidHeightProvider
-from generated_symbols.data.worldgen.UniformHeightProvider import UniformHeightProvider
-from generated_symbols.data.worldgen.WeightListHeightProvider import WeightListHeightProvider
+from pydantic import Field
+
+from vanilla_mcdoc.data.worldgen.BottomBiasHeightProvider import BottomBiasHeightProvider
+from vanilla_mcdoc.data.worldgen.ConstantHeightProvider import ConstantHeightProvider
+from vanilla_mcdoc.data.worldgen.TrapezoidHeightProvider import TrapezoidHeightProvider
+from vanilla_mcdoc.data.worldgen.UniformHeightProvider import UniformHeightProvider
+from vanilla_mcdoc.data.worldgen.WeightListHeightProvider import WeightListHeightProvider
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.VerticalAnchor import VerticalAnchor
+    from vanilla_mcdoc.data.worldgen.VerticalAnchor import VerticalAnchor
 
 
-@dataclass(kw_only=True)
 class HeightProviderStructBiasedToBottom(BottomBiasHeightProvider):
-    type: Literal['minecraft:biased_to_bottom'] = 'minecraft:biased_to_bottom'
+    type: Literal['minecraft:biased_to_bottom', 'biased_to_bottom'] = 'minecraft:biased_to_bottom'
 
 
-@dataclass(kw_only=True)
 class HeightProviderStructConstant(ConstantHeightProvider):
-    type: Literal['minecraft:constant'] = 'minecraft:constant'
+    type: Literal['minecraft:constant', 'constant'] = 'minecraft:constant'
 
 
-@dataclass(kw_only=True)
 class HeightProviderStructTrapezoid(TrapezoidHeightProvider):
-    type: Literal['minecraft:trapezoid'] = 'minecraft:trapezoid'
+    type: Literal['minecraft:trapezoid', 'trapezoid'] = 'minecraft:trapezoid'
 
 
-@dataclass(kw_only=True)
 class HeightProviderStructUniform(UniformHeightProvider):
-    type: Literal['minecraft:uniform'] = 'minecraft:uniform'
+    type: Literal['minecraft:uniform', 'uniform'] = 'minecraft:uniform'
 
 
-@dataclass(kw_only=True)
 class HeightProviderStructVeryBiasedToBottom(BottomBiasHeightProvider):
-    type: Literal['minecraft:very_biased_to_bottom'] = 'minecraft:very_biased_to_bottom'
+    type: Literal['minecraft:very_biased_to_bottom', 'very_biased_to_bottom'] = 'minecraft:very_biased_to_bottom'
 
 
-@dataclass(kw_only=True)
 class HeightProviderStructWeightedList(WeightListHeightProvider):
-    type: Literal['minecraft:weighted_list'] = 'minecraft:weighted_list'
+    type: Literal['minecraft:weighted_list', 'weighted_list'] = 'minecraft:weighted_list'
 
 
-type HeightProviderStruct = HeightProviderStructBiasedToBottom | HeightProviderStructConstant | HeightProviderStructTrapezoid | HeightProviderStructUniform | HeightProviderStructVeryBiasedToBottom | HeightProviderStructWeightedList
+type HeightProviderStruct = Annotated[
+    HeightProviderStructBiasedToBottom | HeightProviderStructConstant | HeightProviderStructTrapezoid | HeightProviderStructUniform | HeightProviderStructVeryBiasedToBottom | HeightProviderStructWeightedList,
+    Field(discriminator='type'),
+]
+
 
 type HeightProvider = HeightProviderStruct | VerticalAnchor

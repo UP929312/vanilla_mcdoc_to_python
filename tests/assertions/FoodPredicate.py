@@ -8,17 +8,17 @@
 # ~~~ FILE CONTENT ~~~
 """
 Generated from symbols.json for ::java::data::advancement::predicate::FoodPredicate
-Local link to file: generated_symbols/data/advancement/predicate/FoodPredicate.py
+Local link to file: vanilla_mcdoc/data/advancement/predicate/FoodPredicate.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
+from vanilla_mcdoc.base import GeneratedModel
+
 if TYPE_CHECKING:
-    from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
+    from vanilla_mcdoc.data.util.MinMaxBounds import MinMaxBounds
 
 
-@dataclass(kw_only=True)
-class FoodPredicate:
+class FoodPredicate(GeneratedModel):
     level: MinMaxBounds[int] | int | None = None
     saturation: MinMaxBounds[float] | float | None = None

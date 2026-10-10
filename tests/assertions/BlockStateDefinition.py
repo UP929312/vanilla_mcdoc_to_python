@@ -1,36 +1,36 @@
 # ~~~ WHAT ARE WE TESTING ~~~
 
-# Top-level dataclasses emitted by unions retain two blank lines between declarations.
+# Top-level models emitted by unions retain two blank lines between declarations.
 
 # ~~~ FILE CONTENT ~~~
 """
 Generated from symbols.json for ::java::assets::block_state_definition::BlockStateDefinition
-Local link to file: generated_symbols/assets/block_state_definition/BlockStateDefinition.py
+Local link to file: vanilla_mcdoc/assets/block_state_definition/BlockStateDefinition.py
 """
 # ~~~ CODE ~~~
-from dataclasses import dataclass
 from typing import TYPE_CHECKING, ClassVar
 
+from vanilla_mcdoc.base import GeneratedModel
+
 if TYPE_CHECKING:
-    from generated_symbols.assets.block_state_definition.ModelVariant import ModelVariant
-    from generated_symbols.assets.block_state_definition.MultiPartCondition import MultiPartCondition
+    from vanilla_mcdoc.assets.block_state_definition.ModelVariant import ModelVariant
+    from vanilla_mcdoc.assets.block_state_definition.MultiPartCondition import MultiPartCondition
 
 
-@dataclass(kw_only=True)
-class MultipartStruct:
+class MultipartStruct(GeneratedModel):
     when: MultiPartCondition | None = None  # One condition or an array where at least one condition must apply.
     apply: ModelVariant
 
 
-@dataclass(kw_only=True)
-class BlockStateDefinitionStruct1:
+class BlockStateDefinitionStruct1(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'block_definition'
 
     variants: dict[str, ModelVariant]
 
 
-@dataclass(kw_only=True)
-class BlockStateDefinitionStruct2:
+class BlockStateDefinitionStruct2(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'block_definition'
+
     multipart: list[MultipartStruct]
 
 
