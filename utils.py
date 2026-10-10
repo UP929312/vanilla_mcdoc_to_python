@@ -95,10 +95,10 @@ def is_valid_with_attributes(attributes: list[Attribute], current_version: str =
 
 
 def iter_child_schemas(value: object) -> Generator[BaseSchema]:
-    from typed_models import BaseSchema
+    from typed_models import BaseSchema  # pylint: disable=C0415
     if isinstance(value, BaseSchema):
         yield value
-    elif isinstance(value, list):
+    if isinstance(value, list):
         for item in value:
             yield from iter_child_schemas(item)
 
@@ -123,10 +123,9 @@ def _convert(value: object) -> object:
 def recursively_remove_none(value: object) -> object:
     if isinstance(value, dict):
         return {k: recursively_remove_none(v) for k, v in value.items() if v is not None}
-    elif isinstance(value, list):
+    if isinstance(value, list):
         return [recursively_remove_none(item) for item in value if item is not None]
-    else:
-        return value
+    return value
 
 
 def resource_path_to_python_path(resource_path: str) -> str:

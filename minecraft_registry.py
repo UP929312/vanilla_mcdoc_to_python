@@ -1,6 +1,7 @@
 import re
 from collections.abc import Iterable, Mapping
 from dataclasses import dataclass
+from functools import cache
 from typing import TYPE_CHECKING, Any, Literal, Self
 
 from context import Import, SingleSymbolContext
@@ -125,14 +126,9 @@ def make_registry_id_files(schema_graph: SchemaGraph) -> None:
 def make_root_resource_registry_content(symbol_paths: Iterable[str]) -> str:
     """Makes the root instance so that things using this library can check if it's a root resource,
     or if it's a "fragment", e.g. a FoodPredicate is a fragment, but the Predicate is the root resource."""
-    datapack_paths = sorted({
-        symbol_path for symbol_path in symbol_paths
-        if get_resource_lookup_map().get(symbol_path) is not None and symbol_path.startswith("::java::data::")
-    })
-    pack_paths = sorted({
-        symbol_path for symbol_path in symbol_paths
-        if get_resource_lookup_map().get(symbol_path) is not None and symbol_path.startswith("::java::assets::")
-    })
+    root_paths = sorted(set(symbol_paths) & get_resource_lookup_map().keys())
+    datapack_paths = [symbol_path for symbol_path in root_paths if symbol_path.startswith("::java::data::")]
+    pack_paths     = [symbol_path for symbol_path in root_paths if symbol_path.startswith("::java::assets::")]  # fmt: skip
 
     lines = [
         '"""Generated root-resource registry for datapack and resource-pack classes."""',
@@ -143,11 +139,11 @@ def make_root_resource_registry_content(symbol_paths: Iterable[str]) -> str:
         ),
         "",
         "ROOT_DATAPACK_CLASSES = (",
-            "\n".join(f"    {symbol_path_to_import_string_and_name(symbol_path)[1]}," for symbol_path in datapack_paths),
+            "\n".join(f"    {symbol_path_to_object_name(symbol_path)}," for symbol_path in datapack_paths),  # noqa: E131
         ")",
         "",
         "ROOT_RESOURCE_PACK_CLASSES = (",
-            "\n".join(f"    {symbol_path_to_import_string_and_name(symbol_path)[1]}," for symbol_path in pack_paths),
+            "\n".join(f"    {symbol_path_to_object_name(symbol_path)}," for symbol_path in pack_paths),
         ")",
         "",
         "",
@@ -164,38 +160,32 @@ def make_root_resource_registry_file(symbol_paths: Iterable[str]) -> None:
     )
 
 
-_RESOURCE_LOOKUP_MAP: dict[str, str] | None = None
-
-
+@cache
 def get_resource_lookup_map() -> dict[str, str]:
     """Build and cache the root-resource lookup once, shared across the project."""
-    global _RESOURCE_LOOKUP_MAP
-    if _RESOURCE_LOOKUP_MAP is None:
-        from schema_resolution import SchemaGraph
-        from typed_models import KIND_TO_MODEL, ReferenceSchema, StructSchema, TemplateSchema
+    from schema_resolution import SchemaGraph
+    from typed_models import KIND_TO_MODEL, ReferenceSchema, StructSchema, TemplateSchema
 
-        schema_graph = SchemaGraph.from_symbol_maps(SYMBOLS_MAP)
-        template_paths = {path for path, schema in schema_graph.symbols.items() if isinstance(schema, TemplateSchema)}
-        base_map: dict[str, str] = {}
+    schema_graph = SchemaGraph.from_symbol_maps(SYMBOLS_MAP)
+    template_paths = {path for path, schema in schema_graph.symbols.items() if isinstance(schema, TemplateSchema)}
+    base_map: dict[str, str] = {}
 
-        for resource_key, raw_value in SYMBOLS_MAP["mcdoc/dispatcher"]["minecraft:resource"].items():
-            model_value = KIND_TO_MODEL[raw_value["kind"]](**raw_value)
-            for reference_path in ReferenceSchema.collect_reference_paths(model_value, template_paths):
+    for resource_key, raw_value in SYMBOLS_MAP["mcdoc/dispatcher"]["minecraft:resource"].items():
+        model_value = KIND_TO_MODEL[raw_value["kind"]](**raw_value)
+        for reference_path in ReferenceSchema.collect_reference_paths(model_value, template_paths):
+            base_map[reference_path] = resource_key
+
+        if "path" not in raw_value:
+            continue
+        root_schema = schema_graph.symbols.get(raw_value["path"])
+        dispatcher = root_schema._spread_dispatcher() if isinstance(root_schema, StructSchema) else None
+        if dispatcher is None:
+            continue
+
+        for branch_schema in schema_graph.dispatchers[dispatcher.registry].values():
+            if isinstance(branch_schema, ReferenceSchema):
+                base_map[branch_schema.path] = resource_key
+            for reference_path in ReferenceSchema.collect_reference_paths(branch_schema, template_paths):
                 base_map[reference_path] = resource_key
 
-            if "path" not in raw_value:
-                continue
-            root_schema = schema_graph.symbols.get(raw_value["path"])
-            dispatcher = root_schema._spread_dispatcher() if isinstance(root_schema, StructSchema) else None
-            if dispatcher is None:
-                continue
-
-            for branch_schema in schema_graph.dispatchers[dispatcher.registry].values():
-                if isinstance(branch_schema, ReferenceSchema):
-                    base_map[branch_schema.path] = resource_key
-                for reference_path in ReferenceSchema.collect_reference_paths(branch_schema, template_paths):
-                    base_map[reference_path] = resource_key
-
-        _RESOURCE_LOOKUP_MAP = base_map
-    return _RESOURCE_LOOKUP_MAP
-
+    return base_map

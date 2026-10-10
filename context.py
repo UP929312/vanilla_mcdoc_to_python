@@ -67,7 +67,7 @@ class SingleSymbolContext:
     required_imports: set[Import] = field(default_factory=set)
     local_type_params: set[str] = field(default_factory=set)
     additional_dataclasses: list[str] = field(default_factory=list)
-    schema_graph: SchemaGraph = field(default_factory=lambda: SchemaGraph.from_symbol_maps({}))
+    schema_graph: SchemaGraph = field(default_factory=lambda: SchemaGraph.from_symbol_maps({}))  # pylint: disable=E0601
     current_symbol_path: str = ""
     allow_numeric_type_arg_shortcuts: bool = True
     require_runtime_imports: bool = False

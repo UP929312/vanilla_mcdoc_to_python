@@ -18,14 +18,15 @@ run_assertions()
 
 # mypy . --strict --exclude generated_symbols
 # coverage run --branch main.py
-# coverage html 
+# coverage html
+# ruff check
+# flake8 --ignore=E501,W503,W391,E221
 # start microsoft-edge:htmlcov\index.html
 # python3 -m pytest
 
 # TODO:
 # Put all the descriptions in the struct/dataclass docstring, not just the comments (so hovering works nicer?)
 # When going from dataclass -> JSON file, recursively remove None/null so they don't end up in the JSON file.
-# Wonder if it makes sense to clean up the nested symbols.json first, to remove non-current stuff, for example first?
 # Safeguards need to also include the value range, currently that is lost (5-10 is lost and now becomes -2147483648 to 2147483647).
 
 # https://github.com/sandstone-mc/sandstone/blob/828171c5fc1f5903e7ae1c508fe638d6481ab8e9/src/arguments/generated/world/item/compass.ts#L6

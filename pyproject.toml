@@ -32,5 +32,40 @@ strict_bytes = true
 [tool.ruff.lint]
 ignore = ["F821"]
 
+[tool.pylint.main]
+# Generated output (and the snapshots of it), we lint the generator instead
+ignore-paths = [
+    "^generated_symbols[\\\\/]",
+    "^htmlcov[\\\\/]",
+    "^tests[\\\\/]assertions[\\\\/]",
+    "symbols.json",
+    "versions.json",
+    "pyproject.toml",
+    "temp.txt",
+]
+
+[tool.pylint.format]
+max-line-length = 220
+max-module-lines = 1200
+
+[tool.pylint.design]
+max-locals = 16
+max-attributes = 10
+
+[tool.pylint."messages control"]
+disable = [
+    "missing-class-docstring",
+    "missing-module-docstring",
+    "missing-function-docstring",
+    "fixme",  # Come on, this is a linter, not a TODO tracker
+    "invalid-name",  # We're generating code, most of it is not properly cased.
+    "missing-timeout",  # 2 functions, not interested.
+    "no-member",  # Noisy.
+    "import-outside-toplevel",
+
+    "abstract-method",  # Too many false positives
+    "protected-access",  # Maybe look into.
+]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]

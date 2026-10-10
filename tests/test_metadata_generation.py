@@ -1,8 +1,8 @@
 from pathlib import Path
 
-import minecraft_registry
 from pytest import MonkeyPatch
 
+import minecraft_registry
 from code_generation import SCHEMA_GRAPH, make_init_content, make_python_file_content
 from context import SingleSymbolContext
 from minecraft_registry import IdSpec, make_registry_id_file_content, make_registry_id_files, make_root_resource_registry_content, used_registry_names

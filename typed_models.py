@@ -23,7 +23,7 @@ class BaseSchema(BaseModel):
         ctx.required_imports.add(Import("generated_symbols.minecraft_types", name, False))
         return name
 
-    def to_nested_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None) -> str:
+    def to_nested_annotation(self, ctx: SingleSymbolContext, _nested_struct_name: str | None) -> str:
         """Render an annotation, using a nested declaration name when supported."""
         return self.to_annotation(ctx)
 
@@ -84,7 +84,7 @@ class ValueRange(BaseModel):
     2 = min exclusive, max inclusive
     3 = min exclusive, max exclusive (currently not used)
     """
-    kind: Literal[0, 1, 2, 3] = Field(default = 0, repr=False)
+    kind: Literal[0, 1, 2, 3] = Field(default=0, repr=False)
     min: float | int  # Min is *always* set
     max: float | int | None = None
 
@@ -412,11 +412,11 @@ class EnumSchema(BaseSchema):
 # ==================================================================================================================================
 # Meta types
 
-
 type ConcreteSchemaTypeArgTypes = (
     AnySchema | ByteSchema | ConcreteSchema | DispatcherSchema | FloatSchema | DoubleSchema | IndexedSchema
     | IntSchema | ListSchema | ReferenceSchema | StringSchema | StructSchema | UnionSchema
 )
+
 
 class ConcreteSchema(BaseSchema):
     """The purpose of this is it's essentially a class but *with* type_args, i.e. annotated args/extras.
@@ -707,7 +707,7 @@ class PairSchema(BaseSchema):
             ctx.required_imports.add(Import("pydantic", "Field", False))
             default = f"Field({'' if default is None else f'default={default}, '}alias={self.key!r})"
         # ===
-        return f"    {name}: {annotation if not self.optional else annotation+' | None'}{'' if default is None else f' = {default}'}{self.description_or_empty}"
+        return f"    {name}: {annotation if not self.optional else annotation + ' | None'}{'' if default is None else f' = {default}'}{self.description_or_empty}"
 
 
 class SpreadFieldSchema(BaseSchema):
@@ -786,7 +786,7 @@ class TemplateSchema(BaseSchema):
         # Otherwise, return the child schema's code.
         if isinstance(self.child, UnionSchema):
             struct_member = next(member for member in self.child.members if isinstance(member, StructSchema))  # Always exactly 1
-            return struct_member.to_python_code(class_name, ctx) 
+            return struct_member.to_python_code(class_name, ctx)
         return self.child.to_python_code(class_name, ctx)
 
 
@@ -821,7 +821,7 @@ class StructSchema(BaseSchema):
         pair means the struct also describes fixed fields, so neither shape is collapsed
         into a mapping alias.
         """
-        plain_pairs =      [field for field in self.fields if isinstance(field, PairSchema) and isinstance(field.key, str)]  # fmt: skip
+        plain_pairs      = [field for field in self.fields if isinstance(field, PairSchema) and isinstance(field.key, str)]  # fmt: skip
         schema_key_pairs = [field for field in self.fields if isinstance(field, PairSchema) and not isinstance(field.key, str)]
         return schema_key_pairs[0] if len(schema_key_pairs) == 1 and not plain_pairs else None
 
@@ -895,7 +895,8 @@ class StructSchema(BaseSchema):
     def _render_variants(class_name: str, variants: list[tuple[str, StructSchema]], discriminator: str | None, ctx: SingleSymbolContext) -> list[str]:
         """Render each (name, struct) variant, followed by `type <class_name> = <variant1> | <variant2> | ...`"""
         rendered = [line for name, variant in variants for line in variant.to_python_code(name, ctx) + [""]]
-        return rendered + [UnionSchema._render_union_alias(class_name, [name for name, _ in variants], discriminator, ctx)]
+        # Ends with a blank line like classes do, so nested variant unions get two blank lines after them too
+        return rendered + [UnionSchema._render_union_alias(class_name, [name for name, _ in variants], discriminator, ctx), ""]
 
     def _render_dispatcher_spread(self, class_name: str, ctx: SingleSymbolContext) -> list[str] | None:
         """Render distributed branch dataclasses followed by their union alias."""

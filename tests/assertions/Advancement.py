@@ -1,6 +1,6 @@
 # ~~~ WHAT ARE WE TESTING ~~~
 
-# Tests the criteria field, which is a mapping of 
+# Tests the criteria field, which is a dict[str, AdvancementCriterion], and the requirements field, which is a list[list[str]].
 
 # ~~~ FILE CONTENT ~~~
 """

@@ -10,6 +10,6 @@ def test_every_generated_module_imports() -> None:
     for module_info in pkgutil.walk_packages(generated_symbols.__path__, "generated_symbols."):
         try:
             importlib.import_module(module_info.name)
-        except Exception as error:
+        except Exception as error:  # pylint: disable=broad-exception-caught
             failures[module_info.name] = f"{type(error).__name__}: {error}"
     assert not failures, "\n".join(f"{name}: {error}" for name, error in failures.items())

@@ -6,7 +6,7 @@ from typing import Any
 from context import Import, SingleSymbolContext
 from minecraft_registry import get_resource_lookup_map
 from schema_resolution import SchemaGraph
-from typed_models import KIND_TO_MODEL, TemplateSchema
+from typed_models import KIND_TO_MODEL
 from utils import GENERATED_SYMBOLS_DIRECTORY, SYMBOLS_MAP, resource_path_to_python_path, symbol_path_to_import_string_and_name, symbol_path_to_object_name, manage_directory_and_inits, write_file_if_changed
 
 
@@ -75,14 +75,10 @@ def make_python_file_content(resource_type: str, resource_data: dict[str, Any], 
     # Add TypeVar declarations after rendering so discovered local type params are included.
     if ctx.local_type_params:
         ctx.required_imports.add(Import('typing', 'TypeVar', False))
-        declared_paths = set(type_param.path for type_param in current_model.type_params) if isinstance(current_model, TemplateSchema) else set()
-        type_names = sorted(
-            {symbol_path_to_object_name(path) for path in declared_paths}
-            | {path.split("::")[-1] for path in ctx.local_type_params if path not in declared_paths}
-        )
-        for type_name in type_names:
+        # Includes a template's declared type params, since TemplateSchema.to_python_code adds them to the ctx
+        for type_name in sorted({symbol_path_to_object_name(path) for path in ctx.local_type_params}):
             signature_lines.append(f"{type_name} = TypeVar('{type_name}')")
-        signature_lines.append("")
+        signature_lines.append("\n")  # Two blank lines before the classes, like the imports
 
     # Build top-of-file imports from the final rendered import set.
     file_comment = [
@@ -96,7 +92,7 @@ def make_python_file_content(resource_type: str, resource_data: dict[str, Any], 
 
     # Add the raw model at the bottom, for reference:
     stringified_output = json.dumps({resource_type: resource_data}, indent=4).replace("true", "True").replace("false", "False")
-    file_contents += f"\n\n# ~~~ MODEL DUMP ~~~\n_ = {stringified_output}\n\n"
+    file_contents += f"\n\n# ~~~ MODEL DUMP ~~~\n_ = {stringified_output}\n"
     return file_contents
 
 
