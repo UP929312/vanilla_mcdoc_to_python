@@ -5,8 +5,9 @@ Local link to file: generated_symbols/util/FlatWeightedEntry.py
 # ~~~ CODE ~~~
 from typing import Annotated, Generic, TypeVar
 
-from generated_symbols.base import GeneratedModel
 from pydantic import Field
+
+from generated_symbols.base import GeneratedModel
 
 
 T = TypeVar('T')

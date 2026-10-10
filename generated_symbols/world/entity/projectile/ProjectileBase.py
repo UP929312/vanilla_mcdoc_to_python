@@ -5,6 +5,7 @@ Local link to file: generated_symbols/world/entity/projectile/ProjectileBase.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
+from generated_symbols.minecraft_types import MinecraftUUID
 from generated_symbols.world.entity.EntityBase import EntityBase
 
 if TYPE_CHECKING:
@@ -13,7 +14,7 @@ if TYPE_CHECKING:
 
 class ProjectileBase(EntityBase):
     HasBeenShot: bool | None = None  # Whether it has been shot. This is set to true when it exists for at least one tick, and is used by the game to ensure it only triggers the projectile_shoot game event once.
-    Owner: tuple[int, int, int, int] | None = None
+    Owner: MinecraftUUID | None = None
     LeftOwner: bool | None = None  # Whether it has left its owner.
     can_break: AdventureModePredicate | None = None
 

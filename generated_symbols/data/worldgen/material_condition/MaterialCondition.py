@@ -5,6 +5,8 @@ Local link to file: generated_symbols/data/worldgen/material_condition/MaterialC
 # ~~~ CODE ~~~
 from typing import Annotated, ClassVar, Literal
 
+from pydantic import Field
+
 from generated_symbols.data.worldgen.material_condition.BiomeCondition import BiomeCondition
 from generated_symbols.data.worldgen.material_condition.NoiseThresholdCondition import NoiseThresholdCondition
 from generated_symbols.data.worldgen.material_condition.NotCondition import NotCondition
@@ -12,7 +14,6 @@ from generated_symbols.data.worldgen.material_condition.StoneDepthCondition impo
 from generated_symbols.data.worldgen.material_condition.VerticalGradientCondition import VerticalGradientCondition
 from generated_symbols.data.worldgen.material_condition.WaterCondition import WaterCondition
 from generated_symbols.data.worldgen.material_condition.YAboveCondition import YAboveCondition
-from pydantic import Field
 
 
 class MaterialConditionBiome(BiomeCondition):

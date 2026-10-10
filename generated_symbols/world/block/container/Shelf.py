@@ -5,8 +5,9 @@ Local link to file: generated_symbols/world/block/container/Shelf.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.world.block.container.ContainerBase import ContainerBase
 from pydantic import Field
+
+from generated_symbols.world.block.container.ContainerBase import ContainerBase
 
 if TYPE_CHECKING:
     from generated_symbols.util.slot.SlottedItem import SlottedItem

@@ -5,6 +5,8 @@ Local link to file: generated_symbols/world/entity/AnyEntity.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
+from pydantic import Field
+
 from generated_symbols.world.entity.BlockAttachedEntity import BlockAttachedEntity
 from generated_symbols.world.entity.area_effect_cloud.AreaEffectCloud import AreaEffectCloud
 from generated_symbols.world.entity.boat.Boat import Boat
@@ -121,7 +123,6 @@ from generated_symbols.world.entity.projectile.shulker_bullet.ShulkerBullet impo
 from generated_symbols.world.entity.projectile.throwable.Potion import Potion
 from generated_symbols.world.entity.projectile.throwable.ThrowableItem import ThrowableItem
 from generated_symbols.world.entity.tnt.Tnt import Tnt
-from pydantic import Field
 
 
 class AnyEntityAcaciaBoat(Boat):

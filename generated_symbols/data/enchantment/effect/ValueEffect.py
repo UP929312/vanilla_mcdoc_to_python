@@ -5,13 +5,14 @@ Local link to file: generated_symbols/data/enchantment/effect/ValueEffect.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
+from pydantic import Field
+
 from generated_symbols.data.enchantment.effect.AddEffectValue import AddEffectValue
 from generated_symbols.data.enchantment.effect.AllOfEffectValue import AllOfEffectValue
 from generated_symbols.data.enchantment.effect.ExponentialEffectValue import ExponentialEffectValue
 from generated_symbols.data.enchantment.effect.MultiplyEffectValue import MultiplyEffectValue
 from generated_symbols.data.enchantment.effect.ReduceBinomialEffectValue import ReduceBinomialEffectValue
 from generated_symbols.data.enchantment.effect.SetEffectValue import SetEffectValue
-from pydantic import Field
 
 
 class ValueEffectAdd(AddEffectValue):

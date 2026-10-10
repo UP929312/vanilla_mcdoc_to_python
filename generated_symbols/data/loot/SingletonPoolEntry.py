@@ -5,8 +5,9 @@ Local link to file: generated_symbols/data/loot/SingletonPoolEntry.py
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from generated_symbols.data.loot.LootPoolEntryBase import LootPoolEntryBase
 from pydantic import Field
+
+from generated_symbols.data.loot.LootPoolEntryBase import LootPoolEntryBase
 
 
 class SingletonPoolEntry(LootPoolEntryBase):

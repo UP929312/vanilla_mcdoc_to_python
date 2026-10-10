@@ -5,8 +5,9 @@ Local link to file: generated_symbols/world/entity/mob/piglin/Piglin.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.world.entity.mob.piglin.PiglinBase import PiglinBase
 from pydantic import Field
+
+from generated_symbols.world.entity.mob.piglin.PiglinBase import PiglinBase
 
 if TYPE_CHECKING:
     from generated_symbols.world.item.ItemStack import ItemStack

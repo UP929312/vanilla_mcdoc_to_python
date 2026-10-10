@@ -5,8 +5,9 @@ Local link to file: generated_symbols/data/worldgen/attribute/modifier/FloatWith
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from generated_symbols.base import GeneratedModel
 from pydantic import Field
+
+from generated_symbols.base import GeneratedModel
 
 
 class FloatWithAlpha(GeneratedModel):

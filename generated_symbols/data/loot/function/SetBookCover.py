@@ -5,8 +5,9 @@ Local link to file: generated_symbols/data/loot/function/SetBookCover.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.data.loot.function.Conditions import Conditions
 from pydantic import Field
+
+from generated_symbols.data.loot.function.Conditions import Conditions
 
 if TYPE_CHECKING:
     from generated_symbols.util.Filterable import Filterable

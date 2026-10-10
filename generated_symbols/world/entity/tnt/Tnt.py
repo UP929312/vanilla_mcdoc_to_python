@@ -5,8 +5,10 @@ Local link to file: generated_symbols/world/entity/tnt/Tnt.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.world.entity.EntityBase import EntityBase
 from pydantic import Field
+
+from generated_symbols.minecraft_types import MinecraftUUID
+from generated_symbols.world.entity.EntityBase import EntityBase
 
 if TYPE_CHECKING:
     from generated_symbols.util.block_state.BlockState import BlockState
@@ -16,7 +18,7 @@ class Tnt(EntityBase):
     fuse: int | None = None  # Ticks until it explodes.
     block_state: BlockState | None = None  # Defaults to tnt.
     explosion_power: Annotated[float, Field(ge=0, le=128)] | None = None
-    owner: tuple[int, int, int, int] | None = None  # The entity that primed this TNT.
+    owner: MinecraftUUID | None = None  # The entity that primed this TNT.
 
 
 # ~~~ MODEL DUMP ~~~

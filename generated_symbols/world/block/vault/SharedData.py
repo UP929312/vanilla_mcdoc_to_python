@@ -6,6 +6,7 @@ Local link to file: generated_symbols/world/block/vault/SharedData.py
 from typing import TYPE_CHECKING
 
 from generated_symbols.base import GeneratedModel
+from generated_symbols.minecraft_types import MinecraftUUID
 
 if TYPE_CHECKING:
     from generated_symbols.world.item.ItemStack import ItemStack
@@ -13,7 +14,7 @@ if TYPE_CHECKING:
 
 class SharedData(GeneratedModel):
     display_item: ItemStack | None = None  # Item that is displayed to players when they are in range of the vault.
-    connected_players: list[tuple[int, int, int, int]] | None = None
+    connected_players: list[MinecraftUUID] | None = None
     connected_particles_range: float | None = None
 
 

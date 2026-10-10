@@ -5,8 +5,10 @@ Local link to file: generated_symbols/world/entity/EntityBase.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.base import GeneratedModel
 from pydantic import Field
+
+from generated_symbols.base import GeneratedModel
+from generated_symbols.minecraft_types import MinecraftUUID
 
 if TYPE_CHECKING:
     from generated_symbols.util.text.Text import Text
@@ -27,7 +29,7 @@ class EntityBase(GeneratedModel):
     Invulnerable: bool | None = None  # Whether the entity is immune to damage.
     invulnerable_time: Annotated[int, Field(ge=0)] | None = None  # Temporary immunity duration of the entity, in ticks.  The entity is immune to damage if `invulnerable_time` > 0 **or** `Invulnerable` is `true`.
     PortalCooldown: int | None = None  # How long until the entity can go through a nether portal.
-    UUID: tuple[int, int, int, int] | None = None
+    UUID: MinecraftUUID | None = None
     CustomName: Text | None = None
     CustomNameVisible: bool | None = None  # Whether the custom name should always be visible.
     Silent: bool | None = None  # Whether the entity should make any sound.

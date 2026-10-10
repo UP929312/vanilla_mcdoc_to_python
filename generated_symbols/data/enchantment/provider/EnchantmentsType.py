@@ -5,8 +5,9 @@ Local link to file: generated_symbols/data/enchantment/provider/EnchantmentsType
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from minecraft_registry import IdSpec
 from pydantic import Field
+
+from minecraft_registry import IdSpec
 
 
 type EnchantmentsType = Annotated[str, IdSpec(registry='enchantment', tags='allowed')] | Annotated[list[Annotated[str, IdSpec(registry='enchantment')]], Field(min_length=1)]

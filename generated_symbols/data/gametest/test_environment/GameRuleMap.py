@@ -5,8 +5,9 @@ Local link to file: generated_symbols/data/gametest/test_environment/GameRuleMap
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from minecraft_registry import IdSpec
 from pydantic import Field
+
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.registry.KnownGameRuleId import KnownGameRuleId

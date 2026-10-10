@@ -5,8 +5,9 @@ Local link to file: generated_symbols/world/entity/display/DisplayBase.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, Literal
 
-from generated_symbols.world.entity.EntityBase import EntityBase
 from pydantic import Field
+
+from generated_symbols.world.entity.EntityBase import EntityBase
 
 if TYPE_CHECKING:
     from generated_symbols.world.entity.display.Billboard import Billboard

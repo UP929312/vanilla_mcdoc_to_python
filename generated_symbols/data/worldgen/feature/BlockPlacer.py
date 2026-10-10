@@ -5,9 +5,10 @@ Local link to file: generated_symbols/data/worldgen/feature/BlockPlacer.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
+from pydantic import Field
+
 from generated_symbols.base import GeneratedModel
 from generated_symbols.data.worldgen.feature.ColumnPlacer import ColumnPlacer
-from pydantic import Field
 
 
 class BlockPlacerColumnPlacer(ColumnPlacer):

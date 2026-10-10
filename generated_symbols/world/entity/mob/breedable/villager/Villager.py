@@ -5,9 +5,10 @@ Local link to file: generated_symbols/world/entity/mob/breedable/villager/Villag
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
+from pydantic import Field
+
 from generated_symbols.world.entity.mob.breedable.Breedable import Breedable
 from generated_symbols.world.entity.mob.breedable.villager.VillagerBase import VillagerBase
-from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.world.entity.mob.breedable.villager.PlayerReputationPart import PlayerReputationPart

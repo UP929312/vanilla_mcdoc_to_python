@@ -5,8 +5,9 @@ Local link to file: generated_symbols/world/entity/mob/raider/RaiderBase.py
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from generated_symbols.world.entity.mob.MobBase import MobBase
 from pydantic import Field
+
+from generated_symbols.world.entity.mob.MobBase import MobBase
 
 
 class RaiderBase(MobBase):

@@ -5,6 +5,8 @@ Local link to file: generated_symbols/world/block/BlockEntityData.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
+from pydantic import Field
+
 from generated_symbols.base import GeneratedModel
 from generated_symbols.world.block.banner.Banner import Banner
 from generated_symbols.world.block.beacon.Beacon import Beacon
@@ -41,7 +43,6 @@ from generated_symbols.world.block.structure_block.StructureBlock import Structu
 from generated_symbols.world.block.test_block.TestBlock import TestBlock
 from generated_symbols.world.block.test_instance_block.TestInstanceBlock import TestInstanceBlock
 from generated_symbols.world.block.vault.Vault import Vault
-from pydantic import Field
 
 
 class BlockEntityDataBanner(Banner):

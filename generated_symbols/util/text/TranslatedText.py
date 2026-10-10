@@ -5,8 +5,9 @@ Local link to file: generated_symbols/util/text/TranslatedText.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, Literal
 
-from generated_symbols.util.text.TextBase import TextBase
 from pydantic import Field
+
+from generated_symbols.util.text.TextBase import TextBase
 
 if TYPE_CHECKING:
     from generated_symbols.util.text.TranslationArg import TranslationArg

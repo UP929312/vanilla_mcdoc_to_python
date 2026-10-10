@@ -5,6 +5,8 @@ Local link to file: generated_symbols/data/worldgen/feature/tree/TreeDecorator.p
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
+from pydantic import Field
+
 from generated_symbols.data.worldgen.feature.tree.AlterGroundTreeDecorator import AlterGroundTreeDecorator
 from generated_symbols.data.worldgen.feature.tree.AttachedToLeavesTreeDecorator import AttachedToLeavesTreeDecorator
 from generated_symbols.data.worldgen.feature.tree.AttachedToLogsTreeDecorator import AttachedToLogsTreeDecorator
@@ -15,7 +17,6 @@ from generated_symbols.data.worldgen.feature.tree.LeaveVineTreeDecorator import 
 from generated_symbols.data.worldgen.feature.tree.PaleMossTreeDecorator import PaleMossTreeDecorator
 from generated_symbols.data.worldgen.feature.tree.PlaceOnGroundTreeDecorator import PlaceOnGroundTreeDecorator
 from generated_symbols.data.worldgen.feature.tree.ShelfMushroomTreeDecorator import ShelfMushroomTreeDecorator
-from pydantic import Field
 
 
 class TreeDecoratorAlterGround(AlterGroundTreeDecorator):

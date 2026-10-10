@@ -5,8 +5,9 @@ Local link to file: generated_symbols/data/worldgen/feature/ModernNetherVegetati
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from generated_symbols.base import GeneratedModel
 from pydantic import Field
+
+from generated_symbols.base import GeneratedModel
 
 
 class ModernNetherVegetationConfig(GeneratedModel):

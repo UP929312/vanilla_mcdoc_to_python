@@ -3,12 +3,13 @@ Generated from symbols.json for ::java::world::entity::evoker_fangs::EvokerFangs
 Local link to file: generated_symbols/world/entity/evoker_fangs/EvokerFangs.py
 """
 # ~~~ CODE ~~~
+from generated_symbols.minecraft_types import MinecraftUUID
 from generated_symbols.world.entity.EntityBase import EntityBase
 
 
 class EvokerFangs(EntityBase):
     Warmup: int | None = None  # Ticks until the fangs pop out of the ground.
-    Owner: tuple[int, int, int, int] | None = None
+    Owner: MinecraftUUID | None = None
 
 
 # ~~~ MODEL DUMP ~~~

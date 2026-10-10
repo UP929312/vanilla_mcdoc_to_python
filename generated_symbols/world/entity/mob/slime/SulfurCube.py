@@ -5,10 +5,11 @@ Local link to file: generated_symbols/world/entity/mob/slime/SulfurCube.py
 # ~~~ CODE ~~~
 from typing import Annotated
 
+from pydantic import Field
+
 from generated_symbols.world.entity.mob.AgeableMob import AgeableMob
 from generated_symbols.world.entity.mob.MobBase import MobBase
 from generated_symbols.world.entity.mob.slime.CubeMob import CubeMob
-from pydantic import Field
 
 
 class SulfurCube(AgeableMob, CubeMob, MobBase):

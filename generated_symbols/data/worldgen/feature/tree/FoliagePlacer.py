@@ -5,6 +5,8 @@ Local link to file: generated_symbols/data/worldgen/feature/tree/FoliagePlacer.p
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, Literal
 
+from pydantic import Field
+
 from generated_symbols.data.worldgen.feature.tree.CherryFoliagePlacer import CherryFoliagePlacer
 from generated_symbols.data.worldgen.feature.tree.HeightFoliagePlacer import HeightFoliagePlacer
 from generated_symbols.data.worldgen.feature.tree.MegaPineFoliagePlacer import MegaPineFoliagePlacer
@@ -12,7 +14,6 @@ from generated_symbols.data.worldgen.feature.tree.PineFoliagePlacer import PineF
 from generated_symbols.data.worldgen.feature.tree.PoplarFoliagePlacer import PoplarFoliagePlacer
 from generated_symbols.data.worldgen.feature.tree.RandomSpreadFoliagePlacer import RandomSpreadFoliagePlacer
 from generated_symbols.data.worldgen.feature.tree.SprucePineFoliagePlacer import SprucePineFoliagePlacer
-from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.IntProvider import IntProvider

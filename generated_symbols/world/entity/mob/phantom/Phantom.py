@@ -5,8 +5,9 @@ Local link to file: generated_symbols/world/entity/mob/phantom/Phantom.py
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from generated_symbols.world.entity.mob.MobBase import MobBase
 from pydantic import Field
+
+from generated_symbols.world.entity.mob.MobBase import MobBase
 
 
 class Phantom(MobBase):

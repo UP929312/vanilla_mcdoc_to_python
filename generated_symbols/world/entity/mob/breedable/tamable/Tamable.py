@@ -3,11 +3,12 @@ Generated from symbols.json for ::java::world::entity::mob::breedable::tamable::
 Local link to file: generated_symbols/world/entity/mob/breedable/tamable/Tamable.py
 """
 # ~~~ CODE ~~~
+from generated_symbols.minecraft_types import MinecraftUUID
 from generated_symbols.world.entity.mob.breedable.Breedable import Breedable
 
 
 class Tamable(Breedable):
-    Owner: tuple[int, int, int, int] | None = None
+    Owner: MinecraftUUID | None = None
     Sitting: bool | None = None  # Whether the mob is sitting.
 
 

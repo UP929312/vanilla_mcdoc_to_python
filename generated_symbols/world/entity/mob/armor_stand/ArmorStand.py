@@ -5,8 +5,9 @@ Local link to file: generated_symbols/world/entity/mob/armor_stand/ArmorStand.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.world.entity.mob.LivingEntity import LivingEntity
 from pydantic import Field
+
+from generated_symbols.world.entity.mob.LivingEntity import LivingEntity
 
 if TYPE_CHECKING:
     from generated_symbols.world.entity.mob.EntityEquipment import EntityEquipment

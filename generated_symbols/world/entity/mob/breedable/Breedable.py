@@ -5,14 +5,16 @@ Local link to file: generated_symbols/world/entity/mob/breedable/Breedable.py
 # ~~~ CODE ~~~
 from typing import Annotated
 
+from pydantic import Field
+
+from generated_symbols.minecraft_types import MinecraftUUID
 from generated_symbols.world.entity.mob.AgeableMob import AgeableMob
 from generated_symbols.world.entity.mob.MobBase import MobBase
-from pydantic import Field
 
 
 class Breedable(AgeableMob, MobBase):
     InLove: Annotated[int, Field(ge=0)] | None = None  # Ticks until it stops searching for a mate.
-    LoveCause: tuple[int, int, int, int] | None = None  # Player that caused this mob to breed.
+    LoveCause: MinecraftUUID | None = None  # Player that caused this mob to breed.
 
 
 # ~~~ MODEL DUMP ~~~

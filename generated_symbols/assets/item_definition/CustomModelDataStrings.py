@@ -5,8 +5,9 @@ Local link to file: generated_symbols/assets/item_definition/CustomModelDataStri
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from generated_symbols.assets.item_definition.SelectCases import SelectCases
 from pydantic import Field
+
+from generated_symbols.assets.item_definition.SelectCases import SelectCases
 
 
 class CustomModelDataStrings(SelectCases[str]):

@@ -5,8 +5,9 @@ Local link to file: generated_symbols/world/entity/mob/copper_golem/CopperGolem.
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.world.entity.mob.MobBase import MobBase
 from pydantic import Field
+
+from generated_symbols.world.entity.mob.MobBase import MobBase
 
 if TYPE_CHECKING:
     from generated_symbols.world.entity.mob.copper_golem.WeatherState import WeatherState

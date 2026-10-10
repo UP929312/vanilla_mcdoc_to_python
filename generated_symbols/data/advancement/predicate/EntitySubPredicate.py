@@ -5,6 +5,8 @@ Local link to file: generated_symbols/data/advancement/predicate/EntitySubPredic
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
+from pydantic import Field
+
 from generated_symbols.base import GeneratedModel
 from generated_symbols.data.advancement.predicate.DistancePredicate import DistancePredicate
 from generated_symbols.data.advancement.predicate.EntityFlagsPredicate import EntityFlagsPredicate
@@ -17,7 +19,6 @@ from generated_symbols.data.advancement.predicate.PlayerPredicate import PlayerP
 from generated_symbols.data.advancement.predicate.RaiderPredicate import RaiderPredicate
 from generated_symbols.data.advancement.predicate.SheepPredicate import SheepPredicate
 from generated_symbols.data.advancement.predicate.SlimePredicate import SlimePredicate
-from pydantic import Field
 
 
 class EntitySubPredicateComponents(GeneratedModel):

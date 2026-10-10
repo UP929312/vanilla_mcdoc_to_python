@@ -5,9 +5,10 @@ Local link to file: generated_symbols/data/worldgen/feature/GeodeBlockSettings.p
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
+from pydantic import Field
+
 from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
-from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProviderRef import BlockStateProviderRef

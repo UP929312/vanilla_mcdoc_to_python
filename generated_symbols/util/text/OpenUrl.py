@@ -4,10 +4,11 @@ Local link to file: generated_symbols/util/text/OpenUrl.py
 """
 # ~~~ CODE ~~~
 from generated_symbols.base import GeneratedModel
+from generated_symbols.minecraft_types import MinecraftURL
 
 
 class OpenUrl(GeneratedModel):
-    url: str
+    url: MinecraftURL
 
 
 # ~~~ MODEL DUMP ~~~

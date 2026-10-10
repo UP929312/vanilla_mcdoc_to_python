@@ -5,9 +5,10 @@ Local link to file: generated_symbols/data/worldgen/feature/tree/FeatureSize.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
+from pydantic import Field
+
 from generated_symbols.data.worldgen.feature.tree.ThreeLayersFeatureSize import ThreeLayersFeatureSize
 from generated_symbols.data.worldgen.feature.tree.TwoLayersFeatureSize import TwoLayersFeatureSize
-from pydantic import Field
 
 
 class FeatureSizeThreeLayersFeatureSize(ThreeLayersFeatureSize):

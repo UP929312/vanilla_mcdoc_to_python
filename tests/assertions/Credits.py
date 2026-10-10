@@ -10,8 +10,9 @@ Local link to file: generated_symbols/assets/credits/Credits.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
-from generated_symbols.base import GeneratedModel
 from pydantic import Field
+
+from generated_symbols.base import GeneratedModel
 
 
 class TitlesStruct(GeneratedModel):

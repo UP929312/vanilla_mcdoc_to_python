@@ -5,6 +5,7 @@ Local link to file: generated_symbols/world/entity/mob/breedable/fox/Fox.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
+from generated_symbols.minecraft_types import MinecraftUUID
 from generated_symbols.world.entity.mob.breedable.Breedable import Breedable
 
 if TYPE_CHECKING:
@@ -12,7 +13,7 @@ if TYPE_CHECKING:
 
 
 class Fox(Breedable):
-    Trusted: list[tuple[int, int, int, int]] | None = None  # List of trusted players.
+    Trusted: list[MinecraftUUID] | None = None  # List of trusted players.
     Sleeping: bool | None = None  # Whether it is sleeping.
     Type: FoxType | None = None  # The type of fox.
     Sitting: bool | None = None  # Whether it is sitting.

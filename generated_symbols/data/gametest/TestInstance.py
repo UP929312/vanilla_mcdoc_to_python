@@ -5,9 +5,10 @@ Local link to file: generated_symbols/data/gametest/TestInstance.py
 # ~~~ CODE ~~~
 from typing import Annotated, ClassVar, Literal
 
+from pydantic import Field
+
 from generated_symbols.data.gametest.BlockBasedTestInstance import BlockBasedTestInstance
 from generated_symbols.data.gametest.FunctionTestInstance import FunctionTestInstance
-from pydantic import Field
 
 
 class TestInstanceBlockBased(BlockBasedTestInstance):

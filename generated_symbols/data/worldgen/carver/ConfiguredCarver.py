@@ -5,9 +5,10 @@ Local link to file: generated_symbols/data/worldgen/carver/ConfiguredCarver.py
 # ~~~ CODE ~~~
 from typing import Annotated, ClassVar, Literal
 
+from pydantic import Field
+
 from generated_symbols.data.worldgen.carver.CanyonConfig import CanyonConfig
 from generated_symbols.data.worldgen.carver.CaveConfig import CaveConfig
-from pydantic import Field
 
 
 class ConfiguredCarverCanyon(CanyonConfig):

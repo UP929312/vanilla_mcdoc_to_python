@@ -5,13 +5,15 @@ Local link to file: generated_symbols/world/entity/mob/warden/Suspect.py
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from generated_symbols.base import GeneratedModel
 from pydantic import Field
+
+from generated_symbols.base import GeneratedModel
+from generated_symbols.minecraft_types import MinecraftUUID
 
 
 class Suspect(GeneratedModel):
     anger: Annotated[int, Field(ge=1, le=150)] | None = None  # Level of anger that will decrease by 1 every second.
-    uuid: tuple[int, int, int, int] | None = None
+    uuid: MinecraftUUID | None = None
 
 
 # ~~~ MODEL DUMP ~~~

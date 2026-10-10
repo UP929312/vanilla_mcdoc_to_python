@@ -3,11 +3,12 @@ Generated from symbols.json for ::java::util::memory::LikedPlayer
 Local link to file: generated_symbols/util/memory/LikedPlayer.py
 """
 # ~~~ CODE ~~~
+from generated_symbols.minecraft_types import MinecraftUUID
 from generated_symbols.util.memory.ExpirableValue import ExpirableValue
 
 
 class LikedPlayer(ExpirableValue):
-    value: tuple[int, int, int, int]  # The UUID of the player entity that the allay likes.
+    value: MinecraftUUID  # The UUID of the player entity that the allay likes.
 
 
 # ~~~ MODEL DUMP ~~~

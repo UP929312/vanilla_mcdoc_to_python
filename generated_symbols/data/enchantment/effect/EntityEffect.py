@@ -5,6 +5,8 @@ Local link to file: generated_symbols/data/enchantment/effect/EntityEffect.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
+from pydantic import Field
+
 from generated_symbols.data.enchantment.effect.AllOfEntityEffect import AllOfEntityEffect
 from generated_symbols.data.enchantment.effect.ApplyExhaustionEntityEffect import ApplyExhaustionEntityEffect
 from generated_symbols.data.enchantment.effect.ApplyImpulseEntityEffect import ApplyImpulseEntityEffect
@@ -20,7 +22,6 @@ from generated_symbols.data.enchantment.effect.RunFunctionEntityEffect import Ru
 from generated_symbols.data.enchantment.effect.SetBlockPropertiesEntityEffect import SetBlockPropertiesEntityEffect
 from generated_symbols.data.enchantment.effect.SpawnParticlesEntityEffect import SpawnParticlesEntityEffect
 from generated_symbols.data.enchantment.effect.SummonEntityEffect import SummonEntityEffect
-from pydantic import Field
 
 
 class EntityEffectAllOf(AllOfEntityEffect):

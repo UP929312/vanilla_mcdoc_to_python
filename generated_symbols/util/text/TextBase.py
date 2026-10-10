@@ -5,8 +5,9 @@ Local link to file: generated_symbols/util/text/TextBase.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.util.text.TextStyle import TextStyle
 from pydantic import Field
+
+from generated_symbols.util.text.TextStyle import TextStyle
 
 if TYPE_CHECKING:
     from generated_symbols.util.text.Text import Text

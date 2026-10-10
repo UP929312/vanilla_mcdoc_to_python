@@ -5,10 +5,11 @@ Local link to file: generated_symbols/data/worldgen/structure/PoolAlias.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
+from pydantic import Field
+
 from generated_symbols.data.worldgen.structure.DirectPoolAlias import DirectPoolAlias
 from generated_symbols.data.worldgen.structure.RandomGroupPoolAlias import RandomGroupPoolAlias
 from generated_symbols.data.worldgen.structure.RandomPoolAlias import RandomPoolAlias
-from pydantic import Field
 
 
 class PoolAliasDirect(DirectPoolAlias):

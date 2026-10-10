@@ -5,8 +5,9 @@ Local link to file: generated_symbols/data/worldgen/carver/CaveConfig.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
-from generated_symbols.data.worldgen.carver.CarverConfigBase import CarverConfigBase
 from pydantic import Field
+
+from generated_symbols.data.worldgen.carver.CarverConfigBase import CarverConfigBase
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.FloatProvider import FloatProvider

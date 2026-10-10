@@ -5,6 +5,8 @@ Local link to file: generated_symbols/data/worldgen/feature/ConfiguredFeature.py
 # ~~~ CODE ~~~
 from typing import Annotated, ClassVar, Literal
 
+from pydantic import Field
+
 from generated_symbols.data.worldgen.feature.BlockBlobConfig import BlockBlobConfig
 from generated_symbols.data.worldgen.feature.BlockColumnConfig import BlockColumnConfig
 from generated_symbols.data.worldgen.feature.BlockPileConfig import BlockPileConfig
@@ -51,7 +53,6 @@ from generated_symbols.data.worldgen.feature.VegetationPatchConfig import Vegeta
 from generated_symbols.data.worldgen.feature.WeightedRandomFeatureConfig import WeightedRandomFeatureConfig
 from generated_symbols.data.worldgen.feature.tree.FallenTreeConfig import FallenTreeConfig
 from generated_symbols.data.worldgen.feature.tree.TreeConfig import TreeConfig
-from pydantic import Field
 
 
 class ConfiguredFeatureBamboo(ProbabilityConfig):

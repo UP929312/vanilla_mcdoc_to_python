@@ -5,6 +5,7 @@ Local link to file: generated_symbols/world/entity/area_effect_cloud/AreaEffectC
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
+from generated_symbols.minecraft_types import MinecraftUUID
 from generated_symbols.world.entity.EntityBase import EntityBase
 from minecraft_registry import IdSpec
 
@@ -20,7 +21,7 @@ class AreaEffectCloud(EntityBase):
     ReapplicationDelay: int | None = None  # Number of ticks until the effects are reapplied.
     WaitTime: int | None = None  # Number of ticks until it appears.
     DurationOnUse: int | None = None  # Amount the duration changes when it is active.
-    Owner: tuple[int, int, int, int] | None = None
+    Owner: MinecraftUUID | None = None
     Radius: float | None = None  # Radius of the particles & effect applications.
     RadiusOnUse: float | None = None  # Change in the radius when it is used.
     RadiusPerTick: float | None = None  # Change in the radius per tick.

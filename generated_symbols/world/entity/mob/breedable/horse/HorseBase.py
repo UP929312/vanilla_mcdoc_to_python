@@ -5,8 +5,10 @@ Local link to file: generated_symbols/world/entity/mob/breedable/horse/HorseBase
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from generated_symbols.world.entity.mob.breedable.Breedable import Breedable
 from pydantic import Field
+
+from generated_symbols.minecraft_types import MinecraftUUID
+from generated_symbols.world.entity.mob.breedable.Breedable import Breedable
 
 
 class HorseBase(Breedable):
@@ -14,7 +16,7 @@ class HorseBase(Breedable):
     EatingHaystack: bool | None = None  # Whether it is eating a haystack.
     Tame: bool | None = None  # Whether it has been tamed.
     Temper: Annotated[int, Field(ge=0, le=100)] | None = None  # Higher values make it easier to tame. Increases with feeding.
-    Owner: tuple[int, int, int, int] | None = None  # Player who tamed it.
+    Owner: MinecraftUUID | None = None  # Player who tamed it.
 
 
 # ~~~ MODEL DUMP ~~~

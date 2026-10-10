@@ -5,8 +5,9 @@ Local link to file: generated_symbols/data/recipe/Ingredient.py
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from minecraft_registry import IdSpec
 from pydantic import Field
+
+from minecraft_registry import IdSpec
 
 
 type Ingredient = Annotated[list[Annotated[str, IdSpec(registry='item', exclude=('air',))]], Field(min_length=1)] | Annotated[str, IdSpec(registry='item', tags='allowed', exclude=('air',))]

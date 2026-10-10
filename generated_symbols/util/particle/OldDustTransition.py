@@ -5,8 +5,9 @@ Local link to file: generated_symbols/util/particle/OldDustTransition.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.base import GeneratedModel
 from pydantic import Field
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.util.particle.DustColor import DustColor

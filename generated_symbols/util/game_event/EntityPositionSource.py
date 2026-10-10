@@ -4,10 +4,11 @@ Local link to file: generated_symbols/util/game_event/EntityPositionSource.py
 """
 # ~~~ CODE ~~~
 from generated_symbols.base import GeneratedModel
+from generated_symbols.minecraft_types import MinecraftUUID
 
 
 class EntityPositionSource(GeneratedModel):
-    source_entity: tuple[int, int, int, int]
+    source_entity: MinecraftUUID
     y_offset: float | None = None  # offset from the entity's feet to the source position
 
 

@@ -5,8 +5,9 @@ Local link to file: generated_symbols/world/component/predicate/ItemCountPseudoP
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
 from pydantic import Field
+
+from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
 
 
 ItemCountPseudoPredicate = MinMaxBounds[Annotated[int, Field(ge=1, le=99)]] | Annotated[int, Field(ge=1, le=99)]

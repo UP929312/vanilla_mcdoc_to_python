@@ -5,10 +5,12 @@ Local link to file: generated_symbols/world/entity/mob/LivingEntity.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
+from pydantic import Field
+
 from generated_symbols.base import GeneratedModel
+from generated_symbols.minecraft_types import MinecraftUUID
 from generated_symbols.world.entity.EntityBase import EntityBase
 from generated_symbols.world.entity.mob.FallDamageLogicData import FallDamageLogicData
-from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.effect.MobEffectInstance import MobEffectInstance
@@ -31,9 +33,9 @@ class LivingEntity(EntityBase, FallDamageLogicData):
     Brain: BrainStruct | None = None
     attributes: list[Attribute] | None = None
     active_effects: list[MobEffectInstance] | None = None
-    last_hurt_by_player: tuple[int, int, int, int] | None = None  # The UUID of the player that last hurt this entity. Stored for 100 ticks.
+    last_hurt_by_player: MinecraftUUID | None = None  # The UUID of the player that last hurt this entity. Stored for 100 ticks.
     last_hurt_by_player_memory_time: Annotated[int, Field(ge=0, le=100)] | None = None  # Amount of ticks that this entity will remember the player that last hurt this entity. Counts down from 100 to 0.
-    last_hurt_by_mob: tuple[int, int, int, int] | None = None  # The UUID of the mob that last hurt this entity. Stored for 100 ticks.
+    last_hurt_by_mob: MinecraftUUID | None = None  # The UUID of the mob that last hurt this entity. Stored for 100 ticks.
     ticks_since_last_hurt_by_mob: Annotated[int, Field(ge=0, le=100)] | None = None  # Amount of ticks since this entity was last hurt by a mob. Counts up from 0 to 100.
     locator_bar_icon: WaypointIcon | None = None
 

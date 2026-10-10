@@ -5,12 +5,13 @@ Local link to file: generated_symbols/assets/atlas/SpriteSource.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
+from pydantic import Field
+
 from generated_symbols.assets.atlas.Directory import Directory
 from generated_symbols.assets.atlas.Filter import Filter
 from generated_symbols.assets.atlas.PalettedPermutations import PalettedPermutations
 from generated_symbols.assets.atlas.Single import Single
 from generated_symbols.assets.atlas.Unstitch import Unstitch
-from pydantic import Field
 
 
 class SpriteSourceDirectory(Directory):

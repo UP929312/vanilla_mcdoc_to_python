@@ -5,10 +5,11 @@ Local link to file: generated_symbols/data/enchantment/provider/EnchantmentProvi
 # ~~~ CODE ~~~
 from typing import Annotated, ClassVar, Literal
 
+from pydantic import Field
+
 from generated_symbols.data.enchantment.provider.ByCostEnchantmentProvider import ByCostEnchantmentProvider
 from generated_symbols.data.enchantment.provider.ByCostWithDifficultyEnchantmentProvider import ByCostWithDifficultyEnchantmentProvider
 from generated_symbols.data.enchantment.provider.SingleProvider import SingleProvider
-from pydantic import Field
 
 
 class EnchantmentProviderByCost(ByCostEnchantmentProvider):

@@ -5,9 +5,10 @@ Local link to file: generated_symbols/data/advancement/trigger/SpearMobsTrigger.
 # ~~~ CODE ~~~
 from typing import Annotated
 
+from pydantic import Field
+
 from generated_symbols.data.advancement.trigger.AllOptional import AllOptional
 from generated_symbols.data.advancement.trigger.PlayerConditions import PlayerConditions
-from pydantic import Field
 
 
 class SpearMobsTriggerTypeArg(PlayerConditions):

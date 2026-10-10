@@ -5,6 +5,8 @@ Local link to file: generated_symbols/assets/item_definition/ItemModel.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, Literal
 
+from pydantic import Field
+
 from generated_symbols.assets.item_definition.BlockState import BlockState
 from generated_symbols.assets.item_definition.ChargeType import ChargeType
 from generated_symbols.assets.item_definition.Compass import Compass
@@ -32,7 +34,6 @@ from generated_symbols.assets.item_definition.UseCycle import UseCycle
 from generated_symbols.assets.item_definition.UseDuration import UseDuration
 from generated_symbols.assets.item_definition.ViewEntity import ViewEntity
 from generated_symbols.base import GeneratedModel
-from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.assets.item_definition.ConditionalPropertyType import ConditionalPropertyType

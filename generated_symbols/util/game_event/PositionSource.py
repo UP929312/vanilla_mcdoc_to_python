@@ -5,9 +5,10 @@ Local link to file: generated_symbols/util/game_event/PositionSource.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
+from pydantic import Field
+
 from generated_symbols.util.game_event.BlockPositionSource import BlockPositionSource
 from generated_symbols.util.game_event.EntityPositionSource import EntityPositionSource
-from pydantic import Field
 
 
 class PositionSourceBlock(BlockPositionSource):

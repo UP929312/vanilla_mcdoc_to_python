@@ -5,10 +5,11 @@ Local link to file: generated_symbols/data/worldgen/template_pool/Element.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
+from pydantic import Field
+
 from generated_symbols.data.worldgen.template_pool.FeatureElement import FeatureElement
 from generated_symbols.data.worldgen.template_pool.ListElement import ListElement
 from generated_symbols.data.worldgen.template_pool.SingleElement import SingleElement
-from pydantic import Field
 
 
 class ElementFeaturePoolElement(FeatureElement):

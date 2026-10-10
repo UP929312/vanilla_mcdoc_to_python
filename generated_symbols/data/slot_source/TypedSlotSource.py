@@ -5,13 +5,14 @@ Local link to file: generated_symbols/data/slot_source/TypedSlotSource.py
 # ~~~ CODE ~~~
 from typing import Annotated, ClassVar, Literal
 
+from pydantic import Field
+
 from generated_symbols.base import GeneratedModel
 from generated_symbols.data.slot_source.ContentsSlotSource import ContentsSlotSource
 from generated_symbols.data.slot_source.FilterSlotSource import FilterSlotSource
 from generated_symbols.data.slot_source.GroupSlotSource import GroupSlotSource
 from generated_symbols.data.slot_source.LimitCountSlotSource import LimitCountSlotSource
 from generated_symbols.data.slot_source.RangeSlotSource import RangeSlotSource
-from pydantic import Field
 
 
 class TypedSlotSourceContents(ContentsSlotSource):

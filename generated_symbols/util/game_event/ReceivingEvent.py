@@ -5,17 +5,19 @@ Local link to file: generated_symbols/util/game_event/ReceivingEvent.py
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
 from pydantic import Field
+
+from generated_symbols.base import GeneratedModel
+from generated_symbols.minecraft_types import MinecraftUUID
+from minecraft_registry import IdSpec
 
 
 class ReceivingEvent(GeneratedModel):
     game_event: Annotated[str, IdSpec(registry='game_event')]
     distance: Annotated[float, Field(ge=0)]  # Distance in blocks to the source
     pos: tuple[float, float, float]  # Origin of the event
-    source: tuple[int, int, int, int] | None = None  # UUID of the source entity of the event, if one exists
-    projectile_owner: tuple[int, int, int, int] | None = None  # UUID of the owner of the projectile, if one exists
+    source: MinecraftUUID | None = None  # UUID of the source entity of the event, if one exists
+    projectile_owner: MinecraftUUID | None = None  # UUID of the owner of the projectile, if one exists
 
 
 # ~~~ MODEL DUMP ~~~

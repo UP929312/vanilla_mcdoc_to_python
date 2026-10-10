@@ -5,8 +5,9 @@ Local link to file: generated_symbols/world/block/crafter/Crafter.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
-from generated_symbols.world.block.container.Container9 import Container9
 from pydantic import Field
+
+from generated_symbols.world.block.container.Container9 import Container9
 
 
 class Crafter(Container9):

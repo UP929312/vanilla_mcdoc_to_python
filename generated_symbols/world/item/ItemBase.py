@@ -5,8 +5,9 @@ Local link to file: generated_symbols/world/item/ItemBase.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Any
 
-from generated_symbols.base import GeneratedModel
 from pydantic import Field
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.world.component.item.Trim import Trim

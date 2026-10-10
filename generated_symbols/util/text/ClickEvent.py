@@ -5,6 +5,8 @@ Local link to file: generated_symbols/util/text/ClickEvent.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
+from pydantic import Field
+
 from generated_symbols.util.text.ChangePage import ChangePage
 from generated_symbols.util.text.CopyToClipboard import CopyToClipboard
 from generated_symbols.util.text.CustomAction import CustomAction
@@ -12,7 +14,6 @@ from generated_symbols.util.text.OpenUrl import OpenUrl
 from generated_symbols.util.text.RunCommand import RunCommand
 from generated_symbols.util.text.ShowDialog import ShowDialog
 from generated_symbols.util.text.SuggestCommand import SuggestCommand
-from pydantic import Field
 
 
 class ClickEventChangePage(ChangePage):

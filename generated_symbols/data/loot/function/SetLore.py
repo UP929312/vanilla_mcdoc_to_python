@@ -5,10 +5,11 @@ Local link to file: generated_symbols/data/loot/function/SetLore.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, Literal
 
+from pydantic import Field
+
 from generated_symbols.data.loot.function.Conditions import Conditions
 from generated_symbols.data.loot.function.InsertListOperation import InsertListOperation
 from generated_symbols.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
-from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.loot.EntityTarget import EntityTarget

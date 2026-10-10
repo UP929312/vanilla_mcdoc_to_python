@@ -5,11 +5,12 @@ Local link to file: generated_symbols/world/block/furnace/Furnace.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
+from pydantic import Field
+
 from generated_symbols.world.block.BlockEntity import BlockEntity
 from generated_symbols.world.block.Lockable import Lockable
 from generated_symbols.world.block.Nameable import Nameable
 from minecraft_registry import IdSpec
-from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.slot.SlottedItem import SlottedItem

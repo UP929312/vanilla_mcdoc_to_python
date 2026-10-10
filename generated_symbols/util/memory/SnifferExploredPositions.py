@@ -5,8 +5,9 @@ Local link to file: generated_symbols/util/memory/SnifferExploredPositions.py
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from generated_symbols.util.memory.ExpirableValue import ExpirableValue
 from pydantic import Field
+
+from generated_symbols.util.memory.ExpirableValue import ExpirableValue
 
 
 class SnifferExploredPositions(ExpirableValue):

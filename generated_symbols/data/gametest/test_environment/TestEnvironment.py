@@ -5,6 +5,8 @@ Local link to file: generated_symbols/data/gametest/test_environment/TestEnviron
 # ~~~ CODE ~~~
 from typing import Annotated, ClassVar, Literal
 
+from pydantic import Field
+
 from generated_symbols.data.gametest.test_environment.AllOffTestEnvironment import AllOffTestEnvironment
 from generated_symbols.data.gametest.test_environment.ClockTimeTestEnvironment import ClockTimeTestEnvironment
 from generated_symbols.data.gametest.test_environment.DifficultyTestEnvironment import DifficultyTestEnvironment
@@ -12,7 +14,6 @@ from generated_symbols.data.gametest.test_environment.FunctionTestEnvironment im
 from generated_symbols.data.gametest.test_environment.GameRulesTestEnvironment import GameRulesTestEnvironment
 from generated_symbols.data.gametest.test_environment.TimelineAttributesTestEnvironment import TimelineAttributesTestEnvironment
 from generated_symbols.data.gametest.test_environment.WeatherTestEnvironment import WeatherTestEnvironment
-from pydantic import Field
 
 
 class TestEnvironmentAllOf(AllOffTestEnvironment):

@@ -5,9 +5,10 @@ Local link to file: generated_symbols/data/worldgen/structure_set/ConcentricRing
 # ~~~ CODE ~~~
 from typing import Annotated
 
+from pydantic import Field
+
 from generated_symbols.data.worldgen.structure_set.SpreadingPlacementBase import SpreadingPlacementBase
 from minecraft_registry import IdSpec
-from pydantic import Field
 
 
 class ConcentricRingsPlacement(SpreadingPlacementBase):

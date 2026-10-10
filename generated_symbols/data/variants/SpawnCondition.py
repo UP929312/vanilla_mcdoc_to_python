@@ -5,10 +5,11 @@ Local link to file: generated_symbols/data/variants/SpawnCondition.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
+from pydantic import Field
+
 from generated_symbols.data.variants.BiomeCheck import BiomeCheck
 from generated_symbols.data.variants.MoonBrightnessCheck import MoonBrightnessCheck
 from generated_symbols.data.variants.StructureCheck import StructureCheck
-from pydantic import Field
 
 
 class SpawnConditionBiome(BiomeCheck):

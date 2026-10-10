@@ -5,9 +5,10 @@ Local link to file: generated_symbols/world/component/item/AttributeDisplay.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
+from pydantic import Field
+
 from generated_symbols.base import GeneratedModel
 from generated_symbols.world.component.item.AttributeDisplayTextOverride import AttributeDisplayTextOverride
-from pydantic import Field
 
 
 class AttributeDisplayDefault(GeneratedModel):

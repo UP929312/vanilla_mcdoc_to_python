@@ -5,12 +5,14 @@ Local link to file: generated_symbols/world/entity/interaction/Action.py
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from generated_symbols.base import GeneratedModel
 from pydantic import Field
+
+from generated_symbols.base import GeneratedModel
+from generated_symbols.minecraft_types import MinecraftUUID
 
 
 class Action(GeneratedModel):
-    player: tuple[int, int, int, int] | None = None
+    player: MinecraftUUID | None = None
     timestamp: Annotated[int, Field(ge=0)] | None = None  # Game tick of when the event occured.
 
 

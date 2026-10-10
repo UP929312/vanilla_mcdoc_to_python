@@ -5,10 +5,11 @@ Local link to file: generated_symbols/assets/texture_meta/GuiSpriteScaling.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
+from pydantic import Field
+
 from generated_symbols.assets.texture_meta.NineSlice import NineSlice
 from generated_symbols.assets.texture_meta.TileScaling import TileScaling
 from generated_symbols.base import GeneratedModel
-from pydantic import Field
 
 
 class GuiSpriteScalingNineSlice(NineSlice):

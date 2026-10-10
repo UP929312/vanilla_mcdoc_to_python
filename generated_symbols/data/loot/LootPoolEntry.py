@@ -5,6 +5,8 @@ Local link to file: generated_symbols/data/loot/LootPoolEntry.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
+from pydantic import Field
+
 from generated_symbols.data.loot.CompositePoolEntry import CompositePoolEntry
 from generated_symbols.data.loot.DynamicPoolEntry import DynamicPoolEntry
 from generated_symbols.data.loot.ItemPoolEntry import ItemPoolEntry
@@ -12,7 +14,6 @@ from generated_symbols.data.loot.LootTablePoolEntry import LootTablePoolEntry
 from generated_symbols.data.loot.SingletonPoolEntry import SingletonPoolEntry
 from generated_symbols.data.loot.SlotsPoolEntry import SlotsPoolEntry
 from generated_symbols.data.loot.TagPoolEntry import TagPoolEntry
-from pydantic import Field
 
 
 class LootPoolEntryAlternatives(CompositePoolEntry):

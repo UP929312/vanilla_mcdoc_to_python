@@ -5,8 +5,9 @@ Local link to file: generated_symbols/data/worldgen/density_function/Interpolate
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from generated_symbols.data.worldgen.density_function.OneArgument import OneArgument
 from pydantic import Field
+
+from generated_symbols.data.worldgen.density_function.OneArgument import OneArgument
 
 
 class Interpolated(OneArgument):

@@ -6,6 +6,7 @@ Local link to file: generated_symbols/world/block/vault/Vault.py
 from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.base import GeneratedModel
+from generated_symbols.minecraft_types import MinecraftUUID
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
@@ -29,7 +30,7 @@ class ConfigStruct(GeneratedModel):
 
 class SharedDataStruct(GeneratedModel):
     display_item: ItemStack | None = None  # Item that is displayed to players when they are in range of the vault.
-    connected_players: list[tuple[int, int, int, int]] | None = None
+    connected_players: list[MinecraftUUID] | None = None
     connected_particles_range: float | None = None
 
 

@@ -5,13 +5,14 @@ Local link to file: generated_symbols/data/enchantment/level_based_value/LevelBa
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
+from pydantic import Field
+
 from generated_symbols.data.enchantment.level_based_value.ClampedLevelValue import ClampedLevelValue
 from generated_symbols.data.enchantment.level_based_value.ExponentLevelValue import ExponentLevelValue
 from generated_symbols.data.enchantment.level_based_value.FractionLevelValue import FractionLevelValue
 from generated_symbols.data.enchantment.level_based_value.LinearLevelValue import LinearLevelValue
 from generated_symbols.data.enchantment.level_based_value.LookupLevelValue import LookupLevelValue
 from generated_symbols.data.enchantment.level_based_value.SquaredLevelValue import SquaredLevelValue
-from pydantic import Field
 
 
 class LevelBasedValueMapClamped(ClampedLevelValue):

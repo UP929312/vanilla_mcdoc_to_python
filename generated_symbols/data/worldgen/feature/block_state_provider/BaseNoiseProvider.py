@@ -5,8 +5,9 @@ Local link to file: generated_symbols/data/worldgen/feature/block_state_provider
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.base import GeneratedModel
 from pydantic import Field
+
+from generated_symbols.base import GeneratedModel
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.dimension.biome_source.NoiseParameters import NoiseParameters

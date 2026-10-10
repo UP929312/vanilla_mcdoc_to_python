@@ -5,8 +5,9 @@ Local link to file: generated_symbols/world/entity/display/Brightness.py
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from generated_symbols.base import GeneratedModel
 from pydantic import Field
+
+from generated_symbols.base import GeneratedModel
 
 
 class Brightness(GeneratedModel):

@@ -5,9 +5,10 @@ Local link to file: generated_symbols/world/component/item/DamageReduction.py
 # ~~~ CODE ~~~
 from typing import Annotated
 
+from pydantic import Field
+
 from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
-from pydantic import Field
 
 
 class DamageReduction(GeneratedModel):

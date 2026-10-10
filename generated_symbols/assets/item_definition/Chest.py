@@ -5,9 +5,10 @@ Local link to file: generated_symbols/assets/item_definition/Chest.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
+from pydantic import Field
+
 from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
-from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.assets.item_definition.ChestType import ChestType

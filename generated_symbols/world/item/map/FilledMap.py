@@ -5,10 +5,11 @@ Local link to file: generated_symbols/world/item/map/FilledMap.py
 # ~~~ CODE ~~~
 from typing import Annotated
 
+from pydantic import Field
+
 from generated_symbols.world.item.Display import Display
 from generated_symbols.world.item.ItemBase import ItemBase
 from generated_symbols.world.item.map.Decoration import Decoration
-from pydantic import Field
 
 
 class DecorationsStruct(Decoration):

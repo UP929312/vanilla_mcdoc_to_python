@@ -5,8 +5,10 @@ Local link to file: generated_symbols/world/entity/mob/breedable/villager/Player
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, Literal
 
-from generated_symbols.base import GeneratedModel
 from pydantic import Field
+
+from generated_symbols.base import GeneratedModel
+from generated_symbols.minecraft_types import MinecraftUUID
 
 if TYPE_CHECKING:
     from generated_symbols.world.entity.mob.breedable.villager.ReputationPart import ReputationPart
@@ -15,7 +17,7 @@ if TYPE_CHECKING:
 class PlayerReputationPart(GeneratedModel):
     Type: ReputationPart | None = None
     Value: Annotated[int, Field(ge=5, le=100)] | Literal[20] | Annotated[int, Field(ge=5, le=200)] | Annotated[int, Field(ge=1, le=25)] | None = None
-    Target: tuple[int, int, int, int] | None = None  # UUID of the player that caused the gossip-worthy event(s) related to this reputation part.
+    Target: MinecraftUUID | None = None  # UUID of the player that caused the gossip-worthy event(s) related to this reputation part.
 
 
 # ~~~ MODEL DUMP ~~~

@@ -5,8 +5,9 @@ Local link to file: generated_symbols/world/entity/mob/breedable/horse/Llama.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.world.entity.mob.breedable.horse.ChestedHorse import ChestedHorse
 from pydantic import Field
+
+from generated_symbols.world.entity.mob.breedable.horse.ChestedHorse import ChestedHorse
 
 if TYPE_CHECKING:
     from generated_symbols.world.entity.mob.breedable.horse.LlamaVariantInt import LlamaVariantInt

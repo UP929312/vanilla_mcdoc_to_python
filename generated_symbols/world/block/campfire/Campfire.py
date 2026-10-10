@@ -5,8 +5,9 @@ Local link to file: generated_symbols/world/block/campfire/Campfire.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.world.block.BlockEntity import BlockEntity
 from pydantic import Field
+
+from generated_symbols.world.block.BlockEntity import BlockEntity
 
 if TYPE_CHECKING:
     from generated_symbols.util.slot.SlottedItem import SlottedItem

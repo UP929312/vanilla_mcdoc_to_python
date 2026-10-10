@@ -5,9 +5,10 @@ Local link to file: generated_symbols/world/entity/mob/player/Player.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
+from pydantic import Field
+
 from generated_symbols.world.entity.mob.LivingEntity import LivingEntity
 from minecraft_registry import IdSpec
-from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.GlobalPos import GlobalPos

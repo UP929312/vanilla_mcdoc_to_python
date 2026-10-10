@@ -5,10 +5,11 @@ Local link to file: generated_symbols/util/text/HoverEvent.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
+from pydantic import Field
+
 from generated_symbols.util.text.ShowEntity import ShowEntity
 from generated_symbols.util.text.ShowItem import ShowItem
 from generated_symbols.util.text.ShowText import ShowText
-from pydantic import Field
 
 
 class HoverEventShowEntity(ShowEntity):

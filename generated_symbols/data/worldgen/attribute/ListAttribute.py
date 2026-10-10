@@ -5,9 +5,10 @@ Local link to file: generated_symbols/data/worldgen/attribute/ListAttribute.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, Generic, TypeVar
 
+from pydantic import Field
+
 from generated_symbols.base import GeneratedModel
 from generated_symbols.data.timeline.AttributeTrackBase import AttributeTrackBase
-from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.attribute.modifier.ListModifier import ListModifier

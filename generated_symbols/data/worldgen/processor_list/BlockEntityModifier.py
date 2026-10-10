@@ -5,10 +5,11 @@ Local link to file: generated_symbols/data/worldgen/processor_list/BlockEntityMo
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
+from pydantic import Field
+
 from generated_symbols.base import GeneratedModel
 from generated_symbols.data.worldgen.processor_list.AppendLoot import AppendLoot
 from generated_symbols.data.worldgen.processor_list.AppendStatic import AppendStatic
-from pydantic import Field
 
 
 class BlockEntityModifierAppendLoot(AppendLoot):

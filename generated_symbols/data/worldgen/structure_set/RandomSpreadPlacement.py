@@ -5,8 +5,9 @@ Local link to file: generated_symbols/data/worldgen/structure_set/RandomSpreadPl
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.data.worldgen.structure_set.SpreadingPlacementBase import SpreadingPlacementBase
 from pydantic import Field
+
+from generated_symbols.data.worldgen.structure_set.SpreadingPlacementBase import SpreadingPlacementBase
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.structure_set.SpreadType import SpreadType

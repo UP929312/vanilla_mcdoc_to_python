@@ -5,12 +5,13 @@ Local link to file: generated_symbols/world/component/item/ConsumeEffect.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
+from pydantic import Field
+
 from generated_symbols.base import GeneratedModel
 from generated_symbols.world.component.item.ApplyEffectsConsumeEffect import ApplyEffectsConsumeEffect
 from generated_symbols.world.component.item.PlaySoundConsumeEffect import PlaySoundConsumeEffect
 from generated_symbols.world.component.item.RemoveEffectsConsumeEffect import RemoveEffectsConsumeEffect
 from generated_symbols.world.component.item.TeleportRandomlyConsumeEffect import TeleportRandomlyConsumeEffect
-from pydantic import Field
 
 
 class ConsumeEffectApplyEffects(ApplyEffectsConsumeEffect):

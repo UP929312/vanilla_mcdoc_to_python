@@ -6,6 +6,7 @@ Local link to file: generated_symbols/world/item/AttributeModifier.py
 from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.base import GeneratedModel
+from generated_symbols.minecraft_types import MinecraftUUID
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
@@ -19,7 +20,7 @@ class AttributeModifier(GeneratedModel):
     Slot: EquipmentSlotGroup | None = None  # Slot that the modifier is active in.
     Operation: LegacyOperation | None = None
     Amount: float | None = None  # Change in the attribute.
-    UUID: tuple[int, int, int, int] | None = None
+    UUID: MinecraftUUID | None = None
 
 
 # ~~~ MODEL DUMP ~~~

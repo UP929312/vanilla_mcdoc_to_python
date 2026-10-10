@@ -5,8 +5,9 @@ Local link to file: generated_symbols/world/item/ItemStackOfComponent.py
 # ~~~ CODE ~~~
 from typing import Annotated, Generic, TypeVar
 
-from generated_symbols.world.item.SingleItemOfComponent import SingleItemOfComponent
 from pydantic import Field
+
+from generated_symbols.world.item.SingleItemOfComponent import SingleItemOfComponent
 
 
 T = TypeVar('T')

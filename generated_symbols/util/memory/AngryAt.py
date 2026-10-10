@@ -3,11 +3,12 @@ Generated from symbols.json for ::java::util::memory::AngryAt
 Local link to file: generated_symbols/util/memory/AngryAt.py
 """
 # ~~~ CODE ~~~
+from generated_symbols.minecraft_types import MinecraftUUID
 from generated_symbols.util.memory.ExpirableValue import ExpirableValue
 
 
 class AngryAt(ExpirableValue):
-    value: tuple[int, int, int, int]  # The target of the piglin or piglin brute.
+    value: MinecraftUUID  # The target of the piglin or piglin brute.
 
 
 # ~~~ MODEL DUMP ~~~

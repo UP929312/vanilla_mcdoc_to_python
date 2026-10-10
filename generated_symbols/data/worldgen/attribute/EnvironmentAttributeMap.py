@@ -5,8 +5,9 @@ Local link to file: generated_symbols/data/worldgen/attribute/EnvironmentAttribu
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, Any, TypeVar
 
-from minecraft_registry import IdSpec
 from pydantic import Field
+
+from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
     from generated_symbols.data.util.MoonPhase import MoonPhase

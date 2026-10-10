@@ -5,6 +5,8 @@ Local link to file: generated_symbols/assets/item_definition/ComponentStrings.py
 # ~~~ CODE ~~~
 from typing import Annotated
 
+from pydantic import Field
+
 from generated_symbols.assets.item_definition.SelectCases import SelectCases
 from generated_symbols.base import GeneratedModel
 from generated_symbols.data.advancement.predicate.ItemPredicate import ItemPredicate
@@ -74,7 +76,6 @@ from generated_symbols.world.component.item.blocks_attacks import blocks_attacks
 from generated_symbols.world.entity.AnyEntity import AnyEntity
 from generated_symbols.world.item.ItemStackTemplate import ItemStackTemplate
 from minecraft_registry import IdSpec
-from pydantic import Field
 
 
 class DataComponentStructCreativeSlotLock(GeneratedModel):

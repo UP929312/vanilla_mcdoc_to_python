@@ -5,8 +5,9 @@ Local link to file: generated_symbols/data/worldgen/dimension/biome_source/Noise
 # ~~~ CODE ~~~
 from typing import Annotated, ClassVar
 
-from generated_symbols.base import GeneratedModel
 from pydantic import Field
+
+from generated_symbols.base import GeneratedModel
 
 
 class NoiseParameters(GeneratedModel):

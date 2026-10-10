@@ -5,6 +5,8 @@ Local link to file: generated_symbols/data/worldgen/feature/placement/PlacementM
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
+from pydantic import Field
+
 from generated_symbols.data.worldgen.feature.placement.BlockPredicateFilter import BlockPredicateFilter
 from generated_symbols.data.worldgen.feature.placement.CountModifier import CountModifier
 from generated_symbols.data.worldgen.feature.placement.CountOnEveryLayerModifier import CountOnEveryLayerModifier
@@ -21,7 +23,6 @@ from generated_symbols.data.worldgen.feature.placement.RandomlySelectedModifier 
 from generated_symbols.data.worldgen.feature.placement.RarityFilter import RarityFilter
 from generated_symbols.data.worldgen.feature.placement.SurfaceRelativeThresholdFilter import SurfaceRelativeThresholdFilter
 from generated_symbols.data.worldgen.feature.placement.SurfaceWaterDepthFilter import SurfaceWaterDepthFilter
-from pydantic import Field
 
 
 class PlacementModifierBlockPredicateFilter(BlockPredicateFilter):

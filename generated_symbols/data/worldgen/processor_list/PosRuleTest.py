@@ -5,9 +5,10 @@ Local link to file: generated_symbols/data/worldgen/processor_list/PosRuleTest.p
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
+from pydantic import Field
+
 from generated_symbols.data.worldgen.processor_list.AxisAlignedLinearPos import AxisAlignedLinearPos
 from generated_symbols.data.worldgen.processor_list.LinearPos import LinearPos
-from pydantic import Field
 
 
 class PosRuleTestAxisAlignedLinearPos(AxisAlignedLinearPos):

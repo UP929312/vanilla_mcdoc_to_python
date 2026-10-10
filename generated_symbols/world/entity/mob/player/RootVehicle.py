@@ -6,13 +6,14 @@ Local link to file: generated_symbols/world/entity/mob/player/RootVehicle.py
 from typing import TYPE_CHECKING
 
 from generated_symbols.base import GeneratedModel
+from generated_symbols.minecraft_types import MinecraftUUID
 
 if TYPE_CHECKING:
     from generated_symbols.world.entity.AnyEntity import AnyEntity
 
 
 class RootVehicle(GeneratedModel):
-    Attach: tuple[int, int, int, int] | None = None  # Ridden entity's UUID.
+    Attach: MinecraftUUID | None = None  # Ridden entity's UUID.
     Entity: AnyEntity | None = None  # The ridden entity.
 
 

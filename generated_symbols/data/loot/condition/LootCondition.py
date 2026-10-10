@@ -5,6 +5,8 @@ Local link to file: generated_symbols/data/loot/condition/LootCondition.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
+from pydantic import Field
+
 from generated_symbols.data.advancement.predicate.BlockPredicate import BlockPredicate
 from generated_symbols.data.loot.condition.AllOf import AllOf
 from generated_symbols.data.loot.condition.AnyOf import AnyOf
@@ -24,7 +26,6 @@ from generated_symbols.data.loot.condition.RandomChanceWithEnchantedBonus import
 from generated_symbols.data.loot.condition.TableBonus import TableBonus
 from generated_symbols.data.loot.condition.TimeCheck import TimeCheck
 from generated_symbols.data.loot.condition.WeatherCheck import WeatherCheck
-from pydantic import Field
 
 
 class LootConditionAllOf(AllOf):

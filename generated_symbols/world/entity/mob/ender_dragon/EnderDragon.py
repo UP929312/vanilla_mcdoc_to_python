@@ -5,8 +5,9 @@ Local link to file: generated_symbols/world/entity/mob/ender_dragon/EnderDragon.
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.world.entity.mob.MobBase import MobBase
 from pydantic import Field
+
+from generated_symbols.world.entity.mob.MobBase import MobBase
 
 if TYPE_CHECKING:
     from generated_symbols.world.entity.mob.ender_dragon.DragonPhase import DragonPhase

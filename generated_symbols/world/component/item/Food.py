@@ -5,8 +5,9 @@ Local link to file: generated_symbols/world/component/item/Food.py
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from generated_symbols.base import GeneratedModel
 from pydantic import Field
+
+from generated_symbols.base import GeneratedModel
 
 
 class Food(GeneratedModel):

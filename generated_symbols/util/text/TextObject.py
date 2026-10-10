@@ -5,12 +5,13 @@ Local link to file: generated_symbols/util/text/TextObject.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, Literal
 
+from pydantic import Field
+
 from generated_symbols.base import GeneratedModel
 from generated_symbols.util.text.ObjectTextConfig import ObjectTextConfig
 from generated_symbols.util.text.TextBase import TextBase
 from generated_symbols.util.text.TextNbtBase import TextNbtBase
 from minecraft_registry import IdSpec
-from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.avatar.Profile import Profile

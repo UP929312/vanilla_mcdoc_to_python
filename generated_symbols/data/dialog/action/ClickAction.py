@@ -5,6 +5,8 @@ Local link to file: generated_symbols/data/dialog/action/ClickAction.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
+from pydantic import Field
+
 from generated_symbols.data.dialog.action.DynamicCustomAction import DynamicCustomAction
 from generated_symbols.data.dialog.action.DynamicRunCommand import DynamicRunCommand
 from generated_symbols.util.text.ChangePage import ChangePage
@@ -14,7 +16,6 @@ from generated_symbols.util.text.OpenUrl import OpenUrl
 from generated_symbols.util.text.RunCommand import RunCommand
 from generated_symbols.util.text.ShowDialog import ShowDialog
 from generated_symbols.util.text.SuggestCommand import SuggestCommand
-from pydantic import Field
 
 
 class ClickActionChangePage(ChangePage):

@@ -6,6 +6,7 @@ Local link to file: generated_symbols/util/text/EntityTooltipInfo.py
 from typing import TYPE_CHECKING, Annotated
 
 from generated_symbols.base import GeneratedModel
+from generated_symbols.minecraft_types import MinecraftUUID, MinecraftUUIDString
 from minecraft_registry import IdSpec
 
 if TYPE_CHECKING:
@@ -14,7 +15,7 @@ if TYPE_CHECKING:
 
 class EntityTooltipInfo(GeneratedModel):
     id: Annotated[str, IdSpec(registry='entity_type')]
-    uuid: tuple[int, int, int, int] | str
+    uuid: MinecraftUUID | MinecraftUUIDString
     name: Text | None = None
 
 

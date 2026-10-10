@@ -5,8 +5,10 @@ Local link to file: generated_symbols/world/entity/mob/zombie/ZombieVillager.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.world.entity.mob.zombie.Zombie import Zombie
 from pydantic import Field
+
+from generated_symbols.minecraft_types import MinecraftUUID
+from generated_symbols.world.entity.mob.zombie.Zombie import Zombie
 
 if TYPE_CHECKING:
     from generated_symbols.world.entity.mob.breedable.villager.Offers import Offers
@@ -20,7 +22,7 @@ class ZombieVillager(Zombie):
     Gossips: list[PlayerReputationPart] | None = None  # Villager's gossips
     Offers_: Offers | None = Field(default=None, alias='Offers')  # Villager's offers
     ConversionTime: int | None = None  # Ticks until the it is converted.
-    ConversionPlayer: tuple[int, int, int, int] | None = None  # Player who triggered the conversion.
+    ConversionPlayer: MinecraftUUID | None = None  # Player who triggered the conversion.
 
 
 # ~~~ MODEL DUMP ~~~

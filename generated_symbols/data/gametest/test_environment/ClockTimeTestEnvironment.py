@@ -5,9 +5,10 @@ Local link to file: generated_symbols/data/gametest/test_environment/ClockTimeTe
 # ~~~ CODE ~~~
 from typing import Annotated, ClassVar
 
+from pydantic import Field
+
 from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
-from pydantic import Field
 
 
 class ClockTimeTestEnvironment(GeneratedModel):

@@ -5,6 +5,8 @@ Local link to file: generated_symbols/data/worldgen/feature/block_predicate/Bloc
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
+from pydantic import Field
+
 from generated_symbols.data.worldgen.feature.block_predicate.BelowHeightmapPredicate import BelowHeightmapPredicate
 from generated_symbols.data.worldgen.feature.block_predicate.CombiningPredicate import CombiningPredicate
 from generated_symbols.data.worldgen.feature.block_predicate.HasSturdyFacePredicate import HasSturdyFacePredicate
@@ -18,7 +20,6 @@ from generated_symbols.data.worldgen.feature.block_predicate.NotPredicate import
 from generated_symbols.data.worldgen.feature.block_predicate.UnobstructedPredicate import UnobstructedPredicate
 from generated_symbols.data.worldgen.feature.block_predicate.VolumeMatchPredicate import VolumeMatchPredicate
 from generated_symbols.data.worldgen.feature.block_predicate.WouldSurvivePredicate import WouldSurvivePredicate
-from pydantic import Field
 
 
 class BlockPredicateAllOf(CombiningPredicate):

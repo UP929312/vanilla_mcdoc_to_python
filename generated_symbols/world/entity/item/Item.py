@@ -5,6 +5,7 @@ Local link to file: generated_symbols/world/entity/item/Item.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
+from generated_symbols.minecraft_types import MinecraftUUID
 from generated_symbols.world.entity.EntityBase import EntityBase
 
 if TYPE_CHECKING:
@@ -15,8 +16,8 @@ class Item(EntityBase):
     Age: int | None = None  # Ticks it has existed.
     Health: int | None = None
     PickupDelay: int | None = None  # Ticks until an entity can pick up this item.
-    Owner: tuple[int, int, int, int] | None = None  # Only this entity can pick up the item.
-    Thrower: tuple[int, int, int, int] | None = None  # Player who threw the item. Can be set and/or changed to any entity.
+    Owner: MinecraftUUID | None = None  # Only this entity can pick up the item.
+    Thrower: MinecraftUUID | None = None  # Player who threw the item. Can be set and/or changed to any entity.
     Item: ItemStack | None = None
 
 

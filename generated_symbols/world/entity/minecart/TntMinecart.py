@@ -5,8 +5,9 @@ Local link to file: generated_symbols/world/entity/minecart/TntMinecart.py
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from generated_symbols.world.entity.minecart.Minecart import Minecart
 from pydantic import Field
+
+from generated_symbols.world.entity.minecart.Minecart import Minecart
 
 
 class TntMinecart(Minecart):

@@ -5,8 +5,9 @@ Local link to file: generated_symbols/world/item/firework/FireworkRocket.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.world.item.ItemBase import ItemBase
 from pydantic import Field
+
+from generated_symbols.world.item.ItemBase import ItemBase
 
 if TYPE_CHECKING:
     from generated_symbols.world.item.firework.Fireworks import Fireworks

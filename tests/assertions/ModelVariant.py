@@ -10,8 +10,9 @@ Local link to file: generated_symbols/assets/block_state_definition/ModelVariant
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from generated_symbols.assets.block_state_definition.ModelVariantBase import ModelVariantBase
 from pydantic import Field
+
+from generated_symbols.assets.block_state_definition.ModelVariantBase import ModelVariantBase
 
 
 class ModelVariantStruct(ModelVariantBase):

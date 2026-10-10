@@ -5,12 +5,13 @@ Local link to file: generated_symbols/assets/font/GlyphProvider.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, Literal
 
+from pydantic import Field
+
 from generated_symbols.assets.font.BitmapProvider import BitmapProvider
 from generated_symbols.assets.font.ReferenceProvider import ReferenceProvider
 from generated_symbols.assets.font.SpaceProvider import SpaceProvider
 from generated_symbols.assets.font.TtfProvider import TtfProvider
 from generated_symbols.assets.font.UnihexProvider import UnihexProvider
-from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.assets.font.FontOption import FontOption

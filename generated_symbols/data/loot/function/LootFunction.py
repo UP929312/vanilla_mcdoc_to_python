@@ -5,6 +5,8 @@ Local link to file: generated_symbols/data/loot/function/LootFunction.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, Literal
 
+from pydantic import Field
+
 from generated_symbols.data.loot.function.BinomialWithBonusCountFormula import BinomialWithBonusCountFormula
 from generated_symbols.data.loot.function.Conditions import Conditions
 from generated_symbols.data.loot.function.CopyComponents import CopyComponents
@@ -46,7 +48,6 @@ from generated_symbols.data.loot.function.SetStewEffect import SetStewEffect
 from generated_symbols.data.loot.function.ToggleTooltips import ToggleTooltips
 from generated_symbols.data.loot.function.UniformBonusFormula import UniformBonusFormula
 from minecraft_registry import IdSpec
-from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.loot.EntityTarget import EntityTarget

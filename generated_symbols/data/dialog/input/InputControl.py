@@ -5,11 +5,12 @@ Local link to file: generated_symbols/data/dialog/input/InputControl.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
+from pydantic import Field
+
 from generated_symbols.data.dialog.input.BooleanInput import BooleanInput
 from generated_symbols.data.dialog.input.NumberRangeInput import NumberRangeInput
 from generated_symbols.data.dialog.input.SingleOptionInput import SingleOptionInput
 from generated_symbols.data.dialog.input.TextInput import TextInput
-from pydantic import Field
 
 
 class InputControlBoolean(BooleanInput):

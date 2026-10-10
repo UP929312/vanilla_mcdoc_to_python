@@ -5,9 +5,10 @@ Local link to file: generated_symbols/data/worldgen/dimension/chunk_generator/Ch
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
+from pydantic import Field
+
 from generated_symbols.data.worldgen.dimension.chunk_generator.Flat import Flat
 from generated_symbols.data.worldgen.dimension.chunk_generator.Noise import Noise
-from pydantic import Field
 
 
 class ChunkGeneratorFlat(Flat):

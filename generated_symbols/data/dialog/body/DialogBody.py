@@ -5,9 +5,10 @@ Local link to file: generated_symbols/data/dialog/body/DialogBody.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
+from pydantic import Field
+
 from generated_symbols.data.dialog.body.ItemBody import ItemBody
 from generated_symbols.data.dialog.body.PlainMessage import PlainMessage
-from pydantic import Field
 
 
 class DialogBodyItem(ItemBody):

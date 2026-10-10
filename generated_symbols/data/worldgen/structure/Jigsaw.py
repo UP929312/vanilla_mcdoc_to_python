@@ -5,9 +5,10 @@ Local link to file: generated_symbols/data/worldgen/structure/Jigsaw.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
+from pydantic import Field
+
 from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
-from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.HeightProvider import HeightProvider

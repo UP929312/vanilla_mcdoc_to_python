@@ -5,8 +5,9 @@ Local link to file: generated_symbols/assets/item_definition/CustomModelDataFlag
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from generated_symbols.base import GeneratedModel
 from pydantic import Field
+
+from generated_symbols.base import GeneratedModel
 
 
 class CustomModelDataFlags(GeneratedModel):

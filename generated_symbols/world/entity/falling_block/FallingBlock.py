@@ -5,9 +5,10 @@ Local link to file: generated_symbols/world/entity/falling_block/FallingBlock.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
+from pydantic import Field
+
 from generated_symbols.base import GeneratedModel
 from generated_symbols.world.entity.EntityBase import EntityBase
-from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.BlockState import BlockState

@@ -4,11 +4,12 @@ Local link to file: generated_symbols/world/entity/mob/NeutralMob.py
 """
 # ~~~ CODE ~~~
 from generated_symbols.base import GeneratedModel
+from generated_symbols.minecraft_types import MinecraftUUID
 
 
 class NeutralMob(GeneratedModel):
     anger_end_time: int | None = None  # The time anger ends.
-    angry_at: tuple[int, int, int, int] | None = None
+    angry_at: MinecraftUUID | None = None
 
 
 # ~~~ MODEL DUMP ~~~

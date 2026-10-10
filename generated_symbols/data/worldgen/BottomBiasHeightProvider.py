@@ -5,8 +5,9 @@ Local link to file: generated_symbols/data/worldgen/BottomBiasHeightProvider.py
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from generated_symbols.data.worldgen.UniformHeightProvider import UniformHeightProvider
 from pydantic import Field
+
+from generated_symbols.data.worldgen.UniformHeightProvider import UniformHeightProvider
 
 
 class BottomBiasHeightProvider(UniformHeightProvider):

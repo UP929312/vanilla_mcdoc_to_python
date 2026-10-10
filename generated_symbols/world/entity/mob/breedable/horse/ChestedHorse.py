@@ -5,9 +5,10 @@ Local link to file: generated_symbols/world/entity/mob/breedable/horse/ChestedHo
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
+from pydantic import Field
+
 from generated_symbols.base import GeneratedModel
 from generated_symbols.world.entity.mob.breedable.horse.HorseBase import HorseBase
-from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.slot.SlottedItem import SlottedItem

@@ -5,9 +5,10 @@ Local link to file: generated_symbols/data/worldgen/feature/VegetationPatchConfi
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
+from pydantic import Field
+
 from generated_symbols.base import GeneratedModel
 from minecraft_registry import IdSpec
-from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.CaveSurface import CaveSurface

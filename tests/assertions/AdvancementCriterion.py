@@ -10,6 +10,8 @@ Local link to file: generated_symbols/data/advancement/AdvancementCriterion.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
+from pydantic import Field
+
 from generated_symbols.data.advancement.trigger.AnyBlockInteractionTrigger import AnyBlockInteractionTrigger
 from generated_symbols.data.advancement.trigger.BeeNestDestroyedTrigger import BeeNestDestroyedTrigger
 from generated_symbols.data.advancement.trigger.BredAnimalsTrigger import BredAnimalsTrigger
@@ -57,7 +59,6 @@ from generated_symbols.data.advancement.trigger.TradeTrigger import TradeTrigger
 from generated_symbols.data.advancement.trigger.UsedEnderEyeTrigger import UsedEnderEyeTrigger
 from generated_symbols.data.advancement.trigger.UsedTotemTrigger import UsedTotemTrigger
 from generated_symbols.data.advancement.trigger.UsingItemTrigger import UsingItemTrigger
-from pydantic import Field
 
 
 class AdvancementCriterionAllayDropItemOnBlock(ItemUsedOnLocationTrigger):

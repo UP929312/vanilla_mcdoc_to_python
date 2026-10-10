@@ -5,6 +5,8 @@ Local link to file: generated_symbols/data/worldgen/processor_list/RuleTest.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
+from pydantic import Field
+
 from generated_symbols.data.worldgen.processor_list.BlockMatch import BlockMatch
 from generated_symbols.data.worldgen.processor_list.BlockStateMatch import BlockStateMatch
 from generated_symbols.data.worldgen.processor_list.CompositeMatch import CompositeMatch
@@ -13,7 +15,6 @@ from generated_symbols.data.worldgen.processor_list.InvertedMatch import Inverte
 from generated_symbols.data.worldgen.processor_list.RandomBlockMatch import RandomBlockMatch
 from generated_symbols.data.worldgen.processor_list.RandomBlockStateMatch import RandomBlockStateMatch
 from generated_symbols.data.worldgen.processor_list.TagMatch import TagMatch
-from pydantic import Field
 
 
 class RuleTestAllOf(CompositeMatch):

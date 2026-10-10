@@ -5,8 +5,9 @@ Local link to file: generated_symbols/world/entity/mob/breedable/armadillo/Armad
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.world.entity.mob.breedable.Breedable import Breedable
 from pydantic import Field
+
+from generated_symbols.world.entity.mob.breedable.Breedable import Breedable
 
 if TYPE_CHECKING:
     from generated_symbols.world.entity.mob.breedable.armadillo.ArmadilloState import ArmadilloState

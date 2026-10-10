@@ -5,8 +5,9 @@ Local link to file: generated_symbols/world/entity/item_frame/ItemFrame.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.world.entity.BlockAttachedEntity import BlockAttachedEntity
 from pydantic import Field
+
+from generated_symbols.world.entity.BlockAttachedEntity import BlockAttachedEntity
 
 if TYPE_CHECKING:
     from generated_symbols.util.direction.DirectionByte import DirectionByte

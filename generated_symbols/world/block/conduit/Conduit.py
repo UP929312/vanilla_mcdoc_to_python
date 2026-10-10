@@ -3,11 +3,12 @@ Generated from symbols.json for ::java::world::block::conduit::Conduit
 Local link to file: generated_symbols/world/block/conduit/Conduit.py
 """
 # ~~~ CODE ~~~
+from generated_symbols.minecraft_types import MinecraftUUID
 from generated_symbols.world.block.BlockEntity import BlockEntity
 
 
 class Conduit(BlockEntity):
-    Target: tuple[int, int, int, int] | None = None  # The hostile mob that the conduit is currently attacking.
+    Target: MinecraftUUID | None = None  # The hostile mob that the conduit is currently attacking.
 
 
 # ~~~ MODEL DUMP ~~~

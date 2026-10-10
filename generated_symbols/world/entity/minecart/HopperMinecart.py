@@ -5,9 +5,10 @@ Local link to file: generated_symbols/world/entity/minecart/HopperMinecart.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
+from pydantic import Field
+
 from generated_symbols.world.entity.minecart.ContainerMinecart import ContainerMinecart
 from generated_symbols.world.entity.minecart.Minecart import Minecart
-from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.util.slot.SlottedItem import SlottedItem

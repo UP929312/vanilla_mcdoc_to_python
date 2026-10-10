@@ -5,6 +5,8 @@ Local link to file: generated_symbols/data/worldgen/structure/Structure.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar, Literal
 
+from pydantic import Field
+
 from generated_symbols.base import GeneratedModel
 from generated_symbols.data.worldgen.structure.BuriedTreasure import BuriedTreasure
 from generated_symbols.data.worldgen.structure.Jigsaw import Jigsaw
@@ -14,7 +16,6 @@ from generated_symbols.data.worldgen.structure.OceanRuin import OceanRuin
 from generated_symbols.data.worldgen.structure.RuinedPortal import RuinedPortal
 from generated_symbols.data.worldgen.structure.Shipwreck import Shipwreck
 from minecraft_registry import IdSpec
-from pydantic import Field
 
 if TYPE_CHECKING:
     from generated_symbols.data.worldgen.DecorationStep import DecorationStep

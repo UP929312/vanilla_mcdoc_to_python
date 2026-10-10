@@ -3,6 +3,7 @@ Generated from symbols.json for ::java::world::entity::mob::breedable::bee::Bee
 Local link to file: generated_symbols/world/entity/mob/breedable/bee/Bee.py
 """
 # ~~~ CODE ~~~
+from generated_symbols.minecraft_types import MinecraftUUID
 from generated_symbols.world.entity.mob.NeutralMob import NeutralMob
 from generated_symbols.world.entity.mob.breedable.Breedable import Breedable
 
@@ -16,7 +17,7 @@ class Bee(Breedable, NeutralMob):
     CannotEnterHiveTicks: int | None = None  # Ticks until the bee can enter its hive.
     CropsGrownSincePollination: int | None = None  # Crops grown since the bee has gathered nectar.
     Anger: int | None = None  # Ticks the bee will be angry for.
-    HurtBy: tuple[int, int, int, int] | None = None  # Player that has attacked the bee.
+    HurtBy: MinecraftUUID | None = None  # Player that has attacked the bee.
 
 
 # ~~~ MODEL DUMP ~~~

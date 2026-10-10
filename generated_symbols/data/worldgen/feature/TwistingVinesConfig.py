@@ -5,8 +5,9 @@ Local link to file: generated_symbols/data/worldgen/feature/TwistingVinesConfig.
 # ~~~ CODE ~~~
 from typing import Annotated, ClassVar
 
-from generated_symbols.base import GeneratedModel
 from pydantic import Field
+
+from generated_symbols.base import GeneratedModel
 
 
 class TwistingVinesConfig(GeneratedModel):

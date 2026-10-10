@@ -5,8 +5,9 @@ Local link to file: generated_symbols/data/loot/CompositePoolEntry.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.data.loot.LootPoolEntryBase import LootPoolEntryBase
 from pydantic import Field
+
+from generated_symbols.data.loot.LootPoolEntryBase import LootPoolEntryBase
 
 if TYPE_CHECKING:
     from generated_symbols.data.loot.LootPoolEntry import LootPoolEntry
