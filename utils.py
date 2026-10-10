@@ -1,8 +1,8 @@
 import json
 import re
-from dataclasses import dataclass, is_dataclass, asdict
-from typing import Any, TYPE_CHECKING
+from dataclasses import asdict, dataclass, is_dataclass
 from pathlib import Path
+from typing import TYPE_CHECKING, Any
 
 if TYPE_CHECKING:
     from collections.abc import Generator
@@ -24,7 +24,7 @@ with open('versions.json', 'r', encoding='utf-8') as file:
 UPSTREAM_COMMITS: dict[str, str] = json.loads(Path("upstream.json").read_text(encoding="utf-8")) if Path("upstream.json").exists() else {}
 
 LATEST_VERSION = VERSION_IDS[0]
-ROOT_SYMBOLS_KEYS = dict({object_type: set(keys) for object_type, keys in SYMBOLS_MAP.items()})
+ROOT_SYMBOLS_KEYS = {object_type: set(keys) for object_type, keys in SYMBOLS_MAP.items()}
 
 
 @dataclass

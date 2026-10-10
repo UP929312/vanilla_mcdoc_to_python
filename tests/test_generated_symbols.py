@@ -15,7 +15,7 @@ def test_every_generated_module_imports() -> None:
     for module_info in pkgutil.walk_packages(vanilla_mcdoc.__path__, "vanilla_mcdoc."):
         try:
             importlib.import_module(module_info.name)
-        except Exception as error:  # pylint: disable=broad-exception-caught
+        except Exception as error:  # noqa: BLE001  # pylint: disable=broad-exception-caught  # Any error, so they're all reported
             failures[module_info.name] = f"{type(error).__name__}: {error}"
     assert not failures, "\n".join(f"{name}: {error}" for name, error in failures.items())
 

@@ -4,18 +4,7 @@ import pytest
 
 from context import SingleSymbolContext
 from schema_resolution import SchemaGraph
-from typed_models import (
-    DispatcherSchema,
-    FloatSchema,
-    IndexedSchema,
-    LongSchema,
-    PairSchema,
-    ReferenceSchema,
-    SpreadFieldSchema,
-    StringSchema,
-    StructSchema,
-    UnionSchema,
-)
+from typed_models import DispatcherSchema, FloatSchema, IndexedSchema, LongSchema, PairSchema, ReferenceSchema, SpreadFieldSchema, StringSchema, StructSchema, UnionSchema
 from utils import SYMBOLS_MAP
 
 

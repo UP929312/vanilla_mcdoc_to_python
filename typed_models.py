@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field, model_validator
 from context import Import, SingleSymbolContext
 from minecraft_registry import known_registry_alias
 from static_symbols.minecraft_types import IdSpec
-from utils import GENERATED_SYMBOLS_DIRECTORY, ROOT_SYMBOLS_KEYS, SAFE_GUARD_JAVA_NUMBERS, symbol_path_to_import_string_and_name, symbol_path_to_object_name, is_valid_with_attributes, iter_child_schemas
+from utils import GENERATED_SYMBOLS_DIRECTORY, ROOT_SYMBOLS_KEYS, SAFE_GUARD_JAVA_NUMBERS, is_valid_with_attributes, iter_child_schemas, symbol_path_to_import_string_and_name, symbol_path_to_object_name
 
 
 class BaseSchema(BaseModel):

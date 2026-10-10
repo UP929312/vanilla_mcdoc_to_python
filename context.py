@@ -68,6 +68,12 @@ class Import:
         return lines + ["\n"]
 
 
+def _empty_schema_graph() -> SchemaGraph:
+    """The default for contexts made without one (e.g. in tests). Imported here, as schema_resolution imports this module."""
+    from schema_resolution import SchemaGraph  # pylint: disable=import-outside-toplevel,redefined-outer-name
+    return SchemaGraph.from_symbol_maps({})
+
+
 @dataclass
 class SingleSymbolContext:
     """Stores the imports, helper declarations, and rendering options for one generated symbol file."""
@@ -75,7 +81,7 @@ class SingleSymbolContext:
     required_imports: set[Import] = field(default_factory=set)
     local_type_params: set[str] = field(default_factory=set)
     additional_dataclasses: list[str] = field(default_factory=list)
-    schema_graph: SchemaGraph = field(default_factory=lambda: SchemaGraph.from_symbol_maps({}))  # pylint: disable=E0601
+    schema_graph: SchemaGraph = field(default_factory=_empty_schema_graph)
     current_symbol_path: str = ""
     allow_numeric_type_arg_shortcuts: bool = True
     require_runtime_imports: bool = False

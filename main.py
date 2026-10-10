@@ -3,8 +3,8 @@ import argparse
 from code_generation import copy_static_files, make_init_files, make_python_file_of_model, make_type_checking_imports_file
 from minecraft_registry import make_registry_id_files, make_root_resource_registry_file
 from schema_resolution import get_schema_graph
-from utils import LATEST_VERSION, SETTINGS, SYMBOLS_MAP, VERSION_IDS, minecraft_to_python_version
 from tests.assertions import run_assertions
+from utils import LATEST_VERSION, SETTINGS, SYMBOLS_MAP, VERSION_IDS, minecraft_to_python_version
 
 parser = argparse.ArgumentParser(description="Generates the vanilla_mcdoc package from symbols.json")
 parser.add_argument("--version", default=LATEST_VERSION, help="The Minecraft version to generate for, e.g. 26.1.2 (default: %(default)s)")

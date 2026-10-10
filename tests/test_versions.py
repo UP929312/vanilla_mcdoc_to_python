@@ -1,7 +1,7 @@
 from pytest import raises
 
 from typed_models import Attribute, LiteralSchema, StringSchema
-from utils import minecraft_to_python_version, is_valid_with_attributes
+from utils import is_valid_with_attributes, minecraft_to_python_version
 
 
 def version_attribute(name: str, version: str) -> Attribute:

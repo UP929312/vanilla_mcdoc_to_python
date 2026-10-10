@@ -7,9 +7,15 @@ from minecraft_registry import get_resource_lookup_map
 from schema_resolution import get_schema_graph
 from typed_models import KIND_TO_MODEL
 from utils import (
-    GENERATED_SYMBOLS_DIRECTORY, SETTINGS, STATIC_SYMBOLS_DIRECTORY, UPSTREAM_COMMITS,
-    minecraft_to_python_version, resource_path_to_python_path,
-    symbol_path_to_import_string_and_name, manage_directory_and_inits, write_file_if_changed,
+    GENERATED_SYMBOLS_DIRECTORY,
+    SETTINGS,
+    STATIC_SYMBOLS_DIRECTORY,
+    UPSTREAM_COMMITS,
+    manage_directory_and_inits,
+    minecraft_to_python_version,
+    resource_path_to_python_path,
+    symbol_path_to_import_string_and_name,
+    write_file_if_changed,
 )
 
 # Filled in as each file is generated: for each module, the names it only imports under TYPE_CHECKING, and where from

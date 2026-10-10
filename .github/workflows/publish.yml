@@ -6,7 +6,12 @@ on:
     - cron: "17 * * * *"  # Hourly, off the hour as that's the busiest time (GitHub can still start it a bit late)
   push:
     branches: [master]  # The generator changed, so rebuild everything
-  workflow_dispatch:  # The "Run workflow" button
+  workflow_dispatch:  # The "Run workflow" button, under Actions > Publish
+    inputs:
+      force:
+        description: "Rebuild even if nothing upstream or in the generator changed (still only publishes versions that did)"
+        type: boolean
+        default: false
 
 concurrency:
   group: publish  # Never two at once, as they'd both pick the same next .postN
@@ -41,7 +46,7 @@ jobs:
 
   publish:
     needs: plan
-    if: needs.plan.outputs.already-published != 'true'
+    if: needs.plan.outputs.already-published != 'true' || inputs.force
     strategy:
       fail-fast: false  # One version failing shouldn't stop the others
       matrix:
@@ -72,7 +77,7 @@ jobs:
   # updates, but you can still browse (and diff) them, or `pip install git+https://github.com/<repo>@generated`.
   generated-branch:
     needs: plan
-    if: needs.plan.outputs.already-published != 'true'
+    if: needs.plan.outputs.already-published != 'true' || inputs.force
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -95,7 +100,7 @@ jobs:
             git worktree add --orphan -b generated branch  # The first time, it starts with no history
           fi
           rm -rf branch/vanilla_mcdoc
-          cp -r vanilla_mcdoc pyproject.toml upstream.json branch/  # pyproject.toml is what makes it pip-installable
+          cp -r vanilla_mcdoc pyproject.toml README.md upstream.json branch/  # pyproject.toml (and the README it uses) make it pip-installable
           cd branch
           git add -A
           if git diff --cached --quiet; then

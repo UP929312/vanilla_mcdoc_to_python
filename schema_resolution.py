@@ -2,8 +2,18 @@ from functools import cache
 from typing import Any
 
 from typed_models import (
-    BaseSchema, ConcreteSchema, ConcreteSchemaTypeArgTypes, DispatcherSchema, DynamicIndexSchema, IndexedSchema,
-    KIND_TO_MODEL, PairSchema, ReferenceSchema, SpreadFieldSchema, StructSchema, TemplateSchema,
+    KIND_TO_MODEL,
+    BaseSchema,
+    ConcreteSchema,
+    ConcreteSchemaTypeArgTypes,
+    DispatcherSchema,
+    DynamicIndexSchema,
+    IndexedSchema,
+    PairSchema,
+    ReferenceSchema,
+    SpreadFieldSchema,
+    StructSchema,
+    TemplateSchema,
 )
 from utils import SYMBOLS_MAP, is_valid_with_attributes
 

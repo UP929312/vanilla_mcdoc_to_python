@@ -112,6 +112,14 @@ def published_builds(base_version: str) -> tuple[dict[str, list[dict[str, str]]]
     return releases, sorted(builds, key=lambda version: int(version.partition(".post")[2] or 0))
 
 
+def description_changed(metadata: str) -> bool:
+    """Whether README.md has changed since the build with this wheel METADATA. It's the PyPI page, which only changes when
+    a new version is published, so a changed README is worth publishing for (even if the code's the same)."""
+    readme = Path("README.md")
+    published_description = metadata.partition("\n\n")[2]  # The description comes after the headers
+    return bool(metadata) and readme.exists() and published_description.strip() != readme.read_text(encoding="utf-8").strip()
+
+
 def set_version(minecraft_version: str) -> None:
     """Write the package's version into its __init__.py: the next post-release of this Minecraft version's builds,
     unless the newest one on PyPI is identical to what's just been generated, in which case there's nothing to publish."""
@@ -124,10 +132,11 @@ def set_version(minecraft_version: str) -> None:
         wheel_url = next(file["url"] for file in releases[newest] if file["packagetype"] == "bdist_wheel")
         with zipfile.ZipFile(io.BytesIO(download(wheel_url))) as wheel:
             published = package_contents({name: wheel.read(name) for name in wheel.namelist() if name.startswith(f"{PACKAGE_DIRECTORY.name}/")})
+            metadata = next((wheel.read(name).decode() for name in wheel.namelist() if name.endswith(".dist-info/METADATA")), "")
         generated = package_contents({
             path.as_posix(): path.read_bytes() for path in PACKAGE_DIRECTORY.rglob("*") if path.is_file() and "__pycache__" not in path.parts
         })
-        if published == generated:
+        if published == generated and not description_changed(metadata):
             log(f"{newest} is identical to what's just been generated, so there's nothing to publish")
             print("publish=false")
             return

@@ -64,3 +64,14 @@ def test_changed_build_gets_the_next_post_release(tmp_path: Path, monkeypatch: M
     ci.set_version("26.3")
     assert capsys.readouterr().out.split() == ["publish=true", "version=26.3.0.post2"]
     assert '__version__ = "26.3.0.post2"' in (tmp_path / "vanilla_mcdoc" / "__init__.py").read_text(encoding="utf-8")
+
+
+def test_changed_readme_is_published_even_if_the_code_isnt(tmp_path: Path, monkeypatch: MonkeyPatch, capsys: CaptureFixture[str]) -> None:
+    """The README is the PyPI page, which only changes when a new version is published."""
+    monkeypatch.chdir(tmp_path)
+    published = make_package(tmp_path, "26.3.0", "x = 1\n")
+    published["vanilla_mcdoc-26.3.0.dist-info/METADATA"] = b"Metadata-Version: 2.4\nName: vanilla-mcdoc\n\n# The old README\n"
+    (tmp_path / "README.md").write_text("# The new README\n", encoding="utf-8")
+    fake_pypi(monkeypatch, {"26.3.0": published})
+    ci.set_version("26.3")
+    assert capsys.readouterr().out.split() == ["publish=true", "version=26.3.0.post1"]
