@@ -46,12 +46,12 @@ class Import:
             builtins.add(Import("typing", "TYPE_CHECKING", False))
         # Builtins, then third party packages, then local imports, with a blank line between each group
         lines: list[str] = []
-        group_lines = [
+        groups = [
             build_lines(builtins),
             build_lines({entry for entry in runtime if not entry.is_builtin and not entry.is_local}),  # Third party (e.g. pydantic)
             build_lines({entry for entry in runtime if entry.is_local}),  # Local
         ]
-        for group_lines in group_lines:
+        for group_lines in groups:
             if group_lines:
                 lines.extend(([""] if lines else []) + group_lines)
         if type_checking:

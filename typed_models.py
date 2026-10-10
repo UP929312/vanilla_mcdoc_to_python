@@ -91,12 +91,6 @@ class ValueRange(BaseModel):
     def to_annotation(self, ctx: SingleSymbolContext, value_range_type: Literal["int", "float"], attributes: list[Attribute]) -> str:
         ctx.required_imports.add(Import("pydantic", "Field", False))
         if self.max is not None:
-            # _INCLUSIVITY_TEXT_BOTH = {
-            #     0: "both inclusive",
-            #     1: "min inclusive, max exclusive",
-            #     2: "min exclusive, max inclusive",
-            #     3: "both exclusive",
-            # }
             greater_than = "ge" if self.kind in {0, 1} else "gt"
             less_than    = "le" if self.kind in {0, 2} else "lt"  # fmt: skip
             parts = [f"Field({greater_than}={self.min}, {less_than}={self.max})"]
@@ -192,17 +186,14 @@ class IntSchema(BaseSchema):
         return "int"
 
     @classmethod
-    def _to_annotation_with_bounds(
-        cls, ctx: SingleSymbolContext, original_object: ByteSchema | ShortSchema | LongSchema,
-        min_value: int, max_value: int
-    ) -> str:
+    def _to_annotation_with_bounds(cls, ctx: SingleSymbolContext, original_object: ByteSchema | ShortSchema | LongSchema) -> str:
         """Purpose of this is so other things like bytes, shorts, longs, etc can call it to get a easier method"""
         int_schema = cls(
             kind="int",
             attributes=original_object.attributes,
             valueRange=original_object.value_range,
-            min_value_internally=min_value,
-            max_value_internally=max_value,
+            min_value_internally=original_object.min_value_internally,
+            max_value_internally=original_object.max_value_internally,
         )
         return int_schema.to_annotation(ctx)
 
@@ -298,7 +289,7 @@ class ByteSchema(BaseSchema):
     max_value_internally: int = 127
 
     def to_annotation(self, ctx: SingleSymbolContext) -> str:
-        return IntSchema._to_annotation_with_bounds(ctx, self, self.min_value_internally, self.max_value_internally)
+        return IntSchema._to_annotation_with_bounds(ctx, self)
 
 
 class ShortSchema(BaseSchema):
@@ -311,7 +302,7 @@ class ShortSchema(BaseSchema):
     max_value_internally: int = 32_767
 
     def to_annotation(self, ctx: SingleSymbolContext) -> str:
-        return IntSchema._to_annotation_with_bounds(ctx, self, self.min_value_internally, self.max_value_internally)
+        return IntSchema._to_annotation_with_bounds(ctx, self)
 
 
 class LongSchema(BaseSchema):
@@ -324,7 +315,7 @@ class LongSchema(BaseSchema):
     max_value_internally: int = 9_223_372_036_854_775_807
 
     def to_annotation(self, ctx: SingleSymbolContext) -> str:
-        return IntSchema._to_annotation_with_bounds(ctx, self, self.min_value_internally, self.max_value_internally)
+        return IntSchema._to_annotation_with_bounds(ctx, self)
 
 
 class AnySchema(BaseSchema):
@@ -356,17 +347,10 @@ class ListSchema(BaseSchema):
     def to_nested_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None) -> str:
         return self.to_annotation(ctx, nested_struct_name)
 
-    def _calculated_item_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None = None) -> str:
-        """Either points directly to the normal annotation (e.g. list[>>>`int`<<<])
-        Or, for locally generated structs, points to them (and creates their code)"""
-        if isinstance(self.item, StructSchema) and nested_struct_name is not None:
-            return self.item.to_materialized_annotation(nested_struct_name, ctx)
-        return self.item.to_nested_annotation(ctx, nested_struct_name)
-
     def to_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None = None) -> str:
         if self.has_attribute("uuid"):  # A list of 4 ints
             return self._minecraft_type("MinecraftUUID", ctx)
-        item_annotation = self._calculated_item_annotation(ctx, nested_struct_name)
+        item_annotation = self.item.to_nested_annotation(ctx, nested_struct_name)
         if self.length_range is None:
             return f"list[{item_annotation}]"
         if self.length_range.min is not None and self.length_range.min == self.length_range.max:
@@ -505,7 +489,7 @@ class IndexedSchema(BaseSchema):
 
     def to_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None = None) -> str:
         return " | ".join(
-            DispatcherSchema._branch_annotation(candidate, f"{nested_struct_name or 'IndexedValue'}{index}", ctx)
+            candidate.to_nested_annotation(ctx, f"{nested_struct_name}{index}")
             for index, candidate in enumerate(ctx.schema_graph.annotation_candidates(self), 1)
         )
 
@@ -560,25 +544,20 @@ class UnionSchema(BaseSchema):
     def prune_members_on_version(self) -> Self:
         # Remove members that aren't valid for the current version
         self.members = [member for member in self.members if is_valid_with_attributes(member.attributes)]
-        if self.has_attribute("uuid"):  # e.g. #[uuid] (int[] @ 4 | string) - every member is a form of the UUID
+        return self
+
+    @model_validator(mode="after")
+    def give_members_uuid_attribute(self) -> Self:
+        # e.g. #[uuid] (int[] @ 4 | string) - every member is a form of the UUID, so render them as such
+        if self.has_attribute("uuid"):
             for member in self.members:
                 if not member.has_attribute("uuid"):
                     member.attributes.append(Attribute(name="uuid"))
         return self
 
-    @staticmethod
-    def _render_member(
-        member: UnionSchemaMemberTypes, nested_name: str | None, ctx: SingleSymbolContext, declare_struct: bool,
-    ) -> tuple[list[str], str]:
-        """Render one union member and any sibling declaration it requires."""
-        if isinstance(member, StructSchema) and nested_name is not None:
-            if declare_struct:
-                return member.to_python_code(nested_name, ctx) + [""], nested_name
-            return [], member.to_materialized_annotation(nested_name, ctx)
-        return [], member.to_nested_annotation(ctx, nested_name)
-
     def _render_members(self, nested_name: str | None, ctx: SingleSymbolContext, declare_structs: bool) -> tuple[list[str], list[str]]:
-        """Render union annotations and any required sibling struct declarations."""
+        """Render union annotations and any required sibling struct declarations.
+        With `declare_structs`, struct members are declared as their own sibling classes (for the union alias to name)."""
         declarations: list[str] = []
         annotations: list[str] = []
         nested_member_count = sum(member.contains_inline_struct() for member in self.members)
@@ -590,9 +569,12 @@ class UnionSchema(BaseSchema):
                 nested_member_index += 1
                 if nested_member_count > 1:
                     member_name = f"{nested_name}{nested_member_index}"
-            member_declarations, annotation = self._render_member(member, member_name, ctx, declare_structs)
-            declarations.extend(member_declarations)
-            annotations.append(annotation)
+            if declare_structs and isinstance(member, StructSchema):
+                assert member_name is not None
+                declarations.extend(member.to_python_code(member_name, ctx) + [""])
+                annotations.append(member_name)
+            else:
+                annotations.append(member.to_nested_annotation(ctx, member_name))
 
         return declarations, list(dict.fromkeys(annotations)) or ["None"]  # De-duplicated, and an empty union is just None
 
@@ -629,7 +611,7 @@ class UnionSchema(BaseSchema):
             {
                 PairSchema.clean_key(field.key): field.type.value.value
                 for field in schema.fields
-                if isinstance(field, PairSchema)
+                if isinstance(field, PairSchema)  # For mypy
                 and isinstance(field.key, str)
                 and isinstance(field.type, LiteralSchema)
                 and isinstance(field.type.value.value, str)
@@ -688,12 +670,16 @@ class PairSchema(BaseSchema):
         return key if key not in {"from", "with"} else f"{key}_"
 
     @staticmethod
-    def nested_struct_name(key: str) -> str:
-        """For structs attributes that are also structs, we need to figure out the name of the new struct.
-        For now, we append Struct, but if it's snake_case, we make it camel case and then add Struct."""
+    def pascal_case(key: str) -> str:
+        """snake_case and lowercase keys become PascalCase, anything else (e.g. camelCase) is left alone."""
         if "_" in key or key.islower():
-            key = "".join(part[:1].upper() + part[1:] for part in key.split("_") if part)
-        return f"{key}Struct"
+            return "".join(part[:1].upper() + part[1:] for part in key.split("_") if part)
+        return key
+
+    @staticmethod
+    def nested_struct_name(key: str) -> str:
+        """For structs attributes that are also structs, we need to figure out the name of the new struct, e.g. BlockStateStruct"""
+        return f"{PairSchema.pascal_case(key)}Struct"
 
     @property
     def formatted_default_value(self) -> str | None:
@@ -708,10 +694,7 @@ class PairSchema(BaseSchema):
         """Render this pair as a class field, e.g. `    count: int | None = None  # How many`.
         Returns None for empty unions, which represent weird stuff - skip so parent members can remain authoritative."""
         name = PairSchema.clean_key(self.key)  # type: ignore[arg-type]
-        if isinstance(self.type, StructSchema):
-            annotation = self.type.to_materialized_annotation(PairSchema.nested_struct_name(name), ctx)
-        else:
-            annotation = self.type.to_nested_annotation(ctx, PairSchema.nested_struct_name(name))
+        annotation = self.type.to_nested_annotation(ctx, PairSchema.nested_struct_name(name))
         if annotation == "None":
             # This is a weird case where the union is empty, only for CustomName and CustomNameVisible, it's weird.
             return None
@@ -814,6 +797,11 @@ class StructSchema(BaseSchema):
     def contains_inline_struct(self) -> bool:
         return True
 
+    def to_nested_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None) -> str:
+        """Structs used inline (e.g. as a field's type) get generated as their own class, named `nested_struct_name`."""
+        assert nested_struct_name is not None, "Inline structs need a name to be generated with"
+        return self.to_materialized_annotation(nested_struct_name, ctx)
+
     @model_validator(mode="after")
     def prune_fields_on_version(self) -> Self:
         # All the PairSchema and SpreadFieldSchema fields have attributes, so we can filter them based on the current version.
@@ -837,8 +825,8 @@ class StructSchema(BaseSchema):
         schema_key_pairs = [field for field in self.fields if isinstance(field, PairSchema) and not isinstance(field.key, str)]
         return schema_key_pairs[0] if len(schema_key_pairs) == 1 and not plain_pairs else None
 
-    def _dispatcher_spread(self) -> tuple[SpreadFieldSchema, DispatcherSchema, str] | None:
-        """Return the supported selector-based union spread, if this struct has one.
+    def _spread_dispatcher(self) -> DispatcherSchema | None:
+        """Return the dispatcher of the supported selector-based union spread, if this struct has one.
 
         mcdoc represents some unions as *shared struct fields* plus a
         dispatcher spread. The dispatcher's single string accessor names the shared
@@ -848,21 +836,18 @@ class StructSchema(BaseSchema):
         Distribution is only unambiguous when there is exactly one dispatcher spread,
         structs with zero or multiple such spreads continue through normal rendering
         """
-        dispatcher_spreads: list[SpreadFieldSchema] = [
-            field for field in self.fields
+        dispatchers = [
+            field.type for field in self.fields
             if isinstance(field, SpreadFieldSchema) and isinstance(field.type, DispatcherSchema)
         ]
-        if len(dispatcher_spreads) != 1:  # Ambiguous, either 0 or > 1
+        if len(dispatchers) != 1:  # Ambiguous, either 0 or > 1
             return None
-        spread = dispatcher_spreads[0]
-        assert isinstance(spread.type, DispatcherSchema)
-        if spread.type.dynamic_selector_field is None:  # Not selected by one of our own fields
+        if dispatchers[0].dynamic_selector_field is None:  # Not selected by one of our own fields
             return None
-        return spread, spread.type, spread.type.dynamic_selector_field
+        return dispatchers[0]
 
     def _dispatcher_variant(
-        self, dispatcher_spread: SpreadFieldSchema, branch_struct: StructSchema, selector_field: str, registry_key: str,
-        branch_reference: ReferenceSchema | None = None,
+        self, dispatcher: DispatcherSchema, branch_struct: StructSchema, registry_key: str, branch_reference: ReferenceSchema | None,
     ) -> StructSchema:
         """Build the struct for one entry in the dispatcher's registry.
 
@@ -874,10 +859,10 @@ class StructSchema(BaseSchema):
         Then add the branch's own fields: either by inheriting the branch (if it's a class), or by copying its
         string-keyed pairs (schema-keyed pairs are arbitrary map entries, so can't become named fields).
         """
-        fields = [field.model_copy(deep=True) for field in self.fields if field is not dispatcher_spread]
+        fields = [field.model_copy(deep=True) for field in self.fields if field.type is not dispatcher]  # i.e. not the spread
         if not registry_key.startswith("%"):
             for field in fields:
-                if isinstance(field, PairSchema) and field.key == selector_field:
+                if isinstance(field, PairSchema) and field.key == dispatcher.dynamic_selector_field:
                     field.type = LiteralSchema(kind="literal", value=StringSchema(kind="string", value=f"minecraft:{registry_key}"))
 
         if branch_reference is not None:
@@ -890,10 +875,7 @@ class StructSchema(BaseSchema):
             )
         return StructSchema(kind="struct", fields=fields)
 
-    def _dispatcher_variants(
-        self, class_name: str, dispatcher_spread: SpreadFieldSchema, dispatcher: DispatcherSchema,
-        selector_field: str, ctx: SingleSymbolContext,
-    ) -> list[tuple[str, StructSchema]]:
+    def _dispatcher_variants(self, class_name: str, dispatcher: DispatcherSchema, ctx: SingleSymbolContext) -> list[tuple[str, StructSchema]]:
         """Resolve every registry entry into a uniquely named specialized struct."""
         variants: list[tuple[str, StructSchema]] = []
         for key, branch in ctx.schema_graph.dispatchers[dispatcher.registry].items():
@@ -901,11 +883,11 @@ class StructSchema(BaseSchema):
                 continue
             resolved = ctx.schema_graph.resolve(branch)
             branch_struct = resolved if isinstance(resolved, StructSchema) else StructSchema(kind="struct", fields=[])
-            suffix = PairSchema.nested_struct_name(key.lstrip("%").replace("/", "_")).removesuffix("Struct")
+            suffix = PairSchema.pascal_case(key.lstrip("%").replace("/", "_"))
             variant_name = ctx.allocate_name(f"{class_name}{suffix}", branch_struct.model_dump_json(by_alias=True))
             # Branches that are classes get inherited, rather than having their fields copied in.
             branch_reference = branch if isinstance(branch, ReferenceSchema) and ctx.schema_graph.is_runtime_class(branch) else None
-            variant = self._dispatcher_variant(dispatcher_spread, branch_struct, selector_field, key, branch_reference)
+            variant = self._dispatcher_variant(dispatcher, branch_struct, key, branch_reference)
             variants.append((variant_name, variant))
         return variants
 
@@ -917,9 +899,9 @@ class StructSchema(BaseSchema):
 
     def _render_dispatcher_spread(self, class_name: str, ctx: SingleSymbolContext) -> list[str] | None:
         """Render distributed branch dataclasses followed by their union alias."""
-        if (dispatcher_spread := self._dispatcher_spread()) is None:
+        if (dispatcher := self._spread_dispatcher()) is None:
             return None
-        variants = self._dispatcher_variants(class_name, *dispatcher_spread, ctx)
+        variants = self._dispatcher_variants(class_name, dispatcher, ctx)
         discriminator = UnionSchema._literal_discriminator_field([variant for _, variant in variants])
         return self._render_variants(class_name, variants, discriminator, ctx)
 
@@ -952,10 +934,7 @@ class StructSchema(BaseSchema):
         field = self._mapping_pair()
         if field is None:
             return None
-        if isinstance(field.type, StructSchema):
-            value_annotation = field.type.to_materialized_annotation(value_struct_name, ctx)
-        else:
-            value_annotation = field.type.to_nested_annotation(ctx, value_struct_name)
+        value_annotation = field.type.to_nested_annotation(ctx, value_struct_name)
         assert not isinstance(field.key, str)
         if isinstance(field.key, DispatcherSchema):  # Annotate the registry (TODO: Make this better.)
             ctx.require_annotated()  # generated_symbols\data\advancement\predicate\BlockPredicateState.py
@@ -1057,16 +1036,14 @@ class DispatcherSchema(BaseSchema):
         self, ctx: SingleSymbolContext, nested_struct_name: str | None = None, type_args: list[ConcreteSchemaTypeArgTypes] | None = None,
     ) -> str:
         registry = ctx.schema_graph.dispatchers[self.registry]
-        if len(self.parallel_indices) != 1:
-            raise ValueError(f"Dispatcher {self.registry} has {len(self.parallel_indices)} parallel indices, which is not supported.")
-        index = self.parallel_indices[0]
+        index = self.parallel_indices[0]  # Always 1
         if isinstance(index, DynamicIndexSchema) or index.value == "%fallback":
             candidates = list(registry.items())
         else:
             key = index.value.removeprefix("minecraft:")
             candidates = [(key, registry[key])]
 
-        registry_name = PairSchema.nested_struct_name(self.registry.split(":")[-1]).removesuffix("Struct")
+        registry_name = PairSchema.pascal_case(self.registry.split(":")[-1])
         base_name = f"{nested_struct_name}{registry_name}" if nested_struct_name else f"{registry_name}Struct"
         annotations: list[str] = []
         seen: set[str] = set()
@@ -1078,16 +1055,10 @@ class DispatcherSchema(BaseSchema):
                 continue
             seen.add(fingerprint)
             clean_key = "".join(character if character.isalnum() else "_" for character in key.lstrip("%"))
-            branch_name = f"{base_name}{PairSchema.nested_struct_name(clean_key).removesuffix('Struct')}"
-            annotations.append(self._branch_annotation(branch, branch_name, ctx))
+            branch_name = f"{base_name}{PairSchema.pascal_case(clean_key)}"
+            annotations.append(branch.to_nested_annotation(ctx, branch_name))
 
         return " | ".join(dict.fromkeys(annotations))
-
-    @classmethod
-    def _branch_annotation(cls, branch: BaseSchema, branch_name: str, ctx: SingleSymbolContext) -> str:
-        if isinstance(branch, StructSchema):
-            return branch.to_materialized_annotation(branch_name, ctx)
-        return branch.to_nested_annotation(ctx, branch_name)
 
 
 class TreeSchema(BaseSchema):

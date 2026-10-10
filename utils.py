@@ -78,7 +78,7 @@ def is_valid_with_attributes(attributes: list[Attribute], current_version: str =
     If the object has an 'until' attribute, it is valid if the current_version is less than or equal to the 'until' version.
     """
     current_index = get_version_index(current_version)
-    for attr in attributes or []:
+    for attr in attributes:
         if attr.name == "until":
             until_version: str = attr.value.value.value  # type: ignore[union-attr, assignment]
             if until_version is not None and current_index <= get_version_index(until_version):  # pragma: no cover

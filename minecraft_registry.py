@@ -186,11 +186,11 @@ def get_resource_lookup_map() -> dict[str, str]:
             if "path" not in raw_value:
                 continue
             root_schema = schema_graph.symbols.get(raw_value["path"])
-            dispatcher_spread = root_schema._dispatcher_spread() if isinstance(root_schema, StructSchema) else None
-            if dispatcher_spread is None or dispatcher_spread[2] != "type":
+            dispatcher = root_schema._spread_dispatcher() if isinstance(root_schema, StructSchema) else None
+            if dispatcher is None:
                 continue
 
-            for branch_schema in schema_graph.dispatchers[dispatcher_spread[1].registry].values():
+            for branch_schema in schema_graph.dispatchers[dispatcher.registry].values():
                 if isinstance(branch_schema, ReferenceSchema):
                     base_map[branch_schema.path] = resource_key
                 for reference_path in ReferenceSchema.collect_reference_paths(branch_schema, template_paths):

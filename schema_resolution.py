@@ -50,7 +50,7 @@ class SchemaGraph:
             return target is None or self.is_runtime_class(target)
         if not isinstance(schema, StructSchema):
             return False
-        if schema._mapping_pair() is not None or schema._dispatcher_spread() is not None:
+        if schema._mapping_pair() is not None or schema._spread_dispatcher() is not None:
             return False
         return all(
             not isinstance(field, SpreadFieldSchema) or self.is_runtime_class(field.type)
