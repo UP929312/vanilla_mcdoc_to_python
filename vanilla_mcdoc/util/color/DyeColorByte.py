@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::util::color::DyeColorByte
-Local link to file: generated_symbols/util/color/DyeColorByte.py
+Local link to file: vanilla_mcdoc/util/color/DyeColorByte.py
 """
 # ~~~ CODE ~~~
 from enum import IntEnum

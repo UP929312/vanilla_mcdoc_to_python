@@ -1,17 +1,17 @@
 """
 Generated from symbols.json for ::java::data::enchantment::effect::PlaySoundEntityEffect
-Local link to file: generated_symbols/data/enchantment/effect/PlaySoundEntityEffect.py
+Local link to file: vanilla_mcdoc/data/enchantment/effect/PlaySoundEntityEffect.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.util.SoundEventRef import SoundEventRef
-    from generated_symbols.data.worldgen.FloatProvider import FloatProvider
+    from vanilla_mcdoc.data.util.SoundEventRef import SoundEventRef
+    from vanilla_mcdoc.data.worldgen.FloatProvider import FloatProvider
 
 
 class PlaySoundEntityEffect(GeneratedModel):

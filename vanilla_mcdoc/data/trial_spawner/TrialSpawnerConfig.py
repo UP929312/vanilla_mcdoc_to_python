@@ -1,18 +1,18 @@
 """
 Generated from symbols.json for ::java::data::trial_spawner::TrialSpawnerConfig
-Local link to file: generated_symbols/data/trial_spawner/TrialSpawnerConfig.py
+Local link to file: vanilla_mcdoc/data/trial_spawner/TrialSpawnerConfig.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.util.WeightedList import WeightedList
-    from generated_symbols.world.block.spawner.SpawnPotential import SpawnPotential
+    from vanilla_mcdoc.util.WeightedList import WeightedList
+    from vanilla_mcdoc.world.block.spawner.SpawnPotential import SpawnPotential
 
 
 class TrialSpawnerConfig(GeneratedModel):

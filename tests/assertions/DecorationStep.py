@@ -5,7 +5,7 @@
 # ~~~ FILE CONTENT ~~~
 """
 Generated from symbols.json for ::java::data::worldgen::DecorationStep
-Local link to file: generated_symbols/data/worldgen/DecorationStep.py
+Local link to file: vanilla_mcdoc/data/worldgen/DecorationStep.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

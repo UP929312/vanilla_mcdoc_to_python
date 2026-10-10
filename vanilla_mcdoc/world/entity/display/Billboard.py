@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::world::entity::display::Billboard
-Local link to file: generated_symbols/world/entity/display/Billboard.py
+Local link to file: vanilla_mcdoc/world/entity/display/Billboard.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

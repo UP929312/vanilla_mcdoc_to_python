@@ -1,59 +1,59 @@
 """
 Generated from symbols.json for ::java::data::advancement::AdvancementCriterion
-Local link to file: generated_symbols/data/advancement/AdvancementCriterion.py
+Local link to file: vanilla_mcdoc/data/advancement/AdvancementCriterion.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
 from pydantic import Field
 
-from generated_symbols.data.advancement.trigger.AnyBlockInteractionTrigger import AnyBlockInteractionTrigger
-from generated_symbols.data.advancement.trigger.BeeNestDestroyedTrigger import BeeNestDestroyedTrigger
-from generated_symbols.data.advancement.trigger.BredAnimalsTrigger import BredAnimalsTrigger
-from generated_symbols.data.advancement.trigger.BrewedPotionTrigger import BrewedPotionTrigger
-from generated_symbols.data.advancement.trigger.ChangeDimensionTrigger import ChangeDimensionTrigger
-from generated_symbols.data.advancement.trigger.ChanneledLightningTrigger import ChanneledLightningTrigger
-from generated_symbols.data.advancement.trigger.ConstructBeaconTrigger import ConstructBeaconTrigger
-from generated_symbols.data.advancement.trigger.ConsumeItemTrigger import ConsumeItemTrigger
-from generated_symbols.data.advancement.trigger.CuredZombieVillagerTrigger import CuredZombieVillagerTrigger
-from generated_symbols.data.advancement.trigger.DefaultBlockInteractionTrigger import DefaultBlockInteractionTrigger
-from generated_symbols.data.advancement.trigger.DistanceTrigger import DistanceTrigger
-from generated_symbols.data.advancement.trigger.EffectsChangedTrigger import EffectsChangedTrigger
-from generated_symbols.data.advancement.trigger.EnchantedItemTrigger import EnchantedItemTrigger
-from generated_symbols.data.advancement.trigger.EnterBlockTrigger import EnterBlockTrigger
-from generated_symbols.data.advancement.trigger.EntityHurtPlayerTrigger import EntityHurtPlayerTrigger
-from generated_symbols.data.advancement.trigger.FallAfterExplosionTrigger import FallAfterExplosionTrigger
-from generated_symbols.data.advancement.trigger.FilledBucketTrigger import FilledBucketTrigger
-from generated_symbols.data.advancement.trigger.FishingRodHookedTrigger import FishingRodHookedTrigger
-from generated_symbols.data.advancement.trigger.ImpossibleTrigger import ImpossibleTrigger
-from generated_symbols.data.advancement.trigger.InventoryChangeTrigger import InventoryChangeTrigger
-from generated_symbols.data.advancement.trigger.ItemDurabilityTrigger import ItemDurabilityTrigger
-from generated_symbols.data.advancement.trigger.ItemUsedOnLocationTrigger import ItemUsedOnLocationTrigger
-from generated_symbols.data.advancement.trigger.KilledByArrowTrigger import KilledByArrowTrigger
-from generated_symbols.data.advancement.trigger.KilledTrigger import KilledTrigger
-from generated_symbols.data.advancement.trigger.LevitationTrigger import LevitationTrigger
-from generated_symbols.data.advancement.trigger.LightningStrikeTrigger import LightningStrikeTrigger
-from generated_symbols.data.advancement.trigger.LocationTrigger import LocationTrigger
-from generated_symbols.data.advancement.trigger.LootTableTrigger import LootTableTrigger
-from generated_symbols.data.advancement.trigger.NetherTravelTrigger import NetherTravelTrigger
-from generated_symbols.data.advancement.trigger.PickedUpItemTrigger import PickedUpItemTrigger
-from generated_symbols.data.advancement.trigger.PlacedBlockTrigger import PlacedBlockTrigger
-from generated_symbols.data.advancement.trigger.PlayerHurtEntityTrigger import PlayerHurtEntityTrigger
-from generated_symbols.data.advancement.trigger.PlayerInteractTrigger import PlayerInteractTrigger
-from generated_symbols.data.advancement.trigger.PlayerTrigger import PlayerTrigger
-from generated_symbols.data.advancement.trigger.RecipeCraftedTrigger import RecipeCraftedTrigger
-from generated_symbols.data.advancement.trigger.RecipeUnlockedTrigger import RecipeUnlockedTrigger
-from generated_symbols.data.advancement.trigger.ShotCrossbowTrigger import ShotCrossbowTrigger
-from generated_symbols.data.advancement.trigger.SlideDownBlockTrigger import SlideDownBlockTrigger
-from generated_symbols.data.advancement.trigger.SpearMobsTrigger import SpearMobsTrigger
-from generated_symbols.data.advancement.trigger.StartRidingTrigger import StartRidingTrigger
-from generated_symbols.data.advancement.trigger.SummonedEntityTrigger import SummonedEntityTrigger
-from generated_symbols.data.advancement.trigger.TameAnimalTrigger import TameAnimalTrigger
-from generated_symbols.data.advancement.trigger.TargetBlockTrigger import TargetBlockTrigger
-from generated_symbols.data.advancement.trigger.TradeTrigger import TradeTrigger
-from generated_symbols.data.advancement.trigger.UsedEnderEyeTrigger import UsedEnderEyeTrigger
-from generated_symbols.data.advancement.trigger.UsedTotemTrigger import UsedTotemTrigger
-from generated_symbols.data.advancement.trigger.UsingItemTrigger import UsingItemTrigger
+from vanilla_mcdoc.data.advancement.trigger.AnyBlockInteractionTrigger import AnyBlockInteractionTrigger
+from vanilla_mcdoc.data.advancement.trigger.BeeNestDestroyedTrigger import BeeNestDestroyedTrigger
+from vanilla_mcdoc.data.advancement.trigger.BredAnimalsTrigger import BredAnimalsTrigger
+from vanilla_mcdoc.data.advancement.trigger.BrewedPotionTrigger import BrewedPotionTrigger
+from vanilla_mcdoc.data.advancement.trigger.ChangeDimensionTrigger import ChangeDimensionTrigger
+from vanilla_mcdoc.data.advancement.trigger.ChanneledLightningTrigger import ChanneledLightningTrigger
+from vanilla_mcdoc.data.advancement.trigger.ConstructBeaconTrigger import ConstructBeaconTrigger
+from vanilla_mcdoc.data.advancement.trigger.ConsumeItemTrigger import ConsumeItemTrigger
+from vanilla_mcdoc.data.advancement.trigger.CuredZombieVillagerTrigger import CuredZombieVillagerTrigger
+from vanilla_mcdoc.data.advancement.trigger.DefaultBlockInteractionTrigger import DefaultBlockInteractionTrigger
+from vanilla_mcdoc.data.advancement.trigger.DistanceTrigger import DistanceTrigger
+from vanilla_mcdoc.data.advancement.trigger.EffectsChangedTrigger import EffectsChangedTrigger
+from vanilla_mcdoc.data.advancement.trigger.EnchantedItemTrigger import EnchantedItemTrigger
+from vanilla_mcdoc.data.advancement.trigger.EnterBlockTrigger import EnterBlockTrigger
+from vanilla_mcdoc.data.advancement.trigger.EntityHurtPlayerTrigger import EntityHurtPlayerTrigger
+from vanilla_mcdoc.data.advancement.trigger.FallAfterExplosionTrigger import FallAfterExplosionTrigger
+from vanilla_mcdoc.data.advancement.trigger.FilledBucketTrigger import FilledBucketTrigger
+from vanilla_mcdoc.data.advancement.trigger.FishingRodHookedTrigger import FishingRodHookedTrigger
+from vanilla_mcdoc.data.advancement.trigger.ImpossibleTrigger import ImpossibleTrigger
+from vanilla_mcdoc.data.advancement.trigger.InventoryChangeTrigger import InventoryChangeTrigger
+from vanilla_mcdoc.data.advancement.trigger.ItemDurabilityTrigger import ItemDurabilityTrigger
+from vanilla_mcdoc.data.advancement.trigger.ItemUsedOnLocationTrigger import ItemUsedOnLocationTrigger
+from vanilla_mcdoc.data.advancement.trigger.KilledByArrowTrigger import KilledByArrowTrigger
+from vanilla_mcdoc.data.advancement.trigger.KilledTrigger import KilledTrigger
+from vanilla_mcdoc.data.advancement.trigger.LevitationTrigger import LevitationTrigger
+from vanilla_mcdoc.data.advancement.trigger.LightningStrikeTrigger import LightningStrikeTrigger
+from vanilla_mcdoc.data.advancement.trigger.LocationTrigger import LocationTrigger
+from vanilla_mcdoc.data.advancement.trigger.LootTableTrigger import LootTableTrigger
+from vanilla_mcdoc.data.advancement.trigger.NetherTravelTrigger import NetherTravelTrigger
+from vanilla_mcdoc.data.advancement.trigger.PickedUpItemTrigger import PickedUpItemTrigger
+from vanilla_mcdoc.data.advancement.trigger.PlacedBlockTrigger import PlacedBlockTrigger
+from vanilla_mcdoc.data.advancement.trigger.PlayerHurtEntityTrigger import PlayerHurtEntityTrigger
+from vanilla_mcdoc.data.advancement.trigger.PlayerInteractTrigger import PlayerInteractTrigger
+from vanilla_mcdoc.data.advancement.trigger.PlayerTrigger import PlayerTrigger
+from vanilla_mcdoc.data.advancement.trigger.RecipeCraftedTrigger import RecipeCraftedTrigger
+from vanilla_mcdoc.data.advancement.trigger.RecipeUnlockedTrigger import RecipeUnlockedTrigger
+from vanilla_mcdoc.data.advancement.trigger.ShotCrossbowTrigger import ShotCrossbowTrigger
+from vanilla_mcdoc.data.advancement.trigger.SlideDownBlockTrigger import SlideDownBlockTrigger
+from vanilla_mcdoc.data.advancement.trigger.SpearMobsTrigger import SpearMobsTrigger
+from vanilla_mcdoc.data.advancement.trigger.StartRidingTrigger import StartRidingTrigger
+from vanilla_mcdoc.data.advancement.trigger.SummonedEntityTrigger import SummonedEntityTrigger
+from vanilla_mcdoc.data.advancement.trigger.TameAnimalTrigger import TameAnimalTrigger
+from vanilla_mcdoc.data.advancement.trigger.TargetBlockTrigger import TargetBlockTrigger
+from vanilla_mcdoc.data.advancement.trigger.TradeTrigger import TradeTrigger
+from vanilla_mcdoc.data.advancement.trigger.UsedEnderEyeTrigger import UsedEnderEyeTrigger
+from vanilla_mcdoc.data.advancement.trigger.UsedTotemTrigger import UsedTotemTrigger
+from vanilla_mcdoc.data.advancement.trigger.UsingItemTrigger import UsingItemTrigger
 
 
 class AdvancementCriterionAllayDropItemOnBlock(ItemUsedOnLocationTrigger):

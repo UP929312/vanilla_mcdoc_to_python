@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::data::loot::LootConditionType
-Local link to file: generated_symbols/data/loot/LootConditionType.py
+Local link to file: vanilla_mcdoc/data/loot/LootConditionType.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::data::worldgen::HeightmapType
-Local link to file: generated_symbols/data/worldgen/HeightmapType.py
+Local link to file: vanilla_mcdoc/data/worldgen/HeightmapType.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

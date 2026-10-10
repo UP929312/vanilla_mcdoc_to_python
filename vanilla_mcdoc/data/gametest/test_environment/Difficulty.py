@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::data::gametest::test_environment::Difficulty
-Local link to file: generated_symbols/data/gametest/test_environment/Difficulty.py
+Local link to file: vanilla_mcdoc/data/gametest/test_environment/Difficulty.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

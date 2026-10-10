@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::data::variants::cow::CowModelType
-Local link to file: generated_symbols/data/variants/cow/CowModelType.py
+Local link to file: vanilla_mcdoc/data/variants/cow/CowModelType.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

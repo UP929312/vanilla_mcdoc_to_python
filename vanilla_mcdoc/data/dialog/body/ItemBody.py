@@ -1,18 +1,18 @@
 """
 Generated from symbols.json for ::java::data::dialog::body::ItemBody
-Local link to file: generated_symbols/data/dialog/body/ItemBody.py
+Local link to file: vanilla_mcdoc/data/dialog/body/ItemBody.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.dialog.body.PlainMessage import PlainMessage
-    from generated_symbols.util.text.Text import Text
-    from generated_symbols.world.item.ItemStackTemplate import ItemStackTemplate
+    from vanilla_mcdoc.data.dialog.body.PlainMessage import PlainMessage
+    from vanilla_mcdoc.util.text.Text import Text
+    from vanilla_mcdoc.world.item.ItemStackTemplate import ItemStackTemplate
 
 
 class ItemBody(GeneratedModel):

@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::world::entity::interaction::Interaction
-Local link to file: generated_symbols/world/entity/interaction/Interaction.py
+Local link to file: vanilla_mcdoc/world/entity/interaction/Interaction.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.world.entity.EntityBase import EntityBase
+from vanilla_mcdoc.world.entity.EntityBase import EntityBase
 
 if TYPE_CHECKING:
-    from generated_symbols.world.entity.interaction.Action import Action
+    from vanilla_mcdoc.world.entity.interaction.Action import Action
 
 
 class Interaction(EntityBase):

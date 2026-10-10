@@ -1,12 +1,12 @@
 """
 Generated from symbols.json for ::java::data::enchantment::effect::RunFunctionEntityEffect
-Local link to file: generated_symbols/data/enchantment/effect/RunFunctionEntityEffect.py
+Local link to file: vanilla_mcdoc/data/enchantment/effect/RunFunctionEntityEffect.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 
 class RunFunctionEntityEffect(GeneratedModel):

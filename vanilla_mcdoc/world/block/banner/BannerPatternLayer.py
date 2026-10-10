@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::world::block::banner::BannerPatternLayer
-Local link to file: generated_symbols/world/block/banner/BannerPatternLayer.py
+Local link to file: vanilla_mcdoc/world/block/banner/BannerPatternLayer.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.variants.banner_pattern.BannerPattern import BannerPattern
-    from generated_symbols.util.DyeColor import DyeColor
+    from vanilla_mcdoc.data.variants.banner_pattern.BannerPattern import BannerPattern
+    from vanilla_mcdoc.util.DyeColor import DyeColor
 
 
 class BannerPatternLayer(GeneratedModel):

@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::util::text::TextFormat
-Local link to file: generated_symbols/util/text/TextFormat.py
+Local link to file: vanilla_mcdoc/util/text/TextFormat.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

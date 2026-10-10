@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::data::worldgen::material_rule::MaterialRule
-Local link to file: generated_symbols/data/worldgen/material_rule/MaterialRule.py
+Local link to file: vanilla_mcdoc/data/worldgen/material_rule/MaterialRule.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, ClassVar, Literal
 
-from generated_symbols.base import GeneratedModel
-from generated_symbols.data.worldgen.material_rule.BlockRule import BlockRule
-from generated_symbols.data.worldgen.material_rule.ConditionRule import ConditionRule
-from generated_symbols.data.worldgen.material_rule.OreVeinifier import OreVeinifier
-from generated_symbols.data.worldgen.material_rule.SequenceRule import SequenceRule
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.data.worldgen.material_rule.BlockRule import BlockRule
+from vanilla_mcdoc.data.worldgen.material_rule.ConditionRule import ConditionRule
+from vanilla_mcdoc.data.worldgen.material_rule.OreVeinifier import OreVeinifier
+from vanilla_mcdoc.data.worldgen.material_rule.SequenceRule import SequenceRule
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 
 class MaterialRuleUnknown(GeneratedModel):

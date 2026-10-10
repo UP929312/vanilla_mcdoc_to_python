@@ -1,11 +1,11 @@
 """
 Generated from symbols.json for ::java::assets::equipment::WingsLayer
-Local link to file: generated_symbols/assets/equipment/WingsLayer.py
+Local link to file: vanilla_mcdoc/assets/equipment/WingsLayer.py
 """
 # ~~~ CODE ~~~
 from typing import Generic, TypeVar
 
-from generated_symbols.assets.equipment.Layer import Layer
+from vanilla_mcdoc.assets.equipment.Layer import Layer
 
 
 T = TypeVar('T')

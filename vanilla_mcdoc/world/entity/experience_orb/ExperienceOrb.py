@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::world::entity::experience_orb::ExperienceOrb
-Local link to file: generated_symbols/world/entity/experience_orb/ExperienceOrb.py
+Local link to file: vanilla_mcdoc/world/entity/experience_orb/ExperienceOrb.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.world.entity.EntityBase import EntityBase
+from vanilla_mcdoc.world.entity.EntityBase import EntityBase
 
 
 class ExperienceOrb(EntityBase):

@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::breedable::tamable::Cat
-Local link to file: generated_symbols/world/entity/mob/breedable/tamable/Cat.py
+Local link to file: vanilla_mcdoc/world/entity/mob/breedable/tamable/Cat.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.world.entity.mob.breedable.tamable.Tamable import Tamable
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.minecraft_types import IdSpec
+from vanilla_mcdoc.world.entity.mob.breedable.tamable.Tamable import Tamable
 
 if TYPE_CHECKING:
-    from generated_symbols.util.DyeColorByte import DyeColorByte
+    from vanilla_mcdoc.util.DyeColorByte import DyeColorByte
 
 
 class Cat(Tamable):

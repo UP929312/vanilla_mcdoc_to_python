@@ -1,28 +1,28 @@
 """
 Generated from symbols.json for ::java::data::worldgen::feature::placement::PlacementModifier
-Local link to file: generated_symbols/data/worldgen/feature/placement/PlacementModifier.py
+Local link to file: vanilla_mcdoc/data/worldgen/feature/placement/PlacementModifier.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
 from pydantic import Field
 
-from generated_symbols.data.worldgen.feature.placement.BlockPredicateFilter import BlockPredicateFilter
-from generated_symbols.data.worldgen.feature.placement.CountModifier import CountModifier
-from generated_symbols.data.worldgen.feature.placement.CountOnEveryLayerModifier import CountOnEveryLayerModifier
-from generated_symbols.data.worldgen.feature.placement.CuboidModifier import CuboidModifier
-from generated_symbols.data.worldgen.feature.placement.EnvironmentScanModifier import EnvironmentScanModifier
-from generated_symbols.data.worldgen.feature.placement.FixedPlacementModifier import FixedPlacementModifier
-from generated_symbols.data.worldgen.feature.placement.HeightRangeModifier import HeightRangeModifier
-from generated_symbols.data.worldgen.feature.placement.HeightmapModifier import HeightmapModifier
-from generated_symbols.data.worldgen.feature.placement.NoiseBasedCountModifier import NoiseBasedCountModifier
-from generated_symbols.data.worldgen.feature.placement.NoiseThresholdCountModifier import NoiseThresholdCountModifier
-from generated_symbols.data.worldgen.feature.placement.OffsetModifier import OffsetModifier
-from generated_symbols.data.worldgen.feature.placement.RandomChanceModifier import RandomChanceModifier
-from generated_symbols.data.worldgen.feature.placement.RandomlySelectedModifier import RandomlySelectedModifier
-from generated_symbols.data.worldgen.feature.placement.RarityFilter import RarityFilter
-from generated_symbols.data.worldgen.feature.placement.SurfaceRelativeThresholdFilter import SurfaceRelativeThresholdFilter
-from generated_symbols.data.worldgen.feature.placement.SurfaceWaterDepthFilter import SurfaceWaterDepthFilter
+from vanilla_mcdoc.data.worldgen.feature.placement.BlockPredicateFilter import BlockPredicateFilter
+from vanilla_mcdoc.data.worldgen.feature.placement.CountModifier import CountModifier
+from vanilla_mcdoc.data.worldgen.feature.placement.CountOnEveryLayerModifier import CountOnEveryLayerModifier
+from vanilla_mcdoc.data.worldgen.feature.placement.CuboidModifier import CuboidModifier
+from vanilla_mcdoc.data.worldgen.feature.placement.EnvironmentScanModifier import EnvironmentScanModifier
+from vanilla_mcdoc.data.worldgen.feature.placement.FixedPlacementModifier import FixedPlacementModifier
+from vanilla_mcdoc.data.worldgen.feature.placement.HeightRangeModifier import HeightRangeModifier
+from vanilla_mcdoc.data.worldgen.feature.placement.HeightmapModifier import HeightmapModifier
+from vanilla_mcdoc.data.worldgen.feature.placement.NoiseBasedCountModifier import NoiseBasedCountModifier
+from vanilla_mcdoc.data.worldgen.feature.placement.NoiseThresholdCountModifier import NoiseThresholdCountModifier
+from vanilla_mcdoc.data.worldgen.feature.placement.OffsetModifier import OffsetModifier
+from vanilla_mcdoc.data.worldgen.feature.placement.RandomChanceModifier import RandomChanceModifier
+from vanilla_mcdoc.data.worldgen.feature.placement.RandomlySelectedModifier import RandomlySelectedModifier
+from vanilla_mcdoc.data.worldgen.feature.placement.RarityFilter import RarityFilter
+from vanilla_mcdoc.data.worldgen.feature.placement.SurfaceRelativeThresholdFilter import SurfaceRelativeThresholdFilter
+from vanilla_mcdoc.data.worldgen.feature.placement.SurfaceWaterDepthFilter import SurfaceWaterDepthFilter
 
 
 class PlacementModifierBlockPredicateFilter(BlockPredicateFilter):

@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::util::DyeColorByte
-Local link to file: generated_symbols/util/DyeColorByte.py
+Local link to file: vanilla_mcdoc/util/DyeColorByte.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.util.color.DyeColorByte import DyeColorByte as DyeColorByte_alias
+from vanilla_mcdoc.util.color.DyeColorByte import DyeColorByte as DyeColorByte_alias
 
 
 type DyeColorByte = DyeColorByte_alias

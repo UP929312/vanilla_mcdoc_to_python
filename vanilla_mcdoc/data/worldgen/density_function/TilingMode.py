@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::data::worldgen::density_function::TilingMode
-Local link to file: generated_symbols/data/worldgen/density_function/TilingMode.py
+Local link to file: vanilla_mcdoc/data/worldgen/density_function/TilingMode.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

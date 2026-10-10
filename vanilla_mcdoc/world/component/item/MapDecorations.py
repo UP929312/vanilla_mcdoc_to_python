@@ -1,12 +1,12 @@
 """
 Generated from symbols.json for ::java::world::component::item::MapDecorations
-Local link to file: generated_symbols/world/component/item/MapDecorations.py
+Local link to file: vanilla_mcdoc/world/component/item/MapDecorations.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from generated_symbols.world.component.item.MapDecoration import MapDecoration
+    from vanilla_mcdoc.world.component.item.MapDecoration import MapDecoration
 
 
 type MapDecorations = dict[str, MapDecoration]

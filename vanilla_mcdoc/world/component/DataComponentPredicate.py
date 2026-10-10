@@ -1,27 +1,27 @@
 """
 Generated from symbols.json for ::java::world::component::DataComponentPredicate
-Local link to file: generated_symbols/world/component/DataComponentPredicate.py
+Local link to file: vanilla_mcdoc/world/component/DataComponentPredicate.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.advancement.predicate.EnchantmentPredicate import EnchantmentPredicate
-    from generated_symbols.world.component.CustomData import CustomData
-    from generated_symbols.world.component.predicate.AttributeModifiersPredicate import AttributeModifiersPredicate
-    from generated_symbols.world.component.predicate.BundleContentsPredicate import BundleContentsPredicate
-    from generated_symbols.world.component.predicate.ContainerPredicate import ContainerPredicate
-    from generated_symbols.world.component.predicate.FireworkExplosionPredicate import FireworkExplosionPredicate
-    from generated_symbols.world.component.predicate.FireworksPredicate import FireworksPredicate
-    from generated_symbols.world.component.predicate.ItemDamagePredicate import ItemDamagePredicate
-    from generated_symbols.world.component.predicate.JukeboxPlayablePredicate import JukeboxPlayablePredicate
-    from generated_symbols.world.component.predicate.PotionsPredicate import PotionsPredicate
-    from generated_symbols.world.component.predicate.TrimPredicate import TrimPredicate
-    from generated_symbols.world.component.predicate.WritableBookPredicate import WritableBookPredicate
-    from generated_symbols.world.component.predicate.WrittenBookPredicate import WrittenBookPredicate
+    from vanilla_mcdoc.data.advancement.predicate.EnchantmentPredicate import EnchantmentPredicate
+    from vanilla_mcdoc.world.component.CustomData import CustomData
+    from vanilla_mcdoc.world.component.predicate.AttributeModifiersPredicate import AttributeModifiersPredicate
+    from vanilla_mcdoc.world.component.predicate.BundleContentsPredicate import BundleContentsPredicate
+    from vanilla_mcdoc.world.component.predicate.ContainerPredicate import ContainerPredicate
+    from vanilla_mcdoc.world.component.predicate.FireworkExplosionPredicate import FireworkExplosionPredicate
+    from vanilla_mcdoc.world.component.predicate.FireworksPredicate import FireworksPredicate
+    from vanilla_mcdoc.world.component.predicate.ItemDamagePredicate import ItemDamagePredicate
+    from vanilla_mcdoc.world.component.predicate.JukeboxPlayablePredicate import JukeboxPlayablePredicate
+    from vanilla_mcdoc.world.component.predicate.PotionsPredicate import PotionsPredicate
+    from vanilla_mcdoc.world.component.predicate.TrimPredicate import TrimPredicate
+    from vanilla_mcdoc.world.component.predicate.WritableBookPredicate import WritableBookPredicate
+    from vanilla_mcdoc.world.component.predicate.WrittenBookPredicate import WrittenBookPredicate
 
 
 class DataComponentPredicateValueStructDataComponentExistencePredicateUnknown(GeneratedModel):

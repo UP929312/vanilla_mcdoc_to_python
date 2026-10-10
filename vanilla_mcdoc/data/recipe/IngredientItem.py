@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::data::recipe::IngredientItem
-Local link to file: generated_symbols/data/recipe/IngredientItem.py
+Local link to file: vanilla_mcdoc/data/recipe/IngredientItem.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.registry.KnownItemId import KnownItemId
+    from vanilla_mcdoc.registry.KnownItemId import KnownItemId
 
 
 class IngredientItem(GeneratedModel):

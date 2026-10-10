@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::data::loot::function::EnchantWithLevels
-Local link to file: generated_symbols/data/loot/function/EnchantWithLevels.py
+Local link to file: vanilla_mcdoc/data/loot/function/EnchantWithLevels.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.data.loot.function.Conditions import Conditions
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.data.loot.function.Conditions import Conditions
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.number_provider.IntNumberProviderRef import IntNumberProviderRef
+    from vanilla_mcdoc.data.number_provider.IntNumberProviderRef import IntNumberProviderRef
 
 
 class EnchantWithLevels(Conditions):

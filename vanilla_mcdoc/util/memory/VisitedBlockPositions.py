@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::util::memory::VisitedBlockPositions
-Local link to file: generated_symbols/util/memory/VisitedBlockPositions.py
+Local link to file: vanilla_mcdoc/util/memory/VisitedBlockPositions.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.util.memory.ExpirableValue import ExpirableValue
+from vanilla_mcdoc.util.memory.ExpirableValue import ExpirableValue
 
 if TYPE_CHECKING:
-    from generated_symbols.util.GlobalPos import GlobalPos
+    from vanilla_mcdoc.util.GlobalPos import GlobalPos
 
 
 class VisitedBlockPositions(ExpirableValue):

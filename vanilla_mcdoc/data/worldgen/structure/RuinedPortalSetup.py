@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::data::worldgen::structure::RuinedPortalSetup
-Local link to file: generated_symbols/data/worldgen/structure/RuinedPortalSetup.py
+Local link to file: vanilla_mcdoc/data/worldgen/structure/RuinedPortalSetup.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.structure.RuinedPortalPlacement import RuinedPortalPlacement
+    from vanilla_mcdoc.data.worldgen.structure.RuinedPortalPlacement import RuinedPortalPlacement
 
 
 class RuinedPortalSetup(GeneratedModel):

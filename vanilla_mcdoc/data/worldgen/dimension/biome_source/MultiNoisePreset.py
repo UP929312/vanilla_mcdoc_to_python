@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::data::worldgen::dimension::biome_source::MultiNoisePreset
-Local link to file: generated_symbols/data/worldgen/dimension/biome_source/MultiNoisePreset.py
+Local link to file: vanilla_mcdoc/data/worldgen/dimension/biome_source/MultiNoisePreset.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

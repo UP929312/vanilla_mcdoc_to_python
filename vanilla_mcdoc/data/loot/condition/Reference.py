@@ -1,12 +1,12 @@
 """
 Generated from symbols.json for ::java::data::loot::condition::Reference
-Local link to file: generated_symbols/data/loot/condition/Reference.py
+Local link to file: vanilla_mcdoc/data/loot/condition/Reference.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 
 class Reference(GeneratedModel):

@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::util::effect::MobEffectInstance
-Local link to file: generated_symbols/util/effect/MobEffectInstance.py
+Local link to file: vanilla_mcdoc/util/effect/MobEffectInstance.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 
 class MobEffectInstance(GeneratedModel):

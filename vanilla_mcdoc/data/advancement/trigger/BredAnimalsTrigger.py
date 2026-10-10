@@ -1,11 +1,11 @@
 """
 Generated from symbols.json for ::java::data::advancement::trigger::BredAnimalsTrigger
-Local link to file: generated_symbols/data/advancement/trigger/BredAnimalsTrigger.py
+Local link to file: vanilla_mcdoc/data/advancement/trigger/BredAnimalsTrigger.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.data.advancement.trigger.AdvancementEntityPredicate import AdvancementEntityPredicate
-from generated_symbols.data.advancement.trigger.AllOptional import AllOptional
-from generated_symbols.data.advancement.trigger.PlayerConditions import PlayerConditions
+from vanilla_mcdoc.data.advancement.trigger.AdvancementEntityPredicate import AdvancementEntityPredicate
+from vanilla_mcdoc.data.advancement.trigger.AllOptional import AllOptional
+from vanilla_mcdoc.data.advancement.trigger.PlayerConditions import PlayerConditions
 
 
 class BredAnimalsTriggerTypeArg(PlayerConditions):

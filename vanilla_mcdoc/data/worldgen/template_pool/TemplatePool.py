@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::data::worldgen::template_pool::TemplatePool
-Local link to file: generated_symbols/data/worldgen/template_pool/TemplatePool.py
+Local link to file: vanilla_mcdoc/data/worldgen/template_pool/TemplatePool.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.template_pool.WeightedElement import WeightedElement
+    from vanilla_mcdoc.data.worldgen.template_pool.WeightedElement import WeightedElement
 
 
 class TemplatePool(GeneratedModel):

@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::copper_golem::WeatherState
-Local link to file: generated_symbols/world/entity/mob/copper_golem/WeatherState.py
+Local link to file: vanilla_mcdoc/world/entity/mob/copper_golem/WeatherState.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

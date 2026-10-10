@@ -1,13 +1,13 @@
 """
 Generated from symbols.json for ::java::data::worldgen::dimension::biome_source::MultiNoise
-Local link to file: generated_symbols/data/worldgen/dimension/biome_source/MultiNoise.py
+Local link to file: vanilla_mcdoc/data/worldgen/dimension/biome_source/MultiNoise.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from generated_symbols.data.worldgen.dimension.biome_source.DirectMultiNoise import DirectMultiNoise
-from generated_symbols.data.worldgen.dimension.biome_source.MultiNoiseBase import MultiNoiseBase
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.data.worldgen.dimension.biome_source.DirectMultiNoise import DirectMultiNoise
+from vanilla_mcdoc.data.worldgen.dimension.biome_source.MultiNoiseBase import MultiNoiseBase
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 
 class MultiNoiseNone(DirectMultiNoise, MultiNoiseBase):

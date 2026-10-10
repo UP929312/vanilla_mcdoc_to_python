@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::data::loot::condition::TimeCheck
-Local link to file: generated_symbols/data/loot/condition/TimeCheck.py
+Local link to file: vanilla_mcdoc/data/loot/condition/TimeCheck.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.loot.IntRange import IntRange
+    from vanilla_mcdoc.data.loot.IntRange import IntRange
 
 
 class TimeCheck(GeneratedModel):

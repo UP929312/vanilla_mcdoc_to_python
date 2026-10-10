@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::data::recipe::CraftingSpecialFireworkStar
-Local link to file: generated_symbols/data/recipe/CraftingSpecialFireworkStar.py
+Local link to file: vanilla_mcdoc/data/recipe/CraftingSpecialFireworkStar.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, ClassVar
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.recipe.Ingredient import Ingredient
-    from generated_symbols.world.component.item.FireworkShape import FireworkShape
-    from generated_symbols.world.item.ItemStackTemplate import ItemStackTemplate
+    from vanilla_mcdoc.data.recipe.Ingredient import Ingredient
+    from vanilla_mcdoc.world.component.item.FireworkShape import FireworkShape
+    from vanilla_mcdoc.world.item.ItemStackTemplate import ItemStackTemplate
 
 
 class CraftingSpecialFireworkStar(GeneratedModel):

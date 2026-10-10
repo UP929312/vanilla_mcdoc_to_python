@@ -1,11 +1,11 @@
 """
 Generated from symbols.json for ::java::data::advancement::trigger::EntityHurtPlayerTrigger
-Local link to file: generated_symbols/data/advancement/trigger/EntityHurtPlayerTrigger.py
+Local link to file: vanilla_mcdoc/data/advancement/trigger/EntityHurtPlayerTrigger.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.data.advancement.predicate.DamagePredicate import DamagePredicate
-from generated_symbols.data.advancement.trigger.AllOptional import AllOptional
-from generated_symbols.data.advancement.trigger.PlayerConditions import PlayerConditions
+from vanilla_mcdoc.data.advancement.predicate.DamagePredicate import DamagePredicate
+from vanilla_mcdoc.data.advancement.trigger.AllOptional import AllOptional
+from vanilla_mcdoc.data.advancement.trigger.PlayerConditions import PlayerConditions
 
 
 class EntityHurtPlayerTriggerTypeArg(PlayerConditions):

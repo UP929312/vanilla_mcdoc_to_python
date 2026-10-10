@@ -1,17 +1,17 @@
 """
 Generated from symbols.json for ::java::assets::shader::program::ShaderProgram
-Local link to file: generated_symbols/assets/shader/program/ShaderProgram.py
+Local link to file: vanilla_mcdoc/assets/shader/program/ShaderProgram.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.assets.shader.program.Defines import Defines
-    from generated_symbols.assets.shader.program.Sampler import Sampler
-    from generated_symbols.assets.shader.program.Uniform import Uniform
+    from vanilla_mcdoc.assets.shader.program.Defines import Defines
+    from vanilla_mcdoc.assets.shader.program.Sampler import Sampler
+    from vanilla_mcdoc.assets.shader.program.Uniform import Uniform
 
 
 class ShaderProgram(GeneratedModel):

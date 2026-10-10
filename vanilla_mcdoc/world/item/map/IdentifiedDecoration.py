@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::world::item::map::IdentifiedDecoration
-Local link to file: generated_symbols/world/item/map/IdentifiedDecoration.py
+Local link to file: vanilla_mcdoc/world/item/map/IdentifiedDecoration.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.world.item.map.Decoration import Decoration
+from vanilla_mcdoc.world.item.map.Decoration import Decoration
 
 
 class IdentifiedDecoration(Decoration):

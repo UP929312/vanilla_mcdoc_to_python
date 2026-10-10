@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::assets::model::ModelDisplay
-Local link to file: generated_symbols/assets/model/ModelDisplay.py
+Local link to file: vanilla_mcdoc/assets/model/ModelDisplay.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.assets.model.CustomizableItemDisplayContext import CustomizableItemDisplayContext
+    from vanilla_mcdoc.assets.model.CustomizableItemDisplayContext import CustomizableItemDisplayContext
 
 
 class ModelDisplayValueStruct(GeneratedModel):

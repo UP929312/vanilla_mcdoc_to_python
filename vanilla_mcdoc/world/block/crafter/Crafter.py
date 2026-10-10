@@ -1,13 +1,13 @@
 """
 Generated from symbols.json for ::java::world::block::crafter::Crafter
-Local link to file: generated_symbols/world/block/crafter/Crafter.py
+Local link to file: vanilla_mcdoc/world/block/crafter/Crafter.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
 from pydantic import Field
 
-from generated_symbols.world.block.container.Container9 import Container9
+from vanilla_mcdoc.world.block.container.Container9 import Container9
 
 
 class Crafter(Container9):

@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::data::advancement::predicate::DamageSourcePredicate
-Local link to file: generated_symbols/data/advancement/predicate/DamageSourcePredicate.py
+Local link to file: vanilla_mcdoc/data/advancement/predicate/DamageSourcePredicate.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.advancement.predicate.DamageTagPredicate import DamageTagPredicate
-    from generated_symbols.data.advancement.predicate.EntityPredicate import EntityPredicate
+    from vanilla_mcdoc.data.advancement.predicate.DamageTagPredicate import DamageTagPredicate
+    from vanilla_mcdoc.data.advancement.predicate.EntityPredicate import EntityPredicate
 
 
 class DamageSourcePredicate(GeneratedModel):

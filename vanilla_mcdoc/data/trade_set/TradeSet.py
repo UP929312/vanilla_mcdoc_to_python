@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::data::trade_set::TradeSet
-Local link to file: generated_symbols/data/trade_set/TradeSet.py
+Local link to file: vanilla_mcdoc/data/trade_set/TradeSet.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.number_provider.IntNumberProvider import IntNumberProvider
+    from vanilla_mcdoc.data.number_provider.IntNumberProvider import IntNumberProvider
 
 
 class TradeSet(GeneratedModel):

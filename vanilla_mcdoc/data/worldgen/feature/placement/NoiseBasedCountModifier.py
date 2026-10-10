@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::data::worldgen::feature::placement::NoiseBasedCountModifier
-Local link to file: generated_symbols/data/worldgen/feature/placement/NoiseBasedCountModifier.py
+Local link to file: vanilla_mcdoc/data/worldgen/feature/placement/NoiseBasedCountModifier.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class NoiseBasedCountModifier(GeneratedModel):

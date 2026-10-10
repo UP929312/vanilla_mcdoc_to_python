@@ -1,6 +1,8 @@
-"""Hand-written types that generated code uses for some mcdoc attributes, e.g. #[uuid] and #[url]."""
+"""Hand-written types that generated code uses for some mcdoc attributes, e.g. #[uuid], #[url] and #[id]."""
 import uuid
-from typing import Annotated
+from collections.abc import Mapping
+from dataclasses import dataclass
+from typing import Annotated, Any, Literal, Self
 
 from pydantic import Field
 
@@ -22,3 +24,40 @@ def uuid_to_int_array(value: uuid.UUID) -> tuple[int, int, int, int]:
     words = [(value.int >> shift) & 0xFFFFFFFF for shift in (96, 64, 32, 0)]
     first, second, third, fourth = (word - 2**32 if word >= 2**31 else word for word in words)
     return first, second, third, fourth
+
+
+@dataclass(frozen=True, slots=True)
+class IdSpec:
+    """An #[id] attribute: the string is a resource location from `registry`, e.g. IdSpec(registry='item') for "minecraft:stone".
+    Generated code puts it in the metadata, e.g. Annotated[str, IdSpec(registry='item')]"""
+    registry: str | None = None
+    tags: Literal["allowed", "implicit", "required"] | None = None
+    definition: bool = False
+    prefix: Literal["!"] | None = None
+    path: str | None = None
+    empty: Literal["allowed"] | None = None
+    exclude: tuple[str, ...] = ()
+
+    @classmethod
+    def from_value(cls, value: str | Mapping[str, Any] | None) -> Self:
+        if value is None:
+            return cls()
+        if isinstance(value, str):
+            return cls(registry=value)
+        options = dict(value)
+        if exclude := options.get("exclude"):
+            options["exclude"] = tuple(exclude)
+        return cls(**options)
+
+    def to_annotation(self) -> str:
+        values: list[tuple[str, object]] = [
+            ("registry", self.registry),
+            ("tags", self.tags),
+            ("definition", self.definition if self.definition else None),
+            ("prefix", self.prefix),
+            ("path", self.path),
+            ("empty", self.empty),
+            ("exclude", self.exclude if self.exclude else None),
+        ]
+        arguments = ", ".join(f"{name}={value!r}" for name, value in values if value is not None)
+        return f"IdSpec({arguments})"

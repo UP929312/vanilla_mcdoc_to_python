@@ -1,13 +1,13 @@
 """
 Generated from symbols.json for ::java::util::FlatWeightedEntry
-Local link to file: generated_symbols/util/FlatWeightedEntry.py
+Local link to file: vanilla_mcdoc/util/FlatWeightedEntry.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, Generic, TypeVar
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 T = TypeVar('T')

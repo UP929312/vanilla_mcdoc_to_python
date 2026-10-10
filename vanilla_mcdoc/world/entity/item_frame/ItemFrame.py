@@ -1,17 +1,17 @@
 """
 Generated from symbols.json for ::java::world::entity::item_frame::ItemFrame
-Local link to file: generated_symbols/world/entity/item_frame/ItemFrame.py
+Local link to file: vanilla_mcdoc/world/entity/item_frame/ItemFrame.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.world.entity.BlockAttachedEntity import BlockAttachedEntity
+from vanilla_mcdoc.world.entity.BlockAttachedEntity import BlockAttachedEntity
 
 if TYPE_CHECKING:
-    from generated_symbols.util.direction.DirectionByte import DirectionByte
-    from generated_symbols.world.item.ItemStack import ItemStack
+    from vanilla_mcdoc.util.direction.DirectionByte import DirectionByte
+    from vanilla_mcdoc.world.item.ItemStack import ItemStack
 
 
 class ItemFrame(BlockAttachedEntity):

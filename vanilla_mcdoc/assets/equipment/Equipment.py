@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::assets::equipment::Equipment
-Local link to file: generated_symbols/assets/equipment/Equipment.py
+Local link to file: vanilla_mcdoc/assets/equipment/Equipment.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, ClassVar
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.assets.equipment.Layers import Layers
-    from generated_symbols.assets.equipment.TrimOverride import TrimOverride
+    from vanilla_mcdoc.assets.equipment.Layers import Layers
+    from vanilla_mcdoc.assets.equipment.TrimOverride import TrimOverride
 
 
 class Equipment(GeneratedModel):

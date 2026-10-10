@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::player::RootVehicle
-Local link to file: generated_symbols/world/entity/mob/player/RootVehicle.py
+Local link to file: vanilla_mcdoc/world/entity/mob/player/RootVehicle.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
-from generated_symbols.minecraft_types import MinecraftUUID
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import MinecraftUUID
 
 if TYPE_CHECKING:
-    from generated_symbols.world.entity.AnyEntity import AnyEntity
+    from vanilla_mcdoc.world.entity.AnyEntity import AnyEntity
 
 
 class RootVehicle(GeneratedModel):

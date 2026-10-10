@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::data::item_modifier::ItemModifierRoot
-Local link to file: generated_symbols/data/item_modifier/ItemModifierRoot.py
+Local link to file: vanilla_mcdoc/data/item_modifier/ItemModifierRoot.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.data.loot.LootFunction import LootFunction
+from vanilla_mcdoc.data.loot.LootFunction import LootFunction
 
 
 type ItemModifierRoot = LootFunction

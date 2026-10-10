@@ -1,17 +1,17 @@
 """
 Generated from symbols.json for ::java::assets::atlas::SpriteSource
-Local link to file: generated_symbols/assets/atlas/SpriteSource.py
+Local link to file: vanilla_mcdoc/assets/atlas/SpriteSource.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
 from pydantic import Field
 
-from generated_symbols.assets.atlas.Directory import Directory
-from generated_symbols.assets.atlas.Filter import Filter
-from generated_symbols.assets.atlas.PalettedPermutations import PalettedPermutations
-from generated_symbols.assets.atlas.Single import Single
-from generated_symbols.assets.atlas.Unstitch import Unstitch
+from vanilla_mcdoc.assets.atlas.Directory import Directory
+from vanilla_mcdoc.assets.atlas.Filter import Filter
+from vanilla_mcdoc.assets.atlas.PalettedPermutations import PalettedPermutations
+from vanilla_mcdoc.assets.atlas.Single import Single
+from vanilla_mcdoc.assets.atlas.Unstitch import Unstitch
 
 
 class SpriteSourceDirectory(Directory):

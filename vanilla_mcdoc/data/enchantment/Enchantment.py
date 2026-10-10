@@ -1,21 +1,21 @@
 """
 Generated from symbols.json for ::java::data::enchantment::Enchantment
-Local link to file: generated_symbols/data/enchantment/Enchantment.py
+Local link to file: vanilla_mcdoc/data/enchantment/Enchantment.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.enchantment.EnchantmentCost import EnchantmentCost
-    from generated_symbols.data.enchantment.effect_component.EnchantmentEffectComponentMap import EnchantmentEffectComponentMap
-    from generated_symbols.registry.KnownItemId import KnownItemId
-    from generated_symbols.util.slot.EquipmentSlotGroup import EquipmentSlotGroup
-    from generated_symbols.util.text.Text import Text
+    from vanilla_mcdoc.data.enchantment.EnchantmentCost import EnchantmentCost
+    from vanilla_mcdoc.data.enchantment.effect_component.EnchantmentEffectComponentMap import EnchantmentEffectComponentMap
+    from vanilla_mcdoc.registry.KnownItemId import KnownItemId
+    from vanilla_mcdoc.util.slot.EquipmentSlotGroup import EquipmentSlotGroup
+    from vanilla_mcdoc.util.text.Text import Text
 
 
 class Enchantment(GeneratedModel):

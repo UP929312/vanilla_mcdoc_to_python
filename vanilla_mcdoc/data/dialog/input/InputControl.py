@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::data::dialog::input::InputControl
-Local link to file: generated_symbols/data/dialog/input/InputControl.py
+Local link to file: vanilla_mcdoc/data/dialog/input/InputControl.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
 from pydantic import Field
 
-from generated_symbols.data.dialog.input.BooleanInput import BooleanInput
-from generated_symbols.data.dialog.input.NumberRangeInput import NumberRangeInput
-from generated_symbols.data.dialog.input.SingleOptionInput import SingleOptionInput
-from generated_symbols.data.dialog.input.TextInput import TextInput
+from vanilla_mcdoc.data.dialog.input.BooleanInput import BooleanInput
+from vanilla_mcdoc.data.dialog.input.NumberRangeInput import NumberRangeInput
+from vanilla_mcdoc.data.dialog.input.SingleOptionInput import SingleOptionInput
+from vanilla_mcdoc.data.dialog.input.TextInput import TextInput
 
 
 class InputControlBoolean(BooleanInput):

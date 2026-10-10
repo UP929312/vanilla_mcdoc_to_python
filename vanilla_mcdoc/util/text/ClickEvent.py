@@ -1,19 +1,19 @@
 """
 Generated from symbols.json for ::java::util::text::ClickEvent
-Local link to file: generated_symbols/util/text/ClickEvent.py
+Local link to file: vanilla_mcdoc/util/text/ClickEvent.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
 from pydantic import Field
 
-from generated_symbols.util.text.ChangePage import ChangePage
-from generated_symbols.util.text.CopyToClipboard import CopyToClipboard
-from generated_symbols.util.text.CustomAction import CustomAction
-from generated_symbols.util.text.OpenUrl import OpenUrl
-from generated_symbols.util.text.RunCommand import RunCommand
-from generated_symbols.util.text.ShowDialog import ShowDialog
-from generated_symbols.util.text.SuggestCommand import SuggestCommand
+from vanilla_mcdoc.util.text.ChangePage import ChangePage
+from vanilla_mcdoc.util.text.CopyToClipboard import CopyToClipboard
+from vanilla_mcdoc.util.text.CustomAction import CustomAction
+from vanilla_mcdoc.util.text.OpenUrl import OpenUrl
+from vanilla_mcdoc.util.text.RunCommand import RunCommand
+from vanilla_mcdoc.util.text.ShowDialog import ShowDialog
+from vanilla_mcdoc.util.text.SuggestCommand import SuggestCommand
 
 
 class ClickEventChangePage(ChangePage):

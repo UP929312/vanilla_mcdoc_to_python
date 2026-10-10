@@ -1,21 +1,21 @@
 """
 Generated from symbols.json for ::java::data::worldgen::feature::VegetationPatchConfig
-Local link to file: generated_symbols/data/worldgen/feature/VegetationPatchConfig.py
+Local link to file: vanilla_mcdoc/data/worldgen/feature/VegetationPatchConfig.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.CaveSurface import CaveSurface
-    from generated_symbols.data.worldgen.IntProvider import IntProvider
-    from generated_symbols.data.worldgen.feature.FeatureRef import FeatureRef
-    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProviderRef import BlockStateProviderRef
-    from generated_symbols.registry.KnownBlockId import KnownBlockId
+    from vanilla_mcdoc.data.worldgen.CaveSurface import CaveSurface
+    from vanilla_mcdoc.data.worldgen.IntProvider import IntProvider
+    from vanilla_mcdoc.data.worldgen.feature.FeatureRef import FeatureRef
+    from vanilla_mcdoc.data.worldgen.feature.block_state_provider.BlockStateProviderRef import BlockStateProviderRef
+    from vanilla_mcdoc.registry.KnownBlockId import KnownBlockId
 
 
 class VegetationPatchConfig(GeneratedModel):

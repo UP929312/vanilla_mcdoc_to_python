@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::data::worldgen::density_function::Slice
-Local link to file: generated_symbols/data/worldgen/density_function/Slice.py
+Local link to file: vanilla_mcdoc/data/worldgen/density_function/Slice.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.density_function.DensityFunctionRef import DensityFunctionRef
-    from generated_symbols.util.direction.Axis import Axis
+    from vanilla_mcdoc.data.worldgen.density_function.DensityFunctionRef import DensityFunctionRef
+    from vanilla_mcdoc.util.direction.Axis import Axis
 
 
 class Slice(GeneratedModel):

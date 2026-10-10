@@ -1,18 +1,18 @@
 """
 Generated from symbols.json for ::java::data::worldgen::feature::SpeleothemConfig
-Local link to file: generated_symbols/data/worldgen/feature/SpeleothemConfig.py
+Local link to file: vanilla_mcdoc/data/worldgen/feature/SpeleothemConfig.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.registry.KnownBlockId import KnownBlockId
-    from generated_symbols.util.block_state.BlockState import BlockState
+    from vanilla_mcdoc.registry.KnownBlockId import KnownBlockId
+    from vanilla_mcdoc.util.block_state.BlockState import BlockState
 
 
 class SpeleothemConfig(GeneratedModel):

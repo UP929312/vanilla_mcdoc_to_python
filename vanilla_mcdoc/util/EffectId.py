@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::util::EffectId
-Local link to file: generated_symbols/util/EffectId.py
+Local link to file: vanilla_mcdoc/util/EffectId.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.util.effect.EffectId import EffectId as EffectId_alias
+from vanilla_mcdoc.util.effect.EffectId import EffectId as EffectId_alias
 
 
 type EffectId = EffectId_alias

@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::data::advancement::trigger::BlockStateConditions
-Local link to file: generated_symbols/data/advancement/trigger/BlockStateConditions.py
+Local link to file: vanilla_mcdoc/data/advancement/trigger/BlockStateConditions.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.util.registry_ref.BlockListRef import BlockListRef
+    from vanilla_mcdoc.util.registry_ref.BlockListRef import BlockListRef
 
 
 class BlockStateConditions(GeneratedModel):

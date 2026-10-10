@@ -1,24 +1,24 @@
 """
 Generated from symbols.json for ::java::data::advancement::predicate::EntitySubPredicate
-Local link to file: generated_symbols/data/advancement/predicate/EntitySubPredicate.py
+Local link to file: vanilla_mcdoc/data/advancement/predicate/EntitySubPredicate.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
-from generated_symbols.data.advancement.predicate.DistancePredicate import DistancePredicate
-from generated_symbols.data.advancement.predicate.EntityFlagsPredicate import EntityFlagsPredicate
-from generated_symbols.data.advancement.predicate.EntityTagPredicate import EntityTagPredicate
-from generated_symbols.data.advancement.predicate.FishingHookPredicate import FishingHookPredicate
-from generated_symbols.data.advancement.predicate.LightningBoltPredicate import LightningBoltPredicate
-from generated_symbols.data.advancement.predicate.LocationPredicate import LocationPredicate
-from generated_symbols.data.advancement.predicate.MovementPredicate import MovementPredicate
-from generated_symbols.data.advancement.predicate.PlayerPredicate import PlayerPredicate
-from generated_symbols.data.advancement.predicate.RaiderPredicate import RaiderPredicate
-from generated_symbols.data.advancement.predicate.SheepPredicate import SheepPredicate
-from generated_symbols.data.advancement.predicate.SlimePredicate import SlimePredicate
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.data.advancement.predicate.DistancePredicate import DistancePredicate
+from vanilla_mcdoc.data.advancement.predicate.EntityFlagsPredicate import EntityFlagsPredicate
+from vanilla_mcdoc.data.advancement.predicate.EntityTagPredicate import EntityTagPredicate
+from vanilla_mcdoc.data.advancement.predicate.FishingHookPredicate import FishingHookPredicate
+from vanilla_mcdoc.data.advancement.predicate.LightningBoltPredicate import LightningBoltPredicate
+from vanilla_mcdoc.data.advancement.predicate.LocationPredicate import LocationPredicate
+from vanilla_mcdoc.data.advancement.predicate.MovementPredicate import MovementPredicate
+from vanilla_mcdoc.data.advancement.predicate.PlayerPredicate import PlayerPredicate
+from vanilla_mcdoc.data.advancement.predicate.RaiderPredicate import RaiderPredicate
+from vanilla_mcdoc.data.advancement.predicate.SheepPredicate import SheepPredicate
+from vanilla_mcdoc.data.advancement.predicate.SlimePredicate import SlimePredicate
 
 
 class EntitySubPredicateComponents(GeneratedModel):

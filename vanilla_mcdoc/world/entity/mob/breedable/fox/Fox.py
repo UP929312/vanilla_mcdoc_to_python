@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::breedable::fox::Fox
-Local link to file: generated_symbols/world/entity/mob/breedable/fox/Fox.py
+Local link to file: vanilla_mcdoc/world/entity/mob/breedable/fox/Fox.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.minecraft_types import MinecraftUUID
-from generated_symbols.world.entity.mob.breedable.Breedable import Breedable
+from vanilla_mcdoc.minecraft_types import MinecraftUUID
+from vanilla_mcdoc.world.entity.mob.breedable.Breedable import Breedable
 
 if TYPE_CHECKING:
-    from generated_symbols.world.component.entity.FoxType import FoxType
+    from vanilla_mcdoc.world.component.entity.FoxType import FoxType
 
 
 class Fox(Breedable):

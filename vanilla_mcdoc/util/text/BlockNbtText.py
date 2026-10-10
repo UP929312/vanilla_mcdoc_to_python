@@ -1,11 +1,11 @@
 """
 Generated from symbols.json for ::java::util::text::BlockNbtText
-Local link to file: generated_symbols/util/text/BlockNbtText.py
+Local link to file: vanilla_mcdoc/util/text/BlockNbtText.py
 """
 # ~~~ CODE ~~~
 from typing import Literal
 
-from generated_symbols.util.text.TextNbtBase import TextNbtBase
+from vanilla_mcdoc.util.text.TextNbtBase import TextNbtBase
 
 
 class BlockNbtText(TextNbtBase):

@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::assets::item_definition::StandingSign
-Local link to file: generated_symbols/assets/item_definition/StandingSign.py
+Local link to file: vanilla_mcdoc/assets/item_definition/StandingSign.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.assets.item_definition.StandingSignAttachment import StandingSignAttachment
-    from generated_symbols.assets.item_definition.WoodType import WoodType
+    from vanilla_mcdoc.assets.item_definition.StandingSignAttachment import StandingSignAttachment
+    from vanilla_mcdoc.assets.item_definition.WoodType import WoodType
 
 
 class StandingSign(GeneratedModel):

@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::world::entity::painting::Painting
-Local link to file: generated_symbols/world/entity/painting/Painting.py
+Local link to file: vanilla_mcdoc/world/entity/painting/Painting.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.world.entity.BlockAttachedEntity import BlockAttachedEntity
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.minecraft_types import IdSpec
+from vanilla_mcdoc.world.entity.BlockAttachedEntity import BlockAttachedEntity
 
 if TYPE_CHECKING:
-    from generated_symbols.util.direction.HorizontalDirectionByte import HorizontalDirectionByte
+    from vanilla_mcdoc.util.direction.HorizontalDirectionByte import HorizontalDirectionByte
 
 
 class Painting(BlockAttachedEntity):

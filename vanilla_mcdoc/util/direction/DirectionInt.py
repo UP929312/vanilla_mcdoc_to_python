@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::util::direction::DirectionInt
-Local link to file: generated_symbols/util/direction/DirectionInt.py
+Local link to file: vanilla_mcdoc/util/direction/DirectionInt.py
 """
 # ~~~ CODE ~~~
 from enum import IntEnum

@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::data::util::RandomIntGenerator
-Local link to file: generated_symbols/data/util/RandomIntGenerator.py
+Local link to file: vanilla_mcdoc/data/util/RandomIntGenerator.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Literal
 
-from generated_symbols.data.util.BinomialIntGenerator import BinomialIntGenerator
-from generated_symbols.data.util.ConstantIntGenerator import ConstantIntGenerator
-from generated_symbols.data.util.UniformIntGenerator import UniformIntGenerator
+from vanilla_mcdoc.data.util.BinomialIntGenerator import BinomialIntGenerator
+from vanilla_mcdoc.data.util.ConstantIntGenerator import ConstantIntGenerator
+from vanilla_mcdoc.data.util.UniformIntGenerator import UniformIntGenerator
 
 if TYPE_CHECKING:
-    from generated_symbols.data.util.RandomIntGeneratorType import RandomIntGeneratorType
+    from vanilla_mcdoc.data.util.RandomIntGeneratorType import RandomIntGeneratorType
 
 
 class RandomIntGeneratorStructNone(UniformIntGenerator):

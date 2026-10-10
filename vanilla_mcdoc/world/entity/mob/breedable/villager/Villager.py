@@ -1,18 +1,18 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::breedable::villager::Villager
-Local link to file: generated_symbols/world/entity/mob/breedable/villager/Villager.py
+Local link to file: vanilla_mcdoc/world/entity/mob/breedable/villager/Villager.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.world.entity.mob.breedable.Breedable import Breedable
-from generated_symbols.world.entity.mob.breedable.villager.VillagerBase import VillagerBase
+from vanilla_mcdoc.world.entity.mob.breedable.Breedable import Breedable
+from vanilla_mcdoc.world.entity.mob.breedable.villager.VillagerBase import VillagerBase
 
 if TYPE_CHECKING:
-    from generated_symbols.world.entity.mob.breedable.villager.PlayerReputationPart import PlayerReputationPart
-    from generated_symbols.world.entity.mob.breedable.villager.VillagerData import VillagerData
+    from vanilla_mcdoc.world.entity.mob.breedable.villager.PlayerReputationPart import PlayerReputationPart
+    from vanilla_mcdoc.world.entity.mob.breedable.villager.VillagerData import VillagerData
 
 
 class Villager(Breedable, VillagerBase):

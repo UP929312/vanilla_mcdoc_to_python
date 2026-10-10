@@ -1,12 +1,12 @@
 """
 Generated from symbols.json for ::java::data::enchantment::level_based_value::LevelBasedValue
-Local link to file: generated_symbols/data/enchantment/level_based_value/LevelBasedValue.py
+Local link to file: vanilla_mcdoc/data/enchantment/level_based_value/LevelBasedValue.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from generated_symbols.data.enchantment.level_based_value.LevelBasedValueMap import LevelBasedValueMap
+    from vanilla_mcdoc.data.enchantment.level_based_value.LevelBasedValueMap import LevelBasedValueMap
 
 
 type LevelBasedValue = float | LevelBasedValueMap

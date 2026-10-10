@@ -1,10 +1,10 @@
 """
 Generated from symbols.json for ::java::world::block::conduit::Conduit
-Local link to file: generated_symbols/world/block/conduit/Conduit.py
+Local link to file: vanilla_mcdoc/world/block/conduit/Conduit.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.minecraft_types import MinecraftUUID
-from generated_symbols.world.block.BlockEntity import BlockEntity
+from vanilla_mcdoc.minecraft_types import MinecraftUUID
+from vanilla_mcdoc.world.block.BlockEntity import BlockEntity
 
 
 class Conduit(BlockEntity):

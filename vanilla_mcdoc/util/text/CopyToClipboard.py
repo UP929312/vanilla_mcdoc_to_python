@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::util::text::CopyToClipboard
-Local link to file: generated_symbols/util/text/CopyToClipboard.py
+Local link to file: vanilla_mcdoc/util/text/CopyToClipboard.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class CopyToClipboard(GeneratedModel):

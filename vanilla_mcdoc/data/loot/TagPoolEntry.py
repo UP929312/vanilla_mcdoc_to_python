@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::data::loot::TagPoolEntry
-Local link to file: generated_symbols/data/loot/TagPoolEntry.py
+Local link to file: vanilla_mcdoc/data/loot/TagPoolEntry.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.data.loot.SingletonPoolEntry import SingletonPoolEntry
+from vanilla_mcdoc.data.loot.SingletonPoolEntry import SingletonPoolEntry
 
 if TYPE_CHECKING:
-    from generated_symbols.util.registry_ref.ItemListRef import ItemListRef
+    from vanilla_mcdoc.util.registry_ref.ItemListRef import ItemListRef
 
 
 class TagPoolEntry(SingletonPoolEntry):

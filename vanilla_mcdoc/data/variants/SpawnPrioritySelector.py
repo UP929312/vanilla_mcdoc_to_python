@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::data::variants::SpawnPrioritySelector
-Local link to file: generated_symbols/data/variants/SpawnPrioritySelector.py
+Local link to file: vanilla_mcdoc/data/variants/SpawnPrioritySelector.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.variants.SpawnCondition import SpawnCondition
+    from vanilla_mcdoc.data.variants.SpawnCondition import SpawnCondition
 
 
 class SpawnPrioritySelector(GeneratedModel):

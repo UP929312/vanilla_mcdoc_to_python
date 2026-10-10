@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::world::item::HideFlags
-Local link to file: generated_symbols/world/item/HideFlags.py
+Local link to file: vanilla_mcdoc/world/item/HideFlags.py
 """
 # ~~~ CODE ~~~
 from enum import IntEnum

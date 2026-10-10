@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::world::item::map::ColorDisplay
-Local link to file: generated_symbols/world/item/map/ColorDisplay.py
+Local link to file: vanilla_mcdoc/world/item/map/ColorDisplay.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.world.item.Display import Display
+from vanilla_mcdoc.world.item.Display import Display
 
 
 class ColorDisplay(Display):

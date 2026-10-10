@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::util::registry_ref::BlockListRef
-Local link to file: generated_symbols/util/registry_ref/BlockListRef.py
+Local link to file: vanilla_mcdoc/util/registry_ref/BlockListRef.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.registry.KnownBlockId import KnownBlockId
+    from vanilla_mcdoc.registry.KnownBlockId import KnownBlockId
 
 
 type BlockListRef = Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId | list[Annotated[str, IdSpec(registry='block')] | KnownBlockId]

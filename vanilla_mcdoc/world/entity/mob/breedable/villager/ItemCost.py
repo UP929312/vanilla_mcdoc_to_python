@@ -1,10 +1,10 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::breedable::villager::ItemCost
-Local link to file: generated_symbols/world/entity/mob/breedable/villager/ItemCost.py
+Local link to file: vanilla_mcdoc/world/entity/mob/breedable/villager/ItemCost.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.world.component.DataComponentExactPredicate import DataComponentExactPredicate
-from generated_symbols.world.item.ItemStackOfComponent import ItemStackOfComponent
+from vanilla_mcdoc.world.component.DataComponentExactPredicate import DataComponentExactPredicate
+from vanilla_mcdoc.world.item.ItemStackOfComponent import ItemStackOfComponent
 
 
 ItemCost = ItemStackOfComponent[DataComponentExactPredicate]

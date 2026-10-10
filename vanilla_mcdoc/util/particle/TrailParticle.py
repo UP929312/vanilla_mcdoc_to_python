@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::util::particle::TrailParticle
-Local link to file: generated_symbols/util/particle/TrailParticle.py
+Local link to file: vanilla_mcdoc/util/particle/TrailParticle.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.util.color.RGB import RGB
+    from vanilla_mcdoc.util.color.RGB import RGB
 
 
 class TrailParticle(GeneratedModel):

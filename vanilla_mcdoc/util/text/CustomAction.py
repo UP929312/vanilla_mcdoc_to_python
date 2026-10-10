@@ -1,12 +1,12 @@
 """
 Generated from symbols.json for ::java::util::text::CustomAction
-Local link to file: generated_symbols/util/text/CustomAction.py
+Local link to file: vanilla_mcdoc/util/text/CustomAction.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, Any
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 
 class CustomAction(GeneratedModel):

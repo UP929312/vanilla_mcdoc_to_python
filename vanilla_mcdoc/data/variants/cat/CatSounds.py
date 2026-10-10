@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::data::variants::cat::CatSounds
-Local link to file: generated_symbols/data/variants/cat/CatSounds.py
+Local link to file: vanilla_mcdoc/data/variants/cat/CatSounds.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, ClassVar
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.util.SoundEventRef import SoundEventRef
+    from vanilla_mcdoc.data.util.SoundEventRef import SoundEventRef
 
 
 class CatSounds(GeneratedModel):

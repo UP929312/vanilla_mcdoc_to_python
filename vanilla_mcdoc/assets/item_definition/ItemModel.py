@@ -1,45 +1,45 @@
 """
 Generated from symbols.json for ::java::assets::item_definition::ItemModel
-Local link to file: generated_symbols/assets/item_definition/ItemModel.py
+Local link to file: vanilla_mcdoc/assets/item_definition/ItemModel.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, Literal
 
 from pydantic import Field
 
-from generated_symbols.assets.item_definition.BlockState import BlockState
-from generated_symbols.assets.item_definition.ChargeType import ChargeType
-from generated_symbols.assets.item_definition.Compass import Compass
-from generated_symbols.assets.item_definition.ComponentFlags import ComponentFlags
-from generated_symbols.assets.item_definition.ComponentStrings import ComponentStrings
-from generated_symbols.assets.item_definition.Composite import Composite
-from generated_symbols.assets.item_definition.ContextDimension import ContextDimension
-from generated_symbols.assets.item_definition.ContextEntityType import ContextEntityType
-from generated_symbols.assets.item_definition.Count import Count
-from generated_symbols.assets.item_definition.CustomModelDataFlags import CustomModelDataFlags
-from generated_symbols.assets.item_definition.CustomModelDataFloats import CustomModelDataFloats
-from generated_symbols.assets.item_definition.CustomModelDataStrings import CustomModelDataStrings
-from generated_symbols.assets.item_definition.Damage import Damage
-from generated_symbols.assets.item_definition.DisplayContext import DisplayContext
-from generated_symbols.assets.item_definition.HasComponent import HasComponent
-from generated_symbols.assets.item_definition.KeybindDown import KeybindDown
-from generated_symbols.assets.item_definition.LocalTime import LocalTime
-from generated_symbols.assets.item_definition.MainHand import MainHand
-from generated_symbols.assets.item_definition.Model import Model
-from generated_symbols.assets.item_definition.SelectCases import SelectCases
-from generated_symbols.assets.item_definition.Special import Special
-from generated_symbols.assets.item_definition.Time import Time
-from generated_symbols.assets.item_definition.TrimMaterial import TrimMaterial
-from generated_symbols.assets.item_definition.UseCycle import UseCycle
-from generated_symbols.assets.item_definition.UseDuration import UseDuration
-from generated_symbols.assets.item_definition.ViewEntity import ViewEntity
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.assets.item_definition.BlockState import BlockState
+from vanilla_mcdoc.assets.item_definition.ChargeType import ChargeType
+from vanilla_mcdoc.assets.item_definition.Compass import Compass
+from vanilla_mcdoc.assets.item_definition.ComponentFlags import ComponentFlags
+from vanilla_mcdoc.assets.item_definition.ComponentStrings import ComponentStrings
+from vanilla_mcdoc.assets.item_definition.Composite import Composite
+from vanilla_mcdoc.assets.item_definition.ContextDimension import ContextDimension
+from vanilla_mcdoc.assets.item_definition.ContextEntityType import ContextEntityType
+from vanilla_mcdoc.assets.item_definition.Count import Count
+from vanilla_mcdoc.assets.item_definition.CustomModelDataFlags import CustomModelDataFlags
+from vanilla_mcdoc.assets.item_definition.CustomModelDataFloats import CustomModelDataFloats
+from vanilla_mcdoc.assets.item_definition.CustomModelDataStrings import CustomModelDataStrings
+from vanilla_mcdoc.assets.item_definition.Damage import Damage
+from vanilla_mcdoc.assets.item_definition.DisplayContext import DisplayContext
+from vanilla_mcdoc.assets.item_definition.HasComponent import HasComponent
+from vanilla_mcdoc.assets.item_definition.KeybindDown import KeybindDown
+from vanilla_mcdoc.assets.item_definition.LocalTime import LocalTime
+from vanilla_mcdoc.assets.item_definition.MainHand import MainHand
+from vanilla_mcdoc.assets.item_definition.Model import Model
+from vanilla_mcdoc.assets.item_definition.SelectCases import SelectCases
+from vanilla_mcdoc.assets.item_definition.Special import Special
+from vanilla_mcdoc.assets.item_definition.Time import Time
+from vanilla_mcdoc.assets.item_definition.TrimMaterial import TrimMaterial
+from vanilla_mcdoc.assets.item_definition.UseCycle import UseCycle
+from vanilla_mcdoc.assets.item_definition.UseDuration import UseDuration
+from vanilla_mcdoc.assets.item_definition.ViewEntity import ViewEntity
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.assets.item_definition.ConditionalPropertyType import ConditionalPropertyType
-    from generated_symbols.assets.item_definition.NumericPropertyType import NumericPropertyType
-    from generated_symbols.assets.item_definition.SelectPropertyType import SelectPropertyType
-    from generated_symbols.world.entity.display.Transformation import Transformation
+    from vanilla_mcdoc.assets.item_definition.ConditionalPropertyType import ConditionalPropertyType
+    from vanilla_mcdoc.assets.item_definition.NumericPropertyType import NumericPropertyType
+    from vanilla_mcdoc.assets.item_definition.SelectPropertyType import SelectPropertyType
+    from vanilla_mcdoc.world.entity.display.Transformation import Transformation
 
 
 class EntriesStruct(GeneratedModel):

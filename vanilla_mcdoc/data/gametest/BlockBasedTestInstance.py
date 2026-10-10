@@ -1,11 +1,11 @@
 """
 Generated from symbols.json for ::java::data::gametest::BlockBasedTestInstance
-Local link to file: generated_symbols/data/gametest/BlockBasedTestInstance.py
+Local link to file: vanilla_mcdoc/data/gametest/BlockBasedTestInstance.py
 """
 # ~~~ CODE ~~~
 from typing import ClassVar
 
-from generated_symbols.data.gametest.TestData import TestData
+from vanilla_mcdoc.data.gametest.TestData import TestData
 
 
 class BlockBasedTestInstance(TestData):

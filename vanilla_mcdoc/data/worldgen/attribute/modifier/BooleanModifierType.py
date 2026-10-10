@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::data::worldgen::attribute::modifier::BooleanModifierType
-Local link to file: generated_symbols/data/worldgen/attribute/modifier/BooleanModifierType.py
+Local link to file: vanilla_mcdoc/data/worldgen/attribute/modifier/BooleanModifierType.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

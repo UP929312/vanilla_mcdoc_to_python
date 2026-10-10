@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::pack::FeatureFlag
-Local link to file: generated_symbols/pack/FeatureFlag.py
+Local link to file: vanilla_mcdoc/pack/FeatureFlag.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

@@ -1,17 +1,17 @@
 """
 Generated from symbols.json for ::java::data::sulfur_cube_archetype::ContactDamage
-Local link to file: generated_symbols/data/sulfur_cube_archetype/ContactDamage.py
+Local link to file: vanilla_mcdoc/data/sulfur_cube_archetype/ContactDamage.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.FloatProvider import FloatProvider
+    from vanilla_mcdoc.data.worldgen.FloatProvider import FloatProvider
 
 
 class ContactDamage(GeneratedModel):

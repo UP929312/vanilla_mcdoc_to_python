@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::data::loot::LootFunction
-Local link to file: generated_symbols/data/loot/LootFunction.py
+Local link to file: vanilla_mcdoc/data/loot/LootFunction.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.data.loot.function.LootFunction import LootFunction as LootFunction_alias
+from vanilla_mcdoc.data.loot.function.LootFunction import LootFunction as LootFunction_alias
 
 
 type LootFunction = LootFunction_alias

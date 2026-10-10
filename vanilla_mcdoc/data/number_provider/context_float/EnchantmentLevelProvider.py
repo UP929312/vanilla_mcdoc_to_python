@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::data::number_provider::context_float::EnchantmentLevelProvider
-Local link to file: generated_symbols/data/number_provider/context_float/EnchantmentLevelProvider.py
+Local link to file: vanilla_mcdoc/data/number_provider/context_float/EnchantmentLevelProvider.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.enchantment.LevelBasedValue import LevelBasedValue
+    from vanilla_mcdoc.data.enchantment.LevelBasedValue import LevelBasedValue
 
 
 class EnchantmentLevelProvider(GeneratedModel):

@@ -1,12 +1,12 @@
 """
 Generated from symbols.json for ::java::data::advancement::predicate::BlockPredicateState
-Local link to file: generated_symbols/data/advancement/predicate/BlockPredicateState.py
+Local link to file: vanilla_mcdoc/data/advancement/predicate/BlockPredicateState.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 if TYPE_CHECKING:
-    from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
+    from vanilla_mcdoc.data.util.MinMaxBounds import MinMaxBounds
 
 
 type BlockPredicateState = dict[Annotated[str, 'Registry("block_state_keys")'], MinMaxBounds[str]]

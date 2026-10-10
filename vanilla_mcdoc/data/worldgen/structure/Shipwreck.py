@@ -1,11 +1,11 @@
 """
 Generated from symbols.json for ::java::data::worldgen::structure::Shipwreck
-Local link to file: generated_symbols/data/worldgen/structure/Shipwreck.py
+Local link to file: vanilla_mcdoc/data/worldgen/structure/Shipwreck.py
 """
 # ~~~ CODE ~~~
 from typing import ClassVar
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class Shipwreck(GeneratedModel):

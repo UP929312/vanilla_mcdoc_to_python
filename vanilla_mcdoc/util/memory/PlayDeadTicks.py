@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::util::memory::PlayDeadTicks
-Local link to file: generated_symbols/util/memory/PlayDeadTicks.py
+Local link to file: vanilla_mcdoc/util/memory/PlayDeadTicks.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.util.memory.ExpirableValue import ExpirableValue
+from vanilla_mcdoc.util.memory.ExpirableValue import ExpirableValue
 
 
 class PlayDeadTicks(ExpirableValue):

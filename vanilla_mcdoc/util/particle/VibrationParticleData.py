@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::util::particle::VibrationParticleData
-Local link to file: generated_symbols/util/particle/VibrationParticleData.py
+Local link to file: vanilla_mcdoc/util/particle/VibrationParticleData.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.util.particle.SafePositionSource import SafePositionSource
+    from vanilla_mcdoc.util.particle.SafePositionSource import SafePositionSource
 
 
 class VibrationParticleData(GeneratedModel):

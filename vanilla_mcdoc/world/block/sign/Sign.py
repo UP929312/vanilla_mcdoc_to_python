@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::world::block::sign::Sign
-Local link to file: generated_symbols/world/block/sign/Sign.py
+Local link to file: vanilla_mcdoc/world/block/sign/Sign.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.world.block.BlockEntity import BlockEntity
+from vanilla_mcdoc.world.block.BlockEntity import BlockEntity
 
 if TYPE_CHECKING:
-    from generated_symbols.world.component.block.SignText import SignText
+    from vanilla_mcdoc.world.component.block.SignText import SignText
 
 
 class Sign(BlockEntity):

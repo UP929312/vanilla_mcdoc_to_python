@@ -1,13 +1,13 @@
 """
 Generated from symbols.json for ::java::data::worldgen::material_condition::WaterCondition
-Local link to file: generated_symbols/data/worldgen/material_condition/WaterCondition.py
+Local link to file: vanilla_mcdoc/data/worldgen/material_condition/WaterCondition.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, ClassVar
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class WaterCondition(GeneratedModel):

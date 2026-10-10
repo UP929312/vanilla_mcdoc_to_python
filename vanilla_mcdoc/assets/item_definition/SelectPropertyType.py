@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::assets::item_definition::SelectPropertyType
-Local link to file: generated_symbols/assets/item_definition/SelectPropertyType.py
+Local link to file: vanilla_mcdoc/assets/item_definition/SelectPropertyType.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::world::component::predicate::FireworksPredicate
-Local link to file: generated_symbols/world/component/predicate/FireworksPredicate.py
+Local link to file: vanilla_mcdoc/world/component/predicate/FireworksPredicate.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
-    from generated_symbols.world.component.predicate.CollectionPredicate import CollectionPredicate
-    from generated_symbols.world.component.predicate.FireworkExplosionPredicate import FireworkExplosionPredicate
+    from vanilla_mcdoc.data.util.MinMaxBounds import MinMaxBounds
+    from vanilla_mcdoc.world.component.predicate.CollectionPredicate import CollectionPredicate
+    from vanilla_mcdoc.world.component.predicate.FireworkExplosionPredicate import FireworkExplosionPredicate
 
 
 class FireworksPredicate(GeneratedModel):

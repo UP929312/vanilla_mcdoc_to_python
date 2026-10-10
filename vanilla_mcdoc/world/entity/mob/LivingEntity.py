@@ -1,22 +1,22 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::LivingEntity
-Local link to file: generated_symbols/world/entity/mob/LivingEntity.py
+Local link to file: vanilla_mcdoc/world/entity/mob/LivingEntity.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
-from generated_symbols.minecraft_types import MinecraftUUID
-from generated_symbols.world.entity.EntityBase import EntityBase
-from generated_symbols.world.entity.mob.FallDamageLogicData import FallDamageLogicData
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import MinecraftUUID
+from vanilla_mcdoc.world.entity.EntityBase import EntityBase
+from vanilla_mcdoc.world.entity.mob.FallDamageLogicData import FallDamageLogicData
 
 if TYPE_CHECKING:
-    from generated_symbols.util.effect.MobEffectInstance import MobEffectInstance
-    from generated_symbols.util.memory.Memories import Memories
-    from generated_symbols.world.entity.mob.Attribute import Attribute
-    from generated_symbols.world.entity.mob.WaypointIcon import WaypointIcon
+    from vanilla_mcdoc.util.effect.MobEffectInstance import MobEffectInstance
+    from vanilla_mcdoc.util.memory.Memories import Memories
+    from vanilla_mcdoc.world.entity.mob.Attribute import Attribute
+    from vanilla_mcdoc.world.entity.mob.WaypointIcon import WaypointIcon
 
 
 class BrainStruct(GeneratedModel):

@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::data::dialog::action::DynamicCustomAction
-Local link to file: generated_symbols/data/dialog/action/DynamicCustomAction.py
+Local link to file: vanilla_mcdoc/data/dialog/action/DynamicCustomAction.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.util.custom_event.UnknownDynamicAdditions import UnknownDynamicAdditions
+    from vanilla_mcdoc.util.custom_event.UnknownDynamicAdditions import UnknownDynamicAdditions
 
 
 class DynamicCustomAction(GeneratedModel):

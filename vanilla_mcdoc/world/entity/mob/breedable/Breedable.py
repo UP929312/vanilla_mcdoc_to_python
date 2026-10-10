@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::breedable::Breedable
-Local link to file: generated_symbols/world/entity/mob/breedable/Breedable.py
+Local link to file: vanilla_mcdoc/world/entity/mob/breedable/Breedable.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated
 
 from pydantic import Field
 
-from generated_symbols.minecraft_types import MinecraftUUID
-from generated_symbols.world.entity.mob.AgeableMob import AgeableMob
-from generated_symbols.world.entity.mob.MobBase import MobBase
+from vanilla_mcdoc.minecraft_types import MinecraftUUID
+from vanilla_mcdoc.world.entity.mob.AgeableMob import AgeableMob
+from vanilla_mcdoc.world.entity.mob.MobBase import MobBase
 
 
 class Breedable(AgeableMob, MobBase):

@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::data::worldgen::feature::TemplateConfig
-Local link to file: generated_symbols/data/worldgen/feature/TemplateConfig.py
+Local link to file: vanilla_mcdoc/data/worldgen/feature/TemplateConfig.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, ClassVar
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.feature.TemplateEntry import TemplateEntry
-    from generated_symbols.data.worldgen.processor_list.ProcessorListRef import ProcessorListRef
-    from generated_symbols.util.WeightedList import WeightedList
+    from vanilla_mcdoc.data.worldgen.feature.TemplateEntry import TemplateEntry
+    from vanilla_mcdoc.data.worldgen.processor_list.ProcessorListRef import ProcessorListRef
+    from vanilla_mcdoc.util.WeightedList import WeightedList
 
 
 class TemplateConfig(GeneratedModel):

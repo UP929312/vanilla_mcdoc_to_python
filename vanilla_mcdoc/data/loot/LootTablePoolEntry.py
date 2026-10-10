@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::data::loot::LootTablePoolEntry
-Local link to file: generated_symbols/data/loot/LootTablePoolEntry.py
+Local link to file: vanilla_mcdoc/data/loot/LootTablePoolEntry.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.data.loot.SingletonPoolEntry import SingletonPoolEntry
+from vanilla_mcdoc.data.loot.SingletonPoolEntry import SingletonPoolEntry
 
 if TYPE_CHECKING:
-    from generated_symbols.data.loot.LootTableListRef import LootTableListRef
+    from vanilla_mcdoc.data.loot.LootTableListRef import LootTableListRef
 
 
 class LootTablePoolEntry(SingletonPoolEntry):

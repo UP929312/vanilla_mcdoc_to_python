@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::data::loot::function::CopyNameSource
-Local link to file: generated_symbols/data/loot/function/CopyNameSource.py
+Local link to file: vanilla_mcdoc/data/loot/function/CopyNameSource.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

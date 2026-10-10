@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::data::worldgen::biome::MobSpawnCost
-Local link to file: generated_symbols/data/worldgen/biome/MobSpawnCost.py
+Local link to file: vanilla_mcdoc/data/worldgen/biome/MobSpawnCost.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class MobSpawnCost(GeneratedModel):

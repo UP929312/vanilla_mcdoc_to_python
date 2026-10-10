@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::data::advancement::Trigger
-Local link to file: generated_symbols/data/advancement/Trigger.py
+Local link to file: vanilla_mcdoc/data/advancement/Trigger.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

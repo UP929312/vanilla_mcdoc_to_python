@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::world::block::end_gateway::ExitPortal
-Local link to file: generated_symbols/world/block/end_gateway/ExitPortal.py
+Local link to file: vanilla_mcdoc/world/block/end_gateway/ExitPortal.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class ExitPortal(GeneratedModel):

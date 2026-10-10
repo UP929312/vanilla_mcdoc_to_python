@@ -1,27 +1,27 @@
 """
 Generated from symbols.json for ::java::data::loot::condition::EnvironmentAttributeCheck
-Local link to file: generated_symbols/data/loot/condition/EnvironmentAttributeCheck.py
+Local link to file: vanilla_mcdoc/data/loot/condition/EnvironmentAttributeCheck.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, Any
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.util.MoonPhase import MoonPhase
-    from generated_symbols.data.worldgen.attribute.AmbientParticle import AmbientParticle
-    from generated_symbols.data.worldgen.attribute.AmbientSounds import AmbientSounds
-    from generated_symbols.data.worldgen.attribute.BackgroundMusic import BackgroundMusic
-    from generated_symbols.data.worldgen.attribute.BedRule import BedRule
-    from generated_symbols.data.worldgen.attribute.TriState import TriState
-    from generated_symbols.data.worldgen.biome.NaturalMobSpawns import NaturalMobSpawns
-    from generated_symbols.registry.KnownEnvironmentAttributeId import KnownEnvironmentAttributeId
-    from generated_symbols.util.color.StringARGB import StringARGB
-    from generated_symbols.util.color.StringRGB import StringRGB
-    from generated_symbols.util.particle.Particle import Particle
+    from vanilla_mcdoc.data.util.MoonPhase import MoonPhase
+    from vanilla_mcdoc.data.worldgen.attribute.AmbientParticle import AmbientParticle
+    from vanilla_mcdoc.data.worldgen.attribute.AmbientSounds import AmbientSounds
+    from vanilla_mcdoc.data.worldgen.attribute.BackgroundMusic import BackgroundMusic
+    from vanilla_mcdoc.data.worldgen.attribute.BedRule import BedRule
+    from vanilla_mcdoc.data.worldgen.attribute.TriState import TriState
+    from vanilla_mcdoc.data.worldgen.biome.NaturalMobSpawns import NaturalMobSpawns
+    from vanilla_mcdoc.registry.KnownEnvironmentAttributeId import KnownEnvironmentAttributeId
+    from vanilla_mcdoc.util.color.StringARGB import StringARGB
+    from vanilla_mcdoc.util.color.StringRGB import StringRGB
+    from vanilla_mcdoc.util.particle.Particle import Particle
 
 
 class EnvironmentAttributeCheck(GeneratedModel):

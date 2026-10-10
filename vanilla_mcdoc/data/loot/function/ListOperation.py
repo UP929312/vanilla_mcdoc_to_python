@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::data::loot::function::ListOperation
-Local link to file: generated_symbols/data/loot/function/ListOperation.py
+Local link to file: vanilla_mcdoc/data/loot/function/ListOperation.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
-from generated_symbols.data.loot.function.InsertListOperation import InsertListOperation
-from generated_symbols.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.data.loot.function.InsertListOperation import InsertListOperation
+from vanilla_mcdoc.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
 
 
 class ListOperationAppend(GeneratedModel):

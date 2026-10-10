@@ -1,20 +1,20 @@
 """
 Generated from symbols.json for ::java::data::worldgen::feature::tree::TrunkPlacer
-Local link to file: generated_symbols/data/worldgen/feature/tree/TrunkPlacer.py
+Local link to file: vanilla_mcdoc/data/worldgen/feature/tree/TrunkPlacer.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, Literal
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
-from generated_symbols.data.worldgen.feature.tree.BendingTrunkPlacer import BendingTrunkPlacer
-from generated_symbols.data.worldgen.feature.tree.CherryTrunkPlacer import CherryTrunkPlacer
-from generated_symbols.data.worldgen.feature.tree.PoplarTrunkPlacer import PoplarTrunkPlacer
-from generated_symbols.data.worldgen.feature.tree.UpwardsBranchingTrunkPlacer import UpwardsBranchingTrunkPlacer
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.data.worldgen.feature.tree.BendingTrunkPlacer import BendingTrunkPlacer
+from vanilla_mcdoc.data.worldgen.feature.tree.CherryTrunkPlacer import CherryTrunkPlacer
+from vanilla_mcdoc.data.worldgen.feature.tree.PoplarTrunkPlacer import PoplarTrunkPlacer
+from vanilla_mcdoc.data.worldgen.feature.tree.UpwardsBranchingTrunkPlacer import UpwardsBranchingTrunkPlacer
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.IntProvider import IntProvider
+    from vanilla_mcdoc.data.worldgen.IntProvider import IntProvider
 
 
 class TrunkPlacerBendingTrunkPlacer(BendingTrunkPlacer):

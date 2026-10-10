@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::data::loot::condition::LocationCheck
-Local link to file: generated_symbols/data/loot/condition/LocationCheck.py
+Local link to file: vanilla_mcdoc/data/loot/condition/LocationCheck.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.advancement.predicate.LocationPredicate import LocationPredicate
+    from vanilla_mcdoc.data.advancement.predicate.LocationPredicate import LocationPredicate
 
 
 class LocationCheck(GeneratedModel):

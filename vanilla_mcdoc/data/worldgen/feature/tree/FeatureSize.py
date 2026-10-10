@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::data::worldgen::feature::tree::FeatureSize
-Local link to file: generated_symbols/data/worldgen/feature/tree/FeatureSize.py
+Local link to file: vanilla_mcdoc/data/worldgen/feature/tree/FeatureSize.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
 from pydantic import Field
 
-from generated_symbols.data.worldgen.feature.tree.ThreeLayersFeatureSize import ThreeLayersFeatureSize
-from generated_symbols.data.worldgen.feature.tree.TwoLayersFeatureSize import TwoLayersFeatureSize
+from vanilla_mcdoc.data.worldgen.feature.tree.ThreeLayersFeatureSize import ThreeLayersFeatureSize
+from vanilla_mcdoc.data.worldgen.feature.tree.TwoLayersFeatureSize import TwoLayersFeatureSize
 
 
 class FeatureSizeThreeLayersFeatureSize(ThreeLayersFeatureSize):

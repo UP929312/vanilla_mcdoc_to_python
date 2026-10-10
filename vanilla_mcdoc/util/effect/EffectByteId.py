@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::util::effect::EffectByteId
-Local link to file: generated_symbols/util/effect/EffectByteId.py
+Local link to file: vanilla_mcdoc/util/effect/EffectByteId.py
 """
 # ~~~ CODE ~~~
 from enum import IntEnum

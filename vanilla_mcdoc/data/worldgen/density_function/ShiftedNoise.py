@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::data::worldgen::density_function::ShiftedNoise
-Local link to file: generated_symbols/data/worldgen/density_function/ShiftedNoise.py
+Local link to file: vanilla_mcdoc/data/worldgen/density_function/ShiftedNoise.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.data.worldgen.density_function.Noise import Noise
+from vanilla_mcdoc.data.worldgen.density_function.Noise import Noise
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.density_function.DensityFunctionRef import DensityFunctionRef
+    from vanilla_mcdoc.data.worldgen.density_function.DensityFunctionRef import DensityFunctionRef
 
 
 class ShiftedNoise(Noise):

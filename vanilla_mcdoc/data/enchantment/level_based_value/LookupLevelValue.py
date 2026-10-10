@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::data::enchantment::level_based_value::LookupLevelValue
-Local link to file: generated_symbols/data/enchantment/level_based_value/LookupLevelValue.py
+Local link to file: vanilla_mcdoc/data/enchantment/level_based_value/LookupLevelValue.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.enchantment.level_based_value.LevelBasedValue import LevelBasedValue
+    from vanilla_mcdoc.data.enchantment.level_based_value.LevelBasedValue import LevelBasedValue
 
 
 class LookupLevelValue(GeneratedModel):

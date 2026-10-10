@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::data::slot_source::SlotSourceArgument
-Local link to file: generated_symbols/data/slot_source/SlotSourceArgument.py
+Local link to file: vanilla_mcdoc/data/slot_source/SlotSourceArgument.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.data.slot_source.SlotSource import SlotSource
+from vanilla_mcdoc.data.slot_source.SlotSource import SlotSource
 
 
 type SlotSourceArgument = SlotSource

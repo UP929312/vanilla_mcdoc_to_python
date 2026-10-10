@@ -1,17 +1,17 @@
 """
 Generated from symbols.json for ::java::world::entity::boat::ChestBoat
-Local link to file: generated_symbols/world/entity/boat/ChestBoat.py
+Local link to file: vanilla_mcdoc/world/entity/boat/ChestBoat.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.world.entity.boat.Boat import Boat
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.minecraft_types import IdSpec
+from vanilla_mcdoc.world.entity.boat.Boat import Boat
 
 if TYPE_CHECKING:
-    from generated_symbols.util.slot.SlottedItem import SlottedItem
+    from vanilla_mcdoc.util.slot.SlottedItem import SlottedItem
 
 
 class ChestBoat(Boat):

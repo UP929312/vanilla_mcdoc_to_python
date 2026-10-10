@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::data::advancement::trigger::AdvancementEntityPredicate
-Local link to file: generated_symbols/data/advancement/trigger/AdvancementEntityPredicate.py
+Local link to file: vanilla_mcdoc/data/advancement/trigger/AdvancementEntityPredicate.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.data.predicate.PredicateRef import PredicateRef
+from vanilla_mcdoc.data.predicate.PredicateRef import PredicateRef
 
 
 type AdvancementEntityPredicate = PredicateRef

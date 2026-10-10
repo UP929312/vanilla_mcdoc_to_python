@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::data::variants::zombie_nautilus::ZombieNautilusVariant
-Local link to file: generated_symbols/data/variants/zombie_nautilus/ZombieNautilusVariant.py
+Local link to file: vanilla_mcdoc/data/variants/zombie_nautilus/ZombieNautilusVariant.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
-from generated_symbols.data.variants.SpawnPrioritySelectors import SpawnPrioritySelectors
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.data.variants.SpawnPrioritySelectors import SpawnPrioritySelectors
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.variants.zombie_nautilus.ZombieNautilusModelType import ZombieNautilusModelType
+    from vanilla_mcdoc.data.variants.zombie_nautilus.ZombieNautilusModelType import ZombieNautilusModelType
 
 
 class ZombieNautilusVariant(SpawnPrioritySelectors):

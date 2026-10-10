@@ -1,10 +1,10 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::vex::Vex
-Local link to file: generated_symbols/world/entity/mob/vex/Vex.py
+Local link to file: vanilla_mcdoc/world/entity/mob/vex/Vex.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.minecraft_types import MinecraftUUID
-from generated_symbols.world.entity.mob.MobBase import MobBase
+from vanilla_mcdoc.minecraft_types import MinecraftUUID
+from vanilla_mcdoc.world.entity.mob.MobBase import MobBase
 
 
 class Vex(MobBase):

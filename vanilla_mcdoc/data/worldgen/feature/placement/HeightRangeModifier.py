@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::data::worldgen::feature::placement::HeightRangeModifier
-Local link to file: generated_symbols/data/worldgen/feature/placement/HeightRangeModifier.py
+Local link to file: vanilla_mcdoc/data/worldgen/feature/placement/HeightRangeModifier.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.HeightProvider import HeightProvider
+    from vanilla_mcdoc.data.worldgen.HeightProvider import HeightProvider
 
 
 class HeightRangeModifier(GeneratedModel):

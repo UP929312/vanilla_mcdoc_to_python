@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::data::number_provider::context_int::ScoreboardValue
-Local link to file: generated_symbols/data/number_provider/context_int/ScoreboardValue.py
+Local link to file: vanilla_mcdoc/data/number_provider/context_int/ScoreboardValue.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.number_provider.context_int.IntRef import IntRef
-    from generated_symbols.data.util.ScoreProvider import ScoreProvider
+    from vanilla_mcdoc.data.number_provider.context_int.IntRef import IntRef
+    from vanilla_mcdoc.data.util.ScoreProvider import ScoreProvider
 
 
 class ScoreboardValue(GeneratedModel):

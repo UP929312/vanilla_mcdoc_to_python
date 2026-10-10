@@ -1,11 +1,11 @@
 """
 Generated from symbols.json for ::java::data::advancement::predicate::PlayerRecipes
-Local link to file: generated_symbols/data/advancement/predicate/PlayerRecipes.py
+Local link to file: vanilla_mcdoc/data/advancement/predicate/PlayerRecipes.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 
 type PlayerRecipes = dict[Annotated[str, IdSpec(registry='recipe')], bool]

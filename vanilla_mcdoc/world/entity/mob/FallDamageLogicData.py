@@ -1,13 +1,13 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::FallDamageLogicData
-Local link to file: generated_symbols/world/entity/mob/FallDamageLogicData.py
+Local link to file: vanilla_mcdoc/world/entity/mob/FallDamageLogicData.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class FallDamageLogicData(GeneratedModel):

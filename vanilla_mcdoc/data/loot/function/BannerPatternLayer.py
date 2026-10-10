@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::data::loot::function::BannerPatternLayer
-Local link to file: generated_symbols/data/loot/function/BannerPatternLayer.py
+Local link to file: vanilla_mcdoc/data/loot/function/BannerPatternLayer.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.util.color.DyeColor import DyeColor
+    from vanilla_mcdoc.util.color.DyeColor import DyeColor
 
 
 class BannerPatternLayer(GeneratedModel):

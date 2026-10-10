@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::data::enchantment::effect_component::ArmorEffectivenessEnchantmentEffect
-Local link to file: generated_symbols/data/enchantment/effect_component/ArmorEffectivenessEnchantmentEffect.py
+Local link to file: vanilla_mcdoc/data/enchantment/effect_component/ArmorEffectivenessEnchantmentEffect.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.enchantment.effect.ValueEffect import ValueEffect
-    from generated_symbols.data.predicate.Predicate import Predicate
+    from vanilla_mcdoc.data.enchantment.effect.ValueEffect import ValueEffect
+    from vanilla_mcdoc.data.predicate.Predicate import Predicate
 
 
 class ArmorEffectivenessEnchantmentEffect(GeneratedModel):

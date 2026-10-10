@@ -1,15 +1,14 @@
 """
 Generated from symbols.json for ::java::util::game_event::ReceivingEvent
-Local link to file: generated_symbols/util/game_event/ReceivingEvent.py
+Local link to file: vanilla_mcdoc/util/game_event/ReceivingEvent.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
-from generated_symbols.minecraft_types import MinecraftUUID
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec, MinecraftUUID
 
 
 class ReceivingEvent(GeneratedModel):

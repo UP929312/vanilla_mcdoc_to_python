@@ -1,58 +1,58 @@
 """
 Generated from symbols.json for ::java::data::loot::function::LootFunction
-Local link to file: generated_symbols/data/loot/function/LootFunction.py
+Local link to file: vanilla_mcdoc/data/loot/function/LootFunction.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, Literal
 
 from pydantic import Field
 
-from generated_symbols.data.loot.function.BinomialWithBonusCountFormula import BinomialWithBonusCountFormula
-from generated_symbols.data.loot.function.Conditions import Conditions
-from generated_symbols.data.loot.function.CopyComponents import CopyComponents
-from generated_symbols.data.loot.function.CopyName import CopyName
-from generated_symbols.data.loot.function.CopyNbt import CopyNbt
-from generated_symbols.data.loot.function.CopyState import CopyState
-from generated_symbols.data.loot.function.EnchantRandomly import EnchantRandomly
-from generated_symbols.data.loot.function.EnchantWithLevels import EnchantWithLevels
-from generated_symbols.data.loot.function.EnchantedCountIncrease import EnchantedCountIncrease
-from generated_symbols.data.loot.function.ExplorationMap import ExplorationMap
-from generated_symbols.data.loot.function.FillPlayerHead import FillPlayerHead
-from generated_symbols.data.loot.function.Filtered import Filtered
-from generated_symbols.data.loot.function.InsertListOperation import InsertListOperation
-from generated_symbols.data.loot.function.LimitCount import LimitCount
-from generated_symbols.data.loot.function.ModifyContents import ModifyContents
-from generated_symbols.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
-from generated_symbols.data.loot.function.Sequence import Sequence
-from generated_symbols.data.loot.function.SetAttributes import SetAttributes
-from generated_symbols.data.loot.function.SetBannerPattern import SetBannerPattern
-from generated_symbols.data.loot.function.SetBookCover import SetBookCover
-from generated_symbols.data.loot.function.SetComponents import SetComponents
-from generated_symbols.data.loot.function.SetContents import SetContents
-from generated_symbols.data.loot.function.SetCount import SetCount
-from generated_symbols.data.loot.function.SetCustomData import SetCustomData
-from generated_symbols.data.loot.function.SetCustomModelData import SetCustomModelData
-from generated_symbols.data.loot.function.SetDamage import SetDamage
-from generated_symbols.data.loot.function.SetEnchantments import SetEnchantments
-from generated_symbols.data.loot.function.SetFireworkExplosion import SetFireworkExplosion
-from generated_symbols.data.loot.function.SetFireworks import SetFireworks
-from generated_symbols.data.loot.function.SetInstrument import SetInstrument
-from generated_symbols.data.loot.function.SetItem import SetItem
-from generated_symbols.data.loot.function.SetLootTable import SetLootTable
-from generated_symbols.data.loot.function.SetName import SetName
-from generated_symbols.data.loot.function.SetOminousBottleAmplifier import SetOminousBottleAmplifier
-from generated_symbols.data.loot.function.SetPotion import SetPotion
-from generated_symbols.data.loot.function.SetRandomDyes import SetRandomDyes
-from generated_symbols.data.loot.function.SetRandomPotion import SetRandomPotion
-from generated_symbols.data.loot.function.SetStewEffect import SetStewEffect
-from generated_symbols.data.loot.function.ToggleTooltips import ToggleTooltips
-from generated_symbols.data.loot.function.UniformBonusFormula import UniformBonusFormula
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.data.loot.function.BinomialWithBonusCountFormula import BinomialWithBonusCountFormula
+from vanilla_mcdoc.data.loot.function.Conditions import Conditions
+from vanilla_mcdoc.data.loot.function.CopyComponents import CopyComponents
+from vanilla_mcdoc.data.loot.function.CopyName import CopyName
+from vanilla_mcdoc.data.loot.function.CopyNbt import CopyNbt
+from vanilla_mcdoc.data.loot.function.CopyState import CopyState
+from vanilla_mcdoc.data.loot.function.EnchantRandomly import EnchantRandomly
+from vanilla_mcdoc.data.loot.function.EnchantWithLevels import EnchantWithLevels
+from vanilla_mcdoc.data.loot.function.EnchantedCountIncrease import EnchantedCountIncrease
+from vanilla_mcdoc.data.loot.function.ExplorationMap import ExplorationMap
+from vanilla_mcdoc.data.loot.function.FillPlayerHead import FillPlayerHead
+from vanilla_mcdoc.data.loot.function.Filtered import Filtered
+from vanilla_mcdoc.data.loot.function.InsertListOperation import InsertListOperation
+from vanilla_mcdoc.data.loot.function.LimitCount import LimitCount
+from vanilla_mcdoc.data.loot.function.ModifyContents import ModifyContents
+from vanilla_mcdoc.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
+from vanilla_mcdoc.data.loot.function.Sequence import Sequence
+from vanilla_mcdoc.data.loot.function.SetAttributes import SetAttributes
+from vanilla_mcdoc.data.loot.function.SetBannerPattern import SetBannerPattern
+from vanilla_mcdoc.data.loot.function.SetBookCover import SetBookCover
+from vanilla_mcdoc.data.loot.function.SetComponents import SetComponents
+from vanilla_mcdoc.data.loot.function.SetContents import SetContents
+from vanilla_mcdoc.data.loot.function.SetCount import SetCount
+from vanilla_mcdoc.data.loot.function.SetCustomData import SetCustomData
+from vanilla_mcdoc.data.loot.function.SetCustomModelData import SetCustomModelData
+from vanilla_mcdoc.data.loot.function.SetDamage import SetDamage
+from vanilla_mcdoc.data.loot.function.SetEnchantments import SetEnchantments
+from vanilla_mcdoc.data.loot.function.SetFireworkExplosion import SetFireworkExplosion
+from vanilla_mcdoc.data.loot.function.SetFireworks import SetFireworks
+from vanilla_mcdoc.data.loot.function.SetInstrument import SetInstrument
+from vanilla_mcdoc.data.loot.function.SetItem import SetItem
+from vanilla_mcdoc.data.loot.function.SetLootTable import SetLootTable
+from vanilla_mcdoc.data.loot.function.SetName import SetName
+from vanilla_mcdoc.data.loot.function.SetOminousBottleAmplifier import SetOminousBottleAmplifier
+from vanilla_mcdoc.data.loot.function.SetPotion import SetPotion
+from vanilla_mcdoc.data.loot.function.SetRandomDyes import SetRandomDyes
+from vanilla_mcdoc.data.loot.function.SetRandomPotion import SetRandomPotion
+from vanilla_mcdoc.data.loot.function.SetStewEffect import SetStewEffect
+from vanilla_mcdoc.data.loot.function.ToggleTooltips import ToggleTooltips
+from vanilla_mcdoc.data.loot.function.UniformBonusFormula import UniformBonusFormula
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.loot.EntityTarget import EntityTarget
-    from generated_symbols.util.Filterable import Filterable
-    from generated_symbols.util.text.Text import Text
+    from vanilla_mcdoc.data.loot.EntityTarget import EntityTarget
+    from vanilla_mcdoc.util.Filterable import Filterable
+    from vanilla_mcdoc.util.text.Text import Text
 
 
 class LootFunctionApplyBonusBinomialWithBonusCount(BinomialWithBonusCountFormula, Conditions):

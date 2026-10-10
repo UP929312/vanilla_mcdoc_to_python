@@ -1,17 +1,17 @@
 """
 Generated from symbols.json for ::java::data::util::NbtProvider
-Local link to file: generated_symbols/data/util/NbtProvider.py
+Local link to file: vanilla_mcdoc/data/util/NbtProvider.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, Literal
 
 from pydantic import Field
 
-from generated_symbols.data.util.ContextNbtProvider import ContextNbtProvider
-from generated_symbols.data.util.StorageNbtProvider import StorageNbtProvider
+from vanilla_mcdoc.data.util.ContextNbtProvider import ContextNbtProvider
+from vanilla_mcdoc.data.util.StorageNbtProvider import StorageNbtProvider
 
 if TYPE_CHECKING:
-    from generated_symbols.data.util.NbtContextTarget import NbtContextTarget
+    from vanilla_mcdoc.data.util.NbtContextTarget import NbtContextTarget
 
 
 class NbtProviderStructContext(ContextNbtProvider):

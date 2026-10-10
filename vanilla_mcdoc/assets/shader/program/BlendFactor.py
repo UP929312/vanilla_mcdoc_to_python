@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::assets::shader::program::BlendFactor
-Local link to file: generated_symbols/assets/shader/program/BlendFactor.py
+Local link to file: vanilla_mcdoc/assets/shader/program/BlendFactor.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

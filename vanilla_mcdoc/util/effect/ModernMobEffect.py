@@ -1,17 +1,17 @@
 """
 Generated from symbols.json for ::java::util::effect::ModernMobEffect
-Local link to file: generated_symbols/util/effect/ModernMobEffect.py
+Local link to file: vanilla_mcdoc/util/effect/ModernMobEffect.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, Literal
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.util.effect.MobEffectInstance import MobEffectInstance
+    from vanilla_mcdoc.util.effect.MobEffectInstance import MobEffectInstance
 
 
 class ModernMobEffect(GeneratedModel):

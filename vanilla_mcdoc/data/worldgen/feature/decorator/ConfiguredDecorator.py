@@ -1,27 +1,25 @@
 """
 Generated from symbols.json for ::java::data::worldgen::feature::decorator::ConfiguredDecorator
-Local link to file: generated_symbols/data/worldgen/feature/decorator/ConfiguredDecorator.py
+Local link to file: vanilla_mcdoc/data/worldgen/feature/decorator/ConfiguredDecorator.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.feature.decorator.CarvingMaskConfig import CarvingMaskConfig
-    from generated_symbols.data.worldgen.feature.decorator.CaveSurface import CaveSurface
-    from generated_symbols.data.worldgen.feature.decorator.ChanceConfig import ChanceConfig
-    from generated_symbols.data.worldgen.feature.decorator.CountConfig import CountConfig
-    from generated_symbols.data.worldgen.feature.decorator.CountExtraConfig import CountExtraConfig
-    from generated_symbols.data.worldgen.feature.decorator.CountNoiseBiasedConfig import CountNoiseBiasedConfig
-    from generated_symbols.data.worldgen.feature.decorator.CountNoiseConfig import CountNoiseConfig
-    from generated_symbols.data.worldgen.feature.decorator.DecoratedConfig import DecoratedConfig
-    from generated_symbols.data.worldgen.feature.decorator.DepthAverageConfig import DepthAverageConfig
-    from generated_symbols.data.worldgen.feature.decorator.HeightmapConfig import HeightmapConfig
-    from generated_symbols.data.worldgen.feature.decorator.OldRangeConfig import OldRangeConfig
-    from generated_symbols.data.worldgen.feature.decorator.RangeConfig import RangeConfig
-    from generated_symbols.data.worldgen.feature.decorator.WaterDepthThresholdConfig import WaterDepthThresholdConfig
+    from vanilla_mcdoc.data.worldgen.feature.decorator.CarvingMaskConfig import CarvingMaskConfig
+    from vanilla_mcdoc.data.worldgen.feature.decorator.CaveSurface import CaveSurface
+    from vanilla_mcdoc.data.worldgen.feature.decorator.ChanceConfig import ChanceConfig
+    from vanilla_mcdoc.data.worldgen.feature.decorator.CountConfig import CountConfig
+    from vanilla_mcdoc.data.worldgen.feature.decorator.CountExtraConfig import CountExtraConfig
+    from vanilla_mcdoc.data.worldgen.feature.decorator.CountNoiseBiasedConfig import CountNoiseBiasedConfig
+    from vanilla_mcdoc.data.worldgen.feature.decorator.CountNoiseConfig import CountNoiseConfig
+    from vanilla_mcdoc.data.worldgen.feature.decorator.DecoratedConfig import DecoratedConfig
+    from vanilla_mcdoc.data.worldgen.feature.decorator.HeightmapConfig import HeightmapConfig
+    from vanilla_mcdoc.data.worldgen.feature.decorator.RangeConfig import RangeConfig
+    from vanilla_mcdoc.data.worldgen.feature.decorator.WaterDepthThresholdConfig import WaterDepthThresholdConfig
 
 
 class ConfigStructDecoratorConfigDarkOakTree(GeneratedModel):
@@ -30,7 +28,7 @@ class ConfigStructDecoratorConfigDarkOakTree(GeneratedModel):
 
 class ConfiguredDecorator(GeneratedModel):
     type: Annotated[str, IdSpec(registry='worldgen/decorator')]
-    config: CarvingMaskConfig | CaveSurface | ChanceConfig | CountConfig | CountExtraConfig | CountNoiseConfig | CountNoiseBiasedConfig | ConfigStructDecoratorConfigDarkOakTree | DecoratedConfig | DepthAverageConfig | HeightmapConfig | RangeConfig | OldRangeConfig | WaterDepthThresholdConfig
+    config: CarvingMaskConfig | CaveSurface | ChanceConfig | CountConfig | CountExtraConfig | CountNoiseConfig | CountNoiseBiasedConfig | ConfigStructDecoratorConfigDarkOakTree | DecoratedConfig | HeightmapConfig | RangeConfig | WaterDepthThresholdConfig
 
 
 # ~~~ MODEL DUMP ~~~

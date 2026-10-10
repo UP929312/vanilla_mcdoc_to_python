@@ -1,17 +1,17 @@
 """
 Generated from symbols.json for ::java::world::block::spawner::SpawnEquipment
-Local link to file: generated_symbols/world/block/spawner/SpawnEquipment.py
+Local link to file: vanilla_mcdoc/world/block/spawner/SpawnEquipment.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.util.slot.EquipmentSlot import EquipmentSlot
+    from vanilla_mcdoc.util.slot.EquipmentSlot import EquipmentSlot
 
 
 class SpawnEquipment(GeneratedModel):

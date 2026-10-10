@@ -1,12 +1,12 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::breedable::chicken::Chicken
-Local link to file: generated_symbols/world/entity/mob/breedable/chicken/Chicken.py
+Local link to file: vanilla_mcdoc/world/entity/mob/breedable/chicken/Chicken.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from generated_symbols.world.entity.mob.breedable.Breedable import Breedable
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.minecraft_types import IdSpec
+from vanilla_mcdoc.world.entity.mob.breedable.Breedable import Breedable
 
 
 class Chicken(Breedable):

@@ -1,19 +1,19 @@
 """
 Generated from symbols.json for ::java::world::component::item::blocks_attacks
-Local link to file: generated_symbols/world/component/item/blocks_attacks.py
+Local link to file: vanilla_mcdoc/world/component/item/blocks_attacks.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.util.SoundEventRef import SoundEventRef
-    from generated_symbols.world.component.item.DamageReduction import DamageReduction
-    from generated_symbols.world.component.item.ItemDamageFunction import ItemDamageFunction
+    from vanilla_mcdoc.data.util.SoundEventRef import SoundEventRef
+    from vanilla_mcdoc.world.component.item.DamageReduction import DamageReduction
+    from vanilla_mcdoc.world.component.item.ItemDamageFunction import ItemDamageFunction
 
 
 class blocks_attacks(GeneratedModel):

@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::ender_dragon::DragonPhase
-Local link to file: generated_symbols/world/entity/mob/ender_dragon/DragonPhase.py
+Local link to file: vanilla_mcdoc/world/entity/mob/ender_dragon/DragonPhase.py
 """
 # ~~~ CODE ~~~
 from enum import IntEnum

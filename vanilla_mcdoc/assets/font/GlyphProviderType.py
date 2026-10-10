@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::assets::font::GlyphProviderType
-Local link to file: generated_symbols/assets/font/GlyphProviderType.py
+Local link to file: vanilla_mcdoc/assets/font/GlyphProviderType.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

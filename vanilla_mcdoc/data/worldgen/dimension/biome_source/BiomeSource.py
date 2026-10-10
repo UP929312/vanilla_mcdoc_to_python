@@ -1,18 +1,18 @@
 """
 Generated from symbols.json for ::java::data::worldgen::dimension::biome_source::BiomeSource
-Local link to file: generated_symbols/data/worldgen/dimension/biome_source/BiomeSource.py
+Local link to file: vanilla_mcdoc/data/worldgen/dimension/biome_source/BiomeSource.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
 from pydantic import Field
 
-from generated_symbols.data.worldgen.dimension.biome_source.Checkerboard import Checkerboard
-from generated_symbols.data.worldgen.dimension.biome_source.DirectMultiNoise import DirectMultiNoise
-from generated_symbols.data.worldgen.dimension.biome_source.Fixed import Fixed
-from generated_symbols.data.worldgen.dimension.biome_source.MultiNoiseBase import MultiNoiseBase
-from generated_symbols.data.worldgen.dimension.biome_source.TheEnd import TheEnd
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.data.worldgen.dimension.biome_source.Checkerboard import Checkerboard
+from vanilla_mcdoc.data.worldgen.dimension.biome_source.DirectMultiNoise import DirectMultiNoise
+from vanilla_mcdoc.data.worldgen.dimension.biome_source.Fixed import Fixed
+from vanilla_mcdoc.data.worldgen.dimension.biome_source.MultiNoiseBase import MultiNoiseBase
+from vanilla_mcdoc.data.worldgen.dimension.biome_source.TheEnd import TheEnd
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 
 class BiomeSourceCheckerboard(Checkerboard):

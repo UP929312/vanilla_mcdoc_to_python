@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::data::worldgen::structure_set::ConcentricRingsPlacement
-Local link to file: generated_symbols/data/worldgen/structure_set/ConcentricRingsPlacement.py
+Local link to file: vanilla_mcdoc/data/worldgen/structure_set/ConcentricRingsPlacement.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated
 
 from pydantic import Field
 
-from generated_symbols.data.worldgen.structure_set.SpreadingPlacementBase import SpreadingPlacementBase
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.data.worldgen.structure_set.SpreadingPlacementBase import SpreadingPlacementBase
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 
 class ConcentricRingsPlacement(SpreadingPlacementBase):

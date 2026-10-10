@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::world::item::potion::EffectItem
-Local link to file: generated_symbols/world/item/potion/EffectItem.py
+Local link to file: vanilla_mcdoc/world/item/potion/EffectItem.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.world.item.ItemBase import ItemBase
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.minecraft_types import IdSpec
+from vanilla_mcdoc.world.item.ItemBase import ItemBase
 
 if TYPE_CHECKING:
-    from generated_symbols.util.effect.MobEffectInstance import MobEffectInstance
+    from vanilla_mcdoc.util.effect.MobEffectInstance import MobEffectInstance
 
 
 class EffectItem(ItemBase):

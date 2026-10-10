@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::data::variants::SpawnCondition
-Local link to file: generated_symbols/data/variants/SpawnCondition.py
+Local link to file: vanilla_mcdoc/data/variants/SpawnCondition.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
 from pydantic import Field
 
-from generated_symbols.data.variants.BiomeCheck import BiomeCheck
-from generated_symbols.data.variants.MoonBrightnessCheck import MoonBrightnessCheck
-from generated_symbols.data.variants.StructureCheck import StructureCheck
+from vanilla_mcdoc.data.variants.BiomeCheck import BiomeCheck
+from vanilla_mcdoc.data.variants.MoonBrightnessCheck import MoonBrightnessCheck
+from vanilla_mcdoc.data.variants.StructureCheck import StructureCheck
 
 
 class SpawnConditionBiome(BiomeCheck):

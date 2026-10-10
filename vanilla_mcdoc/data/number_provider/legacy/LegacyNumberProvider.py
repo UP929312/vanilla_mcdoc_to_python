@@ -1,19 +1,19 @@
 """
 Generated from symbols.json for ::java::data::number_provider::legacy::LegacyNumberProvider
-Local link to file: generated_symbols/data/number_provider/legacy/LegacyNumberProvider.py
+Local link to file: vanilla_mcdoc/data/number_provider/legacy/LegacyNumberProvider.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
-from generated_symbols.data.number_provider.legacy.BinomialNumberProvider import BinomialNumberProvider
-from generated_symbols.data.number_provider.legacy.ConstantNumberProvider import ConstantNumberProvider
-from generated_symbols.data.number_provider.legacy.EnchantmentLevelProvider import EnchantmentLevelProvider
-from generated_symbols.data.number_provider.legacy.EnvironmentAttributeNumberProvider import EnvironmentAttributeNumberProvider
-from generated_symbols.data.number_provider.legacy.ScoreNumberProvider import ScoreNumberProvider
-from generated_symbols.data.number_provider.legacy.StorageNumberProvider import StorageNumberProvider
-from generated_symbols.data.number_provider.legacy.SumNumberProvider import SumNumberProvider
-from generated_symbols.data.number_provider.legacy.UniformNumberProvider import UniformNumberProvider
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.data.number_provider.legacy.BinomialNumberProvider import BinomialNumberProvider
+from vanilla_mcdoc.data.number_provider.legacy.ConstantNumberProvider import ConstantNumberProvider
+from vanilla_mcdoc.data.number_provider.legacy.EnchantmentLevelProvider import EnchantmentLevelProvider
+from vanilla_mcdoc.data.number_provider.legacy.EnvironmentAttributeNumberProvider import EnvironmentAttributeNumberProvider
+from vanilla_mcdoc.data.number_provider.legacy.ScoreNumberProvider import ScoreNumberProvider
+from vanilla_mcdoc.data.number_provider.legacy.StorageNumberProvider import StorageNumberProvider
+from vanilla_mcdoc.data.number_provider.legacy.SumNumberProvider import SumNumberProvider
+from vanilla_mcdoc.data.number_provider.legacy.UniformNumberProvider import UniformNumberProvider
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 
 class LegacyNumberProviderStructNone(UniformNumberProvider):

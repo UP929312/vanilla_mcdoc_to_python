@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::world::block::vault::SharedData
-Local link to file: generated_symbols/world/block/vault/SharedData.py
+Local link to file: vanilla_mcdoc/world/block/vault/SharedData.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
-from generated_symbols.minecraft_types import MinecraftUUID
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import MinecraftUUID
 
 if TYPE_CHECKING:
-    from generated_symbols.world.item.ItemStack import ItemStack
+    from vanilla_mcdoc.world.item.ItemStack import ItemStack
 
 
 class SharedData(GeneratedModel):

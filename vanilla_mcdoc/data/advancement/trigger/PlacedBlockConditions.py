@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::data::advancement::trigger::PlacedBlockConditions
-Local link to file: generated_symbols/data/advancement/trigger/PlacedBlockConditions.py
+Local link to file: vanilla_mcdoc/data/advancement/trigger/PlacedBlockConditions.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.data.advancement.trigger.BlockStateConditions import BlockStateConditions
-from generated_symbols.data.advancement.trigger.PlayerConditions import PlayerConditions
+from vanilla_mcdoc.data.advancement.trigger.BlockStateConditions import BlockStateConditions
+from vanilla_mcdoc.data.advancement.trigger.PlayerConditions import PlayerConditions
 
 if TYPE_CHECKING:
-    from generated_symbols.data.advancement.predicate.ItemPredicate import ItemPredicate
-    from generated_symbols.data.advancement.predicate.LocationPredicate import LocationPredicate
+    from vanilla_mcdoc.data.advancement.predicate.ItemPredicate import ItemPredicate
+    from vanilla_mcdoc.data.advancement.predicate.LocationPredicate import LocationPredicate
 
 
 class PlacedBlockConditions(BlockStateConditions, PlayerConditions):

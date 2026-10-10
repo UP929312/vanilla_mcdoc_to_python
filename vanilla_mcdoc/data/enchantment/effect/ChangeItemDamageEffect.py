@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::data::enchantment::effect::ChangeItemDamageEffect
-Local link to file: generated_symbols/data/enchantment/effect/ChangeItemDamageEffect.py
+Local link to file: vanilla_mcdoc/data/enchantment/effect/ChangeItemDamageEffect.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.enchantment.LevelBasedValue import LevelBasedValue
+    from vanilla_mcdoc.data.enchantment.LevelBasedValue import LevelBasedValue
 
 
 class ChangeItemDamageEffect(GeneratedModel):

@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::data::worldgen::material_rule::MaterialRuleRef
-Local link to file: generated_symbols/data/worldgen/material_rule/MaterialRuleRef.py
+Local link to file: vanilla_mcdoc/data/worldgen/material_rule/MaterialRuleRef.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.material_rule.MaterialRule import MaterialRule
-    from generated_symbols.registry.KnownMaterialRuleId import KnownMaterialRuleId
+    from vanilla_mcdoc.data.worldgen.material_rule.MaterialRule import MaterialRule
+    from vanilla_mcdoc.registry.KnownMaterialRuleId import KnownMaterialRuleId
 
 
 type MaterialRuleRef = Annotated[str, IdSpec(registry='material_rule')] | KnownMaterialRuleId | MaterialRule

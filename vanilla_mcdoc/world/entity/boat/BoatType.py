@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::world::entity::boat::BoatType
-Local link to file: generated_symbols/world/entity/boat/BoatType.py
+Local link to file: vanilla_mcdoc/world/entity/boat/BoatType.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

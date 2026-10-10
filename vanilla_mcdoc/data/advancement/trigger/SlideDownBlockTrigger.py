@@ -1,11 +1,11 @@
 """
 Generated from symbols.json for ::java::data::advancement::trigger::SlideDownBlockTrigger
-Local link to file: generated_symbols/data/advancement/trigger/SlideDownBlockTrigger.py
+Local link to file: vanilla_mcdoc/data/advancement/trigger/SlideDownBlockTrigger.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.data.advancement.trigger.AllOptional import AllOptional
-from generated_symbols.data.advancement.trigger.BlockStateConditions import BlockStateConditions
-from generated_symbols.data.advancement.trigger.PlayerConditions import PlayerConditions
+from vanilla_mcdoc.data.advancement.trigger.AllOptional import AllOptional
+from vanilla_mcdoc.data.advancement.trigger.BlockStateConditions import BlockStateConditions
+from vanilla_mcdoc.data.advancement.trigger.PlayerConditions import PlayerConditions
 
 
 class SlideDownBlockTriggerTypeArg(BlockStateConditions, PlayerConditions):

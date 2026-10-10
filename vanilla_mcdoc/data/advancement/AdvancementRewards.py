@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::data::advancement::AdvancementRewards
-Local link to file: generated_symbols/data/advancement/AdvancementRewards.py
+Local link to file: vanilla_mcdoc/data/advancement/AdvancementRewards.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.loot.LootTableListRef import LootTableListRef
+    from vanilla_mcdoc.data.loot.LootTableListRef import LootTableListRef
 
 
 class AdvancementRewards(GeneratedModel):

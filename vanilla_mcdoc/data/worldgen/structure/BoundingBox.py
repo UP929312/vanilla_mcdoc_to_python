@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::data::worldgen::structure::BoundingBox
-Local link to file: generated_symbols/data/worldgen/structure/BoundingBox.py
+Local link to file: vanilla_mcdoc/data/worldgen/structure/BoundingBox.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

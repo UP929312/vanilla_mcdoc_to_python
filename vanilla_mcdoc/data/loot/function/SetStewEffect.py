@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::data::loot::function::SetStewEffect
-Local link to file: generated_symbols/data/loot/function/SetStewEffect.py
+Local link to file: vanilla_mcdoc/data/loot/function/SetStewEffect.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.data.loot.function.Conditions import Conditions
+from vanilla_mcdoc.data.loot.function.Conditions import Conditions
 
 if TYPE_CHECKING:
-    from generated_symbols.data.loot.function.StewEffect import StewEffect
+    from vanilla_mcdoc.data.loot.function.StewEffect import StewEffect
 
 
 class SetStewEffect(Conditions):

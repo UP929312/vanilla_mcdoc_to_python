@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::world::entity::cushion::Cushion
-Local link to file: generated_symbols/world/entity/cushion/Cushion.py
+Local link to file: vanilla_mcdoc/world/entity/cushion/Cushion.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.world.entity.BlockAttachedEntity import BlockAttachedEntity
+from vanilla_mcdoc.world.entity.BlockAttachedEntity import BlockAttachedEntity
 
 if TYPE_CHECKING:
-    from generated_symbols.util.color.DyeColor import DyeColor
+    from vanilla_mcdoc.util.color.DyeColor import DyeColor
 
 
 class Cushion(BlockAttachedEntity):

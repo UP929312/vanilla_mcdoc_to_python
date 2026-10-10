@@ -1,17 +1,17 @@
 """
 Generated from symbols.json for ::java::data::worldgen::feature::NetherrackReplaceBlobsConfig
-Local link to file: generated_symbols/data/worldgen/feature/NetherrackReplaceBlobsConfig.py
+Local link to file: vanilla_mcdoc/data/worldgen/feature/NetherrackReplaceBlobsConfig.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.IntProvider import IntProvider
-    from generated_symbols.util.block_state.BlockState import BlockState
+    from vanilla_mcdoc.data.worldgen.IntProvider import IntProvider
+    from vanilla_mcdoc.util.block_state.BlockState import BlockState
 
 
 class NetherrackReplaceBlobsConfig(GeneratedModel):

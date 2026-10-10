@@ -1,12 +1,12 @@
 """
 Generated from symbols.json for ::java::data::advancement::predicate::CatPredicate
-Local link to file: generated_symbols/data/advancement/predicate/CatPredicate.py
+Local link to file: vanilla_mcdoc/data/advancement/predicate/CatPredicate.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 
 class CatPredicate(GeneratedModel):

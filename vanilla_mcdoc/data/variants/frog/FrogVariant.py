@@ -1,12 +1,12 @@
 """
 Generated from symbols.json for ::java::data::variants::frog::FrogVariant
-Local link to file: generated_symbols/data/variants/frog/FrogVariant.py
+Local link to file: vanilla_mcdoc/data/variants/frog/FrogVariant.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, ClassVar
 
-from generated_symbols.data.variants.SpawnPrioritySelectors import SpawnPrioritySelectors
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.data.variants.SpawnPrioritySelectors import SpawnPrioritySelectors
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 
 class FrogVariant(SpawnPrioritySelectors):

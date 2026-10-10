@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::assets::item_definition::TintSourceType
-Local link to file: generated_symbols/assets/item_definition/TintSourceType.py
+Local link to file: vanilla_mcdoc/assets/item_definition/TintSourceType.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

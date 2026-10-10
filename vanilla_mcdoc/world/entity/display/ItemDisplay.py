@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::world::entity::display::ItemDisplay
-Local link to file: generated_symbols/world/entity/display/ItemDisplay.py
+Local link to file: vanilla_mcdoc/world/entity/display/ItemDisplay.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.world.entity.display.DisplayBase import DisplayBase
+from vanilla_mcdoc.world.entity.display.DisplayBase import DisplayBase
 
 if TYPE_CHECKING:
-    from generated_symbols.assets.model.ItemDisplayContext import ItemDisplayContext
-    from generated_symbols.world.item.ItemStack import ItemStack
+    from vanilla_mcdoc.assets.model.ItemDisplayContext import ItemDisplayContext
+    from vanilla_mcdoc.world.item.ItemStack import ItemStack
 
 
 class ItemDisplay(DisplayBase):

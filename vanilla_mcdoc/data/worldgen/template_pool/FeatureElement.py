@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::data::worldgen::template_pool::FeatureElement
-Local link to file: generated_symbols/data/worldgen/template_pool/FeatureElement.py
+Local link to file: vanilla_mcdoc/data/worldgen/template_pool/FeatureElement.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.data.worldgen.template_pool.ElementBase import ElementBase
+from vanilla_mcdoc.data.worldgen.template_pool.ElementBase import ElementBase
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.feature.placement.PlacedFeatureRef import PlacedFeatureRef
+    from vanilla_mcdoc.data.worldgen.feature.placement.PlacedFeatureRef import PlacedFeatureRef
 
 
 class FeatureElement(ElementBase):

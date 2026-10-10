@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::data::worldgen::structure_set::RandomSpreadPlacement
-Local link to file: generated_symbols/data/worldgen/structure_set/RandomSpreadPlacement.py
+Local link to file: vanilla_mcdoc/data/worldgen/structure_set/RandomSpreadPlacement.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.data.worldgen.structure_set.SpreadingPlacementBase import SpreadingPlacementBase
+from vanilla_mcdoc.data.worldgen.structure_set.SpreadingPlacementBase import SpreadingPlacementBase
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.structure_set.SpreadType import SpreadType
+    from vanilla_mcdoc.data.worldgen.structure_set.SpreadType import SpreadType
 
 
 class RandomSpreadPlacement(SpreadingPlacementBase):

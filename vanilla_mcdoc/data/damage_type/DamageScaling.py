@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::data::damage_type::DamageScaling
-Local link to file: generated_symbols/data/damage_type/DamageScaling.py
+Local link to file: vanilla_mcdoc/data/damage_type/DamageScaling.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

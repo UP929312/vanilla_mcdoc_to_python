@@ -1,12 +1,12 @@
 """
 Generated from symbols.json for ::java::assets::item_definition::HasComponent
-Local link to file: generated_symbols/assets/item_definition/HasComponent.py
+Local link to file: vanilla_mcdoc/assets/item_definition/HasComponent.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 
 class HasComponent(GeneratedModel):

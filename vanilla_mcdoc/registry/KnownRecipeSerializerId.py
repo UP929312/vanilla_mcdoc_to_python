@@ -19,7 +19,6 @@ type KnownRecipeSerializerId = Literal[
     'minecraft:crafting_special_shielddecoration',
     'minecraft:crafting_transmute',
     'minecraft:smelting',
-    'minecraft:smithing',
     'minecraft:smithing_transform',
     'minecraft:smithing_trim',
     'minecraft:smoking',

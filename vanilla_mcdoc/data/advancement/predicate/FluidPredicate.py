@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::data::advancement::predicate::FluidPredicate
-Local link to file: generated_symbols/data/advancement/predicate/FluidPredicate.py
+Local link to file: vanilla_mcdoc/data/advancement/predicate/FluidPredicate.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
+    from vanilla_mcdoc.data.util.MinMaxBounds import MinMaxBounds
 
 
 class FluidPredicate(GeneratedModel):

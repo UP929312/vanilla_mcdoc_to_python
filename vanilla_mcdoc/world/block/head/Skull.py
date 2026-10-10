@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::world::block::head::Skull
-Local link to file: generated_symbols/world/block/head/Skull.py
+Local link to file: vanilla_mcdoc/world/block/head/Skull.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.world.block.BlockEntity import BlockEntity
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.minecraft_types import IdSpec
+from vanilla_mcdoc.world.block.BlockEntity import BlockEntity
 
 if TYPE_CHECKING:
-    from generated_symbols.util.avatar.Profile import Profile
-    from generated_symbols.util.text.Text import Text
+    from vanilla_mcdoc.util.avatar.Profile import Profile
+    from vanilla_mcdoc.util.text.Text import Text
 
 
 class Skull(BlockEntity):

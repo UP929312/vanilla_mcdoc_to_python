@@ -1,10 +1,10 @@
 """
 Generated from symbols.json for ::java::assets::item_definition::DisplayContext
-Local link to file: generated_symbols/assets/item_definition/DisplayContext.py
+Local link to file: vanilla_mcdoc/assets/item_definition/DisplayContext.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.assets.item_definition.SelectCases import SelectCases
-from generated_symbols.assets.model.ItemDisplayContext import ItemDisplayContext
+from vanilla_mcdoc.assets.item_definition.SelectCases import SelectCases
+from vanilla_mcdoc.assets.model.ItemDisplayContext import ItemDisplayContext
 
 
 class DisplayContext(SelectCases[ItemDisplayContext]):

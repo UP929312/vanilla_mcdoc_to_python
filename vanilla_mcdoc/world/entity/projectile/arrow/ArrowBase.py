@@ -1,17 +1,17 @@
 """
 Generated from symbols.json for ::java::world::entity::projectile::arrow::ArrowBase
-Local link to file: generated_symbols/world/entity/projectile/arrow/ArrowBase.py
+Local link to file: vanilla_mcdoc/world/entity/projectile/arrow/ArrowBase.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.world.entity.projectile.ProjectileBase import ProjectileBase
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.minecraft_types import IdSpec
+from vanilla_mcdoc.world.entity.projectile.ProjectileBase import ProjectileBase
 
 if TYPE_CHECKING:
-    from generated_symbols.util.block_state.BlockState import BlockState
-    from generated_symbols.world.entity.projectile.arrow.Pickup import Pickup
-    from generated_symbols.world.item.ItemStack import ItemStack
+    from vanilla_mcdoc.util.block_state.BlockState import BlockState
+    from vanilla_mcdoc.world.entity.projectile.arrow.Pickup import Pickup
+    from vanilla_mcdoc.world.item.ItemStack import ItemStack
 
 
 class ArrowBase(ProjectileBase):

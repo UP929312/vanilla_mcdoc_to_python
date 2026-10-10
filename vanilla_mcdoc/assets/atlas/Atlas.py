@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::assets::atlas::Atlas
-Local link to file: generated_symbols/assets/atlas/Atlas.py
+Local link to file: vanilla_mcdoc/assets/atlas/Atlas.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, ClassVar
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.assets.atlas.SpriteSource import SpriteSource
+    from vanilla_mcdoc.assets.atlas.SpriteSource import SpriteSource
 
 
 class Atlas(GeneratedModel):

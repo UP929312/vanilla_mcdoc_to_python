@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::data::variants::cow::CowVariant
-Local link to file: generated_symbols/data/variants/cow/CowVariant.py
+Local link to file: vanilla_mcdoc/data/variants/cow/CowVariant.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
-from generated_symbols.data.variants.SpawnPrioritySelectors import SpawnPrioritySelectors
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.data.variants.SpawnPrioritySelectors import SpawnPrioritySelectors
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.variants.cow.CowModelType import CowModelType
+    from vanilla_mcdoc.data.variants.cow.CowModelType import CowModelType
 
 
 class CowVariant(SpawnPrioritySelectors):

@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::util::attribute::AttributeOperation
-Local link to file: generated_symbols/util/attribute/AttributeOperation.py
+Local link to file: vanilla_mcdoc/util/attribute/AttributeOperation.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

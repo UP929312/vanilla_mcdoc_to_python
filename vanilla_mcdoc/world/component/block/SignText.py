@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::world::component::block::SignText
-Local link to file: generated_symbols/world/component/block/SignText.py
+Local link to file: vanilla_mcdoc/world/component/block/SignText.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.util.color.DyeColor import DyeColor
-    from generated_symbols.world.component.block.SignLines import SignLines
+    from vanilla_mcdoc.util.color.DyeColor import DyeColor
+    from vanilla_mcdoc.world.component.block.SignLines import SignLines
 
 
 class SignText(GeneratedModel):

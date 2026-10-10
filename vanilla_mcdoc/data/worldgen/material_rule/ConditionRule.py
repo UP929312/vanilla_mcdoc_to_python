@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::data::worldgen::material_rule::ConditionRule
-Local link to file: generated_symbols/data/worldgen/material_rule/ConditionRule.py
+Local link to file: vanilla_mcdoc/data/worldgen/material_rule/ConditionRule.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, ClassVar
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.material_condition.MaterialConditionRef import MaterialConditionRef
-    from generated_symbols.data.worldgen.material_rule.MaterialRuleRef import MaterialRuleRef
+    from vanilla_mcdoc.data.worldgen.material_condition.MaterialConditionRef import MaterialConditionRef
+    from vanilla_mcdoc.data.worldgen.material_rule.MaterialRuleRef import MaterialRuleRef
 
 
 class ConditionRule(GeneratedModel):

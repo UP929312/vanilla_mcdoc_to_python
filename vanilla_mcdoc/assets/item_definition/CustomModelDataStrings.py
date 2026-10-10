@@ -1,13 +1,13 @@
 """
 Generated from symbols.json for ::java::assets::item_definition::CustomModelDataStrings
-Local link to file: generated_symbols/assets/item_definition/CustomModelDataStrings.py
+Local link to file: vanilla_mcdoc/assets/item_definition/CustomModelDataStrings.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated
 
 from pydantic import Field
 
-from generated_symbols.assets.item_definition.SelectCases import SelectCases
+from vanilla_mcdoc.assets.item_definition.SelectCases import SelectCases
 
 
 class CustomModelDataStrings(SelectCases[str]):

@@ -1,10 +1,10 @@
 """
 Generated from symbols.json for ::java::world::entity::evoker_fangs::EvokerFangs
-Local link to file: generated_symbols/world/entity/evoker_fangs/EvokerFangs.py
+Local link to file: vanilla_mcdoc/world/entity/evoker_fangs/EvokerFangs.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.minecraft_types import MinecraftUUID
-from generated_symbols.world.entity.EntityBase import EntityBase
+from vanilla_mcdoc.minecraft_types import MinecraftUUID
+from vanilla_mcdoc.world.entity.EntityBase import EntityBase
 
 
 class EvokerFangs(EntityBase):

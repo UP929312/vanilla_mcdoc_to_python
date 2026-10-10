@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::world::item::enchanted_book::EnchantedBook
-Local link to file: generated_symbols/world/item/enchanted_book/EnchantedBook.py
+Local link to file: vanilla_mcdoc/world/item/enchanted_book/EnchantedBook.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.world.item.ItemBase import ItemBase
+from vanilla_mcdoc.world.item.ItemBase import ItemBase
 
 if TYPE_CHECKING:
-    from generated_symbols.world.item.Enchantment import Enchantment
+    from vanilla_mcdoc.world.item.Enchantment import Enchantment
 
 
 class EnchantedBook(ItemBase):

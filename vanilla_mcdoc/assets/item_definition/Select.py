@@ -1,26 +1,26 @@
 """
 Generated from symbols.json for ::java::assets::item_definition::Select
-Local link to file: generated_symbols/assets/item_definition/Select.py
+Local link to file: vanilla_mcdoc/assets/item_definition/Select.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Literal
 
-from generated_symbols.assets.item_definition.BlockState import BlockState
-from generated_symbols.assets.item_definition.ChargeType import ChargeType
-from generated_symbols.assets.item_definition.ComponentStrings import ComponentStrings
-from generated_symbols.assets.item_definition.ContextDimension import ContextDimension
-from generated_symbols.assets.item_definition.ContextEntityType import ContextEntityType
-from generated_symbols.assets.item_definition.CustomModelDataStrings import CustomModelDataStrings
-from generated_symbols.assets.item_definition.DisplayContext import DisplayContext
-from generated_symbols.assets.item_definition.LocalTime import LocalTime
-from generated_symbols.assets.item_definition.MainHand import MainHand
-from generated_symbols.assets.item_definition.SelectCases import SelectCases
-from generated_symbols.assets.item_definition.TrimMaterial import TrimMaterial
+from vanilla_mcdoc.assets.item_definition.BlockState import BlockState
+from vanilla_mcdoc.assets.item_definition.ChargeType import ChargeType
+from vanilla_mcdoc.assets.item_definition.ComponentStrings import ComponentStrings
+from vanilla_mcdoc.assets.item_definition.ContextDimension import ContextDimension
+from vanilla_mcdoc.assets.item_definition.ContextEntityType import ContextEntityType
+from vanilla_mcdoc.assets.item_definition.CustomModelDataStrings import CustomModelDataStrings
+from vanilla_mcdoc.assets.item_definition.DisplayContext import DisplayContext
+from vanilla_mcdoc.assets.item_definition.LocalTime import LocalTime
+from vanilla_mcdoc.assets.item_definition.MainHand import MainHand
+from vanilla_mcdoc.assets.item_definition.SelectCases import SelectCases
+from vanilla_mcdoc.assets.item_definition.TrimMaterial import TrimMaterial
 
 if TYPE_CHECKING:
-    from generated_symbols.assets.item_definition.ItemModel import ItemModel
-    from generated_symbols.assets.item_definition.SelectPropertyType import SelectPropertyType
-    from generated_symbols.world.entity.display.Transformation import Transformation
+    from vanilla_mcdoc.assets.item_definition.ItemModel import ItemModel
+    from vanilla_mcdoc.assets.item_definition.SelectPropertyType import SelectPropertyType
+    from vanilla_mcdoc.world.entity.display.Transformation import Transformation
 
 
 class SelectUnknown(SelectCases[str]):

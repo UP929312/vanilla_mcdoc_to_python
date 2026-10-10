@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::data::enchantment::provider::EnchantmentProvider
-Local link to file: generated_symbols/data/enchantment/provider/EnchantmentProvider.py
+Local link to file: vanilla_mcdoc/data/enchantment/provider/EnchantmentProvider.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, ClassVar, Literal
 
 from pydantic import Field
 
-from generated_symbols.data.enchantment.provider.ByCostEnchantmentProvider import ByCostEnchantmentProvider
-from generated_symbols.data.enchantment.provider.ByCostWithDifficultyEnchantmentProvider import ByCostWithDifficultyEnchantmentProvider
-from generated_symbols.data.enchantment.provider.SingleProvider import SingleProvider
+from vanilla_mcdoc.data.enchantment.provider.ByCostEnchantmentProvider import ByCostEnchantmentProvider
+from vanilla_mcdoc.data.enchantment.provider.ByCostWithDifficultyEnchantmentProvider import ByCostWithDifficultyEnchantmentProvider
+from vanilla_mcdoc.data.enchantment.provider.SingleProvider import SingleProvider
 
 
 class EnchantmentProviderByCost(ByCostEnchantmentProvider):

@@ -1,11 +1,11 @@
 """
 Generated from symbols.json for ::java::assets::lang::LangDeprecated
-Local link to file: generated_symbols/assets/lang/LangDeprecated.py
+Local link to file: vanilla_mcdoc/assets/lang/LangDeprecated.py
 """
 # ~~~ CODE ~~~
 from typing import ClassVar
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class LangDeprecated(GeneratedModel):

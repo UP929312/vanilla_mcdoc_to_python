@@ -1,13 +1,13 @@
 """
 Generated from symbols.json for ::java::assets::item_definition::GrassTint
-Local link to file: generated_symbols/assets/item_definition/GrassTint.py
+Local link to file: vanilla_mcdoc/assets/item_definition/GrassTint.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class GrassTint(GeneratedModel):

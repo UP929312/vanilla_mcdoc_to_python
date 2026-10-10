@@ -1,17 +1,17 @@
 """
 Generated from symbols.json for ::java::world::component::item::ConsumeEffect
-Local link to file: generated_symbols/world/component/item/ConsumeEffect.py
+Local link to file: vanilla_mcdoc/world/component/item/ConsumeEffect.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
-from generated_symbols.world.component.item.ApplyEffectsConsumeEffect import ApplyEffectsConsumeEffect
-from generated_symbols.world.component.item.PlaySoundConsumeEffect import PlaySoundConsumeEffect
-from generated_symbols.world.component.item.RemoveEffectsConsumeEffect import RemoveEffectsConsumeEffect
-from generated_symbols.world.component.item.TeleportRandomlyConsumeEffect import TeleportRandomlyConsumeEffect
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.world.component.item.ApplyEffectsConsumeEffect import ApplyEffectsConsumeEffect
+from vanilla_mcdoc.world.component.item.PlaySoundConsumeEffect import PlaySoundConsumeEffect
+from vanilla_mcdoc.world.component.item.RemoveEffectsConsumeEffect import RemoveEffectsConsumeEffect
+from vanilla_mcdoc.world.component.item.TeleportRandomlyConsumeEffect import TeleportRandomlyConsumeEffect
 
 
 class ConsumeEffectApplyEffects(ApplyEffectsConsumeEffect):

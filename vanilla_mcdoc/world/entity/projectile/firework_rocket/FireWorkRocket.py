@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::world::entity::projectile::firework_rocket::FireWorkRocket
-Local link to file: generated_symbols/world/entity/projectile/firework_rocket/FireWorkRocket.py
+Local link to file: vanilla_mcdoc/world/entity/projectile/firework_rocket/FireWorkRocket.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.world.entity.projectile.ProjectileBase import ProjectileBase
+from vanilla_mcdoc.world.entity.projectile.ProjectileBase import ProjectileBase
 
 if TYPE_CHECKING:
-    from generated_symbols.world.item.ItemStack import ItemStack
+    from vanilla_mcdoc.world.item.ItemStack import ItemStack
 
 
 class FireWorkRocket(ProjectileBase):

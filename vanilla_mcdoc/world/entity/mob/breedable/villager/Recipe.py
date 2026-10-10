@@ -1,17 +1,17 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::breedable::villager::Recipe
-Local link to file: generated_symbols/world/entity/mob/breedable/villager/Recipe.py
+Local link to file: vanilla_mcdoc/world/entity/mob/breedable/villager/Recipe.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.world.entity.mob.breedable.villager.ItemCost import ItemCost
-    from generated_symbols.world.item.ItemStack import ItemStack
+    from vanilla_mcdoc.world.entity.mob.breedable.villager.ItemCost import ItemCost
+    from vanilla_mcdoc.world.item.ItemStack import ItemStack
 
 
 class Recipe(GeneratedModel):

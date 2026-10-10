@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::assets::block_state_definition::MultiPartCondition
-Local link to file: generated_symbols/assets/block_state_definition/MultiPartCondition.py
+Local link to file: vanilla_mcdoc/assets/block_state_definition/MultiPartCondition.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class MultiPartConditionStruct1(GeneratedModel):

@@ -1,17 +1,17 @@
 """
 Generated from symbols.json for ::java::data::worldgen::density_function::InvervalSelect
-Local link to file: generated_symbols/data/worldgen/density_function/InvervalSelect.py
+Local link to file: vanilla_mcdoc/data/worldgen/density_function/InvervalSelect.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.density_function.DensityFunctionRef import DensityFunctionRef
-    from generated_symbols.data.worldgen.density_function.NoiseRange import NoiseRange
+    from vanilla_mcdoc.data.worldgen.density_function.DensityFunctionRef import DensityFunctionRef
+    from vanilla_mcdoc.data.worldgen.density_function.NoiseRange import NoiseRange
 
 
 class InvervalSelect(GeneratedModel):

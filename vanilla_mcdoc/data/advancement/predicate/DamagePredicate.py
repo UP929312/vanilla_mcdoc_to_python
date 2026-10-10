@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::data::advancement::predicate::DamagePredicate
-Local link to file: generated_symbols/data/advancement/predicate/DamagePredicate.py
+Local link to file: vanilla_mcdoc/data/advancement/predicate/DamagePredicate.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.advancement.predicate.DamageSourcePredicate import DamageSourcePredicate
-    from generated_symbols.data.advancement.predicate.EntityPredicate import EntityPredicate
-    from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
+    from vanilla_mcdoc.data.advancement.predicate.DamageSourcePredicate import DamageSourcePredicate
+    from vanilla_mcdoc.data.advancement.predicate.EntityPredicate import EntityPredicate
+    from vanilla_mcdoc.data.util.MinMaxBounds import MinMaxBounds
 
 
 class DamagePredicate(GeneratedModel):

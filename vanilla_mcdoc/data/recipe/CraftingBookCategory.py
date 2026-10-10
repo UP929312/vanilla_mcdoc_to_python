@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::data::recipe::CraftingBookCategory
-Local link to file: generated_symbols/data/recipe/CraftingBookCategory.py
+Local link to file: vanilla_mcdoc/data/recipe/CraftingBookCategory.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

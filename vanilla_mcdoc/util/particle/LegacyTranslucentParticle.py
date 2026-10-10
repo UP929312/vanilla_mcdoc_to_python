@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::util::particle::LegacyTranslucentParticle
-Local link to file: generated_symbols/util/particle/LegacyTranslucentParticle.py
+Local link to file: vanilla_mcdoc/util/particle/LegacyTranslucentParticle.py
 """
 # ~~~ CODE ~~~
 

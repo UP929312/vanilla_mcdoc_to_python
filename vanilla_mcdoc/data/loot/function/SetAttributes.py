@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::data::loot::function::SetAttributes
-Local link to file: generated_symbols/data/loot/function/SetAttributes.py
+Local link to file: vanilla_mcdoc/data/loot/function/SetAttributes.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.data.loot.function.Conditions import Conditions
+from vanilla_mcdoc.data.loot.function.Conditions import Conditions
 
 if TYPE_CHECKING:
-    from generated_symbols.data.loot.function.AttributeModifier import AttributeModifier
+    from vanilla_mcdoc.data.loot.function.AttributeModifier import AttributeModifier
 
 
 class SetAttributes(Conditions):

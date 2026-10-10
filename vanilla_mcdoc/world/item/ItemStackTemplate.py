@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::world::item::ItemStackTemplate
-Local link to file: generated_symbols/world/item/ItemStackTemplate.py
+Local link to file: vanilla_mcdoc/world/item/ItemStackTemplate.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.world.item.ItemStack import ItemStack
+    from vanilla_mcdoc.world.item.ItemStack import ItemStack
 
 
 type ItemStackTemplate = ItemStack | Annotated[str, IdSpec(registry='item', exclude=('air',))]

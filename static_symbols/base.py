@@ -16,7 +16,7 @@ class GeneratedModel(BaseModel):
         if not model.__pydantic_complete__:
             namespace: dict[str, object] = {}
             for module in tuple(sys.modules.values()):
-                if isinstance(module, ModuleType) and module.__name__.startswith("generated_symbols"):
+                if isinstance(module, ModuleType) and module.__name__.startswith(__name__.split(".", maxsplit=1)[0]):  # i.e. our package
                     namespace.update(vars(module))
             model.model_rebuild(_types_namespace=namespace)
         super().__init__(**data)

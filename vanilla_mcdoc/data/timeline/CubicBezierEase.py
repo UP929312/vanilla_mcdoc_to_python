@@ -1,13 +1,13 @@
 """
 Generated from symbols.json for ::java::data::timeline::CubicBezierEase
-Local link to file: generated_symbols/data/timeline/CubicBezierEase.py
+Local link to file: vanilla_mcdoc/data/timeline/CubicBezierEase.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class CubicBezierEase(GeneratedModel):

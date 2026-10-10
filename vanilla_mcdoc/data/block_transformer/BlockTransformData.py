@@ -1,22 +1,22 @@
 """
 Generated from symbols.json for ::java::data::block_transformer::BlockTransformData
-Local link to file: generated_symbols/data/block_transformer/BlockTransformData.py
+Local link to file: vanilla_mcdoc/data/block_transformer/BlockTransformData.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.block_transformer.BlockTransformDropStrategy import BlockTransformDropStrategy
-    from generated_symbols.data.block_transformer.BlockTransformParticle import BlockTransformParticle
-    from generated_symbols.data.block_transformer.BlockTransformType import BlockTransformType
-    from generated_symbols.data.util.SoundEventRef import SoundEventRef
-    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProviderRef import BlockStateProviderRef
-    from generated_symbols.util.direction.Direction import Direction
+    from vanilla_mcdoc.data.block_transformer.BlockTransformDropStrategy import BlockTransformDropStrategy
+    from vanilla_mcdoc.data.block_transformer.BlockTransformParticle import BlockTransformParticle
+    from vanilla_mcdoc.data.block_transformer.BlockTransformType import BlockTransformType
+    from vanilla_mcdoc.data.util.SoundEventRef import SoundEventRef
+    from vanilla_mcdoc.data.worldgen.feature.block_state_provider.BlockStateProviderRef import BlockStateProviderRef
+    from vanilla_mcdoc.util.direction.Direction import Direction
 
 
 class BlockTransformData(GeneratedModel):

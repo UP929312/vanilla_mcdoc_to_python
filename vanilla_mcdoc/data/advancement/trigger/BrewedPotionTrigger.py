@@ -1,11 +1,11 @@
 """
 Generated from symbols.json for ::java::data::advancement::trigger::BrewedPotionTrigger
-Local link to file: generated_symbols/data/advancement/trigger/BrewedPotionTrigger.py
+Local link to file: vanilla_mcdoc/data/advancement/trigger/BrewedPotionTrigger.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.data.advancement.trigger.AllOptional import AllOptional
-from generated_symbols.data.advancement.trigger.PlayerConditions import PlayerConditions
-from generated_symbols.world.component.predicate.PotionsPredicate import PotionsPredicate
+from vanilla_mcdoc.data.advancement.trigger.AllOptional import AllOptional
+from vanilla_mcdoc.data.advancement.trigger.PlayerConditions import PlayerConditions
+from vanilla_mcdoc.world.component.predicate.PotionsPredicate import PotionsPredicate
 
 
 class BrewedPotionTriggerTypeArg(PlayerConditions):

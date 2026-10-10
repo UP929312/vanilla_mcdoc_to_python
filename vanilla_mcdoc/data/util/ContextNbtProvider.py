@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::data::util::ContextNbtProvider
-Local link to file: generated_symbols/data/util/ContextNbtProvider.py
+Local link to file: vanilla_mcdoc/data/util/ContextNbtProvider.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.util.NbtContextTarget import NbtContextTarget
+    from vanilla_mcdoc.data.util.NbtContextTarget import NbtContextTarget
 
 
 class ContextNbtProvider(GeneratedModel):

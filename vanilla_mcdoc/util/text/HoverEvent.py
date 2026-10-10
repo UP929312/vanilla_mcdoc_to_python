@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::util::text::HoverEvent
-Local link to file: generated_symbols/util/text/HoverEvent.py
+Local link to file: vanilla_mcdoc/util/text/HoverEvent.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
 from pydantic import Field
 
-from generated_symbols.util.text.ShowEntity import ShowEntity
-from generated_symbols.util.text.ShowItem import ShowItem
-from generated_symbols.util.text.ShowText import ShowText
+from vanilla_mcdoc.util.text.ShowEntity import ShowEntity
+from vanilla_mcdoc.util.text.ShowItem import ShowItem
+from vanilla_mcdoc.util.text.ShowText import ShowText
 
 
 class HoverEventShowEntity(ShowEntity):

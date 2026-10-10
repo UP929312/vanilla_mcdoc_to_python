@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::piglin::PiglinBase
-Local link to file: generated_symbols/world/entity/mob/piglin/PiglinBase.py
+Local link to file: vanilla_mcdoc/world/entity/mob/piglin/PiglinBase.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.world.entity.mob.MobBase import MobBase
+from vanilla_mcdoc.world.entity.mob.MobBase import MobBase
 
 
 class PiglinBase(MobBase):

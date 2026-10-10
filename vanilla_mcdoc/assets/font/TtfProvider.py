@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::assets::font::TtfProvider
-Local link to file: generated_symbols/assets/font/TtfProvider.py
+Local link to file: vanilla_mcdoc/assets/font/TtfProvider.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class TtfProvider(GeneratedModel):

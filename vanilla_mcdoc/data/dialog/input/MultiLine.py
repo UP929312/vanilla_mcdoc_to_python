@@ -1,13 +1,13 @@
 """
 Generated from symbols.json for ::java::data::dialog::input::MultiLine
-Local link to file: generated_symbols/data/dialog/input/MultiLine.py
+Local link to file: vanilla_mcdoc/data/dialog/input/MultiLine.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class MultiLine(GeneratedModel):

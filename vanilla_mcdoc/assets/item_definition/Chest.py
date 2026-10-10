@@ -1,17 +1,17 @@
 """
 Generated from symbols.json for ::java::assets::item_definition::Chest
-Local link to file: generated_symbols/assets/item_definition/Chest.py
+Local link to file: vanilla_mcdoc/assets/item_definition/Chest.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.assets.item_definition.ChestType import ChestType
+    from vanilla_mcdoc.assets.item_definition.ChestType import ChestType
 
 
 class Chest(GeneratedModel):

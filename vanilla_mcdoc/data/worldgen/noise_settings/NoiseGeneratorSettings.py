@@ -1,20 +1,20 @@
 """
 Generated from symbols.json for ::java::data::worldgen::noise_settings::NoiseGeneratorSettings
-Local link to file: generated_symbols/data/worldgen/noise_settings/NoiseGeneratorSettings.py
+Local link to file: vanilla_mcdoc/data/worldgen/noise_settings/NoiseGeneratorSettings.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, ClassVar
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.material_rule.MaterialRuleRef import MaterialRuleRef
-    from generated_symbols.data.worldgen.noise_settings.Aquifer import Aquifer
-    from generated_symbols.data.worldgen.noise_settings.DebugFunctionEntry import DebugFunctionEntry
-    from generated_symbols.data.worldgen.noise_settings.NoiseRouter import NoiseRouter
-    from generated_symbols.data.worldgen.noise_settings.NoiseSettings import NoiseSettings
-    from generated_symbols.data.worldgen.noise_settings.SpawnTargetPoint import SpawnTargetPoint
-    from generated_symbols.util.block_state.BlockState import BlockState
+    from vanilla_mcdoc.data.worldgen.material_rule.MaterialRuleRef import MaterialRuleRef
+    from vanilla_mcdoc.data.worldgen.noise_settings.Aquifer import Aquifer
+    from vanilla_mcdoc.data.worldgen.noise_settings.DebugFunctionEntry import DebugFunctionEntry
+    from vanilla_mcdoc.data.worldgen.noise_settings.NoiseRouter import NoiseRouter
+    from vanilla_mcdoc.data.worldgen.noise_settings.NoiseSettings import NoiseSettings
+    from vanilla_mcdoc.data.worldgen.noise_settings.SpawnTargetPoint import SpawnTargetPoint
+    from vanilla_mcdoc.util.block_state.BlockState import BlockState
 
 
 class NoiseGeneratorSettings(GeneratedModel):

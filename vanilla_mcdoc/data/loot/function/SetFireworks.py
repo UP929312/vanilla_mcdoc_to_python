@@ -1,19 +1,19 @@
 """
 Generated from symbols.json for ::java::data::loot::function::SetFireworks
-Local link to file: generated_symbols/data/loot/function/SetFireworks.py
+Local link to file: vanilla_mcdoc/data/loot/function/SetFireworks.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, Literal
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
-from generated_symbols.data.loot.function.Conditions import Conditions
-from generated_symbols.data.loot.function.InsertListOperation import InsertListOperation
-from generated_symbols.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.data.loot.function.Conditions import Conditions
+from vanilla_mcdoc.data.loot.function.InsertListOperation import InsertListOperation
+from vanilla_mcdoc.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
 
 if TYPE_CHECKING:
-    from generated_symbols.world.component.item.Explosion import Explosion
+    from vanilla_mcdoc.world.component.item.Explosion import Explosion
 
 
 class ExplosionsStructAppend(GeneratedModel):

@@ -1,33 +1,33 @@
 """
 Generated from symbols.json for ::java::data::worldgen::density_function::DensityFunction
-Local link to file: generated_symbols/data/worldgen/density_function/DensityFunction.py
+Local link to file: vanilla_mcdoc/data/worldgen/density_function/DensityFunction.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar, Literal
 
-from generated_symbols.base import GeneratedModel
-from generated_symbols.data.worldgen.density_function.Clamp import Clamp
-from generated_symbols.data.worldgen.density_function.Constant import Constant
-from generated_symbols.data.worldgen.density_function.DistanceToPoint import DistanceToPoint
-from generated_symbols.data.worldgen.density_function.FindTopSurface import FindTopSurface
-from generated_symbols.data.worldgen.density_function.Gradient import Gradient
-from generated_symbols.data.worldgen.density_function.Interpolated import Interpolated
-from generated_symbols.data.worldgen.density_function.InvervalSelect import InvervalSelect
-from generated_symbols.data.worldgen.density_function.Lerp import Lerp
-from generated_symbols.data.worldgen.density_function.Noise import Noise
-from generated_symbols.data.worldgen.density_function.OldBlendedNoise import OldBlendedNoise
-from generated_symbols.data.worldgen.density_function.OneArgument import OneArgument
-from generated_symbols.data.worldgen.density_function.Pow import Pow
-from generated_symbols.data.worldgen.density_function.RangeChoice import RangeChoice
-from generated_symbols.data.worldgen.density_function.Round import Round
-from generated_symbols.data.worldgen.density_function.Shift import Shift
-from generated_symbols.data.worldgen.density_function.Slice import Slice
-from generated_symbols.data.worldgen.density_function.Spline import Spline
-from generated_symbols.data.worldgen.density_function.TwoArguments import TwoArguments
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.data.worldgen.density_function.Clamp import Clamp
+from vanilla_mcdoc.data.worldgen.density_function.Constant import Constant
+from vanilla_mcdoc.data.worldgen.density_function.DistanceToPoint import DistanceToPoint
+from vanilla_mcdoc.data.worldgen.density_function.FindTopSurface import FindTopSurface
+from vanilla_mcdoc.data.worldgen.density_function.Gradient import Gradient
+from vanilla_mcdoc.data.worldgen.density_function.Interpolated import Interpolated
+from vanilla_mcdoc.data.worldgen.density_function.InvervalSelect import InvervalSelect
+from vanilla_mcdoc.data.worldgen.density_function.Lerp import Lerp
+from vanilla_mcdoc.data.worldgen.density_function.Noise import Noise
+from vanilla_mcdoc.data.worldgen.density_function.OldBlendedNoise import OldBlendedNoise
+from vanilla_mcdoc.data.worldgen.density_function.OneArgument import OneArgument
+from vanilla_mcdoc.data.worldgen.density_function.Pow import Pow
+from vanilla_mcdoc.data.worldgen.density_function.RangeChoice import RangeChoice
+from vanilla_mcdoc.data.worldgen.density_function.Round import Round
+from vanilla_mcdoc.data.worldgen.density_function.Shift import Shift
+from vanilla_mcdoc.data.worldgen.density_function.Slice import Slice
+from vanilla_mcdoc.data.worldgen.density_function.Spline import Spline
+from vanilla_mcdoc.data.worldgen.density_function.TwoArguments import TwoArguments
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.density_function.NoiseRange import NoiseRange
+    from vanilla_mcdoc.data.worldgen.density_function.NoiseRange import NoiseRange
 
 
 class DensityFunctionStructUnknown(GeneratedModel):

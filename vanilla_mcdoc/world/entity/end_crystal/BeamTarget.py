@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::world::entity::end_crystal::BeamTarget
-Local link to file: generated_symbols/world/entity/end_crystal/BeamTarget.py
+Local link to file: vanilla_mcdoc/world/entity/end_crystal/BeamTarget.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class BeamTarget(GeneratedModel):

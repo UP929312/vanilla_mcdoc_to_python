@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::data::predicate::Predicate
-Local link to file: generated_symbols/data/predicate/Predicate.py
+Local link to file: vanilla_mcdoc/data/predicate/Predicate.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.data.loot.LootCondition import LootCondition
+from vanilla_mcdoc.data.loot.LootCondition import LootCondition
 
 
 type Predicate = LootCondition

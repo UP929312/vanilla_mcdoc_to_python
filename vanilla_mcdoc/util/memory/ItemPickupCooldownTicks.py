@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::util::memory::ItemPickupCooldownTicks
-Local link to file: generated_symbols/util/memory/ItemPickupCooldownTicks.py
+Local link to file: vanilla_mcdoc/util/memory/ItemPickupCooldownTicks.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.util.memory.ExpirableValue import ExpirableValue
+from vanilla_mcdoc.util.memory.ExpirableValue import ExpirableValue
 
 
 class ItemPickupCooldownTicks(ExpirableValue):

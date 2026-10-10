@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::util::particle::FlashParticle
-Local link to file: generated_symbols/util/particle/FlashParticle.py
+Local link to file: vanilla_mcdoc/util/particle/FlashParticle.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.util.particle.TranslucentParticle import TranslucentParticle
+    from vanilla_mcdoc.util.particle.TranslucentParticle import TranslucentParticle
 
 
 class FlashParticle(GeneratedModel):

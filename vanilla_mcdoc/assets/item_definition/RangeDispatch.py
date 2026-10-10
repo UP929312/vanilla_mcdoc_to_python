@@ -1,23 +1,23 @@
 """
 Generated from symbols.json for ::java::assets::item_definition::RangeDispatch
-Local link to file: generated_symbols/assets/item_definition/RangeDispatch.py
+Local link to file: vanilla_mcdoc/assets/item_definition/RangeDispatch.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Literal
 
-from generated_symbols.assets.item_definition.Compass import Compass
-from generated_symbols.assets.item_definition.Count import Count
-from generated_symbols.assets.item_definition.CustomModelDataFloats import CustomModelDataFloats
-from generated_symbols.assets.item_definition.Damage import Damage
-from generated_symbols.assets.item_definition.Time import Time
-from generated_symbols.assets.item_definition.UseCycle import UseCycle
-from generated_symbols.assets.item_definition.UseDuration import UseDuration
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.assets.item_definition.Compass import Compass
+from vanilla_mcdoc.assets.item_definition.Count import Count
+from vanilla_mcdoc.assets.item_definition.CustomModelDataFloats import CustomModelDataFloats
+from vanilla_mcdoc.assets.item_definition.Damage import Damage
+from vanilla_mcdoc.assets.item_definition.Time import Time
+from vanilla_mcdoc.assets.item_definition.UseCycle import UseCycle
+from vanilla_mcdoc.assets.item_definition.UseDuration import UseDuration
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.assets.item_definition.ItemModel import ItemModel
-    from generated_symbols.assets.item_definition.NumericPropertyType import NumericPropertyType
-    from generated_symbols.world.entity.display.Transformation import Transformation
+    from vanilla_mcdoc.assets.item_definition.ItemModel import ItemModel
+    from vanilla_mcdoc.assets.item_definition.NumericPropertyType import NumericPropertyType
+    from vanilla_mcdoc.world.entity.display.Transformation import Transformation
 
 
 class EntriesStruct(GeneratedModel):

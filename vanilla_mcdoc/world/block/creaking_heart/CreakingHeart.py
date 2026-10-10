@@ -1,10 +1,10 @@
 """
 Generated from symbols.json for ::java::world::block::creaking_heart::CreakingHeart
-Local link to file: generated_symbols/world/block/creaking_heart/CreakingHeart.py
+Local link to file: vanilla_mcdoc/world/block/creaking_heart/CreakingHeart.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.minecraft_types import MinecraftUUID
-from generated_symbols.world.block.BlockEntity import BlockEntity
+from vanilla_mcdoc.minecraft_types import MinecraftUUID
+from vanilla_mcdoc.world.block.BlockEntity import BlockEntity
 
 
 class CreakingHeart(BlockEntity):

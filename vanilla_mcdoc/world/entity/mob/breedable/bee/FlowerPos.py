@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::breedable::bee::FlowerPos
-Local link to file: generated_symbols/world/entity/mob/breedable/bee/FlowerPos.py
+Local link to file: vanilla_mcdoc/world/entity/mob/breedable/bee/FlowerPos.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class FlowerPos(GeneratedModel):

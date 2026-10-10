@@ -1,19 +1,18 @@
 """
 Generated from symbols.json for ::java::world::block::spawner::TrialSpawner
-Local link to file: generated_symbols/world/block/spawner/TrialSpawner.py
+Local link to file: vanilla_mcdoc/world/block/spawner/TrialSpawner.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
-from generated_symbols.minecraft_types import MinecraftUUID
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec, MinecraftUUID
 
 if TYPE_CHECKING:
-    from generated_symbols.data.trial_spawner.TrialSpawnerConfig import TrialSpawnerConfig
-    from generated_symbols.world.block.spawner.SpawnerEntry import SpawnerEntry
+    from vanilla_mcdoc.data.trial_spawner.TrialSpawnerConfig import TrialSpawnerConfig
+    from vanilla_mcdoc.world.block.spawner.SpawnerEntry import SpawnerEntry
 
 
 class TrialSpawner(GeneratedModel):

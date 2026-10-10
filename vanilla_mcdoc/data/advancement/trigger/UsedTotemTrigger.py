@@ -1,11 +1,11 @@
 """
 Generated from symbols.json for ::java::data::advancement::trigger::UsedTotemTrigger
-Local link to file: generated_symbols/data/advancement/trigger/UsedTotemTrigger.py
+Local link to file: vanilla_mcdoc/data/advancement/trigger/UsedTotemTrigger.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.data.advancement.predicate.ItemPredicate import ItemPredicate
-from generated_symbols.data.advancement.trigger.AllOptional import AllOptional
-from generated_symbols.data.advancement.trigger.PlayerConditions import PlayerConditions
+from vanilla_mcdoc.data.advancement.predicate.ItemPredicate import ItemPredicate
+from vanilla_mcdoc.data.advancement.trigger.AllOptional import AllOptional
+from vanilla_mcdoc.data.advancement.trigger.PlayerConditions import PlayerConditions
 
 
 class UsedTotemTriggerTypeArg(PlayerConditions):

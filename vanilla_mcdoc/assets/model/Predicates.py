@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::assets::model::Predicates
-Local link to file: generated_symbols/assets/model/Predicates.py
+Local link to file: vanilla_mcdoc/assets/model/Predicates.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

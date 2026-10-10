@@ -1,18 +1,18 @@
 """
 Generated from symbols.json for ::java::data::advancement::predicate::ItemPredicate
-Local link to file: generated_symbols/data/advancement/predicate/ItemPredicate.py
+Local link to file: vanilla_mcdoc/data/advancement/predicate/ItemPredicate.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
-    from generated_symbols.registry.KnownItemId import KnownItemId
-    from generated_symbols.world.component.DataComponentExactPredicate import DataComponentExactPredicate
-    from generated_symbols.world.component.DataComponentPredicate import DataComponentPredicate
+    from vanilla_mcdoc.data.util.MinMaxBounds import MinMaxBounds
+    from vanilla_mcdoc.registry.KnownItemId import KnownItemId
+    from vanilla_mcdoc.world.component.DataComponentExactPredicate import DataComponentExactPredicate
+    from vanilla_mcdoc.world.component.DataComponentPredicate import DataComponentPredicate
 
 
 class ItemPredicate(GeneratedModel):

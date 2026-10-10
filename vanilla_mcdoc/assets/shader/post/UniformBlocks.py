@@ -1,12 +1,12 @@
 """
 Generated from symbols.json for ::java::assets::shader::post::UniformBlocks
-Local link to file: generated_symbols/assets/shader/post/UniformBlocks.py
+Local link to file: vanilla_mcdoc/assets/shader/post/UniformBlocks.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from generated_symbols.assets.shader.post.UniformValue import UniformValue
+    from vanilla_mcdoc.assets.shader.post.UniformValue import UniformValue
 
 
 type UniformBlocks = dict[str, list[UniformValue]]

@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::data::worldgen::attribute::modifier::ColorModifierType
-Local link to file: generated_symbols/data/worldgen/attribute/modifier/ColorModifierType.py
+Local link to file: vanilla_mcdoc/data/worldgen/attribute/modifier/ColorModifierType.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

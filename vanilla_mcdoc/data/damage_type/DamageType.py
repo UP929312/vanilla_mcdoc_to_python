@@ -1,18 +1,18 @@
 """
 Generated from symbols.json for ::java::data::damage_type::DamageType
-Local link to file: generated_symbols/data/damage_type/DamageType.py
+Local link to file: vanilla_mcdoc/data/damage_type/DamageType.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.damage_type.DamageEffects import DamageEffects
-    from generated_symbols.data.damage_type.DamageScaling import DamageScaling
-    from generated_symbols.data.damage_type.DeathMessageType import DeathMessageType
+    from vanilla_mcdoc.data.damage_type.DamageEffects import DamageEffects
+    from vanilla_mcdoc.data.damage_type.DamageScaling import DamageScaling
+    from vanilla_mcdoc.data.damage_type.DeathMessageType import DeathMessageType
 
 
 class DamageType(GeneratedModel):

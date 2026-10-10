@@ -1,10 +1,10 @@
 """
 Generated from symbols.json for ::java::world::block::spawner::SpawnPotential
-Local link to file: generated_symbols/world/block/spawner/SpawnPotential.py
+Local link to file: vanilla_mcdoc/world/block/spawner/SpawnPotential.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.util.WeightedEntry import WeightedEntry
-from generated_symbols.world.block.spawner.SpawnerEntry import SpawnerEntry
+from vanilla_mcdoc.util.WeightedEntry import WeightedEntry
+from vanilla_mcdoc.world.block.spawner.SpawnerEntry import SpawnerEntry
 
 
 SpawnPotential = WeightedEntry[SpawnerEntry]

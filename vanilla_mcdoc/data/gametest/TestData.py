@@ -1,18 +1,18 @@
 """
 Generated from symbols.json for ::java::data::gametest::TestData
-Local link to file: generated_symbols/data/gametest/TestData.py
+Local link to file: vanilla_mcdoc/data/gametest/TestData.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.gametest.test_environment.TestEnvironment import TestEnvironment
-    from generated_symbols.util.Rotation import Rotation
+    from vanilla_mcdoc.data.gametest.test_environment.TestEnvironment import TestEnvironment
+    from vanilla_mcdoc.util.Rotation import Rotation
 
 
 class TestData(GeneratedModel):

@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::world::block::jukebox::Jukebox
-Local link to file: generated_symbols/world/block/jukebox/Jukebox.py
+Local link to file: vanilla_mcdoc/world/block/jukebox/Jukebox.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.world.block.BlockEntity import BlockEntity
+from vanilla_mcdoc.world.block.BlockEntity import BlockEntity
 
 if TYPE_CHECKING:
-    from generated_symbols.world.item.ItemStack import ItemStack
+    from vanilla_mcdoc.world.item.ItemStack import ItemStack
 
 
 class Jukebox(BlockEntity):

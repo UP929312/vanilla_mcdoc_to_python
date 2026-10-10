@@ -1,19 +1,19 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::mannequin::Mannequin
-Local link to file: generated_symbols/world/entity/mob/mannequin/Mannequin.py
+Local link to file: vanilla_mcdoc/world/entity/mob/mannequin/Mannequin.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.world.entity.mob.LivingEntity import LivingEntity
+from vanilla_mcdoc.world.entity.mob.LivingEntity import LivingEntity
 
 if TYPE_CHECKING:
-    from generated_symbols.util.avatar.HumanoidArm import HumanoidArm
-    from generated_symbols.util.avatar.PlayerModelPart import PlayerModelPart
-    from generated_symbols.util.avatar.Profile import Profile
-    from generated_symbols.util.text.Text import Text
-    from generated_symbols.world.entity.mob.EntityEquipment import EntityEquipment
-    from generated_symbols.world.entity.mob.mannequin.MannequinPose import MannequinPose
+    from vanilla_mcdoc.util.avatar.HumanoidArm import HumanoidArm
+    from vanilla_mcdoc.util.avatar.PlayerModelPart import PlayerModelPart
+    from vanilla_mcdoc.util.avatar.Profile import Profile
+    from vanilla_mcdoc.util.text.Text import Text
+    from vanilla_mcdoc.world.entity.mob.EntityEquipment import EntityEquipment
+    from vanilla_mcdoc.world.entity.mob.mannequin.MannequinPose import MannequinPose
 
 
 class Mannequin(LivingEntity):

@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::data::advancement::trigger::AdvancementLocationPredicate
-Local link to file: generated_symbols/data/advancement/trigger/AdvancementLocationPredicate.py
+Local link to file: vanilla_mcdoc/data/advancement/trigger/AdvancementLocationPredicate.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.data.predicate.PredicateRef import PredicateRef
+from vanilla_mcdoc.data.predicate.PredicateRef import PredicateRef
 
 
 type AdvancementLocationPredicate = PredicateRef

@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::world::block::sculk_sensor::SculkSensor
-Local link to file: generated_symbols/world/block/sculk_sensor/SculkSensor.py
+Local link to file: vanilla_mcdoc/world/block/sculk_sensor/SculkSensor.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.util.game_event.VibrationListener import VibrationListener
+    from vanilla_mcdoc.util.game_event.VibrationListener import VibrationListener
 
 
 class SculkSensor(GeneratedModel):

@@ -1,12 +1,12 @@
 """
 Generated from symbols.json for ::java::data::sulfur_cube_archetype::AttributeEntry
-Local link to file: generated_symbols/data/sulfur_cube_archetype/AttributeEntry.py
+Local link to file: vanilla_mcdoc/data/sulfur_cube_archetype/AttributeEntry.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from generated_symbols.world.entity.mob.ModernAttributeModifier import ModernAttributeModifier
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.minecraft_types import IdSpec
+from vanilla_mcdoc.world.entity.mob.ModernAttributeModifier import ModernAttributeModifier
 
 
 class AttributeEntry(ModernAttributeModifier):

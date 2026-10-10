@@ -1,17 +1,16 @@
 """
 Generated from symbols.json for ::java::world::entity::area_effect_cloud::AreaEffectCloud
-Local link to file: generated_symbols/world/entity/area_effect_cloud/AreaEffectCloud.py
+Local link to file: vanilla_mcdoc/world/entity/area_effect_cloud/AreaEffectCloud.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.minecraft_types import MinecraftUUID
-from generated_symbols.world.entity.EntityBase import EntityBase
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.minecraft_types import IdSpec, MinecraftUUID
+from vanilla_mcdoc.world.entity.EntityBase import EntityBase
 
 if TYPE_CHECKING:
-    from generated_symbols.util.particle.Particle import Particle
-    from generated_symbols.world.component.item.PotionContents import PotionContents
+    from vanilla_mcdoc.util.particle.Particle import Particle
+    from vanilla_mcdoc.world.component.item.PotionContents import PotionContents
 
 
 class AreaEffectCloud(EntityBase):

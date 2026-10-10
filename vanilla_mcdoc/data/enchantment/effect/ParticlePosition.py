@@ -1,11 +1,11 @@
 """
 Generated from symbols.json for ::java::data::enchantment::effect::ParticlePosition
-Local link to file: generated_symbols/data/enchantment/effect/ParticlePosition.py
+Local link to file: vanilla_mcdoc/data/enchantment/effect/ParticlePosition.py
 """
 # ~~~ CODE ~~~
 from typing import Literal
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class ParticlePosition(GeneratedModel):

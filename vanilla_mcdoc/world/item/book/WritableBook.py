@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::world::item::book::WritableBook
-Local link to file: generated_symbols/world/item/book/WritableBook.py
+Local link to file: vanilla_mcdoc/world/item/book/WritableBook.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.world.item.ItemBase import ItemBase
+from vanilla_mcdoc.world.item.ItemBase import ItemBase
 
 
 class WritableBook(ItemBase):

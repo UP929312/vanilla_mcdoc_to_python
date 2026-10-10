@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::data::recipe::CookingBookInfo
-Local link to file: generated_symbols/data/recipe/CookingBookInfo.py
+Local link to file: vanilla_mcdoc/data/recipe/CookingBookInfo.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.recipe.CookingBookCategory import CookingBookCategory
+    from vanilla_mcdoc.data.recipe.CookingBookCategory import CookingBookCategory
 
 
 class CookingBookInfo(GeneratedModel):

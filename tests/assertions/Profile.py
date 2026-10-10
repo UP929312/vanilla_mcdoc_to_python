@@ -5,20 +5,20 @@
 # ~~~ FILE CONTENT ~~~
 """
 Generated from symbols.json for ::java::util::avatar::Profile
-Local link to file: generated_symbols/util/avatar/Profile.py
+Local link to file: vanilla_mcdoc/util/avatar/Profile.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.util.avatar.PlayerModelType import PlayerModelType
-    from generated_symbols.util.avatar.ProfileProperty import ProfileProperty
-    from generated_symbols.util.avatar.ProfilePropertyMap import ProfilePropertyMap
+    from vanilla_mcdoc.util.avatar.PlayerModelType import PlayerModelType
+    from vanilla_mcdoc.util.avatar.ProfileProperty import ProfileProperty
+    from vanilla_mcdoc.util.avatar.ProfilePropertyMap import ProfilePropertyMap
 
 
 class ProfileStruct(GeneratedModel):

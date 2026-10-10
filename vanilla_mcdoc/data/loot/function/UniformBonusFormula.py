@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::data::loot::function::UniformBonusFormula
-Local link to file: generated_symbols/data/loot/function/UniformBonusFormula.py
+Local link to file: vanilla_mcdoc/data/loot/function/UniformBonusFormula.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class ParametersStruct(GeneratedModel):

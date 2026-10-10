@@ -1,12 +1,12 @@
 """
 Generated from symbols.json for ::java::world::item::SingleItemOfComponent
-Local link to file: generated_symbols/world/item/SingleItemOfComponent.py
+Local link to file: vanilla_mcdoc/world/item/SingleItemOfComponent.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, Generic, TypeVar
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 
 T = TypeVar('T')

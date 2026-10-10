@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::util::text::EntityHoverValue
-Local link to file: generated_symbols/util/text/EntityHoverValue.py
+Local link to file: vanilla_mcdoc/util/text/EntityHoverValue.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class EntityHoverValue(GeneratedModel):

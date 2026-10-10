@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::util::custom_event::UnknownDynamicAdditions
-Local link to file: generated_symbols/util/custom_event/UnknownDynamicAdditions.py
+Local link to file: vanilla_mcdoc/util/custom_event/UnknownDynamicAdditions.py
 """
 # ~~~ CODE ~~~
 from typing import Any

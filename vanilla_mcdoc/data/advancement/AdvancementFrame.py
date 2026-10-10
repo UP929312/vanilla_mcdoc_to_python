@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::data::advancement::AdvancementFrame
-Local link to file: generated_symbols/data/advancement/AdvancementFrame.py
+Local link to file: vanilla_mcdoc/data/advancement/AdvancementFrame.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

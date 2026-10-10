@@ -1,17 +1,17 @@
 """
 Generated from symbols.json for ::java::util::game_event::VibrationListener
-Local link to file: generated_symbols/util/game_event/VibrationListener.py
+Local link to file: vanilla_mcdoc/util/game_event/VibrationListener.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.util.game_event.PositionSource import PositionSource
-    from generated_symbols.util.game_event.ReceivingEvent import ReceivingEvent
+    from vanilla_mcdoc.util.game_event.PositionSource import PositionSource
+    from vanilla_mcdoc.util.game_event.ReceivingEvent import ReceivingEvent
 
 
 class VibrationListener(GeneratedModel):

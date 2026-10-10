@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::data::slot_source::RangeSlotSource
-Local link to file: generated_symbols/data/slot_source/RangeSlotSource.py
+Local link to file: vanilla_mcdoc/data/slot_source/RangeSlotSource.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, ClassVar, Literal
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.loot.BlockEntityTarget import BlockEntityTarget
-    from generated_symbols.data.loot.EntityTarget import EntityTarget
+    from vanilla_mcdoc.data.loot.BlockEntityTarget import BlockEntityTarget
+    from vanilla_mcdoc.data.loot.EntityTarget import EntityTarget
 
 
 class RangeSlotSource(GeneratedModel):

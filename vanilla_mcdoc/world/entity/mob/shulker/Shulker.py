@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::shulker::Shulker
-Local link to file: generated_symbols/world/entity/mob/shulker/Shulker.py
+Local link to file: vanilla_mcdoc/world/entity/mob/shulker/Shulker.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.world.entity.mob.MobBase import MobBase
+from vanilla_mcdoc.world.entity.mob.MobBase import MobBase
 
 if TYPE_CHECKING:
-    from generated_symbols.util.color.DyeColorByte import DyeColorByte
-    from generated_symbols.util.direction.DirectionByte import DirectionByte
-    from generated_symbols.world.entity.mob.shulker.ShulkerColor import ShulkerColor
+    from vanilla_mcdoc.util.color.DyeColorByte import DyeColorByte
+    from vanilla_mcdoc.util.direction.DirectionByte import DirectionByte
+    from vanilla_mcdoc.world.entity.mob.shulker.ShulkerColor import ShulkerColor
 
 
 class Shulker(MobBase):

@@ -1,42 +1,42 @@
 """
 Generated from symbols.json for ::java::data::enchantment::effect_component::EnchantmentEffectComponentMap
-Local link to file: generated_symbols/data/enchantment/effect_component/EnchantmentEffectComponentMap.py
+Local link to file: vanilla_mcdoc/data/enchantment/effect_component/EnchantmentEffectComponentMap.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.enchantment.effect.AttributeEffect import AttributeEffect
-    from generated_symbols.data.enchantment.effect.ValueEffect import ValueEffect
-    from generated_symbols.data.enchantment.effect_component.AmmoUseEnchantmentEffect import AmmoUseEnchantmentEffect
-    from generated_symbols.data.enchantment.effect_component.ArmorEffectivenessEnchantmentEffect import ArmorEffectivenessEnchantmentEffect
-    from generated_symbols.data.enchantment.effect_component.BlockExperienceEnchantmentEffect import BlockExperienceEnchantmentEffect
-    from generated_symbols.data.enchantment.effect_component.CrossbowChargeSoundsEnchantmentEffect import CrossbowChargeSoundsEnchantmentEffect
-    from generated_symbols.data.enchantment.effect_component.DamageEnchantmentEffect import DamageEnchantmentEffect
-    from generated_symbols.data.enchantment.effect_component.DamageImmunityEnchantmentEffect import DamageImmunityEnchantmentEffect
-    from generated_symbols.data.enchantment.effect_component.DamageProtectionEnchantmentEffect import DamageProtectionEnchantmentEffect
-    from generated_symbols.data.enchantment.effect_component.EquipmentDropsEnchantmentEffect import EquipmentDropsEnchantmentEffect
-    from generated_symbols.data.enchantment.effect_component.FishingLuckBonusEnchantmentEffect import FishingLuckBonusEnchantmentEffect
-    from generated_symbols.data.enchantment.effect_component.FishingTimeReductionEnchantmentEffect import FishingTimeReductionEnchantmentEffect
-    from generated_symbols.data.enchantment.effect_component.HitBlockEnchantmentEffect import HitBlockEnchantmentEffect
-    from generated_symbols.data.enchantment.effect_component.ItemDamageEnchantmentEffect import ItemDamageEnchantmentEffect
-    from generated_symbols.data.enchantment.effect_component.KnockbackEnchantmentEffect import KnockbackEnchantmentEffect
-    from generated_symbols.data.enchantment.effect_component.LocationChangedEnchantmentEffect import LocationChangedEnchantmentEffect
-    from generated_symbols.data.enchantment.effect_component.MobExperienceEnchantmentEffect import MobExperienceEnchantmentEffect
-    from generated_symbols.data.enchantment.effect_component.PostAttackEnchantmentEffect import PostAttackEnchantmentEffect
-    from generated_symbols.data.enchantment.effect_component.PostPiercingAttackEnchantmentEffect import PostPiercingAttackEnchantmentEffect
-    from generated_symbols.data.enchantment.effect_component.ProjectileCountEnchantmentEffect import ProjectileCountEnchantmentEffect
-    from generated_symbols.data.enchantment.effect_component.ProjectilePiercingEnchantmentEffect import ProjectilePiercingEnchantmentEffect
-    from generated_symbols.data.enchantment.effect_component.ProjectileSpawnedEnchantmentEffect import ProjectileSpawnedEnchantmentEffect
-    from generated_symbols.data.enchantment.effect_component.ProjectileSpreadEnchantmentEffect import ProjectileSpreadEnchantmentEffect
-    from generated_symbols.data.enchantment.effect_component.RepairWithXpEnchantmentEffect import RepairWithXpEnchantmentEffect
-    from generated_symbols.data.enchantment.effect_component.SmashDamagePerBlockFallenEnchantmentEffect import SmashDamagePerBlockFallenEnchantmentEffect
-    from generated_symbols.data.enchantment.effect_component.TickEnchantmentEffect import TickEnchantmentEffect
-    from generated_symbols.data.enchantment.effect_component.TridentReturnAccelerationEnchantmentEffect import TridentReturnAccelerationEnchantmentEffect
-    from generated_symbols.data.util.SoundEventRef import SoundEventRef
+    from vanilla_mcdoc.data.enchantment.effect.AttributeEffect import AttributeEffect
+    from vanilla_mcdoc.data.enchantment.effect.ValueEffect import ValueEffect
+    from vanilla_mcdoc.data.enchantment.effect_component.AmmoUseEnchantmentEffect import AmmoUseEnchantmentEffect
+    from vanilla_mcdoc.data.enchantment.effect_component.ArmorEffectivenessEnchantmentEffect import ArmorEffectivenessEnchantmentEffect
+    from vanilla_mcdoc.data.enchantment.effect_component.BlockExperienceEnchantmentEffect import BlockExperienceEnchantmentEffect
+    from vanilla_mcdoc.data.enchantment.effect_component.CrossbowChargeSoundsEnchantmentEffect import CrossbowChargeSoundsEnchantmentEffect
+    from vanilla_mcdoc.data.enchantment.effect_component.DamageEnchantmentEffect import DamageEnchantmentEffect
+    from vanilla_mcdoc.data.enchantment.effect_component.DamageImmunityEnchantmentEffect import DamageImmunityEnchantmentEffect
+    from vanilla_mcdoc.data.enchantment.effect_component.DamageProtectionEnchantmentEffect import DamageProtectionEnchantmentEffect
+    from vanilla_mcdoc.data.enchantment.effect_component.EquipmentDropsEnchantmentEffect import EquipmentDropsEnchantmentEffect
+    from vanilla_mcdoc.data.enchantment.effect_component.FishingLuckBonusEnchantmentEffect import FishingLuckBonusEnchantmentEffect
+    from vanilla_mcdoc.data.enchantment.effect_component.FishingTimeReductionEnchantmentEffect import FishingTimeReductionEnchantmentEffect
+    from vanilla_mcdoc.data.enchantment.effect_component.HitBlockEnchantmentEffect import HitBlockEnchantmentEffect
+    from vanilla_mcdoc.data.enchantment.effect_component.ItemDamageEnchantmentEffect import ItemDamageEnchantmentEffect
+    from vanilla_mcdoc.data.enchantment.effect_component.KnockbackEnchantmentEffect import KnockbackEnchantmentEffect
+    from vanilla_mcdoc.data.enchantment.effect_component.LocationChangedEnchantmentEffect import LocationChangedEnchantmentEffect
+    from vanilla_mcdoc.data.enchantment.effect_component.MobExperienceEnchantmentEffect import MobExperienceEnchantmentEffect
+    from vanilla_mcdoc.data.enchantment.effect_component.PostAttackEnchantmentEffect import PostAttackEnchantmentEffect
+    from vanilla_mcdoc.data.enchantment.effect_component.PostPiercingAttackEnchantmentEffect import PostPiercingAttackEnchantmentEffect
+    from vanilla_mcdoc.data.enchantment.effect_component.ProjectileCountEnchantmentEffect import ProjectileCountEnchantmentEffect
+    from vanilla_mcdoc.data.enchantment.effect_component.ProjectilePiercingEnchantmentEffect import ProjectilePiercingEnchantmentEffect
+    from vanilla_mcdoc.data.enchantment.effect_component.ProjectileSpawnedEnchantmentEffect import ProjectileSpawnedEnchantmentEffect
+    from vanilla_mcdoc.data.enchantment.effect_component.ProjectileSpreadEnchantmentEffect import ProjectileSpreadEnchantmentEffect
+    from vanilla_mcdoc.data.enchantment.effect_component.RepairWithXpEnchantmentEffect import RepairWithXpEnchantmentEffect
+    from vanilla_mcdoc.data.enchantment.effect_component.SmashDamagePerBlockFallenEnchantmentEffect import SmashDamagePerBlockFallenEnchantmentEffect
+    from vanilla_mcdoc.data.enchantment.effect_component.TickEnchantmentEffect import TickEnchantmentEffect
+    from vanilla_mcdoc.data.enchantment.effect_component.TridentReturnAccelerationEnchantmentEffect import TridentReturnAccelerationEnchantmentEffect
+    from vanilla_mcdoc.data.util.SoundEventRef import SoundEventRef
 
 
 class EnchantmentEffectComponentMapValueStructEffectComponentPreventArmorChange(GeneratedModel):

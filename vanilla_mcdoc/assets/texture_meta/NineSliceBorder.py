@@ -1,13 +1,13 @@
 """
 Generated from symbols.json for ::java::assets::texture_meta::NineSliceBorder
-Local link to file: generated_symbols/assets/texture_meta/NineSliceBorder.py
+Local link to file: vanilla_mcdoc/assets/texture_meta/NineSliceBorder.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class NineSliceBorder(GeneratedModel):

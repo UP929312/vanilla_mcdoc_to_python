@@ -1,13 +1,13 @@
 """
 Generated from symbols.json for ::java::assets::font::BitmapProvider
-Local link to file: generated_symbols/assets/font/BitmapProvider.py
+Local link to file: vanilla_mcdoc/assets/font/BitmapProvider.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class BitmapProvider(GeneratedModel):

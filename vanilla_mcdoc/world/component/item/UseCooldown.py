@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::world::component::item::UseCooldown
-Local link to file: generated_symbols/world/component/item/UseCooldown.py
+Local link to file: vanilla_mcdoc/world/component/item/UseCooldown.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 
 class UseCooldown(GeneratedModel):

@@ -1,10 +1,10 @@
 """
 Generated from symbols.json for ::java::util::memory::AngryAt
-Local link to file: generated_symbols/util/memory/AngryAt.py
+Local link to file: vanilla_mcdoc/util/memory/AngryAt.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.minecraft_types import MinecraftUUID
-from generated_symbols.util.memory.ExpirableValue import ExpirableValue
+from vanilla_mcdoc.minecraft_types import MinecraftUUID
+from vanilla_mcdoc.util.memory.ExpirableValue import ExpirableValue
 
 
 class AngryAt(ExpirableValue):

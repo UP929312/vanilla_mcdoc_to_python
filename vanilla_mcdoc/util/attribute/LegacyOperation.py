@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::util::attribute::LegacyOperation
-Local link to file: generated_symbols/util/attribute/LegacyOperation.py
+Local link to file: vanilla_mcdoc/util/attribute/LegacyOperation.py
 """
 # ~~~ CODE ~~~
 from enum import IntEnum

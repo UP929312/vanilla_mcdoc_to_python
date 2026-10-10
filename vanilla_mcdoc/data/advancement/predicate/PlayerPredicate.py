@@ -1,18 +1,18 @@
 """
 Generated from symbols.json for ::java::data::advancement::predicate::PlayerPredicate
-Local link to file: generated_symbols/data/advancement/predicate/PlayerPredicate.py
+Local link to file: vanilla_mcdoc/data/advancement/predicate/PlayerPredicate.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.advancement.predicate.EntityPredicate import EntityPredicate
-    from generated_symbols.data.advancement.predicate.GameMode import GameMode
-    from generated_symbols.data.advancement.predicate.StatisticPredicate import StatisticPredicate
-    from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
+    from vanilla_mcdoc.data.advancement.predicate.EntityPredicate import EntityPredicate
+    from vanilla_mcdoc.data.advancement.predicate.GameMode import GameMode
+    from vanilla_mcdoc.data.advancement.predicate.StatisticPredicate import StatisticPredicate
+    from vanilla_mcdoc.data.util.MinMaxBounds import MinMaxBounds
 
 
 class InputStruct(GeneratedModel):

@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::assets::shader::program::Sampler
-Local link to file: generated_symbols/assets/shader/program/Sampler.py
+Local link to file: vanilla_mcdoc/assets/shader/program/Sampler.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class Sampler(GeneratedModel):

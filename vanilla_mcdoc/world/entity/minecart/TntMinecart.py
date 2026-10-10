@@ -1,13 +1,13 @@
 """
 Generated from symbols.json for ::java::world::entity::minecart::TntMinecart
-Local link to file: generated_symbols/world/entity/minecart/TntMinecart.py
+Local link to file: vanilla_mcdoc/world/entity/minecart/TntMinecart.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated
 
 from pydantic import Field
 
-from generated_symbols.world.entity.minecart.Minecart import Minecart
+from vanilla_mcdoc.world.entity.minecart.Minecart import Minecart
 
 
 class TntMinecart(Minecart):

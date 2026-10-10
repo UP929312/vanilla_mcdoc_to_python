@@ -1,11 +1,11 @@
 """
 Generated from symbols.json for ::java::util::ExplicitInclusiveRange
-Local link to file: generated_symbols/util/ExplicitInclusiveRange.py
+Local link to file: vanilla_mcdoc/util/ExplicitInclusiveRange.py
 """
 # ~~~ CODE ~~~
 from typing import Generic, TypeVar
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 T = TypeVar('T')

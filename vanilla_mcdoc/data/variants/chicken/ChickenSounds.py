@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::data::variants::chicken::ChickenSounds
-Local link to file: generated_symbols/data/variants/chicken/ChickenSounds.py
+Local link to file: vanilla_mcdoc/data/variants/chicken/ChickenSounds.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, ClassVar
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.util.SoundEventRef import SoundEventRef
+    from vanilla_mcdoc.data.util.SoundEventRef import SoundEventRef
 
 
 class ChickenSounds(GeneratedModel):

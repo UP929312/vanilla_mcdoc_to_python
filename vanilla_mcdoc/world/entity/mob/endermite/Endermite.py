@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::endermite::Endermite
-Local link to file: generated_symbols/world/entity/mob/endermite/Endermite.py
+Local link to file: vanilla_mcdoc/world/entity/mob/endermite/Endermite.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.world.entity.mob.MobBase import MobBase
+from vanilla_mcdoc.world.entity.mob.MobBase import MobBase
 
 
 class Endermite(MobBase):

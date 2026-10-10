@@ -1,11 +1,11 @@
 """
 Generated from symbols.json for ::java::data::worldgen::ClampedNormalIntProvider
-Local link to file: generated_symbols/data/worldgen/ClampedNormalIntProvider.py
+Local link to file: vanilla_mcdoc/data/worldgen/ClampedNormalIntProvider.py
 """
 # ~~~ CODE ~~~
 from typing import Generic, TypeVar
 
-from generated_symbols.data.worldgen.UniformIntProvider import UniformIntProvider
+from vanilla_mcdoc.data.worldgen.UniformIntProvider import UniformIntProvider
 
 
 T = TypeVar('T')

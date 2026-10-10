@@ -1,12 +1,12 @@
 """
 Generated from symbols.json for ::java::util::text::ScoreText
-Local link to file: generated_symbols/util/text/ScoreText.py
+Local link to file: vanilla_mcdoc/util/text/ScoreText.py
 """
 # ~~~ CODE ~~~
 from typing import Literal
 
-from generated_symbols.base import GeneratedModel
-from generated_symbols.util.text.TextBase import TextBase
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.util.text.TextBase import TextBase
 
 
 class ScoreStruct(GeneratedModel):

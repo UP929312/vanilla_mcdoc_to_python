@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::raider::Ravager
-Local link to file: generated_symbols/world/entity/mob/raider/Ravager.py
+Local link to file: vanilla_mcdoc/world/entity/mob/raider/Ravager.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.world.entity.mob.raider.RaiderBase import RaiderBase
+from vanilla_mcdoc.world.entity.mob.raider.RaiderBase import RaiderBase
 
 
 class Ravager(RaiderBase):

@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::data::enchantment::provider::ByCostEnchantmentProvider
-Local link to file: generated_symbols/data/enchantment/provider/ByCostEnchantmentProvider.py
+Local link to file: vanilla_mcdoc/data/enchantment/provider/ByCostEnchantmentProvider.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, ClassVar
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.enchantment.provider.EnchantmentsType import EnchantmentsType
-    from generated_symbols.data.worldgen.IntProvider import IntProvider
+    from vanilla_mcdoc.data.enchantment.provider.EnchantmentsType import EnchantmentsType
+    from vanilla_mcdoc.data.worldgen.IntProvider import IntProvider
 
 
 class ByCostEnchantmentProvider(GeneratedModel):

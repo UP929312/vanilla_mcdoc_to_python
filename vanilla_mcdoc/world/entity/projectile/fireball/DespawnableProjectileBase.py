@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::world::entity::projectile::fireball::DespawnableProjectileBase
-Local link to file: generated_symbols/world/entity/projectile/fireball/DespawnableProjectileBase.py
+Local link to file: vanilla_mcdoc/world/entity/projectile/fireball/DespawnableProjectileBase.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.world.entity.projectile.fireball.AcceleratingProjectileBase import AcceleratingProjectileBase
+from vanilla_mcdoc.world.entity.projectile.fireball.AcceleratingProjectileBase import AcceleratingProjectileBase
 
 
 class DespawnableProjectileBase(AcceleratingProjectileBase):

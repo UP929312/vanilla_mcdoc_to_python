@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::data::number_provider::legacy::ConstantNumberProvider
-Local link to file: generated_symbols/data/number_provider/legacy/ConstantNumberProvider.py
+Local link to file: vanilla_mcdoc/data/number_provider/legacy/ConstantNumberProvider.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class ConstantNumberProvider(GeneratedModel):

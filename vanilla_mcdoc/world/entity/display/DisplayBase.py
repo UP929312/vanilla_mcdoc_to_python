@@ -1,18 +1,18 @@
 """
 Generated from symbols.json for ::java::world::entity::display::DisplayBase
-Local link to file: generated_symbols/world/entity/display/DisplayBase.py
+Local link to file: vanilla_mcdoc/world/entity/display/DisplayBase.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, Literal
 
 from pydantic import Field
 
-from generated_symbols.world.entity.EntityBase import EntityBase
+from vanilla_mcdoc.world.entity.EntityBase import EntityBase
 
 if TYPE_CHECKING:
-    from generated_symbols.world.entity.display.Billboard import Billboard
-    from generated_symbols.world.entity.display.Brightness import Brightness
-    from generated_symbols.world.entity.display.Transformation import Transformation
+    from vanilla_mcdoc.world.entity.display.Billboard import Billboard
+    from vanilla_mcdoc.world.entity.display.Brightness import Brightness
+    from vanilla_mcdoc.world.entity.display.Transformation import Transformation
 
 
 class DisplayBase(EntityBase):

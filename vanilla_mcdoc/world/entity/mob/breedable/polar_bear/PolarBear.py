@@ -1,10 +1,10 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::breedable::polar_bear::PolarBear
-Local link to file: generated_symbols/world/entity/mob/breedable/polar_bear/PolarBear.py
+Local link to file: vanilla_mcdoc/world/entity/mob/breedable/polar_bear/PolarBear.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.world.entity.mob.NeutralMob import NeutralMob
-from generated_symbols.world.entity.mob.breedable.Breedable import Breedable
+from vanilla_mcdoc.world.entity.mob.NeutralMob import NeutralMob
+from vanilla_mcdoc.world.entity.mob.breedable.Breedable import Breedable
 
 
 class PolarBear(Breedable, NeutralMob):

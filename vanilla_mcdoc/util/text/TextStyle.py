@@ -1,20 +1,20 @@
 """
 Generated from symbols.json for ::java::util::text::TextStyle
-Local link to file: generated_symbols/util/text/TextStyle.py
+Local link to file: vanilla_mcdoc/util/text/TextStyle.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.util.color.RGBA import RGBA
-    from generated_symbols.util.text.ClickEvent import ClickEvent
-    from generated_symbols.util.text.HoverEvent import HoverEvent
-    from generated_symbols.util.text.TextColor import TextColor
+    from vanilla_mcdoc.util.color.RGBA import RGBA
+    from vanilla_mcdoc.util.text.ClickEvent import ClickEvent
+    from vanilla_mcdoc.util.text.HoverEvent import HoverEvent
+    from vanilla_mcdoc.util.text.TextColor import TextColor
 
 
 class TextStyle(GeneratedModel):

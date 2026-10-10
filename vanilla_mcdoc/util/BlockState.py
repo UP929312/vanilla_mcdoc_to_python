@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::util::BlockState
-Local link to file: generated_symbols/util/BlockState.py
+Local link to file: vanilla_mcdoc/util/BlockState.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.util.block_state.BlockState import BlockState as BlockState_alias
+from vanilla_mcdoc.util.block_state.BlockState import BlockState as BlockState_alias
 
 
 type BlockState = BlockState_alias

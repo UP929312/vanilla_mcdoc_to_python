@@ -1,13 +1,13 @@
 """
 Generated from symbols.json for ::java::data::worldgen::density_function::Interpolated
-Local link to file: generated_symbols/data/worldgen/density_function/Interpolated.py
+Local link to file: vanilla_mcdoc/data/worldgen/density_function/Interpolated.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated
 
 from pydantic import Field
 
-from generated_symbols.data.worldgen.density_function.OneArgument import OneArgument
+from vanilla_mcdoc.data.worldgen.density_function.OneArgument import OneArgument
 
 
 class Interpolated(OneArgument):

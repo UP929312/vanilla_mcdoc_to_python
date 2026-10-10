@@ -1,10 +1,10 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::slime::Slime
-Local link to file: generated_symbols/world/entity/mob/slime/Slime.py
+Local link to file: vanilla_mcdoc/world/entity/mob/slime/Slime.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.world.entity.mob.MobBase import MobBase
-from generated_symbols.world.entity.mob.slime.CubeMob import CubeMob
+from vanilla_mcdoc.world.entity.mob.MobBase import MobBase
+from vanilla_mcdoc.world.entity.mob.slime.CubeMob import CubeMob
 
 
 class Slime(CubeMob, MobBase):

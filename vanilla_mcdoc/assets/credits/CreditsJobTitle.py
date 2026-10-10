@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::assets::credits::CreditsJobTitle
-Local link to file: generated_symbols/assets/credits/CreditsJobTitle.py
+Local link to file: vanilla_mcdoc/assets/credits/CreditsJobTitle.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class CreditsJobTitle(GeneratedModel):

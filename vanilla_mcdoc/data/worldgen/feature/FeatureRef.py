@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::data::worldgen::feature::FeatureRef
-Local link to file: generated_symbols/data/worldgen/feature/FeatureRef.py
+Local link to file: vanilla_mcdoc/data/worldgen/feature/FeatureRef.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.data.worldgen.feature.placement.PlacedFeatureRef import PlacedFeatureRef
+from vanilla_mcdoc.data.worldgen.feature.placement.PlacedFeatureRef import PlacedFeatureRef
 
 
 type FeatureRef = PlacedFeatureRef

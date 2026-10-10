@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::world::component::item::ApplyEffectsConsumeEffect
-Local link to file: generated_symbols/world/component/item/ApplyEffectsConsumeEffect.py
+Local link to file: vanilla_mcdoc/world/component/item/ApplyEffectsConsumeEffect.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.util.effect.MobEffectInstance import MobEffectInstance
+    from vanilla_mcdoc.util.effect.MobEffectInstance import MobEffectInstance
 
 
 class ApplyEffectsConsumeEffect(GeneratedModel):

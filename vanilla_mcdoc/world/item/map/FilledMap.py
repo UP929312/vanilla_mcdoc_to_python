@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::world::item::map::FilledMap
-Local link to file: generated_symbols/world/item/map/FilledMap.py
+Local link to file: vanilla_mcdoc/world/item/map/FilledMap.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated
 
 from pydantic import Field
 
-from generated_symbols.world.item.Display import Display
-from generated_symbols.world.item.ItemBase import ItemBase
-from generated_symbols.world.item.map.Decoration import Decoration
+from vanilla_mcdoc.world.item.Display import Display
+from vanilla_mcdoc.world.item.ItemBase import ItemBase
+from vanilla_mcdoc.world.item.map.Decoration import Decoration
 
 
 class DecorationsStruct(Decoration):

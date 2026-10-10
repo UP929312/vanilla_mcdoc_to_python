@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::util::avatar::HumanoidArm
-Local link to file: generated_symbols/util/avatar/HumanoidArm.py
+Local link to file: vanilla_mcdoc/util/avatar/HumanoidArm.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

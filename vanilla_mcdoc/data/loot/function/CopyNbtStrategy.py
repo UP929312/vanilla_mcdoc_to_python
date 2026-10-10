@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::data::loot::function::CopyNbtStrategy
-Local link to file: generated_symbols/data/loot/function/CopyNbtStrategy.py
+Local link to file: vanilla_mcdoc/data/loot/function/CopyNbtStrategy.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

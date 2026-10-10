@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::world::block::banner::Banner
-Local link to file: generated_symbols/world/block/banner/Banner.py
+Local link to file: vanilla_mcdoc/world/block/banner/Banner.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.world.block.BlockEntity import BlockEntity
-from generated_symbols.world.block.Nameable import Nameable
+from vanilla_mcdoc.world.block.BlockEntity import BlockEntity
+from vanilla_mcdoc.world.block.Nameable import Nameable
 
 if TYPE_CHECKING:
-    from generated_symbols.world.block.banner.BannerPatternLayer import BannerPatternLayer
+    from vanilla_mcdoc.world.block.banner.BannerPatternLayer import BannerPatternLayer
 
 
 class Banner(BlockEntity, Nameable):

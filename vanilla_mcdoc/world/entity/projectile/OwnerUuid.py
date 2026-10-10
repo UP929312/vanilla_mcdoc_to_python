@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::world::entity::projectile::OwnerUuid
-Local link to file: generated_symbols/world/entity/projectile/OwnerUuid.py
+Local link to file: vanilla_mcdoc/world/entity/projectile/OwnerUuid.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class OwnerUuid(GeneratedModel):

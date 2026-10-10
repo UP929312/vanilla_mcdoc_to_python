@@ -1,13 +1,13 @@
 """
 Generated from symbols.json for ::java::assets::model::ItemTransform
-Local link to file: generated_symbols/assets/model/ItemTransform.py
+Local link to file: vanilla_mcdoc/assets/model/ItemTransform.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class ItemTransform(GeneratedModel):

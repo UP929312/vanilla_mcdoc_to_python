@@ -1,10 +1,10 @@
 """
 Generated from symbols.json for ::java::data::advancement::trigger::ImpossibleTrigger
-Local link to file: generated_symbols/data/advancement/trigger/ImpossibleTrigger.py
+Local link to file: vanilla_mcdoc/data/advancement/trigger/ImpossibleTrigger.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.base import GeneratedModel
-from generated_symbols.data.advancement.trigger.AllOptional import AllOptional
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.data.advancement.trigger.AllOptional import AllOptional
 
 
 class ImpossibleTriggerTypeArg(GeneratedModel):

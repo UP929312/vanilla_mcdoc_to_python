@@ -1,20 +1,20 @@
 """
 Generated from symbols.json for ::java::data::sulfur_cube_archetype::SulfurCubeArchetype
-Local link to file: generated_symbols/data/sulfur_cube_archetype/SulfurCubeArchetype.py
+Local link to file: vanilla_mcdoc/data/sulfur_cube_archetype/SulfurCubeArchetype.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.sulfur_cube_archetype.AttributeEntry import AttributeEntry
-    from generated_symbols.data.sulfur_cube_archetype.ContactDamage import ContactDamage
-    from generated_symbols.data.sulfur_cube_archetype.ExplosionData import ExplosionData
-    from generated_symbols.data.sulfur_cube_archetype.KnockbackModifiers import KnockbackModifiers
-    from generated_symbols.data.sulfur_cube_archetype.SoundSettings import SoundSettings
-    from generated_symbols.registry.KnownItemId import KnownItemId
+    from vanilla_mcdoc.data.sulfur_cube_archetype.AttributeEntry import AttributeEntry
+    from vanilla_mcdoc.data.sulfur_cube_archetype.ContactDamage import ContactDamage
+    from vanilla_mcdoc.data.sulfur_cube_archetype.ExplosionData import ExplosionData
+    from vanilla_mcdoc.data.sulfur_cube_archetype.KnockbackModifiers import KnockbackModifiers
+    from vanilla_mcdoc.data.sulfur_cube_archetype.SoundSettings import SoundSettings
+    from vanilla_mcdoc.registry.KnownItemId import KnownItemId
 
 
 class SulfurCubeArchetype(GeneratedModel):

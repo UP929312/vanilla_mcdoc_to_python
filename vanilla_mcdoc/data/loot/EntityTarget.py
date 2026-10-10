@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::data::loot::EntityTarget
-Local link to file: generated_symbols/data/loot/EntityTarget.py
+Local link to file: vanilla_mcdoc/data/loot/EntityTarget.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

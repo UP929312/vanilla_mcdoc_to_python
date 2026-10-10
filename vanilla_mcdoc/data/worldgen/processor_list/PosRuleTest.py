@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::data::worldgen::processor_list::PosRuleTest
-Local link to file: generated_symbols/data/worldgen/processor_list/PosRuleTest.py
+Local link to file: vanilla_mcdoc/data/worldgen/processor_list/PosRuleTest.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
 from pydantic import Field
 
-from generated_symbols.data.worldgen.processor_list.AxisAlignedLinearPos import AxisAlignedLinearPos
-from generated_symbols.data.worldgen.processor_list.LinearPos import LinearPos
+from vanilla_mcdoc.data.worldgen.processor_list.AxisAlignedLinearPos import AxisAlignedLinearPos
+from vanilla_mcdoc.data.worldgen.processor_list.LinearPos import LinearPos
 
 
 class PosRuleTestAxisAlignedLinearPos(AxisAlignedLinearPos):

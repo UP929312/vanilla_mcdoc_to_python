@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::data::enchantment::level_based_value::LinearLevelValue
-Local link to file: generated_symbols/data/enchantment/level_based_value/LinearLevelValue.py
+Local link to file: vanilla_mcdoc/data/enchantment/level_based_value/LinearLevelValue.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class LinearLevelValue(GeneratedModel):

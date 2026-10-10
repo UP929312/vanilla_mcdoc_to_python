@@ -1,35 +1,35 @@
 """
 Generated from symbols.json for ::java::data::timeline::EnvironmentAttributeTrackMap
-Local link to file: generated_symbols/data/timeline/EnvironmentAttributeTrackMap.py
+Local link to file: vanilla_mcdoc/data/timeline/EnvironmentAttributeTrackMap.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, Any, Literal
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
-from generated_symbols.data.timeline.AttributeTrackBase import AttributeTrackBase
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.data.timeline.AttributeTrackBase import AttributeTrackBase
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.util.MoonPhase import MoonPhase
-    from generated_symbols.data.worldgen.attribute.AmbientParticle import AmbientParticle
-    from generated_symbols.data.worldgen.attribute.AmbientSounds import AmbientSounds
-    from generated_symbols.data.worldgen.attribute.BackgroundMusic import BackgroundMusic
-    from generated_symbols.data.worldgen.attribute.BedRule import BedRule
-    from generated_symbols.data.worldgen.attribute.TriState import TriState
-    from generated_symbols.data.worldgen.attribute.modifier.BlendToGray import BlendToGray
-    from generated_symbols.data.worldgen.attribute.modifier.BooleanModifierType import BooleanModifierType
-    from generated_symbols.data.worldgen.attribute.modifier.ColorModifierType import ColorModifierType
-    from generated_symbols.data.worldgen.attribute.modifier.FloatModifierType import FloatModifierType
-    from generated_symbols.data.worldgen.attribute.modifier.FloatWithAlpha import FloatWithAlpha
-    from generated_symbols.data.worldgen.attribute.modifier.ListModifierType import ListModifierType
-    from generated_symbols.data.worldgen.attribute.modifier.MergeableModifierType import MergeableModifierType
-    from generated_symbols.data.worldgen.biome.NaturalMobSpawns import NaturalMobSpawns
-    from generated_symbols.registry.KnownEnvironmentAttributeId import KnownEnvironmentAttributeId
-    from generated_symbols.util.color.StringARGB import StringARGB
-    from generated_symbols.util.color.StringRGB import StringRGB
-    from generated_symbols.util.particle.Particle import Particle
+    from vanilla_mcdoc.data.util.MoonPhase import MoonPhase
+    from vanilla_mcdoc.data.worldgen.attribute.AmbientParticle import AmbientParticle
+    from vanilla_mcdoc.data.worldgen.attribute.AmbientSounds import AmbientSounds
+    from vanilla_mcdoc.data.worldgen.attribute.BackgroundMusic import BackgroundMusic
+    from vanilla_mcdoc.data.worldgen.attribute.BedRule import BedRule
+    from vanilla_mcdoc.data.worldgen.attribute.TriState import TriState
+    from vanilla_mcdoc.data.worldgen.attribute.modifier.BlendToGray import BlendToGray
+    from vanilla_mcdoc.data.worldgen.attribute.modifier.BooleanModifierType import BooleanModifierType
+    from vanilla_mcdoc.data.worldgen.attribute.modifier.ColorModifierType import ColorModifierType
+    from vanilla_mcdoc.data.worldgen.attribute.modifier.FloatModifierType import FloatModifierType
+    from vanilla_mcdoc.data.worldgen.attribute.modifier.FloatWithAlpha import FloatWithAlpha
+    from vanilla_mcdoc.data.worldgen.attribute.modifier.ListModifierType import ListModifierType
+    from vanilla_mcdoc.data.worldgen.attribute.modifier.MergeableModifierType import MergeableModifierType
+    from vanilla_mcdoc.data.worldgen.biome.NaturalMobSpawns import NaturalMobSpawns
+    from vanilla_mcdoc.registry.KnownEnvironmentAttributeId import KnownEnvironmentAttributeId
+    from vanilla_mcdoc.util.color.StringARGB import StringARGB
+    from vanilla_mcdoc.util.color.StringRGB import StringRGB
+    from vanilla_mcdoc.util.particle.Particle import Particle
 
 
 class KeyframesStruct(GeneratedModel):

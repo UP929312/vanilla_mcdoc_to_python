@@ -1,10 +1,10 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::breedable::villager::WanderingTrader
-Local link to file: generated_symbols/world/entity/mob/breedable/villager/WanderingTrader.py
+Local link to file: vanilla_mcdoc/world/entity/mob/breedable/villager/WanderingTrader.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.world.entity.mob.MobBase import MobBase
-from generated_symbols.world.entity.mob.breedable.villager.VillagerBase import VillagerBase
+from vanilla_mcdoc.world.entity.mob.MobBase import MobBase
+from vanilla_mcdoc.world.entity.mob.breedable.villager.VillagerBase import VillagerBase
 
 
 class WanderingTrader(MobBase, VillagerBase):

@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::data::number_provider::DistributionProvider
-Local link to file: generated_symbols/data/number_provider/DistributionProvider.py
+Local link to file: vanilla_mcdoc/data/number_provider/DistributionProvider.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Generic, TypeVar
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.util.NonEmptyWeightedList import NonEmptyWeightedList
+    from vanilla_mcdoc.util.NonEmptyWeightedList import NonEmptyWeightedList
 
 
 T = TypeVar('T')

@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::world::entity::BlockAttachedEntity
-Local link to file: generated_symbols/world/entity/BlockAttachedEntity.py
+Local link to file: vanilla_mcdoc/world/entity/BlockAttachedEntity.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.world.entity.EntityBase import EntityBase
+from vanilla_mcdoc.world.entity.EntityBase import EntityBase
 
 
 class BlockAttachedEntity(EntityBase):

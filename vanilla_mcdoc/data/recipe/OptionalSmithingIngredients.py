@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::data::recipe::OptionalSmithingIngredients
-Local link to file: generated_symbols/data/recipe/OptionalSmithingIngredients.py
+Local link to file: vanilla_mcdoc/data/recipe/OptionalSmithingIngredients.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.recipe.Ingredient import Ingredient
+    from vanilla_mcdoc.data.recipe.Ingredient import Ingredient
 
 
 class OptionalSmithingIngredients(GeneratedModel):

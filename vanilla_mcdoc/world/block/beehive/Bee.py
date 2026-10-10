@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::world::block::beehive::Bee
-Local link to file: generated_symbols/world/block/beehive/Bee.py
+Local link to file: vanilla_mcdoc/world/block/beehive/Bee.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.world.entity.AnyEntity import AnyEntity
+    from vanilla_mcdoc.world.entity.AnyEntity import AnyEntity
 
 
 class Bee(GeneratedModel):

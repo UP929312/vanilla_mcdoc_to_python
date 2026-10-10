@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::util::NonEmptyWeightedList
-Local link to file: generated_symbols/util/NonEmptyWeightedList.py
+Local link to file: vanilla_mcdoc/util/NonEmptyWeightedList.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, TypeVar
@@ -8,7 +8,7 @@ from typing import TYPE_CHECKING, Annotated, TypeVar
 from pydantic import Field
 
 if TYPE_CHECKING:
-    from generated_symbols.util.WeightedEntry import WeightedEntry
+    from vanilla_mcdoc.util.WeightedEntry import WeightedEntry
 
 
 T = TypeVar('T')

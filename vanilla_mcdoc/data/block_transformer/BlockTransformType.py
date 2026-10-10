@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::data::block_transformer::BlockTransformType
-Local link to file: generated_symbols/data/block_transformer/BlockTransformType.py
+Local link to file: vanilla_mcdoc/data/block_transformer/BlockTransformType.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

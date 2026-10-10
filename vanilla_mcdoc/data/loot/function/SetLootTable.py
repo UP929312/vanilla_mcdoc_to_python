@@ -1,12 +1,12 @@
 """
 Generated from symbols.json for ::java::data::loot::function::SetLootTable
-Local link to file: generated_symbols/data/loot/function/SetLootTable.py
+Local link to file: vanilla_mcdoc/data/loot/function/SetLootTable.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from generated_symbols.data.loot.function.Conditions import Conditions
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.data.loot.function.Conditions import Conditions
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 
 class SetLootTable(Conditions):

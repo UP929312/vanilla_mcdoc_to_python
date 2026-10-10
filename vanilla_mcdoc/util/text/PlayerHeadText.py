@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::util::text::PlayerHeadText
-Local link to file: generated_symbols/util/text/PlayerHeadText.py
+Local link to file: vanilla_mcdoc/util/text/PlayerHeadText.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Literal
 
-from generated_symbols.util.text.ObjectTextConfig import ObjectTextConfig
-from generated_symbols.util.text.TextBase import TextBase
+from vanilla_mcdoc.util.text.ObjectTextConfig import ObjectTextConfig
+from vanilla_mcdoc.util.text.TextBase import TextBase
 
 if TYPE_CHECKING:
-    from generated_symbols.util.avatar.Profile import Profile
+    from vanilla_mcdoc.util.avatar.Profile import Profile
 
 
 class PlayerHeadText(ObjectTextConfig, TextBase):

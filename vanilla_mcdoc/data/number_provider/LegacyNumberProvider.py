@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::data::number_provider::LegacyNumberProvider
-Local link to file: generated_symbols/data/number_provider/LegacyNumberProvider.py
+Local link to file: vanilla_mcdoc/data/number_provider/LegacyNumberProvider.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.data.number_provider.legacy.LegacyNumberProvider import LegacyNumberProvider as LegacyNumberProvider_alias
+from vanilla_mcdoc.data.number_provider.legacy.LegacyNumberProvider import LegacyNumberProvider as LegacyNumberProvider_alias
 
 
 type LegacyNumberProvider = LegacyNumberProvider_alias

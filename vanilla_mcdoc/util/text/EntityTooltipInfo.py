@@ -1,16 +1,15 @@
 """
 Generated from symbols.json for ::java::util::text::EntityTooltipInfo
-Local link to file: generated_symbols/util/text/EntityTooltipInfo.py
+Local link to file: vanilla_mcdoc/util/text/EntityTooltipInfo.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.base import GeneratedModel
-from generated_symbols.minecraft_types import MinecraftUUID, MinecraftUUIDString
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec, MinecraftUUID, MinecraftUUIDString
 
 if TYPE_CHECKING:
-    from generated_symbols.util.text.Text import Text
+    from vanilla_mcdoc.util.text.Text import Text
 
 
 class EntityTooltipInfo(GeneratedModel):

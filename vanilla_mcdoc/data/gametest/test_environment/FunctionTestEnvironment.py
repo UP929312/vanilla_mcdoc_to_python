@@ -1,12 +1,12 @@
 """
 Generated from symbols.json for ::java::data::gametest::test_environment::FunctionTestEnvironment
-Local link to file: generated_symbols/data/gametest/test_environment/FunctionTestEnvironment.py
+Local link to file: vanilla_mcdoc/data/gametest/test_environment/FunctionTestEnvironment.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, ClassVar
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 
 class FunctionTestEnvironment(GeneratedModel):

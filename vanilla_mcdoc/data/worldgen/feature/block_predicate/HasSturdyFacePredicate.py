@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::data::worldgen::feature::block_predicate::HasSturdyFacePredicate
-Local link to file: generated_symbols/data/worldgen/feature/block_predicate/HasSturdyFacePredicate.py
+Local link to file: vanilla_mcdoc/data/worldgen/feature/block_predicate/HasSturdyFacePredicate.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.data.worldgen.feature.block_predicate.PredicateOffset import PredicateOffset
+from vanilla_mcdoc.data.worldgen.feature.block_predicate.PredicateOffset import PredicateOffset
 
 if TYPE_CHECKING:
-    from generated_symbols.util.direction.Direction import Direction
+    from vanilla_mcdoc.util.direction.Direction import Direction
 
 
 class HasSturdyFacePredicate(PredicateOffset):

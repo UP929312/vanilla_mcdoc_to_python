@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::data::worldgen::dimension::biome_source::ClimateParameter
-Local link to file: generated_symbols/data/worldgen/dimension/biome_source/ClimateParameter.py
+Local link to file: vanilla_mcdoc/data/worldgen/dimension/biome_source/ClimateParameter.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated

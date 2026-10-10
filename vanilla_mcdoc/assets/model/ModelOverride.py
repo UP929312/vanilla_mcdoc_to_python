@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::assets::model::ModelOverride
-Local link to file: generated_symbols/assets/model/ModelOverride.py
+Local link to file: vanilla_mcdoc/assets/model/ModelOverride.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.assets.model.ModelRef import ModelRef
-    from generated_symbols.assets.model.Predicates import Predicates
+    from vanilla_mcdoc.assets.model.ModelRef import ModelRef
+    from vanilla_mcdoc.assets.model.Predicates import Predicates
 
 
 class ModelOverride(GeneratedModel):

@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::util::text::TranslatedText
-Local link to file: generated_symbols/util/text/TranslatedText.py
+Local link to file: vanilla_mcdoc/util/text/TranslatedText.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, Literal
 
 from pydantic import Field
 
-from generated_symbols.util.text.TextBase import TextBase
+from vanilla_mcdoc.util.text.TextBase import TextBase
 
 if TYPE_CHECKING:
-    from generated_symbols.util.text.TranslationArg import TranslationArg
+    from vanilla_mcdoc.util.text.TranslationArg import TranslationArg
 
 
 class TranslatedText(TextBase):

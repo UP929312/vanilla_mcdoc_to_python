@@ -1,18 +1,18 @@
 """
 Generated from symbols.json for ::java::data::worldgen::feature::MultifaceGrowthConfig
-Local link to file: generated_symbols/data/worldgen/feature/MultifaceGrowthConfig.py
+Local link to file: vanilla_mcdoc/data/worldgen/feature/MultifaceGrowthConfig.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.feature.MultifaceBlock import MultifaceBlock
-    from generated_symbols.registry.KnownBlockId import KnownBlockId
+    from vanilla_mcdoc.data.worldgen.feature.MultifaceBlock import MultifaceBlock
+    from vanilla_mcdoc.registry.KnownBlockId import KnownBlockId
 
 
 class MultifaceGrowthConfig(GeneratedModel):

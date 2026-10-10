@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::world::block::vault::ServerData
-Local link to file: generated_symbols/world/block/vault/ServerData.py
+Local link to file: vanilla_mcdoc/world/block/vault/ServerData.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.world.item.ItemStack import ItemStack
+    from vanilla_mcdoc.world.item.ItemStack import ItemStack
 
 
 class ServerData(GeneratedModel):

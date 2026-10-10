@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::data::worldgen::structure_set::ExclusionZone
-Local link to file: generated_symbols/data/worldgen/structure_set/ExclusionZone.py
+Local link to file: vanilla_mcdoc/data/worldgen/structure_set/ExclusionZone.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.structure_set.StructureSetRef import StructureSetRef
+    from vanilla_mcdoc.data.worldgen.structure_set.StructureSetRef import StructureSetRef
 
 
 class ExclusionZone(GeneratedModel):

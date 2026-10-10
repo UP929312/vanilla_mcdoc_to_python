@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::data::worldgen::feature::block_state_provider::NoiseThresholdProvider
-Local link to file: generated_symbols/data/worldgen/feature/block_state_provider/NoiseThresholdProvider.py
+Local link to file: vanilla_mcdoc/data/worldgen/feature/block_state_provider/NoiseThresholdProvider.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.data.worldgen.feature.block_state_provider.BaseNoiseProvider import BaseNoiseProvider
+from vanilla_mcdoc.data.worldgen.feature.block_state_provider.BaseNoiseProvider import BaseNoiseProvider
 
 if TYPE_CHECKING:
-    from generated_symbols.util.block_state.BlockState import BlockState
+    from vanilla_mcdoc.util.block_state.BlockState import BlockState
 
 
 class NoiseThresholdProvider(BaseNoiseProvider):

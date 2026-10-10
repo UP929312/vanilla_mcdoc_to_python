@@ -1,28 +1,28 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::player::Player
-Local link to file: generated_symbols/world/entity/mob/player/Player.py
+Local link to file: vanilla_mcdoc/world/entity/mob/player/Player.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.world.entity.mob.LivingEntity import LivingEntity
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.minecraft_types import IdSpec
+from vanilla_mcdoc.world.entity.mob.LivingEntity import LivingEntity
 
 if TYPE_CHECKING:
-    from generated_symbols.util.GlobalPos import GlobalPos
-    from generated_symbols.util.slot.SlottedItem import SlottedItem
-    from generated_symbols.world.entity.AnyEntity import AnyEntity
-    from generated_symbols.world.entity.mob.player.Abilities import Abilities
-    from generated_symbols.world.entity.mob.player.EnderPearl import EnderPearl
-    from generated_symbols.world.entity.mob.player.Gamemode import Gamemode
-    from generated_symbols.world.entity.mob.player.PlayerEquipment import PlayerEquipment
-    from generated_symbols.world.entity.mob.player.PlayerSlot import PlayerSlot
-    from generated_symbols.world.entity.mob.player.RecipeBook import RecipeBook
-    from generated_symbols.world.entity.mob.player.Respawn import Respawn
-    from generated_symbols.world.entity.mob.player.RootVehicle import RootVehicle
-    from generated_symbols.world.entity.mob.player.WardenSpawnTracker import WardenSpawnTracker
+    from vanilla_mcdoc.util.GlobalPos import GlobalPos
+    from vanilla_mcdoc.util.slot.SlottedItem import SlottedItem
+    from vanilla_mcdoc.world.entity.AnyEntity import AnyEntity
+    from vanilla_mcdoc.world.entity.mob.player.Abilities import Abilities
+    from vanilla_mcdoc.world.entity.mob.player.EnderPearl import EnderPearl
+    from vanilla_mcdoc.world.entity.mob.player.Gamemode import Gamemode
+    from vanilla_mcdoc.world.entity.mob.player.PlayerEquipment import PlayerEquipment
+    from vanilla_mcdoc.world.entity.mob.player.PlayerSlot import PlayerSlot
+    from vanilla_mcdoc.world.entity.mob.player.RecipeBook import RecipeBook
+    from vanilla_mcdoc.world.entity.mob.player.Respawn import Respawn
+    from vanilla_mcdoc.world.entity.mob.player.RootVehicle import RootVehicle
+    from vanilla_mcdoc.world.entity.mob.player.WardenSpawnTracker import WardenSpawnTracker
 
 
 class Player(LivingEntity):

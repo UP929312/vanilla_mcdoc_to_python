@@ -14,7 +14,6 @@ type KnownBlockId = Literal[
     'minecraft:bamboo_wall_sign',
     'minecraft:barrel',
     'minecraft:beacon',
-    'minecraft:bed',
     'minecraft:bee_nest',
     'minecraft:beehive',
     'minecraft:bell',

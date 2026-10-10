@@ -1,18 +1,18 @@
 """
 Generated from symbols.json for ::java::data::timeline::Timeline
-Local link to file: generated_symbols/data/timeline/Timeline.py
+Local link to file: vanilla_mcdoc/data/timeline/Timeline.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.timeline.EnvironmentAttributeTrackMap import EnvironmentAttributeTrackMap
-    from generated_symbols.data.timeline.TimeMarkerMap import TimeMarkerMap
+    from vanilla_mcdoc.data.timeline.EnvironmentAttributeTrackMap import EnvironmentAttributeTrackMap
+    from vanilla_mcdoc.data.timeline.TimeMarkerMap import TimeMarkerMap
 
 
 class Timeline(GeneratedModel):

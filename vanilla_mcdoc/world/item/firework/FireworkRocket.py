@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::world::item::firework::FireworkRocket
-Local link to file: generated_symbols/world/item/firework/FireworkRocket.py
+Local link to file: vanilla_mcdoc/world/item/firework/FireworkRocket.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
 from pydantic import Field
 
-from generated_symbols.world.item.ItemBase import ItemBase
+from vanilla_mcdoc.world.item.ItemBase import ItemBase
 
 if TYPE_CHECKING:
-    from generated_symbols.world.item.firework.Fireworks import Fireworks
+    from vanilla_mcdoc.world.item.firework.Fireworks import Fireworks
 
 
 class FireworkRocket(ItemBase):

@@ -1,12 +1,12 @@
 """
 Generated from symbols.json for ::java::data::advancement::predicate::FluidPredicateState
-Local link to file: generated_symbols/data/advancement/predicate/FluidPredicateState.py
+Local link to file: vanilla_mcdoc/data/advancement/predicate/FluidPredicateState.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
+    from vanilla_mcdoc.data.util.MinMaxBounds import MinMaxBounds
 
 
 type FluidPredicateState = dict[str, MinMaxBounds[int] | int | bool | str]

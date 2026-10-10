@@ -1,20 +1,20 @@
 """
 Generated from symbols.json for ::java::assets::item_definition::ModelTint
-Local link to file: generated_symbols/assets/item_definition/ModelTint.py
+Local link to file: vanilla_mcdoc/assets/item_definition/ModelTint.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
 from pydantic import Field
 
-from generated_symbols.assets.item_definition.ConstantTint import ConstantTint
-from generated_symbols.assets.item_definition.CustomModelDataTint import CustomModelDataTint
-from generated_symbols.assets.item_definition.DyeTint import DyeTint
-from generated_symbols.assets.item_definition.FireworkTint import FireworkTint
-from generated_symbols.assets.item_definition.GrassTint import GrassTint
-from generated_symbols.assets.item_definition.MapColorTint import MapColorTint
-from generated_symbols.assets.item_definition.PotionTint import PotionTint
-from generated_symbols.assets.item_definition.TeamTint import TeamTint
+from vanilla_mcdoc.assets.item_definition.ConstantTint import ConstantTint
+from vanilla_mcdoc.assets.item_definition.CustomModelDataTint import CustomModelDataTint
+from vanilla_mcdoc.assets.item_definition.DyeTint import DyeTint
+from vanilla_mcdoc.assets.item_definition.FireworkTint import FireworkTint
+from vanilla_mcdoc.assets.item_definition.GrassTint import GrassTint
+from vanilla_mcdoc.assets.item_definition.MapColorTint import MapColorTint
+from vanilla_mcdoc.assets.item_definition.PotionTint import PotionTint
+from vanilla_mcdoc.assets.item_definition.TeamTint import TeamTint
 
 
 class ModelTintConstant(ConstantTint):

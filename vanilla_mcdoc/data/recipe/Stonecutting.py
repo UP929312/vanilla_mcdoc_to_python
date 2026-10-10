@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::data::recipe::Stonecutting
-Local link to file: generated_symbols/data/recipe/Stonecutting.py
+Local link to file: vanilla_mcdoc/data/recipe/Stonecutting.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, ClassVar
 
-from generated_symbols.data.recipe.NotificationInfo import NotificationInfo
+from vanilla_mcdoc.data.recipe.NotificationInfo import NotificationInfo
 
 if TYPE_CHECKING:
-    from generated_symbols.data.recipe.Ingredient import Ingredient
-    from generated_symbols.world.item.ItemStackTemplate import ItemStackTemplate
+    from vanilla_mcdoc.data.recipe.Ingredient import Ingredient
+    from vanilla_mcdoc.world.item.ItemStackTemplate import ItemStackTemplate
 
 
 class Stonecutting(NotificationInfo):

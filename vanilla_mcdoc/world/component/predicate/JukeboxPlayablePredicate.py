@@ -1,12 +1,12 @@
 """
 Generated from symbols.json for ::java::world::component::predicate::JukeboxPlayablePredicate
-Local link to file: generated_symbols/world/component/predicate/JukeboxPlayablePredicate.py
+Local link to file: vanilla_mcdoc/world/component/predicate/JukeboxPlayablePredicate.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 
 class JukeboxPlayablePredicate(GeneratedModel):

@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::data::worldgen::structure::OceanRuin
-Local link to file: generated_symbols/data/worldgen/structure/OceanRuin.py
+Local link to file: vanilla_mcdoc/data/worldgen/structure/OceanRuin.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.structure.BiomeTemperature import BiomeTemperature
+    from vanilla_mcdoc.data.worldgen.structure.BiomeTemperature import BiomeTemperature
 
 
 class OceanRuin(GeneratedModel):

@@ -1,17 +1,17 @@
 """
 Generated from symbols.json for ::java::world::entity::minecart::ChestMinecart
-Local link to file: generated_symbols/world/entity/minecart/ChestMinecart.py
+Local link to file: vanilla_mcdoc/world/entity/minecart/ChestMinecart.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.world.entity.minecart.ContainerMinecart import ContainerMinecart
-from generated_symbols.world.entity.minecart.Minecart import Minecart
+from vanilla_mcdoc.world.entity.minecart.ContainerMinecart import ContainerMinecart
+from vanilla_mcdoc.world.entity.minecart.Minecart import Minecart
 
 if TYPE_CHECKING:
-    from generated_symbols.util.slot.SlottedItem import SlottedItem
+    from vanilla_mcdoc.util.slot.SlottedItem import SlottedItem
 
 
 class ChestMinecart(ContainerMinecart, Minecart):

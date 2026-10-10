@@ -1,19 +1,19 @@
 """
 Generated from symbols.json for ::java::world::item::ItemBase
-Local link to file: generated_symbols/world/item/ItemBase.py
+Local link to file: vanilla_mcdoc/world/item/ItemBase.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Any
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.world.component.item.Trim import Trim
-    from generated_symbols.world.item.AttributeModifier import AttributeModifier
-    from generated_symbols.world.item.Display import Display
-    from generated_symbols.world.item.Enchantment import Enchantment
+    from vanilla_mcdoc.world.component.item.Trim import Trim
+    from vanilla_mcdoc.world.item.AttributeModifier import AttributeModifier
+    from vanilla_mcdoc.world.item.Display import Display
+    from vanilla_mcdoc.world.item.Enchantment import Enchantment
 
 
 class ItemBase(GeneratedModel):

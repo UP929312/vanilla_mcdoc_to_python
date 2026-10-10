@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::data::worldgen::processor_list::AppendStatic
-Local link to file: generated_symbols/data/worldgen/processor_list/AppendStatic.py
+Local link to file: vanilla_mcdoc/data/worldgen/processor_list/AppendStatic.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class DataStruct(GeneratedModel):

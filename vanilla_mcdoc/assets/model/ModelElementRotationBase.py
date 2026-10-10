@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::assets::model::ModelElementRotationBase
-Local link to file: generated_symbols/assets/model/ModelElementRotationBase.py
+Local link to file: vanilla_mcdoc/assets/model/ModelElementRotationBase.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class ModelElementRotationBase(GeneratedModel):

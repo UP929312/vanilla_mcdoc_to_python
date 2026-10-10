@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::data::worldgen::noise_settings::StructureSettings
-Local link to file: generated_symbols/data/worldgen/noise_settings/StructureSettings.py
+Local link to file: vanilla_mcdoc/data/worldgen/noise_settings/StructureSettings.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.structure_set.ConcentricRingsPlacement import ConcentricRingsPlacement
-    from generated_symbols.data.worldgen.structure_set.RandomSpreadPlacement import RandomSpreadPlacement
+    from vanilla_mcdoc.data.worldgen.structure_set.ConcentricRingsPlacement import ConcentricRingsPlacement
+    from vanilla_mcdoc.data.worldgen.structure_set.RandomSpreadPlacement import RandomSpreadPlacement
 
 
 class StructureSettings(GeneratedModel):

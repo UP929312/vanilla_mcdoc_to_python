@@ -1,18 +1,18 @@
 """
 Generated from symbols.json for ::java::world::component::item::WrittenBookContent
-Local link to file: generated_symbols/world/component/item/WrittenBookContent.py
+Local link to file: vanilla_mcdoc/world/component/item/WrittenBookContent.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.util.Filterable import Filterable
-    from generated_symbols.util.text.Text import Text
-    from generated_symbols.world.component.item.BookGeneration import BookGeneration
+    from vanilla_mcdoc.util.Filterable import Filterable
+    from vanilla_mcdoc.util.text.Text import Text
+    from vanilla_mcdoc.world.component.item.BookGeneration import BookGeneration
 
 
 class WrittenBookContent(GeneratedModel):

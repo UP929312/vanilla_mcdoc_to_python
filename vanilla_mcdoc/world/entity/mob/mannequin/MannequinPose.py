@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::mannequin::MannequinPose
-Local link to file: generated_symbols/world/entity/mob/mannequin/MannequinPose.py
+Local link to file: vanilla_mcdoc/world/entity/mob/mannequin/MannequinPose.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

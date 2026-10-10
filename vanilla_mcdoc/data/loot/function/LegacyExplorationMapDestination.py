@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::data::loot::function::LegacyExplorationMapDestination
-Local link to file: generated_symbols/data/loot/function/LegacyExplorationMapDestination.py
+Local link to file: vanilla_mcdoc/data/loot/function/LegacyExplorationMapDestination.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

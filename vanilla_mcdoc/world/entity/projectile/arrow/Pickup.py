@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::world::entity::projectile::arrow::Pickup
-Local link to file: generated_symbols/world/entity/projectile/arrow/Pickup.py
+Local link to file: vanilla_mcdoc/world/entity/projectile/arrow/Pickup.py
 """
 # ~~~ CODE ~~~
 from enum import IntEnum

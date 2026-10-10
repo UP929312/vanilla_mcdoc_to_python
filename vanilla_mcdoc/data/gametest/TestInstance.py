@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::data::gametest::TestInstance
-Local link to file: generated_symbols/data/gametest/TestInstance.py
+Local link to file: vanilla_mcdoc/data/gametest/TestInstance.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, ClassVar, Literal
 
 from pydantic import Field
 
-from generated_symbols.data.gametest.BlockBasedTestInstance import BlockBasedTestInstance
-from generated_symbols.data.gametest.FunctionTestInstance import FunctionTestInstance
+from vanilla_mcdoc.data.gametest.BlockBasedTestInstance import BlockBasedTestInstance
+from vanilla_mcdoc.data.gametest.FunctionTestInstance import FunctionTestInstance
 
 
 class TestInstanceBlockBased(BlockBasedTestInstance):

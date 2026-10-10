@@ -1,19 +1,19 @@
 """
 Generated from symbols.json for ::java::data::advancement::predicate::LocationPredicate
-Local link to file: generated_symbols/data/advancement/predicate/LocationPredicate.py
+Local link to file: vanilla_mcdoc/data/advancement/predicate/LocationPredicate.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.advancement.predicate.BlockPredicate import BlockPredicate
-    from generated_symbols.data.advancement.predicate.FluidPredicate import FluidPredicate
-    from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
+    from vanilla_mcdoc.data.advancement.predicate.BlockPredicate import BlockPredicate
+    from vanilla_mcdoc.data.advancement.predicate.FluidPredicate import FluidPredicate
+    from vanilla_mcdoc.data.util.MinMaxBounds import MinMaxBounds
 
 
 class PositionStruct(GeneratedModel):

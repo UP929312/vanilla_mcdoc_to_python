@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::world::block::conduit::TargetUuid
-Local link to file: generated_symbols/world/block/conduit/TargetUuid.py
+Local link to file: vanilla_mcdoc/world/block/conduit/TargetUuid.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class TargetUuid(GeneratedModel):

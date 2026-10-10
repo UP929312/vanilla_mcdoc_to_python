@@ -1,12 +1,12 @@
 """
 Generated from symbols.json for ::java::assets::atlas::PermutationsMap
-Local link to file: generated_symbols/assets/atlas/PermutationsMap.py
+Local link to file: vanilla_mcdoc/assets/atlas/PermutationsMap.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from generated_symbols.assets.atlas.PaletteTexture import PaletteTexture
+    from vanilla_mcdoc.assets.atlas.PaletteTexture import PaletteTexture
 
 
 type PermutationsMap = dict[str, PaletteTexture]

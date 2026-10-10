@@ -1,13 +1,13 @@
 """
 Generated from symbols.json for ::java::data::advancement::trigger::InventoryChangeTrigger
-Local link to file: generated_symbols/data/advancement/trigger/InventoryChangeTrigger.py
+Local link to file: vanilla_mcdoc/data/advancement/trigger/InventoryChangeTrigger.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.base import GeneratedModel
-from generated_symbols.data.advancement.predicate.ItemPredicate import ItemPredicate
-from generated_symbols.data.advancement.trigger.AllOptional import AllOptional
-from generated_symbols.data.advancement.trigger.PlayerConditions import PlayerConditions
-from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.data.advancement.predicate.ItemPredicate import ItemPredicate
+from vanilla_mcdoc.data.advancement.trigger.AllOptional import AllOptional
+from vanilla_mcdoc.data.advancement.trigger.PlayerConditions import PlayerConditions
+from vanilla_mcdoc.data.util.MinMaxBounds import MinMaxBounds
 
 
 class SlotsStruct(GeneratedModel):

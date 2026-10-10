@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::util::text::TextColor
-Local link to file: generated_symbols/util/text/TextColor.py
+Local link to file: vanilla_mcdoc/util/text/TextColor.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

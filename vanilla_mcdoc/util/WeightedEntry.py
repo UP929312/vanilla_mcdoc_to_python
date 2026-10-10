@@ -1,13 +1,13 @@
 """
 Generated from symbols.json for ::java::util::WeightedEntry
-Local link to file: generated_symbols/util/WeightedEntry.py
+Local link to file: vanilla_mcdoc/util/WeightedEntry.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, Generic, TypeVar
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 T = TypeVar('T')

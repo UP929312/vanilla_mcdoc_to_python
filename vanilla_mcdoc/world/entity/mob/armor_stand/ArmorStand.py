@@ -1,17 +1,17 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::armor_stand::ArmorStand
-Local link to file: generated_symbols/world/entity/mob/armor_stand/ArmorStand.py
+Local link to file: vanilla_mcdoc/world/entity/mob/armor_stand/ArmorStand.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
 from pydantic import Field
 
-from generated_symbols.world.entity.mob.LivingEntity import LivingEntity
+from vanilla_mcdoc.world.entity.mob.LivingEntity import LivingEntity
 
 if TYPE_CHECKING:
-    from generated_symbols.world.entity.mob.EntityEquipment import EntityEquipment
-    from generated_symbols.world.entity.mob.armor_stand.Pose import Pose
+    from vanilla_mcdoc.world.entity.mob.EntityEquipment import EntityEquipment
+    from vanilla_mcdoc.world.entity.mob.armor_stand.Pose import Pose
 
 
 class ArmorStand(LivingEntity):

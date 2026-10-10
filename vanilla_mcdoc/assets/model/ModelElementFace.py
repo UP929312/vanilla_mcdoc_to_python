@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::assets::model::ModelElementFace
-Local link to file: generated_symbols/assets/model/ModelElementFace.py
+Local link to file: vanilla_mcdoc/assets/model/ModelElementFace.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Literal
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.util.direction.Direction import Direction
+    from vanilla_mcdoc.util.direction.Direction import Direction
 
 
 class ModelElementFace(GeneratedModel):

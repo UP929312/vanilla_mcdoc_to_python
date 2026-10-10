@@ -1,18 +1,18 @@
 """
 Generated from symbols.json for ::java::data::worldgen::feature::block_state_provider::DualNoiseProvider
-Local link to file: generated_symbols/data/worldgen/feature/block_state_provider/DualNoiseProvider.py
+Local link to file: vanilla_mcdoc/data/worldgen/feature/block_state_provider/DualNoiseProvider.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.data.worldgen.feature.block_state_provider.BaseNoiseProvider import BaseNoiseProvider
+from vanilla_mcdoc.data.worldgen.feature.block_state_provider.BaseNoiseProvider import BaseNoiseProvider
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.dimension.biome_source.NoiseParameters import NoiseParameters
-    from generated_symbols.util.InclusiveRange import InclusiveRange
-    from generated_symbols.util.block_state.BlockState import BlockState
+    from vanilla_mcdoc.data.worldgen.dimension.biome_source.NoiseParameters import NoiseParameters
+    from vanilla_mcdoc.util.InclusiveRange import InclusiveRange
+    from vanilla_mcdoc.util.block_state.BlockState import BlockState
 
 
 class DualNoiseProvider(BaseNoiseProvider):

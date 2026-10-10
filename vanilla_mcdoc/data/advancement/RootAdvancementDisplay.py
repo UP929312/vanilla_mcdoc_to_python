@@ -1,12 +1,12 @@
 """
 Generated from symbols.json for ::java::data::advancement::RootAdvancementDisplay
-Local link to file: generated_symbols/data/advancement/RootAdvancementDisplay.py
+Local link to file: vanilla_mcdoc/data/advancement/RootAdvancementDisplay.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from generated_symbols.data.advancement.AdvancementDisplay import AdvancementDisplay
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.data.advancement.AdvancementDisplay import AdvancementDisplay
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 
 class RootAdvancementDisplay(AdvancementDisplay):

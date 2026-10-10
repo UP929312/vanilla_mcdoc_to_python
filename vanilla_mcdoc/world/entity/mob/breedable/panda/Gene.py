@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::breedable::panda::Gene
-Local link to file: generated_symbols/world/entity/mob/breedable/panda/Gene.py
+Local link to file: vanilla_mcdoc/world/entity/mob/breedable/panda/Gene.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

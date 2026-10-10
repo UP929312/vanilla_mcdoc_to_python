@@ -6,16 +6,16 @@
 # ~~~ FILE CONTENT ~~~
 """
 Generated from symbols.json for ::java::assets::equipment::TrimOverride
-Local link to file: generated_symbols/assets/equipment/TrimOverride.py
+Local link to file: vanilla_mcdoc/assets/equipment/TrimOverride.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.assets.atlas.PaletteRef import PaletteRef
+    from vanilla_mcdoc.assets.atlas.PaletteRef import PaletteRef
 
 
 class WhenStruct(GeneratedModel):

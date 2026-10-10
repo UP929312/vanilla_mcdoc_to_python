@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::data::gametest::test_environment::AllOffTestEnvironment
-Local link to file: generated_symbols/data/gametest/test_environment/AllOffTestEnvironment.py
+Local link to file: vanilla_mcdoc/data/gametest/test_environment/AllOffTestEnvironment.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, ClassVar
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.gametest.test_environment.TestEnvironment import TestEnvironment
+    from vanilla_mcdoc.data.gametest.test_environment.TestEnvironment import TestEnvironment
 
 
 class AllOffTestEnvironment(GeneratedModel):

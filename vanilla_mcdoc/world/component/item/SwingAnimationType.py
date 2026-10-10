@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::world::component::item::SwingAnimationType
-Local link to file: generated_symbols/world/component/item/SwingAnimationType.py
+Local link to file: vanilla_mcdoc/world/component/item/SwingAnimationType.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

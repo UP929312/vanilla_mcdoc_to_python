@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::pack::PackFormat
-Local link to file: generated_symbols/pack/PackFormat.py
+Local link to file: vanilla_mcdoc/pack/PackFormat.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated

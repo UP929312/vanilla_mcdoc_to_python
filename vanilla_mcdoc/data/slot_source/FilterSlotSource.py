@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::data::slot_source::FilterSlotSource
-Local link to file: generated_symbols/data/slot_source/FilterSlotSource.py
+Local link to file: vanilla_mcdoc/data/slot_source/FilterSlotSource.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, ClassVar
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.advancement.predicate.ItemPredicate import ItemPredicate
-    from generated_symbols.data.slot_source.SlotSource import SlotSource
+    from vanilla_mcdoc.data.advancement.predicate.ItemPredicate import ItemPredicate
+    from vanilla_mcdoc.data.slot_source.SlotSource import SlotSource
 
 
 class FilterSlotSource(GeneratedModel):

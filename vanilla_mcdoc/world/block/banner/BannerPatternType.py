@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::world::block::banner::BannerPatternType
-Local link to file: generated_symbols/world/block/banner/BannerPatternType.py
+Local link to file: vanilla_mcdoc/world/block/banner/BannerPatternType.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

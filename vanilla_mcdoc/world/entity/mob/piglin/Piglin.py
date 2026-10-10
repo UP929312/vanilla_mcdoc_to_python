@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::piglin::Piglin
-Local link to file: generated_symbols/world/entity/mob/piglin/Piglin.py
+Local link to file: vanilla_mcdoc/world/entity/mob/piglin/Piglin.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.world.entity.mob.piglin.PiglinBase import PiglinBase
+from vanilla_mcdoc.world.entity.mob.piglin.PiglinBase import PiglinBase
 
 if TYPE_CHECKING:
-    from generated_symbols.world.item.ItemStack import ItemStack
+    from vanilla_mcdoc.world.item.ItemStack import ItemStack
 
 
 class Piglin(PiglinBase):

@@ -1,17 +1,17 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::breedable::horse::ChestedHorse
-Local link to file: generated_symbols/world/entity/mob/breedable/horse/ChestedHorse.py
+Local link to file: vanilla_mcdoc/world/entity/mob/breedable/horse/ChestedHorse.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
-from generated_symbols.world.entity.mob.breedable.horse.HorseBase import HorseBase
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.world.entity.mob.breedable.horse.HorseBase import HorseBase
 
 if TYPE_CHECKING:
-    from generated_symbols.util.slot.SlottedItem import SlottedItem
+    from vanilla_mcdoc.util.slot.SlottedItem import SlottedItem
 
 
 class ItemsStruct(GeneratedModel):

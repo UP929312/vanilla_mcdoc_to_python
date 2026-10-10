@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::breedable::axolotl::Axolotl
-Local link to file: generated_symbols/world/entity/mob/breedable/axolotl/Axolotl.py
+Local link to file: vanilla_mcdoc/world/entity/mob/breedable/axolotl/Axolotl.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.world.entity.mob.breedable.Breedable import Breedable
+from vanilla_mcdoc.world.entity.mob.breedable.Breedable import Breedable
 
 if TYPE_CHECKING:
-    from generated_symbols.world.entity.mob.breedable.axolotl.AxolotlVariantInt import AxolotlVariantInt
+    from vanilla_mcdoc.world.entity.mob.breedable.axolotl.AxolotlVariantInt import AxolotlVariantInt
 
 
 class Axolotl(Breedable):

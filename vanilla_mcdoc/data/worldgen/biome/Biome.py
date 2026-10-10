@@ -1,21 +1,21 @@
 """
 Generated from symbols.json for ::java::data::worldgen::biome::Biome
-Local link to file: generated_symbols/data/worldgen/biome/Biome.py
+Local link to file: vanilla_mcdoc/data/worldgen/biome/Biome.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.attribute.PositionalEnvironmentAttributeMap import PositionalEnvironmentAttributeMap
-    from generated_symbols.data.worldgen.biome.BiomeEffects import BiomeEffects
-    from generated_symbols.data.worldgen.biome.TemperatureModifier import TemperatureModifier
-    from generated_symbols.data.worldgen.carver.CarverListRef import CarverListRef
-    from generated_symbols.data.worldgen.feature.placement.PlacedFeatureRef import PlacedFeatureRef
+    from vanilla_mcdoc.data.worldgen.attribute.PositionalEnvironmentAttributeMap import PositionalEnvironmentAttributeMap
+    from vanilla_mcdoc.data.worldgen.biome.BiomeEffects import BiomeEffects
+    from vanilla_mcdoc.data.worldgen.biome.TemperatureModifier import TemperatureModifier
+    from vanilla_mcdoc.data.worldgen.carver.CarverListRef import CarverListRef
+    from vanilla_mcdoc.data.worldgen.feature.placement.PlacedFeatureRef import PlacedFeatureRef
 
 
 class Biome(GeneratedModel):

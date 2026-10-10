@@ -1,13 +1,13 @@
 """
 Generated from symbols.json for ::java::data::worldgen::feature::SculkPatchConfig
-Local link to file: generated_symbols/data/worldgen/feature/SculkPatchConfig.py
+Local link to file: vanilla_mcdoc/data/worldgen/feature/SculkPatchConfig.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, ClassVar
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class SculkPatchConfig(GeneratedModel):

@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::util::particle::SculkChargeParticle
-Local link to file: generated_symbols/util/particle/SculkChargeParticle.py
+Local link to file: vanilla_mcdoc/util/particle/SculkChargeParticle.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class SculkChargeParticle(GeneratedModel):

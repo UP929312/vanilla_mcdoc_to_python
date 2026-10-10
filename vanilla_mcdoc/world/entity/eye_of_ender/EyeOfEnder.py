@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::world::entity::eye_of_ender::EyeOfEnder
-Local link to file: generated_symbols/world/entity/eye_of_ender/EyeOfEnder.py
+Local link to file: vanilla_mcdoc/world/entity/eye_of_ender/EyeOfEnder.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.world.entity.EntityBase import EntityBase
+from vanilla_mcdoc.world.entity.EntityBase import EntityBase
 
 if TYPE_CHECKING:
-    from generated_symbols.world.item.ItemStack import ItemStack
+    from vanilla_mcdoc.world.item.ItemStack import ItemStack
 
 
 class EyeOfEnder(EntityBase):

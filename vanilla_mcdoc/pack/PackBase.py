@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::pack::PackBase
-Local link to file: generated_symbols/pack/PackBase.py
+Local link to file: vanilla_mcdoc/pack/PackBase.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.pack.PackFormat import PackFormat
-    from generated_symbols.util.InclusiveRange import InclusiveRange
-    from generated_symbols.util.text.Text import Text
+    from vanilla_mcdoc.pack.PackFormat import PackFormat
+    from vanilla_mcdoc.util.InclusiveRange import InclusiveRange
+    from vanilla_mcdoc.util.text.Text import Text
 
 
 class PackBase(GeneratedModel):

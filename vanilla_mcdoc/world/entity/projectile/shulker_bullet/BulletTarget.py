@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::world::entity::projectile::shulker_bullet::BulletTarget
-Local link to file: generated_symbols/world/entity/projectile/shulker_bullet/BulletTarget.py
+Local link to file: vanilla_mcdoc/world/entity/projectile/shulker_bullet/BulletTarget.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class BulletTarget(GeneratedModel):

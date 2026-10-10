@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::assets::font::Font
-Local link to file: generated_symbols/assets/font/Font.py
+Local link to file: vanilla_mcdoc/assets/font/Font.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, ClassVar
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.assets.font.GlyphProvider import GlyphProvider
+    from vanilla_mcdoc.assets.font.GlyphProvider import GlyphProvider
 
 
 class Font(GeneratedModel):

@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::breedable::horse::TraderLlama
-Local link to file: generated_symbols/world/entity/mob/breedable/horse/TraderLlama.py
+Local link to file: vanilla_mcdoc/world/entity/mob/breedable/horse/TraderLlama.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.world.entity.mob.breedable.horse.Llama import Llama
+from vanilla_mcdoc.world.entity.mob.breedable.horse.Llama import Llama
 
 
 class TraderLlama(Llama):

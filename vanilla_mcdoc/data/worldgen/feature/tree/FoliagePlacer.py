@@ -1,22 +1,22 @@
 """
 Generated from symbols.json for ::java::data::worldgen::feature::tree::FoliagePlacer
-Local link to file: generated_symbols/data/worldgen/feature/tree/FoliagePlacer.py
+Local link to file: vanilla_mcdoc/data/worldgen/feature/tree/FoliagePlacer.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, Literal
 
 from pydantic import Field
 
-from generated_symbols.data.worldgen.feature.tree.CherryFoliagePlacer import CherryFoliagePlacer
-from generated_symbols.data.worldgen.feature.tree.HeightFoliagePlacer import HeightFoliagePlacer
-from generated_symbols.data.worldgen.feature.tree.MegaPineFoliagePlacer import MegaPineFoliagePlacer
-from generated_symbols.data.worldgen.feature.tree.PineFoliagePlacer import PineFoliagePlacer
-from generated_symbols.data.worldgen.feature.tree.PoplarFoliagePlacer import PoplarFoliagePlacer
-from generated_symbols.data.worldgen.feature.tree.RandomSpreadFoliagePlacer import RandomSpreadFoliagePlacer
-from generated_symbols.data.worldgen.feature.tree.SprucePineFoliagePlacer import SprucePineFoliagePlacer
+from vanilla_mcdoc.data.worldgen.feature.tree.CherryFoliagePlacer import CherryFoliagePlacer
+from vanilla_mcdoc.data.worldgen.feature.tree.HeightFoliagePlacer import HeightFoliagePlacer
+from vanilla_mcdoc.data.worldgen.feature.tree.MegaPineFoliagePlacer import MegaPineFoliagePlacer
+from vanilla_mcdoc.data.worldgen.feature.tree.PineFoliagePlacer import PineFoliagePlacer
+from vanilla_mcdoc.data.worldgen.feature.tree.PoplarFoliagePlacer import PoplarFoliagePlacer
+from vanilla_mcdoc.data.worldgen.feature.tree.RandomSpreadFoliagePlacer import RandomSpreadFoliagePlacer
+from vanilla_mcdoc.data.worldgen.feature.tree.SprucePineFoliagePlacer import SprucePineFoliagePlacer
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.IntProvider import IntProvider
+    from vanilla_mcdoc.data.worldgen.IntProvider import IntProvider
 
 
 class FoliagePlacerBlobFoliagePlacer(HeightFoliagePlacer):

@@ -1,17 +1,17 @@
 """
 Generated from symbols.json for ::java::data::worldgen::biome::NaturalMobSpawns
-Local link to file: generated_symbols/data/worldgen/biome/NaturalMobSpawns.py
+Local link to file: vanilla_mcdoc/data/worldgen/biome/NaturalMobSpawns.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.biome.MobSpawnCost import MobSpawnCost
-    from generated_symbols.data.worldgen.biome.SpawnerDataMap import SpawnerDataMap
-    from generated_symbols.registry.KnownEntityId import KnownEntityId
+    from vanilla_mcdoc.data.worldgen.biome.MobSpawnCost import MobSpawnCost
+    from vanilla_mcdoc.data.worldgen.biome.SpawnerDataMap import SpawnerDataMap
+    from vanilla_mcdoc.registry.KnownEntityId import KnownEntityId
 
 
 class NaturalMobSpawns(GeneratedModel):

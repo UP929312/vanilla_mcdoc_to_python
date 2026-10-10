@@ -1,22 +1,22 @@
 """
 Generated from symbols.json for ::java::data::worldgen::feature::block_state_provider::TypedBlockStateProvider
-Local link to file: generated_symbols/data/worldgen/feature/block_state_provider/TypedBlockStateProvider.py
+Local link to file: vanilla_mcdoc/data/worldgen/feature/block_state_provider/TypedBlockStateProvider.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
-from generated_symbols.base import GeneratedModel
-from generated_symbols.data.worldgen.feature.RuleBasedBlockStateProvider import RuleBasedBlockStateProvider
-from generated_symbols.data.worldgen.feature.block_state_provider.CopyPropertiesProvider import CopyPropertiesProvider
-from generated_symbols.data.worldgen.feature.block_state_provider.DualNoiseProvider import DualNoiseProvider
-from generated_symbols.data.worldgen.feature.block_state_provider.NoiseProvider import NoiseProvider
-from generated_symbols.data.worldgen.feature.block_state_provider.NoiseThresholdProvider import NoiseThresholdProvider
-from generated_symbols.data.worldgen.feature.block_state_provider.RandomBlockStateProvider import RandomBlockStateProvider
-from generated_symbols.data.worldgen.feature.block_state_provider.RandomizedIntStateProvider import RandomizedIntStateProvider
-from generated_symbols.data.worldgen.feature.block_state_provider.RotatedStateProvider import RotatedStateProvider
-from generated_symbols.data.worldgen.feature.block_state_provider.SimpleStateProvider import SimpleStateProvider
-from generated_symbols.data.worldgen.feature.block_state_provider.WeightedBlockStateProvider import WeightedBlockStateProvider
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.data.worldgen.feature.RuleBasedBlockStateProvider import RuleBasedBlockStateProvider
+from vanilla_mcdoc.data.worldgen.feature.block_state_provider.CopyPropertiesProvider import CopyPropertiesProvider
+from vanilla_mcdoc.data.worldgen.feature.block_state_provider.DualNoiseProvider import DualNoiseProvider
+from vanilla_mcdoc.data.worldgen.feature.block_state_provider.NoiseProvider import NoiseProvider
+from vanilla_mcdoc.data.worldgen.feature.block_state_provider.NoiseThresholdProvider import NoiseThresholdProvider
+from vanilla_mcdoc.data.worldgen.feature.block_state_provider.RandomBlockStateProvider import RandomBlockStateProvider
+from vanilla_mcdoc.data.worldgen.feature.block_state_provider.RandomizedIntStateProvider import RandomizedIntStateProvider
+from vanilla_mcdoc.data.worldgen.feature.block_state_provider.RotatedStateProvider import RotatedStateProvider
+from vanilla_mcdoc.data.worldgen.feature.block_state_provider.SimpleStateProvider import SimpleStateProvider
+from vanilla_mcdoc.data.worldgen.feature.block_state_provider.WeightedBlockStateProvider import WeightedBlockStateProvider
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 
 class TypedBlockStateProviderNone(GeneratedModel):

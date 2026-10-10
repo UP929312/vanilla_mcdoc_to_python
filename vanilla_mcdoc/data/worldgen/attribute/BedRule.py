@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::data::worldgen::attribute::BedRule
-Local link to file: generated_symbols/data/worldgen/attribute/BedRule.py
+Local link to file: vanilla_mcdoc/data/worldgen/attribute/BedRule.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.attribute.BedRuleType import BedRuleType
-    from generated_symbols.util.text.Text import Text
+    from vanilla_mcdoc.data.worldgen.attribute.BedRuleType import BedRuleType
+    from vanilla_mcdoc.util.text.Text import Text
 
 
 class BedRule(GeneratedModel):

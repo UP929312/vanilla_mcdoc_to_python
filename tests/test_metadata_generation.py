@@ -3,10 +3,11 @@ from pathlib import Path
 from pytest import MonkeyPatch
 
 import minecraft_registry
-from code_generation import SCHEMA_GRAPH, make_init_content, make_python_file_content
+from code_generation import get_schema_graph, make_init_content, make_python_file_content
 from context import SingleSymbolContext
-from minecraft_registry import IdSpec, make_registry_id_file_content, make_registry_id_files, make_root_resource_registry_content, used_registry_names
+from minecraft_registry import make_registry_id_file_content, make_registry_id_files, make_root_resource_registry_content, used_registry_names
 from schema_resolution import SchemaGraph
+from static_symbols.minecraft_types import IdSpec
 from typed_models import IntSchema, ReferenceSchema, UnionSchema
 from utils import LATEST_VERSION, SYMBOLS_MAP
 
@@ -38,7 +39,7 @@ class TestIdMetadataGeneration:
             "ItemId",
         )
 
-        assert "from minecraft_registry import IdSpec" in content
+        assert "from vanilla_mcdoc.minecraft_types import IdSpec" in content
         assert "type ItemId = Annotated[str, IdSpec(registry='item')] | KnownItemId" in content
 
     def test_bare_id_attribute(self) -> None:
@@ -63,7 +64,7 @@ class TestIdMetadataGeneration:
         path = "::java::data::loot::condition::EnvironmentAttributeCheck"
         content = generated_body(path, SYMBOLS_MAP["mcdoc"][path], "EnvironmentAttributeCheck")
 
-        assert "from generated_symbols.registry.KnownEnvironmentAttributeId import KnownEnvironmentAttributeId" in content
+        assert "from vanilla_mcdoc.registry.KnownEnvironmentAttributeId import KnownEnvironmentAttributeId" in content
         assert "attribute: Annotated[str, IdSpec(registry='environment_attribute')] | KnownEnvironmentAttributeId" in content
 
         registry_content = make_registry_id_file_content("environment_attribute", [
@@ -81,13 +82,13 @@ class TestIdMetadataGeneration:
         assert spec.to_annotation() == "IdSpec(registry='texture', tags='allowed', definition=True, path='entity/')"
 
     def test_used_registry_names_are_discovered_from_nested_schemas(self) -> None:
-        registries = used_registry_names(SCHEMA_GRAPH)
+        registries = used_registry_names(get_schema_graph())
 
         assert "block" in registries
         assert "environment_attribute" in registries
 
     def test_registry_files_skip_dispatchers_without_public_ids(self, tmp_path: Path, monkeypatch: MonkeyPatch) -> None:
-        output_directory = tmp_path / "generated_symbols"
+        output_directory = tmp_path / "vanilla_mcdoc"
 
         def make_directory(path: Path) -> None:
             path.mkdir(parents=True, exist_ok=True)
@@ -98,7 +99,7 @@ class TestIdMetadataGeneration:
         monkeypatch.setattr(minecraft_registry, "GENERATED_SYMBOLS_DIRECTORY", output_directory)
         monkeypatch.setattr(minecraft_registry, "manage_directory_and_inits", make_directory)
         monkeypatch.setattr(minecraft_registry, "used_registry_names", registry_names)
-        make_registry_id_files(SCHEMA_GRAPH)
+        make_registry_id_files(get_schema_graph())
 
         block_file = output_directory / "registry" / "KnownBlockId.py"
         assert block_file.exists()
@@ -183,7 +184,7 @@ class TestDispatcherSpreadGeneration:
         assert "Field(discriminator=" not in content
 
     def test_union_with_unresolved_type_parameter_remains_plain_union(self) -> None:
-        context = SingleSymbolContext(schema_graph=SCHEMA_GRAPH)
+        context = SingleSymbolContext(schema_graph=get_schema_graph())
         context.local_type_params.add("::test::T")
         schema = UnionSchema(kind="union", members=[
             ReferenceSchema(kind="reference", path="::test::T"),
@@ -215,11 +216,11 @@ class TestRootExportGeneration:
             "::java::data::anonymous::Ignored",
         ], ("::java::data::",))
 
-        assert "from generated_symbols.data.advancement.Advancement import Advancement" in content
-        assert "from generated_symbols.data.worldgen.DecorationStep import DecorationStep" in content
+        assert "from vanilla_mcdoc.data.advancement.Advancement import Advancement" in content
+        assert "from vanilla_mcdoc.data.worldgen.DecorationStep import DecorationStep" in content
         assert '"Model",' not in content
         assert '"Entity",' not in content
-        assert "from generated_symbols.data.anonymous.Ignored import Ignored" in content
+        assert "from vanilla_mcdoc.data.anonymous.Ignored import Ignored" in content
         assert '"Conditions",' not in content
         assert "import_module" not in content
         assert "def __getattr__" not in content
@@ -232,7 +233,7 @@ class TestRootExportGeneration:
             "::java::data::advancement::Advancement",
         ], ("::java::data::loot::",))
 
-        assert "from generated_symbols.data.loot.function.Conditions import Conditions" in content
+        assert "from vanilla_mcdoc.data.loot.function.Conditions import Conditions" in content
         assert '"Reference",' not in content
         assert '"Advancement",' not in content
 
@@ -359,7 +360,7 @@ class TestRuntimeImportGeneration:
 
         assert len(schema.members) == 1
         assert isinstance(schema.members[0], IntSchema)
-        assert schema.to_python_code("CurrentValue", SingleSymbolContext(current_symbol_path="CurrentValue", schema_graph=SCHEMA_GRAPH)) == [
+        assert schema.to_python_code("CurrentValue", SingleSymbolContext(current_symbol_path="CurrentValue", schema_graph=get_schema_graph())) == [
             "type CurrentValue = int",
         ]
 
@@ -367,7 +368,7 @@ class TestRuntimeImportGeneration:
         path = "::java::data::worldgen::attribute::GlobalEnvironmentAttributeMap"
         content = generated_body(path, SYMBOLS_MAP["mcdoc"][path], "GlobalEnvironmentAttributeMap")
 
-        runtime_import = "from generated_symbols.data.worldgen.attribute.EnvironmentAttributeMap import EnvironmentAttributeMap"
+        runtime_import = "from vanilla_mcdoc.data.worldgen.attribute.EnvironmentAttributeMap import EnvironmentAttributeMap"
         assert runtime_import in content
         assert f"if TYPE_CHECKING:\n    {runtime_import}" not in content
 

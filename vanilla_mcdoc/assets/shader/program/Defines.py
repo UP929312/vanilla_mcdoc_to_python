@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::assets::shader::program::Defines
-Local link to file: generated_symbols/assets/shader/program/Defines.py
+Local link to file: vanilla_mcdoc/assets/shader/program/Defines.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class Defines(GeneratedModel):

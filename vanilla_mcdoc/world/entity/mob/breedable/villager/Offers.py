@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::breedable::villager::Offers
-Local link to file: generated_symbols/world/entity/mob/breedable/villager/Offers.py
+Local link to file: vanilla_mcdoc/world/entity/mob/breedable/villager/Offers.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.world.entity.mob.breedable.villager.Recipe import Recipe
+    from vanilla_mcdoc.world.entity.mob.breedable.villager.Recipe import Recipe
 
 
 class Offers(GeneratedModel):

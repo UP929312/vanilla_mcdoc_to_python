@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::data::util::MoonPhase
-Local link to file: generated_symbols/data/util/MoonPhase.py
+Local link to file: vanilla_mcdoc/data/util/MoonPhase.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

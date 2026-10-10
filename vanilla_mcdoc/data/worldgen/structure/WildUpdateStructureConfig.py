@@ -1,19 +1,19 @@
 """
 Generated from symbols.json for ::java::data::worldgen::structure::WildUpdateStructureConfig
-Local link to file: generated_symbols/data/worldgen/structure/WildUpdateStructureConfig.py
+Local link to file: vanilla_mcdoc/data/worldgen/structure/WildUpdateStructureConfig.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.HeightProvider import HeightProvider
-    from generated_symbols.data.worldgen.HeightmapType import HeightmapType
-    from generated_symbols.data.worldgen.structure.JigsawDistanceLimits import JigsawDistanceLimits
+    from vanilla_mcdoc.data.worldgen.HeightProvider import HeightProvider
+    from vanilla_mcdoc.data.worldgen.HeightmapType import HeightmapType
+    from vanilla_mcdoc.data.worldgen.structure.JigsawDistanceLimits import JigsawDistanceLimits
 
 
 class WildUpdateStructureConfig(GeneratedModel):

@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::world::block::structure_block::Rotation
-Local link to file: generated_symbols/world/block/structure_block/Rotation.py
+Local link to file: vanilla_mcdoc/world/block/structure_block/Rotation.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

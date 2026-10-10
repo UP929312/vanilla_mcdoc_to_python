@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::data::worldgen::feature::EndSpike
-Local link to file: generated_symbols/data/worldgen/feature/EndSpike.py
+Local link to file: vanilla_mcdoc/data/worldgen/feature/EndSpike.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class EndSpike(GeneratedModel):

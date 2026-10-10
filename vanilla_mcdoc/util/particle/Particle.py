@@ -1,27 +1,27 @@
 """
 Generated from symbols.json for ::java::util::particle::Particle
-Local link to file: generated_symbols/util/particle/Particle.py
+Local link to file: vanilla_mcdoc/util/particle/Particle.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
-from generated_symbols.base import GeneratedModel
-from generated_symbols.util.particle.BlockParticle import BlockParticle
-from generated_symbols.util.particle.DragonBreathParticle import DragonBreathParticle
-from generated_symbols.util.particle.DustColorTransitionParticle import DustColorTransitionParticle
-from generated_symbols.util.particle.DustParticle import DustParticle
-from generated_symbols.util.particle.EffectParticle import EffectParticle
-from generated_symbols.util.particle.EntityEffectParticle import EntityEffectParticle
-from generated_symbols.util.particle.FlashParticle import FlashParticle
-from generated_symbols.util.particle.GeyserBaseParticle import GeyserBaseParticle
-from generated_symbols.util.particle.GeyserParticle import GeyserParticle
-from generated_symbols.util.particle.ItemParticle import ItemParticle
-from generated_symbols.util.particle.SculkChargeParticle import SculkChargeParticle
-from generated_symbols.util.particle.ShriekParticle import ShriekParticle
-from generated_symbols.util.particle.TintedLeavesParticle import TintedLeavesParticle
-from generated_symbols.util.particle.TrailParticle import TrailParticle
-from generated_symbols.util.particle.VibrationParticle import VibrationParticle
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
+from vanilla_mcdoc.util.particle.BlockParticle import BlockParticle
+from vanilla_mcdoc.util.particle.DragonBreathParticle import DragonBreathParticle
+from vanilla_mcdoc.util.particle.DustColorTransitionParticle import DustColorTransitionParticle
+from vanilla_mcdoc.util.particle.DustParticle import DustParticle
+from vanilla_mcdoc.util.particle.EffectParticle import EffectParticle
+from vanilla_mcdoc.util.particle.EntityEffectParticle import EntityEffectParticle
+from vanilla_mcdoc.util.particle.FlashParticle import FlashParticle
+from vanilla_mcdoc.util.particle.GeyserBaseParticle import GeyserBaseParticle
+from vanilla_mcdoc.util.particle.GeyserParticle import GeyserParticle
+from vanilla_mcdoc.util.particle.ItemParticle import ItemParticle
+from vanilla_mcdoc.util.particle.SculkChargeParticle import SculkChargeParticle
+from vanilla_mcdoc.util.particle.ShriekParticle import ShriekParticle
+from vanilla_mcdoc.util.particle.TintedLeavesParticle import TintedLeavesParticle
+from vanilla_mcdoc.util.particle.TrailParticle import TrailParticle
+from vanilla_mcdoc.util.particle.VibrationParticle import VibrationParticle
 
 
 class ParticleNone(GeneratedModel):

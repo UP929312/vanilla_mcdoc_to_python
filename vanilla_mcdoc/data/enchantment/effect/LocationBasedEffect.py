@@ -1,27 +1,27 @@
 """
 Generated from symbols.json for ::java::data::enchantment::effect::LocationBasedEffect
-Local link to file: generated_symbols/data/enchantment/effect/LocationBasedEffect.py
+Local link to file: vanilla_mcdoc/data/enchantment/effect/LocationBasedEffect.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
 from pydantic import Field
 
-from generated_symbols.data.enchantment.effect.AllOfLocationBasedEffect import AllOfLocationBasedEffect
-from generated_symbols.data.enchantment.effect.ApplyExhaustionEntityEffect import ApplyExhaustionEntityEffect
-from generated_symbols.data.enchantment.effect.ApplyImpulseEntityEffect import ApplyImpulseEntityEffect
-from generated_symbols.data.enchantment.effect.ApplyMobEffectEntityEffect import ApplyMobEffectEntityEffect
-from generated_symbols.data.enchantment.effect.ChangeItemDamageEffect import ChangeItemDamageEffect
-from generated_symbols.data.enchantment.effect.DamageEntityEffect import DamageEntityEffect
-from generated_symbols.data.enchantment.effect.ExplodeEntityEffect import ExplodeEntityEffect
-from generated_symbols.data.enchantment.effect.IgniteEntityEffect import IgniteEntityEffect
-from generated_symbols.data.enchantment.effect.PlaySoundEntityEffect import PlaySoundEntityEffect
-from generated_symbols.data.enchantment.effect.ReplaceBlockEntityEffect import ReplaceBlockEntityEffect
-from generated_symbols.data.enchantment.effect.ReplaceDiskEntityEffect import ReplaceDiskEntityEffect
-from generated_symbols.data.enchantment.effect.RunFunctionEntityEffect import RunFunctionEntityEffect
-from generated_symbols.data.enchantment.effect.SetBlockPropertiesEntityEffect import SetBlockPropertiesEntityEffect
-from generated_symbols.data.enchantment.effect.SpawnParticlesEntityEffect import SpawnParticlesEntityEffect
-from generated_symbols.data.enchantment.effect.SummonEntityEffect import SummonEntityEffect
+from vanilla_mcdoc.data.enchantment.effect.AllOfLocationBasedEffect import AllOfLocationBasedEffect
+from vanilla_mcdoc.data.enchantment.effect.ApplyExhaustionEntityEffect import ApplyExhaustionEntityEffect
+from vanilla_mcdoc.data.enchantment.effect.ApplyImpulseEntityEffect import ApplyImpulseEntityEffect
+from vanilla_mcdoc.data.enchantment.effect.ApplyMobEffectEntityEffect import ApplyMobEffectEntityEffect
+from vanilla_mcdoc.data.enchantment.effect.ChangeItemDamageEffect import ChangeItemDamageEffect
+from vanilla_mcdoc.data.enchantment.effect.DamageEntityEffect import DamageEntityEffect
+from vanilla_mcdoc.data.enchantment.effect.ExplodeEntityEffect import ExplodeEntityEffect
+from vanilla_mcdoc.data.enchantment.effect.IgniteEntityEffect import IgniteEntityEffect
+from vanilla_mcdoc.data.enchantment.effect.PlaySoundEntityEffect import PlaySoundEntityEffect
+from vanilla_mcdoc.data.enchantment.effect.ReplaceBlockEntityEffect import ReplaceBlockEntityEffect
+from vanilla_mcdoc.data.enchantment.effect.ReplaceDiskEntityEffect import ReplaceDiskEntityEffect
+from vanilla_mcdoc.data.enchantment.effect.RunFunctionEntityEffect import RunFunctionEntityEffect
+from vanilla_mcdoc.data.enchantment.effect.SetBlockPropertiesEntityEffect import SetBlockPropertiesEntityEffect
+from vanilla_mcdoc.data.enchantment.effect.SpawnParticlesEntityEffect import SpawnParticlesEntityEffect
+from vanilla_mcdoc.data.enchantment.effect.SummonEntityEffect import SummonEntityEffect
 
 
 class LocationBasedEffectAllOf(AllOfLocationBasedEffect):

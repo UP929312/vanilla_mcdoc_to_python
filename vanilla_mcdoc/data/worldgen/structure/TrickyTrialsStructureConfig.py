@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::data::worldgen::structure::TrickyTrialsStructureConfig
-Local link to file: generated_symbols/data/worldgen/structure/TrickyTrialsStructureConfig.py
+Local link to file: vanilla_mcdoc/data/worldgen/structure/TrickyTrialsStructureConfig.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.structure.LiquidSettings import LiquidSettings
+    from vanilla_mcdoc.data.worldgen.structure.LiquidSettings import LiquidSettings
 
 
 class DimensionPaddingStruct(GeneratedModel):

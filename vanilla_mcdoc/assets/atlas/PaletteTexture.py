@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::assets::atlas::PaletteTexture
-Local link to file: generated_symbols/assets/atlas/PaletteTexture.py
+Local link to file: vanilla_mcdoc/assets/atlas/PaletteTexture.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.assets.atlas.PaletteRef import PaletteRef
+from vanilla_mcdoc.assets.atlas.PaletteRef import PaletteRef
 
 
 type PaletteTexture = PaletteRef

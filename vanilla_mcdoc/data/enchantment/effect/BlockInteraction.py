@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::data::enchantment::effect::BlockInteraction
-Local link to file: generated_symbols/data/enchantment/effect/BlockInteraction.py
+Local link to file: vanilla_mcdoc/data/enchantment/effect/BlockInteraction.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

@@ -1,12 +1,12 @@
 """
 Generated from symbols.json for ::java::data::advancement::trigger::TradeTrigger
-Local link to file: generated_symbols/data/advancement/trigger/TradeTrigger.py
+Local link to file: vanilla_mcdoc/data/advancement/trigger/TradeTrigger.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.data.advancement.predicate.ItemPredicate import ItemPredicate
-from generated_symbols.data.advancement.trigger.AdvancementEntityPredicate import AdvancementEntityPredicate
-from generated_symbols.data.advancement.trigger.AllOptional import AllOptional
-from generated_symbols.data.advancement.trigger.PlayerConditions import PlayerConditions
+from vanilla_mcdoc.data.advancement.predicate.ItemPredicate import ItemPredicate
+from vanilla_mcdoc.data.advancement.trigger.AdvancementEntityPredicate import AdvancementEntityPredicate
+from vanilla_mcdoc.data.advancement.trigger.AllOptional import AllOptional
+from vanilla_mcdoc.data.advancement.trigger.PlayerConditions import PlayerConditions
 
 
 class TradeTriggerTypeArg(PlayerConditions):

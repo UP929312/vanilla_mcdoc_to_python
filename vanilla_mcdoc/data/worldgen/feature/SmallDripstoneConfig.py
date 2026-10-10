@@ -1,18 +1,16 @@
 """
 Generated from symbols.json for ::java::data::worldgen::feature::SmallDripstoneConfig
-Local link to file: generated_symbols/data/worldgen/feature/SmallDripstoneConfig.py
+Local link to file: vanilla_mcdoc/data/worldgen/feature/SmallDripstoneConfig.py
 """
 # ~~~ CODE ~~~
-from typing import Annotated, ClassVar
+from typing import Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class SmallDripstoneConfig(GeneratedModel):
-    __resource_dir__: ClassVar[str] = 'worldgen/feature'
-
     max_placements: Annotated[int, Field(ge=0, le=100)] | None = None
     empty_space_search_radius: Annotated[int, Field(ge=0, le=20)] | None = None
     max_offset_from_origin: Annotated[int, Field(ge=0, le=20)] | None = None

@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::world::item::suspicious_stew::SuspiciousStew
-Local link to file: generated_symbols/world/item/suspicious_stew/SuspiciousStew.py
+Local link to file: vanilla_mcdoc/world/item/suspicious_stew/SuspiciousStew.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.world.item.ItemBase import ItemBase
+from vanilla_mcdoc.world.item.ItemBase import ItemBase
 
 if TYPE_CHECKING:
-    from generated_symbols.world.item.suspicious_stew.Effect import Effect
+    from vanilla_mcdoc.world.item.suspicious_stew.Effect import Effect
 
 
 class SuspiciousStew(ItemBase):

@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::world::component::predicate::PotionsPredicate
-Local link to file: generated_symbols/world/component/predicate/PotionsPredicate.py
+Local link to file: vanilla_mcdoc/world/component/predicate/PotionsPredicate.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.advancement.predicate.EntityEffectsPredicate import EntityEffectsPredicate
-    from generated_symbols.world.component.predicate.CollectionPredicate import CollectionPredicate
-    from generated_symbols.world.component.predicate.PotionTypeMatch import PotionTypeMatch
+    from vanilla_mcdoc.data.advancement.predicate.EntityEffectsPredicate import EntityEffectsPredicate
+    from vanilla_mcdoc.world.component.predicate.CollectionPredicate import CollectionPredicate
+    from vanilla_mcdoc.world.component.predicate.PotionTypeMatch import PotionTypeMatch
 
 
 class PotionsPredicate(GeneratedModel):

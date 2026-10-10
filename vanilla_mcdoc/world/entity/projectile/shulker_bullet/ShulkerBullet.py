@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::world::entity::projectile::shulker_bullet::ShulkerBullet
-Local link to file: generated_symbols/world/entity/projectile/shulker_bullet/ShulkerBullet.py
+Local link to file: vanilla_mcdoc/world/entity/projectile/shulker_bullet/ShulkerBullet.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.world.entity.projectile.ProjectileBase import ProjectileBase
+from vanilla_mcdoc.world.entity.projectile.ProjectileBase import ProjectileBase
 
 if TYPE_CHECKING:
-    from generated_symbols.util.direction.DirectionByte import DirectionByte
-    from generated_symbols.world.entity.projectile.shulker_bullet.BulletTarget import BulletTarget
+    from vanilla_mcdoc.util.direction.DirectionByte import DirectionByte
+    from vanilla_mcdoc.world.entity.projectile.shulker_bullet.BulletTarget import BulletTarget
 
 
 class ShulkerBullet(ProjectileBase):

@@ -1,19 +1,19 @@
 """
 Generated from symbols.json for ::java::data::gametest::test_environment::TestEnvironment
-Local link to file: generated_symbols/data/gametest/test_environment/TestEnvironment.py
+Local link to file: vanilla_mcdoc/data/gametest/test_environment/TestEnvironment.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, ClassVar, Literal
 
 from pydantic import Field
 
-from generated_symbols.data.gametest.test_environment.AllOffTestEnvironment import AllOffTestEnvironment
-from generated_symbols.data.gametest.test_environment.ClockTimeTestEnvironment import ClockTimeTestEnvironment
-from generated_symbols.data.gametest.test_environment.DifficultyTestEnvironment import DifficultyTestEnvironment
-from generated_symbols.data.gametest.test_environment.FunctionTestEnvironment import FunctionTestEnvironment
-from generated_symbols.data.gametest.test_environment.GameRulesTestEnvironment import GameRulesTestEnvironment
-from generated_symbols.data.gametest.test_environment.TimelineAttributesTestEnvironment import TimelineAttributesTestEnvironment
-from generated_symbols.data.gametest.test_environment.WeatherTestEnvironment import WeatherTestEnvironment
+from vanilla_mcdoc.data.gametest.test_environment.AllOffTestEnvironment import AllOffTestEnvironment
+from vanilla_mcdoc.data.gametest.test_environment.ClockTimeTestEnvironment import ClockTimeTestEnvironment
+from vanilla_mcdoc.data.gametest.test_environment.DifficultyTestEnvironment import DifficultyTestEnvironment
+from vanilla_mcdoc.data.gametest.test_environment.FunctionTestEnvironment import FunctionTestEnvironment
+from vanilla_mcdoc.data.gametest.test_environment.GameRulesTestEnvironment import GameRulesTestEnvironment
+from vanilla_mcdoc.data.gametest.test_environment.TimelineAttributesTestEnvironment import TimelineAttributesTestEnvironment
+from vanilla_mcdoc.data.gametest.test_environment.WeatherTestEnvironment import WeatherTestEnvironment
 
 
 class TestEnvironmentAllOf(AllOffTestEnvironment):

@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::util::color::StringRGB
-Local link to file: generated_symbols/util/color/StringRGB.py
+Local link to file: vanilla_mcdoc/util/color/StringRGB.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated

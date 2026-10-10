@@ -1,17 +1,17 @@
 """
 Generated from symbols.json for ::java::data::worldgen::structure_set::SpreadingPlacementBase
-Local link to file: generated_symbols/data/worldgen/structure_set/SpreadingPlacementBase.py
+Local link to file: vanilla_mcdoc/data/worldgen/structure_set/SpreadingPlacementBase.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.structure_set.ExclusionZone import ExclusionZone
-    from generated_symbols.data.worldgen.structure_set.FrequencyReductionMethod import FrequencyReductionMethod
+    from vanilla_mcdoc.data.worldgen.structure_set.ExclusionZone import ExclusionZone
+    from vanilla_mcdoc.data.worldgen.structure_set.FrequencyReductionMethod import FrequencyReductionMethod
 
 
 class SpreadingPlacementBase(GeneratedModel):

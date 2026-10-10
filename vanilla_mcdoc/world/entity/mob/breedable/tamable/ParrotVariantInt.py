@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::breedable::tamable::ParrotVariantInt
-Local link to file: generated_symbols/world/entity/mob/breedable/tamable/ParrotVariantInt.py
+Local link to file: vanilla_mcdoc/world/entity/mob/breedable/tamable/ParrotVariantInt.py
 """
 # ~~~ CODE ~~~
 from enum import IntEnum

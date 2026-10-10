@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::fish::TropicalFish
-Local link to file: generated_symbols/world/entity/mob/fish/TropicalFish.py
+Local link to file: vanilla_mcdoc/world/entity/mob/fish/TropicalFish.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.world.entity.mob.fish.Fish import Fish
+from vanilla_mcdoc.world.entity.mob.fish.Fish import Fish
 
 
 class TropicalFish(Fish):

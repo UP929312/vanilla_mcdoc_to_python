@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::world::block::moving_piston::MovingPiston
-Local link to file: generated_symbols/world/block/moving_piston/MovingPiston.py
+Local link to file: vanilla_mcdoc/world/block/moving_piston/MovingPiston.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.world.block.BlockEntity import BlockEntity
+from vanilla_mcdoc.world.block.BlockEntity import BlockEntity
 
 if TYPE_CHECKING:
-    from generated_symbols.util.block_state.BlockState import BlockState
-    from generated_symbols.util.direction.DirectionByte import DirectionByte
+    from vanilla_mcdoc.util.block_state.BlockState import BlockState
+    from vanilla_mcdoc.util.direction.DirectionByte import DirectionByte
 
 
 class MovingPiston(BlockEntity):

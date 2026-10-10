@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::assets::shader::program::UniformType
-Local link to file: generated_symbols/assets/shader/program/UniformType.py
+Local link to file: vanilla_mcdoc/assets/shader/program/UniformType.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

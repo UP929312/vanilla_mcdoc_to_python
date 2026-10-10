@@ -1,13 +1,13 @@
 """
 Generated from symbols.json for ::java::util::particle::ShriekParticle
-Local link to file: generated_symbols/util/particle/ShriekParticle.py
+Local link to file: vanilla_mcdoc/util/particle/ShriekParticle.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class ShriekParticle(GeneratedModel):

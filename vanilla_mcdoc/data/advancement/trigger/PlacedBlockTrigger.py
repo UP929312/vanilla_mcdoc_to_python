@@ -1,10 +1,10 @@
 """
 Generated from symbols.json for ::java::data::advancement::trigger::PlacedBlockTrigger
-Local link to file: generated_symbols/data/advancement/trigger/PlacedBlockTrigger.py
+Local link to file: vanilla_mcdoc/data/advancement/trigger/PlacedBlockTrigger.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.data.advancement.trigger.AllOptional import AllOptional
-from generated_symbols.data.advancement.trigger.ItemUesdOnLocationConditions import ItemUesdOnLocationConditions
+from vanilla_mcdoc.data.advancement.trigger.AllOptional import AllOptional
+from vanilla_mcdoc.data.advancement.trigger.ItemUesdOnLocationConditions import ItemUesdOnLocationConditions
 
 
 PlacedBlockTrigger = AllOptional[ItemUesdOnLocationConditions]

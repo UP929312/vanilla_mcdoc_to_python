@@ -1,17 +1,17 @@
 """
 Generated from symbols.json for ::java::data::worldgen::material_rule::OreVeinifier
-Local link to file: generated_symbols/data/worldgen/material_rule/OreVeinifier.py
+Local link to file: vanilla_mcdoc/data/worldgen/material_rule/OreVeinifier.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.density_function.DensityFunctionRef import DensityFunctionRef
-    from generated_symbols.util.block_state.BlockState import BlockState
+    from vanilla_mcdoc.data.worldgen.density_function.DensityFunctionRef import DensityFunctionRef
+    from vanilla_mcdoc.util.block_state.BlockState import BlockState
 
 
 class OreVeinifier(GeneratedModel):

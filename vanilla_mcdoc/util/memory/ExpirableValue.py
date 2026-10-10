@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::util::memory::ExpirableValue
-Local link to file: generated_symbols/util/memory/ExpirableValue.py
+Local link to file: vanilla_mcdoc/util/memory/ExpirableValue.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class ExpirableValue(GeneratedModel):

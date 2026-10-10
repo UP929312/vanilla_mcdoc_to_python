@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::breedable::saddled::Saddled
-Local link to file: generated_symbols/world/entity/mob/breedable/saddled/Saddled.py
+Local link to file: vanilla_mcdoc/world/entity/mob/breedable/saddled/Saddled.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.world.entity.mob.breedable.Breedable import Breedable
+from vanilla_mcdoc.world.entity.mob.breedable.Breedable import Breedable
 
 
 class Saddled(Breedable):

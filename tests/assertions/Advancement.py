@@ -5,21 +5,21 @@
 # ~~~ FILE CONTENT ~~~
 """
 Generated from symbols.json for ::java::data::advancement::Advancement
-Local link to file: generated_symbols/data/advancement/Advancement.py
+Local link to file: vanilla_mcdoc/data/advancement/Advancement.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.advancement.AdvancementCriterion import AdvancementCriterion
-    from generated_symbols.data.advancement.AdvancementDisplay import AdvancementDisplay
-    from generated_symbols.data.advancement.AdvancementRewards import AdvancementRewards
-    from generated_symbols.data.advancement.RootAdvancementDisplay import RootAdvancementDisplay
+    from vanilla_mcdoc.data.advancement.AdvancementCriterion import AdvancementCriterion
+    from vanilla_mcdoc.data.advancement.AdvancementDisplay import AdvancementDisplay
+    from vanilla_mcdoc.data.advancement.AdvancementRewards import AdvancementRewards
+    from vanilla_mcdoc.data.advancement.RootAdvancementDisplay import RootAdvancementDisplay
 
 
 class Advancement(GeneratedModel):

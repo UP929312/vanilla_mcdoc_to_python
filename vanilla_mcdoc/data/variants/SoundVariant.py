@@ -1,11 +1,11 @@
 """
 Generated from symbols.json for ::java::data::variants::SoundVariant
-Local link to file: generated_symbols/data/variants/SoundVariant.py
+Local link to file: vanilla_mcdoc/data/variants/SoundVariant.py
 """
 # ~~~ CODE ~~~
 from typing import Generic, TypeVar
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 T = TypeVar('T')

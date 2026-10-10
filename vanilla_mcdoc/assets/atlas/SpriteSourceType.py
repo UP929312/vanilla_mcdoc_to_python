@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::assets::atlas::SpriteSourceType
-Local link to file: generated_symbols/assets/atlas/SpriteSourceType.py
+Local link to file: vanilla_mcdoc/assets/atlas/SpriteSourceType.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

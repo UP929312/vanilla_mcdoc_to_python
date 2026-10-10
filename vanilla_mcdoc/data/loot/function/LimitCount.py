@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::data::loot::function::LimitCount
-Local link to file: generated_symbols/data/loot/function/LimitCount.py
+Local link to file: vanilla_mcdoc/data/loot/function/LimitCount.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
-from generated_symbols.data.loot.function.Conditions import Conditions
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.data.loot.function.Conditions import Conditions
 
 if TYPE_CHECKING:
-    from generated_symbols.data.number_provider.IntNumberProviderRef import IntNumberProviderRef
+    from vanilla_mcdoc.data.number_provider.IntNumberProviderRef import IntNumberProviderRef
 
 
 class LimitStruct(GeneratedModel):

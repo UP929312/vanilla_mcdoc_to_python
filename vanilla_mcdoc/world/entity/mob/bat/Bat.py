@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::bat::Bat
-Local link to file: generated_symbols/world/entity/mob/bat/Bat.py
+Local link to file: vanilla_mcdoc/world/entity/mob/bat/Bat.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.world.entity.mob.MobBase import MobBase
+from vanilla_mcdoc.world.entity.mob.MobBase import MobBase
 
 
 class Bat(MobBase):

@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::data::enchantment::effect::ParticleVelocity
-Local link to file: generated_symbols/data/enchantment/effect/ParticleVelocity.py
+Local link to file: vanilla_mcdoc/data/enchantment/effect/ParticleVelocity.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class ParticleVelocity(GeneratedModel):

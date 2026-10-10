@@ -1,17 +1,17 @@
 """
 Generated from symbols.json for ::java::world::component::item::AttributeModifier
-Local link to file: generated_symbols/world/component/item/AttributeModifier.py
+Local link to file: vanilla_mcdoc/world/component/item/AttributeModifier.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.util.attribute.AttributeOperation import AttributeOperation
-    from generated_symbols.util.slot.EquipmentSlotGroup import EquipmentSlotGroup
-    from generated_symbols.world.component.item.AttributeDisplay import AttributeDisplay
+    from vanilla_mcdoc.util.attribute.AttributeOperation import AttributeOperation
+    from vanilla_mcdoc.util.slot.EquipmentSlotGroup import EquipmentSlotGroup
+    from vanilla_mcdoc.world.component.item.AttributeDisplay import AttributeDisplay
 
 
 class AttributeModifier(GeneratedModel):

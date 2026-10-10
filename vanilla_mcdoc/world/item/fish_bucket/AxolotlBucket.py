@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::world::item::fish_bucket::AxolotlBucket
-Local link to file: generated_symbols/world/item/fish_bucket/AxolotlBucket.py
+Local link to file: vanilla_mcdoc/world/item/fish_bucket/AxolotlBucket.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.world.item.ItemBase import ItemBase
+from vanilla_mcdoc.world.item.ItemBase import ItemBase
 
 if TYPE_CHECKING:
-    from generated_symbols.world.entity.AnyEntity import AnyEntity
+    from vanilla_mcdoc.world.entity.AnyEntity import AnyEntity
 
 
 class AxolotlBucket(ItemBase):

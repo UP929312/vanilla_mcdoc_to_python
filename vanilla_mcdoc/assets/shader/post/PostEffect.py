@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::assets::shader::post::PostEffect
-Local link to file: generated_symbols/assets/shader/post/PostEffect.py
+Local link to file: vanilla_mcdoc/assets/shader/post/PostEffect.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, ClassVar
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.assets.shader.post.Pass import Pass
-    from generated_symbols.assets.shader.post.Targets import Targets
+    from vanilla_mcdoc.assets.shader.post.Pass import Pass
+    from vanilla_mcdoc.assets.shader.post.Targets import Targets
 
 
 class PostEffect(GeneratedModel):

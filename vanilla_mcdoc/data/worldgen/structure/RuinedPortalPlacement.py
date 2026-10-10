@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::data::worldgen::structure::RuinedPortalPlacement
-Local link to file: generated_symbols/data/worldgen/structure/RuinedPortalPlacement.py
+Local link to file: vanilla_mcdoc/data/worldgen/structure/RuinedPortalPlacement.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

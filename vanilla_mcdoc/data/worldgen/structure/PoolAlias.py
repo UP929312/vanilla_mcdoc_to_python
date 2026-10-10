@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::data::worldgen::structure::PoolAlias
-Local link to file: generated_symbols/data/worldgen/structure/PoolAlias.py
+Local link to file: vanilla_mcdoc/data/worldgen/structure/PoolAlias.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
 from pydantic import Field
 
-from generated_symbols.data.worldgen.structure.DirectPoolAlias import DirectPoolAlias
-from generated_symbols.data.worldgen.structure.RandomGroupPoolAlias import RandomGroupPoolAlias
-from generated_symbols.data.worldgen.structure.RandomPoolAlias import RandomPoolAlias
+from vanilla_mcdoc.data.worldgen.structure.DirectPoolAlias import DirectPoolAlias
+from vanilla_mcdoc.data.worldgen.structure.RandomGroupPoolAlias import RandomGroupPoolAlias
+from vanilla_mcdoc.data.worldgen.structure.RandomPoolAlias import RandomPoolAlias
 
 
 class PoolAliasDirect(DirectPoolAlias):

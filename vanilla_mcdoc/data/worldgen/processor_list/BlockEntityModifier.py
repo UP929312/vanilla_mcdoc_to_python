@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::data::worldgen::processor_list::BlockEntityModifier
-Local link to file: generated_symbols/data/worldgen/processor_list/BlockEntityModifier.py
+Local link to file: vanilla_mcdoc/data/worldgen/processor_list/BlockEntityModifier.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
-from generated_symbols.data.worldgen.processor_list.AppendLoot import AppendLoot
-from generated_symbols.data.worldgen.processor_list.AppendStatic import AppendStatic
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.data.worldgen.processor_list.AppendLoot import AppendLoot
+from vanilla_mcdoc.data.worldgen.processor_list.AppendStatic import AppendStatic
 
 
 class BlockEntityModifierAppendLoot(AppendLoot):

@@ -1,18 +1,18 @@
 """
 Generated from symbols.json for ::java::data::recipe::CraftingSpecialBookCloning
-Local link to file: generated_symbols/data/recipe/CraftingSpecialBookCloning.py
+Local link to file: vanilla_mcdoc/data/recipe/CraftingSpecialBookCloning.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.recipe.Ingredient import Ingredient
-    from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
-    from generated_symbols.world.item.ItemStackTemplate import ItemStackTemplate
+    from vanilla_mcdoc.data.recipe.Ingredient import Ingredient
+    from vanilla_mcdoc.data.util.MinMaxBounds import MinMaxBounds
+    from vanilla_mcdoc.world.item.ItemStackTemplate import ItemStackTemplate
 
 
 class CraftingSpecialBookCloning(GeneratedModel):

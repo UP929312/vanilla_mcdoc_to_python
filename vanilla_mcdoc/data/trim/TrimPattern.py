@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::data::trim::TrimPattern
-Local link to file: generated_symbols/data/trim/TrimPattern.py
+Local link to file: vanilla_mcdoc/data/trim/TrimPattern.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.util.text.Text import Text
+    from vanilla_mcdoc.util.text.Text import Text
 
 
 class TrimPattern(GeneratedModel):

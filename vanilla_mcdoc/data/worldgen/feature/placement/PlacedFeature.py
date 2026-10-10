@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::data::worldgen::feature::placement::PlacedFeature
-Local link to file: generated_symbols/data/worldgen/feature/placement/PlacedFeature.py
+Local link to file: vanilla_mcdoc/data/worldgen/feature/placement/PlacedFeature.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, ClassVar
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.feature.ConfiguredFeatureRef import ConfiguredFeatureRef
-    from generated_symbols.data.worldgen.feature.placement.PlacementModifier import PlacementModifier
+    from vanilla_mcdoc.data.worldgen.feature.ConfiguredFeatureRef import ConfiguredFeatureRef
+    from vanilla_mcdoc.data.worldgen.feature.placement.PlacementModifier import PlacementModifier
 
 
 class PlacedFeature(GeneratedModel):

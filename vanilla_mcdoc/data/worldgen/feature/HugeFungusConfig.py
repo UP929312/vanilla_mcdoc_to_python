@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::data::worldgen::feature::HugeFungusConfig
-Local link to file: generated_symbols/data/worldgen/feature/HugeFungusConfig.py
+Local link to file: vanilla_mcdoc/data/worldgen/feature/HugeFungusConfig.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, ClassVar
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.feature.block_predicate.BlockPredicate import BlockPredicate
-    from generated_symbols.util.block_state.BlockState import BlockState
+    from vanilla_mcdoc.data.worldgen.feature.block_predicate.BlockPredicate import BlockPredicate
+    from vanilla_mcdoc.util.block_state.BlockState import BlockState
 
 
 class HugeFungusConfig(GeneratedModel):

@@ -1,12 +1,12 @@
 """
 Generated from symbols.json for ::java::util::text::StorageNbtText
-Local link to file: generated_symbols/util/text/StorageNbtText.py
+Local link to file: vanilla_mcdoc/util/text/StorageNbtText.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
-from generated_symbols.util.text.TextNbtBase import TextNbtBase
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.minecraft_types import IdSpec
+from vanilla_mcdoc.util.text.TextNbtBase import TextNbtBase
 
 
 class StorageNbtText(TextNbtBase):

@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::util::memory::IsTempted
-Local link to file: generated_symbols/util/memory/IsTempted.py
+Local link to file: vanilla_mcdoc/util/memory/IsTempted.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.util.memory.ExpirableValue import ExpirableValue
+from vanilla_mcdoc.util.memory.ExpirableValue import ExpirableValue
 
 
 class IsTempted(ExpirableValue):

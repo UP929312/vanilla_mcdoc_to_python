@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::util::particle::OldDustTransition
-Local link to file: generated_symbols/util/particle/OldDustTransition.py
+Local link to file: vanilla_mcdoc/util/particle/OldDustTransition.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.util.particle.DustColor import DustColor
+    from vanilla_mcdoc.util.particle.DustColor import DustColor
 
 
 class OldDustTransition(GeneratedModel):

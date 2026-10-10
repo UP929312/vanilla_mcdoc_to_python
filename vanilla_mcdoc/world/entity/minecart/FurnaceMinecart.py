@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::world::entity::minecart::FurnaceMinecart
-Local link to file: generated_symbols/world/entity/minecart/FurnaceMinecart.py
+Local link to file: vanilla_mcdoc/world/entity/minecart/FurnaceMinecart.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.world.entity.minecart.Minecart import Minecart
+from vanilla_mcdoc.world.entity.minecart.Minecart import Minecart
 
 
 class FurnaceMinecart(Minecart):

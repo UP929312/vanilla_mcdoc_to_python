@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::data::slot_source::LimitCountSlotSource
-Local link to file: generated_symbols/data/slot_source/LimitCountSlotSource.py
+Local link to file: vanilla_mcdoc/data/slot_source/LimitCountSlotSource.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.slot_source.SlotSource import SlotSource
+    from vanilla_mcdoc.data.slot_source.SlotSource import SlotSource
 
 
 class LimitCountSlotSource(GeneratedModel):

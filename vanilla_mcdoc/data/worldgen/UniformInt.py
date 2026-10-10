@@ -1,11 +1,11 @@
 """
 Generated from symbols.json for ::java::data::worldgen::UniformInt
-Local link to file: generated_symbols/data/worldgen/UniformInt.py
+Local link to file: vanilla_mcdoc/data/worldgen/UniformInt.py
 """
 # ~~~ CODE ~~~
 from typing import Generic, TypeVar
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 Base = TypeVar('Base')

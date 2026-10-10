@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::ModernAttributeModifier
-Local link to file: generated_symbols/world/entity/mob/ModernAttributeModifier.py
+Local link to file: vanilla_mcdoc/world/entity/mob/ModernAttributeModifier.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.util.attribute.AttributeOperation import AttributeOperation
+    from vanilla_mcdoc.util.attribute.AttributeOperation import AttributeOperation
 
 
 class ModernAttributeModifier(GeneratedModel):

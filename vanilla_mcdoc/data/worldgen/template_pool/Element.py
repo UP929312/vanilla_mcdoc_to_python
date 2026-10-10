@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::data::worldgen::template_pool::Element
-Local link to file: generated_symbols/data/worldgen/template_pool/Element.py
+Local link to file: vanilla_mcdoc/data/worldgen/template_pool/Element.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
 from pydantic import Field
 
-from generated_symbols.data.worldgen.template_pool.FeatureElement import FeatureElement
-from generated_symbols.data.worldgen.template_pool.ListElement import ListElement
-from generated_symbols.data.worldgen.template_pool.SingleElement import SingleElement
+from vanilla_mcdoc.data.worldgen.template_pool.FeatureElement import FeatureElement
+from vanilla_mcdoc.data.worldgen.template_pool.ListElement import ListElement
+from vanilla_mcdoc.data.worldgen.template_pool.SingleElement import SingleElement
 
 
 class ElementFeaturePoolElement(FeatureElement):

@@ -1,21 +1,21 @@
 """
 Generated from symbols.json for ::java::data::worldgen::carver::CaveConfig
-Local link to file: generated_symbols/data/worldgen/carver/CaveConfig.py
+Local link to file: vanilla_mcdoc/data/worldgen/carver/CaveConfig.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from pydantic import Field
 
-from generated_symbols.data.worldgen.carver.CarverConfigBase import CarverConfigBase
+from vanilla_mcdoc.data.worldgen.carver.CarverConfigBase import CarverConfigBase
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.FloatProvider import FloatProvider
-    from generated_symbols.data.worldgen.IntProvider import IntProvider
+    from vanilla_mcdoc.data.worldgen.FloatProvider import FloatProvider
+    from vanilla_mcdoc.data.worldgen.IntProvider import IntProvider
 
 
 class CaveConfig(CarverConfigBase):
-    __resource_dir__: ClassVar[str] = 'worldgen/configured_carver'
+    __resource_dir__: ClassVar[str] = 'worldgen/carver'
 
     count: IntProvider[Annotated[int, Field(ge=0)]] | Annotated[int, Field(ge=0)]
     thickness: FloatProvider[Annotated[float, Field(ge=0)]] | Annotated[float, Field(ge=0)]

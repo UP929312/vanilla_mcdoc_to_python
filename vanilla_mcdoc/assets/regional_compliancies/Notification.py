@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::assets::regional_compliancies::Notification
-Local link to file: generated_symbols/assets/regional_compliancies/Notification.py
+Local link to file: vanilla_mcdoc/assets/regional_compliancies/Notification.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class Notification(GeneratedModel):

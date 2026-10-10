@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::world::entity::display::BlockDisplay
-Local link to file: generated_symbols/world/entity/display/BlockDisplay.py
+Local link to file: vanilla_mcdoc/world/entity/display/BlockDisplay.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.world.entity.display.DisplayBase import DisplayBase
+from vanilla_mcdoc.world.entity.display.DisplayBase import DisplayBase
 
 if TYPE_CHECKING:
-    from generated_symbols.util.block_state.BlockState import BlockState
+    from vanilla_mcdoc.util.block_state.BlockState import BlockState
 
 
 class BlockDisplay(DisplayBase):

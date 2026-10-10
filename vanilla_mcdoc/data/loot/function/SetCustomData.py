@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::data::loot::function::SetCustomData
-Local link to file: generated_symbols/data/loot/function/SetCustomData.py
+Local link to file: vanilla_mcdoc/data/loot/function/SetCustomData.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.data.loot.function.Conditions import Conditions
+from vanilla_mcdoc.data.loot.function.Conditions import Conditions
 
 if TYPE_CHECKING:
-    from generated_symbols.world.component.CustomData import CustomData
+    from vanilla_mcdoc.world.component.CustomData import CustomData
 
 
 class SetCustomData(Conditions):

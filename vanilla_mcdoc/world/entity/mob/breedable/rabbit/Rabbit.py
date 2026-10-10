@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::breedable::rabbit::Rabbit
-Local link to file: generated_symbols/world/entity/mob/breedable/rabbit/Rabbit.py
+Local link to file: vanilla_mcdoc/world/entity/mob/breedable/rabbit/Rabbit.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
 from pydantic import Field
 
-from generated_symbols.world.entity.mob.breedable.Breedable import Breedable
+from vanilla_mcdoc.world.entity.mob.breedable.Breedable import Breedable
 
 if TYPE_CHECKING:
-    from generated_symbols.world.entity.mob.breedable.rabbit.RabbitType import RabbitType
+    from vanilla_mcdoc.world.entity.mob.breedable.rabbit.RabbitType import RabbitType
 
 
 class Rabbit(Breedable):

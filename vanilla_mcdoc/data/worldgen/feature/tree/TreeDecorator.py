@@ -1,22 +1,22 @@
 """
 Generated from symbols.json for ::java::data::worldgen::feature::tree::TreeDecorator
-Local link to file: generated_symbols/data/worldgen/feature/tree/TreeDecorator.py
+Local link to file: vanilla_mcdoc/data/worldgen/feature/tree/TreeDecorator.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
 from pydantic import Field
 
-from generated_symbols.data.worldgen.feature.tree.AlterGroundTreeDecorator import AlterGroundTreeDecorator
-from generated_symbols.data.worldgen.feature.tree.AttachedToLeavesTreeDecorator import AttachedToLeavesTreeDecorator
-from generated_symbols.data.worldgen.feature.tree.AttachedToLogsTreeDecorator import AttachedToLogsTreeDecorator
-from generated_symbols.data.worldgen.feature.tree.BeehiveTreeDecorator import BeehiveTreeDecorator
-from generated_symbols.data.worldgen.feature.tree.CocoaTreeDecorator import CocoaTreeDecorator
-from generated_symbols.data.worldgen.feature.tree.CreakingHeartTreeDecorator import CreakingHeartTreeDecorator
-from generated_symbols.data.worldgen.feature.tree.LeaveVineTreeDecorator import LeaveVineTreeDecorator
-from generated_symbols.data.worldgen.feature.tree.PaleMossTreeDecorator import PaleMossTreeDecorator
-from generated_symbols.data.worldgen.feature.tree.PlaceOnGroundTreeDecorator import PlaceOnGroundTreeDecorator
-from generated_symbols.data.worldgen.feature.tree.ShelfMushroomTreeDecorator import ShelfMushroomTreeDecorator
+from vanilla_mcdoc.data.worldgen.feature.tree.AlterGroundTreeDecorator import AlterGroundTreeDecorator
+from vanilla_mcdoc.data.worldgen.feature.tree.AttachedToLeavesTreeDecorator import AttachedToLeavesTreeDecorator
+from vanilla_mcdoc.data.worldgen.feature.tree.AttachedToLogsTreeDecorator import AttachedToLogsTreeDecorator
+from vanilla_mcdoc.data.worldgen.feature.tree.BeehiveTreeDecorator import BeehiveTreeDecorator
+from vanilla_mcdoc.data.worldgen.feature.tree.CocoaTreeDecorator import CocoaTreeDecorator
+from vanilla_mcdoc.data.worldgen.feature.tree.CreakingHeartTreeDecorator import CreakingHeartTreeDecorator
+from vanilla_mcdoc.data.worldgen.feature.tree.LeaveVineTreeDecorator import LeaveVineTreeDecorator
+from vanilla_mcdoc.data.worldgen.feature.tree.PaleMossTreeDecorator import PaleMossTreeDecorator
+from vanilla_mcdoc.data.worldgen.feature.tree.PlaceOnGroundTreeDecorator import PlaceOnGroundTreeDecorator
+from vanilla_mcdoc.data.worldgen.feature.tree.ShelfMushroomTreeDecorator import ShelfMushroomTreeDecorator
 
 
 class TreeDecoratorAlterGround(AlterGroundTreeDecorator):

@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::data::enchantment::effect::ReplaceDiskEntityEffect
-Local link to file: generated_symbols/data/enchantment/effect/ReplaceDiskEntityEffect.py
+Local link to file: vanilla_mcdoc/data/enchantment/effect/ReplaceDiskEntityEffect.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.data.enchantment.effect.ReplaceBlockEntityEffect import ReplaceBlockEntityEffect
+from vanilla_mcdoc.data.enchantment.effect.ReplaceBlockEntityEffect import ReplaceBlockEntityEffect
 
 if TYPE_CHECKING:
-    from generated_symbols.data.enchantment.LevelBasedValue import LevelBasedValue
+    from vanilla_mcdoc.data.enchantment.LevelBasedValue import LevelBasedValue
 
 
 class ReplaceDiskEntityEffect(ReplaceBlockEntityEffect):

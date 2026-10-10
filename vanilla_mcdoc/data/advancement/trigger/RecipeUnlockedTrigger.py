@@ -1,11 +1,11 @@
 """
 Generated from symbols.json for ::java::data::advancement::trigger::RecipeUnlockedTrigger
-Local link to file: generated_symbols/data/advancement/trigger/RecipeUnlockedTrigger.py
+Local link to file: vanilla_mcdoc/data/advancement/trigger/RecipeUnlockedTrigger.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.data.advancement.trigger.ParitalRequired import ParitalRequired
-from generated_symbols.data.advancement.trigger.PlayerConditions import PlayerConditions
-from generated_symbols.data.recipe.RecipeListRef import RecipeListRef
+from vanilla_mcdoc.data.advancement.trigger.ParitalRequired import ParitalRequired
+from vanilla_mcdoc.data.advancement.trigger.PlayerConditions import PlayerConditions
+from vanilla_mcdoc.data.recipe.RecipeListRef import RecipeListRef
 
 
 class RecipeUnlockedTriggerTypeArg(PlayerConditions):

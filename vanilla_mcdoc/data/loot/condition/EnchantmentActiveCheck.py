@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::data::loot::condition::EnchantmentActiveCheck
-Local link to file: generated_symbols/data/loot/condition/EnchantmentActiveCheck.py
+Local link to file: vanilla_mcdoc/data/loot/condition/EnchantmentActiveCheck.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class EnchantmentActiveCheck(GeneratedModel):

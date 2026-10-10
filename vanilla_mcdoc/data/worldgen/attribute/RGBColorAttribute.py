@@ -1,21 +1,21 @@
 """
 Generated from symbols.json for ::java::data::worldgen::attribute::RGBColorAttribute
-Local link to file: generated_symbols/data/worldgen/attribute/RGBColorAttribute.py
+Local link to file: vanilla_mcdoc/data/worldgen/attribute/RGBColorAttribute.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
-from generated_symbols.data.timeline.AttributeTrackBase import AttributeTrackBase
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.data.timeline.AttributeTrackBase import AttributeTrackBase
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.attribute.modifier.BlendToGray import BlendToGray
-    from generated_symbols.data.worldgen.attribute.modifier.ColorAttributeModifier import ColorAttributeModifier
-    from generated_symbols.data.worldgen.attribute.modifier.ColorModifierType import ColorModifierType
-    from generated_symbols.util.color.StringARGB import StringARGB
-    from generated_symbols.util.color.StringRGB import StringRGB
+    from vanilla_mcdoc.data.worldgen.attribute.modifier.BlendToGray import BlendToGray
+    from vanilla_mcdoc.data.worldgen.attribute.modifier.ColorAttributeModifier import ColorAttributeModifier
+    from vanilla_mcdoc.data.worldgen.attribute.modifier.ColorModifierType import ColorModifierType
+    from vanilla_mcdoc.util.color.StringARGB import StringARGB
+    from vanilla_mcdoc.util.color.StringRGB import StringRGB
 
 
 class KeyframesStruct(GeneratedModel):

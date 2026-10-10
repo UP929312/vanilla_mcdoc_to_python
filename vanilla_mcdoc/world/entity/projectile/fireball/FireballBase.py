@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::world::entity::projectile::fireball::FireballBase
-Local link to file: generated_symbols/world/entity/projectile/fireball/FireballBase.py
+Local link to file: vanilla_mcdoc/world/entity/projectile/fireball/FireballBase.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.world.entity.projectile.fireball.DespawnableProjectileBase import DespawnableProjectileBase
+from vanilla_mcdoc.world.entity.projectile.fireball.DespawnableProjectileBase import DespawnableProjectileBase
 
 if TYPE_CHECKING:
-    from generated_symbols.world.item.ItemStack import ItemStack
+    from vanilla_mcdoc.world.item.ItemStack import ItemStack
 
 
 class FireballBase(DespawnableProjectileBase):

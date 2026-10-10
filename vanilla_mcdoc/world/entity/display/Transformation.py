@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::world::entity::display::Transformation
-Local link to file: generated_symbols/world/entity/display/Transformation.py
+Local link to file: vanilla_mcdoc/world/entity/display/Transformation.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.world.entity.display.Rotation import Rotation
+    from vanilla_mcdoc.world.entity.display.Rotation import Rotation
 
 
 class TransformationStruct(GeneratedModel):

@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::world::entity::marker::Marker
-Local link to file: generated_symbols/world/entity/marker/Marker.py
+Local link to file: vanilla_mcdoc/world/entity/marker/Marker.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.world.entity.EntityBase import EntityBase
+from vanilla_mcdoc.world.entity.EntityBase import EntityBase
 
 
 class Marker(EntityBase):

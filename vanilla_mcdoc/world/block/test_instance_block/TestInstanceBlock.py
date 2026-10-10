@@ -1,19 +1,19 @@
 """
 Generated from symbols.json for ::java::world::block::test_instance_block::TestInstanceBlock
-Local link to file: generated_symbols/world/block/test_instance_block/TestInstanceBlock.py
+Local link to file: vanilla_mcdoc/world/block/test_instance_block/TestInstanceBlock.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.base import GeneratedModel
-from generated_symbols.world.block.BlockEntity import BlockEntity
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
+from vanilla_mcdoc.world.block.BlockEntity import BlockEntity
 
 if TYPE_CHECKING:
-    from generated_symbols.registry.KnownTestInstanceId import KnownTestInstanceId
-    from generated_symbols.util.Rotation import Rotation
-    from generated_symbols.util.text.Text import Text
-    from generated_symbols.world.block.test_instance_block.TestInstanceBlockStatus import TestInstanceBlockStatus
+    from vanilla_mcdoc.registry.KnownTestInstanceId import KnownTestInstanceId
+    from vanilla_mcdoc.util.Rotation import Rotation
+    from vanilla_mcdoc.util.text.Text import Text
+    from vanilla_mcdoc.world.block.test_instance_block.TestInstanceBlockStatus import TestInstanceBlockStatus
 
 
 class DataStruct(GeneratedModel):

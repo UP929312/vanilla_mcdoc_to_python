@@ -5,14 +5,14 @@
 # ~~~ FILE CONTENT ~~~
 """
 Generated from symbols.json for ::java::assets::credits::Credits
-Local link to file: generated_symbols/assets/credits/Credits.py
+Local link to file: vanilla_mcdoc/assets/credits/Credits.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class TitlesStruct(GeneratedModel):

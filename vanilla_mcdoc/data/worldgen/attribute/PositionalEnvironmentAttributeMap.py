@@ -1,10 +1,10 @@
 """
 Generated from symbols.json for ::java::data::worldgen::attribute::PositionalEnvironmentAttributeMap
-Local link to file: generated_symbols/data/worldgen/attribute/PositionalEnvironmentAttributeMap.py
+Local link to file: vanilla_mcdoc/data/worldgen/attribute/PositionalEnvironmentAttributeMap.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.data.worldgen.attribute.EnvironmentAttributeMap import EnvironmentAttributeMap
-from generated_symbols.data.worldgen.attribute.PositionalEnvironmentAttribute import PositionalEnvironmentAttribute
+from vanilla_mcdoc.data.worldgen.attribute.EnvironmentAttributeMap import EnvironmentAttributeMap
+from vanilla_mcdoc.data.worldgen.attribute.PositionalEnvironmentAttribute import PositionalEnvironmentAttribute
 
 
 PositionalEnvironmentAttributeMap = EnvironmentAttributeMap[PositionalEnvironmentAttribute]

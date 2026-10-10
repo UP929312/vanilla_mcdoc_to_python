@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::data::worldgen::dimension::Dimension
-Local link to file: generated_symbols/data/worldgen/dimension/Dimension.py
+Local link to file: vanilla_mcdoc/data/worldgen/dimension/Dimension.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, ClassVar
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.dimension.DimensionTypeRef import DimensionTypeRef
-    from generated_symbols.data.worldgen.dimension.chunk_generator.ChunkGenerator import ChunkGenerator
+    from vanilla_mcdoc.data.worldgen.dimension.DimensionTypeRef import DimensionTypeRef
+    from vanilla_mcdoc.data.worldgen.dimension.chunk_generator.ChunkGenerator import ChunkGenerator
 
 
 class Dimension(GeneratedModel):

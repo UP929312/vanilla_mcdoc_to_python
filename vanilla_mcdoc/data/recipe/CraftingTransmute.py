@@ -1,20 +1,20 @@
 """
 Generated from symbols.json for ::java::data::recipe::CraftingTransmute
-Local link to file: generated_symbols/data/recipe/CraftingTransmute.py
+Local link to file: vanilla_mcdoc/data/recipe/CraftingTransmute.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from pydantic import Field
 
-from generated_symbols.data.recipe.CraftingBookInfo import CraftingBookInfo
-from generated_symbols.data.recipe.NotificationInfo import NotificationInfo
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.data.recipe.CraftingBookInfo import CraftingBookInfo
+from vanilla_mcdoc.data.recipe.NotificationInfo import NotificationInfo
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.recipe.Ingredient import Ingredient
-    from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
-    from generated_symbols.world.item.ItemStack import ItemStack
+    from vanilla_mcdoc.data.recipe.Ingredient import Ingredient
+    from vanilla_mcdoc.data.util.MinMaxBounds import MinMaxBounds
+    from vanilla_mcdoc.world.item.ItemStack import ItemStack
 
 
 class CraftingTransmute(CraftingBookInfo, NotificationInfo):

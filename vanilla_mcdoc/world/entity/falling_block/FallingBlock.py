@@ -1,17 +1,17 @@
 """
 Generated from symbols.json for ::java::world::entity::falling_block::FallingBlock
-Local link to file: generated_symbols/world/entity/falling_block/FallingBlock.py
+Local link to file: vanilla_mcdoc/world/entity/falling_block/FallingBlock.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
-from generated_symbols.world.entity.EntityBase import EntityBase
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.world.entity.EntityBase import EntityBase
 
 if TYPE_CHECKING:
-    from generated_symbols.util.BlockState import BlockState
+    from vanilla_mcdoc.util.BlockState import BlockState
 
 
 class TileEntityDataStruct(GeneratedModel):

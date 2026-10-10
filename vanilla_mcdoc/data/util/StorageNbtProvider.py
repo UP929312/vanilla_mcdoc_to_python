@@ -1,12 +1,12 @@
 """
 Generated from symbols.json for ::java::data::util::StorageNbtProvider
-Local link to file: generated_symbols/data/util/StorageNbtProvider.py
+Local link to file: vanilla_mcdoc/data/util/StorageNbtProvider.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 
 class StorageNbtProvider(GeneratedModel):

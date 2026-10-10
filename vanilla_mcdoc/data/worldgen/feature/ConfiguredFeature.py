@@ -1,58 +1,58 @@
 """
 Generated from symbols.json for ::java::data::worldgen::feature::ConfiguredFeature
-Local link to file: generated_symbols/data/worldgen/feature/ConfiguredFeature.py
+Local link to file: vanilla_mcdoc/data/worldgen/feature/ConfiguredFeature.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, ClassVar, Literal
 
 from pydantic import Field
 
-from generated_symbols.data.worldgen.feature.BlockBlobConfig import BlockBlobConfig
-from generated_symbols.data.worldgen.feature.BlockColumnConfig import BlockColumnConfig
-from generated_symbols.data.worldgen.feature.BlockPileConfig import BlockPileConfig
-from generated_symbols.data.worldgen.feature.ColumnsConfig import ColumnsConfig
-from generated_symbols.data.worldgen.feature.CoralConfig import CoralConfig
-from generated_symbols.data.worldgen.feature.DeltaConfig import DeltaConfig
-from generated_symbols.data.worldgen.feature.DiskConfig import DiskConfig
-from generated_symbols.data.worldgen.feature.EmeraldOreConfig import EmeraldOreConfig
-from generated_symbols.data.worldgen.feature.EndGatewayConfig import EndGatewayConfig
-from generated_symbols.data.worldgen.feature.EndPodiumConfig import EndPodiumConfig
-from generated_symbols.data.worldgen.feature.EndSpikeConfig import EndSpikeConfig
-from generated_symbols.data.worldgen.feature.FillLayerConfig import FillLayerConfig
-from generated_symbols.data.worldgen.feature.FossilConfig import FossilConfig
-from generated_symbols.data.worldgen.feature.GeodeConfig import GeodeConfig
-from generated_symbols.data.worldgen.feature.HugeFungusConfig import HugeFungusConfig
-from generated_symbols.data.worldgen.feature.HugeMushroomConfig import HugeMushroomConfig
-from generated_symbols.data.worldgen.feature.IcebergConfig import IcebergConfig
-from generated_symbols.data.worldgen.feature.LakeConfig import LakeConfig
-from generated_symbols.data.worldgen.feature.LargeSpeleothemConfig import LargeSpeleothemConfig
-from generated_symbols.data.worldgen.feature.MultifaceGrowthConfig import MultifaceGrowthConfig
-from generated_symbols.data.worldgen.feature.NetherrackReplaceBlobsConfig import NetherrackReplaceBlobsConfig
-from generated_symbols.data.worldgen.feature.OreConfig import OreConfig
-from generated_symbols.data.worldgen.feature.OverlayConfig import OverlayConfig
-from generated_symbols.data.worldgen.feature.ProbabilityConfig import ProbabilityConfig
-from generated_symbols.data.worldgen.feature.ProjectedSquareConfig import ProjectedSquareConfig
-from generated_symbols.data.worldgen.feature.RandomBooleanSelector import RandomBooleanSelector
-from generated_symbols.data.worldgen.feature.RandomNeighborSpreadConfig import RandomNeighborSpreadConfig
-from generated_symbols.data.worldgen.feature.RandomPatchConfig import RandomPatchConfig
-from generated_symbols.data.worldgen.feature.RandomSelector import RandomSelector
-from generated_symbols.data.worldgen.feature.ReplaceSingleBlockConfig import ReplaceSingleBlockConfig
-from generated_symbols.data.worldgen.feature.RootSystemConfig import RootSystemConfig
-from generated_symbols.data.worldgen.feature.SculkPatchConfig import SculkPatchConfig
-from generated_symbols.data.worldgen.feature.SequenceConfig import SequenceConfig
-from generated_symbols.data.worldgen.feature.SimpleBlockConfig import SimpleBlockConfig
-from generated_symbols.data.worldgen.feature.SimpleRandomSelectorConfig import SimpleRandomSelectorConfig
-from generated_symbols.data.worldgen.feature.SingleBlockPillarConfig import SingleBlockPillarConfig
-from generated_symbols.data.worldgen.feature.SpeleothemClusterConfig import SpeleothemClusterConfig
-from generated_symbols.data.worldgen.feature.SpeleothemConfig import SpeleothemConfig
-from generated_symbols.data.worldgen.feature.SpikeConfig import SpikeConfig
-from generated_symbols.data.worldgen.feature.SpringConfig import SpringConfig
-from generated_symbols.data.worldgen.feature.TemplateConfig import TemplateConfig
-from generated_symbols.data.worldgen.feature.UnderwaterMagmaConfig import UnderwaterMagmaConfig
-from generated_symbols.data.worldgen.feature.VegetationPatchConfig import VegetationPatchConfig
-from generated_symbols.data.worldgen.feature.WeightedRandomFeatureConfig import WeightedRandomFeatureConfig
-from generated_symbols.data.worldgen.feature.tree.FallenTreeConfig import FallenTreeConfig
-from generated_symbols.data.worldgen.feature.tree.TreeConfig import TreeConfig
+from vanilla_mcdoc.data.worldgen.feature.BlockBlobConfig import BlockBlobConfig
+from vanilla_mcdoc.data.worldgen.feature.BlockColumnConfig import BlockColumnConfig
+from vanilla_mcdoc.data.worldgen.feature.BlockPileConfig import BlockPileConfig
+from vanilla_mcdoc.data.worldgen.feature.ColumnsConfig import ColumnsConfig
+from vanilla_mcdoc.data.worldgen.feature.CoralConfig import CoralConfig
+from vanilla_mcdoc.data.worldgen.feature.DeltaConfig import DeltaConfig
+from vanilla_mcdoc.data.worldgen.feature.DiskConfig import DiskConfig
+from vanilla_mcdoc.data.worldgen.feature.EmeraldOreConfig import EmeraldOreConfig
+from vanilla_mcdoc.data.worldgen.feature.EndGatewayConfig import EndGatewayConfig
+from vanilla_mcdoc.data.worldgen.feature.EndPodiumConfig import EndPodiumConfig
+from vanilla_mcdoc.data.worldgen.feature.EndSpikeConfig import EndSpikeConfig
+from vanilla_mcdoc.data.worldgen.feature.FillLayerConfig import FillLayerConfig
+from vanilla_mcdoc.data.worldgen.feature.FossilConfig import FossilConfig
+from vanilla_mcdoc.data.worldgen.feature.GeodeConfig import GeodeConfig
+from vanilla_mcdoc.data.worldgen.feature.HugeFungusConfig import HugeFungusConfig
+from vanilla_mcdoc.data.worldgen.feature.HugeMushroomConfig import HugeMushroomConfig
+from vanilla_mcdoc.data.worldgen.feature.IcebergConfig import IcebergConfig
+from vanilla_mcdoc.data.worldgen.feature.LakeConfig import LakeConfig
+from vanilla_mcdoc.data.worldgen.feature.LargeSpeleothemConfig import LargeSpeleothemConfig
+from vanilla_mcdoc.data.worldgen.feature.MultifaceGrowthConfig import MultifaceGrowthConfig
+from vanilla_mcdoc.data.worldgen.feature.NetherrackReplaceBlobsConfig import NetherrackReplaceBlobsConfig
+from vanilla_mcdoc.data.worldgen.feature.OreConfig import OreConfig
+from vanilla_mcdoc.data.worldgen.feature.OverlayConfig import OverlayConfig
+from vanilla_mcdoc.data.worldgen.feature.ProbabilityConfig import ProbabilityConfig
+from vanilla_mcdoc.data.worldgen.feature.ProjectedSquareConfig import ProjectedSquareConfig
+from vanilla_mcdoc.data.worldgen.feature.RandomBooleanSelector import RandomBooleanSelector
+from vanilla_mcdoc.data.worldgen.feature.RandomNeighborSpreadConfig import RandomNeighborSpreadConfig
+from vanilla_mcdoc.data.worldgen.feature.RandomPatchConfig import RandomPatchConfig
+from vanilla_mcdoc.data.worldgen.feature.RandomSelector import RandomSelector
+from vanilla_mcdoc.data.worldgen.feature.ReplaceSingleBlockConfig import ReplaceSingleBlockConfig
+from vanilla_mcdoc.data.worldgen.feature.RootSystemConfig import RootSystemConfig
+from vanilla_mcdoc.data.worldgen.feature.SculkPatchConfig import SculkPatchConfig
+from vanilla_mcdoc.data.worldgen.feature.SequenceConfig import SequenceConfig
+from vanilla_mcdoc.data.worldgen.feature.SimpleBlockConfig import SimpleBlockConfig
+from vanilla_mcdoc.data.worldgen.feature.SimpleRandomSelectorConfig import SimpleRandomSelectorConfig
+from vanilla_mcdoc.data.worldgen.feature.SingleBlockPillarConfig import SingleBlockPillarConfig
+from vanilla_mcdoc.data.worldgen.feature.SpeleothemClusterConfig import SpeleothemClusterConfig
+from vanilla_mcdoc.data.worldgen.feature.SpeleothemConfig import SpeleothemConfig
+from vanilla_mcdoc.data.worldgen.feature.SpikeConfig import SpikeConfig
+from vanilla_mcdoc.data.worldgen.feature.SpringConfig import SpringConfig
+from vanilla_mcdoc.data.worldgen.feature.TemplateConfig import TemplateConfig
+from vanilla_mcdoc.data.worldgen.feature.UnderwaterMagmaConfig import UnderwaterMagmaConfig
+from vanilla_mcdoc.data.worldgen.feature.VegetationPatchConfig import VegetationPatchConfig
+from vanilla_mcdoc.data.worldgen.feature.WeightedRandomFeatureConfig import WeightedRandomFeatureConfig
+from vanilla_mcdoc.data.worldgen.feature.tree.FallenTreeConfig import FallenTreeConfig
+from vanilla_mcdoc.data.worldgen.feature.tree.TreeConfig import TreeConfig
 
 
 class ConfiguredFeatureBamboo(ProbabilityConfig):

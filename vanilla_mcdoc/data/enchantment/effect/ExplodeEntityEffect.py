@@ -1,21 +1,21 @@
 """
 Generated from symbols.json for ::java::data::enchantment::effect::ExplodeEntityEffect
-Local link to file: generated_symbols/data/enchantment/effect/ExplodeEntityEffect.py
+Local link to file: vanilla_mcdoc/data/enchantment/effect/ExplodeEntityEffect.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.enchantment.LevelBasedValue import LevelBasedValue
-    from generated_symbols.data.enchantment.effect.BlockInteraction import BlockInteraction
-    from generated_symbols.data.enchantment.effect.ExplosionParticleInfo import ExplosionParticleInfo
-    from generated_symbols.data.util.SoundEventRef import SoundEventRef
-    from generated_symbols.registry.KnownBlockId import KnownBlockId
-    from generated_symbols.util.FlatWeightedList import FlatWeightedList
-    from generated_symbols.util.particle.Particle import Particle
+    from vanilla_mcdoc.data.enchantment.LevelBasedValue import LevelBasedValue
+    from vanilla_mcdoc.data.enchantment.effect.BlockInteraction import BlockInteraction
+    from vanilla_mcdoc.data.enchantment.effect.ExplosionParticleInfo import ExplosionParticleInfo
+    from vanilla_mcdoc.data.util.SoundEventRef import SoundEventRef
+    from vanilla_mcdoc.registry.KnownBlockId import KnownBlockId
+    from vanilla_mcdoc.util.FlatWeightedList import FlatWeightedList
+    from vanilla_mcdoc.util.particle.Particle import Particle
 
 
 class ExplodeEntityEffect(GeneratedModel):

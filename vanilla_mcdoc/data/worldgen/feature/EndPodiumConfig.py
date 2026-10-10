@@ -1,11 +1,11 @@
 """
 Generated from symbols.json for ::java::data::worldgen::feature::EndPodiumConfig
-Local link to file: generated_symbols/data/worldgen/feature/EndPodiumConfig.py
+Local link to file: vanilla_mcdoc/data/worldgen/feature/EndPodiumConfig.py
 """
 # ~~~ CODE ~~~
 from typing import ClassVar
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class EndPodiumConfig(GeneratedModel):

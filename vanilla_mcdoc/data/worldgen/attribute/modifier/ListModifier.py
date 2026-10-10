@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::data::worldgen::attribute::modifier::ListModifier
-Local link to file: generated_symbols/data/worldgen/attribute/modifier/ListModifier.py
+Local link to file: vanilla_mcdoc/data/worldgen/attribute/modifier/ListModifier.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Generic, TypeVar
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.attribute.modifier.ListModifierType import ListModifierType
+    from vanilla_mcdoc.data.worldgen.attribute.modifier.ListModifierType import ListModifierType
 
 
 E = TypeVar('E')

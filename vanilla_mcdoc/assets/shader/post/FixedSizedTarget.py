@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::assets::shader::post::FixedSizedTarget
-Local link to file: generated_symbols/assets/shader/post/FixedSizedTarget.py
+Local link to file: vanilla_mcdoc/assets/shader/post/FixedSizedTarget.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class FixedSizedTarget(GeneratedModel):

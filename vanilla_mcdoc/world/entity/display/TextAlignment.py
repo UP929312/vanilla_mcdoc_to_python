@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::world::entity::display::TextAlignment
-Local link to file: generated_symbols/world/entity/display/TextAlignment.py
+Local link to file: vanilla_mcdoc/world/entity/display/TextAlignment.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

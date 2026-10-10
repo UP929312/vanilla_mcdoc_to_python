@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::data::tag::Tag
-Local link to file: generated_symbols/data/tag/Tag.py
+Local link to file: vanilla_mcdoc/data/tag/Tag.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Generic, TypeVar
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.tag.TagEntry import TagEntry
+    from vanilla_mcdoc.data.tag.TagEntry import TagEntry
 
 
 E = TypeVar('E')

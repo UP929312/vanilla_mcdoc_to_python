@@ -1,10 +1,10 @@
 """
 Generated from symbols.json for ::java::world::item::ItemStack
-Local link to file: generated_symbols/world/item/ItemStack.py
+Local link to file: vanilla_mcdoc/world/item/ItemStack.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.world.component.DataComponentPatch import DataComponentPatch
-from generated_symbols.world.item.ItemStackOfComponent import ItemStackOfComponent
+from vanilla_mcdoc.world.component.DataComponentPatch import DataComponentPatch
+from vanilla_mcdoc.world.item.ItemStackOfComponent import ItemStackOfComponent
 
 
 ItemStack = ItemStackOfComponent[DataComponentPatch]

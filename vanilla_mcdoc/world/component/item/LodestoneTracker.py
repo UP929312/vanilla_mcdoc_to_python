@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::world::component::item::LodestoneTracker
-Local link to file: generated_symbols/world/component/item/LodestoneTracker.py
+Local link to file: vanilla_mcdoc/world/component/item/LodestoneTracker.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.util.GlobalPos import GlobalPos
+    from vanilla_mcdoc.util.GlobalPos import GlobalPos
 
 
 class LodestoneTracker(GeneratedModel):

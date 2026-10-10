@@ -1,12 +1,12 @@
 """
 Generated from symbols.json for ::java::data::advancement::trigger::NetherTravelTrigger
-Local link to file: generated_symbols/data/advancement/trigger/NetherTravelTrigger.py
+Local link to file: vanilla_mcdoc/data/advancement/trigger/NetherTravelTrigger.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.data.advancement.predicate.DistancePredicate import DistancePredicate
-from generated_symbols.data.advancement.predicate.LocationPredicate import LocationPredicate
-from generated_symbols.data.advancement.trigger.AllOptional import AllOptional
-from generated_symbols.data.advancement.trigger.PlayerConditions import PlayerConditions
+from vanilla_mcdoc.data.advancement.predicate.DistancePredicate import DistancePredicate
+from vanilla_mcdoc.data.advancement.predicate.LocationPredicate import LocationPredicate
+from vanilla_mcdoc.data.advancement.trigger.AllOptional import AllOptional
+from vanilla_mcdoc.data.advancement.trigger.PlayerConditions import PlayerConditions
 
 
 class NetherTravelTriggerTypeArg(PlayerConditions):

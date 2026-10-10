@@ -1,13 +1,13 @@
 import importlib
 import pkgutil
 
-import generated_symbols
+import vanilla_mcdoc
 
 
 def test_every_generated_module_imports() -> None:
     """Catches generated code that can't even be defined, e.g. a field that shadows its own type (`BlockState: BlockState`)."""
     failures: dict[str, str] = {}
-    for module_info in pkgutil.walk_packages(generated_symbols.__path__, "generated_symbols."):
+    for module_info in pkgutil.walk_packages(vanilla_mcdoc.__path__, "vanilla_mcdoc."):
         try:
             importlib.import_module(module_info.name)
         except Exception as error:  # pylint: disable=broad-exception-caught

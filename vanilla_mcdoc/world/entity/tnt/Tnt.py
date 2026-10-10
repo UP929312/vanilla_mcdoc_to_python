@@ -1,17 +1,17 @@
 """
 Generated from symbols.json for ::java::world::entity::tnt::Tnt
-Local link to file: generated_symbols/world/entity/tnt/Tnt.py
+Local link to file: vanilla_mcdoc/world/entity/tnt/Tnt.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.minecraft_types import MinecraftUUID
-from generated_symbols.world.entity.EntityBase import EntityBase
+from vanilla_mcdoc.minecraft_types import MinecraftUUID
+from vanilla_mcdoc.world.entity.EntityBase import EntityBase
 
 if TYPE_CHECKING:
-    from generated_symbols.util.block_state.BlockState import BlockState
+    from vanilla_mcdoc.util.block_state.BlockState import BlockState
 
 
 class Tnt(EntityBase):

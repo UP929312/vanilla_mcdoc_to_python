@@ -1,12 +1,12 @@
 """
 Generated from symbols.json for ::java::assets::particle::Particle
-Local link to file: generated_symbols/assets/particle/Particle.py
+Local link to file: vanilla_mcdoc/assets/particle/Particle.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, ClassVar
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 
 class Particle(GeneratedModel):

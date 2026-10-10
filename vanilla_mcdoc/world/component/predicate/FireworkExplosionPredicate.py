@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::world::component::predicate::FireworkExplosionPredicate
-Local link to file: generated_symbols/world/component/predicate/FireworkExplosionPredicate.py
+Local link to file: vanilla_mcdoc/world/component/predicate/FireworkExplosionPredicate.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.world.component.item.FireworkShape import FireworkShape
+    from vanilla_mcdoc.world.component.item.FireworkShape import FireworkShape
 
 
 class FireworkExplosionPredicate(GeneratedModel):

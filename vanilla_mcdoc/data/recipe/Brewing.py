@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::data::recipe::Brewing
-Local link to file: generated_symbols/data/recipe/Brewing.py
+Local link to file: vanilla_mcdoc/data/recipe/Brewing.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, ClassVar
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.recipe.PotionIngredient import PotionIngredient
-    from generated_symbols.world.item.ItemStackTemplate import ItemStackTemplate
+    from vanilla_mcdoc.data.recipe.PotionIngredient import PotionIngredient
+    from vanilla_mcdoc.world.item.ItemStackTemplate import ItemStackTemplate
 
 
 class Brewing(GeneratedModel):

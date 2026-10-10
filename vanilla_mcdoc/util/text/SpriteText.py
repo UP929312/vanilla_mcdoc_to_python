@@ -1,13 +1,13 @@
 """
 Generated from symbols.json for ::java::util::text::SpriteText
-Local link to file: generated_symbols/util/text/SpriteText.py
+Local link to file: vanilla_mcdoc/util/text/SpriteText.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
-from generated_symbols.util.text.ObjectTextConfig import ObjectTextConfig
-from generated_symbols.util.text.TextBase import TextBase
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.minecraft_types import IdSpec
+from vanilla_mcdoc.util.text.ObjectTextConfig import ObjectTextConfig
+from vanilla_mcdoc.util.text.TextBase import TextBase
 
 
 class SpriteText(ObjectTextConfig, TextBase):

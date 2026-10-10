@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::data::gametest::test_environment::WeatherTestEnvironment
-Local link to file: generated_symbols/data/gametest/test_environment/WeatherTestEnvironment.py
+Local link to file: vanilla_mcdoc/data/gametest/test_environment/WeatherTestEnvironment.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, ClassVar
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.gametest.test_environment.Weather import Weather
+    from vanilla_mcdoc.data.gametest.test_environment.Weather import Weather
 
 
 class WeatherTestEnvironment(GeneratedModel):

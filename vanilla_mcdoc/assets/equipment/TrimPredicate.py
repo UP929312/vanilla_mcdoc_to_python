@@ -1,12 +1,12 @@
 """
 Generated from symbols.json for ::java::assets::equipment::TrimPredicate
-Local link to file: generated_symbols/assets/equipment/TrimPredicate.py
+Local link to file: vanilla_mcdoc/assets/equipment/TrimPredicate.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 
 class TrimPredicate(GeneratedModel):

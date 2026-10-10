@@ -1,11 +1,11 @@
 """
 Generated from symbols.json for ::java::data::advancement::trigger::LootTableTrigger
-Local link to file: generated_symbols/data/advancement/trigger/LootTableTrigger.py
+Local link to file: vanilla_mcdoc/data/advancement/trigger/LootTableTrigger.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.data.advancement.trigger.ParitalRequired import ParitalRequired
-from generated_symbols.data.advancement.trigger.PlayerConditions import PlayerConditions
-from generated_symbols.data.loot.LootTableListRef import LootTableListRef
+from vanilla_mcdoc.data.advancement.trigger.ParitalRequired import ParitalRequired
+from vanilla_mcdoc.data.advancement.trigger.PlayerConditions import PlayerConditions
+from vanilla_mcdoc.data.loot.LootTableListRef import LootTableListRef
 
 
 class LootTableTriggerTypeArg(PlayerConditions):

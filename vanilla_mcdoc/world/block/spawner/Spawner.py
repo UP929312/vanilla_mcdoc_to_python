@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::world::block::spawner::Spawner
-Local link to file: generated_symbols/world/block/spawner/Spawner.py
+Local link to file: vanilla_mcdoc/world/block/spawner/Spawner.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.world.block.BlockEntity import BlockEntity
+from vanilla_mcdoc.world.block.BlockEntity import BlockEntity
 
 if TYPE_CHECKING:
-    from generated_symbols.world.block.spawner.SpawnPotential import SpawnPotential
-    from generated_symbols.world.block.spawner.SpawnerEntry import SpawnerEntry
+    from vanilla_mcdoc.world.block.spawner.SpawnPotential import SpawnPotential
+    from vanilla_mcdoc.world.block.spawner.SpawnerEntry import SpawnerEntry
 
 
 class Spawner(BlockEntity):

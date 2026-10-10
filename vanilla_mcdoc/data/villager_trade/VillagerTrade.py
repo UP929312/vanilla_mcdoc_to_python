@@ -1,20 +1,20 @@
 """
 Generated from symbols.json for ::java::data::villager_trade::VillagerTrade
-Local link to file: generated_symbols/data/villager_trade/VillagerTrade.py
+Local link to file: vanilla_mcdoc/data/villager_trade/VillagerTrade.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.item_modifier.ItemModifierWithoutRootRef import ItemModifierWithoutRootRef
-    from generated_symbols.data.number_provider.FloatNumberProvider import FloatNumberProvider
-    from generated_symbols.data.number_provider.IntNumberProvider import IntNumberProvider
-    from generated_symbols.data.predicate.Predicate import Predicate
-    from generated_symbols.data.villager_trade.TradeCost import TradeCost
-    from generated_symbols.world.item.ItemStackTemplate import ItemStackTemplate
+    from vanilla_mcdoc.data.item_modifier.ItemModifierWithoutRootRef import ItemModifierWithoutRootRef
+    from vanilla_mcdoc.data.number_provider.FloatNumberProvider import FloatNumberProvider
+    from vanilla_mcdoc.data.number_provider.IntNumberProvider import IntNumberProvider
+    from vanilla_mcdoc.data.predicate.Predicate import Predicate
+    from vanilla_mcdoc.data.villager_trade.TradeCost import TradeCost
+    from vanilla_mcdoc.world.item.ItemStackTemplate import ItemStackTemplate
 
 
 class VillagerTrade(GeneratedModel):

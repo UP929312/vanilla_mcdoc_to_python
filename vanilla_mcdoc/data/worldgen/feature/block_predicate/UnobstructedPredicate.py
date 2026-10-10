@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::data::worldgen::feature::block_predicate::UnobstructedPredicate
-Local link to file: generated_symbols/data/worldgen/feature/block_predicate/UnobstructedPredicate.py
+Local link to file: vanilla_mcdoc/data/worldgen/feature/block_predicate/UnobstructedPredicate.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class UnobstructedPredicate(GeneratedModel):

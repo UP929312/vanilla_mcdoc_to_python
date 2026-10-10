@@ -1,21 +1,21 @@
 """
 Generated from symbols.json for ::java::assets::item_definition::SpecialModel
-Local link to file: generated_symbols/assets/item_definition/SpecialModel.py
+Local link to file: vanilla_mcdoc/assets/item_definition/SpecialModel.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Literal
 
-from generated_symbols.assets.item_definition.Banner import Banner
-from generated_symbols.assets.item_definition.Book import Book
-from generated_symbols.assets.item_definition.Chest import Chest
-from generated_symbols.assets.item_definition.CopperGolemStatue import CopperGolemStatue
-from generated_symbols.assets.item_definition.EndCube import EndCube
-from generated_symbols.assets.item_definition.Head import Head
-from generated_symbols.assets.item_definition.ShulkerBox import ShulkerBox
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.assets.item_definition.Banner import Banner
+from vanilla_mcdoc.assets.item_definition.Book import Book
+from vanilla_mcdoc.assets.item_definition.Chest import Chest
+from vanilla_mcdoc.assets.item_definition.CopperGolemStatue import CopperGolemStatue
+from vanilla_mcdoc.assets.item_definition.EndCube import EndCube
+from vanilla_mcdoc.assets.item_definition.Head import Head
+from vanilla_mcdoc.assets.item_definition.ShulkerBox import ShulkerBox
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.assets.item_definition.SpecialModelType import SpecialModelType
+    from vanilla_mcdoc.assets.item_definition.SpecialModelType import SpecialModelType
 
 
 class SpecialModelUnknown(GeneratedModel):

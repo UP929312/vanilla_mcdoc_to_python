@@ -1,19 +1,19 @@
 """
 Generated from symbols.json for ::java::data::loot::function::CustomModelDataColors
-Local link to file: generated_symbols/data/loot/function/CustomModelDataColors.py
+Local link to file: vanilla_mcdoc/data/loot/function/CustomModelDataColors.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, Literal
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
-from generated_symbols.data.loot.function.InsertListOperation import InsertListOperation
-from generated_symbols.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.data.loot.function.InsertListOperation import InsertListOperation
+from vanilla_mcdoc.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
 
 if TYPE_CHECKING:
-    from generated_symbols.data.number_provider.IntNumberProviderRef import IntNumberProviderRef
-    from generated_symbols.util.color.RGB import RGB
+    from vanilla_mcdoc.data.number_provider.IntNumberProviderRef import IntNumberProviderRef
+    from vanilla_mcdoc.util.color.RGB import RGB
 
 
 class CustomModelDataColorsAppend(GeneratedModel):

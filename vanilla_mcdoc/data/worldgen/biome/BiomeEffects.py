@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::data::worldgen::biome::BiomeEffects
-Local link to file: generated_symbols/data/worldgen/biome/BiomeEffects.py
+Local link to file: vanilla_mcdoc/data/worldgen/biome/BiomeEffects.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.biome.GrassColorModifier import GrassColorModifier
-    from generated_symbols.util.color.StringRGB import StringRGB
+    from vanilla_mcdoc.data.worldgen.biome.GrassColorModifier import GrassColorModifier
+    from vanilla_mcdoc.util.color.StringRGB import StringRGB
 
 
 class BiomeEffects(GeneratedModel):

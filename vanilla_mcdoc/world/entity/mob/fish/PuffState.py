@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::fish::PuffState
-Local link to file: generated_symbols/world/entity/mob/fish/PuffState.py
+Local link to file: vanilla_mcdoc/world/entity/mob/fish/PuffState.py
 """
 # ~~~ CODE ~~~
 from enum import IntEnum

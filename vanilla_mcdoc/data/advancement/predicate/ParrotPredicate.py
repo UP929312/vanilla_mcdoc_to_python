@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::data::advancement::predicate::ParrotPredicate
-Local link to file: generated_symbols/data/advancement/predicate/ParrotPredicate.py
+Local link to file: vanilla_mcdoc/data/advancement/predicate/ParrotPredicate.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.world.component.entity.ParrotVariant import ParrotVariant
+    from vanilla_mcdoc.world.component.entity.ParrotVariant import ParrotVariant
 
 
 class ParrotPredicate(GeneratedModel):

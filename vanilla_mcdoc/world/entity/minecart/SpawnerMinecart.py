@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::world::entity::minecart::SpawnerMinecart
-Local link to file: generated_symbols/world/entity/minecart/SpawnerMinecart.py
+Local link to file: vanilla_mcdoc/world/entity/minecart/SpawnerMinecart.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.world.entity.minecart.Minecart import Minecart
+from vanilla_mcdoc.world.entity.minecart.Minecart import Minecart
 
 if TYPE_CHECKING:
-    from generated_symbols.world.block.spawner.SpawnPotential import SpawnPotential
-    from generated_symbols.world.block.spawner.SpawnerEntry import SpawnerEntry
+    from vanilla_mcdoc.world.block.spawner.SpawnPotential import SpawnPotential
+    from vanilla_mcdoc.world.block.spawner.SpawnerEntry import SpawnerEntry
 
 
 class SpawnerMinecart(Minecart):

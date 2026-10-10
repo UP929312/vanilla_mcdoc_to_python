@@ -1,27 +1,27 @@
 """
 Generated from symbols.json for ::java::data::worldgen::structure::Structure
-Local link to file: generated_symbols/data/worldgen/structure/Structure.py
+Local link to file: vanilla_mcdoc/data/worldgen/structure/Structure.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar, Literal
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
-from generated_symbols.data.worldgen.structure.BuriedTreasure import BuriedTreasure
-from generated_symbols.data.worldgen.structure.Jigsaw import Jigsaw
-from generated_symbols.data.worldgen.structure.Mineshaft import Mineshaft
-from generated_symbols.data.worldgen.structure.NetherFossil import NetherFossil
-from generated_symbols.data.worldgen.structure.OceanRuin import OceanRuin
-from generated_symbols.data.worldgen.structure.RuinedPortal import RuinedPortal
-from generated_symbols.data.worldgen.structure.Shipwreck import Shipwreck
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.data.worldgen.structure.BuriedTreasure import BuriedTreasure
+from vanilla_mcdoc.data.worldgen.structure.Jigsaw import Jigsaw
+from vanilla_mcdoc.data.worldgen.structure.Mineshaft import Mineshaft
+from vanilla_mcdoc.data.worldgen.structure.NetherFossil import NetherFossil
+from vanilla_mcdoc.data.worldgen.structure.OceanRuin import OceanRuin
+from vanilla_mcdoc.data.worldgen.structure.RuinedPortal import RuinedPortal
+from vanilla_mcdoc.data.worldgen.structure.Shipwreck import Shipwreck
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.DecorationStep import DecorationStep
-    from generated_symbols.data.worldgen.biome.MobCategory import MobCategory
-    from generated_symbols.data.worldgen.structure.SpawnOverride import SpawnOverride
-    from generated_symbols.data.worldgen.structure.TerrainAdaptation import TerrainAdaptation
+    from vanilla_mcdoc.data.worldgen.DecorationStep import DecorationStep
+    from vanilla_mcdoc.data.worldgen.biome.MobCategory import MobCategory
+    from vanilla_mcdoc.data.worldgen.structure.SpawnOverride import SpawnOverride
+    from vanilla_mcdoc.data.worldgen.structure.TerrainAdaptation import TerrainAdaptation
 
 
 class StructureBastionRemnant(Jigsaw):

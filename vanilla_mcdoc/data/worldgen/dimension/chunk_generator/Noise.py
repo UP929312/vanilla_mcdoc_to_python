@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::data::worldgen::dimension::chunk_generator::Noise
-Local link to file: generated_symbols/data/worldgen/dimension/chunk_generator/Noise.py
+Local link to file: vanilla_mcdoc/data/worldgen/dimension/chunk_generator/Noise.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.dimension.biome_source.BiomeSource import BiomeSource
-    from generated_symbols.data.worldgen.noise_settings.NoiseGeneratorSettingsRef import NoiseGeneratorSettingsRef
+    from vanilla_mcdoc.data.worldgen.dimension.biome_source.BiomeSource import BiomeSource
+    from vanilla_mcdoc.data.worldgen.noise_settings.NoiseGeneratorSettingsRef import NoiseGeneratorSettingsRef
 
 
 class Noise(GeneratedModel):

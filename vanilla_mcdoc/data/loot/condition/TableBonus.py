@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::data::loot::condition::TableBonus
-Local link to file: generated_symbols/data/loot/condition/TableBonus.py
+Local link to file: vanilla_mcdoc/data/loot/condition/TableBonus.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 
 class TableBonus(GeneratedModel):

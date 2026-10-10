@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::world::component::block::Occupant
-Local link to file: generated_symbols/world/component/block/Occupant.py
+Local link to file: vanilla_mcdoc/world/component/block/Occupant.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.world.entity.AnyEntity import AnyEntity
+    from vanilla_mcdoc.world.entity.AnyEntity import AnyEntity
 
 
 class Occupant(GeneratedModel):

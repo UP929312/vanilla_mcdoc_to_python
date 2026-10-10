@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::data::worldgen::feature::SequenceConfig
-Local link to file: generated_symbols/data/worldgen/feature/SequenceConfig.py
+Local link to file: vanilla_mcdoc/data/worldgen/feature/SequenceConfig.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, ClassVar
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.feature.placement.PlacedFeatureListRef import PlacedFeatureListRef
+    from vanilla_mcdoc.data.worldgen.feature.placement.PlacedFeatureListRef import PlacedFeatureListRef
 
 
 class SequenceConfig(GeneratedModel):

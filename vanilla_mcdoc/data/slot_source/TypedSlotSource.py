@@ -1,18 +1,18 @@
 """
 Generated from symbols.json for ::java::data::slot_source::TypedSlotSource
-Local link to file: generated_symbols/data/slot_source/TypedSlotSource.py
+Local link to file: vanilla_mcdoc/data/slot_source/TypedSlotSource.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, ClassVar, Literal
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
-from generated_symbols.data.slot_source.ContentsSlotSource import ContentsSlotSource
-from generated_symbols.data.slot_source.FilterSlotSource import FilterSlotSource
-from generated_symbols.data.slot_source.GroupSlotSource import GroupSlotSource
-from generated_symbols.data.slot_source.LimitCountSlotSource import LimitCountSlotSource
-from generated_symbols.data.slot_source.RangeSlotSource import RangeSlotSource
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.data.slot_source.ContentsSlotSource import ContentsSlotSource
+from vanilla_mcdoc.data.slot_source.FilterSlotSource import FilterSlotSource
+from vanilla_mcdoc.data.slot_source.GroupSlotSource import GroupSlotSource
+from vanilla_mcdoc.data.slot_source.LimitCountSlotSource import LimitCountSlotSource
+from vanilla_mcdoc.data.slot_source.RangeSlotSource import RangeSlotSource
 
 
 class TypedSlotSourceContents(ContentsSlotSource):

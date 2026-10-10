@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::data::worldgen::feature::OreConfig
-Local link to file: generated_symbols/data/worldgen/feature/OreConfig.py
+Local link to file: vanilla_mcdoc/data/worldgen/feature/OreConfig.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.feature.TargetBlock import TargetBlock
+    from vanilla_mcdoc.data.worldgen.feature.TargetBlock import TargetBlock
 
 
 class OreConfig(GeneratedModel):

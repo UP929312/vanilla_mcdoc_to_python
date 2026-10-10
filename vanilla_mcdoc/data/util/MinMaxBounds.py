@@ -1,11 +1,11 @@
 """
 Generated from symbols.json for ::java::data::util::MinMaxBounds
-Local link to file: generated_symbols/data/util/MinMaxBounds.py
+Local link to file: vanilla_mcdoc/data/util/MinMaxBounds.py
 """
 # ~~~ CODE ~~~
 from typing import Generic, TypeVar
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 T = TypeVar('T')

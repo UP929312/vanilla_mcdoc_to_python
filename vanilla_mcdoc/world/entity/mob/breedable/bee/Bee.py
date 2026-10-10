@@ -1,11 +1,11 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::breedable::bee::Bee
-Local link to file: generated_symbols/world/entity/mob/breedable/bee/Bee.py
+Local link to file: vanilla_mcdoc/world/entity/mob/breedable/bee/Bee.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.minecraft_types import MinecraftUUID
-from generated_symbols.world.entity.mob.NeutralMob import NeutralMob
-from generated_symbols.world.entity.mob.breedable.Breedable import Breedable
+from vanilla_mcdoc.minecraft_types import MinecraftUUID
+from vanilla_mcdoc.world.entity.mob.NeutralMob import NeutralMob
+from vanilla_mcdoc.world.entity.mob.breedable.Breedable import Breedable
 
 
 class Bee(Breedable, NeutralMob):

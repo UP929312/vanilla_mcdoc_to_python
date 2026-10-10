@@ -1,20 +1,20 @@
 """
 Generated from symbols.json for ::java::data::worldgen::processor_list::RuleTest
-Local link to file: generated_symbols/data/worldgen/processor_list/RuleTest.py
+Local link to file: vanilla_mcdoc/data/worldgen/processor_list/RuleTest.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
 from pydantic import Field
 
-from generated_symbols.data.worldgen.processor_list.BlockMatch import BlockMatch
-from generated_symbols.data.worldgen.processor_list.BlockStateMatch import BlockStateMatch
-from generated_symbols.data.worldgen.processor_list.CompositeMatch import CompositeMatch
-from generated_symbols.data.worldgen.processor_list.HeightMatch import HeightMatch
-from generated_symbols.data.worldgen.processor_list.InvertedMatch import InvertedMatch
-from generated_symbols.data.worldgen.processor_list.RandomBlockMatch import RandomBlockMatch
-from generated_symbols.data.worldgen.processor_list.RandomBlockStateMatch import RandomBlockStateMatch
-from generated_symbols.data.worldgen.processor_list.TagMatch import TagMatch
+from vanilla_mcdoc.data.worldgen.processor_list.BlockMatch import BlockMatch
+from vanilla_mcdoc.data.worldgen.processor_list.BlockStateMatch import BlockStateMatch
+from vanilla_mcdoc.data.worldgen.processor_list.CompositeMatch import CompositeMatch
+from vanilla_mcdoc.data.worldgen.processor_list.HeightMatch import HeightMatch
+from vanilla_mcdoc.data.worldgen.processor_list.InvertedMatch import InvertedMatch
+from vanilla_mcdoc.data.worldgen.processor_list.RandomBlockMatch import RandomBlockMatch
+from vanilla_mcdoc.data.worldgen.processor_list.RandomBlockStateMatch import RandomBlockStateMatch
+from vanilla_mcdoc.data.worldgen.processor_list.TagMatch import TagMatch
 
 
 class RuleTestAllOf(CompositeMatch):

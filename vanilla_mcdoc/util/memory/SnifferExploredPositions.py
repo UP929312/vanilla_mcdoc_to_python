@@ -1,13 +1,13 @@
 """
 Generated from symbols.json for ::java::util::memory::SnifferExploredPositions
-Local link to file: generated_symbols/util/memory/SnifferExploredPositions.py
+Local link to file: vanilla_mcdoc/util/memory/SnifferExploredPositions.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated
 
 from pydantic import Field
 
-from generated_symbols.util.memory.ExpirableValue import ExpirableValue
+from vanilla_mcdoc.util.memory.ExpirableValue import ExpirableValue
 
 
 class SnifferExploredPositions(ExpirableValue):

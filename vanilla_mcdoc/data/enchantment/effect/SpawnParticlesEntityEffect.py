@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::data::enchantment::effect::SpawnParticlesEntityEffect
-Local link to file: generated_symbols/data/enchantment/effect/SpawnParticlesEntityEffect.py
+Local link to file: vanilla_mcdoc/data/enchantment/effect/SpawnParticlesEntityEffect.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.enchantment.effect.ParticlePosition import ParticlePosition
-    from generated_symbols.data.enchantment.effect.ParticleVelocity import ParticleVelocity
-    from generated_symbols.util.particle.Particle import Particle
+    from vanilla_mcdoc.data.enchantment.effect.ParticlePosition import ParticlePosition
+    from vanilla_mcdoc.data.enchantment.effect.ParticleVelocity import ParticleVelocity
+    from vanilla_mcdoc.util.particle.Particle import Particle
 
 
 class SpawnParticlesEntityEffect(GeneratedModel):

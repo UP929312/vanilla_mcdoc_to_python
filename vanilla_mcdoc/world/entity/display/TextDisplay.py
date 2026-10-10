@@ -1,17 +1,17 @@
 """
 Generated from symbols.json for ::java::world::entity::display::TextDisplay
-Local link to file: generated_symbols/world/entity/display/TextDisplay.py
+Local link to file: vanilla_mcdoc/world/entity/display/TextDisplay.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.world.entity.display.DisplayBase import DisplayBase
+from vanilla_mcdoc.world.entity.display.DisplayBase import DisplayBase
 
 if TYPE_CHECKING:
-    from generated_symbols.util.text.Text import Text
-    from generated_symbols.world.entity.display.TextAlignment import TextAlignment
+    from vanilla_mcdoc.util.text.Text import Text
+    from vanilla_mcdoc.world.entity.display.TextAlignment import TextAlignment
 
 
 class TextDisplay(DisplayBase):

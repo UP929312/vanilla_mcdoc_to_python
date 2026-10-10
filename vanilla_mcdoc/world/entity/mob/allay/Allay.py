@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::allay::Allay
-Local link to file: generated_symbols/world/entity/mob/allay/Allay.py
+Local link to file: vanilla_mcdoc/world/entity/mob/allay/Allay.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.world.entity.mob.MobBase import MobBase
+from vanilla_mcdoc.world.entity.mob.MobBase import MobBase
 
 if TYPE_CHECKING:
-    from generated_symbols.util.game_event.VibrationListener import VibrationListener
-    from generated_symbols.world.item.ItemStack import ItemStack
+    from vanilla_mcdoc.util.game_event.VibrationListener import VibrationListener
+    from vanilla_mcdoc.world.item.ItemStack import ItemStack
 
 
 class Allay(MobBase):

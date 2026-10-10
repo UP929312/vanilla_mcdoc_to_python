@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::world::item::shield::BlockEntityTag
-Local link to file: generated_symbols/world/item/shield/BlockEntityTag.py
+Local link to file: vanilla_mcdoc/world/item/shield/BlockEntityTag.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.util.color.DyeColorInt import DyeColorInt
-    from generated_symbols.world.block.banner.BannerPatternLayer import BannerPatternLayer
+    from vanilla_mcdoc.util.color.DyeColorInt import DyeColorInt
+    from vanilla_mcdoc.world.block.banner.BannerPatternLayer import BannerPatternLayer
 
 
 class BlockEntityTag(GeneratedModel):

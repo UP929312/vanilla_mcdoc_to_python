@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::util::text::SuggestCommand
-Local link to file: generated_symbols/util/text/SuggestCommand.py
+Local link to file: vanilla_mcdoc/util/text/SuggestCommand.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class SuggestCommand(GeneratedModel):

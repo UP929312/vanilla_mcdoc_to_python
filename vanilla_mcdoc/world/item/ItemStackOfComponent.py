@@ -1,13 +1,13 @@
 """
 Generated from symbols.json for ::java::world::item::ItemStackOfComponent
-Local link to file: generated_symbols/world/item/ItemStackOfComponent.py
+Local link to file: vanilla_mcdoc/world/item/ItemStackOfComponent.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, Generic, TypeVar
 
 from pydantic import Field
 
-from generated_symbols.world.item.SingleItemOfComponent import SingleItemOfComponent
+from vanilla_mcdoc.world.item.SingleItemOfComponent import SingleItemOfComponent
 
 
 T = TypeVar('T')

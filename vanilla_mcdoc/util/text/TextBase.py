@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::util::text::TextBase
-Local link to file: generated_symbols/util/text/TextBase.py
+Local link to file: vanilla_mcdoc/util/text/TextBase.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.util.text.TextStyle import TextStyle
+from vanilla_mcdoc.util.text.TextStyle import TextStyle
 
 if TYPE_CHECKING:
-    from generated_symbols.util.text.Text import Text
+    from vanilla_mcdoc.util.text.Text import Text
 
 
 class TextBase(TextStyle):

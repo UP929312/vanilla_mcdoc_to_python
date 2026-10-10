@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::breedable::sheep::Sheep
-Local link to file: generated_symbols/world/entity/mob/breedable/sheep/Sheep.py
+Local link to file: vanilla_mcdoc/world/entity/mob/breedable/sheep/Sheep.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.world.entity.mob.breedable.Breedable import Breedable
+from vanilla_mcdoc.world.entity.mob.breedable.Breedable import Breedable
 
 if TYPE_CHECKING:
-    from generated_symbols.util.DyeColorByte import DyeColorByte
+    from vanilla_mcdoc.util.DyeColorByte import DyeColorByte
 
 
 class Sheep(Breedable):

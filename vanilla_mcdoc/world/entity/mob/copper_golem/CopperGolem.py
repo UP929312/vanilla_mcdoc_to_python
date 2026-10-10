@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::copper_golem::CopperGolem
-Local link to file: generated_symbols/world/entity/mob/copper_golem/CopperGolem.py
+Local link to file: vanilla_mcdoc/world/entity/mob/copper_golem/CopperGolem.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.world.entity.mob.MobBase import MobBase
+from vanilla_mcdoc.world.entity.mob.MobBase import MobBase
 
 if TYPE_CHECKING:
-    from generated_symbols.world.entity.mob.copper_golem.WeatherState import WeatherState
+    from vanilla_mcdoc.world.entity.mob.copper_golem.WeatherState import WeatherState
 
 
 class CopperGolem(MobBase):

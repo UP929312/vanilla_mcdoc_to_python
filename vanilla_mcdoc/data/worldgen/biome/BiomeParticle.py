@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::data::worldgen::biome::BiomeParticle
-Local link to file: generated_symbols/data/worldgen/biome/BiomeParticle.py
+Local link to file: vanilla_mcdoc/data/worldgen/biome/BiomeParticle.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.util.particle.Particle import Particle
+    from vanilla_mcdoc.util.particle.Particle import Particle
 
 
 class BiomeParticle(GeneratedModel):

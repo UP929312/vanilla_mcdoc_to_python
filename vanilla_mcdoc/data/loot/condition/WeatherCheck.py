@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::data::loot::condition::WeatherCheck
-Local link to file: generated_symbols/data/loot/condition/WeatherCheck.py
+Local link to file: vanilla_mcdoc/data/loot/condition/WeatherCheck.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class WeatherCheck(GeneratedModel):

@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::data::worldgen::processor_list::AxisAlignedLinearPos
-Local link to file: generated_symbols/data/worldgen/processor_list/AxisAlignedLinearPos.py
+Local link to file: vanilla_mcdoc/data/worldgen/processor_list/AxisAlignedLinearPos.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.data.worldgen.processor_list.LinearPos import LinearPos
+from vanilla_mcdoc.data.worldgen.processor_list.LinearPos import LinearPos
 
 if TYPE_CHECKING:
-    from generated_symbols.util.direction.Axis import Axis
+    from vanilla_mcdoc.util.direction.Axis import Axis
 
 
 class AxisAlignedLinearPos(LinearPos):

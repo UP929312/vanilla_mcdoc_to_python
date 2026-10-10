@@ -1,11 +1,11 @@
 """
 Generated from symbols.json for ::java::data::advancement::trigger::ConstructBeaconTrigger
-Local link to file: generated_symbols/data/advancement/trigger/ConstructBeaconTrigger.py
+Local link to file: vanilla_mcdoc/data/advancement/trigger/ConstructBeaconTrigger.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.data.advancement.trigger.AllOptional import AllOptional
-from generated_symbols.data.advancement.trigger.PlayerConditions import PlayerConditions
-from generated_symbols.data.util.MinMaxBounds import MinMaxBounds
+from vanilla_mcdoc.data.advancement.trigger.AllOptional import AllOptional
+from vanilla_mcdoc.data.advancement.trigger.PlayerConditions import PlayerConditions
+from vanilla_mcdoc.data.util.MinMaxBounds import MinMaxBounds
 
 
 class ConstructBeaconTriggerTypeArg(PlayerConditions):

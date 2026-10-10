@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::data::worldgen::carver::ConfiguredCarver
-Local link to file: generated_symbols/data/worldgen/carver/ConfiguredCarver.py
+Local link to file: vanilla_mcdoc/data/worldgen/carver/ConfiguredCarver.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, ClassVar, Literal
 
 from pydantic import Field
 
-from generated_symbols.data.worldgen.carver.CanyonConfig import CanyonConfig
-from generated_symbols.data.worldgen.carver.CaveConfig import CaveConfig
+from vanilla_mcdoc.data.worldgen.carver.CanyonConfig import CanyonConfig
+from vanilla_mcdoc.data.worldgen.carver.CaveConfig import CaveConfig
 
 
 class ConfiguredCarverCanyon(CanyonConfig):

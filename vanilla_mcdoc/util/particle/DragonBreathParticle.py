@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::util::particle::DragonBreathParticle
-Local link to file: generated_symbols/util/particle/DragonBreathParticle.py
+Local link to file: vanilla_mcdoc/util/particle/DragonBreathParticle.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class DragonBreathParticle(GeneratedModel):

@@ -1,12 +1,12 @@
 """
 Generated from symbols.json for ::java::data::advancement::AdvancementCriteriaMap
-Local link to file: generated_symbols/data/advancement/AdvancementCriteriaMap.py
+Local link to file: vanilla_mcdoc/data/advancement/AdvancementCriteriaMap.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from generated_symbols.data.advancement.AdvancementCriterion import AdvancementCriterion
+    from vanilla_mcdoc.data.advancement.AdvancementCriterion import AdvancementCriterion
 
 
 type AdvancementCriteriaMap = dict[str, AdvancementCriterion]

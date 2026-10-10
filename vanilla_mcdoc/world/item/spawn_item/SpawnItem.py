@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::world::item::spawn_item::SpawnItem
-Local link to file: generated_symbols/world/item/spawn_item/SpawnItem.py
+Local link to file: vanilla_mcdoc/world/item/spawn_item/SpawnItem.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.world.item.ItemBase import ItemBase
+from vanilla_mcdoc.world.item.ItemBase import ItemBase
 
 if TYPE_CHECKING:
-    from generated_symbols.world.entity.AnyEntity import AnyEntity
+    from vanilla_mcdoc.world.entity.AnyEntity import AnyEntity
 
 
 class SpawnItem(ItemBase):

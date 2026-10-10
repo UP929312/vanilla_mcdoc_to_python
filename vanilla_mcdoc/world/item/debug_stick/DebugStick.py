@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::world::item::debug_stick::DebugStick
-Local link to file: generated_symbols/world/item/debug_stick/DebugStick.py
+Local link to file: vanilla_mcdoc/world/item/debug_stick/DebugStick.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.world.item.ItemBase import ItemBase
+from vanilla_mcdoc.world.item.ItemBase import ItemBase
 
 if TYPE_CHECKING:
-    from generated_symbols.world.component.item.DebugStickState import DebugStickState
+    from vanilla_mcdoc.world.component.item.DebugStickState import DebugStickState
 
 
 class DebugStick(ItemBase):

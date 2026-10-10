@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::raider::Pillager
-Local link to file: generated_symbols/world/entity/mob/raider/Pillager.py
+Local link to file: vanilla_mcdoc/world/entity/mob/raider/Pillager.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.world.entity.mob.raider.RaiderBase import RaiderBase
+from vanilla_mcdoc.world.entity.mob.raider.RaiderBase import RaiderBase
 
 if TYPE_CHECKING:
-    from generated_symbols.world.item.ItemStack import ItemStack
+    from vanilla_mcdoc.world.item.ItemStack import ItemStack
 
 
 class Pillager(RaiderBase):

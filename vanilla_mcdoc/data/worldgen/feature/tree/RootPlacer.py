@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::data::worldgen::feature::tree::RootPlacer
-Local link to file: generated_symbols/data/worldgen/feature/tree/RootPlacer.py
+Local link to file: vanilla_mcdoc/data/worldgen/feature/tree/RootPlacer.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Literal
 
-from generated_symbols.data.worldgen.feature.tree.MangroveRootPlacer import MangroveRootPlacer
+from vanilla_mcdoc.data.worldgen.feature.tree.MangroveRootPlacer import MangroveRootPlacer
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.IntProvider import IntProvider
-    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProviderRef import BlockStateProviderRef
-    from generated_symbols.data.worldgen.feature.tree.AboveRootPlacement import AboveRootPlacement
+    from vanilla_mcdoc.data.worldgen.IntProvider import IntProvider
+    from vanilla_mcdoc.data.worldgen.feature.block_state_provider.BlockStateProviderRef import BlockStateProviderRef
+    from vanilla_mcdoc.data.worldgen.feature.tree.AboveRootPlacement import AboveRootPlacement
 
 
 class RootPlacerMangroveRootPlacer(MangroveRootPlacer):

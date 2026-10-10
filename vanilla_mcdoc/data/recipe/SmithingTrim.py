@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::data::recipe::SmithingTrim
-Local link to file: generated_symbols/data/recipe/SmithingTrim.py
+Local link to file: vanilla_mcdoc/data/recipe/SmithingTrim.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
-from generated_symbols.data.recipe.NotificationInfo import NotificationInfo
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.data.recipe.NotificationInfo import NotificationInfo
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.recipe.Ingredient import Ingredient
+    from vanilla_mcdoc.data.recipe.Ingredient import Ingredient
 
 
 class SmithingTrim(NotificationInfo):

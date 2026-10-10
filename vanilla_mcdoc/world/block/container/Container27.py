@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::world::block::container::Container27
-Local link to file: generated_symbols/world/block/container/Container27.py
+Local link to file: vanilla_mcdoc/world/block/container/Container27.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.world.block.container.ContainerBase import ContainerBase
+from vanilla_mcdoc.world.block.container.ContainerBase import ContainerBase
 
 if TYPE_CHECKING:
-    from generated_symbols.util.slot.SlottedItem import SlottedItem
+    from vanilla_mcdoc.util.slot.SlottedItem import SlottedItem
 
 
 class Container27(ContainerBase):

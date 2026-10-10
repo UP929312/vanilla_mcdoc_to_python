@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::util::text::HoverEventAction
-Local link to file: generated_symbols/util/text/HoverEventAction.py
+Local link to file: vanilla_mcdoc/util/text/HoverEventAction.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

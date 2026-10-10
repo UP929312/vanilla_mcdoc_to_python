@@ -1,12 +1,12 @@
 """
 Generated from symbols.json for ::java::world::item::knowledge_book::KnowledgeBook
-Local link to file: generated_symbols/world/item/knowledge_book/KnowledgeBook.py
+Local link to file: vanilla_mcdoc/world/item/knowledge_book/KnowledgeBook.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from generated_symbols.world.item.ItemBase import ItemBase
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.minecraft_types import IdSpec
+from vanilla_mcdoc.world.item.ItemBase import ItemBase
 
 
 class KnowledgeBook(ItemBase):

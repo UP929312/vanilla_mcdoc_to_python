@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::data::loot::CompositePoolEntry
-Local link to file: generated_symbols/data/loot/CompositePoolEntry.py
+Local link to file: vanilla_mcdoc/data/loot/CompositePoolEntry.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.data.loot.LootPoolEntryBase import LootPoolEntryBase
+from vanilla_mcdoc.data.loot.LootPoolEntryBase import LootPoolEntryBase
 
 if TYPE_CHECKING:
-    from generated_symbols.data.loot.LootPoolEntry import LootPoolEntry
+    from vanilla_mcdoc.data.loot.LootPoolEntry import LootPoolEntry
 
 
 class CompositePoolEntry(LootPoolEntryBase):

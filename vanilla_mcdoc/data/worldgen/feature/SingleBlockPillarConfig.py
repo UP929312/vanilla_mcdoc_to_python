@@ -1,19 +1,19 @@
 """
 Generated from symbols.json for ::java::data::worldgen::feature::SingleBlockPillarConfig
-Local link to file: generated_symbols/data/worldgen/feature/SingleBlockPillarConfig.py
+Local link to file: vanilla_mcdoc/data/worldgen/feature/SingleBlockPillarConfig.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.feature.block_predicate.BlockPredicate import BlockPredicate
-    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProviderRef import BlockStateProviderRef
-    from generated_symbols.data.worldgen.feature.placement.PlacedFeatureRef import PlacedFeatureRef
-    from generated_symbols.util.direction.VerticalDirection import VerticalDirection
+    from vanilla_mcdoc.data.worldgen.feature.block_predicate.BlockPredicate import BlockPredicate
+    from vanilla_mcdoc.data.worldgen.feature.block_state_provider.BlockStateProviderRef import BlockStateProviderRef
+    from vanilla_mcdoc.data.worldgen.feature.placement.PlacedFeatureRef import PlacedFeatureRef
+    from vanilla_mcdoc.util.direction.VerticalDirection import VerticalDirection
 
 
 class SingleBlockPillarConfig(GeneratedModel):

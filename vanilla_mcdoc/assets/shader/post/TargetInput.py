@@ -1,12 +1,12 @@
 """
 Generated from symbols.json for ::java::assets::shader::post::TargetInput
-Local link to file: generated_symbols/assets/shader/post/TargetInput.py
+Local link to file: vanilla_mcdoc/assets/shader/post/TargetInput.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 
 class TargetInput(GeneratedModel):

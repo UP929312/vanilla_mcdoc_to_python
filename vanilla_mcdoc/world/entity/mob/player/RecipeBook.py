@@ -1,12 +1,12 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::player::RecipeBook
-Local link to file: generated_symbols/world/entity/mob/player/RecipeBook.py
+Local link to file: vanilla_mcdoc/world/entity/mob/player/RecipeBook.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 
 class RecipeBook(GeneratedModel):

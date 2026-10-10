@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::util::particle::VibrationParticle
-Local link to file: generated_symbols/util/particle/VibrationParticle.py
+Local link to file: vanilla_mcdoc/util/particle/VibrationParticle.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.util.particle.VibrationParticleData import VibrationParticleData
+from vanilla_mcdoc.util.particle.VibrationParticleData import VibrationParticleData
 
 
 class VibrationParticle(VibrationParticleData):

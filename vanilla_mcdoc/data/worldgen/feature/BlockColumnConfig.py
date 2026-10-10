@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::data::worldgen::feature::BlockColumnConfig
-Local link to file: generated_symbols/data/worldgen/feature/BlockColumnConfig.py
+Local link to file: vanilla_mcdoc/data/worldgen/feature/BlockColumnConfig.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, ClassVar
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.feature.BlockColumnLayer import BlockColumnLayer
-    from generated_symbols.data.worldgen.feature.block_predicate.BlockPredicate import BlockPredicate
-    from generated_symbols.util.direction.Direction import Direction
+    from vanilla_mcdoc.data.worldgen.feature.BlockColumnLayer import BlockColumnLayer
+    from vanilla_mcdoc.data.worldgen.feature.block_predicate.BlockPredicate import BlockPredicate
+    from vanilla_mcdoc.util.direction.Direction import Direction
 
 
 class BlockColumnConfig(GeneratedModel):

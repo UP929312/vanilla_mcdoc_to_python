@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::data::util::RandomIntGeneratorType
-Local link to file: generated_symbols/data/util/RandomIntGeneratorType.py
+Local link to file: vanilla_mcdoc/data/util/RandomIntGeneratorType.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

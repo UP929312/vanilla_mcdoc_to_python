@@ -1,17 +1,17 @@
 """
 Generated from symbols.json for ::java::data::util::ScoreProvider
-Local link to file: generated_symbols/data/util/ScoreProvider.py
+Local link to file: vanilla_mcdoc/data/util/ScoreProvider.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, Literal
 
 from pydantic import Field
 
-from generated_symbols.data.util.ContextScoreProvider import ContextScoreProvider
-from generated_symbols.data.util.FixedScoreProvider import FixedScoreProvider
+from vanilla_mcdoc.data.util.ContextScoreProvider import ContextScoreProvider
+from vanilla_mcdoc.data.util.FixedScoreProvider import FixedScoreProvider
 
 if TYPE_CHECKING:
-    from generated_symbols.data.loot.EntityTarget import EntityTarget
+    from vanilla_mcdoc.data.loot.EntityTarget import EntityTarget
 
 
 class ScoreProviderStructContext(ContextScoreProvider):

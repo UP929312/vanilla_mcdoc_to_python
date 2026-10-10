@@ -1,10 +1,10 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::iron_golem::IronGolem
-Local link to file: generated_symbols/world/entity/mob/iron_golem/IronGolem.py
+Local link to file: vanilla_mcdoc/world/entity/mob/iron_golem/IronGolem.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.world.entity.mob.MobBase import MobBase
-from generated_symbols.world.entity.mob.NeutralMob import NeutralMob
+from vanilla_mcdoc.world.entity.mob.MobBase import MobBase
+from vanilla_mcdoc.world.entity.mob.NeutralMob import NeutralMob
 
 
 class IronGolem(MobBase, NeutralMob):

@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::data::number_provider::FloatNumberProviderRef
-Local link to file: generated_symbols/data/number_provider/FloatNumberProviderRef.py
+Local link to file: vanilla_mcdoc/data/number_provider/FloatNumberProviderRef.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.data.number_provider.context_float.FloatRef import FloatRef
+from vanilla_mcdoc.data.number_provider.context_float.FloatRef import FloatRef
 
 
 type FloatNumberProviderRef = FloatRef

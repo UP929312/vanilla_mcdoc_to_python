@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::world::entity::projectile::arrow::SpectralArrow
-Local link to file: generated_symbols/world/entity/projectile/arrow/SpectralArrow.py
+Local link to file: vanilla_mcdoc/world/entity/projectile/arrow/SpectralArrow.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.world.entity.projectile.arrow.ArrowBase import ArrowBase
+from vanilla_mcdoc.world.entity.projectile.arrow.ArrowBase import ArrowBase
 
 
 class SpectralArrow(ArrowBase):

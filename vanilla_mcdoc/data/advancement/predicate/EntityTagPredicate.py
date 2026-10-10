@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::data::advancement::predicate::EntityTagPredicate
-Local link to file: generated_symbols/data/advancement/predicate/EntityTagPredicate.py
+Local link to file: vanilla_mcdoc/data/advancement/predicate/EntityTagPredicate.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class EntityTagPredicate(GeneratedModel):

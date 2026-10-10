@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::armor_stand::DisabledSlots
-Local link to file: generated_symbols/world/entity/mob/armor_stand/DisabledSlots.py
+Local link to file: vanilla_mcdoc/world/entity/mob/armor_stand/DisabledSlots.py
 """
 # ~~~ CODE ~~~
 from enum import IntEnum

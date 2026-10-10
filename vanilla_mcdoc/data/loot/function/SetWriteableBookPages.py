@@ -1,18 +1,18 @@
 """
 Generated from symbols.json for ::java::data::loot::function::SetWriteableBookPages
-Local link to file: generated_symbols/data/loot/function/SetWriteableBookPages.py
+Local link to file: vanilla_mcdoc/data/loot/function/SetWriteableBookPages.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, Literal
 
 from pydantic import Field
 
-from generated_symbols.data.loot.function.Conditions import Conditions
-from generated_symbols.data.loot.function.InsertListOperation import InsertListOperation
-from generated_symbols.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
+from vanilla_mcdoc.data.loot.function.Conditions import Conditions
+from vanilla_mcdoc.data.loot.function.InsertListOperation import InsertListOperation
+from vanilla_mcdoc.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
 
 if TYPE_CHECKING:
-    from generated_symbols.util.Filterable import Filterable
+    from vanilla_mcdoc.util.Filterable import Filterable
 
 
 class SetWriteableBookPagesAppend(Conditions):

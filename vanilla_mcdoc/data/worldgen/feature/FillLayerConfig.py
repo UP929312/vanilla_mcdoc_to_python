@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::data::worldgen::feature::FillLayerConfig
-Local link to file: generated_symbols/data/worldgen/feature/FillLayerConfig.py
+Local link to file: vanilla_mcdoc/data/worldgen/feature/FillLayerConfig.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.util.block_state.BlockState import BlockState
+    from vanilla_mcdoc.util.block_state.BlockState import BlockState
 
 
 class FillLayerConfig(GeneratedModel):

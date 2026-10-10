@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::assets::texture_meta::VillagerTextureMeta
-Local link to file: generated_symbols/assets/texture_meta/VillagerTextureMeta.py
+Local link to file: vanilla_mcdoc/assets/texture_meta/VillagerTextureMeta.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.assets.texture_meta.VillagerHatType import VillagerHatType
+    from vanilla_mcdoc.assets.texture_meta.VillagerHatType import VillagerHatType
 
 
 class VillagerTextureMeta(GeneratedModel):

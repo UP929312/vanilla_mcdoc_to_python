@@ -1,25 +1,25 @@
 """
 Generated from symbols.json for ::java::data::recipe::Recipe
-Local link to file: generated_symbols/data/recipe/Recipe.py
+Local link to file: vanilla_mcdoc/data/recipe/Recipe.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar, Literal
 
-from generated_symbols.base import GeneratedModel
-from generated_symbols.data.recipe.Brewing import Brewing
-from generated_symbols.data.recipe.CraftingDye import CraftingDye
-from generated_symbols.data.recipe.CraftingImbue import CraftingImbue
-from generated_symbols.data.recipe.CraftingShaped import CraftingShaped
-from generated_symbols.data.recipe.CraftingShapeless import CraftingShapeless
-from generated_symbols.data.recipe.CraftingTransmute import CraftingTransmute
-from generated_symbols.data.recipe.Smelting import Smelting
-from generated_symbols.data.recipe.SmithingTransform import SmithingTransform
-from generated_symbols.data.recipe.SmithingTrim import SmithingTrim
-from generated_symbols.data.recipe.Stonecutting import Stonecutting
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.data.recipe.Brewing import Brewing
+from vanilla_mcdoc.data.recipe.CraftingDye import CraftingDye
+from vanilla_mcdoc.data.recipe.CraftingImbue import CraftingImbue
+from vanilla_mcdoc.data.recipe.CraftingShaped import CraftingShaped
+from vanilla_mcdoc.data.recipe.CraftingShapeless import CraftingShapeless
+from vanilla_mcdoc.data.recipe.CraftingTransmute import CraftingTransmute
+from vanilla_mcdoc.data.recipe.Smelting import Smelting
+from vanilla_mcdoc.data.recipe.SmithingTransform import SmithingTransform
+from vanilla_mcdoc.data.recipe.SmithingTrim import SmithingTrim
+from vanilla_mcdoc.data.recipe.Stonecutting import Stonecutting
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.registry.KnownRecipeSerializerId import KnownRecipeSerializerId
+    from vanilla_mcdoc.registry.KnownRecipeSerializerId import KnownRecipeSerializerId
 
 
 class RecipeUnknown(GeneratedModel):

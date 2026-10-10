@@ -1,18 +1,18 @@
 """
 Generated from symbols.json for ::java::data::worldgen::feature::DiskConfig
-Local link to file: generated_symbols/data/worldgen/feature/DiskConfig.py
+Local link to file: vanilla_mcdoc/data/worldgen/feature/DiskConfig.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.IntProvider import IntProvider
-    from generated_symbols.data.worldgen.feature.block_predicate.BlockPredicate import BlockPredicate
-    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProviderRef import BlockStateProviderRef
+    from vanilla_mcdoc.data.worldgen.IntProvider import IntProvider
+    from vanilla_mcdoc.data.worldgen.feature.block_predicate.BlockPredicate import BlockPredicate
+    from vanilla_mcdoc.data.worldgen.feature.block_state_provider.BlockStateProviderRef import BlockStateProviderRef
 
 
 class DiskConfig(GeneratedModel):

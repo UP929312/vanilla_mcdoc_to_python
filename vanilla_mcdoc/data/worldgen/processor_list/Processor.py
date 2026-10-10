@@ -1,19 +1,19 @@
 """
 Generated from symbols.json for ::java::data::worldgen::processor_list::Processor
-Local link to file: generated_symbols/data/worldgen/processor_list/Processor.py
+Local link to file: vanilla_mcdoc/data/worldgen/processor_list/Processor.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
 from pydantic import Field
 
-from generated_symbols.data.worldgen.processor_list.BlockAge import BlockAge
-from generated_symbols.data.worldgen.processor_list.BlockIgnore import BlockIgnore
-from generated_symbols.data.worldgen.processor_list.BlockRot import BlockRot
-from generated_symbols.data.worldgen.processor_list.Capped import Capped
-from generated_symbols.data.worldgen.processor_list.Gravity import Gravity
-from generated_symbols.data.worldgen.processor_list.ProtectedBlocks import ProtectedBlocks
-from generated_symbols.data.worldgen.processor_list.Rule import Rule
+from vanilla_mcdoc.data.worldgen.processor_list.BlockAge import BlockAge
+from vanilla_mcdoc.data.worldgen.processor_list.BlockIgnore import BlockIgnore
+from vanilla_mcdoc.data.worldgen.processor_list.BlockRot import BlockRot
+from vanilla_mcdoc.data.worldgen.processor_list.Capped import Capped
+from vanilla_mcdoc.data.worldgen.processor_list.Gravity import Gravity
+from vanilla_mcdoc.data.worldgen.processor_list.ProtectedBlocks import ProtectedBlocks
+from vanilla_mcdoc.data.worldgen.processor_list.Rule import Rule
 
 
 class ProcessorBlockAge(BlockAge):

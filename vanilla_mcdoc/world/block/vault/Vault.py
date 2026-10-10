@@ -1,16 +1,15 @@
 """
 Generated from symbols.json for ::java::world::block::vault::Vault
-Local link to file: generated_symbols/world/block/vault/Vault.py
+Local link to file: vanilla_mcdoc/world/block/vault/Vault.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.base import GeneratedModel
-from generated_symbols.minecraft_types import MinecraftUUID
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec, MinecraftUUID
 
 if TYPE_CHECKING:
-    from generated_symbols.world.item.ItemStack import ItemStack
+    from vanilla_mcdoc.world.item.ItemStack import ItemStack
 
 
 class ServerDataStruct(GeneratedModel):

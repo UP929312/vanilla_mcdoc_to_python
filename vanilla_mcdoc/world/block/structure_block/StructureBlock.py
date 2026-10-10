@@ -1,17 +1,17 @@
 """
 Generated from symbols.json for ::java::world::block::structure_block::StructureBlock
-Local link to file: generated_symbols/world/block/structure_block/StructureBlock.py
+Local link to file: vanilla_mcdoc/world/block/structure_block/StructureBlock.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.world.block.BlockEntity import BlockEntity
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.minecraft_types import IdSpec
+from vanilla_mcdoc.world.block.BlockEntity import BlockEntity
 
 if TYPE_CHECKING:
-    from generated_symbols.world.block.structure_block.Mirror import Mirror
-    from generated_symbols.world.block.structure_block.Mode import Mode
-    from generated_symbols.world.block.structure_block.Rotation import Rotation
+    from vanilla_mcdoc.world.block.structure_block.Mirror import Mirror
+    from vanilla_mcdoc.world.block.structure_block.Mode import Mode
+    from vanilla_mcdoc.world.block.structure_block.Rotation import Rotation
 
 
 class StructureBlock(BlockEntity):

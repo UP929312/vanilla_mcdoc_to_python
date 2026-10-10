@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::world::component::CustomDataMap
-Local link to file: generated_symbols/world/component/CustomDataMap.py
+Local link to file: vanilla_mcdoc/world/component/CustomDataMap.py
 """
 # ~~~ CODE ~~~
 from typing import Any

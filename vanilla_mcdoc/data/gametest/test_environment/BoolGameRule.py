@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::data::gametest::test_environment::BoolGameRule
-Local link to file: generated_symbols/data/gametest/test_environment/BoolGameRule.py
+Local link to file: vanilla_mcdoc/data/gametest/test_environment/BoolGameRule.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class BoolGameRule(GeneratedModel):

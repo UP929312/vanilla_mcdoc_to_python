@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::assets::model::ItemDisplayContext
-Local link to file: generated_symbols/assets/model/ItemDisplayContext.py
+Local link to file: vanilla_mcdoc/assets/model/ItemDisplayContext.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

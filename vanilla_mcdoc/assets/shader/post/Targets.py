@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::assets::shader::post::Targets
-Local link to file: generated_symbols/assets/shader/post/Targets.py
+Local link to file: vanilla_mcdoc/assets/shader/post/Targets.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.assets.shader.post.InternalTarget import InternalTarget
+    from vanilla_mcdoc.assets.shader.post.InternalTarget import InternalTarget
 
 
 type Targets = dict[Annotated[str, IdSpec(registry='shader_target')], InternalTarget]

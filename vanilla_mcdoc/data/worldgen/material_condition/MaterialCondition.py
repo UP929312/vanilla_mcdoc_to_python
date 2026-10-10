@@ -1,19 +1,19 @@
 """
 Generated from symbols.json for ::java::data::worldgen::material_condition::MaterialCondition
-Local link to file: generated_symbols/data/worldgen/material_condition/MaterialCondition.py
+Local link to file: vanilla_mcdoc/data/worldgen/material_condition/MaterialCondition.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, ClassVar, Literal
 
 from pydantic import Field
 
-from generated_symbols.data.worldgen.material_condition.BiomeCondition import BiomeCondition
-from generated_symbols.data.worldgen.material_condition.NoiseThresholdCondition import NoiseThresholdCondition
-from generated_symbols.data.worldgen.material_condition.NotCondition import NotCondition
-from generated_symbols.data.worldgen.material_condition.StoneDepthCondition import StoneDepthCondition
-from generated_symbols.data.worldgen.material_condition.VerticalGradientCondition import VerticalGradientCondition
-from generated_symbols.data.worldgen.material_condition.WaterCondition import WaterCondition
-from generated_symbols.data.worldgen.material_condition.YAboveCondition import YAboveCondition
+from vanilla_mcdoc.data.worldgen.material_condition.BiomeCondition import BiomeCondition
+from vanilla_mcdoc.data.worldgen.material_condition.NoiseThresholdCondition import NoiseThresholdCondition
+from vanilla_mcdoc.data.worldgen.material_condition.NotCondition import NotCondition
+from vanilla_mcdoc.data.worldgen.material_condition.StoneDepthCondition import StoneDepthCondition
+from vanilla_mcdoc.data.worldgen.material_condition.VerticalGradientCondition import VerticalGradientCondition
+from vanilla_mcdoc.data.worldgen.material_condition.WaterCondition import WaterCondition
+from vanilla_mcdoc.data.worldgen.material_condition.YAboveCondition import YAboveCondition
 
 
 class MaterialConditionBiome(BiomeCondition):

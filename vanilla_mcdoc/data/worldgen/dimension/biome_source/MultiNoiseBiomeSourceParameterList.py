@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::data::worldgen::dimension::biome_source::MultiNoiseBiomeSourceParameterList
-Local link to file: generated_symbols/data/worldgen/dimension/biome_source/MultiNoiseBiomeSourceParameterList.py
+Local link to file: vanilla_mcdoc/data/worldgen/dimension/biome_source/MultiNoiseBiomeSourceParameterList.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, ClassVar
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.dimension.biome_source.MultiNoisePreset import MultiNoisePreset
+    from vanilla_mcdoc.data.worldgen.dimension.biome_source.MultiNoisePreset import MultiNoisePreset
 
 
 class MultiNoiseBiomeSourceParameterList(GeneratedModel):

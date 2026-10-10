@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::util::direction::DirectionByte
-Local link to file: generated_symbols/util/direction/DirectionByte.py
+Local link to file: vanilla_mcdoc/util/direction/DirectionByte.py
 """
 # ~~~ CODE ~~~
 from enum import IntEnum

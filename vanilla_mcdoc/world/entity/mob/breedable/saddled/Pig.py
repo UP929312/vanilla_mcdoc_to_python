@@ -1,12 +1,12 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::breedable::saddled::Pig
-Local link to file: generated_symbols/world/entity/mob/breedable/saddled/Pig.py
+Local link to file: vanilla_mcdoc/world/entity/mob/breedable/saddled/Pig.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from generated_symbols.world.entity.mob.breedable.saddled.Saddled import Saddled
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.minecraft_types import IdSpec
+from vanilla_mcdoc.world.entity.mob.breedable.saddled.Saddled import Saddled
 
 
 class Pig(Saddled):

@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::data::advancement::predicate::GameMode
-Local link to file: generated_symbols/data/advancement/predicate/GameMode.py
+Local link to file: vanilla_mcdoc/data/advancement/predicate/GameMode.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

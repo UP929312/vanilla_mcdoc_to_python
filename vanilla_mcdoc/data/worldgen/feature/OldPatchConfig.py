@@ -1,18 +1,18 @@
 """
 Generated from symbols.json for ::java::data::worldgen::feature::OldPatchConfig
-Local link to file: generated_symbols/data/worldgen/feature/OldPatchConfig.py
+Local link to file: vanilla_mcdoc/data/worldgen/feature/OldPatchConfig.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.feature.BlockPlacer import BlockPlacer
-    from generated_symbols.data.worldgen.feature.block_state_provider.BlockStateProviderRef import BlockStateProviderRef
-    from generated_symbols.util.block_state.BlockState import BlockState
+    from vanilla_mcdoc.data.worldgen.feature.BlockPlacer import BlockPlacer
+    from vanilla_mcdoc.data.worldgen.feature.block_state_provider.BlockStateProviderRef import BlockStateProviderRef
+    from vanilla_mcdoc.util.block_state.BlockState import BlockState
 
 
 class OldPatchConfig(GeneratedModel):

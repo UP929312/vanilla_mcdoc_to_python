@@ -1,23 +1,23 @@
 """
 Generated from symbols.json for ::java::data::number_provider::context_float::ContextFloatProvider
-Local link to file: generated_symbols/data/number_provider/context_float/ContextFloatProvider.py
+Local link to file: vanilla_mcdoc/data/number_provider/context_float/ContextFloatProvider.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar, Literal
 
-from generated_symbols.base import GeneratedModel
-from generated_symbols.data.number_provider.context_float.AggregateProvider import AggregateProvider
-from generated_symbols.data.number_provider.context_float.BinaryProvider import BinaryProvider
-from generated_symbols.data.number_provider.context_float.EnchantmentLevelProvider import EnchantmentLevelProvider
-from generated_symbols.data.number_provider.context_float.SingleProvider import SingleProvider
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.data.number_provider.context_float.AggregateProvider import AggregateProvider
+from vanilla_mcdoc.data.number_provider.context_float.BinaryProvider import BinaryProvider
+from vanilla_mcdoc.data.number_provider.context_float.EnchantmentLevelProvider import EnchantmentLevelProvider
+from vanilla_mcdoc.data.number_provider.context_float.SingleProvider import SingleProvider
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.number_provider.context_float.FloatRef import FloatRef
-    from generated_symbols.data.number_provider.context_int.IntRef import IntRef
-    from generated_symbols.data.predicate.PredicateRef import PredicateRef
-    from generated_symbols.data.worldgen.attribute.NumericalEnvironmentAttribute import NumericalEnvironmentAttribute
-    from generated_symbols.util.NonEmptyWeightedList import NonEmptyWeightedList
+    from vanilla_mcdoc.data.number_provider.context_float.FloatRef import FloatRef
+    from vanilla_mcdoc.data.number_provider.context_int.IntRef import IntRef
+    from vanilla_mcdoc.data.predicate.PredicateRef import PredicateRef
+    from vanilla_mcdoc.data.worldgen.attribute.NumericalEnvironmentAttribute import NumericalEnvironmentAttribute
+    from vanilla_mcdoc.util.NonEmptyWeightedList import NonEmptyWeightedList
 
 
 class CasesStruct(GeneratedModel):

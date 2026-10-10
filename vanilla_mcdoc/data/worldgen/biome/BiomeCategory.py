@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::data::worldgen::biome::BiomeCategory
-Local link to file: generated_symbols/data/worldgen/biome/BiomeCategory.py
+Local link to file: vanilla_mcdoc/data/worldgen/biome/BiomeCategory.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

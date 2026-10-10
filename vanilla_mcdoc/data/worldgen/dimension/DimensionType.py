@@ -1,21 +1,21 @@
 """
 Generated from symbols.json for ::java::data::worldgen::dimension::DimensionType
-Local link to file: generated_symbols/data/worldgen/dimension/DimensionType.py
+Local link to file: vanilla_mcdoc/data/worldgen/dimension/DimensionType.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.worldgen.IntProvider import IntProvider
-    from generated_symbols.data.worldgen.attribute.GlobalEnvironmentAttributeMap import GlobalEnvironmentAttributeMap
-    from generated_symbols.data.worldgen.dimension.CardinalLightType import CardinalLightType
-    from generated_symbols.data.worldgen.dimension.SkyboxType import SkyboxType
-    from generated_symbols.registry.KnownBlockId import KnownBlockId
+    from vanilla_mcdoc.data.worldgen.IntProvider import IntProvider
+    from vanilla_mcdoc.data.worldgen.attribute.GlobalEnvironmentAttributeMap import GlobalEnvironmentAttributeMap
+    from vanilla_mcdoc.data.worldgen.dimension.CardinalLightType import CardinalLightType
+    from vanilla_mcdoc.data.worldgen.dimension.SkyboxType import SkyboxType
+    from vanilla_mcdoc.registry.KnownBlockId import KnownBlockId
 
 
 class DimensionType(GeneratedModel):

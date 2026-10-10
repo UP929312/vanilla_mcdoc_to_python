@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::world::entity::projectile::throwable::Throwable
-Local link to file: generated_symbols/world/entity/projectile/throwable/Throwable.py
+Local link to file: vanilla_mcdoc/world/entity/projectile/throwable/Throwable.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.world.entity.projectile.ProjectileBase import ProjectileBase
+from vanilla_mcdoc.world.entity.projectile.ProjectileBase import ProjectileBase
 
 
 class Throwable(ProjectileBase):

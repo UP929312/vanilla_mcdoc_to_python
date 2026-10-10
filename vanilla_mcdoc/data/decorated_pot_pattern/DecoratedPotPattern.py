@@ -1,12 +1,12 @@
 """
 Generated from symbols.json for ::java::data::decorated_pot_pattern::DecoratedPotPattern
-Local link to file: generated_symbols/data/decorated_pot_pattern/DecoratedPotPattern.py
+Local link to file: vanilla_mcdoc/data/decorated_pot_pattern/DecoratedPotPattern.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, ClassVar
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 
 class DecoratedPotPattern(GeneratedModel):

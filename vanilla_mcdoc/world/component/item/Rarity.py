@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::world::component::item::Rarity
-Local link to file: generated_symbols/world/component/item/Rarity.py
+Local link to file: vanilla_mcdoc/world/component/item/Rarity.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

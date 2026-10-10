@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::world::component::entity::FoxType
-Local link to file: generated_symbols/world/component/entity/FoxType.py
+Local link to file: vanilla_mcdoc/world/component/entity/FoxType.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

@@ -1,31 +1,31 @@
 """
 Generated from symbols.json for ::java::data::loot::condition::LootCondition
-Local link to file: generated_symbols/data/loot/condition/LootCondition.py
+Local link to file: vanilla_mcdoc/data/loot/condition/LootCondition.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
 from pydantic import Field
 
-from generated_symbols.data.advancement.predicate.BlockPredicate import BlockPredicate
-from generated_symbols.data.loot.condition.AllOf import AllOf
-from generated_symbols.data.loot.condition.AnyOf import AnyOf
-from generated_symbols.data.loot.condition.DamageSourceProperties import DamageSourceProperties
-from generated_symbols.data.loot.condition.EnchantmentActiveCheck import EnchantmentActiveCheck
-from generated_symbols.data.loot.condition.EntityProperties import EntityProperties
-from generated_symbols.data.loot.condition.EntityScores import EntityScores
-from generated_symbols.data.loot.condition.EnvironmentAttributeCheck import EnvironmentAttributeCheck
-from generated_symbols.data.loot.condition.FloatValueCheck import FloatValueCheck
-from generated_symbols.data.loot.condition.IntegerValueCheck import IntegerValueCheck
-from generated_symbols.data.loot.condition.Inverted import Inverted
-from generated_symbols.data.loot.condition.KilledByPlayer import KilledByPlayer
-from generated_symbols.data.loot.condition.LocationCheck import LocationCheck
-from generated_symbols.data.loot.condition.MatchTool import MatchTool
-from generated_symbols.data.loot.condition.RandomChance import RandomChance
-from generated_symbols.data.loot.condition.RandomChanceWithEnchantedBonus import RandomChanceWithEnchantedBonus
-from generated_symbols.data.loot.condition.TableBonus import TableBonus
-from generated_symbols.data.loot.condition.TimeCheck import TimeCheck
-from generated_symbols.data.loot.condition.WeatherCheck import WeatherCheck
+from vanilla_mcdoc.data.advancement.predicate.BlockPredicate import BlockPredicate
+from vanilla_mcdoc.data.loot.condition.AllOf import AllOf
+from vanilla_mcdoc.data.loot.condition.AnyOf import AnyOf
+from vanilla_mcdoc.data.loot.condition.DamageSourceProperties import DamageSourceProperties
+from vanilla_mcdoc.data.loot.condition.EnchantmentActiveCheck import EnchantmentActiveCheck
+from vanilla_mcdoc.data.loot.condition.EntityProperties import EntityProperties
+from vanilla_mcdoc.data.loot.condition.EntityScores import EntityScores
+from vanilla_mcdoc.data.loot.condition.EnvironmentAttributeCheck import EnvironmentAttributeCheck
+from vanilla_mcdoc.data.loot.condition.FloatValueCheck import FloatValueCheck
+from vanilla_mcdoc.data.loot.condition.IntegerValueCheck import IntegerValueCheck
+from vanilla_mcdoc.data.loot.condition.Inverted import Inverted
+from vanilla_mcdoc.data.loot.condition.KilledByPlayer import KilledByPlayer
+from vanilla_mcdoc.data.loot.condition.LocationCheck import LocationCheck
+from vanilla_mcdoc.data.loot.condition.MatchTool import MatchTool
+from vanilla_mcdoc.data.loot.condition.RandomChance import RandomChance
+from vanilla_mcdoc.data.loot.condition.RandomChanceWithEnchantedBonus import RandomChanceWithEnchantedBonus
+from vanilla_mcdoc.data.loot.condition.TableBonus import TableBonus
+from vanilla_mcdoc.data.loot.condition.TimeCheck import TimeCheck
+from vanilla_mcdoc.data.loot.condition.WeatherCheck import WeatherCheck
 
 
 class LootConditionAllOf(AllOf):

@@ -1,6 +1,6 @@
 """
 Generated from symbols.json for ::java::data::loot::function::ContainerComponents
-Local link to file: generated_symbols/data/loot/function/ContainerComponents.py
+Local link to file: vanilla_mcdoc/data/loot/function/ContainerComponents.py
 """
 # ~~~ CODE ~~~
 from enum import StrEnum

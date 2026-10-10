@@ -1,17 +1,17 @@
 """
 Generated from symbols.json for ::java::data::loot::function::CopyComponents
-Local link to file: generated_symbols/data/loot/function/CopyComponents.py
+Local link to file: vanilla_mcdoc/data/loot/function/CopyComponents.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
-from generated_symbols.data.loot.function.Conditions import Conditions
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.data.loot.function.Conditions import Conditions
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
-    from generated_symbols.data.loot.BlockEntityTarget import BlockEntityTarget
-    from generated_symbols.data.loot.EntityTarget import EntityTarget
-    from generated_symbols.data.loot.ItemStackTarget import ItemStackTarget
+    from vanilla_mcdoc.data.loot.BlockEntityTarget import BlockEntityTarget
+    from vanilla_mcdoc.data.loot.EntityTarget import EntityTarget
+    from vanilla_mcdoc.data.loot.ItemStackTarget import ItemStackTarget
 
 
 class CopyComponents(Conditions):

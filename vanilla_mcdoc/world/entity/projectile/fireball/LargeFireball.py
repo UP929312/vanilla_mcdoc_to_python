@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::world::entity::projectile::fireball::LargeFireball
-Local link to file: generated_symbols/world/entity/projectile/fireball/LargeFireball.py
+Local link to file: vanilla_mcdoc/world/entity/projectile/fireball/LargeFireball.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.world.entity.projectile.fireball.FireballBase import FireballBase
+from vanilla_mcdoc.world.entity.projectile.fireball.FireballBase import FireballBase
 
 
 class LargeFireball(FireballBase):

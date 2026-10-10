@@ -1,18 +1,18 @@
 """
 Generated from symbols.json for ::java::world::block::brewing_stand::BrewingStand
-Local link to file: generated_symbols/world/block/brewing_stand/BrewingStand.py
+Local link to file: vanilla_mcdoc/world/block/brewing_stand/BrewingStand.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.world.block.BlockEntity import BlockEntity
-from generated_symbols.world.block.Lockable import Lockable
-from generated_symbols.world.block.Nameable import Nameable
+from vanilla_mcdoc.world.block.BlockEntity import BlockEntity
+from vanilla_mcdoc.world.block.Lockable import Lockable
+from vanilla_mcdoc.world.block.Nameable import Nameable
 
 if TYPE_CHECKING:
-    from generated_symbols.util.slot.SlottedItem import SlottedItem
+    from vanilla_mcdoc.util.slot.SlottedItem import SlottedItem
 
 
 class BrewingStand(BlockEntity, Lockable, Nameable):

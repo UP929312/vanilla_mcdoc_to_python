@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::data::sulfur_cube_archetype::KnockbackModifiers
-Local link to file: generated_symbols/data/sulfur_cube_archetype/KnockbackModifiers.py
+Local link to file: vanilla_mcdoc/data/sulfur_cube_archetype/KnockbackModifiers.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class KnockbackModifiers(GeneratedModel):

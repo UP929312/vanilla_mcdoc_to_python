@@ -1,18 +1,18 @@
 """
 Generated from symbols.json for ::java::data::enchantment::level_based_value::LevelBasedValueMap
-Local link to file: generated_symbols/data/enchantment/level_based_value/LevelBasedValueMap.py
+Local link to file: vanilla_mcdoc/data/enchantment/level_based_value/LevelBasedValueMap.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
 from pydantic import Field
 
-from generated_symbols.data.enchantment.level_based_value.ClampedLevelValue import ClampedLevelValue
-from generated_symbols.data.enchantment.level_based_value.ExponentLevelValue import ExponentLevelValue
-from generated_symbols.data.enchantment.level_based_value.FractionLevelValue import FractionLevelValue
-from generated_symbols.data.enchantment.level_based_value.LinearLevelValue import LinearLevelValue
-from generated_symbols.data.enchantment.level_based_value.LookupLevelValue import LookupLevelValue
-from generated_symbols.data.enchantment.level_based_value.SquaredLevelValue import SquaredLevelValue
+from vanilla_mcdoc.data.enchantment.level_based_value.ClampedLevelValue import ClampedLevelValue
+from vanilla_mcdoc.data.enchantment.level_based_value.ExponentLevelValue import ExponentLevelValue
+from vanilla_mcdoc.data.enchantment.level_based_value.FractionLevelValue import FractionLevelValue
+from vanilla_mcdoc.data.enchantment.level_based_value.LinearLevelValue import LinearLevelValue
+from vanilla_mcdoc.data.enchantment.level_based_value.LookupLevelValue import LookupLevelValue
+from vanilla_mcdoc.data.enchantment.level_based_value.SquaredLevelValue import SquaredLevelValue
 
 
 class LevelBasedValueMapClamped(ClampedLevelValue):

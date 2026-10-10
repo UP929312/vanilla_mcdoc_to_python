@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::pack::BlockPattern
-Local link to file: generated_symbols/pack/BlockPattern.py
+Local link to file: vanilla_mcdoc/pack/BlockPattern.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class BlockPattern(GeneratedModel):

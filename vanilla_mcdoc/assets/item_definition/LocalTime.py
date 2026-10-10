@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::assets::item_definition::LocalTime
-Local link to file: generated_symbols/assets/item_definition/LocalTime.py
+Local link to file: vanilla_mcdoc/assets/item_definition/LocalTime.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.assets.item_definition.SelectCases import SelectCases
+from vanilla_mcdoc.assets.item_definition.SelectCases import SelectCases
 
 
 class LocalTime(SelectCases[str]):

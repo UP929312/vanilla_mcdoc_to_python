@@ -1,11 +1,11 @@
 """
 Generated from symbols.json for ::java::world::entity::mob::zombified_piglin::ZombiePigman
-Local link to file: generated_symbols/world/entity/mob/zombified_piglin/ZombiePigman.py
+Local link to file: vanilla_mcdoc/world/entity/mob/zombified_piglin/ZombiePigman.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.minecraft_types import MinecraftUUIDString
-from generated_symbols.world.entity.mob.MobBase import MobBase
-from generated_symbols.world.entity.mob.NeutralMob import NeutralMob
+from vanilla_mcdoc.minecraft_types import MinecraftUUIDString
+from vanilla_mcdoc.world.entity.mob.MobBase import MobBase
+from vanilla_mcdoc.world.entity.mob.NeutralMob import NeutralMob
 
 
 class ZombiePigman(MobBase, NeutralMob):

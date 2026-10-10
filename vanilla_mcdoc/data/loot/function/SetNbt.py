@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::data::loot::function::SetNbt
-Local link to file: generated_symbols/data/loot/function/SetNbt.py
+Local link to file: vanilla_mcdoc/data/loot/function/SetNbt.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.data.loot.function.Conditions import Conditions
+from vanilla_mcdoc.data.loot.function.Conditions import Conditions
 
 
 class SetNbt(Conditions):

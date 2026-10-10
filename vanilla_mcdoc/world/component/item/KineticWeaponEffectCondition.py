@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::world::component::item::KineticWeaponEffectCondition
-Local link to file: generated_symbols/world/component/item/KineticWeaponEffectCondition.py
+Local link to file: vanilla_mcdoc/world/component/item/KineticWeaponEffectCondition.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class KineticWeaponEffectCondition(GeneratedModel):

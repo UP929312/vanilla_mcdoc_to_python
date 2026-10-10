@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::world::entity::minecart::Minecart
-Local link to file: generated_symbols/world/entity/minecart/Minecart.py
+Local link to file: vanilla_mcdoc/world/entity/minecart/Minecart.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.world.entity.EntityBase import EntityBase
+from vanilla_mcdoc.world.entity.EntityBase import EntityBase
 
 if TYPE_CHECKING:
-    from generated_symbols.util.BlockState import BlockState
+    from vanilla_mcdoc.util.BlockState import BlockState
 
 
 class Minecart(EntityBase):

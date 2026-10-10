@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::data::advancement::predicate::BoatPredicate
-Local link to file: generated_symbols/data/advancement/predicate/BoatPredicate.py
+Local link to file: vanilla_mcdoc/data/advancement/predicate/BoatPredicate.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.world.entity.boat.BoatType import BoatType
+    from vanilla_mcdoc.world.entity.boat.BoatType import BoatType
 
 
 class BoatPredicate(GeneratedModel):

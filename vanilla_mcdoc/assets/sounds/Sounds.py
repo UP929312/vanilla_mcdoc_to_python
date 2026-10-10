@@ -1,12 +1,12 @@
 """
 Generated from symbols.json for ::java::assets::sounds::Sounds
-Local link to file: generated_symbols/assets/sounds/Sounds.py
+Local link to file: vanilla_mcdoc/assets/sounds/Sounds.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from generated_symbols.assets.sounds.SoundEventRegistration import SoundEventRegistration
+    from vanilla_mcdoc.assets.sounds.SoundEventRegistration import SoundEventRegistration
 
 
 type Sounds = dict[str, SoundEventRegistration]

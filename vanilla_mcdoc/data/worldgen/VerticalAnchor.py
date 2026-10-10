@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::data::worldgen::VerticalAnchor
-Local link to file: generated_symbols/data/worldgen/VerticalAnchor.py
+Local link to file: vanilla_mcdoc/data/worldgen/VerticalAnchor.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 
 class VerticalAnchorStruct1(GeneratedModel):

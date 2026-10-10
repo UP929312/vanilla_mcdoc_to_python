@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::world::component::block::PotDecorations
-Local link to file: generated_symbols/world/component/block/PotDecorations.py
+Local link to file: vanilla_mcdoc/world/component/block/PotDecorations.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.world.item.ItemStackTemplate import ItemStackTemplate
+    from vanilla_mcdoc.world.item.ItemStackTemplate import ItemStackTemplate
 
 
 class PotDecorations(GeneratedModel):

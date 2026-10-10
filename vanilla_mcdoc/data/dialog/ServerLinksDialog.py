@@ -1,20 +1,20 @@
 """
 Generated from symbols.json for ::java::data::dialog::ServerLinksDialog
-Local link to file: generated_symbols/data/dialog/ServerLinksDialog.py
+Local link to file: vanilla_mcdoc/data/dialog/ServerLinksDialog.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar, Literal
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.dialog.AfterAction import AfterAction
-    from generated_symbols.data.dialog.Button import Button
-    from generated_symbols.data.dialog.body.DialogBody import DialogBody
-    from generated_symbols.data.dialog.input.InputControl import InputControl
-    from generated_symbols.util.text.Text import Text
+    from vanilla_mcdoc.data.dialog.AfterAction import AfterAction
+    from vanilla_mcdoc.data.dialog.Button import Button
+    from vanilla_mcdoc.data.dialog.body.DialogBody import DialogBody
+    from vanilla_mcdoc.data.dialog.input.InputControl import InputControl
+    from vanilla_mcdoc.util.text.Text import Text
 
 
 class ServerLinksDialogNone(GeneratedModel):

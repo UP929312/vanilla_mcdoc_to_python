@@ -1,17 +1,17 @@
 """
 Generated from symbols.json for ::java::pack::PackOverlay
-Local link to file: generated_symbols/pack/PackOverlay.py
+Local link to file: vanilla_mcdoc/pack/PackOverlay.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.pack.PackFormat import PackFormat
-    from generated_symbols.util.InclusiveRange import InclusiveRange
+    from vanilla_mcdoc.pack.PackFormat import PackFormat
+    from vanilla_mcdoc.util.InclusiveRange import InclusiveRange
 
 
 class PackOverlay(GeneratedModel):

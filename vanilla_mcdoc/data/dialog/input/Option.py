@@ -1,14 +1,14 @@
 """
 Generated from symbols.json for ::java::data::dialog::input::Option
-Local link to file: generated_symbols/data/dialog/input/Option.py
+Local link to file: vanilla_mcdoc/data/dialog/input/Option.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.util.text.Text import Text
+    from vanilla_mcdoc.util.text.Text import Text
 
 
 class Option(GeneratedModel):

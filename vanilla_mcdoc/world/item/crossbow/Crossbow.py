@@ -1,16 +1,16 @@
 """
 Generated from symbols.json for ::java::world::item::crossbow::Crossbow
-Local link to file: generated_symbols/world/item/crossbow/Crossbow.py
+Local link to file: vanilla_mcdoc/world/item/crossbow/Crossbow.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from generated_symbols.world.item.ItemBase import ItemBase
+from vanilla_mcdoc.world.item.ItemBase import ItemBase
 
 if TYPE_CHECKING:
-    from generated_symbols.world.item.ItemStack import ItemStack
+    from vanilla_mcdoc.world.item.ItemStack import ItemStack
 
 
 class Crossbow(ItemBase):

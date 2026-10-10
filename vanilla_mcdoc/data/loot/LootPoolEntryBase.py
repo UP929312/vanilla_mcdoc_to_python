@@ -1,15 +1,15 @@
 """
 Generated from symbols.json for ::java::data::loot::LootPoolEntryBase
-Local link to file: generated_symbols/data/loot/LootPoolEntryBase.py
+Local link to file: vanilla_mcdoc/data/loot/LootPoolEntryBase.py
 """
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
-from generated_symbols.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
-    from generated_symbols.data.item_modifier.ItemModifier import ItemModifier
-    from generated_symbols.data.predicate.PredicateRef import PredicateRef
+    from vanilla_mcdoc.data.item_modifier.ItemModifier import ItemModifier
+    from vanilla_mcdoc.data.predicate.PredicateRef import PredicateRef
 
 
 class LootPoolEntryBase(GeneratedModel):

@@ -1,9 +1,9 @@
 """
 Generated from symbols.json for ::java::data::item_modifier::ItemModifierArgument
-Local link to file: generated_symbols/data/item_modifier/ItemModifierArgument.py
+Local link to file: vanilla_mcdoc/data/item_modifier/ItemModifierArgument.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.data.item_modifier.ItemModifier import ItemModifier
+from vanilla_mcdoc.data.item_modifier.ItemModifier import ItemModifier
 
 
 type ItemModifierArgument = ItemModifier

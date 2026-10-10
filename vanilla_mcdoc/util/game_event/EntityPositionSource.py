@@ -1,10 +1,10 @@
 """
 Generated from symbols.json for ::java::util::game_event::EntityPositionSource
-Local link to file: generated_symbols/util/game_event/EntityPositionSource.py
+Local link to file: vanilla_mcdoc/util/game_event/EntityPositionSource.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.base import GeneratedModel
-from generated_symbols.minecraft_types import MinecraftUUID
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import MinecraftUUID
 
 
 class EntityPositionSource(GeneratedModel):

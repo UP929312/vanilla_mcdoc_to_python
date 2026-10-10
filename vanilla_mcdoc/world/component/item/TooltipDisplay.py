@@ -1,12 +1,12 @@
 """
 Generated from symbols.json for ::java::world::component::item::TooltipDisplay
-Local link to file: generated_symbols/world/component/item/TooltipDisplay.py
+Local link to file: vanilla_mcdoc/world/component/item/TooltipDisplay.py
 """
 # ~~~ CODE ~~~
 from typing import Annotated
 
-from generated_symbols.base import GeneratedModel
-from minecraft_registry import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
 
 
 class TooltipDisplay(GeneratedModel):

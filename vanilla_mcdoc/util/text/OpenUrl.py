@@ -1,10 +1,10 @@
 """
 Generated from symbols.json for ::java::util::text::OpenUrl
-Local link to file: generated_symbols/util/text/OpenUrl.py
+Local link to file: vanilla_mcdoc/util/text/OpenUrl.py
 """
 # ~~~ CODE ~~~
-from generated_symbols.base import GeneratedModel
-from generated_symbols.minecraft_types import MinecraftURL
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import MinecraftURL
 
 
 class OpenUrl(GeneratedModel):
