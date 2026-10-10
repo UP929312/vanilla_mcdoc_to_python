@@ -1,0 +1,57 @@
+"""
+Generated from symbols.json for ::java::data::slot_source::TypedSlotSource
+Local link to file: vanilla_mcdoc/data/slot_source/TypedSlotSource.py
+"""
+# ~~~ CODE ~~~
+from typing import Annotated, ClassVar, Literal
+
+from pydantic import Field
+
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.data.slot_source.ContentsSlotSource import ContentsSlotSource
+from vanilla_mcdoc.data.slot_source.FilterSlotSource import FilterSlotSource
+from vanilla_mcdoc.data.slot_source.GroupSlotSource import GroupSlotSource
+from vanilla_mcdoc.data.slot_source.LimitCountSlotSource import LimitCountSlotSource
+from vanilla_mcdoc.data.slot_source.RangeSlotSource import RangeSlotSource
+
+
+class TypedSlotSourceContents(ContentsSlotSource):
+    __resource_dir__: ClassVar[str] = 'slot_source'
+
+    type: Literal['minecraft:contents', 'contents'] = 'minecraft:contents'
+
+
+class TypedSlotSourceEmpty(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'slot_source'
+
+    type: Literal['minecraft:empty', 'empty'] = 'minecraft:empty'
+
+
+class TypedSlotSourceFiltered(FilterSlotSource):
+    __resource_dir__: ClassVar[str] = 'slot_source'
+
+    type: Literal['minecraft:filtered', 'filtered'] = 'minecraft:filtered'
+
+
+class TypedSlotSourceGroup(GroupSlotSource):
+    __resource_dir__: ClassVar[str] = 'slot_source'
+
+    type: Literal['minecraft:group', 'group'] = 'minecraft:group'
+
+
+class TypedSlotSourceLimitSlots(LimitCountSlotSource):
+    __resource_dir__: ClassVar[str] = 'slot_source'
+
+    type: Literal['minecraft:limit_slots', 'limit_slots'] = 'minecraft:limit_slots'
+
+
+class TypedSlotSourceSlotRange(RangeSlotSource):
+    __resource_dir__: ClassVar[str] = 'slot_source'
+
+    type: Literal['minecraft:slot_range', 'slot_range'] = 'minecraft:slot_range'
+
+
+type TypedSlotSource = Annotated[
+    TypedSlotSourceContents | TypedSlotSourceEmpty | TypedSlotSourceFiltered | TypedSlotSourceGroup | TypedSlotSourceLimitSlots | TypedSlotSourceSlotRange,
+    Field(discriminator='type'),
+]

@@ -1,0 +1,24 @@
+"""
+Generated from symbols.json for ::java::data::recipe::CraftingSpecialFireworkStar
+Local link to file: vanilla_mcdoc/data/recipe/CraftingSpecialFireworkStar.py
+"""
+# ~~~ CODE ~~~
+from typing import TYPE_CHECKING, ClassVar
+
+from vanilla_mcdoc.base import GeneratedModel
+
+if TYPE_CHECKING:
+    from vanilla_mcdoc.data.recipe.Ingredient import Ingredient
+    from vanilla_mcdoc.world.component.item.FireworkShape import FireworkShape
+    from vanilla_mcdoc.world.item.ItemStackTemplate import ItemStackTemplate
+
+
+class CraftingSpecialFireworkStar(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'recipe'
+
+    trail: Ingredient  # If this ingredient is provided, the result will have `has_trail` field set.
+    twinkle: Ingredient  # If this ingredient is provided, the result will have `has_twinkle` field set.
+    fuel: Ingredient  # Additional ingredient.  Exactly 1 additional ingredient is required.
+    dye: Ingredient  # The items to provide explosion color.  Colors are provided by the `dye` component.  Multiple dyes can be used at the same time.
+    shapes: dict[FireworkShape, Ingredient]  # If one of the ingredients is provided, the result will have the corresponding `shape` value.  If no shape ingredient is provided, the shape will be `small_ball`.
+    result: ItemStackTemplate  # The `firework_explosion` component is controlled by the ingredients.

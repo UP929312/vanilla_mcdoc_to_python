@@ -1,0 +1,41 @@
+"""
+Generated from symbols.json for ::java::data::timeline::SimpleEasingType
+Local link to file: vanilla_mcdoc/data/timeline/SimpleEasingType.py
+"""
+# ~~~ CODE ~~~
+from enum import StrEnum
+
+
+class SimpleEasingType(StrEnum):
+    CONSTANT = "constant"
+    LINEAR = "linear"
+    INBACK = "in_back"
+    INBOUNCE = "in_bounce"
+    INCIRC = "in_circ"
+    INCUBIC = "in_cubic"
+    INELASTIC = "in_elastic"
+    INEXPO = "in_expo"
+    INQUAD = "in_quad"
+    INQUART = "in_quart"
+    INQUINT = "in_quint"
+    INSINE = "in_sine"
+    INOUTBACK = "in_out_back"
+    INOUTBOUNCE = "in_out_bounce"
+    INOUTCIRC = "in_out_circ"
+    INOUTCUBIC = "in_out_cubic"
+    INOUTELASTIC = "in_out_elastic"
+    INOUTEXPO = "in_out_expo"
+    INOUTQUAD = "in_out_quad"
+    INOUTQUART = "in_out_quart"
+    INOUTQUINT = "in_out_quint"
+    INOUTSINE = "in_out_sine"
+    OUTBACK = "out_back"
+    OUTBOUNCE = "out_bounce"
+    OUTCIRC = "out_circ"
+    OUTCUBIC = "out_cubic"
+    OUTELASTIC = "out_elastic"
+    OUTEXPO = "out_expo"
+    OUTQUAD = "out_quad"
+    OUTQUART = "out_quart"
+    OUTQUINT = "out_quint"
+    OUTSINE = "out_sine"

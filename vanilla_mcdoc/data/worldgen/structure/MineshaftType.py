@@ -1,0 +1,11 @@
+"""
+Generated from symbols.json for ::java::data::worldgen::structure::MineshaftType
+Local link to file: vanilla_mcdoc/data/worldgen/structure/MineshaftType.py
+"""
+# ~~~ CODE ~~~
+from enum import StrEnum
+
+
+class MineshaftType(StrEnum):
+    NORMAL = "normal"
+    MESA = "mesa"

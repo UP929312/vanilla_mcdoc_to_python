@@ -1,0 +1,42 @@
+"""
+Generated from symbols.json for ::java::data::loot::function::SetWrittenBookPages
+Local link to file: vanilla_mcdoc/data/loot/function/SetWrittenBookPages.py
+"""
+# ~~~ CODE ~~~
+from typing import TYPE_CHECKING, Annotated, Literal
+
+from pydantic import Field
+
+from vanilla_mcdoc.data.loot.function.Conditions import Conditions
+from vanilla_mcdoc.data.loot.function.InsertListOperation import InsertListOperation
+from vanilla_mcdoc.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
+
+if TYPE_CHECKING:
+    from vanilla_mcdoc.util.Filterable import Filterable
+    from vanilla_mcdoc.util.text.Text import Text
+
+
+class SetWrittenBookPagesAppend(Conditions):
+    pages: list[Filterable[Text]]  # Sets the pages of a written book.
+    mode: Literal['minecraft:append', 'append'] = 'minecraft:append'  # Determines how the existing list should be modified.
+
+
+class SetWrittenBookPagesInsert(Conditions, InsertListOperation):
+    pages: list[Filterable[Text]]  # Sets the pages of a written book.
+    mode: Literal['minecraft:insert', 'insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
+
+
+class SetWrittenBookPagesReplaceAll(Conditions):
+    pages: list[Filterable[Text]]  # Sets the pages of a written book.
+    mode: Literal['minecraft:replace_all', 'replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
+
+
+class SetWrittenBookPagesReplaceSection(Conditions, ReplaceSectionListOperation):
+    pages: list[Filterable[Text]]  # Sets the pages of a written book.
+    mode: Literal['minecraft:replace_section', 'replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
+
+
+type SetWrittenBookPages = Annotated[
+    SetWrittenBookPagesAppend | SetWrittenBookPagesInsert | SetWrittenBookPagesReplaceAll | SetWrittenBookPagesReplaceSection,
+    Field(discriminator='mode'),
+]

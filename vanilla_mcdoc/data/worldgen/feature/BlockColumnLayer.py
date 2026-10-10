@@ -1,0 +1,19 @@
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::BlockColumnLayer
+Local link to file: vanilla_mcdoc/data/worldgen/feature/BlockColumnLayer.py
+"""
+# ~~~ CODE ~~~
+from typing import TYPE_CHECKING, Annotated
+
+from pydantic import Field
+
+from vanilla_mcdoc.base import GeneratedModel
+
+if TYPE_CHECKING:
+    from vanilla_mcdoc.data.worldgen.IntProvider import IntProvider
+    from vanilla_mcdoc.data.worldgen.feature.block_state_provider.BlockStateProviderRef import BlockStateProviderRef
+
+
+class BlockColumnLayer(GeneratedModel):
+    height: IntProvider[Annotated[int, Field(ge=0)]] | Annotated[int, Field(ge=0)]
+    provider: BlockStateProviderRef

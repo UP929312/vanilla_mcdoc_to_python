@@ -1,0 +1,16 @@
+"""
+Generated from symbols.json for ::java::data::loot::condition::TableBonus
+Local link to file: vanilla_mcdoc/data/loot/condition/TableBonus.py
+"""
+# ~~~ CODE ~~~
+from typing import Annotated
+
+from pydantic import Field
+
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
+
+
+class TableBonus(GeneratedModel):
+    enchantment: Annotated[str, IdSpec(registry='enchantment')]
+    chances: list[Annotated[float, Field(ge=0, le=1)]]  # Probabilities for each enchantment level

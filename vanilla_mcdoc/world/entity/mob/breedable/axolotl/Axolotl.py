@@ -1,0 +1,16 @@
+"""
+Generated from symbols.json for ::java::world::entity::mob::breedable::axolotl::Axolotl
+Local link to file: vanilla_mcdoc/world/entity/mob/breedable/axolotl/Axolotl.py
+"""
+# ~~~ CODE ~~~
+from typing import TYPE_CHECKING
+
+from vanilla_mcdoc.world.entity.mob.breedable.Breedable import Breedable
+
+if TYPE_CHECKING:
+    from vanilla_mcdoc.world.entity.mob.breedable.axolotl.AxolotlVariantInt import AxolotlVariantInt
+
+
+class Axolotl(Breedable):
+    Variant: AxolotlVariantInt | None = None  # The variant of the axolotl.
+    FromBucket: bool | None = None  # If this axolotl was released from a bucket.

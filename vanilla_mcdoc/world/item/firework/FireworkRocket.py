@@ -1,0 +1,17 @@
+"""
+Generated from symbols.json for ::java::world::item::firework::FireworkRocket
+Local link to file: vanilla_mcdoc/world/item/firework/FireworkRocket.py
+"""
+# ~~~ CODE ~~~
+from typing import TYPE_CHECKING
+
+from pydantic import Field
+
+from vanilla_mcdoc.world.item.ItemBase import ItemBase
+
+if TYPE_CHECKING:
+    from vanilla_mcdoc.world.item.firework.Fireworks import Fireworks
+
+
+class FireworkRocket(ItemBase):
+    Fireworks_: Fireworks | None = Field(default=None, alias='Fireworks')

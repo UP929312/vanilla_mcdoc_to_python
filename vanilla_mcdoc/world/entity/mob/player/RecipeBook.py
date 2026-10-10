@@ -1,0 +1,18 @@
+"""
+Generated from symbols.json for ::java::world::entity::mob::player::RecipeBook
+Local link to file: vanilla_mcdoc/world/entity/mob/player/RecipeBook.py
+"""
+# ~~~ CODE ~~~
+from typing import Annotated
+
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
+
+
+class RecipeBook(GeneratedModel):
+    recipes: list[Annotated[str, IdSpec(registry='recipe')]] | None = None  # Recipes the player has acquired.
+    toBeDisplayed: list[Annotated[str, IdSpec(registry='recipe')]] | None = None  # Recipes that should pulse in the crafting book.
+    isFilteringCraftable: bool | None = None  # Whether the player has filtered crafting on in the crafting table.
+    isGuiOpen: bool | None = None  # Whether the player has the crafting book open in the crafting table.
+    isFurnaceFilteringCraftable: bool | None = None  # Whether the player has filtered crafting on in the furnace.
+    isFurnaceGuiOpen: bool | None = None  # Whether the player has the crafting book open in the furnace.

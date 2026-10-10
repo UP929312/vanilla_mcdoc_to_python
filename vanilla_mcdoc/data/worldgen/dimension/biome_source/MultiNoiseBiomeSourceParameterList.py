@@ -1,0 +1,17 @@
+"""
+Generated from symbols.json for ::java::data::worldgen::dimension::biome_source::MultiNoiseBiomeSourceParameterList
+Local link to file: vanilla_mcdoc/data/worldgen/dimension/biome_source/MultiNoiseBiomeSourceParameterList.py
+"""
+# ~~~ CODE ~~~
+from typing import TYPE_CHECKING, ClassVar
+
+from vanilla_mcdoc.base import GeneratedModel
+
+if TYPE_CHECKING:
+    from vanilla_mcdoc.data.worldgen.dimension.biome_source.MultiNoisePreset import MultiNoisePreset
+
+
+class MultiNoiseBiomeSourceParameterList(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'worldgen/multi_noise_biome_source_parameter_list'
+
+    preset: MultiNoisePreset

@@ -1,0 +1,92 @@
+"""
+Generated from symbols.json for ::java::assets::item_definition::Select
+Local link to file: vanilla_mcdoc/assets/item_definition/Select.py
+"""
+# ~~~ CODE ~~~
+from typing import TYPE_CHECKING, Literal
+
+from vanilla_mcdoc.assets.item_definition.BlockState import BlockState
+from vanilla_mcdoc.assets.item_definition.ChargeType import ChargeType
+from vanilla_mcdoc.assets.item_definition.ComponentStrings import ComponentStrings
+from vanilla_mcdoc.assets.item_definition.ContextDimension import ContextDimension
+from vanilla_mcdoc.assets.item_definition.ContextEntityType import ContextEntityType
+from vanilla_mcdoc.assets.item_definition.CustomModelDataStrings import CustomModelDataStrings
+from vanilla_mcdoc.assets.item_definition.DisplayContext import DisplayContext
+from vanilla_mcdoc.assets.item_definition.LocalTime import LocalTime
+from vanilla_mcdoc.assets.item_definition.MainHand import MainHand
+from vanilla_mcdoc.assets.item_definition.SelectCases import SelectCases
+from vanilla_mcdoc.assets.item_definition.TrimMaterial import TrimMaterial
+
+if TYPE_CHECKING:
+    from vanilla_mcdoc.assets.item_definition.ItemModel import ItemModel
+    from vanilla_mcdoc.assets.item_definition.SelectPropertyType import SelectPropertyType
+    from vanilla_mcdoc.world.entity.display.Transformation import Transformation
+
+
+class SelectUnknown(SelectCases[str]):
+    property: SelectPropertyType
+    fallback: ItemModel | None = None  # Item model to render if none of the cases matched the value.
+    transformation: Transformation | None = None
+
+
+class SelectBlockState(BlockState):
+    property: Literal['minecraft:block_state', 'block_state'] = 'minecraft:block_state'
+    fallback: ItemModel | None = None  # Item model to render if none of the cases matched the value.
+    transformation: Transformation | None = None
+
+
+class SelectChargeType(ChargeType):
+    property: Literal['minecraft:charge_type', 'charge_type'] = 'minecraft:charge_type'
+    fallback: ItemModel | None = None  # Item model to render if none of the cases matched the value.
+    transformation: Transformation | None = None
+
+
+class SelectComponent(ComponentStrings):
+    property: Literal['minecraft:component', 'component'] = 'minecraft:component'
+    fallback: ItemModel | None = None  # Item model to render if none of the cases matched the value.
+    transformation: Transformation | None = None
+
+
+class SelectContextDimension(ContextDimension):
+    property: Literal['minecraft:context_dimension', 'context_dimension'] = 'minecraft:context_dimension'
+    fallback: ItemModel | None = None  # Item model to render if none of the cases matched the value.
+    transformation: Transformation | None = None
+
+
+class SelectContextEntityType(ContextEntityType):
+    property: Literal['minecraft:context_entity_type', 'context_entity_type'] = 'minecraft:context_entity_type'
+    fallback: ItemModel | None = None  # Item model to render if none of the cases matched the value.
+    transformation: Transformation | None = None
+
+
+class SelectCustomModelData(CustomModelDataStrings):
+    property: Literal['minecraft:custom_model_data', 'custom_model_data'] = 'minecraft:custom_model_data'
+    fallback: ItemModel | None = None  # Item model to render if none of the cases matched the value.
+    transformation: Transformation | None = None
+
+
+class SelectDisplayContext(DisplayContext):
+    property: Literal['minecraft:display_context', 'display_context'] = 'minecraft:display_context'
+    fallback: ItemModel | None = None  # Item model to render if none of the cases matched the value.
+    transformation: Transformation | None = None
+
+
+class SelectLocalTime(LocalTime):
+    property: Literal['minecraft:local_time', 'local_time'] = 'minecraft:local_time'
+    fallback: ItemModel | None = None  # Item model to render if none of the cases matched the value.
+    transformation: Transformation | None = None
+
+
+class SelectMainHand(MainHand):
+    property: Literal['minecraft:main_hand', 'main_hand'] = 'minecraft:main_hand'
+    fallback: ItemModel | None = None  # Item model to render if none of the cases matched the value.
+    transformation: Transformation | None = None
+
+
+class SelectTrimMaterial(TrimMaterial):
+    property: Literal['minecraft:trim_material', 'trim_material'] = 'minecraft:trim_material'
+    fallback: ItemModel | None = None  # Item model to render if none of the cases matched the value.
+    transformation: Transformation | None = None
+
+
+type Select = SelectUnknown | SelectBlockState | SelectChargeType | SelectComponent | SelectContextDimension | SelectContextEntityType | SelectCustomModelData | SelectDisplayContext | SelectLocalTime | SelectMainHand | SelectTrimMaterial

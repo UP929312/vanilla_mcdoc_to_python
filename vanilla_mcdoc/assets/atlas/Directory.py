@@ -1,0 +1,11 @@
+"""
+Generated from symbols.json for ::java::assets::atlas::Directory
+Local link to file: vanilla_mcdoc/assets/atlas/Directory.py
+"""
+# ~~~ CODE ~~~
+from vanilla_mcdoc.base import GeneratedModel
+
+
+class Directory(GeneratedModel):
+    source: str  # Directory of texture locations to include, relative to the `textures` folder, not including the trailing `/`.
+    prefix: str  # The sprite name prefix, usually ending with `/`.

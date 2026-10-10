@@ -1,0 +1,18 @@
+"""
+Generated from symbols.json for ::java::assets::shader::post::InternalTarget
+Local link to file: vanilla_mcdoc/assets/shader/post/InternalTarget.py
+"""
+# ~~~ CODE ~~~
+from typing import TYPE_CHECKING
+
+from vanilla_mcdoc.base import GeneratedModel
+
+if TYPE_CHECKING:
+    from vanilla_mcdoc.util.color.RGBA import RGBA
+
+
+class InternalTarget(GeneratedModel):
+    width: int | None = None
+    height: int | None = None
+    persistent: bool | None = None  # If `true`, target will be persistent across frames. Defaults to `false`. The contents of the target will be cleared when the screen is resized.
+    clear_color: RGBA | None = None  # Target will be filled with this color when created or cleared. Defaults to `0`.

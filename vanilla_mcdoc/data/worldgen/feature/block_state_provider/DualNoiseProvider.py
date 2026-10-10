@@ -1,0 +1,22 @@
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::block_state_provider::DualNoiseProvider
+Local link to file: vanilla_mcdoc/data/worldgen/feature/block_state_provider/DualNoiseProvider.py
+"""
+# ~~~ CODE ~~~
+from typing import TYPE_CHECKING, Annotated
+
+from pydantic import Field
+
+from vanilla_mcdoc.data.worldgen.feature.block_state_provider.BaseNoiseProvider import BaseNoiseProvider
+
+if TYPE_CHECKING:
+    from vanilla_mcdoc.data.worldgen.dimension.biome_source.NoiseParameters import NoiseParameters
+    from vanilla_mcdoc.util.InclusiveRange import InclusiveRange
+    from vanilla_mcdoc.util.block_state.BlockState import BlockState
+
+
+class DualNoiseProvider(BaseNoiseProvider):
+    variety: InclusiveRange[Annotated[int, Field(ge=1, le=64)]] | Annotated[int, Field(ge=1, le=64)]
+    slow_noise: NoiseParameters
+    slow_scale: Annotated[float, Field(ge=0)]
+    states: list[BlockState]

@@ -1,0 +1,1851 @@
+"""Exports for generated symbols."""
+
+from vanilla_mcdoc.data.worldgen.attribute.ARGBColorAttribute import ARGBColorAttribute
+from vanilla_mcdoc.data.worldgen.feature.tree.AboveRootPlacement import AboveRootPlacement
+from vanilla_mcdoc.data.enchantment.effect.AddEffectValue import AddEffectValue
+from vanilla_mcdoc.data.advancement.Advancement import Advancement
+from vanilla_mcdoc.data.advancement.AdvancementCriteriaMap import AdvancementCriteriaMap
+from vanilla_mcdoc.data.advancement.AdvancementCriterion import AdvancementCriterion
+from vanilla_mcdoc.data.advancement.AdvancementDisplay import AdvancementDisplay
+from vanilla_mcdoc.data.advancement.trigger.AdvancementEntityPredicate import AdvancementEntityPredicate
+from vanilla_mcdoc.data.advancement.AdvancementFrame import AdvancementFrame
+from vanilla_mcdoc.data.advancement.AdvancementIcon import AdvancementIcon
+from vanilla_mcdoc.data.advancement.trigger.AdvancementLocationPredicate import AdvancementLocationPredicate
+from vanilla_mcdoc.data.advancement.AdvancementRewards import AdvancementRewards
+from vanilla_mcdoc.data.dialog.AfterAction import AfterAction
+from vanilla_mcdoc.data.loot.condition.AllOf import AllOf
+from vanilla_mcdoc.data.enchantment.effect.AllOfEffectValue import AllOfEffectValue
+from vanilla_mcdoc.data.enchantment.effect.AllOfEntityEffect import AllOfEntityEffect
+from vanilla_mcdoc.data.enchantment.effect.AllOfLocationBasedEffect import AllOfLocationBasedEffect
+from vanilla_mcdoc.data.gametest.test_environment.AllOffTestEnvironment import AllOffTestEnvironment
+from vanilla_mcdoc.data.advancement.trigger.AllOptional import AllOptional
+from vanilla_mcdoc.data.worldgen.feature.tree.AlterGroundTreeDecorator import AlterGroundTreeDecorator
+from vanilla_mcdoc.data.loot.condition.Alternative import Alternative
+from vanilla_mcdoc.data.worldgen.attribute.AmbientParticle import AmbientParticle
+from vanilla_mcdoc.data.worldgen.attribute.AmbientSounds import AmbientSounds
+from vanilla_mcdoc.data.enchantment.effect_component.AmmoUseEnchantmentEffect import AmmoUseEnchantmentEffect
+from vanilla_mcdoc.data.advancement.trigger.AnyBlockInteractionTrigger import AnyBlockInteractionTrigger
+from vanilla_mcdoc.data.loot.condition.AnyOf import AnyOf
+from vanilla_mcdoc.data.worldgen.processor_list.AppendLoot import AppendLoot
+from vanilla_mcdoc.data.worldgen.processor_list.AppendStatic import AppendStatic
+from vanilla_mcdoc.data.loot.function.ApplyBonus import ApplyBonus
+from vanilla_mcdoc.data.loot.function.ApplyBonusFormula import ApplyBonusFormula
+from vanilla_mcdoc.data.enchantment.effect.ApplyExhaustionEntityEffect import ApplyExhaustionEntityEffect
+from vanilla_mcdoc.data.enchantment.effect.ApplyImpulseEntityEffect import ApplyImpulseEntityEffect
+from vanilla_mcdoc.data.enchantment.effect.ApplyMobEffectEntityEffect import ApplyMobEffectEntityEffect
+from vanilla_mcdoc.data.worldgen.noise_settings.Aquifer import Aquifer
+from vanilla_mcdoc.data.enchantment.effect_component.ArmorEffectivenessEnchantmentEffect import ArmorEffectivenessEnchantmentEffect
+from vanilla_mcdoc.data.trim.ArmorMaterial import ArmorMaterial
+from vanilla_mcdoc.data.worldgen.feature.tree.AttachedToLeavesTreeDecorator import AttachedToLeavesTreeDecorator
+from vanilla_mcdoc.data.worldgen.feature.tree.AttachedToLogsTreeDecorator import AttachedToLogsTreeDecorator
+from vanilla_mcdoc.data.enchantment.effect_component.AttackTarget import AttackTarget
+from vanilla_mcdoc.data.enchantment.effect.AttributeEffect import AttributeEffect
+from vanilla_mcdoc.data.sulfur_cube_archetype.AttributeEntry import AttributeEntry
+from vanilla_mcdoc.data.loot.function.AttributeModifier import AttributeModifier
+from vanilla_mcdoc.data.timeline.AttributeTrackBase import AttributeTrackBase
+from vanilla_mcdoc.data.worldgen.processor_list.AxisAlignedLinearPos import AxisAlignedLinearPos
+from vanilla_mcdoc.data.advancement.predicate.AxolotlPredicate import AxolotlPredicate
+from vanilla_mcdoc.data.worldgen.attribute.BackgroundMusic import BackgroundMusic
+from vanilla_mcdoc.data.loot.function.BannerPatternLayer import BannerPatternLayer
+from vanilla_mcdoc.data.worldgen.feature.block_state_provider.BaseNoiseProvider import BaseNoiseProvider
+from vanilla_mcdoc.data.worldgen.attribute.BedRule import BedRule
+from vanilla_mcdoc.data.worldgen.attribute.BedRuleType import BedRuleType
+from vanilla_mcdoc.data.advancement.trigger.BeeNestDestroyedTrigger import BeeNestDestroyedTrigger
+from vanilla_mcdoc.data.worldgen.feature.tree.BeehiveTreeDecorator import BeehiveTreeDecorator
+from vanilla_mcdoc.data.worldgen.feature.block_predicate.BelowHeightmapPredicate import BelowHeightmapPredicate
+from vanilla_mcdoc.data.worldgen.feature.tree.BendingTrunkPlacer import BendingTrunkPlacer
+from vanilla_mcdoc.data.number_provider.context_int.BinomialDistributionGenerator import BinomialDistributionGenerator
+from vanilla_mcdoc.data.util.BinomialIntGenerator import BinomialIntGenerator
+from vanilla_mcdoc.data.number_provider.legacy.BinomialNumberProvider import BinomialNumberProvider
+from vanilla_mcdoc.data.loot.function.BinomialWithBonusCountFormula import BinomialWithBonusCountFormula
+from vanilla_mcdoc.data.worldgen.biome.Biome import Biome
+from vanilla_mcdoc.data.worldgen.biome.BiomeCategory import BiomeCategory
+from vanilla_mcdoc.data.variants.BiomeCheck import BiomeCheck
+from vanilla_mcdoc.data.worldgen.material_condition.BiomeCondition import BiomeCondition
+from vanilla_mcdoc.data.worldgen.biome.BiomeEffects import BiomeEffects
+from vanilla_mcdoc.data.worldgen.biome.BiomeMusic import BiomeMusic
+from vanilla_mcdoc.data.worldgen.dimension.biome_source.BiomeNoiseEntry import BiomeNoiseEntry
+from vanilla_mcdoc.data.worldgen.biome.BiomeParticle import BiomeParticle
+from vanilla_mcdoc.data.worldgen.biome.BiomeSoundAdditions import BiomeSoundAdditions
+from vanilla_mcdoc.data.worldgen.dimension.biome_source.BiomeSource import BiomeSource
+from vanilla_mcdoc.data.worldgen.structure.BiomeTemperature import BiomeTemperature
+from vanilla_mcdoc.data.worldgen.attribute.modifier.BlendToGray import BlendToGray
+from vanilla_mcdoc.data.worldgen.processor_list.BlockAge import BlockAge
+from vanilla_mcdoc.data.gametest.BlockBasedTestInstance import BlockBasedTestInstance
+from vanilla_mcdoc.data.worldgen.feature.BlockBlobConfig import BlockBlobConfig
+from vanilla_mcdoc.data.worldgen.feature.BlockColumnConfig import BlockColumnConfig
+from vanilla_mcdoc.data.worldgen.feature.BlockColumnLayer import BlockColumnLayer
+from vanilla_mcdoc.data.worldgen.processor_list.BlockEntityModifier import BlockEntityModifier
+from vanilla_mcdoc.data.loot.BlockEntityTarget import BlockEntityTarget
+from vanilla_mcdoc.data.enchantment.effect_component.BlockExperienceEnchantmentEffect import BlockExperienceEnchantmentEffect
+from vanilla_mcdoc.data.worldgen.processor_list.BlockIgnore import BlockIgnore
+from vanilla_mcdoc.data.enchantment.effect.BlockInteraction import BlockInteraction
+from vanilla_mcdoc.data.worldgen.processor_list.BlockMatch import BlockMatch
+from vanilla_mcdoc.data.structure.BlockPalette import BlockPalette
+from vanilla_mcdoc.data.worldgen.feature.BlockPileConfig import BlockPileConfig
+from vanilla_mcdoc.data.worldgen.feature.BlockPlacer import BlockPlacer
+from vanilla_mcdoc.data.worldgen.feature.placement.BlockPredicateFilter import BlockPredicateFilter
+from vanilla_mcdoc.data.advancement.predicate.BlockPredicateState import BlockPredicateState
+from vanilla_mcdoc.data.worldgen.processor_list.BlockRot import BlockRot
+from vanilla_mcdoc.data.worldgen.material_rule.BlockRule import BlockRule
+from vanilla_mcdoc.data.block_sound_set.BlockSoundSet import BlockSoundSet
+from vanilla_mcdoc.data.advancement.trigger.BlockStateConditions import BlockStateConditions
+from vanilla_mcdoc.data.worldgen.processor_list.BlockStateMatch import BlockStateMatch
+from vanilla_mcdoc.data.loot.condition.BlockStateProperty import BlockStateProperty
+from vanilla_mcdoc.data.worldgen.feature.block_state_provider.BlockStateProvider import BlockStateProvider
+from vanilla_mcdoc.data.worldgen.feature.block_state_provider.BlockStateProviderRef import BlockStateProviderRef
+from vanilla_mcdoc.data.worldgen.feature.BlockStateRuleProviderEntry import BlockStateRuleProviderEntry
+from vanilla_mcdoc.data.block_transformer.BlockTransformData import BlockTransformData
+from vanilla_mcdoc.data.block_transformer.BlockTransformDropStrategy import BlockTransformDropStrategy
+from vanilla_mcdoc.data.block_transformer.BlockTransformParticle import BlockTransformParticle
+from vanilla_mcdoc.data.block_transformer.BlockTransformType import BlockTransformType
+from vanilla_mcdoc.data.advancement.predicate.BoatPredicate import BoatPredicate
+from vanilla_mcdoc.data.gametest.test_environment.BoolGameRule import BoolGameRule
+from vanilla_mcdoc.data.worldgen.attribute.BooleanAttribute import BooleanAttribute
+from vanilla_mcdoc.data.worldgen.attribute.modifier.BooleanAttributeModifier import BooleanAttributeModifier
+from vanilla_mcdoc.data.dialog.input.BooleanInput import BooleanInput
+from vanilla_mcdoc.data.worldgen.attribute.modifier.BooleanModifierType import BooleanModifierType
+from vanilla_mcdoc.data.worldgen.BottomBiasHeightProvider import BottomBiasHeightProvider
+from vanilla_mcdoc.data.worldgen.structure.BoundingBox import BoundingBox
+from vanilla_mcdoc.data.advancement.trigger.BredAnimalsTrigger import BredAnimalsTrigger
+from vanilla_mcdoc.data.advancement.trigger.BrewedPotionTrigger import BrewedPotionTrigger
+from vanilla_mcdoc.data.recipe.Brewing import Brewing
+from vanilla_mcdoc.data.worldgen.structure.BuriedTreasure import BuriedTreasure
+from vanilla_mcdoc.data.dialog.Button import Button
+from vanilla_mcdoc.data.dialog.ButtonListDialogBase import ButtonListDialogBase
+from vanilla_mcdoc.data.enchantment.provider.ByCostEnchantmentProvider import ByCostEnchantmentProvider
+from vanilla_mcdoc.data.enchantment.provider.ByCostWithDifficultyEnchantmentProvider import ByCostWithDifficultyEnchantmentProvider
+from vanilla_mcdoc.data.worldgen.carver.CanyonConfig import CanyonConfig
+from vanilla_mcdoc.data.worldgen.carver.CanyonShape import CanyonShape
+from vanilla_mcdoc.data.worldgen.processor_list.Capped import Capped
+from vanilla_mcdoc.data.worldgen.dimension.CardinalLightType import CardinalLightType
+from vanilla_mcdoc.data.worldgen.CarveStep import CarveStep
+from vanilla_mcdoc.data.worldgen.carver.CarverConfigBase import CarverConfigBase
+from vanilla_mcdoc.data.worldgen.carver.CarverDebugSettings import CarverDebugSettings
+from vanilla_mcdoc.data.worldgen.carver.CarverListRef import CarverListRef
+from vanilla_mcdoc.data.worldgen.carver.CarverRef import CarverRef
+from vanilla_mcdoc.data.worldgen.biome.CarversPerStep import CarversPerStep
+from vanilla_mcdoc.data.worldgen.feature.decorator.CarvingMaskConfig import CarvingMaskConfig
+from vanilla_mcdoc.data.worldgen.feature.placement.CarvingMaskModifier import CarvingMaskModifier
+from vanilla_mcdoc.data.advancement.predicate.CatPredicate import CatPredicate
+from vanilla_mcdoc.data.variants.cat.CatSounds import CatSounds
+from vanilla_mcdoc.data.variants.cat.CatVariant import CatVariant
+from vanilla_mcdoc.data.worldgen.carver.CaveConfig import CaveConfig
+from vanilla_mcdoc.data.worldgen.feature.decorator.ChanceConfig import ChanceConfig
+from vanilla_mcdoc.data.advancement.trigger.ChangeDimensionTrigger import ChangeDimensionTrigger
+from vanilla_mcdoc.data.enchantment.effect.ChangeItemDamageEffect import ChangeItemDamageEffect
+from vanilla_mcdoc.data.advancement.trigger.ChanneledLightningTrigger import ChanneledLightningTrigger
+from vanilla_mcdoc.data.chat_type.ChatDecoration import ChatDecoration
+from vanilla_mcdoc.data.chat_type.ChatDecorationParameter import ChatDecorationParameter
+from vanilla_mcdoc.data.chat_type.ChatType import ChatType
+from vanilla_mcdoc.data.worldgen.dimension.biome_source.Checkerboard import Checkerboard
+from vanilla_mcdoc.data.worldgen.feature.tree.CherryFoliagePlacer import CherryFoliagePlacer
+from vanilla_mcdoc.data.worldgen.feature.tree.CherryTrunkPlacer import CherryTrunkPlacer
+from vanilla_mcdoc.data.variants.chicken.ChickenModelType import ChickenModelType
+from vanilla_mcdoc.data.variants.chicken.ChickenSounds import ChickenSounds
+from vanilla_mcdoc.data.variants.chicken.ChickenVariant import ChickenVariant
+from vanilla_mcdoc.data.worldgen.dimension.chunk_generator.ChunkGenerator import ChunkGenerator
+from vanilla_mcdoc.data.worldgen.density_function.Clamp import Clamp
+from vanilla_mcdoc.data.worldgen.ClampedIntProvider import ClampedIntProvider
+from vanilla_mcdoc.data.enchantment.level_based_value.ClampedLevelValue import ClampedLevelValue
+from vanilla_mcdoc.data.worldgen.ClampedNormalIntProvider import ClampedNormalIntProvider
+from vanilla_mcdoc.data.dialog.action.ClickAction import ClickAction
+from vanilla_mcdoc.data.worldgen.dimension.biome_source.ClimateParameter import ClimateParameter
+from vanilla_mcdoc.data.worldgen.dimension.biome_source.ClimateParameters import ClimateParameters
+from vanilla_mcdoc.data.gametest.test_environment.ClockTimeTestEnvironment import ClockTimeTestEnvironment
+from vanilla_mcdoc.data.worldgen.feature.tree.CocoaTreeDecorator import CocoaTreeDecorator
+from vanilla_mcdoc.data.worldgen.attribute.modifier.ColorAttributeModifier import ColorAttributeModifier
+from vanilla_mcdoc.data.worldgen.attribute.modifier.ColorModifierType import ColorModifierType
+from vanilla_mcdoc.data.worldgen.feature.ColumnPlacer import ColumnPlacer
+from vanilla_mcdoc.data.worldgen.feature.ColumnsConfig import ColumnsConfig
+from vanilla_mcdoc.data.worldgen.feature.block_predicate.CombiningPredicate import CombiningPredicate
+from vanilla_mcdoc.data.worldgen.processor_list.CompositeMatch import CompositeMatch
+from vanilla_mcdoc.data.loot.CompositePoolEntry import CompositePoolEntry
+from vanilla_mcdoc.data.worldgen.structure_set.ConcentricRingsPlacement import ConcentricRingsPlacement
+from vanilla_mcdoc.data.worldgen.material_rule.ConditionRule import ConditionRule
+from vanilla_mcdoc.data.number_provider.ConditionalProvider import ConditionalProvider
+from vanilla_mcdoc.data.loot.function.Conditions import Conditions
+from vanilla_mcdoc.data.worldgen.surface_builder.Config import Config
+from vanilla_mcdoc.data.worldgen.carver.ConfiguredCarver import ConfiguredCarver
+from vanilla_mcdoc.data.worldgen.feature.decorator.ConfiguredDecorator import ConfiguredDecorator
+from vanilla_mcdoc.data.worldgen.feature.ConfiguredFeature import ConfiguredFeature
+from vanilla_mcdoc.data.worldgen.feature.ConfiguredFeatureRef import ConfiguredFeatureRef
+from vanilla_mcdoc.data.worldgen.surface_builder.ConfiguredSurfaceBuilder import ConfiguredSurfaceBuilder
+from vanilla_mcdoc.data.worldgen.surface_builder.ConfiguredSurfaceBuilderRef import ConfiguredSurfaceBuilderRef
+from vanilla_mcdoc.data.dialog.ConfirmationDialog import ConfirmationDialog
+from vanilla_mcdoc.data.worldgen.density_function.Constant import Constant
+from vanilla_mcdoc.data.worldgen.ConstantHeightProvider import ConstantHeightProvider
+from vanilla_mcdoc.data.util.ConstantIntGenerator import ConstantIntGenerator
+from vanilla_mcdoc.data.worldgen.ConstantIntProvider import ConstantIntProvider
+from vanilla_mcdoc.data.number_provider.legacy.ConstantNumberProvider import ConstantNumberProvider
+from vanilla_mcdoc.data.number_provider.ConstantValue import ConstantValue
+from vanilla_mcdoc.data.advancement.trigger.ConstructBeaconTrigger import ConstructBeaconTrigger
+from vanilla_mcdoc.data.advancement.trigger.ConsumeItemTrigger import ConsumeItemTrigger
+from vanilla_mcdoc.data.sulfur_cube_archetype.ContactDamage import ContactDamage
+from vanilla_mcdoc.data.loot.function.ContainerComponents import ContainerComponents
+from vanilla_mcdoc.data.slot_source.ContentsSlotSource import ContentsSlotSource
+from vanilla_mcdoc.data.number_provider.context_float.ContextFloatProvider import ContextFloatProvider
+from vanilla_mcdoc.data.number_provider.context_int.ContextIntProvider import ContextIntProvider
+from vanilla_mcdoc.data.util.ContextNbtProvider import ContextNbtProvider
+from vanilla_mcdoc.data.util.ContextScoreProvider import ContextScoreProvider
+from vanilla_mcdoc.data.recipe.CookingBookCategory import CookingBookCategory
+from vanilla_mcdoc.data.recipe.CookingBookInfo import CookingBookInfo
+from vanilla_mcdoc.data.loot.function.CopyComponents import CopyComponents
+from vanilla_mcdoc.data.loot.function.CopyName import CopyName
+from vanilla_mcdoc.data.loot.function.CopyNameSource import CopyNameSource
+from vanilla_mcdoc.data.loot.function.CopyNbt import CopyNbt
+from vanilla_mcdoc.data.loot.function.CopyNbtOperation import CopyNbtOperation
+from vanilla_mcdoc.data.loot.function.CopyNbtStrategy import CopyNbtStrategy
+from vanilla_mcdoc.data.worldgen.feature.block_state_provider.CopyPropertiesProvider import CopyPropertiesProvider
+from vanilla_mcdoc.data.loot.function.CopyState import CopyState
+from vanilla_mcdoc.data.worldgen.feature.CoralConfig import CoralConfig
+from vanilla_mcdoc.data.worldgen.feature.decorator.CountConfig import CountConfig
+from vanilla_mcdoc.data.worldgen.feature.decorator.CountExtraConfig import CountExtraConfig
+from vanilla_mcdoc.data.worldgen.feature.placement.CountModifier import CountModifier
+from vanilla_mcdoc.data.worldgen.feature.decorator.CountNoiseBiasedConfig import CountNoiseBiasedConfig
+from vanilla_mcdoc.data.worldgen.feature.decorator.CountNoiseConfig import CountNoiseConfig
+from vanilla_mcdoc.data.worldgen.feature.placement.CountOnEveryLayerModifier import CountOnEveryLayerModifier
+from vanilla_mcdoc.data.variants.cow.CowModelType import CowModelType
+from vanilla_mcdoc.data.variants.cow.CowSounds import CowSounds
+from vanilla_mcdoc.data.variants.cow.CowVariant import CowVariant
+from vanilla_mcdoc.data.recipe.CraftingBookCategory import CraftingBookCategory
+from vanilla_mcdoc.data.recipe.CraftingBookInfo import CraftingBookInfo
+from vanilla_mcdoc.data.recipe.CraftingDecoratedPot import CraftingDecoratedPot
+from vanilla_mcdoc.data.recipe.CraftingDye import CraftingDye
+from vanilla_mcdoc.data.recipe.CraftingImbue import CraftingImbue
+from vanilla_mcdoc.data.recipe.CraftingIngredients import CraftingIngredients
+from vanilla_mcdoc.data.recipe.CraftingShaped import CraftingShaped
+from vanilla_mcdoc.data.recipe.CraftingShapeless import CraftingShapeless
+from vanilla_mcdoc.data.recipe.CraftingSpecialBannerDuplicate import CraftingSpecialBannerDuplicate
+from vanilla_mcdoc.data.recipe.CraftingSpecialBookCloning import CraftingSpecialBookCloning
+from vanilla_mcdoc.data.recipe.CraftingSpecialFireworkRocket import CraftingSpecialFireworkRocket
+from vanilla_mcdoc.data.recipe.CraftingSpecialFireworkStar import CraftingSpecialFireworkStar
+from vanilla_mcdoc.data.recipe.CraftingSpecialFireworkStarFade import CraftingSpecialFireworkStarFade
+from vanilla_mcdoc.data.recipe.CraftingSpecialMapExtending import CraftingSpecialMapExtending
+from vanilla_mcdoc.data.recipe.CraftingSpecialShieldDecoration import CraftingSpecialShieldDecoration
+from vanilla_mcdoc.data.recipe.CraftingTransmute import CraftingTransmute
+from vanilla_mcdoc.data.worldgen.feature.tree.CreakingHeartTreeDecorator import CreakingHeartTreeDecorator
+from vanilla_mcdoc.data.enchantment.effect_component.CrossbowChargeSoundsEnchantmentEffect import CrossbowChargeSoundsEnchantmentEffect
+from vanilla_mcdoc.data.timeline.CubicBezierEase import CubicBezierEase
+from vanilla_mcdoc.data.worldgen.density_function.CubicSpline import CubicSpline
+from vanilla_mcdoc.data.worldgen.feature.placement.CuboidModifier import CuboidModifier
+from vanilla_mcdoc.data.advancement.trigger.CuredZombieVillagerTrigger import CuredZombieVillagerTrigger
+from vanilla_mcdoc.data.loot.function.CustomModelDataColors import CustomModelDataColors
+from vanilla_mcdoc.data.loot.function.CustomModelDataFlags import CustomModelDataFlags
+from vanilla_mcdoc.data.loot.function.CustomModelDataFloats import CustomModelDataFloats
+from vanilla_mcdoc.data.loot.function.CustomModelDataStrings import CustomModelDataStrings
+from vanilla_mcdoc.data.damage_type.DamageEffects import DamageEffects
+from vanilla_mcdoc.data.enchantment.effect_component.DamageEnchantmentEffect import DamageEnchantmentEffect
+from vanilla_mcdoc.data.enchantment.effect.DamageEntityEffect import DamageEntityEffect
+from vanilla_mcdoc.data.enchantment.effect_component.DamageImmunityEnchantmentEffect import DamageImmunityEnchantmentEffect
+from vanilla_mcdoc.data.enchantment.effect.DamageItemEffect import DamageItemEffect
+from vanilla_mcdoc.data.advancement.predicate.DamagePredicate import DamagePredicate
+from vanilla_mcdoc.data.enchantment.effect_component.DamageProtectionEnchantmentEffect import DamageProtectionEnchantmentEffect
+from vanilla_mcdoc.data.damage_type.DamageScaling import DamageScaling
+from vanilla_mcdoc.data.advancement.predicate.DamageSourceFlags import DamageSourceFlags
+from vanilla_mcdoc.data.advancement.predicate.DamageSourcePredicate import DamageSourcePredicate
+from vanilla_mcdoc.data.loot.condition.DamageSourceProperties import DamageSourceProperties
+from vanilla_mcdoc.data.advancement.predicate.DamageTagPredicate import DamageTagPredicate
+from vanilla_mcdoc.data.damage_type.DamageType import DamageType
+from vanilla_mcdoc.data.number_provider.DataStorageProvider import DataStorageProvider
+from vanilla_mcdoc.data.damage_type.DeathMessageType import DeathMessageType
+from vanilla_mcdoc.data.worldgen.noise_settings.DebugFunctionEntry import DebugFunctionEntry
+from vanilla_mcdoc.data.decorated_pot_pattern.DecoratedPotPattern import DecoratedPotPattern
+from vanilla_mcdoc.data.worldgen.DecorationStep import DecorationStep
+from vanilla_mcdoc.data.advancement.trigger.DefaultBlockInteractionTrigger import DefaultBlockInteractionTrigger
+from vanilla_mcdoc.data.worldgen.feature.DeltaConfig import DeltaConfig
+from vanilla_mcdoc.data.worldgen.density_function.DensityFunction import DensityFunction
+from vanilla_mcdoc.data.worldgen.density_function.DensityFunctionRef import DensityFunctionRef
+from vanilla_mcdoc.data.worldgen.feature.decorator.DepthAverageConfig import DepthAverageConfig
+from vanilla_mcdoc.data.dialog.Dialog import Dialog
+from vanilla_mcdoc.data.dialog.DialogBase import DialogBase
+from vanilla_mcdoc.data.dialog.body.DialogBody import DialogBody
+from vanilla_mcdoc.data.dialog.DialogListRef import DialogListRef
+from vanilla_mcdoc.data.gametest.test_environment.Difficulty import Difficulty
+from vanilla_mcdoc.data.gametest.test_environment.DifficultyTestEnvironment import DifficultyTestEnvironment
+from vanilla_mcdoc.data.worldgen.dimension.Dimension import Dimension
+from vanilla_mcdoc.data.worldgen.structure.DimensionPaddingConfig import DimensionPaddingConfig
+from vanilla_mcdoc.data.worldgen.dimension.DimensionType import DimensionType
+from vanilla_mcdoc.data.worldgen.dimension.DimensionTypeEffects import DimensionTypeEffects
+from vanilla_mcdoc.data.worldgen.dimension.DimensionTypeRef import DimensionTypeRef
+from vanilla_mcdoc.data.worldgen.dimension.biome_source.DirectMultiNoise import DirectMultiNoise
+from vanilla_mcdoc.data.worldgen.structure.DirectPoolAlias import DirectPoolAlias
+from vanilla_mcdoc.data.worldgen.attribute.DiscreteAttribute import DiscreteAttribute
+from vanilla_mcdoc.data.worldgen.feature.DiskConfig import DiskConfig
+from vanilla_mcdoc.data.number_provider.DispatcherProvider import DispatcherProvider
+from vanilla_mcdoc.data.worldgen.density_function.DistanceMetric import DistanceMetric
+from vanilla_mcdoc.data.advancement.predicate.DistancePredicate import DistancePredicate
+from vanilla_mcdoc.data.worldgen.density_function.DistanceToPoint import DistanceToPoint
+from vanilla_mcdoc.data.advancement.trigger.DistanceTrigger import DistanceTrigger
+from vanilla_mcdoc.data.number_provider.DistributionProvider import DistributionProvider
+from vanilla_mcdoc.data.worldgen.feature.block_state_provider.DualNoiseProvider import DualNoiseProvider
+from vanilla_mcdoc.data.dialog.action.DynamicCustomAction import DynamicCustomAction
+from vanilla_mcdoc.data.loot.DynamicDrops import DynamicDrops
+from vanilla_mcdoc.data.loot.DynamicPoolEntry import DynamicPoolEntry
+from vanilla_mcdoc.data.dialog.action.DynamicRunCommand import DynamicRunCommand
+from vanilla_mcdoc.data.timeline.EasingType import EasingType
+from vanilla_mcdoc.data.advancement.trigger.EffectsChangedTrigger import EffectsChangedTrigger
+from vanilla_mcdoc.data.worldgen.template_pool.Element import Element
+from vanilla_mcdoc.data.worldgen.template_pool.ElementBase import ElementBase
+from vanilla_mcdoc.data.worldgen.feature.EmeraldOreConfig import EmeraldOreConfig
+from vanilla_mcdoc.data.loot.function.EnchantRandomly import EnchantRandomly
+from vanilla_mcdoc.data.loot.function.EnchantWithLevels import EnchantWithLevels
+from vanilla_mcdoc.data.loot.function.EnchantedCountBase import EnchantedCountBase
+from vanilla_mcdoc.data.loot.function.EnchantedCountIncrease import EnchantedCountIncrease
+from vanilla_mcdoc.data.advancement.trigger.EnchantedItemTrigger import EnchantedItemTrigger
+from vanilla_mcdoc.data.enchantment.Enchantment import Enchantment
+from vanilla_mcdoc.data.loot.condition.EnchantmentActiveCheck import EnchantmentActiveCheck
+from vanilla_mcdoc.data.enchantment.EnchantmentCost import EnchantmentCost
+from vanilla_mcdoc.data.enchantment.effect_component.EnchantmentEffectComponentMap import EnchantmentEffectComponentMap
+from vanilla_mcdoc.data.advancement.predicate.EnchantmentPredicate import EnchantmentPredicate
+from vanilla_mcdoc.data.enchantment.provider.EnchantmentProvider import EnchantmentProvider
+from vanilla_mcdoc.data.enchantment.provider.EnchantmentsType import EnchantmentsType
+from vanilla_mcdoc.data.worldgen.feature.EndGatewayConfig import EndGatewayConfig
+from vanilla_mcdoc.data.worldgen.feature.EndPodiumConfig import EndPodiumConfig
+from vanilla_mcdoc.data.worldgen.feature.EndSpike import EndSpike
+from vanilla_mcdoc.data.worldgen.feature.EndSpikeConfig import EndSpikeConfig
+from vanilla_mcdoc.data.advancement.trigger.EnterBlockTrigger import EnterBlockTrigger
+from vanilla_mcdoc.data.enchantment.effect.EntityEffect import EntityEffect
+from vanilla_mcdoc.data.advancement.predicate.EntityEffectsPredicate import EntityEffectsPredicate
+from vanilla_mcdoc.data.advancement.predicate.EntityEquipmentPredicate import EntityEquipmentPredicate
+from vanilla_mcdoc.data.advancement.predicate.EntityFlagsPredicate import EntityFlagsPredicate
+from vanilla_mcdoc.data.advancement.trigger.EntityHurtPlayerTrigger import EntityHurtPlayerTrigger
+from vanilla_mcdoc.data.advancement.predicate.EntityPredicate import EntityPredicate
+from vanilla_mcdoc.data.loot.condition.EntityProperties import EntityProperties
+from vanilla_mcdoc.data.loot.condition.EntityScores import EntityScores
+from vanilla_mcdoc.data.advancement.predicate.EntitySlotsPredicate import EntitySlotsPredicate
+from vanilla_mcdoc.data.advancement.predicate.EntitySubPredicate import EntitySubPredicate
+from vanilla_mcdoc.data.advancement.predicate.EntitySubPredicateMap import EntitySubPredicateMap
+from vanilla_mcdoc.data.advancement.predicate.EntityTagPredicate import EntityTagPredicate
+from vanilla_mcdoc.data.loot.EntityTarget import EntityTarget
+from vanilla_mcdoc.data.advancement.predicate.EntityTypePredicate import EntityTypePredicate
+from vanilla_mcdoc.data.loot.condition.EnvironmentAttributeCheck import EnvironmentAttributeCheck
+from vanilla_mcdoc.data.worldgen.attribute.EnvironmentAttributeMap import EnvironmentAttributeMap
+from vanilla_mcdoc.data.number_provider.legacy.EnvironmentAttributeNumberProvider import EnvironmentAttributeNumberProvider
+from vanilla_mcdoc.data.number_provider.EnvironmentAttributeProvider import EnvironmentAttributeProvider
+from vanilla_mcdoc.data.timeline.EnvironmentAttributeTrackMap import EnvironmentAttributeTrackMap
+from vanilla_mcdoc.data.worldgen.feature.placement.EnvironmentScanModifier import EnvironmentScanModifier
+from vanilla_mcdoc.data.enchantment.effect_component.EquipmentDropsEnchantmentEffect import EquipmentDropsEnchantmentEffect
+from vanilla_mcdoc.data.advancement.predicate.EquipmentPredicateSlot import EquipmentPredicateSlot
+from vanilla_mcdoc.data.worldgen.structure_set.ExclusionZone import ExclusionZone
+from vanilla_mcdoc.data.tag.ExplicitTagEntry import ExplicitTagEntry
+from vanilla_mcdoc.data.enchantment.effect.ExplodeEntityEffect import ExplodeEntityEffect
+from vanilla_mcdoc.data.loot.function.ExplorationMap import ExplorationMap
+from vanilla_mcdoc.data.sulfur_cube_archetype.ExplosionData import ExplosionData
+from vanilla_mcdoc.data.enchantment.effect.ExplosionParticleInfo import ExplosionParticleInfo
+from vanilla_mcdoc.data.enchantment.level_based_value.ExponentLevelValue import ExponentLevelValue
+from vanilla_mcdoc.data.enchantment.effect.ExponentialEffectValue import ExponentialEffectValue
+from vanilla_mcdoc.data.advancement.trigger.FallAfterExplosionTrigger import FallAfterExplosionTrigger
+from vanilla_mcdoc.data.worldgen.feature.tree.FallenTreeConfig import FallenTreeConfig
+from vanilla_mcdoc.data.worldgen.template_pool.FeatureElement import FeatureElement
+from vanilla_mcdoc.data.worldgen.feature.FeatureRef import FeatureRef
+from vanilla_mcdoc.data.worldgen.feature.tree.FeatureSize import FeatureSize
+from vanilla_mcdoc.data.worldgen.feature.FillLayerConfig import FillLayerConfig
+from vanilla_mcdoc.data.loot.function.FillPlayerHead import FillPlayerHead
+from vanilla_mcdoc.data.advancement.trigger.FilledBucketTrigger import FilledBucketTrigger
+from vanilla_mcdoc.data.slot_source.FilterSlotSource import FilterSlotSource
+from vanilla_mcdoc.data.loot.function.Filtered import Filtered
+from vanilla_mcdoc.data.worldgen.density_function.FindTopSurface import FindTopSurface
+from vanilla_mcdoc.data.loot.function.FireworkExplosions import FireworkExplosions
+from vanilla_mcdoc.data.recipe.FireworkShapeIngredients import FireworkShapeIngredients
+from vanilla_mcdoc.data.advancement.predicate.FishingHookPredicate import FishingHookPredicate
+from vanilla_mcdoc.data.enchantment.effect_component.FishingLuckBonusEnchantmentEffect import FishingLuckBonusEnchantmentEffect
+from vanilla_mcdoc.data.advancement.trigger.FishingRodHookedTrigger import FishingRodHookedTrigger
+from vanilla_mcdoc.data.enchantment.effect_component.FishingTimeReductionEnchantmentEffect import FishingTimeReductionEnchantmentEffect
+from vanilla_mcdoc.data.worldgen.dimension.biome_source.Fixed import Fixed
+from vanilla_mcdoc.data.worldgen.feature.placement.FixedPlacementModifier import FixedPlacementModifier
+from vanilla_mcdoc.data.util.FixedScoreProvider import FixedScoreProvider
+from vanilla_mcdoc.data.worldgen.dimension.chunk_generator.Flat import Flat
+from vanilla_mcdoc.data.worldgen.dimension.chunk_generator.FlatGeneratorLayer import FlatGeneratorLayer
+from vanilla_mcdoc.data.worldgen.world_preset.FlatGeneratorPreset import FlatGeneratorPreset
+from vanilla_mcdoc.data.worldgen.dimension.chunk_generator.FlatGeneratorSettings import FlatGeneratorSettings
+from vanilla_mcdoc.data.worldgen.attribute.FloatAttribute import FloatAttribute
+from vanilla_mcdoc.data.worldgen.attribute.modifier.FloatAttributeModifier import FloatAttributeModifier
+from vanilla_mcdoc.data.worldgen.attribute.modifier.FloatModifierType import FloatModifierType
+from vanilla_mcdoc.data.number_provider.FloatNumberProvider import FloatNumberProvider
+from vanilla_mcdoc.data.number_provider.FloatNumberProviderRef import FloatNumberProviderRef
+from vanilla_mcdoc.data.worldgen.FloatProvider import FloatProvider
+from vanilla_mcdoc.data.loot.FloatRange import FloatRange
+from vanilla_mcdoc.data.number_provider.context_float.FloatRef import FloatRef
+from vanilla_mcdoc.data.loot.condition.FloatValueCheck import FloatValueCheck
+from vanilla_mcdoc.data.worldgen.attribute.modifier.FloatWithAlpha import FloatWithAlpha
+from vanilla_mcdoc.data.advancement.predicate.FluidPredicate import FluidPredicate
+from vanilla_mcdoc.data.advancement.predicate.FluidPredicateState import FluidPredicateState
+from vanilla_mcdoc.data.worldgen.feature.tree.FoliagePlacer import FoliagePlacer
+from vanilla_mcdoc.data.advancement.predicate.FoodPredicate import FoodPredicate
+from vanilla_mcdoc.data.worldgen.feature.ForestRockConfig import ForestRockConfig
+from vanilla_mcdoc.data.worldgen.feature.FossilConfig import FossilConfig
+from vanilla_mcdoc.data.advancement.predicate.FoxPredicate import FoxPredicate
+from vanilla_mcdoc.data.enchantment.level_based_value.FractionLevelValue import FractionLevelValue
+from vanilla_mcdoc.data.worldgen.structure_set.FrequencyReductionMethod import FrequencyReductionMethod
+from vanilla_mcdoc.data.advancement.predicate.FrogPredicate import FrogPredicate
+from vanilla_mcdoc.data.variants.frog.FrogVariant import FrogVariant
+from vanilla_mcdoc.data.gametest.test_environment.FunctionTestEnvironment import FunctionTestEnvironment
+from vanilla_mcdoc.data.gametest.FunctionTestInstance import FunctionTestInstance
+from vanilla_mcdoc.data.advancement.predicate.GameMode import GameMode
+from vanilla_mcdoc.data.gametest.test_environment.GameRuleMap import GameRuleMap
+from vanilla_mcdoc.data.gametest.test_environment.GameRulesTestEnvironment import GameRulesTestEnvironment
+from vanilla_mcdoc.data.worldgen.feature.GeodeBlockSettings import GeodeBlockSettings
+from vanilla_mcdoc.data.worldgen.feature.GeodeConfig import GeodeConfig
+from vanilla_mcdoc.data.worldgen.feature.GeodeCrackSettings import GeodeCrackSettings
+from vanilla_mcdoc.data.worldgen.feature.GeodeLayerSettings import GeodeLayerSettings
+from vanilla_mcdoc.data.worldgen.attribute.GlobalEnvironmentAttributeMap import GlobalEnvironmentAttributeMap
+from vanilla_mcdoc.data.worldgen.density_function.Gradient import Gradient
+from vanilla_mcdoc.data.worldgen.biome.GrassColorModifier import GrassColorModifier
+from vanilla_mcdoc.data.worldgen.processor_list.Gravity import Gravity
+from vanilla_mcdoc.data.slot_source.GroupSlotSource import GroupSlotSource
+from vanilla_mcdoc.data.worldgen.feature.GrowingPlantConfig import GrowingPlantConfig
+from vanilla_mcdoc.data.worldgen.feature.block_predicate.HasSturdyFacePredicate import HasSturdyFacePredicate
+from vanilla_mcdoc.data.worldgen.feature.tree.HeightFoliagePlacer import HeightFoliagePlacer
+from vanilla_mcdoc.data.worldgen.processor_list.HeightMatch import HeightMatch
+from vanilla_mcdoc.data.worldgen.HeightProvider import HeightProvider
+from vanilla_mcdoc.data.worldgen.feature.placement.HeightRangeModifier import HeightRangeModifier
+from vanilla_mcdoc.data.worldgen.feature.block_predicate.HeightRangePredicate import HeightRangePredicate
+from vanilla_mcdoc.data.worldgen.feature.decorator.HeightmapConfig import HeightmapConfig
+from vanilla_mcdoc.data.worldgen.feature.placement.HeightmapModifier import HeightmapModifier
+from vanilla_mcdoc.data.worldgen.HeightmapType import HeightmapType
+from vanilla_mcdoc.data.enchantment.effect_component.HitBlockEnchantmentEffect import HitBlockEnchantmentEffect
+from vanilla_mcdoc.data.advancement.predicate.HorsePredicate import HorsePredicate
+from vanilla_mcdoc.data.worldgen.feature.HugeFungusConfig import HugeFungusConfig
+from vanilla_mcdoc.data.worldgen.feature.HugeMushroomConfig import HugeMushroomConfig
+from vanilla_mcdoc.data.worldgen.feature.IcebergConfig import IcebergConfig
+from vanilla_mcdoc.data.enchantment.effect.IgniteEntityEffect import IgniteEntityEffect
+from vanilla_mcdoc.data.advancement.trigger.ImpossibleTrigger import ImpossibleTrigger
+from vanilla_mcdoc.data.recipe.Ingredient import Ingredient
+from vanilla_mcdoc.data.recipe.IngredientItem import IngredientItem
+from vanilla_mcdoc.data.recipe.IngredientTag import IngredientTag
+from vanilla_mcdoc.data.recipe.IngredientValue import IngredientValue
+from vanilla_mcdoc.data.dialog.input.InputControl import InputControl
+from vanilla_mcdoc.data.advancement.predicate.InputPredicate import InputPredicate
+from vanilla_mcdoc.data.loot.function.InsertListOperation import InsertListOperation
+from vanilla_mcdoc.data.worldgen.feature.block_predicate.InsideWorldBoundsPredicate import InsideWorldBoundsPredicate
+from vanilla_mcdoc.data.variants.instrument.Instrument import Instrument
+from vanilla_mcdoc.data.gametest.test_environment.IntGameRule import IntGameRule
+from vanilla_mcdoc.data.util.IntLimiter import IntLimiter
+from vanilla_mcdoc.data.number_provider.IntNumberProvider import IntNumberProvider
+from vanilla_mcdoc.data.number_provider.IntNumberProviderRef import IntNumberProviderRef
+from vanilla_mcdoc.data.worldgen.IntProvider import IntProvider
+from vanilla_mcdoc.data.loot.IntRange import IntRange
+from vanilla_mcdoc.data.number_provider.context_int.IntRef import IntRef
+from vanilla_mcdoc.data.worldgen.attribute.IntegerEnvironmentAttribute import IntegerEnvironmentAttribute
+from vanilla_mcdoc.data.loot.condition.IntegerValueCheck import IntegerValueCheck
+from vanilla_mcdoc.data.worldgen.density_function.Interpolated import Interpolated
+from vanilla_mcdoc.data.advancement.trigger.InventoryChangeTrigger import InventoryChangeTrigger
+from vanilla_mcdoc.data.advancement.trigger.InventoryChangedSlots import InventoryChangedSlots
+from vanilla_mcdoc.data.loot.condition.Inverted import Inverted
+from vanilla_mcdoc.data.worldgen.processor_list.InvertedMatch import InvertedMatch
+from vanilla_mcdoc.data.worldgen.density_function.InvervalSelect import InvervalSelect
+from vanilla_mcdoc.data.dialog.body.ItemBody import ItemBody
+from vanilla_mcdoc.data.enchantment.effect_component.ItemDamageEnchantmentEffect import ItemDamageEnchantmentEffect
+from vanilla_mcdoc.data.advancement.trigger.ItemDurabilityTrigger import ItemDurabilityTrigger
+from vanilla_mcdoc.data.item_modifier.ItemModifier import ItemModifier
+from vanilla_mcdoc.data.item_modifier.ItemModifierArgument import ItemModifierArgument
+from vanilla_mcdoc.data.item_modifier.ItemModifierRoot import ItemModifierRoot
+from vanilla_mcdoc.data.item_modifier.ItemModifierWithoutRootRef import ItemModifierWithoutRootRef
+from vanilla_mcdoc.data.loot.ItemPoolEntry import ItemPoolEntry
+from vanilla_mcdoc.data.advancement.predicate.ItemPredicate import ItemPredicate
+from vanilla_mcdoc.data.recipe.ItemResult import ItemResult
+from vanilla_mcdoc.data.loot.ItemStackTarget import ItemStackTarget
+from vanilla_mcdoc.data.advancement.trigger.ItemUesdOnLocationConditions import ItemUesdOnLocationConditions
+from vanilla_mcdoc.data.advancement.trigger.ItemUsedOnLocationTrigger import ItemUsedOnLocationTrigger
+from vanilla_mcdoc.data.worldgen.structure.Jigsaw import Jigsaw
+from vanilla_mcdoc.data.worldgen.structure.JigsawDistanceLimits import JigsawDistanceLimits
+from vanilla_mcdoc.data.variants.jukebox_song.JukeboxSong import JukeboxSong
+from vanilla_mcdoc.data.advancement.trigger.KilledByArrowTrigger import KilledByArrowTrigger
+from vanilla_mcdoc.data.loot.condition.KilledByPlayer import KilledByPlayer
+from vanilla_mcdoc.data.advancement.trigger.KilledTrigger import KilledTrigger
+from vanilla_mcdoc.data.enchantment.effect_component.KnockbackEnchantmentEffect import KnockbackEnchantmentEffect
+from vanilla_mcdoc.data.sulfur_cube_archetype.KnockbackModifiers import KnockbackModifiers
+from vanilla_mcdoc.data.worldgen.feature.LakeConfig import LakeConfig
+from vanilla_mcdoc.data.worldgen.feature.LargeSpeleothemConfig import LargeSpeleothemConfig
+from vanilla_mcdoc.data.worldgen.feature.tree.LeaveVineTreeDecorator import LeaveVineTreeDecorator
+from vanilla_mcdoc.data.loot.function.LegacyExplorationMapDestination import LegacyExplorationMapDestination
+from vanilla_mcdoc.data.worldgen.density_function.Lerp import Lerp
+from vanilla_mcdoc.data.enchantment.level_based_value.LevelBasedValueMap import LevelBasedValueMap
+from vanilla_mcdoc.data.advancement.trigger.LevitationTrigger import LevitationTrigger
+from vanilla_mcdoc.data.advancement.predicate.LightningBoltPredicate import LightningBoltPredicate
+from vanilla_mcdoc.data.advancement.trigger.LightningStrikeTrigger import LightningStrikeTrigger
+from vanilla_mcdoc.data.loot.function.LimitCount import LimitCount
+from vanilla_mcdoc.data.slot_source.LimitCountSlotSource import LimitCountSlotSource
+from vanilla_mcdoc.data.enchantment.level_based_value.LinearLevelValue import LinearLevelValue
+from vanilla_mcdoc.data.worldgen.processor_list.LinearPos import LinearPos
+from vanilla_mcdoc.data.worldgen.structure.LiquidSettings import LiquidSettings
+from vanilla_mcdoc.data.worldgen.attribute.ListAttribute import ListAttribute
+from vanilla_mcdoc.data.dialog.ListDialogBase import ListDialogBase
+from vanilla_mcdoc.data.worldgen.template_pool.ListElement import ListElement
+from vanilla_mcdoc.data.worldgen.attribute.modifier.ListModifier import ListModifier
+from vanilla_mcdoc.data.worldgen.attribute.modifier.ListModifierType import ListModifierType
+from vanilla_mcdoc.data.loot.function.ListOperation import ListOperation
+from vanilla_mcdoc.data.loot.function.ListOperationMode import ListOperationMode
+from vanilla_mcdoc.data.advancement.predicate.LlamaPredicate import LlamaPredicate
+from vanilla_mcdoc.data.enchantment.effect.LocationBasedEffect import LocationBasedEffect
+from vanilla_mcdoc.data.enchantment.effect_component.LocationChangedEnchantmentEffect import LocationChangedEnchantmentEffect
+from vanilla_mcdoc.data.loot.condition.LocationCheck import LocationCheck
+from vanilla_mcdoc.data.advancement.predicate.LocationPredicate import LocationPredicate
+from vanilla_mcdoc.data.advancement.predicate.LocationPredicateLight import LocationPredicateLight
+from vanilla_mcdoc.data.advancement.predicate.LocationPredicatePosition import LocationPredicatePosition
+from vanilla_mcdoc.data.advancement.trigger.LocationTrigger import LocationTrigger
+from vanilla_mcdoc.data.enchantment.level_based_value.LookupLevelValue import LookupLevelValue
+from vanilla_mcdoc.data.loot.LootConditionType import LootConditionType
+from vanilla_mcdoc.data.loot.LootContextParamSets import LootContextParamSets
+from vanilla_mcdoc.data.loot.LootEntryType import LootEntryType
+from vanilla_mcdoc.data.loot.LootFunctionType import LootFunctionType
+from vanilla_mcdoc.data.loot.LootPool import LootPool
+from vanilla_mcdoc.data.loot.LootPoolEntry import LootPoolEntry
+from vanilla_mcdoc.data.loot.LootPoolEntryBase import LootPoolEntryBase
+from vanilla_mcdoc.data.loot.LootTable import LootTable
+from vanilla_mcdoc.data.loot.LootTableListRef import LootTableListRef
+from vanilla_mcdoc.data.loot.LootTablePoolEntry import LootTablePoolEntry
+from vanilla_mcdoc.data.loot.LootTableRef import LootTableRef
+from vanilla_mcdoc.data.advancement.trigger.LootTableTrigger import LootTableTrigger
+from vanilla_mcdoc.data.loot.function.LootingEnchant import LootingEnchant
+from vanilla_mcdoc.data.worldgen.feature.tree.MangroveRootPlacement import MangroveRootPlacement
+from vanilla_mcdoc.data.worldgen.feature.tree.MangroveRootPlacer import MangroveRootPlacer
+from vanilla_mcdoc.data.loot.function.MapDecoration import MapDecoration
+from vanilla_mcdoc.data.loot.condition.MatchTool import MatchTool
+from vanilla_mcdoc.data.worldgen.feature.block_predicate.MatchingBiomesPredicate import MatchingBiomesPredicate
+from vanilla_mcdoc.data.worldgen.feature.block_predicate.MatchingBlockTagPredicate import MatchingBlockTagPredicate
+from vanilla_mcdoc.data.worldgen.feature.block_predicate.MatchingBlocksPredicate import MatchingBlocksPredicate
+from vanilla_mcdoc.data.worldgen.feature.block_predicate.MatchingFluidsPredicate import MatchingFluidsPredicate
+from vanilla_mcdoc.data.worldgen.material_condition.MaterialCondition import MaterialCondition
+from vanilla_mcdoc.data.worldgen.material_condition.MaterialConditionRef import MaterialConditionRef
+from vanilla_mcdoc.data.worldgen.material_rule.MaterialRule import MaterialRule
+from vanilla_mcdoc.data.worldgen.material_rule.MaterialRuleRef import MaterialRuleRef
+from vanilla_mcdoc.data.worldgen.feature.tree.MegaPineFoliagePlacer import MegaPineFoliagePlacer
+from vanilla_mcdoc.data.worldgen.attribute.MergeableAttribute import MergeableAttribute
+from vanilla_mcdoc.data.worldgen.attribute.modifier.MergeableModifier import MergeableModifier
+from vanilla_mcdoc.data.worldgen.attribute.modifier.MergeableModifierType import MergeableModifierType
+from vanilla_mcdoc.data.util.MinMaxBounds import MinMaxBounds
+from vanilla_mcdoc.data.worldgen.structure.Mineshaft import Mineshaft
+from vanilla_mcdoc.data.worldgen.structure.MineshaftType import MineshaftType
+from vanilla_mcdoc.data.worldgen.biome.MobCategory import MobCategory
+from vanilla_mcdoc.data.advancement.predicate.MobEffectPredicate import MobEffectPredicate
+from vanilla_mcdoc.data.enchantment.effect_component.MobExperienceEnchantmentEffect import MobExperienceEnchantmentEffect
+from vanilla_mcdoc.data.worldgen.biome.MobSpawnCost import MobSpawnCost
+from vanilla_mcdoc.data.worldgen.feature.ModernNetherVegetationConfig import ModernNetherVegetationConfig
+from vanilla_mcdoc.data.worldgen.feature.ModernPatchConfig import ModernPatchConfig
+from vanilla_mcdoc.data.loot.function.ModifyContents import ModifyContents
+from vanilla_mcdoc.data.worldgen.biome.MoodSound import MoodSound
+from vanilla_mcdoc.data.variants.MoonBrightnessCheck import MoonBrightnessCheck
+from vanilla_mcdoc.data.util.MoonPhase import MoonPhase
+from vanilla_mcdoc.data.advancement.predicate.MooshroomPredicate import MooshroomPredicate
+from vanilla_mcdoc.data.advancement.predicate.MovementPredicate import MovementPredicate
+from vanilla_mcdoc.data.dialog.MultiActionDialog import MultiActionDialog
+from vanilla_mcdoc.data.dialog.input.MultiLine import MultiLine
+from vanilla_mcdoc.data.worldgen.dimension.biome_source.MultiNoise import MultiNoise
+from vanilla_mcdoc.data.worldgen.dimension.biome_source.MultiNoiseBase import MultiNoiseBase
+from vanilla_mcdoc.data.worldgen.dimension.biome_source.MultiNoiseBiomeSourceParameterList import MultiNoiseBiomeSourceParameterList
+from vanilla_mcdoc.data.worldgen.dimension.biome_source.MultiNoisePreset import MultiNoisePreset
+from vanilla_mcdoc.data.worldgen.feature.MultifaceBlock import MultifaceBlock
+from vanilla_mcdoc.data.worldgen.feature.MultifaceGrowthConfig import MultifaceGrowthConfig
+from vanilla_mcdoc.data.enchantment.effect.MultiplyEffectValue import MultiplyEffectValue
+from vanilla_mcdoc.data.chat_type.Narration import Narration
+from vanilla_mcdoc.data.chat_type.NarrationPriority import NarrationPriority
+from vanilla_mcdoc.data.worldgen.biome.NaturalMobSpawns import NaturalMobSpawns
+from vanilla_mcdoc.data.util.NbtContextTarget import NbtContextTarget
+from vanilla_mcdoc.data.util.NbtProvider import NbtProvider
+from vanilla_mcdoc.data.util.NbtProviderSource import NbtProviderSource
+from vanilla_mcdoc.data.worldgen.feature.NetherForestVegetationConfig import NetherForestVegetationConfig
+from vanilla_mcdoc.data.worldgen.structure.NetherFossil import NetherFossil
+from vanilla_mcdoc.data.advancement.trigger.NetherTravelTrigger import NetherTravelTrigger
+from vanilla_mcdoc.data.worldgen.feature.NetherrackReplaceBlobsConfig import NetherrackReplaceBlobsConfig
+from vanilla_mcdoc.data.worldgen.feature.placement.NoiseBasedCountModifier import NoiseBasedCountModifier
+from vanilla_mcdoc.data.worldgen.noise_settings.NoiseGeneratorFlags import NoiseGeneratorFlags
+from vanilla_mcdoc.data.worldgen.noise_settings.NoiseGeneratorSettings import NoiseGeneratorSettings
+from vanilla_mcdoc.data.worldgen.noise_settings.NoiseGeneratorSettingsRef import NoiseGeneratorSettingsRef
+from vanilla_mcdoc.data.worldgen.dimension.biome_source.NoiseParameters import NoiseParameters
+from vanilla_mcdoc.data.worldgen.density_function.NoiseParametersRef import NoiseParametersRef
+from vanilla_mcdoc.data.worldgen.feature.block_state_provider.NoiseProvider import NoiseProvider
+from vanilla_mcdoc.data.worldgen.density_function.NoiseRange import NoiseRange
+from vanilla_mcdoc.data.worldgen.noise_settings.NoiseRouter import NoiseRouter
+from vanilla_mcdoc.data.worldgen.noise_settings.NoiseSamplingSettings import NoiseSamplingSettings
+from vanilla_mcdoc.data.worldgen.noise_settings.NoiseSettings import NoiseSettings
+from vanilla_mcdoc.data.worldgen.noise_settings.NoiseSlideSettings import NoiseSlideSettings
+from vanilla_mcdoc.data.worldgen.material_condition.NoiseThresholdCondition import NoiseThresholdCondition
+from vanilla_mcdoc.data.worldgen.feature.placement.NoiseThresholdCountModifier import NoiseThresholdCountModifier
+from vanilla_mcdoc.data.worldgen.feature.block_state_provider.NoiseThresholdProvider import NoiseThresholdProvider
+from vanilla_mcdoc.data.worldgen.material_condition.NotCondition import NotCondition
+from vanilla_mcdoc.data.worldgen.feature.block_predicate.NotPredicate import NotPredicate
+from vanilla_mcdoc.data.dialog.NoticeDialog import NoticeDialog
+from vanilla_mcdoc.data.recipe.NotificationInfo import NotificationInfo
+from vanilla_mcdoc.data.dialog.input.NumberRangeInput import NumberRangeInput
+from vanilla_mcdoc.data.worldgen.attribute.NumericalEnvironmentAttribute import NumericalEnvironmentAttribute
+from vanilla_mcdoc.data.worldgen.structure.OceanRuin import OceanRuin
+from vanilla_mcdoc.data.worldgen.feature.placement.OffsetModifier import OffsetModifier
+from vanilla_mcdoc.data.worldgen.density_function.OldBlendedNoise import OldBlendedNoise
+from vanilla_mcdoc.data.chat_type.OldChatType import OldChatType
+from vanilla_mcdoc.data.advancement.predicate.OldEntityPredicate import OldEntityPredicate
+from vanilla_mcdoc.data.worldgen.feature.OldPatchConfig import OldPatchConfig
+from vanilla_mcdoc.data.worldgen.feature.decorator.OldRangeConfig import OldRangeConfig
+from vanilla_mcdoc.data.worldgen.feature.OldSimpleBlockConfig import OldSimpleBlockConfig
+from vanilla_mcdoc.data.trim.OldTrimMaterialOverrides import OldTrimMaterialOverrides
+from vanilla_mcdoc.data.worldgen.density_function.OneArgument import OneArgument
+from vanilla_mcdoc.data.dialog.input.Option import Option
+from vanilla_mcdoc.data.worldgen.feature.OptionalSimpleBlockConfig import OptionalSimpleBlockConfig
+from vanilla_mcdoc.data.recipe.OptionalSmithingIngredients import OptionalSmithingIngredients
+from vanilla_mcdoc.data.worldgen.feature.OreConfig import OreConfig
+from vanilla_mcdoc.data.worldgen.material_rule.OreVeinifier import OreVeinifier
+from vanilla_mcdoc.data.worldgen.feature.OverlayConfig import OverlayConfig
+from vanilla_mcdoc.data.worldgen.attribute.modifier.OverrideModifier import OverrideModifier
+from vanilla_mcdoc.data.advancement.predicate.PaintingPredicate import PaintingPredicate
+from vanilla_mcdoc.data.variants.painting.PaintingVariant import PaintingVariant
+from vanilla_mcdoc.data.worldgen.feature.tree.PaleMossTreeDecorator import PaleMossTreeDecorator
+from vanilla_mcdoc.data.structure.Palette import Palette
+from vanilla_mcdoc.data.advancement.trigger.ParitalRequired import ParitalRequired
+from vanilla_mcdoc.data.advancement.predicate.ParrotPredicate import ParrotPredicate
+from vanilla_mcdoc.data.enchantment.effect.ParticlePosition import ParticlePosition
+from vanilla_mcdoc.data.enchantment.effect.ParticleVelocity import ParticleVelocity
+from vanilla_mcdoc.data.advancement.trigger.PickedUpItemTrigger import PickedUpItemTrigger
+from vanilla_mcdoc.data.variants.pig.PigModelType import PigModelType
+from vanilla_mcdoc.data.variants.pig.PigSounds import PigSounds
+from vanilla_mcdoc.data.variants.pig.PigVariant import PigVariant
+from vanilla_mcdoc.data.worldgen.feature.tree.PineFoliagePlacer import PineFoliagePlacer
+from vanilla_mcdoc.data.worldgen.feature.tree.PlaceOnGroundTreeDecorator import PlaceOnGroundTreeDecorator
+from vanilla_mcdoc.data.advancement.trigger.PlacedBlockConditions import PlacedBlockConditions
+from vanilla_mcdoc.data.advancement.trigger.PlacedBlockTrigger import PlacedBlockTrigger
+from vanilla_mcdoc.data.worldgen.feature.placement.PlacedFeature import PlacedFeature
+from vanilla_mcdoc.data.worldgen.feature.placement.PlacedFeatureListRef import PlacedFeatureListRef
+from vanilla_mcdoc.data.worldgen.feature.placement.PlacedFeatureRef import PlacedFeatureRef
+from vanilla_mcdoc.data.worldgen.feature.placement.PlacementModifier import PlacementModifier
+from vanilla_mcdoc.data.dialog.body.PlainMessage import PlainMessage
+from vanilla_mcdoc.data.enchantment.effect.PlaySoundEntityEffect import PlaySoundEntityEffect
+from vanilla_mcdoc.data.advancement.predicate.PlayerAdvancementCriteria import PlayerAdvancementCriteria
+from vanilla_mcdoc.data.advancement.predicate.PlayerAdvancements import PlayerAdvancements
+from vanilla_mcdoc.data.advancement.trigger.PlayerConditions import PlayerConditions
+from vanilla_mcdoc.data.advancement.trigger.PlayerHurtEntityTrigger import PlayerHurtEntityTrigger
+from vanilla_mcdoc.data.advancement.trigger.PlayerInteractTrigger import PlayerInteractTrigger
+from vanilla_mcdoc.data.advancement.predicate.PlayerPredicate import PlayerPredicate
+from vanilla_mcdoc.data.advancement.predicate.PlayerRecipes import PlayerRecipes
+from vanilla_mcdoc.data.advancement.trigger.PlayerTrigger import PlayerTrigger
+from vanilla_mcdoc.data.worldgen.structure.PoolAlias import PoolAlias
+from vanilla_mcdoc.data.worldgen.feature.tree.PoplarFoliagePlacer import PoplarFoliagePlacer
+from vanilla_mcdoc.data.worldgen.feature.tree.PoplarTrunkPlacer import PoplarTrunkPlacer
+from vanilla_mcdoc.data.worldgen.processor_list.PosRuleTest import PosRuleTest
+from vanilla_mcdoc.data.worldgen.attribute.PositionalEnvironmentAttribute import PositionalEnvironmentAttribute
+from vanilla_mcdoc.data.worldgen.attribute.PositionalEnvironmentAttributeMap import PositionalEnvironmentAttributeMap
+from vanilla_mcdoc.data.enchantment.effect_component.PostAttackEnchantmentEffect import PostAttackEnchantmentEffect
+from vanilla_mcdoc.data.advancement.predicate.PostComponentsItemPredicate import PostComponentsItemPredicate
+from vanilla_mcdoc.data.enchantment.effect_component.PostPiercingAttackEnchantmentEffect import PostPiercingAttackEnchantmentEffect
+from vanilla_mcdoc.data.recipe.PotionIngredient import PotionIngredient
+from vanilla_mcdoc.data.worldgen.density_function.Pow import Pow
+from vanilla_mcdoc.data.number_provider.PowerProvider import PowerProvider
+from vanilla_mcdoc.data.advancement.predicate.PreComponentsItemPredicate import PreComponentsItemPredicate
+from vanilla_mcdoc.data.worldgen.biome.Precipitation import Precipitation
+from vanilla_mcdoc.data.predicate.Predicate import Predicate
+from vanilla_mcdoc.data.predicate.PredicateListRef import PredicateListRef
+from vanilla_mcdoc.data.worldgen.feature.block_predicate.PredicateOffset import PredicateOffset
+from vanilla_mcdoc.data.predicate.PredicateRef import PredicateRef
+from vanilla_mcdoc.data.worldgen.feature.ProbabilityConfig import ProbabilityConfig
+from vanilla_mcdoc.data.worldgen.processor_list.Processor import Processor
+from vanilla_mcdoc.data.worldgen.processor_list.ProcessorList import ProcessorList
+from vanilla_mcdoc.data.worldgen.processor_list.ProcessorListObject import ProcessorListObject
+from vanilla_mcdoc.data.worldgen.processor_list.ProcessorListRef import ProcessorListRef
+from vanilla_mcdoc.data.worldgen.processor_list.ProcessorRule import ProcessorRule
+from vanilla_mcdoc.data.worldgen.feature.ProjectedSquareConfig import ProjectedSquareConfig
+from vanilla_mcdoc.data.enchantment.effect_component.ProjectileCountEnchantmentEffect import ProjectileCountEnchantmentEffect
+from vanilla_mcdoc.data.enchantment.effect_component.ProjectilePiercingEnchantmentEffect import ProjectilePiercingEnchantmentEffect
+from vanilla_mcdoc.data.enchantment.effect_component.ProjectileSpawnedEnchantmentEffect import ProjectileSpawnedEnchantmentEffect
+from vanilla_mcdoc.data.enchantment.effect_component.ProjectileSpreadEnchantmentEffect import ProjectileSpreadEnchantmentEffect
+from vanilla_mcdoc.data.worldgen.template_pool.Projection import Projection
+from vanilla_mcdoc.data.worldgen.processor_list.ProtectedBlocks import ProtectedBlocks
+from vanilla_mcdoc.data.worldgen.attribute.RGBColorAttribute import RGBColorAttribute
+from vanilla_mcdoc.data.advancement.predicate.RabbitPredicate import RabbitPredicate
+from vanilla_mcdoc.data.advancement.predicate.RaiderPredicate import RaiderPredicate
+from vanilla_mcdoc.data.worldgen.processor_list.RandomBlockMatch import RandomBlockMatch
+from vanilla_mcdoc.data.worldgen.processor_list.RandomBlockStateMatch import RandomBlockStateMatch
+from vanilla_mcdoc.data.worldgen.feature.block_state_provider.RandomBlockStateProvider import RandomBlockStateProvider
+from vanilla_mcdoc.data.worldgen.feature.RandomBooleanSelector import RandomBooleanSelector
+from vanilla_mcdoc.data.loot.condition.RandomChance import RandomChance
+from vanilla_mcdoc.data.worldgen.feature.placement.RandomChanceModifier import RandomChanceModifier
+from vanilla_mcdoc.data.loot.condition.RandomChanceWithEnchantedBonus import RandomChanceWithEnchantedBonus
+from vanilla_mcdoc.data.loot.condition.RandomChanceWithLooting import RandomChanceWithLooting
+from vanilla_mcdoc.data.worldgen.feature.RandomFeatureEntry import RandomFeatureEntry
+from vanilla_mcdoc.data.worldgen.structure.RandomGroupPoolAlias import RandomGroupPoolAlias
+from vanilla_mcdoc.data.util.RandomIntGenerator import RandomIntGenerator
+from vanilla_mcdoc.data.util.RandomIntGeneratorType import RandomIntGeneratorType
+from vanilla_mcdoc.data.worldgen.feature.RandomNeighborSpreadConfig import RandomNeighborSpreadConfig
+from vanilla_mcdoc.data.worldgen.feature.placement.RandomOffsetModifier import RandomOffsetModifier
+from vanilla_mcdoc.data.worldgen.feature.RandomPatchConfig import RandomPatchConfig
+from vanilla_mcdoc.data.worldgen.structure.RandomPoolAlias import RandomPoolAlias
+from vanilla_mcdoc.data.number_provider.RandomProvider import RandomProvider
+from vanilla_mcdoc.data.worldgen.feature.RandomSelector import RandomSelector
+from vanilla_mcdoc.data.worldgen.feature.tree.RandomSpreadFoliagePlacer import RandomSpreadFoliagePlacer
+from vanilla_mcdoc.data.worldgen.structure_set.RandomSpreadPlacement import RandomSpreadPlacement
+from vanilla_mcdoc.data.util.RandomValueBounds import RandomValueBounds
+from vanilla_mcdoc.data.worldgen.feature.block_state_provider.RandomizedIntStateProvider import RandomizedIntStateProvider
+from vanilla_mcdoc.data.structure.RandomizedPalette import RandomizedPalette
+from vanilla_mcdoc.data.worldgen.feature.placement.RandomlySelectedModifier import RandomlySelectedModifier
+from vanilla_mcdoc.data.worldgen.density_function.RangeChoice import RangeChoice
+from vanilla_mcdoc.data.worldgen.feature.decorator.RangeConfig import RangeConfig
+from vanilla_mcdoc.data.slot_source.RangeSlotSource import RangeSlotSource
+from vanilla_mcdoc.data.worldgen.feature.placement.RarityFilter import RarityFilter
+from vanilla_mcdoc.data.worldgen.density_function.RarityType import RarityType
+from vanilla_mcdoc.data.recipe.Recipe import Recipe
+from vanilla_mcdoc.data.advancement.trigger.RecipeCraftedTrigger import RecipeCraftedTrigger
+from vanilla_mcdoc.data.recipe.RecipeListRef import RecipeListRef
+from vanilla_mcdoc.data.advancement.trigger.RecipeUnlockedTrigger import RecipeUnlockedTrigger
+from vanilla_mcdoc.data.dialog.RedirectDialog import RedirectDialog
+from vanilla_mcdoc.data.enchantment.effect.ReduceBinomialEffectValue import ReduceBinomialEffectValue
+from vanilla_mcdoc.data.enchantment.effect_component.RepairWithXpEnchantmentEffect import RepairWithXpEnchantmentEffect
+from vanilla_mcdoc.data.enchantment.effect.ReplaceBlockEntityEffect import ReplaceBlockEntityEffect
+from vanilla_mcdoc.data.enchantment.effect.ReplaceDiskEntityEffect import ReplaceDiskEntityEffect
+from vanilla_mcdoc.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
+from vanilla_mcdoc.data.worldgen.feature.ReplaceSingleBlockConfig import ReplaceSingleBlockConfig
+from vanilla_mcdoc.data.recipe.RequiredSmithingIngredients import RequiredSmithingIngredients
+from vanilla_mcdoc.data.advancement.RootAdvancementDisplay import RootAdvancementDisplay
+from vanilla_mcdoc.data.worldgen.feature.tree.RootPlacer import RootPlacer
+from vanilla_mcdoc.data.worldgen.feature.RootSystemConfig import RootSystemConfig
+from vanilla_mcdoc.data.worldgen.feature.block_state_provider.RotatedStateProvider import RotatedStateProvider
+from vanilla_mcdoc.data.worldgen.density_function.Round import Round
+from vanilla_mcdoc.data.worldgen.structure.RuinedPortal import RuinedPortal
+from vanilla_mcdoc.data.worldgen.structure.RuinedPortalPlacement import RuinedPortalPlacement
+from vanilla_mcdoc.data.worldgen.structure.RuinedPortalSetup import RuinedPortalSetup
+from vanilla_mcdoc.data.worldgen.structure.RuinedPortalType import RuinedPortalType
+from vanilla_mcdoc.data.worldgen.processor_list.Rule import Rule
+from vanilla_mcdoc.data.worldgen.feature.RuleBasedBlockStateProvider import RuleBasedBlockStateProvider
+from vanilla_mcdoc.data.worldgen.processor_list.RuleTest import RuleTest
+from vanilla_mcdoc.data.enchantment.effect.RunFunctionEntityEffect import RunFunctionEntityEffect
+from vanilla_mcdoc.data.advancement.predicate.SalmonPredicate import SalmonPredicate
+from vanilla_mcdoc.data.advancement.predicate.SalmonVariant import SalmonVariant
+from vanilla_mcdoc.data.number_provider.legacy.ScoreNumberProvider import ScoreNumberProvider
+from vanilla_mcdoc.data.util.ScoreProvider import ScoreProvider
+from vanilla_mcdoc.data.number_provider.context_int.ScoreboardValue import ScoreboardValue
+from vanilla_mcdoc.data.worldgen.feature.SculkPatchConfig import SculkPatchConfig
+from vanilla_mcdoc.data.worldgen.feature.SeaPickleConfig import SeaPickleConfig
+from vanilla_mcdoc.data.loot.function.Sequence import Sequence
+from vanilla_mcdoc.data.worldgen.feature.SequenceConfig import SequenceConfig
+from vanilla_mcdoc.data.worldgen.material_rule.SequenceRule import SequenceRule
+from vanilla_mcdoc.data.dialog.ServerLinksDialog import ServerLinksDialog
+from vanilla_mcdoc.data.loot.function.SetAttributes import SetAttributes
+from vanilla_mcdoc.data.loot.function.SetBannerPattern import SetBannerPattern
+from vanilla_mcdoc.data.enchantment.effect.SetBlockPropertiesEntityEffect import SetBlockPropertiesEntityEffect
+from vanilla_mcdoc.data.loot.function.SetBookCover import SetBookCover
+from vanilla_mcdoc.data.loot.function.SetComponents import SetComponents
+from vanilla_mcdoc.data.loot.function.SetContents import SetContents
+from vanilla_mcdoc.data.loot.function.SetCount import SetCount
+from vanilla_mcdoc.data.loot.function.SetCustomData import SetCustomData
+from vanilla_mcdoc.data.loot.function.SetCustomModelData import SetCustomModelData
+from vanilla_mcdoc.data.loot.function.SetDamage import SetDamage
+from vanilla_mcdoc.data.enchantment.effect.SetEffectValue import SetEffectValue
+from vanilla_mcdoc.data.loot.function.SetEnchantments import SetEnchantments
+from vanilla_mcdoc.data.loot.function.SetFireworkExplosion import SetFireworkExplosion
+from vanilla_mcdoc.data.loot.function.SetFireworks import SetFireworks
+from vanilla_mcdoc.data.loot.function.SetInstrument import SetInstrument
+from vanilla_mcdoc.data.loot.function.SetItem import SetItem
+from vanilla_mcdoc.data.loot.function.SetLootTable import SetLootTable
+from vanilla_mcdoc.data.loot.function.SetLore import SetLore
+from vanilla_mcdoc.data.loot.function.SetName import SetName
+from vanilla_mcdoc.data.loot.function.SetNameTarget import SetNameTarget
+from vanilla_mcdoc.data.loot.function.SetNbt import SetNbt
+from vanilla_mcdoc.data.loot.function.SetOminousBottleAmplifier import SetOminousBottleAmplifier
+from vanilla_mcdoc.data.loot.function.SetPotion import SetPotion
+from vanilla_mcdoc.data.loot.function.SetRandomDyes import SetRandomDyes
+from vanilla_mcdoc.data.loot.function.SetRandomPotion import SetRandomPotion
+from vanilla_mcdoc.data.loot.function.SetStewEffect import SetStewEffect
+from vanilla_mcdoc.data.loot.function.SetWriteableBookPages import SetWriteableBookPages
+from vanilla_mcdoc.data.loot.function.SetWrittenBookPages import SetWrittenBookPages
+from vanilla_mcdoc.data.advancement.predicate.SheepPredicate import SheepPredicate
+from vanilla_mcdoc.data.worldgen.feature.tree.ShelfMushroomTreeDecorator import ShelfMushroomTreeDecorator
+from vanilla_mcdoc.data.worldgen.density_function.Shift import Shift
+from vanilla_mcdoc.data.worldgen.density_function.ShiftedNoise import ShiftedNoise
+from vanilla_mcdoc.data.worldgen.structure.Shipwreck import Shipwreck
+from vanilla_mcdoc.data.advancement.trigger.ShotCrossbowTrigger import ShotCrossbowTrigger
+from vanilla_mcdoc.data.worldgen.feature.SimpleBlockConfig import SimpleBlockConfig
+from vanilla_mcdoc.data.timeline.SimpleEasingType import SimpleEasingType
+from vanilla_mcdoc.data.worldgen.feature.SimpleRandomSelectorConfig import SimpleRandomSelectorConfig
+from vanilla_mcdoc.data.worldgen.feature.block_state_provider.SimpleStateProvider import SimpleStateProvider
+from vanilla_mcdoc.data.worldgen.feature.SingleBlockPillarConfig import SingleBlockPillarConfig
+from vanilla_mcdoc.data.worldgen.template_pool.SingleElement import SingleElement
+from vanilla_mcdoc.data.dialog.input.SingleOptionInput import SingleOptionInput
+from vanilla_mcdoc.data.loot.SingletonPoolEntry import SingletonPoolEntry
+from vanilla_mcdoc.data.worldgen.dimension.SkyboxType import SkyboxType
+from vanilla_mcdoc.data.worldgen.density_function.Slice import Slice
+from vanilla_mcdoc.data.advancement.trigger.SlideDownBlockTrigger import SlideDownBlockTrigger
+from vanilla_mcdoc.data.advancement.predicate.SlimePredicate import SlimePredicate
+from vanilla_mcdoc.data.slot_source.SlotSource import SlotSource
+from vanilla_mcdoc.data.slot_source.SlotSourceArgument import SlotSourceArgument
+from vanilla_mcdoc.data.loot.SlotsPoolEntry import SlotsPoolEntry
+from vanilla_mcdoc.data.worldgen.feature.SmallDripstoneConfig import SmallDripstoneConfig
+from vanilla_mcdoc.data.enchantment.effect_component.SmashDamagePerBlockFallenEnchantmentEffect import SmashDamagePerBlockFallenEnchantmentEffect
+from vanilla_mcdoc.data.recipe.Smelting import Smelting
+from vanilla_mcdoc.data.recipe.Smithing import Smithing
+from vanilla_mcdoc.data.recipe.SmithingIngredients import SmithingIngredients
+from vanilla_mcdoc.data.recipe.SmithingTransform import SmithingTransform
+from vanilla_mcdoc.data.recipe.SmithingTransformResult import SmithingTransformResult
+from vanilla_mcdoc.data.recipe.SmithingTrim import SmithingTrim
+from vanilla_mcdoc.data.util.SoundEventRef import SoundEventRef
+from vanilla_mcdoc.data.sulfur_cube_archetype.SoundSettings import SoundSettings
+from vanilla_mcdoc.data.variants.SoundVariant import SoundVariant
+from vanilla_mcdoc.data.variants.SpawnCondition import SpawnCondition
+from vanilla_mcdoc.data.worldgen.structure.SpawnOverride import SpawnOverride
+from vanilla_mcdoc.data.enchantment.effect.SpawnParticlesEntityEffect import SpawnParticlesEntityEffect
+from vanilla_mcdoc.data.variants.SpawnPrioritySelector import SpawnPrioritySelector
+from vanilla_mcdoc.data.variants.SpawnPrioritySelectors import SpawnPrioritySelectors
+from vanilla_mcdoc.data.worldgen.noise_settings.SpawnTargetPoint import SpawnTargetPoint
+from vanilla_mcdoc.data.worldgen.biome.SpawnerData import SpawnerData
+from vanilla_mcdoc.data.worldgen.biome.SpawnerDataMap import SpawnerDataMap
+from vanilla_mcdoc.data.advancement.trigger.SpearMobsTrigger import SpearMobsTrigger
+from vanilla_mcdoc.data.advancement.predicate.SpecificType import SpecificType
+from vanilla_mcdoc.data.worldgen.feature.SpeleothemBaseBlockTransformer import SpeleothemBaseBlockTransformer
+from vanilla_mcdoc.data.worldgen.feature.SpeleothemClusterConfig import SpeleothemClusterConfig
+from vanilla_mcdoc.data.worldgen.feature.SpeleothemClusterPlacementMode import SpeleothemClusterPlacementMode
+from vanilla_mcdoc.data.worldgen.feature.SpeleothemClusterPlacementOptions import SpeleothemClusterPlacementOptions
+from vanilla_mcdoc.data.worldgen.feature.SpeleothemConfig import SpeleothemConfig
+from vanilla_mcdoc.data.worldgen.feature.SpikeConfig import SpikeConfig
+from vanilla_mcdoc.data.worldgen.density_function.Spline import Spline
+from vanilla_mcdoc.data.worldgen.density_function.SplinePoint import SplinePoint
+from vanilla_mcdoc.data.worldgen.density_function.SplineType import SplineType
+from vanilla_mcdoc.data.worldgen.structure_set.SpreadType import SpreadType
+from vanilla_mcdoc.data.worldgen.structure_set.SpreadingPlacementBase import SpreadingPlacementBase
+from vanilla_mcdoc.data.worldgen.feature.SpringConfig import SpringConfig
+from vanilla_mcdoc.data.worldgen.feature.tree.SprucePineFoliagePlacer import SprucePineFoliagePlacer
+from vanilla_mcdoc.data.enchantment.level_based_value.SquaredLevelValue import SquaredLevelValue
+from vanilla_mcdoc.data.advancement.trigger.StartRidingTrigger import StartRidingTrigger
+from vanilla_mcdoc.data.advancement.predicate.StatisticPredicate import StatisticPredicate
+from vanilla_mcdoc.data.loot.function.StewEffect import StewEffect
+from vanilla_mcdoc.data.worldgen.material_condition.StoneDepthCondition import StoneDepthCondition
+from vanilla_mcdoc.data.recipe.Stonecutting import Stonecutting
+from vanilla_mcdoc.data.util.StorageNbtProvider import StorageNbtProvider
+from vanilla_mcdoc.data.number_provider.legacy.StorageNumberProvider import StorageNumberProvider
+from vanilla_mcdoc.data.worldgen.structure.Structure import Structure
+from vanilla_mcdoc.data.structure.StructureBlock import StructureBlock
+from vanilla_mcdoc.data.variants.StructureCheck import StructureCheck
+from vanilla_mcdoc.data.structure.StructureEntity import StructureEntity
+from vanilla_mcdoc.data.structure.StructureNBT import StructureNBT
+from vanilla_mcdoc.data.worldgen.structure_set.StructurePlacement import StructurePlacement
+from vanilla_mcdoc.data.worldgen.structure.StructureRef import StructureRef
+from vanilla_mcdoc.data.worldgen.structure_set.StructureSet import StructureSet
+from vanilla_mcdoc.data.worldgen.structure_set.StructureSetElement import StructureSetElement
+from vanilla_mcdoc.data.worldgen.structure_set.StructureSetRef import StructureSetRef
+from vanilla_mcdoc.data.worldgen.noise_settings.StructureSettings import StructureSettings
+from vanilla_mcdoc.data.sulfur_cube_archetype.SulfurCubeArchetype import SulfurCubeArchetype
+from vanilla_mcdoc.data.number_provider.legacy.SumNumberProvider import SumNumberProvider
+from vanilla_mcdoc.data.enchantment.effect.SummonEntityEffect import SummonEntityEffect
+from vanilla_mcdoc.data.advancement.trigger.SummonedEntityTrigger import SummonedEntityTrigger
+from vanilla_mcdoc.data.worldgen.feature.placement.SurfaceRelativeThresholdFilter import SurfaceRelativeThresholdFilter
+from vanilla_mcdoc.data.worldgen.feature.placement.SurfaceWaterDepthFilter import SurfaceWaterDepthFilter
+from vanilla_mcdoc.data.loot.condition.TableBonus import TableBonus
+from vanilla_mcdoc.data.tag.Tag import Tag
+from vanilla_mcdoc.data.tag.TagEntry import TagEntry
+from vanilla_mcdoc.data.worldgen.processor_list.TagMatch import TagMatch
+from vanilla_mcdoc.data.loot.TagPoolEntry import TagPoolEntry
+from vanilla_mcdoc.data.advancement.trigger.TameAnimalTrigger import TameAnimalTrigger
+from vanilla_mcdoc.data.worldgen.feature.TargetBlock import TargetBlock
+from vanilla_mcdoc.data.advancement.trigger.TargetBlockTrigger import TargetBlockTrigger
+from vanilla_mcdoc.data.worldgen.biome.TemperatureModifier import TemperatureModifier
+from vanilla_mcdoc.data.worldgen.feature.TemplateConfig import TemplateConfig
+from vanilla_mcdoc.data.worldgen.feature.TemplateEntry import TemplateEntry
+from vanilla_mcdoc.data.worldgen.template_pool.TemplatePool import TemplatePool
+from vanilla_mcdoc.data.worldgen.structure.TerrainAdaptation import TerrainAdaptation
+from vanilla_mcdoc.data.worldgen.density_function.TerrainCoordinate import TerrainCoordinate
+from vanilla_mcdoc.data.worldgen.noise_settings.TerrainShaper import TerrainShaper
+from vanilla_mcdoc.data.worldgen.density_function.TerrainShaperSpline import TerrainShaperSpline
+from vanilla_mcdoc.data.gametest.TestData import TestData
+from vanilla_mcdoc.data.gametest.test_environment.TestEnvironment import TestEnvironment
+from vanilla_mcdoc.data.gametest.TestInstance import TestInstance
+from vanilla_mcdoc.data.chat_type.TextDisplay import TextDisplay
+from vanilla_mcdoc.data.dialog.input.TextInput import TextInput
+from vanilla_mcdoc.data.worldgen.dimension.biome_source.TheEnd import TheEnd
+from vanilla_mcdoc.data.worldgen.feature.tree.ThreeLayersFeatureSize import ThreeLayersFeatureSize
+from vanilla_mcdoc.data.enchantment.effect_component.TickEnchantmentEffect import TickEnchantmentEffect
+from vanilla_mcdoc.data.worldgen.density_function.TilingMode import TilingMode
+from vanilla_mcdoc.data.loot.condition.TimeCheck import TimeCheck
+from vanilla_mcdoc.data.timeline.TimeMarker import TimeMarker
+from vanilla_mcdoc.data.timeline.TimeMarkerMap import TimeMarkerMap
+from vanilla_mcdoc.data.gametest.test_environment.TimeOfDayTestEnvironment import TimeOfDayTestEnvironment
+from vanilla_mcdoc.data.timeline.Timeline import Timeline
+from vanilla_mcdoc.data.gametest.test_environment.TimelineAttributesTestEnvironment import TimelineAttributesTestEnvironment
+from vanilla_mcdoc.data.loot.function.ToggleTooltips import ToggleTooltips
+from vanilla_mcdoc.data.loot.function.ToggleableDataComponent import ToggleableDataComponent
+from vanilla_mcdoc.data.villager_trade.TradeCost import TradeCost
+from vanilla_mcdoc.data.trade_set.TradeSet import TradeSet
+from vanilla_mcdoc.data.advancement.trigger.TradeTrigger import TradeTrigger
+from vanilla_mcdoc.data.worldgen.attribute.modifier.TranslucentColorAttributeModifier import TranslucentColorAttributeModifier
+from vanilla_mcdoc.data.worldgen.TrapezoidHeightProvider import TrapezoidHeightProvider
+from vanilla_mcdoc.data.worldgen.feature.tree.TreeConfig import TreeConfig
+from vanilla_mcdoc.data.worldgen.feature.tree.TreeDecorator import TreeDecorator
+from vanilla_mcdoc.data.worldgen.attribute.TriState import TriState
+from vanilla_mcdoc.data.trial_spawner.TrialSpawnerConfig import TrialSpawnerConfig
+from vanilla_mcdoc.data.worldgen.structure.TrickyTrialsStructureConfig import TrickyTrialsStructureConfig
+from vanilla_mcdoc.data.enchantment.effect_component.TridentReturnAccelerationEnchantmentEffect import TridentReturnAccelerationEnchantmentEffect
+from vanilla_mcdoc.data.advancement.Trigger import Trigger
+from vanilla_mcdoc.data.trim.TrimMaterial import TrimMaterial
+from vanilla_mcdoc.data.trim.TrimMaterialOverrides import TrimMaterialOverrides
+from vanilla_mcdoc.data.trim.TrimPattern import TrimPattern
+from vanilla_mcdoc.data.advancement.predicate.TropicalFishPredicate import TropicalFishPredicate
+from vanilla_mcdoc.data.worldgen.feature.tree.TrunkPlacer import TrunkPlacer
+from vanilla_mcdoc.data.worldgen.feature.TwistingVinesConfig import TwistingVinesConfig
+from vanilla_mcdoc.data.worldgen.density_function.TwoArguments import TwoArguments
+from vanilla_mcdoc.data.worldgen.feature.tree.TwoLayersFeatureSize import TwoLayersFeatureSize
+from vanilla_mcdoc.data.worldgen.feature.block_state_provider.TypedBlockStateProvider import TypedBlockStateProvider
+from vanilla_mcdoc.data.slot_source.TypedSlotSource import TypedSlotSource
+from vanilla_mcdoc.data.worldgen.feature.UnderwaterMagmaConfig import UnderwaterMagmaConfig
+from vanilla_mcdoc.data.loot.function.UniformBonusFormula import UniformBonusFormula
+from vanilla_mcdoc.data.worldgen.UniformHeightProvider import UniformHeightProvider
+from vanilla_mcdoc.data.worldgen.UniformInt import UniformInt
+from vanilla_mcdoc.data.util.UniformIntGenerator import UniformIntGenerator
+from vanilla_mcdoc.data.worldgen.UniformIntProvider import UniformIntProvider
+from vanilla_mcdoc.data.number_provider.legacy.UniformNumberProvider import UniformNumberProvider
+from vanilla_mcdoc.data.storage.UnknownStorage import UnknownStorage
+from vanilla_mcdoc.data.worldgen.feature.block_predicate.UnobstructedPredicate import UnobstructedPredicate
+from vanilla_mcdoc.data.worldgen.feature.tree.UpwardsBranchingTrunkPlacer import UpwardsBranchingTrunkPlacer
+from vanilla_mcdoc.data.advancement.trigger.UsedEnderEyeTrigger import UsedEnderEyeTrigger
+from vanilla_mcdoc.data.advancement.trigger.UsedTotemTrigger import UsedTotemTrigger
+from vanilla_mcdoc.data.advancement.trigger.UsingItemTrigger import UsingItemTrigger
+from vanilla_mcdoc.data.loot.condition.ValueCheck import ValueCheck
+from vanilla_mcdoc.data.enchantment.effect.ValueEffect import ValueEffect
+from vanilla_mcdoc.data.worldgen.dimension.biome_source.VanillaLayered import VanillaLayered
+from vanilla_mcdoc.data.worldgen.feature.VegetationPatchConfig import VegetationPatchConfig
+from vanilla_mcdoc.data.worldgen.VerticalAnchor import VerticalAnchor
+from vanilla_mcdoc.data.worldgen.material_condition.VerticalGradientCondition import VerticalGradientCondition
+from vanilla_mcdoc.data.advancement.predicate.VillagerPredicate import VillagerPredicate
+from vanilla_mcdoc.data.villager_trade.VillagerTrade import VillagerTrade
+from vanilla_mcdoc.data.worldgen.feature.block_predicate.VolumeMatchPredicate import VolumeMatchPredicate
+from vanilla_mcdoc.data.worldgen.material_condition.WaterCondition import WaterCondition
+from vanilla_mcdoc.data.worldgen.feature.decorator.WaterDepthThresholdConfig import WaterDepthThresholdConfig
+from vanilla_mcdoc.data.gametest.test_environment.Weather import Weather
+from vanilla_mcdoc.data.loot.condition.WeatherCheck import WeatherCheck
+from vanilla_mcdoc.data.gametest.test_environment.WeatherTestEnvironment import WeatherTestEnvironment
+from vanilla_mcdoc.data.worldgen.WeightListHeightProvider import WeightListHeightProvider
+from vanilla_mcdoc.data.worldgen.feature.block_state_provider.WeightedBlockStateProvider import WeightedBlockStateProvider
+from vanilla_mcdoc.data.worldgen.template_pool.WeightedElement import WeightedElement
+from vanilla_mcdoc.data.worldgen.feature.WeightedRandomFeatureConfig import WeightedRandomFeatureConfig
+from vanilla_mcdoc.data.util.WeightedSoundEvent import WeightedSoundEvent
+from vanilla_mcdoc.data.worldgen.density_function.WeirdScaledSampler import WeirdScaledSampler
+from vanilla_mcdoc.data.worldgen.structure.WildUpdateStructureConfig import WildUpdateStructureConfig
+from vanilla_mcdoc.data.advancement.predicate.WolfPredicate import WolfPredicate
+from vanilla_mcdoc.data.variants.wolf.WolfSounds import WolfSounds
+from vanilla_mcdoc.data.variants.wolf.WolfVariant import WolfVariant
+from vanilla_mcdoc.data.variants.wolf.WolfVariantAssetInfo import WolfVariantAssetInfo
+from vanilla_mcdoc.data.worldgen.world_preset.WorldPreset import WorldPreset
+from vanilla_mcdoc.data.worldgen.feature.block_predicate.WouldSurvivePredicate import WouldSurvivePredicate
+from vanilla_mcdoc.data.worldgen.material_condition.YAboveCondition import YAboveCondition
+from vanilla_mcdoc.data.worldgen.density_function.YClampedGradient import YClampedGradient
+from vanilla_mcdoc.data.variants.zombie_nautilus.ZombieNautilusModelType import ZombieNautilusModelType
+from vanilla_mcdoc.data.variants.zombie_nautilus.ZombieNautilusVariant import ZombieNautilusVariant
+
+__all__ = [
+    "ARGBColorAttribute",
+    "AboveRootPlacement",
+    "AddEffectValue",
+    "Advancement",
+    "AdvancementCriteriaMap",
+    "AdvancementCriterion",
+    "AdvancementDisplay",
+    "AdvancementEntityPredicate",
+    "AdvancementFrame",
+    "AdvancementIcon",
+    "AdvancementLocationPredicate",
+    "AdvancementRewards",
+    "AfterAction",
+    "AllOf",
+    "AllOfEffectValue",
+    "AllOfEntityEffect",
+    "AllOfLocationBasedEffect",
+    "AllOffTestEnvironment",
+    "AllOptional",
+    "AlterGroundTreeDecorator",
+    "Alternative",
+    "AmbientParticle",
+    "AmbientSounds",
+    "AmmoUseEnchantmentEffect",
+    "AnyBlockInteractionTrigger",
+    "AnyOf",
+    "AppendLoot",
+    "AppendStatic",
+    "ApplyBonus",
+    "ApplyBonusFormula",
+    "ApplyExhaustionEntityEffect",
+    "ApplyImpulseEntityEffect",
+    "ApplyMobEffectEntityEffect",
+    "Aquifer",
+    "ArmorEffectivenessEnchantmentEffect",
+    "ArmorMaterial",
+    "AttachedToLeavesTreeDecorator",
+    "AttachedToLogsTreeDecorator",
+    "AttackTarget",
+    "AttributeEffect",
+    "AttributeEntry",
+    "AttributeModifier",
+    "AttributeTrackBase",
+    "AxisAlignedLinearPos",
+    "AxolotlPredicate",
+    "BackgroundMusic",
+    "BannerPatternLayer",
+    "BaseNoiseProvider",
+    "BedRule",
+    "BedRuleType",
+    "BeeNestDestroyedTrigger",
+    "BeehiveTreeDecorator",
+    "BelowHeightmapPredicate",
+    "BendingTrunkPlacer",
+    "BinomialDistributionGenerator",
+    "BinomialIntGenerator",
+    "BinomialNumberProvider",
+    "BinomialWithBonusCountFormula",
+    "Biome",
+    "BiomeCategory",
+    "BiomeCheck",
+    "BiomeCondition",
+    "BiomeEffects",
+    "BiomeMusic",
+    "BiomeNoiseEntry",
+    "BiomeParticle",
+    "BiomeSoundAdditions",
+    "BiomeSource",
+    "BiomeTemperature",
+    "BlendToGray",
+    "BlockAge",
+    "BlockBasedTestInstance",
+    "BlockBlobConfig",
+    "BlockColumnConfig",
+    "BlockColumnLayer",
+    "BlockEntityModifier",
+    "BlockEntityTarget",
+    "BlockExperienceEnchantmentEffect",
+    "BlockIgnore",
+    "BlockInteraction",
+    "BlockMatch",
+    "BlockPalette",
+    "BlockPileConfig",
+    "BlockPlacer",
+    "BlockPredicateFilter",
+    "BlockPredicateState",
+    "BlockRot",
+    "BlockRule",
+    "BlockSoundSet",
+    "BlockStateConditions",
+    "BlockStateMatch",
+    "BlockStateProperty",
+    "BlockStateProvider",
+    "BlockStateProviderRef",
+    "BlockStateRuleProviderEntry",
+    "BlockTransformData",
+    "BlockTransformDropStrategy",
+    "BlockTransformParticle",
+    "BlockTransformType",
+    "BoatPredicate",
+    "BoolGameRule",
+    "BooleanAttribute",
+    "BooleanAttributeModifier",
+    "BooleanInput",
+    "BooleanModifierType",
+    "BottomBiasHeightProvider",
+    "BoundingBox",
+    "BredAnimalsTrigger",
+    "BrewedPotionTrigger",
+    "Brewing",
+    "BuriedTreasure",
+    "Button",
+    "ButtonListDialogBase",
+    "ByCostEnchantmentProvider",
+    "ByCostWithDifficultyEnchantmentProvider",
+    "CanyonConfig",
+    "CanyonShape",
+    "Capped",
+    "CardinalLightType",
+    "CarveStep",
+    "CarverConfigBase",
+    "CarverDebugSettings",
+    "CarverListRef",
+    "CarverRef",
+    "CarversPerStep",
+    "CarvingMaskConfig",
+    "CarvingMaskModifier",
+    "CatPredicate",
+    "CatSounds",
+    "CatVariant",
+    "CaveConfig",
+    "ChanceConfig",
+    "ChangeDimensionTrigger",
+    "ChangeItemDamageEffect",
+    "ChanneledLightningTrigger",
+    "ChatDecoration",
+    "ChatDecorationParameter",
+    "ChatType",
+    "Checkerboard",
+    "CherryFoliagePlacer",
+    "CherryTrunkPlacer",
+    "ChickenModelType",
+    "ChickenSounds",
+    "ChickenVariant",
+    "ChunkGenerator",
+    "Clamp",
+    "ClampedIntProvider",
+    "ClampedLevelValue",
+    "ClampedNormalIntProvider",
+    "ClickAction",
+    "ClimateParameter",
+    "ClimateParameters",
+    "ClockTimeTestEnvironment",
+    "CocoaTreeDecorator",
+    "ColorAttributeModifier",
+    "ColorModifierType",
+    "ColumnPlacer",
+    "ColumnsConfig",
+    "CombiningPredicate",
+    "CompositeMatch",
+    "CompositePoolEntry",
+    "ConcentricRingsPlacement",
+    "ConditionRule",
+    "ConditionalProvider",
+    "Conditions",
+    "Config",
+    "ConfiguredCarver",
+    "ConfiguredDecorator",
+    "ConfiguredFeature",
+    "ConfiguredFeatureRef",
+    "ConfiguredSurfaceBuilder",
+    "ConfiguredSurfaceBuilderRef",
+    "ConfirmationDialog",
+    "Constant",
+    "ConstantHeightProvider",
+    "ConstantIntGenerator",
+    "ConstantIntProvider",
+    "ConstantNumberProvider",
+    "ConstantValue",
+    "ConstructBeaconTrigger",
+    "ConsumeItemTrigger",
+    "ContactDamage",
+    "ContainerComponents",
+    "ContentsSlotSource",
+    "ContextFloatProvider",
+    "ContextIntProvider",
+    "ContextNbtProvider",
+    "ContextScoreProvider",
+    "CookingBookCategory",
+    "CookingBookInfo",
+    "CopyComponents",
+    "CopyName",
+    "CopyNameSource",
+    "CopyNbt",
+    "CopyNbtOperation",
+    "CopyNbtStrategy",
+    "CopyPropertiesProvider",
+    "CopyState",
+    "CoralConfig",
+    "CountConfig",
+    "CountExtraConfig",
+    "CountModifier",
+    "CountNoiseBiasedConfig",
+    "CountNoiseConfig",
+    "CountOnEveryLayerModifier",
+    "CowModelType",
+    "CowSounds",
+    "CowVariant",
+    "CraftingBookCategory",
+    "CraftingBookInfo",
+    "CraftingDecoratedPot",
+    "CraftingDye",
+    "CraftingImbue",
+    "CraftingIngredients",
+    "CraftingShaped",
+    "CraftingShapeless",
+    "CraftingSpecialBannerDuplicate",
+    "CraftingSpecialBookCloning",
+    "CraftingSpecialFireworkRocket",
+    "CraftingSpecialFireworkStar",
+    "CraftingSpecialFireworkStarFade",
+    "CraftingSpecialMapExtending",
+    "CraftingSpecialShieldDecoration",
+    "CraftingTransmute",
+    "CreakingHeartTreeDecorator",
+    "CrossbowChargeSoundsEnchantmentEffect",
+    "CubicBezierEase",
+    "CubicSpline",
+    "CuboidModifier",
+    "CuredZombieVillagerTrigger",
+    "CustomModelDataColors",
+    "CustomModelDataFlags",
+    "CustomModelDataFloats",
+    "CustomModelDataStrings",
+    "DamageEffects",
+    "DamageEnchantmentEffect",
+    "DamageEntityEffect",
+    "DamageImmunityEnchantmentEffect",
+    "DamageItemEffect",
+    "DamagePredicate",
+    "DamageProtectionEnchantmentEffect",
+    "DamageScaling",
+    "DamageSourceFlags",
+    "DamageSourcePredicate",
+    "DamageSourceProperties",
+    "DamageTagPredicate",
+    "DamageType",
+    "DataStorageProvider",
+    "DeathMessageType",
+    "DebugFunctionEntry",
+    "DecoratedPotPattern",
+    "DecorationStep",
+    "DefaultBlockInteractionTrigger",
+    "DeltaConfig",
+    "DensityFunction",
+    "DensityFunctionRef",
+    "DepthAverageConfig",
+    "Dialog",
+    "DialogBase",
+    "DialogBody",
+    "DialogListRef",
+    "Difficulty",
+    "DifficultyTestEnvironment",
+    "Dimension",
+    "DimensionPaddingConfig",
+    "DimensionType",
+    "DimensionTypeEffects",
+    "DimensionTypeRef",
+    "DirectMultiNoise",
+    "DirectPoolAlias",
+    "DiscreteAttribute",
+    "DiskConfig",
+    "DispatcherProvider",
+    "DistanceMetric",
+    "DistancePredicate",
+    "DistanceToPoint",
+    "DistanceTrigger",
+    "DistributionProvider",
+    "DualNoiseProvider",
+    "DynamicCustomAction",
+    "DynamicDrops",
+    "DynamicPoolEntry",
+    "DynamicRunCommand",
+    "EasingType",
+    "EffectsChangedTrigger",
+    "Element",
+    "ElementBase",
+    "EmeraldOreConfig",
+    "EnchantRandomly",
+    "EnchantWithLevels",
+    "EnchantedCountBase",
+    "EnchantedCountIncrease",
+    "EnchantedItemTrigger",
+    "Enchantment",
+    "EnchantmentActiveCheck",
+    "EnchantmentCost",
+    "EnchantmentEffectComponentMap",
+    "EnchantmentPredicate",
+    "EnchantmentProvider",
+    "EnchantmentsType",
+    "EndGatewayConfig",
+    "EndPodiumConfig",
+    "EndSpike",
+    "EndSpikeConfig",
+    "EnterBlockTrigger",
+    "EntityEffect",
+    "EntityEffectsPredicate",
+    "EntityEquipmentPredicate",
+    "EntityFlagsPredicate",
+    "EntityHurtPlayerTrigger",
+    "EntityPredicate",
+    "EntityProperties",
+    "EntityScores",
+    "EntitySlotsPredicate",
+    "EntitySubPredicate",
+    "EntitySubPredicateMap",
+    "EntityTagPredicate",
+    "EntityTarget",
+    "EntityTypePredicate",
+    "EnvironmentAttributeCheck",
+    "EnvironmentAttributeMap",
+    "EnvironmentAttributeNumberProvider",
+    "EnvironmentAttributeProvider",
+    "EnvironmentAttributeTrackMap",
+    "EnvironmentScanModifier",
+    "EquipmentDropsEnchantmentEffect",
+    "EquipmentPredicateSlot",
+    "ExclusionZone",
+    "ExplicitTagEntry",
+    "ExplodeEntityEffect",
+    "ExplorationMap",
+    "ExplosionData",
+    "ExplosionParticleInfo",
+    "ExponentLevelValue",
+    "ExponentialEffectValue",
+    "FallAfterExplosionTrigger",
+    "FallenTreeConfig",
+    "FeatureElement",
+    "FeatureRef",
+    "FeatureSize",
+    "FillLayerConfig",
+    "FillPlayerHead",
+    "FilledBucketTrigger",
+    "FilterSlotSource",
+    "Filtered",
+    "FindTopSurface",
+    "FireworkExplosions",
+    "FireworkShapeIngredients",
+    "FishingHookPredicate",
+    "FishingLuckBonusEnchantmentEffect",
+    "FishingRodHookedTrigger",
+    "FishingTimeReductionEnchantmentEffect",
+    "Fixed",
+    "FixedPlacementModifier",
+    "FixedScoreProvider",
+    "Flat",
+    "FlatGeneratorLayer",
+    "FlatGeneratorPreset",
+    "FlatGeneratorSettings",
+    "FloatAttribute",
+    "FloatAttributeModifier",
+    "FloatModifierType",
+    "FloatNumberProvider",
+    "FloatNumberProviderRef",
+    "FloatProvider",
+    "FloatRange",
+    "FloatRef",
+    "FloatValueCheck",
+    "FloatWithAlpha",
+    "FluidPredicate",
+    "FluidPredicateState",
+    "FoliagePlacer",
+    "FoodPredicate",
+    "ForestRockConfig",
+    "FossilConfig",
+    "FoxPredicate",
+    "FractionLevelValue",
+    "FrequencyReductionMethod",
+    "FrogPredicate",
+    "FrogVariant",
+    "FunctionTestEnvironment",
+    "FunctionTestInstance",
+    "GameMode",
+    "GameRuleMap",
+    "GameRulesTestEnvironment",
+    "GeodeBlockSettings",
+    "GeodeConfig",
+    "GeodeCrackSettings",
+    "GeodeLayerSettings",
+    "GlobalEnvironmentAttributeMap",
+    "Gradient",
+    "GrassColorModifier",
+    "Gravity",
+    "GroupSlotSource",
+    "GrowingPlantConfig",
+    "HasSturdyFacePredicate",
+    "HeightFoliagePlacer",
+    "HeightMatch",
+    "HeightProvider",
+    "HeightRangeModifier",
+    "HeightRangePredicate",
+    "HeightmapConfig",
+    "HeightmapModifier",
+    "HeightmapType",
+    "HitBlockEnchantmentEffect",
+    "HorsePredicate",
+    "HugeFungusConfig",
+    "HugeMushroomConfig",
+    "IcebergConfig",
+    "IgniteEntityEffect",
+    "ImpossibleTrigger",
+    "Ingredient",
+    "IngredientItem",
+    "IngredientTag",
+    "IngredientValue",
+    "InputControl",
+    "InputPredicate",
+    "InsertListOperation",
+    "InsideWorldBoundsPredicate",
+    "Instrument",
+    "IntGameRule",
+    "IntLimiter",
+    "IntNumberProvider",
+    "IntNumberProviderRef",
+    "IntProvider",
+    "IntRange",
+    "IntRef",
+    "IntegerEnvironmentAttribute",
+    "IntegerValueCheck",
+    "Interpolated",
+    "InventoryChangeTrigger",
+    "InventoryChangedSlots",
+    "Inverted",
+    "InvertedMatch",
+    "InvervalSelect",
+    "ItemBody",
+    "ItemDamageEnchantmentEffect",
+    "ItemDurabilityTrigger",
+    "ItemModifier",
+    "ItemModifierArgument",
+    "ItemModifierRoot",
+    "ItemModifierWithoutRootRef",
+    "ItemPoolEntry",
+    "ItemPredicate",
+    "ItemResult",
+    "ItemStackTarget",
+    "ItemUesdOnLocationConditions",
+    "ItemUsedOnLocationTrigger",
+    "Jigsaw",
+    "JigsawDistanceLimits",
+    "JukeboxSong",
+    "KilledByArrowTrigger",
+    "KilledByPlayer",
+    "KilledTrigger",
+    "KnockbackEnchantmentEffect",
+    "KnockbackModifiers",
+    "LakeConfig",
+    "LargeSpeleothemConfig",
+    "LeaveVineTreeDecorator",
+    "LegacyExplorationMapDestination",
+    "Lerp",
+    "LevelBasedValueMap",
+    "LevitationTrigger",
+    "LightningBoltPredicate",
+    "LightningStrikeTrigger",
+    "LimitCount",
+    "LimitCountSlotSource",
+    "LinearLevelValue",
+    "LinearPos",
+    "LiquidSettings",
+    "ListAttribute",
+    "ListDialogBase",
+    "ListElement",
+    "ListModifier",
+    "ListModifierType",
+    "ListOperation",
+    "ListOperationMode",
+    "LlamaPredicate",
+    "LocationBasedEffect",
+    "LocationChangedEnchantmentEffect",
+    "LocationCheck",
+    "LocationPredicate",
+    "LocationPredicateLight",
+    "LocationPredicatePosition",
+    "LocationTrigger",
+    "LookupLevelValue",
+    "LootConditionType",
+    "LootContextParamSets",
+    "LootEntryType",
+    "LootFunctionType",
+    "LootPool",
+    "LootPoolEntry",
+    "LootPoolEntryBase",
+    "LootTable",
+    "LootTableListRef",
+    "LootTablePoolEntry",
+    "LootTableRef",
+    "LootTableTrigger",
+    "LootingEnchant",
+    "MangroveRootPlacement",
+    "MangroveRootPlacer",
+    "MapDecoration",
+    "MatchTool",
+    "MatchingBiomesPredicate",
+    "MatchingBlockTagPredicate",
+    "MatchingBlocksPredicate",
+    "MatchingFluidsPredicate",
+    "MaterialCondition",
+    "MaterialConditionRef",
+    "MaterialRule",
+    "MaterialRuleRef",
+    "MegaPineFoliagePlacer",
+    "MergeableAttribute",
+    "MergeableModifier",
+    "MergeableModifierType",
+    "MinMaxBounds",
+    "Mineshaft",
+    "MineshaftType",
+    "MobCategory",
+    "MobEffectPredicate",
+    "MobExperienceEnchantmentEffect",
+    "MobSpawnCost",
+    "ModernNetherVegetationConfig",
+    "ModernPatchConfig",
+    "ModifyContents",
+    "MoodSound",
+    "MoonBrightnessCheck",
+    "MoonPhase",
+    "MooshroomPredicate",
+    "MovementPredicate",
+    "MultiActionDialog",
+    "MultiLine",
+    "MultiNoise",
+    "MultiNoiseBase",
+    "MultiNoiseBiomeSourceParameterList",
+    "MultiNoisePreset",
+    "MultifaceBlock",
+    "MultifaceGrowthConfig",
+    "MultiplyEffectValue",
+    "Narration",
+    "NarrationPriority",
+    "NaturalMobSpawns",
+    "NbtContextTarget",
+    "NbtProvider",
+    "NbtProviderSource",
+    "NetherForestVegetationConfig",
+    "NetherFossil",
+    "NetherTravelTrigger",
+    "NetherrackReplaceBlobsConfig",
+    "NoiseBasedCountModifier",
+    "NoiseGeneratorFlags",
+    "NoiseGeneratorSettings",
+    "NoiseGeneratorSettingsRef",
+    "NoiseParameters",
+    "NoiseParametersRef",
+    "NoiseProvider",
+    "NoiseRange",
+    "NoiseRouter",
+    "NoiseSamplingSettings",
+    "NoiseSettings",
+    "NoiseSlideSettings",
+    "NoiseThresholdCondition",
+    "NoiseThresholdCountModifier",
+    "NoiseThresholdProvider",
+    "NotCondition",
+    "NotPredicate",
+    "NoticeDialog",
+    "NotificationInfo",
+    "NumberRangeInput",
+    "NumericalEnvironmentAttribute",
+    "OceanRuin",
+    "OffsetModifier",
+    "OldBlendedNoise",
+    "OldChatType",
+    "OldEntityPredicate",
+    "OldPatchConfig",
+    "OldRangeConfig",
+    "OldSimpleBlockConfig",
+    "OldTrimMaterialOverrides",
+    "OneArgument",
+    "Option",
+    "OptionalSimpleBlockConfig",
+    "OptionalSmithingIngredients",
+    "OreConfig",
+    "OreVeinifier",
+    "OverlayConfig",
+    "OverrideModifier",
+    "PaintingPredicate",
+    "PaintingVariant",
+    "PaleMossTreeDecorator",
+    "Palette",
+    "ParitalRequired",
+    "ParrotPredicate",
+    "ParticlePosition",
+    "ParticleVelocity",
+    "PickedUpItemTrigger",
+    "PigModelType",
+    "PigSounds",
+    "PigVariant",
+    "PineFoliagePlacer",
+    "PlaceOnGroundTreeDecorator",
+    "PlacedBlockConditions",
+    "PlacedBlockTrigger",
+    "PlacedFeature",
+    "PlacedFeatureListRef",
+    "PlacedFeatureRef",
+    "PlacementModifier",
+    "PlainMessage",
+    "PlaySoundEntityEffect",
+    "PlayerAdvancementCriteria",
+    "PlayerAdvancements",
+    "PlayerConditions",
+    "PlayerHurtEntityTrigger",
+    "PlayerInteractTrigger",
+    "PlayerPredicate",
+    "PlayerRecipes",
+    "PlayerTrigger",
+    "PoolAlias",
+    "PoplarFoliagePlacer",
+    "PoplarTrunkPlacer",
+    "PosRuleTest",
+    "PositionalEnvironmentAttribute",
+    "PositionalEnvironmentAttributeMap",
+    "PostAttackEnchantmentEffect",
+    "PostComponentsItemPredicate",
+    "PostPiercingAttackEnchantmentEffect",
+    "PotionIngredient",
+    "Pow",
+    "PowerProvider",
+    "PreComponentsItemPredicate",
+    "Precipitation",
+    "Predicate",
+    "PredicateListRef",
+    "PredicateOffset",
+    "PredicateRef",
+    "ProbabilityConfig",
+    "Processor",
+    "ProcessorList",
+    "ProcessorListObject",
+    "ProcessorListRef",
+    "ProcessorRule",
+    "ProjectedSquareConfig",
+    "ProjectileCountEnchantmentEffect",
+    "ProjectilePiercingEnchantmentEffect",
+    "ProjectileSpawnedEnchantmentEffect",
+    "ProjectileSpreadEnchantmentEffect",
+    "Projection",
+    "ProtectedBlocks",
+    "RGBColorAttribute",
+    "RabbitPredicate",
+    "RaiderPredicate",
+    "RandomBlockMatch",
+    "RandomBlockStateMatch",
+    "RandomBlockStateProvider",
+    "RandomBooleanSelector",
+    "RandomChance",
+    "RandomChanceModifier",
+    "RandomChanceWithEnchantedBonus",
+    "RandomChanceWithLooting",
+    "RandomFeatureEntry",
+    "RandomGroupPoolAlias",
+    "RandomIntGenerator",
+    "RandomIntGeneratorType",
+    "RandomNeighborSpreadConfig",
+    "RandomOffsetModifier",
+    "RandomPatchConfig",
+    "RandomPoolAlias",
+    "RandomProvider",
+    "RandomSelector",
+    "RandomSpreadFoliagePlacer",
+    "RandomSpreadPlacement",
+    "RandomValueBounds",
+    "RandomizedIntStateProvider",
+    "RandomizedPalette",
+    "RandomlySelectedModifier",
+    "RangeChoice",
+    "RangeConfig",
+    "RangeSlotSource",
+    "RarityFilter",
+    "RarityType",
+    "Recipe",
+    "RecipeCraftedTrigger",
+    "RecipeListRef",
+    "RecipeUnlockedTrigger",
+    "RedirectDialog",
+    "ReduceBinomialEffectValue",
+    "RepairWithXpEnchantmentEffect",
+    "ReplaceBlockEntityEffect",
+    "ReplaceDiskEntityEffect",
+    "ReplaceSectionListOperation",
+    "ReplaceSingleBlockConfig",
+    "RequiredSmithingIngredients",
+    "RootAdvancementDisplay",
+    "RootPlacer",
+    "RootSystemConfig",
+    "RotatedStateProvider",
+    "Round",
+    "RuinedPortal",
+    "RuinedPortalPlacement",
+    "RuinedPortalSetup",
+    "RuinedPortalType",
+    "Rule",
+    "RuleBasedBlockStateProvider",
+    "RuleTest",
+    "RunFunctionEntityEffect",
+    "SalmonPredicate",
+    "SalmonVariant",
+    "ScoreNumberProvider",
+    "ScoreProvider",
+    "ScoreboardValue",
+    "SculkPatchConfig",
+    "SeaPickleConfig",
+    "Sequence",
+    "SequenceConfig",
+    "SequenceRule",
+    "ServerLinksDialog",
+    "SetAttributes",
+    "SetBannerPattern",
+    "SetBlockPropertiesEntityEffect",
+    "SetBookCover",
+    "SetComponents",
+    "SetContents",
+    "SetCount",
+    "SetCustomData",
+    "SetCustomModelData",
+    "SetDamage",
+    "SetEffectValue",
+    "SetEnchantments",
+    "SetFireworkExplosion",
+    "SetFireworks",
+    "SetInstrument",
+    "SetItem",
+    "SetLootTable",
+    "SetLore",
+    "SetName",
+    "SetNameTarget",
+    "SetNbt",
+    "SetOminousBottleAmplifier",
+    "SetPotion",
+    "SetRandomDyes",
+    "SetRandomPotion",
+    "SetStewEffect",
+    "SetWriteableBookPages",
+    "SetWrittenBookPages",
+    "SheepPredicate",
+    "ShelfMushroomTreeDecorator",
+    "Shift",
+    "ShiftedNoise",
+    "Shipwreck",
+    "ShotCrossbowTrigger",
+    "SimpleBlockConfig",
+    "SimpleEasingType",
+    "SimpleRandomSelectorConfig",
+    "SimpleStateProvider",
+    "SingleBlockPillarConfig",
+    "SingleElement",
+    "SingleOptionInput",
+    "SingletonPoolEntry",
+    "SkyboxType",
+    "Slice",
+    "SlideDownBlockTrigger",
+    "SlimePredicate",
+    "SlotSource",
+    "SlotSourceArgument",
+    "SlotsPoolEntry",
+    "SmallDripstoneConfig",
+    "SmashDamagePerBlockFallenEnchantmentEffect",
+    "Smelting",
+    "Smithing",
+    "SmithingIngredients",
+    "SmithingTransform",
+    "SmithingTransformResult",
+    "SmithingTrim",
+    "SoundEventRef",
+    "SoundSettings",
+    "SoundVariant",
+    "SpawnCondition",
+    "SpawnOverride",
+    "SpawnParticlesEntityEffect",
+    "SpawnPrioritySelector",
+    "SpawnPrioritySelectors",
+    "SpawnTargetPoint",
+    "SpawnerData",
+    "SpawnerDataMap",
+    "SpearMobsTrigger",
+    "SpecificType",
+    "SpeleothemBaseBlockTransformer",
+    "SpeleothemClusterConfig",
+    "SpeleothemClusterPlacementMode",
+    "SpeleothemClusterPlacementOptions",
+    "SpeleothemConfig",
+    "SpikeConfig",
+    "Spline",
+    "SplinePoint",
+    "SplineType",
+    "SpreadType",
+    "SpreadingPlacementBase",
+    "SpringConfig",
+    "SprucePineFoliagePlacer",
+    "SquaredLevelValue",
+    "StartRidingTrigger",
+    "StatisticPredicate",
+    "StewEffect",
+    "StoneDepthCondition",
+    "Stonecutting",
+    "StorageNbtProvider",
+    "StorageNumberProvider",
+    "Structure",
+    "StructureBlock",
+    "StructureCheck",
+    "StructureEntity",
+    "StructureNBT",
+    "StructurePlacement",
+    "StructureRef",
+    "StructureSet",
+    "StructureSetElement",
+    "StructureSetRef",
+    "StructureSettings",
+    "SulfurCubeArchetype",
+    "SumNumberProvider",
+    "SummonEntityEffect",
+    "SummonedEntityTrigger",
+    "SurfaceRelativeThresholdFilter",
+    "SurfaceWaterDepthFilter",
+    "TableBonus",
+    "Tag",
+    "TagEntry",
+    "TagMatch",
+    "TagPoolEntry",
+    "TameAnimalTrigger",
+    "TargetBlock",
+    "TargetBlockTrigger",
+    "TemperatureModifier",
+    "TemplateConfig",
+    "TemplateEntry",
+    "TemplatePool",
+    "TerrainAdaptation",
+    "TerrainCoordinate",
+    "TerrainShaper",
+    "TerrainShaperSpline",
+    "TestData",
+    "TestEnvironment",
+    "TestInstance",
+    "TextDisplay",
+    "TextInput",
+    "TheEnd",
+    "ThreeLayersFeatureSize",
+    "TickEnchantmentEffect",
+    "TilingMode",
+    "TimeCheck",
+    "TimeMarker",
+    "TimeMarkerMap",
+    "TimeOfDayTestEnvironment",
+    "Timeline",
+    "TimelineAttributesTestEnvironment",
+    "ToggleTooltips",
+    "ToggleableDataComponent",
+    "TradeCost",
+    "TradeSet",
+    "TradeTrigger",
+    "TranslucentColorAttributeModifier",
+    "TrapezoidHeightProvider",
+    "TreeConfig",
+    "TreeDecorator",
+    "TriState",
+    "TrialSpawnerConfig",
+    "TrickyTrialsStructureConfig",
+    "TridentReturnAccelerationEnchantmentEffect",
+    "Trigger",
+    "TrimMaterial",
+    "TrimMaterialOverrides",
+    "TrimPattern",
+    "TropicalFishPredicate",
+    "TrunkPlacer",
+    "TwistingVinesConfig",
+    "TwoArguments",
+    "TwoLayersFeatureSize",
+    "TypedBlockStateProvider",
+    "TypedSlotSource",
+    "UnderwaterMagmaConfig",
+    "UniformBonusFormula",
+    "UniformHeightProvider",
+    "UniformInt",
+    "UniformIntGenerator",
+    "UniformIntProvider",
+    "UniformNumberProvider",
+    "UnknownStorage",
+    "UnobstructedPredicate",
+    "UpwardsBranchingTrunkPlacer",
+    "UsedEnderEyeTrigger",
+    "UsedTotemTrigger",
+    "UsingItemTrigger",
+    "ValueCheck",
+    "ValueEffect",
+    "VanillaLayered",
+    "VegetationPatchConfig",
+    "VerticalAnchor",
+    "VerticalGradientCondition",
+    "VillagerPredicate",
+    "VillagerTrade",
+    "VolumeMatchPredicate",
+    "WaterCondition",
+    "WaterDepthThresholdConfig",
+    "Weather",
+    "WeatherCheck",
+    "WeatherTestEnvironment",
+    "WeightListHeightProvider",
+    "WeightedBlockStateProvider",
+    "WeightedElement",
+    "WeightedRandomFeatureConfig",
+    "WeightedSoundEvent",
+    "WeirdScaledSampler",
+    "WildUpdateStructureConfig",
+    "WolfPredicate",
+    "WolfSounds",
+    "WolfVariant",
+    "WolfVariantAssetInfo",
+    "WorldPreset",
+    "WouldSurvivePredicate",
+    "YAboveCondition",
+    "YClampedGradient",
+    "ZombieNautilusModelType",
+    "ZombieNautilusVariant",
+]

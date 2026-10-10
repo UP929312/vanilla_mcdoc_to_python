@@ -1,0 +1,15 @@
+"""
+Generated from symbols.json for ::java::data::enchantment::effect::ReduceBinomialEffectValue
+Local link to file: vanilla_mcdoc/data/enchantment/effect/ReduceBinomialEffectValue.py
+"""
+# ~~~ CODE ~~~
+from typing import TYPE_CHECKING
+
+from vanilla_mcdoc.base import GeneratedModel
+
+if TYPE_CHECKING:
+    from vanilla_mcdoc.data.enchantment.LevelBasedValue import LevelBasedValue
+
+
+class ReduceBinomialEffectValue(GeneratedModel):
+    chance: LevelBasedValue  # Chance that an input value is dropped by 1.  The span is 0 to 1, with 0 being no chance to drop an input value and 1 dropping all input values.

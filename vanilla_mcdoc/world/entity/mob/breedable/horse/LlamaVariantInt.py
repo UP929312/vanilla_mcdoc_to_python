@@ -1,0 +1,13 @@
+"""
+Generated from symbols.json for ::java::world::entity::mob::breedable::horse::LlamaVariantInt
+Local link to file: vanilla_mcdoc/world/entity/mob/breedable/horse/LlamaVariantInt.py
+"""
+# ~~~ CODE ~~~
+from enum import IntEnum
+
+
+class LlamaVariantInt(IntEnum):
+    CREAMY = 0
+    WHITE = 1
+    BROWN = 2
+    GRAY = 3

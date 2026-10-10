@@ -1,0 +1,17 @@
+"""
+Generated from symbols.json for ::java::util::text::ShowDialog
+Local link to file: vanilla_mcdoc/util/text/ShowDialog.py
+"""
+# ~~~ CODE ~~~
+from typing import TYPE_CHECKING, Annotated
+
+from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import IdSpec
+
+if TYPE_CHECKING:
+    from vanilla_mcdoc.data.dialog.Dialog import Dialog
+    from vanilla_mcdoc.registry.KnownDialogId import KnownDialogId
+
+
+class ShowDialog(GeneratedModel):
+    dialog: Annotated[str, IdSpec(registry='dialog')] | KnownDialogId | Dialog

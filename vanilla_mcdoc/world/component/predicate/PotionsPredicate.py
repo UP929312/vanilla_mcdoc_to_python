@@ -1,0 +1,18 @@
+"""
+Generated from symbols.json for ::java::world::component::predicate::PotionsPredicate
+Local link to file: vanilla_mcdoc/world/component/predicate/PotionsPredicate.py
+"""
+# ~~~ CODE ~~~
+from typing import TYPE_CHECKING
+
+from vanilla_mcdoc.base import GeneratedModel
+
+if TYPE_CHECKING:
+    from vanilla_mcdoc.data.advancement.predicate.EntityEffectsPredicate import EntityEffectsPredicate
+    from vanilla_mcdoc.world.component.predicate.CollectionPredicate import CollectionPredicate
+    from vanilla_mcdoc.world.component.predicate.PotionTypeMatch import PotionTypeMatch
+
+
+class PotionsPredicate(GeneratedModel):
+    potions: PotionTypeMatch | None = None
+    effects: CollectionPredicate[EntityEffectsPredicate] | None = None

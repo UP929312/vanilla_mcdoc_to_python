@@ -1,0 +1,32 @@
+"""
+Generated from symbols.json for ::java::assets::block_state_definition::BlockStateDefinition
+Local link to file: vanilla_mcdoc/assets/block_state_definition/BlockStateDefinition.py
+"""
+# ~~~ CODE ~~~
+from typing import TYPE_CHECKING, ClassVar
+
+from vanilla_mcdoc.base import GeneratedModel
+
+if TYPE_CHECKING:
+    from vanilla_mcdoc.assets.block_state_definition.ModelVariant import ModelVariant
+    from vanilla_mcdoc.assets.block_state_definition.MultiPartCondition import MultiPartCondition
+
+
+class MultipartStruct(GeneratedModel):
+    when: MultiPartCondition | None = None  # One condition or an array where at least one condition must apply.
+    apply: ModelVariant
+
+
+class BlockStateDefinitionStruct1(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'block_definition'
+
+    variants: dict[str, ModelVariant]
+
+
+class BlockStateDefinitionStruct2(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'block_definition'
+
+    multipart: list[MultipartStruct]
+
+
+type BlockStateDefinition = BlockStateDefinitionStruct1 | BlockStateDefinitionStruct2

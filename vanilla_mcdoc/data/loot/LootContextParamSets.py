@@ -1,0 +1,40 @@
+"""
+Generated from symbols.json for ::java::data::loot::LootContextParamSets
+Local link to file: vanilla_mcdoc/data/loot/LootContextParamSets.py
+"""
+# ~~~ CODE ~~~
+from enum import StrEnum
+
+
+class LootContextParamSets(StrEnum):
+    EMPTY = "empty"
+    CHEST = "chest"
+    COMMAND = "command"
+    SELECTOR = "selector"
+    FISHING = "fishing"
+    ENTITY = "entity"
+    GIFT = "gift"
+    BARTER = "barter"
+    ADVANCEMENTREWARD = "advancement_reward"
+    ADVANCEMENTENTITY = "advancement_entity"
+    ADVANCEMENTLOCATION = "advancement_location"
+    GENERIC = "generic"
+    BLOCK = "block"
+    BLOCKUSE = "block_use"
+    EQUIPMENT = "equipment"
+    ARCHAEOLOGY = "archaeology"
+    VAULT = "vault"
+    SHEARING = "shearing"
+    ENCHANTEDDAMAGE = "enchanted_damage"
+    ENCHANTEDITEM = "enchanted_item"
+    ENCHANTEDLOCATION = "enchanted_location"
+    ENCHANTEDENTITY = "enchanted_entity"
+    HITBLOCK = "hit_block"
+    BLOCKINTERACT = "block_interact"
+    ENTITYINTERACT = "entity_interact"
+    VILLAGERTRADE = "villager_trade"
+    COMMANDSLOTSOURCE = "command_slot_source"
+    CONTAINERPROCESS = "container_process"
+    COMMANDCOMPUTEDEFAULT = "command_compute_default"
+    COMMANDCOMPUTEPOSITION = "command_compute_position"
+    COMMANDCOMPUTEENTITY = "command_compute_entity"

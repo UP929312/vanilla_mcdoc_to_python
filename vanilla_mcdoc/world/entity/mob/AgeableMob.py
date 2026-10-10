@@ -1,0 +1,12 @@
+"""
+Generated from symbols.json for ::java::world::entity::mob::AgeableMob
+Local link to file: vanilla_mcdoc/world/entity/mob/AgeableMob.py
+"""
+# ~~~ CODE ~~~
+from vanilla_mcdoc.base import GeneratedModel
+
+
+class AgeableMob(GeneratedModel):
+    Age: int | None = None  # The age of the mob in ticks. When negative, the mob is a baby. When 0 or above, the mob is an adult. If this mob is breedable, when 0 or above, represents the number of ticks before it can breed again.
+    ForcedAge: int | None = None  # A value of age assigned to this mob when it grows up. Incremented when a baby mob is fed.
+    AgeLocked: bool | None = None

@@ -1,0 +1,15 @@
+"""
+Generated from symbols.json for ::java::data::worldgen::feature::block_predicate::CombiningPredicate
+Local link to file: vanilla_mcdoc/data/worldgen/feature/block_predicate/CombiningPredicate.py
+"""
+# ~~~ CODE ~~~
+from typing import TYPE_CHECKING
+
+from vanilla_mcdoc.base import GeneratedModel
+
+if TYPE_CHECKING:
+    from vanilla_mcdoc.data.worldgen.feature.block_predicate.BlockPredicate import BlockPredicate
+
+
+class CombiningPredicate(GeneratedModel):
+    predicates: list[BlockPredicate]

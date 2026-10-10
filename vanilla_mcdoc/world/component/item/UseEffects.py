@@ -1,0 +1,16 @@
+"""
+Generated from symbols.json for ::java::world::component::item::UseEffects
+Local link to file: vanilla_mcdoc/world/component/item/UseEffects.py
+"""
+# ~~~ CODE ~~~
+from typing import Annotated
+
+from pydantic import Field
+
+from vanilla_mcdoc.base import GeneratedModel
+
+
+class UseEffects(GeneratedModel):
+    can_sprint: bool | None = None  # Whether the player can sprint while using this item. Defaults to `false`.
+    speed_multiplier: Annotated[float, Field(ge=0, le=1)] | None = None  # The speed multiplier applied to the player while using this item. Defaults to 0.2
+    interact_vibrations: bool | None = None  # Whether using this item emits game events (`item_interact_start` and `item_interact_finish`). Defaults to `true`.

@@ -1,0 +1,20 @@
+"""
+Generated from symbols.json for ::java::data::worldgen::DecorationStep
+Local link to file: vanilla_mcdoc/data/worldgen/DecorationStep.py
+"""
+# ~~~ CODE ~~~
+from enum import StrEnum
+
+
+class DecorationStep(StrEnum):
+    RAWGENERATION = "raw_generation"
+    LAKES = "lakes"
+    LOCALMODIFICATIONS = "local_modifications"
+    UNDERGROUNDSTRUCTURES = "underground_structures"
+    SURFACESTRUCTURES = "surface_structures"
+    STRONGHOLDS = "strongholds"
+    UNDERGROUNDORES = "underground_ores"
+    UNDERGROUNDDECORATION = "underground_decoration"
+    FLUIDSPRINGS = "fluid_springs"
+    VEGETALDECORATION = "vegetal_decoration"
+    TOPLAYERMODIFICATION = "top_layer_modification"
