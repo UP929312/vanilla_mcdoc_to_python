@@ -22,15 +22,23 @@ class Import:
     @property
     def is_local(self) -> bool:
         """Our own modules, as opposed to third party packages like pydantic (each gets its own group of imports)."""
-        return self.relative_module.split(".")[0] in {GENERATED_SYMBOLS_DIRECTORY.name, "minecraft_registry"}
+        return self.relative_module.split(".")[0] == GENERATED_SYMBOLS_DIRECTORY.name
+
+    @staticmethod
+    def only_under_type_checking(entries: set[Import]) -> set[Import]:
+        """The imports that only go under `if TYPE_CHECKING:` (i.e. not ones that are also needed at runtime)."""
+        runtime_keys = {(entry.relative_module, entry.identifier) for entry in entries if not entry.type_checking_only}
+        return {entry for entry in entries if entry.type_checking_only and (entry.relative_module, entry.identifier) not in runtime_keys}
+
+    def local_name_and_attribute(self) -> tuple[str, str]:
+        """The name this import is known by in the module, and what it's called where it's from, e.g. for
+        `from x import Effect as Effect2` that's ("Effect2", "Effect")."""
+        attribute, _, alias = self.identifier.partition(" as ")
+        return alias or attribute, attribute
 
     @staticmethod
     def to_python_code(entries: set[Import]) -> list[str]:
-        runtime_keys = {(entry.relative_module, entry.identifier) for entry in entries if not entry.type_checking_only}
-        entries = {
-            entry for entry in entries
-            if not entry.type_checking_only or (entry.relative_module, entry.identifier) not in runtime_keys
-        }
+        entries = {entry for entry in entries if not entry.type_checking_only} | Import.only_under_type_checking(entries)
 
         def build_lines(group: set[Import]) -> list[str]:
             modules = {entry.relative_module for entry in group}
@@ -81,10 +89,31 @@ class SingleSymbolContext:
     def require_annotated(self) -> None:
         self.required_imports.add(Import("typing", "Annotated", type_checking_only=False))
 
+    def type_param_names(self) -> list[str]:
+        """The local type params' names, e.g. ["K", "V"]: a template's declared ones, plus any unresolved references."""
+        return sorted({symbol_path_to_object_name(path) for path in self.local_type_params})
+
     def type_params_suffix(self) -> str:
         """The local type params to put after a generic name, e.g. `[K, V]`, or "" if there aren't any."""
-        type_param_names = sorted({symbol_path_to_object_name(path) for path in self.local_type_params})
+        type_param_names = self.type_param_names()
         return f"[{', '.join(type_param_names)}]" if type_param_names else ""
+
+    def type_checking_import_sources(self) -> dict[str, tuple[str, str]]:
+        """For each name only imported under TYPE_CHECKING, where it's from, e.g. {"Effect2": ("vanilla_mcdoc.x.Effect", "Effect")}."""
+        sources = {}
+        for entry in Import.only_under_type_checking(self.required_imports):
+            name, attribute = entry.local_name_and_attribute()
+            sources[name] = (entry.relative_module, attribute)
+        return sources
+
+    def to_python_code(self, body_lines: list[str]) -> list[str]:
+        """The file's code around the symbol's own `body_lines`: its imports, TypeVars and helper classes (e.g. a field's
+        struct). Call it after rendering the body, because rendering is what fills these in."""
+        type_var_lines: list[str] = []
+        if type_param_names := self.type_param_names():
+            self.required_imports.add(Import("typing", "TypeVar", False))
+            type_var_lines = [f"{name} = TypeVar('{name}')" for name in type_param_names] + ["\n"]  # Two blank lines before the classes, like the imports
+        return Import.to_python_code(self.required_imports) + type_var_lines + self.additional_dataclasses + body_lines
 
     def add_dataclass(self, lines: list[str]) -> None:
         """Adds the given dataclass declaration lines to the context, if not already emitted."""

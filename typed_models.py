@@ -1,10 +1,11 @@
-﻿from typing import Annotated, Literal, Self, get_args
+from typing import Annotated, Literal, Self, get_args
 
 from pydantic import BaseModel, Field, model_validator
 
 from context import Import, SingleSymbolContext
-from minecraft_registry import IdSpec, known_registry_alias
-from utils import ROOT_SYMBOLS_KEYS, SAFE_GUARD_JAVA_NUMBERS, symbol_path_to_import_string_and_name, symbol_path_to_object_name, is_valid_with_attributes, iter_child_schemas
+from minecraft_registry import known_registry_alias
+from static_symbols.minecraft_types import IdSpec
+from utils import GENERATED_SYMBOLS_DIRECTORY, ROOT_SYMBOLS_KEYS, SAFE_GUARD_JAVA_NUMBERS, symbol_path_to_import_string_and_name, symbol_path_to_object_name, is_valid_with_attributes, iter_child_schemas
 
 
 class BaseSchema(BaseModel):
@@ -19,8 +20,8 @@ class BaseSchema(BaseModel):
 
     @staticmethod
     def _minecraft_type(name: str, ctx: SingleSymbolContext) -> str:
-        """Use one of the hand-written types from generated_symbols/minecraft_types.py, e.g. MinecraftUUID"""
-        ctx.required_imports.add(Import("generated_symbols.minecraft_types", name, False))
+        """Use one of the hand-written types from static_symbols/minecraft_types.py (copied into the package), e.g. MinecraftUUID"""
+        ctx.required_imports.add(Import(f"{GENERATED_SYMBOLS_DIRECTORY.name}.minecraft_types", name, False))
         return name
 
     def to_nested_annotation(self, ctx: SingleSymbolContext, _nested_struct_name: str | None) -> str:
@@ -211,7 +212,7 @@ class StringSchema(BaseSchema):
         id_spec = next((attribute.to_id_spec() for attribute in self.attributes if attribute.to_id_spec() is not None), None)
         metadata: list[str] = []
         if id_spec is not None:
-            ctx.required_imports.add(Import("minecraft_registry", "IdSpec", False))
+            self._minecraft_type("IdSpec", ctx)  # Imports it
             metadata.append(id_spec.to_annotation())  # Adds IdSpec(registry=...), for example
         # For regex patterns, we add a Field(pattern=...) to the Annotated[str, ...] type, so that pydantic can validate it.
         for attribute in [attribute for attribute in self.attributes if attribute.to_string_pattern() is not None]:
@@ -878,13 +879,10 @@ class StructSchema(BaseSchema):
     def _dispatcher_variants(self, class_name: str, dispatcher: DispatcherSchema, ctx: SingleSymbolContext) -> list[tuple[str, StructSchema]]:
         """Resolve every registry entry into a uniquely named specialized struct."""
         variants: list[tuple[str, StructSchema]] = []
-        for key, branch in ctx.schema_graph.dispatchers[dispatcher.registry].items():
-            if not is_valid_with_attributes(branch.attributes):
-                continue
+        for key, branch in ctx.schema_graph.dispatchers[dispatcher.registry].items():  # Already filtered to the current version
             resolved = ctx.schema_graph.resolve(branch)
             branch_struct = resolved if isinstance(resolved, StructSchema) else StructSchema(kind="struct", fields=[])
-            suffix = PairSchema.pascal_case(key.lstrip("%").replace("/", "_"))
-            variant_name = ctx.allocate_name(f"{class_name}{suffix}", branch_struct.model_dump_json(by_alias=True))
+            variant_name = ctx.allocate_name(f"{class_name}{DispatcherSchema.branch_name_suffix(key)}", branch_struct.model_dump_json(by_alias=True))
             # Branches that are classes get inherited, rather than having their fields copied in.
             branch_reference = branch if isinstance(branch, ReferenceSchema) and ctx.schema_graph.is_runtime_class(branch) else None
             variant = self._dispatcher_variant(dispatcher, branch_struct, key, branch_reference)
@@ -903,7 +901,10 @@ class StructSchema(BaseSchema):
         if (dispatcher := self._spread_dispatcher()) is None:
             return None
         variants = self._dispatcher_variants(class_name, dispatcher, ctx)
-        discriminator = UnionSchema._literal_discriminator_field([variant for _, variant in variants])
+        # Only when each variant is one class: a variant that's itself a union (e.g. each Dialog type splits again by its
+        # after_action) has several classes with the same selector value, which pydantic rejects as a discriminator.
+        all_classes = all(ctx.schema_graph.is_runtime_class(variant) for _, variant in variants)
+        discriminator = UnionSchema._literal_discriminator_field([variant for _, variant in variants]) if all_classes else None
         return self._render_variants(class_name, variants, discriminator, ctx)
 
     def _render_alias_spread(self, class_name: str, ctx: SingleSymbolContext) -> list[str] | None:
@@ -938,7 +939,7 @@ class StructSchema(BaseSchema):
         value_annotation = field.type.to_nested_annotation(ctx, value_struct_name)
         assert not isinstance(field.key, str)
         if isinstance(field.key, DispatcherSchema):  # Annotate the registry (TODO: Make this better.)
-            ctx.require_annotated()  # generated_symbols\data\advancement\predicate\BlockPredicateState.py
+            ctx.require_annotated()  # vanilla_mcdoc\data\advancement\predicate\BlockPredicateState.py
             return f"dict[Annotated[str, 'Registry(\"{field.key.registry.removeprefix('mcdoc:')}\")'], {value_annotation}]"
         return f"dict[{field.key.to_annotation(ctx)}, {value_annotation}]"
 
@@ -957,7 +958,7 @@ class StructSchema(BaseSchema):
         # Structs' inherited children, e.g. class MyClass(PredicateOffset), or GeneratedModel if there's none.
         base_names = SpreadFieldSchema.collect_inherited_base_names(self.fields, ctx)
         if not base_names:
-            ctx.required_imports.add(Import("generated_symbols.base", "GeneratedModel", False))
+            ctx.required_imports.add(Import(f"{GENERATED_SYMBOLS_DIRECTORY.name}.base", "GeneratedModel", False))
             base_names = ["GeneratedModel"]
         if type_params := ctx.type_params_suffix():
             ctx.required_imports.add(Import("typing", "Generic", False))
@@ -1033,6 +1034,15 @@ class DispatcherSchema(BaseSchema):
             return None
         return index.accessor[0] if len(index.accessor) == 1 and isinstance(index.accessor[0], str) else None
 
+    @staticmethod
+    def branch_name_suffix(key: str) -> str:
+        """The part of a branch's class name that comes from its registry key, e.g. "ore_drops" -> "OreDrops".
+        `%none` is the branch for when the selector field isn't given at all, so it's the Default (no registry has a real
+        "default" key), not "None", which would clash with real "none" keys (e.g. a dialog's after_action)."""
+        if key == "%none":
+            return "Default"
+        return PairSchema.pascal_case("".join(character if character.isalnum() else "_" for character in key.lstrip("%")))
+
     def to_annotation(
         self, ctx: SingleSymbolContext, nested_struct_name: str | None = None, type_args: list[ConcreteSchemaTypeArgTypes] | None = None,
     ) -> str:
@@ -1055,8 +1065,7 @@ class DispatcherSchema(BaseSchema):
             if fingerprint in seen:
                 continue
             seen.add(fingerprint)
-            clean_key = "".join(character if character.isalnum() else "_" for character in key.lstrip("%"))
-            branch_name = f"{base_name}{PairSchema.pascal_case(clean_key)}"
+            branch_name = f"{base_name}{self.branch_name_suffix(key)}"
             annotations.append(branch.to_nested_annotation(ctx, branch_name))
 
         return " | ".join(dict.fromkeys(annotations))

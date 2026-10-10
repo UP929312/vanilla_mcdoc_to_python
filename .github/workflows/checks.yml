@@ -1,0 +1,25 @@
+# The same checks as running them locally: the snapshots, tests, type checking and linters.
+name: Checks
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.14"
+      - run: pip install --group dev
+      - run: python main.py  # Generates vanilla_mcdoc/ (it isn't committed), and compares it against tests/assertions
+      - run: python -m pytest -q
+      - run: mypy . --strict
+      - run: ruff check
+      - run: flake8 --ignore=E501,W503,W391,E221
+      - run: pylint .

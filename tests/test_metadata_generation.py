@@ -3,10 +3,10 @@ from pathlib import Path
 from pytest import MonkeyPatch
 
 import minecraft_registry
-from code_generation import get_schema_graph, make_init_content, make_python_file_content
+from code_generation import make_init_content, make_python_file_content
 from context import SingleSymbolContext
 from minecraft_registry import make_registry_id_file_content, make_registry_id_files, make_root_resource_registry_content, used_registry_names
-from schema_resolution import SchemaGraph
+from schema_resolution import SchemaGraph, get_schema_graph
 from static_symbols.minecraft_types import IdSpec
 from typed_models import IntSchema, ReferenceSchema, UnionSchema
 from utils import LATEST_VERSION, SYMBOLS_MAP
@@ -405,7 +405,9 @@ class TestRuntimeImportGeneration:
     def test_generated_declaration_names_are_unique(self) -> None:
         dialog_path = "::java::data::dialog::Dialog"
         dialog = generated_body(dialog_path, SYMBOLS_MAP["mcdoc"][dialog_path], "Dialog")
-        assert "class DialogConfirmationNone2(GeneratedModel):" in dialog
+        # The `%none` branch (after_action not given) and the real `none` value used to clash, as DialogConfirmationNone(2)
+        assert "class DialogConfirmationDefault(GeneratedModel):" in dialog
+        assert "class DialogConfirmationNone(GeneratedModel):" in dialog
 
         timeline_path = "::java::data::timeline::EnvironmentAttributeTrackMap"
         timeline = generated_body(timeline_path, SYMBOLS_MAP["mcdoc"][timeline_path], "EnvironmentAttributeTrackMap")

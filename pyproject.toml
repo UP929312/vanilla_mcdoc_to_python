@@ -1,7 +1,37 @@
+# The package this repo publishes: only the generated vanilla_mcdoc/ (main.py builds it), not the generator itself
+[project]
+name = "vanilla-mcdoc"
+dynamic = ["version"]  # The Minecraft version it was generated for, e.g. 26.4-snapshot-3 -> 26.4.0a3
+description = "Pydantic models for Minecraft's data packs and resource packs, generated from Spyglass's vanilla-mcdoc"
+requires-python = ">=3.14"  # Generated classes use annotations that are only imported under TYPE_CHECKING (needs PEP 649)
+dependencies = ["pydantic>=2.11"]  # For validate_by_name and serialize_by_alias
+
+[dependency-groups]
+# What the generator and its checks need: `pip install --group dev` (pip 25.1+)
+dev = ["pydantic>=2.11", "pytest", "coverage", "mypy", "ruff", "flake8", "pylint", "build"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "vanilla_mcdoc/__init__.py"  # main.py writes __version__ into it
+
+[tool.hatch.build]
+ignore-vcs = true  # vanilla_mcdoc/ is in .gitignore (it's generated), which hatch would otherwise leave out
+exclude = ["__pycache__", "*.pyc"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["vanilla_mcdoc"]
+
+[tool.hatch.build.targets.sdist]
+include = ["vanilla_mcdoc"]
+
 [tool.mypy]
 python_version = "3.14"
 strict = true
-exclude = "generated_symbols.data.structure.StructureNBT"  # TODO: Fix this.
+exclude = "vanilla_mcdoc.data.structure.StructureNBT"  # TODO: Fix this.
+explicit_package_bases = true  # Name modules from the repo root, so static_symbols/x.py is static_symbols.x (as the generator imports it)
 
 # --- strict = true already enables the following, but listed explicitly: ---
 warn_return_any = true
@@ -24,18 +54,18 @@ extra_checks = true
 disallow_any_unimported = false  # This is just too much.
 disallow_any_expr = false        # Too noisy, we also need `Any` sometimes.
 disallow_any_explicit = false    # Also very noisy
-implicit_reexport = false        # We allow this here, we don't allow it in generated_symbols/*
+implicit_reexport = false        # We allow this here, we don't allow it in vanilla_mcdoc/*
 disallow_any_decorated = true
 strict_optional = true
 strict_bytes = true
 
 [tool.ruff.lint]
-ignore = ["F821"]
+ignore = ["F821"]  # F821 is some noise for undefined name.
 
 [tool.pylint.main]
 # Generated output (and the snapshots of it), we lint the generator instead
 ignore-paths = [
-    "^generated_symbols[\\\\/]",
+    "^vanilla_mcdoc[\\\\/]",
     "^htmlcov[\\\\/]",
     "^tests[\\\\/]assertions[\\\\/]",
     "symbols.json",

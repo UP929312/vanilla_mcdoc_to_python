@@ -1,0 +1,116 @@
+# Builds vanilla_mcdoc for the newest Minecraft versions and publishes any that changed to PyPI (see ci.py for the details).
+name: Publish
+
+on:
+  schedule:
+    - cron: "17 * * * *"  # Hourly, off the hour as that's the busiest time (GitHub can still start it a bit late)
+  push:
+    branches: [master]  # The generator changed, so rebuild everything
+  workflow_dispatch:  # The "Run workflow" button
+
+concurrency:
+  group: publish  # Never two at once, as they'd both pick the same next .postN
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      versions: ${{ steps.plan.outputs.versions }}
+      mcdoc: ${{ steps.plan.outputs.mcdoc }}
+      mcmeta: ${{ steps.plan.outputs.mcmeta }}
+      already-published: ${{ steps.seen.outputs.cache-hit }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.14"
+      - id: plan
+        run: python ci.py plan >> "$GITHUB_OUTPUT"
+      # Whether this exact upstream data and generator were already published (saved by the `remember` job below), so
+      # most hours finish here in seconds. Cache entries expire after a week unused, and then it just rebuilds to check.
+      - id: seen
+        uses: actions/cache/restore@v4
+        with:
+          path: published.txt
+          key: published-${{ steps.plan.outputs.mcdoc }}-${{ steps.plan.outputs.mcmeta }}-${{ github.sha }}
+          lookup-only: true
+
+  publish:
+    needs: plan
+    if: needs.plan.outputs.already-published != 'true'
+    strategy:
+      fail-fast: false  # One version failing shouldn't stop the others
+      matrix:
+        minecraft-version: ${{ fromJSON(needs.plan.outputs.versions) }}
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/project/vanilla-mcdoc/
+    permissions:
+      id-token: write  # PyPI Trusted Publishing: PyPI trusts this workflow directly, so there's no API token to store
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.14"
+      - run: pip install --group dev
+      - run: python ci.py fetch ${{ needs.plan.outputs.mcdoc }} ${{ needs.plan.outputs.mcmeta }}  # The same data as the plan
+      - run: python main.py --version "${{ matrix.minecraft-version }}" --no-model-dump --no-snapshot-tests
+      - run: python -m pytest tests/test_generated_symbols.py -k imports  # Every module can at least be imported
+      - id: version
+        run: python ci.py set-version "${{ matrix.minecraft-version }}" >> "$GITHUB_OUTPUT"
+      - if: steps.version.outputs.publish == 'true'
+        run: python -m build
+      - if: steps.version.outputs.publish == 'true'
+        uses: pypa/gh-action-pypi-publish@release/v1
+
+  # The newest version's generated code also goes on the `generated` branch, so master's history isn't full of symbol
+  # updates, but you can still browse (and diff) them, or `pip install git+https://github.com/<repo>@generated`.
+  generated-branch:
+    needs: plan
+    if: needs.plan.outputs.already-published != 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.14"
+      - run: pip install pydantic
+      - run: python ci.py fetch ${{ needs.plan.outputs.mcdoc }} ${{ needs.plan.outputs.mcmeta }}
+      - run: python main.py --version "${{ fromJSON(needs.plan.outputs.versions)[0] }}" --no-model-dump --no-snapshot-tests
+      - name: Commit it to the generated branch, if it changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git ls-remote --exit-code --heads origin generated; then
+            git fetch origin generated
+            git worktree add branch FETCH_HEAD
+          else
+            git worktree add --orphan -b generated branch  # The first time, it starts with no history
+          fi
+          rm -rf branch/vanilla_mcdoc
+          cp -r vanilla_mcdoc pyproject.toml upstream.json branch/  # pyproject.toml is what makes it pip-installable
+          cd branch
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Nothing changed"
+          else
+            git commit -m "Minecraft ${{ fromJSON(needs.plan.outputs.versions)[0] }}, from vanilla-mcdoc@${{ needs.plan.outputs.mcdoc }}"
+            git push origin HEAD:generated
+          fi
+
+  remember:
+    needs: [plan, publish, generated-branch]  # Only once every version has been published (or had nothing new)
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "${{ needs.plan.outputs.mcdoc }} ${{ needs.plan.outputs.mcmeta }} ${{ github.sha }}" > published.txt
+      - uses: actions/cache/save@v4
+        with:
+          path: published.txt
+          key: published-${{ needs.plan.outputs.mcdoc }}-${{ needs.plan.outputs.mcmeta }}-${{ github.sha }}

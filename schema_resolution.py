@@ -1,9 +1,11 @@
+from functools import cache
 from typing import Any
 
 from typed_models import (
     BaseSchema, ConcreteSchema, ConcreteSchemaTypeArgTypes, DispatcherSchema, DynamicIndexSchema, IndexedSchema,
     KIND_TO_MODEL, PairSchema, ReferenceSchema, SpreadFieldSchema, StructSchema, TemplateSchema,
 )
+from utils import SYMBOLS_MAP, is_valid_with_attributes
 
 
 class SchemaGraph:
@@ -19,11 +21,9 @@ class SchemaGraph:
         }
         dispatchers: dict[str, dict[str, BaseSchema]] = {}
         for name, data in symbol_maps.get("mcdoc/dispatcher", {}).items():
-            dispatchers[name] = {
-                key: KIND_TO_MODEL[branch["kind"]](**branch)
-                for key, branch in data.items()
-                if key != "attribute"
-            }
+            branches = {key: KIND_TO_MODEL[branch["kind"]](**branch) for key, branch in data.items() if key != "attribute"}
+            # Drop entries that don't exist in the version we're generating for, e.g. a registry entry that was removed
+            dispatchers[name] = {key: branch for key, branch in branches.items() if is_valid_with_attributes(branch.attributes)}
         return cls(symbols, dispatchers)
 
     def resolve(self, schema: BaseSchema) -> BaseSchema:
@@ -115,3 +115,9 @@ class SchemaGraph:
 
         data: dict[str, Any] = replace(schema.model_dump(by_alias=True))  # type: ignore[assignment]
         return KIND_TO_MODEL[data["kind"]](**data)
+
+
+@cache
+def get_schema_graph() -> SchemaGraph:
+    """Built on first use, rather than on import, so main.py can set SETTINGS.minecraft_version first (parsing prunes by version)."""
+    return SchemaGraph.from_symbol_maps(SYMBOLS_MAP)
