@@ -1,7 +1,8 @@
+import sys
 from dataclasses import dataclass, field
 from typing import TYPE_CHECKING
 
-from utils import symbol_path_to_import_string_and_name, symbol_path_to_object_name
+from utils import GENERATED_SYMBOLS_DIRECTORY, symbol_path_to_import_string_and_name, symbol_path_to_object_name
 
 if TYPE_CHECKING:
     from schema_resolution import SchemaGraph
@@ -12,7 +13,16 @@ class Import:
     relative_module: str
     identifier: str
     type_checking_only: bool
-    is_builtin: bool
+
+    @property
+    def is_builtin(self) -> bool:
+        """Python's standard library (e.g. typing, enum), as opposed to third party packages like pydantic."""
+        return self.relative_module.split(".")[0] in sys.stdlib_module_names
+
+    @property
+    def is_local(self) -> bool:
+        """Our own modules, as opposed to third party packages like pydantic (each gets its own group of imports)."""
+        return self.relative_module.split(".")[0] in {GENERATED_SYMBOLS_DIRECTORY.name, "minecraft_registry"}
 
     @staticmethod
     def to_python_code(entries: set[Import]) -> list[str]:
@@ -29,16 +39,21 @@ class Import:
                 for module in sorted(modules)
             ]
 
-        builtins = {entry for entry in entries if entry.is_builtin and not entry.type_checking_only}
-        regular = {entry for entry in entries if not entry.is_builtin and not entry.type_checking_only}
+        runtime = {entry for entry in entries if not entry.type_checking_only}
+        builtins = {entry for entry in runtime if entry.is_builtin}
         type_checking = {entry for entry in entries if entry.type_checking_only}
         if type_checking:
-            builtins.add(Import("typing", "TYPE_CHECKING", False, True))
-
-        lines = build_lines(builtins)
-        if lines and regular:
-            lines.append("")
-        lines.extend(build_lines(regular))
+            builtins.add(Import("typing", "TYPE_CHECKING", False))
+        # Builtins, then third party packages, then local imports, with a blank line between each group
+        lines: list[str] = []
+        group_lines = [
+            build_lines(builtins),
+            build_lines({entry for entry in runtime if not entry.is_builtin and not entry.is_local}),  # Third party (e.g. pydantic)
+            build_lines({entry for entry in runtime if entry.is_local}),  # Local
+        ]
+        for group_lines in group_lines:
+            if group_lines:
+                lines.extend(([""] if lines else []) + group_lines)
         if type_checking:
             lines.append("\nif TYPE_CHECKING:")
             lines.extend(f"    {line}" for line in build_lines(type_checking))
@@ -64,7 +79,7 @@ class SingleSymbolContext:
     emitted_declaration_names: set[str] = field(default_factory=set)
 
     def require_annotated(self) -> None:
-        self.required_imports.add(Import("typing", "Annotated", type_checking_only=False, is_builtin=True))
+        self.required_imports.add(Import("typing", "Annotated", type_checking_only=False))
 
     def type_params_suffix(self) -> str:
         """The local type params to put after a generic name, e.g. `[K, V]`, or "" if there aren't any."""
@@ -73,9 +88,10 @@ class SingleSymbolContext:
 
     def add_dataclass(self, lines: list[str]) -> None:
         """Adds the given dataclass declaration lines to the context, if not already emitted."""
-        if (name := lines[0].split()[1].split("(", 1)[0]) in self.emitted_declaration_names:
+        dataclass_name = lines[0].split()[1].split("(", 1)[0]
+        if dataclass_name in self.emitted_declaration_names:
             return
-        self.emitted_declaration_names.add(name)
+        self.emitted_declaration_names.add(dataclass_name)
         self.additional_dataclasses.extend(lines + [""])
 
     def allocate_name(self, preferred: str, fingerprint: str) -> str:
@@ -84,7 +100,7 @@ class SingleSymbolContext:
         if key not in self.allocated_name_by_identity:
             used = set(self.allocated_name_by_identity.values())
             used.add(symbol_path_to_object_name(self.current_symbol_path))
-            suffix = 2
+            suffix = 2  # TODO: Remind myself why it starts at 2
             name = preferred
             while name in used:
                 name = f"{preferred}{suffix}"
@@ -95,13 +111,11 @@ class SingleSymbolContext:
     def add_import_by_symbol_path(self, path: str) -> str:
         """Add the referenced symbol's import and return its collision-safe local name."""
         module, name = symbol_path_to_import_string_and_name(path)
-        if path == self.current_symbol_path:
-            return name
-        if path in self.local_type_params:
+        if path == self.current_symbol_path or path in self.local_type_params:
             return name
         imported_name = self.allocate_name(name, path)
         identifier = name if imported_name == name else f"{name} as {imported_name}"
-        self.required_imports.add(Import(module, identifier, type_checking_only=not self.require_runtime_imports, is_builtin=False))
+        self.required_imports.add(Import(module, identifier, type_checking_only=not self.require_runtime_imports))
         return imported_name
 
     def copy(self) -> SingleSymbolContext:

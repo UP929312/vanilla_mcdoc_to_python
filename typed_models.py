@@ -14,6 +14,15 @@ class BaseSchema(BaseModel):
         """Return whether this schema needs a generated name for an inline struct."""
         return False
 
+    def has_attribute(self, name: str) -> bool:
+        return any(attribute.name == name for attribute in self.attributes)
+
+    @staticmethod
+    def _minecraft_type(name: str, ctx: SingleSymbolContext) -> str:
+        """Use one of the hand-written types from generated_symbols/minecraft_types.py, e.g. MinecraftUUID"""
+        ctx.required_imports.add(Import("generated_symbols.minecraft_types", name, False))
+        return name
+
     def to_nested_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None) -> str:
         """Render an annotation, using a nested declaration name when supported."""
         return self.to_annotation(ctx)
@@ -80,7 +89,7 @@ class ValueRange(BaseModel):
     max: float | int | None = None
 
     def to_annotation(self, ctx: SingleSymbolContext, value_range_type: Literal["int", "float"], attributes: list[Attribute]) -> str:
-        ctx.required_imports.add(Import("pydantic", "Field", False, False))
+        ctx.required_imports.add(Import("pydantic", "Field", False))
         if self.max is not None:
             # _INCLUSIVITY_TEXT_BOTH = {
             #     0: "both inclusive",
@@ -115,7 +124,7 @@ class LengthRange(BaseModel):
     max: int | None = None
 
     def to_annotation_suffix(self, ctx: SingleSymbolContext) -> str:
-        ctx.required_imports.add(Import("pydantic", "Field", False, False))
+        ctx.required_imports.add(Import("pydantic", "Field", False))
         if self.min is not None and self.max is not None:
             return f"Field(min_length={self.min}, max_length={self.max})"
         if self.min is not None:
@@ -152,7 +161,7 @@ class LiteralSchema(BaseSchema):
     value: Annotated[StringSchema | IntSchema | BooleanSchema | DoubleSchema, Field(discriminator="kind")]
 
     def to_annotation(self, ctx: SingleSymbolContext) -> str:
-        ctx.required_imports.add(Import("typing", "Literal", False, True))
+        ctx.required_imports.add(Import("typing", "Literal", False))
         value = self.value.value
         if isinstance(value, str) and value.startswith("minecraft:"):  # Resource locations work with or without the namespace
             return f"Literal[{value!r}, {value.removeprefix('minecraft:')!r}]"
@@ -204,15 +213,19 @@ class StringSchema(BaseSchema):
     value: str | None = None  # For literal strings
 
     def to_annotation(self, ctx: SingleSymbolContext) -> str:
+        if self.has_attribute("uuid"):
+            return self._minecraft_type("MinecraftUUIDString", ctx)
+        if self.has_attribute("url"):
+            return self._minecraft_type("MinecraftURL", ctx)
         id_spec = next((attribute.to_id_spec() for attribute in self.attributes if attribute.to_id_spec() is not None), None)
         metadata: list[str] = []
         if id_spec is not None:
-            ctx.required_imports.add(Import("minecraft_registry", "IdSpec", False, False))
+            ctx.required_imports.add(Import("minecraft_registry", "IdSpec", False))
             metadata.append(id_spec.to_annotation())  # Adds IdSpec(registry=...), for example
         # For regex patterns, we add a Field(pattern=...) to the Annotated[str, ...] type, so that pydantic can validate it.
-        for pattern in (pattern for attribute in self.attributes if (pattern := attribute.to_string_pattern()) is not None):
-            ctx.required_imports.add(Import("pydantic", "Field", False, False))
-            metadata.append(f"Field(pattern={pattern!r})")
+        for attribute in [attribute for attribute in self.attributes if attribute.to_string_pattern() is not None]:
+            ctx.required_imports.add(Import("pydantic", "Field", False))
+            metadata.append(f"Field(pattern={attribute.to_string_pattern()!r})")
 
         # Return Annotated[str, <x>] if length range present:
         if self.length_range is not None:
@@ -221,7 +234,7 @@ class StringSchema(BaseSchema):
                 # https://github.com/SpyglassMC/vanilla-mcdoc/blob/main/java/assets/credits.mcdoc#L5
                 # https://github.com/misode/mcmeta/blob/assets/assets/minecraft/texts/credits.json#L1998
                 # Literally only one thing - ::java::assets::credits::CreditsDiscipline
-                ctx.required_imports.add(Import("typing", "Literal", False, True))
+                ctx.required_imports.add(Import("typing", "Literal", False))
                 return 'Literal[""]'
             metadata.insert(0, self.length_range.to_annotation_suffix(ctx))
 
@@ -318,7 +331,7 @@ class AnySchema(BaseSchema):
     kind: Literal["any"] = Field(repr=False)
 
     def to_annotation(self, ctx: SingleSymbolContext) -> str:
-        ctx.required_imports.add(Import("typing", "Any", type_checking_only=False, is_builtin=True))
+        ctx.required_imports.add(Import("typing", "Any", type_checking_only=False))
         return "Any"
 
 
@@ -351,6 +364,8 @@ class ListSchema(BaseSchema):
         return self.item.to_nested_annotation(ctx, nested_struct_name)
 
     def to_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None = None) -> str:
+        if self.has_attribute("uuid"):  # A list of 4 ints
+            return self._minecraft_type("MinecraftUUID", ctx)
         item_annotation = self._calculated_item_annotation(ctx, nested_struct_name)
         if self.length_range is None:
             return f"list[{item_annotation}]"
@@ -383,6 +398,8 @@ class IntArraySchema(BaseSchema):
     value_range: ValueRange | None = Field(default=None, alias="valueRange")
 
     def to_annotation(self, ctx: SingleSymbolContext) -> str:
+        if self.has_attribute("uuid"):  # [I; a, b, c, d]
+            return self._minecraft_type("MinecraftUUID", ctx)
         array_type_annotation = IntSchema(kind="int", attributes=self.attributes, valueRange=self.value_range)
         list_schema_proxy = ListSchema(kind="list", attributes=self.attributes, item=array_type_annotation, lengthRange=self.length_range)
         return list_schema_proxy.to_annotation(ctx)
@@ -400,7 +417,7 @@ class EnumSchema(BaseSchema):
 
     def to_python_code(self, class_name: str, ctx: SingleSymbolContext) -> list[str]:
         enum_kind = "StrEnum" if self.enum_kind == "string" else "IntEnum"
-        ctx.required_imports.add(Import("enum", enum_kind, False, True))
+        ctx.required_imports.add(Import("enum", enum_kind, False))
         lines = [f"class {class_name}({enum_kind}):"] + [
             f"    {value.identifier.upper()} = {value.to_annotation()}{value.description_comment_or_empty}"
             for value in self.values
@@ -520,7 +537,7 @@ class ReferenceSchema(BaseSchema):
         path, name = symbol_path_to_import_string_and_name(self.path)
         maybe_aliased_name = f"{name}_alias" if class_name == name else name
         import_identifier = f"{name} as {maybe_aliased_name}" if class_name == name else name
-        ctx.required_imports.add(Import(path, f"{import_identifier}", type_checking_only=False, is_builtin=False))
+        ctx.required_imports.add(Import(path, f"{import_identifier}", type_checking_only=False))
         return [f"type {class_name} = {maybe_aliased_name}"]
 
     def to_annotation(self, ctx: SingleSymbolContext) -> str:
@@ -543,6 +560,10 @@ class UnionSchema(BaseSchema):
     def prune_members_on_version(self) -> Self:
         # Remove members that aren't valid for the current version
         self.members = [member for member in self.members if is_valid_with_attributes(member.attributes)]
+        if self.has_attribute("uuid"):  # e.g. #[uuid] (int[] @ 4 | string) - every member is a form of the UUID
+            for member in self.members:
+                if not member.has_attribute("uuid"):
+                    member.attributes.append(Attribute(name="uuid"))
         return self
 
     @staticmethod
@@ -590,7 +611,7 @@ class UnionSchema(BaseSchema):
             return f"type {class_name} = {union_annotation}"
 
         ctx.require_annotated()
-        ctx.required_imports.add(Import("pydantic", "Field", False, False))
+        ctx.required_imports.add(Import("pydantic", "Field", False))
         return (
             f"type {class_name} = Annotated[\n"
             f"    {union_annotation},\n"
@@ -700,7 +721,7 @@ class PairSchema(BaseSchema):
         if name in ctx.allocated_name_by_identity.values():
             name += "_"
         if isinstance(self.key, str) and name != self.key:  # Renamed (e.g. `from_`), so alias it back to the real JSON key
-            ctx.required_imports.add(Import("pydantic", "Field", False, False))
+            ctx.required_imports.add(Import("pydantic", "Field", False))
             default = f"Field({'' if default is None else f'default={default}, '}alias={self.key!r})"
         # ===
         return f"    {name}: {annotation if not self.optional else annotation+' | None'}{'' if default is None else f' = {default}'}{self.description_or_empty}"
@@ -956,15 +977,15 @@ class StructSchema(BaseSchema):
         # Structs' inherited children, e.g. class MyClass(PredicateOffset), or GeneratedModel if there's none.
         base_names = SpreadFieldSchema.collect_inherited_base_names(self.fields, ctx)
         if not base_names:
-            ctx.required_imports.add(Import("generated_symbols.base", "GeneratedModel", False, False))
+            ctx.required_imports.add(Import("generated_symbols.base", "GeneratedModel", False))
             base_names = ["GeneratedModel"]
         if type_params := ctx.type_params_suffix():
-            ctx.required_imports.add(Import("typing", "Generic", False, True))
+            ctx.required_imports.add(Import("typing", "Generic", False))
             base_names.append(f"Generic{type_params}")
 
         lines = [f"class {class_name}({', '.join(base_names)}):"]
         if ctx.resource_dir is not None:  # A root resource (or one of its variants), e.g. a recipe, knows its pack directory
-            ctx.required_imports.add(Import("typing", "ClassVar", False, True))
+            ctx.required_imports.add(Import("typing", "ClassVar", False))
             lines.append(f"    __resource_dir__: ClassVar[str] = {ctx.resource_dir!r}\n")
         pair_fields = SpreadFieldSchema.filter_fields_to_pair_schemas_only(self.fields)
         if not pair_fields:

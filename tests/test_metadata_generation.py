@@ -135,8 +135,8 @@ class TestDispatcherSpreadGeneration:
             "ButtonListDialogBase",
         )
 
-        assert "class ButtonListDialogBaseClose(BaseModel):" in content
-        assert "after_action: Literal['minecraft:close', 'close'] = 'minecraft:close'" in content
+        assert "class ButtonListDialogBaseClose(GeneratedModel):" in content
+        assert "after_action: Literal['minecraft:close', 'close'] | None = 'minecraft:close'" in content
 
     def test_dynamic_spread_generates_correlated_branch_classes(self) -> None:
         content = generated_body(
@@ -199,7 +199,7 @@ class TestDispatcherSpreadGeneration:
             "EntitySubPredicate",
         )
 
-        assert "class EntitySubPredicatePredicates(BaseModel):" in content
+        assert "class EntitySubPredicatePredicates(GeneratedModel):" in content
         assert "type: Literal['minecraft:predicates', 'predicates']" in content
 
 
@@ -288,10 +288,10 @@ class TestRootResourceMetadata:
             "::java::data::advancement::predicate::FoodPredicate",
         ])
 
-        assert "root_datapack_classes" in content
+        assert "ROOT_DATAPACK_CLASSES" in content
         assert "Advancement" in content
         assert "Recipe" in content
-        assert "root_resource_pack_classes" in content
+        assert "ROOT_RESOURCE_PACK_CLASSES" in content
         assert "Atlas" in content
         assert "FoodPredicate" not in content
 
@@ -330,7 +330,7 @@ class TestRuntimeImportGeneration:
             "InlineStructMap",
         )
 
-        assert "class InlineStructMapValueStruct(BaseModel):" in content
+        assert "class InlineStructMapValueStruct(GeneratedModel):" in content
         assert "type InlineStructMap = dict[str, InlineStructMapValueStruct]" in content
 
     def test_dispatcher_mapping_key_preserves_registry_metadata(self) -> None:
@@ -383,33 +383,33 @@ class TestRuntimeImportGeneration:
         path = "::java::util::FlatWeightedEntry"
         content = generated_body(path, SYMBOLS_MAP["mcdoc"][path], "FlatWeightedEntry")
 
-        assert "class FlatWeightedEntry(BaseModel, Generic[T]):" in content
+        assert "class FlatWeightedEntry(GeneratedModel, Generic[T]):" in content
         assert "type FlatWeightedEntry =" not in content
 
     def test_alias_spread_is_distributed(self) -> None:
         path = "::java::data::loot::function::CustomModelDataFlags"
         content = generated_body(path, SYMBOLS_MAP["mcdoc"][path], "CustomModelDataFlags")
 
-        assert "class CustomModelDataFlagsAppend(BaseModel):" in content
+        assert "class CustomModelDataFlagsAppend(GeneratedModel):" in content
         assert "class CustomModelDataFlags(ListOperation):" not in content
 
     def test_union_alias_spread_is_distributed(self) -> None:
         path = "::java::data::structure::StructureNBT"
         content = generated_body(path, SYMBOLS_MAP["mcdoc"][path], "StructureNBT")
 
-        assert "class StructureNBTStruct1(BaseModel):" in content
-        assert "class StructureNBTStruct2(BaseModel):" in content
+        assert "class StructureNBTStruct1(GeneratedModel):" in content
+        assert "class StructureNBTStruct2(GeneratedModel):" in content
         assert "type StructureNBT = StructureNBTStruct1 | StructureNBTStruct2" in content
 
     def test_generated_declaration_names_are_unique(self) -> None:
         dialog_path = "::java::data::dialog::Dialog"
         dialog = generated_body(dialog_path, SYMBOLS_MAP["mcdoc"][dialog_path], "Dialog")
-        assert "class DialogConfirmationNone2(BaseModel):" in dialog
+        assert "class DialogConfirmationNone2(GeneratedModel):" in dialog
 
         timeline_path = "::java::data::timeline::EnvironmentAttributeTrackMap"
         timeline = generated_body(timeline_path, SYMBOLS_MAP["mcdoc"][timeline_path], "EnvironmentAttributeTrackMap")
-        assert timeline.count("class KeyframesStruct(BaseModel):") == 1
-        assert "class KeyframesStruct2(BaseModel):" in timeline
+        assert timeline.count("class KeyframesStruct(GeneratedModel):") == 1
+        assert "class KeyframesStruct2(GeneratedModel):" in timeline
 
     def test_concrete_dispatcher_instantiates_template_branches(self) -> None:
         path = "::java::data::worldgen::attribute::FloatAttribute"

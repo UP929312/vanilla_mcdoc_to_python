@@ -1,10 +1,11 @@
-from code_generation import SCHEMA_GRAPH, make_init_files, make_python_file_of_model
+from code_generation import SCHEMA_GRAPH, copy_static_files, make_init_files, make_python_file_of_model
 from minecraft_registry import make_registry_id_files, make_root_resource_registry_file
 from utils import SYMBOLS_MAP
 from tests.assertions import run_assertions
 
 SYMBOLS_MAP_NO_ANONYMOUS = {key: value for key, value in SYMBOLS_MAP["mcdoc"].items() if "anonymous" not in key}
 
+copy_static_files()  # Hand-written modules like base.py, from static_symbols/
 make_registry_id_files(SCHEMA_GRAPH)
 
 for resource_type, resource_data in SYMBOLS_MAP_NO_ANONYMOUS.items():

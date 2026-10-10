@@ -66,7 +66,7 @@ def known_registry_alias(ctx: SingleSymbolContext, id_spec: IdSpec) -> str | Non
         # Only registries with concrete (non-%) IDs get a type alias generated.
         return None
     module, identifier = registry_import(id_spec.registry)
-    ctx.required_imports.add(Import(module, identifier, not ctx.require_runtime_imports, False))
+    ctx.required_imports.add(Import(module, identifier, not ctx.require_runtime_imports))
     return identifier
 
 
@@ -142,11 +142,11 @@ def make_root_resource_registry_content(symbol_paths: Iterable[str]) -> str:
             for symbol_path in datapack_paths + pack_paths
         ),
         "",
-        "root_datapack_classes = (",
+        "ROOT_DATAPACK_CLASSES = (",
             "\n".join(f"    {symbol_path_to_import_string_and_name(symbol_path)[1]}," for symbol_path in datapack_paths),
         ")",
         "",
-        "root_resource_pack_classes = (",
+        "ROOT_RESOURCE_PACK_CLASSES = (",
             "\n".join(f"    {symbol_path_to_import_string_and_name(symbol_path)[1]}," for symbol_path in pack_paths),
         ")",
         "",

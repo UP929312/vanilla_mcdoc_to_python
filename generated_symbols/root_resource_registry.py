@@ -193,7 +193,7 @@ from generated_symbols.assets.sounds.Sounds import Sounds
 from generated_symbols.assets.texture_meta.TextureMeta import TextureMeta
 from generated_symbols.assets.waypoint_style.WaypointStyle import WaypointStyle
 
-root_datapack_classes = (
+ROOT_DATAPACK_CLASSES = (
     Advancement,
     BlockSoundSet,
     BlockTransformData,
@@ -371,7 +371,7 @@ root_datapack_classes = (
     WorldPreset,
 )
 
-root_resource_pack_classes = (
+ROOT_RESOURCE_PACK_CLASSES = (
     Atlas,
     BlockStateDefinition,
     Credits,

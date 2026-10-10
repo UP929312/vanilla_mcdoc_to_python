@@ -1,5 +1,6 @@
 import json
 from collections.abc import Iterable
+from pathlib import Path
 from typing import Any
 
 from context import Import, SingleSymbolContext
@@ -10,6 +11,15 @@ from utils import GENERATED_SYMBOLS_DIRECTORY, SYMBOLS_MAP, resource_path_to_pyt
 
 
 SCHEMA_GRAPH = SchemaGraph.from_symbol_maps(SYMBOLS_MAP)
+STATIC_SYMBOLS_DIRECTORY = Path("static_symbols")
+
+
+def copy_static_files() -> None:
+    """Copy the hand-written modules that generated code imports (e.g. base.py's GeneratedModel) into generated_symbols/,
+    so the whole of generated_symbols/ can be deleted and regenerated."""
+    manage_directory_and_inits(GENERATED_SYMBOLS_DIRECTORY)
+    for path in STATIC_SYMBOLS_DIRECTORY.glob("*.py"):
+        write_file_if_changed(GENERATED_SYMBOLS_DIRECTORY / path.name, path.read_text(encoding="utf-8"))
 
 
 def make_init_content(symbol_paths: Iterable[str], included_prefixes: tuple[str, ...]) -> str:
@@ -64,7 +74,7 @@ def make_python_file_content(resource_type: str, resource_data: dict[str, Any], 
 
     # Add TypeVar declarations after rendering so discovered local type params are included.
     if ctx.local_type_params:
-        ctx.required_imports.add(Import('typing', 'TypeVar', False, True))
+        ctx.required_imports.add(Import('typing', 'TypeVar', False))
         declared_paths = set(type_param.path for type_param in current_model.type_params) if isinstance(current_model, TemplateSchema) else set()
         type_names = sorted(
             {symbol_path_to_object_name(path) for path in declared_paths}
