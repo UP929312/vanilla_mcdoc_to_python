@@ -16,4 +16,3 @@ _ = {
         "path": "::java::data::loot::function::LootFunction"
     }
 }
-

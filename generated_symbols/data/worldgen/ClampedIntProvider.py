@@ -13,6 +13,7 @@ if TYPE_CHECKING:
 
 T = TypeVar('T')
 
+
 class ClampedIntProvider(GeneratedModel, Generic[T]):
     min_inclusive: T
     max_inclusive: T
@@ -67,4 +68,3 @@ _ = {
         ]
     }
 }
-

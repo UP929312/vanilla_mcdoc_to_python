@@ -27,6 +27,7 @@ type ScoreProviderStruct = Annotated[
     Field(discriminator='type'),
 ]
 
+
 type ScoreProvider = EntityTarget | ScoreProviderStruct
 
 
@@ -81,4 +82,3 @@ _ = {
         ]
     }
 }
-

@@ -11,6 +11,7 @@ from minecraft_registry import IdSpec
 
 T = TypeVar('T')
 
+
 class SingleItemOfComponent(GeneratedModel, Generic[T]):
     id: Annotated[str, IdSpec(registry='item', exclude=('air',))]  # ID of the item.
     components: T | None = None
@@ -159,4 +160,3 @@ _ = {
         ]
     }
 }
-

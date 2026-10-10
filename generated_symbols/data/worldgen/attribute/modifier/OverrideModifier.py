@@ -10,6 +10,7 @@ from generated_symbols.base import GeneratedModel
 
 T = TypeVar('T')
 
+
 class OverrideModifier(GeneratedModel, Generic[T]):
     modifier: Literal['override'] = 'override'
     argument: T
@@ -50,4 +51,3 @@ _ = {
         ]
     }
 }
-

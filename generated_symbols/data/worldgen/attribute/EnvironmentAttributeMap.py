@@ -31,6 +31,7 @@ if TYPE_CHECKING:
 
 K = TypeVar('K')
 
+
 type EnvironmentAttributeMap[K] = dict[K, Any | AmbientSounds | BackgroundMusic | bool | Annotated[float, Field(ge=0, le=1)] | Annotated[str, IdSpec(registry='activity')] | BedRule | Annotated[float, Field(ge=0, le=0.9999999)] | TriState | NaturalMobSpawns | Annotated[float, Field(ge=0, le=15)] | StringRGB | list[AmbientParticle] | StringARGB | Annotated[float, Field(ge=0)] | float | Particle | MoonPhase | OverrideModifier[Any] | OverrideModifier[AmbientSounds] | OverrideModifier[BackgroundMusic] | BooleanAttributeModifier | FloatAttributeModifier[Annotated[float, Field(ge=0, le=1)]] | Annotated[float, Field(ge=0, le=1)] | OverrideModifier[Annotated[str, IdSpec(registry='activity')]] | OverrideModifier[BedRule] | FloatAttributeModifier[Annotated[float, Field(ge=0, le=0.9999999)]] | Annotated[float, Field(ge=0, le=0.9999999)] | OverrideModifier[TriState] | MergeableModifier[NaturalMobSpawns] | FloatAttributeModifier[Annotated[float, Field(ge=0, le=15)]] | Annotated[float, Field(ge=0, le=15)] | ColorAttributeModifier | ListModifier[AmbientParticle] | TranslucentColorAttributeModifier | FloatAttributeModifier[Annotated[float, Field(ge=0)]] | Annotated[float, Field(ge=0)] | FloatAttributeModifier[float] | float | OverrideModifier[Particle] | OverrideModifier[MoonPhase]]
 
 
@@ -108,4 +109,3 @@ _ = {
         ]
     }
 }
-

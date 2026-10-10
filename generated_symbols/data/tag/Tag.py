@@ -13,6 +13,7 @@ if TYPE_CHECKING:
 
 E = TypeVar('E')
 
+
 class Tag(GeneratedModel, Generic[E]):
     replace: bool | None = None
     values: list[TagEntry[E]]
@@ -62,4 +63,3 @@ _ = {
         ]
     }
 }
-

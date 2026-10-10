@@ -78,6 +78,7 @@ type LootFunctionApplyBonus = Annotated[
     Field(discriminator='formula'),
 ]
 
+
 class LootFunctionCopyComponents(CopyComponents):
     type: Literal['minecraft:copy_components', 'copy_components'] = 'minecraft:copy_components'
 
@@ -235,6 +236,7 @@ type LootFunctionSetLore = Annotated[
     Field(discriminator='mode'),
 ]
 
+
 class LootFunctionSetName(SetName):
     type: Literal['minecraft:set_name', 'set_name'] = 'minecraft:set_name'
 
@@ -288,6 +290,7 @@ type LootFunctionSetWritableBookPages = Annotated[
     Field(discriminator='mode'),
 ]
 
+
 class LootFunctionSetWrittenBookPagesAppend(Conditions):
     type: Literal['minecraft:set_written_book_pages', 'set_written_book_pages'] = 'minecraft:set_written_book_pages'
     pages: list[Filterable[Text]]  # Sets the pages of a written book.
@@ -316,6 +319,7 @@ type LootFunctionSetWrittenBookPages = Annotated[
     LootFunctionSetWrittenBookPagesAppend | LootFunctionSetWrittenBookPagesInsert | LootFunctionSetWrittenBookPagesReplaceAll | LootFunctionSetWrittenBookPagesReplaceSection,
     Field(discriminator='mode'),
 ]
+
 
 class LootFunctionToggleTooltips(ToggleTooltips):
     type: Literal['minecraft:toggle_tooltips', 'toggle_tooltips'] = 'minecraft:toggle_tooltips'
@@ -485,4 +489,3 @@ _ = {
         ]
     }
 }
-

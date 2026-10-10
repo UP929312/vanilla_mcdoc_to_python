@@ -10,6 +10,7 @@ from generated_symbols.base import GeneratedModel
 
 T = TypeVar('T')
 
+
 class SoundVariant(GeneratedModel, Generic[T]):
     adult_sounds: T
     baby_sounds: T
@@ -47,4 +48,3 @@ _ = {
         ]
     }
 }
-

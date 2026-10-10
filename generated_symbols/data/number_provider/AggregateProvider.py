@@ -10,6 +10,7 @@ from generated_symbols.base import GeneratedModel
 
 S = TypeVar('S')
 
+
 class AggregateProvider(GeneratedModel, Generic[S]):
     inputs: S
 
@@ -38,4 +39,3 @@ _ = {
         ]
     }
 }
-

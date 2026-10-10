@@ -11,6 +11,7 @@ from minecraft_registry import IdSpec
 
 T = TypeVar('T')
 
+
 class FloatProvider(GeneratedModel, Generic[T]):
     type: Annotated[str, IdSpec(registry='float_provider_type')]
 
@@ -132,4 +133,3 @@ _ = {
         ]
     }
 }
-

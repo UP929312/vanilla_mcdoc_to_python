@@ -105,6 +105,7 @@ class ItemModelConditionViewEntity(ViewEntity):
 
 type ItemModelCondition = ItemModelConditionUnknown | ItemModelConditionComponent | ItemModelConditionCustomModelData | ItemModelConditionHasComponent | ItemModelConditionKeybindDown | ItemModelConditionViewEntity
 
+
 class ItemModelModel(Model):
     type: Literal['minecraft:model', 'model'] = 'minecraft:model'
 
@@ -182,6 +183,7 @@ class ItemModelRangeDispatchUseDuration(UseDuration):
 
 
 type ItemModelRangeDispatch = ItemModelRangeDispatchUnknown | ItemModelRangeDispatchCompass | ItemModelRangeDispatchCount | ItemModelRangeDispatchCustomModelData | ItemModelRangeDispatchDamage | ItemModelRangeDispatchTime | ItemModelRangeDispatchUseCycle | ItemModelRangeDispatchUseDuration
+
 
 class ItemModelSelectUnknown(SelectCases[str]):
     type: Literal['minecraft:select', 'select'] = 'minecraft:select'
@@ -262,6 +264,7 @@ class ItemModelSelectTrimMaterial(TrimMaterial):
 
 type ItemModelSelect = ItemModelSelectUnknown | ItemModelSelectBlockState | ItemModelSelectChargeType | ItemModelSelectComponent | ItemModelSelectContextDimension | ItemModelSelectContextEntityType | ItemModelSelectCustomModelData | ItemModelSelectDisplayContext | ItemModelSelectLocalTime | ItemModelSelectMainHand | ItemModelSelectTrimMaterial
 
+
 class ItemModelSpecial(Special):
     type: Literal['minecraft:special', 'special'] = 'minecraft:special'
 
@@ -308,4 +311,3 @@ _ = {
         ]
     }
 }
-

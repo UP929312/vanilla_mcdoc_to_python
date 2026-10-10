@@ -13,6 +13,7 @@ if TYPE_CHECKING:
 
 T = TypeVar('T')
 
+
 class ConditionalProvider(GeneratedModel, Generic[T]):
     condition: PredicateRef
     on_true: T
@@ -61,4 +62,3 @@ _ = {
         ]
     }
 }
-

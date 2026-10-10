@@ -10,6 +10,7 @@ from generated_symbols.base import GeneratedModel
 
 C = TypeVar('C')
 
+
 class AllOptional(GeneratedModel, Generic[C]):
     conditions: C | None = None
 
@@ -39,4 +40,3 @@ _ = {
         ]
     }
 }
-

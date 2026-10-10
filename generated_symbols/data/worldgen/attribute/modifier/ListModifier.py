@@ -13,6 +13,7 @@ if TYPE_CHECKING:
 
 E = TypeVar('E')
 
+
 class ListModifier(GeneratedModel, Generic[E]):
     modifier: ListModifierType
     argument: list[E]
@@ -53,4 +54,3 @@ _ = {
         ]
     }
 }
-

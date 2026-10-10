@@ -41,6 +41,7 @@ type ExplosionsStruct = Annotated[
     Field(discriminator='mode'),
 ]
 
+
 class SetFireworks(Conditions):
     flight_duration: Annotated[int, Field(ge=0, le=255)] | None = None  # If omitted, the flight duration of the item is left untouched - or set to 0 if the component did not exist before.
     explosions: ExplosionsStruct | None = None
@@ -109,4 +110,3 @@ _ = {
         ]
     }
 }
-

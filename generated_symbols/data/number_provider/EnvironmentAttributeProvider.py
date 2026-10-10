@@ -10,6 +10,7 @@ from generated_symbols.base import GeneratedModel
 
 A = TypeVar('A')
 
+
 class EnvironmentAttributeProvider(GeneratedModel, Generic[A]):
     attribute: A
 
@@ -38,4 +39,3 @@ _ = {
         ]
     }
 }
-

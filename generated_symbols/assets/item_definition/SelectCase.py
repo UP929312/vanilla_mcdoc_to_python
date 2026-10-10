@@ -13,6 +13,7 @@ if TYPE_CHECKING:
 
 T = TypeVar('T')
 
+
 class SelectCase(GeneratedModel, Generic[T]):
     when: T | list[T]
     model: ItemModel
@@ -62,4 +63,3 @@ _ = {
         ]
     }
 }
-

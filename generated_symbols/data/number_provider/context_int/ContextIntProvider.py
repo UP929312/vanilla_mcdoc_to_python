@@ -188,6 +188,7 @@ class ContextIntProviderStructWeightedList(GeneratedModel):
 
 type ContextIntProviderStruct = ContextIntProviderStructNone | ContextIntProviderStructAbs | ContextIntProviderStructAdd | ContextIntProviderStructAvg | ContextIntProviderStructBinomial | ContextIntProviderStructConditional | ContextIntProviderStructConstant | ContextIntProviderStructDiv | ContextIntProviderStructEnvironmentAttribute | ContextIntProviderStructFloorDiv | ContextIntProviderStructFloorMod | ContextIntProviderStructFromFloat | ContextIntProviderStructMax | ContextIntProviderStructMin | ContextIntProviderStructMod | ContextIntProviderStructMul | ContextIntProviderStructNegate | ContextIntProviderStructNumberDispatcher | ContextIntProviderStructPow | ContextIntProviderStructScore | ContextIntProviderStructStorage | ContextIntProviderStructSub | ContextIntProviderStructUniform | ContextIntProviderStructWeightedList
 
+
 type ContextIntProvider = int | ContextIntProviderStruct
 
 
@@ -241,4 +242,3 @@ _ = {
         ]
     }
 }
-

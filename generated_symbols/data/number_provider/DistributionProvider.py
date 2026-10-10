@@ -13,6 +13,7 @@ if TYPE_CHECKING:
 
 T = TypeVar('T')
 
+
 class DistributionProvider(GeneratedModel, Generic[T]):
     distribution: NonEmptyWeightedList[T]
 
@@ -50,4 +51,3 @@ _ = {
         ]
     }
 }
-

@@ -27,6 +27,7 @@ type NbtProviderStruct = Annotated[
     Field(discriminator='type'),
 ]
 
+
 type NbtProvider = NbtContextTarget | NbtProviderStruct
 
 
@@ -81,4 +82,3 @@ _ = {
         ]
     }
 }
-

@@ -13,6 +13,7 @@ if TYPE_CHECKING:
 
 T = TypeVar('T')
 
+
 class SelectCases(GeneratedModel, Generic[T]):
     cases: list[SelectCase[T]]
 
@@ -53,4 +54,3 @@ _ = {
         ]
     }
 }
-

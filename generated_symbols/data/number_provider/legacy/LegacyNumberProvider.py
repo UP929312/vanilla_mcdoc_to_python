@@ -54,6 +54,7 @@ class LegacyNumberProviderStructUniform(UniformNumberProvider):
 
 type LegacyNumberProviderStruct = LegacyNumberProviderStructNone | LegacyNumberProviderStructBinomial | LegacyNumberProviderStructConstant | LegacyNumberProviderStructEnchantmentLevel | LegacyNumberProviderStructEnvironmentAttribute | LegacyNumberProviderStructScore | LegacyNumberProviderStructStorage | LegacyNumberProviderStructSum | LegacyNumberProviderStructUniform
 
+
 type LegacyNumberProvider = float | LegacyNumberProviderStruct
 
 
@@ -109,4 +110,3 @@ _ = {
         ]
     }
 }
-

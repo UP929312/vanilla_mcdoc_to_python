@@ -10,6 +10,7 @@ from generated_symbols.base import GeneratedModel
 
 T = TypeVar('T')
 
+
 class InclusiveRange(GeneratedModel, Generic[T]):
     min_inclusive: T
     max_inclusive: T
@@ -68,4 +69,3 @@ _ = {
         ]
     }
 }
-

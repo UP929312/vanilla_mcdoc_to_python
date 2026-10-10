@@ -11,6 +11,7 @@ from generated_symbols.base import GeneratedModel
 Base = TypeVar('Base')
 Spread = TypeVar('Spread')
 
+
 class UniformInt(GeneratedModel, Generic[Base, Spread]):
     base: Base
     spread: Spread
@@ -60,4 +61,3 @@ _ = {
         ]
     }
 }
-

@@ -31,6 +31,7 @@ class RandomIntGeneratorStructUniform(UniformIntGenerator):
 
 type RandomIntGeneratorStruct = RandomIntGeneratorStructNone | RandomIntGeneratorStructBinomial | RandomIntGeneratorStructConstant | RandomIntGeneratorStructUniform
 
+
 type RandomIntGenerator = int | RandomIntGeneratorStruct
 
 
@@ -74,4 +75,3 @@ _ = {
         ]
     }
 }
-

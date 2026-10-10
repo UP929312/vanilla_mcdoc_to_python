@@ -12,6 +12,7 @@ from generated_symbols.base import GeneratedModel
 
 T = TypeVar('T')
 
+
 class WeightedEntry(GeneratedModel, Generic[T]):
     weight: Annotated[int, Field(ge=0)]
     data: T
@@ -52,4 +53,3 @@ _ = {
         ]
     }
 }
-

@@ -217,6 +217,7 @@ class ContextFloatProviderStructWeightedList(GeneratedModel):
 
 type ContextFloatProviderStruct = ContextFloatProviderStructNone | ContextFloatProviderStructAbs | ContextFloatProviderStructAdd | ContextFloatProviderStructAvg | ContextFloatProviderStructCeil | ContextFloatProviderStructConditional | ContextFloatProviderStructConstant | ContextFloatProviderStructCos | ContextFloatProviderStructDiv | ContextFloatProviderStructEnchantmentLevel | ContextFloatProviderStructEnvironmentAttribute | ContextFloatProviderStructFloor | ContextFloatProviderStructFromInt | ContextFloatProviderStructLength | ContextFloatProviderStructMax | ContextFloatProviderStructMin | ContextFloatProviderStructMod | ContextFloatProviderStructMul | ContextFloatProviderStructNegate | ContextFloatProviderStructNumberDispatcher | ContextFloatProviderStructPow | ContextFloatProviderStructRound | ContextFloatProviderStructSin | ContextFloatProviderStructSqrt | ContextFloatProviderStructStorage | ContextFloatProviderStructSub | ContextFloatProviderStructTruncate | ContextFloatProviderStructUniform | ContextFloatProviderStructWeightedList
 
+
 type ContextFloatProvider = float | ContextFloatProviderStruct
 
 
@@ -270,4 +271,3 @@ _ = {
         ]
     }
 }
-

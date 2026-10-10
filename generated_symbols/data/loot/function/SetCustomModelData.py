@@ -43,6 +43,7 @@ type FloatsStruct = Annotated[
     Field(discriminator='mode'),
 ]
 
+
 class FlagsStructAppend(GeneratedModel):
     values: list[bool]
     mode: Literal['minecraft:append', 'append'] = 'minecraft:append'  # Determines how the existing list should be modified.
@@ -67,6 +68,7 @@ type FlagsStruct = Annotated[
     FlagsStructAppend | FlagsStructInsert | FlagsStructReplaceAll | FlagsStructReplaceSection,
     Field(discriminator='mode'),
 ]
+
 
 class StringsStructAppend(GeneratedModel):
     values: list[str]
@@ -93,6 +95,7 @@ type StringsStruct = Annotated[
     Field(discriminator='mode'),
 ]
 
+
 class ColorsStructAppend(GeneratedModel):
     values: list[RGB | IntNumberProviderRef]
     mode: Literal['minecraft:append', 'append'] = 'minecraft:append'  # Determines how the existing list should be modified.
@@ -117,6 +120,7 @@ type ColorsStruct = Annotated[
     ColorsStructAppend | ColorsStructInsert | ColorsStructReplaceAll | ColorsStructReplaceSection,
     Field(discriminator='mode'),
 ]
+
 
 class SetCustomModelData(Conditions):
     floats: FloatsStruct | None = None
@@ -300,4 +304,3 @@ _ = {
         ]
     }
 }
-

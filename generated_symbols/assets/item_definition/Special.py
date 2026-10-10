@@ -54,6 +54,7 @@ class ModelStructShulkerBox(ShulkerBox):
 
 type ModelStruct = ModelStructUnknown | ModelStructBanner | ModelStructBook | ModelStructChest | ModelStructCopperGolemStatue | ModelStructEndCube | ModelStructHead | ModelStructShulkerBox
 
+
 class Special(GeneratedModel):
     model: ModelStruct  # Renders a special hardcoded model.
     base: ModelRef  # Base model, providing transformations, particle texture and GUI light.
@@ -136,4 +137,3 @@ _ = {
         ]
     }
 }
-

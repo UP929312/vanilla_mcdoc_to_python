@@ -10,6 +10,7 @@ from generated_symbols.base import GeneratedModel
 
 T = TypeVar('T')
 
+
 class MinMaxBounds(GeneratedModel, Generic[T]):
     min: T | None = None
     max: T | None = None
@@ -58,4 +59,3 @@ _ = {
         ]
     }
 }
-

@@ -10,6 +10,7 @@ from generated_symbols.base import GeneratedModel
 
 T = TypeVar('T')
 
+
 class BinaryProvider(GeneratedModel, Generic[T]):
     left: T
     right: T
@@ -47,4 +48,3 @@ _ = {
         ]
     }
 }
-

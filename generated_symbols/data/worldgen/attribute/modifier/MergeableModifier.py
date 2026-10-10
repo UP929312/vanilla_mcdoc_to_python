@@ -13,6 +13,7 @@ if TYPE_CHECKING:
 
 T = TypeVar('T')
 
+
 class MergeableModifier(GeneratedModel, Generic[T]):
     modifier: MergeableModifierType
     argument: T
@@ -50,4 +51,3 @@ _ = {
         ]
     }
 }
-

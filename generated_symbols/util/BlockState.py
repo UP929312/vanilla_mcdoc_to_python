@@ -16,4 +16,3 @@ _ = {
         "path": "::java::util::block_state::BlockState"
     }
 }
-

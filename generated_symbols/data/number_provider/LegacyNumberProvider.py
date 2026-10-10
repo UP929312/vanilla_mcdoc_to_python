@@ -16,4 +16,3 @@ _ = {
         "path": "::java::data::number_provider::legacy::LegacyNumberProvider"
     }
 }
-

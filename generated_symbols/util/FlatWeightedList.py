@@ -11,6 +11,7 @@ if TYPE_CHECKING:
 
 T = TypeVar('T')
 
+
 type FlatWeightedList[T] = list[FlatWeightedEntry[T]]
 
 
@@ -41,4 +42,3 @@ _ = {
         ]
     }
 }
-

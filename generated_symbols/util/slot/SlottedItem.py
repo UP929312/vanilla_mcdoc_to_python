@@ -10,6 +10,7 @@ from generated_symbols.world.item.ItemStack import ItemStack
 
 T = TypeVar('T')
 
+
 class SlottedItem(ItemStack, Generic[T]):
     Slot: T | None = None  # Inventory slot the item is in
 
@@ -47,4 +48,3 @@ _ = {
         ]
     }
 }
-

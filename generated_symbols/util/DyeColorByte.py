@@ -16,4 +16,3 @@ _ = {
         "path": "::java::util::color::DyeColorByte"
     }
 }
-

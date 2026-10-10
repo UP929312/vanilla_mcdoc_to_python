@@ -13,6 +13,7 @@ if TYPE_CHECKING:
 
 T = TypeVar('T')
 
+
 type NonEmptyWeightedList[T] = Annotated[list[WeightedEntry[T]], Field(min_length=1)]
 
 
@@ -47,4 +48,3 @@ _ = {
         ]
     }
 }
-

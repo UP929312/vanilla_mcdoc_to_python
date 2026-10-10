@@ -12,6 +12,7 @@ from generated_symbols.world.item.SingleItemOfComponent import SingleItemOfCompo
 
 T = TypeVar('T')
 
+
 class ItemStackOfComponent(SingleItemOfComponent[T], Generic[T]):
     count: Annotated[int, Field(ge=1, le=99)] | None = None  # Number of items in the stack. Defaults to `1`.
 
@@ -95,4 +96,3 @@ _ = {
         ]
     }
 }
-

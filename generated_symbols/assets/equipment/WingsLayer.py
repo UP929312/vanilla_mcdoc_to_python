@@ -10,6 +10,7 @@ from generated_symbols.assets.equipment.Layer import Layer
 
 T = TypeVar('T')
 
+
 class WingsLayer(Layer[T], Generic[T]):
     use_player_texture: bool | None = None  # Whether this layer texture should be overridden by the player's custom elytra texture.  Defaults to `false`.
 
@@ -55,4 +56,3 @@ _ = {
         ]
     }
 }
-

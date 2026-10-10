@@ -80,6 +80,7 @@ class DialogConfirmationWaitForResponse(GeneratedModel):
 
 type DialogConfirmation = DialogConfirmationNone | DialogConfirmationClose | DialogConfirmationNone2 | DialogConfirmationWaitForResponse
 
+
 class DialogDialogListNone(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'dialog'
 
@@ -150,6 +151,7 @@ class DialogDialogListWaitForResponse(GeneratedModel):
 
 type DialogDialogList = DialogDialogListNone | DialogDialogListClose | DialogDialogListNone2 | DialogDialogListWaitForResponse
 
+
 class DialogMultiActionNone(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'dialog'
 
@@ -216,6 +218,7 @@ class DialogMultiActionWaitForResponse(GeneratedModel):
 
 type DialogMultiAction = DialogMultiActionNone | DialogMultiActionClose | DialogMultiActionNone2 | DialogMultiActionWaitForResponse
 
+
 class DialogNoticeNone(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'dialog'
 
@@ -273,6 +276,7 @@ class DialogNoticeWaitForResponse(GeneratedModel):
 
 
 type DialogNotice = DialogNoticeNone | DialogNoticeClose | DialogNoticeNone2 | DialogNoticeWaitForResponse
+
 
 class DialogServerLinksNone(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'dialog'
@@ -340,6 +344,7 @@ class DialogServerLinksWaitForResponse(GeneratedModel):
 
 type DialogServerLinks = DialogServerLinksNone | DialogServerLinksClose | DialogServerLinksNone2 | DialogServerLinksWaitForResponse
 
+
 type Dialog = Annotated[
     DialogConfirmation | DialogDialogList | DialogMultiAction | DialogNotice | DialogServerLinks,
     Field(discriminator='type'),
@@ -388,4 +393,3 @@ _ = {
         ]
     }
 }
-

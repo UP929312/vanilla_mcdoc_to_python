@@ -35,6 +35,7 @@ class BiomeSourceMultiNoiseUnknown(MultiNoiseBase):
 
 type BiomeSourceMultiNoise = BiomeSourceMultiNoiseNone | BiomeSourceMultiNoiseUnknown
 
+
 class BiomeSourceTheEnd(TheEnd):
     type: Literal['minecraft:the_end', 'the_end'] = 'minecraft:the_end'
 
@@ -87,4 +88,3 @@ _ = {
         ]
     }
 }
-

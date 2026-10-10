@@ -10,6 +10,7 @@ from generated_symbols.base import GeneratedModel
 
 C = TypeVar('C')
 
+
 class ParitalRequired(GeneratedModel, Generic[C]):
     conditions: C
 
@@ -38,4 +39,3 @@ _ = {
         ]
     }
 }
-

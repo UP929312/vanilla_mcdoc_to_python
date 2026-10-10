@@ -13,6 +13,7 @@ if TYPE_CHECKING:
 
 T = TypeVar('T')
 
+
 class CasesStruct(GeneratedModel, Generic[T]):
     condition: PredicateRef
     value: T
@@ -78,4 +79,3 @@ _ = {
         ]
     }
 }
-

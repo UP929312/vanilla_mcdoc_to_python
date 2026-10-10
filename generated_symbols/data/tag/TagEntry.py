@@ -10,6 +10,7 @@ from generated_symbols.base import GeneratedModel
 
 E = TypeVar('E')
 
+
 class TagEntry(GeneratedModel, Generic[E]):
     id: E
     required: bool | None = None
@@ -68,4 +69,3 @@ _ = {
         ]
     }
 }
-

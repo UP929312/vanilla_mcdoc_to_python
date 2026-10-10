@@ -14,6 +14,7 @@ if TYPE_CHECKING:
 
 T = TypeVar('T')
 
+
 class FloatAttributeModifier(GeneratedModel, Generic[T]):
     modifier: FloatModifierType
     argument: T | float | FloatWithAlpha
@@ -68,4 +69,3 @@ _ = {
         ]
     }
 }
-

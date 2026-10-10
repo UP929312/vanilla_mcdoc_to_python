@@ -16,4 +16,3 @@ _ = {
         "path": "::java::data::enchantment::level_based_value::LevelBasedValue"
     }
 }
-

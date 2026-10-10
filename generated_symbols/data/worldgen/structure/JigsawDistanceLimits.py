@@ -12,6 +12,7 @@ from generated_symbols.base import GeneratedModel
 
 T = TypeVar('T')
 
+
 class JigsawDistanceLimits(GeneratedModel, Generic[T]):
     horizontal: T
     vertical: Annotated[int, Field(ge=1, le=4064)] | None = None  # Defaults to 4064
@@ -55,4 +56,3 @@ _ = {
         ]
     }
 }
-

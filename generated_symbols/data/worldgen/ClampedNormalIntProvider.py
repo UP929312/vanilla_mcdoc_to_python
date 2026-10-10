@@ -10,6 +10,7 @@ from generated_symbols.data.worldgen.UniformIntProvider import UniformIntProvide
 
 T = TypeVar('T')
 
+
 class ClampedNormalIntProvider(UniformIntProvider[T], Generic[T]):
     mean: float
     deviation: float
@@ -61,4 +62,3 @@ _ = {
         ]
     }
 }
-

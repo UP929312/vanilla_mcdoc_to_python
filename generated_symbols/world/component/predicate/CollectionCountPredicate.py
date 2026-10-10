@@ -13,6 +13,7 @@ if TYPE_CHECKING:
 
 P = TypeVar('P')
 
+
 class CollectionCountPredicate(GeneratedModel, Generic[P]):
     test: P  # The contents an entry's text must match exactly.
     count: MinMaxBounds[int] | int  # The number of entries that must match the test.
@@ -52,4 +53,3 @@ _ = {
         ]
     }
 }
-

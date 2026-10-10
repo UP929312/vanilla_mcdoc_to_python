@@ -10,6 +10,7 @@ from generated_symbols.base import GeneratedModel
 
 T = TypeVar('T')
 
+
 class RandomProvider(GeneratedModel, Generic[T]):
     min: T
     max: T
@@ -47,4 +48,3 @@ _ = {
         ]
     }
 }
-

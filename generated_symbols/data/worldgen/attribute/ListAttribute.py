@@ -17,6 +17,7 @@ if TYPE_CHECKING:
 
 E = TypeVar('E')
 
+
 class KeyframesStruct(GeneratedModel, Generic[E]):
     ticks: Annotated[int, Field(ge=0)]
     value: list[E]
@@ -140,4 +141,3 @@ _ = {
         ]
     }
 }
-

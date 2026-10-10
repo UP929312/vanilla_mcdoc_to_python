@@ -10,6 +10,7 @@ from generated_symbols.base import GeneratedModel
 
 T = TypeVar('T')
 
+
 class ConstantIntProvider(GeneratedModel, Generic[T]):
     value: T
 
@@ -38,4 +39,3 @@ _ = {
         ]
     }
 }
-

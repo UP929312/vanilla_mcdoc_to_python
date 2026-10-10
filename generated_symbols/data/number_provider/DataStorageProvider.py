@@ -11,6 +11,7 @@ from minecraft_registry import IdSpec
 
 T = TypeVar('T')
 
+
 class DataStorageProvider(GeneratedModel, Generic[T]):
     storage: Annotated[str, IdSpec(registry='storage')]
     path: str
@@ -86,4 +87,3 @@ _ = {
         ]
     }
 }
-

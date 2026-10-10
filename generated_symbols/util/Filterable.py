@@ -10,6 +10,7 @@ from generated_symbols.base import GeneratedModel
 
 T = TypeVar('T')
 
+
 class Filterable(GeneratedModel, Generic[T]):
     raw: T
     filtered: T | None = None  # Shown only to players with chat filtering enabled.
@@ -58,4 +59,3 @@ _ = {
         ]
     }
 }
-
