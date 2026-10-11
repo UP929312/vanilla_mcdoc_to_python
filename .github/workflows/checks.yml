@@ -13,13 +13,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+        with:
+          persist-credentials: false  # Nothing here pushes
       - uses: actions/setup-python@v6
         with:
           python-version: "3.14"
       - run: pip install --group dev
-      - run: python main.py  # Generates vanilla_mcdoc/ (it isn't committed), and compares it against tests/assertions
-      - run: python -m pytest -q
+      - run: coverage run main.py  # Generates vanilla_mcdoc/ (it isn't committed), and compares it against tests/assertions
+      - run: coverage run --append -m pytest -q
+      - run: coverage report --format=markdown --fail-under=0 >> "$GITHUB_STEP_SUMMARY"  # The table on the run's page
+      - run: coverage report  # Fails if it's under fail_under in pyproject.toml
       - run: mypy . --strict
       - run: ruff check
       - run: flake8 --ignore=E501,W503,W391,E221
       - run: pylint .
+      - run: codespell
+      - run: vulture
+      - run: zizmor .github

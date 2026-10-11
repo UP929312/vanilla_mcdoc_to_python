@@ -30,6 +30,8 @@ jobs:
       already-published: ${{ steps.seen.outputs.cache-hit }}
     steps:
       - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
       - uses: actions/setup-python@v6
         with:
           python-version: "3.14"
@@ -57,17 +59,23 @@ jobs:
       url: https://pypi.org/project/vanilla-mcdoc/
     permissions:
       id-token: write  # PyPI Trusted Publishing: PyPI trusts this workflow directly, so there's no API token to store
+    env:  # Passed to the commands as variables, not pasted into them, so an odd value can't become a shell command
+      MINECRAFT_VERSION: ${{ matrix.minecraft-version }}
+      MCDOC_COMMIT: ${{ needs.plan.outputs.mcdoc }}
+      MCMETA_COMMIT: ${{ needs.plan.outputs.mcmeta }}
     steps:
       - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
       - uses: actions/setup-python@v6
         with:
           python-version: "3.14"
       - run: pip install --group dev
-      - run: python ci.py fetch ${{ needs.plan.outputs.mcdoc }} ${{ needs.plan.outputs.mcmeta }}  # The same data as the plan
-      - run: python main.py --version "${{ matrix.minecraft-version }}" --no-model-dump --no-snapshot-tests
+      - run: python ci.py fetch "$MCDOC_COMMIT" "$MCMETA_COMMIT"  # The same data as the plan
+      - run: python main.py --version "$MINECRAFT_VERSION" --no-model-dump --no-snapshot-tests
       - run: python -m pytest tests/test_generated_symbols.py -k imports  # Every module can at least be imported
       - id: version
-        run: python ci.py set-version "${{ matrix.minecraft-version }}" >> "$GITHUB_OUTPUT"
+        run: python ci.py set-version "$MINECRAFT_VERSION" >> "$GITHUB_OUTPUT"
       - if: steps.version.outputs.publish == 'true'
         run: python -m build
       - if: steps.version.outputs.publish == 'true'
@@ -81,14 +89,18 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    env:
+      MINECRAFT_VERSION: ${{ fromJSON(needs.plan.outputs.versions)[0] }}
+      MCDOC_COMMIT: ${{ needs.plan.outputs.mcdoc }}
+      MCMETA_COMMIT: ${{ needs.plan.outputs.mcmeta }}
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v5  # zizmor: ignore[artipacked]  # Keeps its credentials, to push to the generated branch
       - uses: actions/setup-python@v6
         with:
           python-version: "3.14"
       - run: pip install pydantic
-      - run: python ci.py fetch ${{ needs.plan.outputs.mcdoc }} ${{ needs.plan.outputs.mcmeta }}
-      - run: python main.py --version "${{ fromJSON(needs.plan.outputs.versions)[0] }}" --no-model-dump --no-snapshot-tests
+      - run: python ci.py fetch "$MCDOC_COMMIT" "$MCMETA_COMMIT"
+      - run: python main.py --version "$MINECRAFT_VERSION" --no-model-dump --no-snapshot-tests
       - name: Commit it to the generated branch, if it changed
         run: |
           git config user.name "github-actions[bot]"
@@ -106,15 +118,18 @@ jobs:
           if git diff --cached --quiet; then
             echo "Nothing changed"
           else
-            git commit -m "Minecraft ${{ fromJSON(needs.plan.outputs.versions)[0] }}, from vanilla-mcdoc@${{ needs.plan.outputs.mcdoc }}"
+            git commit -m "Minecraft $MINECRAFT_VERSION, from vanilla-mcdoc@$MCDOC_COMMIT"
             git push origin HEAD:generated
           fi
 
   remember:
     needs: [plan, publish, generated-branch]  # Only once every version has been published (or had nothing new)
     runs-on: ubuntu-latest
+    env:
+      MCDOC_COMMIT: ${{ needs.plan.outputs.mcdoc }}
+      MCMETA_COMMIT: ${{ needs.plan.outputs.mcmeta }}
     steps:
-      - run: echo "${{ needs.plan.outputs.mcdoc }} ${{ needs.plan.outputs.mcmeta }} ${{ github.sha }}" > published.txt
+      - run: echo "$MCDOC_COMMIT $MCMETA_COMMIT $GITHUB_SHA" > published.txt
       - uses: actions/cache/save@v4
         with:
           path: published.txt

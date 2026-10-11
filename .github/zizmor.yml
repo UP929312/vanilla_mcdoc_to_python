@@ -1,0 +1,8 @@
+# zizmor checks the workflows for security problems. By default it wants every action pinned to a commit hash, but
+# without something like Dependabot to update them they'd go stale, so tags are fine for GitHub's own and PyPA's.
+rules:
+  unpinned-uses:
+    config:
+      policies:
+        actions/*: ref-pin
+        pypa/gh-action-pypi-publish: ref-pin

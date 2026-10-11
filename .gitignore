@@ -5,6 +5,9 @@ __pycache__/**.pyc
 *.*.pyc
 **__pycache__**
 .vscode/settings.json
+# Coverage's data and HTML report (CI measures it fresh each run)
+.coverage
+htmlcov/
 # Built wheels, from python -m build
 dist/
 build/

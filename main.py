@@ -53,7 +53,7 @@ if SETTINGS.minecraft_version == LATEST_VERSION and not arguments.no_snapshot_te
 # https://github.com/OguzhanUmutlu/flare/blob/84b5121a21827eefcfca846ac6859512187e7f84/flare/generated/item.py#L166
 
 
-HANDY_LINKS = [
+_HANDY_LINKS = [
     r"vanilla_mcdoc\data\advancement\predicate\FoodPredicate.py",  # MinMaxBounds[T]
     r"vanilla_mcdoc\data\worldgen\attribute\GlobalEnvironmentAttributeMap.py",  # ConcreteSchema (Base, not struct)
     r"vanilla_mcdoc\data\worldgen\DecorationStep.py",  # Enum

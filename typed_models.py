@@ -448,7 +448,7 @@ class ConcreteSchema(BaseSchema):
         runtime_ctx = ctx.copy()
         runtime_ctx.allow_numeric_type_arg_shortcuts = True
         runtime_ctx.require_runtime_imports = True
-        # We ommit the "type" so we can bind them, and then other things can inherit this binding.
+        # We omit the "type" so we can bind them, and then other things can inherit this binding.
         return [f"{class_name} = {self.to_annotation(runtime_ctx, class_name)}"]
 
     def to_nested_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None) -> str:
@@ -712,7 +712,7 @@ class PairSchema(BaseSchema):
 
 
 class SpreadFieldSchema(BaseSchema):
-    """An inliner, for spread (inheritence).
+    """An inliner, for spread (inheritance).
     E.g. Suspicious stew has attributes {
         "kind": "spread", "type": {"kind": "reference", "path": "::java::world::item::ItemBase"}
     }

@@ -1,6 +1,6 @@
 import json
 import re
-from dataclasses import asdict, dataclass, is_dataclass
+from dataclasses import dataclass
 from pathlib import Path
 from typing import TYPE_CHECKING, Any
 
@@ -10,7 +10,6 @@ if TYPE_CHECKING:
     from typed_models import Attribute, BaseSchema
 
 
-INDENT = 4
 STATIC_SYMBOLS_DIRECTORY = Path("static_symbols")
 GENERATED_SYMBOLS_DIRECTORY = Path("vanilla_mcdoc")
 SAFE_GUARD_JAVA_NUMBERS = False  # Do we annotate, say, ints to have bounds (e.g. <=2147483647), or just mark them as "int"
@@ -20,6 +19,7 @@ with open('symbols.json', 'r', encoding='utf-8') as file:
     SYMBOLS_MAP: dict[str, dict[str, Any]] = json.load(file)
 with open('versions.json', 'r', encoding='utf-8') as file:
     VERSION_IDS: list[str] = json.load(file)
+
 # The vanilla-mcdoc and mcmeta commits the two files above came from, if they were fetched by ci.py
 UPSTREAM_COMMITS: dict[str, str] = json.loads(Path("upstream.json").read_text(encoding="utf-8")) if Path("upstream.json").exists() else {}
 
@@ -62,7 +62,7 @@ def symbol_path_to_object_name(path: str) -> str:
 
 
 def symbol_path_to_import_string_and_name(path: str) -> tuple[str, str]:
-    """Turns a symbol path into both it's dot seperated components, and it's leaf/final part
+    """Turns a symbol path into both it's dot separated components, and it's leaf/final part
        e.g. ::java::data::worldgen::IntProvider -> data.worldgen.IntProvider & IntProvider
        So we can do things like imports: from generated_symbolds.data.worldgen.IntProvider import IntProvider
     """
@@ -71,6 +71,7 @@ def symbol_path_to_import_string_and_name(path: str) -> tuple[str, str]:
     return module, identifier
 
 
+# TODO: Move this to BaseSchema
 def is_valid_with_attributes(attributes: list[Attribute], current_version: str | None = None) -> bool:
     """
     Checks if an object is valid based on its 'since' and 'until' attributes compared to the current_version.
@@ -102,31 +103,6 @@ def iter_child_schemas(value: object) -> Generator[BaseSchema]:
     if isinstance(value, list):
         for item in value:
             yield from iter_child_schemas(item)
-
-
-def to_json(obj: object) -> str:
-    """Converts an object to a JSON string, handling special cases for certain types.
-    Also removes None values recursively from dataclasses, dictionaries and lists."""
-    return json.dumps(_convert(obj))
-
-
-def _convert(value: object) -> object:
-    """Gets everything into a JSON serializable format, recursively removing None values."""
-    if is_dataclass(value) and not isinstance(value, type):
-        return _convert(asdict(value))
-    if isinstance(value, dict):
-        return {k: _convert(v) for k, v in value.items() if v is not None}
-    if isinstance(value, (list, tuple)):
-        return [_convert(item) for item in value if item is not None]
-    return value
-
-
-def recursively_remove_none(value: object) -> object:
-    if isinstance(value, dict):
-        return {k: recursively_remove_none(v) for k, v in value.items() if v is not None}
-    if isinstance(value, list):
-        return [recursively_remove_none(item) for item in value if item is not None]
-    return value
 
 
 def resource_path_to_python_path(resource_path: str) -> str:
