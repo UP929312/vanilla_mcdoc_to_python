@@ -9,7 +9,12 @@ dependencies = ["pydantic>=2.11"]  # For validate_by_name and serialize_by_alias
 
 [dependency-groups]
 # What the generator and its checks need: `pip install --group dev` (pip 25.1+)
-dev = ["pydantic>=2.11", "pytest", "coverage", "mypy", "ruff==0.17.*", "flake8", "pylint", "build"]  # ruff is pinned, as new versions turn on new rules
+dev = [  # ruff and zizmor are pinned, as new versions turn on new rules
+    "pydantic>=2.11", "pytest", "coverage", "mypy", "ruff==0.17.*", "flake8", "pylint", "codespell", "vulture", "zizmor==1.30.*", "pre-commit", "build",
+]
+
+# ========================================================================
+# Build/packaging
 
 [build-system]
 requires = ["hatchling"]
@@ -27,6 +32,9 @@ packages = ["vanilla_mcdoc"]
 
 [tool.hatch.build.targets.sdist]
 include = ["vanilla_mcdoc", "README.md"]
+
+# ========================================================================
+# Linting
 
 [tool.mypy]
 python_version = "3.14"
@@ -106,5 +114,38 @@ disable = [
     "protected-access",  # Maybe look into.
 ]
 
+[tool.codespell]
+# The generated code and upstream data have upstream's spellings, which aren't ours to fix
+skip = "vanilla_mcdoc,htmlcov,tests/assertions,symbols.json,versions.json,upstream.json,temp.txt,.coverage,*.pyc,dist,build"
+
+# ========================================================================
+# Testing
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+
+# ========================================================================
+# Coverage, Dead code
+
+[tool.coverage.run]
+# `coverage run main.py`, then `coverage run --append -m pytest`, then `coverage report` (as CI does)
+branch = true
+omit = ["vanilla_mcdoc/*", "tests/*", "htmlcov/*"]  # Just the generator (vanilla_mcdoc/ is what it generates)
+
+[tool.coverage.report]
+fail_under = 95  # It's 96%, mostly missing ci.py's downloading
+skip_covered = true
+
+[tool.vulture]
+# Finds unused code. Run as `vulture`, with no arguments
+paths = ["."]
+exclude = ["vanilla_mcdoc/", "htmlcov/", "tests/assertions/", "tests/test_example.py"]  # test_example.py is an example of using the package, not a test
+ignore_decorators = ["@model_validator", "@pytest.fixture"]  # Pydantic and pytest call these themselves
+ignore_names = [
+    # static_symbols/ is copied into vanilla_mcdoc/, where generated code (and users) use these
+    "GeneratedModel", "model_config", "MinecraftUUID", "MinecraftUUIDString", "MinecraftURL", "uuid_to_int_array",
+    "keyword",  # A field symbols.json has, which pydantic reads in
+    "to_json",  # For turning models back into JSON, later
+]
+
+# ========================================================================
