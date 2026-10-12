@@ -47,7 +47,7 @@ class SchemaGraph:
                     (parameter.path for parameter in target.type_params),
                     schema.type_args,
                 ))
-                return self.resolve(self._substitute(target.child, arguments))
+                return self.resolve(self.substitute(target.child, arguments))
             return self.resolve(schema.child)
         return schema
 
@@ -75,7 +75,7 @@ class SchemaGraph:
 
     def instantiate(self, schema: TemplateSchema, arguments: list[ConcreteSchemaTypeArgTypes]) -> BaseSchema:
         mapping = dict(zip((parameter.path for parameter in schema.type_params), arguments, strict=False))
-        return self._substitute(schema.child, mapping)
+        return self.substitute(schema.child, mapping)
 
     def _dispatcher_candidates(self, schema: DispatcherSchema) -> tuple[BaseSchema, ...]:
         registry = self.dispatchers.get(schema.registry, {})
@@ -111,7 +111,7 @@ class SchemaGraph:
         return tuple(unique)
 
     @staticmethod
-    def _substitute(schema: BaseSchema, mapping: dict[str, ConcreteSchemaTypeArgTypes]) -> BaseSchema:
+    def substitute(schema: BaseSchema, mapping: dict[str, ConcreteSchemaTypeArgTypes]) -> BaseSchema:
         """Recursively replace references to type parameters with concrete types."""
         def replace(value: object) -> object:
             if isinstance(value, dict):

@@ -2,7 +2,7 @@ import sys
 from dataclasses import dataclass, field
 from typing import TYPE_CHECKING
 
-from utils import GENERATED_SYMBOLS_DIRECTORY, symbol_path_to_import_string_and_name, symbol_path_to_object_name
+from utils import GENERATED_SYMBOLS_DIRECTORY, SYMBOL_NAMES, symbol_path_to_import_string_and_name, symbol_path_to_object_name
 
 if TYPE_CHECKING:
     from schema_resolution import SchemaGraph
@@ -83,7 +83,8 @@ class SingleSymbolContext:
     additional_dataclasses: list[str] = field(default_factory=list)
     schema_graph: SchemaGraph = field(default_factory=_empty_schema_graph)
     current_symbol_path: str = ""
-    allow_numeric_type_arg_shortcuts: bool = True
+    # Whether a template that's a union also allows its other members, e.g. `MinMaxBounds[int] | int` (not for base classes)
+    allow_template_shortcuts: bool = True
     require_runtime_imports: bool = False
     # The datapack/resourcepack directory (e.g. "recipe") if this symbol is a root resource, for its __resource_dir__.
     resource_dir: str | None = None
@@ -129,13 +130,17 @@ class SingleSymbolContext:
         self.emitted_declaration_names.add(dataclass_name)
         self.additional_dataclasses.extend(lines + [""])
 
-    def allocate_name(self, preferred: str, fingerprint: str) -> str:
-        """Gives the dataclass a name that is stable across nested contexts and avoids collisions with other names in the same context."""
+    def allocate_name(self, preferred: str, fingerprint: str, *, avoid_symbol_names: bool) -> str:
+        """The name for something this file defines or imports: `preferred`, unless it's taken, then preferred2, preferred3...
+        The same (preferred, fingerprint) always gets the same name, so asking again (e.g. from a nested context) reuses it.
+        avoid_symbol_names is for names made up for helper classes, e.g. a union's variants (see SYMBOL_NAMES for why)."""
         key = preferred, fingerprint
         if key not in self.allocated_name_by_identity:
             used = set(self.allocated_name_by_identity.values())
             used.add(symbol_path_to_object_name(self.current_symbol_path))
-            suffix = 2  # TODO: Remind myself why it starts at 2
+            if avoid_symbol_names:
+                used |= SYMBOL_NAMES
+            suffix = 2  # The first is just `preferred`, so the next is the 2nd
             name = preferred
             while name in used:
                 name = f"{preferred}{suffix}"
@@ -148,7 +153,7 @@ class SingleSymbolContext:
         module, name = symbol_path_to_import_string_and_name(path)
         if path == self.current_symbol_path or path in self.local_type_params:
             return name
-        imported_name = self.allocate_name(name, path)
+        imported_name = self.allocate_name(name, path, avoid_symbol_names=False)  # Keeps the symbol's name, unless this file already uses it
         identifier = name if imported_name == name else f"{name} as {imported_name}"
         self.required_imports.add(Import(module, identifier, type_checking_only=not self.require_runtime_imports))
         return imported_name
@@ -156,7 +161,7 @@ class SingleSymbolContext:
     def copy(self) -> SingleSymbolContext:
         """Copy the context with new values while sharing accumulated generation state.
         This is normally so we can temporarily disable attributes like:
-        - allow_numeric_type_arg_shortcuts
+        - allow_template_shortcuts
         - require_runtime_imports
         - resource_dir
         """
@@ -166,7 +171,7 @@ class SingleSymbolContext:
             additional_dataclasses=self.additional_dataclasses,
             current_symbol_path=self.current_symbol_path,
             schema_graph=self.schema_graph,
-            allow_numeric_type_arg_shortcuts=self.allow_numeric_type_arg_shortcuts,
+            allow_template_shortcuts=self.allow_template_shortcuts,
             require_runtime_imports=self.require_runtime_imports,
             resource_dir=self.resource_dir,
             allocated_name_by_identity=self.allocated_name_by_identity,

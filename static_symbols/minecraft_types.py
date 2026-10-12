@@ -2,9 +2,10 @@
 import uuid
 from collections.abc import Mapping
 from dataclasses import dataclass
+from enum import Enum
 from typing import Annotated, Any, Literal, Self
 
-from pydantic import Field
+from pydantic import BeforeValidator, Field, PlainSerializer
 
 type Int32 = Annotated[int, Field(ge=-2**31, le=2**31 - 1)]
 
@@ -24,6 +25,21 @@ def uuid_to_int_array(value: uuid.UUID) -> tuple[int, int, int, int]:
     words = [(value.int >> shift) & 0xFFFFFFFF for shift in (96, 64, 32, 0)]
     first, second, third, fourth = (word - 2**32 if word >= 2**31 else word for word in words)
     return first, second, third, fourth
+
+
+def without_namespace(value: object) -> object:
+    """e.g. "minecraft:chest" -> "chest" (anything else is left alone)"""
+    return value.removeprefix("minecraft:") if isinstance(value, str) else value
+
+
+def with_namespace(member: Enum) -> str:
+    """e.g. "minecraft:chest" for LootContextParamSets.CHEST"""
+    return f"minecraft:{member.value}"
+
+
+# An enum of ids, e.g. a loot table's type. Its values have no namespace (LootContextParamSets.CHEST is "chest"), but vanilla's
+# files do ("minecraft:chest"), and both mean the same, so this accepts both, and writes the namespace in JSON (like vanilla)
+type NamespacedId[E: Enum] = Annotated[E, BeforeValidator(without_namespace), PlainSerializer(with_namespace, when_used="json")]
 
 
 @dataclass(frozen=True, slots=True)

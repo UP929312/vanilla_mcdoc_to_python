@@ -117,8 +117,8 @@ A few more things worth knowing:
 - **Fields renamed to be valid Python** (e.g. `from` becomes `from_`) still read and write the real JSON key.
 - **Resource locations** accept both forms: `"minecraft:stone"` and `"stone"`. Where vanilla-mcdoc lists a registry's
   entries, they're in its type too (e.g. `KnownItemId`), so your editor can autocomplete them.
-- **The first time you use a model type in a program, it takes a second or two**, while pydantic builds that type's
-  validator. After that, validating is fast.
+- **Importing it takes about 2 seconds**, as it imports every model (so they can all refer to each other). After that,
+  each model's validator is built the first time it's used, which is quick, and validating is fast.
 
 ## Where it comes from
 

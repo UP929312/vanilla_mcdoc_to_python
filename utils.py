@@ -14,17 +14,38 @@ STATIC_SYMBOLS_DIRECTORY = Path("static_symbols")
 GENERATED_SYMBOLS_DIRECTORY = Path("vanilla_mcdoc")
 SAFE_GUARD_JAVA_NUMBERS = False  # Do we annotate, say, ints to have bounds (e.g. <=2147483647), or just mark them as "int"
 
-# To get the latest of these (pinned to exact upstream commits, which go in upstream.json), run `python ci.py fetch`
+# To get the latest of these (pinned to exact upstream commits, which go in upstream.json), run `python .github/scripts/fetch.py`
 with open('symbols.json', 'r', encoding='utf-8') as file:
     SYMBOLS_MAP: dict[str, dict[str, Any]] = json.load(file)
 with open('versions.json', 'r', encoding='utf-8') as file:
     VERSION_IDS: list[str] = json.load(file)
-
-# The vanilla-mcdoc and mcmeta commits the two files above came from, if they were fetched by ci.py
+# Every registry's entries (e.g. all the loot condition types) for one Minecraft version: `python .github/scripts/fetch.py version <version>`
+with open('registries.json', 'r', encoding='utf-8') as file:
+    REGISTRIES_FILE: dict[str, Any] = json.load(file)
+REGISTRIES_VERSION: str = REGISTRIES_FILE["minecraft_version"]
+REGISTRIES: dict[str, list[str]] = REGISTRIES_FILE["registries"]
+# The vanilla-mcdoc and mcmeta commits symbols.json and versions.json came from, if they were fetched by .github/scripts/fetch.py
 UPSTREAM_COMMITS: dict[str, str] = json.loads(Path("upstream.json").read_text(encoding="utf-8")) if Path("upstream.json").exists() else {}
 
 LATEST_VERSION = VERSION_IDS[0]
-ROOT_SYMBOLS_KEYS = {object_type: set(keys) for object_type, keys in SYMBOLS_MAP.items()}
+
+
+def name_inline_resources(symbols_map: dict[str, dict[str, Any]]) -> None:
+    """Most of vanilla-mcdoc's resource types refer to a named type (e.g. recipe is ::java::data::recipe::Recipe), but a
+    few are written inline, e.g. world_clock is just `struct {}`, so would have no class of their own. Give each a symbol
+    named after its directory, e.g. ::java::data::world_clock::WorldClock, which the resource refers to instead."""
+    resources = symbols_map["mcdoc/dispatcher"]["minecraft:resource"]
+    for directory, schema in resources.items():
+        if schema["kind"] == "reference" or (schema["kind"] == "union" and all(member["kind"] == "reference" for member in schema["members"])):
+            continue  # Already named (or one named type per version, e.g. chat_type is OldChatType until 1.19.1, then ChatType)
+        name = "".join(part.capitalize() for part in directory.split("/")[-1].split("_"))  # e.g. world_clock -> WorldClock
+        path = f"::java::data::{directory.replace('/', '::')}::{name}"
+        symbols_map["mcdoc"][path] = schema
+        resources[directory] = {"kind": "reference", "path": path, "attributes": schema.get("attributes", [])}
+
+
+name_inline_resources(SYMBOLS_MAP)
+ROOT_SYMBOLS_KEYS = {object_type: set(keys) for object_type, keys in SYMBOLS_MAP.items()}  # After, so it has those symbols too
 
 
 @dataclass
@@ -57,10 +78,6 @@ def get_version_index(version: str) -> int:
     raise TypeError(f"Invalid version: {version}. Must be one of {VERSION_IDS}.")  # pragma: no cover
 
 
-def symbol_path_to_object_name(path: str) -> str:
-    return symbol_path_to_import_string_and_name(path)[1]
-
-
 def symbol_path_to_import_string_and_name(path: str) -> tuple[str, str]:
     """Turns a symbol path into both it's dot separated components, and it's leaf/final part
        e.g. ::java::data::worldgen::IntProvider -> data.worldgen.IntProvider & IntProvider
@@ -69,6 +86,16 @@ def symbol_path_to_import_string_and_name(path: str) -> tuple[str, str]:
     *segments, identifier = path.removeprefix('::java::').split('::')
     module = f"{GENERATED_SYMBOLS_DIRECTORY.name}.{'.'.join(segments)}.{identifier}"
     return module, identifier
+
+
+def symbol_path_to_object_name(path: str) -> str:
+    return symbol_path_to_import_string_and_name(path)[1]
+
+
+# Every symbol's class or alias name. Names made up for helper classes avoid these, even if their file doesn't import
+# that symbol: Processor's `rule` variant would otherwise be ProcessorRule, a real symbol, and as its parent class Rule
+# has `rules: list[ProcessorRule]` (which pydantic reads in the variant's file), each rule would be read as a processor.
+SYMBOL_NAMES = {symbol_path_to_object_name(path) for path in ROOT_SYMBOLS_KEYS["mcdoc"]}
 
 
 # TODO: Move this to BaseSchema

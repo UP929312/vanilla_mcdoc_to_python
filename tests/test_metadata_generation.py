@@ -150,8 +150,8 @@ class TestDispatcherSpreadGeneration:
         assert "trigger: Literal['minecraft:inventory_changed', 'inventory_changed']" in content
         assert "class AdvancementCriterionTick(PlayerTrigger):" in content
         assert "trigger: Literal['minecraft:tick', 'tick']" in content
-        assert "type AdvancementCriterion = Annotated[\n    AdvancementCriterionAllayDropItemOnBlock |" in content
-        assert "Field(discriminator='trigger')" in content
+        assert "type AdvancementCriterion = Annotated[\n    Annotated[AdvancementCriterionAllayDropItemOnBlock, Tag('minecraft:allay_drop_item_on_block')]\n    |" in content
+        assert "Discriminator(tag_of('trigger'))" in content
 
     def test_union_schema_uses_shared_unique_string_literal_discriminator(self) -> None:
         content = generated_body(
@@ -162,26 +162,27 @@ class TestDispatcherSpreadGeneration:
                     {"kind": "struct", "fields": [{
                         "kind": "pair",
                         "key": "kind",
-                        "type": {"kind": "literal", "value": {"kind": "string", "value": "first"}},
+                        "type": {"kind": "literal", "value": {"kind": "string", "value": "minecraft:first"}},
                     }]},
                     {"kind": "struct", "fields": [{
                         "kind": "pair",
                         "key": "kind",
-                        "type": {"kind": "literal", "value": {"kind": "string", "value": "second"}},
+                        "type": {"kind": "literal", "value": {"kind": "string", "value": "minecraft:second"}},
                     }]},
                 ],
             },
             "TaggedUnion",
         )
 
-        assert "Field(discriminator='kind')" in content
+        assert "Annotated[TaggedUnionStruct1, Tag('minecraft:first')]\n    | Annotated[TaggedUnionStruct2, Tag('minecraft:second')]" in content
+        assert "Discriminator(tag_of('kind'))" in content
 
     def test_union_without_discriminator_remains_plain_union(self) -> None:
         path = "::java::data::structure::StructureNBT"
         content = generated_body(path, SYMBOLS_MAP["mcdoc"][path], "StructureNBT")
 
         assert "type StructureNBT = StructureNBTStruct1 | StructureNBTStruct2" in content
-        assert "Field(discriminator=" not in content
+        assert "Discriminator(" not in content
 
     def test_union_with_unresolved_type_parameter_remains_plain_union(self) -> None:
         context = SingleSymbolContext(schema_graph=get_schema_graph())
@@ -279,7 +280,8 @@ class TestRootResourceMetadata:
     def test_generic_sound_variant_template_is_not_a_root_resource(self) -> None:
         lookup = minecraft_registry.get_resource_lookup_map()
         assert lookup.get("::java::data::variants::SoundVariant") is None
-        assert lookup.get("::java::data::variants::wolf::WolfSounds") == "wolf_sound_variant"
+        # A wolf sound variant file is a SoundVariant<WolfSounds>, which vanilla-mcdoc writes inline, so utils names it
+        assert lookup.get("::java::data::wolf_sound_variant::WolfSoundVariant") == "wolf_sound_variant"
 
     def test_root_resource_registry_lists_datapack_and_pack_classes(self) -> None:
         content = make_root_resource_registry_content([
@@ -339,7 +341,8 @@ class TestRuntimeImportGeneration:
         content = generated_body(path, SYMBOLS_MAP["mcdoc"][path], "BlockPredicateState")
 
         assert "from typing import TYPE_CHECKING, Annotated" in content
-        assert "type BlockPredicateState = dict[Annotated[str, 'Registry(\"block_state_keys\")'], MinMaxBounds[str]]" in content
+        # MinMaxBounds<T> is `T | struct { min?: T, max?: T }`, and only the struct is the class, so the T is added
+        assert "type BlockPredicateState = dict[Annotated[str, 'Registry(\"block_state_keys\")'], MinMaxBounds[str] | str]" in content
 
     def test_discarded_spread_annotations_do_not_add_any_import(self) -> None:
         path = "::java::data::worldgen::processor_list::AppendStatic"
@@ -428,3 +431,34 @@ class TestRuntimeImportGeneration:
         loot_path = "::java::data::loot::function::LootFunction"
         loot = generated_body(loot_path, SYMBOLS_MAP["mcdoc"][loot_path], "LootFunction")
         assert "class LootFunctionCopyCustomData(CopyNbt):" in loot
+
+
+class TestVanillaDataGeneration:
+    """Things vanilla's own data needs, found by validating it."""
+    def test_registry_entries_without_fields_of_their_own_get_a_variant(self) -> None:
+        """vanilla-mcdoc only lists loot conditions with fields of their own, registries.json has the rest."""
+        path = "::java::data::loot::condition::LootCondition"
+        content = generated_body(path, SYMBOLS_MAP["mcdoc"][path], "LootCondition")
+
+        assert "class LootConditionSurvivesExplosion(GeneratedModel):" in content
+        assert "Annotated[LootConditionSurvivesExplosion, Tag('minecraft:survives_explosion')]" in content
+
+    def test_registry_maps_get_a_field_per_entry(self) -> None:
+        path = "::java::world::component::DataComponentPatch"
+        content = generated_body(path, SYMBOLS_MAP["mcdoc"][path], "DataComponentPatch")
+
+        assert "    potion_contents: PotionContents | Annotated[str, IdSpec(registry='potion')] | None = Field(default=None, alias='minecraft:potion_contents')" in content
+        assert "    axolotl_variant: AxolotlVariant | None = Field(default=None, alias='minecraft:axolotl/variant')" in content
+
+    def test_enums_of_ids_are_annotated_as_ids(self) -> None:
+        path = "::java::data::loot::LootTable"
+        content = generated_body(path, SYMBOLS_MAP["mcdoc"][path], "LootTable")
+
+        assert "    type: NamespacedId[LootContextParamSets] | None = None" in content
+
+    def test_made_up_names_are_not_other_symbols_names(self) -> None:
+        """Processor's `rule` variant would be ProcessorRule, which its parent Rule uses for its rules."""
+        path = "::java::data::worldgen::processor_list::Processor"
+        content = generated_body(path, SYMBOLS_MAP["mcdoc"][path], "Processor")
+
+        assert "class ProcessorRule2(Rule):" in content

@@ -10,8 +10,9 @@ Local link to file: vanilla_mcdoc/data/advancement/AdvancementCriterion.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
+from vanilla_mcdoc.base import tag_of
 from vanilla_mcdoc.data.advancement.trigger.AnyBlockInteractionTrigger import AnyBlockInteractionTrigger
 from vanilla_mcdoc.data.advancement.trigger.BeeNestDestroyedTrigger import BeeNestDestroyedTrigger
 from vanilla_mcdoc.data.advancement.trigger.BredAnimalsTrigger import BredAnimalsTrigger
@@ -294,6 +295,63 @@ class AdvancementCriterionVoluntaryExile(LocationTrigger):
 
 
 type AdvancementCriterion = Annotated[
-    AdvancementCriterionAllayDropItemOnBlock | AdvancementCriterionAnyBlockUse | AdvancementCriterionAvoidVibration | AdvancementCriterionBeeNestDestroyed | AdvancementCriterionBredAnimals | AdvancementCriterionBrewedPotion | AdvancementCriterionChangedDimension | AdvancementCriterionChanneledLightning | AdvancementCriterionConstructBeacon | AdvancementCriterionConsumeItem | AdvancementCriterionCrafterRecipeCrafted | AdvancementCriterionCuredZombieVillager | AdvancementCriterionDefaultBlockUse | AdvancementCriterionEffectsChanged | AdvancementCriterionEnchantedItem | AdvancementCriterionEnterBlock | AdvancementCriterionEntityHurtPlayer | AdvancementCriterionEntityKilledPlayer | AdvancementCriterionFallAfterExplosion | AdvancementCriterionFallFromHeight | AdvancementCriterionFilledBucket | AdvancementCriterionFishingRodHooked | AdvancementCriterionHeroOfTheVillage | AdvancementCriterionImpossible | AdvancementCriterionInventoryChanged | AdvancementCriterionItemDurabilityChanged | AdvancementCriterionItemUsedOnBlock | AdvancementCriterionKillMobNearSculkCatalyst | AdvancementCriterionKilledByArrow | AdvancementCriterionLevitation | AdvancementCriterionLightningStrike | AdvancementCriterionLocation | AdvancementCriterionNetherTravel | AdvancementCriterionPlacedBlock | AdvancementCriterionPlayerGeneratesContainerLoot | AdvancementCriterionPlayerHurtEntity | AdvancementCriterionPlayerInteractedWithEntity | AdvancementCriterionPlayerKilledEntity | AdvancementCriterionPlayerShearedEquipment | AdvancementCriterionRecipeCrafted | AdvancementCriterionRecipeUnlocked | AdvancementCriterionRideEntityInLava | AdvancementCriterionShotCrossbow | AdvancementCriterionSleptInBed | AdvancementCriterionSlideDownBlock | AdvancementCriterionSpearMobs | AdvancementCriterionStartedRiding | AdvancementCriterionSummonedEntity | AdvancementCriterionTameAnimal | AdvancementCriterionTargetHit | AdvancementCriterionThrownItemPickedUpByEntity | AdvancementCriterionThrownItemPickedUpByPlayer | AdvancementCriterionTick | AdvancementCriterionUsedEnderEye | AdvancementCriterionUsedTotem | AdvancementCriterionUsingItem | AdvancementCriterionVillagerTrade | AdvancementCriterionVoluntaryExile,
-    Field(discriminator='trigger'),
+    Annotated[AdvancementCriterionAllayDropItemOnBlock, Tag('minecraft:allay_drop_item_on_block')]
+    | Annotated[AdvancementCriterionAnyBlockUse, Tag('minecraft:any_block_use')]
+    | Annotated[AdvancementCriterionAvoidVibration, Tag('minecraft:avoid_vibration')]
+    | Annotated[AdvancementCriterionBeeNestDestroyed, Tag('minecraft:bee_nest_destroyed')]
+    | Annotated[AdvancementCriterionBredAnimals, Tag('minecraft:bred_animals')]
+    | Annotated[AdvancementCriterionBrewedPotion, Tag('minecraft:brewed_potion')]
+    | Annotated[AdvancementCriterionChangedDimension, Tag('minecraft:changed_dimension')]
+    | Annotated[AdvancementCriterionChanneledLightning, Tag('minecraft:channeled_lightning')]
+    | Annotated[AdvancementCriterionConstructBeacon, Tag('minecraft:construct_beacon')]
+    | Annotated[AdvancementCriterionConsumeItem, Tag('minecraft:consume_item')]
+    | Annotated[AdvancementCriterionCrafterRecipeCrafted, Tag('minecraft:crafter_recipe_crafted')]
+    | Annotated[AdvancementCriterionCuredZombieVillager, Tag('minecraft:cured_zombie_villager')]
+    | Annotated[AdvancementCriterionDefaultBlockUse, Tag('minecraft:default_block_use')]
+    | Annotated[AdvancementCriterionEffectsChanged, Tag('minecraft:effects_changed')]
+    | Annotated[AdvancementCriterionEnchantedItem, Tag('minecraft:enchanted_item')]
+    | Annotated[AdvancementCriterionEnterBlock, Tag('minecraft:enter_block')]
+    | Annotated[AdvancementCriterionEntityHurtPlayer, Tag('minecraft:entity_hurt_player')]
+    | Annotated[AdvancementCriterionEntityKilledPlayer, Tag('minecraft:entity_killed_player')]
+    | Annotated[AdvancementCriterionFallAfterExplosion, Tag('minecraft:fall_after_explosion')]
+    | Annotated[AdvancementCriterionFallFromHeight, Tag('minecraft:fall_from_height')]
+    | Annotated[AdvancementCriterionFilledBucket, Tag('minecraft:filled_bucket')]
+    | Annotated[AdvancementCriterionFishingRodHooked, Tag('minecraft:fishing_rod_hooked')]
+    | Annotated[AdvancementCriterionHeroOfTheVillage, Tag('minecraft:hero_of_the_village')]
+    | Annotated[AdvancementCriterionImpossible, Tag('minecraft:impossible')]
+    | Annotated[AdvancementCriterionInventoryChanged, Tag('minecraft:inventory_changed')]
+    | Annotated[AdvancementCriterionItemDurabilityChanged, Tag('minecraft:item_durability_changed')]
+    | Annotated[AdvancementCriterionItemUsedOnBlock, Tag('minecraft:item_used_on_block')]
+    | Annotated[AdvancementCriterionKillMobNearSculkCatalyst, Tag('minecraft:kill_mob_near_sculk_catalyst')]
+    | Annotated[AdvancementCriterionKilledByArrow, Tag('minecraft:killed_by_arrow')]
+    | Annotated[AdvancementCriterionLevitation, Tag('minecraft:levitation')]
+    | Annotated[AdvancementCriterionLightningStrike, Tag('minecraft:lightning_strike')]
+    | Annotated[AdvancementCriterionLocation, Tag('minecraft:location')]
+    | Annotated[AdvancementCriterionNetherTravel, Tag('minecraft:nether_travel')]
+    | Annotated[AdvancementCriterionPlacedBlock, Tag('minecraft:placed_block')]
+    | Annotated[AdvancementCriterionPlayerGeneratesContainerLoot, Tag('minecraft:player_generates_container_loot')]
+    | Annotated[AdvancementCriterionPlayerHurtEntity, Tag('minecraft:player_hurt_entity')]
+    | Annotated[AdvancementCriterionPlayerInteractedWithEntity, Tag('minecraft:player_interacted_with_entity')]
+    | Annotated[AdvancementCriterionPlayerKilledEntity, Tag('minecraft:player_killed_entity')]
+    | Annotated[AdvancementCriterionPlayerShearedEquipment, Tag('minecraft:player_sheared_equipment')]
+    | Annotated[AdvancementCriterionRecipeCrafted, Tag('minecraft:recipe_crafted')]
+    | Annotated[AdvancementCriterionRecipeUnlocked, Tag('minecraft:recipe_unlocked')]
+    | Annotated[AdvancementCriterionRideEntityInLava, Tag('minecraft:ride_entity_in_lava')]
+    | Annotated[AdvancementCriterionShotCrossbow, Tag('minecraft:shot_crossbow')]
+    | Annotated[AdvancementCriterionSleptInBed, Tag('minecraft:slept_in_bed')]
+    | Annotated[AdvancementCriterionSlideDownBlock, Tag('minecraft:slide_down_block')]
+    | Annotated[AdvancementCriterionSpearMobs, Tag('minecraft:spear_mobs')]
+    | Annotated[AdvancementCriterionStartedRiding, Tag('minecraft:started_riding')]
+    | Annotated[AdvancementCriterionSummonedEntity, Tag('minecraft:summoned_entity')]
+    | Annotated[AdvancementCriterionTameAnimal, Tag('minecraft:tame_animal')]
+    | Annotated[AdvancementCriterionTargetHit, Tag('minecraft:target_hit')]
+    | Annotated[AdvancementCriterionThrownItemPickedUpByEntity, Tag('minecraft:thrown_item_picked_up_by_entity')]
+    | Annotated[AdvancementCriterionThrownItemPickedUpByPlayer, Tag('minecraft:thrown_item_picked_up_by_player')]
+    | Annotated[AdvancementCriterionTick, Tag('minecraft:tick')]
+    | Annotated[AdvancementCriterionUsedEnderEye, Tag('minecraft:used_ender_eye')]
+    | Annotated[AdvancementCriterionUsedTotem, Tag('minecraft:used_totem')]
+    | Annotated[AdvancementCriterionUsingItem, Tag('minecraft:using_item')]
+    | Annotated[AdvancementCriterionVillagerTrade, Tag('minecraft:villager_trade')]
+    | Annotated[AdvancementCriterionVoluntaryExile, Tag('minecraft:voluntary_exile')],
+    Discriminator(tag_of('trigger')),
 ]

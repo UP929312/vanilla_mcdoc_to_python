@@ -65,10 +65,13 @@ def make_init_files(symbol_paths: Iterable[str]) -> None:
     init_files = {
         GENERATED_SYMBOLS_DIRECTORY / "__init__.py": "\n".join([
             '"""Generated data and asset symbol packages."""',
+            f"from {GENERATED_SYMBOLS_DIRECTORY.name}.base import import_annotation_types",
+            "",
+            "import_annotation_types()  # Imports what modules only import under TYPE_CHECKING for real, see base.py for why",
             "",
             f'__version__ = "{minecraft_to_python_version(SETTINGS.minecraft_version)}"  # Read by pyproject.toml when building the package',
             f'__minecraft_version__ = "{SETTINGS.minecraft_version}"',
-            # Which vanilla-mcdoc commit's symbols.json this was generated from (known when it was fetched by ci.py)
+            # Which vanilla-mcdoc commit's symbols.json this was generated from (known when it was fetched by .github/scripts/fetch.py)
             *([f'__mcdoc_commit__ = "{UPSTREAM_COMMITS["vanilla-mcdoc"]}"'] if "vanilla-mcdoc" in UPSTREAM_COMMITS else []),
             "",
         ]),

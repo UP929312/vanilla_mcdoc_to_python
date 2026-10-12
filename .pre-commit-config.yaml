@@ -20,7 +20,7 @@ repos:
         entry: codespell
         language: system
         types: [text]
-        exclude: ^(tests/assertions/|symbols\.json|versions\.json|temp\.txt)
+        exclude: ^(tests/assertions/|symbols\.json|versions\.json|registries\.json|temp\.txt)
       - id: vulture
         name: vulture
         entry: vulture  # Checks the whole project, as code is only unused if nothing anywhere uses it

@@ -1,4 +1,4 @@
-# Builds vanilla_mcdoc for the newest Minecraft versions and publishes any that changed to PyPI (see ci.py for the details).
+# Builds vanilla_mcdoc for the newest Minecraft versions and publishes any that changed to PyPI (see .github/scripts/publish.py for the details).
 name: Publish
 
 on:
@@ -36,7 +36,7 @@ jobs:
         with:
           python-version: "3.14"
       - id: plan
-        run: python ci.py plan >> "$GITHUB_OUTPUT"
+        run: python .github/scripts/publish.py plan >> "$GITHUB_OUTPUT"
       # Whether this exact upstream data and generator were already published (saved by the `remember` job below), so
       # most hours finish here in seconds. Cache entries expire after a week unused, and then it just rebuilds to check.
       - id: seen
@@ -71,11 +71,12 @@ jobs:
         with:
           python-version: "3.14"
       - run: pip install --group dev
-      - run: python ci.py fetch "$MCDOC_COMMIT" "$MCMETA_COMMIT"  # The same data as the plan
+      - run: python .github/scripts/fetch.py "$MCDOC_COMMIT" "$MCMETA_COMMIT"  # The same data as the plan
+      - run: python .github/scripts/fetch.py version "$MINECRAFT_VERSION"  # Its registries
       - run: python main.py --version "$MINECRAFT_VERSION" --no-model-dump --no-snapshot-tests
       - run: python -m pytest tests/test_generated_symbols.py -k imports  # Every module can at least be imported
       - id: version
-        run: python ci.py set-version "$MINECRAFT_VERSION" >> "$GITHUB_OUTPUT"
+        run: python .github/scripts/publish.py set-version "$MINECRAFT_VERSION" >> "$GITHUB_OUTPUT"
       - if: steps.version.outputs.publish == 'true'
         run: python -m build
       - if: steps.version.outputs.publish == 'true'
@@ -99,7 +100,8 @@ jobs:
         with:
           python-version: "3.14"
       - run: pip install pydantic
-      - run: python ci.py fetch "$MCDOC_COMMIT" "$MCMETA_COMMIT"
+      - run: python .github/scripts/fetch.py "$MCDOC_COMMIT" "$MCMETA_COMMIT"
+      - run: python .github/scripts/fetch.py version "$MINECRAFT_VERSION"
       - run: python main.py --version "$MINECRAFT_VERSION" --no-model-dump --no-snapshot-tests
       - name: Commit it to the generated branch, if it changed
         run: |

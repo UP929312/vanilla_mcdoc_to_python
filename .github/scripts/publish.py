@@ -1,8 +1,8 @@
-"""Helpers for .github/workflows/publish.yml, which builds vanilla_mcdoc for each Minecraft version and publishes it to PyPI.
+"""Helpers for publish.yml, which builds vanilla_mcdoc for each Minecraft version and publishes it to PyPI. Run it from
+the repo root.
 
-python ci.py fetch [<vanilla-mcdoc commit> <mcmeta commit>] Download symbols.json and versions.json (by default, the latest)
-python ci.py plan                                           Fetch, then say which versions to build (lines for $GITHUB_OUTPUT)
-python ci.py set-version <minecraft version>                Pick the package's next version, or say nothing changed
+python .github/scripts/publish.py plan                             Fetch, then say which versions to build (lines for $GITHUB_OUTPUT)
+python .github/scripts/publish.py set-version <minecraft version>  Pick the package's next version, or say nothing changed
 
 Each Minecraft version is its own package version, e.g. 26.3 -> 26.3.0, and rebuilding it (because Spyglass fixed something,
 or the generator changed) publishes the next post-release: 26.3.0.post1, 26.3.0.post2... So `vanilla-mcdoc==26.3.0.*`
@@ -11,62 +11,23 @@ always gets the newest build for 26.3. PyPI never lets a version be replaced, wh
 import io
 import json
 import re
-import subprocess
 import sys
 import urllib.error
-import urllib.request
 import zipfile
 from pathlib import Path
 
-# (repository, branch, file): symbols.json comes from vanilla-mcdoc, and the list of Minecraft versions from mcmeta
-VANILLA_MCDOC = ("https://github.com/SpyglassMC/vanilla-mcdoc", "generated", "symbols.json")
-MCMETA = ("https://github.com/misode/mcmeta", "summary", "versions/data.min.json")
+from fetch import download, fetch, log
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))  # The repo root, for utils (Python only adds this script's folder)
 PYPI_PROJECT = "vanilla-mcdoc"
 PACKAGE_DIRECTORY = Path("vanilla_mcdoc")
 RELEASES_TO_BUILD = 3  # The newest few releases keep getting fixes, plus the newest snapshot/pre-release/rc (if it's newer)
 
 
-def log(message: str) -> None:
-    """Progress goes to stderr, because stdout is for $GITHUB_OUTPUT."""
-    print(message, file=sys.stderr)
-
-
-def download(url: str) -> bytes:
-    with urllib.request.urlopen(url, timeout=120) as response:  # Only ever our fixed GitHub and PyPI URLs
-        data: bytes = response.read()
-        return data
-
-
-def latest_commit(repository: str, branch: str) -> str:
-    """The commit a branch is on right now, e.g. so symbols.json can be downloaded from that exact commit."""
-    output = subprocess.run(["git", "ls-remote", repository, f"refs/heads/{branch}"], check=True, capture_output=True, text=True).stdout
-    return output.split()[0]
-
-
-def file_at_commit(repository: str, commit: str, path: str) -> bytes:
-    return download(f"{repository.replace('https://github.com/', 'https://raw.githubusercontent.com/')}/{commit}/{path}")
-
-
-def fetch(mcdoc_commit: str | None = None, mcmeta_commit: str | None = None) -> dict[str, str]:
-    """Download symbols.json and versions.json from exact commits (the latest, unless given), so a build can always be
-    reproduced, and record those commits in upstream.json (the package's __mcdoc_commit__ comes from it)."""
-    commits = {
-        "vanilla-mcdoc": mcdoc_commit or latest_commit(*VANILLA_MCDOC[:2]),
-        "mcmeta": mcmeta_commit or latest_commit(*MCMETA[:2]),
-    }
-    log(f"Fetching symbols.json from vanilla-mcdoc@{commits['vanilla-mcdoc']}, versions from mcmeta@{commits['mcmeta']}")
-    symbols = json.loads(file_at_commit(VANILLA_MCDOC[0], commits["vanilla-mcdoc"], VANILLA_MCDOC[2]))
-    version_ids = [version["id"] for version in json.loads(file_at_commit(MCMETA[0], commits["mcmeta"], MCMETA[2]))]
-    for path, contents in {"symbols.json": symbols, "versions.json": version_ids, "upstream.json": commits}.items():
-        with open(path, "w", encoding="utf-8") as file:
-            json.dump(contents, file, indent=4)
-    return commits
-
-
 def versions_to_build(version_ids: list[str]) -> list[str]:
     """The newest few releases, plus the newest snapshot/pre-release/release candidate if it's newer than all of them.
     Only versions that can be package versions, so not old style snapshots like 25w14a. version_ids is newest first."""
-    from utils import minecraft_to_python_version  # pylint: disable=import-outside-toplevel  # utils loads symbols.json, which fetch replaces
+    from utils import minecraft_to_python_version  # Not at the top, as utils loads symbols.json, which plan fetches first
 
     def publishable(version: str) -> bool:
         try:
@@ -82,6 +43,8 @@ def versions_to_build(version_ids: list[str]) -> list[str]:
 
 
 def plan() -> None:
+    """Fetch the latest upstream data, and say which versions to build from it, and the commits it's from (so every
+    build uses the same data)."""
     commits = fetch()
     versions = versions_to_build(json.loads(Path("versions.json").read_text(encoding="utf-8")))
     log(f"Versions to build: {versions}")
@@ -123,7 +86,7 @@ def description_changed(metadata: str) -> bool:
 def set_version(minecraft_version: str) -> None:
     """Write the package's version into its __init__.py: the next post-release of this Minecraft version's builds,
     unless the newest one on PyPI is identical to what's just been generated, in which case there's nothing to publish."""
-    from utils import minecraft_to_python_version  # pylint: disable=import-outside-toplevel
+    from utils import minecraft_to_python_version
 
     base_version = minecraft_to_python_version(minecraft_version)
     releases, builds = published_builds(base_version)
@@ -152,8 +115,6 @@ def set_version(minecraft_version: str) -> None:
 
 def main(arguments: list[str]) -> None:
     match arguments:
-        case ["fetch", *commits] if len(commits) in {0, 2}:
-            fetch(*commits)
         case ["plan"]:
             plan()
         case ["set-version", version]:
