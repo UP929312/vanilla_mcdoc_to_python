@@ -19,6 +19,39 @@ recipe.experience  # 0.7
 recipe.model_dump(mode="json", exclude_none=True)  # Back to the JSON that goes in the pack
 ```
 
+You can also build resources in pure Python, with no JSON at all. Every field is a real keyword argument, so your
+editor autocompletes field names and known IDs, shows each field's description, and a type checker flags a wrong
+field or type before you ever load the pack. Because they're plain Python objects, you can build a piece once and
+reuse it across several resources:
+
+```python
+from vanilla_mcdoc.data import LootPool, LootTable
+from vanilla_mcdoc.data.loot.function.LootFunction import LootFunctionSetCount
+from vanilla_mcdoc.data.loot.LootPoolEntry import LootPoolEntryItem
+from vanilla_mcdoc.data.recipe.Recipe import RecipeSmelting
+from vanilla_mcdoc.world.item.ItemStack import ItemStack
+
+ingot = ItemStack(id="minecraft:iron_ingot", count=2)
+
+recipe = RecipeSmelting(
+    ingredient="minecraft:raw_iron",
+    result=ingot,
+    experience=0.7,
+    cookingtime=200,
+)
+
+loot_table = LootTable(
+    pools=[
+        LootPool(
+            rolls=1,
+            entries=[
+                LootPoolEntryItem(name=ingot.id, modifier=LootFunctionSetCount(count=2)),
+            ],
+        ),
+    ],
+)
+```
+
 ## Installing
 
 Requires Python 3.14 or later.
