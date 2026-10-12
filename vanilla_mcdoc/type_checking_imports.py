@@ -2849,8 +2849,12 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
     'vanilla_mcdoc.data.worldgen.world_preset.WorldPreset': {
         'Dimension': ('vanilla_mcdoc.data.worldgen.dimension.Dimension', 'Dimension'),
     },
+    'vanilla_mcdoc.pack.Languages': {
+        'LanguageInfo': ('vanilla_mcdoc.pack.LanguageInfo', 'LanguageInfo'),
+    },
     'vanilla_mcdoc.pack.Pack': {
         'InclusiveRange': ('vanilla_mcdoc.util.InclusiveRange', 'InclusiveRange'),
+        'Languages': ('vanilla_mcdoc.pack.Languages', 'Languages'),
         'PackFeatures': ('vanilla_mcdoc.pack.PackFeatures', 'PackFeatures'),
         'PackFilter': ('vanilla_mcdoc.pack.PackFilter', 'PackFilter'),
         'PackFormat': ('vanilla_mcdoc.pack.PackFormat', 'PackFormat'),

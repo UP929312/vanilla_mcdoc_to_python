@@ -8,6 +8,7 @@ from typing import TYPE_CHECKING
 from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
+    from vanilla_mcdoc.pack.Languages import Languages
     from vanilla_mcdoc.pack.PackFeatures import PackFeatures
     from vanilla_mcdoc.pack.PackFilter import PackFilter
     from vanilla_mcdoc.pack.PackFormat import PackFormat
@@ -29,3 +30,4 @@ class Pack(GeneratedModel):
     filter: PackFilter | None = None
     features: PackFeatures | None = None
     overlays: PackOverlays | None = None
+    language: Languages | None = None  # Only used by resource pack.  Adds additional languages to the language menu.
