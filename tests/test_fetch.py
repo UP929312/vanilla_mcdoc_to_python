@@ -3,7 +3,7 @@ from pathlib import Path
 
 from pytest import MonkeyPatch
 
-import fetch  # type: ignore[import]
+import fetch
 
 
 def test_fetch_version_saves_that_versions_registries_and_vanilla_files(tmp_path: Path, monkeypatch: MonkeyPatch) -> None:

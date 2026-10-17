@@ -69,6 +69,9 @@ disallow_any_decorated = true
 strict_optional = true
 strict_bytes = true
 
+[tool.pyright]
+extraPaths = [".github/scripts"]  # So Pylance finds the CI scripts the tests import, like mypy_path above
+
 [tool.ruff]
 line-length = 220  # Same as pylint's (it's used when sorting imports)
 src = [".", ".github/scripts"]  # So the CI scripts are sorted as ours when imported

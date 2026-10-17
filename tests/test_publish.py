@@ -6,7 +6,7 @@ from pathlib import Path
 
 from pytest import CaptureFixture, MonkeyPatch
 
-import publish  # type: ignore[import]
+import publish
 
 
 def test_versions_to_build_are_the_newest_releases_plus_any_newer_snapshot() -> None:

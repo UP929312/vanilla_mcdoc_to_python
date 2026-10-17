@@ -4,7 +4,7 @@ import zipfile
 
 from pytest import CaptureFixture, MonkeyPatch, raises
 
-import validate  # type: ignore[import]
+import validate
 
 SMELTING = {"type": "minecraft:smelting", "ingredient": "minecraft:cobblestone", "result": {"id": "minecraft:stone"}, "cookingtime": 200}
 
