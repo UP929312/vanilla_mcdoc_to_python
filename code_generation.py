@@ -3,13 +3,14 @@ from collections.abc import Iterable
 from typing import Any
 
 from context import SingleSymbolContext
-from minecraft_registry import get_resource_lookup_map
+from minecraft_registry import get_resource_lookup_map, make_registry_id_files, make_root_resource_registry_file
 from schema_resolution import get_schema_graph
 from typed_models import KIND_TO_MODEL
 from utils import (
     GENERATED_SYMBOLS_DIRECTORY,
     SETTINGS,
     STATIC_SYMBOLS_DIRECTORY,
+    SYMBOLS_MAP,
     UPSTREAM_COMMITS,
     manage_directory_and_inits,
     minecraft_to_python_version,
@@ -17,6 +18,7 @@ from utils import (
     symbol_path_to_import_string_and_name,
     write_file_if_changed,
 )
+from vanilla_files import make_vanilla_package
 
 # Filled in as each file is generated: for each module, the names it only imports under TYPE_CHECKING, and where from
 TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {}
@@ -88,16 +90,10 @@ def file_header(resource_type: str) -> list[str]:
     return [
         "\"\"\"",
         f"Generated from symbols.json for {resource_type}",
-        f"Local link to file: {resource_path_to_python_path(resource_type).replace("\\", "/")}",
+        f"Local link to file: {str(resource_path_to_python_path(resource_type)).replace('\\', '/')}",
         "\"\"\"",
         "# ~~~ CODE ~~~"
     ]
-
-
-def model_dump(resource_type: str, resource_data: dict[str, Any]) -> str:
-    """The raw symbols.json data, for the bottom of the file, for reference (left out of builds for publishing, where it's 2/3 of the size)."""
-    stringified_output = json.dumps({resource_type: resource_data}, indent=4).replace("true", "True").replace("false", "False")
-    return f"\n\n# ~~~ MODEL DUMP ~~~\n_ = {stringified_output}\n"
 
 
 def make_python_file_content(resource_type: str, resource_data: dict[str, Any], class_name: str) -> str:
@@ -109,12 +105,15 @@ def make_python_file_content(resource_type: str, resource_data: dict[str, Any], 
     file_contents = "\n".join(file_header(resource_type) + ctx.to_python_code(body_lines)).rstrip() + "\n"
     if sources := ctx.type_checking_import_sources():
         TYPE_CHECKING_IMPORTS[symbol_path_to_import_string_and_name(resource_type)[0]] = sources
-    return file_contents + (model_dump(resource_type, resource_data) if SETTINGS.include_model_dump else "")
+    if SETTINGS.include_model_dump:
+        # The raw symbols.json data, for reference (left out of builds for publishing, where it's 2/3 of the size). As JSON,
+        # in a string, as turning it into Python would mean changing true to True, but not in a description.
+        file_contents += f'\n\n# ~~~ MODEL DUMP ~~~\n_ = r"""\n{json.dumps({resource_type: resource_data}, indent=4)}\n"""\n'
+    return file_contents
 
 
 def make_python_file_of_model(resource_type: str, resource_data: dict[str, Any]) -> None:
-    path, name = symbol_path_to_import_string_and_name(resource_type)
-    output_path = GENERATED_SYMBOLS_DIRECTORY.joinpath(*path.split(".")[1:-1], name).with_suffix(".py")
+    output_path = resource_path_to_python_path(resource_type)
     manage_directory_and_inits(output_path.parent)
     file_contents = make_python_file_content(resource_type, resource_data, class_name=output_path.stem)
     write_file_if_changed(output_path, file_contents)
@@ -134,3 +133,17 @@ def make_type_checking_imports_file() -> None:
         lines.extend(f"        {name!r}: {source!r}," for name, source in sorted(TYPE_CHECKING_IMPORTS[module].items()))
         lines.append("    },")
     write_file_if_changed(GENERATED_SYMBOLS_DIRECTORY / "type_checking_imports.py", "\n".join(lines + ["}", ""]))
+
+
+def generate_package() -> None:
+    """Writes the whole of vanilla_mcdoc/, for SETTINGS.minecraft_version (which has to be set first, as parsing removes
+    things that aren't in that version)."""
+    symbols = {path: data for path, data in SYMBOLS_MAP["mcdoc"].items() if "anonymous" not in path}
+    copy_static_files()  # Hand-written modules like base.py, from static_symbols/
+    make_registry_id_files(get_schema_graph())
+    for path, data in symbols.items():
+        make_python_file_of_model(path, data)
+    make_type_checking_imports_file()  # What each module only imports under TYPE_CHECKING, for base.py
+    make_root_resource_registry_file(symbols)
+    make_init_files(symbols)  # Adds the nice top level imports
+    make_vanilla_package()  # Vanilla's own files, e.g. vanilla_mcdoc.vanilla.data.recipe's oak_boat

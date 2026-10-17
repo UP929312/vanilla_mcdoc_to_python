@@ -13,6 +13,19 @@ def graph_fixture() -> SchemaGraph:
     return SchemaGraph.from_symbol_maps(SYMBOLS_MAP)
 
 
+def test_entries_of_another_registrys_missing_entry_are_dropped() -> None:
+    def block_entity(key: str) -> dict[str, object]:
+        return {"kind": "dispatcher", "parallelIndices": [{"kind": "static", "value": key}], "registry": "minecraft:block_entity"}
+
+    removed = [{"name": "until", "value": {"kind": "literal", "value": {"kind": "string", "value": "1.14"}}}]
+    graph = SchemaGraph.from_symbol_maps({"mcdoc/dispatcher": {
+        "minecraft:block": {"chest": block_entity("chest"), "trial_spawner": block_entity("trial_spawner")},
+        "minecraft:block_entity": {"chest": {"kind": "struct", "fields": []}, "trial_spawner": {"kind": "struct", "fields": [], "attributes": removed}},
+    }})
+
+    assert list(graph.dispatchers["minecraft:block"]) == ["chest"]
+
+
 def test_union_accepts_long_schema() -> None:
     schema = UnionSchema(kind="union", members=[LongSchema(kind="long")])
 

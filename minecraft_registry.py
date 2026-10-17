@@ -5,11 +5,29 @@ from typing import TYPE_CHECKING
 
 from context import Import, SingleSymbolContext
 from static_symbols.minecraft_types import IdSpec
-from utils import GENERATED_SYMBOLS_DIRECTORY, iter_child_schemas, manage_directory_and_inits, symbol_path_to_import_string_and_name, symbol_path_to_object_name, write_file_if_changed
+from utils import GENERATED_SYMBOLS_DIRECTORY, manage_directory_and_inits, symbol_path_to_import_string_and_name, symbol_path_to_object_name, write_file_if_changed
 
 if TYPE_CHECKING:
     from schema_resolution import SchemaGraph
     from typed_models import BaseSchema
+
+
+def resource_symbol(path: str, resources: dict[str, BaseSchema]) -> str | None:
+    """The symbol a pack file is, from its path in its namespace without the .json, e.g. ::java::data::recipe::Recipe
+    for recipe/stone, or None if it isn't a resource type. resources is the minecraft:resource dispatcher."""
+    from typed_models import ReferenceSchema, UnionSchema
+
+    if path.startswith("tags/"):
+        return "::java::data::tag::Tag"
+    # The type it's in the folder (or is the file) of, the deepest if there's more than one, e.g. lang/deprecated, not lang
+    category = max((category for category in resources if path.startswith(f"{category}/") or path == category), key=len, default=None)
+    if category is None:
+        return None
+    branch = resources[category]
+    if isinstance(branch, UnionSchema) and len(branch.members) == 1:  # e.g. chat_type, whose other member is for older versions
+        branch = branch.members[0]
+    assert isinstance(branch, ReferenceSchema), f"{path} isn't one named type"
+    return branch.path
 
 
 def registry_import(registry: str) -> tuple[str, str]:
@@ -64,9 +82,8 @@ def used_registry_names(schema_graph: SchemaGraph) -> set[str]:
                 for attribute in schema.attributes
                 if (spec := attribute.to_id_spec()) is not None and spec.registry is not None
             )
-        for field_name in type(schema).model_fields:
-            for child in iter_child_schemas(getattr(schema, field_name)):
-                collect(child)
+        for child in schema.child_schemas():
+            collect(child)
 
     for schema in schema_graph.symbols.values():
         collect(schema)
@@ -129,7 +146,7 @@ def make_root_resource_registry_file(symbol_paths: Iterable[str]) -> None:
 def get_resource_lookup_map() -> dict[str, str]:
     """Build and cache the root-resource lookup once, shared across the project."""
     from schema_resolution import get_schema_graph
-    from typed_models import ReferenceSchema, StructSchema, TemplateSchema
+    from typed_models import DispatcherSpread, ReferenceSchema, StructSchema, TemplateSchema
 
     schema_graph = get_schema_graph()  # The same one the rest of generation uses
     template_paths = {path for path, schema in schema_graph.symbols.items() if isinstance(schema, TemplateSchema)}
@@ -143,11 +160,11 @@ def get_resource_lookup_map() -> dict[str, str]:
         if not isinstance(model_value, ReferenceSchema):
             continue
         root_schema = schema_graph.symbols.get(model_value.path)
-        dispatcher = root_schema._spread_dispatcher() if isinstance(root_schema, StructSchema) else None
-        if dispatcher is None:
+        spread = DispatcherSpread.of(root_schema, schema_graph) if isinstance(root_schema, StructSchema) else None
+        if spread is None or spread.field is not None:  # Only a spread's branches are part of the resource itself
             continue
 
-        for branch_schema in schema_graph.dispatchers[dispatcher.registry].values():
+        for branch_schema in schema_graph.dispatchers[spread.dispatcher.registry].values():
             if isinstance(branch_schema, ReferenceSchema):
                 base_map[branch_schema.path] = resource_key
             for reference_path in ReferenceSchema.collect_reference_paths(branch_schema, template_paths):

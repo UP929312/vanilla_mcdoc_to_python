@@ -1,17 +1,28 @@
 import re
-from typing import Annotated, Literal, Self, get_args
+from collections.abc import Iterator
+from dataclasses import dataclass
+from typing import TYPE_CHECKING, Annotated, ClassVar, Literal, Self, get_args
 
 from pydantic import BaseModel, Field, model_validator
 
 from context import Import, SingleSymbolContext
 from minecraft_registry import known_registry_alias
 from static_symbols.minecraft_types import IdSpec
-from utils import GENERATED_SYMBOLS_DIRECTORY, REGISTRIES, ROOT_SYMBOLS_KEYS, SAFE_GUARD_JAVA_NUMBERS, is_valid_with_attributes, iter_child_schemas, symbol_path_to_import_string_and_name, symbol_path_to_object_name
+from utils import GENERATED_SYMBOLS_DIRECTORY, REGISTRIES, ROOT_SYMBOLS_KEYS, SAFE_GUARD_JAVA_NUMBERS, is_valid_with_attributes, symbol_path_to_import_string_and_name
+
+if TYPE_CHECKING:
+    from schema_resolution import SchemaGraph
+
+
+def description_comment(description: str) -> str:
+    """A description as a comment for the end of the line, e.g. "  # How many", or "" if there isn't one"""
+    return f"  # {description.replace('\\\n', '\n').replace('\n', ' ').strip()}" if description else ""
 
 
 class BaseSchema(BaseModel):
     attributes: list[Attribute] = Field(default_factory=list, repr=False)
 
+    @property
     def contains_inline_struct(self) -> bool:
         """Return whether this schema needs a generated name for an inline struct."""
         return False
@@ -19,28 +30,33 @@ class BaseSchema(BaseModel):
     def has_attribute(self, name: str) -> bool:
         return any(attribute.name == name for attribute in self.attributes)
 
+    def child_schemas(self) -> Iterator[BaseSchema]:
+        """The schemas directly inside this one, e.g. a list's item, or each of a struct's fields"""
+        for field_name in type(self).model_fields:
+            value = getattr(self, field_name)
+            for child in value if isinstance(value, list) else [value]:
+                if isinstance(child, BaseSchema):
+                    yield child
+
     @staticmethod
     def _minecraft_type(name: str, ctx: SingleSymbolContext) -> str:
         """Use one of the hand-written types from static_symbols/minecraft_types.py (copied into the package), e.g. MinecraftUUID"""
-        ctx.required_imports.add(Import(f"{GENERATED_SYMBOLS_DIRECTORY.name}.minecraft_types", name, False))
+        ctx.required_imports.add(Import(f"{GENERATED_SYMBOLS_DIRECTORY.name}.minecraft_types", name))
         return name
-
-    def to_nested_annotation(self, ctx: SingleSymbolContext, _nested_struct_name: str | None) -> str:
-        """Render an annotation, using a nested declaration name when supported."""
-        return self.to_annotation(ctx)
 
     def to_python_code(self, class_name: str, ctx: SingleSymbolContext) -> list[str]:
         """Generate the actual Python, for most things, this is just the alias to the annotation"""
         return [f"type {class_name} = {self.to_annotation(ctx)}"]
 
-    def to_annotation(self, ctx: SingleSymbolContext) -> str:
+    def to_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None = None) -> str:
+        """The annotation for a value of this schema, e.g. `list[int]`. A struct written inline in it becomes its own class,
+        named nested_struct_name (or something based on it), so schemas that can't have one just ignore it."""
         raise NotImplementedError(f"This should never get called directly on a {self.__class__.__name__}")  # pragma: no cover
 
     def remove_version_data(self) -> BaseSchema:
         self.attributes = [x for x in self.attributes if x.name not in {"since", "until", "deprecated"}]
-        for field_name in type(self).model_fields:
-            for child in iter_child_schemas(getattr(self, field_name)):
-                child.remove_version_data()
+        for child in self.child_schemas():
+            child.remove_version_data()
         return self
 
 
@@ -49,33 +65,36 @@ class Attribute(BaseModel):
     name: str
     value: Annotated[LiteralSchema | TreeSchema | DispatcherSchema | ReferenceSchema, Field(discriminator="kind")] | None = None
 
+    @property
+    def plain_value(self) -> object:
+        """The value as plain Python, e.g. "hex_rgb" for #[color="hex_rgb"], or {"registry": "item"} for #[id(registry="item")]"""
+        return self._plain_value(self.value)
+
+    @classmethod
+    def _plain_value(cls, schema: BaseSchema | None) -> object:
+        if schema is None:
+            return None
+        if isinstance(schema, LiteralSchema):
+            return schema.value.value
+        assert isinstance(schema, TreeSchema)  # Dispatchers and references are never used as values
+        values = {key: cls._plain_value(value) for key, value in schema.values.items()}
+        return tuple(values[key] for key in sorted(values, key=int)) if all(key.isdigit() for key in values) else values
+
     def to_id_spec(self) -> IdSpec | None:
         if self.name != "id":
             return None
-        value: str | dict | None = self._attribute_value(self.value)  # type: ignore[assignment, type-arg]
-        return IdSpec.from_value(value)
+        return IdSpec.from_value(self.plain_value)  # type: ignore[arg-type]
 
     def to_string_pattern(self) -> str | None:
         """The regex a string with this attribute must contain, matching how Spyglass validates them, e.g.
         #[match_regex="^[A-Za-z0-9_]*$"], #[integer] (a string of digits) or #[color="hex_rgb"] (starts with a #)"""
         if self.name == "match_regex":
-            return str(self._attribute_value(self.value))
+            return str(self.plain_value)
         if self.name == "integer":
             return r"^-?\d+$"
-        if self.name == "color" and self._attribute_value(self.value) == "hex_rgb":
+        if self.name == "color" and self.plain_value == "hex_rgb":
             return "^#"
         return None
-
-    @classmethod
-    def _attribute_value(cls, schema: LiteralSchema | TreeSchema | DispatcherSchema | ReferenceSchema | None) -> object:
-        if schema is None:
-            return None
-        if isinstance(schema, LiteralSchema):
-            return schema.value.value
-        # TreeSchemas:
-        assert not isinstance(schema, (DispatcherSchema, ReferenceSchema))
-        values = {key: cls._attribute_value(value) for key, value in schema.values.items()}
-        return tuple(values[key] for key in sorted(values, key=int)) if all(key.isdigit() for key in values) else values
 
 
 class ValueRange(BaseModel):
@@ -90,28 +109,12 @@ class ValueRange(BaseModel):
     min: float | int  # Min is *always* set
     max: float | int | None = None
 
-    def to_annotation(self, ctx: SingleSymbolContext, value_range_type: Literal["int", "float"], attributes: list[Attribute]) -> str:
-        ctx.required_imports.add(Import("pydantic", "Field", False))
-        if self.max is not None:
-            greater_than = "ge" if self.kind in {0, 1} else "gt"
-            less_than    = "le" if self.kind in {0, 2} else "lt"  # fmt: skip
-            parts = [f"Field({greater_than}={self.min}, {less_than}={self.max})"]
-        # In cases where self.max _IS_ None:
-        elif self.kind in {0, 1}:  # Min is inclusive
-            parts = [f"Field(ge={self.min})"]
-        else:  # Kind in 2, 3 - Min is exclusive
-            parts = [f"Field(gt={self.min})"]
-        if self.extract_divisible_by_value(attributes):
-            parts.append(f"Field(multiple_of={self.extract_divisible_by_value(attributes)})")
-        ctx.require_annotated()
-        return f"Annotated[{value_range_type}, {', '.join(parts)}]"
-
-    def extract_divisible_by_value(self, attributes: list[Attribute]) -> str | None:
-        attribute = next((attr for attr in attributes if attr.name == "divisible_by"), None)
-        if attribute is None:
-            return None
-        value = str(Attribute._attribute_value(attribute.value))
-        return value
+    def to_field(self, ctx: SingleSymbolContext) -> str:
+        """e.g. Field(ge=0, lt=10), for the metadata of an Annotated[int, ...]"""
+        ctx.required_imports.add(Import("pydantic", "Field"))
+        greater_than = "ge" if self.kind in {0, 1} else "gt"
+        less_than    = "le" if self.kind in {0, 2} else "lt"  # fmt: skip
+        return f"Field({greater_than}={self.min}{'' if self.max is None else f', {less_than}={self.max}'})"
 
 
 class LengthRange(BaseModel):
@@ -119,15 +122,11 @@ class LengthRange(BaseModel):
     min: int | None = None  # Only like one of these has a max but no min...
     max: int | None = None
 
-    def to_annotation_suffix(self, ctx: SingleSymbolContext) -> str:
-        ctx.required_imports.add(Import("pydantic", "Field", False))
-        if self.min is not None and self.max is not None:
-            return f"Field(min_length={self.min}, max_length={self.max})"
-        if self.min is not None:
-            return f"Field(min_length={self.min})"
-        if self.max is not None:
-            return f"Field(max_length={self.max})"
-        raise TypeError("Min and Max are None! LengthRange.to_annotation_suffix error")  # pragma: no cover
+    def to_field(self, ctx: SingleSymbolContext) -> str:
+        """e.g. Field(min_length=1, max_length=16), for the metadata of an Annotated[str, ...] or Annotated[list[...], ...]"""
+        ctx.required_imports.add(Import("pydantic", "Field"))
+        lengths = {"min_length": self.min, "max_length": self.max}
+        return f"Field({', '.join(f'{name}={length}' for name, length in lengths.items() if length is not None)})"
 
 
 class EnumValue(BaseModel):
@@ -137,11 +136,7 @@ class EnumValue(BaseModel):
     attributes: list[Attribute] = Field(default_factory=list, repr=False)
 
     def to_annotation(self) -> str:
-        return f"{repr(self.value).replace('\'', '\"')}"  # This fixes it so strings are handled properly
-
-    @property
-    def description_comment_or_empty(self) -> str:
-        return f"  # {self.description.replace('\\\n', '\n').replace('\n', ' ').strip()}" if self.description else ""
+        return repr(self.value).replace("'", '"')  # This fixes it so strings are handled properly
 
 
 # ==================================================================================================================================
@@ -156,8 +151,8 @@ class LiteralSchema(BaseSchema):
     kind: Literal["literal"] = Field(repr=False)
     value: Annotated[StringSchema | IntSchema | BooleanSchema | DoubleSchema, Field(discriminator="kind")]
 
-    def to_annotation(self, ctx: SingleSymbolContext) -> str:
-        ctx.required_imports.add(Import("typing", "Literal", False))
+    def to_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None = None) -> str:
+        ctx.required_imports.add(Import("typing", "Literal"))
         value = self.value.value
         if isinstance(value, str) and value.startswith("minecraft:"):  # Resource locations work with or without the namespace
             return f"Literal[{value!r}, {value.removeprefix('minecraft:')!r}]"
@@ -168,36 +163,82 @@ class LiteralSchema(BaseSchema):
 # Primitive Schemas (string, int, float, boolean, etc.)
 
 
-class IntSchema(BaseSchema):
+class NumericSchema(BaseSchema):
+    """What all the number types have in common, e.g. `int @ 0..10` is an IntSchema with a value_range"""
+    value_range: ValueRange | None = Field(default=None, alias="valueRange")
+
+    python_type: ClassVar[Literal["int", "float"]]
+    min_value_internally: ClassVar[float]  # The range Java can store it in, for SAFE_GUARD_JAVA_NUMBERS
+    max_value_internally: ClassVar[float]
+
+    def to_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None = None) -> str:
+        value_range = self.value_range
+        if value_range is None and SAFE_GUARD_JAVA_NUMBERS:  # pragma: no cover
+            value_range = ValueRange(min=self.min_value_internally, max=self.max_value_internally)
+        if value_range is None:
+            return self.python_type
+        metadata = [value_range.to_field(ctx)]
+        divisible_by = next((attribute.plain_value for attribute in self.attributes if attribute.name == "divisible_by"), None)
+        if divisible_by is not None:
+            metadata.append(f"Field(multiple_of={divisible_by})")
+        ctx.require_annotated()
+        return f"Annotated[{self.python_type}, {', '.join(metadata)}]"
+
+
+class IntSchema(NumericSchema):
     """A signed 32-bit integer, ranging from -2,147,483,648 to 2,147,483,647 (inclusive)"""
     kind: Literal["int"] = Field(repr=False)
-    value_range: ValueRange | None = Field(default=None, alias="valueRange")
-    value: Literal[-1, 0, 1, 3, 16, 20, 90, 180, 270, 32500] | None = None  # This is for speed, but should probably go back to int.
+    value: int | None = None  # For literal ints
 
-    min_value_internally: int = -2_147_483_648
-    max_value_internally: int = 2_147_483_647
+    python_type = "int"
+    min_value_internally = -2_147_483_648
+    max_value_internally = 2_147_483_647
 
-    def to_annotation(self, ctx: SingleSymbolContext) -> str:
-        if self.value_range:
-            return self.value_range.to_annotation(ctx, "int", self.attributes)
-        if SAFE_GUARD_JAVA_NUMBERS:  # pragma: no cover
-            copied_schema = self.model_copy(update={
-                "value_range": ValueRange(min=self.min_value_internally, max=self.max_value_internally),
-            })
-            return copied_schema.to_annotation(ctx)
-        return "int"
 
-    @classmethod
-    def _to_annotation_with_bounds(cls, ctx: SingleSymbolContext, original_object: ByteSchema | ShortSchema | LongSchema) -> str:
-        """Purpose of this is so other things like bytes, shorts, longs, etc can call it to get a easier method"""
-        int_schema = cls(
-            kind="int",
-            attributes=original_object.attributes,
-            valueRange=original_object.value_range,
-            min_value_internally=original_object.min_value_internally,
-            max_value_internally=original_object.max_value_internally,
-        )
-        return int_schema.to_annotation(ctx)
+class ByteSchema(NumericSchema):
+    """A signed 8-bit integer, ranging from -128 to 127 (inclusive)."""
+    kind: Literal["byte"] = Field(repr=False)
+
+    python_type = "int"
+    min_value_internally = -128
+    max_value_internally = 127
+
+
+class ShortSchema(NumericSchema):
+    """A signed 16-bit integer, ranging from -32,768 to 32,767 (inclusive)."""
+    kind: Literal["short"] = Field(repr=False)
+
+    python_type = "int"
+    min_value_internally = -32_768
+    max_value_internally = 32_767
+
+
+class LongSchema(NumericSchema):
+    """A signed 64-bit integer, ranging from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 (inclusive)."""
+    kind: Literal["long"] = Field(repr=False)
+
+    python_type = "int"
+    min_value_internally = -9_223_372_036_854_775_808
+    max_value_internally = 9_223_372_036_854_775_807
+
+
+class FloatSchema(NumericSchema):
+    """A 32-bit, single-precision floating-point number, ranging from -3.4E38 to +3.4E38."""
+    kind: Literal["float"] = Field(repr=False)
+
+    python_type = "float"
+    min_value_internally = -3.4E38
+    max_value_internally = 3.4E38
+
+
+class DoubleSchema(NumericSchema):
+    """A 64-bit, double-precision floating-point, ranging from -1.79E308 to +1.79E308."""
+    kind: Literal["double"] = Field(repr=False)
+    value: float | None = None  # For literal doubles
+
+    python_type = "float"
+    min_value_internally = -1.79E308
+    max_value_internally = 1.79E308
 
 
 class StringSchema(BaseSchema):
@@ -205,31 +246,28 @@ class StringSchema(BaseSchema):
     length_range: LengthRange | None = Field(default=None, alias="lengthRange")
     value: str | None = None  # For literal strings
 
-    def to_annotation(self, ctx: SingleSymbolContext) -> str:
+    def to_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None = None) -> str:
         if self.has_attribute("uuid"):
             return self._minecraft_type("MinecraftUUIDString", ctx)
         if self.has_attribute("url"):
             return self._minecraft_type("MinecraftURL", ctx)
-        id_spec = self.id_spec()
-        metadata: list[str] = []
-        if id_spec is not None:
+        if self.length_range is not None and self.length_range.min == self.length_range.max == 0:
+            # Edge case, because of this one instance:
+            # https://github.com/SpyglassMC/vanilla-mcdoc/blob/main/java/assets/credits.mcdoc#L5
+            # https://github.com/misode/mcmeta/blob/assets/assets/minecraft/texts/credits.json#L1998
+            # Literally only one thing - ::java::assets::credits::CreditsDiscipline
+            ctx.required_imports.add(Import("typing", "Literal"))
+            return 'Literal[""]'
+
+        metadata = [self.length_range.to_field(ctx)] if self.length_range is not None else []
+        if (id_spec := self.id_spec()) is not None:
             self._minecraft_type("IdSpec", ctx)  # Imports it
             metadata.append(id_spec.to_annotation())  # Adds IdSpec(registry=...), for example
         # For regex patterns, we add a Field(pattern=...) to the Annotated[str, ...] type, so that pydantic can validate it.
-        for attribute in [attribute for attribute in self.attributes if attribute.to_string_pattern() is not None]:
-            ctx.required_imports.add(Import("pydantic", "Field", False))
-            metadata.append(f"Field(pattern={attribute.to_string_pattern()!r})")
-
-        # Return Annotated[str, <x>] if length range present:
-        if self.length_range is not None:
-            if self.length_range.min == 0 and self.length_range.max == 0:
-                # Edge case, because of this one instance:
-                # https://github.com/SpyglassMC/vanilla-mcdoc/blob/main/java/assets/credits.mcdoc#L5
-                # https://github.com/misode/mcmeta/blob/assets/assets/minecraft/texts/credits.json#L1998
-                # Literally only one thing - ::java::assets::credits::CreditsDiscipline
-                ctx.required_imports.add(Import("typing", "Literal", False))
-                return 'Literal[""]'
-            metadata.insert(0, self.length_range.to_annotation_suffix(ctx))
+        for pattern in (attribute.to_string_pattern() for attribute in self.attributes):
+            if pattern is not None:
+                ctx.required_imports.add(Import("pydantic", "Field"))
+                metadata.append(f"Field(pattern={pattern!r})")
 
         if not metadata:
             return "str"
@@ -243,92 +281,19 @@ class StringSchema(BaseSchema):
         return next((id_spec for attribute in self.attributes if (id_spec := attribute.to_id_spec()) is not None), None)
 
 
-class FloatSchema(BaseSchema):
-    """A 32-bit, single-precision floating-point number, ranging from -3.4E38 to +3.4E38."""
-    kind: Literal["float"] = Field(repr=False)
-    value_range: ValueRange | None = Field(default=None, alias="valueRange")
-    value: float | None = None  # For literal floats (not used in the symbols yet)
-
-    min_value_internally: float = -3.4E38
-    max_value_internally: float = 3.4E38
-
-    def to_annotation(self, ctx: SingleSymbolContext) -> str:
-        if self.value_range:
-            return self.value_range.to_annotation(ctx, "float", self.attributes)
-        if SAFE_GUARD_JAVA_NUMBERS:  # pragma: no cover
-            return self.model_copy(update={"value_range": ValueRange(min=self.min_value_internally, max=self.max_value_internally)}).to_annotation(ctx)
-        return "float"
-
-
-class DoubleSchema(BaseSchema):
-    """A 64-bit, double-precision floating-point, ranging from -1.79E308 to +1.79E308."""
-    kind: Literal["double"] = Field(repr=False)
-    value_range: ValueRange | None = Field(default=None, alias="valueRange")
-    value: float | None = None  # For literal doubles
-
-    min_value_internally: float = -1.79E308
-    max_value_internally: float = 1.79E308
-
-    def to_annotation(self, ctx: SingleSymbolContext) -> str:
-        if self.value_range:
-            return self.value_range.to_annotation(ctx, "float", self.attributes)
-        if SAFE_GUARD_JAVA_NUMBERS:  # pragma: no cover
-            return self.model_copy(update={"value_range": ValueRange(min=self.min_value_internally, max=self.max_value_internally)}).to_annotation(ctx)
-        return "float"
-
-
 class BooleanSchema(BaseSchema):
     kind: Literal["boolean"] = Field(repr=False)
     value: bool | None = None
 
-    def to_annotation(self, ctx: SingleSymbolContext) -> str:
+    def to_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None = None) -> str:
         return "bool"
-
-
-class ByteSchema(BaseSchema):
-    """A signed 8-bit integer, ranging from -128 to 127 (inclusive)."""
-    kind: Literal["byte"] = Field(repr=False)
-    value_range: ValueRange | None = Field(default=None, alias="valueRange")
-    value: bool | int | None = None  # For literal bytes (not used in the symbols yet)
-
-    min_value_internally: int = -128
-    max_value_internally: int = 127
-
-    def to_annotation(self, ctx: SingleSymbolContext) -> str:
-        return IntSchema._to_annotation_with_bounds(ctx, self)
-
-
-class ShortSchema(BaseSchema):
-    """A signed 16-bit integer, ranging from -32,768 to 32,767 (inclusive)."""
-    kind: Literal["short"] = Field(repr=False)
-    value_range: ValueRange | None = Field(default=None, alias="valueRange")
-    value: int | None = None  # For literal shorts (not used in the symbols yet)
-
-    min_value_internally: int = -32_768
-    max_value_internally: int = 32_767
-
-    def to_annotation(self, ctx: SingleSymbolContext) -> str:
-        return IntSchema._to_annotation_with_bounds(ctx, self)
-
-
-class LongSchema(BaseSchema):
-    """A signed 64-bit integer, ranging from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 (inclusive)."""
-    kind: Literal["long"] = Field(repr=False)
-    value_range: ValueRange | None = Field(default=None, alias="valueRange")
-    value: int | None = None  # For literal longs (not used in the symbols yet)
-
-    min_value_internally: int = -9_223_372_036_854_775_808
-    max_value_internally: int = 9_223_372_036_854_775_807
-
-    def to_annotation(self, ctx: SingleSymbolContext) -> str:
-        return IntSchema._to_annotation_with_bounds(ctx, self)
 
 
 class AnySchema(BaseSchema):
     kind: Literal["any"] = Field(repr=False)
 
-    def to_annotation(self, ctx: SingleSymbolContext) -> str:
-        ctx.required_imports.add(Import("typing", "Any", type_checking_only=False))
+    def to_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None = None) -> str:
+        ctx.required_imports.add(Import("typing", "Any"))
         return "Any"
 
 
@@ -347,22 +312,20 @@ class ListSchema(BaseSchema):
     item: Annotated[ListSchemaItemTypes, Field(discriminator="kind")]
     length_range: LengthRange | None = Field(default=None, alias="lengthRange")
 
+    @property
     def contains_inline_struct(self) -> bool:
-        return self.item.contains_inline_struct()
-
-    def to_nested_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None) -> str:
-        return self.to_annotation(ctx, nested_struct_name)
+        return self.item.contains_inline_struct
 
     def to_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None = None) -> str:
         if self.has_attribute("uuid"):  # A list of 4 ints
             return self._minecraft_type("MinecraftUUID", ctx)
-        item_annotation = self.item.to_nested_annotation(ctx, nested_struct_name)
+        item_annotation = self.item.to_annotation(ctx, nested_struct_name)
         if self.length_range is None:
             return f"list[{item_annotation}]"
         if self.length_range.min is not None and self.length_range.min == self.length_range.max:
-            return f"tuple[{', '.join(item_annotation for _ in range(self.length_range.min))}]"
+            return f"tuple[{', '.join([item_annotation] * self.length_range.min)}]"
         ctx.require_annotated()
-        return f"Annotated[list[{item_annotation}], {self.length_range.to_annotation_suffix(ctx)}]"
+        return f"Annotated[list[{item_annotation}], {self.length_range.to_field(ctx)}]"
 
     def to_python_code(self, class_name: str, ctx: SingleSymbolContext) -> list[str]:
         return [f"type {class_name}{ctx.type_params_suffix()} = {self.to_annotation(ctx, PairSchema.nested_struct_name(class_name))}"]
@@ -375,9 +338,9 @@ class TupleSchema(BaseSchema):
     Length is either 2 or 4.
     """
     kind: Literal["tuple"] = Field(repr=False)
-    items: list[IntSchema] | list[FloatSchema]  # Make this use discriminator="kind".
+    items: list[Annotated[IntSchema | FloatSchema, Field(discriminator="kind")]]
 
-    def to_annotation(self, ctx: SingleSymbolContext) -> str:
+    def to_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None = None) -> str:
         return f"tuple[{', '.join(item.to_annotation(ctx) for item in self.items)}]"
 
 
@@ -387,7 +350,7 @@ class IntArraySchema(BaseSchema):
     length_range: LengthRange | None = Field(default=None, alias="lengthRange")
     value_range: ValueRange | None = Field(default=None, alias="valueRange")
 
-    def to_annotation(self, ctx: SingleSymbolContext) -> str:
+    def to_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None = None) -> str:
         if self.has_attribute("uuid"):  # [I; a, b, c, d]
             return self._minecraft_type("MinecraftUUID", ctx)
         array_type_annotation = IntSchema(kind="int", attributes=self.attributes, valueRange=self.value_range)
@@ -407,9 +370,9 @@ class EnumSchema(BaseSchema):
 
     def to_python_code(self, class_name: str, ctx: SingleSymbolContext) -> list[str]:
         enum_kind = "StrEnum" if self.enum_kind == "string" else "IntEnum"
-        ctx.required_imports.add(Import("enum", enum_kind, False))
+        ctx.required_imports.add(Import("enum", enum_kind))
         lines = [f"class {class_name}({enum_kind}):"] + [
-            f"    {value.identifier.upper()} = {value.to_annotation()}{value.description_comment_or_empty}"
+            f"    {value.identifier.upper()} = {value.to_annotation()}{description_comment(value.description)}"
             for value in self.values
         ]
         return lines if self.values else lines + ["    pass"]
@@ -445,7 +408,7 @@ class ConcreteSchema(BaseSchema):
     }
     (Must be 0 or above)
     """
-    kind: Literal["concrete"]
+    kind: Literal["concrete"] = Field(repr=False)
     child: ReferenceSchema | DispatcherSchema
     type_args: list[Annotated[ConcreteSchemaTypeArgTypes, Field(discriminator="kind")]] = Field(default_factory=list, alias="typeArgs")
 
@@ -456,26 +419,16 @@ class ConcreteSchema(BaseSchema):
         # We omit the "type" so we can bind them, and then other things can inherit this binding.
         return [f"{class_name} = {self.to_annotation(runtime_ctx, class_name)}"]
 
-    def to_nested_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None) -> str:
-        return self.to_annotation(ctx, nested_struct_name)
-
     def to_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None = None) -> str:
-        child_annotation = (
-            self.child.to_annotation(ctx, type_args=self.type_args)
-            if isinstance(self.child, DispatcherSchema)
-            else self.child.to_annotation(ctx)
-        )
-        type_arg_annotations: list[str] = []
-        for type_arg in self.type_args:
-            if isinstance(type_arg, StructSchema):
-                type_arg_annotations.append(type_arg.to_materialized_annotation(f"{nested_struct_name}TypeArg", ctx))
-            else:
-                type_arg_annotations.append(type_arg.to_annotation(ctx))
-        concrete_annotation = (
-            f"{child_annotation}[{', '.join(type_arg_annotations)}]"
-            if isinstance(self.child, ReferenceSchema)
-            else child_annotation
-        )
+        if isinstance(self.child, DispatcherSchema):  # Its branches get the type args filled in
+            concrete_annotation = self.child.to_annotation(ctx, type_args=self.type_args)
+        else:
+            child_annotation = self.child.to_annotation(ctx)
+            type_arg_annotations = [  # Only ones with a struct written in them get a name, as the struct becomes a class
+                type_arg.to_annotation(ctx, f"{nested_struct_name}TypeArg" if type_arg.contains_inline_struct else None)
+                for type_arg in self.type_args
+            ]
+            concrete_annotation = f"{child_annotation}[{', '.join(type_arg_annotations)}]"
         # Not for base classes, which can't be unions
         other_members = self._other_template_members(ctx) if ctx.allow_template_shortcuts else []
         return " | ".join([concrete_annotation] + other_members)
@@ -497,12 +450,9 @@ class IndexedSchema(BaseSchema):
     child: DispatcherSchema
     parallel_indices: list[StaticIndexSchema | DynamicIndexSchema] = Field(default_factory=list, alias="parallelIndices")
 
-    def to_nested_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None) -> str:
-        return self.to_annotation(ctx, nested_struct_name)
-
     def to_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None = None) -> str:
         return " | ".join(
-            candidate.to_nested_annotation(ctx, f"{nested_struct_name}{index}")
+            candidate.to_annotation(ctx, f"{nested_struct_name}{index}")
             for index, candidate in enumerate(ctx.schema_graph.annotation_candidates(self), 1)
         )
 
@@ -519,25 +469,17 @@ class ReferenceSchema(BaseSchema):
             if not is_valid_with_attributes(value.attributes) or value.path in template_paths:
                 return set()
             return {value.path}
-
-        refs: set[str] = set()
-        for field in type(value).model_fields:
-            child = getattr(value, field)
-            if isinstance(child, BaseSchema):
-                refs |= ReferenceSchema.collect_reference_paths(child, template_paths)
-            elif isinstance(child, list):
-                for item in child:
-                    refs |= ReferenceSchema.collect_reference_paths(item, template_paths)
-        return refs
+        return {path for child in value.child_schemas() for path in ReferenceSchema.collect_reference_paths(child, template_paths)}
 
     def to_python_code(self, class_name: str, ctx: SingleSymbolContext) -> list[str]:
-        path, name = symbol_path_to_import_string_and_name(self.path)
-        maybe_aliased_name = f"{name}_alias" if class_name == name else name
-        import_identifier = f"{name} as {maybe_aliased_name}" if class_name == name else name
-        ctx.required_imports.add(Import(path, f"{import_identifier}", type_checking_only=False))
-        return [f"type {class_name} = {maybe_aliased_name}"]
+        if self.path in ctx.local_type_params:  # A template that's just its type param, e.g. TagEntry<E> before 1.16.2
+            return [f"type {class_name}{ctx.type_params_suffix()} = {self.to_annotation(ctx)}"]
+        module, name = symbol_path_to_import_string_and_name(self.path)
+        local_name = f"{name}_alias" if class_name == name else name  # It can't have the same name as this alias
+        ctx.required_imports.add(Import(module, name if local_name == name else f"{name} as {local_name}"))
+        return [f"type {class_name} = {local_name}"]
 
-    def to_annotation(self, ctx: SingleSymbolContext) -> str:
+    def to_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None = None) -> str:
         annotation = ctx.add_import_by_symbol_path(self.path)  # Make sure we import the referenced symbol
         if self.has_attribute("id") and isinstance(ctx.schema_graph.symbols.get(self.path), EnumSchema):
             # An enum of ids, e.g. a loot table's `type: #[id] LootContextParamSets`, which can be written with "minecraft:" too
@@ -563,13 +505,16 @@ class UnionSchema(BaseSchema):
         self.members = [member for member in self.members if is_valid_with_attributes(member.attributes)]
         return self
 
+    @property
+    def contains_inline_struct(self) -> bool:
+        return any(member.contains_inline_struct for member in self.members)
+
     @model_validator(mode="after")
     def give_members_uuid_attribute(self) -> Self:
         # e.g. #[uuid] (int[] @ 4 | string) - every member is a form of the UUID, so render them as such
         if self.has_attribute("uuid"):
             for member in self.members:
-                if not member.has_attribute("uuid"):
-                    member.attributes.append(Attribute(name="uuid"))
+                member.attributes.append(Attribute(name="uuid"))
         return self
 
     def _render_members(self, nested_name: str | None, ctx: SingleSymbolContext, declare_structs: bool) -> tuple[list[str], list[str]]:
@@ -577,12 +522,12 @@ class UnionSchema(BaseSchema):
         With `declare_structs`, struct members are declared as their own sibling classes (for the union alias to name)."""
         declarations: list[str] = []
         annotations: list[str] = []
-        nested_member_count = sum(member.contains_inline_struct() for member in self.members)
+        nested_member_count = sum(member.contains_inline_struct for member in self.members)
         nested_member_index = 0
 
         for member in self.members:
             member_name = nested_name
-            if member.contains_inline_struct():
+            if member.contains_inline_struct:
                 nested_member_index += 1
                 if nested_member_count > 1:
                     member_name = f"{nested_name}{nested_member_index}"
@@ -591,7 +536,7 @@ class UnionSchema(BaseSchema):
                 declarations.extend(member.to_python_code(member_name, ctx) + [""])
                 annotations.append(member_name)
             else:
-                annotations.append(member.to_nested_annotation(ctx, member_name))
+                annotations.append(member.to_annotation(ctx, member_name))
 
         return declarations, list(dict.fromkeys(annotations)) or ["None"]  # De-duplicated, and an empty union is just None
 
@@ -599,8 +544,12 @@ class UnionSchema(BaseSchema):
         _, annotations = self._render_members(nested_struct_name, ctx, declare_structs=False)
         return " | ".join(annotations)
 
-    def to_nested_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None) -> str:
-        return self.to_annotation(ctx, nested_struct_name)
+    @staticmethod
+    def render_struct_variants(class_name: str, variants: list[tuple[str, StructSchema]], discriminator: tuple[str, list[str]] | None, ctx: SingleSymbolContext) -> list[str]:
+        """Render each (name, struct) variant as a class, followed by `type <class_name> = <variant1> | <variant2> | ...`"""
+        rendered = [line for name, variant in variants for line in variant.to_python_code(name, ctx) + [""]]
+        # Ends with a blank line like classes do, so nested variant unions get two blank lines after them too
+        return rendered + [UnionSchema._render_union_alias(class_name, [name for name, _ in variants], discriminator, ctx), ""]
 
     @staticmethod
     def _render_union_alias(class_name: str, annotations: list[str], discriminator: tuple[str, list[str]] | None, ctx: SingleSymbolContext) -> str:
@@ -608,46 +557,22 @@ class UnionSchema(BaseSchema):
         `Annotated[Annotated[A, Tag(...)] | ..., Discriminator(...)]`. The tags are given, rather than pydantic finding
         them in the models, as base.py has models use each other's validators, so pydantic can't see inside them."""
         if discriminator is None:
-            return f"type {class_name} = {' | '.join(annotations)}"
+            return f"type {class_name}{ctx.type_params_suffix()} = {' | '.join(annotations)}"
 
         field_name, tags = discriminator
         ctx.require_annotated()
         ctx.required_imports |= {
-            Import("pydantic", "Discriminator", False),
-            Import("pydantic", "Tag", False),
-            Import(f"{GENERATED_SYMBOLS_DIRECTORY.name}.base", "tag_of", False),
+            Import("pydantic", "Discriminator"),
+            Import("pydantic", "Tag"),
+            Import(f"{GENERATED_SYMBOLS_DIRECTORY.name}.base", "tag_of"),
         }
         tagged_annotations = "\n    | ".join(f"Annotated[{annotation}, Tag({tag!r})]" for annotation, tag in zip(annotations, tags, strict=True))
         return (
-            f"type {class_name} = Annotated[\n"
+            f"type {class_name}{ctx.type_params_suffix()} = Annotated[\n"
             f"    {tagged_annotations},\n"
             f"    Discriminator(tag_of({field_name!r})),\n"
             "]"
         )
-
-    @staticmethod
-    def _literal_discriminator_field(schemas: list[StructSchema]) -> tuple[str, list[str]] | None:
-        """Find a shared string-literal field whose value uniquely identifies each model, and each one's value. Only
-        resource locations, as tag_of adds the "minecraft:" if it's left out (as their Literals allow)."""
-        if len(schemas) < 2:
-            return None
-
-        string_literals_per_schema: list[dict[str, str]] = [
-            {
-                PairSchema.clean_key(field.key): field.type.value.value
-                for field in schema.fields
-                if isinstance(field, PairSchema)  # For mypy
-                and isinstance(field.key, str)
-                and isinstance(field.type, LiteralSchema)
-                and isinstance(field.type.value.value, str)
-            }
-            for schema in schemas
-        ]
-        for field_name in string_literals_per_schema[0]:
-            values = [string_literals[field_name] for string_literals in string_literals_per_schema]
-            if len(set(values)) == len(values) and all(value.startswith("minecraft:") for value in values):  # Unique resource locations
-                return field_name, values
-        return None
 
     def to_python_code(self, class_name: str, ctx: SingleSymbolContext) -> list[str]:
         if len(self.members) == 1:  # Some objects are (since, A) | (until, B) - collapse into just A
@@ -655,15 +580,7 @@ class UnionSchema(BaseSchema):
 
         # Materialize struct members as concrete sibling symbols so the union alias can reference them.
         declarations, annotations = self._render_members(f"{class_name}Struct", ctx, declare_structs=True)
-        try:
-            resolved_members = [ctx.schema_graph.resolve(member) for member in self.members]
-        except KeyError:  # A member is an unresolved type param (e.g. T), so it can't be a struct
-            resolved_members = []
-        struct_members = [resolved for resolved in resolved_members if isinstance(resolved, StructSchema)]
-        # Only discriminate when every member is a struct, and none of them got merged as duplicates
-        all_distinct_structs = len(struct_members) == len(self.members) == len(annotations)
-        discriminator = self._literal_discriminator_field(struct_members) if all_distinct_structs else None
-        return declarations + [self._render_union_alias(class_name, annotations, discriminator, ctx)]
+        return declarations + [self._render_union_alias(class_name, annotations, None, ctx)]
 
 
 type PairSchemaTypes = (
@@ -681,19 +598,20 @@ class PairSchema(BaseSchema):
     description: str = Field(default="", repr=False, alias="desc")
     optional: bool = False
 
-    @property
-    def description_or_empty(self) -> str:
-        return f"  # {self.description.replace('\\\n', '\n').replace('\n', ' ').strip()}" if self.description else ""
-
     @staticmethod
-    def clean_key(key: str | StringSchema | ReferenceSchema) -> str:
-        # These two isinstance checks aren't perfect, but there's only 3 tiny cases in the whole of symbols.json
-        if isinstance(key, ReferenceSchema):
-            return symbol_path_to_object_name(key.path)
-        if isinstance(key, StringSchema):
-            return "key_name"
+    def clean_key(key: str) -> str:
         key = re.sub(r"\W", "_", key.removeprefix("minecraft:"))  # e.g. the data component minecraft:axolotl/variant (aliased back to it)
         return key if key not in {"from", "with"} else f"{key}_"
+
+    @property
+    def key_schema(self) -> BaseSchema:
+        """What the keys of a pair with a schema for a key (so any key of it, e.g. `[string]: int`) have to be."""
+        assert not isinstance(self.key, str), "Pairs with a name are fields, see to_field_line"
+        return self.key
+
+    def any_key_annotations(self, ctx: SingleSymbolContext, value_struct_name: str) -> tuple[str, str]:
+        """For a pair with a schema for a key: its keys' annotation and its values', e.g. ("str", "int")."""
+        return self.key_schema.to_annotation(ctx), self.type.to_annotation(ctx, value_struct_name)
 
     @staticmethod
     def pascal_case(key: str) -> str:
@@ -719,8 +637,9 @@ class PairSchema(BaseSchema):
     def to_field_line(self, ctx: SingleSymbolContext) -> str | None:
         """Render this pair as a class field, e.g. `    count: int | None = None  # How many`.
         Returns None for empty unions, which represent weird stuff - skip so parent members can remain authoritative."""
-        name = PairSchema.clean_key(self.key)  # type: ignore[arg-type]
-        annotation = self.type.to_nested_annotation(ctx, PairSchema.nested_struct_name(name))
+        assert isinstance(self.key, str), "Pairs with a schema for a key are extra keys, see StructSchema._render_model"
+        name = PairSchema.clean_key(self.key)
+        annotation = self.type.to_annotation(ctx, PairSchema.nested_struct_name(name))
         if annotation == "None":
             # This is a weird case where the union is empty, only for CustomName and CustomNameVisible, it's weird.
             return None
@@ -730,10 +649,13 @@ class PairSchema(BaseSchema):
         if name in ctx.allocated_name_by_identity.values():
             name += "_"
         if isinstance(self.key, str) and name != self.key:  # Renamed (e.g. `from_`), so alias it back to the real JSON key
-            ctx.required_imports.add(Import("pydantic", "Field", False))
-            default = f"Field({'' if default is None else f'default={default}, '}alias={self.key!r})"
+            # Not alias=, as type checkers then want the JSON key as the keyword (e.g. minecraft:custom_name), not the field's name
+            ctx.required_imports.add(Import("pydantic", "Field"))
+            default = f"Field({'' if default is None else f'default={default}, '}validation_alias={self.key!r}, serialization_alias={self.key!r})"
         # ===
-        return f"    {name}: {annotation if not self.optional else annotation + ' | None'}{'' if default is None else f' = {default}'}{self.description_or_empty}"
+        annotation_string = annotation if not self.optional else annotation + ' | None'
+        default_string = '' if default is None else f' = {default}'
+        return f"    {name}: {annotation_string}{default_string}{description_comment(self.description)}"
 
 
 class SpreadFieldSchema(BaseSchema):
@@ -749,7 +671,7 @@ class SpreadFieldSchema(BaseSchema):
         Field(discriminator="kind"),
     ]
 
-    def _unravel_reference(self) -> ReferenceSchema | None:
+    def reference(self) -> ReferenceSchema | None:
         """Returns a reference, or a concrete schema's reference, or None"""
         if isinstance(self.type, ReferenceSchema):
             return self.type
@@ -759,34 +681,6 @@ class SpreadFieldSchema(BaseSchema):
         # e.g. parallel_indices=[DynamicIndexSchema(accessor=['type'])] registry='minecraft:int_provider'
         return None
 
-    @classmethod
-    def collect_inherited_base_names(cls, fields: list[PairSchema | SpreadFieldSchema], ctx: SingleSymbolContext) -> list[str]:
-        """Return a list of strings representing inherited classes, e.g. class MyClass(`<x>`, `<y>`) """
-        base_names: set[str] = set()
-        for spread_field_schema in [fld for fld in fields if isinstance(fld, SpreadFieldSchema)]:
-            strict_ctx = ctx.copy()
-            strict_ctx.allow_template_shortcuts = False  # Don't allow inherited | float, for example.
-            strict_ctx.require_runtime_imports = True
-            # Keep concrete spread type arguments in inheritance, e.g. UniformIntProvider[T].
-            reference: ReferenceSchema | None = spread_field_schema._unravel_reference()
-            if reference is not None and reference.path not in ctx.local_type_params:
-                base_names.add(spread_field_schema.type.to_annotation(strict_ctx))
-            if isinstance(spread_field_schema.type, StructSchema):
-                base_names = base_names.union(SpreadFieldSchema.collect_inherited_base_names(spread_field_schema.type.fields, ctx))
-        return sorted(base_names)
-
-    @classmethod
-    def filter_fields_to_pair_schemas_only(cls, fields: list[PairSchema | SpreadFieldSchema]) -> list[PairSchema]:
-        """For all the fields, return only those that are `PairSchema`. \n
-        If it's a struct, return **ITS** `PairSchema`s"""
-        inlined_fields: list[PairSchema] = []
-        for pair_field in fields:
-            if isinstance(pair_field, PairSchema):
-                inlined_fields.append(pair_field)
-            if isinstance(pair_field, SpreadFieldSchema) and isinstance(pair_field.type, StructSchema):
-                inlined_fields.extend(SpreadFieldSchema.filter_fields_to_pair_schemas_only(pair_field.type.fields))
-        return inlined_fields
-
 
 class TemplateTypeParam(BaseModel):
     """Represents a template type parameter path (e.g. ::java::world::item::T)."""
@@ -794,7 +688,7 @@ class TemplateTypeParam(BaseModel):
 
 
 class TemplateSchema(BaseSchema):
-    """"
+    """
     Built-in types, e.g. `::java::data::worldgen::UniformInt`
     They always take a type, e.g. ClampedIntProvider[T]
     Essentially, these are Generics of type (normally T)
@@ -811,22 +705,14 @@ class TemplateSchema(BaseSchema):
         # If it's a Union (with a struct), just return the struct's code, because the union is just a wrapper for it.
         # Otherwise, return the child schema's code.
         if isinstance(self.child, UnionSchema):
-            struct_member = next(member for member in self.child.members if isinstance(member, StructSchema))  # Always exactly 1
+            struct_member = next((member for member in self.child.members if isinstance(member, StructSchema)), self.child)  # Older versions' have none
             return struct_member.to_python_code(class_name, ctx)
         return self.child.to_python_code(class_name, ctx)
 
 
 class StructSchema(BaseSchema):
-    kind: Literal["struct"]
+    kind: Literal["struct"] = Field(repr=False)
     fields: list[Annotated[PairSchema | SpreadFieldSchema, Field(discriminator="kind")]]
-
-    def contains_inline_struct(self) -> bool:
-        return True
-
-    def to_nested_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None) -> str:
-        """Structs used inline (e.g. as a field's type) get generated as their own class, named `nested_struct_name`."""
-        assert nested_struct_name is not None, "Inline structs need a name to be generated with"
-        return self.to_materialized_annotation(nested_struct_name, ctx)
 
     @model_validator(mode="after")
     def prune_fields_on_version(self) -> Self:
@@ -834,11 +720,55 @@ class StructSchema(BaseSchema):
         self.fields = [field for field in self.fields if is_valid_with_attributes(field.attributes)]
         return self  # Has to return self
 
+    @property
+    def contains_inline_struct(self) -> bool:
+        return True
+
+    def flattened_pairs(self) -> list[PairSchema]:
+        """The pairs that become its class's fields: its own, plus those of any inline structs it spreads (spreads of
+        classes get inherited instead, see inherited_base_names)"""
+        pairs: list[PairSchema] = []
+        for field in self.fields:
+            if isinstance(field, PairSchema):
+                pairs.append(field)
+            elif isinstance(field.type, StructSchema):
+                pairs.extend(field.type.flattened_pairs())
+        return pairs
+
+    def inherited_base_names(self, ctx: SingleSymbolContext) -> list[str]:
+        """The classes its class inherits from (the ones it spreads), e.g. class MyClass(`<x>`, `<y>`)"""
+        strict_ctx = ctx.copy()
+        strict_ctx.allow_template_shortcuts = False  # Don't allow inherited | float, for example.
+        strict_ctx.require_runtime_imports = True
+        base_names: set[str] = set()
+        for spread in (field for field in self.fields if isinstance(field, SpreadFieldSchema)):
+            # Keep concrete spread type arguments in inheritance, e.g. UniformIntProvider[T].
+            reference = spread.reference()
+            if reference is not None and reference.path not in ctx.local_type_params:
+                base_names.add(spread.type.to_annotation(strict_ctx))
+            if isinstance(spread.type, StructSchema):
+                base_names.update(spread.type.inherited_base_names(ctx))
+        return sorted(base_names)
+
+    def to_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None = None) -> str:
+        """Structs used inline (e.g. as a field's type) get generated as their own class, named `nested_struct_name`."""
+        assert nested_struct_name is not None, "Inline structs need a name to be generated with"
+        if (with_fields := self._with_registry_map_fields(ctx)) is not self:
+            return with_fields.to_annotation(ctx, nested_struct_name)
+        mapping_alias = self._mapping_alias_annotation(ctx, f"{nested_struct_name}ValueStruct")
+        if mapping_alias is not None:  # Mappings are just dict[<x>, <x>], so inline them rather than making a type alias.
+            return mapping_alias
+        class_name = ctx.allocate_name(nested_struct_name, self.model_dump_json(by_alias=True), avoid_symbol_names=True)
+        helper_ctx = ctx.copy()
+        helper_ctx.resource_dir = None  # Helper structs (e.g. a field's struct) aren't the resource itself
+        ctx.add_dataclass(self.to_python_code(class_name, helper_ctx))
+        return f"{class_name}{ctx.type_params_suffix()}"
+
     def _with_registry_map_fields(self, ctx: SingleSymbolContext) -> StructSchema:
         """Maps from a registry's ids to what each one's value is, e.g. data components: `[#[id] string]: minecraft:data_component[[%key]]`,
         get a field for each, e.g. `potion_contents: PotionContents | None` (aliased to minecraft:potion_contents), so each
-        value is its own type. Other keys, e.g. "!minecraft:potion_contents" (which removes it), are kept as extra keys.
-        Only minecraft: registries, as the mcdoc: ones (e.g. custom data) have any keys, so stay a dict."""
+        value is its own type. Its other any-key pairs, e.g. for "!minecraft:potion_contents" (which removes it), stay, as
+        the class's extra keys. Only minecraft: registries, as the mcdoc: ones (e.g. custom data) have any keys, so stay a dict."""
         registry_map = next((
             field.type for field in self.fields
             if isinstance(field, PairSchema) and not isinstance(field.key, str) and isinstance(field.type, DispatcherSchema)
@@ -846,132 +776,31 @@ class StructSchema(BaseSchema):
         ), None)
         if registry_map is None:
             return self
-        fields = [field for field in self.fields if not isinstance(field, PairSchema) or isinstance(field.key, str)]  # Without the maps
+        fields = [field for field in self.fields if field.type is not registry_map]  # Without the map
         fields += [
             PairSchema(kind="pair", key=f"minecraft:{key}", type=branch.model_copy(deep=True), optional=True)  # type: ignore[arg-type]
             for key, branch in ctx.schema_graph.dispatchers[registry_map.registry].items() if not key.startswith("%")
         ]
         return self.model_copy(update={"fields": fields})
 
-    def _mapping_pair(self) -> PairSchema | None:
-        """Recognize mcdoc's struct representation of a mapping.
+    def any_key_pairs(self) -> list[PairSchema]:
+        """Its pairs with a schema for a key (so any key of it, e.g. `[string]: int`), rather than a name."""
+        return [field for field in self.fields if isinstance(field, PairSchema) and not isinstance(field.key, str)]
 
-        A pair whose key is itself a schema describes *arbitrary* entries, such as
-        `string -> string`, rather than a *fixed object* field. A struct is therefore
-        rendered as `dict[key_type, value_type]` ONLY when it contains exactly one
-        schema-keyed pair and no named string-keyed pairs. For example, Lang's sole
-        `StringSchema` key becomes `dict[str, str]`
-
-        Multiple schema-keyed pairs are slightly ambiguous, and the presence of a named
-        pair means the struct also describes fixed fields, so neither shape is collapsed
-        into a mapping alias.
-        """
-        plain_pairs      = [field for field in self.fields if isinstance(field, PairSchema) and isinstance(field.key, str)]  # fmt: skip
-        schema_key_pairs = [field for field in self.fields if isinstance(field, PairSchema) and not isinstance(field.key, str)]
-        return schema_key_pairs[0] if len(schema_key_pairs) == 1 and not plain_pairs else None
-
-    def _spread_dispatcher(self) -> DispatcherSchema | None:
-        """Return the dispatcher of the supported selector-based union spread, if this struct has one.
-
-        mcdoc represents some unions as *shared struct fields* plus a
-        dispatcher spread. The dispatcher's single string accessor names the shared
-        field that selects a registry branch. We expand that shape into one dataclass
-        per branch so each selector value stays correlated with its fields.
-
-        Distribution is only unambiguous when there is exactly one dispatcher spread,
-        structs with zero or multiple such spreads continue through normal rendering
-        """
-        dispatchers = [
-            field.type for field in self.fields
-            if isinstance(field, SpreadFieldSchema) and isinstance(field.type, DispatcherSchema)
-        ]
-        if len(dispatchers) != 1:  # Ambiguous, either 0 or > 1
-            return None
-        if dispatchers[0].dynamic_selector_field is None:  # Not selected by one of our own fields
-            return None
-        return dispatchers[0]
-
-    def _dispatcher_variant(
-        self, dispatcher: DispatcherSchema, branch_struct: StructSchema, registry_key: str, branch_reference: ReferenceSchema | None,
-    ) -> StructSchema:
-        """Build the struct for one entry in the dispatcher's registry.
-
-        Start with deep copies of the original struct's shared fields (minus the dispatcher spread, which this
-        branch replaces). For a normal key, narrow the selector field to its namespaced literal value, e.g. the
-        `ore_drops` branch changes `formula: ApplyBonusFormula` to `formula: Literal["minecraft:ore_drops"]`.
-        Keys beginning with `%` are fallback entries rather than real selector values, so they're left unchanged.
-
-        Then add the branch's own fields: either by inheriting the branch (if it's a class), or by copying its
-        string-keyed pairs (schema-keyed pairs are arbitrary map entries, so can't become named fields).
-        """
-        fields = [field.model_copy(deep=True) for field in self.fields if field.type is not dispatcher]  # i.e. not the spread
-        if not registry_key.startswith("%"):
-            for field in fields:
-                if isinstance(field, PairSchema) and field.key == dispatcher.dynamic_selector_field:
-                    field.type = LiteralSchema(kind="literal", value=StringSchema(kind="string", value=f"minecraft:{registry_key}"))
-
-        if branch_reference is not None:
-            fields.append(SpreadFieldSchema(kind="spread", type=branch_reference.model_copy(deep=True)))
-        else:
-            fields.extend(
-                field.model_copy(deep=True)
-                for field in branch_struct.fields
-                if not isinstance(field, PairSchema) or isinstance(field.key, str)
-            )
-        return StructSchema(kind="struct", fields=fields)
-
-    def _selector_registry(self, dispatcher: DispatcherSchema) -> str | None:
-        """Which registry the dispatcher's selector field is an id from, e.g. `type: #[id="loot_condition_type"] string`"""
-        selector = next((field.type for field in self.fields if isinstance(field, PairSchema) and field.key == dispatcher.dynamic_selector_field), None)
-        if isinstance(selector, UnionSchema) and len(selector.members) == 1:  # e.g. the other members are for older versions
-            selector = selector.members[0]
-        id_spec = selector.id_spec() if isinstance(selector, StringSchema) else None
-        if id_spec is None or id_spec.registry is None:
-            return None
-        registry = id_spec.registry.removeprefix("minecraft:")
-        return registry if registry in REGISTRIES else f"{registry}_type"  # mcmeta calls some e.g. rule_test_type
-
-    def _dispatcher_variants(self, class_name: str, dispatcher: DispatcherSchema, ctx: SingleSymbolContext) -> dict[str, tuple[str, StructSchema]]:
-        """Resolve every registry entry into a uniquely named specialized struct, by its registry key."""
-        branches: dict[str, BaseSchema] = dict(ctx.schema_graph.dispatchers[dispatcher.registry])  # Already filtered to the current version
-        if (registry := self._selector_registry(dispatcher)) in REGISTRIES:
-            # vanilla-mcdoc only has the entries with fields of their own, so the rest of the registry (e.g. the loot condition
-            # minecraft:survives_explosion) get what mcdoc gives a missing entry: %unknown's fields, or none. Then each has its
-            # own tag (so the union can be discriminated), and %unknown isn't needed.
-            fallback = branches.pop("%unknown", StructSchema(kind="struct", fields=[]))
-            branches |= {key: fallback for key in REGISTRIES[registry] if key not in branches}
-        variants: dict[str, tuple[str, StructSchema]] = {}
-        for key, branch in branches.items():
-            resolved = ctx.schema_graph.resolve(branch)
-            if isinstance(resolved, UnionSchema) and not resolved.members:  # mcdoc's "nothing's allowed", e.g. a %none of
-                continue  # `union {}` means the selector can't be left out, so there's no variant for it (it'd allow anything)
-            branch_struct = resolved if isinstance(resolved, StructSchema) else StructSchema(kind="struct", fields=[])
-            variant_name = ctx.allocate_name(f"{class_name}{DispatcherSchema.branch_name_suffix(key)}", branch_struct.model_dump_json(by_alias=True), avoid_symbol_names=True)
-            # Branches that are classes get inherited, rather than having their fields copied in.
-            branch_reference = branch if isinstance(branch, ReferenceSchema) and ctx.schema_graph.is_runtime_class(branch) else None
-            variant = self._dispatcher_variant(dispatcher, branch_struct, key, branch_reference)
-            variants[key] = (variant_name, variant)
-        return variants
+    @property
+    def is_mapping(self) -> bool:
+        """Whether it's really a dict, e.g. Lang is `[string]: string`, so dict[str, str]: all it has is any-key pairs. With
+        named pairs or a spread too, it's a class, whose other keys are the any-key pairs (see _render_model)."""
+        return bool(self.fields) and len(self.any_key_pairs()) == len(self.fields)
 
     @staticmethod
-    def _render_variants(class_name: str, variants: list[tuple[str, StructSchema]], discriminator: tuple[str, list[str]] | None, ctx: SingleSymbolContext) -> list[str]:
-        """Render each (name, struct) variant, followed by `type <class_name> = <variant1> | <variant2> | ...`"""
-        rendered = [line for name, variant in variants for line in variant.to_python_code(name, ctx) + [""]]
-        # Ends with a blank line like classes do, so nested variant unions get two blank lines after them too
-        return rendered + [UnionSchema._render_union_alias(class_name, [name for name, _ in variants], discriminator, ctx), ""]
-
-    def _render_dispatcher_spread(self, class_name: str, ctx: SingleSymbolContext) -> list[str] | None:
-        """Render distributed branch dataclasses followed by their union alias."""
-        if (dispatcher := self._spread_dispatcher()) is None:
-            return None
-        variants = self._dispatcher_variants(class_name, dispatcher, ctx)
-        # Each variant's tag is its registry key, even if it's a union itself (e.g. apply_bonus splits again by formula).
-        # Not when there's a %none (for when there's no selector) or %unknown (any other value), which have no tag.
-        selector = dispatcher.dynamic_selector_field
-        discriminator = None
-        if selector is not None and not any(key.startswith("%") for key in variants):
-            discriminator = selector, [f"minecraft:{key}" for key in variants]
-        return self._render_variants(class_name, list(variants.values()), discriminator, ctx)
+    def _any_keys_annotation(pairs: list[PairSchema], ctx: SingleSymbolContext, value_struct_name: str) -> str:
+        """dict[<key>, <value>] for any-key pairs, e.g. dict[str, int] for `[string]: int`. With more than one, its keys
+        can be any of theirs, and so can its values."""
+        annotations = [pair.any_key_annotations(ctx, value_struct_name) for pair in pairs]
+        keys = " | ".join(dict.fromkeys(key for key, _ in annotations))
+        values = " | ".join(dict.fromkeys(value for _, value in annotations))
+        return f"dict[{keys}, {values}]"
 
     def _render_alias_spread(self, class_name: str, ctx: SingleSymbolContext) -> list[str] | None:
         """Spreads of things that aren't classes (e.g. an alias to a union of structs) can't be inherited, so instead,
@@ -994,58 +823,51 @@ class StructSchema(BaseSchema):
             if len(variants) == 1:
                 return variants[0].to_python_code(class_name, ctx)
             named_variants: list[tuple[str, StructSchema]] = [(f"{class_name}Struct{index}", variant) for index, variant in enumerate(variants, 1)]
-            return self._render_variants(class_name, named_variants, None, ctx)
+            return UnionSchema.render_struct_variants(class_name, named_variants, None, ctx)
         return None
 
     def _mapping_alias_annotation(self, ctx: SingleSymbolContext, value_struct_name: str) -> str | None:
         """Returns the mapping alias dict (i.e. dict[<x>, <x>]) for a struct, or None if it's not that kind of struct."""
-        field = self._mapping_pair()
-        if field is None:
-            return None
-        value_annotation = field.type.to_nested_annotation(ctx, value_struct_name)
-        assert not isinstance(field.key, str)
-        if isinstance(field.key, DispatcherSchema):  # Annotate the registry (TODO: Make this better.)
-            ctx.require_annotated()  # vanilla_mcdoc\data\advancement\predicate\BlockPredicateState.py
-            return f"dict[Annotated[str, 'Registry(\"{field.key.registry.removeprefix('mcdoc:')}\")'], {value_annotation}]"
-        return f"dict[{field.key.to_annotation(ctx)}, {value_annotation}]"
-
-    def to_materialized_annotation(self, class_name: str, ctx: SingleSymbolContext) -> str:
-        """Both adds itself to the list of created dataclasses, plus returns the annotation materialized."""
-        if (with_fields := self._with_registry_map_fields(ctx)) is not self:
-            return with_fields.to_materialized_annotation(class_name, ctx)
-        mapping_alias = self._mapping_alias_annotation(ctx, f"{class_name}ValueStruct")
-        if mapping_alias is not None:  # Mappings are just dict[<x>, <x>], so inline them rather than making a type alias.
-            return mapping_alias
-        class_name = ctx.allocate_name(class_name, self.model_dump_json(by_alias=True), avoid_symbol_names=True)
-        helper_ctx = ctx.copy()
-        helper_ctx.resource_dir = None  # Helper structs (e.g. a field's struct) aren't the resource itself
-        ctx.add_dataclass(self.to_python_code(class_name, helper_ctx))
-        return f"{class_name}{ctx.type_params_suffix()}"
+        return self._any_keys_annotation(self.any_key_pairs(), ctx, value_struct_name) if self.is_mapping else None
 
     def _render_model(self, class_name: str, ctx: SingleSymbolContext) -> list[str]:
+        pairs = self.flattened_pairs()
+        # Discover unresolved symbolic refs before rendering the Generic[...] base.
+        for pair in pairs:
+            if isinstance(pair.type, ReferenceSchema) and pair.type.path not in ROOT_SYMBOLS_KEYS["mcdoc"]:
+                ctx.local_type_params.add(pair.type.path)
         # Structs' inherited children, e.g. class MyClass(PredicateOffset), or GeneratedModel if there's none.
-        base_names = SpreadFieldSchema.collect_inherited_base_names(self.fields, ctx)
+        base_names = self.inherited_base_names(ctx)
         if not base_names:
-            ctx.required_imports.add(Import(f"{GENERATED_SYMBOLS_DIRECTORY.name}.base", "GeneratedModel", False))
+            ctx.required_imports.add(Import(f"{GENERATED_SYMBOLS_DIRECTORY.name}.base", "GeneratedModel"))
             base_names = ["GeneratedModel"]
         if type_params := ctx.type_params_suffix():
-            ctx.required_imports.add(Import("typing", "Generic", False))
+            ctx.required_imports.add(Import("typing", "Generic"))
             base_names.append(f"Generic{type_params}")
 
         lines = [f"class {class_name}({', '.join(base_names)}):"]
         if ctx.resource_dir is not None:  # A root resource (or one of its variants), e.g. a recipe, knows its pack directory
-            ctx.required_imports.add(Import("typing", "ClassVar", False))
+            ctx.required_imports.add(Import("typing", "ClassVar"))
             lines.append(f"    __resource_dir__: ClassVar[str] = {ctx.resource_dir!r}\n")
-        pair_fields = SpreadFieldSchema.filter_fields_to_pair_schemas_only(self.fields)
-        if not pair_fields and ctx.resource_dir is None:  # A class needs something in it
+        if not pairs and ctx.resource_dir is None:  # A class needs something in it
             lines.append("    pass")
-        lines.extend(line for pair_field in pair_fields if (line := pair_field.to_field_line(ctx)) is not None)
+        lines.extend(line for pair in pairs if isinstance(pair.key, str) and (line := pair.to_field_line(ctx)) is not None)
+        if any_keys := [pair for pair in pairs if not isinstance(pair.key, str)]:
+            # Any other keys it has, e.g. ItemBase's custom NBT, which pydantic checks against this (init=False is for type
+            # checkers, which would otherwise think it's a field you have to give)
+            ctx.required_imports.add(Import("pydantic", "Field"))
+            extra = self._any_keys_annotation(any_keys, ctx, f"{class_name}ValueStruct")
+            # Type checkers only allow string keys (BaseModel has dict[str, Any]), but pydantic checks others too, e.g. axes
+            string_keys = all(isinstance(ctx.schema_graph.resolve(pair.key_schema), StringSchema) for pair in any_keys)
+            ignore = "" if string_keys else "  # type: ignore[assignment]"
+            description = next((pair.description for pair in any_keys if pair.description), "")
+            lines.append(f"    __pydantic_extra__: {extra} = Field(init=False){ignore}{description_comment(description)}")
         return lines + [""]
 
     def to_python_code(self, class_name: str, ctx: SingleSymbolContext) -> list[str]:
         """A struct renders as the first of these that applies:
         1. A spread of a non-class alias  -> one class per struct it could be, plus their union
-        2. A spread of a dispatcher       -> one class per registry entry, plus their (discriminated) union
+        2. A spread of a dispatcher       -> one class per registry entry, plus their (discriminated) union, see DispatcherSpread
         3. A mapping                      -> `type <class_name> = dict[<key>, <value>]`
         4. Anything else                  -> a normal class
         """
@@ -1053,17 +875,108 @@ class StructSchema(BaseSchema):
             return with_fields.to_python_code(class_name, ctx)
         if (alias_spread := self._render_alias_spread(class_name, ctx)) is not None:
             return alias_spread
-        if (dispatcher_union := self._render_dispatcher_spread(class_name, ctx)) is not None:
-            return dispatcher_union
+        if (dispatcher_spread := DispatcherSpread.of(self, ctx.schema_graph)) is not None:
+            return dispatcher_spread.to_python_code(class_name, ctx)
         if (mapping_alias := self._mapping_alias_annotation(ctx, f"{class_name}ValueStruct")) is not None:
             return [f"type {class_name}{ctx.type_params_suffix()} = {mapping_alias}\n"]
-
-        # Discover unresolved symbolic refs before rendering the Generic[...] base.
-        for field in SpreadFieldSchema.filter_fields_to_pair_schemas_only(self.fields):
-            if isinstance(field.type, ReferenceSchema) and field.type.path not in ROOT_SYMBOLS_KEYS["mcdoc"]:
-                ctx.local_type_params.add(field.type.path)
-
         return self._render_model(class_name, ctx)
+
+
+@dataclass(frozen=True)
+class DispatcherSpread:
+    """A struct with a dispatcher that one of the struct's own fields (the selector, e.g. `type`) picks the branch of,
+    which it either spreads, or is the type of one of its fields (`field`, e.g. ComponentFlags' value, picked by its
+    predicate). Each registry entry gets its own class, with the selector narrowed to its id, and the struct is their union."""
+    struct: StructSchema
+    dispatcher: DispatcherSchema
+    selector: str
+    field: PairSchema | None = None  # The field it's the type of, or None if it's spread
+
+    @classmethod
+    def of(cls, struct: StructSchema, schema_graph: SchemaGraph) -> DispatcherSpread | None:
+        """The struct's dispatcher spread, or if it has none, its field that's a dispatcher picked by another field. Not if
+        there's more than one, as it's not clear which picks what. And not a field's dispatcher that only has %none and
+        %unknown, e.g. an advancement's display (root or not), as then the selector's value doesn't matter, just whether it's there."""
+        dispatchers = [field.type for field in struct.fields if isinstance(field, SpreadFieldSchema) and isinstance(field.type, DispatcherSchema)]
+        if dispatchers:
+            if len(dispatchers) != 1 or (selector := dispatchers[0].dynamic_selector_field) is None:
+                return None
+            return cls(struct, dispatchers[0], selector)
+        names = {field.key for field in struct.fields if isinstance(field, PairSchema) and isinstance(field.key, str)}
+        fields = [
+            (field, field.type, selector) for field in struct.fields
+            if isinstance(field, PairSchema) and isinstance(field.type, DispatcherSchema) and (selector := field.type.dynamic_selector_field) in names
+        ]
+        if len(fields) != 1 or all(key.startswith("%") for key in schema_graph.dispatchers[fields[0][1].registry]):
+            return None
+        field, dispatcher, selector = fields[0]
+        return cls(struct, dispatcher, selector, field)
+
+    def _selector_registry(self) -> str | None:
+        """Which registry the selector is an id from, e.g. `type: #[id="loot_condition_type"] string`"""
+        selector = next((field.type for field in self.struct.fields if isinstance(field, PairSchema) and field.key == self.selector), None)
+        if isinstance(selector, UnionSchema) and len(selector.members) == 1:  # e.g. the other members are for older versions
+            selector = selector.members[0]
+        id_spec = selector.id_spec() if isinstance(selector, StringSchema) else None
+        if id_spec is None or id_spec.registry is None:
+            return None
+        registry = id_spec.registry.removeprefix("minecraft:")
+        return registry if registry in REGISTRIES else f"{registry}_type"  # mcmeta calls some e.g. rule_test_type
+
+    def _variant(self, registry_key: str, branch: BaseSchema, branch_struct: StructSchema, branch_reference: ReferenceSchema | None) -> StructSchema:
+        """The struct for one registry entry: copies of the struct's fields (without the spread), with the selector narrowed
+        to the entry's id, e.g. the `ore_drops` branch has `formula: Literal["minecraft:ore_drops"]`, not `formula: ApplyBonusFormula`
+        (but not for % keys like %unknown, which aren't real ids). Then, for a field, the branch is its type. For a spread,
+        the branch's own fields, by inheriting it if it's a class, or copying its named pairs (pairs with a schema for a key
+        are any key, so can't be named fields)."""
+        fields = [
+            field.model_copy(update={"type": branch.model_copy(deep=True)}) if field is self.field else field.model_copy(deep=True)
+            for field in self.struct.fields if field is self.field or field.type is not self.dispatcher  # i.e. not the spread
+        ]
+        if not registry_key.startswith("%"):
+            for field in fields:
+                if isinstance(field, PairSchema) and field.key == self.selector:
+                    field.type = LiteralSchema(kind="literal", value=StringSchema(kind="string", value=f"minecraft:{registry_key}"))
+
+        if self.field is not None:
+            return StructSchema(kind="struct", fields=fields)
+        if branch_reference is not None:
+            fields.append(SpreadFieldSchema(kind="spread", type=branch_reference.model_copy(deep=True)))
+        else:
+            fields.extend(
+                field.model_copy(deep=True)
+                for field in branch_struct.fields
+                if not isinstance(field, PairSchema) or isinstance(field.key, str)
+            )
+        return StructSchema(kind="struct", fields=fields)
+
+    def _variants(self, class_name: str, ctx: SingleSymbolContext) -> dict[str, tuple[str, StructSchema]]:
+        """Every registry entry's (uniquely named) struct, by its registry key."""
+        branches: dict[str, BaseSchema] = dict(ctx.schema_graph.dispatchers[self.dispatcher.registry])  # Already filtered to the current version
+        if (registry := self._selector_registry()) in REGISTRIES:
+            # vanilla-mcdoc only has the entries with fields of their own, so the rest of the registry (e.g. the loot condition
+            # minecraft:survives_explosion) get what mcdoc gives a missing entry: %unknown's fields (or type), or none (or
+            # anything). Then each has its own tag (so the union can be discriminated), and %unknown isn't needed.
+            fallback = branches.pop(r"%unknown", StructSchema(kind="struct", fields=[]) if self.field is None else AnySchema(kind="any"))
+            branches |= {key: fallback for key in REGISTRIES[registry] if key not in branches}
+        variants: dict[str, tuple[str, StructSchema]] = {}
+        for key, branch in branches.items():
+            resolved = ctx.schema_graph.resolve(branch)
+            if isinstance(resolved, UnionSchema) and not resolved.members:  # mcdoc's "nothing's allowed", e.g. a %none of
+                continue  # `union {}` means the selector can't be left out, so there's no variant for it (it'd allow anything)
+            branch_struct = resolved if isinstance(resolved, StructSchema) else StructSchema(kind="struct", fields=[])
+            variant_name = ctx.allocate_name(f"{class_name}{DispatcherSchema.branch_name_suffix(key)}", branch_struct.model_dump_json(by_alias=True), avoid_symbol_names=True)
+            # Branches that are classes get inherited, rather than having their fields copied in.
+            branch_reference = branch if isinstance(branch, ReferenceSchema) and ctx.schema_graph.is_runtime_class(branch) else None
+            variants[key] = (variant_name, self._variant(key, branch, branch_struct, branch_reference))
+        return variants
+
+    def to_python_code(self, class_name: str, ctx: SingleSymbolContext) -> list[str]:
+        variants = self._variants(class_name, ctx)
+        # Each variant's tag is its registry key, even if it's a union itself (e.g. apply_bonus splits again by formula).
+        # Not when there's a %none (for when there's no selector) or %unknown (any other value), which have no tag.
+        discriminator = None if any(key.startswith(r"%") for key in variants) else (self.selector, [f"minecraft:{key}" for key in variants])
+        return UnionSchema.render_struct_variants(class_name, list(variants.values()), discriminator, ctx)
 
 
 # ==================================================================================================================================
@@ -1092,9 +1005,6 @@ class DispatcherSchema(BaseSchema):
     parallel_indices: list[StaticIndexSchema | DynamicIndexSchema] = Field(alias="parallelIndices")
     registry: str
 
-    def to_nested_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None) -> str:
-        return self.to_annotation(ctx, nested_struct_name)
-
     @property
     def dynamic_selector_field(self) -> str | None:
         """Return the sibling field that selects the branch (e.g. `type`), or None if it's selected some other way,
@@ -1110,6 +1020,14 @@ class DispatcherSchema(BaseSchema):
         index = self.parallel_indices[0]
         return isinstance(index, DynamicIndexSchema) and index.accessor == [DynamicIndexAccessorItem(keyword="key")]
 
+    @property
+    def static_key(self) -> str | None:
+        """The one entry it always picks, e.g. "trial_spawner" for `minecraft:block_entity[trial_spawner]`, or None if it can be any"""
+        index = self.parallel_indices[0]
+        if isinstance(index, DynamicIndexSchema) or index.value == "%fallback":
+            return None
+        return index.value.removeprefix("minecraft:")
+
     @staticmethod
     def branch_name_suffix(key: str) -> str:
         """The part of a branch's class name that comes from its registry key, e.g. "ore_drops" -> "OreDrops".
@@ -1123,12 +1041,7 @@ class DispatcherSchema(BaseSchema):
         self, ctx: SingleSymbolContext, nested_struct_name: str | None = None, type_args: list[ConcreteSchemaTypeArgTypes] | None = None,
     ) -> str:
         registry = ctx.schema_graph.dispatchers[self.registry]
-        index = self.parallel_indices[0]  # Always 1
-        if isinstance(index, DynamicIndexSchema) or index.value == "%fallback":
-            candidates = list(registry.items())
-        else:
-            key = index.value.removeprefix("minecraft:")
-            candidates = [(key, registry[key])]
+        candidates = list(registry.items()) if self.static_key is None else [(self.static_key, registry[self.static_key])]
 
         registry_name = PairSchema.pascal_case(self.registry.split(":")[-1])
         base_name = f"{nested_struct_name}{registry_name}" if nested_struct_name else f"{registry_name}Struct"
@@ -1142,8 +1055,11 @@ class DispatcherSchema(BaseSchema):
                 continue
             seen.add(fingerprint)
             branch_name = f"{base_name}{self.branch_name_suffix(key)}"
-            annotations.append(branch.to_nested_annotation(ctx, branch_name))
+            annotations.append(branch.to_annotation(ctx, branch_name))
 
+        if not annotations:  # Its registry has nothing in it yet in this version, which like a missing entry, isn't checked
+            ctx.required_imports.add(Import("typing", "Any"))
+            return "Any"
         return " | ".join(dict.fromkeys(annotations))
 
 

@@ -7,6 +7,7 @@ from typed_models import (
     ConcreteSchema,
     ConcreteSchemaTypeArgTypes,
     DispatcherSchema,
+    DispatcherSpread,
     DynamicIndexSchema,
     IndexedSchema,
     PairSchema,
@@ -34,6 +35,12 @@ class SchemaGraph:
             branches = {key: KIND_TO_MODEL[branch["kind"]](**branch) for key, branch in data.items() if key != "attribute"}
             # Drop entries that don't exist in the version we're generating for, e.g. a registry entry that was removed
             dispatchers[name] = {key: branch for key, branch in branches.items() if is_valid_with_attributes(branch.attributes)}
+        # And entries that are just another registry's entry, if that one's gone: the trial_spawner block is
+        # minecraft:block_entity[trial_spawner], which is since 1.20.5, but the block's entry doesn't say so
+        for branches in dispatchers.values():
+            for key, branch in list(branches.items()):
+                if isinstance(branch, DispatcherSchema) and (target := branch.static_key) is not None and target not in dispatchers[branch.registry]:
+                    del branches[key]
         return cls(symbols, dispatchers)
 
     def resolve(self, schema: BaseSchema) -> BaseSchema:
@@ -60,7 +67,7 @@ class SchemaGraph:
             return target is None or self.is_runtime_class(target)
         if not isinstance(schema, StructSchema):
             return False
-        if schema._mapping_pair() is not None or schema._spread_dispatcher() is not None:
+        if schema.is_mapping or DispatcherSpread.of(schema, self) is not None:
             return False
         return all(
             not isinstance(field, SpreadFieldSchema) or self.is_runtime_class(field.type)
@@ -79,7 +86,7 @@ class SchemaGraph:
 
     def _dispatcher_candidates(self, schema: DispatcherSchema) -> tuple[BaseSchema, ...]:
         registry = self.dispatchers.get(schema.registry, {})
-        assert isinstance(schema.parallel_indices[0], DynamicIndexSchema) or schema.parallel_indices[0].value == "%fallback"
+        assert schema.static_key is None
         return self._deduplicate(list(registry.values()))
 
     def _indexed_candidates(self, schema: IndexedSchema) -> tuple[BaseSchema, ...]:

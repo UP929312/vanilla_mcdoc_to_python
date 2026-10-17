@@ -1,18 +1,23 @@
 """Downloads the upstream data the generator reads, from exact commits, so a build can always be reproduced. Run it from
 the repo root, which is where the files go.
 
-python .github/scripts/fetch.py [<vanilla-mcdoc commit> <mcmeta commit>]  symbols.json, versions.json and the newest version's registries.json (by default, the latest)
-python .github/scripts/fetch.py version <minecraft version>              registries.json for that version
+python .github/scripts/fetch.py [<vanilla-mcdoc commit> <mcmeta commit>]  symbols.json, versions.json and the newest version's registries.json and vanilla files (by default, the latest)
+python .github/scripts/fetch.py version <minecraft version>              registries.json and vanilla's files for that version
+python .github/scripts/fetch.py vanilla                                  Just vanilla's files, for registries.json's version (they aren't committed)
 """
 import json
 import subprocess
 import sys
 import urllib.request
+from pathlib import Path
 
 # (repository, branch, file): symbols.json comes from vanilla-mcdoc, and the list of Minecraft versions from mcmeta
 VANILLA_MCDOC = ("https://github.com/SpyglassMC/vanilla-mcdoc", "generated", "symbols.json")
 MCMETA = ("https://github.com/misode/mcmeta", "summary", "versions/data.min.json")
 MCMETA_REGISTRIES = "registries/data.min.json"  # Every registry's entries, e.g. all the loot condition types, on the same branch
+# Vanilla's own data pack and resource pack files, which mcmeta tags for each version, e.g. 26.3-data-json. They're
+# about 25 MB, so they go in mcmeta/, which isn't committed (utils.VANILLA_ZIPS is where the generator reads them)
+MCMETA_ZIPS = ["data-json", "assets-json"]
 
 
 def log(message: str) -> None:
@@ -54,19 +59,30 @@ def fetch(mcdoc_commit: str | None = None, mcmeta_commit: str | None = None) -> 
 
 
 def fetch_version(minecraft_version: str, mcmeta_commit: str | None = None) -> None:
-    """Download what's specific to one Minecraft version: its registries, into registries.json. symbols.json doesn't
-    have them, e.g. loot condition types with no fields of their own, like minecraft:survives_explosion. mcmeta tags
-    each version's summary, e.g. 26.3-summary (and the summary branch is the newest version's)."""
+    """Download what's specific to one Minecraft version: its registries, into registries.json, and vanilla's files.
+    symbols.json doesn't have the registries, e.g. loot condition types with no fields of their own, like
+    minecraft:survives_explosion. mcmeta tags each version's summary, e.g. 26.3-summary (and the summary branch is the newest version's)."""
     log(f"Fetching the registries for {minecraft_version}")
     registries = json.loads(file_at_commit(MCMETA[0], mcmeta_commit or f"{minecraft_version}-summary", MCMETA_REGISTRIES))
     with open("registries.json", "w", encoding="utf-8") as file:
         json.dump({"minecraft_version": minecraft_version, "registries": registries}, file, indent=4)
+    fetch_vanilla_files(minecraft_version)
+
+
+def fetch_vanilla_files(minecraft_version: str) -> None:
+    """Download vanilla's own data pack and resource pack files for one version, which main.py puts in vanilla_mcdoc.vanilla."""
+    Path("mcmeta").mkdir(exist_ok=True)
+    for tag in MCMETA_ZIPS:
+        log(f"Fetching vanilla's files ({tag}) for {minecraft_version}")
+        Path("mcmeta", f"{tag}.zip").write_bytes(download(f"{MCMETA[0]}/archive/refs/tags/{minecraft_version}-{tag}.zip"))
 
 
 def main(arguments: list[str]) -> None:
     match arguments:
         case ["version", version]:
             fetch_version(version)
+        case ["vanilla"]:
+            fetch_vanilla_files(json.loads(Path("registries.json").read_text(encoding="utf-8"))["minecraft_version"])
         case [*commits] if len(commits) in {0, 2}:
             fetch(*commits)
         case _:

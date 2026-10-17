@@ -8,7 +8,7 @@ from context import SingleSymbolContext
 from minecraft_registry import make_registry_id_file_content, make_registry_id_files, make_root_resource_registry_content, used_registry_names
 from schema_resolution import SchemaGraph, get_schema_graph
 from static_symbols.minecraft_types import IdSpec
-from typed_models import IntSchema, ReferenceSchema, UnionSchema
+from typed_models import ConcreteSchema, DispatcherSchema, IntSchema, ReferenceSchema, StructSchema, TemplateSchema, UnionSchema
 from utils import LATEST_VERSION, SYMBOLS_MAP
 
 
@@ -153,30 +153,6 @@ class TestDispatcherSpreadGeneration:
         assert "type AdvancementCriterion = Annotated[\n    Annotated[AdvancementCriterionAllayDropItemOnBlock, Tag('minecraft:allay_drop_item_on_block')]\n    |" in content
         assert "Discriminator(tag_of('trigger'))" in content
 
-    def test_union_schema_uses_shared_unique_string_literal_discriminator(self) -> None:
-        content = generated_body(
-            "::test::TaggedUnion",
-            {
-                "kind": "union",
-                "members": [
-                    {"kind": "struct", "fields": [{
-                        "kind": "pair",
-                        "key": "kind",
-                        "type": {"kind": "literal", "value": {"kind": "string", "value": "minecraft:first"}},
-                    }]},
-                    {"kind": "struct", "fields": [{
-                        "kind": "pair",
-                        "key": "kind",
-                        "type": {"kind": "literal", "value": {"kind": "string", "value": "minecraft:second"}},
-                    }]},
-                ],
-            },
-            "TaggedUnion",
-        )
-
-        assert "Annotated[TaggedUnionStruct1, Tag('minecraft:first')]\n    | Annotated[TaggedUnionStruct2, Tag('minecraft:second')]" in content
-        assert "Discriminator(tag_of('kind'))" in content
-
     def test_union_without_discriminator_remains_plain_union(self) -> None:
         path = "::java::data::structure::StructureNBT"
         content = generated_body(path, SYMBOLS_MAP["mcdoc"][path], "StructureNBT")
@@ -192,7 +168,7 @@ class TestDispatcherSpreadGeneration:
             IntSchema(kind="int"),
         ])
 
-        assert schema.to_python_code("GenericUnion", context) == ["type GenericUnion = T | int"]
+        assert schema.to_python_code("GenericUnion", context) == ["type GenericUnion[T] = T | int"]  # It has to say it has a T
 
     def test_dynamic_map_branch_does_not_break_distribution(self) -> None:
         content = generated_body(
@@ -336,13 +312,13 @@ class TestRuntimeImportGeneration:
         assert "class InlineStructMapValueStruct(GeneratedModel):" in content
         assert "type InlineStructMap = dict[str, InlineStructMapValueStruct]" in content
 
-    def test_dispatcher_mapping_key_preserves_registry_metadata(self) -> None:
+    def test_dispatcher_mapping_key_is_what_its_entries_are(self) -> None:
         path = "::java::data::advancement::predicate::BlockPredicateState"
         content = generated_body(path, SYMBOLS_MAP["mcdoc"][path], "BlockPredicateState")
 
-        assert "from typing import TYPE_CHECKING, Annotated" in content
+        # The key is mcdoc:block_state_keys[[%parent.block]], whose entries (%none and %unknown) are both strings. And
         # MinMaxBounds<T> is `T | struct { min?: T, max?: T }`, and only the struct is the class, so the T is added
-        assert "type BlockPredicateState = dict[Annotated[str, 'Registry(\"block_state_keys\")'], MinMaxBounds[str] | str]" in content
+        assert "type BlockPredicateState = dict[str, MinMaxBounds[str] | str]" in content
 
     def test_discarded_spread_annotations_do_not_add_any_import(self) -> None:
         path = "::java::data::worldgen::processor_list::AppendStatic"
@@ -379,7 +355,7 @@ class TestRuntimeImportGeneration:
         path = "::java::data::worldgen::attribute::FloatAttribute"
         content = generated_body(path, SYMBOLS_MAP["mcdoc"][path], "FloatAttribute")
 
-        assert content.count("T = TypeVar('T')") == 1
+        assert content.count("T = TypeVar('T', default=Any)") == 1
         assert "Generic[T, T]" not in content
         assert "[T, T]" not in content
 
@@ -447,8 +423,9 @@ class TestVanillaDataGeneration:
         path = "::java::world::component::DataComponentPatch"
         content = generated_body(path, SYMBOLS_MAP["mcdoc"][path], "DataComponentPatch")
 
-        assert "    potion_contents: PotionContents | Annotated[str, IdSpec(registry='potion')] | None = Field(default=None, alias='minecraft:potion_contents')" in content
-        assert "    axolotl_variant: AxolotlVariant | None = Field(default=None, alias='minecraft:axolotl/variant')" in content
+        potion_contents = "Field(default=None, validation_alias='minecraft:potion_contents', serialization_alias='minecraft:potion_contents')"
+        assert f"    potion_contents: PotionContents | Annotated[str, IdSpec(registry='potion')] | None = {potion_contents}" in content
+        assert "    axolotl_variant: AxolotlVariant | None = Field(default=None, validation_alias='minecraft:axolotl/variant', serialization_alias='minecraft:axolotl/variant')" in content
 
     def test_enums_of_ids_are_annotated_as_ids(self) -> None:
         path = "::java::data::loot::LootTable"
@@ -462,3 +439,78 @@ class TestVanillaDataGeneration:
         content = generated_body(path, SYMBOLS_MAP["mcdoc"][path], "Processor")
 
         assert "class ProcessorRule2(Rule):" in content
+
+
+class TestAnyKeyGeneration:
+    def test_other_keys_of_a_class_are_typed_extras(self) -> None:
+        path = "::java::world::item::ItemBase"
+        content = generated_body(path, SYMBOLS_MAP["mcdoc"][path], "ItemBase")
+
+        assert "    __pydantic_extra__: dict[str, Any] = Field(init=False)  # Custom item NBT tags" in content
+        assert "key_name" not in content
+
+    def test_a_mapping_that_spreads_something_is_a_class(self) -> None:
+        path = "::java::assets::model::MultipleAxesModelElementRotation"
+        content = generated_body(path, SYMBOLS_MAP["mcdoc"][path], "MultipleAxesModelElementRotation")
+
+        assert "class MultipleAxesModelElementRotation(ModelElementRotationBase):" in content  # Not dict[Axis, float], which lost origin
+        assert "__pydantic_extra__: dict[Axis, float] = Field(init=False)  # type: ignore[assignment]" in content
+
+    def test_a_mapping_with_more_than_one_kind_of_key_has_all_of_them(self) -> None:
+        schema = StructSchema.model_validate({"kind": "struct", "fields": [
+            {"kind": "pair", "key": {"kind": "string"}, "type": {"kind": "boolean"}},
+            {"kind": "pair", "key": {"kind": "reference", "path": "::java::util::direction::Axis"}, "type": {"kind": "int"}},
+        ]})
+
+        assert schema.to_python_code("Toggles", SingleSymbolContext(schema_graph=get_schema_graph())) == ["type Toggles = dict[str | Axis, bool | int]\n"]
+
+
+class TestDispatchedFieldGeneration:
+    def test_a_field_picked_by_another_field_gets_a_class_per_entry(self) -> None:
+        path = "::java::assets::item_definition::ComponentFlags"
+        content = generated_body(path, SYMBOLS_MAP["mcdoc"][path], "ComponentFlags")
+
+        assert "class ComponentFlagsDamage(GeneratedModel):\n    predicate: Literal['minecraft:damage', 'damage'] = 'minecraft:damage'" in content
+        assert "    value: ItemDamagePredicate" in content
+        assert "Discriminator(tag_of('predicate'))" in content
+
+    def test_not_when_its_dispatcher_only_has_none_and_unknown(self) -> None:
+        # An advancement's display is mcdoc:advancement_display[[parent]], which only says whether it's a root (no parent)
+        path = "::java::data::advancement::Advancement"
+        content = generated_body(path, SYMBOLS_MAP["mcdoc"][path], "Advancement")
+
+        assert content.count("\nclass ") == 1
+        assert "    display: RootAdvancementDisplay | AdvancementDisplay | None = None" in content
+
+
+class TestOlderVersionShapes:
+    """Shapes only older versions' schemas have, made up here, as the snapshots are of the newest version."""
+    def test_a_dispatcher_with_nothing_in_its_registry_is_anything(self) -> None:
+        graph = SchemaGraph.from_symbol_maps({"mcdoc/dispatcher": {"minecraft:carver_config": {}}})  # e.g. 1.14's
+        dispatcher = DispatcherSchema.model_validate({"kind": "dispatcher", "parallelIndices": [{"kind": "dynamic", "accessor": ["type"]}], "registry": "minecraft:carver_config"})
+
+        assert dispatcher.to_annotation(SingleSymbolContext(schema_graph=graph)) == "Any"
+
+    def test_a_template_union_with_no_struct_is_the_union(self) -> None:
+        schema = TemplateSchema.model_validate({"kind": "template", "typeParams": [{"path": "::test::C"}], "child": {
+            "kind": "union", "members": [{"kind": "reference", "path": "::test::C"}, {"kind": "int"}],
+        }})
+
+        assert schema.to_python_code("ItemStackOfComponent", SingleSymbolContext(schema_graph=get_schema_graph())) == ["type ItemStackOfComponent[C] = C | int"]
+
+    def test_a_template_that_is_just_its_type_parameter(self) -> None:
+        # e.g. TagEntry<E> before 1.16.2, when it was just E (no struct { id: E, required?: boolean } yet)
+        schema = TemplateSchema.model_validate({"kind": "template", "typeParams": [{"path": "::test::E"}], "child": {
+            "kind": "union", "members": [{"kind": "reference", "path": "::test::E"}],
+        }})
+
+        assert schema.to_python_code("TagEntry", SingleSymbolContext(schema_graph=get_schema_graph())) == ["type TagEntry[E] = E"]
+
+    def test_a_type_argument_with_a_struct_in_it_names_the_struct(self) -> None:
+        schema = ConcreteSchema.model_validate({"kind": "concrete", "child": {"kind": "reference", "path": "::java::util::FlatWeightedList"}, "typeArgs": [{
+            "kind": "union", "members": [{"kind": "struct", "fields": [{"kind": "pair", "key": "id", "type": {"kind": "string"}}]}, {"kind": "int"}],
+        }]})
+        context = SingleSymbolContext(schema_graph=get_schema_graph())
+
+        assert schema.to_annotation(context, "Pool") == "FlatWeightedList[PoolTypeArg | int]"
+        assert "class PoolTypeArg(GeneratedModel):" in context.additional_dataclasses

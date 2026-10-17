@@ -120,6 +120,22 @@ A few more things worth knowing:
 - **Importing it takes about 2 seconds**, as it imports every model (so they can all refer to each other). After that,
   each model's validator is built the first time it's used, which is quick, and validating is fast.
 
+## Vanilla's own files
+
+Vanilla's data pack and resource pack files are in `vanilla_mcdoc.vanilla`, already made into their models, in the same
+folders as in the game (minus the `minecraft` namespace folder):
+
+```python
+from vanilla_mcdoc.vanilla.data.recipe import TNT_MINECART
+
+TNT_MINECART.result.id  # "minecraft:tnt_minecart"
+TNT_MINECART.model_dump(mode="json", exclude_unset=True)  # Exactly what's in vanilla's tnt_minecart.json
+```
+
+Each one is named after its file, in capitals, so `data/minecraft/loot_table/entities/sheep.json` is `SHEEP` in
+`vanilla_mcdoc.vanilla.data.loot_table.entities`. Ones that start with a number get a `_` first, e.g. the jukebox song
+`11.json` is `_11`.
+
 ## Where it comes from
 
 The generator, and how the package gets published, live at

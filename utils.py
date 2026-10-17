@@ -1,13 +1,12 @@
 import json
 import re
+import zipfile
 from dataclasses import dataclass
 from pathlib import Path
 from typing import TYPE_CHECKING, Any
 
 if TYPE_CHECKING:
-    from collections.abc import Generator
-
-    from typed_models import Attribute, BaseSchema
+    from typed_models import Attribute
 
 
 STATIC_SYMBOLS_DIRECTORY = Path("static_symbols")
@@ -24,6 +23,9 @@ with open('registries.json', 'r', encoding='utf-8') as file:
     REGISTRIES_FILE: dict[str, Any] = json.load(file)
 REGISTRIES_VERSION: str = REGISTRIES_FILE["minecraft_version"]
 REGISTRIES: dict[str, list[str]] = REGISTRIES_FILE["registries"]
+# Vanilla's own data pack and resource pack files (mcmeta's <version>-data-json and -assets-json tags), for
+# vanilla_mcdoc.vanilla. They're about 25 MB, so `python .github/scripts/fetch.py vanilla` downloads them, rather than them being committed
+VANILLA_ZIPS = [Path("mcmeta/data-json.zip"), Path("mcmeta/assets-json.zip")]
 # The vanilla-mcdoc and mcmeta commits symbols.json and versions.json came from, if they were fetched by .github/scripts/fetch.py
 UPSTREAM_COMMITS: dict[str, str] = json.loads(Path("upstream.json").read_text(encoding="utf-8")) if Path("upstream.json").exists() else {}
 
@@ -70,6 +72,30 @@ def minecraft_to_python_version(version: str) -> str:
     return f"{major}.{minor}.{patch or 0}{suffix}"
 
 
+def zip_version(path: Path) -> str | None:
+    """Which Minecraft version one of VANILLA_ZIPS is for, from its folder (e.g. mcmeta-26.3-data-json/), or None if it isn't there."""
+    if not path.exists():
+        return None
+    with zipfile.ZipFile(path) as archive:
+        match = re.fullmatch(r"mcmeta-(.+)-(?:data|assets)-json", archive.namelist()[0].split("/")[0])
+    return match[1] if match else None
+
+
+def version_problem(version: str) -> str | None:
+    """Why vanilla_mcdoc can't be generated for this Minecraft version (e.g. registries.json being another one's), or None if it can."""
+    if version not in VERSION_IDS:
+        return f"Unknown Minecraft version {version!r}, see versions.json"
+    try:
+        minecraft_to_python_version(version)  # It has to be able to be a package version, e.g. 25w14a can't
+    except ValueError as error:
+        return str(error)
+    if version != REGISTRIES_VERSION:
+        return f"registries.json is for {REGISTRIES_VERSION}, run `python .github/scripts/fetch.py version {version}` first"
+    if any(zip_version(path) != version for path in VANILLA_ZIPS):
+        return f"mcmeta/ doesn't have vanilla's files for {version}, run `python .github/scripts/fetch.py vanilla` first"
+    return None
+
+
 def get_version_index(version: str) -> int:
     if version in VERSION_IDS:
         return VERSION_IDS.index(version)
@@ -104,38 +130,24 @@ def is_valid_with_attributes(attributes: list[Attribute], current_version: str |
     Checks if an object is valid based on its 'since' and 'until' attributes compared to the current_version.
     If the object has no attributes, it is considered valid.
     If the object has a 'since' attribute, it is valid if the current_version is greater than or equal to the 'since' version.
-    If the object has an 'until' attribute, it is valid if the current_version is less than or equal to the 'until' version.
+    If the object has an 'until' attribute, it is valid if the current_version is before the 'until' version.
+    Deprecated things still are, as the game still accepts them (Spyglass just warns), e.g. vanilla's models still use the old rotations.
     """
     current_index = get_version_index(current_version or SETTINGS.minecraft_version)
     for attr in attributes:
-        if attr.name == "until":
-            until_version: str = attr.value.value.value  # type: ignore[union-attr, assignment]
-            if until_version is not None and current_index <= get_version_index(until_version):  # pragma: no cover
-                return False
-        elif attr.name == "since":
-            since_version: str = attr.value.value.value  # type: ignore[union-attr, assignment]
-            if since_version is not None and current_index > get_version_index(since_version):  # pragma: no cover
-                return False
-        elif attr.name == "deprecated":
-            deprecated_version: str | None = attr.value.value.value if attr.value is not None else None  # type: ignore[union-attr, assignment]
-            if deprecated_version is None or current_index <= get_version_index(deprecated_version):  # pragma: no cover
-                return False
+        if attr.name == "until" and current_index <= get_version_index(str(attr.plain_value)):  # pragma: no cover
+            return False
+        if attr.name == "since" and current_index > get_version_index(str(attr.plain_value)):  # pragma: no cover
+            return False
+        # if attr.name == "deprecated" and current_index >= get_version_index(str(attr.plain_value)):  # pragma: no cover
+        #     return False
     return True
 
 
-def iter_child_schemas(value: object) -> Generator[BaseSchema]:
-    from typed_models import BaseSchema  # pylint: disable=C0415
-    if isinstance(value, BaseSchema):
-        yield value
-    if isinstance(value, list):
-        for item in value:
-            yield from iter_child_schemas(item)
-
-
-def resource_path_to_python_path(resource_path: str) -> str:
+def resource_path_to_python_path(resource_path: str) -> Path:
     path, name = symbol_path_to_import_string_and_name(resource_path)
     output_path = GENERATED_SYMBOLS_DIRECTORY.joinpath(*path.split(".")[1:-1], name).with_suffix(".py")
-    return str(output_path)
+    return output_path
 
 
 def manage_directory_and_inits(path: Path) -> None:

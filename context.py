@@ -12,7 +12,7 @@ if TYPE_CHECKING:
 class Import:
     relative_module: str
     identifier: str
-    type_checking_only: bool
+    type_checking_only: bool = False
 
     @property
     def is_builtin(self) -> bool:
@@ -51,7 +51,7 @@ class Import:
         builtins = {entry for entry in runtime if entry.is_builtin}
         type_checking = {entry for entry in entries if entry.type_checking_only}
         if type_checking:
-            builtins.add(Import("typing", "TYPE_CHECKING", False))
+            builtins.add(Import("typing", "TYPE_CHECKING"))
         # Builtins, then third party packages, then local imports, with a blank line between each group
         lines: list[str] = []
         groups = [
@@ -68,20 +68,14 @@ class Import:
         return lines + ["\n"]
 
 
-def _empty_schema_graph() -> SchemaGraph:
-    """The default for contexts made without one (e.g. in tests). Imported here, as schema_resolution imports this module."""
-    from schema_resolution import SchemaGraph  # pylint: disable=import-outside-toplevel,redefined-outer-name
-    return SchemaGraph.from_symbol_maps({})
-
-
 @dataclass
 class SingleSymbolContext:
     """Stores the imports, helper declarations, and rendering options for one generated symbol file."""
 
+    schema_graph: SchemaGraph
     required_imports: set[Import] = field(default_factory=set)
     local_type_params: set[str] = field(default_factory=set)
     additional_dataclasses: list[str] = field(default_factory=list)
-    schema_graph: SchemaGraph = field(default_factory=_empty_schema_graph)
     current_symbol_path: str = ""
     # Whether a template that's a union also allows its other members, e.g. `MinMaxBounds[int] | int` (not for base classes)
     allow_template_shortcuts: bool = True
@@ -94,7 +88,7 @@ class SingleSymbolContext:
     emitted_declaration_names: set[str] = field(default_factory=set)
 
     def require_annotated(self) -> None:
-        self.required_imports.add(Import("typing", "Annotated", type_checking_only=False))
+        self.required_imports.add(Import("typing", "Annotated"))
 
     def type_param_names(self) -> list[str]:
         """The local type params' names, e.g. ["K", "V"]: a template's declared ones, plus any unresolved references."""
@@ -118,8 +112,9 @@ class SingleSymbolContext:
         struct). Call it after rendering the body, because rendering is what fills these in."""
         type_var_lines: list[str] = []
         if type_param_names := self.type_param_names():
-            self.required_imports.add(Import("typing", "TypeVar", False))
-            type_var_lines = [f"{name} = TypeVar('{name}')" for name in type_param_names] + ["\n"]  # Two blank lines before the classes, like the imports
+            # Defaulting to Any, so a type checker can still tell what e.g. Tag(values=[]) is (there's nothing to tell T from)
+            self.required_imports |= {Import("typing", "TypeVar"), Import("typing", "Any")}
+            type_var_lines = [f"{name} = TypeVar('{name}', default=Any)" for name in type_param_names] + ["\n"]  # Two blank lines before the classes, like the imports
         return Import.to_python_code(self.required_imports) + type_var_lines + self.additional_dataclasses + body_lines
 
     def add_dataclass(self, lines: list[str]) -> None:

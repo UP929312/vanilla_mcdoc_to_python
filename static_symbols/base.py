@@ -1,3 +1,10 @@
+"""This file is part of the static_symbols package, which contains models for Minecraft data files.
+It defines a base model class, GeneratedModel, that extends Pydantic's BaseModel with additional functionality
+for deferred schema building and JSON schema generation.
+The module also includes utility functions for importing annotation types,
+and handling discriminated unions.
+It's kind of gross, if you have a better way of doing this, please let me know! - Skezza
+"""
 import importlib
 import sys
 from collections.abc import Callable
@@ -112,10 +119,10 @@ class GeneratedModel(BaseModel):
         own_schema = cls.__pydantic_core_schema__
         # e.g. {'type': 'model', 'ref': ...}, or for a model that uses itself, {'type': 'definitions', 'schema': {'type': 'definition-ref', ...}, ...}
         schema = own_schema["schema"] if own_schema["type"] == "definitions" else own_schema
-        reference = core_schema.definition_reference_schema(schema["schema_ref"] if schema["type"] == "definition-ref" else schema["ref"])
+        reference = core_schema.definition_reference_schema(schema["schema_ref"] if schema["type"] == "definition-ref" else schema["ref"])  # pyright: ignore
         if (to_write := JSON_SCHEMAS_TO_WRITE.get()) is None:
             to_write = [own_schema], {cls}
-            writing = JSON_SCHEMAS_TO_WRITE.set(to_write)
+            writing = JSON_SCHEMAS_TO_WRITE.set(to_write)  # pyright: ignore
             try:
                 while to_write[0]:
                     generator.generate_inner(to_write[0].pop())  # Puts it in $defs

@@ -149,7 +149,7 @@ ignore_names = [
     # static_symbols/ is copied into vanilla_mcdoc/, where generated code (and users) use these
     "GeneratedModel", "model_config", "tag_of", "import_annotation_types", "NamespacedId", "MinecraftUUID", "MinecraftUUIDString", "MinecraftURL", "uuid_to_int_array",
     "keyword",  # A field symbols.json has, which pydantic reads in
-    "to_json",  # For turning models back into JSON, later
+    "definition", "prefix", "empty",  # IdSpec's fields, which its to_annotation goes through with dataclasses.fields()
 ]
 
 # ========================================================================

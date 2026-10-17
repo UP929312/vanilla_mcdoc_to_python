@@ -1,7 +1,7 @@
 """Hand-written types that generated code uses for some mcdoc attributes, e.g. #[uuid], #[url] and #[id]."""
 import uuid
 from collections.abc import Mapping
-from dataclasses import dataclass
+from dataclasses import dataclass, fields
 from enum import Enum
 from typing import Annotated, Any, Literal, Self
 
@@ -66,14 +66,10 @@ class IdSpec:
         return cls(**options)
 
     def to_annotation(self) -> str:
-        values: list[tuple[str, object]] = [
-            ("registry", self.registry),
-            ("tags", self.tags),
-            ("definition", self.definition if self.definition else None),
-            ("prefix", self.prefix),
-            ("path", self.path),
-            ("empty", self.empty),
-            ("exclude", self.exclude if self.exclude else None),
-        ]
-        arguments = ", ".join(f"{name}={value!r}" for name, value in values if value is not None)
-        return f"IdSpec({arguments})"
+        """e.g. IdSpec(registry='item', tags='allowed'), leaving out anything that's still its default"""
+        values = {
+            field.name: getattr(self, field.name)
+            for field in fields(self)
+            if getattr(self, field.name) != field.default
+        }
+        return f"IdSpec({', '.join(f'{name}={value!r}' for name, value in values.items())})"

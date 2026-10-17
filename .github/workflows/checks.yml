@@ -19,6 +19,7 @@ jobs:
         with:
           python-version: "3.14"
       - run: pip install --group dev
+      - run: python .github/scripts/fetch.py vanilla  # Vanilla's own files, for vanilla_mcdoc.vanilla (they aren't committed either)
       - run: coverage run main.py  # Generates vanilla_mcdoc/ (it isn't committed), and compares it against tests/assertions
       - run: coverage run --append -m pytest -q
       - run: python .github/scripts/validate.py  # Every vanilla data file (from mcmeta) against the generated models, see its KNOWN_INVALID

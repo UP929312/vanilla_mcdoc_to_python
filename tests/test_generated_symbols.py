@@ -1,5 +1,6 @@
 import importlib
 import pkgutil
+import uuid
 
 from pydantic import BaseModel, TypeAdapter, ValidationError
 from pytest import raises
@@ -72,3 +73,45 @@ def test_json_schemas_refer_to_other_models() -> None:
     schema = TypeAdapter(BlockPredicate).json_schema()
     assert schema["$defs"]["BlockPredicateAllOf"]["properties"]["predicates"]["items"] == {"$ref": "#/$defs/BlockPredicate"}
     assert {"$ref": "#/$defs/BlockPredicateAllOf"} in schema["$defs"]["BlockPredicate"]["oneOf"]
+
+
+def test_vanilla_files_are_their_models() -> None:
+    """vanilla_mcdoc.vanilla has every one of vanilla's files, as the model it is. A file next to a folder of the same name
+    (sheep.json and sheep/) is fine, as the constant's in capitals."""
+    from vanilla_mcdoc.data.recipe.Recipe import RecipeCraftingShapeless
+    from vanilla_mcdoc.vanilla.assets.lang import EN_US
+    from vanilla_mcdoc.vanilla.data.loot_table.entities import SHEEP
+    from vanilla_mcdoc.vanilla.data.loot_table.entities.sheep import WHITE
+    from vanilla_mcdoc.vanilla.data.recipe import TNT_MINECART
+
+    assert isinstance(TNT_MINECART, RecipeCraftingShapeless)
+    assert TNT_MINECART.model_dump(mode="json", exclude_unset=True) == {
+        "type": "minecraft:crafting_shapeless", "ingredients": ["minecraft:tnt", "minecraft:minecart"], "result": {"id": "minecraft:tnt_minecart"},
+    }
+    assert isinstance(SHEEP, LootTable) and isinstance(WHITE, LootTable)
+    assert EN_US["block.minecraft.stone"] == "Stone"
+
+
+def test_both_kinds_of_model_rotation() -> None:
+    """The old axis and angle one (deprecated, but vanilla's models still use it), and one with an angle per axis, which
+    are extra keys pydantic checks."""
+    from vanilla_mcdoc.assets.model.ModelElementRotation import ModelElementRotation, ModelElementRotationStruct1, ModelElementRotationStruct2
+
+    assert isinstance(TypeAdapter(ModelElementRotation).validate_python({"origin": [8, 8, 8], "axis": "y", "angle": 45, "rescale": True}), ModelElementRotationStruct1)
+    per_axis: object = TypeAdapter(ModelElementRotation).validate_python({"origin": [8, 8, 8], "x": 22.5})
+    assert isinstance(per_axis, ModelElementRotationStruct2) and per_axis.model_dump()["x"] == 22.5
+    with raises(ValidationError):
+        TypeAdapter(ModelElementRotation).validate_python({"origin": [8, 8, 8], "w": 45})  # Not an axis
+
+
+def test_items_keep_their_custom_nbt() -> None:
+    from vanilla_mcdoc.world.item.ItemBase import ItemBase
+
+    item = ItemBase.model_validate({"Damage": 3, "MyPack": {"level": 2}})
+    assert item.model_extra == {"MyPack": {"level": 2}}
+
+
+def test_uuids_become_minecrafts_four_ints() -> None:
+    from vanilla_mcdoc.minecraft_types import uuid_to_int_array
+
+    assert uuid_to_int_array(uuid.UUID("f81d4fae-7dec-11d0-a765-00a0c91e6bf6")) == (-132296786, 2112623056, -1486552928, -920753162)
