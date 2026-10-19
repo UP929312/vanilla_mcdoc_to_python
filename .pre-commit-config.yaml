@@ -1,6 +1,9 @@
-# The quicker checks from .github/workflows/checks.yml, before each commit. Set up once with `pre-commit install`
-# (after `pip install --group dev`), or run them all with `pre-commit run --all-files`. mypy, pylint and the tests are
-# slower, so they're left to CI. They're all `language: system`, so they use the versions the dev group installs.
+# The quicker checks from .github/workflows/checks.yml, before each commit, and all of CI's jobs before each push (see
+# .github/scripts/local_ci.py). Set up once with `pre-commit install` (after `pip install --group dev`),
+# or run them all with `pre-commit run --all-files`. They're all `language: system`, so
+# they use the versions the dev group installs.
+default_install_hook_types: [pre-commit, pre-push]
+default_stages: [pre-commit]  # Only local-ci runs before a push, it does the rest anyway
 repos:
   - repo: local
     hooks:
@@ -33,3 +36,10 @@ repos:
         language: system
         files: ^\.github/
         pass_filenames: false
+      - id: local-ci
+        name: CI's jobs
+        entry: python .github/scripts/local_ci.py
+        language: system
+        pass_filenames: false
+        always_run: true
+        stages: [pre-push]

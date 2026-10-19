@@ -10,7 +10,7 @@ dependencies = ["pydantic>=2.11"]  # For validate_by_name and serialize_by_alias
 [dependency-groups]
 # What the generator and its checks need: `pip install --group dev` (pip 25.1+)
 dev = [  # ruff and zizmor are pinned, as new versions turn on new rules
-    "pydantic>=2.11", "pytest", "coverage", "mypy", "ruff==0.17.*", "flake8", "pylint", "codespell", "vulture", "zizmor==1.30.*", "pre-commit", "build",
+    "pydantic>=2.11", "pytest", "coverage", "mypy", "ruff==0.17.*", "flake8", "pylint", "codespell", "vulture", "zizmor==1.30.*", "pre-commit", "build", "pyyaml", "types-PyYAML",
 ]
 
 # ========================================================================
