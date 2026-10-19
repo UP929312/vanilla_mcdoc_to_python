@@ -3,12 +3,12 @@ Generated from symbols.json for ::java::data::tag::ExplicitTagEntry
 Local link to file: vanilla_mcdoc/data/tag/ExplicitTagEntry.py
 """
 # ~~~ CODE ~~~
-from typing import Generic, TypeVar
+from typing import Any, Generic, TypeVar
 
 from vanilla_mcdoc.base import GeneratedModel
 
 
-E = TypeVar('E')
+E = TypeVar('E', default=Any)
 
 
 class ExplicitTagEntry(GeneratedModel, Generic[E]):

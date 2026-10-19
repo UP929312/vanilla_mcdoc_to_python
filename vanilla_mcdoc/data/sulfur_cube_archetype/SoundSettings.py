@@ -12,7 +12,7 @@ if TYPE_CHECKING:
 
 
 class SoundSettings(GeneratedModel):
-    hit_sound: SoundEventRef
-    push_sound: SoundEventRef
+    hit_sound: SoundEventRef | None = None
+    push_sound: SoundEventRef | None = None
     push_sound_impulse_threshold: float  # Minimum impact speed required to trigger the sound.
     push_sound_cooldown: float  # Cooldown in seconds for the sound effect.

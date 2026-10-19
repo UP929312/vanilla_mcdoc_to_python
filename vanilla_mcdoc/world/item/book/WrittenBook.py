@@ -14,7 +14,7 @@ if TYPE_CHECKING:
 
 class WrittenBook(ItemBase):
     resolved: bool | None = None  # Whether the dynamic content on the pages has been resolved.
-    pages: list[Filterable[str]] | None = None  # Pages of the book as JSON text components.
+    pages: list[Filterable[str] | str] | None = None  # Pages of the book as JSON text components.
     generation: BookGeneration | None = None  # Generation of the book. 0 = original, 1 = copy of original, 2 = copy of copy, 3 = tattered.
     author: str | None = None
-    title: Filterable[str] | None = None
+    title: Filterable[str] | str | None = None

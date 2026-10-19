@@ -5,8 +5,9 @@ Local link to file: vanilla_mcdoc/data/worldgen/processor_list/RuleTest.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
+from vanilla_mcdoc.base import GeneratedModel, tag_of
 from vanilla_mcdoc.data.worldgen.processor_list.BlockMatch import BlockMatch
 from vanilla_mcdoc.data.worldgen.processor_list.BlockStateMatch import BlockStateMatch
 from vanilla_mcdoc.data.worldgen.processor_list.CompositeMatch import CompositeMatch
@@ -53,7 +54,20 @@ class RuleTestTagMatch(TagMatch):
     predicate_type: Literal['minecraft:tag_match', 'tag_match'] = 'minecraft:tag_match'
 
 
+class RuleTestAlwaysTrue(GeneratedModel):
+    predicate_type: Literal['minecraft:always_true', 'always_true'] = 'minecraft:always_true'
+
+
 type RuleTest = Annotated[
-    RuleTestAllOf | RuleTestAnyOf | RuleTestBlockMatch | RuleTestBlockstateMatch | RuleTestHeightMatch | RuleTestNot | RuleTestRandomBlockMatch | RuleTestRandomBlockstateMatch | RuleTestTagMatch,
-    Field(discriminator='predicate_type'),
+    Annotated[RuleTestAllOf, Tag('minecraft:all_of')]
+    | Annotated[RuleTestAnyOf, Tag('minecraft:any_of')]
+    | Annotated[RuleTestBlockMatch, Tag('minecraft:block_match')]
+    | Annotated[RuleTestBlockstateMatch, Tag('minecraft:blockstate_match')]
+    | Annotated[RuleTestHeightMatch, Tag('minecraft:height_match')]
+    | Annotated[RuleTestNot, Tag('minecraft:not')]
+    | Annotated[RuleTestRandomBlockMatch, Tag('minecraft:random_block_match')]
+    | Annotated[RuleTestRandomBlockstateMatch, Tag('minecraft:random_blockstate_match')]
+    | Annotated[RuleTestTagMatch, Tag('minecraft:tag_match')]
+    | Annotated[RuleTestAlwaysTrue, Tag('minecraft:always_true')],
+    Discriminator(tag_of('predicate_type')),
 ]

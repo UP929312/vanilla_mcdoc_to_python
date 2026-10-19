@@ -5,13 +5,15 @@ Local link to file: vanilla_mcdoc/data/worldgen/feature/ConfiguredFeature.py
 # ~~~ CODE ~~~
 from typing import Annotated, ClassVar, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
+from vanilla_mcdoc.base import GeneratedModel, tag_of
 from vanilla_mcdoc.data.worldgen.feature.BlockBlobConfig import BlockBlobConfig
 from vanilla_mcdoc.data.worldgen.feature.BlockColumnConfig import BlockColumnConfig
 from vanilla_mcdoc.data.worldgen.feature.BlockPileConfig import BlockPileConfig
 from vanilla_mcdoc.data.worldgen.feature.ColumnsConfig import ColumnsConfig
 from vanilla_mcdoc.data.worldgen.feature.CoralConfig import CoralConfig
+from vanilla_mcdoc.data.worldgen.feature.CrevasseConfig import CrevasseConfig
 from vanilla_mcdoc.data.worldgen.feature.DeltaConfig import DeltaConfig
 from vanilla_mcdoc.data.worldgen.feature.DiskConfig import DiskConfig
 from vanilla_mcdoc.data.worldgen.feature.EmeraldOreConfig import EmeraldOreConfig
@@ -89,6 +91,12 @@ class ConfiguredFeatureCoralTree(CoralConfig):
     __resource_dir__: ClassVar[str] = 'worldgen/feature'
 
     type: Literal['minecraft:coral_tree', 'coral_tree'] = 'minecraft:coral_tree'
+
+
+class ConfiguredFeatureCrevasse(CrevasseConfig):
+    __resource_dir__: ClassVar[str] = 'worldgen/feature'
+
+    type: Literal['minecraft:crevasse', 'crevasse'] = 'minecraft:crevasse'
 
 
 class ConfiguredFeatureDeltaFeature(DeltaConfig):
@@ -385,7 +393,132 @@ class ConfiguredFeatureWeightedRandomSelector(WeightedRandomFeatureConfig):
     type: Literal['minecraft:weighted_random_selector', 'weighted_random_selector'] = 'minecraft:weighted_random_selector'
 
 
+class ConfiguredFeatureBlueIce(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'worldgen/feature'
+
+    type: Literal['minecraft:blue_ice', 'blue_ice'] = 'minecraft:blue_ice'
+
+
+class ConfiguredFeatureBonusChest(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'worldgen/feature'
+
+    type: Literal['minecraft:bonus_chest', 'bonus_chest'] = 'minecraft:bonus_chest'
+
+
+class ConfiguredFeatureChorusPlant(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'worldgen/feature'
+
+    type: Literal['minecraft:chorus_plant', 'chorus_plant'] = 'minecraft:chorus_plant'
+
+
+class ConfiguredFeatureEndIsland(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'worldgen/feature'
+
+    type: Literal['minecraft:end_island', 'end_island'] = 'minecraft:end_island'
+
+
+class ConfiguredFeatureEndPlatform(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'worldgen/feature'
+
+    type: Literal['minecraft:end_platform', 'end_platform'] = 'minecraft:end_platform'
+
+
+class ConfiguredFeatureFreezeTopLayer(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'worldgen/feature'
+
+    type: Literal['minecraft:freeze_top_layer', 'freeze_top_layer'] = 'minecraft:freeze_top_layer'
+
+
+class ConfiguredFeatureMonsterRoom(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'worldgen/feature'
+
+    type: Literal['minecraft:monster_room', 'monster_room'] = 'minecraft:monster_room'
+
+
+class ConfiguredFeatureNoOp(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'worldgen/feature'
+
+    type: Literal['minecraft:no_op', 'no_op'] = 'minecraft:no_op'
+
+
+class ConfiguredFeatureVines(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'worldgen/feature'
+
+    type: Literal['minecraft:vines', 'vines'] = 'minecraft:vines'
+
+
+class ConfiguredFeatureVoidStartPlatform(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'worldgen/feature'
+
+    type: Literal['minecraft:void_start_platform', 'void_start_platform'] = 'minecraft:void_start_platform'
+
+
 type ConfiguredFeature = Annotated[
-    ConfiguredFeatureBamboo | ConfiguredFeatureBlockBlob | ConfiguredFeatureBlockColumn | ConfiguredFeatureBlockPile | ConfiguredFeatureCoralClaw | ConfiguredFeatureCoralTree | ConfiguredFeatureDeltaFeature | ConfiguredFeatureDisk | ConfiguredFeatureEmeraldOre | ConfiguredFeatureEndGateway | ConfiguredFeatureEndPodium | ConfiguredFeatureEndSpike | ConfiguredFeatureFallenTree | ConfiguredFeatureFillLayer | ConfiguredFeatureFlower | ConfiguredFeatureFossil | ConfiguredFeatureGeode | ConfiguredFeatureGlowLichen | ConfiguredFeatureHugeBrownMushroom | ConfiguredFeatureHugeFungus | ConfiguredFeatureHugeRedMushroom | ConfiguredFeatureIcePatch | ConfiguredFeatureIceberg | ConfiguredFeatureLake | ConfiguredFeatureLargeSpeleothem | ConfiguredFeatureMultifaceGrowth | ConfiguredFeatureNetherrackReplaceBlobs | ConfiguredFeatureNoBonemealFlower | ConfiguredFeatureNoSurfaceOre | ConfiguredFeatureOre | ConfiguredFeatureOverlay | ConfiguredFeatureProjectedRandomPatchySquare | ConfiguredFeatureRandomBooleanSelector | ConfiguredFeatureRandomNeighborSpread | ConfiguredFeatureRandomPatch | ConfiguredFeatureRandomSelector | ConfiguredFeatureReplaceSingleBlock | ConfiguredFeatureRootSystem | ConfiguredFeatureScatteredOre | ConfiguredFeatureSculkPatch | ConfiguredFeatureSequence | ConfiguredFeatureSimpleBlock | ConfiguredFeatureSimpleRandomSelector | ConfiguredFeatureSingleBlockPillar | ConfiguredFeatureSpeleothem | ConfiguredFeatureSpeleothemCluster | ConfiguredFeatureSpike | ConfiguredFeatureSpringFeature | ConfiguredFeatureSteppedColumnCluster | ConfiguredFeatureTemplate | ConfiguredFeatureTree | ConfiguredFeatureUnderwaterMagma | ConfiguredFeatureVegetationPatch | ConfiguredFeatureWaterloggedVegetationPatch | ConfiguredFeatureWeightedRandomSelector,
-    Field(discriminator='type'),
+    Annotated[ConfiguredFeatureBamboo, Tag('minecraft:bamboo')]
+    | Annotated[ConfiguredFeatureBlockBlob, Tag('minecraft:block_blob')]
+    | Annotated[ConfiguredFeatureBlockColumn, Tag('minecraft:block_column')]
+    | Annotated[ConfiguredFeatureBlockPile, Tag('minecraft:block_pile')]
+    | Annotated[ConfiguredFeatureCoralClaw, Tag('minecraft:coral_claw')]
+    | Annotated[ConfiguredFeatureCoralTree, Tag('minecraft:coral_tree')]
+    | Annotated[ConfiguredFeatureCrevasse, Tag('minecraft:crevasse')]
+    | Annotated[ConfiguredFeatureDeltaFeature, Tag('minecraft:delta_feature')]
+    | Annotated[ConfiguredFeatureDisk, Tag('minecraft:disk')]
+    | Annotated[ConfiguredFeatureEmeraldOre, Tag('minecraft:emerald_ore')]
+    | Annotated[ConfiguredFeatureEndGateway, Tag('minecraft:end_gateway')]
+    | Annotated[ConfiguredFeatureEndPodium, Tag('minecraft:end_podium')]
+    | Annotated[ConfiguredFeatureEndSpike, Tag('minecraft:end_spike')]
+    | Annotated[ConfiguredFeatureFallenTree, Tag('minecraft:fallen_tree')]
+    | Annotated[ConfiguredFeatureFillLayer, Tag('minecraft:fill_layer')]
+    | Annotated[ConfiguredFeatureFlower, Tag('minecraft:flower')]
+    | Annotated[ConfiguredFeatureFossil, Tag('minecraft:fossil')]
+    | Annotated[ConfiguredFeatureGeode, Tag('minecraft:geode')]
+    | Annotated[ConfiguredFeatureGlowLichen, Tag('minecraft:glow_lichen')]
+    | Annotated[ConfiguredFeatureHugeBrownMushroom, Tag('minecraft:huge_brown_mushroom')]
+    | Annotated[ConfiguredFeatureHugeFungus, Tag('minecraft:huge_fungus')]
+    | Annotated[ConfiguredFeatureHugeRedMushroom, Tag('minecraft:huge_red_mushroom')]
+    | Annotated[ConfiguredFeatureIcePatch, Tag('minecraft:ice_patch')]
+    | Annotated[ConfiguredFeatureIceberg, Tag('minecraft:iceberg')]
+    | Annotated[ConfiguredFeatureLake, Tag('minecraft:lake')]
+    | Annotated[ConfiguredFeatureLargeSpeleothem, Tag('minecraft:large_speleothem')]
+    | Annotated[ConfiguredFeatureMultifaceGrowth, Tag('minecraft:multiface_growth')]
+    | Annotated[ConfiguredFeatureNetherrackReplaceBlobs, Tag('minecraft:netherrack_replace_blobs')]
+    | Annotated[ConfiguredFeatureNoBonemealFlower, Tag('minecraft:no_bonemeal_flower')]
+    | Annotated[ConfiguredFeatureNoSurfaceOre, Tag('minecraft:no_surface_ore')]
+    | Annotated[ConfiguredFeatureOre, Tag('minecraft:ore')]
+    | Annotated[ConfiguredFeatureOverlay, Tag('minecraft:overlay')]
+    | Annotated[ConfiguredFeatureProjectedRandomPatchySquare, Tag('minecraft:projected_random_patchy_square')]
+    | Annotated[ConfiguredFeatureRandomBooleanSelector, Tag('minecraft:random_boolean_selector')]
+    | Annotated[ConfiguredFeatureRandomNeighborSpread, Tag('minecraft:random_neighbor_spread')]
+    | Annotated[ConfiguredFeatureRandomPatch, Tag('minecraft:random_patch')]
+    | Annotated[ConfiguredFeatureRandomSelector, Tag('minecraft:random_selector')]
+    | Annotated[ConfiguredFeatureReplaceSingleBlock, Tag('minecraft:replace_single_block')]
+    | Annotated[ConfiguredFeatureRootSystem, Tag('minecraft:root_system')]
+    | Annotated[ConfiguredFeatureScatteredOre, Tag('minecraft:scattered_ore')]
+    | Annotated[ConfiguredFeatureSculkPatch, Tag('minecraft:sculk_patch')]
+    | Annotated[ConfiguredFeatureSequence, Tag('minecraft:sequence')]
+    | Annotated[ConfiguredFeatureSimpleBlock, Tag('minecraft:simple_block')]
+    | Annotated[ConfiguredFeatureSimpleRandomSelector, Tag('minecraft:simple_random_selector')]
+    | Annotated[ConfiguredFeatureSingleBlockPillar, Tag('minecraft:single_block_pillar')]
+    | Annotated[ConfiguredFeatureSpeleothem, Tag('minecraft:speleothem')]
+    | Annotated[ConfiguredFeatureSpeleothemCluster, Tag('minecraft:speleothem_cluster')]
+    | Annotated[ConfiguredFeatureSpike, Tag('minecraft:spike')]
+    | Annotated[ConfiguredFeatureSpringFeature, Tag('minecraft:spring_feature')]
+    | Annotated[ConfiguredFeatureSteppedColumnCluster, Tag('minecraft:stepped_column_cluster')]
+    | Annotated[ConfiguredFeatureTemplate, Tag('minecraft:template')]
+    | Annotated[ConfiguredFeatureTree, Tag('minecraft:tree')]
+    | Annotated[ConfiguredFeatureUnderwaterMagma, Tag('minecraft:underwater_magma')]
+    | Annotated[ConfiguredFeatureVegetationPatch, Tag('minecraft:vegetation_patch')]
+    | Annotated[ConfiguredFeatureWaterloggedVegetationPatch, Tag('minecraft:waterlogged_vegetation_patch')]
+    | Annotated[ConfiguredFeatureWeightedRandomSelector, Tag('minecraft:weighted_random_selector')]
+    | Annotated[ConfiguredFeatureBlueIce, Tag('minecraft:blue_ice')]
+    | Annotated[ConfiguredFeatureBonusChest, Tag('minecraft:bonus_chest')]
+    | Annotated[ConfiguredFeatureChorusPlant, Tag('minecraft:chorus_plant')]
+    | Annotated[ConfiguredFeatureEndIsland, Tag('minecraft:end_island')]
+    | Annotated[ConfiguredFeatureEndPlatform, Tag('minecraft:end_platform')]
+    | Annotated[ConfiguredFeatureFreezeTopLayer, Tag('minecraft:freeze_top_layer')]
+    | Annotated[ConfiguredFeatureMonsterRoom, Tag('minecraft:monster_room')]
+    | Annotated[ConfiguredFeatureNoOp, Tag('minecraft:no_op')]
+    | Annotated[ConfiguredFeatureVines, Tag('minecraft:vines')]
+    | Annotated[ConfiguredFeatureVoidStartPlatform, Tag('minecraft:void_start_platform')],
+    Discriminator(tag_of('type')),
 ]

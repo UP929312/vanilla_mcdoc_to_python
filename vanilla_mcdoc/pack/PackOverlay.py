@@ -16,6 +16,6 @@ if TYPE_CHECKING:
 
 class PackOverlay(GeneratedModel):
     directory: Annotated[str, Field(min_length=1)]
-    formats: InclusiveRange[int] | int | None = None
+    formats: InclusiveRange[int] | int | tuple[int, int] | None = None
     min_format: PackFormat | None = None
     max_format: PackFormat | None = None

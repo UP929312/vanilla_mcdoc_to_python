@@ -5,9 +5,9 @@ Local link to file: vanilla_mcdoc/data/loot/function/SetCustomModelData.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
-from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel, tag_of
 from vanilla_mcdoc.data.loot.function.Conditions import Conditions
 from vanilla_mcdoc.data.loot.function.InsertListOperation import InsertListOperation
 from vanilla_mcdoc.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
@@ -39,8 +39,11 @@ class FloatsStructReplaceSection(ReplaceSectionListOperation):
 
 
 type FloatsStruct = Annotated[
-    FloatsStructAppend | FloatsStructInsert | FloatsStructReplaceAll | FloatsStructReplaceSection,
-    Field(discriminator='mode'),
+    Annotated[FloatsStructAppend, Tag('minecraft:append')]
+    | Annotated[FloatsStructInsert, Tag('minecraft:insert')]
+    | Annotated[FloatsStructReplaceAll, Tag('minecraft:replace_all')]
+    | Annotated[FloatsStructReplaceSection, Tag('minecraft:replace_section')],
+    Discriminator(tag_of('mode')),
 ]
 
 
@@ -65,8 +68,11 @@ class FlagsStructReplaceSection(ReplaceSectionListOperation):
 
 
 type FlagsStruct = Annotated[
-    FlagsStructAppend | FlagsStructInsert | FlagsStructReplaceAll | FlagsStructReplaceSection,
-    Field(discriminator='mode'),
+    Annotated[FlagsStructAppend, Tag('minecraft:append')]
+    | Annotated[FlagsStructInsert, Tag('minecraft:insert')]
+    | Annotated[FlagsStructReplaceAll, Tag('minecraft:replace_all')]
+    | Annotated[FlagsStructReplaceSection, Tag('minecraft:replace_section')],
+    Discriminator(tag_of('mode')),
 ]
 
 
@@ -91,8 +97,11 @@ class StringsStructReplaceSection(ReplaceSectionListOperation):
 
 
 type StringsStruct = Annotated[
-    StringsStructAppend | StringsStructInsert | StringsStructReplaceAll | StringsStructReplaceSection,
-    Field(discriminator='mode'),
+    Annotated[StringsStructAppend, Tag('minecraft:append')]
+    | Annotated[StringsStructInsert, Tag('minecraft:insert')]
+    | Annotated[StringsStructReplaceAll, Tag('minecraft:replace_all')]
+    | Annotated[StringsStructReplaceSection, Tag('minecraft:replace_section')],
+    Discriminator(tag_of('mode')),
 ]
 
 
@@ -117,8 +126,11 @@ class ColorsStructReplaceSection(ReplaceSectionListOperation):
 
 
 type ColorsStruct = Annotated[
-    ColorsStructAppend | ColorsStructInsert | ColorsStructReplaceAll | ColorsStructReplaceSection,
-    Field(discriminator='mode'),
+    Annotated[ColorsStructAppend, Tag('minecraft:append')]
+    | Annotated[ColorsStructInsert, Tag('minecraft:insert')]
+    | Annotated[ColorsStructReplaceAll, Tag('minecraft:replace_all')]
+    | Annotated[ColorsStructReplaceSection, Tag('minecraft:replace_section')],
+    Discriminator(tag_of('mode')),
 ]
 
 

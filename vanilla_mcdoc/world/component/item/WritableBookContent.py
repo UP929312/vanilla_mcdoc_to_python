@@ -12,4 +12,4 @@ if TYPE_CHECKING:
 
 
 class WritableBookContent(GeneratedModel):
-    pages: list[Filterable[str]]
+    pages: list[Filterable[str] | str]

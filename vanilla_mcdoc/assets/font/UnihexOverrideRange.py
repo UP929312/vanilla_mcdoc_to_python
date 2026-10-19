@@ -11,7 +11,7 @@ from vanilla_mcdoc.base import GeneratedModel
 
 
 class UnihexOverrideRange(GeneratedModel):
-    from_: str = Field(alias='from')  # Minimum in codepoint range (inclusive).
+    from_: str = Field(validation_alias='from', serialization_alias='from')  # Minimum in codepoint range (inclusive).
     to: str  # Maximum in codepoint range (inclusive).
     left: Annotated[int, Field(ge=0, le=255)]  # Position of left-most column of the glyph.
     right: Annotated[int, Field(ge=0, le=255)]  # Position of right-most column of the glyph.

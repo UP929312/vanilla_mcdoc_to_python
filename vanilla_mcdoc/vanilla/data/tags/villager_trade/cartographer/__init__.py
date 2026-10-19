@@ -1,0 +1,53 @@
+"""Vanilla's data/tags/villager_trade/cartographer/ files"""
+from vanilla_mcdoc.data.tag.Tag import Tag
+
+LEVEL_1 = Tag(values=['minecraft:cartographer/1/paper_emerald', 'minecraft:cartographer/1/emerald_map'])
+
+LEVEL_2 = Tag(
+    values=[
+        'minecraft:cartographer/2/glass_pane_emerald',
+        'minecraft:cartographer/2/emerald_and_compass_village_taiga_map',
+        'minecraft:cartographer/2/emerald_and_compass_explorer_swamp_map',
+        'minecraft:cartographer/2/emerald_and_compass_village_snowy_map',
+        'minecraft:cartographer/2/emerald_and_compass_village_savanna_map',
+        'minecraft:cartographer/2/emerald_and_compass_village_plains_map',
+        'minecraft:cartographer/2/emerald_and_compass_explorer_jungle_map',
+        'minecraft:cartographer/2/emerald_and_compass_village_desert_map',
+    ],
+)
+
+LEVEL_3 = Tag(
+    values=[
+        'minecraft:cartographer/3/compass_emerald',
+        'minecraft:cartographer/3/emerald_and_compass_ocean_monument_map',
+        'minecraft:cartographer/3/emerald_and_compass_buried_trial_chambers_map',
+    ],
+)
+
+LEVEL_4 = Tag(
+    values=[
+        'minecraft:cartographer/4/emerald_item_frame',
+        'minecraft:cartographer/4/emerald_white_banner',
+        'minecraft:cartographer/4/emerald_orange_banner',
+        'minecraft:cartographer/4/emerald_magenta_banner',
+        'minecraft:cartographer/4/emerald_blue_banner',
+        'minecraft:cartographer/4/emerald_light_blue_banner',
+        'minecraft:cartographer/4/emerald_yellow_banner',
+        'minecraft:cartographer/4/emerald_lime_banner',
+        'minecraft:cartographer/4/emerald_pink_banner',
+        'minecraft:cartographer/4/emerald_gray_banner',
+        'minecraft:cartographer/4/emerald_cyan_banner',
+        'minecraft:cartographer/4/emerald_purple_banner',
+        'minecraft:cartographer/4/emerald_brown_banner',
+        'minecraft:cartographer/4/emerald_green_banner',
+        'minecraft:cartographer/4/emerald_red_banner',
+        'minecraft:cartographer/4/emerald_black_banner',
+    ],
+)
+
+LEVEL_5 = Tag(
+    values=[
+        'minecraft:cartographer/5/emerald_globe_banner_pattern',
+        'minecraft:cartographer/5/emerald_and_compass_woodland_mansion_map',
+    ],
+)

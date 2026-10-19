@@ -3,12 +3,12 @@ Generated from symbols.json for ::java::data::util::MinMaxBounds
 Local link to file: vanilla_mcdoc/data/util/MinMaxBounds.py
 """
 # ~~~ CODE ~~~
-from typing import Generic, TypeVar
+from typing import Any, Generic, TypeVar
 
 from vanilla_mcdoc.base import GeneratedModel
 
 
-T = TypeVar('T')
+T = TypeVar('T', default=Any)
 
 
 class MinMaxBounds(GeneratedModel, Generic[T]):

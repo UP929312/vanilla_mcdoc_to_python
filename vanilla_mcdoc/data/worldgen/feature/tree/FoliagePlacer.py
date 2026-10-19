@@ -5,8 +5,9 @@ Local link to file: vanilla_mcdoc/data/worldgen/feature/tree/FoliagePlacer.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Field, Tag
 
+from vanilla_mcdoc.base import GeneratedModel, tag_of
 from vanilla_mcdoc.data.worldgen.feature.tree.CherryFoliagePlacer import CherryFoliagePlacer
 from vanilla_mcdoc.data.worldgen.feature.tree.HeightFoliagePlacer import HeightFoliagePlacer
 from vanilla_mcdoc.data.worldgen.feature.tree.MegaPineFoliagePlacer import MegaPineFoliagePlacer
@@ -79,7 +80,30 @@ class FoliagePlacerSpruceFoliagePlacer(SprucePineFoliagePlacer):
     offset: IntProvider[Annotated[int, Field(ge=0, le=16)]] | Annotated[int, Field(ge=0, le=16)]
 
 
+class FoliagePlacerAcaciaFoliagePlacer(GeneratedModel):
+    type: Literal['minecraft:acacia_foliage_placer', 'acacia_foliage_placer'] = 'minecraft:acacia_foliage_placer'
+    radius: IntProvider[Annotated[int, Field(ge=0, le=16)]] | Annotated[int, Field(ge=0, le=16)]
+    offset: IntProvider[Annotated[int, Field(ge=0, le=16)]] | Annotated[int, Field(ge=0, le=16)]
+
+
+class FoliagePlacerDarkOakFoliagePlacer(GeneratedModel):
+    type: Literal['minecraft:dark_oak_foliage_placer', 'dark_oak_foliage_placer'] = 'minecraft:dark_oak_foliage_placer'
+    radius: IntProvider[Annotated[int, Field(ge=0, le=16)]] | Annotated[int, Field(ge=0, le=16)]
+    offset: IntProvider[Annotated[int, Field(ge=0, le=16)]] | Annotated[int, Field(ge=0, le=16)]
+
+
 type FoliagePlacer = Annotated[
-    FoliagePlacerBlobFoliagePlacer | FoliagePlacerBushFoliagePlacer | FoliagePlacerCherryFoliagePlacer | FoliagePlacerFancyFoliagePlacer | FoliagePlacerJungleFoliagePlacer | FoliagePlacerMegaPineFoliagePlacer | FoliagePlacerPineFoliagePlacer | FoliagePlacerPoplarFoliagePlacer | FoliagePlacerRandomSpreadFoliagePlacer | FoliagePlacerSpruceFoliagePlacer,
-    Field(discriminator='type'),
+    Annotated[FoliagePlacerBlobFoliagePlacer, Tag('minecraft:blob_foliage_placer')]
+    | Annotated[FoliagePlacerBushFoliagePlacer, Tag('minecraft:bush_foliage_placer')]
+    | Annotated[FoliagePlacerCherryFoliagePlacer, Tag('minecraft:cherry_foliage_placer')]
+    | Annotated[FoliagePlacerFancyFoliagePlacer, Tag('minecraft:fancy_foliage_placer')]
+    | Annotated[FoliagePlacerJungleFoliagePlacer, Tag('minecraft:jungle_foliage_placer')]
+    | Annotated[FoliagePlacerMegaPineFoliagePlacer, Tag('minecraft:mega_pine_foliage_placer')]
+    | Annotated[FoliagePlacerPineFoliagePlacer, Tag('minecraft:pine_foliage_placer')]
+    | Annotated[FoliagePlacerPoplarFoliagePlacer, Tag('minecraft:poplar_foliage_placer')]
+    | Annotated[FoliagePlacerRandomSpreadFoliagePlacer, Tag('minecraft:random_spread_foliage_placer')]
+    | Annotated[FoliagePlacerSpruceFoliagePlacer, Tag('minecraft:spruce_foliage_placer')]
+    | Annotated[FoliagePlacerAcaciaFoliagePlacer, Tag('minecraft:acacia_foliage_placer')]
+    | Annotated[FoliagePlacerDarkOakFoliagePlacer, Tag('minecraft:dark_oak_foliage_placer')],
+    Discriminator(tag_of('type')),
 ]

@@ -5,8 +5,13 @@ Local link to file: vanilla_mcdoc/assets/model/MultipleAxesModelElementRotation.
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING
 
+from pydantic import Field
+
+from vanilla_mcdoc.assets.model.ModelElementRotationBase import ModelElementRotationBase
+
 if TYPE_CHECKING:
     from vanilla_mcdoc.util.direction.Axis import Axis
 
 
-type MultipleAxesModelElementRotation = dict[Axis, float]
+class MultipleAxesModelElementRotation(ModelElementRotationBase):
+    __pydantic_extra__: dict[Axis, float] = Field(init=False)  # type: ignore[assignment]

@@ -1,0 +1,531 @@
+"""Vanilla's data/sulfur_cube_archetype/ files"""
+from vanilla_mcdoc.data.sulfur_cube_archetype.AttributeEntry import AttributeEntry
+from vanilla_mcdoc.data.sulfur_cube_archetype.ContactDamage import ContactDamage
+from vanilla_mcdoc.data.sulfur_cube_archetype.ExplosionData import ExplosionData
+from vanilla_mcdoc.data.sulfur_cube_archetype.KnockbackModifiers import KnockbackModifiers
+from vanilla_mcdoc.data.sulfur_cube_archetype.SoundSettings import SoundSettings
+from vanilla_mcdoc.data.sulfur_cube_archetype.SulfurCubeArchetype import SulfurCubeArchetype
+from vanilla_mcdoc.util.attribute.AttributeOperation import AttributeOperation
+
+BOUNCY = SulfurCubeArchetype(
+    items='#minecraft:sulfur_cube_archetype/bouncy',
+    buoyant=True,
+    knockback_modifiers=KnockbackModifiers(horizontal_power=0.4125, vertical_power=0.105),
+    attribute_modifiers=[
+        AttributeEntry(
+            id='minecraft:bouncy_add_knockback_resistance',
+            amount=-2.0,
+            operation=AttributeOperation.ADDVALUE,
+            attribute='minecraft:knockback_resistance',
+        ),
+        AttributeEntry(
+            id='minecraft:bouncy_add_explosion_knockback_resistance',
+            amount=-2.0,
+            operation=AttributeOperation.ADDVALUE,
+            attribute='minecraft:explosion_knockback_resistance',
+        ),
+        AttributeEntry(
+            id='minecraft:bouncy_add_bounciness',
+            amount=0.8999999761581421,
+            operation=AttributeOperation.ADDVALUE,
+            attribute='minecraft:bounciness',
+        ),
+        AttributeEntry(
+            id='minecraft:bouncy_mul_friction_modifier',
+            amount=-0.699999988079071,
+            operation=AttributeOperation.ADDMULTIPLIEDTOTAL,
+            attribute='minecraft:friction_modifier',
+        ),
+        AttributeEntry(
+            id='minecraft:bouncy_mul_air_drag_modifier',
+            amount=-0.9900000002235174,
+            operation=AttributeOperation.ADDMULTIPLIEDTOTAL,
+            attribute='minecraft:air_drag_modifier',
+        ),
+    ],
+    sound_settings=SoundSettings(
+        hit_sound='minecraft:entity.sulfur_cube.bouncy.hit',
+        push_sound='minecraft:entity.sulfur_cube.bouncy.push',
+        push_sound_impulse_threshold=0.3,
+        push_sound_cooldown=0.7,
+    ),
+)
+
+EXPLOSIVE = SulfurCubeArchetype(
+    items='#minecraft:sulfur_cube_archetype/explosive',
+    buoyant=True,
+    explosion=ExplosionData(fuse=120, power=3, causes_fire=False),
+    knockback_modifiers=KnockbackModifiers(horizontal_power=0.4125, vertical_power=0.09),
+    attribute_modifiers=[
+        AttributeEntry(
+            id='minecraft:explosive_add_knockback_resistance',
+            amount=-1.0,
+            operation=AttributeOperation.ADDVALUE,
+            attribute='minecraft:knockback_resistance',
+        ),
+        AttributeEntry(
+            id='minecraft:explosive_add_explosion_knockback_resistance',
+            amount=-1.0,
+            operation=AttributeOperation.ADDVALUE,
+            attribute='minecraft:explosion_knockback_resistance',
+        ),
+        AttributeEntry(
+            id='minecraft:explosive_add_bounciness',
+            amount=0.5,
+            operation=AttributeOperation.ADDVALUE,
+            attribute='minecraft:bounciness',
+        ),
+        AttributeEntry(
+            id='minecraft:explosive_mul_friction_modifier',
+            amount=-0.699999988079071,
+            operation=AttributeOperation.ADDMULTIPLIEDTOTAL,
+            attribute='minecraft:friction_modifier',
+        ),
+        AttributeEntry(
+            id='minecraft:explosive_mul_air_drag_modifier',
+            amount=-0.699999988079071,
+            operation=AttributeOperation.ADDMULTIPLIEDTOTAL,
+            attribute='minecraft:air_drag_modifier',
+        ),
+    ],
+    sound_settings=SoundSettings(
+        hit_sound='minecraft:entity.sulfur_cube.explosive.hit',
+        push_sound='minecraft:entity.sulfur_cube.explosive.push',
+        push_sound_impulse_threshold=0.1,
+        push_sound_cooldown=0.7,
+    ),
+)
+
+FAST_FLAT = SulfurCubeArchetype(
+    items='#minecraft:sulfur_cube_archetype/fast_flat',
+    knockback_modifiers=KnockbackModifiers(horizontal_power=0.9125, vertical_power=0.09),
+    attribute_modifiers=[
+        AttributeEntry(
+            id='minecraft:fast_flat_add_knockback_resistance',
+            amount=-1.0,
+            operation=AttributeOperation.ADDVALUE,
+            attribute='minecraft:knockback_resistance',
+        ),
+        AttributeEntry(
+            id='minecraft:fast_flat_add_explosion_knockback_resistance',
+            amount=-1.0,
+            operation=AttributeOperation.ADDVALUE,
+            attribute='minecraft:explosion_knockback_resistance',
+        ),
+        AttributeEntry(
+            id='minecraft:fast_flat_add_bounciness',
+            amount=0.5,
+            operation=AttributeOperation.ADDVALUE,
+            attribute='minecraft:bounciness',
+        ),
+        AttributeEntry(
+            id='minecraft:fast_flat_mul_friction_modifier',
+            amount=-0.7999999970197678,
+            operation=AttributeOperation.ADDMULTIPLIEDTOTAL,
+            attribute='minecraft:friction_modifier',
+        ),
+        AttributeEntry(
+            id='minecraft:fast_flat_mul_air_drag_modifier',
+            amount=-0.9900000002235174,
+            operation=AttributeOperation.ADDMULTIPLIEDTOTAL,
+            attribute='minecraft:air_drag_modifier',
+        ),
+    ],
+    sound_settings=SoundSettings(
+        hit_sound='minecraft:entity.sulfur_cube.fast_flat.hit',
+        push_sound='minecraft:entity.sulfur_cube.fast_flat.push',
+        push_sound_impulse_threshold=0.03,
+        push_sound_cooldown=0.9,
+    ),
+)
+
+FAST_SLIDING = SulfurCubeArchetype(
+    items='#minecraft:sulfur_cube_archetype/fast_sliding',
+    knockback_modifiers=KnockbackModifiers(horizontal_power=0.6625, vertical_power=0.09),
+    attribute_modifiers=[
+        AttributeEntry(
+            id='minecraft:fast_sliding_add_knockback_resistance',
+            amount=0.5,
+            operation=AttributeOperation.ADDVALUE,
+            attribute='minecraft:knockback_resistance',
+        ),
+        AttributeEntry(
+            id='minecraft:fast_sliding_add_explosion_knockback_resistance',
+            amount=0.5,
+            operation=AttributeOperation.ADDVALUE,
+            attribute='minecraft:explosion_knockback_resistance',
+        ),
+        AttributeEntry(
+            id='minecraft:fast_sliding_add_bounciness',
+            amount=0.10000000149011612,
+            operation=AttributeOperation.ADDVALUE,
+            attribute='minecraft:bounciness',
+        ),
+        AttributeEntry(
+            id='minecraft:fast_sliding_mul_friction_modifier',
+            amount=-0.9499999992549419,
+            operation=AttributeOperation.ADDMULTIPLIEDTOTAL,
+            attribute='minecraft:friction_modifier',
+        ),
+        AttributeEntry(
+            id='minecraft:fast_sliding_mul_air_drag_modifier',
+            amount=-0.9900000002235174,
+            operation=AttributeOperation.ADDMULTIPLIEDTOTAL,
+            attribute='minecraft:air_drag_modifier',
+        ),
+    ],
+    sound_settings=SoundSettings(
+        hit_sound='minecraft:entity.sulfur_cube.fast_sliding.hit',
+        push_sound='minecraft:entity.sulfur_cube.fast_sliding.push',
+        push_sound_impulse_threshold=0.05,
+        push_sound_cooldown=1.0,
+    ),
+)
+
+HIGH_RESISTANCE = SulfurCubeArchetype(
+    items='#minecraft:sulfur_cube_archetype/high_resistance',
+    knockback_modifiers=KnockbackModifiers(horizontal_power=0.4125, vertical_power=0.09),
+    attribute_modifiers=[
+        AttributeEntry(
+            id='minecraft:high_resistance_add_knockback_resistance',
+            amount=0.699999988079071,
+            operation=AttributeOperation.ADDVALUE,
+            attribute='minecraft:knockback_resistance',
+        ),
+        AttributeEntry(
+            id='minecraft:high_resistance_add_explosion_knockback_resistance',
+            amount=0.699999988079071,
+            operation=AttributeOperation.ADDVALUE,
+            attribute='minecraft:explosion_knockback_resistance',
+        ),
+        AttributeEntry(
+            id='minecraft:high_resistance_add_bounciness',
+            amount=0.20000000298023224,
+            operation=AttributeOperation.ADDVALUE,
+            attribute='minecraft:bounciness',
+        ),
+        AttributeEntry(
+            id='minecraft:high_resistance_mul_friction_modifier',
+            amount=0.0,
+            operation=AttributeOperation.ADDMULTIPLIEDTOTAL,
+            attribute='minecraft:friction_modifier',
+        ),
+        AttributeEntry(
+            id='minecraft:high_resistance_mul_air_drag_modifier',
+            amount=-0.9900000002235174,
+            operation=AttributeOperation.ADDMULTIPLIEDTOTAL,
+            attribute='minecraft:air_drag_modifier',
+        ),
+    ],
+    sound_settings=SoundSettings(
+        hit_sound='minecraft:entity.sulfur_cube.high_resistance.hit',
+        push_sound='minecraft:entity.sulfur_cube.high_resistance.push',
+        push_sound_impulse_threshold=0.03,
+        push_sound_cooldown=0.7,
+    ),
+)
+
+HOT = SulfurCubeArchetype(
+    items='#minecraft:sulfur_cube_archetype/hot',
+    buoyant=True,
+    contact_damage=ContactDamage(damage_type='minecraft:sulfur_cube_hot', amount=1.0, attribute_to_source=False),
+    knockback_modifiers=KnockbackModifiers(horizontal_power=0.4125, vertical_power=0.09),
+    attribute_modifiers=[
+        AttributeEntry(
+            id='minecraft:hot_add_knockback_resistance',
+            amount=-1.0,
+            operation=AttributeOperation.ADDVALUE,
+            attribute='minecraft:knockback_resistance',
+        ),
+        AttributeEntry(
+            id='minecraft:hot_add_explosion_knockback_resistance',
+            amount=-1.0,
+            operation=AttributeOperation.ADDVALUE,
+            attribute='minecraft:explosion_knockback_resistance',
+        ),
+        AttributeEntry(
+            id='minecraft:hot_add_bounciness',
+            amount=0.5,
+            operation=AttributeOperation.ADDVALUE,
+            attribute='minecraft:bounciness',
+        ),
+        AttributeEntry(
+            id='minecraft:hot_mul_friction_modifier',
+            amount=-0.699999988079071,
+            operation=AttributeOperation.ADDMULTIPLIEDTOTAL,
+            attribute='minecraft:friction_modifier',
+        ),
+        AttributeEntry(
+            id='minecraft:hot_mul_air_drag_modifier',
+            amount=-0.8999999985098839,
+            operation=AttributeOperation.ADDMULTIPLIEDTOTAL,
+            attribute='minecraft:air_drag_modifier',
+        ),
+    ],
+    sound_settings=SoundSettings(
+        hit_sound='minecraft:entity.sulfur_cube.hot.hit',
+        push_sound='minecraft:entity.sulfur_cube.hot.push',
+        push_sound_impulse_threshold=0.2,
+        push_sound_cooldown=0.7,
+    ),
+)
+
+LIGHT = SulfurCubeArchetype(
+    items='#minecraft:sulfur_cube_archetype/light',
+    buoyant=True,
+    knockback_modifiers=KnockbackModifiers(horizontal_power=0.4125, vertical_power=0.18),
+    attribute_modifiers=[
+        AttributeEntry(
+            id='minecraft:light_add_knockback_resistance',
+            amount=-1.0,
+            operation=AttributeOperation.ADDVALUE,
+            attribute='minecraft:knockback_resistance',
+        ),
+        AttributeEntry(
+            id='minecraft:light_add_explosion_knockback_resistance',
+            amount=-1.0,
+            operation=AttributeOperation.ADDVALUE,
+            attribute='minecraft:explosion_knockback_resistance',
+        ),
+        AttributeEntry(
+            id='minecraft:light_add_bounciness',
+            amount=1.0,
+            operation=AttributeOperation.ADDVALUE,
+            attribute='minecraft:bounciness',
+        ),
+        AttributeEntry(
+            id='minecraft:light_mul_friction_modifier',
+            amount=-0.699999988079071,
+            operation=AttributeOperation.ADDMULTIPLIEDTOTAL,
+            attribute='minecraft:friction_modifier',
+        ),
+        AttributeEntry(
+            id='minecraft:light_mul_air_drag_modifier',
+            amount=0.7999999523162842,
+            operation=AttributeOperation.ADDMULTIPLIEDTOTAL,
+            attribute='minecraft:air_drag_modifier',
+        ),
+    ],
+    sound_settings=SoundSettings(
+        hit_sound='minecraft:entity.sulfur_cube.light.hit',
+        push_sound='minecraft:entity.sulfur_cube.light.push',
+        push_sound_impulse_threshold=0.2,
+        push_sound_cooldown=0.7,
+    ),
+)
+
+REGULAR = SulfurCubeArchetype(
+    items='#minecraft:sulfur_cube_archetype/regular',
+    buoyant=True,
+    knockback_modifiers=KnockbackModifiers(horizontal_power=0.4125, vertical_power=0.09),
+    attribute_modifiers=[
+        AttributeEntry(
+            id='minecraft:regular_add_knockback_resistance',
+            amount=-1.0,
+            operation=AttributeOperation.ADDVALUE,
+            attribute='minecraft:knockback_resistance',
+        ),
+        AttributeEntry(
+            id='minecraft:regular_add_explosion_knockback_resistance',
+            amount=-1.0,
+            operation=AttributeOperation.ADDVALUE,
+            attribute='minecraft:explosion_knockback_resistance',
+        ),
+        AttributeEntry(
+            id='minecraft:regular_add_bounciness',
+            amount=0.5,
+            operation=AttributeOperation.ADDVALUE,
+            attribute='minecraft:bounciness',
+        ),
+        AttributeEntry(
+            id='minecraft:regular_mul_friction_modifier',
+            amount=-0.699999988079071,
+            operation=AttributeOperation.ADDMULTIPLIEDTOTAL,
+            attribute='minecraft:friction_modifier',
+        ),
+        AttributeEntry(
+            id='minecraft:regular_mul_air_drag_modifier',
+            amount=-0.8999999985098839,
+            operation=AttributeOperation.ADDMULTIPLIEDTOTAL,
+            attribute='minecraft:air_drag_modifier',
+        ),
+    ],
+    sound_settings=SoundSettings(
+        hit_sound='minecraft:entity.sulfur_cube.regular.hit',
+        push_sound='minecraft:entity.sulfur_cube.regular.push',
+        push_sound_impulse_threshold=0.2,
+        push_sound_cooldown=0.5,
+    ),
+)
+
+SLOW_BOUNCY = SulfurCubeArchetype(
+    items='#minecraft:sulfur_cube_archetype/slow_bouncy',
+    knockback_modifiers=KnockbackModifiers(horizontal_power=0.4125, vertical_power=0.24),
+    attribute_modifiers=[
+        AttributeEntry(
+            id='minecraft:slow_bouncy_add_knockback_resistance',
+            amount=0.4000000059604645,
+            operation=AttributeOperation.ADDVALUE,
+            attribute='minecraft:knockback_resistance',
+        ),
+        AttributeEntry(
+            id='minecraft:slow_bouncy_add_explosion_knockback_resistance',
+            amount=0.4000000059604645,
+            operation=AttributeOperation.ADDVALUE,
+            attribute='minecraft:explosion_knockback_resistance',
+        ),
+        AttributeEntry(
+            id='minecraft:slow_bouncy_add_bounciness',
+            amount=0.6000000238418579,
+            operation=AttributeOperation.ADDVALUE,
+            attribute='minecraft:bounciness',
+        ),
+        AttributeEntry(
+            id='minecraft:slow_bouncy_mul_friction_modifier',
+            amount=-0.699999988079071,
+            operation=AttributeOperation.ADDMULTIPLIEDTOTAL,
+            attribute='minecraft:friction_modifier',
+        ),
+        AttributeEntry(
+            id='minecraft:slow_bouncy_mul_air_drag_modifier',
+            amount=-0.9499999992549419,
+            operation=AttributeOperation.ADDMULTIPLIEDTOTAL,
+            attribute='minecraft:air_drag_modifier',
+        ),
+    ],
+    sound_settings=SoundSettings(
+        hit_sound='minecraft:entity.sulfur_cube.slow_bouncy.hit',
+        push_sound='minecraft:entity.sulfur_cube.slow_bouncy.push',
+        push_sound_impulse_threshold=0.05,
+        push_sound_cooldown=0.5,
+    ),
+)
+
+SLOW_FLAT = SulfurCubeArchetype(
+    items='#minecraft:sulfur_cube_archetype/slow_flat',
+    knockback_modifiers=KnockbackModifiers(horizontal_power=0.4125, vertical_power=0.105),
+    attribute_modifiers=[
+        AttributeEntry(
+            id='minecraft:slow_flat_add_knockback_resistance',
+            amount=0.5,
+            operation=AttributeOperation.ADDVALUE,
+            attribute='minecraft:knockback_resistance',
+        ),
+        AttributeEntry(
+            id='minecraft:slow_flat_add_explosion_knockback_resistance',
+            amount=0.5,
+            operation=AttributeOperation.ADDVALUE,
+            attribute='minecraft:explosion_knockback_resistance',
+        ),
+        AttributeEntry(
+            id='minecraft:slow_flat_add_bounciness',
+            amount=0.4000000059604645,
+            operation=AttributeOperation.ADDVALUE,
+            attribute='minecraft:bounciness',
+        ),
+        AttributeEntry(
+            id='minecraft:slow_flat_mul_friction_modifier',
+            amount=-0.5999999940395355,
+            operation=AttributeOperation.ADDMULTIPLIEDTOTAL,
+            attribute='minecraft:friction_modifier',
+        ),
+        AttributeEntry(
+            id='minecraft:slow_flat_mul_air_drag_modifier',
+            amount=-0.8999999985098839,
+            operation=AttributeOperation.ADDMULTIPLIEDTOTAL,
+            attribute='minecraft:air_drag_modifier',
+        ),
+    ],
+    sound_settings=SoundSettings(
+        hit_sound='minecraft:entity.sulfur_cube.slow_flat.hit',
+        push_sound='minecraft:entity.sulfur_cube.slow_flat.push',
+        push_sound_impulse_threshold=0.03,
+        push_sound_cooldown=0.9,
+    ),
+)
+
+SLOW_SLIDING = SulfurCubeArchetype(
+    items='#minecraft:sulfur_cube_archetype/slow_sliding',
+    knockback_modifiers=KnockbackModifiers(horizontal_power=0.4125, vertical_power=0.09),
+    attribute_modifiers=[
+        AttributeEntry(
+            id='minecraft:slow_sliding_add_knockback_resistance',
+            amount=0.800000011920929,
+            operation=AttributeOperation.ADDVALUE,
+            attribute='minecraft:knockback_resistance',
+        ),
+        AttributeEntry(
+            id='minecraft:slow_sliding_add_explosion_knockback_resistance',
+            amount=0.800000011920929,
+            operation=AttributeOperation.ADDVALUE,
+            attribute='minecraft:explosion_knockback_resistance',
+        ),
+        AttributeEntry(
+            id='minecraft:slow_sliding_add_bounciness',
+            amount=0.10000000149011612,
+            operation=AttributeOperation.ADDVALUE,
+            attribute='minecraft:bounciness',
+        ),
+        AttributeEntry(
+            id='minecraft:slow_sliding_mul_friction_modifier',
+            amount=-0.9499999992549419,
+            operation=AttributeOperation.ADDMULTIPLIEDTOTAL,
+            attribute='minecraft:friction_modifier',
+        ),
+        AttributeEntry(
+            id='minecraft:slow_sliding_mul_air_drag_modifier',
+            amount=-0.9900000002235174,
+            operation=AttributeOperation.ADDMULTIPLIEDTOTAL,
+            attribute='minecraft:air_drag_modifier',
+        ),
+    ],
+    sound_settings=SoundSettings(
+        hit_sound='minecraft:entity.sulfur_cube.slow_sliding.hit',
+        push_sound='minecraft:entity.sulfur_cube.slow_sliding.push',
+        push_sound_impulse_threshold=0.02,
+        push_sound_cooldown=1.0,
+    ),
+)
+
+STICKY = SulfurCubeArchetype(
+    items='#minecraft:sulfur_cube_archetype/sticky',
+    knockback_modifiers=KnockbackModifiers(horizontal_power=0.4125, vertical_power=0.09),
+    attribute_modifiers=[
+        AttributeEntry(
+            id='minecraft:sticky_add_knockback_resistance',
+            amount=-2.0,
+            operation=AttributeOperation.ADDVALUE,
+            attribute='minecraft:knockback_resistance',
+        ),
+        AttributeEntry(
+            id='minecraft:sticky_add_explosion_knockback_resistance',
+            amount=-2.0,
+            operation=AttributeOperation.ADDVALUE,
+            attribute='minecraft:explosion_knockback_resistance',
+        ),
+        AttributeEntry(
+            id='minecraft:sticky_add_bounciness',
+            amount=0.0,
+            operation=AttributeOperation.ADDVALUE,
+            attribute='minecraft:bounciness',
+        ),
+        AttributeEntry(
+            id='minecraft:sticky_mul_friction_modifier',
+            amount=1.0,
+            operation=AttributeOperation.ADDMULTIPLIEDTOTAL,
+            attribute='minecraft:friction_modifier',
+        ),
+        AttributeEntry(
+            id='minecraft:sticky_mul_air_drag_modifier',
+            amount=-0.9900000002235174,
+            operation=AttributeOperation.ADDMULTIPLIEDTOTAL,
+            attribute='minecraft:air_drag_modifier',
+        ),
+    ],
+    sound_settings=SoundSettings(
+        hit_sound='minecraft:entity.sulfur_cube.sticky.hit',
+        push_sound='minecraft:entity.sulfur_cube.sticky.push',
+        push_sound_impulse_threshold=0.05,
+        push_sound_cooldown=0.5,
+    ),
+)

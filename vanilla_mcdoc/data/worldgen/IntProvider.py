@@ -3,13 +3,13 @@ Generated from symbols.json for ::java::data::worldgen::IntProvider
 Local link to file: vanilla_mcdoc/data/worldgen/IntProvider.py
 """
 # ~~~ CODE ~~~
-from typing import Annotated, Generic, TypeVar
+from typing import Annotated, Any, Generic, TypeVar
 
 from vanilla_mcdoc.base import GeneratedModel
 from vanilla_mcdoc.minecraft_types import IdSpec
 
 
-T = TypeVar('T')
+T = TypeVar('T', default=Any)
 
 
 class IntProvider(GeneratedModel, Generic[T]):

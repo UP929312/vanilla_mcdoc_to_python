@@ -17,9 +17,9 @@ if TYPE_CHECKING:
 
 
 class ZombieVillager(Zombie):
-    VillagerData_: VillagerData | None = Field(default=None, alias='VillagerData')  # Villager's skin data
+    VillagerData_: VillagerData | None = Field(default=None, validation_alias='VillagerData', serialization_alias='VillagerData')  # Villager's skin data
     VillagerDataFinalized: bool | None = None
     Gossips: list[PlayerReputationPart] | None = None  # Villager's gossips
-    Offers_: Offers | None = Field(default=None, alias='Offers')  # Villager's offers
+    Offers_: Offers | None = Field(default=None, validation_alias='Offers', serialization_alias='Offers')  # Villager's offers
     ConversionTime: int | None = None  # Ticks until the it is converted.
     ConversionPlayer: MinecraftUUID | None = None  # Player who triggered the conversion.

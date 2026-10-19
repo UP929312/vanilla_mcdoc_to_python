@@ -5,9 +5,9 @@ Local link to file: vanilla_mcdoc/world/component/item/AttributeDisplay.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
-from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel, tag_of
 from vanilla_mcdoc.world.component.item.AttributeDisplayTextOverride import AttributeDisplayTextOverride
 
 
@@ -24,6 +24,8 @@ class AttributeDisplayOverride(AttributeDisplayTextOverride):
 
 
 type AttributeDisplay = Annotated[
-    AttributeDisplayDefault | AttributeDisplayHidden | AttributeDisplayOverride,
-    Field(discriminator='type'),
+    Annotated[AttributeDisplayDefault, Tag('minecraft:default')]
+    | Annotated[AttributeDisplayHidden, Tag('minecraft:hidden')]
+    | Annotated[AttributeDisplayOverride, Tag('minecraft:override')],
+    Discriminator(tag_of('type')),
 ]

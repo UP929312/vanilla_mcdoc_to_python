@@ -5,8 +5,9 @@ Local link to file: vanilla_mcdoc/data/worldgen/feature/placement/PlacementModif
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
+from vanilla_mcdoc.base import GeneratedModel, tag_of
 from vanilla_mcdoc.data.worldgen.feature.placement.BlockPredicateFilter import BlockPredicateFilter
 from vanilla_mcdoc.data.worldgen.feature.placement.CountModifier import CountModifier
 from vanilla_mcdoc.data.worldgen.feature.placement.CountOnEveryLayerModifier import CountOnEveryLayerModifier
@@ -89,7 +90,32 @@ class PlacementModifierSurfaceWaterDepthFilter(SurfaceWaterDepthFilter):
     type: Literal['minecraft:surface_water_depth_filter', 'surface_water_depth_filter'] = 'minecraft:surface_water_depth_filter'
 
 
+class PlacementModifierBiome(GeneratedModel):
+    type: Literal['minecraft:biome', 'biome'] = 'minecraft:biome'
+
+
+class PlacementModifierInSquare(GeneratedModel):
+    type: Literal['minecraft:in_square', 'in_square'] = 'minecraft:in_square'
+
+
 type PlacementModifier = Annotated[
-    PlacementModifierBlockPredicateFilter | PlacementModifierCount | PlacementModifierCountOnEveryLayer | PlacementModifierCuboid | PlacementModifierEnvironmentScan | PlacementModifierFixedPlacement | PlacementModifierHeightRange | PlacementModifierHeightmap | PlacementModifierNoiseBasedCount | PlacementModifierNoiseThresholdCount | PlacementModifierOffset | PlacementModifierRandomChance | PlacementModifierRandomlySelected | PlacementModifierRarityFilter | PlacementModifierSurfaceRelativeThresholdFilter | PlacementModifierSurfaceWaterDepthFilter,
-    Field(discriminator='type'),
+    Annotated[PlacementModifierBlockPredicateFilter, Tag('minecraft:block_predicate_filter')]
+    | Annotated[PlacementModifierCount, Tag('minecraft:count')]
+    | Annotated[PlacementModifierCountOnEveryLayer, Tag('minecraft:count_on_every_layer')]
+    | Annotated[PlacementModifierCuboid, Tag('minecraft:cuboid')]
+    | Annotated[PlacementModifierEnvironmentScan, Tag('minecraft:environment_scan')]
+    | Annotated[PlacementModifierFixedPlacement, Tag('minecraft:fixed_placement')]
+    | Annotated[PlacementModifierHeightRange, Tag('minecraft:height_range')]
+    | Annotated[PlacementModifierHeightmap, Tag('minecraft:heightmap')]
+    | Annotated[PlacementModifierNoiseBasedCount, Tag('minecraft:noise_based_count')]
+    | Annotated[PlacementModifierNoiseThresholdCount, Tag('minecraft:noise_threshold_count')]
+    | Annotated[PlacementModifierOffset, Tag('minecraft:offset')]
+    | Annotated[PlacementModifierRandomChance, Tag('minecraft:random_chance')]
+    | Annotated[PlacementModifierRandomlySelected, Tag('minecraft:randomly_selected')]
+    | Annotated[PlacementModifierRarityFilter, Tag('minecraft:rarity_filter')]
+    | Annotated[PlacementModifierSurfaceRelativeThresholdFilter, Tag('minecraft:surface_relative_threshold_filter')]
+    | Annotated[PlacementModifierSurfaceWaterDepthFilter, Tag('minecraft:surface_water_depth_filter')]
+    | Annotated[PlacementModifierBiome, Tag('minecraft:biome')]
+    | Annotated[PlacementModifierInSquare, Tag('minecraft:in_square')],
+    Discriminator(tag_of('type')),
 ]

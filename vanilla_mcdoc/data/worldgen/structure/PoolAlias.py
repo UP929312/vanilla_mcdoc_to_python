@@ -5,8 +5,9 @@ Local link to file: vanilla_mcdoc/data/worldgen/structure/PoolAlias.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
+from vanilla_mcdoc.base import tag_of
 from vanilla_mcdoc.data.worldgen.structure.DirectPoolAlias import DirectPoolAlias
 from vanilla_mcdoc.data.worldgen.structure.RandomGroupPoolAlias import RandomGroupPoolAlias
 from vanilla_mcdoc.data.worldgen.structure.RandomPoolAlias import RandomPoolAlias
@@ -25,6 +26,8 @@ class PoolAliasRandomGroup(RandomGroupPoolAlias):
 
 
 type PoolAlias = Annotated[
-    PoolAliasDirect | PoolAliasRandom | PoolAliasRandomGroup,
-    Field(discriminator='type'),
+    Annotated[PoolAliasDirect, Tag('minecraft:direct')]
+    | Annotated[PoolAliasRandom, Tag('minecraft:random')]
+    | Annotated[PoolAliasRandomGroup, Tag('minecraft:random_group')],
+    Discriminator(tag_of('type')),
 ]

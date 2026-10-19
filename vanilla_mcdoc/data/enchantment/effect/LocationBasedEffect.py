@@ -5,8 +5,9 @@ Local link to file: vanilla_mcdoc/data/enchantment/effect/LocationBasedEffect.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
+from vanilla_mcdoc.base import GeneratedModel, tag_of
 from vanilla_mcdoc.data.enchantment.effect.AllOfLocationBasedEffect import AllOfLocationBasedEffect
 from vanilla_mcdoc.data.enchantment.effect.ApplyExhaustionEntityEffect import ApplyExhaustionEntityEffect
 from vanilla_mcdoc.data.enchantment.effect.ApplyImpulseEntityEffect import ApplyImpulseEntityEffect
@@ -84,7 +85,26 @@ class LocationBasedEffectSummonEntity(SummonEntityEffect):
     type: Literal['minecraft:summon_entity', 'summon_entity'] = 'minecraft:summon_entity'
 
 
+class LocationBasedEffectAttribute(GeneratedModel):
+    type: Literal['minecraft:attribute', 'attribute'] = 'minecraft:attribute'
+
+
 type LocationBasedEffect = Annotated[
-    LocationBasedEffectAllOf | LocationBasedEffectApplyExhaustion | LocationBasedEffectApplyImpulse | LocationBasedEffectApplyMobEffect | LocationBasedEffectChangeItemDamage | LocationBasedEffectDamageEntity | LocationBasedEffectExplode | LocationBasedEffectIgnite | LocationBasedEffectPlaySound | LocationBasedEffectReplaceBlock | LocationBasedEffectReplaceDisk | LocationBasedEffectRunFunction | LocationBasedEffectSetBlockProperties | LocationBasedEffectSpawnParticles | LocationBasedEffectSummonEntity,
-    Field(discriminator='type'),
+    Annotated[LocationBasedEffectAllOf, Tag('minecraft:all_of')]
+    | Annotated[LocationBasedEffectApplyExhaustion, Tag('minecraft:apply_exhaustion')]
+    | Annotated[LocationBasedEffectApplyImpulse, Tag('minecraft:apply_impulse')]
+    | Annotated[LocationBasedEffectApplyMobEffect, Tag('minecraft:apply_mob_effect')]
+    | Annotated[LocationBasedEffectChangeItemDamage, Tag('minecraft:change_item_damage')]
+    | Annotated[LocationBasedEffectDamageEntity, Tag('minecraft:damage_entity')]
+    | Annotated[LocationBasedEffectExplode, Tag('minecraft:explode')]
+    | Annotated[LocationBasedEffectIgnite, Tag('minecraft:ignite')]
+    | Annotated[LocationBasedEffectPlaySound, Tag('minecraft:play_sound')]
+    | Annotated[LocationBasedEffectReplaceBlock, Tag('minecraft:replace_block')]
+    | Annotated[LocationBasedEffectReplaceDisk, Tag('minecraft:replace_disk')]
+    | Annotated[LocationBasedEffectRunFunction, Tag('minecraft:run_function')]
+    | Annotated[LocationBasedEffectSetBlockProperties, Tag('minecraft:set_block_properties')]
+    | Annotated[LocationBasedEffectSpawnParticles, Tag('minecraft:spawn_particles')]
+    | Annotated[LocationBasedEffectSummonEntity, Tag('minecraft:summon_entity')]
+    | Annotated[LocationBasedEffectAttribute, Tag('minecraft:attribute')],
+    Discriminator(tag_of('type')),
 ]

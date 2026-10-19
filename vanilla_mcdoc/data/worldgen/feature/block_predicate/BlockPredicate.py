@@ -5,8 +5,9 @@ Local link to file: vanilla_mcdoc/data/worldgen/feature/block_predicate/BlockPre
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
+from vanilla_mcdoc.base import GeneratedModel, tag_of
 from vanilla_mcdoc.data.worldgen.feature.block_predicate.BelowHeightmapPredicate import BelowHeightmapPredicate
 from vanilla_mcdoc.data.worldgen.feature.block_predicate.CombiningPredicate import CombiningPredicate
 from vanilla_mcdoc.data.worldgen.feature.block_predicate.HasSturdyFacePredicate import HasSturdyFacePredicate
@@ -78,7 +79,35 @@ class BlockPredicateWouldSurvive(WouldSurvivePredicate):
     type: Literal['minecraft:would_survive', 'would_survive'] = 'minecraft:would_survive'
 
 
+class BlockPredicateReplaceable(GeneratedModel):
+    type: Literal['minecraft:replaceable', 'replaceable'] = 'minecraft:replaceable'
+
+
+class BlockPredicateSolid(GeneratedModel):
+    type: Literal['minecraft:solid', 'solid'] = 'minecraft:solid'
+
+
+class BlockPredicateTrue(GeneratedModel):
+    type: Literal['minecraft:true', 'true'] = 'minecraft:true'
+
+
 type BlockPredicate = Annotated[
-    BlockPredicateAllOf | BlockPredicateAnyOf | BlockPredicateBelowHeightmap | BlockPredicateHasSturdyFace | BlockPredicateHeightRange | BlockPredicateInsideWorldBounds | BlockPredicateMatchingBiomes | BlockPredicateMatchingBlockTag | BlockPredicateMatchingBlocks | BlockPredicateMatchingFluids | BlockPredicateNot | BlockPredicateUnobstructed | BlockPredicateVolumeMatch | BlockPredicateWouldSurvive,
-    Field(discriminator='type'),
+    Annotated[BlockPredicateAllOf, Tag('minecraft:all_of')]
+    | Annotated[BlockPredicateAnyOf, Tag('minecraft:any_of')]
+    | Annotated[BlockPredicateBelowHeightmap, Tag('minecraft:below_heightmap')]
+    | Annotated[BlockPredicateHasSturdyFace, Tag('minecraft:has_sturdy_face')]
+    | Annotated[BlockPredicateHeightRange, Tag('minecraft:height_range')]
+    | Annotated[BlockPredicateInsideWorldBounds, Tag('minecraft:inside_world_bounds')]
+    | Annotated[BlockPredicateMatchingBiomes, Tag('minecraft:matching_biomes')]
+    | Annotated[BlockPredicateMatchingBlockTag, Tag('minecraft:matching_block_tag')]
+    | Annotated[BlockPredicateMatchingBlocks, Tag('minecraft:matching_blocks')]
+    | Annotated[BlockPredicateMatchingFluids, Tag('minecraft:matching_fluids')]
+    | Annotated[BlockPredicateNot, Tag('minecraft:not')]
+    | Annotated[BlockPredicateUnobstructed, Tag('minecraft:unobstructed')]
+    | Annotated[BlockPredicateVolumeMatch, Tag('minecraft:volume_match')]
+    | Annotated[BlockPredicateWouldSurvive, Tag('minecraft:would_survive')]
+    | Annotated[BlockPredicateReplaceable, Tag('minecraft:replaceable')]
+    | Annotated[BlockPredicateSolid, Tag('minecraft:solid')]
+    | Annotated[BlockPredicateTrue, Tag('minecraft:true')],
+    Discriminator(tag_of('type')),
 ]

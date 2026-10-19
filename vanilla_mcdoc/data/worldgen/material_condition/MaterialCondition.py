@@ -5,8 +5,9 @@ Local link to file: vanilla_mcdoc/data/worldgen/material_condition/MaterialCondi
 # ~~~ CODE ~~~
 from typing import Annotated, ClassVar, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
+from vanilla_mcdoc.base import GeneratedModel, tag_of
 from vanilla_mcdoc.data.worldgen.material_condition.BiomeCondition import BiomeCondition
 from vanilla_mcdoc.data.worldgen.material_condition.NoiseThresholdCondition import NoiseThresholdCondition
 from vanilla_mcdoc.data.worldgen.material_condition.NotCondition import NotCondition
@@ -58,7 +59,41 @@ class MaterialConditionYAbove(YAboveCondition):
     type: Literal['minecraft:y_above', 'y_above'] = 'minecraft:y_above'
 
 
+class MaterialConditionAbovePreliminarySurface(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'worldgen/material_condition'
+
+    type: Literal['minecraft:above_preliminary_surface', 'above_preliminary_surface'] = 'minecraft:above_preliminary_surface'
+
+
+class MaterialConditionHole(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'worldgen/material_condition'
+
+    type: Literal['minecraft:hole', 'hole'] = 'minecraft:hole'
+
+
+class MaterialConditionSteep(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'worldgen/material_condition'
+
+    type: Literal['minecraft:steep', 'steep'] = 'minecraft:steep'
+
+
+class MaterialConditionTemperature(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'worldgen/material_condition'
+
+    type: Literal['minecraft:temperature', 'temperature'] = 'minecraft:temperature'
+
+
 type MaterialCondition = Annotated[
-    MaterialConditionBiome | MaterialConditionNoiseThreshold | MaterialConditionNot | MaterialConditionStoneDepth | MaterialConditionVerticalGradient | MaterialConditionWater | MaterialConditionYAbove,
-    Field(discriminator='type'),
+    Annotated[MaterialConditionBiome, Tag('minecraft:biome')]
+    | Annotated[MaterialConditionNoiseThreshold, Tag('minecraft:noise_threshold')]
+    | Annotated[MaterialConditionNot, Tag('minecraft:not')]
+    | Annotated[MaterialConditionStoneDepth, Tag('minecraft:stone_depth')]
+    | Annotated[MaterialConditionVerticalGradient, Tag('minecraft:vertical_gradient')]
+    | Annotated[MaterialConditionWater, Tag('minecraft:water')]
+    | Annotated[MaterialConditionYAbove, Tag('minecraft:y_above')]
+    | Annotated[MaterialConditionAbovePreliminarySurface, Tag('minecraft:above_preliminary_surface')]
+    | Annotated[MaterialConditionHole, Tag('minecraft:hole')]
+    | Annotated[MaterialConditionSteep, Tag('minecraft:steep')]
+    | Annotated[MaterialConditionTemperature, Tag('minecraft:temperature')],
+    Discriminator(tag_of('type')),
 ]

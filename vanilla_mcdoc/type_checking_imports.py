@@ -103,9 +103,22 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
         'Transformation': ('vanilla_mcdoc.world.entity.display.Transformation', 'Transformation'),
     },
     'vanilla_mcdoc.assets.item_definition.Condition': {
+        'AttributeModifiersPredicate': ('vanilla_mcdoc.world.component.predicate.AttributeModifiersPredicate', 'AttributeModifiersPredicate'),
+        'BundleContentsPredicate': ('vanilla_mcdoc.world.component.predicate.BundleContentsPredicate', 'BundleContentsPredicate'),
         'ConditionalPropertyType': ('vanilla_mcdoc.assets.item_definition.ConditionalPropertyType', 'ConditionalPropertyType'),
+        'ContainerPredicate': ('vanilla_mcdoc.world.component.predicate.ContainerPredicate', 'ContainerPredicate'),
+        'CustomData': ('vanilla_mcdoc.world.component.CustomData', 'CustomData'),
+        'EnchantmentPredicate': ('vanilla_mcdoc.data.advancement.predicate.EnchantmentPredicate', 'EnchantmentPredicate'),
+        'FireworkExplosionPredicate': ('vanilla_mcdoc.world.component.predicate.FireworkExplosionPredicate', 'FireworkExplosionPredicate'),
+        'FireworksPredicate': ('vanilla_mcdoc.world.component.predicate.FireworksPredicate', 'FireworksPredicate'),
+        'ItemDamagePredicate': ('vanilla_mcdoc.world.component.predicate.ItemDamagePredicate', 'ItemDamagePredicate'),
         'ItemModel': ('vanilla_mcdoc.assets.item_definition.ItemModel', 'ItemModel'),
+        'JukeboxPlayablePredicate': ('vanilla_mcdoc.world.component.predicate.JukeboxPlayablePredicate', 'JukeboxPlayablePredicate'),
+        'PotionsPredicate': ('vanilla_mcdoc.world.component.predicate.PotionsPredicate', 'PotionsPredicate'),
         'Transformation': ('vanilla_mcdoc.world.entity.display.Transformation', 'Transformation'),
+        'TrimPredicate': ('vanilla_mcdoc.world.component.predicate.TrimPredicate', 'TrimPredicate'),
+        'WritableBookPredicate': ('vanilla_mcdoc.world.component.predicate.WritableBookPredicate', 'WritableBookPredicate'),
+        'WrittenBookPredicate': ('vanilla_mcdoc.world.component.predicate.WrittenBookPredicate', 'WrittenBookPredicate'),
     },
     'vanilla_mcdoc.assets.item_definition.ConstantTint': {
         'RGB': ('vanilla_mcdoc.util.color.RGB', 'RGB'),
@@ -136,10 +149,23 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
         'ItemModel': ('vanilla_mcdoc.assets.item_definition.ItemModel', 'ItemModel'),
     },
     'vanilla_mcdoc.assets.item_definition.ItemModel': {
+        'AttributeModifiersPredicate': ('vanilla_mcdoc.world.component.predicate.AttributeModifiersPredicate', 'AttributeModifiersPredicate'),
+        'BundleContentsPredicate': ('vanilla_mcdoc.world.component.predicate.BundleContentsPredicate', 'BundleContentsPredicate'),
         'ConditionalPropertyType': ('vanilla_mcdoc.assets.item_definition.ConditionalPropertyType', 'ConditionalPropertyType'),
+        'ContainerPredicate': ('vanilla_mcdoc.world.component.predicate.ContainerPredicate', 'ContainerPredicate'),
+        'CustomData': ('vanilla_mcdoc.world.component.CustomData', 'CustomData'),
+        'EnchantmentPredicate': ('vanilla_mcdoc.data.advancement.predicate.EnchantmentPredicate', 'EnchantmentPredicate'),
+        'FireworkExplosionPredicate': ('vanilla_mcdoc.world.component.predicate.FireworkExplosionPredicate', 'FireworkExplosionPredicate'),
+        'FireworksPredicate': ('vanilla_mcdoc.world.component.predicate.FireworksPredicate', 'FireworksPredicate'),
+        'ItemDamagePredicate': ('vanilla_mcdoc.world.component.predicate.ItemDamagePredicate', 'ItemDamagePredicate'),
+        'JukeboxPlayablePredicate': ('vanilla_mcdoc.world.component.predicate.JukeboxPlayablePredicate', 'JukeboxPlayablePredicate'),
         'NumericPropertyType': ('vanilla_mcdoc.assets.item_definition.NumericPropertyType', 'NumericPropertyType'),
+        'PotionsPredicate': ('vanilla_mcdoc.world.component.predicate.PotionsPredicate', 'PotionsPredicate'),
         'SelectPropertyType': ('vanilla_mcdoc.assets.item_definition.SelectPropertyType', 'SelectPropertyType'),
         'Transformation': ('vanilla_mcdoc.world.entity.display.Transformation', 'Transformation'),
+        'TrimPredicate': ('vanilla_mcdoc.world.component.predicate.TrimPredicate', 'TrimPredicate'),
+        'WritableBookPredicate': ('vanilla_mcdoc.world.component.predicate.WritableBookPredicate', 'WritableBookPredicate'),
+        'WrittenBookPredicate': ('vanilla_mcdoc.world.component.predicate.WrittenBookPredicate', 'WrittenBookPredicate'),
     },
     'vanilla_mcdoc.assets.item_definition.KeybindDown': {
         'Keybind': ('vanilla_mcdoc.util.text.Keybind', 'Keybind'),
@@ -250,9 +276,6 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
     },
     'vanilla_mcdoc.assets.shader.post.UniformBlocks': {
         'UniformValue': ('vanilla_mcdoc.assets.shader.post.UniformValue', 'UniformValue'),
-    },
-    'vanilla_mcdoc.assets.shader.post.UniformValue': {
-        'UniformValueType': ('vanilla_mcdoc.assets.shader.post.UniformValueType', 'UniformValueType'),
     },
     'vanilla_mcdoc.assets.shader.program.BlendMode': {
         'BlendFactor': ('vanilla_mcdoc.assets.shader.program.BlendFactor', 'BlendFactor'),
@@ -770,6 +793,9 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
         'Direction': ('vanilla_mcdoc.util.direction.Direction', 'Direction'),
         'SoundEventRef': ('vanilla_mcdoc.data.util.SoundEventRef', 'SoundEventRef'),
     },
+    'vanilla_mcdoc.data.block_transformer.BlockTransformer': {
+        'BlockTransformData': ('vanilla_mcdoc.data.block_transformer.BlockTransformData', 'BlockTransformData'),
+    },
     'vanilla_mcdoc.data.chat_type.ChatDecoration': {
         'ChatDecorationParameter': ('vanilla_mcdoc.data.chat_type.ChatDecorationParameter', 'ChatDecorationParameter'),
         'TextStyle': ('vanilla_mcdoc.util.text.TextStyle', 'TextStyle'),
@@ -1139,12 +1165,6 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
     },
     'vanilla_mcdoc.data.gametest.test_environment.DifficultyTestEnvironment': {
         'Difficulty': ('vanilla_mcdoc.data.gametest.test_environment.Difficulty', 'Difficulty'),
-    },
-    'vanilla_mcdoc.data.gametest.test_environment.GameRuleMap': {
-        'KnownGameRuleId': ('vanilla_mcdoc.registry.KnownGameRuleId', 'KnownGameRuleId'),
-    },
-    'vanilla_mcdoc.data.gametest.test_environment.GameRulesTestEnvironment': {
-        'KnownGameRuleId': ('vanilla_mcdoc.registry.KnownGameRuleId', 'KnownGameRuleId'),
     },
     'vanilla_mcdoc.data.gametest.test_environment.WeatherTestEnvironment': {
         'Weather': ('vanilla_mcdoc.data.gametest.test_environment.Weather', 'Weather'),
@@ -1558,8 +1578,8 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
     },
     'vanilla_mcdoc.data.recipe.CraftingTransmute': {
         'Ingredient': ('vanilla_mcdoc.data.recipe.Ingredient', 'Ingredient'),
-        'ItemStack': ('vanilla_mcdoc.world.item.ItemStack', 'ItemStack'),
         'MinMaxBounds': ('vanilla_mcdoc.data.util.MinMaxBounds', 'MinMaxBounds'),
+        'TransmuteResult': ('vanilla_mcdoc.data.recipe.TransmuteResult', 'TransmuteResult'),
     },
     'vanilla_mcdoc.data.recipe.FireworkShapeIngredients': {
         'FireworkShape': ('vanilla_mcdoc.world.component.item.FireworkShape', 'FireworkShape'),
@@ -1583,9 +1603,6 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
     'vanilla_mcdoc.data.recipe.PotionIngredient': {
         'Ingredient': ('vanilla_mcdoc.data.recipe.Ingredient', 'Ingredient'),
         'PotionsPredicate': ('vanilla_mcdoc.world.component.predicate.PotionsPredicate', 'PotionsPredicate'),
-    },
-    'vanilla_mcdoc.data.recipe.Recipe': {
-        'KnownRecipeSerializerId': ('vanilla_mcdoc.registry.KnownRecipeSerializerId', 'KnownRecipeSerializerId'),
     },
     'vanilla_mcdoc.data.recipe.RequiredSmithingIngredients': {
         'Ingredient': ('vanilla_mcdoc.data.recipe.Ingredient', 'Ingredient'),
@@ -1614,6 +1631,9 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
     'vanilla_mcdoc.data.recipe.Stonecutting': {
         'Ingredient': ('vanilla_mcdoc.data.recipe.Ingredient', 'Ingredient'),
         'ItemStackTemplate': ('vanilla_mcdoc.world.item.ItemStackTemplate', 'ItemStackTemplate'),
+    },
+    'vanilla_mcdoc.data.recipe.TransmuteResult': {
+        'DataComponentPatch': ('vanilla_mcdoc.world.component.DataComponentPatch', 'DataComponentPatch'),
     },
     'vanilla_mcdoc.data.slot_source.ContentsSlotSource': {
         'ContainerComponents': ('vanilla_mcdoc.data.loot.function.ContainerComponents', 'ContainerComponents'),
@@ -1762,12 +1782,12 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
         'FloatModifierType': ('vanilla_mcdoc.data.worldgen.attribute.modifier.FloatModifierType', 'FloatModifierType'),
         'FloatWithAlpha': ('vanilla_mcdoc.data.worldgen.attribute.modifier.FloatWithAlpha', 'FloatWithAlpha'),
         'KnownEnvironmentAttributeId': ('vanilla_mcdoc.registry.KnownEnvironmentAttributeId', 'KnownEnvironmentAttributeId'),
+        'LenientStringARGB': ('vanilla_mcdoc.data.worldgen.attribute.modifier.LenientStringARGB', 'LenientStringARGB'),
         'ListModifierType': ('vanilla_mcdoc.data.worldgen.attribute.modifier.ListModifierType', 'ListModifierType'),
         'MergeableModifierType': ('vanilla_mcdoc.data.worldgen.attribute.modifier.MergeableModifierType', 'MergeableModifierType'),
         'MoonPhase': ('vanilla_mcdoc.data.util.MoonPhase', 'MoonPhase'),
         'NaturalMobSpawns': ('vanilla_mcdoc.data.worldgen.biome.NaturalMobSpawns', 'NaturalMobSpawns'),
         'Particle': ('vanilla_mcdoc.util.particle.Particle', 'Particle'),
-        'StringARGB': ('vanilla_mcdoc.util.color.StringARGB', 'StringARGB'),
         'StringRGB': ('vanilla_mcdoc.util.color.StringRGB', 'StringRGB'),
         'TriState': ('vanilla_mcdoc.data.worldgen.attribute.TriState', 'TriState'),
     },
@@ -1826,17 +1846,26 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
     'vanilla_mcdoc.data.variants.cat.CatSounds': {
         'SoundEventRef': ('vanilla_mcdoc.data.util.SoundEventRef', 'SoundEventRef'),
     },
+    'vanilla_mcdoc.data.variants.cat.OptionalCatSounds': {
+        'SoundEventRef': ('vanilla_mcdoc.data.util.SoundEventRef', 'SoundEventRef'),
+    },
     'vanilla_mcdoc.data.variants.chicken.ChickenSounds': {
         'SoundEventRef': ('vanilla_mcdoc.data.util.SoundEventRef', 'SoundEventRef'),
     },
     'vanilla_mcdoc.data.variants.chicken.ChickenVariant': {
         'ChickenModelType': ('vanilla_mcdoc.data.variants.chicken.ChickenModelType', 'ChickenModelType'),
     },
+    'vanilla_mcdoc.data.variants.chicken.OptionalChickenSounds': {
+        'SoundEventRef': ('vanilla_mcdoc.data.util.SoundEventRef', 'SoundEventRef'),
+    },
     'vanilla_mcdoc.data.variants.cow.CowSounds': {
         'SoundEventRef': ('vanilla_mcdoc.data.util.SoundEventRef', 'SoundEventRef'),
     },
     'vanilla_mcdoc.data.variants.cow.CowVariant': {
         'CowModelType': ('vanilla_mcdoc.data.variants.cow.CowModelType', 'CowModelType'),
+    },
+    'vanilla_mcdoc.data.variants.cow.OptionalCowSounds': {
+        'SoundEventRef': ('vanilla_mcdoc.data.util.SoundEventRef', 'SoundEventRef'),
     },
     'vanilla_mcdoc.data.variants.instrument.Instrument': {
         'SoundEventRef': ('vanilla_mcdoc.data.util.SoundEventRef', 'SoundEventRef'),
@@ -1849,11 +1878,17 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
     'vanilla_mcdoc.data.variants.painting.PaintingVariant': {
         'Text': ('vanilla_mcdoc.util.text.Text', 'Text'),
     },
+    'vanilla_mcdoc.data.variants.pig.OptionalPigSounds': {
+        'SoundEventRef': ('vanilla_mcdoc.data.util.SoundEventRef', 'SoundEventRef'),
+    },
     'vanilla_mcdoc.data.variants.pig.PigSounds': {
         'SoundEventRef': ('vanilla_mcdoc.data.util.SoundEventRef', 'SoundEventRef'),
     },
     'vanilla_mcdoc.data.variants.pig.PigVariant': {
         'PigModelType': ('vanilla_mcdoc.data.variants.pig.PigModelType', 'PigModelType'),
+    },
+    'vanilla_mcdoc.data.variants.wolf.OptionalWolfSounds': {
+        'SoundEventRef': ('vanilla_mcdoc.data.util.SoundEventRef', 'SoundEventRef'),
     },
     'vanilla_mcdoc.data.variants.wolf.WolfSounds': {
         'SoundEventRef': ('vanilla_mcdoc.data.util.SoundEventRef', 'SoundEventRef'),
@@ -1894,6 +1929,7 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
     'vanilla_mcdoc.data.worldgen.attribute.ARGBColorAttribute': {
         'BlendToGray': ('vanilla_mcdoc.data.worldgen.attribute.modifier.BlendToGray', 'BlendToGray'),
         'ColorModifierType': ('vanilla_mcdoc.data.worldgen.attribute.modifier.ColorModifierType', 'ColorModifierType'),
+        'LenientStringARGB': ('vanilla_mcdoc.data.worldgen.attribute.modifier.LenientStringARGB', 'LenientStringARGB'),
         'StringARGB': ('vanilla_mcdoc.util.color.StringARGB', 'StringARGB'),
         'StringRGB': ('vanilla_mcdoc.util.color.StringRGB', 'StringRGB'),
         'TranslucentColorAttributeModifier': ('vanilla_mcdoc.data.worldgen.attribute.modifier.TranslucentColorAttributeModifier', 'TranslucentColorAttributeModifier'),
@@ -1956,7 +1992,7 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
         'BlendToGray': ('vanilla_mcdoc.data.worldgen.attribute.modifier.BlendToGray', 'BlendToGray'),
         'ColorAttributeModifier': ('vanilla_mcdoc.data.worldgen.attribute.modifier.ColorAttributeModifier', 'ColorAttributeModifier'),
         'ColorModifierType': ('vanilla_mcdoc.data.worldgen.attribute.modifier.ColorModifierType', 'ColorModifierType'),
-        'StringARGB': ('vanilla_mcdoc.util.color.StringARGB', 'StringARGB'),
+        'LenientStringARGB': ('vanilla_mcdoc.data.worldgen.attribute.modifier.LenientStringARGB', 'LenientStringARGB'),
         'StringRGB': ('vanilla_mcdoc.util.color.StringRGB', 'StringRGB'),
     },
     'vanilla_mcdoc.data.worldgen.attribute.modifier.BooleanAttributeModifier': {
@@ -1965,7 +2001,7 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
     'vanilla_mcdoc.data.worldgen.attribute.modifier.ColorAttributeModifier': {
         'BlendToGray': ('vanilla_mcdoc.data.worldgen.attribute.modifier.BlendToGray', 'BlendToGray'),
         'ColorModifierType': ('vanilla_mcdoc.data.worldgen.attribute.modifier.ColorModifierType', 'ColorModifierType'),
-        'StringARGB': ('vanilla_mcdoc.util.color.StringARGB', 'StringARGB'),
+        'LenientStringARGB': ('vanilla_mcdoc.data.worldgen.attribute.modifier.LenientStringARGB', 'LenientStringARGB'),
         'StringRGB': ('vanilla_mcdoc.util.color.StringRGB', 'StringRGB'),
     },
     'vanilla_mcdoc.data.worldgen.attribute.modifier.FloatAttributeModifier': {
@@ -1981,7 +2017,7 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
     'vanilla_mcdoc.data.worldgen.attribute.modifier.TranslucentColorAttributeModifier': {
         'BlendToGray': ('vanilla_mcdoc.data.worldgen.attribute.modifier.BlendToGray', 'BlendToGray'),
         'ColorModifierType': ('vanilla_mcdoc.data.worldgen.attribute.modifier.ColorModifierType', 'ColorModifierType'),
-        'StringARGB': ('vanilla_mcdoc.util.color.StringARGB', 'StringARGB'),
+        'LenientStringARGB': ('vanilla_mcdoc.data.worldgen.attribute.modifier.LenientStringARGB', 'LenientStringARGB'),
         'StringRGB': ('vanilla_mcdoc.util.color.StringRGB', 'StringRGB'),
     },
     'vanilla_mcdoc.data.worldgen.biome.Biome': {
@@ -2205,6 +2241,11 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
     'vanilla_mcdoc.data.worldgen.feature.CoralConfig': {
         'PlacedFeatureRef': ('vanilla_mcdoc.data.worldgen.feature.placement.PlacedFeatureRef', 'PlacedFeatureRef'),
     },
+    'vanilla_mcdoc.data.worldgen.feature.CrevasseConfig': {
+        'BlockPredicate': ('vanilla_mcdoc.data.worldgen.feature.block_predicate.BlockPredicate', 'BlockPredicate'),
+        'BlockStateProviderRef': ('vanilla_mcdoc.data.worldgen.feature.block_state_provider.BlockStateProviderRef', 'BlockStateProviderRef'),
+        'IntProvider': ('vanilla_mcdoc.data.worldgen.IntProvider', 'IntProvider'),
+    },
     'vanilla_mcdoc.data.worldgen.feature.DecoratedConfig': {
         'ConfiguredDecorator': ('vanilla_mcdoc.data.worldgen.feature.decorator.ConfiguredDecorator', 'ConfiguredDecorator'),
         'FeatureRef': ('vanilla_mcdoc.data.worldgen.feature.FeatureRef', 'FeatureRef'),
@@ -2409,6 +2450,9 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
     'vanilla_mcdoc.data.worldgen.feature.block_predicate.CombiningPredicate': {
         'BlockPredicate': ('vanilla_mcdoc.data.worldgen.feature.block_predicate.BlockPredicate', 'BlockPredicate'),
     },
+    'vanilla_mcdoc.data.worldgen.feature.block_predicate.FluidPredicateState': {
+        'MinMaxBounds': ('vanilla_mcdoc.data.util.MinMaxBounds', 'MinMaxBounds'),
+    },
     'vanilla_mcdoc.data.worldgen.feature.block_predicate.HasSturdyFacePredicate': {
         'Direction': ('vanilla_mcdoc.util.direction.Direction', 'Direction'),
     },
@@ -2420,6 +2464,9 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
     },
     'vanilla_mcdoc.data.worldgen.feature.block_predicate.MatchingBlocksPredicate': {
         'KnownBlockId': ('vanilla_mcdoc.registry.KnownBlockId', 'KnownBlockId'),
+    },
+    'vanilla_mcdoc.data.worldgen.feature.block_predicate.MatchingFluidsPredicate': {
+        'FluidPredicateState': ('vanilla_mcdoc.data.worldgen.feature.block_predicate.FluidPredicateState', 'FluidPredicateState'),
     },
     'vanilla_mcdoc.data.worldgen.feature.block_predicate.NotPredicate': {
         'BlockPredicate': ('vanilla_mcdoc.data.worldgen.feature.block_predicate.BlockPredicate', 'BlockPredicate'),
@@ -3253,6 +3300,7 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
         'AxolotlVariant': ('vanilla_mcdoc.world.component.entity.AxolotlVariant', 'AxolotlVariant'),
         'BannerPatternLayer': ('vanilla_mcdoc.world.block.banner.BannerPatternLayer', 'BannerPatternLayer'),
         'BlockEntityData': ('vanilla_mcdoc.world.block.BlockEntityData', 'BlockEntityData'),
+        'BlocksAttacks': ('vanilla_mcdoc.world.component.item.BlocksAttacks', 'BlocksAttacks'),
         'BrewingFuel': ('vanilla_mcdoc.world.component.item.BrewingFuel', 'BrewingFuel'),
         'BucketEntityData': ('vanilla_mcdoc.world.component.item.BucketEntityData', 'BucketEntityData'),
         'Compostable': ('vanilla_mcdoc.world.component.item.Compostable', 'Compostable'),
@@ -3286,7 +3334,6 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
         'MooshroomType': ('vanilla_mcdoc.world.component.entity.MooshroomType', 'MooshroomType'),
         'Occupant': ('vanilla_mcdoc.world.component.block.Occupant', 'Occupant'),
         'ParrotVariant': ('vanilla_mcdoc.world.component.entity.ParrotVariant', 'ParrotVariant'),
-        'PersistentDataComponent': ('vanilla_mcdoc.world.component.PersistentDataComponent', 'PersistentDataComponent'),
         'PiercingWeapon': ('vanilla_mcdoc.world.component.item.PiercingWeapon', 'PiercingWeapon'),
         'PotDecorations': ('vanilla_mcdoc.world.component.block.PotDecorations', 'PotDecorations'),
         'PotionContents': ('vanilla_mcdoc.world.component.item.PotionContents', 'PotionContents'),
@@ -3312,7 +3359,6 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
         'Weapon': ('vanilla_mcdoc.world.component.item.Weapon', 'Weapon'),
         'WritableBookContent': ('vanilla_mcdoc.world.component.item.WritableBookContent', 'WritableBookContent'),
         'WrittenBookContent': ('vanilla_mcdoc.world.component.item.WrittenBookContent', 'WrittenBookContent'),
-        'blocks_attacks': ('vanilla_mcdoc.world.component.item.blocks_attacks', 'blocks_attacks'),
     },
     'vanilla_mcdoc.world.component.DataComponentPatch': {
         'AdventureModePredicate': ('vanilla_mcdoc.world.component.item.AdventureModePredicate', 'AdventureModePredicate'),
@@ -3322,6 +3368,7 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
         'AxolotlVariant': ('vanilla_mcdoc.world.component.entity.AxolotlVariant', 'AxolotlVariant'),
         'BannerPatternLayer': ('vanilla_mcdoc.world.block.banner.BannerPatternLayer', 'BannerPatternLayer'),
         'BlockEntityData': ('vanilla_mcdoc.world.block.BlockEntityData', 'BlockEntityData'),
+        'BlocksAttacks': ('vanilla_mcdoc.world.component.item.BlocksAttacks', 'BlocksAttacks'),
         'BrewingFuel': ('vanilla_mcdoc.world.component.item.BrewingFuel', 'BrewingFuel'),
         'BucketEntityData': ('vanilla_mcdoc.world.component.item.BucketEntityData', 'BucketEntityData'),
         'Compostable': ('vanilla_mcdoc.world.component.item.Compostable', 'Compostable'),
@@ -3380,7 +3427,6 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
         'Weapon': ('vanilla_mcdoc.world.component.item.Weapon', 'Weapon'),
         'WritableBookContent': ('vanilla_mcdoc.world.component.item.WritableBookContent', 'WritableBookContent'),
         'WrittenBookContent': ('vanilla_mcdoc.world.component.item.WrittenBookContent', 'WrittenBookContent'),
-        'blocks_attacks': ('vanilla_mcdoc.world.component.item.blocks_attacks', 'blocks_attacks'),
     },
     'vanilla_mcdoc.world.component.DataComponentPredicate': {
         'AttributeModifiersPredicate': ('vanilla_mcdoc.world.component.predicate.AttributeModifiersPredicate', 'AttributeModifiersPredicate'),
@@ -3429,6 +3475,11 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
     },
     'vanilla_mcdoc.world.component.item.AttributeModifiers': {
         'AttributeModifier': ('vanilla_mcdoc.world.component.item.AttributeModifier', 'AttributeModifier'),
+    },
+    'vanilla_mcdoc.world.component.item.BlocksAttacks': {
+        'DamageReduction': ('vanilla_mcdoc.world.component.item.DamageReduction', 'DamageReduction'),
+        'ItemDamageFunction': ('vanilla_mcdoc.world.component.item.ItemDamageFunction', 'ItemDamageFunction'),
+        'SoundEventRef': ('vanilla_mcdoc.data.util.SoundEventRef', 'SoundEventRef'),
     },
     'vanilla_mcdoc.world.component.item.BrewingFuel': {
         'KnownContextFloatProviderId': ('vanilla_mcdoc.registry.KnownContextFloatProviderId', 'KnownContextFloatProviderId'),
@@ -3513,11 +3564,6 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
         'BookGeneration': ('vanilla_mcdoc.world.component.item.BookGeneration', 'BookGeneration'),
         'Filterable': ('vanilla_mcdoc.util.Filterable', 'Filterable'),
         'Text': ('vanilla_mcdoc.util.text.Text', 'Text'),
-    },
-    'vanilla_mcdoc.world.component.item.blocks_attacks': {
-        'DamageReduction': ('vanilla_mcdoc.world.component.item.DamageReduction', 'DamageReduction'),
-        'ItemDamageFunction': ('vanilla_mcdoc.world.component.item.ItemDamageFunction', 'ItemDamageFunction'),
-        'SoundEventRef': ('vanilla_mcdoc.data.util.SoundEventRef', 'SoundEventRef'),
     },
     'vanilla_mcdoc.world.component.predicate.AttributeModifiersPredicate': {
         'AttributeModifiersPredicateEntry': ('vanilla_mcdoc.world.component.predicate.AttributeModifiersPredicateEntry', 'AttributeModifiersPredicateEntry'),
@@ -3717,9 +3763,6 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
     },
     'vanilla_mcdoc.world.entity.mob.breedable.villager.Offers': {
         'Recipe': ('vanilla_mcdoc.world.entity.mob.breedable.villager.Recipe', 'Recipe'),
-    },
-    'vanilla_mcdoc.world.entity.mob.breedable.villager.PlayerReputationPart': {
-        'ReputationPart': ('vanilla_mcdoc.world.entity.mob.breedable.villager.ReputationPart', 'ReputationPart'),
     },
     'vanilla_mcdoc.world.entity.mob.breedable.villager.Recipe': {
         'ItemCost': ('vanilla_mcdoc.world.entity.mob.breedable.villager.ItemCost', 'ItemCost'),

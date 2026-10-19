@@ -13,7 +13,7 @@ from vanilla_mcdoc.minecraft_types import IdSpec
 
 
 class ChangeDimensionTriggerTypeArg(PlayerConditions):
-    from_: Annotated[str, IdSpec(registry='dimension')] | None = Field(default=None, alias='from')
+    from_: Annotated[str, IdSpec(registry='dimension')] | None = Field(default=None, validation_alias='from', serialization_alias='from')
     to: Annotated[str, IdSpec(registry='dimension')] | None = None
 
 

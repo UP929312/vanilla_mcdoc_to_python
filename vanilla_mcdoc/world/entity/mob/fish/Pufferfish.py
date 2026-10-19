@@ -14,4 +14,4 @@ if TYPE_CHECKING:
 
 
 class Pufferfish(Fish):
-    PuffState_: PuffState | None = Field(default=None, alias='PuffState')  # How puffed it is.
+    PuffState_: PuffState | None = Field(default=None, validation_alias='PuffState', serialization_alias='PuffState')  # How puffed it is.

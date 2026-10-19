@@ -6,10 +6,11 @@ Local link to file: vanilla_mcdoc/pack/PackFeatures.py
 from typing import TYPE_CHECKING
 
 from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import NamespacedId
 
 if TYPE_CHECKING:
     from vanilla_mcdoc.pack.FeatureFlag import FeatureFlag
 
 
 class PackFeatures(GeneratedModel):
-    enabled: list[FeatureFlag]
+    enabled: list[NamespacedId[FeatureFlag]]

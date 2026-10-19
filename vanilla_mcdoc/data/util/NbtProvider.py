@@ -5,8 +5,9 @@ Local link to file: vanilla_mcdoc/data/util/NbtProvider.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
+from vanilla_mcdoc.base import tag_of
 from vanilla_mcdoc.data.util.ContextNbtProvider import ContextNbtProvider
 from vanilla_mcdoc.data.util.StorageNbtProvider import StorageNbtProvider
 
@@ -23,8 +24,9 @@ class NbtProviderStructStorage(StorageNbtProvider):
 
 
 type NbtProviderStruct = Annotated[
-    NbtProviderStructContext | NbtProviderStructStorage,
-    Field(discriminator='type'),
+    Annotated[NbtProviderStructContext, Tag('minecraft:context')]
+    | Annotated[NbtProviderStructStorage, Tag('minecraft:storage')],
+    Discriminator(tag_of('type')),
 ]
 
 

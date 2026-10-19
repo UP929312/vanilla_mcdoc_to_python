@@ -5,9 +5,9 @@ Local link to file: vanilla_mcdoc/world/component/item/ConsumeEffect.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
-from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel, tag_of
 from vanilla_mcdoc.world.component.item.ApplyEffectsConsumeEffect import ApplyEffectsConsumeEffect
 from vanilla_mcdoc.world.component.item.PlaySoundConsumeEffect import PlaySoundConsumeEffect
 from vanilla_mcdoc.world.component.item.RemoveEffectsConsumeEffect import RemoveEffectsConsumeEffect
@@ -35,6 +35,10 @@ class ConsumeEffectTeleportRandomly(TeleportRandomlyConsumeEffect):
 
 
 type ConsumeEffect = Annotated[
-    ConsumeEffectApplyEffects | ConsumeEffectClearAllEffects | ConsumeEffectPlaySound | ConsumeEffectRemoveEffects | ConsumeEffectTeleportRandomly,
-    Field(discriminator='type'),
+    Annotated[ConsumeEffectApplyEffects, Tag('minecraft:apply_effects')]
+    | Annotated[ConsumeEffectClearAllEffects, Tag('minecraft:clear_all_effects')]
+    | Annotated[ConsumeEffectPlaySound, Tag('minecraft:play_sound')]
+    | Annotated[ConsumeEffectRemoveEffects, Tag('minecraft:remove_effects')]
+    | Annotated[ConsumeEffectTeleportRandomly, Tag('minecraft:teleport_randomly')],
+    Discriminator(tag_of('type')),
 ]

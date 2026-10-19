@@ -3,12 +3,13 @@ Generated from symbols.json for ::java::assets::item_definition::ItemModel
 Local link to file: vanilla_mcdoc/assets/item_definition/ItemModel.py
 """
 # ~~~ CODE ~~~
-from typing import TYPE_CHECKING, Literal
+from typing import TYPE_CHECKING, Annotated, Literal
+
+from pydantic import Discriminator, Tag
 
 from vanilla_mcdoc.assets.item_definition.BlockState import BlockState
 from vanilla_mcdoc.assets.item_definition.ChargeType import ChargeType
 from vanilla_mcdoc.assets.item_definition.Compass import Compass
-from vanilla_mcdoc.assets.item_definition.ComponentFlags import ComponentFlags
 from vanilla_mcdoc.assets.item_definition.ComponentStrings import ComponentStrings
 from vanilla_mcdoc.assets.item_definition.Composite import Composite
 from vanilla_mcdoc.assets.item_definition.ContextDimension import ContextDimension
@@ -31,12 +32,26 @@ from vanilla_mcdoc.assets.item_definition.TrimMaterial import TrimMaterial
 from vanilla_mcdoc.assets.item_definition.UseCycle import UseCycle
 from vanilla_mcdoc.assets.item_definition.UseDuration import UseDuration
 from vanilla_mcdoc.assets.item_definition.ViewEntity import ViewEntity
-from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel, tag_of
+from vanilla_mcdoc.minecraft_types import IdSpec, NamespacedId
 
 if TYPE_CHECKING:
     from vanilla_mcdoc.assets.item_definition.ConditionalPropertyType import ConditionalPropertyType
     from vanilla_mcdoc.assets.item_definition.NumericPropertyType import NumericPropertyType
     from vanilla_mcdoc.assets.item_definition.SelectPropertyType import SelectPropertyType
+    from vanilla_mcdoc.data.advancement.predicate.EnchantmentPredicate import EnchantmentPredicate
+    from vanilla_mcdoc.world.component.CustomData import CustomData
+    from vanilla_mcdoc.world.component.predicate.AttributeModifiersPredicate import AttributeModifiersPredicate
+    from vanilla_mcdoc.world.component.predicate.BundleContentsPredicate import BundleContentsPredicate
+    from vanilla_mcdoc.world.component.predicate.ContainerPredicate import ContainerPredicate
+    from vanilla_mcdoc.world.component.predicate.FireworkExplosionPredicate import FireworkExplosionPredicate
+    from vanilla_mcdoc.world.component.predicate.FireworksPredicate import FireworksPredicate
+    from vanilla_mcdoc.world.component.predicate.ItemDamagePredicate import ItemDamagePredicate
+    from vanilla_mcdoc.world.component.predicate.JukeboxPlayablePredicate import JukeboxPlayablePredicate
+    from vanilla_mcdoc.world.component.predicate.PotionsPredicate import PotionsPredicate
+    from vanilla_mcdoc.world.component.predicate.TrimPredicate import TrimPredicate
+    from vanilla_mcdoc.world.component.predicate.WritableBookPredicate import WritableBookPredicate
+    from vanilla_mcdoc.world.component.predicate.WrittenBookPredicate import WrittenBookPredicate
     from vanilla_mcdoc.world.entity.display.Transformation import Transformation
 
 
@@ -55,18 +70,180 @@ class ItemModelComposite(Composite):
 
 class ItemModelConditionUnknown(GeneratedModel):
     type: Literal['minecraft:condition', 'condition'] = 'minecraft:condition'
-    property: ConditionalPropertyType
+    property: NamespacedId[ConditionalPropertyType]
     on_true: ItemModel
     on_false: ItemModel
     transformation: Transformation | None = None
 
 
-class ItemModelConditionComponent(ComponentFlags):
+class ItemModelConditionComponentAttributeModifiers(GeneratedModel):
     type: Literal['minecraft:condition', 'condition'] = 'minecraft:condition'
     property: Literal['minecraft:component', 'component'] = 'minecraft:component'
     on_true: ItemModel
     on_false: ItemModel
     transformation: Transformation | None = None
+    predicate: Literal['minecraft:attribute_modifiers', 'attribute_modifiers'] = 'minecraft:attribute_modifiers'  # The component predicate to check.
+    value: AttributeModifiersPredicate  # The predicate-specific value.
+
+
+class ItemModelConditionComponentBundleContents(GeneratedModel):
+    type: Literal['minecraft:condition', 'condition'] = 'minecraft:condition'
+    property: Literal['minecraft:component', 'component'] = 'minecraft:component'
+    on_true: ItemModel
+    on_false: ItemModel
+    transformation: Transformation | None = None
+    predicate: Literal['minecraft:bundle_contents', 'bundle_contents'] = 'minecraft:bundle_contents'  # The component predicate to check.
+    value: BundleContentsPredicate  # The predicate-specific value.
+
+
+class ItemModelConditionComponentContainer(GeneratedModel):
+    type: Literal['minecraft:condition', 'condition'] = 'minecraft:condition'
+    property: Literal['minecraft:component', 'component'] = 'minecraft:component'
+    on_true: ItemModel
+    on_false: ItemModel
+    transformation: Transformation | None = None
+    predicate: Literal['minecraft:container', 'container'] = 'minecraft:container'  # The component predicate to check.
+    value: ContainerPredicate  # The predicate-specific value.
+
+
+class ItemModelConditionComponentCustomData(GeneratedModel):
+    type: Literal['minecraft:condition', 'condition'] = 'minecraft:condition'
+    property: Literal['minecraft:component', 'component'] = 'minecraft:component'
+    on_true: ItemModel
+    on_false: ItemModel
+    transformation: Transformation | None = None
+    predicate: Literal['minecraft:custom_data', 'custom_data'] = 'minecraft:custom_data'  # The component predicate to check.
+    value: CustomData  # The predicate-specific value.
+
+
+class ItemModelConditionComponentDamage(GeneratedModel):
+    type: Literal['minecraft:condition', 'condition'] = 'minecraft:condition'
+    property: Literal['minecraft:component', 'component'] = 'minecraft:component'
+    on_true: ItemModel
+    on_false: ItemModel
+    transformation: Transformation | None = None
+    predicate: Literal['minecraft:damage', 'damage'] = 'minecraft:damage'  # The component predicate to check.
+    value: ItemDamagePredicate  # The predicate-specific value.
+
+
+class ItemModelConditionComponentEnchantments(GeneratedModel):
+    type: Literal['minecraft:condition', 'condition'] = 'minecraft:condition'
+    property: Literal['minecraft:component', 'component'] = 'minecraft:component'
+    on_true: ItemModel
+    on_false: ItemModel
+    transformation: Transformation | None = None
+    predicate: Literal['minecraft:enchantments', 'enchantments'] = 'minecraft:enchantments'  # The component predicate to check.
+    value: list[EnchantmentPredicate]  # The predicate-specific value.
+
+
+class ItemModelConditionComponentFireworkExplosion(GeneratedModel):
+    type: Literal['minecraft:condition', 'condition'] = 'minecraft:condition'
+    property: Literal['minecraft:component', 'component'] = 'minecraft:component'
+    on_true: ItemModel
+    on_false: ItemModel
+    transformation: Transformation | None = None
+    predicate: Literal['minecraft:firework_explosion', 'firework_explosion'] = 'minecraft:firework_explosion'  # The component predicate to check.
+    value: FireworkExplosionPredicate  # The predicate-specific value.
+
+
+class ItemModelConditionComponentFireworks(GeneratedModel):
+    type: Literal['minecraft:condition', 'condition'] = 'minecraft:condition'
+    property: Literal['minecraft:component', 'component'] = 'minecraft:component'
+    on_true: ItemModel
+    on_false: ItemModel
+    transformation: Transformation | None = None
+    predicate: Literal['minecraft:fireworks', 'fireworks'] = 'minecraft:fireworks'  # The component predicate to check.
+    value: FireworksPredicate  # The predicate-specific value.
+
+
+class ItemModelConditionComponentJukeboxPlayable(GeneratedModel):
+    type: Literal['minecraft:condition', 'condition'] = 'minecraft:condition'
+    property: Literal['minecraft:component', 'component'] = 'minecraft:component'
+    on_true: ItemModel
+    on_false: ItemModel
+    transformation: Transformation | None = None
+    predicate: Literal['minecraft:jukebox_playable', 'jukebox_playable'] = 'minecraft:jukebox_playable'  # The component predicate to check.
+    value: JukeboxPlayablePredicate  # The predicate-specific value.
+
+
+class ItemModelConditionComponentPotionContents(GeneratedModel):
+    type: Literal['minecraft:condition', 'condition'] = 'minecraft:condition'
+    property: Literal['minecraft:component', 'component'] = 'minecraft:component'
+    on_true: ItemModel
+    on_false: ItemModel
+    transformation: Transformation | None = None
+    predicate: Literal['minecraft:potion_contents', 'potion_contents'] = 'minecraft:potion_contents'  # The component predicate to check.
+    value: PotionsPredicate  # The predicate-specific value.
+
+
+class ItemModelConditionComponentStoredEnchantments(GeneratedModel):
+    type: Literal['minecraft:condition', 'condition'] = 'minecraft:condition'
+    property: Literal['minecraft:component', 'component'] = 'minecraft:component'
+    on_true: ItemModel
+    on_false: ItemModel
+    transformation: Transformation | None = None
+    predicate: Literal['minecraft:stored_enchantments', 'stored_enchantments'] = 'minecraft:stored_enchantments'  # The component predicate to check.
+    value: list[EnchantmentPredicate]  # The predicate-specific value.
+
+
+class ItemModelConditionComponentTrim(GeneratedModel):
+    type: Literal['minecraft:condition', 'condition'] = 'minecraft:condition'
+    property: Literal['minecraft:component', 'component'] = 'minecraft:component'
+    on_true: ItemModel
+    on_false: ItemModel
+    transformation: Transformation | None = None
+    predicate: Literal['minecraft:trim', 'trim'] = 'minecraft:trim'  # The component predicate to check.
+    value: TrimPredicate  # The predicate-specific value.
+
+
+class ItemModelConditionComponentVillagerVariant(GeneratedModel):
+    type: Literal['minecraft:condition', 'condition'] = 'minecraft:condition'
+    property: Literal['minecraft:component', 'component'] = 'minecraft:component'
+    on_true: ItemModel
+    on_false: ItemModel
+    transformation: Transformation | None = None
+    predicate: Literal['minecraft:villager/variant', 'villager/variant'] = 'minecraft:villager/variant'  # The component predicate to check.
+    value: Annotated[str, IdSpec(registry='villager_type', tags='allowed')] | list[Annotated[str, IdSpec(registry='villager_type')]]  # The predicate-specific value.
+
+
+class ItemModelConditionComponentWritableBookContent(GeneratedModel):
+    type: Literal['minecraft:condition', 'condition'] = 'minecraft:condition'
+    property: Literal['minecraft:component', 'component'] = 'minecraft:component'
+    on_true: ItemModel
+    on_false: ItemModel
+    transformation: Transformation | None = None
+    predicate: Literal['minecraft:writable_book_content', 'writable_book_content'] = 'minecraft:writable_book_content'  # The component predicate to check.
+    value: WritableBookPredicate  # The predicate-specific value.
+
+
+class ItemModelConditionComponentWrittenBookContent(GeneratedModel):
+    type: Literal['minecraft:condition', 'condition'] = 'minecraft:condition'
+    property: Literal['minecraft:component', 'component'] = 'minecraft:component'
+    on_true: ItemModel
+    on_false: ItemModel
+    transformation: Transformation | None = None
+    predicate: Literal['minecraft:written_book_content', 'written_book_content'] = 'minecraft:written_book_content'  # The component predicate to check.
+    value: WrittenBookPredicate  # The predicate-specific value.
+
+
+type ItemModelConditionComponent = Annotated[
+    Annotated[ItemModelConditionComponentAttributeModifiers, Tag('minecraft:attribute_modifiers')]
+    | Annotated[ItemModelConditionComponentBundleContents, Tag('minecraft:bundle_contents')]
+    | Annotated[ItemModelConditionComponentContainer, Tag('minecraft:container')]
+    | Annotated[ItemModelConditionComponentCustomData, Tag('minecraft:custom_data')]
+    | Annotated[ItemModelConditionComponentDamage, Tag('minecraft:damage')]
+    | Annotated[ItemModelConditionComponentEnchantments, Tag('minecraft:enchantments')]
+    | Annotated[ItemModelConditionComponentFireworkExplosion, Tag('minecraft:firework_explosion')]
+    | Annotated[ItemModelConditionComponentFireworks, Tag('minecraft:fireworks')]
+    | Annotated[ItemModelConditionComponentJukeboxPlayable, Tag('minecraft:jukebox_playable')]
+    | Annotated[ItemModelConditionComponentPotionContents, Tag('minecraft:potion_contents')]
+    | Annotated[ItemModelConditionComponentStoredEnchantments, Tag('minecraft:stored_enchantments')]
+    | Annotated[ItemModelConditionComponentTrim, Tag('minecraft:trim')]
+    | Annotated[ItemModelConditionComponentVillagerVariant, Tag('minecraft:villager/variant')]
+    | Annotated[ItemModelConditionComponentWritableBookContent, Tag('minecraft:writable_book_content')]
+    | Annotated[ItemModelConditionComponentWrittenBookContent, Tag('minecraft:written_book_content')],
+    Discriminator(tag_of('predicate')),
+]
 
 
 class ItemModelConditionCustomModelData(CustomModelDataFlags):
@@ -110,7 +287,7 @@ class ItemModelModel(Model):
 
 class ItemModelRangeDispatchUnknown(GeneratedModel):
     type: Literal['minecraft:range_dispatch', 'range_dispatch'] = 'minecraft:range_dispatch'
-    property: NumericPropertyType
+    property: NamespacedId[NumericPropertyType]
     scale: float | None = None  # Factor to multiply the property value with. Defaults to 1.
     entries: list[EntriesStruct]  # List of ranges. Will select last entry with threshold less or equal to value. Order does not matter, list will be sorted by threshold in ascending order.
     fallback: ItemModel | None = None  # Item model to render if no entries were less or equal to the value.
@@ -185,7 +362,7 @@ type ItemModelRangeDispatch = ItemModelRangeDispatchUnknown | ItemModelRangeDisp
 
 class ItemModelSelectUnknown(SelectCases[str]):
     type: Literal['minecraft:select', 'select'] = 'minecraft:select'
-    property: SelectPropertyType
+    property: NamespacedId[SelectPropertyType]
     fallback: ItemModel | None = None  # Item model to render if none of the cases matched the value.
     transformation: Transformation | None = None
 
@@ -267,4 +444,13 @@ class ItemModelSpecial(Special):
     type: Literal['minecraft:special', 'special'] = 'minecraft:special'
 
 
-type ItemModel = ItemModelBundleSelectedItem | ItemModelComposite | ItemModelCondition | ItemModelModel | ItemModelRangeDispatch | ItemModelSelect | ItemModelSpecial
+type ItemModel = Annotated[
+    Annotated[ItemModelBundleSelectedItem, Tag('minecraft:bundle/selected_item')]
+    | Annotated[ItemModelComposite, Tag('minecraft:composite')]
+    | Annotated[ItemModelCondition, Tag('minecraft:condition')]
+    | Annotated[ItemModelModel, Tag('minecraft:model')]
+    | Annotated[ItemModelRangeDispatch, Tag('minecraft:range_dispatch')]
+    | Annotated[ItemModelSelect, Tag('minecraft:select')]
+    | Annotated[ItemModelSpecial, Tag('minecraft:special')],
+    Discriminator(tag_of('type')),
+]

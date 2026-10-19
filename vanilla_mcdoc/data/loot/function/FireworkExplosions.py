@@ -5,9 +5,9 @@ Local link to file: vanilla_mcdoc/data/loot/function/FireworkExplosions.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
-from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel, tag_of
 from vanilla_mcdoc.data.loot.function.InsertListOperation import InsertListOperation
 from vanilla_mcdoc.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
 
@@ -36,6 +36,9 @@ class FireworkExplosionsReplaceSection(ReplaceSectionListOperation):
 
 
 type FireworkExplosions = Annotated[
-    FireworkExplosionsAppend | FireworkExplosionsInsert | FireworkExplosionsReplaceAll | FireworkExplosionsReplaceSection,
-    Field(discriminator='mode'),
+    Annotated[FireworkExplosionsAppend, Tag('minecraft:append')]
+    | Annotated[FireworkExplosionsInsert, Tag('minecraft:insert')]
+    | Annotated[FireworkExplosionsReplaceAll, Tag('minecraft:replace_all')]
+    | Annotated[FireworkExplosionsReplaceSection, Tag('minecraft:replace_section')],
+    Discriminator(tag_of('mode')),
 ]

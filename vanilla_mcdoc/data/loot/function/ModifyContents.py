@@ -6,6 +6,7 @@ Local link to file: vanilla_mcdoc/data/loot/function/ModifyContents.py
 from typing import TYPE_CHECKING
 
 from vanilla_mcdoc.data.loot.function.Conditions import Conditions
+from vanilla_mcdoc.minecraft_types import NamespacedId
 
 if TYPE_CHECKING:
     from vanilla_mcdoc.data.item_modifier.ItemModifier import ItemModifier
@@ -13,5 +14,5 @@ if TYPE_CHECKING:
 
 
 class ModifyContents(Conditions):
-    component: ContainerComponents  # Describes target component's items to modify.
+    component: NamespacedId[ContainerComponents]  # Describes target component's items to modify.
     modifier: ItemModifier  # Applied to every item inside container.

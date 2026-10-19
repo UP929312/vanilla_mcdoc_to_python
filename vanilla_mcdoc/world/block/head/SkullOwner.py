@@ -17,4 +17,4 @@ if TYPE_CHECKING:
 class SkullOwner(GeneratedModel):
     Id: MinecraftUUID | None = None  # Optional.
     Name: str | None = None  # Name of the owner, if missing appears as a steve head.
-    Properties_: Properties | None = Field(default=None, alias='Properties')
+    Properties_: Properties | None = Field(default=None, validation_alias='Properties', serialization_alias='Properties')

@@ -5,8 +5,9 @@ Local link to file: vanilla_mcdoc/data/variants/SpawnCondition.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
+from vanilla_mcdoc.base import tag_of
 from vanilla_mcdoc.data.variants.BiomeCheck import BiomeCheck
 from vanilla_mcdoc.data.variants.MoonBrightnessCheck import MoonBrightnessCheck
 from vanilla_mcdoc.data.variants.StructureCheck import StructureCheck
@@ -25,6 +26,8 @@ class SpawnConditionStructure(StructureCheck):
 
 
 type SpawnCondition = Annotated[
-    SpawnConditionBiome | SpawnConditionMoonBrightness | SpawnConditionStructure,
-    Field(discriminator='type'),
+    Annotated[SpawnConditionBiome, Tag('minecraft:biome')]
+    | Annotated[SpawnConditionMoonBrightness, Tag('minecraft:moon_brightness')]
+    | Annotated[SpawnConditionStructure, Tag('minecraft:structure')],
+    Discriminator(tag_of('type')),
 ]

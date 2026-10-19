@@ -5,8 +5,9 @@ Local link to file: vanilla_mcdoc/data/enchantment/effect/EntityEffect.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
+from vanilla_mcdoc.base import tag_of
 from vanilla_mcdoc.data.enchantment.effect.AllOfEntityEffect import AllOfEntityEffect
 from vanilla_mcdoc.data.enchantment.effect.ApplyExhaustionEntityEffect import ApplyExhaustionEntityEffect
 from vanilla_mcdoc.data.enchantment.effect.ApplyImpulseEntityEffect import ApplyImpulseEntityEffect
@@ -85,6 +86,20 @@ class EntityEffectSummonEntity(SummonEntityEffect):
 
 
 type EntityEffect = Annotated[
-    EntityEffectAllOf | EntityEffectApplyExhaustion | EntityEffectApplyImpulse | EntityEffectApplyMobEffect | EntityEffectChangeItemDamage | EntityEffectDamageEntity | EntityEffectExplode | EntityEffectIgnite | EntityEffectPlaySound | EntityEffectReplaceBlock | EntityEffectReplaceDisk | EntityEffectRunFunction | EntityEffectSetBlockProperties | EntityEffectSpawnParticles | EntityEffectSummonEntity,
-    Field(discriminator='type'),
+    Annotated[EntityEffectAllOf, Tag('minecraft:all_of')]
+    | Annotated[EntityEffectApplyExhaustion, Tag('minecraft:apply_exhaustion')]
+    | Annotated[EntityEffectApplyImpulse, Tag('minecraft:apply_impulse')]
+    | Annotated[EntityEffectApplyMobEffect, Tag('minecraft:apply_mob_effect')]
+    | Annotated[EntityEffectChangeItemDamage, Tag('minecraft:change_item_damage')]
+    | Annotated[EntityEffectDamageEntity, Tag('minecraft:damage_entity')]
+    | Annotated[EntityEffectExplode, Tag('minecraft:explode')]
+    | Annotated[EntityEffectIgnite, Tag('minecraft:ignite')]
+    | Annotated[EntityEffectPlaySound, Tag('minecraft:play_sound')]
+    | Annotated[EntityEffectReplaceBlock, Tag('minecraft:replace_block')]
+    | Annotated[EntityEffectReplaceDisk, Tag('minecraft:replace_disk')]
+    | Annotated[EntityEffectRunFunction, Tag('minecraft:run_function')]
+    | Annotated[EntityEffectSetBlockProperties, Tag('minecraft:set_block_properties')]
+    | Annotated[EntityEffectSpawnParticles, Tag('minecraft:spawn_particles')]
+    | Annotated[EntityEffectSummonEntity, Tag('minecraft:summon_entity')],
+    Discriminator(tag_of('type')),
 ]

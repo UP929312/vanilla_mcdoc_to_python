@@ -5,8 +5,9 @@ Local link to file: vanilla_mcdoc/data/enchantment/level_based_value/LevelBasedV
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
+from vanilla_mcdoc.base import tag_of
 from vanilla_mcdoc.data.enchantment.level_based_value.ClampedLevelValue import ClampedLevelValue
 from vanilla_mcdoc.data.enchantment.level_based_value.ExponentLevelValue import ExponentLevelValue
 from vanilla_mcdoc.data.enchantment.level_based_value.FractionLevelValue import FractionLevelValue
@@ -40,6 +41,11 @@ class LevelBasedValueMapLookup(LookupLevelValue):
 
 
 type LevelBasedValueMap = Annotated[
-    LevelBasedValueMapClamped | LevelBasedValueMapExponent | LevelBasedValueMapFraction | LevelBasedValueMapLevelsSquared | LevelBasedValueMapLinear | LevelBasedValueMapLookup,
-    Field(discriminator='type'),
+    Annotated[LevelBasedValueMapClamped, Tag('minecraft:clamped')]
+    | Annotated[LevelBasedValueMapExponent, Tag('minecraft:exponent')]
+    | Annotated[LevelBasedValueMapFraction, Tag('minecraft:fraction')]
+    | Annotated[LevelBasedValueMapLevelsSquared, Tag('minecraft:levels_squared')]
+    | Annotated[LevelBasedValueMapLinear, Tag('minecraft:linear')]
+    | Annotated[LevelBasedValueMapLookup, Tag('minecraft:lookup')],
+    Discriminator(tag_of('type')),
 ]

@@ -3,8 +3,11 @@ Generated from symbols.json for ::java::data::worldgen::feature::tree::RootPlace
 Local link to file: vanilla_mcdoc/data/worldgen/feature/tree/RootPlacer.py
 """
 # ~~~ CODE ~~~
-from typing import TYPE_CHECKING, Literal
+from typing import TYPE_CHECKING, Annotated, Literal
 
+from pydantic import Discriminator, Tag
+
+from vanilla_mcdoc.base import tag_of
 from vanilla_mcdoc.data.worldgen.feature.tree.MangroveRootPlacer import MangroveRootPlacer
 
 if TYPE_CHECKING:
@@ -20,4 +23,7 @@ class RootPlacerMangroveRootPlacer(MangroveRootPlacer):
     above_root_placement: AboveRootPlacement | None = None
 
 
-type RootPlacer = RootPlacerMangroveRootPlacer
+type RootPlacer = Annotated[
+    Annotated[RootPlacerMangroveRootPlacer, Tag('minecraft:mangrove_root_placer')],
+    Discriminator(tag_of('type')),
+]

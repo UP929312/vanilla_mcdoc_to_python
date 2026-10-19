@@ -10,5 +10,3 @@ from vanilla_mcdoc.data.gametest.TestData import TestData
 
 class BlockBasedTestInstance(TestData):
     __resource_dir__: ClassVar[str] = 'test_instance'
-
-    pass

@@ -5,8 +5,9 @@ Local link to file: vanilla_mcdoc/data/gametest/test_environment/TestEnvironment
 # ~~~ CODE ~~~
 from typing import Annotated, ClassVar, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
+from vanilla_mcdoc.base import tag_of
 from vanilla_mcdoc.data.gametest.test_environment.AllOffTestEnvironment import AllOffTestEnvironment
 from vanilla_mcdoc.data.gametest.test_environment.ClockTimeTestEnvironment import ClockTimeTestEnvironment
 from vanilla_mcdoc.data.gametest.test_environment.DifficultyTestEnvironment import DifficultyTestEnvironment
@@ -59,6 +60,12 @@ class TestEnvironmentWeather(WeatherTestEnvironment):
 
 
 type TestEnvironment = Annotated[
-    TestEnvironmentAllOf | TestEnvironmentClockTime | TestEnvironmentDifficulty | TestEnvironmentFunction | TestEnvironmentGameRules | TestEnvironmentTimelineAttributes | TestEnvironmentWeather,
-    Field(discriminator='type'),
+    Annotated[TestEnvironmentAllOf, Tag('minecraft:all_of')]
+    | Annotated[TestEnvironmentClockTime, Tag('minecraft:clock_time')]
+    | Annotated[TestEnvironmentDifficulty, Tag('minecraft:difficulty')]
+    | Annotated[TestEnvironmentFunction, Tag('minecraft:function')]
+    | Annotated[TestEnvironmentGameRules, Tag('minecraft:game_rules')]
+    | Annotated[TestEnvironmentTimelineAttributes, Tag('minecraft:timeline_attributes')]
+    | Annotated[TestEnvironmentWeather, Tag('minecraft:weather')],
+    Discriminator(tag_of('type')),
 ]

@@ -5,9 +5,9 @@ Local link to file: vanilla_mcdoc/data/dialog/Dialog.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Field, Tag
 
-from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel, tag_of
 
 if TYPE_CHECKING:
     from vanilla_mcdoc.data.dialog.AfterAction import AfterAction
@@ -345,4 +345,11 @@ class DialogServerLinksWaitForResponse(GeneratedModel):
 type DialogServerLinks = DialogServerLinksDefault | DialogServerLinksClose | DialogServerLinksNone | DialogServerLinksWaitForResponse
 
 
-type Dialog = DialogConfirmation | DialogDialogList | DialogMultiAction | DialogNotice | DialogServerLinks
+type Dialog = Annotated[
+    Annotated[DialogConfirmation, Tag('minecraft:confirmation')]
+    | Annotated[DialogDialogList, Tag('minecraft:dialog_list')]
+    | Annotated[DialogMultiAction, Tag('minecraft:multi_action')]
+    | Annotated[DialogNotice, Tag('minecraft:notice')]
+    | Annotated[DialogServerLinks, Tag('minecraft:server_links')],
+    Discriminator(tag_of('type')),
+]

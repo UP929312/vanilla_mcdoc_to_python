@@ -5,9 +5,9 @@ Local link to file: vanilla_mcdoc/world/block/BlockEntityData.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
-from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel, tag_of
 from vanilla_mcdoc.world.block.banner.Banner import Banner
 from vanilla_mcdoc.world.block.beacon.Beacon import Beacon
 from vanilla_mcdoc.world.block.beehive.Beehive import Beehive
@@ -221,7 +221,80 @@ class BlockEntityDataVault(Vault):
     id: Literal['minecraft:vault', 'vault'] = 'minecraft:vault'
 
 
+class BlockEntityDataBell(GeneratedModel):
+    id: Literal['minecraft:bell', 'bell'] = 'minecraft:bell'
+
+
+class BlockEntityDataCopperGolemStatue(GeneratedModel):
+    id: Literal['minecraft:copper_golem_statue', 'copper_golem_statue'] = 'minecraft:copper_golem_statue'
+
+
+class BlockEntityDataDaylightDetector(GeneratedModel):
+    id: Literal['minecraft:daylight_detector', 'daylight_detector'] = 'minecraft:daylight_detector'
+
+
+class BlockEntityDataEndPortal(GeneratedModel):
+    id: Literal['minecraft:end_portal', 'end_portal'] = 'minecraft:end_portal'
+
+
+class BlockEntityDataEnderChest(GeneratedModel):
+    id: Literal['minecraft:ender_chest', 'ender_chest'] = 'minecraft:ender_chest'
+
+
+class BlockEntityDataPiston(GeneratedModel):
+    id: Literal['minecraft:piston', 'piston'] = 'minecraft:piston'
+
+
 type BlockEntityData = Annotated[
-    BlockEntityDataBanner | BlockEntityDataBarrel | BlockEntityDataBeacon | BlockEntityDataBeehive | BlockEntityDataBlastFurnace | BlockEntityDataBrewingStand | BlockEntityDataBrushableBlock | BlockEntityDataCalibratedSculkSensor | BlockEntityDataCampfire | BlockEntityDataChest | BlockEntityDataChiseledBookshelf | BlockEntityDataCommandBlock | BlockEntityDataComparator | BlockEntityDataConduit | BlockEntityDataCrafter | BlockEntityDataCreakingHeart | BlockEntityDataDecoratedPot | BlockEntityDataDispenser | BlockEntityDataDropper | BlockEntityDataEnchantingTable | BlockEntityDataEndGateway | BlockEntityDataFurnace | BlockEntityDataHangingSign | BlockEntityDataHopper | BlockEntityDataJigsaw | BlockEntityDataJukebox | BlockEntityDataLectern | BlockEntityDataMobSpawner | BlockEntityDataMovingPiston | BlockEntityDataPotentSulfur | BlockEntityDataSculkCatalyst | BlockEntityDataSculkSensor | BlockEntityDataSculkShrieker | BlockEntityDataShelf | BlockEntityDataShulkerBox | BlockEntityDataSign | BlockEntityDataSkull | BlockEntityDataSmoker | BlockEntityDataStructureBlock | BlockEntityDataTestBlock | BlockEntityDataTestInstanceBlock | BlockEntityDataTrappedChest | BlockEntityDataTrialSpawner | BlockEntityDataVault,
-    Field(discriminator='id'),
+    Annotated[BlockEntityDataBanner, Tag('minecraft:banner')]
+    | Annotated[BlockEntityDataBarrel, Tag('minecraft:barrel')]
+    | Annotated[BlockEntityDataBeacon, Tag('minecraft:beacon')]
+    | Annotated[BlockEntityDataBeehive, Tag('minecraft:beehive')]
+    | Annotated[BlockEntityDataBlastFurnace, Tag('minecraft:blast_furnace')]
+    | Annotated[BlockEntityDataBrewingStand, Tag('minecraft:brewing_stand')]
+    | Annotated[BlockEntityDataBrushableBlock, Tag('minecraft:brushable_block')]
+    | Annotated[BlockEntityDataCalibratedSculkSensor, Tag('minecraft:calibrated_sculk_sensor')]
+    | Annotated[BlockEntityDataCampfire, Tag('minecraft:campfire')]
+    | Annotated[BlockEntityDataChest, Tag('minecraft:chest')]
+    | Annotated[BlockEntityDataChiseledBookshelf, Tag('minecraft:chiseled_bookshelf')]
+    | Annotated[BlockEntityDataCommandBlock, Tag('minecraft:command_block')]
+    | Annotated[BlockEntityDataComparator, Tag('minecraft:comparator')]
+    | Annotated[BlockEntityDataConduit, Tag('minecraft:conduit')]
+    | Annotated[BlockEntityDataCrafter, Tag('minecraft:crafter')]
+    | Annotated[BlockEntityDataCreakingHeart, Tag('minecraft:creaking_heart')]
+    | Annotated[BlockEntityDataDecoratedPot, Tag('minecraft:decorated_pot')]
+    | Annotated[BlockEntityDataDispenser, Tag('minecraft:dispenser')]
+    | Annotated[BlockEntityDataDropper, Tag('minecraft:dropper')]
+    | Annotated[BlockEntityDataEnchantingTable, Tag('minecraft:enchanting_table')]
+    | Annotated[BlockEntityDataEndGateway, Tag('minecraft:end_gateway')]
+    | Annotated[BlockEntityDataFurnace, Tag('minecraft:furnace')]
+    | Annotated[BlockEntityDataHangingSign, Tag('minecraft:hanging_sign')]
+    | Annotated[BlockEntityDataHopper, Tag('minecraft:hopper')]
+    | Annotated[BlockEntityDataJigsaw, Tag('minecraft:jigsaw')]
+    | Annotated[BlockEntityDataJukebox, Tag('minecraft:jukebox')]
+    | Annotated[BlockEntityDataLectern, Tag('minecraft:lectern')]
+    | Annotated[BlockEntityDataMobSpawner, Tag('minecraft:mob_spawner')]
+    | Annotated[BlockEntityDataMovingPiston, Tag('minecraft:moving_piston')]
+    | Annotated[BlockEntityDataPotentSulfur, Tag('minecraft:potent_sulfur')]
+    | Annotated[BlockEntityDataSculkCatalyst, Tag('minecraft:sculk_catalyst')]
+    | Annotated[BlockEntityDataSculkSensor, Tag('minecraft:sculk_sensor')]
+    | Annotated[BlockEntityDataSculkShrieker, Tag('minecraft:sculk_shrieker')]
+    | Annotated[BlockEntityDataShelf, Tag('minecraft:shelf')]
+    | Annotated[BlockEntityDataShulkerBox, Tag('minecraft:shulker_box')]
+    | Annotated[BlockEntityDataSign, Tag('minecraft:sign')]
+    | Annotated[BlockEntityDataSkull, Tag('minecraft:skull')]
+    | Annotated[BlockEntityDataSmoker, Tag('minecraft:smoker')]
+    | Annotated[BlockEntityDataStructureBlock, Tag('minecraft:structure_block')]
+    | Annotated[BlockEntityDataTestBlock, Tag('minecraft:test_block')]
+    | Annotated[BlockEntityDataTestInstanceBlock, Tag('minecraft:test_instance_block')]
+    | Annotated[BlockEntityDataTrappedChest, Tag('minecraft:trapped_chest')]
+    | Annotated[BlockEntityDataTrialSpawner, Tag('minecraft:trial_spawner')]
+    | Annotated[BlockEntityDataVault, Tag('minecraft:vault')]
+    | Annotated[BlockEntityDataBell, Tag('minecraft:bell')]
+    | Annotated[BlockEntityDataCopperGolemStatue, Tag('minecraft:copper_golem_statue')]
+    | Annotated[BlockEntityDataDaylightDetector, Tag('minecraft:daylight_detector')]
+    | Annotated[BlockEntityDataEndPortal, Tag('minecraft:end_portal')]
+    | Annotated[BlockEntityDataEnderChest, Tag('minecraft:ender_chest')]
+    | Annotated[BlockEntityDataPiston, Tag('minecraft:piston')],
+    Discriminator(tag_of('id')),
 ]

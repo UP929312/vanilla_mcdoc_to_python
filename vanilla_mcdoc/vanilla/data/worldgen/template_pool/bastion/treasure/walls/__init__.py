@@ -1,0 +1,173 @@
+"""Vanilla's data/worldgen/template_pool/bastion/treasure/walls/ files"""
+from vanilla_mcdoc.data.worldgen.template_pool.Element import ElementSinglePoolElement
+from vanilla_mcdoc.data.worldgen.template_pool.Projection import Projection
+from vanilla_mcdoc.data.worldgen.template_pool.TemplatePool import TemplatePool
+from vanilla_mcdoc.data.worldgen.template_pool.WeightedElement import WeightedElement
+
+BOTTOM = TemplatePool(
+    fallback='minecraft:empty',
+    elements=[
+        WeightedElement(
+            weight=1,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:bastion/treasure/walls/bottom/wall_0',
+                processors='minecraft:treasure_rooms',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+        WeightedElement(
+            weight=1,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:bastion/treasure/walls/bottom/wall_1',
+                processors='minecraft:treasure_rooms',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+        WeightedElement(
+            weight=1,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:bastion/treasure/walls/bottom/wall_2',
+                processors='minecraft:treasure_rooms',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+        WeightedElement(
+            weight=1,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:bastion/treasure/walls/bottom/wall_3',
+                processors='minecraft:treasure_rooms',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+    ],
+)
+
+MID = TemplatePool(
+    fallback='minecraft:empty',
+    elements=[
+        WeightedElement(
+            weight=1,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:bastion/treasure/walls/mid/wall_0',
+                processors='minecraft:treasure_rooms',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+        WeightedElement(
+            weight=1,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:bastion/treasure/walls/mid/wall_1',
+                processors='minecraft:treasure_rooms',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+        WeightedElement(
+            weight=1,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:bastion/treasure/walls/mid/wall_2',
+                processors='minecraft:treasure_rooms',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+    ],
+)
+
+OUTER = TemplatePool(
+    fallback='minecraft:empty',
+    elements=[
+        WeightedElement(
+            weight=1,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:bastion/treasure/walls/outer/top_corner',
+                processors='minecraft:high_wall',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+        WeightedElement(
+            weight=1,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:bastion/treasure/walls/outer/mid_corner',
+                processors='minecraft:high_wall',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+        WeightedElement(
+            weight=1,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:bastion/treasure/walls/outer/bottom_corner',
+                processors='minecraft:high_wall',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+        WeightedElement(
+            weight=1,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:bastion/treasure/walls/outer/outer_wall',
+                processors='minecraft:high_wall',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+        WeightedElement(
+            weight=1,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:bastion/treasure/walls/outer/medium_outer_wall',
+                processors='minecraft:high_wall',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+        WeightedElement(
+            weight=1,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:bastion/treasure/walls/outer/tall_outer_wall',
+                processors='minecraft:high_wall',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+    ],
+)
+
+TOP = TemplatePool(
+    fallback='minecraft:empty',
+    elements=[
+        WeightedElement(
+            weight=1,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:bastion/treasure/walls/top/main_entrance',
+                processors='minecraft:treasure_rooms',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+        WeightedElement(
+            weight=1,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:bastion/treasure/walls/top/wall_0',
+                processors='minecraft:treasure_rooms',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+        WeightedElement(
+            weight=1,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:bastion/treasure/walls/top/wall_1',
+                processors='minecraft:treasure_rooms',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+    ],
+)

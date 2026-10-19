@@ -3,13 +3,13 @@ Generated from symbols.json for ::java::data::number_provider::DataStorageProvid
 Local link to file: vanilla_mcdoc/data/number_provider/DataStorageProvider.py
 """
 # ~~~ CODE ~~~
-from typing import Annotated, Generic, TypeVar
+from typing import Annotated, Any, Generic, TypeVar
 
 from vanilla_mcdoc.base import GeneratedModel
 from vanilla_mcdoc.minecraft_types import IdSpec
 
 
-T = TypeVar('T')
+T = TypeVar('T', default=Any)
 
 
 class DataStorageProvider(GeneratedModel, Generic[T]):

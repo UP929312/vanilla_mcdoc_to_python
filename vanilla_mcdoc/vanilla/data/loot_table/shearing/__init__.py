@@ -1,0 +1,289 @@
+"""Vanilla's data/loot_table/shearing/ files"""
+from vanilla_mcdoc.data.advancement.predicate.EntitySubPredicateMap import EntitySubPredicateMap
+from vanilla_mcdoc.data.advancement.predicate.SheepPredicate import SheepPredicate
+from vanilla_mcdoc.data.loot.EntityTarget import EntityTarget
+from vanilla_mcdoc.data.loot.LootContextParamSets import LootContextParamSets
+from vanilla_mcdoc.data.loot.LootPool import LootPool
+from vanilla_mcdoc.data.loot.LootPoolEntry import LootPoolEntryAlternatives, LootPoolEntryItem, LootPoolEntryLootTable
+from vanilla_mcdoc.data.loot.LootTable import LootTable
+from vanilla_mcdoc.data.loot.condition.LootCondition import LootConditionEntityProperties
+from vanilla_mcdoc.data.loot.function.LootFunction import LootFunctionSetCount
+from vanilla_mcdoc.util.color.DyeColor import DyeColor
+from vanilla_mcdoc.world.component.DataComponentExactPredicate import DataComponentExactPredicate
+from vanilla_mcdoc.world.component.entity.MooshroomType import MooshroomType
+
+BOGGED = LootTable(
+    type=LootContextParamSets.SHEARING,
+    pools=[
+        LootPool(
+            rolls=2,
+            entries=[
+                LootPoolEntryItem(
+                    modifier=LootFunctionSetCount(count=1, type='minecraft:set_count'),
+                    name='minecraft:brown_mushroom',
+                    type='minecraft:item',
+                ),
+                LootPoolEntryItem(
+                    modifier=LootFunctionSetCount(count=1, type='minecraft:set_count'),
+                    name='minecraft:red_mushroom',
+                    type='minecraft:item',
+                ),
+            ],
+        ),
+    ],
+    random_sequence='minecraft:shearing/bogged',
+)
+
+MOOSHROOM = LootTable(
+    type=LootContextParamSets.SHEARING,
+    pools=[
+        LootPool(
+            rolls=1,
+            entries=[
+                LootPoolEntryAlternatives(
+                    children=[
+                        LootPoolEntryLootTable(
+                            condition=LootConditionEntityProperties(
+                                entity=EntityTarget.THIS,
+                                predicate=EntitySubPredicateMap(
+                                    components=DataComponentExactPredicate(mooshroom_variant=MooshroomType.RED),
+                                ),
+                                type='minecraft:entity_properties',
+                            ),
+                            value='minecraft:shearing/mooshroom/red',
+                            type='minecraft:loot_table',
+                        ),
+                        LootPoolEntryLootTable(
+                            condition=LootConditionEntityProperties(
+                                entity=EntityTarget.THIS,
+                                predicate=EntitySubPredicateMap(
+                                    components=DataComponentExactPredicate(mooshroom_variant=MooshroomType.BROWN),
+                                ),
+                                type='minecraft:entity_properties',
+                            ),
+                            value='minecraft:shearing/mooshroom/brown',
+                            type='minecraft:loot_table',
+                        ),
+                    ],
+                    type='minecraft:alternatives',
+                ),
+            ],
+        ),
+    ],
+    random_sequence='minecraft:shearing/mooshroom',
+)
+
+SHEEP = LootTable(
+    type=LootContextParamSets.SHEARING,
+    pools=[
+        LootPool(
+            rolls=1,
+            entries=[
+                LootPoolEntryAlternatives(
+                    children=[
+                        LootPoolEntryLootTable(
+                            condition=LootConditionEntityProperties(
+                                entity=EntityTarget.THIS,
+                                predicate=EntitySubPredicateMap(
+                                    components=DataComponentExactPredicate(sheep_color=DyeColor.WHITE),
+                                    type_specific_sheep=SheepPredicate(sheared=False),
+                                ),
+                                type='minecraft:entity_properties',
+                            ),
+                            value='minecraft:shearing/sheep/white',
+                            type='minecraft:loot_table',
+                        ),
+                        LootPoolEntryLootTable(
+                            condition=LootConditionEntityProperties(
+                                entity=EntityTarget.THIS,
+                                predicate=EntitySubPredicateMap(
+                                    components=DataComponentExactPredicate(sheep_color=DyeColor.ORANGE),
+                                    type_specific_sheep=SheepPredicate(sheared=False),
+                                ),
+                                type='minecraft:entity_properties',
+                            ),
+                            value='minecraft:shearing/sheep/orange',
+                            type='minecraft:loot_table',
+                        ),
+                        LootPoolEntryLootTable(
+                            condition=LootConditionEntityProperties(
+                                entity=EntityTarget.THIS,
+                                predicate=EntitySubPredicateMap(
+                                    components=DataComponentExactPredicate(sheep_color=DyeColor.MAGENTA),
+                                    type_specific_sheep=SheepPredicate(sheared=False),
+                                ),
+                                type='minecraft:entity_properties',
+                            ),
+                            value='minecraft:shearing/sheep/magenta',
+                            type='minecraft:loot_table',
+                        ),
+                        LootPoolEntryLootTable(
+                            condition=LootConditionEntityProperties(
+                                entity=EntityTarget.THIS,
+                                predicate=EntitySubPredicateMap(
+                                    components=DataComponentExactPredicate(sheep_color=DyeColor.LIGHTBLUE),
+                                    type_specific_sheep=SheepPredicate(sheared=False),
+                                ),
+                                type='minecraft:entity_properties',
+                            ),
+                            value='minecraft:shearing/sheep/light_blue',
+                            type='minecraft:loot_table',
+                        ),
+                        LootPoolEntryLootTable(
+                            condition=LootConditionEntityProperties(
+                                entity=EntityTarget.THIS,
+                                predicate=EntitySubPredicateMap(
+                                    components=DataComponentExactPredicate(sheep_color=DyeColor.YELLOW),
+                                    type_specific_sheep=SheepPredicate(sheared=False),
+                                ),
+                                type='minecraft:entity_properties',
+                            ),
+                            value='minecraft:shearing/sheep/yellow',
+                            type='minecraft:loot_table',
+                        ),
+                        LootPoolEntryLootTable(
+                            condition=LootConditionEntityProperties(
+                                entity=EntityTarget.THIS,
+                                predicate=EntitySubPredicateMap(
+                                    components=DataComponentExactPredicate(sheep_color=DyeColor.LIME),
+                                    type_specific_sheep=SheepPredicate(sheared=False),
+                                ),
+                                type='minecraft:entity_properties',
+                            ),
+                            value='minecraft:shearing/sheep/lime',
+                            type='minecraft:loot_table',
+                        ),
+                        LootPoolEntryLootTable(
+                            condition=LootConditionEntityProperties(
+                                entity=EntityTarget.THIS,
+                                predicate=EntitySubPredicateMap(
+                                    components=DataComponentExactPredicate(sheep_color=DyeColor.PINK),
+                                    type_specific_sheep=SheepPredicate(sheared=False),
+                                ),
+                                type='minecraft:entity_properties',
+                            ),
+                            value='minecraft:shearing/sheep/pink',
+                            type='minecraft:loot_table',
+                        ),
+                        LootPoolEntryLootTable(
+                            condition=LootConditionEntityProperties(
+                                entity=EntityTarget.THIS,
+                                predicate=EntitySubPredicateMap(
+                                    components=DataComponentExactPredicate(sheep_color=DyeColor.GRAY),
+                                    type_specific_sheep=SheepPredicate(sheared=False),
+                                ),
+                                type='minecraft:entity_properties',
+                            ),
+                            value='minecraft:shearing/sheep/gray',
+                            type='minecraft:loot_table',
+                        ),
+                        LootPoolEntryLootTable(
+                            condition=LootConditionEntityProperties(
+                                entity=EntityTarget.THIS,
+                                predicate=EntitySubPredicateMap(
+                                    components=DataComponentExactPredicate(sheep_color=DyeColor.LIGHTGRAY),
+                                    type_specific_sheep=SheepPredicate(sheared=False),
+                                ),
+                                type='minecraft:entity_properties',
+                            ),
+                            value='minecraft:shearing/sheep/light_gray',
+                            type='minecraft:loot_table',
+                        ),
+                        LootPoolEntryLootTable(
+                            condition=LootConditionEntityProperties(
+                                entity=EntityTarget.THIS,
+                                predicate=EntitySubPredicateMap(
+                                    components=DataComponentExactPredicate(sheep_color=DyeColor.CYAN),
+                                    type_specific_sheep=SheepPredicate(sheared=False),
+                                ),
+                                type='minecraft:entity_properties',
+                            ),
+                            value='minecraft:shearing/sheep/cyan',
+                            type='minecraft:loot_table',
+                        ),
+                        LootPoolEntryLootTable(
+                            condition=LootConditionEntityProperties(
+                                entity=EntityTarget.THIS,
+                                predicate=EntitySubPredicateMap(
+                                    components=DataComponentExactPredicate(sheep_color=DyeColor.PURPLE),
+                                    type_specific_sheep=SheepPredicate(sheared=False),
+                                ),
+                                type='minecraft:entity_properties',
+                            ),
+                            value='minecraft:shearing/sheep/purple',
+                            type='minecraft:loot_table',
+                        ),
+                        LootPoolEntryLootTable(
+                            condition=LootConditionEntityProperties(
+                                entity=EntityTarget.THIS,
+                                predicate=EntitySubPredicateMap(
+                                    components=DataComponentExactPredicate(sheep_color=DyeColor.BLUE),
+                                    type_specific_sheep=SheepPredicate(sheared=False),
+                                ),
+                                type='minecraft:entity_properties',
+                            ),
+                            value='minecraft:shearing/sheep/blue',
+                            type='minecraft:loot_table',
+                        ),
+                        LootPoolEntryLootTable(
+                            condition=LootConditionEntityProperties(
+                                entity=EntityTarget.THIS,
+                                predicate=EntitySubPredicateMap(
+                                    components=DataComponentExactPredicate(sheep_color=DyeColor.BROWN),
+                                    type_specific_sheep=SheepPredicate(sheared=False),
+                                ),
+                                type='minecraft:entity_properties',
+                            ),
+                            value='minecraft:shearing/sheep/brown',
+                            type='minecraft:loot_table',
+                        ),
+                        LootPoolEntryLootTable(
+                            condition=LootConditionEntityProperties(
+                                entity=EntityTarget.THIS,
+                                predicate=EntitySubPredicateMap(
+                                    components=DataComponentExactPredicate(sheep_color=DyeColor.GREEN),
+                                    type_specific_sheep=SheepPredicate(sheared=False),
+                                ),
+                                type='minecraft:entity_properties',
+                            ),
+                            value='minecraft:shearing/sheep/green',
+                            type='minecraft:loot_table',
+                        ),
+                        LootPoolEntryLootTable(
+                            condition=LootConditionEntityProperties(
+                                entity=EntityTarget.THIS,
+                                predicate=EntitySubPredicateMap(
+                                    components=DataComponentExactPredicate(sheep_color=DyeColor.RED),
+                                    type_specific_sheep=SheepPredicate(sheared=False),
+                                ),
+                                type='minecraft:entity_properties',
+                            ),
+                            value='minecraft:shearing/sheep/red',
+                            type='minecraft:loot_table',
+                        ),
+                        LootPoolEntryLootTable(
+                            condition=LootConditionEntityProperties(
+                                entity=EntityTarget.THIS,
+                                predicate=EntitySubPredicateMap(
+                                    components=DataComponentExactPredicate(sheep_color=DyeColor.BLACK),
+                                    type_specific_sheep=SheepPredicate(sheared=False),
+                                ),
+                                type='minecraft:entity_properties',
+                            ),
+                            value='minecraft:shearing/sheep/black',
+                            type='minecraft:loot_table',
+                        ),
+                    ],
+                    type='minecraft:alternatives',
+                ),
+            ],
+        ),
+    ],
+    random_sequence='minecraft:shearing/sheep',
+)
+
+SNOW_GOLEM = LootTable(
+    type=LootContextParamSets.SHEARING,
+    pools=[LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:carved_pumpkin', type='minecraft:item')])],
+    random_sequence='minecraft:shearing/snow_golem',
+)

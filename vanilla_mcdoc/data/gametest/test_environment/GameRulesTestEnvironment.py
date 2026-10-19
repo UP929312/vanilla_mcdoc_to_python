@@ -3,18 +3,75 @@ Generated from symbols.json for ::java::data::gametest::test_environment::GameRu
 Local link to file: vanilla_mcdoc/data/gametest/test_environment/GameRulesTestEnvironment.py
 """
 # ~~~ CODE ~~~
-from typing import TYPE_CHECKING, Annotated, ClassVar
+from typing import Annotated, ClassVar
 
 from pydantic import Field
 
 from vanilla_mcdoc.base import GeneratedModel
-from vanilla_mcdoc.minecraft_types import IdSpec
 
-if TYPE_CHECKING:
-    from vanilla_mcdoc.registry.KnownGameRuleId import KnownGameRuleId
+
+class RulesStruct(GeneratedModel):
+    advance_time: bool | None = Field(default=None, validation_alias='minecraft:advance_time', serialization_alias='minecraft:advance_time')
+    advance_weather: bool | None = Field(default=None, validation_alias='minecraft:advance_weather', serialization_alias='minecraft:advance_weather')
+    allow_entering_nether_using_portals: bool | None = Field(default=None, validation_alias='minecraft:allow_entering_nether_using_portals', serialization_alias='minecraft:allow_entering_nether_using_portals')
+    block_drops: bool | None = Field(default=None, validation_alias='minecraft:block_drops', serialization_alias='minecraft:block_drops')
+    block_explosion_drop_decay: bool | None = Field(default=None, validation_alias='minecraft:block_explosion_drop_decay', serialization_alias='minecraft:block_explosion_drop_decay')
+    command_block_output: bool | None = Field(default=None, validation_alias='minecraft:command_block_output', serialization_alias='minecraft:command_block_output')
+    command_blocks_work: bool | None = Field(default=None, validation_alias='minecraft:command_blocks_work', serialization_alias='minecraft:command_blocks_work')
+    drowning_damage: bool | None = Field(default=None, validation_alias='minecraft:drowning_damage', serialization_alias='minecraft:drowning_damage')
+    elytra_movement_check: bool | None = Field(default=None, validation_alias='minecraft:elytra_movement_check', serialization_alias='minecraft:elytra_movement_check')
+    ender_pearls_vanish_on_death: bool | None = Field(default=None, validation_alias='minecraft:ender_pearls_vanish_on_death', serialization_alias='minecraft:ender_pearls_vanish_on_death')
+    entity_drops: bool | None = Field(default=None, validation_alias='minecraft:entity_drops', serialization_alias='minecraft:entity_drops')
+    fall_damage: bool | None = Field(default=None, validation_alias='minecraft:fall_damage', serialization_alias='minecraft:fall_damage')
+    fire_damage: bool | None = Field(default=None, validation_alias='minecraft:fire_damage', serialization_alias='minecraft:fire_damage')
+    fire_spread_radius_around_player: Annotated[int, Field(ge=-1)] | None = Field(default=None, validation_alias='minecraft:fire_spread_radius_around_player', serialization_alias='minecraft:fire_spread_radius_around_player')
+    forgive_dead_players: bool | None = Field(default=None, validation_alias='minecraft:forgive_dead_players', serialization_alias='minecraft:forgive_dead_players')
+    freeze_damage: bool | None = Field(default=None, validation_alias='minecraft:freeze_damage', serialization_alias='minecraft:freeze_damage')
+    global_sound_events: bool | None = Field(default=None, validation_alias='minecraft:global_sound_events', serialization_alias='minecraft:global_sound_events')
+    immediate_respawn: bool | None = Field(default=None, validation_alias='minecraft:immediate_respawn', serialization_alias='minecraft:immediate_respawn')
+    keep_inventory: bool | None = Field(default=None, validation_alias='minecraft:keep_inventory', serialization_alias='minecraft:keep_inventory')
+    lava_source_conversion: bool | None = Field(default=None, validation_alias='minecraft:lava_source_conversion', serialization_alias='minecraft:lava_source_conversion')
+    limited_crafting: bool | None = Field(default=None, validation_alias='minecraft:limited_crafting', serialization_alias='minecraft:limited_crafting')
+    locator_bar: bool | None = Field(default=None, validation_alias='minecraft:locator_bar', serialization_alias='minecraft:locator_bar')
+    log_admin_commands: bool | None = Field(default=None, validation_alias='minecraft:log_admin_commands', serialization_alias='minecraft:log_admin_commands')
+    max_block_modifications: Annotated[int, Field(ge=1)] | None = Field(default=None, validation_alias='minecraft:max_block_modifications', serialization_alias='minecraft:max_block_modifications')
+    max_command_forks: Annotated[int, Field(ge=0)] | None = Field(default=None, validation_alias='minecraft:max_command_forks', serialization_alias='minecraft:max_command_forks')
+    max_command_sequence_length: Annotated[int, Field(ge=0)] | None = Field(default=None, validation_alias='minecraft:max_command_sequence_length', serialization_alias='minecraft:max_command_sequence_length')
+    max_entity_cramming: Annotated[int, Field(ge=0)] | None = Field(default=None, validation_alias='minecraft:max_entity_cramming', serialization_alias='minecraft:max_entity_cramming')
+    max_minecart_speed: Annotated[int, Field(ge=1, le=1000)] | None = Field(default=None, validation_alias='minecraft:max_minecart_speed', serialization_alias='minecraft:max_minecart_speed')
+    max_snow_accumulation_height: Annotated[int, Field(ge=0, le=8)] | None = Field(default=None, validation_alias='minecraft:max_snow_accumulation_height', serialization_alias='minecraft:max_snow_accumulation_height')
+    mob_drops: bool | None = Field(default=None, validation_alias='minecraft:mob_drops', serialization_alias='minecraft:mob_drops')
+    mob_explosion_drop_decay: bool | None = Field(default=None, validation_alias='minecraft:mob_explosion_drop_decay', serialization_alias='minecraft:mob_explosion_drop_decay')
+    mob_griefing: bool | None = Field(default=None, validation_alias='minecraft:mob_griefing', serialization_alias='minecraft:mob_griefing')
+    natural_health_regeneration: bool | None = Field(default=None, validation_alias='minecraft:natural_health_regeneration', serialization_alias='minecraft:natural_health_regeneration')
+    player_movement_check: bool | None = Field(default=None, validation_alias='minecraft:player_movement_check', serialization_alias='minecraft:player_movement_check')
+    players_nether_portal_creative_delay: Annotated[int, Field(ge=0)] | None = Field(default=None, validation_alias='minecraft:players_nether_portal_creative_delay', serialization_alias='minecraft:players_nether_portal_creative_delay')
+    players_nether_portal_default_delay: Annotated[int, Field(ge=0)] | None = Field(default=None, validation_alias='minecraft:players_nether_portal_default_delay', serialization_alias='minecraft:players_nether_portal_default_delay')
+    players_sleeping_percentage: Annotated[int, Field(ge=0)] | None = Field(default=None, validation_alias='minecraft:players_sleeping_percentage', serialization_alias='minecraft:players_sleeping_percentage')
+    projectiles_can_break_blocks: bool | None = Field(default=None, validation_alias='minecraft:projectiles_can_break_blocks', serialization_alias='minecraft:projectiles_can_break_blocks')
+    pvp: bool | None = Field(default=None, validation_alias='minecraft:pvp', serialization_alias='minecraft:pvp')
+    raids: bool | None = Field(default=None, validation_alias='minecraft:raids', serialization_alias='minecraft:raids')
+    random_tick_speed: Annotated[int, Field(ge=0)] | None = Field(default=None, validation_alias='minecraft:random_tick_speed', serialization_alias='minecraft:random_tick_speed')
+    reduced_debug_info: bool | None = Field(default=None, validation_alias='minecraft:reduced_debug_info', serialization_alias='minecraft:reduced_debug_info')
+    respawn_radius: Annotated[int, Field(ge=0)] | None = Field(default=None, validation_alias='minecraft:respawn_radius', serialization_alias='minecraft:respawn_radius')
+    send_command_feedback: bool | None = Field(default=None, validation_alias='minecraft:send_command_feedback', serialization_alias='minecraft:send_command_feedback')
+    show_death_messages: bool | None = Field(default=None, validation_alias='minecraft:show_death_messages', serialization_alias='minecraft:show_death_messages')
+    spawn_mobs: bool | None = Field(default=None, validation_alias='minecraft:spawn_mobs', serialization_alias='minecraft:spawn_mobs')
+    spawn_monsters: bool | None = Field(default=None, validation_alias='minecraft:spawn_monsters', serialization_alias='minecraft:spawn_monsters')
+    spawn_patrols: bool | None = Field(default=None, validation_alias='minecraft:spawn_patrols', serialization_alias='minecraft:spawn_patrols')
+    spawn_phantoms: bool | None = Field(default=None, validation_alias='minecraft:spawn_phantoms', serialization_alias='minecraft:spawn_phantoms')
+    spawn_wandering_traders: bool | None = Field(default=None, validation_alias='minecraft:spawn_wandering_traders', serialization_alias='minecraft:spawn_wandering_traders')
+    spawn_wardens: bool | None = Field(default=None, validation_alias='minecraft:spawn_wardens', serialization_alias='minecraft:spawn_wardens')
+    spawner_blocks_work: bool | None = Field(default=None, validation_alias='minecraft:spawner_blocks_work', serialization_alias='minecraft:spawner_blocks_work')
+    spectators_generate_chunks: bool | None = Field(default=None, validation_alias='minecraft:spectators_generate_chunks', serialization_alias='minecraft:spectators_generate_chunks')
+    spread_vines: bool | None = Field(default=None, validation_alias='minecraft:spread_vines', serialization_alias='minecraft:spread_vines')
+    tnt_explodes: bool | None = Field(default=None, validation_alias='minecraft:tnt_explodes', serialization_alias='minecraft:tnt_explodes')
+    tnt_explosion_drop_decay: bool | None = Field(default=None, validation_alias='minecraft:tnt_explosion_drop_decay', serialization_alias='minecraft:tnt_explosion_drop_decay')
+    universal_anger: bool | None = Field(default=None, validation_alias='minecraft:universal_anger', serialization_alias='minecraft:universal_anger')
+    water_source_conversion: bool | None = Field(default=None, validation_alias='minecraft:water_source_conversion', serialization_alias='minecraft:water_source_conversion')
 
 
 class GameRulesTestEnvironment(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'test_environment'
 
-    rules: dict[Annotated[str, IdSpec(registry='game_rule')] | KnownGameRuleId, bool | Annotated[int, Field(ge=-1)] | Annotated[int, Field(ge=1)] | Annotated[int, Field(ge=0)] | Annotated[int, Field(ge=1, le=1000)] | Annotated[int, Field(ge=0, le=8)]]
+    rules: RulesStruct

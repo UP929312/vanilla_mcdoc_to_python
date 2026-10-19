@@ -14,5 +14,5 @@ if TYPE_CHECKING:
 
 
 class CustomSpawnRules(GeneratedModel):
-    block_light_limit: InclusiveRange[Annotated[int, Field(ge=0, le=15)]] | Annotated[int, Field(ge=0, le=15)] | None = None  # Range of block light level required for the entity to spawn.
-    sky_light_limit: InclusiveRange[Annotated[int, Field(ge=0, le=15)]] | Annotated[int, Field(ge=0, le=15)] | None = None  # Range of sky light level required for the entity to spawn.
+    block_light_limit: InclusiveRange[Annotated[int, Field(ge=0, le=15)]] | Annotated[int, Field(ge=0, le=15)] | tuple[Annotated[int, Field(ge=0, le=15)], Annotated[int, Field(ge=0, le=15)]] | None = None  # Range of block light level required for the entity to spawn.
+    sky_light_limit: InclusiveRange[Annotated[int, Field(ge=0, le=15)]] | Annotated[int, Field(ge=0, le=15)] | tuple[Annotated[int, Field(ge=0, le=15)], Annotated[int, Field(ge=0, le=15)]] | None = None  # Range of sky light level required for the entity to spawn.

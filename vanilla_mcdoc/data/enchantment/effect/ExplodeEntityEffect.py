@@ -27,7 +27,7 @@ class ExplodeEntityEffect(GeneratedModel):
     radius: LevelBasedValue
     create_fire: bool | None = None  # Whether fire is placed within the explosion radius.
     block_interaction: BlockInteraction  # Whether the explosion has special effects on blocks.
-    small_particle: Particle
-    large_particle: Particle
+    sound: SoundEventRef | None = None
+    small_particle: Particle | None = None
+    large_particle: Particle | None = None
     block_particles: FlatWeightedList[ExplosionParticleInfo] | None = None
-    sound: SoundEventRef

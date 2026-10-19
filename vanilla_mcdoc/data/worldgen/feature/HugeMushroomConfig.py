@@ -17,5 +17,5 @@ class HugeMushroomConfig(GeneratedModel):
 
     cap_provider: BlockStateProviderRef
     stem_provider: BlockStateProviderRef
-    foliage_radius: int
+    foliage_radius: int | None = None  # Defaults to `2`.
     can_place_on: BlockPredicate

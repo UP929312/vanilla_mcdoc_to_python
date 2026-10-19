@@ -3,7 +3,7 @@ Generated from symbols.json for ::java::data::worldgen::attribute::DiscreteAttri
 Local link to file: vanilla_mcdoc/data/worldgen/attribute/DiscreteAttribute.py
 """
 # ~~~ CODE ~~~
-from typing import TYPE_CHECKING, Annotated, Generic, Literal, TypeVar
+from typing import TYPE_CHECKING, Annotated, Any, Generic, Literal, TypeVar
 
 from pydantic import Field
 
@@ -14,7 +14,7 @@ if TYPE_CHECKING:
     from vanilla_mcdoc.data.worldgen.attribute.modifier.OverrideModifier import OverrideModifier
 
 
-T = TypeVar('T')
+T = TypeVar('T', default=Any)
 
 
 class KeyframesStruct(GeneratedModel, Generic[T]):

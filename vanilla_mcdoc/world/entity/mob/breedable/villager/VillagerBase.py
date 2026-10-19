@@ -16,4 +16,4 @@ if TYPE_CHECKING:
 
 class VillagerBase(GeneratedModel):
     Inventory: Annotated[list[ItemStack], Field(min_length=0, max_length=8)] | None = None  # Slots from 0 to 7.
-    Offers_: Offers | None = Field(default=None, alias='Offers')  # Trade offers it has.
+    Offers_: Offers | None = Field(default=None, validation_alias='Offers', serialization_alias='Offers')  # Trade offers it has.

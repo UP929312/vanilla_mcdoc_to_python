@@ -14,4 +14,4 @@ if TYPE_CHECKING:
 
 
 class FireworkStar(ItemBase):
-    Explosion_: Explosion | None = Field(default=None, alias='Explosion')
+    Explosion_: Explosion | None = Field(default=None, validation_alias='Explosion', serialization_alias='Explosion')

@@ -5,7 +5,9 @@ Local link to file: vanilla_mcdoc/data/number_provider/context_float/ContextFloa
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar, Literal
 
-from vanilla_mcdoc.base import GeneratedModel
+from pydantic import Discriminator, Tag
+
+from vanilla_mcdoc.base import GeneratedModel, tag_of
 from vanilla_mcdoc.data.number_provider.context_float.AggregateProvider import AggregateProvider
 from vanilla_mcdoc.data.number_provider.context_float.BinaryProvider import BinaryProvider
 from vanilla_mcdoc.data.number_provider.context_float.EnchantmentLevelProvider import EnchantmentLevelProvider
@@ -23,12 +25,6 @@ if TYPE_CHECKING:
 class CasesStruct(GeneratedModel):
     condition: PredicateRef
     value: FloatRef
-
-
-class ContextFloatProviderStructDefault(GeneratedModel):
-    __resource_dir__: ClassVar[str] = 'context_float_provider'
-
-    type: Annotated[str, IdSpec(registry='context_float_provider_type')]
 
 
 class ContextFloatProviderStructAbs(SingleProvider):
@@ -215,7 +211,37 @@ class ContextFloatProviderStructWeightedList(GeneratedModel):
     distribution: NonEmptyWeightedList[FloatRef]
 
 
-type ContextFloatProviderStruct = ContextFloatProviderStructDefault | ContextFloatProviderStructAbs | ContextFloatProviderStructAdd | ContextFloatProviderStructAvg | ContextFloatProviderStructCeil | ContextFloatProviderStructConditional | ContextFloatProviderStructConstant | ContextFloatProviderStructCos | ContextFloatProviderStructDiv | ContextFloatProviderStructEnchantmentLevel | ContextFloatProviderStructEnvironmentAttribute | ContextFloatProviderStructFloor | ContextFloatProviderStructFromInt | ContextFloatProviderStructLength | ContextFloatProviderStructMax | ContextFloatProviderStructMin | ContextFloatProviderStructMod | ContextFloatProviderStructMul | ContextFloatProviderStructNegate | ContextFloatProviderStructNumberDispatcher | ContextFloatProviderStructPow | ContextFloatProviderStructRound | ContextFloatProviderStructSin | ContextFloatProviderStructSqrt | ContextFloatProviderStructStorage | ContextFloatProviderStructSub | ContextFloatProviderStructTruncate | ContextFloatProviderStructUniform | ContextFloatProviderStructWeightedList
+type ContextFloatProviderStruct = Annotated[
+    Annotated[ContextFloatProviderStructAbs, Tag('minecraft:abs')]
+    | Annotated[ContextFloatProviderStructAdd, Tag('minecraft:add')]
+    | Annotated[ContextFloatProviderStructAvg, Tag('minecraft:avg')]
+    | Annotated[ContextFloatProviderStructCeil, Tag('minecraft:ceil')]
+    | Annotated[ContextFloatProviderStructConditional, Tag('minecraft:conditional')]
+    | Annotated[ContextFloatProviderStructConstant, Tag('minecraft:constant')]
+    | Annotated[ContextFloatProviderStructCos, Tag('minecraft:cos')]
+    | Annotated[ContextFloatProviderStructDiv, Tag('minecraft:div')]
+    | Annotated[ContextFloatProviderStructEnchantmentLevel, Tag('minecraft:enchantment_level')]
+    | Annotated[ContextFloatProviderStructEnvironmentAttribute, Tag('minecraft:environment_attribute')]
+    | Annotated[ContextFloatProviderStructFloor, Tag('minecraft:floor')]
+    | Annotated[ContextFloatProviderStructFromInt, Tag('minecraft:from_int')]
+    | Annotated[ContextFloatProviderStructLength, Tag('minecraft:length')]
+    | Annotated[ContextFloatProviderStructMax, Tag('minecraft:max')]
+    | Annotated[ContextFloatProviderStructMin, Tag('minecraft:min')]
+    | Annotated[ContextFloatProviderStructMod, Tag('minecraft:mod')]
+    | Annotated[ContextFloatProviderStructMul, Tag('minecraft:mul')]
+    | Annotated[ContextFloatProviderStructNegate, Tag('minecraft:negate')]
+    | Annotated[ContextFloatProviderStructNumberDispatcher, Tag('minecraft:number_dispatcher')]
+    | Annotated[ContextFloatProviderStructPow, Tag('minecraft:pow')]
+    | Annotated[ContextFloatProviderStructRound, Tag('minecraft:round')]
+    | Annotated[ContextFloatProviderStructSin, Tag('minecraft:sin')]
+    | Annotated[ContextFloatProviderStructSqrt, Tag('minecraft:sqrt')]
+    | Annotated[ContextFloatProviderStructStorage, Tag('minecraft:storage')]
+    | Annotated[ContextFloatProviderStructSub, Tag('minecraft:sub')]
+    | Annotated[ContextFloatProviderStructTruncate, Tag('minecraft:truncate')]
+    | Annotated[ContextFloatProviderStructUniform, Tag('minecraft:uniform')]
+    | Annotated[ContextFloatProviderStructWeightedList, Tag('minecraft:weighted_list')],
+    Discriminator(tag_of('type')),
+]
 
 
 type ContextFloatProvider = float | ContextFloatProviderStruct

@@ -20,5 +20,5 @@ class WildUpdateStructureConfig(GeneratedModel):
     start_height: HeightProvider
     start_jigsaw_name: Annotated[str, IdSpec()] | None = None
     project_start_to_heightmap: HeightmapType | None = None
-    max_distance_from_center: Annotated[int, Field(ge=1, le=128)] | JigsawDistanceLimits[Annotated[int, Field(ge=1, le=128)]] | Annotated[int, Field(ge=1, le=128)] | Annotated[int, Field(ge=1, le=116)] | JigsawDistanceLimits[Annotated[int, Field(ge=1, le=116)]] | Annotated[int, Field(ge=1, le=116)]
+    max_distance_from_center: Annotated[int, Field(ge=1, le=128)] | JigsawDistanceLimits[Annotated[int, Field(ge=1, le=128)]] | Annotated[int, Field(ge=1, le=116)] | JigsawDistanceLimits[Annotated[int, Field(ge=1, le=116)]]
     use_expansion_hack: bool

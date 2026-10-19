@@ -5,13 +5,14 @@ Local link to file: vanilla_mcdoc/assets/atlas/SpriteSource.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
 from vanilla_mcdoc.assets.atlas.Directory import Directory
 from vanilla_mcdoc.assets.atlas.Filter import Filter
 from vanilla_mcdoc.assets.atlas.PalettedPermutations import PalettedPermutations
 from vanilla_mcdoc.assets.atlas.Single import Single
 from vanilla_mcdoc.assets.atlas.Unstitch import Unstitch
+from vanilla_mcdoc.base import tag_of
 
 
 class SpriteSourceDirectory(Directory):
@@ -35,6 +36,10 @@ class SpriteSourceUnstitch(Unstitch):
 
 
 type SpriteSource = Annotated[
-    SpriteSourceDirectory | SpriteSourceFilter | SpriteSourcePalettedPermutations | SpriteSourceSingle | SpriteSourceUnstitch,
-    Field(discriminator='type'),
+    Annotated[SpriteSourceDirectory, Tag('minecraft:directory')]
+    | Annotated[SpriteSourceFilter, Tag('minecraft:filter')]
+    | Annotated[SpriteSourcePalettedPermutations, Tag('minecraft:paletted_permutations')]
+    | Annotated[SpriteSourceSingle, Tag('minecraft:single')]
+    | Annotated[SpriteSourceUnstitch, Tag('minecraft:unstitch')],
+    Discriminator(tag_of('type')),
 ]

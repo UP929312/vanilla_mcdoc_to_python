@@ -1,0 +1,1871 @@
+"""Vanilla's data/worldgen/processor_list/ files"""
+from vanilla_mcdoc.data.worldgen.processor_list.BlockEntityModifier import BlockEntityModifierAppendLoot
+from vanilla_mcdoc.data.worldgen.processor_list.PosRuleTest import PosRuleTestAxisAlignedLinearPos
+from vanilla_mcdoc.data.worldgen.processor_list.Processor import ProcessorBlockRot, ProcessorCapped, ProcessorProtectedBlocks, ProcessorRule2
+from vanilla_mcdoc.data.worldgen.processor_list.ProcessorList import ProcessorListStruct
+from vanilla_mcdoc.data.worldgen.processor_list.ProcessorRule import ProcessorRule
+from vanilla_mcdoc.data.worldgen.processor_list.RuleTest import RuleTestAlwaysTrue, RuleTestBlockMatch, RuleTestBlockstateMatch, RuleTestRandomBlockMatch, RuleTestTagMatch
+from vanilla_mcdoc.util.block_state.FullBlockState import FullBlockState
+
+ANCIENT_CITY_GENERIC_DEGRADATION = ProcessorListStruct(
+    processors=[
+        ProcessorBlockRot(
+            integrity=0.95,
+            rottable_blocks='#minecraft:ancient_city_replaceable',
+            processor_type='minecraft:block_rot',
+        ),
+        ProcessorRule2(
+            rules=[
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:deepslate_bricks',
+                        probability=0.3,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cracked_deepslate_bricks',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:deepslate_tiles',
+                        probability=0.3,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cracked_deepslate_tiles',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:soul_lantern',
+                        probability=0.05,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:air',
+                ),
+            ],
+            processor_type='minecraft:rule',
+        ),
+        ProcessorProtectedBlocks(
+            value='#minecraft:features_cannot_replace',
+            processor_type='minecraft:protected_blocks',
+        ),
+    ],
+)
+
+ANCIENT_CITY_START_DEGRADATION = ProcessorListStruct(
+    processors=[
+        ProcessorRule2(
+            rules=[
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:deepslate_bricks',
+                        probability=0.3,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cracked_deepslate_bricks',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:deepslate_tiles',
+                        probability=0.3,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cracked_deepslate_tiles',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:soul_lantern',
+                        probability=0.05,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:air',
+                ),
+            ],
+            processor_type='minecraft:rule',
+        ),
+        ProcessorProtectedBlocks(
+            value='#minecraft:features_cannot_replace',
+            processor_type='minecraft:protected_blocks',
+        ),
+    ],
+)
+
+ANCIENT_CITY_WALLS_DEGRADATION = ProcessorListStruct(
+    processors=[
+        ProcessorBlockRot(
+            integrity=0.95,
+            rottable_blocks='#minecraft:ancient_city_replaceable',
+            processor_type='minecraft:block_rot',
+        ),
+        ProcessorRule2(
+            rules=[
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:deepslate_bricks',
+                        probability=0.3,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cracked_deepslate_bricks',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:deepslate_tiles',
+                        probability=0.3,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cracked_deepslate_tiles',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:deepslate_tile_slab',
+                        probability=0.3,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:air',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:soul_lantern',
+                        probability=0.05,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:air',
+                ),
+            ],
+            processor_type='minecraft:rule',
+        ),
+        ProcessorProtectedBlocks(
+            value='#minecraft:features_cannot_replace',
+            processor_type='minecraft:protected_blocks',
+        ),
+    ],
+)
+
+BASTION_GENERIC_DEGRADATION = ProcessorListStruct(
+    processors=[
+        ProcessorRule2(
+            rules=[
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:polished_blackstone_bricks',
+                        probability=0.3,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cracked_polished_blackstone_bricks',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:blackstone',
+                        probability=0.0001,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:air',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:gold_block',
+                        probability=0.3,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cracked_polished_blackstone_bricks',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:gilded_blackstone',
+                        probability=0.5,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:blackstone',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:blackstone',
+                        probability=0.01,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:gilded_blackstone',
+                ),
+            ],
+            processor_type='minecraft:rule',
+        ),
+    ],
+)
+
+BOTTOM_RAMPART = ProcessorListStruct(
+    processors=[
+        ProcessorRule2(
+            rules=[
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:magma_block',
+                        probability=0.75,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cracked_polished_blackstone_bricks',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:cracked_polished_blackstone_bricks',
+                        probability=0.15,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:polished_blackstone_bricks',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:gilded_blackstone',
+                        probability=0.5,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:blackstone',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:blackstone',
+                        probability=0.01,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:gilded_blackstone',
+                ),
+            ],
+            processor_type='minecraft:rule',
+        ),
+    ],
+)
+
+BRIDGE = ProcessorListStruct(
+    processors=[
+        ProcessorRule2(
+            rules=[
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:polished_blackstone_bricks',
+                        probability=0.3,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cracked_polished_blackstone_bricks',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:blackstone',
+                        probability=0.0001,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:air',
+                ),
+            ],
+            processor_type='minecraft:rule',
+        ),
+    ],
+)
+
+EMPTY = ProcessorListStruct(processors=[])
+
+ENTRANCE_REPLACEMENT = ProcessorListStruct(
+    processors=[
+        ProcessorRule2(
+            rules=[
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:chiseled_polished_blackstone',
+                        probability=0.5,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:air',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:gold_block',
+                        probability=0.6,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cracked_polished_blackstone_bricks',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:gilded_blackstone',
+                        probability=0.5,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:blackstone',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:blackstone',
+                        probability=0.01,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:gilded_blackstone',
+                ),
+            ],
+            processor_type='minecraft:rule',
+        ),
+    ],
+)
+
+FARM_DESERT = ProcessorListStruct(
+    processors=[
+        ProcessorRule2(
+            rules=[
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:wheat',
+                        probability=0.2,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:beetroots',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:wheat',
+                        probability=0.1,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:melon_stem',
+                ),
+            ],
+            processor_type='minecraft:rule',
+        ),
+    ],
+)
+
+FARM_PLAINS = ProcessorListStruct(
+    processors=[
+        ProcessorRule2(
+            rules=[
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:wheat',
+                        probability=0.3,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:carrots',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:wheat',
+                        probability=0.2,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:potatoes',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:wheat',
+                        probability=0.1,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:beetroots',
+                ),
+            ],
+            processor_type='minecraft:rule',
+        ),
+    ],
+)
+
+FARM_SAVANNA = ProcessorListStruct(
+    processors=[
+        ProcessorRule2(
+            rules=[
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:wheat',
+                        probability=0.1,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:melon_stem',
+                ),
+            ],
+            processor_type='minecraft:rule',
+        ),
+    ],
+)
+
+FARM_SNOWY = ProcessorListStruct(
+    processors=[
+        ProcessorRule2(
+            rules=[
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:wheat',
+                        probability=0.1,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:carrots',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:wheat',
+                        probability=0.8,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:potatoes',
+                ),
+            ],
+            processor_type='minecraft:rule',
+        ),
+    ],
+)
+
+FARM_TAIGA = ProcessorListStruct(
+    processors=[
+        ProcessorRule2(
+            rules=[
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:wheat',
+                        probability=0.3,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:pumpkin_stem',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:wheat',
+                        probability=0.2,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:potatoes',
+                ),
+            ],
+            processor_type='minecraft:rule',
+        ),
+    ],
+)
+
+FOSSIL_COAL = ProcessorListStruct(
+    processors=[
+        ProcessorBlockRot(integrity=0.1, processor_type='minecraft:block_rot'),
+        ProcessorProtectedBlocks(
+            value='#minecraft:features_cannot_replace',
+            processor_type='minecraft:protected_blocks',
+        ),
+    ],
+)
+
+FOSSIL_DIAMONDS = ProcessorListStruct(
+    processors=[
+        ProcessorBlockRot(integrity=0.1, processor_type='minecraft:block_rot'),
+        ProcessorRule2(
+            rules=[
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestBlockMatch(block='minecraft:coal_ore', predicate_type='minecraft:block_match'),
+                    output_state='minecraft:deepslate_diamond_ore',
+                ),
+            ],
+            processor_type='minecraft:rule',
+        ),
+        ProcessorProtectedBlocks(
+            value='#minecraft:features_cannot_replace',
+            processor_type='minecraft:protected_blocks',
+        ),
+    ],
+)
+
+FOSSIL_ROT = ProcessorListStruct(
+    processors=[
+        ProcessorBlockRot(integrity=0.9, processor_type='minecraft:block_rot'),
+        ProcessorProtectedBlocks(
+            value='#minecraft:features_cannot_replace',
+            processor_type='minecraft:protected_blocks',
+        ),
+    ],
+)
+
+HIGH_RAMPART = ProcessorListStruct(
+    processors=[
+        ProcessorRule2(
+            rules=[
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:gold_block',
+                        probability=0.3,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cracked_polished_blackstone_bricks',
+                ),
+                ProcessorRule(
+                    position_predicate=PosRuleTestAxisAlignedLinearPos(
+                        max_dist=100,
+                        max_chance=0.05,
+                        predicate_type='minecraft:axis_aligned_linear_pos',
+                    ),
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    output_state='minecraft:air',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:gilded_blackstone',
+                        probability=0.5,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:blackstone',
+                ),
+            ],
+            processor_type='minecraft:rule',
+        ),
+    ],
+)
+
+HIGH_WALL = ProcessorListStruct(
+    processors=[
+        ProcessorRule2(
+            rules=[
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:polished_blackstone_bricks',
+                        probability=0.01,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:air',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:polished_blackstone_bricks',
+                        probability=0.5,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cracked_polished_blackstone_bricks',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:polished_blackstone_bricks',
+                        probability=0.3,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:blackstone',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:gilded_blackstone',
+                        probability=0.5,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:blackstone',
+                ),
+            ],
+            processor_type='minecraft:rule',
+        ),
+    ],
+)
+
+HOUSING = ProcessorListStruct(
+    processors=[
+        ProcessorRule2(
+            rules=[
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:polished_blackstone_bricks',
+                        probability=0.3,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cracked_polished_blackstone_bricks',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:blackstone',
+                        probability=0.0001,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:air',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:gilded_blackstone',
+                        probability=0.5,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:blackstone',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:blackstone',
+                        probability=0.01,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:gilded_blackstone',
+                ),
+            ],
+            processor_type='minecraft:rule',
+        ),
+    ],
+)
+
+MOSSIFY_10_PERCENT = ProcessorListStruct(
+    processors=[
+        ProcessorRule2(
+            rules=[
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:cobblestone',
+                        probability=0.1,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:mossy_cobblestone',
+                ),
+            ],
+            processor_type='minecraft:rule',
+        ),
+    ],
+)
+
+MOSSIFY_20_PERCENT = ProcessorListStruct(
+    processors=[
+        ProcessorRule2(
+            rules=[
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:cobblestone',
+                        probability=0.2,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:mossy_cobblestone',
+                ),
+            ],
+            processor_type='minecraft:rule',
+        ),
+    ],
+)
+
+MOSSIFY_70_PERCENT = ProcessorListStruct(
+    processors=[
+        ProcessorRule2(
+            rules=[
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:cobblestone',
+                        probability=0.7,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:mossy_cobblestone',
+                ),
+            ],
+            processor_type='minecraft:rule',
+        ),
+    ],
+)
+
+OUTPOST_ROT = ProcessorListStruct(processors=[ProcessorBlockRot(integrity=0.05, processor_type='minecraft:block_rot')])
+
+RAMPART_DEGRADATION = ProcessorListStruct(
+    processors=[
+        ProcessorRule2(
+            rules=[
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:polished_blackstone_bricks',
+                        probability=0.4,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cracked_polished_blackstone_bricks',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:blackstone',
+                        probability=0.01,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cracked_polished_blackstone_bricks',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:polished_blackstone_bricks',
+                        probability=0.0001,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:air',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:blackstone',
+                        probability=0.0001,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:air',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:gold_block',
+                        probability=0.3,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cracked_polished_blackstone_bricks',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:gilded_blackstone',
+                        probability=0.5,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:blackstone',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:blackstone',
+                        probability=0.01,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:gilded_blackstone',
+                ),
+            ],
+            processor_type='minecraft:rule',
+        ),
+    ],
+)
+
+ROOF = ProcessorListStruct(
+    processors=[
+        ProcessorRule2(
+            rules=[
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:polished_blackstone_bricks',
+                        probability=0.3,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cracked_polished_blackstone_bricks',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:polished_blackstone_bricks',
+                        probability=0.15,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:air',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:polished_blackstone_bricks',
+                        probability=0.3,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:blackstone',
+                ),
+            ],
+            processor_type='minecraft:rule',
+        ),
+    ],
+)
+
+SIDE_WALL_DEGRADATION = ProcessorListStruct(
+    processors=[
+        ProcessorRule2(
+            rules=[
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:chiseled_polished_blackstone',
+                        probability=0.5,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:air',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:gold_block',
+                        probability=0.1,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cracked_polished_blackstone_bricks',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:gilded_blackstone',
+                        probability=0.5,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:blackstone',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:blackstone',
+                        probability=0.01,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:gilded_blackstone',
+                ),
+            ],
+            processor_type='minecraft:rule',
+        ),
+    ],
+)
+
+STABLE_DEGRADATION = ProcessorListStruct(
+    processors=[
+        ProcessorRule2(
+            rules=[
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:polished_blackstone_bricks',
+                        probability=0.1,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cracked_polished_blackstone_bricks',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:blackstone',
+                        probability=0.0001,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:air',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:gilded_blackstone',
+                        probability=0.5,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:blackstone',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:blackstone',
+                        probability=0.01,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:gilded_blackstone',
+                ),
+            ],
+            processor_type='minecraft:rule',
+        ),
+    ],
+)
+
+STREET_PLAINS = ProcessorListStruct(
+    processors=[
+        ProcessorRule2(
+            rules=[
+                ProcessorRule(
+                    location_predicate=RuleTestBlockMatch(block='minecraft:water', predicate_type='minecraft:block_match'),
+                    input_predicate=RuleTestBlockMatch(block='minecraft:dirt_path', predicate_type='minecraft:block_match'),
+                    output_state='minecraft:oak_planks',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:dirt_path',
+                        probability=0.1,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:grass_block',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestBlockMatch(block='minecraft:water', predicate_type='minecraft:block_match'),
+                    input_predicate=RuleTestBlockMatch(block='minecraft:grass_block', predicate_type='minecraft:block_match'),
+                    output_state='minecraft:water',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestBlockMatch(block='minecraft:water', predicate_type='minecraft:block_match'),
+                    input_predicate=RuleTestBlockMatch(block='minecraft:dirt', predicate_type='minecraft:block_match'),
+                    output_state='minecraft:water',
+                ),
+            ],
+            processor_type='minecraft:rule',
+        ),
+    ],
+)
+
+STREET_SAVANNA = ProcessorListStruct(
+    processors=[
+        ProcessorRule2(
+            rules=[
+                ProcessorRule(
+                    location_predicate=RuleTestBlockMatch(block='minecraft:water', predicate_type='minecraft:block_match'),
+                    input_predicate=RuleTestBlockMatch(block='minecraft:dirt_path', predicate_type='minecraft:block_match'),
+                    output_state='minecraft:acacia_planks',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:dirt_path',
+                        probability=0.2,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:grass_block',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestBlockMatch(block='minecraft:water', predicate_type='minecraft:block_match'),
+                    input_predicate=RuleTestBlockMatch(block='minecraft:grass_block', predicate_type='minecraft:block_match'),
+                    output_state='minecraft:water',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestBlockMatch(block='minecraft:water', predicate_type='minecraft:block_match'),
+                    input_predicate=RuleTestBlockMatch(block='minecraft:dirt', predicate_type='minecraft:block_match'),
+                    output_state='minecraft:water',
+                ),
+            ],
+            processor_type='minecraft:rule',
+        ),
+    ],
+)
+
+STREET_SNOWY_OR_TAIGA = ProcessorListStruct(
+    processors=[
+        ProcessorRule2(
+            rules=[
+                ProcessorRule(
+                    location_predicate=RuleTestBlockMatch(block='minecraft:water', predicate_type='minecraft:block_match'),
+                    input_predicate=RuleTestBlockMatch(block='minecraft:dirt_path', predicate_type='minecraft:block_match'),
+                    output_state='minecraft:spruce_planks',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestBlockMatch(block='minecraft:ice', predicate_type='minecraft:block_match'),
+                    input_predicate=RuleTestBlockMatch(block='minecraft:dirt_path', predicate_type='minecraft:block_match'),
+                    output_state='minecraft:spruce_planks',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:dirt_path',
+                        probability=0.2,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:grass_block',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestBlockMatch(block='minecraft:water', predicate_type='minecraft:block_match'),
+                    input_predicate=RuleTestBlockMatch(block='minecraft:grass_block', predicate_type='minecraft:block_match'),
+                    output_state='minecraft:water',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestBlockMatch(block='minecraft:water', predicate_type='minecraft:block_match'),
+                    input_predicate=RuleTestBlockMatch(block='minecraft:dirt', predicate_type='minecraft:block_match'),
+                    output_state='minecraft:water',
+                ),
+            ],
+            processor_type='minecraft:rule',
+        ),
+    ],
+)
+
+TRAIL_RUINS_HOUSES_ARCHAEOLOGY = ProcessorListStruct(
+    processors=[
+        ProcessorRule2(
+            rules=[
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:gravel',
+                        probability=0.2,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:dirt',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:gravel',
+                        probability=0.1,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:coarse_dirt',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:mud_bricks',
+                        probability=0.1,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:packed_mud',
+                ),
+            ],
+            processor_type='minecraft:rule',
+        ),
+        ProcessorCapped(
+            delegate=ProcessorRule2(
+                rules=[
+                    ProcessorRule(
+                        location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                        input_predicate=RuleTestTagMatch(tag='minecraft:trail_ruins_replaceable', predicate_type='minecraft:tag_match'),
+                        output_state='minecraft:suspicious_gravel',
+                        block_entity_modifier=BlockEntityModifierAppendLoot(
+                            loot_table='minecraft:archaeology/trail_ruins_common',
+                            type='minecraft:append_loot',
+                        ),
+                    ),
+                ],
+                processor_type='minecraft:rule',
+            ),
+            limit=6,
+            processor_type='minecraft:capped',
+        ),
+        ProcessorCapped(
+            delegate=ProcessorRule2(
+                rules=[
+                    ProcessorRule(
+                        location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                        input_predicate=RuleTestTagMatch(tag='minecraft:trail_ruins_replaceable', predicate_type='minecraft:tag_match'),
+                        output_state='minecraft:suspicious_gravel',
+                        block_entity_modifier=BlockEntityModifierAppendLoot(
+                            loot_table='minecraft:archaeology/trail_ruins_rare',
+                            type='minecraft:append_loot',
+                        ),
+                    ),
+                ],
+                processor_type='minecraft:rule',
+            ),
+            limit=3,
+            processor_type='minecraft:capped',
+        ),
+    ],
+)
+
+TRAIL_RUINS_ROADS_ARCHAEOLOGY = ProcessorListStruct(
+    processors=[
+        ProcessorRule2(
+            rules=[
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:gravel',
+                        probability=0.2,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:dirt',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:gravel',
+                        probability=0.1,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:coarse_dirt',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:mud_bricks',
+                        probability=0.1,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:packed_mud',
+                ),
+            ],
+            processor_type='minecraft:rule',
+        ),
+        ProcessorCapped(
+            delegate=ProcessorRule2(
+                rules=[
+                    ProcessorRule(
+                        location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                        input_predicate=RuleTestTagMatch(tag='minecraft:trail_ruins_replaceable', predicate_type='minecraft:tag_match'),
+                        output_state='minecraft:suspicious_gravel',
+                        block_entity_modifier=BlockEntityModifierAppendLoot(
+                            loot_table='minecraft:archaeology/trail_ruins_common',
+                            type='minecraft:append_loot',
+                        ),
+                    ),
+                ],
+                processor_type='minecraft:rule',
+            ),
+            limit=2,
+            processor_type='minecraft:capped',
+        ),
+    ],
+)
+
+TRAIL_RUINS_TOWER_TOP_ARCHAEOLOGY = ProcessorListStruct(
+    processors=[
+        ProcessorCapped(
+            delegate=ProcessorRule2(
+                rules=[
+                    ProcessorRule(
+                        location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                        input_predicate=RuleTestTagMatch(tag='minecraft:trail_ruins_replaceable', predicate_type='minecraft:tag_match'),
+                        output_state='minecraft:suspicious_gravel',
+                        block_entity_modifier=BlockEntityModifierAppendLoot(
+                            loot_table='minecraft:archaeology/trail_ruins_common',
+                            type='minecraft:append_loot',
+                        ),
+                    ),
+                ],
+                processor_type='minecraft:rule',
+            ),
+            limit=2,
+            processor_type='minecraft:capped',
+        ),
+    ],
+)
+
+TREASURE_ROOMS = ProcessorListStruct(
+    processors=[
+        ProcessorRule2(
+            rules=[
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:polished_blackstone_bricks',
+                        probability=0.35,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cracked_polished_blackstone_bricks',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:chiseled_polished_blackstone',
+                        probability=0.1,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cracked_polished_blackstone_bricks',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:gilded_blackstone',
+                        probability=0.5,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:blackstone',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:blackstone',
+                        probability=0.01,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:gilded_blackstone',
+                ),
+            ],
+            processor_type='minecraft:rule',
+        ),
+    ],
+)
+
+TRIAL_CHAMBERS_COPPER_BULB_DEGRADATION = ProcessorListStruct(
+    processors=[
+        ProcessorRule2(
+            rules=[
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:waxed_copper_bulb',
+                        probability=0.1,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state=FullBlockState(
+                        id='minecraft:waxed_oxidized_copper_bulb',
+                        properties={'lit': 'true', 'powered': 'false'},
+                    ),
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:waxed_copper_bulb',
+                        probability=0.33333334,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state=FullBlockState(
+                        id='minecraft:waxed_weathered_copper_bulb',
+                        properties={'lit': 'true', 'powered': 'false'},
+                    ),
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:waxed_copper_bulb',
+                        probability=0.5,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state=FullBlockState(
+                        id='minecraft:waxed_exposed_copper_bulb',
+                        properties={'lit': 'true', 'powered': 'false'},
+                    ),
+                ),
+            ],
+            processor_type='minecraft:rule',
+        ),
+        ProcessorProtectedBlocks(
+            value='#minecraft:features_cannot_replace',
+            processor_type='minecraft:protected_blocks',
+        ),
+    ],
+)
+
+ZOMBIE_DESERT = ProcessorListStruct(
+    processors=[
+        ProcessorRule2(
+            rules=[
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestTagMatch(tag='minecraft:doors', predicate_type='minecraft:tag_match'),
+                    output_state='minecraft:air',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestBlockMatch(block='minecraft:torch', predicate_type='minecraft:block_match'),
+                    output_state='minecraft:air',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestBlockMatch(block='minecraft:wall_torch', predicate_type='minecraft:block_match'),
+                    output_state='minecraft:air',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:smooth_sandstone',
+                        probability=0.08,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cobweb',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:cut_sandstone',
+                        probability=0.1,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cobweb',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:terracotta',
+                        probability=0.08,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cobweb',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:smooth_sandstone_stairs',
+                        probability=0.08,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cobweb',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:smooth_sandstone_slab',
+                        probability=0.08,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cobweb',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:wheat',
+                        probability=0.2,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:beetroots',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:wheat',
+                        probability=0.1,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:melon_stem',
+                ),
+            ],
+            processor_type='minecraft:rule',
+        ),
+    ],
+)
+
+ZOMBIE_PLAINS = ProcessorListStruct(
+    processors=[
+        ProcessorRule2(
+            rules=[
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:cobblestone',
+                        probability=0.8,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:mossy_cobblestone',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestTagMatch(tag='minecraft:doors', predicate_type='minecraft:tag_match'),
+                    output_state='minecraft:air',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestBlockMatch(block='minecraft:torch', predicate_type='minecraft:block_match'),
+                    output_state='minecraft:air',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestBlockMatch(block='minecraft:wall_torch', predicate_type='minecraft:block_match'),
+                    output_state='minecraft:air',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:cobblestone',
+                        probability=0.07,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cobweb',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:mossy_cobblestone',
+                        probability=0.07,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cobweb',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:white_terracotta',
+                        probability=0.07,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cobweb',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:oak_log',
+                        probability=0.05,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cobweb',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:oak_planks',
+                        probability=0.1,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cobweb',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:oak_stairs',
+                        probability=0.1,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cobweb',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:stripped_oak_log',
+                        probability=0.02,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cobweb',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:glass_pane',
+                        probability=0.5,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cobweb',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestBlockstateMatch(
+                        block_state=FullBlockState(
+                            id='minecraft:glass_pane',
+                            properties={'east': 'false', 'north': 'true', 'south': 'true', 'waterlogged': 'false', 'west': 'false'},
+                        ),
+                        predicate_type='minecraft:blockstate_match',
+                    ),
+                    output_state=FullBlockState(
+                        id='minecraft:brown_stained_glass_pane',
+                        properties={'east': 'false', 'north': 'true', 'south': 'true', 'waterlogged': 'false', 'west': 'false'},
+                    ),
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestBlockstateMatch(
+                        block_state=FullBlockState(
+                            id='minecraft:glass_pane',
+                            properties={'east': 'true', 'north': 'false', 'south': 'false', 'waterlogged': 'false', 'west': 'true'},
+                        ),
+                        predicate_type='minecraft:blockstate_match',
+                    ),
+                    output_state=FullBlockState(
+                        id='minecraft:brown_stained_glass_pane',
+                        properties={'east': 'true', 'north': 'false', 'south': 'false', 'waterlogged': 'false', 'west': 'true'},
+                    ),
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:wheat',
+                        probability=0.3,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:carrots',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:wheat',
+                        probability=0.2,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:potatoes',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:wheat',
+                        probability=0.1,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:beetroots',
+                ),
+            ],
+            processor_type='minecraft:rule',
+        ),
+    ],
+)
+
+ZOMBIE_SAVANNA = ProcessorListStruct(
+    processors=[
+        ProcessorRule2(
+            rules=[
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestTagMatch(tag='minecraft:doors', predicate_type='minecraft:tag_match'),
+                    output_state='minecraft:air',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestBlockMatch(block='minecraft:torch', predicate_type='minecraft:block_match'),
+                    output_state='minecraft:air',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestBlockMatch(block='minecraft:wall_torch', predicate_type='minecraft:block_match'),
+                    output_state='minecraft:air',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:acacia_planks',
+                        probability=0.2,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cobweb',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:acacia_stairs',
+                        probability=0.2,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cobweb',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:acacia_log',
+                        probability=0.05,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cobweb',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:acacia_wood',
+                        probability=0.05,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cobweb',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:orange_terracotta',
+                        probability=0.05,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cobweb',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:yellow_terracotta',
+                        probability=0.05,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cobweb',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:red_terracotta',
+                        probability=0.05,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cobweb',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:glass_pane',
+                        probability=0.5,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cobweb',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestBlockstateMatch(
+                        block_state=FullBlockState(
+                            id='minecraft:glass_pane',
+                            properties={'east': 'false', 'north': 'true', 'south': 'true', 'waterlogged': 'false', 'west': 'false'},
+                        ),
+                        predicate_type='minecraft:blockstate_match',
+                    ),
+                    output_state=FullBlockState(
+                        id='minecraft:brown_stained_glass_pane',
+                        properties={'east': 'false', 'north': 'true', 'south': 'true', 'waterlogged': 'false', 'west': 'false'},
+                    ),
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestBlockstateMatch(
+                        block_state=FullBlockState(
+                            id='minecraft:glass_pane',
+                            properties={'east': 'true', 'north': 'false', 'south': 'false', 'waterlogged': 'false', 'west': 'true'},
+                        ),
+                        predicate_type='minecraft:blockstate_match',
+                    ),
+                    output_state=FullBlockState(
+                        id='minecraft:brown_stained_glass_pane',
+                        properties={'east': 'true', 'north': 'false', 'south': 'false', 'waterlogged': 'false', 'west': 'true'},
+                    ),
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:wheat',
+                        probability=0.1,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:melon_stem',
+                ),
+            ],
+            processor_type='minecraft:rule',
+        ),
+    ],
+)
+
+ZOMBIE_SNOWY = ProcessorListStruct(
+    processors=[
+        ProcessorRule2(
+            rules=[
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestTagMatch(tag='minecraft:doors', predicate_type='minecraft:tag_match'),
+                    output_state='minecraft:air',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestBlockMatch(block='minecraft:torch', predicate_type='minecraft:block_match'),
+                    output_state='minecraft:air',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestBlockMatch(block='minecraft:wall_torch', predicate_type='minecraft:block_match'),
+                    output_state='minecraft:air',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestBlockMatch(block='minecraft:lantern', predicate_type='minecraft:block_match'),
+                    output_state='minecraft:air',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:spruce_planks',
+                        probability=0.2,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cobweb',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:spruce_slab',
+                        probability=0.4,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cobweb',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:stripped_spruce_log',
+                        probability=0.05,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cobweb',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:stripped_spruce_wood',
+                        probability=0.05,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cobweb',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:glass_pane',
+                        probability=0.5,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cobweb',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestBlockstateMatch(
+                        block_state=FullBlockState(
+                            id='minecraft:glass_pane',
+                            properties={'east': 'false', 'north': 'true', 'south': 'true', 'waterlogged': 'false', 'west': 'false'},
+                        ),
+                        predicate_type='minecraft:blockstate_match',
+                    ),
+                    output_state=FullBlockState(
+                        id='minecraft:brown_stained_glass_pane',
+                        properties={'east': 'false', 'north': 'true', 'south': 'true', 'waterlogged': 'false', 'west': 'false'},
+                    ),
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestBlockstateMatch(
+                        block_state=FullBlockState(
+                            id='minecraft:glass_pane',
+                            properties={'east': 'true', 'north': 'false', 'south': 'false', 'waterlogged': 'false', 'west': 'true'},
+                        ),
+                        predicate_type='minecraft:blockstate_match',
+                    ),
+                    output_state=FullBlockState(
+                        id='minecraft:brown_stained_glass_pane',
+                        properties={'east': 'true', 'north': 'false', 'south': 'false', 'waterlogged': 'false', 'west': 'true'},
+                    ),
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:wheat',
+                        probability=0.1,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:carrots',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:wheat',
+                        probability=0.8,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:potatoes',
+                ),
+            ],
+            processor_type='minecraft:rule',
+        ),
+    ],
+)
+
+ZOMBIE_TAIGA = ProcessorListStruct(
+    processors=[
+        ProcessorRule2(
+            rules=[
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:cobblestone',
+                        probability=0.8,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:mossy_cobblestone',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestTagMatch(tag='minecraft:doors', predicate_type='minecraft:tag_match'),
+                    output_state='minecraft:air',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestBlockMatch(block='minecraft:torch', predicate_type='minecraft:block_match'),
+                    output_state='minecraft:air',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestBlockMatch(block='minecraft:wall_torch', predicate_type='minecraft:block_match'),
+                    output_state='minecraft:air',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestBlockMatch(block='minecraft:campfire', predicate_type='minecraft:block_match'),
+                    output_state=FullBlockState(
+                        id='minecraft:campfire',
+                        properties={'facing': 'north', 'lit': 'false', 'signal_fire': 'false', 'waterlogged': 'false'},
+                    ),
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:cobblestone',
+                        probability=0.08,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cobweb',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:spruce_log',
+                        probability=0.08,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cobweb',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:glass_pane',
+                        probability=0.5,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:cobweb',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestBlockstateMatch(
+                        block_state=FullBlockState(
+                            id='minecraft:glass_pane',
+                            properties={'east': 'false', 'north': 'true', 'south': 'true', 'waterlogged': 'false', 'west': 'false'},
+                        ),
+                        predicate_type='minecraft:blockstate_match',
+                    ),
+                    output_state=FullBlockState(
+                        id='minecraft:brown_stained_glass_pane',
+                        properties={'east': 'false', 'north': 'true', 'south': 'true', 'waterlogged': 'false', 'west': 'false'},
+                    ),
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestBlockstateMatch(
+                        block_state=FullBlockState(
+                            id='minecraft:glass_pane',
+                            properties={'east': 'true', 'north': 'false', 'south': 'false', 'waterlogged': 'false', 'west': 'true'},
+                        ),
+                        predicate_type='minecraft:blockstate_match',
+                    ),
+                    output_state=FullBlockState(
+                        id='minecraft:brown_stained_glass_pane',
+                        properties={'east': 'true', 'north': 'false', 'south': 'false', 'waterlogged': 'false', 'west': 'true'},
+                    ),
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:wheat',
+                        probability=0.3,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:pumpkin_stem',
+                ),
+                ProcessorRule(
+                    location_predicate=RuleTestAlwaysTrue(predicate_type='minecraft:always_true'),
+                    input_predicate=RuleTestRandomBlockMatch(
+                        block='minecraft:wheat',
+                        probability=0.2,
+                        predicate_type='minecraft:random_block_match',
+                    ),
+                    output_state='minecraft:potatoes',
+                ),
+            ],
+            processor_type='minecraft:rule',
+        ),
+    ],
+)

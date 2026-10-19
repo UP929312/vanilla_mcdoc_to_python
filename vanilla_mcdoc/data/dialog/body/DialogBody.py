@@ -5,8 +5,9 @@ Local link to file: vanilla_mcdoc/data/dialog/body/DialogBody.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
+from vanilla_mcdoc.base import tag_of
 from vanilla_mcdoc.data.dialog.body.ItemBody import ItemBody
 from vanilla_mcdoc.data.dialog.body.PlainMessage import PlainMessage
 
@@ -20,6 +21,7 @@ class DialogBodyPlainMessage(PlainMessage):
 
 
 type DialogBody = Annotated[
-    DialogBodyItem | DialogBodyPlainMessage,
-    Field(discriminator='type'),
+    Annotated[DialogBodyItem, Tag('minecraft:item')]
+    | Annotated[DialogBodyPlainMessage, Tag('minecraft:plain_message')],
+    Discriminator(tag_of('type')),
 ]

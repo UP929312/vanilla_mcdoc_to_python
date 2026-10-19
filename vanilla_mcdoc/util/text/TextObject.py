@@ -33,7 +33,7 @@ class TextObjectStruct1(TextBase):
 class TextObjectStruct2(TextBase):
     translate: str
     fallback: str | None = None
-    with_: Annotated[list[TranslationArg], Field(min_length=1)] | None = Field(default=None, alias='with')
+    with_: Annotated[list[TranslationArg], Field(min_length=1)] | None = Field(default=None, validation_alias='with', serialization_alias='with')
     type: Literal['translatable'] | None = 'translatable'
 
 

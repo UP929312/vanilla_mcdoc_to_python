@@ -5,7 +5,9 @@ Local link to file: vanilla_mcdoc/data/number_provider/context_int/ContextIntPro
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar, Literal
 
-from vanilla_mcdoc.base import GeneratedModel
+from pydantic import Discriminator, Tag
+
+from vanilla_mcdoc.base import GeneratedModel, tag_of
 from vanilla_mcdoc.data.number_provider.context_int.AggregateProvider import AggregateProvider
 from vanilla_mcdoc.data.number_provider.context_int.BinaryProvider import BinaryProvider
 from vanilla_mcdoc.data.number_provider.context_int.BinomialDistributionGenerator import BinomialDistributionGenerator
@@ -24,12 +26,6 @@ if TYPE_CHECKING:
 class CasesStruct(GeneratedModel):
     condition: PredicateRef
     value: IntRef
-
-
-class ContextIntProviderStructDefault(GeneratedModel):
-    __resource_dir__: ClassVar[str] = 'context_int_provider'
-
-    type: Annotated[str, IdSpec(registry='context_int_provider_type')]
 
 
 class ContextIntProviderStructAbs(SingleProvider):
@@ -186,7 +182,32 @@ class ContextIntProviderStructWeightedList(GeneratedModel):
     distribution: NonEmptyWeightedList[IntRef]
 
 
-type ContextIntProviderStruct = ContextIntProviderStructDefault | ContextIntProviderStructAbs | ContextIntProviderStructAdd | ContextIntProviderStructAvg | ContextIntProviderStructBinomial | ContextIntProviderStructConditional | ContextIntProviderStructConstant | ContextIntProviderStructDiv | ContextIntProviderStructEnvironmentAttribute | ContextIntProviderStructFloorDiv | ContextIntProviderStructFloorMod | ContextIntProviderStructFromFloat | ContextIntProviderStructMax | ContextIntProviderStructMin | ContextIntProviderStructMod | ContextIntProviderStructMul | ContextIntProviderStructNegate | ContextIntProviderStructNumberDispatcher | ContextIntProviderStructPow | ContextIntProviderStructScore | ContextIntProviderStructStorage | ContextIntProviderStructSub | ContextIntProviderStructUniform | ContextIntProviderStructWeightedList
+type ContextIntProviderStruct = Annotated[
+    Annotated[ContextIntProviderStructAbs, Tag('minecraft:abs')]
+    | Annotated[ContextIntProviderStructAdd, Tag('minecraft:add')]
+    | Annotated[ContextIntProviderStructAvg, Tag('minecraft:avg')]
+    | Annotated[ContextIntProviderStructBinomial, Tag('minecraft:binomial')]
+    | Annotated[ContextIntProviderStructConditional, Tag('minecraft:conditional')]
+    | Annotated[ContextIntProviderStructConstant, Tag('minecraft:constant')]
+    | Annotated[ContextIntProviderStructDiv, Tag('minecraft:div')]
+    | Annotated[ContextIntProviderStructEnvironmentAttribute, Tag('minecraft:environment_attribute')]
+    | Annotated[ContextIntProviderStructFloorDiv, Tag('minecraft:floor_div')]
+    | Annotated[ContextIntProviderStructFloorMod, Tag('minecraft:floor_mod')]
+    | Annotated[ContextIntProviderStructFromFloat, Tag('minecraft:from_float')]
+    | Annotated[ContextIntProviderStructMax, Tag('minecraft:max')]
+    | Annotated[ContextIntProviderStructMin, Tag('minecraft:min')]
+    | Annotated[ContextIntProviderStructMod, Tag('minecraft:mod')]
+    | Annotated[ContextIntProviderStructMul, Tag('minecraft:mul')]
+    | Annotated[ContextIntProviderStructNegate, Tag('minecraft:negate')]
+    | Annotated[ContextIntProviderStructNumberDispatcher, Tag('minecraft:number_dispatcher')]
+    | Annotated[ContextIntProviderStructPow, Tag('minecraft:pow')]
+    | Annotated[ContextIntProviderStructScore, Tag('minecraft:score')]
+    | Annotated[ContextIntProviderStructStorage, Tag('minecraft:storage')]
+    | Annotated[ContextIntProviderStructSub, Tag('minecraft:sub')]
+    | Annotated[ContextIntProviderStructUniform, Tag('minecraft:uniform')]
+    | Annotated[ContextIntProviderStructWeightedList, Tag('minecraft:weighted_list')],
+    Discriminator(tag_of('type')),
+]
 
 
 type ContextIntProvider = int | ContextIntProviderStruct

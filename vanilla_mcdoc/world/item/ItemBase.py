@@ -27,5 +27,5 @@ class ItemBase(GeneratedModel):
     AttributeModifiers: list[AttributeModifier] | None = None  # Applied to an entity that has equipped the item.
     display: Display | None = None  # Display settings.
     HideFlags: int | None = None  # Bitfield for which flags to hide on an item.
-    Trim_: Trim | None = Field(default=None, alias='Trim')  # Trim to apply to the item & armor when worn.
-    key_name: Any  # Custom item NBT tags
+    Trim_: Trim | None = Field(default=None, validation_alias='Trim', serialization_alias='Trim')  # Trim to apply to the item & armor when worn.
+    __pydantic_extra__: dict[str, Any] = Field(init=False)  # Custom item NBT tags

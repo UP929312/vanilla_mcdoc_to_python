@@ -23,11 +23,11 @@ if TYPE_CHECKING:
     from vanilla_mcdoc.data.worldgen.attribute.modifier.ColorModifierType import ColorModifierType
     from vanilla_mcdoc.data.worldgen.attribute.modifier.FloatModifierType import FloatModifierType
     from vanilla_mcdoc.data.worldgen.attribute.modifier.FloatWithAlpha import FloatWithAlpha
+    from vanilla_mcdoc.data.worldgen.attribute.modifier.LenientStringARGB import LenientStringARGB
     from vanilla_mcdoc.data.worldgen.attribute.modifier.ListModifierType import ListModifierType
     from vanilla_mcdoc.data.worldgen.attribute.modifier.MergeableModifierType import MergeableModifierType
     from vanilla_mcdoc.data.worldgen.biome.NaturalMobSpawns import NaturalMobSpawns
     from vanilla_mcdoc.registry.KnownEnvironmentAttributeId import KnownEnvironmentAttributeId
-    from vanilla_mcdoc.util.color.StringARGB import StringARGB
     from vanilla_mcdoc.util.color.StringRGB import StringRGB
     from vanilla_mcdoc.util.particle.Particle import Particle
 
@@ -74,7 +74,7 @@ class EnvironmentAttributeTrackMapValueStruct4(AttributeTrackBase):
 
 class KeyframesStruct5(GeneratedModel):
     ticks: Annotated[int, Field(ge=0)]
-    value: Annotated[float, Field(ge=0, le=1)] | float | FloatWithAlpha | Annotated[float, Field(ge=0, le=1)]
+    value: Annotated[float, Field(ge=0, le=1)] | float | FloatWithAlpha
 
 
 class EnvironmentAttributeTrackMapValueStruct5(AttributeTrackBase):
@@ -104,7 +104,7 @@ class EnvironmentAttributeTrackMapValueStruct7(AttributeTrackBase):
 
 class KeyframesStruct8(GeneratedModel):
     ticks: Annotated[int, Field(ge=0)]
-    value: Annotated[float, Field(ge=0, le=0.9999999)] | float | FloatWithAlpha | Annotated[float, Field(ge=0, le=0.9999999)]
+    value: Annotated[float, Field(ge=0, le=0.9999999)] | float | FloatWithAlpha
 
 
 class EnvironmentAttributeTrackMapValueStruct8(AttributeTrackBase):
@@ -134,7 +134,7 @@ class EnvironmentAttributeTrackMapValueStruct10(AttributeTrackBase):
 
 class KeyframesStruct11(GeneratedModel):
     ticks: Annotated[int, Field(ge=0)]
-    value: Annotated[float, Field(ge=0, le=15)] | float | FloatWithAlpha | Annotated[float, Field(ge=0, le=15)]
+    value: Annotated[float, Field(ge=0, le=15)] | float | FloatWithAlpha
 
 
 class EnvironmentAttributeTrackMapValueStruct11(AttributeTrackBase):
@@ -144,7 +144,7 @@ class EnvironmentAttributeTrackMapValueStruct11(AttributeTrackBase):
 
 class KeyframesStruct12(GeneratedModel):
     ticks: Annotated[int, Field(ge=0)]
-    value: StringRGB | StringARGB | BlendToGray
+    value: StringRGB | LenientStringARGB | BlendToGray
 
 
 class EnvironmentAttributeTrackMapValueStruct12(AttributeTrackBase):
@@ -164,7 +164,7 @@ class EnvironmentAttributeTrackMapValueStruct13(AttributeTrackBase):
 
 class KeyframesStruct14(GeneratedModel):
     ticks: Annotated[int, Field(ge=0)]
-    value: StringARGB | StringRGB | BlendToGray | StringRGB | StringARGB
+    value: LenientStringARGB | StringRGB | BlendToGray
 
 
 class EnvironmentAttributeTrackMapValueStruct14(AttributeTrackBase):
@@ -174,7 +174,7 @@ class EnvironmentAttributeTrackMapValueStruct14(AttributeTrackBase):
 
 class KeyframesStruct15(GeneratedModel):
     ticks: Annotated[int, Field(ge=0)]
-    value: Annotated[float, Field(ge=0)] | float | FloatWithAlpha | Annotated[float, Field(ge=0)]
+    value: Annotated[float, Field(ge=0)] | float | FloatWithAlpha
 
 
 class EnvironmentAttributeTrackMapValueStruct15(AttributeTrackBase):
@@ -184,7 +184,7 @@ class EnvironmentAttributeTrackMapValueStruct15(AttributeTrackBase):
 
 class KeyframesStruct16(GeneratedModel):
     ticks: Annotated[int, Field(ge=0)]
-    value: float | FloatWithAlpha | float
+    value: float | FloatWithAlpha
 
 
 class EnvironmentAttributeTrackMapValueStruct16(AttributeTrackBase):

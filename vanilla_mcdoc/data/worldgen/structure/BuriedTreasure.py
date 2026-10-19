@@ -10,5 +10,3 @@ from vanilla_mcdoc.base import GeneratedModel
 
 class BuriedTreasure(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/structure'
-
-    pass

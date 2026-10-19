@@ -12,4 +12,4 @@ if TYPE_CHECKING:
 
 
 class AxisAlignedLinearPos(LinearPos):
-    axis: Axis
+    axis: Axis | None = None  # Defaults to `y`.

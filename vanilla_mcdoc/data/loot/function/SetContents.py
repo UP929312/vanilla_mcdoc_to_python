@@ -6,6 +6,7 @@ Local link to file: vanilla_mcdoc/data/loot/function/SetContents.py
 from typing import TYPE_CHECKING
 
 from vanilla_mcdoc.data.loot.function.Conditions import Conditions
+from vanilla_mcdoc.minecraft_types import NamespacedId
 
 if TYPE_CHECKING:
     from vanilla_mcdoc.data.loot.LootPoolEntry import LootPoolEntry
@@ -13,5 +14,5 @@ if TYPE_CHECKING:
 
 
 class SetContents(Conditions):
-    component: ContainerComponents  # Describes target component to be filled with items.
+    component: NamespacedId[ContainerComponents]  # Describes target component to be filled with items.
     entries: list[LootPoolEntry]

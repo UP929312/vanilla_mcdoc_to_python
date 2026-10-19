@@ -5,9 +5,9 @@ Local link to file: vanilla_mcdoc/data/advancement/predicate/EntitySubPredicate.
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
-from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel, tag_of
 from vanilla_mcdoc.data.advancement.predicate.DistancePredicate import DistancePredicate
 from vanilla_mcdoc.data.advancement.predicate.EntityFlagsPredicate import EntityFlagsPredicate
 from vanilla_mcdoc.data.advancement.predicate.EntityTagPredicate import EntityTagPredicate
@@ -122,6 +122,30 @@ class EntitySubPredicateVehicle(GeneratedModel):
 
 
 type EntitySubPredicate = Annotated[
-    EntitySubPredicateComponents | EntitySubPredicateDistance | EntitySubPredicateEffects | EntitySubPredicateEntityTags | EntitySubPredicateEntityType | EntitySubPredicateEquipment | EntitySubPredicateFlags | EntitySubPredicateLocation | EntitySubPredicateMovement | EntitySubPredicateMovementAffectedBy | EntitySubPredicateNbt | EntitySubPredicatePassenger | EntitySubPredicatePeriodicTick | EntitySubPredicatePredicates | EntitySubPredicateSlots | EntitySubPredicateSteppingOn | EntitySubPredicateTargetedEntity | EntitySubPredicateTeam | EntitySubPredicateTypeSpecificCubeMob | EntitySubPredicateTypeSpecificFishingHook | EntitySubPredicateTypeSpecificLightning | EntitySubPredicateTypeSpecificPlayer | EntitySubPredicateTypeSpecificRaider | EntitySubPredicateTypeSpecificSheep | EntitySubPredicateVehicle,
-    Field(discriminator='type'),
+    Annotated[EntitySubPredicateComponents, Tag('minecraft:components')]
+    | Annotated[EntitySubPredicateDistance, Tag('minecraft:distance')]
+    | Annotated[EntitySubPredicateEffects, Tag('minecraft:effects')]
+    | Annotated[EntitySubPredicateEntityTags, Tag('minecraft:entity_tags')]
+    | Annotated[EntitySubPredicateEntityType, Tag('minecraft:entity_type')]
+    | Annotated[EntitySubPredicateEquipment, Tag('minecraft:equipment')]
+    | Annotated[EntitySubPredicateFlags, Tag('minecraft:flags')]
+    | Annotated[EntitySubPredicateLocation, Tag('minecraft:location')]
+    | Annotated[EntitySubPredicateMovement, Tag('minecraft:movement')]
+    | Annotated[EntitySubPredicateMovementAffectedBy, Tag('minecraft:movement_affected_by')]
+    | Annotated[EntitySubPredicateNbt, Tag('minecraft:nbt')]
+    | Annotated[EntitySubPredicatePassenger, Tag('minecraft:passenger')]
+    | Annotated[EntitySubPredicatePeriodicTick, Tag('minecraft:periodic_tick')]
+    | Annotated[EntitySubPredicatePredicates, Tag('minecraft:predicates')]
+    | Annotated[EntitySubPredicateSlots, Tag('minecraft:slots')]
+    | Annotated[EntitySubPredicateSteppingOn, Tag('minecraft:stepping_on')]
+    | Annotated[EntitySubPredicateTargetedEntity, Tag('minecraft:targeted_entity')]
+    | Annotated[EntitySubPredicateTeam, Tag('minecraft:team')]
+    | Annotated[EntitySubPredicateTypeSpecificCubeMob, Tag('minecraft:type_specific/cube_mob')]
+    | Annotated[EntitySubPredicateTypeSpecificFishingHook, Tag('minecraft:type_specific/fishing_hook')]
+    | Annotated[EntitySubPredicateTypeSpecificLightning, Tag('minecraft:type_specific/lightning')]
+    | Annotated[EntitySubPredicateTypeSpecificPlayer, Tag('minecraft:type_specific/player')]
+    | Annotated[EntitySubPredicateTypeSpecificRaider, Tag('minecraft:type_specific/raider')]
+    | Annotated[EntitySubPredicateTypeSpecificSheep, Tag('minecraft:type_specific/sheep')]
+    | Annotated[EntitySubPredicateVehicle, Tag('minecraft:vehicle')],
+    Discriminator(tag_of('type')),
 ]

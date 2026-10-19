@@ -20,7 +20,7 @@ if TYPE_CHECKING:
 class PackStruct(GeneratedModel):
     description: Text
     pack_format: int | None = None  # Optional since 1.21.9. Define it if you want older versions to recognize your pack with a “made for a newer version” warning message.  Because of backwards compatibility, only the main pack format can be used here. Minor formats can only be specified in min and max format.
-    supported_formats: InclusiveRange[int] | int | None = None  # Must not be specified in case min_format indicates a format version for 1.21.9 and later.
+    supported_formats: InclusiveRange[int] | int | tuple[int, int] | None = None  # Must not be specified in case min_format indicates a format version for 1.21.9 and later.
     min_format: PackFormat | None = None  # The minimun format that is supported. To specify a minor version, use a list of two integers.
     max_format: PackFormat | None = None  # The maximum format that is supported. To specify a minor version, use a list of two integers.
 

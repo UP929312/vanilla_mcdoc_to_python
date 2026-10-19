@@ -5,8 +5,9 @@ Local link to file: vanilla_mcdoc/data/util/ScoreProvider.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
+from vanilla_mcdoc.base import tag_of
 from vanilla_mcdoc.data.util.ContextScoreProvider import ContextScoreProvider
 from vanilla_mcdoc.data.util.FixedScoreProvider import FixedScoreProvider
 
@@ -23,8 +24,9 @@ class ScoreProviderStructFixed(FixedScoreProvider):
 
 
 type ScoreProviderStruct = Annotated[
-    ScoreProviderStructContext | ScoreProviderStructFixed,
-    Field(discriminator='type'),
+    Annotated[ScoreProviderStructContext, Tag('minecraft:context')]
+    | Annotated[ScoreProviderStructFixed, Tag('minecraft:fixed')],
+    Discriminator(tag_of('type')),
 ]
 
 

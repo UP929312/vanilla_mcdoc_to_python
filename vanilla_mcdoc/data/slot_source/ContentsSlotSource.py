@@ -6,6 +6,7 @@ Local link to file: vanilla_mcdoc/data/slot_source/ContentsSlotSource.py
 from typing import TYPE_CHECKING, ClassVar
 
 from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import NamespacedId
 
 if TYPE_CHECKING:
     from vanilla_mcdoc.data.loot.function.ContainerComponents import ContainerComponents
@@ -16,4 +17,4 @@ class ContentsSlotSource(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'slot_source'
 
     slot_source: SlotSource  # The slots to search.
-    component: ContainerComponents  # If an item targeted by `slot_source` has this container component, selects all items inside.
+    component: NamespacedId[ContainerComponents]  # If an item targeted by `slot_source` has this container component, selects all items inside.

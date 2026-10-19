@@ -17,5 +17,5 @@ if TYPE_CHECKING:
 class CherryTrunkPlacer(GeneratedModel):
     branch_count: IntProvider[Annotated[int, Field(ge=1, le=3)]] | Annotated[int, Field(ge=1, le=3)]
     branch_horizontal_length: IntProvider[Annotated[int, Field(ge=2, le=16)]] | Annotated[int, Field(ge=2, le=16)]
-    branch_start_offset_from_top: UniformIntProvider[Annotated[int, Field(ge=-16, le=0)]] | Annotated[int, Field(ge=-16, le=0)]
+    branch_start_offset_from_top: UniformIntProvider[Annotated[int, Field(ge=-16, le=0)]]
     branch_end_offset_from_top: IntProvider[Annotated[int, Field(ge=-16, le=16)]] | Annotated[int, Field(ge=-16, le=16)]

@@ -5,8 +5,9 @@ Local link to file: vanilla_mcdoc/data/dialog/input/InputControl.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Field, Tag
 
+from vanilla_mcdoc.base import tag_of
 from vanilla_mcdoc.data.dialog.input.BooleanInput import BooleanInput
 from vanilla_mcdoc.data.dialog.input.NumberRangeInput import NumberRangeInput
 from vanilla_mcdoc.data.dialog.input.SingleOptionInput import SingleOptionInput
@@ -34,6 +35,9 @@ class InputControlText(TextInput):
 
 
 type InputControl = Annotated[
-    InputControlBoolean | InputControlNumberRange | InputControlSingleOption | InputControlText,
-    Field(discriminator='type'),
+    Annotated[InputControlBoolean, Tag('minecraft:boolean')]
+    | Annotated[InputControlNumberRange, Tag('minecraft:number_range')]
+    | Annotated[InputControlSingleOption, Tag('minecraft:single_option')]
+    | Annotated[InputControlText, Tag('minecraft:text')],
+    Discriminator(tag_of('type')),
 ]

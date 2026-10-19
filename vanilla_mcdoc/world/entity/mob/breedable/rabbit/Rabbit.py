@@ -14,5 +14,5 @@ if TYPE_CHECKING:
 
 
 class Rabbit(Breedable):
-    RabbitType_: RabbitType | None = Field(default=None, alias='RabbitType')
+    RabbitType_: RabbitType | None = Field(default=None, validation_alias='RabbitType', serialization_alias='RabbitType')
     MoreCarrotTicks: int | None = None  # Ticks down once a carrot crop is eaten

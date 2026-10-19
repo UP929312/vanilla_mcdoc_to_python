@@ -5,7 +5,9 @@ Local link to file: vanilla_mcdoc/data/worldgen/density_function/DensityFunction
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar, Literal
 
-from vanilla_mcdoc.base import GeneratedModel
+from pydantic import Discriminator, Tag
+
+from vanilla_mcdoc.base import GeneratedModel, tag_of
 from vanilla_mcdoc.data.worldgen.density_function.Clamp import Clamp
 from vanilla_mcdoc.data.worldgen.density_function.Constant import Constant
 from vanilla_mcdoc.data.worldgen.density_function.DistanceToPoint import DistanceToPoint
@@ -24,16 +26,9 @@ from vanilla_mcdoc.data.worldgen.density_function.Shift import Shift
 from vanilla_mcdoc.data.worldgen.density_function.Slice import Slice
 from vanilla_mcdoc.data.worldgen.density_function.Spline import Spline
 from vanilla_mcdoc.data.worldgen.density_function.TwoArguments import TwoArguments
-from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
     from vanilla_mcdoc.data.worldgen.density_function.NoiseRange import NoiseRange
-
-
-class DensityFunctionStructUnknown(GeneratedModel):
-    __resource_dir__: ClassVar[str] = 'worldgen/density_function'
-
-    type: Annotated[str, IdSpec(registry='worldgen/density_function_type')]
 
 
 class DensityFunctionStructAbs(OneArgument):
@@ -282,7 +277,78 @@ class DensityFunctionStructTruncate(Round):
     type: Literal['minecraft:truncate', 'truncate'] = 'minecraft:truncate'
 
 
-type DensityFunctionStruct = DensityFunctionStructUnknown | DensityFunctionStructAbs | DensityFunctionStructAdd | DensityFunctionStructBlendDensity | DensityFunctionStructCache | DensityFunctionStructCeil | DensityFunctionStructClamp | DensityFunctionStructConstant | DensityFunctionStructCube | DensityFunctionStructDistanceToPoint | DensityFunctionStructDiv | DensityFunctionStructFindTopSurface | DensityFunctionStructFloor | DensityFunctionStructGradient | DensityFunctionStructHalfNegative | DensityFunctionStructInterpolated | DensityFunctionStructIntervalSelect | DensityFunctionStructLerp | DensityFunctionStructLog | DensityFunctionStructMax | DensityFunctionStructMin | DensityFunctionStructMul | DensityFunctionStructNegate | DensityFunctionStructNoise | DensityFunctionStructOldBlendedNoise | DensityFunctionStructPow | DensityFunctionStructQuarterNegative | DensityFunctionStructRangeChoice | DensityFunctionStructReciprocal | DensityFunctionStructRound | DensityFunctionStructShift | DensityFunctionStructShiftA | DensityFunctionStructShiftB | DensityFunctionStructSign | DensityFunctionStructSlice | DensityFunctionStructSlide | DensityFunctionStructSpline | DensityFunctionStructSqrt | DensityFunctionStructSquare | DensityFunctionStructSqueeze | DensityFunctionStructSub | DensityFunctionStructTruncate
+class DensityFunctionStructBeardifier(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'worldgen/density_function'
+
+    type: Literal['minecraft:beardifier', 'beardifier'] = 'minecraft:beardifier'
+
+
+class DensityFunctionStructBlendAlpha(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'worldgen/density_function'
+
+    type: Literal['minecraft:blend_alpha', 'blend_alpha'] = 'minecraft:blend_alpha'
+
+
+class DensityFunctionStructBlendOffset(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'worldgen/density_function'
+
+    type: Literal['minecraft:blend_offset', 'blend_offset'] = 'minecraft:blend_offset'
+
+
+class DensityFunctionStructEndOuterIslands(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'worldgen/density_function'
+
+    type: Literal['minecraft:end_outer_islands', 'end_outer_islands'] = 'minecraft:end_outer_islands'
+
+
+type DensityFunctionStruct = Annotated[
+    Annotated[DensityFunctionStructAbs, Tag('minecraft:abs')]
+    | Annotated[DensityFunctionStructAdd, Tag('minecraft:add')]
+    | Annotated[DensityFunctionStructBlendDensity, Tag('minecraft:blend_density')]
+    | Annotated[DensityFunctionStructCache, Tag('minecraft:cache')]
+    | Annotated[DensityFunctionStructCeil, Tag('minecraft:ceil')]
+    | Annotated[DensityFunctionStructClamp, Tag('minecraft:clamp')]
+    | Annotated[DensityFunctionStructConstant, Tag('minecraft:constant')]
+    | Annotated[DensityFunctionStructCube, Tag('minecraft:cube')]
+    | Annotated[DensityFunctionStructDistanceToPoint, Tag('minecraft:distance_to_point')]
+    | Annotated[DensityFunctionStructDiv, Tag('minecraft:div')]
+    | Annotated[DensityFunctionStructFindTopSurface, Tag('minecraft:find_top_surface')]
+    | Annotated[DensityFunctionStructFloor, Tag('minecraft:floor')]
+    | Annotated[DensityFunctionStructGradient, Tag('minecraft:gradient')]
+    | Annotated[DensityFunctionStructHalfNegative, Tag('minecraft:half_negative')]
+    | Annotated[DensityFunctionStructInterpolated, Tag('minecraft:interpolated')]
+    | Annotated[DensityFunctionStructIntervalSelect, Tag('minecraft:interval_select')]
+    | Annotated[DensityFunctionStructLerp, Tag('minecraft:lerp')]
+    | Annotated[DensityFunctionStructLog, Tag('minecraft:log')]
+    | Annotated[DensityFunctionStructMax, Tag('minecraft:max')]
+    | Annotated[DensityFunctionStructMin, Tag('minecraft:min')]
+    | Annotated[DensityFunctionStructMul, Tag('minecraft:mul')]
+    | Annotated[DensityFunctionStructNegate, Tag('minecraft:negate')]
+    | Annotated[DensityFunctionStructNoise, Tag('minecraft:noise')]
+    | Annotated[DensityFunctionStructOldBlendedNoise, Tag('minecraft:old_blended_noise')]
+    | Annotated[DensityFunctionStructPow, Tag('minecraft:pow')]
+    | Annotated[DensityFunctionStructQuarterNegative, Tag('minecraft:quarter_negative')]
+    | Annotated[DensityFunctionStructRangeChoice, Tag('minecraft:range_choice')]
+    | Annotated[DensityFunctionStructReciprocal, Tag('minecraft:reciprocal')]
+    | Annotated[DensityFunctionStructRound, Tag('minecraft:round')]
+    | Annotated[DensityFunctionStructShift, Tag('minecraft:shift')]
+    | Annotated[DensityFunctionStructShiftA, Tag('minecraft:shift_a')]
+    | Annotated[DensityFunctionStructShiftB, Tag('minecraft:shift_b')]
+    | Annotated[DensityFunctionStructSign, Tag('minecraft:sign')]
+    | Annotated[DensityFunctionStructSlice, Tag('minecraft:slice')]
+    | Annotated[DensityFunctionStructSlide, Tag('minecraft:slide')]
+    | Annotated[DensityFunctionStructSpline, Tag('minecraft:spline')]
+    | Annotated[DensityFunctionStructSqrt, Tag('minecraft:sqrt')]
+    | Annotated[DensityFunctionStructSquare, Tag('minecraft:square')]
+    | Annotated[DensityFunctionStructSqueeze, Tag('minecraft:squeeze')]
+    | Annotated[DensityFunctionStructSub, Tag('minecraft:sub')]
+    | Annotated[DensityFunctionStructTruncate, Tag('minecraft:truncate')]
+    | Annotated[DensityFunctionStructBeardifier, Tag('minecraft:beardifier')]
+    | Annotated[DensityFunctionStructBlendAlpha, Tag('minecraft:blend_alpha')]
+    | Annotated[DensityFunctionStructBlendOffset, Tag('minecraft:blend_offset')]
+    | Annotated[DensityFunctionStructEndOuterIslands, Tag('minecraft:end_outer_islands')],
+    Discriminator(tag_of('type')),
+]
 
 
 type DensityFunction = NoiseRange | DensityFunctionStruct

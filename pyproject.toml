@@ -41,6 +41,7 @@ python_version = "3.14"
 strict = true
 exclude = "vanilla_mcdoc.data.structure.StructureNBT"  # TODO: Fix this.
 explicit_package_bases = true  # Name modules from the repo root, so static_symbols/x.py is static_symbols.x (as the generator imports it)
+mypy_path = ".github/scripts"  # Where the tests import the CI scripts from (mypy skips folders starting with a dot otherwise)
 
 # --- strict = true already enables the following, but listed explicitly: ---
 warn_return_any = true
@@ -68,8 +69,12 @@ disallow_any_decorated = true
 strict_optional = true
 strict_bytes = true
 
+[tool.pyright]
+extraPaths = [".github/scripts"]  # So Pylance finds the CI scripts the tests import, like mypy_path above
+
 [tool.ruff]
 line-length = 220  # Same as pylint's (it's used when sorting imports)
+src = [".", ".github/scripts"]  # So the CI scripts are sorted as ours when imported
 extend-exclude = ["tests/assertions"]  # Snapshots of generated code (vanilla_mcdoc/ itself is left out by .gitignore)
 
 [tool.ruff.lint.isort]
@@ -80,6 +85,7 @@ known-first-party = ["vanilla_mcdoc"]  # It's ours (just generated, and gitignor
 ignore = ["F821"]  # F821 is some noise for undefined name.
 
 [tool.pylint.main]
+init-hook = "import sys; sys.path.append('.github/scripts')"  # So it can find the CI scripts when they import each other (and the tests import them)
 # Generated output (and the snapshots of it), we lint the generator instead
 ignore-paths = [
     "^vanilla_mcdoc[\\\\/]",
@@ -116,13 +122,14 @@ disable = [
 
 [tool.codespell]
 # The generated code and upstream data have upstream's spellings, which aren't ours to fix
-skip = "vanilla_mcdoc,htmlcov,tests/assertions,symbols.json,versions.json,upstream.json,temp.txt,.coverage,*.pyc,dist,build"
+skip = "vanilla_mcdoc,htmlcov,tests/assertions,symbols.json,versions.json,registries.json,upstream.json,temp.txt,.coverage,*.pyc,dist,build"
 
 # ========================================================================
 # Testing
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+pythonpath = [".github/scripts"]  # So the tests can import the CI scripts
 
 # ========================================================================
 # Coverage, Dead code
@@ -133,7 +140,7 @@ branch = true
 omit = ["vanilla_mcdoc/*", "tests/*", "htmlcov/*"]  # Just the generator (vanilla_mcdoc/ is what it generates)
 
 [tool.coverage.report]
-fail_under = 95  # It's 96%, mostly missing ci.py's downloading
+fail_under = 95  # It's 95%, mostly missing .github/scripts' downloading
 skip_covered = true
 
 [tool.vulture]
@@ -143,9 +150,9 @@ exclude = ["vanilla_mcdoc/", "htmlcov/", "tests/assertions/", "tests/test_exampl
 ignore_decorators = ["@model_validator", "@pytest.fixture"]  # Pydantic and pytest call these themselves
 ignore_names = [
     # static_symbols/ is copied into vanilla_mcdoc/, where generated code (and users) use these
-    "GeneratedModel", "model_config", "MinecraftUUID", "MinecraftUUIDString", "MinecraftURL", "uuid_to_int_array",
+    "GeneratedModel", "model_config", "tag_of", "import_annotation_types", "NamespacedId", "MinecraftUUID", "MinecraftUUIDString", "MinecraftURL", "uuid_to_int_array",
     "keyword",  # A field symbols.json has, which pydantic reads in
-    "to_json",  # For turning models back into JSON, later
+    "definition", "prefix", "empty",  # IdSpec's fields, which its to_annotation goes through with dataclasses.fields()
 ]
 
 # ========================================================================

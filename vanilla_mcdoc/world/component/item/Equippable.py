@@ -15,7 +15,7 @@ if TYPE_CHECKING:
 
 class Equippable(GeneratedModel):
     slot: EquipmentSlot
-    equip_sound: SoundEventRef | None = None  # Sound event to play when the item is equipped. If not specified, the default armor equip sound will be played.
+    equip_sound: SoundEventRef | None = None  # Sound event to play when the item is equipped.  If not specified, the default armor equip sound will be played.
     asset_id: Annotated[str, IdSpec(registry='equipment')] | None = None
     camera_overlay: Annotated[str, IdSpec(registry='texture')] | None = None  # The overlay texture that should render in first person when equipped.
     allowed_entities: Annotated[str, IdSpec(registry='entity_type', tags='allowed')] | list[Annotated[str, IdSpec(registry='entity_type')]] | None = None  # Limits which entities can equip this item.

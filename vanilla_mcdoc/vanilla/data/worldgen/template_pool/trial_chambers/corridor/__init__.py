@@ -1,0 +1,83 @@
+"""Vanilla's data/worldgen/template_pool/trial_chambers/corridor/ files"""
+from vanilla_mcdoc.data.worldgen.template_pool.Element import ElementSinglePoolElement
+from vanilla_mcdoc.data.worldgen.template_pool.Projection import Projection
+from vanilla_mcdoc.data.worldgen.template_pool.TemplatePool import TemplatePool
+from vanilla_mcdoc.data.worldgen.template_pool.WeightedElement import WeightedElement
+
+SLICES = TemplatePool(
+    fallback='minecraft:empty',
+    elements=[
+        WeightedElement(
+            weight=1,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:trial_chambers/corridor/straight_1',
+                processors='minecraft:trial_chambers_copper_bulb_degradation',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+        WeightedElement(
+            weight=2,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:trial_chambers/corridor/straight_2',
+                processors='minecraft:trial_chambers_copper_bulb_degradation',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+        WeightedElement(
+            weight=2,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:trial_chambers/corridor/straight_3',
+                processors='minecraft:trial_chambers_copper_bulb_degradation',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+        WeightedElement(
+            weight=2,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:trial_chambers/corridor/straight_4',
+                processors='minecraft:trial_chambers_copper_bulb_degradation',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+        WeightedElement(
+            weight=2,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:trial_chambers/corridor/straight_5',
+                processors='minecraft:trial_chambers_copper_bulb_degradation',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+        WeightedElement(
+            weight=2,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:trial_chambers/corridor/straight_6',
+                processors='minecraft:trial_chambers_copper_bulb_degradation',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+        WeightedElement(
+            weight=1,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:trial_chambers/corridor/straight_7',
+                processors='minecraft:trial_chambers_copper_bulb_degradation',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+        WeightedElement(
+            weight=2,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:trial_chambers/corridor/straight_8',
+                processors='minecraft:trial_chambers_copper_bulb_degradation',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+    ],
+)

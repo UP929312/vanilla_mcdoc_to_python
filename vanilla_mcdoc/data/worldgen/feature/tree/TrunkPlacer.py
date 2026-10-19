@@ -5,9 +5,9 @@ Local link to file: vanilla_mcdoc/data/worldgen/feature/tree/TrunkPlacer.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Field, Tag
 
-from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel, tag_of
 from vanilla_mcdoc.data.worldgen.feature.tree.BendingTrunkPlacer import BendingTrunkPlacer
 from vanilla_mcdoc.data.worldgen.feature.tree.CherryTrunkPlacer import CherryTrunkPlacer
 from vanilla_mcdoc.data.worldgen.feature.tree.PoplarTrunkPlacer import PoplarTrunkPlacer
@@ -89,6 +89,15 @@ class TrunkPlacerUpwardsBranchingTrunkPlacer(UpwardsBranchingTrunkPlacer):
 
 
 type TrunkPlacer = Annotated[
-    TrunkPlacerBendingTrunkPlacer | TrunkPlacerCherryTrunkPlacer | TrunkPlacerDarkOakTrunkPlacer | TrunkPlacerFancyTrunkPlacer | TrunkPlacerForkingTrunkPlacer | TrunkPlacerGiantTrunkPlacer | TrunkPlacerMegaJungleTrunkPlacer | TrunkPlacerPoplarTrunkPlacer | TrunkPlacerStraightTrunkPlacer | TrunkPlacerUpwardsBranchingTrunkPlacer,
-    Field(discriminator='type'),
+    Annotated[TrunkPlacerBendingTrunkPlacer, Tag('minecraft:bending_trunk_placer')]
+    | Annotated[TrunkPlacerCherryTrunkPlacer, Tag('minecraft:cherry_trunk_placer')]
+    | Annotated[TrunkPlacerDarkOakTrunkPlacer, Tag('minecraft:dark_oak_trunk_placer')]
+    | Annotated[TrunkPlacerFancyTrunkPlacer, Tag('minecraft:fancy_trunk_placer')]
+    | Annotated[TrunkPlacerForkingTrunkPlacer, Tag('minecraft:forking_trunk_placer')]
+    | Annotated[TrunkPlacerGiantTrunkPlacer, Tag('minecraft:giant_trunk_placer')]
+    | Annotated[TrunkPlacerMegaJungleTrunkPlacer, Tag('minecraft:mega_jungle_trunk_placer')]
+    | Annotated[TrunkPlacerPoplarTrunkPlacer, Tag('minecraft:poplar_trunk_placer')]
+    | Annotated[TrunkPlacerStraightTrunkPlacer, Tag('minecraft:straight_trunk_placer')]
+    | Annotated[TrunkPlacerUpwardsBranchingTrunkPlacer, Tag('minecraft:upwards_branching_trunk_placer')],
+    Discriminator(tag_of('type')),
 ]

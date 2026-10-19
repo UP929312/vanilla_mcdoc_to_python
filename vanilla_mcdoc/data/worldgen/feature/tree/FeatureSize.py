@@ -5,8 +5,9 @@ Local link to file: vanilla_mcdoc/data/worldgen/feature/tree/FeatureSize.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
+from vanilla_mcdoc.base import tag_of
 from vanilla_mcdoc.data.worldgen.feature.tree.ThreeLayersFeatureSize import ThreeLayersFeatureSize
 from vanilla_mcdoc.data.worldgen.feature.tree.TwoLayersFeatureSize import TwoLayersFeatureSize
 
@@ -20,6 +21,7 @@ class FeatureSizeTwoLayersFeatureSize(TwoLayersFeatureSize):
 
 
 type FeatureSize = Annotated[
-    FeatureSizeThreeLayersFeatureSize | FeatureSizeTwoLayersFeatureSize,
-    Field(discriminator='type'),
+    Annotated[FeatureSizeThreeLayersFeatureSize, Tag('minecraft:three_layers_feature_size')]
+    | Annotated[FeatureSizeTwoLayersFeatureSize, Tag('minecraft:two_layers_feature_size')],
+    Discriminator(tag_of('type')),
 ]

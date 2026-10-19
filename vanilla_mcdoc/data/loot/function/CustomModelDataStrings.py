@@ -5,9 +5,9 @@ Local link to file: vanilla_mcdoc/data/loot/function/CustomModelDataStrings.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
-from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel, tag_of
 from vanilla_mcdoc.data.loot.function.InsertListOperation import InsertListOperation
 from vanilla_mcdoc.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
 
@@ -33,6 +33,9 @@ class CustomModelDataStringsReplaceSection(ReplaceSectionListOperation):
 
 
 type CustomModelDataStrings = Annotated[
-    CustomModelDataStringsAppend | CustomModelDataStringsInsert | CustomModelDataStringsReplaceAll | CustomModelDataStringsReplaceSection,
-    Field(discriminator='mode'),
+    Annotated[CustomModelDataStringsAppend, Tag('minecraft:append')]
+    | Annotated[CustomModelDataStringsInsert, Tag('minecraft:insert')]
+    | Annotated[CustomModelDataStringsReplaceAll, Tag('minecraft:replace_all')]
+    | Annotated[CustomModelDataStringsReplaceSection, Tag('minecraft:replace_section')],
+    Discriminator(tag_of('mode')),
 ]

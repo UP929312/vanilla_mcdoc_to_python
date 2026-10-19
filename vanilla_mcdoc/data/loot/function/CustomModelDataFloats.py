@@ -5,9 +5,9 @@ Local link to file: vanilla_mcdoc/data/loot/function/CustomModelDataFloats.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
-from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel, tag_of
 from vanilla_mcdoc.data.loot.function.InsertListOperation import InsertListOperation
 from vanilla_mcdoc.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
 
@@ -36,6 +36,9 @@ class CustomModelDataFloatsReplaceSection(ReplaceSectionListOperation):
 
 
 type CustomModelDataFloats = Annotated[
-    CustomModelDataFloatsAppend | CustomModelDataFloatsInsert | CustomModelDataFloatsReplaceAll | CustomModelDataFloatsReplaceSection,
-    Field(discriminator='mode'),
+    Annotated[CustomModelDataFloatsAppend, Tag('minecraft:append')]
+    | Annotated[CustomModelDataFloatsInsert, Tag('minecraft:insert')]
+    | Annotated[CustomModelDataFloatsReplaceAll, Tag('minecraft:replace_all')]
+    | Annotated[CustomModelDataFloatsReplaceSection, Tag('minecraft:replace_section')],
+    Discriminator(tag_of('mode')),
 ]

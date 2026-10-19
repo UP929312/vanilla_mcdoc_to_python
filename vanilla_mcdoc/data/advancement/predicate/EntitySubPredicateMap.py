@@ -7,7 +7,7 @@ from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
-from vanilla_mcdoc.minecraft_types import IdSpec
+from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
     from vanilla_mcdoc.data.advancement.predicate.DistancePredicate import DistancePredicate
@@ -146,4 +146,29 @@ if TYPE_CHECKING:
     from vanilla_mcdoc.world.entity.tnt.Tnt import Tnt
 
 
-type EntitySubPredicateMap = dict[Annotated[str, IdSpec(registry='entity_sub_predicate_type')], DataComponentExactPredicate | DistancePredicate | EntityEffectsPredicate | EntityTagPredicate | EntityTypePredicate | EntityEquipmentPredicate | EntityFlagsPredicate | LocationPredicate | MovementPredicate | str | Boat | ChestBoat | Allay | AreaEffectCloud | Armadillo | ArmorStand | Arrow | Axolotl | Bat | Bee | MobBase | BlockDisplay | Bogged | AcceleratingProjectileBase | Camel | Cat | ChestMinecart | Chicken | Fish | CommandBlockMinecart | CopperGolem | Cow | Creaking | Creeper | Cushion | Dolphin | ChestedHorse | DespawnableProjectileBase | Zombie | ThrowableItem | EndCrystal | EnderDragon | Enderman | Endermite | Spellcaster | EvokerFangs | ExperienceOrb | EyeOfEnder | FallingBlock | LargeFireball | FireWorkRocket | Fox | Frog | FurnaceMinecart | Ghast | ItemFrame | GlowSquid | Goat | HappyGhast | Hoglin | HopperMinecart | Horse | Interaction | IronGolem | Item | ItemDisplay | BlockAttachedEntity | Potion | Llama | LlamaSpit | Slime | Mannequin | Marker | Minecart | Mooshroom | Tamable | Ocelot | OminousItemSpawner | Painting | Panda | Parrot | Phantom | Pig | Piglin | PiglinBase | Pillager | Player | PolarBear | Pufferfish | Rabbit | Ravager | Salmon | Sheep | Shulker | ShulkerBullet | Skeleton | SkeletonHorse | FireballBase | Breedable | SnowGolem | SpawnerMinecart | SpectralArrow | Squid | Saddled | SulfurCube | Tadpole | TextDisplay | Tnt | TntMinecart | TraderLlama | Trident | TropicalFish | Turtle | Vex | Villager | Vindicator | WanderingTrader | Warden | RaiderBase | Wither | WitherSkull | Wolf | Zoglin | HorseBase | ZombieVillager | ZombiePigman | EntityPredicate | Annotated[int, Field(ge=1)] | DataComponentPredicate | EntitySlotsPredicate | str | SlimePredicate | FishingHookPredicate | LightningBoltPredicate | PlayerPredicate | RaiderPredicate | SheepPredicate]
+class EntitySubPredicateMap(GeneratedModel):
+    components: DataComponentExactPredicate | None = Field(default=None, validation_alias='minecraft:components', serialization_alias='minecraft:components')
+    distance: DistancePredicate | None = Field(default=None, validation_alias='minecraft:distance', serialization_alias='minecraft:distance')
+    effects: EntityEffectsPredicate | None = Field(default=None, validation_alias='minecraft:effects', serialization_alias='minecraft:effects')
+    entity_tags: EntityTagPredicate | None = Field(default=None, validation_alias='minecraft:entity_tags', serialization_alias='minecraft:entity_tags')
+    entity_type: EntityTypePredicate | None = Field(default=None, validation_alias='minecraft:entity_type', serialization_alias='minecraft:entity_type')
+    equipment: EntityEquipmentPredicate | None = Field(default=None, validation_alias='minecraft:equipment', serialization_alias='minecraft:equipment')
+    flags: EntityFlagsPredicate | None = Field(default=None, validation_alias='minecraft:flags', serialization_alias='minecraft:flags')
+    location: LocationPredicate | None = Field(default=None, validation_alias='minecraft:location', serialization_alias='minecraft:location')
+    movement: MovementPredicate | None = Field(default=None, validation_alias='minecraft:movement', serialization_alias='minecraft:movement')
+    movement_affected_by: LocationPredicate | None = Field(default=None, validation_alias='minecraft:movement_affected_by', serialization_alias='minecraft:movement_affected_by')
+    nbt: str | Boat | ChestBoat | Allay | AreaEffectCloud | Armadillo | ArmorStand | Arrow | Axolotl | Bat | Bee | MobBase | BlockDisplay | Bogged | AcceleratingProjectileBase | Camel | Cat | ChestMinecart | Chicken | Fish | CommandBlockMinecart | CopperGolem | Cow | Creaking | Creeper | Cushion | Dolphin | ChestedHorse | DespawnableProjectileBase | Zombie | ThrowableItem | EndCrystal | EnderDragon | Enderman | Endermite | Spellcaster | EvokerFangs | ExperienceOrb | EyeOfEnder | FallingBlock | LargeFireball | FireWorkRocket | Fox | Frog | FurnaceMinecart | Ghast | ItemFrame | GlowSquid | Goat | HappyGhast | Hoglin | HopperMinecart | Horse | Interaction | IronGolem | Item | ItemDisplay | BlockAttachedEntity | Potion | Llama | LlamaSpit | Slime | Mannequin | Marker | Minecart | Mooshroom | Tamable | Ocelot | OminousItemSpawner | Painting | Panda | Parrot | Phantom | Pig | Piglin | PiglinBase | Pillager | Player | PolarBear | Pufferfish | Rabbit | Ravager | Salmon | Sheep | Shulker | ShulkerBullet | Skeleton | SkeletonHorse | FireballBase | Breedable | SnowGolem | SpawnerMinecart | SpectralArrow | Squid | Saddled | SulfurCube | Tadpole | TextDisplay | Tnt | TntMinecart | TraderLlama | Trident | TropicalFish | Turtle | Vex | Villager | Vindicator | WanderingTrader | Warden | RaiderBase | Wither | WitherSkull | Wolf | Zoglin | HorseBase | ZombieVillager | ZombiePigman | None = Field(default=None, validation_alias='minecraft:nbt', serialization_alias='minecraft:nbt')
+    passenger: EntityPredicate | None = Field(default=None, validation_alias='minecraft:passenger', serialization_alias='minecraft:passenger')
+    periodic_tick: Annotated[int, Field(ge=1)] | None = Field(default=None, validation_alias='minecraft:periodic_tick', serialization_alias='minecraft:periodic_tick')
+    predicates: DataComponentPredicate | None = Field(default=None, validation_alias='minecraft:predicates', serialization_alias='minecraft:predicates')
+    slots: EntitySlotsPredicate | None = Field(default=None, validation_alias='minecraft:slots', serialization_alias='minecraft:slots')
+    stepping_on: LocationPredicate | None = Field(default=None, validation_alias='minecraft:stepping_on', serialization_alias='minecraft:stepping_on')
+    targeted_entity: EntityPredicate | None = Field(default=None, validation_alias='minecraft:targeted_entity', serialization_alias='minecraft:targeted_entity')
+    team: str | None = Field(default=None, validation_alias='minecraft:team', serialization_alias='minecraft:team')
+    type_specific_cube_mob: SlimePredicate | None = Field(default=None, validation_alias='minecraft:type_specific/cube_mob', serialization_alias='minecraft:type_specific/cube_mob')
+    type_specific_fishing_hook: FishingHookPredicate | None = Field(default=None, validation_alias='minecraft:type_specific/fishing_hook', serialization_alias='minecraft:type_specific/fishing_hook')
+    type_specific_lightning: LightningBoltPredicate | None = Field(default=None, validation_alias='minecraft:type_specific/lightning', serialization_alias='minecraft:type_specific/lightning')
+    type_specific_player: PlayerPredicate | None = Field(default=None, validation_alias='minecraft:type_specific/player', serialization_alias='minecraft:type_specific/player')
+    type_specific_raider: RaiderPredicate | None = Field(default=None, validation_alias='minecraft:type_specific/raider', serialization_alias='minecraft:type_specific/raider')
+    type_specific_sheep: SheepPredicate | None = Field(default=None, validation_alias='minecraft:type_specific/sheep', serialization_alias='minecraft:type_specific/sheep')
+    vehicle: EntityPredicate | None = Field(default=None, validation_alias='minecraft:vehicle', serialization_alias='minecraft:vehicle')

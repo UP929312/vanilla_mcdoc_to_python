@@ -18,6 +18,6 @@ if TYPE_CHECKING:
 class Consumable(GeneratedModel):
     consume_seconds: Annotated[float, Field(ge=0)] | None = None  # Time taken for a player to consume the item. Defaults to 1.6.
     animation: ItemUseAnimation | None = None  # View model/arms animation used during consumption of the item. Defaults to `eat`.
-    sound: SoundEventRef | None = None  # Sound played during and on completion of item consumption.
+    sound: SoundEventRef | None = None  # Sound played during and on completion of item consumption.  If not specified, the default eating sound will be played.
     has_consume_particles: bool | None = None  # Whether the `item` particle is emitted while consuming the item. Defaults to `true`.
     on_consume_effects: list[ConsumeEffect] | None = None  # Side effects which take place after consuming the item.

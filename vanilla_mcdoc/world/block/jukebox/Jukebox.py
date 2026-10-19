@@ -14,3 +14,4 @@ if TYPE_CHECKING:
 class Jukebox(BlockEntity):
     RecordItem: ItemStack | None = None
     ticks_since_song_started: int | None = None
+    playlist_position: int

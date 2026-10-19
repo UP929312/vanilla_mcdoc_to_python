@@ -3,7 +3,7 @@ Generated from symbols.json for ::java::data::block_transformer::BlockTransformD
 Local link to file: vanilla_mcdoc/data/block_transformer/BlockTransformData.py
 """
 # ~~~ CODE ~~~
-from typing import TYPE_CHECKING, Annotated, ClassVar
+from typing import TYPE_CHECKING, Annotated
 
 from pydantic import Field
 
@@ -20,8 +20,6 @@ if TYPE_CHECKING:
 
 
 class BlockTransformData(GeneratedModel):
-    __resource_dir__: ClassVar[str] = 'block_transformer'
-
     block_state_provider: BlockStateProviderRef  # If the provider returns no result, the next transformer will be attempted.
     sound: SoundEventRef | None = None  # Defaults to not playing sound.
     particle: BlockTransformParticle | None = None  # Defaults to `none`.

@@ -5,9 +5,9 @@ Local link to file: vanilla_mcdoc/data/loot/function/CustomModelDataColors.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
-from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel, tag_of
 from vanilla_mcdoc.data.loot.function.InsertListOperation import InsertListOperation
 from vanilla_mcdoc.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
 
@@ -37,6 +37,9 @@ class CustomModelDataColorsReplaceSection(ReplaceSectionListOperation):
 
 
 type CustomModelDataColors = Annotated[
-    CustomModelDataColorsAppend | CustomModelDataColorsInsert | CustomModelDataColorsReplaceAll | CustomModelDataColorsReplaceSection,
-    Field(discriminator='mode'),
+    Annotated[CustomModelDataColorsAppend, Tag('minecraft:append')]
+    | Annotated[CustomModelDataColorsInsert, Tag('minecraft:insert')]
+    | Annotated[CustomModelDataColorsReplaceAll, Tag('minecraft:replace_all')]
+    | Annotated[CustomModelDataColorsReplaceSection, Tag('minecraft:replace_section')],
+    Discriminator(tag_of('mode')),
 ]

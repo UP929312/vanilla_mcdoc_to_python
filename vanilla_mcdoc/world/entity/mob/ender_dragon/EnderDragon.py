@@ -14,6 +14,6 @@ if TYPE_CHECKING:
 
 
 class EnderDragon(MobBase):
-    DragonPhase_: DragonPhase | None = Field(default=None, alias='DragonPhase')  # The dragon's current state.
+    DragonPhase_: DragonPhase | None = Field(default=None, validation_alias='DragonPhase', serialization_alias='DragonPhase')  # The dragon's current state.
     DragonDeathTime: int | None = None  # Number of ticks the dragon has been dead for, or `0` when alive. At `150`, the dragon begins spawning experience orbs every 5 ticks (first drop at 155). Removes dragon at values `200` and higher.
     sitting_damage_received: float | None = None  # The amount of damage the dragon has received while perched. When this value is `50` or higher, it is reset to `0` and the dragon ends its perch.

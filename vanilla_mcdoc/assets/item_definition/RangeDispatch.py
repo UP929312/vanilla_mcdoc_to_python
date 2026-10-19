@@ -13,6 +13,7 @@ from vanilla_mcdoc.assets.item_definition.Time import Time
 from vanilla_mcdoc.assets.item_definition.UseCycle import UseCycle
 from vanilla_mcdoc.assets.item_definition.UseDuration import UseDuration
 from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import NamespacedId
 
 if TYPE_CHECKING:
     from vanilla_mcdoc.assets.item_definition.ItemModel import ItemModel
@@ -26,7 +27,7 @@ class EntriesStruct(GeneratedModel):
 
 
 class RangeDispatchUnknown(GeneratedModel):
-    property: NumericPropertyType
+    property: NamespacedId[NumericPropertyType]
     scale: float | None = None  # Factor to multiply the property value with. Defaults to 1.
     entries: list[EntriesStruct]  # List of ranges. Will select last entry with threshold less or equal to value. Order does not matter, list will be sorted by threshold in ascending order.
     fallback: ItemModel | None = None  # Item model to render if no entries were less or equal to the value.

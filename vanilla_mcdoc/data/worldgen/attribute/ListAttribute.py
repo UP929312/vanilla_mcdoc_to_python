@@ -3,7 +3,7 @@ Generated from symbols.json for ::java::data::worldgen::attribute::ListAttribute
 Local link to file: vanilla_mcdoc/data/worldgen/attribute/ListAttribute.py
 """
 # ~~~ CODE ~~~
-from typing import TYPE_CHECKING, Annotated, Generic, TypeVar
+from typing import TYPE_CHECKING, Annotated, Any, Generic, TypeVar
 
 from pydantic import Field
 
@@ -15,7 +15,7 @@ if TYPE_CHECKING:
     from vanilla_mcdoc.data.worldgen.attribute.modifier.ListModifierType import ListModifierType
 
 
-E = TypeVar('E')
+E = TypeVar('E', default=Any)
 
 
 class KeyframesStruct(GeneratedModel, Generic[E]):

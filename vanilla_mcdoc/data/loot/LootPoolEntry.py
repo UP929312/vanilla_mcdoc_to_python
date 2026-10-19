@@ -5,8 +5,9 @@ Local link to file: vanilla_mcdoc/data/loot/LootPoolEntry.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
+from vanilla_mcdoc.base import tag_of
 from vanilla_mcdoc.data.loot.CompositePoolEntry import CompositePoolEntry
 from vanilla_mcdoc.data.loot.DynamicPoolEntry import DynamicPoolEntry
 from vanilla_mcdoc.data.loot.ItemPoolEntry import ItemPoolEntry
@@ -53,6 +54,14 @@ class LootPoolEntryTag(TagPoolEntry):
 
 
 type LootPoolEntry = Annotated[
-    LootPoolEntryAlternatives | LootPoolEntryDynamic | LootPoolEntryEmpty | LootPoolEntryGroup | LootPoolEntryItem | LootPoolEntryLootTable | LootPoolEntrySequence | LootPoolEntrySlots | LootPoolEntryTag,
-    Field(discriminator='type'),
+    Annotated[LootPoolEntryAlternatives, Tag('minecraft:alternatives')]
+    | Annotated[LootPoolEntryDynamic, Tag('minecraft:dynamic')]
+    | Annotated[LootPoolEntryEmpty, Tag('minecraft:empty')]
+    | Annotated[LootPoolEntryGroup, Tag('minecraft:group')]
+    | Annotated[LootPoolEntryItem, Tag('minecraft:item')]
+    | Annotated[LootPoolEntryLootTable, Tag('minecraft:loot_table')]
+    | Annotated[LootPoolEntrySequence, Tag('minecraft:sequence')]
+    | Annotated[LootPoolEntrySlots, Tag('minecraft:slots')]
+    | Annotated[LootPoolEntryTag, Tag('minecraft:tag')],
+    Discriminator(tag_of('type')),
 ]

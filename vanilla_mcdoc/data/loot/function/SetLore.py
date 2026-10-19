@@ -5,8 +5,9 @@ Local link to file: vanilla_mcdoc/data/loot/function/SetLore.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
+from vanilla_mcdoc.base import tag_of
 from vanilla_mcdoc.data.loot.function.Conditions import Conditions
 from vanilla_mcdoc.data.loot.function.InsertListOperation import InsertListOperation
 from vanilla_mcdoc.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
@@ -41,6 +42,9 @@ class SetLoreReplaceSection(Conditions, ReplaceSectionListOperation):
 
 
 type SetLore = Annotated[
-    SetLoreAppend | SetLoreInsert | SetLoreReplaceAll | SetLoreReplaceSection,
-    Field(discriminator='mode'),
+    Annotated[SetLoreAppend, Tag('minecraft:append')]
+    | Annotated[SetLoreInsert, Tag('minecraft:insert')]
+    | Annotated[SetLoreReplaceAll, Tag('minecraft:replace_all')]
+    | Annotated[SetLoreReplaceSection, Tag('minecraft:replace_section')],
+    Discriminator(tag_of('mode')),
 ]

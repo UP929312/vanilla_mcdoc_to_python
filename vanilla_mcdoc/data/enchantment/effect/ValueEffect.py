@@ -5,8 +5,9 @@ Local link to file: vanilla_mcdoc/data/enchantment/effect/ValueEffect.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
+from vanilla_mcdoc.base import tag_of
 from vanilla_mcdoc.data.enchantment.effect.AddEffectValue import AddEffectValue
 from vanilla_mcdoc.data.enchantment.effect.AllOfEffectValue import AllOfEffectValue
 from vanilla_mcdoc.data.enchantment.effect.ExponentialEffectValue import ExponentialEffectValue
@@ -40,6 +41,11 @@ class ValueEffectSet(SetEffectValue):
 
 
 type ValueEffect = Annotated[
-    ValueEffectAdd | ValueEffectAllOf | ValueEffectExponential | ValueEffectMultiply | ValueEffectRemoveBinomial | ValueEffectSet,
-    Field(discriminator='type'),
+    Annotated[ValueEffectAdd, Tag('minecraft:add')]
+    | Annotated[ValueEffectAllOf, Tag('minecraft:all_of')]
+    | Annotated[ValueEffectExponential, Tag('minecraft:exponential')]
+    | Annotated[ValueEffectMultiply, Tag('minecraft:multiply')]
+    | Annotated[ValueEffectRemoveBinomial, Tag('minecraft:remove_binomial')]
+    | Annotated[ValueEffectSet, Tag('minecraft:set')],
+    Discriminator(tag_of('type')),
 ]

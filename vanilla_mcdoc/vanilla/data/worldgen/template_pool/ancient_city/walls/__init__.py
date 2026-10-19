@@ -1,0 +1,83 @@
+"""Vanilla's data/worldgen/template_pool/ancient_city/walls/ files"""
+from vanilla_mcdoc.data.worldgen.template_pool.Element import ElementSinglePoolElement
+from vanilla_mcdoc.data.worldgen.template_pool.Projection import Projection
+from vanilla_mcdoc.data.worldgen.template_pool.TemplatePool import TemplatePool
+from vanilla_mcdoc.data.worldgen.template_pool.WeightedElement import WeightedElement
+
+NO_CORNERS = TemplatePool(
+    fallback='minecraft:empty',
+    elements=[
+        WeightedElement(
+            weight=1,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:ancient_city/walls/intact_horizontal_wall_1',
+                processors='minecraft:ancient_city_walls_degradation',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+        WeightedElement(
+            weight=1,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:ancient_city/walls/intact_horizontal_wall_2',
+                processors='minecraft:ancient_city_walls_degradation',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+        WeightedElement(
+            weight=1,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:ancient_city/walls/intact_horizontal_wall_stairs_1',
+                processors='minecraft:ancient_city_walls_degradation',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+        WeightedElement(
+            weight=1,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:ancient_city/walls/intact_horizontal_wall_stairs_2',
+                processors='minecraft:ancient_city_walls_degradation',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+        WeightedElement(
+            weight=1,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:ancient_city/walls/intact_horizontal_wall_stairs_3',
+                processors='minecraft:ancient_city_walls_degradation',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+        WeightedElement(
+            weight=1,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4',
+                processors='minecraft:ancient_city_walls_degradation',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+        WeightedElement(
+            weight=1,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:ancient_city/walls/intact_horizontal_wall_stairs_5',
+                processors='minecraft:ancient_city_walls_degradation',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+        WeightedElement(
+            weight=1,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:ancient_city/walls/intact_horizontal_wall_bridge',
+                processors='minecraft:ancient_city_walls_degradation',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+    ],
+)

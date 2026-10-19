@@ -3,12 +3,12 @@ Generated from symbols.json for ::java::assets::equipment::WingsLayer
 Local link to file: vanilla_mcdoc/assets/equipment/WingsLayer.py
 """
 # ~~~ CODE ~~~
-from typing import Generic, TypeVar
+from typing import Any, Generic, TypeVar
 
 from vanilla_mcdoc.assets.equipment.Layer import Layer
 
 
-T = TypeVar('T')
+T = TypeVar('T', default=Any)
 
 
 class WingsLayer(Layer[T], Generic[T]):

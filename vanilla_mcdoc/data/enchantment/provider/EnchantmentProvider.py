@@ -5,8 +5,9 @@ Local link to file: vanilla_mcdoc/data/enchantment/provider/EnchantmentProvider.
 # ~~~ CODE ~~~
 from typing import Annotated, ClassVar, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
+from vanilla_mcdoc.base import tag_of
 from vanilla_mcdoc.data.enchantment.provider.ByCostEnchantmentProvider import ByCostEnchantmentProvider
 from vanilla_mcdoc.data.enchantment.provider.ByCostWithDifficultyEnchantmentProvider import ByCostWithDifficultyEnchantmentProvider
 from vanilla_mcdoc.data.enchantment.provider.SingleProvider import SingleProvider
@@ -31,6 +32,8 @@ class EnchantmentProviderSingle(SingleProvider):
 
 
 type EnchantmentProvider = Annotated[
-    EnchantmentProviderByCost | EnchantmentProviderByCostWithDifficulty | EnchantmentProviderSingle,
-    Field(discriminator='type'),
+    Annotated[EnchantmentProviderByCost, Tag('minecraft:by_cost')]
+    | Annotated[EnchantmentProviderByCostWithDifficulty, Tag('minecraft:by_cost_with_difficulty')]
+    | Annotated[EnchantmentProviderSingle, Tag('minecraft:single')],
+    Discriminator(tag_of('type')),
 ]

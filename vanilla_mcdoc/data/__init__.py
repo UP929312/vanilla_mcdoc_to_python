@@ -99,6 +99,7 @@ from vanilla_mcdoc.data.block_transformer.BlockTransformData import BlockTransfo
 from vanilla_mcdoc.data.block_transformer.BlockTransformDropStrategy import BlockTransformDropStrategy
 from vanilla_mcdoc.data.block_transformer.BlockTransformParticle import BlockTransformParticle
 from vanilla_mcdoc.data.block_transformer.BlockTransformType import BlockTransformType
+from vanilla_mcdoc.data.block_transformer.BlockTransformer import BlockTransformer
 from vanilla_mcdoc.data.advancement.predicate.BoatPredicate import BoatPredicate
 from vanilla_mcdoc.data.gametest.test_environment.BoolGameRule import BoolGameRule
 from vanilla_mcdoc.data.worldgen.attribute.BooleanAttribute import BooleanAttribute
@@ -128,6 +129,7 @@ from vanilla_mcdoc.data.worldgen.biome.CarversPerStep import CarversPerStep
 from vanilla_mcdoc.data.worldgen.feature.decorator.CarvingMaskConfig import CarvingMaskConfig
 from vanilla_mcdoc.data.worldgen.feature.placement.CarvingMaskModifier import CarvingMaskModifier
 from vanilla_mcdoc.data.advancement.predicate.CatPredicate import CatPredicate
+from vanilla_mcdoc.data.cat_sound_variant.CatSoundVariant import CatSoundVariant
 from vanilla_mcdoc.data.variants.cat.CatSounds import CatSounds
 from vanilla_mcdoc.data.variants.cat.CatVariant import CatVariant
 from vanilla_mcdoc.data.worldgen.carver.CaveConfig import CaveConfig
@@ -142,6 +144,7 @@ from vanilla_mcdoc.data.worldgen.dimension.biome_source.Checkerboard import Chec
 from vanilla_mcdoc.data.worldgen.feature.tree.CherryFoliagePlacer import CherryFoliagePlacer
 from vanilla_mcdoc.data.worldgen.feature.tree.CherryTrunkPlacer import CherryTrunkPlacer
 from vanilla_mcdoc.data.variants.chicken.ChickenModelType import ChickenModelType
+from vanilla_mcdoc.data.chicken_sound_variant.ChickenSoundVariant import ChickenSoundVariant
 from vanilla_mcdoc.data.variants.chicken.ChickenSounds import ChickenSounds
 from vanilla_mcdoc.data.variants.chicken.ChickenVariant import ChickenVariant
 from vanilla_mcdoc.data.worldgen.dimension.chunk_generator.ChunkGenerator import ChunkGenerator
@@ -225,6 +228,7 @@ from vanilla_mcdoc.data.recipe.CraftingSpecialMapExtending import CraftingSpecia
 from vanilla_mcdoc.data.recipe.CraftingSpecialShieldDecoration import CraftingSpecialShieldDecoration
 from vanilla_mcdoc.data.recipe.CraftingTransmute import CraftingTransmute
 from vanilla_mcdoc.data.worldgen.feature.tree.CreakingHeartTreeDecorator import CreakingHeartTreeDecorator
+from vanilla_mcdoc.data.worldgen.feature.CrevasseConfig import CrevasseConfig
 from vanilla_mcdoc.data.enchantment.effect_component.CrossbowChargeSoundsEnchantmentEffect import CrossbowChargeSoundsEnchantmentEffect
 from vanilla_mcdoc.data.timeline.CubicBezierEase import CubicBezierEase
 from vanilla_mcdoc.data.worldgen.density_function.CubicSpline import CubicSpline
@@ -370,7 +374,6 @@ from vanilla_mcdoc.data.number_provider.context_float.FloatRef import FloatRef
 from vanilla_mcdoc.data.loot.condition.FloatValueCheck import FloatValueCheck
 from vanilla_mcdoc.data.worldgen.attribute.modifier.FloatWithAlpha import FloatWithAlpha
 from vanilla_mcdoc.data.advancement.predicate.FluidPredicate import FluidPredicate
-from vanilla_mcdoc.data.advancement.predicate.FluidPredicateState import FluidPredicateState
 from vanilla_mcdoc.data.worldgen.feature.tree.FoliagePlacer import FoliagePlacer
 from vanilla_mcdoc.data.advancement.predicate.FoodPredicate import FoodPredicate
 from vanilla_mcdoc.data.worldgen.feature.ForestRockConfig import ForestRockConfig
@@ -460,6 +463,7 @@ from vanilla_mcdoc.data.worldgen.feature.LakeConfig import LakeConfig
 from vanilla_mcdoc.data.worldgen.feature.LargeSpeleothemConfig import LargeSpeleothemConfig
 from vanilla_mcdoc.data.worldgen.feature.tree.LeaveVineTreeDecorator import LeaveVineTreeDecorator
 from vanilla_mcdoc.data.loot.function.LegacyExplorationMapDestination import LegacyExplorationMapDestination
+from vanilla_mcdoc.data.worldgen.attribute.modifier.LenientStringARGB import LenientStringARGB
 from vanilla_mcdoc.data.worldgen.density_function.Lerp import Lerp
 from vanilla_mcdoc.data.enchantment.level_based_value.LevelBasedValueMap import LevelBasedValueMap
 from vanilla_mcdoc.data.advancement.trigger.LevitationTrigger import LevitationTrigger
@@ -581,8 +585,13 @@ from vanilla_mcdoc.data.worldgen.feature.OldSimpleBlockConfig import OldSimpleBl
 from vanilla_mcdoc.data.trim.OldTrimMaterialOverrides import OldTrimMaterialOverrides
 from vanilla_mcdoc.data.worldgen.density_function.OneArgument import OneArgument
 from vanilla_mcdoc.data.dialog.input.Option import Option
+from vanilla_mcdoc.data.variants.cat.OptionalCatSounds import OptionalCatSounds
+from vanilla_mcdoc.data.variants.chicken.OptionalChickenSounds import OptionalChickenSounds
+from vanilla_mcdoc.data.variants.cow.OptionalCowSounds import OptionalCowSounds
+from vanilla_mcdoc.data.variants.pig.OptionalPigSounds import OptionalPigSounds
 from vanilla_mcdoc.data.worldgen.feature.OptionalSimpleBlockConfig import OptionalSimpleBlockConfig
 from vanilla_mcdoc.data.recipe.OptionalSmithingIngredients import OptionalSmithingIngredients
+from vanilla_mcdoc.data.variants.wolf.OptionalWolfSounds import OptionalWolfSounds
 from vanilla_mcdoc.data.worldgen.feature.OreConfig import OreConfig
 from vanilla_mcdoc.data.worldgen.material_rule.OreVeinifier import OreVeinifier
 from vanilla_mcdoc.data.worldgen.feature.OverlayConfig import OverlayConfig
@@ -597,6 +606,7 @@ from vanilla_mcdoc.data.enchantment.effect.ParticlePosition import ParticlePosit
 from vanilla_mcdoc.data.enchantment.effect.ParticleVelocity import ParticleVelocity
 from vanilla_mcdoc.data.advancement.trigger.PickedUpItemTrigger import PickedUpItemTrigger
 from vanilla_mcdoc.data.variants.pig.PigModelType import PigModelType
+from vanilla_mcdoc.data.pig_sound_variant.PigSoundVariant import PigSoundVariant
 from vanilla_mcdoc.data.variants.pig.PigSounds import PigSounds
 from vanilla_mcdoc.data.variants.pig.PigVariant import PigVariant
 from vanilla_mcdoc.data.worldgen.feature.tree.PineFoliagePlacer import PineFoliagePlacer
@@ -861,6 +871,7 @@ from vanilla_mcdoc.data.villager_trade.TradeCost import TradeCost
 from vanilla_mcdoc.data.trade_set.TradeSet import TradeSet
 from vanilla_mcdoc.data.advancement.trigger.TradeTrigger import TradeTrigger
 from vanilla_mcdoc.data.worldgen.attribute.modifier.TranslucentColorAttributeModifier import TranslucentColorAttributeModifier
+from vanilla_mcdoc.data.recipe.TransmuteResult import TransmuteResult
 from vanilla_mcdoc.data.worldgen.TrapezoidHeightProvider import TrapezoidHeightProvider
 from vanilla_mcdoc.data.worldgen.feature.tree.TreeConfig import TreeConfig
 from vanilla_mcdoc.data.worldgen.feature.tree.TreeDecorator import TreeDecorator
@@ -914,9 +925,11 @@ from vanilla_mcdoc.data.util.WeightedSoundEvent import WeightedSoundEvent
 from vanilla_mcdoc.data.worldgen.density_function.WeirdScaledSampler import WeirdScaledSampler
 from vanilla_mcdoc.data.worldgen.structure.WildUpdateStructureConfig import WildUpdateStructureConfig
 from vanilla_mcdoc.data.advancement.predicate.WolfPredicate import WolfPredicate
+from vanilla_mcdoc.data.wolf_sound_variant.WolfSoundVariant import WolfSoundVariant
 from vanilla_mcdoc.data.variants.wolf.WolfSounds import WolfSounds
 from vanilla_mcdoc.data.variants.wolf.WolfVariant import WolfVariant
 from vanilla_mcdoc.data.variants.wolf.WolfVariantAssetInfo import WolfVariantAssetInfo
+from vanilla_mcdoc.data.world_clock.WorldClock import WorldClock
 from vanilla_mcdoc.data.worldgen.world_preset.WorldPreset import WorldPreset
 from vanilla_mcdoc.data.worldgen.feature.block_predicate.WouldSurvivePredicate import WouldSurvivePredicate
 from vanilla_mcdoc.data.worldgen.material_condition.YAboveCondition import YAboveCondition
@@ -1024,6 +1037,7 @@ __all__ = [
     "BlockTransformDropStrategy",
     "BlockTransformParticle",
     "BlockTransformType",
+    "BlockTransformer",
     "BoatPredicate",
     "BoolGameRule",
     "BooleanAttribute",
@@ -1053,6 +1067,7 @@ __all__ = [
     "CarvingMaskConfig",
     "CarvingMaskModifier",
     "CatPredicate",
+    "CatSoundVariant",
     "CatSounds",
     "CatVariant",
     "CaveConfig",
@@ -1067,6 +1082,7 @@ __all__ = [
     "CherryFoliagePlacer",
     "CherryTrunkPlacer",
     "ChickenModelType",
+    "ChickenSoundVariant",
     "ChickenSounds",
     "ChickenVariant",
     "ChunkGenerator",
@@ -1150,6 +1166,7 @@ __all__ = [
     "CraftingSpecialShieldDecoration",
     "CraftingTransmute",
     "CreakingHeartTreeDecorator",
+    "CrevasseConfig",
     "CrossbowChargeSoundsEnchantmentEffect",
     "CubicBezierEase",
     "CubicSpline",
@@ -1295,7 +1312,6 @@ __all__ = [
     "FloatValueCheck",
     "FloatWithAlpha",
     "FluidPredicate",
-    "FluidPredicateState",
     "FoliagePlacer",
     "FoodPredicate",
     "ForestRockConfig",
@@ -1385,6 +1401,7 @@ __all__ = [
     "LargeSpeleothemConfig",
     "LeaveVineTreeDecorator",
     "LegacyExplorationMapDestination",
+    "LenientStringARGB",
     "Lerp",
     "LevelBasedValueMap",
     "LevitationTrigger",
@@ -1506,8 +1523,13 @@ __all__ = [
     "OldTrimMaterialOverrides",
     "OneArgument",
     "Option",
+    "OptionalCatSounds",
+    "OptionalChickenSounds",
+    "OptionalCowSounds",
+    "OptionalPigSounds",
     "OptionalSimpleBlockConfig",
     "OptionalSmithingIngredients",
+    "OptionalWolfSounds",
     "OreConfig",
     "OreVeinifier",
     "OverlayConfig",
@@ -1522,6 +1544,7 @@ __all__ = [
     "ParticleVelocity",
     "PickedUpItemTrigger",
     "PigModelType",
+    "PigSoundVariant",
     "PigSounds",
     "PigVariant",
     "PineFoliagePlacer",
@@ -1786,6 +1809,7 @@ __all__ = [
     "TradeSet",
     "TradeTrigger",
     "TranslucentColorAttributeModifier",
+    "TransmuteResult",
     "TrapezoidHeightProvider",
     "TreeConfig",
     "TreeDecorator",
@@ -1839,9 +1863,11 @@ __all__ = [
     "WeirdScaledSampler",
     "WildUpdateStructureConfig",
     "WolfPredicate",
+    "WolfSoundVariant",
     "WolfSounds",
     "WolfVariant",
     "WolfVariantAssetInfo",
+    "WorldClock",
     "WorldPreset",
     "WouldSurvivePredicate",
     "YAboveCondition",

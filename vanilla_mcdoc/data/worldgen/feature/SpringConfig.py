@@ -17,7 +17,7 @@ class SpringConfig(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/feature'
 
     state: FluidState
-    rock_count: int
-    hole_count: int
-    requires_block_below: bool
+    rock_count: int | None = None  # Defaults to `4`.
+    hole_count: int | None = None  # Defaults to `1`.
+    requires_block_below: bool | None = None  # Defaults to `true`.
     valid_blocks: list[Annotated[str, IdSpec(registry='block')] | KnownBlockId] | Annotated[str, IdSpec(registry='block', tags='allowed')] | KnownBlockId

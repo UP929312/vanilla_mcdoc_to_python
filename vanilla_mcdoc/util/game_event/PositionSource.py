@@ -5,8 +5,9 @@ Local link to file: vanilla_mcdoc/util/game_event/PositionSource.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
+from vanilla_mcdoc.base import tag_of
 from vanilla_mcdoc.util.game_event.BlockPositionSource import BlockPositionSource
 from vanilla_mcdoc.util.game_event.EntityPositionSource import EntityPositionSource
 
@@ -20,6 +21,7 @@ class PositionSourceEntity(EntityPositionSource):
 
 
 type PositionSource = Annotated[
-    PositionSourceBlock | PositionSourceEntity,
-    Field(discriminator='type'),
+    Annotated[PositionSourceBlock, Tag('minecraft:block')]
+    | Annotated[PositionSourceEntity, Tag('minecraft:entity')],
+    Discriminator(tag_of('type')),
 ]

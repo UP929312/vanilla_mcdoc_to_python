@@ -5,6 +5,9 @@ Local link to file: vanilla_mcdoc/data/worldgen/dimension/biome_source/BiomeSour
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
+from pydantic import Discriminator, Tag
+
+from vanilla_mcdoc.base import tag_of
 from vanilla_mcdoc.data.worldgen.dimension.biome_source.Checkerboard import Checkerboard
 from vanilla_mcdoc.data.worldgen.dimension.biome_source.DirectMultiNoise import DirectMultiNoise
 from vanilla_mcdoc.data.worldgen.dimension.biome_source.Fixed import Fixed
@@ -26,16 +29,27 @@ class BiomeSourceMultiNoiseDefault(DirectMultiNoise, MultiNoiseBase):
     preset: Annotated[str, IdSpec(registry='worldgen/multi_noise_biome_source_parameter_list')] | None = None
 
 
-class BiomeSourceMultiNoiseUnknown(MultiNoiseBase):
+class BiomeSourceMultiNoiseNether(MultiNoiseBase):
     type: Literal['minecraft:multi_noise', 'multi_noise'] = 'minecraft:multi_noise'
-    preset: Annotated[str, IdSpec(registry='worldgen/multi_noise_biome_source_parameter_list')] | None = None
+    preset: Literal['minecraft:nether', 'nether'] | None = 'minecraft:nether'
 
 
-type BiomeSourceMultiNoise = BiomeSourceMultiNoiseDefault | BiomeSourceMultiNoiseUnknown
+class BiomeSourceMultiNoiseOverworld(MultiNoiseBase):
+    type: Literal['minecraft:multi_noise', 'multi_noise'] = 'minecraft:multi_noise'
+    preset: Literal['minecraft:overworld', 'overworld'] | None = 'minecraft:overworld'
+
+
+type BiomeSourceMultiNoise = BiomeSourceMultiNoiseDefault | BiomeSourceMultiNoiseNether | BiomeSourceMultiNoiseOverworld
 
 
 class BiomeSourceTheEnd(TheEnd):
     type: Literal['minecraft:the_end', 'the_end'] = 'minecraft:the_end'
 
 
-type BiomeSource = BiomeSourceCheckerboard | BiomeSourceFixed | BiomeSourceMultiNoise | BiomeSourceTheEnd
+type BiomeSource = Annotated[
+    Annotated[BiomeSourceCheckerboard, Tag('minecraft:checkerboard')]
+    | Annotated[BiomeSourceFixed, Tag('minecraft:fixed')]
+    | Annotated[BiomeSourceMultiNoise, Tag('minecraft:multi_noise')]
+    | Annotated[BiomeSourceTheEnd, Tag('minecraft:the_end')],
+    Discriminator(tag_of('type')),
+]

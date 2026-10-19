@@ -5,8 +5,9 @@ Local link to file: vanilla_mcdoc/data/gametest/TestInstance.py
 # ~~~ CODE ~~~
 from typing import Annotated, ClassVar, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
+from vanilla_mcdoc.base import tag_of
 from vanilla_mcdoc.data.gametest.BlockBasedTestInstance import BlockBasedTestInstance
 from vanilla_mcdoc.data.gametest.FunctionTestInstance import FunctionTestInstance
 
@@ -24,6 +25,7 @@ class TestInstanceFunction(FunctionTestInstance):
 
 
 type TestInstance = Annotated[
-    TestInstanceBlockBased | TestInstanceFunction,
-    Field(discriminator='type'),
+    Annotated[TestInstanceBlockBased, Tag('minecraft:block_based')]
+    | Annotated[TestInstanceFunction, Tag('minecraft:function')],
+    Discriminator(tag_of('type')),
 ]

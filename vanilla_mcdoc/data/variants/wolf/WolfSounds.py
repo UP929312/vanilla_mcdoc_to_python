@@ -3,7 +3,7 @@ Generated from symbols.json for ::java::data::variants::wolf::WolfSounds
 Local link to file: vanilla_mcdoc/data/variants/wolf/WolfSounds.py
 """
 # ~~~ CODE ~~~
-from typing import TYPE_CHECKING, ClassVar
+from typing import TYPE_CHECKING
 
 from vanilla_mcdoc.base import GeneratedModel
 
@@ -12,8 +12,6 @@ if TYPE_CHECKING:
 
 
 class WolfSounds(GeneratedModel):
-    __resource_dir__: ClassVar[str] = 'wolf_sound_variant'
-
     ambient_sound: SoundEventRef
     death_sound: SoundEventRef
     growl_sound: SoundEventRef

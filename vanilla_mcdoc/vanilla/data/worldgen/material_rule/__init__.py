@@ -1,0 +1,478 @@
+"""Vanilla's data/worldgen/material_rule/ files"""
+from vanilla_mcdoc.data.worldgen.VerticalAnchor import VerticalAnchorStruct1, VerticalAnchorStruct2, VerticalAnchorStruct3
+from vanilla_mcdoc.data.worldgen.material_condition.MaterialCondition import MaterialConditionAbovePreliminarySurface, MaterialConditionBiome, MaterialConditionHole, MaterialConditionNoiseThreshold, MaterialConditionNot, MaterialConditionVerticalGradient, MaterialConditionYAbove
+from vanilla_mcdoc.data.worldgen.material_rule.MaterialRule import MaterialRuleBlock, MaterialRuleCondition, MaterialRuleSequence
+
+BEDROCK_FLOOR = MaterialRuleCondition(
+    if_true=MaterialConditionVerticalGradient(
+        random_name='minecraft:bedrock_floor',
+        true_at_and_below=VerticalAnchorStruct2(above_bottom=0),
+        false_at_and_above=VerticalAnchorStruct2(above_bottom=5),
+        type='minecraft:vertical_gradient',
+    ),
+    then_run=MaterialRuleBlock(result_state='minecraft:bedrock', type='minecraft:block'),
+    type='minecraft:condition',
+)
+
+BEDROCK_ROOF = MaterialRuleCondition(
+    if_true=MaterialConditionNot(
+        invert=MaterialConditionVerticalGradient(
+            random_name='minecraft:bedrock_roof',
+            true_at_and_below=VerticalAnchorStruct3(below_top=5),
+            false_at_and_above=VerticalAnchorStruct3(below_top=0),
+            type='minecraft:vertical_gradient',
+        ),
+        type='minecraft:not',
+    ),
+    then_run=MaterialRuleBlock(result_state='minecraft:bedrock', type='minecraft:block'),
+    type='minecraft:condition',
+)
+
+END = MaterialRuleBlock(result_state='minecraft:end_stone', type='minecraft:block')
+
+NETHER = MaterialRuleSequence(
+    sequence=[
+        'minecraft:bedrock_floor',
+        'minecraft:bedrock_roof',
+        MaterialRuleCondition(
+            if_true=MaterialConditionYAbove(
+                anchor=VerticalAnchorStruct3(below_top=5),
+                surface_depth_multiplier=0,
+                add_stone_depth=False,
+                type='minecraft:y_above',
+            ),
+            then_run=MaterialRuleBlock(result_state='minecraft:netherrack', type='minecraft:block'),
+            type='minecraft:condition',
+        ),
+        MaterialRuleCondition(
+            if_true=MaterialConditionBiome(biome_is='minecraft:basalt_deltas', type='minecraft:biome'),
+            then_run=MaterialRuleSequence(
+                sequence=[
+                    MaterialRuleCondition(
+                        if_true='minecraft:under_ceiling',
+                        then_run=MaterialRuleBlock(result_state='minecraft:basalt', type='minecraft:block'),
+                        type='minecraft:condition',
+                    ),
+                    MaterialRuleCondition(
+                        if_true='minecraft:under_floor',
+                        then_run=MaterialRuleSequence(
+                            sequence=[
+                                MaterialRuleCondition(
+                                    if_true=MaterialConditionNoiseThreshold(
+                                        noise='minecraft:patch',
+                                        min_threshold=-0.012,
+                                        max_threshold=1.7976931348623157e+308,
+                                        type='minecraft:noise_threshold',
+                                    ),
+                                    then_run=MaterialRuleCondition(
+                                        if_true=MaterialConditionYAbove(
+                                            anchor=VerticalAnchorStruct1(absolute=30),
+                                            surface_depth_multiplier=0,
+                                            add_stone_depth=True,
+                                            type='minecraft:y_above',
+                                        ),
+                                        then_run=MaterialRuleCondition(
+                                            if_true=MaterialConditionNot(
+                                                invert=MaterialConditionYAbove(
+                                                    anchor=VerticalAnchorStruct1(absolute=35),
+                                                    surface_depth_multiplier=0,
+                                                    add_stone_depth=True,
+                                                    type='minecraft:y_above',
+                                                ),
+                                                type='minecraft:not',
+                                            ),
+                                            then_run=MaterialRuleBlock(result_state='minecraft:gravel', type='minecraft:block'),
+                                            type='minecraft:condition',
+                                        ),
+                                        type='minecraft:condition',
+                                    ),
+                                    type='minecraft:condition',
+                                ),
+                                MaterialRuleCondition(
+                                    if_true=MaterialConditionNoiseThreshold(
+                                        noise='minecraft:nether_state_selector',
+                                        min_threshold=0.0,
+                                        max_threshold=1.7976931348623157e+308,
+                                        type='minecraft:noise_threshold',
+                                    ),
+                                    then_run=MaterialRuleBlock(result_state='minecraft:basalt', type='minecraft:block'),
+                                    type='minecraft:condition',
+                                ),
+                                MaterialRuleBlock(result_state='minecraft:blackstone', type='minecraft:block'),
+                            ],
+                            type='minecraft:sequence',
+                        ),
+                        type='minecraft:condition',
+                    ),
+                ],
+                type='minecraft:sequence',
+            ),
+            type='minecraft:condition',
+        ),
+        MaterialRuleCondition(
+            if_true=MaterialConditionBiome(biome_is='minecraft:soul_sand_valley', type='minecraft:biome'),
+            then_run=MaterialRuleSequence(
+                sequence=[
+                    MaterialRuleCondition(
+                        if_true='minecraft:under_ceiling',
+                        then_run=MaterialRuleSequence(
+                            sequence=[
+                                MaterialRuleCondition(
+                                    if_true=MaterialConditionNoiseThreshold(
+                                        noise='minecraft:nether_state_selector',
+                                        min_threshold=0.0,
+                                        max_threshold=1.7976931348623157e+308,
+                                        type='minecraft:noise_threshold',
+                                    ),
+                                    then_run=MaterialRuleBlock(result_state='minecraft:soul_sand', type='minecraft:block'),
+                                    type='minecraft:condition',
+                                ),
+                                MaterialRuleBlock(result_state='minecraft:soul_soil', type='minecraft:block'),
+                            ],
+                            type='minecraft:sequence',
+                        ),
+                        type='minecraft:condition',
+                    ),
+                    MaterialRuleCondition(
+                        if_true='minecraft:under_floor',
+                        then_run=MaterialRuleSequence(
+                            sequence=[
+                                MaterialRuleCondition(
+                                    if_true=MaterialConditionNoiseThreshold(
+                                        noise='minecraft:patch',
+                                        min_threshold=-0.012,
+                                        max_threshold=1.7976931348623157e+308,
+                                        type='minecraft:noise_threshold',
+                                    ),
+                                    then_run=MaterialRuleCondition(
+                                        if_true=MaterialConditionYAbove(
+                                            anchor=VerticalAnchorStruct1(absolute=30),
+                                            surface_depth_multiplier=0,
+                                            add_stone_depth=True,
+                                            type='minecraft:y_above',
+                                        ),
+                                        then_run=MaterialRuleCondition(
+                                            if_true=MaterialConditionNot(
+                                                invert=MaterialConditionYAbove(
+                                                    anchor=VerticalAnchorStruct1(absolute=35),
+                                                    surface_depth_multiplier=0,
+                                                    add_stone_depth=True,
+                                                    type='minecraft:y_above',
+                                                ),
+                                                type='minecraft:not',
+                                            ),
+                                            then_run=MaterialRuleBlock(result_state='minecraft:gravel', type='minecraft:block'),
+                                            type='minecraft:condition',
+                                        ),
+                                        type='minecraft:condition',
+                                    ),
+                                    type='minecraft:condition',
+                                ),
+                                MaterialRuleCondition(
+                                    if_true=MaterialConditionNoiseThreshold(
+                                        noise='minecraft:nether_state_selector',
+                                        min_threshold=0.0,
+                                        max_threshold=1.7976931348623157e+308,
+                                        type='minecraft:noise_threshold',
+                                    ),
+                                    then_run=MaterialRuleBlock(result_state='minecraft:soul_sand', type='minecraft:block'),
+                                    type='minecraft:condition',
+                                ),
+                                MaterialRuleBlock(result_state='minecraft:soul_soil', type='minecraft:block'),
+                            ],
+                            type='minecraft:sequence',
+                        ),
+                        type='minecraft:condition',
+                    ),
+                ],
+                type='minecraft:sequence',
+            ),
+            type='minecraft:condition',
+        ),
+        MaterialRuleCondition(
+            if_true='minecraft:on_floor',
+            then_run=MaterialRuleSequence(
+                sequence=[
+                    MaterialRuleCondition(
+                        if_true=MaterialConditionNot(
+                            invert=MaterialConditionYAbove(
+                                anchor=VerticalAnchorStruct1(absolute=32),
+                                surface_depth_multiplier=0,
+                                add_stone_depth=False,
+                                type='minecraft:y_above',
+                            ),
+                            type='minecraft:not',
+                        ),
+                        then_run=MaterialRuleCondition(
+                            if_true=MaterialConditionHole(type='minecraft:hole'),
+                            then_run=MaterialRuleBlock(result_state='minecraft:lava', type='minecraft:block'),
+                            type='minecraft:condition',
+                        ),
+                        type='minecraft:condition',
+                    ),
+                    MaterialRuleCondition(
+                        if_true=MaterialConditionBiome(biome_is='minecraft:warped_forest', type='minecraft:biome'),
+                        then_run=MaterialRuleCondition(
+                            if_true=MaterialConditionNot(
+                                invert=MaterialConditionNoiseThreshold(
+                                    noise='minecraft:netherrack',
+                                    min_threshold=0.54,
+                                    max_threshold=1.7976931348623157e+308,
+                                    type='minecraft:noise_threshold',
+                                ),
+                                type='minecraft:not',
+                            ),
+                            then_run=MaterialRuleCondition(
+                                if_true=MaterialConditionYAbove(
+                                    anchor=VerticalAnchorStruct1(absolute=31),
+                                    surface_depth_multiplier=0,
+                                    add_stone_depth=False,
+                                    type='minecraft:y_above',
+                                ),
+                                then_run=MaterialRuleSequence(
+                                    sequence=[
+                                        MaterialRuleCondition(
+                                            if_true=MaterialConditionNoiseThreshold(
+                                                noise='minecraft:nether_wart',
+                                                min_threshold=1.17,
+                                                max_threshold=1.7976931348623157e+308,
+                                                type='minecraft:noise_threshold',
+                                            ),
+                                            then_run=MaterialRuleBlock(
+                                                result_state='minecraft:warped_wart_block',
+                                                type='minecraft:block',
+                                            ),
+                                            type='minecraft:condition',
+                                        ),
+                                        MaterialRuleBlock(
+                                            result_state='minecraft:warped_nylium',
+                                            type='minecraft:block',
+                                        ),
+                                    ],
+                                    type='minecraft:sequence',
+                                ),
+                                type='minecraft:condition',
+                            ),
+                            type='minecraft:condition',
+                        ),
+                        type='minecraft:condition',
+                    ),
+                    MaterialRuleCondition(
+                        if_true=MaterialConditionBiome(biome_is='minecraft:crimson_forest', type='minecraft:biome'),
+                        then_run=MaterialRuleCondition(
+                            if_true=MaterialConditionNot(
+                                invert=MaterialConditionNoiseThreshold(
+                                    noise='minecraft:netherrack',
+                                    min_threshold=0.54,
+                                    max_threshold=1.7976931348623157e+308,
+                                    type='minecraft:noise_threshold',
+                                ),
+                                type='minecraft:not',
+                            ),
+                            then_run=MaterialRuleCondition(
+                                if_true=MaterialConditionYAbove(
+                                    anchor=VerticalAnchorStruct1(absolute=31),
+                                    surface_depth_multiplier=0,
+                                    add_stone_depth=False,
+                                    type='minecraft:y_above',
+                                ),
+                                then_run=MaterialRuleSequence(
+                                    sequence=[
+                                        MaterialRuleCondition(
+                                            if_true=MaterialConditionNoiseThreshold(
+                                                noise='minecraft:nether_wart',
+                                                min_threshold=1.17,
+                                                max_threshold=1.7976931348623157e+308,
+                                                type='minecraft:noise_threshold',
+                                            ),
+                                            then_run=MaterialRuleBlock(
+                                                result_state='minecraft:nether_wart_block',
+                                                type='minecraft:block',
+                                            ),
+                                            type='minecraft:condition',
+                                        ),
+                                        MaterialRuleBlock(
+                                            result_state='minecraft:crimson_nylium',
+                                            type='minecraft:block',
+                                        ),
+                                    ],
+                                    type='minecraft:sequence',
+                                ),
+                                type='minecraft:condition',
+                            ),
+                            type='minecraft:condition',
+                        ),
+                        type='minecraft:condition',
+                    ),
+                ],
+                type='minecraft:sequence',
+            ),
+            type='minecraft:condition',
+        ),
+        MaterialRuleCondition(
+            if_true=MaterialConditionBiome(biome_is='minecraft:nether_wastes', type='minecraft:biome'),
+            then_run=MaterialRuleSequence(
+                sequence=[
+                    MaterialRuleCondition(
+                        if_true='minecraft:under_floor',
+                        then_run=MaterialRuleCondition(
+                            if_true=MaterialConditionNoiseThreshold(
+                                noise='minecraft:soul_sand_layer',
+                                min_threshold=-0.012,
+                                max_threshold=1.7976931348623157e+308,
+                                type='minecraft:noise_threshold',
+                            ),
+                            then_run=MaterialRuleSequence(
+                                sequence=[
+                                    MaterialRuleCondition(
+                                        if_true=MaterialConditionNot(
+                                            invert=MaterialConditionHole(type='minecraft:hole'),
+                                            type='minecraft:not',
+                                        ),
+                                        then_run=MaterialRuleCondition(
+                                            if_true=MaterialConditionYAbove(
+                                                anchor=VerticalAnchorStruct1(absolute=30),
+                                                surface_depth_multiplier=0,
+                                                add_stone_depth=True,
+                                                type='minecraft:y_above',
+                                            ),
+                                            then_run=MaterialRuleCondition(
+                                                if_true=MaterialConditionNot(
+                                                    invert=MaterialConditionYAbove(
+                                                        anchor=VerticalAnchorStruct1(absolute=35),
+                                                        surface_depth_multiplier=0,
+                                                        add_stone_depth=True,
+                                                        type='minecraft:y_above',
+                                                    ),
+                                                    type='minecraft:not',
+                                                ),
+                                                then_run=MaterialRuleBlock(
+                                                    result_state='minecraft:soul_sand',
+                                                    type='minecraft:block',
+                                                ),
+                                                type='minecraft:condition',
+                                            ),
+                                            type='minecraft:condition',
+                                        ),
+                                        type='minecraft:condition',
+                                    ),
+                                    MaterialRuleBlock(result_state='minecraft:netherrack', type='minecraft:block'),
+                                ],
+                                type='minecraft:sequence',
+                            ),
+                            type='minecraft:condition',
+                        ),
+                        type='minecraft:condition',
+                    ),
+                    MaterialRuleCondition(
+                        if_true='minecraft:on_floor',
+                        then_run=MaterialRuleCondition(
+                            if_true=MaterialConditionYAbove(
+                                anchor=VerticalAnchorStruct1(absolute=31),
+                                surface_depth_multiplier=0,
+                                add_stone_depth=False,
+                                type='minecraft:y_above',
+                            ),
+                            then_run=MaterialRuleCondition(
+                                if_true=MaterialConditionNot(
+                                    invert=MaterialConditionYAbove(
+                                        anchor=VerticalAnchorStruct1(absolute=35),
+                                        surface_depth_multiplier=0,
+                                        add_stone_depth=True,
+                                        type='minecraft:y_above',
+                                    ),
+                                    type='minecraft:not',
+                                ),
+                                then_run=MaterialRuleCondition(
+                                    if_true=MaterialConditionNoiseThreshold(
+                                        noise='minecraft:gravel_layer',
+                                        min_threshold=-0.012,
+                                        max_threshold=1.7976931348623157e+308,
+                                        type='minecraft:noise_threshold',
+                                    ),
+                                    then_run=MaterialRuleSequence(
+                                        sequence=[
+                                            MaterialRuleCondition(
+                                                if_true=MaterialConditionYAbove(
+                                                    anchor=VerticalAnchorStruct1(absolute=32),
+                                                    surface_depth_multiplier=0,
+                                                    add_stone_depth=False,
+                                                    type='minecraft:y_above',
+                                                ),
+                                                then_run=MaterialRuleBlock(
+                                                    result_state='minecraft:gravel',
+                                                    type='minecraft:block',
+                                                ),
+                                                type='minecraft:condition',
+                                            ),
+                                            MaterialRuleCondition(
+                                                if_true=MaterialConditionNot(
+                                                    invert=MaterialConditionHole(type='minecraft:hole'),
+                                                    type='minecraft:not',
+                                                ),
+                                                then_run=MaterialRuleBlock(
+                                                    result_state='minecraft:gravel',
+                                                    type='minecraft:block',
+                                                ),
+                                                type='minecraft:condition',
+                                            ),
+                                        ],
+                                        type='minecraft:sequence',
+                                    ),
+                                    type='minecraft:condition',
+                                ),
+                                type='minecraft:condition',
+                            ),
+                            type='minecraft:condition',
+                        ),
+                        type='minecraft:condition',
+                    ),
+                ],
+                type='minecraft:sequence',
+            ),
+            type='minecraft:condition',
+        ),
+        MaterialRuleBlock(result_state='minecraft:netherrack', type='minecraft:block'),
+    ],
+    type='minecraft:sequence',
+)
+
+OVERWORLD = MaterialRuleSequence(
+    sequence=[
+        'minecraft:bedrock_floor',
+        'minecraft:overworld/copper_ore_vein',
+        'minecraft:overworld/iron_ore_vein',
+        MaterialRuleCondition(
+            if_true=MaterialConditionAbovePreliminarySurface(type='minecraft:above_preliminary_surface'),
+            then_run='minecraft:overworld/surface',
+            type='minecraft:condition',
+        ),
+        'minecraft:overworld/underground',
+        MaterialRuleBlock(result_state='minecraft:stone', type='minecraft:block'),
+    ],
+    type='minecraft:sequence',
+)
+
+OVERWORLD_CAVES = MaterialRuleSequence(
+    sequence=[
+        'minecraft:bedrock_roof',
+        'minecraft:bedrock_floor',
+        'minecraft:overworld/copper_ore_vein',
+        'minecraft:overworld/iron_ore_vein',
+        'minecraft:overworld/surface',
+        'minecraft:overworld/underground',
+        MaterialRuleBlock(result_state='minecraft:stone', type='minecraft:block'),
+    ],
+    type='minecraft:sequence',
+)
+
+OVERWORLD_FLOATING_ISLANDS = MaterialRuleSequence(
+    sequence=[
+        'minecraft:overworld/copper_ore_vein',
+        'minecraft:overworld/iron_ore_vein',
+        'minecraft:overworld/surface',
+        'minecraft:overworld/underground',
+        MaterialRuleBlock(result_state='minecraft:stone', type='minecraft:block'),
+    ],
+    type='minecraft:sequence',
+)

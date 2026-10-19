@@ -6,10 +6,11 @@ Local link to file: vanilla_mcdoc/data/loot/DynamicPoolEntry.py
 from typing import TYPE_CHECKING
 
 from vanilla_mcdoc.data.loot.SingletonPoolEntry import SingletonPoolEntry
+from vanilla_mcdoc.minecraft_types import NamespacedId
 
 if TYPE_CHECKING:
     from vanilla_mcdoc.data.loot.DynamicDrops import DynamicDrops
 
 
 class DynamicPoolEntry(SingletonPoolEntry):
-    name: DynamicDrops
+    name: NamespacedId[DynamicDrops]

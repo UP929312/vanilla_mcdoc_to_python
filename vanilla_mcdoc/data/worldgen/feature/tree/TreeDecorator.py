@@ -5,8 +5,9 @@ Local link to file: vanilla_mcdoc/data/worldgen/feature/tree/TreeDecorator.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
+from vanilla_mcdoc.base import GeneratedModel, tag_of
 from vanilla_mcdoc.data.worldgen.feature.tree.AlterGroundTreeDecorator import AlterGroundTreeDecorator
 from vanilla_mcdoc.data.worldgen.feature.tree.AttachedToLeavesTreeDecorator import AttachedToLeavesTreeDecorator
 from vanilla_mcdoc.data.worldgen.feature.tree.AttachedToLogsTreeDecorator import AttachedToLogsTreeDecorator
@@ -59,7 +60,21 @@ class TreeDecoratorShelfMushroom(ShelfMushroomTreeDecorator):
     type: Literal['minecraft:shelf_mushroom', 'shelf_mushroom'] = 'minecraft:shelf_mushroom'
 
 
+class TreeDecoratorTrunkVine(GeneratedModel):
+    type: Literal['minecraft:trunk_vine', 'trunk_vine'] = 'minecraft:trunk_vine'
+
+
 type TreeDecorator = Annotated[
-    TreeDecoratorAlterGround | TreeDecoratorAttachedToLeaves | TreeDecoratorAttachedToLogs | TreeDecoratorBeehive | TreeDecoratorCocoa | TreeDecoratorCreakingHeart | TreeDecoratorLeaveVine | TreeDecoratorPaleMoss | TreeDecoratorPlaceOnGround | TreeDecoratorShelfMushroom,
-    Field(discriminator='type'),
+    Annotated[TreeDecoratorAlterGround, Tag('minecraft:alter_ground')]
+    | Annotated[TreeDecoratorAttachedToLeaves, Tag('minecraft:attached_to_leaves')]
+    | Annotated[TreeDecoratorAttachedToLogs, Tag('minecraft:attached_to_logs')]
+    | Annotated[TreeDecoratorBeehive, Tag('minecraft:beehive')]
+    | Annotated[TreeDecoratorCocoa, Tag('minecraft:cocoa')]
+    | Annotated[TreeDecoratorCreakingHeart, Tag('minecraft:creaking_heart')]
+    | Annotated[TreeDecoratorLeaveVine, Tag('minecraft:leave_vine')]
+    | Annotated[TreeDecoratorPaleMoss, Tag('minecraft:pale_moss')]
+    | Annotated[TreeDecoratorPlaceOnGround, Tag('minecraft:place_on_ground')]
+    | Annotated[TreeDecoratorShelfMushroom, Tag('minecraft:shelf_mushroom')]
+    | Annotated[TreeDecoratorTrunkVine, Tag('minecraft:trunk_vine')],
+    Discriminator(tag_of('type')),
 ]

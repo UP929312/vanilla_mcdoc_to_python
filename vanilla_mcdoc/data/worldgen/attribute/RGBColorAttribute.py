@@ -14,13 +14,13 @@ if TYPE_CHECKING:
     from vanilla_mcdoc.data.worldgen.attribute.modifier.BlendToGray import BlendToGray
     from vanilla_mcdoc.data.worldgen.attribute.modifier.ColorAttributeModifier import ColorAttributeModifier
     from vanilla_mcdoc.data.worldgen.attribute.modifier.ColorModifierType import ColorModifierType
-    from vanilla_mcdoc.util.color.StringARGB import StringARGB
+    from vanilla_mcdoc.data.worldgen.attribute.modifier.LenientStringARGB import LenientStringARGB
     from vanilla_mcdoc.util.color.StringRGB import StringRGB
 
 
 class KeyframesStruct(GeneratedModel):
     ticks: Annotated[int, Field(ge=0)]
-    value: StringRGB | StringARGB | BlendToGray
+    value: StringRGB | LenientStringARGB | BlendToGray
 
 
 class AttributeTrackStruct(AttributeTrackBase):

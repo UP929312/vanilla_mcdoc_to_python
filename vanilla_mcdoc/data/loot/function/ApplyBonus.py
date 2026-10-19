@@ -5,8 +5,9 @@ Local link to file: vanilla_mcdoc/data/loot/function/ApplyBonus.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
+from vanilla_mcdoc.base import tag_of
 from vanilla_mcdoc.data.loot.function.BinomialWithBonusCountFormula import BinomialWithBonusCountFormula
 from vanilla_mcdoc.data.loot.function.Conditions import Conditions
 from vanilla_mcdoc.data.loot.function.UniformBonusFormula import UniformBonusFormula
@@ -29,6 +30,8 @@ class ApplyBonusUniformBonusCount(Conditions, UniformBonusFormula):
 
 
 type ApplyBonus = Annotated[
-    ApplyBonusBinomialWithBonusCount | ApplyBonusOreDrops | ApplyBonusUniformBonusCount,
-    Field(discriminator='formula'),
+    Annotated[ApplyBonusBinomialWithBonusCount, Tag('minecraft:binomial_with_bonus_count')]
+    | Annotated[ApplyBonusOreDrops, Tag('minecraft:ore_drops')]
+    | Annotated[ApplyBonusUniformBonusCount, Tag('minecraft:uniform_bonus_count')],
+    Discriminator(tag_of('formula')),
 ]

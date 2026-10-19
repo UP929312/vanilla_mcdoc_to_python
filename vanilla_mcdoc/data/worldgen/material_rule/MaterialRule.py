@@ -5,18 +5,13 @@ Local link to file: vanilla_mcdoc/data/worldgen/material_rule/MaterialRule.py
 # ~~~ CODE ~~~
 from typing import Annotated, ClassVar, Literal
 
-from vanilla_mcdoc.base import GeneratedModel
+from pydantic import Discriminator, Tag
+
+from vanilla_mcdoc.base import GeneratedModel, tag_of
 from vanilla_mcdoc.data.worldgen.material_rule.BlockRule import BlockRule
 from vanilla_mcdoc.data.worldgen.material_rule.ConditionRule import ConditionRule
 from vanilla_mcdoc.data.worldgen.material_rule.OreVeinifier import OreVeinifier
 from vanilla_mcdoc.data.worldgen.material_rule.SequenceRule import SequenceRule
-from vanilla_mcdoc.minecraft_types import IdSpec
-
-
-class MaterialRuleUnknown(GeneratedModel):
-    __resource_dir__: ClassVar[str] = 'worldgen/material_rule'
-
-    type: Annotated[str, IdSpec(registry='worldgen/material_rule_type')]
 
 
 class MaterialRuleBlock(BlockRule):
@@ -43,4 +38,17 @@ class MaterialRuleSequence(SequenceRule):
     type: Literal['minecraft:sequence', 'sequence'] = 'minecraft:sequence'
 
 
-type MaterialRule = MaterialRuleUnknown | MaterialRuleBlock | MaterialRuleCondition | MaterialRuleOreVein | MaterialRuleSequence
+class MaterialRuleBandlands(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'worldgen/material_rule'
+
+    type: Literal['minecraft:bandlands', 'bandlands'] = 'minecraft:bandlands'
+
+
+type MaterialRule = Annotated[
+    Annotated[MaterialRuleBlock, Tag('minecraft:block')]
+    | Annotated[MaterialRuleCondition, Tag('minecraft:condition')]
+    | Annotated[MaterialRuleOreVein, Tag('minecraft:ore_vein')]
+    | Annotated[MaterialRuleSequence, Tag('minecraft:sequence')]
+    | Annotated[MaterialRuleBandlands, Tag('minecraft:bandlands')],
+    Discriminator(tag_of('type')),
+]

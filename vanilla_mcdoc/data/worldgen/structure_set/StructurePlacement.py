@@ -5,14 +5,11 @@ Local link to file: vanilla_mcdoc/data/worldgen/structure_set/StructurePlacement
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
-from vanilla_mcdoc.base import GeneratedModel
+from pydantic import Discriminator, Tag
+
+from vanilla_mcdoc.base import GeneratedModel, tag_of
 from vanilla_mcdoc.data.worldgen.structure_set.ConcentricRingsPlacement import ConcentricRingsPlacement
 from vanilla_mcdoc.data.worldgen.structure_set.RandomSpreadPlacement import RandomSpreadPlacement
-from vanilla_mcdoc.minecraft_types import IdSpec
-
-
-class StructurePlacementUnknown(GeneratedModel):
-    type: Annotated[str, IdSpec(registry='worldgen/structure_placement')]
 
 
 class StructurePlacementConcentricRings(ConcentricRingsPlacement):
@@ -23,4 +20,13 @@ class StructurePlacementRandomSpread(RandomSpreadPlacement):
     type: Literal['minecraft:random_spread', 'random_spread'] = 'minecraft:random_spread'
 
 
-type StructurePlacement = StructurePlacementUnknown | StructurePlacementConcentricRings | StructurePlacementRandomSpread
+class StructurePlacementDimensionOrigin(GeneratedModel):
+    type: Literal['minecraft:dimension_origin', 'dimension_origin'] = 'minecraft:dimension_origin'
+
+
+type StructurePlacement = Annotated[
+    Annotated[StructurePlacementConcentricRings, Tag('minecraft:concentric_rings')]
+    | Annotated[StructurePlacementRandomSpread, Tag('minecraft:random_spread')]
+    | Annotated[StructurePlacementDimensionOrigin, Tag('minecraft:dimension_origin')],
+    Discriminator(tag_of('type')),
+]

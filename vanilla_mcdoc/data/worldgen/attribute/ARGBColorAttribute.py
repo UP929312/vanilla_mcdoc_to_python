@@ -13,6 +13,7 @@ from vanilla_mcdoc.data.timeline.AttributeTrackBase import AttributeTrackBase
 if TYPE_CHECKING:
     from vanilla_mcdoc.data.worldgen.attribute.modifier.BlendToGray import BlendToGray
     from vanilla_mcdoc.data.worldgen.attribute.modifier.ColorModifierType import ColorModifierType
+    from vanilla_mcdoc.data.worldgen.attribute.modifier.LenientStringARGB import LenientStringARGB
     from vanilla_mcdoc.data.worldgen.attribute.modifier.TranslucentColorAttributeModifier import TranslucentColorAttributeModifier
     from vanilla_mcdoc.util.color.StringARGB import StringARGB
     from vanilla_mcdoc.util.color.StringRGB import StringRGB
@@ -20,7 +21,7 @@ if TYPE_CHECKING:
 
 class KeyframesStruct(GeneratedModel):
     ticks: Annotated[int, Field(ge=0)]
-    value: StringARGB | StringRGB | BlendToGray | StringRGB | StringARGB
+    value: LenientStringARGB | StringRGB | BlendToGray
 
 
 class AttributeTrackStruct(AttributeTrackBase):

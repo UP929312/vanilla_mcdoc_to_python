@@ -14,4 +14,4 @@ if TYPE_CHECKING:
 
 
 class FireworkRocket(ItemBase):
-    Fireworks_: Fireworks | None = Field(default=None, alias='Fireworks')
+    Fireworks_: Fireworks | None = Field(default=None, validation_alias='Fireworks', serialization_alias='Fireworks')

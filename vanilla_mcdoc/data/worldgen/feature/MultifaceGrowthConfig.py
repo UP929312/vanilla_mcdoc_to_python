@@ -8,7 +8,7 @@ from typing import TYPE_CHECKING, Annotated, ClassVar
 from pydantic import Field
 
 from vanilla_mcdoc.base import GeneratedModel
-from vanilla_mcdoc.minecraft_types import IdSpec
+from vanilla_mcdoc.minecraft_types import IdSpec, NamespacedId
 
 if TYPE_CHECKING:
     from vanilla_mcdoc.data.worldgen.feature.MultifaceBlock import MultifaceBlock
@@ -18,7 +18,7 @@ if TYPE_CHECKING:
 class MultifaceGrowthConfig(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/feature'
 
-    block: MultifaceBlock
+    block: NamespacedId[MultifaceBlock]
     search_range: Annotated[int, Field(ge=1, le=64)] | None = None
     chance_of_spreading: Annotated[float, Field(ge=0, le=1)] | None = None
     can_place_on_floor: bool | None = None

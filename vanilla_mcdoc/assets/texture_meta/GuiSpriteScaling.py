@@ -5,11 +5,11 @@ Local link to file: vanilla_mcdoc/assets/texture_meta/GuiSpriteScaling.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
 from vanilla_mcdoc.assets.texture_meta.NineSlice import NineSlice
 from vanilla_mcdoc.assets.texture_meta.TileScaling import TileScaling
-from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel, tag_of
 
 
 class GuiSpriteScalingNineSlice(NineSlice):
@@ -25,6 +25,8 @@ class GuiSpriteScalingTile(TileScaling):
 
 
 type GuiSpriteScaling = Annotated[
-    GuiSpriteScalingNineSlice | GuiSpriteScalingStretch | GuiSpriteScalingTile,
-    Field(discriminator='type'),
+    Annotated[GuiSpriteScalingNineSlice, Tag('minecraft:nine_slice')]
+    | Annotated[GuiSpriteScalingStretch, Tag('minecraft:stretch')]
+    | Annotated[GuiSpriteScalingTile, Tag('minecraft:tile')],
+    Discriminator(tag_of('type')),
 ]

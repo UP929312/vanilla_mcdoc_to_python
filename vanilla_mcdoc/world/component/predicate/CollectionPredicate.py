@@ -3,7 +3,7 @@ Generated from symbols.json for ::java::world::component::predicate::CollectionP
 Local link to file: vanilla_mcdoc/world/component/predicate/CollectionPredicate.py
 """
 # ~~~ CODE ~~~
-from typing import TYPE_CHECKING, Generic, TypeVar
+from typing import TYPE_CHECKING, Any, Generic, TypeVar
 
 from vanilla_mcdoc.base import GeneratedModel
 
@@ -11,7 +11,7 @@ if TYPE_CHECKING:
     from vanilla_mcdoc.data.util.MinMaxBounds import MinMaxBounds
 
 
-P = TypeVar('P')
+P = TypeVar('P', default=Any)
 
 
 class CountStruct(GeneratedModel, Generic[P]):

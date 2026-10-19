@@ -13,8 +13,8 @@ from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
     from vanilla_mcdoc.data.recipe.Ingredient import Ingredient
+    from vanilla_mcdoc.data.recipe.TransmuteResult import TransmuteResult
     from vanilla_mcdoc.data.util.MinMaxBounds import MinMaxBounds
-    from vanilla_mcdoc.world.item.ItemStack import ItemStack
 
 
 class CraftingTransmute(CraftingBookInfo, NotificationInfo):
@@ -24,4 +24,4 @@ class CraftingTransmute(CraftingBookInfo, NotificationInfo):
     material: Ingredient  # An additional ingredient.
     material_count: MinMaxBounds[Annotated[int, Field(ge=1, le=8)]] | Annotated[int, Field(ge=1, le=8)] | None = None  # The allowed count of material. Defaults to `1`.
     add_material_count_to_result: bool | None = None  # When true, the number of materials will be added to the result count.  Defaults to `false`.
-    result: ItemStack | Annotated[str, IdSpec(registry='item', exclude=('air',))]  # The result item that will be merged with the input ingredient.
+    result: TransmuteResult | Annotated[str, IdSpec(registry='item', exclude=('air',))]  # The result item that will be merged with the input ingredient.

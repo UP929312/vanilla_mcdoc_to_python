@@ -5,9 +5,9 @@ Local link to file: vanilla_mcdoc/data/slot_source/TypedSlotSource.py
 # ~~~ CODE ~~~
 from typing import Annotated, ClassVar, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
-from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel, tag_of
 from vanilla_mcdoc.data.slot_source.ContentsSlotSource import ContentsSlotSource
 from vanilla_mcdoc.data.slot_source.FilterSlotSource import FilterSlotSource
 from vanilla_mcdoc.data.slot_source.GroupSlotSource import GroupSlotSource
@@ -52,6 +52,11 @@ class TypedSlotSourceSlotRange(RangeSlotSource):
 
 
 type TypedSlotSource = Annotated[
-    TypedSlotSourceContents | TypedSlotSourceEmpty | TypedSlotSourceFiltered | TypedSlotSourceGroup | TypedSlotSourceLimitSlots | TypedSlotSourceSlotRange,
-    Field(discriminator='type'),
+    Annotated[TypedSlotSourceContents, Tag('minecraft:contents')]
+    | Annotated[TypedSlotSourceEmpty, Tag('minecraft:empty')]
+    | Annotated[TypedSlotSourceFiltered, Tag('minecraft:filtered')]
+    | Annotated[TypedSlotSourceGroup, Tag('minecraft:group')]
+    | Annotated[TypedSlotSourceLimitSlots, Tag('minecraft:limit_slots')]
+    | Annotated[TypedSlotSourceSlotRange, Tag('minecraft:slot_range')],
+    Discriminator(tag_of('type')),
 ]

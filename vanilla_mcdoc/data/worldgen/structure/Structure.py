@@ -5,9 +5,9 @@ Local link to file: vanilla_mcdoc/data/worldgen/structure/Structure.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, ClassVar, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
-from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel, tag_of
 from vanilla_mcdoc.data.worldgen.structure.BuriedTreasure import BuriedTreasure
 from vanilla_mcdoc.data.worldgen.structure.Jigsaw import Jigsaw
 from vanilla_mcdoc.data.worldgen.structure.Mineshaft import Mineshaft
@@ -215,6 +215,24 @@ class StructureWoodlandMansion(GeneratedModel):
 
 
 type Structure = Annotated[
-    StructureBastionRemnant | StructureBuriedTreasure | StructureDesertPyramid | StructureEndCity | StructureFortress | StructureIgloo | StructureJigsaw | StructureJungleTemple | StructureMineshaft | StructureNetherFossil | StructureOceanMonument | StructureOceanRuin | StructurePillagerOutpost | StructureRuinedPortal | StructureShipwreck | StructureStronghold | StructureSwampHut | StructureVillage | StructureWoodlandMansion,
-    Field(discriminator='type'),
+    Annotated[StructureBastionRemnant, Tag('minecraft:bastion_remnant')]
+    | Annotated[StructureBuriedTreasure, Tag('minecraft:buried_treasure')]
+    | Annotated[StructureDesertPyramid, Tag('minecraft:desert_pyramid')]
+    | Annotated[StructureEndCity, Tag('minecraft:end_city')]
+    | Annotated[StructureFortress, Tag('minecraft:fortress')]
+    | Annotated[StructureIgloo, Tag('minecraft:igloo')]
+    | Annotated[StructureJigsaw, Tag('minecraft:jigsaw')]
+    | Annotated[StructureJungleTemple, Tag('minecraft:jungle_temple')]
+    | Annotated[StructureMineshaft, Tag('minecraft:mineshaft')]
+    | Annotated[StructureNetherFossil, Tag('minecraft:nether_fossil')]
+    | Annotated[StructureOceanMonument, Tag('minecraft:ocean_monument')]
+    | Annotated[StructureOceanRuin, Tag('minecraft:ocean_ruin')]
+    | Annotated[StructurePillagerOutpost, Tag('minecraft:pillager_outpost')]
+    | Annotated[StructureRuinedPortal, Tag('minecraft:ruined_portal')]
+    | Annotated[StructureShipwreck, Tag('minecraft:shipwreck')]
+    | Annotated[StructureStronghold, Tag('minecraft:stronghold')]
+    | Annotated[StructureSwampHut, Tag('minecraft:swamp_hut')]
+    | Annotated[StructureVillage, Tag('minecraft:village')]
+    | Annotated[StructureWoodlandMansion, Tag('minecraft:woodland_mansion')],
+    Discriminator(tag_of('type')),
 ]

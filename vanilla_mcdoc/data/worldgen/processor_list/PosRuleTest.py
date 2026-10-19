@@ -5,8 +5,9 @@ Local link to file: vanilla_mcdoc/data/worldgen/processor_list/PosRuleTest.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
+from vanilla_mcdoc.base import GeneratedModel, tag_of
 from vanilla_mcdoc.data.worldgen.processor_list.AxisAlignedLinearPos import AxisAlignedLinearPos
 from vanilla_mcdoc.data.worldgen.processor_list.LinearPos import LinearPos
 
@@ -19,7 +20,13 @@ class PosRuleTestLinearPos(LinearPos):
     predicate_type: Literal['minecraft:linear_pos', 'linear_pos'] = 'minecraft:linear_pos'
 
 
+class PosRuleTestAlwaysTrue(GeneratedModel):
+    predicate_type: Literal['minecraft:always_true', 'always_true'] = 'minecraft:always_true'
+
+
 type PosRuleTest = Annotated[
-    PosRuleTestAxisAlignedLinearPos | PosRuleTestLinearPos,
-    Field(discriminator='predicate_type'),
+    Annotated[PosRuleTestAxisAlignedLinearPos, Tag('minecraft:axis_aligned_linear_pos')]
+    | Annotated[PosRuleTestLinearPos, Tag('minecraft:linear_pos')]
+    | Annotated[PosRuleTestAlwaysTrue, Tag('minecraft:always_true')],
+    Discriminator(tag_of('predicate_type')),
 ]

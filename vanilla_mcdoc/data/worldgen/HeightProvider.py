@@ -5,8 +5,9 @@ Local link to file: vanilla_mcdoc/data/worldgen/HeightProvider.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
+from vanilla_mcdoc.base import tag_of
 from vanilla_mcdoc.data.worldgen.BottomBiasHeightProvider import BottomBiasHeightProvider
 from vanilla_mcdoc.data.worldgen.ConstantHeightProvider import ConstantHeightProvider
 from vanilla_mcdoc.data.worldgen.TrapezoidHeightProvider import TrapezoidHeightProvider
@@ -42,8 +43,13 @@ class HeightProviderStructWeightedList(WeightListHeightProvider):
 
 
 type HeightProviderStruct = Annotated[
-    HeightProviderStructBiasedToBottom | HeightProviderStructConstant | HeightProviderStructTrapezoid | HeightProviderStructUniform | HeightProviderStructVeryBiasedToBottom | HeightProviderStructWeightedList,
-    Field(discriminator='type'),
+    Annotated[HeightProviderStructBiasedToBottom, Tag('minecraft:biased_to_bottom')]
+    | Annotated[HeightProviderStructConstant, Tag('minecraft:constant')]
+    | Annotated[HeightProviderStructTrapezoid, Tag('minecraft:trapezoid')]
+    | Annotated[HeightProviderStructUniform, Tag('minecraft:uniform')]
+    | Annotated[HeightProviderStructVeryBiasedToBottom, Tag('minecraft:very_biased_to_bottom')]
+    | Annotated[HeightProviderStructWeightedList, Tag('minecraft:weighted_list')],
+    Discriminator(tag_of('type')),
 ]
 
 

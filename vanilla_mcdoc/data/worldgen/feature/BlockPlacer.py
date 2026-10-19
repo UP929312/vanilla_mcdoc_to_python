@@ -5,9 +5,9 @@ Local link to file: vanilla_mcdoc/data/worldgen/feature/BlockPlacer.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
-from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel, tag_of
 from vanilla_mcdoc.data.worldgen.feature.ColumnPlacer import ColumnPlacer
 
 
@@ -24,6 +24,8 @@ class BlockPlacerSimpleBlockPlacer(GeneratedModel):
 
 
 type BlockPlacer = Annotated[
-    BlockPlacerColumnPlacer | BlockPlacerDoublePlantPlacer | BlockPlacerSimpleBlockPlacer,
-    Field(discriminator='type'),
+    Annotated[BlockPlacerColumnPlacer, Tag('minecraft:column_placer')]
+    | Annotated[BlockPlacerDoublePlantPlacer, Tag('minecraft:double_plant_placer')]
+    | Annotated[BlockPlacerSimpleBlockPlacer, Tag('minecraft:simple_block_placer')],
+    Discriminator(tag_of('type')),
 ]

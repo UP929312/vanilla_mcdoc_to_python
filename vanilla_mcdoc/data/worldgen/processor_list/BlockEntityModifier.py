@@ -5,9 +5,9 @@ Local link to file: vanilla_mcdoc/data/worldgen/processor_list/BlockEntityModifi
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
-from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel, tag_of
 from vanilla_mcdoc.data.worldgen.processor_list.AppendLoot import AppendLoot
 from vanilla_mcdoc.data.worldgen.processor_list.AppendStatic import AppendStatic
 
@@ -29,6 +29,9 @@ class BlockEntityModifierPassthrough(GeneratedModel):
 
 
 type BlockEntityModifier = Annotated[
-    BlockEntityModifierAppendLoot | BlockEntityModifierAppendStatic | BlockEntityModifierClear | BlockEntityModifierPassthrough,
-    Field(discriminator='type'),
+    Annotated[BlockEntityModifierAppendLoot, Tag('minecraft:append_loot')]
+    | Annotated[BlockEntityModifierAppendStatic, Tag('minecraft:append_static')]
+    | Annotated[BlockEntityModifierClear, Tag('minecraft:clear')]
+    | Annotated[BlockEntityModifierPassthrough, Tag('minecraft:passthrough')],
+    Discriminator(tag_of('type')),
 ]

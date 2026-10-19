@@ -5,8 +5,9 @@ Local link to file: vanilla_mcdoc/data/loot/function/SetWriteableBookPages.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
+from vanilla_mcdoc.base import tag_of
 from vanilla_mcdoc.data.loot.function.Conditions import Conditions
 from vanilla_mcdoc.data.loot.function.InsertListOperation import InsertListOperation
 from vanilla_mcdoc.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
@@ -16,26 +17,29 @@ if TYPE_CHECKING:
 
 
 class SetWriteableBookPagesAppend(Conditions):
-    pages: list[Filterable[str]]  # Sets the pages of a book and quill.
+    pages: list[Filterable[str] | str]  # Sets the pages of a book and quill.
     mode: Literal['minecraft:append', 'append'] = 'minecraft:append'  # Determines how the existing list should be modified.
 
 
 class SetWriteableBookPagesInsert(Conditions, InsertListOperation):
-    pages: list[Filterable[str]]  # Sets the pages of a book and quill.
+    pages: list[Filterable[str] | str]  # Sets the pages of a book and quill.
     mode: Literal['minecraft:insert', 'insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
 
 
 class SetWriteableBookPagesReplaceAll(Conditions):
-    pages: list[Filterable[str]]  # Sets the pages of a book and quill.
+    pages: list[Filterable[str] | str]  # Sets the pages of a book and quill.
     mode: Literal['minecraft:replace_all', 'replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
 
 
 class SetWriteableBookPagesReplaceSection(Conditions, ReplaceSectionListOperation):
-    pages: list[Filterable[str]]  # Sets the pages of a book and quill.
+    pages: list[Filterable[str] | str]  # Sets the pages of a book and quill.
     mode: Literal['minecraft:replace_section', 'replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
 
 
 type SetWriteableBookPages = Annotated[
-    SetWriteableBookPagesAppend | SetWriteableBookPagesInsert | SetWriteableBookPagesReplaceAll | SetWriteableBookPagesReplaceSection,
-    Field(discriminator='mode'),
+    Annotated[SetWriteableBookPagesAppend, Tag('minecraft:append')]
+    | Annotated[SetWriteableBookPagesInsert, Tag('minecraft:insert')]
+    | Annotated[SetWriteableBookPagesReplaceAll, Tag('minecraft:replace_all')]
+    | Annotated[SetWriteableBookPagesReplaceSection, Tag('minecraft:replace_section')],
+    Discriminator(tag_of('mode')),
 ]

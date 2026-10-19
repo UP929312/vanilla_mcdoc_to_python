@@ -14,5 +14,5 @@ if TYPE_CHECKING:
 
 
 class Effect(GeneratedModel):
-    EffectId_: EffectId | None = Field(default=None, alias='EffectId')
+    EffectId_: EffectId | None = Field(default=None, validation_alias='EffectId', serialization_alias='EffectId')
     EffectDuration: Annotated[int, Field(ge=1)] | None = None  # Duration in ticks.

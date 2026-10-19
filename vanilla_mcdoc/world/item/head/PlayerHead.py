@@ -14,4 +14,4 @@ if TYPE_CHECKING:
 
 
 class PlayerHead(ItemBase):
-    SkullOwner_: SkullOwner | str | None = Field(default=None, alias='SkullOwner')
+    SkullOwner_: SkullOwner | str | None = Field(default=None, validation_alias='SkullOwner', serialization_alias='SkullOwner')

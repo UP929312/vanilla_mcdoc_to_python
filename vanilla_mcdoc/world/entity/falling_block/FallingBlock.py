@@ -20,7 +20,7 @@ class TileEntityDataStruct(GeneratedModel):
 
 class FallingBlock(EntityBase):
     TileEntityData: TileEntityDataStruct | None = None  # NBT data for the placed block.
-    BlockState_: BlockState | None = Field(default=None, alias='BlockState')  # Block state for the placed block. Defaults to sand.
+    BlockState_: BlockState | None = Field(default=None, validation_alias='BlockState', serialization_alias='BlockState')  # Block state for the placed block. Defaults to sand.
     Time: int | None = None  # Ticks it has existed.
     DropItem: bool | None = None  # Whether it should drop as a block when destroyed.
     HurtEntities: bool | None = None  # Whether this it should hurt entities.

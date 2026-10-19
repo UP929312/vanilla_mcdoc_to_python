@@ -3,7 +3,7 @@ Generated from symbols.json for ::java::data::worldgen::attribute::MergeableAttr
 Local link to file: vanilla_mcdoc/data/worldgen/attribute/MergeableAttribute.py
 """
 # ~~~ CODE ~~~
-from typing import TYPE_CHECKING, Annotated, Generic, TypeVar
+from typing import TYPE_CHECKING, Annotated, Any, Generic, TypeVar
 
 from pydantic import Field
 
@@ -15,7 +15,7 @@ if TYPE_CHECKING:
     from vanilla_mcdoc.data.worldgen.attribute.modifier.MergeableModifierType import MergeableModifierType
 
 
-T = TypeVar('T')
+T = TypeVar('T', default=Any)
 
 
 class KeyframesStruct(GeneratedModel, Generic[T]):

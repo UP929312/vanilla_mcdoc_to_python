@@ -13,13 +13,14 @@ from vanilla_mcdoc.assets.item_definition.EndCube import EndCube
 from vanilla_mcdoc.assets.item_definition.Head import Head
 from vanilla_mcdoc.assets.item_definition.ShulkerBox import ShulkerBox
 from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.minecraft_types import NamespacedId
 
 if TYPE_CHECKING:
     from vanilla_mcdoc.assets.item_definition.SpecialModelType import SpecialModelType
 
 
 class SpecialModelUnknown(GeneratedModel):
-    type: SpecialModelType
+    type: NamespacedId[SpecialModelType]
 
 
 class SpecialModelBanner(Banner):

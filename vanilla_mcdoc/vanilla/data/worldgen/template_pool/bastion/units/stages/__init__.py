@@ -1,0 +1,155 @@
+"""Vanilla's data/worldgen/template_pool/bastion/units/stages/ files"""
+from vanilla_mcdoc.data.worldgen.template_pool.Element import ElementSinglePoolElement
+from vanilla_mcdoc.data.worldgen.template_pool.Projection import Projection
+from vanilla_mcdoc.data.worldgen.template_pool.TemplatePool import TemplatePool
+from vanilla_mcdoc.data.worldgen.template_pool.WeightedElement import WeightedElement
+
+STAGE_0 = TemplatePool(
+    fallback='minecraft:empty',
+    elements=[
+        WeightedElement(
+            weight=1,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:bastion/units/stages/stage_0_0',
+                processors='minecraft:housing',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+        WeightedElement(
+            weight=1,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:bastion/units/stages/stage_0_1',
+                processors='minecraft:housing',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+        WeightedElement(
+            weight=1,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:bastion/units/stages/stage_0_2',
+                processors='minecraft:housing',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+        WeightedElement(
+            weight=1,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:bastion/units/stages/stage_0_3',
+                processors='minecraft:housing',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+    ],
+)
+
+STAGE_1 = TemplatePool(
+    fallback='minecraft:empty',
+    elements=[
+        WeightedElement(
+            weight=1,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:bastion/units/stages/stage_1_0',
+                processors='minecraft:housing',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+        WeightedElement(
+            weight=1,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:bastion/units/stages/stage_1_1',
+                processors='minecraft:housing',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+        WeightedElement(
+            weight=1,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:bastion/units/stages/stage_1_2',
+                processors='minecraft:housing',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+        WeightedElement(
+            weight=1,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:bastion/units/stages/stage_1_3',
+                processors='minecraft:housing',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+    ],
+)
+
+STAGE_2 = TemplatePool(
+    fallback='minecraft:empty',
+    elements=[
+        WeightedElement(
+            weight=1,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:bastion/units/stages/stage_2_0',
+                processors='minecraft:housing',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+        WeightedElement(
+            weight=1,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:bastion/units/stages/stage_2_1',
+                processors='minecraft:housing',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+    ],
+)
+
+STAGE_3 = TemplatePool(
+    fallback='minecraft:empty',
+    elements=[
+        WeightedElement(
+            weight=1,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:bastion/units/stages/stage_3_0',
+                processors='minecraft:housing',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+        WeightedElement(
+            weight=1,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:bastion/units/stages/stage_3_1',
+                processors='minecraft:housing',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+        WeightedElement(
+            weight=1,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:bastion/units/stages/stage_3_2',
+                processors='minecraft:housing',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+        WeightedElement(
+            weight=1,
+            element=ElementSinglePoolElement(
+                projection=Projection.RIGID,
+                location='minecraft:bastion/units/stages/stage_3_3',
+                processors='minecraft:housing',
+                element_type='minecraft:single_pool_element',
+            ),
+        ),
+    ],
+)

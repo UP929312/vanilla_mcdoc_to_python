@@ -16,6 +16,7 @@ from vanilla_mcdoc.assets.item_definition.LocalTime import LocalTime
 from vanilla_mcdoc.assets.item_definition.MainHand import MainHand
 from vanilla_mcdoc.assets.item_definition.SelectCases import SelectCases
 from vanilla_mcdoc.assets.item_definition.TrimMaterial import TrimMaterial
+from vanilla_mcdoc.minecraft_types import NamespacedId
 
 if TYPE_CHECKING:
     from vanilla_mcdoc.assets.item_definition.ItemModel import ItemModel
@@ -24,7 +25,7 @@ if TYPE_CHECKING:
 
 
 class SelectUnknown(SelectCases[str]):
-    property: SelectPropertyType
+    property: NamespacedId[SelectPropertyType]
     fallback: ItemModel | None = None  # Item model to render if none of the cases matched the value.
     transformation: Transformation | None = None
 

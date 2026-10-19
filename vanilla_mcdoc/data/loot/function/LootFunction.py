@@ -5,8 +5,9 @@ Local link to file: vanilla_mcdoc/data/loot/function/LootFunction.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
+from vanilla_mcdoc.base import tag_of
 from vanilla_mcdoc.data.loot.function.BinomialWithBonusCountFormula import BinomialWithBonusCountFormula
 from vanilla_mcdoc.data.loot.function.Conditions import Conditions
 from vanilla_mcdoc.data.loot.function.CopyComponents import CopyComponents
@@ -74,8 +75,10 @@ class LootFunctionApplyBonusUniformBonusCount(Conditions, UniformBonusFormula):
 
 
 type LootFunctionApplyBonus = Annotated[
-    LootFunctionApplyBonusBinomialWithBonusCount | LootFunctionApplyBonusOreDrops | LootFunctionApplyBonusUniformBonusCount,
-    Field(discriminator='formula'),
+    Annotated[LootFunctionApplyBonusBinomialWithBonusCount, Tag('minecraft:binomial_with_bonus_count')]
+    | Annotated[LootFunctionApplyBonusOreDrops, Tag('minecraft:ore_drops')]
+    | Annotated[LootFunctionApplyBonusUniformBonusCount, Tag('minecraft:uniform_bonus_count')],
+    Discriminator(tag_of('formula')),
 ]
 
 
@@ -232,8 +235,11 @@ class LootFunctionSetLoreReplaceSection(Conditions, ReplaceSectionListOperation)
 
 
 type LootFunctionSetLore = Annotated[
-    LootFunctionSetLoreAppend | LootFunctionSetLoreInsert | LootFunctionSetLoreReplaceAll | LootFunctionSetLoreReplaceSection,
-    Field(discriminator='mode'),
+    Annotated[LootFunctionSetLoreAppend, Tag('minecraft:append')]
+    | Annotated[LootFunctionSetLoreInsert, Tag('minecraft:insert')]
+    | Annotated[LootFunctionSetLoreReplaceAll, Tag('minecraft:replace_all')]
+    | Annotated[LootFunctionSetLoreReplaceSection, Tag('minecraft:replace_section')],
+    Discriminator(tag_of('mode')),
 ]
 
 
@@ -263,61 +269,67 @@ class LootFunctionSetStewEffect(SetStewEffect):
 
 class LootFunctionSetWritableBookPagesAppend(Conditions):
     type: Literal['minecraft:set_writable_book_pages', 'set_writable_book_pages'] = 'minecraft:set_writable_book_pages'
-    pages: list[Filterable[str]]  # Sets the pages of a book and quill.
+    pages: list[Filterable[str] | str]  # Sets the pages of a book and quill.
     mode: Literal['minecraft:append', 'append'] = 'minecraft:append'  # Determines how the existing list should be modified.
 
 
 class LootFunctionSetWritableBookPagesInsert(Conditions, InsertListOperation):
     type: Literal['minecraft:set_writable_book_pages', 'set_writable_book_pages'] = 'minecraft:set_writable_book_pages'
-    pages: list[Filterable[str]]  # Sets the pages of a book and quill.
+    pages: list[Filterable[str] | str]  # Sets the pages of a book and quill.
     mode: Literal['minecraft:insert', 'insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
 
 
 class LootFunctionSetWritableBookPagesReplaceAll(Conditions):
     type: Literal['minecraft:set_writable_book_pages', 'set_writable_book_pages'] = 'minecraft:set_writable_book_pages'
-    pages: list[Filterable[str]]  # Sets the pages of a book and quill.
+    pages: list[Filterable[str] | str]  # Sets the pages of a book and quill.
     mode: Literal['minecraft:replace_all', 'replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
 
 
 class LootFunctionSetWritableBookPagesReplaceSection(Conditions, ReplaceSectionListOperation):
     type: Literal['minecraft:set_writable_book_pages', 'set_writable_book_pages'] = 'minecraft:set_writable_book_pages'
-    pages: list[Filterable[str]]  # Sets the pages of a book and quill.
+    pages: list[Filterable[str] | str]  # Sets the pages of a book and quill.
     mode: Literal['minecraft:replace_section', 'replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
 
 
 type LootFunctionSetWritableBookPages = Annotated[
-    LootFunctionSetWritableBookPagesAppend | LootFunctionSetWritableBookPagesInsert | LootFunctionSetWritableBookPagesReplaceAll | LootFunctionSetWritableBookPagesReplaceSection,
-    Field(discriminator='mode'),
+    Annotated[LootFunctionSetWritableBookPagesAppend, Tag('minecraft:append')]
+    | Annotated[LootFunctionSetWritableBookPagesInsert, Tag('minecraft:insert')]
+    | Annotated[LootFunctionSetWritableBookPagesReplaceAll, Tag('minecraft:replace_all')]
+    | Annotated[LootFunctionSetWritableBookPagesReplaceSection, Tag('minecraft:replace_section')],
+    Discriminator(tag_of('mode')),
 ]
 
 
 class LootFunctionSetWrittenBookPagesAppend(Conditions):
     type: Literal['minecraft:set_written_book_pages', 'set_written_book_pages'] = 'minecraft:set_written_book_pages'
-    pages: list[Filterable[Text]]  # Sets the pages of a written book.
+    pages: list[Filterable[Text] | Text]  # Sets the pages of a written book.
     mode: Literal['minecraft:append', 'append'] = 'minecraft:append'  # Determines how the existing list should be modified.
 
 
 class LootFunctionSetWrittenBookPagesInsert(Conditions, InsertListOperation):
     type: Literal['minecraft:set_written_book_pages', 'set_written_book_pages'] = 'minecraft:set_written_book_pages'
-    pages: list[Filterable[Text]]  # Sets the pages of a written book.
+    pages: list[Filterable[Text] | Text]  # Sets the pages of a written book.
     mode: Literal['minecraft:insert', 'insert'] = 'minecraft:insert'  # Determines how the existing list should be modified.
 
 
 class LootFunctionSetWrittenBookPagesReplaceAll(Conditions):
     type: Literal['minecraft:set_written_book_pages', 'set_written_book_pages'] = 'minecraft:set_written_book_pages'
-    pages: list[Filterable[Text]]  # Sets the pages of a written book.
+    pages: list[Filterable[Text] | Text]  # Sets the pages of a written book.
     mode: Literal['minecraft:replace_all', 'replace_all'] = 'minecraft:replace_all'  # Determines how the existing list should be modified.
 
 
 class LootFunctionSetWrittenBookPagesReplaceSection(Conditions, ReplaceSectionListOperation):
     type: Literal['minecraft:set_written_book_pages', 'set_written_book_pages'] = 'minecraft:set_written_book_pages'
-    pages: list[Filterable[Text]]  # Sets the pages of a written book.
+    pages: list[Filterable[Text] | Text]  # Sets the pages of a written book.
     mode: Literal['minecraft:replace_section', 'replace_section'] = 'minecraft:replace_section'  # Determines how the existing list should be modified.
 
 
 type LootFunctionSetWrittenBookPages = Annotated[
-    LootFunctionSetWrittenBookPagesAppend | LootFunctionSetWrittenBookPagesInsert | LootFunctionSetWrittenBookPagesReplaceAll | LootFunctionSetWrittenBookPagesReplaceSection,
-    Field(discriminator='mode'),
+    Annotated[LootFunctionSetWrittenBookPagesAppend, Tag('minecraft:append')]
+    | Annotated[LootFunctionSetWrittenBookPagesInsert, Tag('minecraft:insert')]
+    | Annotated[LootFunctionSetWrittenBookPagesReplaceAll, Tag('minecraft:replace_all')]
+    | Annotated[LootFunctionSetWrittenBookPagesReplaceSection, Tag('minecraft:replace_section')],
+    Discriminator(tag_of('mode')),
 ]
 
 
@@ -325,4 +337,48 @@ class LootFunctionToggleTooltips(ToggleTooltips):
     type: Literal['minecraft:toggle_tooltips', 'toggle_tooltips'] = 'minecraft:toggle_tooltips'
 
 
-type LootFunction = LootFunctionApplyBonus | LootFunctionCopyComponents | LootFunctionCopyCustomData | LootFunctionCopyName | LootFunctionCopyState | LootFunctionDiscard | LootFunctionEnchantRandomly | LootFunctionEnchantWithLevels | LootFunctionEnchantedCountIncrease | LootFunctionExplorationMap | LootFunctionExplosionDecay | LootFunctionFillPlayerHead | LootFunctionFiltered | LootFunctionFurnaceSmelt | LootFunctionLimitCount | LootFunctionModifyContents | LootFunctionSequence | LootFunctionSetAttributes | LootFunctionSetBannerPattern | LootFunctionSetBookCover | LootFunctionSetComponents | LootFunctionSetContents | LootFunctionSetCount | LootFunctionSetCustomData | LootFunctionSetCustomModelData | LootFunctionSetDamage | LootFunctionSetEnchantments | LootFunctionSetFireworkExplosion | LootFunctionSetFireworks | LootFunctionSetInstrument | LootFunctionSetItem | LootFunctionSetLootTable | LootFunctionSetLore | LootFunctionSetName | LootFunctionSetOminousBottleAmplifier | LootFunctionSetPotion | LootFunctionSetRandomDyes | LootFunctionSetRandomPotion | LootFunctionSetStewEffect | LootFunctionSetWritableBookPages | LootFunctionSetWrittenBookPages | LootFunctionToggleTooltips
+type LootFunction = Annotated[
+    Annotated[LootFunctionApplyBonus, Tag('minecraft:apply_bonus')]
+    | Annotated[LootFunctionCopyComponents, Tag('minecraft:copy_components')]
+    | Annotated[LootFunctionCopyCustomData, Tag('minecraft:copy_custom_data')]
+    | Annotated[LootFunctionCopyName, Tag('minecraft:copy_name')]
+    | Annotated[LootFunctionCopyState, Tag('minecraft:copy_state')]
+    | Annotated[LootFunctionDiscard, Tag('minecraft:discard')]
+    | Annotated[LootFunctionEnchantRandomly, Tag('minecraft:enchant_randomly')]
+    | Annotated[LootFunctionEnchantWithLevels, Tag('minecraft:enchant_with_levels')]
+    | Annotated[LootFunctionEnchantedCountIncrease, Tag('minecraft:enchanted_count_increase')]
+    | Annotated[LootFunctionExplorationMap, Tag('minecraft:exploration_map')]
+    | Annotated[LootFunctionExplosionDecay, Tag('minecraft:explosion_decay')]
+    | Annotated[LootFunctionFillPlayerHead, Tag('minecraft:fill_player_head')]
+    | Annotated[LootFunctionFiltered, Tag('minecraft:filtered')]
+    | Annotated[LootFunctionFurnaceSmelt, Tag('minecraft:furnace_smelt')]
+    | Annotated[LootFunctionLimitCount, Tag('minecraft:limit_count')]
+    | Annotated[LootFunctionModifyContents, Tag('minecraft:modify_contents')]
+    | Annotated[LootFunctionSequence, Tag('minecraft:sequence')]
+    | Annotated[LootFunctionSetAttributes, Tag('minecraft:set_attributes')]
+    | Annotated[LootFunctionSetBannerPattern, Tag('minecraft:set_banner_pattern')]
+    | Annotated[LootFunctionSetBookCover, Tag('minecraft:set_book_cover')]
+    | Annotated[LootFunctionSetComponents, Tag('minecraft:set_components')]
+    | Annotated[LootFunctionSetContents, Tag('minecraft:set_contents')]
+    | Annotated[LootFunctionSetCount, Tag('minecraft:set_count')]
+    | Annotated[LootFunctionSetCustomData, Tag('minecraft:set_custom_data')]
+    | Annotated[LootFunctionSetCustomModelData, Tag('minecraft:set_custom_model_data')]
+    | Annotated[LootFunctionSetDamage, Tag('minecraft:set_damage')]
+    | Annotated[LootFunctionSetEnchantments, Tag('minecraft:set_enchantments')]
+    | Annotated[LootFunctionSetFireworkExplosion, Tag('minecraft:set_firework_explosion')]
+    | Annotated[LootFunctionSetFireworks, Tag('minecraft:set_fireworks')]
+    | Annotated[LootFunctionSetInstrument, Tag('minecraft:set_instrument')]
+    | Annotated[LootFunctionSetItem, Tag('minecraft:set_item')]
+    | Annotated[LootFunctionSetLootTable, Tag('minecraft:set_loot_table')]
+    | Annotated[LootFunctionSetLore, Tag('minecraft:set_lore')]
+    | Annotated[LootFunctionSetName, Tag('minecraft:set_name')]
+    | Annotated[LootFunctionSetOminousBottleAmplifier, Tag('minecraft:set_ominous_bottle_amplifier')]
+    | Annotated[LootFunctionSetPotion, Tag('minecraft:set_potion')]
+    | Annotated[LootFunctionSetRandomDyes, Tag('minecraft:set_random_dyes')]
+    | Annotated[LootFunctionSetRandomPotion, Tag('minecraft:set_random_potion')]
+    | Annotated[LootFunctionSetStewEffect, Tag('minecraft:set_stew_effect')]
+    | Annotated[LootFunctionSetWritableBookPages, Tag('minecraft:set_writable_book_pages')]
+    | Annotated[LootFunctionSetWrittenBookPages, Tag('minecraft:set_written_book_pages')]
+    | Annotated[LootFunctionToggleTooltips, Tag('minecraft:toggle_tooltips')],
+    Discriminator(tag_of('type')),
+]

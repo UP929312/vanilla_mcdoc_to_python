@@ -22,4 +22,4 @@ class ArmorStand(LivingEntity):
     ShowArms: bool | None = None  # Whether it should show its arms.
     Small: bool | None = None  # Whether it is small.
     DisabledSlots: int | None = None  # A bitfield of the slots that cannot be used.
-    Pose_: Pose | None = Field(default=None, alias='Pose')  # Body part rotations.
+    Pose_: Pose | None = Field(default=None, validation_alias='Pose', serialization_alias='Pose')  # Body part rotations.

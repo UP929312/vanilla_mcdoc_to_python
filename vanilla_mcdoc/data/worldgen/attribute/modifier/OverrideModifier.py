@@ -3,12 +3,12 @@ Generated from symbols.json for ::java::data::worldgen::attribute::modifier::Ove
 Local link to file: vanilla_mcdoc/data/worldgen/attribute/modifier/OverrideModifier.py
 """
 # ~~~ CODE ~~~
-from typing import Generic, Literal, TypeVar
+from typing import Any, Generic, Literal, TypeVar
 
 from vanilla_mcdoc.base import GeneratedModel
 
 
-T = TypeVar('T')
+T = TypeVar('T', default=Any)
 
 
 class OverrideModifier(GeneratedModel, Generic[T]):

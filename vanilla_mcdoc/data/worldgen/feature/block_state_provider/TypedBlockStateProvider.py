@@ -5,7 +5,9 @@ Local link to file: vanilla_mcdoc/data/worldgen/feature/block_state_provider/Typ
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
-from vanilla_mcdoc.base import GeneratedModel
+from pydantic import Discriminator, Tag
+
+from vanilla_mcdoc.base import tag_of
 from vanilla_mcdoc.data.worldgen.feature.RuleBasedBlockStateProvider import RuleBasedBlockStateProvider
 from vanilla_mcdoc.data.worldgen.feature.block_state_provider.CopyPropertiesProvider import CopyPropertiesProvider
 from vanilla_mcdoc.data.worldgen.feature.block_state_provider.DualNoiseProvider import DualNoiseProvider
@@ -16,11 +18,6 @@ from vanilla_mcdoc.data.worldgen.feature.block_state_provider.RandomizedIntState
 from vanilla_mcdoc.data.worldgen.feature.block_state_provider.RotatedStateProvider import RotatedStateProvider
 from vanilla_mcdoc.data.worldgen.feature.block_state_provider.SimpleStateProvider import SimpleStateProvider
 from vanilla_mcdoc.data.worldgen.feature.block_state_provider.WeightedBlockStateProvider import WeightedBlockStateProvider
-from vanilla_mcdoc.minecraft_types import IdSpec
-
-
-class TypedBlockStateProviderDefault(GeneratedModel):
-    type: Annotated[str, IdSpec(registry='worldgen/block_state_provider_type')]
 
 
 class TypedBlockStateProviderCopyProperties(CopyPropertiesProvider):
@@ -63,4 +60,16 @@ class TypedBlockStateProviderWeighted(WeightedBlockStateProvider):
     type: Literal['minecraft:weighted', 'weighted'] = 'minecraft:weighted'
 
 
-type TypedBlockStateProvider = TypedBlockStateProviderDefault | TypedBlockStateProviderCopyProperties | TypedBlockStateProviderDualNoise | TypedBlockStateProviderNoise | TypedBlockStateProviderNoiseThreshold | TypedBlockStateProviderRandomBlock | TypedBlockStateProviderRandomizedInt | TypedBlockStateProviderRotated | TypedBlockStateProviderRuleBased | TypedBlockStateProviderSimple | TypedBlockStateProviderWeighted
+type TypedBlockStateProvider = Annotated[
+    Annotated[TypedBlockStateProviderCopyProperties, Tag('minecraft:copy_properties')]
+    | Annotated[TypedBlockStateProviderDualNoise, Tag('minecraft:dual_noise')]
+    | Annotated[TypedBlockStateProviderNoise, Tag('minecraft:noise')]
+    | Annotated[TypedBlockStateProviderNoiseThreshold, Tag('minecraft:noise_threshold')]
+    | Annotated[TypedBlockStateProviderRandomBlock, Tag('minecraft:random_block')]
+    | Annotated[TypedBlockStateProviderRandomizedInt, Tag('minecraft:randomized_int')]
+    | Annotated[TypedBlockStateProviderRotated, Tag('minecraft:rotated')]
+    | Annotated[TypedBlockStateProviderRuleBased, Tag('minecraft:rule_based')]
+    | Annotated[TypedBlockStateProviderSimple, Tag('minecraft:simple')]
+    | Annotated[TypedBlockStateProviderWeighted, Tag('minecraft:weighted')],
+    Discriminator(tag_of('type')),
+]

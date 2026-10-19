@@ -3,14 +3,14 @@ Generated from symbols.json for ::java::data::worldgen::structure::JigsawDistanc
 Local link to file: vanilla_mcdoc/data/worldgen/structure/JigsawDistanceLimits.py
 """
 # ~~~ CODE ~~~
-from typing import Annotated, Generic, TypeVar
+from typing import Annotated, Any, Generic, TypeVar
 
 from pydantic import Field
 
 from vanilla_mcdoc.base import GeneratedModel
 
 
-T = TypeVar('T')
+T = TypeVar('T', default=Any)
 
 
 class JigsawDistanceLimits(GeneratedModel, Generic[T]):

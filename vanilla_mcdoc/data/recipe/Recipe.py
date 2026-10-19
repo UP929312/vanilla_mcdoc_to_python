@@ -3,9 +3,11 @@ Generated from symbols.json for ::java::data::recipe::Recipe
 Local link to file: vanilla_mcdoc/data/recipe/Recipe.py
 """
 # ~~~ CODE ~~~
-from typing import TYPE_CHECKING, Annotated, ClassVar, Literal
+from typing import Annotated, ClassVar, Literal
 
-from vanilla_mcdoc.base import GeneratedModel
+from pydantic import Discriminator, Tag
+
+from vanilla_mcdoc.base import GeneratedModel, tag_of
 from vanilla_mcdoc.data.recipe.Brewing import Brewing
 from vanilla_mcdoc.data.recipe.CraftingDye import CraftingDye
 from vanilla_mcdoc.data.recipe.CraftingImbue import CraftingImbue
@@ -16,16 +18,6 @@ from vanilla_mcdoc.data.recipe.Smelting import Smelting
 from vanilla_mcdoc.data.recipe.SmithingTransform import SmithingTransform
 from vanilla_mcdoc.data.recipe.SmithingTrim import SmithingTrim
 from vanilla_mcdoc.data.recipe.Stonecutting import Stonecutting
-from vanilla_mcdoc.minecraft_types import IdSpec
-
-if TYPE_CHECKING:
-    from vanilla_mcdoc.registry.KnownRecipeSerializerId import KnownRecipeSerializerId
-
-
-class RecipeUnknown(GeneratedModel):
-    __resource_dir__: ClassVar[str] = 'recipe'
-
-    type: Annotated[str, IdSpec(registry='recipe_serializer')] | KnownRecipeSerializerId
 
 
 class RecipeBlasting(Smelting):
@@ -154,4 +146,34 @@ class RecipeStonecutting(Stonecutting):
     type: Literal['minecraft:stonecutting', 'stonecutting'] = 'minecraft:stonecutting'
 
 
-type Recipe = RecipeUnknown | RecipeBlasting | RecipeBrewing | RecipeCampfireCooking | RecipeCraftingDecoratedPot | RecipeCraftingDye | RecipeCraftingImbue | RecipeCraftingShaped | RecipeCraftingShapeless | RecipeCraftingSpecialBannerduplicate | RecipeCraftingSpecialBookcloning | RecipeCraftingSpecialFireworkRocket | RecipeCraftingSpecialFireworkStar | RecipeCraftingSpecialFireworkStarFade | RecipeCraftingSpecialMapextending | RecipeCraftingSpecialShielddecoration | RecipeCraftingTransmute | RecipeSmelting | RecipeSmithingTransform | RecipeSmithingTrim | RecipeSmoking | RecipeStonecutting
+class RecipeCraftingSpecialRepairitem(GeneratedModel):
+    __resource_dir__: ClassVar[str] = 'recipe'
+
+    type: Literal['minecraft:crafting_special_repairitem', 'crafting_special_repairitem'] = 'minecraft:crafting_special_repairitem'
+
+
+type Recipe = Annotated[
+    Annotated[RecipeBlasting, Tag('minecraft:blasting')]
+    | Annotated[RecipeBrewing, Tag('minecraft:brewing')]
+    | Annotated[RecipeCampfireCooking, Tag('minecraft:campfire_cooking')]
+    | Annotated[RecipeCraftingDecoratedPot, Tag('minecraft:crafting_decorated_pot')]
+    | Annotated[RecipeCraftingDye, Tag('minecraft:crafting_dye')]
+    | Annotated[RecipeCraftingImbue, Tag('minecraft:crafting_imbue')]
+    | Annotated[RecipeCraftingShaped, Tag('minecraft:crafting_shaped')]
+    | Annotated[RecipeCraftingShapeless, Tag('minecraft:crafting_shapeless')]
+    | Annotated[RecipeCraftingSpecialBannerduplicate, Tag('minecraft:crafting_special_bannerduplicate')]
+    | Annotated[RecipeCraftingSpecialBookcloning, Tag('minecraft:crafting_special_bookcloning')]
+    | Annotated[RecipeCraftingSpecialFireworkRocket, Tag('minecraft:crafting_special_firework_rocket')]
+    | Annotated[RecipeCraftingSpecialFireworkStar, Tag('minecraft:crafting_special_firework_star')]
+    | Annotated[RecipeCraftingSpecialFireworkStarFade, Tag('minecraft:crafting_special_firework_star_fade')]
+    | Annotated[RecipeCraftingSpecialMapextending, Tag('minecraft:crafting_special_mapextending')]
+    | Annotated[RecipeCraftingSpecialShielddecoration, Tag('minecraft:crafting_special_shielddecoration')]
+    | Annotated[RecipeCraftingTransmute, Tag('minecraft:crafting_transmute')]
+    | Annotated[RecipeSmelting, Tag('minecraft:smelting')]
+    | Annotated[RecipeSmithingTransform, Tag('minecraft:smithing_transform')]
+    | Annotated[RecipeSmithingTrim, Tag('minecraft:smithing_trim')]
+    | Annotated[RecipeSmoking, Tag('minecraft:smoking')]
+    | Annotated[RecipeStonecutting, Tag('minecraft:stonecutting')]
+    | Annotated[RecipeCraftingSpecialRepairitem, Tag('minecraft:crafting_special_repairitem')],
+    Discriminator(tag_of('type')),
+]

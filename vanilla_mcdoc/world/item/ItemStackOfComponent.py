@@ -3,14 +3,14 @@ Generated from symbols.json for ::java::world::item::ItemStackOfComponent
 Local link to file: vanilla_mcdoc/world/item/ItemStackOfComponent.py
 """
 # ~~~ CODE ~~~
-from typing import Annotated, Generic, TypeVar
+from typing import Annotated, Any, Generic, TypeVar
 
 from pydantic import Field
 
 from vanilla_mcdoc.world.item.SingleItemOfComponent import SingleItemOfComponent
 
 
-T = TypeVar('T')
+T = TypeVar('T', default=Any)
 
 
 class ItemStackOfComponent(SingleItemOfComponent[T], Generic[T]):

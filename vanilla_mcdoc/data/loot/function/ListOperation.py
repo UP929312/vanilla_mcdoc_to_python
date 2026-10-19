@@ -5,9 +5,9 @@ Local link to file: vanilla_mcdoc/data/loot/function/ListOperation.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
-from vanilla_mcdoc.base import GeneratedModel
+from vanilla_mcdoc.base import GeneratedModel, tag_of
 from vanilla_mcdoc.data.loot.function.InsertListOperation import InsertListOperation
 from vanilla_mcdoc.data.loot.function.ReplaceSectionListOperation import ReplaceSectionListOperation
 
@@ -29,6 +29,9 @@ class ListOperationReplaceSection(ReplaceSectionListOperation):
 
 
 type ListOperation = Annotated[
-    ListOperationAppend | ListOperationInsert | ListOperationReplaceAll | ListOperationReplaceSection,
-    Field(discriminator='mode'),
+    Annotated[ListOperationAppend, Tag('minecraft:append')]
+    | Annotated[ListOperationInsert, Tag('minecraft:insert')]
+    | Annotated[ListOperationReplaceAll, Tag('minecraft:replace_all')]
+    | Annotated[ListOperationReplaceSection, Tag('minecraft:replace_section')],
+    Discriminator(tag_of('mode')),
 ]

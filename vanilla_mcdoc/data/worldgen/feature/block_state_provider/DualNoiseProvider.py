@@ -16,7 +16,7 @@ if TYPE_CHECKING:
 
 
 class DualNoiseProvider(BaseNoiseProvider):
-    variety: InclusiveRange[Annotated[int, Field(ge=1, le=64)]] | Annotated[int, Field(ge=1, le=64)]
+    variety: InclusiveRange[Annotated[int, Field(ge=1, le=64)]] | Annotated[int, Field(ge=1, le=64)] | tuple[Annotated[int, Field(ge=1, le=64)], Annotated[int, Field(ge=1, le=64)]]
     slow_noise: NoiseParameters
     slow_scale: Annotated[float, Field(ge=0)]
     states: list[BlockState]

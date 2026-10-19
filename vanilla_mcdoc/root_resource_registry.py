@@ -2,8 +2,10 @@
 
 from vanilla_mcdoc.data.advancement.Advancement import Advancement
 from vanilla_mcdoc.data.block_sound_set.BlockSoundSet import BlockSoundSet
-from vanilla_mcdoc.data.block_transformer.BlockTransformData import BlockTransformData
+from vanilla_mcdoc.data.block_transformer.BlockTransformer import BlockTransformer
+from vanilla_mcdoc.data.cat_sound_variant.CatSoundVariant import CatSoundVariant
 from vanilla_mcdoc.data.chat_type.ChatType import ChatType
+from vanilla_mcdoc.data.chicken_sound_variant.ChickenSoundVariant import ChickenSoundVariant
 from vanilla_mcdoc.data.damage_type.DamageType import DamageType
 from vanilla_mcdoc.data.decorated_pot_pattern.DecoratedPotPattern import DecoratedPotPattern
 from vanilla_mcdoc.data.dialog.ConfirmationDialog import ConfirmationDialog
@@ -32,6 +34,7 @@ from vanilla_mcdoc.data.item_modifier.ItemModifierRoot import ItemModifierRoot
 from vanilla_mcdoc.data.loot.LootTable import LootTable
 from vanilla_mcdoc.data.number_provider.context_float.ContextFloatProvider import ContextFloatProvider
 from vanilla_mcdoc.data.number_provider.context_int.ContextIntProvider import ContextIntProvider
+from vanilla_mcdoc.data.pig_sound_variant.PigSoundVariant import PigSoundVariant
 from vanilla_mcdoc.data.predicate.Predicate import Predicate
 from vanilla_mcdoc.data.recipe.Brewing import Brewing
 from vanilla_mcdoc.data.recipe.CraftingDecoratedPot import CraftingDecoratedPot
@@ -65,22 +68,20 @@ from vanilla_mcdoc.data.trial_spawner.TrialSpawnerConfig import TrialSpawnerConf
 from vanilla_mcdoc.data.trim.TrimMaterial import TrimMaterial
 from vanilla_mcdoc.data.trim.TrimPattern import TrimPattern
 from vanilla_mcdoc.data.variants.banner_pattern.BannerPattern import BannerPattern
-from vanilla_mcdoc.data.variants.cat.CatSounds import CatSounds
 from vanilla_mcdoc.data.variants.cat.CatVariant import CatVariant
-from vanilla_mcdoc.data.variants.chicken.ChickenSounds import ChickenSounds
 from vanilla_mcdoc.data.variants.chicken.ChickenVariant import ChickenVariant
-from vanilla_mcdoc.data.variants.cow.CowSounds import CowSounds
 from vanilla_mcdoc.data.variants.cow.CowVariant import CowVariant
+from vanilla_mcdoc.data.variants.cow.OptionalCowSounds import OptionalCowSounds
 from vanilla_mcdoc.data.variants.frog.FrogVariant import FrogVariant
 from vanilla_mcdoc.data.variants.instrument.Instrument import Instrument
 from vanilla_mcdoc.data.variants.jukebox_song.JukeboxSong import JukeboxSong
 from vanilla_mcdoc.data.variants.painting.PaintingVariant import PaintingVariant
-from vanilla_mcdoc.data.variants.pig.PigSounds import PigSounds
 from vanilla_mcdoc.data.variants.pig.PigVariant import PigVariant
-from vanilla_mcdoc.data.variants.wolf.WolfSounds import WolfSounds
 from vanilla_mcdoc.data.variants.wolf.WolfVariant import WolfVariant
 from vanilla_mcdoc.data.variants.zombie_nautilus.ZombieNautilusVariant import ZombieNautilusVariant
 from vanilla_mcdoc.data.villager_trade.VillagerTrade import VillagerTrade
+from vanilla_mcdoc.data.wolf_sound_variant.WolfSoundVariant import WolfSoundVariant
+from vanilla_mcdoc.data.world_clock.WorldClock import WorldClock
 from vanilla_mcdoc.data.worldgen.biome.Biome import Biome
 from vanilla_mcdoc.data.worldgen.carver.CanyonConfig import CanyonConfig
 from vanilla_mcdoc.data.worldgen.carver.CaveConfig import CaveConfig
@@ -96,6 +97,7 @@ from vanilla_mcdoc.data.worldgen.feature.BlockPileConfig import BlockPileConfig
 from vanilla_mcdoc.data.worldgen.feature.ColumnsConfig import ColumnsConfig
 from vanilla_mcdoc.data.worldgen.feature.ConfiguredFeature import ConfiguredFeature
 from vanilla_mcdoc.data.worldgen.feature.CoralConfig import CoralConfig
+from vanilla_mcdoc.data.worldgen.feature.CrevasseConfig import CrevasseConfig
 from vanilla_mcdoc.data.worldgen.feature.DeltaConfig import DeltaConfig
 from vanilla_mcdoc.data.worldgen.feature.DiskConfig import DiskConfig
 from vanilla_mcdoc.data.worldgen.feature.EmeraldOreConfig import EmeraldOreConfig
@@ -187,8 +189,10 @@ from vanilla_mcdoc.assets.waypoint_style.WaypointStyle import WaypointStyle
 ROOT_DATAPACK_CLASSES = (
     Advancement,
     BlockSoundSet,
-    BlockTransformData,
+    BlockTransformer,
+    CatSoundVariant,
     ChatType,
+    ChickenSoundVariant,
     DamageType,
     DecoratedPotPattern,
     ConfirmationDialog,
@@ -217,6 +221,7 @@ ROOT_DATAPACK_CLASSES = (
     LootTable,
     ContextFloatProvider,
     ContextIntProvider,
+    PigSoundVariant,
     Predicate,
     Brewing,
     CraftingDecoratedPot,
@@ -250,22 +255,20 @@ ROOT_DATAPACK_CLASSES = (
     TrimMaterial,
     TrimPattern,
     BannerPattern,
-    CatSounds,
     CatVariant,
-    ChickenSounds,
     ChickenVariant,
-    CowSounds,
     CowVariant,
+    OptionalCowSounds,
     FrogVariant,
     Instrument,
     JukeboxSong,
     PaintingVariant,
-    PigSounds,
     PigVariant,
-    WolfSounds,
     WolfVariant,
     ZombieNautilusVariant,
     VillagerTrade,
+    WolfSoundVariant,
+    WorldClock,
     Biome,
     CanyonConfig,
     CaveConfig,
@@ -281,6 +284,7 @@ ROOT_DATAPACK_CLASSES = (
     ColumnsConfig,
     ConfiguredFeature,
     CoralConfig,
+    CrevasseConfig,
     DeltaConfig,
     DiskConfig,
     EmeraldOreConfig,

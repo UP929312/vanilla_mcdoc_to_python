@@ -5,13 +5,14 @@ Local link to file: vanilla_mcdoc/assets/font/GlyphProvider.py
 # ~~~ CODE ~~~
 from typing import TYPE_CHECKING, Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
 from vanilla_mcdoc.assets.font.BitmapProvider import BitmapProvider
 from vanilla_mcdoc.assets.font.ReferenceProvider import ReferenceProvider
 from vanilla_mcdoc.assets.font.SpaceProvider import SpaceProvider
 from vanilla_mcdoc.assets.font.TtfProvider import TtfProvider
 from vanilla_mcdoc.assets.font.UnihexProvider import UnihexProvider
+from vanilla_mcdoc.base import tag_of
 
 if TYPE_CHECKING:
     from vanilla_mcdoc.assets.font.FontOption import FontOption
@@ -43,6 +44,10 @@ class GlyphProviderUnihex(UnihexProvider):
 
 
 type GlyphProvider = Annotated[
-    GlyphProviderBitmap | GlyphProviderReference | GlyphProviderSpace | GlyphProviderTtf | GlyphProviderUnihex,
-    Field(discriminator='type'),
+    Annotated[GlyphProviderBitmap, Tag('minecraft:bitmap')]
+    | Annotated[GlyphProviderReference, Tag('minecraft:reference')]
+    | Annotated[GlyphProviderSpace, Tag('minecraft:space')]
+    | Annotated[GlyphProviderTtf, Tag('minecraft:ttf')]
+    | Annotated[GlyphProviderUnihex, Tag('minecraft:unihex')],
+    Discriminator(tag_of('type')),
 ]

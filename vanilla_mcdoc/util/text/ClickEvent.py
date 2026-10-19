@@ -5,8 +5,9 @@ Local link to file: vanilla_mcdoc/util/text/ClickEvent.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
+from vanilla_mcdoc.base import tag_of
 from vanilla_mcdoc.util.text.ChangePage import ChangePage
 from vanilla_mcdoc.util.text.CopyToClipboard import CopyToClipboard
 from vanilla_mcdoc.util.text.CustomAction import CustomAction
@@ -45,6 +46,12 @@ class ClickEventSuggestCommand(SuggestCommand):
 
 
 type ClickEvent = Annotated[
-    ClickEventChangePage | ClickEventCopyToClipboard | ClickEventCustom | ClickEventOpenUrl | ClickEventRunCommand | ClickEventShowDialog | ClickEventSuggestCommand,
-    Field(discriminator='action'),
+    Annotated[ClickEventChangePage, Tag('minecraft:change_page')]
+    | Annotated[ClickEventCopyToClipboard, Tag('minecraft:copy_to_clipboard')]
+    | Annotated[ClickEventCustom, Tag('minecraft:custom')]
+    | Annotated[ClickEventOpenUrl, Tag('minecraft:open_url')]
+    | Annotated[ClickEventRunCommand, Tag('minecraft:run_command')]
+    | Annotated[ClickEventShowDialog, Tag('minecraft:show_dialog')]
+    | Annotated[ClickEventSuggestCommand, Tag('minecraft:suggest_command')],
+    Discriminator(tag_of('action')),
 ]

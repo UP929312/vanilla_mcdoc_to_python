@@ -5,8 +5,9 @@ Local link to file: vanilla_mcdoc/data/loot/condition/LootCondition.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
+from vanilla_mcdoc.base import GeneratedModel, tag_of
 from vanilla_mcdoc.data.advancement.predicate.BlockPredicate import BlockPredicate
 from vanilla_mcdoc.data.loot.condition.AllOf import AllOf
 from vanilla_mcdoc.data.loot.condition.AnyOf import AnyOf
@@ -104,7 +105,30 @@ class LootConditionWeatherCheck(WeatherCheck):
     type: Literal['minecraft:weather_check', 'weather_check'] = 'minecraft:weather_check'
 
 
+class LootConditionSurvivesExplosion(GeneratedModel):
+    type: Literal['minecraft:survives_explosion', 'survives_explosion'] = 'minecraft:survives_explosion'
+
+
 type LootCondition = Annotated[
-    LootConditionAllOf | LootConditionAnyOf | LootConditionDamageSourceProperties | LootConditionEnchantmentActiveCheck | LootConditionEntityProperties | LootConditionEntityScores | LootConditionEnvironmentAttributeCheck | LootConditionFloatValueCheck | LootConditionIntValueCheck | LootConditionInverted | LootConditionKilledByPlayer | LootConditionLocationCheck | LootConditionMatchBlock | LootConditionMatchTool | LootConditionRandomChance | LootConditionRandomChanceWithEnchantedBonus | LootConditionTableBonus | LootConditionTimeCheck | LootConditionWeatherCheck,
-    Field(discriminator='type'),
+    Annotated[LootConditionAllOf, Tag('minecraft:all_of')]
+    | Annotated[LootConditionAnyOf, Tag('minecraft:any_of')]
+    | Annotated[LootConditionDamageSourceProperties, Tag('minecraft:damage_source_properties')]
+    | Annotated[LootConditionEnchantmentActiveCheck, Tag('minecraft:enchantment_active_check')]
+    | Annotated[LootConditionEntityProperties, Tag('minecraft:entity_properties')]
+    | Annotated[LootConditionEntityScores, Tag('minecraft:entity_scores')]
+    | Annotated[LootConditionEnvironmentAttributeCheck, Tag('minecraft:environment_attribute_check')]
+    | Annotated[LootConditionFloatValueCheck, Tag('minecraft:float_value_check')]
+    | Annotated[LootConditionIntValueCheck, Tag('minecraft:int_value_check')]
+    | Annotated[LootConditionInverted, Tag('minecraft:inverted')]
+    | Annotated[LootConditionKilledByPlayer, Tag('minecraft:killed_by_player')]
+    | Annotated[LootConditionLocationCheck, Tag('minecraft:location_check')]
+    | Annotated[LootConditionMatchBlock, Tag('minecraft:match_block')]
+    | Annotated[LootConditionMatchTool, Tag('minecraft:match_tool')]
+    | Annotated[LootConditionRandomChance, Tag('minecraft:random_chance')]
+    | Annotated[LootConditionRandomChanceWithEnchantedBonus, Tag('minecraft:random_chance_with_enchanted_bonus')]
+    | Annotated[LootConditionTableBonus, Tag('minecraft:table_bonus')]
+    | Annotated[LootConditionTimeCheck, Tag('minecraft:time_check')]
+    | Annotated[LootConditionWeatherCheck, Tag('minecraft:weather_check')]
+    | Annotated[LootConditionSurvivesExplosion, Tag('minecraft:survives_explosion')],
+    Discriminator(tag_of('type')),
 ]

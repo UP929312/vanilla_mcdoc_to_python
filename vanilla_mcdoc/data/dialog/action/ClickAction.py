@@ -5,8 +5,9 @@ Local link to file: vanilla_mcdoc/data/dialog/action/ClickAction.py
 # ~~~ CODE ~~~
 from typing import Annotated, Literal
 
-from pydantic import Field
+from pydantic import Discriminator, Tag
 
+from vanilla_mcdoc.base import tag_of
 from vanilla_mcdoc.data.dialog.action.DynamicCustomAction import DynamicCustomAction
 from vanilla_mcdoc.data.dialog.action.DynamicRunCommand import DynamicRunCommand
 from vanilla_mcdoc.util.text.ChangePage import ChangePage
@@ -55,6 +56,14 @@ class ClickActionSuggestCommand(SuggestCommand):
 
 
 type ClickAction = Annotated[
-    ClickActionChangePage | ClickActionCopyToClipboard | ClickActionCustom | ClickActionDynamicCustom | ClickActionDynamicRunCommand | ClickActionOpenUrl | ClickActionRunCommand | ClickActionShowDialog | ClickActionSuggestCommand,
-    Field(discriminator='type'),
+    Annotated[ClickActionChangePage, Tag('minecraft:change_page')]
+    | Annotated[ClickActionCopyToClipboard, Tag('minecraft:copy_to_clipboard')]
+    | Annotated[ClickActionCustom, Tag('minecraft:custom')]
+    | Annotated[ClickActionDynamicCustom, Tag('minecraft:dynamic/custom')]
+    | Annotated[ClickActionDynamicRunCommand, Tag('minecraft:dynamic/run_command')]
+    | Annotated[ClickActionOpenUrl, Tag('minecraft:open_url')]
+    | Annotated[ClickActionRunCommand, Tag('minecraft:run_command')]
+    | Annotated[ClickActionShowDialog, Tag('minecraft:show_dialog')]
+    | Annotated[ClickActionSuggestCommand, Tag('minecraft:suggest_command')],
+    Discriminator(tag_of('type')),
 ]
