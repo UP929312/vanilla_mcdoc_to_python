@@ -10,7 +10,7 @@ dependencies = ["pydantic>=2.11"]  # For validate_by_name and serialize_by_alias
 [dependency-groups]
 # What the generator and its checks need: `pip install --group dev` (pip 25.1+)
 dev = [  # ruff and zizmor are pinned, as new versions turn on new rules
-    "pydantic>=2.11", "pytest", "coverage", "mypy", "ruff==0.17.*", "flake8", "pylint", "codespell", "vulture", "zizmor==1.30.*", "pre-commit", "build",
+    "pydantic>=2.11", "pytest", "coverage", "mypy", "ruff==0.17.*", "flake8", "pylint", "codespell", "vulture", "zizmor==1.30.*", "pre-commit", "build", "pyyaml", "types-PyYAML",
 ]
 
 # ========================================================================
@@ -38,8 +38,9 @@ include = ["vanilla_mcdoc", "README.md"]
 
 [tool.mypy]
 python_version = "3.14"
+platform = "linux"  # What CI runs it on, so it's the same on Windows (it treats `if sys.platform == ...` as always one way)
 strict = true
-exclude = "vanilla_mcdoc.data.structure.StructureNBT"  # TODO: Fix this.
+exclude = "^tests/"
 explicit_package_bases = true  # Name modules from the repo root, so static_symbols/x.py is static_symbols.x (as the generator imports it)
 mypy_path = ".github/scripts"  # Where the tests import the CI scripts from (mypy skips folders starting with a dot otherwise)
 
