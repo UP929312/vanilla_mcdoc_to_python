@@ -1,6 +1,6 @@
 """Runs CI's jobs on your machine, so a push isn't how you find out they fail: checks.yml's, and publish.yml's build of
 each version it would publish, from the latest upstream data (checks.yml uses the committed symbols.json, so it can pass
-while publishing fails). Run it from the repo root, and on Windows from Git Bash, as the steps are bash.
+while publishing fails). Run it from the repo root. The steps are bash, which on Windows is the one that comes with Git.
 
 python .github/scripts/local_ci.py         | All of it
 python .github/scripts/local_ci.py checks  | Just checks.yml (quicker, easier, better)
@@ -23,7 +23,17 @@ from typing import Any
 import yaml
 
 WORKFLOWS = Path(".github/workflows")
-BASH = shutil.which("bash") or "bash"  # Its full path, as otherwise Windows finds WSL's bash before Git's
+
+
+def bash() -> str:
+    """bash, to run the steps with. On Windows it's Git's, as the bash on PATH there is WSL's (or none, from Git Bash it's Git's)."""
+    if os.name != "nt":
+        return "bash"
+    git_core = subprocess.run(["git", "--exec-path"], check=True, capture_output=True, text=True).stdout.strip()  # e.g. C:/Program Files/Git/mingw64/libexec/git-core
+    return str(Path(git_core).parents[2] / "bin" / "bash.exe")
+
+
+BASH = bash()
 
 
 def copy_working_tree(destination: Path) -> None:
@@ -45,7 +55,12 @@ def run_job(workflow: str, job: str, variables: dict[str, str] | None = None, na
         repo, outputs = Path(directory, "repo"), Path(directory, "outputs.txt")
         copy_working_tree(repo)
         outputs.touch()
-        environment = {**os.environ, **(variables or {}), "GITHUB_OUTPUT": outputs.as_posix(), "GITHUB_STEP_SUMMARY": Path(directory, "summary.md").as_posix()}
+        environment = {
+            **os.environ, **(variables or {}),
+            "GITHUB_OUTPUT": outputs.as_posix(),
+            "GITHUB_STEP_SUMMARY": Path(directory, "summary.md").as_posix(),
+            "MYPY_CACHE_DIR": str(Path(".mypy_cache").resolve()),  # Your own runs' cache, as a fresh one makes mypy check all of vanilla_mcdoc/ again (about 40s)
+        }
         for step in steps:
             if "run" not in step or step["run"].startswith("pip install"):
                 continue

@@ -25,6 +25,13 @@ jobs:
       - run: python .github/scripts/validate.py  # Every vanilla data file (from mcmeta) against the generated models, see its KNOWN_INVALID
       - run: coverage report --format=markdown --fail-under=0 >> "$GITHUB_STEP_SUMMARY"  # The table on the run's page
       - run: coverage report  # Fails if it's under fail_under in pyproject.toml
+      # mypy's cache from the last run (and this run's is saved for the next), as checking everything takes it about 40s
+      # and only rechecks what's changed with it. A new key each run, as a cache can't be updated, only added.
+      - uses: actions/cache@v4
+        with:
+          path: .mypy_cache
+          key: mypy-${{ github.sha }}
+          restore-keys: mypy-
       - run: mypy . --strict
       - run: ruff check
       - run: flake8 --ignore=E501,W503,W391,E221
