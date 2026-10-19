@@ -13,3 +13,5 @@ htmlcov/
 # Built wheels, from python -m build
 dist/
 build/
+
+tests/test_decoding.py

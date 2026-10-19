@@ -32,10 +32,6 @@ if SETTINGS.minecraft_version == LATEST_VERSION and not arguments.no_snapshot_te
 # Put all the descriptions in the struct/dataclass docstring, not just the comments (so hovering works nicer?)
 # Safeguards need to also include the value range, currently that is lost (5-10 is lost and now becomes -2147483648 to 2147483647).
 
-# https://github.com/sandstone-mc/sandstone/blob/828171c5fc1f5903e7ae1c508fe638d6481ab8e9/src/arguments/generated/world/item/compass.ts#L6
-# https://github.com/OguzhanUmutlu/flare/blob/84b5121a21827eefcfca846ac6859512187e7f84/flare/generated/item.py#L166
-
-
 _HANDY_LINKS = [
     r"vanilla_mcdoc\data\advancement\predicate\FoodPredicate.py",  # MinMaxBounds[T]
     r"vanilla_mcdoc\data\worldgen\attribute\GlobalEnvironmentAttributeMap.py",  # ConcreteSchema (Base, not struct)

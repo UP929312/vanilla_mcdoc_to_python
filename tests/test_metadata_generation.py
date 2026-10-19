@@ -464,6 +464,14 @@ class TestAnyKeyGeneration:
 
         assert schema.to_python_code("Toggles", SingleSymbolContext(schema_graph=get_schema_graph())) == ["type Toggles = dict[str | Axis, bool | int]\n"]
 
+    def test_a_mapping_keyed_by_a_dispatcher_symbols_json_does_not_have_takes_any_key(self) -> None:
+        # Like FluidPredicateState: Spyglass fills mcdoc:fluid_state_keys from the game, so it isn't in symbols.json
+        schema = StructSchema.model_validate({"kind": "struct", "fields": [{"kind": "pair", "type": {"kind": "string"}, "key": {
+            "kind": "dispatcher", "parallelIndices": [{"kind": "dynamic", "accessor": [{"keyword": "parent"}, "fluids"]}], "registry": "mcdoc:fluid_state_keys",
+        }}]})
+
+        assert schema.to_python_code("FluidState", SingleSymbolContext(schema_graph=SchemaGraph({}, {}))) == ["type FluidState = dict[Any, str]\n"]
+
 
 class TestDispatchedFieldGeneration:
     def test_a_field_picked_by_another_field_gets_a_class_per_entry(self) -> None:

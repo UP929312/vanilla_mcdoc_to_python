@@ -907,7 +907,7 @@ class DispatcherSpread:
             (field, field.type, selector) for field in struct.fields
             if isinstance(field, PairSchema) and isinstance(field.type, DispatcherSchema) and (selector := field.type.dynamic_selector_field) in names
         ]
-        if len(fields) != 1 or all(key.startswith("%") for key in schema_graph.dispatchers[fields[0][1].registry]):
+        if len(fields) != 1 or all(key.startswith("%") for key in schema_graph.dispatchers.get(fields[0][1].registry, {})):
             return None
         field, dispatcher, selector = fields[0]
         return cls(struct, dispatcher, selector, field)
@@ -1040,7 +1040,7 @@ class DispatcherSchema(BaseSchema):
     def to_annotation(
         self, ctx: SingleSymbolContext, nested_struct_name: str | None = None, type_args: list[ConcreteSchemaTypeArgTypes] | None = None,
     ) -> str:
-        registry = ctx.schema_graph.dispatchers[self.registry]
+        registry = ctx.schema_graph.dispatchers.get(self.registry, {})  # Not in symbols.json at all if Spyglass fills it from the game, e.g. mcdoc:fluid_state_keys
         candidates = list(registry.items()) if self.static_key is None else [(self.static_key, registry[self.static_key])]
 
         registry_name = PairSchema.pascal_case(self.registry.split(":")[-1])
@@ -1057,7 +1057,7 @@ class DispatcherSchema(BaseSchema):
             branch_name = f"{base_name}{self.branch_name_suffix(key)}"
             annotations.append(branch.to_annotation(ctx, branch_name))
 
-        if not annotations:  # Its registry has nothing in it yet in this version, which like a missing entry, isn't checked
+        if not annotations:  # Its registry has nothing in it (yet, or in this version), which like a missing entry, isn't checked
             ctx.required_imports.add(Import("typing", "Any"))
             return "Any"
         return " | ".join(dict.fromkeys(annotations))
