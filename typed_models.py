@@ -149,7 +149,7 @@ class LiteralSchema(BaseSchema):
     Also normally used to just set until/since version (80% + of cases)
     """
     kind: Literal["literal"] = Field(repr=False)
-    value: Annotated[StringSchema | IntSchema | BooleanSchema | DoubleSchema, Field(discriminator="kind")]
+    value: Annotated[StringSchema | IntSchema | BooleanSchema | FloatSchema | DoubleSchema, Field(discriminator="kind")]
 
     def to_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None = None) -> str:
         ctx.required_imports.add(Import("typing", "Literal"))
@@ -225,6 +225,7 @@ class LongSchema(NumericSchema):
 class FloatSchema(NumericSchema):
     """A 32-bit, single-precision floating-point number, ranging from -3.4E38 to +3.4E38."""
     kind: Literal["float"] = Field(repr=False)
+    value: float | None = None  # For literal floats (currently unused)
 
     python_type = "float"
     min_value_internally = -3.4E38
