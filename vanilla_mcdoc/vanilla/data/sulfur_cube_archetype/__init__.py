@@ -1,11 +1,19 @@
 """Vanilla's data/sulfur_cube_archetype/ files"""
+from vanilla_mcdoc.data.advancement.predicate.EntityFlagsPredicate import EntityFlagsPredicate
+from vanilla_mcdoc.data.advancement.predicate.EntitySubPredicateMap import EntitySubPredicateMap
+from vanilla_mcdoc.data.enchantment.effect.LocationBasedEffect import LocationBasedEffectReplaceDisk
+from vanilla_mcdoc.data.enchantment.effect_component.LocationChangedEnchantmentEffect import LocationChangedEnchantmentEffect
+from vanilla_mcdoc.data.loot.EntityTarget import EntityTarget
+from vanilla_mcdoc.data.loot.condition.LootCondition import LootConditionAllOf, LootConditionEntityProperties, LootConditionInverted
 from vanilla_mcdoc.data.sulfur_cube_archetype.AttributeEntry import AttributeEntry
 from vanilla_mcdoc.data.sulfur_cube_archetype.ContactDamage import ContactDamage
 from vanilla_mcdoc.data.sulfur_cube_archetype.ExplosionData import ExplosionData
 from vanilla_mcdoc.data.sulfur_cube_archetype.KnockbackModifiers import KnockbackModifiers
 from vanilla_mcdoc.data.sulfur_cube_archetype.SoundSettings import SoundSettings
 from vanilla_mcdoc.data.sulfur_cube_archetype.SulfurCubeArchetype import SulfurCubeArchetype
+from vanilla_mcdoc.data.worldgen.feature.block_predicate.BlockPredicate import BlockPredicateAllOf, BlockPredicateMatchingBlockTag, BlockPredicateMatchingBlocks, BlockPredicateMatchingFluids, BlockPredicateUnobstructed
 from vanilla_mcdoc.util.attribute.AttributeOperation import AttributeOperation
+from vanilla_mcdoc.util.block_state.FullBlockState import FullBlockState
 
 BOUNCY = SulfurCubeArchetype(
     items='#minecraft:sulfur_cube_archetype/bouncy',
@@ -48,6 +56,93 @@ BOUNCY = SulfurCubeArchetype(
         push_sound='minecraft:entity.sulfur_cube.bouncy.push',
         push_sound_impulse_threshold=0.3,
         push_sound_cooldown=0.7,
+    ),
+)
+
+COLD = SulfurCubeArchetype(
+    items='#minecraft:sulfur_cube_archetype/cold',
+    buoyant=True,
+    knockback_modifiers=KnockbackModifiers(horizontal_power=0.6625, vertical_power=0.09),
+    attribute_modifiers=[
+        AttributeEntry(
+            id='minecraft:cold_add_knockback_resistance',
+            amount=0.5,
+            operation=AttributeOperation.ADDVALUE,
+            attribute='minecraft:knockback_resistance',
+        ),
+        AttributeEntry(
+            id='minecraft:cold_add_explosion_knockback_resistance',
+            amount=0.5,
+            operation=AttributeOperation.ADDVALUE,
+            attribute='minecraft:explosion_knockback_resistance',
+        ),
+        AttributeEntry(
+            id='minecraft:cold_add_bounciness',
+            amount=0.10000000149011612,
+            operation=AttributeOperation.ADDVALUE,
+            attribute='minecraft:bounciness',
+        ),
+        AttributeEntry(
+            id='minecraft:cold_mul_friction_modifier',
+            amount=-0.9499999992549419,
+            operation=AttributeOperation.ADDMULTIPLIEDTOTAL,
+            attribute='minecraft:friction_modifier',
+        ),
+        AttributeEntry(
+            id='minecraft:cold_mul_air_drag_modifier',
+            amount=-0.9900000002235174,
+            operation=AttributeOperation.ADDMULTIPLIEDTOTAL,
+            attribute='minecraft:air_drag_modifier',
+        ),
+    ],
+    location_based_effects=[
+        LocationChangedEnchantmentEffect(
+            requirements=LootConditionAllOf(
+                terms=[
+                    LootConditionEntityProperties(
+                        entity=EntityTarget.THIS,
+                        predicate=EntitySubPredicateMap(flags=EntityFlagsPredicate(is_on_ground=True)),
+                        type='minecraft:entity_properties',
+                    ),
+                    LootConditionInverted(
+                        term=LootConditionEntityProperties(
+                            entity=EntityTarget.THIS,
+                            predicate=EntitySubPredicateMap(vehicle=EntitySubPredicateMap()),
+                            type='minecraft:entity_properties',
+                        ),
+                        type='minecraft:inverted',
+                    ),
+                ],
+                type='minecraft:all_of',
+            ),
+            effect=LocationBasedEffectReplaceDisk(
+                block_state=FullBlockState(id='minecraft:frosted_ice', properties={'age': '0'}),
+                offset=(0, -1, 0),
+                predicate=BlockPredicateAllOf(
+                    predicates=[
+                        BlockPredicateMatchingBlockTag(
+                            offset=(0, 1, 0),
+                            tag='minecraft:air',
+                            type='minecraft:matching_block_tag',
+                        ),
+                        BlockPredicateMatchingBlocks(blocks='minecraft:water', type='minecraft:matching_blocks'),
+                        BlockPredicateMatchingFluids(fluids='minecraft:water', type='minecraft:matching_fluids'),
+                        BlockPredicateUnobstructed(type='minecraft:unobstructed'),
+                    ],
+                    type='minecraft:all_of',
+                ),
+                trigger_game_event='minecraft:block_place',
+                radius=3.0,
+                height=1.0,
+                type='minecraft:replace_disk',
+            ),
+        ),
+    ],
+    sound_settings=SoundSettings(
+        hit_sound='minecraft:entity.sulfur_cube.fast_sliding.hit',
+        push_sound='minecraft:entity.sulfur_cube.fast_sliding.hit',
+        push_sound_impulse_threshold=0.05,
+        push_sound_cooldown=1.0,
     ),
 )
 

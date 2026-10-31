@@ -23,7 +23,7 @@ EMERALD_ENCHANTED_IRON_SWORD = VillagerTrade(
             type='minecraft:filtered',
         ),
     ],
-    max_uses=12,
+    max_uses=3,
     reputation_discount=0.2,
 )
 

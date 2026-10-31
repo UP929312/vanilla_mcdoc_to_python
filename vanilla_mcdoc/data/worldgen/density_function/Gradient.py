@@ -8,6 +8,7 @@ from typing import TYPE_CHECKING
 from vanilla_mcdoc.base import GeneratedModel
 
 if TYPE_CHECKING:
+    from vanilla_mcdoc.data.worldgen.VerticalAnchor import VerticalAnchor
     from vanilla_mcdoc.data.worldgen.density_function.NoiseRange import NoiseRange
     from vanilla_mcdoc.data.worldgen.density_function.TilingMode import TilingMode
     from vanilla_mcdoc.util.direction.Axis import Axis
@@ -16,7 +17,7 @@ if TYPE_CHECKING:
 class Gradient(GeneratedModel):
     axis: Axis
     tiling: TilingMode | None = None  # Defaults to `clamp_to_edge`.
-    from_coordinate: int
-    to_coordinate: int
+    from_coordinate: int | int | VerticalAnchor
+    to_coordinate: int | int | VerticalAnchor
     from_value: NoiseRange
     to_value: NoiseRange

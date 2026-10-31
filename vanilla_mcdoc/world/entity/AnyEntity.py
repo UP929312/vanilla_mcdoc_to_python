@@ -105,6 +105,8 @@ from vanilla_mcdoc.world.entity.mob.vex.Vex import Vex
 from vanilla_mcdoc.world.entity.mob.warden.Warden import Warden
 from vanilla_mcdoc.world.entity.mob.wither.Wither import Wither
 from vanilla_mcdoc.world.entity.mob.zoglin.Zoglin import Zoglin
+from vanilla_mcdoc.world.entity.mob.zombie.Drowned import Drowned
+from vanilla_mcdoc.world.entity.mob.zombie.Frostbite import Frostbite
 from vanilla_mcdoc.world.entity.mob.zombie.Zombie import Zombie
 from vanilla_mcdoc.world.entity.mob.zombie.ZombieVillager import ZombieVillager
 from vanilla_mcdoc.world.entity.mob.zombified_piglin.ZombiePigman import ZombiePigman
@@ -282,7 +284,7 @@ class AnyEntityDragonFireball(DespawnableProjectileBase):
     id: Literal['minecraft:dragon_fireball', 'dragon_fireball'] = 'minecraft:dragon_fireball'  # The ID of this entity. Not present on player entities.
 
 
-class AnyEntityDrowned(Zombie):
+class AnyEntityDrowned(Drowned):
     id: Literal['minecraft:drowned', 'drowned'] = 'minecraft:drowned'  # The ID of this entity. Not present on player entities.
 
 
@@ -354,7 +356,7 @@ class AnyEntityFrog(Frog):
     id: Literal['minecraft:frog', 'frog'] = 'minecraft:frog'  # The ID of this entity. Not present on player entities.
 
 
-class AnyEntityFrostbite(Zombie):
+class AnyEntityFrostbite(Frostbite):
     id: Literal['minecraft:frostbite', 'frostbite'] = 'minecraft:frostbite'  # The ID of this entity. Not present on player entities.
 
 

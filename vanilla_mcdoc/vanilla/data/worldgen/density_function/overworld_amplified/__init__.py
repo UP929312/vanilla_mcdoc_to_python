@@ -1,14 +1,17 @@
 """Vanilla's data/worldgen/density_function/overworld_amplified/ files"""
 from vanilla_mcdoc.data.worldgen.density_function.CubicSpline import CubicSplineStruct
-from vanilla_mcdoc.data.worldgen.density_function.DensityFunction import DensityFunctionStructAdd, DensityFunctionStructBeardifier, DensityFunctionStructBlendAlpha, DensityFunctionStructBlendDensity, DensityFunctionStructBlendOffset, DensityFunctionStructCache, DensityFunctionStructClamp, DensityFunctionStructDiv, DensityFunctionStructFindTopSurface, DensityFunctionStructGradient, DensityFunctionStructHalfNegative, DensityFunctionStructInterpolated, DensityFunctionStructLerp, DensityFunctionStructMax, DensityFunctionStructMin, DensityFunctionStructMul, DensityFunctionStructNoise, DensityFunctionStructQuarterNegative, DensityFunctionStructRangeChoice, DensityFunctionStructSpline, DensityFunctionStructSquare, DensityFunctionStructSqueeze, DensityFunctionStructSub
+from vanilla_mcdoc.data.worldgen.density_function.DensityFunction import DensityFunctionStructAdd, DensityFunctionStructBeardifier, DensityFunctionStructBlendAlpha, DensityFunctionStructBlendDensity, DensityFunctionStructBlendOffset, DensityFunctionStructCache, DensityFunctionStructClamp, DensityFunctionStructDiv, DensityFunctionStructFindTopSurface, DensityFunctionStructGradient, DensityFunctionStructHalfNegative, DensityFunctionStructLerp, DensityFunctionStructMax, DensityFunctionStructMin, DensityFunctionStructMul, DensityFunctionStructNoise, DensityFunctionStructQuarterNegative, DensityFunctionStructRangeChoice, DensityFunctionStructSpline, DensityFunctionStructSquare, DensityFunctionStructSqueeze, DensityFunctionStructSub, DensityFunctionStructUpscale
 from vanilla_mcdoc.data.worldgen.density_function.SplinePoint import SplinePoint
+from vanilla_mcdoc.data.worldgen.density_function.UpscaleAxis import UpscaleAxis
+from vanilla_mcdoc.data.worldgen.density_function.UpscaleMode import UpscaleMode
 from vanilla_mcdoc.util.direction.Axis import Axis
 
-CHUNK_SURFACE_LEVEL = DensityFunctionStructInterpolated(
+CHUNK_SURFACE_LEVEL = DensityFunctionStructUpscale(
     input='minecraft:overworld_amplified/preliminary_surface_level',
-    cell_size_xz=16,
-    cell_size_y=1,
-    type='minecraft:interpolated',
+    x=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=16),
+    y=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=1),
+    z=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=16),
+    type='minecraft:upscale',
 )
 
 DEPTH = DensityFunctionStructAdd(
@@ -562,7 +565,7 @@ FACTOR = DensityFunctionStructCache(
 FINAL_DENSITY = DensityFunctionStructAdd(
     left=DensityFunctionStructMin(
         left=DensityFunctionStructSqueeze(
-            input=DensityFunctionStructInterpolated(
+            input=DensityFunctionStructUpscale(
                 input=DensityFunctionStructMul(
                     left=DensityFunctionStructBlendDensity(
                         input=DensityFunctionStructLerp(
@@ -680,9 +683,10 @@ FINAL_DENSITY = DensityFunctionStructAdd(
                     right=0.64,
                     type='minecraft:mul',
                 ),
-                cell_size_xz=4,
-                cell_size_y=8,
-                type='minecraft:interpolated',
+                x=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=4),
+                y=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=8),
+                z=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=4),
+                type='minecraft:upscale',
             ),
             type='minecraft:squeeze',
         ),

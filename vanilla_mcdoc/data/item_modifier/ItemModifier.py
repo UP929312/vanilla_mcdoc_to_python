@@ -11,4 +11,4 @@ if TYPE_CHECKING:
     from vanilla_mcdoc.data.loot.LootFunction import LootFunction
 
 
-type ItemModifier = LootFunction | list[ItemModifier] | Annotated[str, IdSpec(registry='item_modifier', tags='allowed')]
+type ItemModifier = LootFunction | Annotated[str, IdSpec(registry='item_modifier', tags='allowed')] | list[Annotated[str, IdSpec(registry='item_modifier')] | LootFunction]

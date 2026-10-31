@@ -144,6 +144,7 @@ RUINED_PORTAL_STANDARD = Tag(
         'minecraft:ice_spikes',
         'minecraft:dripstone_caves',
         'minecraft:lush_caves',
+        'minecraft:ice_caves',
         'minecraft:sulfur_caves',
         'minecraft:savanna',
         'minecraft:snowy_plains',

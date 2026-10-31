@@ -3147,6 +3147,33 @@ WALK_ON_POWDER_SNOW_WITH_LEATHER_BOOTS = Advancement(
     sends_telemetry_event=True,
 )
 
+WHAT_GOES_AROUND_COMES_AROUND = Advancement(
+    parent='minecraft:adventure/kill_a_mob',
+    display=AdvancementDisplay(
+        icon=ItemStackOfComponent(id='minecraft:ice_ball'),
+        title=TextObjectStruct2(translate='advancements.adventure.what_goes_around_comes_around.title'),
+        description=TextObjectStruct2(translate='advancements.adventure.what_goes_around_comes_around.description'),
+    ),
+    criteria={
+        'kill_frostbite_with_ice_ball': AdvancementCriterionPlayerKilledEntity(
+            conditions=KilledTriggerTypeArg(
+                entity=LootConditionEntityProperties(
+                    entity=EntityTarget.THIS,
+                    predicate=EntitySubPredicateMap(entity_type='minecraft:frostbite'),
+                    type='minecraft:entity_properties',
+                ),
+                killing_blow=DamageSourcePredicate(
+                    tags=[DamageTagPredicate(id='#minecraft:is_projectile', expected=True)],
+                    direct_entity=EntitySubPredicateMap(entity_type='minecraft:ice_ball'),
+                ),
+            ),
+            trigger='minecraft:player_killed_entity',
+        ),
+    },
+    requirements=[['kill_frostbite_with_ice_ball']],
+    sends_telemetry_event=True,
+)
+
 WHOS_THE_PILLAGER_NOW = Advancement(
     parent='minecraft:adventure/ol_betsy',
     display=AdvancementDisplay(

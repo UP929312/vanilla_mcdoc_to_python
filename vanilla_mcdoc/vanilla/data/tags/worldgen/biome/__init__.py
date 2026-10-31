@@ -171,6 +171,8 @@ REDUCE_WATER_AMBIENT_SPAWNS = Tag(values=['#minecraft:is_river'])
 
 REQUIRED_OCEAN_MONUMENT_SURROUNDING = Tag(values=['#minecraft:is_ocean', '#minecraft:is_river'])
 
+SPAWNS_COLD_VARIANTS_UNDERGROUND = Tag(values=['minecraft:ice_caves'])
+
 SPAWNS_COLD_VARIANT_FARM_ANIMALS = Tag(
     values=[
         'minecraft:snowy_plains',
@@ -238,8 +240,6 @@ SPAWNS_SNOW_FOXES = Tag(
         'minecraft:ice_caves',
     ],
 )
-
-SPAWNS_STRAYS_WITHOUT_POWDER_SNOW = Tag(values=['minecraft:ice_caves'])
 
 SPAWNS_WARM_VARIANT_FARM_ANIMALS = Tag(
     values=[
@@ -323,6 +323,7 @@ STRONGHOLD_BIASED_TO = Tag(
         'minecraft:dripstone_caves',
         'minecraft:lush_caves',
         'minecraft:sulfur_caves',
+        'minecraft:ice_caves',
     ],
 )
 

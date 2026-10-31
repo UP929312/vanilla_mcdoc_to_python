@@ -1,5 +1,7 @@
 """Vanilla's data/worldgen/noise_settings/ files"""
-from vanilla_mcdoc.data.worldgen.density_function.DensityFunction import DensityFunctionStructAbs, DensityFunctionStructAdd, DensityFunctionStructBeardifier, DensityFunctionStructBlendDensity, DensityFunctionStructGradient, DensityFunctionStructInterpolated, DensityFunctionStructLerp, DensityFunctionStructMax, DensityFunctionStructMin, DensityFunctionStructMul, DensityFunctionStructNoise, DensityFunctionStructSqueeze, DensityFunctionStructSub
+from vanilla_mcdoc.data.worldgen.density_function.DensityFunction import DensityFunctionStructAbs, DensityFunctionStructAdd, DensityFunctionStructBeardifier, DensityFunctionStructBlendDensity, DensityFunctionStructGradient, DensityFunctionStructLerp, DensityFunctionStructMax, DensityFunctionStructMin, DensityFunctionStructMul, DensityFunctionStructNoise, DensityFunctionStructSqueeze, DensityFunctionStructSub, DensityFunctionStructUpscale
+from vanilla_mcdoc.data.worldgen.density_function.UpscaleAxis import UpscaleAxis
+from vanilla_mcdoc.data.worldgen.density_function.UpscaleMode import UpscaleMode
 from vanilla_mcdoc.data.worldgen.noise_settings.Aquifer import Aquifer
 from vanilla_mcdoc.data.worldgen.noise_settings.DebugFunctionEntry import DebugFunctionEntry
 from vanilla_mcdoc.data.worldgen.noise_settings.NoiseGeneratorSettings import NoiseGeneratorSettings
@@ -113,7 +115,7 @@ CAVES = NoiseGeneratorSettings(
         chunk_surface_level=0.0,
         final_density=DensityFunctionStructAdd(
             left=DensityFunctionStructSqueeze(
-                input=DensityFunctionStructInterpolated(
+                input=DensityFunctionStructUpscale(
                     input=DensityFunctionStructMul(
                         left=DensityFunctionStructBlendDensity(
                             input=DensityFunctionStructLerp(
@@ -146,9 +148,10 @@ CAVES = NoiseGeneratorSettings(
                         right=0.64,
                         type='minecraft:mul',
                     ),
-                    cell_size_xz=4,
-                    cell_size_y=8,
-                    type='minecraft:interpolated',
+                    x=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=4),
+                    y=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=8),
+                    z=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=4),
+                    type='minecraft:upscale',
                 ),
                 type='minecraft:squeeze',
             ),
@@ -163,7 +166,7 @@ CAVES = NoiseGeneratorSettings(
             label='N',
             function=DensityFunctionStructAdd(
                 left=DensityFunctionStructSqueeze(
-                    input=DensityFunctionStructInterpolated(
+                    input=DensityFunctionStructUpscale(
                         input=DensityFunctionStructMul(
                             left=DensityFunctionStructBlendDensity(
                                 input=DensityFunctionStructLerp(
@@ -196,9 +199,10 @@ CAVES = NoiseGeneratorSettings(
                             right=0.64,
                             type='minecraft:mul',
                         ),
-                        cell_size_xz=4,
-                        cell_size_y=8,
-                        type='minecraft:interpolated',
+                        x=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=4),
+                        y=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=8),
+                        z=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=4),
+                        type='minecraft:upscale',
                     ),
                     type='minecraft:squeeze',
                 ),
@@ -225,7 +229,7 @@ END = NoiseGeneratorSettings(
         chunk_surface_level=0.0,
         final_density=DensityFunctionStructAdd(
             left=DensityFunctionStructSqueeze(
-                input=DensityFunctionStructInterpolated(
+                input=DensityFunctionStructUpscale(
                     input=DensityFunctionStructMul(
                         left=DensityFunctionStructBlendDensity(
                             input=DensityFunctionStructLerp(
@@ -258,9 +262,10 @@ END = NoiseGeneratorSettings(
                         right=0.64,
                         type='minecraft:mul',
                     ),
-                    cell_size_xz=8,
-                    cell_size_y=4,
-                    type='minecraft:interpolated',
+                    x=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=8),
+                    y=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=4),
+                    z=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=8),
+                    type='minecraft:upscale',
                 ),
                 type='minecraft:squeeze',
             ),
@@ -275,7 +280,7 @@ END = NoiseGeneratorSettings(
             label='N',
             function=DensityFunctionStructAdd(
                 left=DensityFunctionStructSqueeze(
-                    input=DensityFunctionStructInterpolated(
+                    input=DensityFunctionStructUpscale(
                         input=DensityFunctionStructMul(
                             left=DensityFunctionStructBlendDensity(
                                 input=DensityFunctionStructLerp(
@@ -308,9 +313,10 @@ END = NoiseGeneratorSettings(
                             right=0.64,
                             type='minecraft:mul',
                         ),
-                        cell_size_xz=8,
-                        cell_size_y=4,
-                        type='minecraft:interpolated',
+                        x=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=8),
+                        y=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=4),
+                        z=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=8),
+                        type='minecraft:upscale',
                     ),
                     type='minecraft:squeeze',
                 ),
@@ -338,7 +344,7 @@ FLOATING_ISLANDS = NoiseGeneratorSettings(
         chunk_surface_level=0.0,
         final_density=DensityFunctionStructAdd(
             left=DensityFunctionStructSqueeze(
-                input=DensityFunctionStructInterpolated(
+                input=DensityFunctionStructUpscale(
                     input=DensityFunctionStructMul(
                         left=DensityFunctionStructBlendDensity(
                             input=DensityFunctionStructLerp(
@@ -371,9 +377,10 @@ FLOATING_ISLANDS = NoiseGeneratorSettings(
                         right=0.64,
                         type='minecraft:mul',
                     ),
-                    cell_size_xz=8,
-                    cell_size_y=4,
-                    type='minecraft:interpolated',
+                    x=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=8),
+                    y=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=4),
+                    z=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=8),
+                    type='minecraft:upscale',
                 ),
                 type='minecraft:squeeze',
             ),
@@ -388,7 +395,7 @@ FLOATING_ISLANDS = NoiseGeneratorSettings(
             label='N',
             function=DensityFunctionStructAdd(
                 left=DensityFunctionStructSqueeze(
-                    input=DensityFunctionStructInterpolated(
+                    input=DensityFunctionStructUpscale(
                         input=DensityFunctionStructMul(
                             left=DensityFunctionStructBlendDensity(
                                 input=DensityFunctionStructLerp(
@@ -421,9 +428,10 @@ FLOATING_ISLANDS = NoiseGeneratorSettings(
                             right=0.64,
                             type='minecraft:mul',
                         ),
-                        cell_size_xz=8,
-                        cell_size_y=4,
-                        type='minecraft:interpolated',
+                        x=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=8),
+                        y=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=4),
+                        z=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=8),
+                        type='minecraft:upscale',
                     ),
                     type='minecraft:squeeze',
                 ),
@@ -557,7 +565,7 @@ NETHER = NoiseGeneratorSettings(
         chunk_surface_level=0.0,
         final_density=DensityFunctionStructAdd(
             left=DensityFunctionStructSqueeze(
-                input=DensityFunctionStructInterpolated(
+                input=DensityFunctionStructUpscale(
                     input=DensityFunctionStructMul(
                         left=DensityFunctionStructBlendDensity(
                             input=DensityFunctionStructLerp(
@@ -590,9 +598,10 @@ NETHER = NoiseGeneratorSettings(
                         right=0.64,
                         type='minecraft:mul',
                     ),
-                    cell_size_xz=4,
-                    cell_size_y=8,
-                    type='minecraft:interpolated',
+                    x=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=4),
+                    y=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=8),
+                    z=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=4),
+                    type='minecraft:upscale',
                 ),
                 type='minecraft:squeeze',
             ),
@@ -607,7 +616,7 @@ NETHER = NoiseGeneratorSettings(
             label='N',
             function=DensityFunctionStructAdd(
                 left=DensityFunctionStructSqueeze(
-                    input=DensityFunctionStructInterpolated(
+                    input=DensityFunctionStructUpscale(
                         input=DensityFunctionStructMul(
                             left=DensityFunctionStructBlendDensity(
                                 input=DensityFunctionStructLerp(
@@ -640,9 +649,10 @@ NETHER = NoiseGeneratorSettings(
                             right=0.64,
                             type='minecraft:mul',
                         ),
-                        cell_size_xz=4,
-                        cell_size_y=8,
-                        type='minecraft:interpolated',
+                        x=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=4),
+                        y=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=8),
+                        z=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=4),
+                        type='minecraft:upscale',
                     ),
                     type='minecraft:squeeze',
                 ),

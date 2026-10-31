@@ -16,7 +16,8 @@ from vanilla_mcdoc.data.enchantment.effect.AttributeEffect import AttributeEffec
 from vanilla_mcdoc.data.enchantment.effect.BlockInteraction import BlockInteraction
 from vanilla_mcdoc.data.enchantment.effect.EntityEffect import EntityEffectAllOf, EntityEffectApplyExhaustion, EntityEffectApplyImpulse, EntityEffectApplyMobEffect, EntityEffectChangeItemDamage, EntityEffectDamageEntity, EntityEffectExplode, EntityEffectIgnite, EntityEffectPlaySound, EntityEffectSpawnParticles, EntityEffectSummonEntity
 from vanilla_mcdoc.data.enchantment.effect.LocationBasedEffect import LocationBasedEffectAllOf, LocationBasedEffectAttribute, LocationBasedEffectChangeItemDamage, LocationBasedEffectReplaceDisk
-from vanilla_mcdoc.data.enchantment.effect.ParticlePosition import ParticlePosition
+from vanilla_mcdoc.data.enchantment.effect.ParticlePosition import ParticlePositionUnknown
+from vanilla_mcdoc.data.enchantment.effect.ParticlePositionType import ParticlePositionType
 from vanilla_mcdoc.data.enchantment.effect.ParticleVelocity import ParticleVelocity
 from vanilla_mcdoc.data.enchantment.effect.ValueEffect import ValueEffectAdd, ValueEffectMultiply, ValueEffectRemoveBinomial, ValueEffectSet
 from vanilla_mcdoc.data.enchantment.effect_component.AmmoUseEnchantmentEffect import AmmoUseEnchantmentEffect
@@ -1266,8 +1267,8 @@ SOUL_SPEED = Enchantment(
                 ),
                 effect=EntityEffectSpawnParticles(
                     particle=ParticleDefault(type='minecraft:soul'),
-                    horizontal_position=ParticlePosition(type='in_bounding_box'),
-                    vertical_position=ParticlePosition(type='entity_position', offset=0.1),
+                    horizontal_position=ParticlePositionUnknown(type=ParticlePositionType.INBOUNDINGBOX),
+                    vertical_position=ParticlePositionUnknown(type=ParticlePositionType.ENTITYPOSITION, offset=0.1),
                     horizontal_velocity=ParticleVelocity(movement_scale=-0.2),
                     vertical_velocity=ParticleVelocity(base=0.1),
                     speed=1.0,

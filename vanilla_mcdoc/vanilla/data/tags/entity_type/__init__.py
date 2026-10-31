@@ -177,7 +177,7 @@ DISMOUNTS_UNDERWATER = Tag(
     ],
 )
 
-DOES_NOT_BREAK_BRITTLE_ICE = Tag(values=['minecraft:frostbite'])
+DOES_NOT_BREAK_BRITTLE_ICE = Tag(values=['minecraft:frostbite', 'minecraft:stray'])
 
 FALL_DAMAGE_IMMUNE = Tag(
     values=[
@@ -199,6 +199,22 @@ FALL_DAMAGE_IMMUNE = Tag(
         'minecraft:parrot',
         'minecraft:wither',
         'minecraft:breeze',
+    ],
+)
+
+FLYING = Tag(
+    values=[
+        'minecraft:allay',
+        'minecraft:bat',
+        'minecraft:bee',
+        'minecraft:blaze',
+        'minecraft:ender_dragon',
+        'minecraft:parrot',
+        'minecraft:phantom',
+        'minecraft:ghast',
+        'minecraft:happy_ghast',
+        'minecraft:vex',
+        'minecraft:wither',
     ],
 )
 
@@ -234,7 +250,13 @@ FOLLOWABLE_FRIENDLY_MOBS = Tag(
 
 FREEZE_HURTS_EXTRA_TYPES = Tag(values=['minecraft:strider', 'minecraft:blaze', 'minecraft:magma_cube'])
 
-FREEZE_IMMUNE_ENTITY_TYPES = Tag(
+FROG_FOOD = Tag(values=['minecraft:slime', 'minecraft:magma_cube'])
+
+ILLAGER = Tag(values=['minecraft:evoker', 'minecraft:illusioner', 'minecraft:pillager', 'minecraft:vindicator'])
+
+ILLAGER_FRIENDS = Tag(values=['#minecraft:illager'])
+
+IMMUNE_TO_FREEZING = Tag(
     values=[
         'minecraft:stray',
         'minecraft:polar_bear',
@@ -247,17 +269,25 @@ FREEZE_IMMUNE_ENTITY_TYPES = Tag(
     ],
 )
 
-FROG_FOOD = Tag(values=['minecraft:slime', 'minecraft:magma_cube'])
-
-IGNORES_POISON_AND_REGEN = Tag(values=['#minecraft:undead'])
-
-ILLAGER = Tag(values=['minecraft:evoker', 'minecraft:illusioner', 'minecraft:pillager', 'minecraft:vindicator'])
-
-ILLAGER_FRIENDS = Tag(values=['#minecraft:illager'])
-
 IMMUNE_TO_INFESTED = Tag(values=['minecraft:silverfish'])
 
 IMMUNE_TO_OOZING = Tag(values=['minecraft:slime'])
+
+IMMUNE_TO_POISON = Tag(
+    values=[
+        '#minecraft:undead',
+        'minecraft:nautilus',
+        'minecraft:zombie_nautilus',
+        'minecraft:spider',
+        'minecraft:cave_spider',
+    ],
+)
+
+IMMUNE_TO_REGENERATION = Tag(values=['#minecraft:undead'])
+
+IMMUNE_TO_WEAKNESS = Tag(values=['minecraft:parched'])
+
+IMMUNE_TO_WITHER = Tag(values=['minecraft:wither', 'minecraft:wither_skeleton'])
 
 IMPACT_PROJECTILES = Tag(
     values=[
@@ -349,6 +379,8 @@ SKELETONS = Tag(
         'minecraft:parched',
     ],
 )
+
+SWIMMING = Tag(values=['#minecraft:aquatic', 'minecraft:frog'])
 
 UNDEAD = Tag(values=['#minecraft:skeletons', '#minecraft:zombies', 'minecraft:wither', 'minecraft:phantom'])
 

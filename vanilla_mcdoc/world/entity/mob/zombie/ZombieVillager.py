@@ -8,7 +8,7 @@ from typing import TYPE_CHECKING
 from pydantic import Field
 
 from vanilla_mcdoc.minecraft_types import MinecraftUUID
-from vanilla_mcdoc.world.entity.mob.zombie.Zombie import Zombie
+from vanilla_mcdoc.world.entity.mob.zombie.ZombieBase import ZombieBase
 
 if TYPE_CHECKING:
     from vanilla_mcdoc.world.entity.mob.breedable.villager.Offers import Offers
@@ -16,7 +16,7 @@ if TYPE_CHECKING:
     from vanilla_mcdoc.world.entity.mob.breedable.villager.VillagerData import VillagerData
 
 
-class ZombieVillager(Zombie):
+class ZombieVillager(ZombieBase):
     VillagerData_: VillagerData | None = Field(default=None, validation_alias='VillagerData', serialization_alias='VillagerData')  # Villager's skin data
     VillagerDataFinalized: bool | None = None
     Gossips: list[PlayerReputationPart] | None = None  # Villager's gossips

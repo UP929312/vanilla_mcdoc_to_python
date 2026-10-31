@@ -19,4 +19,6 @@ SUPPORTS_LILY_PAD = Tag(values=['minecraft:water'])
 
 SUPPORTS_SUGAR_CANE_ADJACENTLY = Tag(values=['#minecraft:water'])
 
+SWIMMABLE = Tag(values=['minecraft:water'])
+
 WATER = Tag(values=['minecraft:water'])

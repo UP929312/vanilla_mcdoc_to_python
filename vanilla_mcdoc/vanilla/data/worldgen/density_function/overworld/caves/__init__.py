@@ -1,5 +1,7 @@
 """Vanilla's data/worldgen/density_function/overworld/caves/ files"""
-from vanilla_mcdoc.data.worldgen.density_function.DensityFunction import DensityFunctionStructAbs, DensityFunctionStructAdd, DensityFunctionStructCache, DensityFunctionStructClamp, DensityFunctionStructCube, DensityFunctionStructGradient, DensityFunctionStructInterpolated, DensityFunctionStructIntervalSelect, DensityFunctionStructMax, DensityFunctionStructMin, DensityFunctionStructMul, DensityFunctionStructNoise, DensityFunctionStructRangeChoice
+from vanilla_mcdoc.data.worldgen.density_function.DensityFunction import DensityFunctionStructAbs, DensityFunctionStructAdd, DensityFunctionStructCache, DensityFunctionStructClamp, DensityFunctionStructCube, DensityFunctionStructGradient, DensityFunctionStructIntervalSelect, DensityFunctionStructMax, DensityFunctionStructMin, DensityFunctionStructMul, DensityFunctionStructNoise, DensityFunctionStructRangeChoice, DensityFunctionStructUpscale
+from vanilla_mcdoc.data.worldgen.density_function.UpscaleAxis import UpscaleAxis
+from vanilla_mcdoc.data.worldgen.density_function.UpscaleMode import UpscaleMode
 from vanilla_mcdoc.util.direction.Axis import Axis
 
 ENTRANCES = DensityFunctionStructCache(
@@ -176,7 +178,7 @@ ENTRANCES = DensityFunctionStructCache(
 )
 
 NOODLE = DensityFunctionStructRangeChoice(
-    input=DensityFunctionStructInterpolated(
+    input=DensityFunctionStructUpscale(
         input=DensityFunctionStructRangeChoice(
             input='minecraft:y',
             min_inclusive=-60.0,
@@ -185,15 +187,16 @@ NOODLE = DensityFunctionStructRangeChoice(
             when_out_of_range=-1.0,
             type='minecraft:range_choice',
         ),
-        cell_size_xz=4,
-        cell_size_y=8,
-        type='minecraft:interpolated',
+        x=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=4),
+        y=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=8),
+        z=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=4),
+        type='minecraft:upscale',
     ),
     min_inclusive=-1000000.0,
     max_exclusive=0.0,
     when_in_range=64.0,
     when_out_of_range=DensityFunctionStructAdd(
-        left=DensityFunctionStructInterpolated(
+        left=DensityFunctionStructUpscale(
             input=DensityFunctionStructRangeChoice(
                 input='minecraft:y',
                 min_inclusive=-60.0,
@@ -215,14 +218,15 @@ NOODLE = DensityFunctionStructRangeChoice(
                 when_out_of_range=0.0,
                 type='minecraft:range_choice',
             ),
-            cell_size_xz=4,
-            cell_size_y=8,
-            type='minecraft:interpolated',
+            x=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=4),
+            y=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=8),
+            z=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=4),
+            type='minecraft:upscale',
         ),
         right=DensityFunctionStructMul(
             left=DensityFunctionStructMax(
                 left=DensityFunctionStructAbs(
-                    input=DensityFunctionStructInterpolated(
+                    input=DensityFunctionStructUpscale(
                         input=DensityFunctionStructRangeChoice(
                             input='minecraft:y',
                             min_inclusive=-60.0,
@@ -236,14 +240,15 @@ NOODLE = DensityFunctionStructRangeChoice(
                             when_out_of_range=0.0,
                             type='minecraft:range_choice',
                         ),
-                        cell_size_xz=4,
-                        cell_size_y=8,
-                        type='minecraft:interpolated',
+                        x=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=4),
+                        y=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=8),
+                        z=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=4),
+                        type='minecraft:upscale',
                     ),
                     type='minecraft:abs',
                 ),
                 right=DensityFunctionStructAbs(
-                    input=DensityFunctionStructInterpolated(
+                    input=DensityFunctionStructUpscale(
                         input=DensityFunctionStructRangeChoice(
                             input='minecraft:y',
                             min_inclusive=-60.0,
@@ -257,9 +262,10 @@ NOODLE = DensityFunctionStructRangeChoice(
                             when_out_of_range=0.0,
                             type='minecraft:range_choice',
                         ),
-                        cell_size_xz=4,
-                        cell_size_y=8,
-                        type='minecraft:interpolated',
+                        x=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=4),
+                        y=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=8),
+                        z=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=4),
+                        type='minecraft:upscale',
                     ),
                     type='minecraft:abs',
                 ),

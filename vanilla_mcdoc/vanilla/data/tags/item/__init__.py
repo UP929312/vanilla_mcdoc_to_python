@@ -1329,6 +1329,8 @@ SLABS = Tag(
         'minecraft:sulfur_slab',
         'minecraft:polished_sulfur_slab',
         'minecraft:sulfur_brick_slab',
+        'minecraft:packed_ice_brick_slab',
+        'minecraft:snow_brick_slab',
         '#minecraft:wool_slabs',
         '#minecraft:concrete_slabs',
     ],
@@ -1433,6 +1435,8 @@ STAIRS = Tag(
         'minecraft:sulfur_stairs',
         'minecraft:polished_sulfur_stairs',
         'minecraft:sulfur_brick_stairs',
+        'minecraft:packed_ice_brick_stairs',
+        'minecraft:snow_brick_stairs',
         '#minecraft:wool_stairs',
         '#minecraft:concrete_stairs',
     ],
@@ -1473,6 +1477,7 @@ SULFUR_CUBE_SWALLOWABLE = Tag(
         '#minecraft:sulfur_cube_archetype/explosive',
         '#minecraft:sulfur_cube_archetype/hot',
         '#minecraft:sulfur_cube_archetype/slow_bouncy',
+        '#minecraft:sulfur_cube_archetype/cold',
     ],
 )
 
@@ -1592,6 +1597,8 @@ WALLS = Tag(
         'minecraft:sulfur_wall',
         'minecraft:polished_sulfur_wall',
         'minecraft:sulfur_brick_wall',
+        'minecraft:packed_ice_brick_wall',
+        'minecraft:snow_brick_wall',
     ],
 )
 

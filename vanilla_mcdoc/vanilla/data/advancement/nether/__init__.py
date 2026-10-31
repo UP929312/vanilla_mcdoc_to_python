@@ -56,6 +56,7 @@ ALL_EFFECTS = Advancement(
                     'minecraft:darkness': MobEffectPredicate(),
                     'minecraft:dolphins_grace': MobEffectPredicate(),
                     'minecraft:fire_resistance': MobEffectPredicate(),
+                    'minecraft:freezing': MobEffectPredicate(),
                     'minecraft:glowing': MobEffectPredicate(),
                     'minecraft:haste': MobEffectPredicate(),
                     'minecraft:hero_of_the_village': MobEffectPredicate(),
@@ -105,6 +106,7 @@ ALL_POTIONS = Advancement(
             conditions=EffectsChangedTriggerTypeArg(
                 effects={
                     'minecraft:fire_resistance': MobEffectPredicate(),
+                    'minecraft:freezing': MobEffectPredicate(),
                     'minecraft:infested': MobEffectPredicate(),
                     'minecraft:invisibility': MobEffectPredicate(),
                     'minecraft:jump_boost': MobEffectPredicate(),

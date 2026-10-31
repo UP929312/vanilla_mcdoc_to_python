@@ -3,6 +3,8 @@ from vanilla_mcdoc.data.tag.Tag import Tag
 
 BOUNCY = Tag(values=['#minecraft:planks', 'minecraft:bamboo_mosaic', '#minecraft:logs', '#minecraft:bamboo_blocks'])
 
+COLD = Tag(values=['minecraft:blue_ice'])
+
 EXPLOSIVE = Tag(values=['minecraft:tnt'])
 
 FAST_FLAT = Tag(
@@ -35,7 +37,15 @@ FAST_FLAT = Tag(
     ],
 )
 
-FAST_SLIDING = Tag(values=['minecraft:blue_ice', 'minecraft:packed_ice', 'minecraft:snow_block'])
+FAST_SLIDING = Tag(
+    values=[
+        'minecraft:packed_ice',
+        'minecraft:packed_ice_bricks',
+        'minecraft:chiseled_packed_ice',
+        'minecraft:snow_block',
+        'minecraft:snow_bricks',
+    ],
+)
 
 HIGH_RESISTANCE = Tag(values=['minecraft:soul_sand', 'minecraft:soul_soil'])
 

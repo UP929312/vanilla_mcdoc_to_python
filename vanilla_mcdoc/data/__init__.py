@@ -202,6 +202,7 @@ from vanilla_mcdoc.data.loot.function.CopyNbtStrategy import CopyNbtStrategy
 from vanilla_mcdoc.data.worldgen.feature.block_state_provider.CopyPropertiesProvider import CopyPropertiesProvider
 from vanilla_mcdoc.data.loot.function.CopyState import CopyState
 from vanilla_mcdoc.data.worldgen.feature.CoralConfig import CoralConfig
+from vanilla_mcdoc.data.worldgen.template_pool.CornersToCheck import CornersToCheck
 from vanilla_mcdoc.data.worldgen.feature.decorator.CountConfig import CountConfig
 from vanilla_mcdoc.data.worldgen.feature.decorator.CountExtraConfig import CountExtraConfig
 from vanilla_mcdoc.data.worldgen.feature.placement.CountModifier import CountModifier
@@ -260,6 +261,7 @@ from vanilla_mcdoc.data.advancement.trigger.DefaultBlockInteractionTrigger impor
 from vanilla_mcdoc.data.worldgen.feature.DeltaConfig import DeltaConfig
 from vanilla_mcdoc.data.worldgen.density_function.DensityFunction import DensityFunction
 from vanilla_mcdoc.data.worldgen.density_function.DensityFunctionRef import DensityFunctionRef
+from vanilla_mcdoc.data.worldgen.template_pool.DensityPredicate import DensityPredicate
 from vanilla_mcdoc.data.worldgen.feature.decorator.DepthAverageConfig import DepthAverageConfig
 from vanilla_mcdoc.data.dialog.Dialog import Dialog
 from vanilla_mcdoc.data.dialog.DialogBase import DialogBase
@@ -282,6 +284,7 @@ from vanilla_mcdoc.data.advancement.predicate.DistancePredicate import DistanceP
 from vanilla_mcdoc.data.worldgen.density_function.DistanceToPoint import DistanceToPoint
 from vanilla_mcdoc.data.advancement.trigger.DistanceTrigger import DistanceTrigger
 from vanilla_mcdoc.data.number_provider.DistributionProvider import DistributionProvider
+from vanilla_mcdoc.data.worldgen.density_function.DomainWarp import DomainWarp
 from vanilla_mcdoc.data.worldgen.feature.block_state_provider.DualNoiseProvider import DualNoiseProvider
 from vanilla_mcdoc.data.dialog.action.DynamicCustomAction import DynamicCustomAction
 from vanilla_mcdoc.data.loot.DynamicDrops import DynamicDrops
@@ -603,6 +606,7 @@ from vanilla_mcdoc.data.structure.Palette import Palette
 from vanilla_mcdoc.data.advancement.trigger.ParitalRequired import ParitalRequired
 from vanilla_mcdoc.data.advancement.predicate.ParrotPredicate import ParrotPredicate
 from vanilla_mcdoc.data.enchantment.effect.ParticlePosition import ParticlePosition
+from vanilla_mcdoc.data.enchantment.effect.ParticlePositionType import ParticlePositionType
 from vanilla_mcdoc.data.enchantment.effect.ParticleVelocity import ParticleVelocity
 from vanilla_mcdoc.data.advancement.trigger.PickedUpItemTrigger import PickedUpItemTrigger
 from vanilla_mcdoc.data.variants.pig.PigModelType import PigModelType
@@ -899,6 +903,9 @@ from vanilla_mcdoc.data.worldgen.UniformIntProvider import UniformIntProvider
 from vanilla_mcdoc.data.number_provider.legacy.UniformNumberProvider import UniformNumberProvider
 from vanilla_mcdoc.data.storage.UnknownStorage import UnknownStorage
 from vanilla_mcdoc.data.worldgen.feature.block_predicate.UnobstructedPredicate import UnobstructedPredicate
+from vanilla_mcdoc.data.worldgen.density_function.Upscale import Upscale
+from vanilla_mcdoc.data.worldgen.density_function.UpscaleAxis import UpscaleAxis
+from vanilla_mcdoc.data.worldgen.density_function.UpscaleMode import UpscaleMode
 from vanilla_mcdoc.data.worldgen.feature.tree.UpwardsBranchingTrunkPlacer import UpwardsBranchingTrunkPlacer
 from vanilla_mcdoc.data.advancement.trigger.UsedEnderEyeTrigger import UsedEnderEyeTrigger
 from vanilla_mcdoc.data.advancement.trigger.UsedTotemTrigger import UsedTotemTrigger
@@ -1140,6 +1147,7 @@ __all__ = [
     "CopyPropertiesProvider",
     "CopyState",
     "CoralConfig",
+    "CornersToCheck",
     "CountConfig",
     "CountExtraConfig",
     "CountModifier",
@@ -1198,6 +1206,7 @@ __all__ = [
     "DeltaConfig",
     "DensityFunction",
     "DensityFunctionRef",
+    "DensityPredicate",
     "DepthAverageConfig",
     "Dialog",
     "DialogBase",
@@ -1220,6 +1229,7 @@ __all__ = [
     "DistanceToPoint",
     "DistanceTrigger",
     "DistributionProvider",
+    "DomainWarp",
     "DualNoiseProvider",
     "DynamicCustomAction",
     "DynamicDrops",
@@ -1541,6 +1551,7 @@ __all__ = [
     "ParitalRequired",
     "ParrotPredicate",
     "ParticlePosition",
+    "ParticlePositionType",
     "ParticleVelocity",
     "PickedUpItemTrigger",
     "PigModelType",
@@ -1837,6 +1848,9 @@ __all__ = [
     "UniformNumberProvider",
     "UnknownStorage",
     "UnobstructedPredicate",
+    "Upscale",
+    "UpscaleAxis",
+    "UpscaleMode",
     "UpwardsBranchingTrunkPlacer",
     "UsedEnderEyeTrigger",
     "UsedTotemTrigger",

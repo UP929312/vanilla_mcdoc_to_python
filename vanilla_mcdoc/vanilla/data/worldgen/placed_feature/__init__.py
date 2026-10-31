@@ -1662,7 +1662,7 @@ ICE_CAVE_ORE_REDSTONE_LOWER = PlacedFeature(
 ICE_CREVASSE = PlacedFeature(
     feature='minecraft:ice_crevasse',
     placement=[
-        PlacementModifierCount(count=8, type='minecraft:count'),
+        PlacementModifierCount(count=16, type='minecraft:count'),
         PlacementModifierInSquare(type='minecraft:in_square'),
         PlacementModifierHeightRange(
             height=HeightProviderStructUniform(
@@ -1674,7 +1674,7 @@ ICE_CREVASSE = PlacedFeature(
         ),
         PlacementModifierEnvironmentScan(
             direction_of_search=VerticalDirection.DOWN,
-            max_steps=32,
+            max_steps=8,
             target_condition=BlockPredicateMatchingBlockTag(
                 tag='minecraft:ice_crevasse_replaceables',
                 type='minecraft:matching_block_tag',

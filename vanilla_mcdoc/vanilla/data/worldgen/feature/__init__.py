@@ -33,7 +33,7 @@ from vanilla_mcdoc.data.worldgen.processor_list.BlockEntityModifier import Block
 from vanilla_mcdoc.data.worldgen.processor_list.Processor import ProcessorRule2
 from vanilla_mcdoc.data.worldgen.processor_list.ProcessorList import ProcessorListStruct
 from vanilla_mcdoc.data.worldgen.processor_list.ProcessorRule import ProcessorRule
-from vanilla_mcdoc.data.worldgen.processor_list.RuleTest import RuleTestAllOf, RuleTestAlwaysTrue, RuleTestAnyOf, RuleTestBlockMatch, RuleTestHeightMatch, RuleTestNot, RuleTestTagMatch
+from vanilla_mcdoc.data.worldgen.processor_list.RuleTest import RuleTestAllOf, RuleTestAlwaysTrue, RuleTestAnyOf, RuleTestBlockMatch, RuleTestHeightMatch, RuleTestTagMatch
 from vanilla_mcdoc.util.WeightedEntry import WeightedEntry
 from vanilla_mcdoc.util.block_state.FullBlockState import FullBlockState
 from vanilla_mcdoc.util.direction.Direction import Direction
@@ -2646,113 +2646,52 @@ ICE_CAVE_ORE_COAL = ConfiguredFeatureSequence(
             feature=ConfiguredFeatureOre(
                 targets=[
                     TargetBlock(
-                        target=RuleTestAnyOf(
+                        target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+                        state='minecraft:stone',
+                    ),
+                    TargetBlock(
+                        target=RuleTestTagMatch(
+                            tag='minecraft:deepslate_ore_replaceables',
+                            predicate_type='minecraft:tag_match',
+                        ),
+                        state='minecraft:deepslate',
+                    ),
+                    TargetBlock(
+                        target=RuleTestAllOf(
                             rules=[
+                                RuleTestHeightMatch(
+                                    min_inclusive=0,
+                                    max_inclusive=2031,
+                                    predicate_type='minecraft:height_match',
+                                ),
                                 RuleTestAnyOf(
                                     rules=[
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:height_specific_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                                RuleTestHeightMatch(
-                                                    min_inclusive=0,
-                                                    max_inclusive=2031,
-                                                    predicate_type='minecraft:height_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestNot(
-                                                    rule=RuleTestTagMatch(
-                                                        tag='minecraft:height_specific_ore_replaceables',
-                                                        predicate_type='minecraft:tag_match',
-                                                    ),
-                                                    predicate_type='minecraft:not',
-                                                ),
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:stone_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:any_of',
-                                ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestHeightMatch(
-                                            min_inclusive=0,
-                                            max_inclusive=2031,
-                                            predicate_type='minecraft:height_match',
+                                        RuleTestTagMatch(
+                                            tag='minecraft:height_specific_ore_replaceables',
+                                            predicate_type='minecraft:tag_match',
                                         ),
                                         RuleTestTagMatch(
                                             tag='minecraft:ice_cave_ore_replaceables',
                                             predicate_type='minecraft:tag_match',
                                         ),
                                     ],
-                                    predicate_type='minecraft:all_of',
+                                    predicate_type='minecraft:any_of',
                                 ),
                             ],
-                            predicate_type='minecraft:any_of',
+                            predicate_type='minecraft:all_of',
                         ),
                         state='minecraft:stone',
                     ),
                     TargetBlock(
                         target=RuleTestAnyOf(
                             rules=[
-                                RuleTestAnyOf(
-                                    rules=[
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:height_specific_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                                RuleTestHeightMatch(
-                                                    min_inclusive=-2032,
-                                                    max_inclusive=8,
-                                                    predicate_type='minecraft:height_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestNot(
-                                                    rule=RuleTestTagMatch(
-                                                        tag='minecraft:height_specific_ore_replaceables',
-                                                        predicate_type='minecraft:tag_match',
-                                                    ),
-                                                    predicate_type='minecraft:not',
-                                                ),
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:deepslate_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:any_of',
+                                RuleTestTagMatch(
+                                    tag='minecraft:height_specific_ore_replaceables',
+                                    predicate_type='minecraft:tag_match',
                                 ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestHeightMatch(
-                                            min_inclusive=-2032,
-                                            max_inclusive=8,
-                                            predicate_type='minecraft:height_match',
-                                        ),
-                                        RuleTestTagMatch(
-                                            tag='minecraft:ice_cave_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
+                                RuleTestTagMatch(
+                                    tag='minecraft:ice_cave_ore_replaceables',
+                                    predicate_type='minecraft:tag_match',
                                 ),
                             ],
                             predicate_type='minecraft:any_of',
@@ -2770,78 +2709,37 @@ ICE_CAVE_ORE_COAL = ConfiguredFeatureSequence(
             feature=ConfiguredFeatureOre(
                 targets=[
                     TargetBlock(
-                        target=RuleTestAnyOf(
+                        target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+                        state='minecraft:coal_ore',
+                    ),
+                    TargetBlock(
+                        target=RuleTestTagMatch(
+                            tag='minecraft:deepslate_ore_replaceables',
+                            predicate_type='minecraft:tag_match',
+                        ),
+                        state='minecraft:deepslate_coal_ore',
+                    ),
+                    TargetBlock(
+                        target=RuleTestAllOf(
                             rules=[
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestTagMatch(
-                                            tag='minecraft:height_specific_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                        RuleTestHeightMatch(
-                                            min_inclusive=0,
-                                            max_inclusive=2031,
-                                            predicate_type='minecraft:height_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
+                                RuleTestHeightMatch(
+                                    min_inclusive=0,
+                                    max_inclusive=2031,
+                                    predicate_type='minecraft:height_match',
                                 ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestNot(
-                                            rule=RuleTestTagMatch(
-                                                tag='minecraft:height_specific_ore_replaceables',
-                                                predicate_type='minecraft:tag_match',
-                                            ),
-                                            predicate_type='minecraft:not',
-                                        ),
-                                        RuleTestTagMatch(
-                                            tag='minecraft:stone_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
+                                RuleTestTagMatch(
+                                    tag='minecraft:height_specific_ore_replaceables',
+                                    predicate_type='minecraft:tag_match',
                                 ),
                             ],
-                            predicate_type='minecraft:any_of',
+                            predicate_type='minecraft:all_of',
                         ),
                         state='minecraft:coal_ore',
                     ),
                     TargetBlock(
-                        target=RuleTestAnyOf(
-                            rules=[
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestTagMatch(
-                                            tag='minecraft:height_specific_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                        RuleTestHeightMatch(
-                                            min_inclusive=-2032,
-                                            max_inclusive=8,
-                                            predicate_type='minecraft:height_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
-                                ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestNot(
-                                            rule=RuleTestTagMatch(
-                                                tag='minecraft:height_specific_ore_replaceables',
-                                                predicate_type='minecraft:tag_match',
-                                            ),
-                                            predicate_type='minecraft:not',
-                                        ),
-                                        RuleTestTagMatch(
-                                            tag='minecraft:deepslate_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
-                                ),
-                            ],
-                            predicate_type='minecraft:any_of',
+                        target=RuleTestTagMatch(
+                            tag='minecraft:height_specific_ore_replaceables',
+                            predicate_type='minecraft:tag_match',
                         ),
                         state='minecraft:deepslate_coal_ore',
                     ),
@@ -2862,113 +2760,52 @@ ICE_CAVE_ORE_COAL_BURIED = ConfiguredFeatureSequence(
             feature=ConfiguredFeatureOre(
                 targets=[
                     TargetBlock(
-                        target=RuleTestAnyOf(
+                        target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+                        state='minecraft:stone',
+                    ),
+                    TargetBlock(
+                        target=RuleTestTagMatch(
+                            tag='minecraft:deepslate_ore_replaceables',
+                            predicate_type='minecraft:tag_match',
+                        ),
+                        state='minecraft:deepslate',
+                    ),
+                    TargetBlock(
+                        target=RuleTestAllOf(
                             rules=[
+                                RuleTestHeightMatch(
+                                    min_inclusive=0,
+                                    max_inclusive=2031,
+                                    predicate_type='minecraft:height_match',
+                                ),
                                 RuleTestAnyOf(
                                     rules=[
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:height_specific_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                                RuleTestHeightMatch(
-                                                    min_inclusive=0,
-                                                    max_inclusive=2031,
-                                                    predicate_type='minecraft:height_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestNot(
-                                                    rule=RuleTestTagMatch(
-                                                        tag='minecraft:height_specific_ore_replaceables',
-                                                        predicate_type='minecraft:tag_match',
-                                                    ),
-                                                    predicate_type='minecraft:not',
-                                                ),
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:stone_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:any_of',
-                                ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestHeightMatch(
-                                            min_inclusive=0,
-                                            max_inclusive=2031,
-                                            predicate_type='minecraft:height_match',
+                                        RuleTestTagMatch(
+                                            tag='minecraft:height_specific_ore_replaceables',
+                                            predicate_type='minecraft:tag_match',
                                         ),
                                         RuleTestTagMatch(
                                             tag='minecraft:ice_cave_ore_replaceables',
                                             predicate_type='minecraft:tag_match',
                                         ),
                                     ],
-                                    predicate_type='minecraft:all_of',
+                                    predicate_type='minecraft:any_of',
                                 ),
                             ],
-                            predicate_type='minecraft:any_of',
+                            predicate_type='minecraft:all_of',
                         ),
                         state='minecraft:stone',
                     ),
                     TargetBlock(
                         target=RuleTestAnyOf(
                             rules=[
-                                RuleTestAnyOf(
-                                    rules=[
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:height_specific_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                                RuleTestHeightMatch(
-                                                    min_inclusive=-2032,
-                                                    max_inclusive=8,
-                                                    predicate_type='minecraft:height_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestNot(
-                                                    rule=RuleTestTagMatch(
-                                                        tag='minecraft:height_specific_ore_replaceables',
-                                                        predicate_type='minecraft:tag_match',
-                                                    ),
-                                                    predicate_type='minecraft:not',
-                                                ),
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:deepslate_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:any_of',
+                                RuleTestTagMatch(
+                                    tag='minecraft:height_specific_ore_replaceables',
+                                    predicate_type='minecraft:tag_match',
                                 ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestHeightMatch(
-                                            min_inclusive=-2032,
-                                            max_inclusive=8,
-                                            predicate_type='minecraft:height_match',
-                                        ),
-                                        RuleTestTagMatch(
-                                            tag='minecraft:ice_cave_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
+                                RuleTestTagMatch(
+                                    tag='minecraft:ice_cave_ore_replaceables',
+                                    predicate_type='minecraft:tag_match',
                                 ),
                             ],
                             predicate_type='minecraft:any_of',
@@ -2986,78 +2823,37 @@ ICE_CAVE_ORE_COAL_BURIED = ConfiguredFeatureSequence(
             feature=ConfiguredFeatureOre(
                 targets=[
                     TargetBlock(
-                        target=RuleTestAnyOf(
+                        target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+                        state='minecraft:coal_ore',
+                    ),
+                    TargetBlock(
+                        target=RuleTestTagMatch(
+                            tag='minecraft:deepslate_ore_replaceables',
+                            predicate_type='minecraft:tag_match',
+                        ),
+                        state='minecraft:deepslate_coal_ore',
+                    ),
+                    TargetBlock(
+                        target=RuleTestAllOf(
                             rules=[
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestTagMatch(
-                                            tag='minecraft:height_specific_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                        RuleTestHeightMatch(
-                                            min_inclusive=0,
-                                            max_inclusive=2031,
-                                            predicate_type='minecraft:height_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
+                                RuleTestHeightMatch(
+                                    min_inclusive=0,
+                                    max_inclusive=2031,
+                                    predicate_type='minecraft:height_match',
                                 ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestNot(
-                                            rule=RuleTestTagMatch(
-                                                tag='minecraft:height_specific_ore_replaceables',
-                                                predicate_type='minecraft:tag_match',
-                                            ),
-                                            predicate_type='minecraft:not',
-                                        ),
-                                        RuleTestTagMatch(
-                                            tag='minecraft:stone_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
+                                RuleTestTagMatch(
+                                    tag='minecraft:height_specific_ore_replaceables',
+                                    predicate_type='minecraft:tag_match',
                                 ),
                             ],
-                            predicate_type='minecraft:any_of',
+                            predicate_type='minecraft:all_of',
                         ),
                         state='minecraft:coal_ore',
                     ),
                     TargetBlock(
-                        target=RuleTestAnyOf(
-                            rules=[
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestTagMatch(
-                                            tag='minecraft:height_specific_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                        RuleTestHeightMatch(
-                                            min_inclusive=-2032,
-                                            max_inclusive=8,
-                                            predicate_type='minecraft:height_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
-                                ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestNot(
-                                            rule=RuleTestTagMatch(
-                                                tag='minecraft:height_specific_ore_replaceables',
-                                                predicate_type='minecraft:tag_match',
-                                            ),
-                                            predicate_type='minecraft:not',
-                                        ),
-                                        RuleTestTagMatch(
-                                            tag='minecraft:deepslate_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
-                                ),
-                            ],
-                            predicate_type='minecraft:any_of',
+                        target=RuleTestTagMatch(
+                            tag='minecraft:height_specific_ore_replaceables',
+                            predicate_type='minecraft:tag_match',
                         ),
                         state='minecraft:deepslate_coal_ore',
                     ),
@@ -3078,113 +2874,52 @@ ICE_CAVE_ORE_COPPER_SMALL = ConfiguredFeatureSequence(
             feature=ConfiguredFeatureOre(
                 targets=[
                     TargetBlock(
-                        target=RuleTestAnyOf(
+                        target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+                        state='minecraft:stone',
+                    ),
+                    TargetBlock(
+                        target=RuleTestTagMatch(
+                            tag='minecraft:deepslate_ore_replaceables',
+                            predicate_type='minecraft:tag_match',
+                        ),
+                        state='minecraft:deepslate',
+                    ),
+                    TargetBlock(
+                        target=RuleTestAllOf(
                             rules=[
+                                RuleTestHeightMatch(
+                                    min_inclusive=0,
+                                    max_inclusive=2031,
+                                    predicate_type='minecraft:height_match',
+                                ),
                                 RuleTestAnyOf(
                                     rules=[
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:height_specific_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                                RuleTestHeightMatch(
-                                                    min_inclusive=0,
-                                                    max_inclusive=2031,
-                                                    predicate_type='minecraft:height_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestNot(
-                                                    rule=RuleTestTagMatch(
-                                                        tag='minecraft:height_specific_ore_replaceables',
-                                                        predicate_type='minecraft:tag_match',
-                                                    ),
-                                                    predicate_type='minecraft:not',
-                                                ),
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:stone_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:any_of',
-                                ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestHeightMatch(
-                                            min_inclusive=0,
-                                            max_inclusive=2031,
-                                            predicate_type='minecraft:height_match',
+                                        RuleTestTagMatch(
+                                            tag='minecraft:height_specific_ore_replaceables',
+                                            predicate_type='minecraft:tag_match',
                                         ),
                                         RuleTestTagMatch(
                                             tag='minecraft:ice_cave_ore_replaceables',
                                             predicate_type='minecraft:tag_match',
                                         ),
                                     ],
-                                    predicate_type='minecraft:all_of',
+                                    predicate_type='minecraft:any_of',
                                 ),
                             ],
-                            predicate_type='minecraft:any_of',
+                            predicate_type='minecraft:all_of',
                         ),
                         state='minecraft:stone',
                     ),
                     TargetBlock(
                         target=RuleTestAnyOf(
                             rules=[
-                                RuleTestAnyOf(
-                                    rules=[
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:height_specific_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                                RuleTestHeightMatch(
-                                                    min_inclusive=-2032,
-                                                    max_inclusive=8,
-                                                    predicate_type='minecraft:height_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestNot(
-                                                    rule=RuleTestTagMatch(
-                                                        tag='minecraft:height_specific_ore_replaceables',
-                                                        predicate_type='minecraft:tag_match',
-                                                    ),
-                                                    predicate_type='minecraft:not',
-                                                ),
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:deepslate_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:any_of',
+                                RuleTestTagMatch(
+                                    tag='minecraft:height_specific_ore_replaceables',
+                                    predicate_type='minecraft:tag_match',
                                 ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestHeightMatch(
-                                            min_inclusive=-2032,
-                                            max_inclusive=8,
-                                            predicate_type='minecraft:height_match',
-                                        ),
-                                        RuleTestTagMatch(
-                                            tag='minecraft:ice_cave_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
+                                RuleTestTagMatch(
+                                    tag='minecraft:ice_cave_ore_replaceables',
+                                    predicate_type='minecraft:tag_match',
                                 ),
                             ],
                             predicate_type='minecraft:any_of',
@@ -3202,78 +2937,37 @@ ICE_CAVE_ORE_COPPER_SMALL = ConfiguredFeatureSequence(
             feature=ConfiguredFeatureOre(
                 targets=[
                     TargetBlock(
-                        target=RuleTestAnyOf(
+                        target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+                        state='minecraft:copper_ore',
+                    ),
+                    TargetBlock(
+                        target=RuleTestTagMatch(
+                            tag='minecraft:deepslate_ore_replaceables',
+                            predicate_type='minecraft:tag_match',
+                        ),
+                        state='minecraft:deepslate_copper_ore',
+                    ),
+                    TargetBlock(
+                        target=RuleTestAllOf(
                             rules=[
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestTagMatch(
-                                            tag='minecraft:height_specific_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                        RuleTestHeightMatch(
-                                            min_inclusive=0,
-                                            max_inclusive=2031,
-                                            predicate_type='minecraft:height_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
+                                RuleTestHeightMatch(
+                                    min_inclusive=0,
+                                    max_inclusive=2031,
+                                    predicate_type='minecraft:height_match',
                                 ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestNot(
-                                            rule=RuleTestTagMatch(
-                                                tag='minecraft:height_specific_ore_replaceables',
-                                                predicate_type='minecraft:tag_match',
-                                            ),
-                                            predicate_type='minecraft:not',
-                                        ),
-                                        RuleTestTagMatch(
-                                            tag='minecraft:stone_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
+                                RuleTestTagMatch(
+                                    tag='minecraft:height_specific_ore_replaceables',
+                                    predicate_type='minecraft:tag_match',
                                 ),
                             ],
-                            predicate_type='minecraft:any_of',
+                            predicate_type='minecraft:all_of',
                         ),
                         state='minecraft:copper_ore',
                     ),
                     TargetBlock(
-                        target=RuleTestAnyOf(
-                            rules=[
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestTagMatch(
-                                            tag='minecraft:height_specific_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                        RuleTestHeightMatch(
-                                            min_inclusive=-2032,
-                                            max_inclusive=8,
-                                            predicate_type='minecraft:height_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
-                                ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestNot(
-                                            rule=RuleTestTagMatch(
-                                                tag='minecraft:height_specific_ore_replaceables',
-                                                predicate_type='minecraft:tag_match',
-                                            ),
-                                            predicate_type='minecraft:not',
-                                        ),
-                                        RuleTestTagMatch(
-                                            tag='minecraft:deepslate_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
-                                ),
-                            ],
-                            predicate_type='minecraft:any_of',
+                        target=RuleTestTagMatch(
+                            tag='minecraft:height_specific_ore_replaceables',
+                            predicate_type='minecraft:tag_match',
                         ),
                         state='minecraft:deepslate_copper_ore',
                     ),
@@ -3294,113 +2988,52 @@ ICE_CAVE_ORE_DIAMOND_BURIED = ConfiguredFeatureSequence(
             feature=ConfiguredFeatureOre(
                 targets=[
                     TargetBlock(
-                        target=RuleTestAnyOf(
+                        target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+                        state='minecraft:stone',
+                    ),
+                    TargetBlock(
+                        target=RuleTestTagMatch(
+                            tag='minecraft:deepslate_ore_replaceables',
+                            predicate_type='minecraft:tag_match',
+                        ),
+                        state='minecraft:deepslate',
+                    ),
+                    TargetBlock(
+                        target=RuleTestAllOf(
                             rules=[
+                                RuleTestHeightMatch(
+                                    min_inclusive=0,
+                                    max_inclusive=2031,
+                                    predicate_type='minecraft:height_match',
+                                ),
                                 RuleTestAnyOf(
                                     rules=[
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:height_specific_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                                RuleTestHeightMatch(
-                                                    min_inclusive=0,
-                                                    max_inclusive=2031,
-                                                    predicate_type='minecraft:height_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestNot(
-                                                    rule=RuleTestTagMatch(
-                                                        tag='minecraft:height_specific_ore_replaceables',
-                                                        predicate_type='minecraft:tag_match',
-                                                    ),
-                                                    predicate_type='minecraft:not',
-                                                ),
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:stone_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:any_of',
-                                ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestHeightMatch(
-                                            min_inclusive=0,
-                                            max_inclusive=2031,
-                                            predicate_type='minecraft:height_match',
+                                        RuleTestTagMatch(
+                                            tag='minecraft:height_specific_ore_replaceables',
+                                            predicate_type='minecraft:tag_match',
                                         ),
                                         RuleTestTagMatch(
                                             tag='minecraft:ice_cave_ore_replaceables',
                                             predicate_type='minecraft:tag_match',
                                         ),
                                     ],
-                                    predicate_type='minecraft:all_of',
+                                    predicate_type='minecraft:any_of',
                                 ),
                             ],
-                            predicate_type='minecraft:any_of',
+                            predicate_type='minecraft:all_of',
                         ),
                         state='minecraft:stone',
                     ),
                     TargetBlock(
                         target=RuleTestAnyOf(
                             rules=[
-                                RuleTestAnyOf(
-                                    rules=[
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:height_specific_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                                RuleTestHeightMatch(
-                                                    min_inclusive=-2032,
-                                                    max_inclusive=8,
-                                                    predicate_type='minecraft:height_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestNot(
-                                                    rule=RuleTestTagMatch(
-                                                        tag='minecraft:height_specific_ore_replaceables',
-                                                        predicate_type='minecraft:tag_match',
-                                                    ),
-                                                    predicate_type='minecraft:not',
-                                                ),
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:deepslate_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:any_of',
+                                RuleTestTagMatch(
+                                    tag='minecraft:height_specific_ore_replaceables',
+                                    predicate_type='minecraft:tag_match',
                                 ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestHeightMatch(
-                                            min_inclusive=-2032,
-                                            max_inclusive=8,
-                                            predicate_type='minecraft:height_match',
-                                        ),
-                                        RuleTestTagMatch(
-                                            tag='minecraft:ice_cave_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
+                                RuleTestTagMatch(
+                                    tag='minecraft:ice_cave_ore_replaceables',
+                                    predicate_type='minecraft:tag_match',
                                 ),
                             ],
                             predicate_type='minecraft:any_of',
@@ -3418,78 +3051,37 @@ ICE_CAVE_ORE_DIAMOND_BURIED = ConfiguredFeatureSequence(
             feature=ConfiguredFeatureOre(
                 targets=[
                     TargetBlock(
-                        target=RuleTestAnyOf(
+                        target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+                        state='minecraft:diamond_ore',
+                    ),
+                    TargetBlock(
+                        target=RuleTestTagMatch(
+                            tag='minecraft:deepslate_ore_replaceables',
+                            predicate_type='minecraft:tag_match',
+                        ),
+                        state='minecraft:deepslate_diamond_ore',
+                    ),
+                    TargetBlock(
+                        target=RuleTestAllOf(
                             rules=[
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestTagMatch(
-                                            tag='minecraft:height_specific_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                        RuleTestHeightMatch(
-                                            min_inclusive=0,
-                                            max_inclusive=2031,
-                                            predicate_type='minecraft:height_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
+                                RuleTestHeightMatch(
+                                    min_inclusive=0,
+                                    max_inclusive=2031,
+                                    predicate_type='minecraft:height_match',
                                 ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestNot(
-                                            rule=RuleTestTagMatch(
-                                                tag='minecraft:height_specific_ore_replaceables',
-                                                predicate_type='minecraft:tag_match',
-                                            ),
-                                            predicate_type='minecraft:not',
-                                        ),
-                                        RuleTestTagMatch(
-                                            tag='minecraft:stone_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
+                                RuleTestTagMatch(
+                                    tag='minecraft:height_specific_ore_replaceables',
+                                    predicate_type='minecraft:tag_match',
                                 ),
                             ],
-                            predicate_type='minecraft:any_of',
+                            predicate_type='minecraft:all_of',
                         ),
                         state='minecraft:diamond_ore',
                     ),
                     TargetBlock(
-                        target=RuleTestAnyOf(
-                            rules=[
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestTagMatch(
-                                            tag='minecraft:height_specific_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                        RuleTestHeightMatch(
-                                            min_inclusive=-2032,
-                                            max_inclusive=8,
-                                            predicate_type='minecraft:height_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
-                                ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestNot(
-                                            rule=RuleTestTagMatch(
-                                                tag='minecraft:height_specific_ore_replaceables',
-                                                predicate_type='minecraft:tag_match',
-                                            ),
-                                            predicate_type='minecraft:not',
-                                        ),
-                                        RuleTestTagMatch(
-                                            tag='minecraft:deepslate_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
-                                ),
-                            ],
-                            predicate_type='minecraft:any_of',
+                        target=RuleTestTagMatch(
+                            tag='minecraft:height_specific_ore_replaceables',
+                            predicate_type='minecraft:tag_match',
                         ),
                         state='minecraft:deepslate_diamond_ore',
                     ),
@@ -3510,113 +3102,52 @@ ICE_CAVE_ORE_DIAMOND_LARGE = ConfiguredFeatureSequence(
             feature=ConfiguredFeatureOre(
                 targets=[
                     TargetBlock(
-                        target=RuleTestAnyOf(
+                        target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+                        state='minecraft:stone',
+                    ),
+                    TargetBlock(
+                        target=RuleTestTagMatch(
+                            tag='minecraft:deepslate_ore_replaceables',
+                            predicate_type='minecraft:tag_match',
+                        ),
+                        state='minecraft:deepslate',
+                    ),
+                    TargetBlock(
+                        target=RuleTestAllOf(
                             rules=[
+                                RuleTestHeightMatch(
+                                    min_inclusive=0,
+                                    max_inclusive=2031,
+                                    predicate_type='minecraft:height_match',
+                                ),
                                 RuleTestAnyOf(
                                     rules=[
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:height_specific_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                                RuleTestHeightMatch(
-                                                    min_inclusive=0,
-                                                    max_inclusive=2031,
-                                                    predicate_type='minecraft:height_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestNot(
-                                                    rule=RuleTestTagMatch(
-                                                        tag='minecraft:height_specific_ore_replaceables',
-                                                        predicate_type='minecraft:tag_match',
-                                                    ),
-                                                    predicate_type='minecraft:not',
-                                                ),
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:stone_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:any_of',
-                                ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestHeightMatch(
-                                            min_inclusive=0,
-                                            max_inclusive=2031,
-                                            predicate_type='minecraft:height_match',
+                                        RuleTestTagMatch(
+                                            tag='minecraft:height_specific_ore_replaceables',
+                                            predicate_type='minecraft:tag_match',
                                         ),
                                         RuleTestTagMatch(
                                             tag='minecraft:ice_cave_ore_replaceables',
                                             predicate_type='minecraft:tag_match',
                                         ),
                                     ],
-                                    predicate_type='minecraft:all_of',
+                                    predicate_type='minecraft:any_of',
                                 ),
                             ],
-                            predicate_type='minecraft:any_of',
+                            predicate_type='minecraft:all_of',
                         ),
                         state='minecraft:stone',
                     ),
                     TargetBlock(
                         target=RuleTestAnyOf(
                             rules=[
-                                RuleTestAnyOf(
-                                    rules=[
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:height_specific_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                                RuleTestHeightMatch(
-                                                    min_inclusive=-2032,
-                                                    max_inclusive=8,
-                                                    predicate_type='minecraft:height_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestNot(
-                                                    rule=RuleTestTagMatch(
-                                                        tag='minecraft:height_specific_ore_replaceables',
-                                                        predicate_type='minecraft:tag_match',
-                                                    ),
-                                                    predicate_type='minecraft:not',
-                                                ),
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:deepslate_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:any_of',
+                                RuleTestTagMatch(
+                                    tag='minecraft:height_specific_ore_replaceables',
+                                    predicate_type='minecraft:tag_match',
                                 ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestHeightMatch(
-                                            min_inclusive=-2032,
-                                            max_inclusive=8,
-                                            predicate_type='minecraft:height_match',
-                                        ),
-                                        RuleTestTagMatch(
-                                            tag='minecraft:ice_cave_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
+                                RuleTestTagMatch(
+                                    tag='minecraft:ice_cave_ore_replaceables',
+                                    predicate_type='minecraft:tag_match',
                                 ),
                             ],
                             predicate_type='minecraft:any_of',
@@ -3634,78 +3165,37 @@ ICE_CAVE_ORE_DIAMOND_LARGE = ConfiguredFeatureSequence(
             feature=ConfiguredFeatureOre(
                 targets=[
                     TargetBlock(
-                        target=RuleTestAnyOf(
+                        target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+                        state='minecraft:diamond_ore',
+                    ),
+                    TargetBlock(
+                        target=RuleTestTagMatch(
+                            tag='minecraft:deepslate_ore_replaceables',
+                            predicate_type='minecraft:tag_match',
+                        ),
+                        state='minecraft:deepslate_diamond_ore',
+                    ),
+                    TargetBlock(
+                        target=RuleTestAllOf(
                             rules=[
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestTagMatch(
-                                            tag='minecraft:height_specific_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                        RuleTestHeightMatch(
-                                            min_inclusive=0,
-                                            max_inclusive=2031,
-                                            predicate_type='minecraft:height_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
+                                RuleTestHeightMatch(
+                                    min_inclusive=0,
+                                    max_inclusive=2031,
+                                    predicate_type='minecraft:height_match',
                                 ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestNot(
-                                            rule=RuleTestTagMatch(
-                                                tag='minecraft:height_specific_ore_replaceables',
-                                                predicate_type='minecraft:tag_match',
-                                            ),
-                                            predicate_type='minecraft:not',
-                                        ),
-                                        RuleTestTagMatch(
-                                            tag='minecraft:stone_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
+                                RuleTestTagMatch(
+                                    tag='minecraft:height_specific_ore_replaceables',
+                                    predicate_type='minecraft:tag_match',
                                 ),
                             ],
-                            predicate_type='minecraft:any_of',
+                            predicate_type='minecraft:all_of',
                         ),
                         state='minecraft:diamond_ore',
                     ),
                     TargetBlock(
-                        target=RuleTestAnyOf(
-                            rules=[
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestTagMatch(
-                                            tag='minecraft:height_specific_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                        RuleTestHeightMatch(
-                                            min_inclusive=-2032,
-                                            max_inclusive=8,
-                                            predicate_type='minecraft:height_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
-                                ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestNot(
-                                            rule=RuleTestTagMatch(
-                                                tag='minecraft:height_specific_ore_replaceables',
-                                                predicate_type='minecraft:tag_match',
-                                            ),
-                                            predicate_type='minecraft:not',
-                                        ),
-                                        RuleTestTagMatch(
-                                            tag='minecraft:deepslate_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
-                                ),
-                            ],
-                            predicate_type='minecraft:any_of',
+                        target=RuleTestTagMatch(
+                            tag='minecraft:height_specific_ore_replaceables',
+                            predicate_type='minecraft:tag_match',
                         ),
                         state='minecraft:deepslate_diamond_ore',
                     ),
@@ -3726,113 +3216,52 @@ ICE_CAVE_ORE_DIAMOND_MEDIUM = ConfiguredFeatureSequence(
             feature=ConfiguredFeatureOre(
                 targets=[
                     TargetBlock(
-                        target=RuleTestAnyOf(
+                        target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+                        state='minecraft:stone',
+                    ),
+                    TargetBlock(
+                        target=RuleTestTagMatch(
+                            tag='minecraft:deepslate_ore_replaceables',
+                            predicate_type='minecraft:tag_match',
+                        ),
+                        state='minecraft:deepslate',
+                    ),
+                    TargetBlock(
+                        target=RuleTestAllOf(
                             rules=[
+                                RuleTestHeightMatch(
+                                    min_inclusive=0,
+                                    max_inclusive=2031,
+                                    predicate_type='minecraft:height_match',
+                                ),
                                 RuleTestAnyOf(
                                     rules=[
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:height_specific_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                                RuleTestHeightMatch(
-                                                    min_inclusive=0,
-                                                    max_inclusive=2031,
-                                                    predicate_type='minecraft:height_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestNot(
-                                                    rule=RuleTestTagMatch(
-                                                        tag='minecraft:height_specific_ore_replaceables',
-                                                        predicate_type='minecraft:tag_match',
-                                                    ),
-                                                    predicate_type='minecraft:not',
-                                                ),
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:stone_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:any_of',
-                                ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestHeightMatch(
-                                            min_inclusive=0,
-                                            max_inclusive=2031,
-                                            predicate_type='minecraft:height_match',
+                                        RuleTestTagMatch(
+                                            tag='minecraft:height_specific_ore_replaceables',
+                                            predicate_type='minecraft:tag_match',
                                         ),
                                         RuleTestTagMatch(
                                             tag='minecraft:ice_cave_ore_replaceables',
                                             predicate_type='minecraft:tag_match',
                                         ),
                                     ],
-                                    predicate_type='minecraft:all_of',
+                                    predicate_type='minecraft:any_of',
                                 ),
                             ],
-                            predicate_type='minecraft:any_of',
+                            predicate_type='minecraft:all_of',
                         ),
                         state='minecraft:stone',
                     ),
                     TargetBlock(
                         target=RuleTestAnyOf(
                             rules=[
-                                RuleTestAnyOf(
-                                    rules=[
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:height_specific_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                                RuleTestHeightMatch(
-                                                    min_inclusive=-2032,
-                                                    max_inclusive=8,
-                                                    predicate_type='minecraft:height_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestNot(
-                                                    rule=RuleTestTagMatch(
-                                                        tag='minecraft:height_specific_ore_replaceables',
-                                                        predicate_type='minecraft:tag_match',
-                                                    ),
-                                                    predicate_type='minecraft:not',
-                                                ),
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:deepslate_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:any_of',
+                                RuleTestTagMatch(
+                                    tag='minecraft:height_specific_ore_replaceables',
+                                    predicate_type='minecraft:tag_match',
                                 ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestHeightMatch(
-                                            min_inclusive=-2032,
-                                            max_inclusive=8,
-                                            predicate_type='minecraft:height_match',
-                                        ),
-                                        RuleTestTagMatch(
-                                            tag='minecraft:ice_cave_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
+                                RuleTestTagMatch(
+                                    tag='minecraft:ice_cave_ore_replaceables',
+                                    predicate_type='minecraft:tag_match',
                                 ),
                             ],
                             predicate_type='minecraft:any_of',
@@ -3850,78 +3279,37 @@ ICE_CAVE_ORE_DIAMOND_MEDIUM = ConfiguredFeatureSequence(
             feature=ConfiguredFeatureOre(
                 targets=[
                     TargetBlock(
-                        target=RuleTestAnyOf(
+                        target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+                        state='minecraft:diamond_ore',
+                    ),
+                    TargetBlock(
+                        target=RuleTestTagMatch(
+                            tag='minecraft:deepslate_ore_replaceables',
+                            predicate_type='minecraft:tag_match',
+                        ),
+                        state='minecraft:deepslate_diamond_ore',
+                    ),
+                    TargetBlock(
+                        target=RuleTestAllOf(
                             rules=[
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestTagMatch(
-                                            tag='minecraft:height_specific_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                        RuleTestHeightMatch(
-                                            min_inclusive=0,
-                                            max_inclusive=2031,
-                                            predicate_type='minecraft:height_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
+                                RuleTestHeightMatch(
+                                    min_inclusive=0,
+                                    max_inclusive=2031,
+                                    predicate_type='minecraft:height_match',
                                 ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestNot(
-                                            rule=RuleTestTagMatch(
-                                                tag='minecraft:height_specific_ore_replaceables',
-                                                predicate_type='minecraft:tag_match',
-                                            ),
-                                            predicate_type='minecraft:not',
-                                        ),
-                                        RuleTestTagMatch(
-                                            tag='minecraft:stone_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
+                                RuleTestTagMatch(
+                                    tag='minecraft:height_specific_ore_replaceables',
+                                    predicate_type='minecraft:tag_match',
                                 ),
                             ],
-                            predicate_type='minecraft:any_of',
+                            predicate_type='minecraft:all_of',
                         ),
                         state='minecraft:diamond_ore',
                     ),
                     TargetBlock(
-                        target=RuleTestAnyOf(
-                            rules=[
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestTagMatch(
-                                            tag='minecraft:height_specific_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                        RuleTestHeightMatch(
-                                            min_inclusive=-2032,
-                                            max_inclusive=8,
-                                            predicate_type='minecraft:height_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
-                                ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestNot(
-                                            rule=RuleTestTagMatch(
-                                                tag='minecraft:height_specific_ore_replaceables',
-                                                predicate_type='minecraft:tag_match',
-                                            ),
-                                            predicate_type='minecraft:not',
-                                        ),
-                                        RuleTestTagMatch(
-                                            tag='minecraft:deepslate_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
-                                ),
-                            ],
-                            predicate_type='minecraft:any_of',
+                        target=RuleTestTagMatch(
+                            tag='minecraft:height_specific_ore_replaceables',
+                            predicate_type='minecraft:tag_match',
                         ),
                         state='minecraft:deepslate_diamond_ore',
                     ),
@@ -3942,113 +3330,52 @@ ICE_CAVE_ORE_DIAMOND_SMALL = ConfiguredFeatureSequence(
             feature=ConfiguredFeatureOre(
                 targets=[
                     TargetBlock(
-                        target=RuleTestAnyOf(
+                        target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+                        state='minecraft:stone',
+                    ),
+                    TargetBlock(
+                        target=RuleTestTagMatch(
+                            tag='minecraft:deepslate_ore_replaceables',
+                            predicate_type='minecraft:tag_match',
+                        ),
+                        state='minecraft:deepslate',
+                    ),
+                    TargetBlock(
+                        target=RuleTestAllOf(
                             rules=[
+                                RuleTestHeightMatch(
+                                    min_inclusive=0,
+                                    max_inclusive=2031,
+                                    predicate_type='minecraft:height_match',
+                                ),
                                 RuleTestAnyOf(
                                     rules=[
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:height_specific_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                                RuleTestHeightMatch(
-                                                    min_inclusive=0,
-                                                    max_inclusive=2031,
-                                                    predicate_type='minecraft:height_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestNot(
-                                                    rule=RuleTestTagMatch(
-                                                        tag='minecraft:height_specific_ore_replaceables',
-                                                        predicate_type='minecraft:tag_match',
-                                                    ),
-                                                    predicate_type='minecraft:not',
-                                                ),
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:stone_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:any_of',
-                                ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestHeightMatch(
-                                            min_inclusive=0,
-                                            max_inclusive=2031,
-                                            predicate_type='minecraft:height_match',
+                                        RuleTestTagMatch(
+                                            tag='minecraft:height_specific_ore_replaceables',
+                                            predicate_type='minecraft:tag_match',
                                         ),
                                         RuleTestTagMatch(
                                             tag='minecraft:ice_cave_ore_replaceables',
                                             predicate_type='minecraft:tag_match',
                                         ),
                                     ],
-                                    predicate_type='minecraft:all_of',
+                                    predicate_type='minecraft:any_of',
                                 ),
                             ],
-                            predicate_type='minecraft:any_of',
+                            predicate_type='minecraft:all_of',
                         ),
                         state='minecraft:stone',
                     ),
                     TargetBlock(
                         target=RuleTestAnyOf(
                             rules=[
-                                RuleTestAnyOf(
-                                    rules=[
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:height_specific_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                                RuleTestHeightMatch(
-                                                    min_inclusive=-2032,
-                                                    max_inclusive=8,
-                                                    predicate_type='minecraft:height_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestNot(
-                                                    rule=RuleTestTagMatch(
-                                                        tag='minecraft:height_specific_ore_replaceables',
-                                                        predicate_type='minecraft:tag_match',
-                                                    ),
-                                                    predicate_type='minecraft:not',
-                                                ),
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:deepslate_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:any_of',
+                                RuleTestTagMatch(
+                                    tag='minecraft:height_specific_ore_replaceables',
+                                    predicate_type='minecraft:tag_match',
                                 ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestHeightMatch(
-                                            min_inclusive=-2032,
-                                            max_inclusive=8,
-                                            predicate_type='minecraft:height_match',
-                                        ),
-                                        RuleTestTagMatch(
-                                            tag='minecraft:ice_cave_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
+                                RuleTestTagMatch(
+                                    tag='minecraft:ice_cave_ore_replaceables',
+                                    predicate_type='minecraft:tag_match',
                                 ),
                             ],
                             predicate_type='minecraft:any_of',
@@ -4066,78 +3393,37 @@ ICE_CAVE_ORE_DIAMOND_SMALL = ConfiguredFeatureSequence(
             feature=ConfiguredFeatureOre(
                 targets=[
                     TargetBlock(
-                        target=RuleTestAnyOf(
+                        target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+                        state='minecraft:diamond_ore',
+                    ),
+                    TargetBlock(
+                        target=RuleTestTagMatch(
+                            tag='minecraft:deepslate_ore_replaceables',
+                            predicate_type='minecraft:tag_match',
+                        ),
+                        state='minecraft:deepslate_diamond_ore',
+                    ),
+                    TargetBlock(
+                        target=RuleTestAllOf(
                             rules=[
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestTagMatch(
-                                            tag='minecraft:height_specific_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                        RuleTestHeightMatch(
-                                            min_inclusive=0,
-                                            max_inclusive=2031,
-                                            predicate_type='minecraft:height_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
+                                RuleTestHeightMatch(
+                                    min_inclusive=0,
+                                    max_inclusive=2031,
+                                    predicate_type='minecraft:height_match',
                                 ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestNot(
-                                            rule=RuleTestTagMatch(
-                                                tag='minecraft:height_specific_ore_replaceables',
-                                                predicate_type='minecraft:tag_match',
-                                            ),
-                                            predicate_type='minecraft:not',
-                                        ),
-                                        RuleTestTagMatch(
-                                            tag='minecraft:stone_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
+                                RuleTestTagMatch(
+                                    tag='minecraft:height_specific_ore_replaceables',
+                                    predicate_type='minecraft:tag_match',
                                 ),
                             ],
-                            predicate_type='minecraft:any_of',
+                            predicate_type='minecraft:all_of',
                         ),
                         state='minecraft:diamond_ore',
                     ),
                     TargetBlock(
-                        target=RuleTestAnyOf(
-                            rules=[
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestTagMatch(
-                                            tag='minecraft:height_specific_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                        RuleTestHeightMatch(
-                                            min_inclusive=-2032,
-                                            max_inclusive=8,
-                                            predicate_type='minecraft:height_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
-                                ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestNot(
-                                            rule=RuleTestTagMatch(
-                                                tag='minecraft:height_specific_ore_replaceables',
-                                                predicate_type='minecraft:tag_match',
-                                            ),
-                                            predicate_type='minecraft:not',
-                                        ),
-                                        RuleTestTagMatch(
-                                            tag='minecraft:deepslate_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
-                                ),
-                            ],
-                            predicate_type='minecraft:any_of',
+                        target=RuleTestTagMatch(
+                            tag='minecraft:height_specific_ore_replaceables',
+                            predicate_type='minecraft:tag_match',
                         ),
                         state='minecraft:deepslate_diamond_ore',
                     ),
@@ -4176,113 +3462,52 @@ ICE_CAVE_ORE_GOLD_BURIED = ConfiguredFeatureSequence(
             feature=ConfiguredFeatureOre(
                 targets=[
                     TargetBlock(
-                        target=RuleTestAnyOf(
+                        target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+                        state='minecraft:stone',
+                    ),
+                    TargetBlock(
+                        target=RuleTestTagMatch(
+                            tag='minecraft:deepslate_ore_replaceables',
+                            predicate_type='minecraft:tag_match',
+                        ),
+                        state='minecraft:deepslate',
+                    ),
+                    TargetBlock(
+                        target=RuleTestAllOf(
                             rules=[
+                                RuleTestHeightMatch(
+                                    min_inclusive=0,
+                                    max_inclusive=2031,
+                                    predicate_type='minecraft:height_match',
+                                ),
                                 RuleTestAnyOf(
                                     rules=[
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:height_specific_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                                RuleTestHeightMatch(
-                                                    min_inclusive=0,
-                                                    max_inclusive=2031,
-                                                    predicate_type='minecraft:height_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestNot(
-                                                    rule=RuleTestTagMatch(
-                                                        tag='minecraft:height_specific_ore_replaceables',
-                                                        predicate_type='minecraft:tag_match',
-                                                    ),
-                                                    predicate_type='minecraft:not',
-                                                ),
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:stone_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:any_of',
-                                ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestHeightMatch(
-                                            min_inclusive=0,
-                                            max_inclusive=2031,
-                                            predicate_type='minecraft:height_match',
+                                        RuleTestTagMatch(
+                                            tag='minecraft:height_specific_ore_replaceables',
+                                            predicate_type='minecraft:tag_match',
                                         ),
                                         RuleTestTagMatch(
                                             tag='minecraft:ice_cave_ore_replaceables',
                                             predicate_type='minecraft:tag_match',
                                         ),
                                     ],
-                                    predicate_type='minecraft:all_of',
+                                    predicate_type='minecraft:any_of',
                                 ),
                             ],
-                            predicate_type='minecraft:any_of',
+                            predicate_type='minecraft:all_of',
                         ),
                         state='minecraft:stone',
                     ),
                     TargetBlock(
                         target=RuleTestAnyOf(
                             rules=[
-                                RuleTestAnyOf(
-                                    rules=[
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:height_specific_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                                RuleTestHeightMatch(
-                                                    min_inclusive=-2032,
-                                                    max_inclusive=8,
-                                                    predicate_type='minecraft:height_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestNot(
-                                                    rule=RuleTestTagMatch(
-                                                        tag='minecraft:height_specific_ore_replaceables',
-                                                        predicate_type='minecraft:tag_match',
-                                                    ),
-                                                    predicate_type='minecraft:not',
-                                                ),
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:deepslate_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:any_of',
+                                RuleTestTagMatch(
+                                    tag='minecraft:height_specific_ore_replaceables',
+                                    predicate_type='minecraft:tag_match',
                                 ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestHeightMatch(
-                                            min_inclusive=-2032,
-                                            max_inclusive=8,
-                                            predicate_type='minecraft:height_match',
-                                        ),
-                                        RuleTestTagMatch(
-                                            tag='minecraft:ice_cave_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
+                                RuleTestTagMatch(
+                                    tag='minecraft:ice_cave_ore_replaceables',
+                                    predicate_type='minecraft:tag_match',
                                 ),
                             ],
                             predicate_type='minecraft:any_of',
@@ -4300,78 +3525,37 @@ ICE_CAVE_ORE_GOLD_BURIED = ConfiguredFeatureSequence(
             feature=ConfiguredFeatureOre(
                 targets=[
                     TargetBlock(
-                        target=RuleTestAnyOf(
+                        target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+                        state='minecraft:gold_ore',
+                    ),
+                    TargetBlock(
+                        target=RuleTestTagMatch(
+                            tag='minecraft:deepslate_ore_replaceables',
+                            predicate_type='minecraft:tag_match',
+                        ),
+                        state='minecraft:deepslate_gold_ore',
+                    ),
+                    TargetBlock(
+                        target=RuleTestAllOf(
                             rules=[
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestTagMatch(
-                                            tag='minecraft:height_specific_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                        RuleTestHeightMatch(
-                                            min_inclusive=0,
-                                            max_inclusive=2031,
-                                            predicate_type='minecraft:height_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
+                                RuleTestHeightMatch(
+                                    min_inclusive=0,
+                                    max_inclusive=2031,
+                                    predicate_type='minecraft:height_match',
                                 ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestNot(
-                                            rule=RuleTestTagMatch(
-                                                tag='minecraft:height_specific_ore_replaceables',
-                                                predicate_type='minecraft:tag_match',
-                                            ),
-                                            predicate_type='minecraft:not',
-                                        ),
-                                        RuleTestTagMatch(
-                                            tag='minecraft:stone_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
+                                RuleTestTagMatch(
+                                    tag='minecraft:height_specific_ore_replaceables',
+                                    predicate_type='minecraft:tag_match',
                                 ),
                             ],
-                            predicate_type='minecraft:any_of',
+                            predicate_type='minecraft:all_of',
                         ),
                         state='minecraft:gold_ore',
                     ),
                     TargetBlock(
-                        target=RuleTestAnyOf(
-                            rules=[
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestTagMatch(
-                                            tag='minecraft:height_specific_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                        RuleTestHeightMatch(
-                                            min_inclusive=-2032,
-                                            max_inclusive=8,
-                                            predicate_type='minecraft:height_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
-                                ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestNot(
-                                            rule=RuleTestTagMatch(
-                                                tag='minecraft:height_specific_ore_replaceables',
-                                                predicate_type='minecraft:tag_match',
-                                            ),
-                                            predicate_type='minecraft:not',
-                                        ),
-                                        RuleTestTagMatch(
-                                            tag='minecraft:deepslate_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
-                                ),
-                            ],
-                            predicate_type='minecraft:any_of',
+                        target=RuleTestTagMatch(
+                            tag='minecraft:height_specific_ore_replaceables',
+                            predicate_type='minecraft:tag_match',
                         ),
                         state='minecraft:deepslate_gold_ore',
                     ),
@@ -4410,113 +3594,52 @@ ICE_CAVE_ORE_IRON = ConfiguredFeatureSequence(
             feature=ConfiguredFeatureOre(
                 targets=[
                     TargetBlock(
-                        target=RuleTestAnyOf(
+                        target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+                        state='minecraft:stone',
+                    ),
+                    TargetBlock(
+                        target=RuleTestTagMatch(
+                            tag='minecraft:deepslate_ore_replaceables',
+                            predicate_type='minecraft:tag_match',
+                        ),
+                        state='minecraft:deepslate',
+                    ),
+                    TargetBlock(
+                        target=RuleTestAllOf(
                             rules=[
+                                RuleTestHeightMatch(
+                                    min_inclusive=0,
+                                    max_inclusive=2031,
+                                    predicate_type='minecraft:height_match',
+                                ),
                                 RuleTestAnyOf(
                                     rules=[
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:height_specific_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                                RuleTestHeightMatch(
-                                                    min_inclusive=0,
-                                                    max_inclusive=2031,
-                                                    predicate_type='minecraft:height_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestNot(
-                                                    rule=RuleTestTagMatch(
-                                                        tag='minecraft:height_specific_ore_replaceables',
-                                                        predicate_type='minecraft:tag_match',
-                                                    ),
-                                                    predicate_type='minecraft:not',
-                                                ),
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:stone_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:any_of',
-                                ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestHeightMatch(
-                                            min_inclusive=0,
-                                            max_inclusive=2031,
-                                            predicate_type='minecraft:height_match',
+                                        RuleTestTagMatch(
+                                            tag='minecraft:height_specific_ore_replaceables',
+                                            predicate_type='minecraft:tag_match',
                                         ),
                                         RuleTestTagMatch(
                                             tag='minecraft:ice_cave_ore_replaceables',
                                             predicate_type='minecraft:tag_match',
                                         ),
                                     ],
-                                    predicate_type='minecraft:all_of',
+                                    predicate_type='minecraft:any_of',
                                 ),
                             ],
-                            predicate_type='minecraft:any_of',
+                            predicate_type='minecraft:all_of',
                         ),
                         state='minecraft:stone',
                     ),
                     TargetBlock(
                         target=RuleTestAnyOf(
                             rules=[
-                                RuleTestAnyOf(
-                                    rules=[
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:height_specific_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                                RuleTestHeightMatch(
-                                                    min_inclusive=-2032,
-                                                    max_inclusive=8,
-                                                    predicate_type='minecraft:height_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestNot(
-                                                    rule=RuleTestTagMatch(
-                                                        tag='minecraft:height_specific_ore_replaceables',
-                                                        predicate_type='minecraft:tag_match',
-                                                    ),
-                                                    predicate_type='minecraft:not',
-                                                ),
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:deepslate_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:any_of',
+                                RuleTestTagMatch(
+                                    tag='minecraft:height_specific_ore_replaceables',
+                                    predicate_type='minecraft:tag_match',
                                 ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestHeightMatch(
-                                            min_inclusive=-2032,
-                                            max_inclusive=8,
-                                            predicate_type='minecraft:height_match',
-                                        ),
-                                        RuleTestTagMatch(
-                                            tag='minecraft:ice_cave_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
+                                RuleTestTagMatch(
+                                    tag='minecraft:ice_cave_ore_replaceables',
+                                    predicate_type='minecraft:tag_match',
                                 ),
                             ],
                             predicate_type='minecraft:any_of',
@@ -4534,78 +3657,37 @@ ICE_CAVE_ORE_IRON = ConfiguredFeatureSequence(
             feature=ConfiguredFeatureOre(
                 targets=[
                     TargetBlock(
-                        target=RuleTestAnyOf(
+                        target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+                        state='minecraft:iron_ore',
+                    ),
+                    TargetBlock(
+                        target=RuleTestTagMatch(
+                            tag='minecraft:deepslate_ore_replaceables',
+                            predicate_type='minecraft:tag_match',
+                        ),
+                        state='minecraft:deepslate_iron_ore',
+                    ),
+                    TargetBlock(
+                        target=RuleTestAllOf(
                             rules=[
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestTagMatch(
-                                            tag='minecraft:height_specific_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                        RuleTestHeightMatch(
-                                            min_inclusive=0,
-                                            max_inclusive=2031,
-                                            predicate_type='minecraft:height_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
+                                RuleTestHeightMatch(
+                                    min_inclusive=0,
+                                    max_inclusive=2031,
+                                    predicate_type='minecraft:height_match',
                                 ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestNot(
-                                            rule=RuleTestTagMatch(
-                                                tag='minecraft:height_specific_ore_replaceables',
-                                                predicate_type='minecraft:tag_match',
-                                            ),
-                                            predicate_type='minecraft:not',
-                                        ),
-                                        RuleTestTagMatch(
-                                            tag='minecraft:stone_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
+                                RuleTestTagMatch(
+                                    tag='minecraft:height_specific_ore_replaceables',
+                                    predicate_type='minecraft:tag_match',
                                 ),
                             ],
-                            predicate_type='minecraft:any_of',
+                            predicate_type='minecraft:all_of',
                         ),
                         state='minecraft:iron_ore',
                     ),
                     TargetBlock(
-                        target=RuleTestAnyOf(
-                            rules=[
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestTagMatch(
-                                            tag='minecraft:height_specific_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                        RuleTestHeightMatch(
-                                            min_inclusive=-2032,
-                                            max_inclusive=8,
-                                            predicate_type='minecraft:height_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
-                                ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestNot(
-                                            rule=RuleTestTagMatch(
-                                                tag='minecraft:height_specific_ore_replaceables',
-                                                predicate_type='minecraft:tag_match',
-                                            ),
-                                            predicate_type='minecraft:not',
-                                        ),
-                                        RuleTestTagMatch(
-                                            tag='minecraft:deepslate_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
-                                ),
-                            ],
-                            predicate_type='minecraft:any_of',
+                        target=RuleTestTagMatch(
+                            tag='minecraft:height_specific_ore_replaceables',
+                            predicate_type='minecraft:tag_match',
                         ),
                         state='minecraft:deepslate_iron_ore',
                     ),
@@ -4626,113 +3708,52 @@ ICE_CAVE_ORE_IRON_SMALL = ConfiguredFeatureSequence(
             feature=ConfiguredFeatureOre(
                 targets=[
                     TargetBlock(
-                        target=RuleTestAnyOf(
+                        target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+                        state='minecraft:stone',
+                    ),
+                    TargetBlock(
+                        target=RuleTestTagMatch(
+                            tag='minecraft:deepslate_ore_replaceables',
+                            predicate_type='minecraft:tag_match',
+                        ),
+                        state='minecraft:deepslate',
+                    ),
+                    TargetBlock(
+                        target=RuleTestAllOf(
                             rules=[
+                                RuleTestHeightMatch(
+                                    min_inclusive=0,
+                                    max_inclusive=2031,
+                                    predicate_type='minecraft:height_match',
+                                ),
                                 RuleTestAnyOf(
                                     rules=[
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:height_specific_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                                RuleTestHeightMatch(
-                                                    min_inclusive=0,
-                                                    max_inclusive=2031,
-                                                    predicate_type='minecraft:height_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestNot(
-                                                    rule=RuleTestTagMatch(
-                                                        tag='minecraft:height_specific_ore_replaceables',
-                                                        predicate_type='minecraft:tag_match',
-                                                    ),
-                                                    predicate_type='minecraft:not',
-                                                ),
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:stone_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:any_of',
-                                ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestHeightMatch(
-                                            min_inclusive=0,
-                                            max_inclusive=2031,
-                                            predicate_type='minecraft:height_match',
+                                        RuleTestTagMatch(
+                                            tag='minecraft:height_specific_ore_replaceables',
+                                            predicate_type='minecraft:tag_match',
                                         ),
                                         RuleTestTagMatch(
                                             tag='minecraft:ice_cave_ore_replaceables',
                                             predicate_type='minecraft:tag_match',
                                         ),
                                     ],
-                                    predicate_type='minecraft:all_of',
+                                    predicate_type='minecraft:any_of',
                                 ),
                             ],
-                            predicate_type='minecraft:any_of',
+                            predicate_type='minecraft:all_of',
                         ),
                         state='minecraft:stone',
                     ),
                     TargetBlock(
                         target=RuleTestAnyOf(
                             rules=[
-                                RuleTestAnyOf(
-                                    rules=[
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:height_specific_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                                RuleTestHeightMatch(
-                                                    min_inclusive=-2032,
-                                                    max_inclusive=8,
-                                                    predicate_type='minecraft:height_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestNot(
-                                                    rule=RuleTestTagMatch(
-                                                        tag='minecraft:height_specific_ore_replaceables',
-                                                        predicate_type='minecraft:tag_match',
-                                                    ),
-                                                    predicate_type='minecraft:not',
-                                                ),
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:deepslate_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:any_of',
+                                RuleTestTagMatch(
+                                    tag='minecraft:height_specific_ore_replaceables',
+                                    predicate_type='minecraft:tag_match',
                                 ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestHeightMatch(
-                                            min_inclusive=-2032,
-                                            max_inclusive=8,
-                                            predicate_type='minecraft:height_match',
-                                        ),
-                                        RuleTestTagMatch(
-                                            tag='minecraft:ice_cave_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
+                                RuleTestTagMatch(
+                                    tag='minecraft:ice_cave_ore_replaceables',
+                                    predicate_type='minecraft:tag_match',
                                 ),
                             ],
                             predicate_type='minecraft:any_of',
@@ -4750,78 +3771,37 @@ ICE_CAVE_ORE_IRON_SMALL = ConfiguredFeatureSequence(
             feature=ConfiguredFeatureOre(
                 targets=[
                     TargetBlock(
-                        target=RuleTestAnyOf(
+                        target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+                        state='minecraft:iron_ore',
+                    ),
+                    TargetBlock(
+                        target=RuleTestTagMatch(
+                            tag='minecraft:deepslate_ore_replaceables',
+                            predicate_type='minecraft:tag_match',
+                        ),
+                        state='minecraft:deepslate_iron_ore',
+                    ),
+                    TargetBlock(
+                        target=RuleTestAllOf(
                             rules=[
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestTagMatch(
-                                            tag='minecraft:height_specific_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                        RuleTestHeightMatch(
-                                            min_inclusive=0,
-                                            max_inclusive=2031,
-                                            predicate_type='minecraft:height_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
+                                RuleTestHeightMatch(
+                                    min_inclusive=0,
+                                    max_inclusive=2031,
+                                    predicate_type='minecraft:height_match',
                                 ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestNot(
-                                            rule=RuleTestTagMatch(
-                                                tag='minecraft:height_specific_ore_replaceables',
-                                                predicate_type='minecraft:tag_match',
-                                            ),
-                                            predicate_type='minecraft:not',
-                                        ),
-                                        RuleTestTagMatch(
-                                            tag='minecraft:stone_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
+                                RuleTestTagMatch(
+                                    tag='minecraft:height_specific_ore_replaceables',
+                                    predicate_type='minecraft:tag_match',
                                 ),
                             ],
-                            predicate_type='minecraft:any_of',
+                            predicate_type='minecraft:all_of',
                         ),
                         state='minecraft:iron_ore',
                     ),
                     TargetBlock(
-                        target=RuleTestAnyOf(
-                            rules=[
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestTagMatch(
-                                            tag='minecraft:height_specific_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                        RuleTestHeightMatch(
-                                            min_inclusive=-2032,
-                                            max_inclusive=8,
-                                            predicate_type='minecraft:height_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
-                                ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestNot(
-                                            rule=RuleTestTagMatch(
-                                                tag='minecraft:height_specific_ore_replaceables',
-                                                predicate_type='minecraft:tag_match',
-                                            ),
-                                            predicate_type='minecraft:not',
-                                        ),
-                                        RuleTestTagMatch(
-                                            tag='minecraft:deepslate_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
-                                ),
-                            ],
-                            predicate_type='minecraft:any_of',
+                        target=RuleTestTagMatch(
+                            tag='minecraft:height_specific_ore_replaceables',
+                            predicate_type='minecraft:tag_match',
                         ),
                         state='minecraft:deepslate_iron_ore',
                     ),
@@ -4842,113 +3822,52 @@ ICE_CAVE_ORE_LAPIS = ConfiguredFeatureSequence(
             feature=ConfiguredFeatureOre(
                 targets=[
                     TargetBlock(
-                        target=RuleTestAnyOf(
+                        target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+                        state='minecraft:stone',
+                    ),
+                    TargetBlock(
+                        target=RuleTestTagMatch(
+                            tag='minecraft:deepslate_ore_replaceables',
+                            predicate_type='minecraft:tag_match',
+                        ),
+                        state='minecraft:deepslate',
+                    ),
+                    TargetBlock(
+                        target=RuleTestAllOf(
                             rules=[
+                                RuleTestHeightMatch(
+                                    min_inclusive=0,
+                                    max_inclusive=2031,
+                                    predicate_type='minecraft:height_match',
+                                ),
                                 RuleTestAnyOf(
                                     rules=[
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:height_specific_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                                RuleTestHeightMatch(
-                                                    min_inclusive=0,
-                                                    max_inclusive=2031,
-                                                    predicate_type='minecraft:height_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestNot(
-                                                    rule=RuleTestTagMatch(
-                                                        tag='minecraft:height_specific_ore_replaceables',
-                                                        predicate_type='minecraft:tag_match',
-                                                    ),
-                                                    predicate_type='minecraft:not',
-                                                ),
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:stone_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:any_of',
-                                ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestHeightMatch(
-                                            min_inclusive=0,
-                                            max_inclusive=2031,
-                                            predicate_type='minecraft:height_match',
+                                        RuleTestTagMatch(
+                                            tag='minecraft:height_specific_ore_replaceables',
+                                            predicate_type='minecraft:tag_match',
                                         ),
                                         RuleTestTagMatch(
                                             tag='minecraft:ice_cave_ore_replaceables',
                                             predicate_type='minecraft:tag_match',
                                         ),
                                     ],
-                                    predicate_type='minecraft:all_of',
+                                    predicate_type='minecraft:any_of',
                                 ),
                             ],
-                            predicate_type='minecraft:any_of',
+                            predicate_type='minecraft:all_of',
                         ),
                         state='minecraft:stone',
                     ),
                     TargetBlock(
                         target=RuleTestAnyOf(
                             rules=[
-                                RuleTestAnyOf(
-                                    rules=[
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:height_specific_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                                RuleTestHeightMatch(
-                                                    min_inclusive=-2032,
-                                                    max_inclusive=8,
-                                                    predicate_type='minecraft:height_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestNot(
-                                                    rule=RuleTestTagMatch(
-                                                        tag='minecraft:height_specific_ore_replaceables',
-                                                        predicate_type='minecraft:tag_match',
-                                                    ),
-                                                    predicate_type='minecraft:not',
-                                                ),
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:deepslate_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:any_of',
+                                RuleTestTagMatch(
+                                    tag='minecraft:height_specific_ore_replaceables',
+                                    predicate_type='minecraft:tag_match',
                                 ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestHeightMatch(
-                                            min_inclusive=-2032,
-                                            max_inclusive=8,
-                                            predicate_type='minecraft:height_match',
-                                        ),
-                                        RuleTestTagMatch(
-                                            tag='minecraft:ice_cave_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
+                                RuleTestTagMatch(
+                                    tag='minecraft:ice_cave_ore_replaceables',
+                                    predicate_type='minecraft:tag_match',
                                 ),
                             ],
                             predicate_type='minecraft:any_of',
@@ -4966,78 +3885,37 @@ ICE_CAVE_ORE_LAPIS = ConfiguredFeatureSequence(
             feature=ConfiguredFeatureOre(
                 targets=[
                     TargetBlock(
-                        target=RuleTestAnyOf(
+                        target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+                        state='minecraft:lapis_ore',
+                    ),
+                    TargetBlock(
+                        target=RuleTestTagMatch(
+                            tag='minecraft:deepslate_ore_replaceables',
+                            predicate_type='minecraft:tag_match',
+                        ),
+                        state='minecraft:deepslate_lapis_ore',
+                    ),
+                    TargetBlock(
+                        target=RuleTestAllOf(
                             rules=[
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestTagMatch(
-                                            tag='minecraft:height_specific_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                        RuleTestHeightMatch(
-                                            min_inclusive=0,
-                                            max_inclusive=2031,
-                                            predicate_type='minecraft:height_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
+                                RuleTestHeightMatch(
+                                    min_inclusive=0,
+                                    max_inclusive=2031,
+                                    predicate_type='minecraft:height_match',
                                 ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestNot(
-                                            rule=RuleTestTagMatch(
-                                                tag='minecraft:height_specific_ore_replaceables',
-                                                predicate_type='minecraft:tag_match',
-                                            ),
-                                            predicate_type='minecraft:not',
-                                        ),
-                                        RuleTestTagMatch(
-                                            tag='minecraft:stone_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
+                                RuleTestTagMatch(
+                                    tag='minecraft:height_specific_ore_replaceables',
+                                    predicate_type='minecraft:tag_match',
                                 ),
                             ],
-                            predicate_type='minecraft:any_of',
+                            predicate_type='minecraft:all_of',
                         ),
                         state='minecraft:lapis_ore',
                     ),
                     TargetBlock(
-                        target=RuleTestAnyOf(
-                            rules=[
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestTagMatch(
-                                            tag='minecraft:height_specific_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                        RuleTestHeightMatch(
-                                            min_inclusive=-2032,
-                                            max_inclusive=8,
-                                            predicate_type='minecraft:height_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
-                                ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestNot(
-                                            rule=RuleTestTagMatch(
-                                                tag='minecraft:height_specific_ore_replaceables',
-                                                predicate_type='minecraft:tag_match',
-                                            ),
-                                            predicate_type='minecraft:not',
-                                        ),
-                                        RuleTestTagMatch(
-                                            tag='minecraft:deepslate_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
-                                ),
-                            ],
-                            predicate_type='minecraft:any_of',
+                        target=RuleTestTagMatch(
+                            tag='minecraft:height_specific_ore_replaceables',
+                            predicate_type='minecraft:tag_match',
                         ),
                         state='minecraft:deepslate_lapis_ore',
                     ),
@@ -5058,113 +3936,52 @@ ICE_CAVE_ORE_LAPIS_BURIED = ConfiguredFeatureSequence(
             feature=ConfiguredFeatureOre(
                 targets=[
                     TargetBlock(
-                        target=RuleTestAnyOf(
+                        target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+                        state='minecraft:stone',
+                    ),
+                    TargetBlock(
+                        target=RuleTestTagMatch(
+                            tag='minecraft:deepslate_ore_replaceables',
+                            predicate_type='minecraft:tag_match',
+                        ),
+                        state='minecraft:deepslate',
+                    ),
+                    TargetBlock(
+                        target=RuleTestAllOf(
                             rules=[
+                                RuleTestHeightMatch(
+                                    min_inclusive=0,
+                                    max_inclusive=2031,
+                                    predicate_type='minecraft:height_match',
+                                ),
                                 RuleTestAnyOf(
                                     rules=[
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:height_specific_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                                RuleTestHeightMatch(
-                                                    min_inclusive=0,
-                                                    max_inclusive=2031,
-                                                    predicate_type='minecraft:height_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestNot(
-                                                    rule=RuleTestTagMatch(
-                                                        tag='minecraft:height_specific_ore_replaceables',
-                                                        predicate_type='minecraft:tag_match',
-                                                    ),
-                                                    predicate_type='minecraft:not',
-                                                ),
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:stone_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:any_of',
-                                ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestHeightMatch(
-                                            min_inclusive=0,
-                                            max_inclusive=2031,
-                                            predicate_type='minecraft:height_match',
+                                        RuleTestTagMatch(
+                                            tag='minecraft:height_specific_ore_replaceables',
+                                            predicate_type='minecraft:tag_match',
                                         ),
                                         RuleTestTagMatch(
                                             tag='minecraft:ice_cave_ore_replaceables',
                                             predicate_type='minecraft:tag_match',
                                         ),
                                     ],
-                                    predicate_type='minecraft:all_of',
+                                    predicate_type='minecraft:any_of',
                                 ),
                             ],
-                            predicate_type='minecraft:any_of',
+                            predicate_type='minecraft:all_of',
                         ),
                         state='minecraft:stone',
                     ),
                     TargetBlock(
                         target=RuleTestAnyOf(
                             rules=[
-                                RuleTestAnyOf(
-                                    rules=[
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:height_specific_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                                RuleTestHeightMatch(
-                                                    min_inclusive=-2032,
-                                                    max_inclusive=8,
-                                                    predicate_type='minecraft:height_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestNot(
-                                                    rule=RuleTestTagMatch(
-                                                        tag='minecraft:height_specific_ore_replaceables',
-                                                        predicate_type='minecraft:tag_match',
-                                                    ),
-                                                    predicate_type='minecraft:not',
-                                                ),
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:deepslate_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:any_of',
+                                RuleTestTagMatch(
+                                    tag='minecraft:height_specific_ore_replaceables',
+                                    predicate_type='minecraft:tag_match',
                                 ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestHeightMatch(
-                                            min_inclusive=-2032,
-                                            max_inclusive=8,
-                                            predicate_type='minecraft:height_match',
-                                        ),
-                                        RuleTestTagMatch(
-                                            tag='minecraft:ice_cave_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
+                                RuleTestTagMatch(
+                                    tag='minecraft:ice_cave_ore_replaceables',
+                                    predicate_type='minecraft:tag_match',
                                 ),
                             ],
                             predicate_type='minecraft:any_of',
@@ -5182,78 +3999,37 @@ ICE_CAVE_ORE_LAPIS_BURIED = ConfiguredFeatureSequence(
             feature=ConfiguredFeatureOre(
                 targets=[
                     TargetBlock(
-                        target=RuleTestAnyOf(
+                        target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+                        state='minecraft:lapis_ore',
+                    ),
+                    TargetBlock(
+                        target=RuleTestTagMatch(
+                            tag='minecraft:deepslate_ore_replaceables',
+                            predicate_type='minecraft:tag_match',
+                        ),
+                        state='minecraft:deepslate_lapis_ore',
+                    ),
+                    TargetBlock(
+                        target=RuleTestAllOf(
                             rules=[
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestTagMatch(
-                                            tag='minecraft:height_specific_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                        RuleTestHeightMatch(
-                                            min_inclusive=0,
-                                            max_inclusive=2031,
-                                            predicate_type='minecraft:height_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
+                                RuleTestHeightMatch(
+                                    min_inclusive=0,
+                                    max_inclusive=2031,
+                                    predicate_type='minecraft:height_match',
                                 ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestNot(
-                                            rule=RuleTestTagMatch(
-                                                tag='minecraft:height_specific_ore_replaceables',
-                                                predicate_type='minecraft:tag_match',
-                                            ),
-                                            predicate_type='minecraft:not',
-                                        ),
-                                        RuleTestTagMatch(
-                                            tag='minecraft:stone_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
+                                RuleTestTagMatch(
+                                    tag='minecraft:height_specific_ore_replaceables',
+                                    predicate_type='minecraft:tag_match',
                                 ),
                             ],
-                            predicate_type='minecraft:any_of',
+                            predicate_type='minecraft:all_of',
                         ),
                         state='minecraft:lapis_ore',
                     ),
                     TargetBlock(
-                        target=RuleTestAnyOf(
-                            rules=[
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestTagMatch(
-                                            tag='minecraft:height_specific_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                        RuleTestHeightMatch(
-                                            min_inclusive=-2032,
-                                            max_inclusive=8,
-                                            predicate_type='minecraft:height_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
-                                ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestNot(
-                                            rule=RuleTestTagMatch(
-                                                tag='minecraft:height_specific_ore_replaceables',
-                                                predicate_type='minecraft:tag_match',
-                                            ),
-                                            predicate_type='minecraft:not',
-                                        ),
-                                        RuleTestTagMatch(
-                                            tag='minecraft:deepslate_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
-                                ),
-                            ],
-                            predicate_type='minecraft:any_of',
+                        target=RuleTestTagMatch(
+                            tag='minecraft:height_specific_ore_replaceables',
+                            predicate_type='minecraft:tag_match',
                         ),
                         state='minecraft:deepslate_lapis_ore',
                     ),
@@ -5274,113 +4050,52 @@ ICE_CAVE_ORE_REDSTONE = ConfiguredFeatureSequence(
             feature=ConfiguredFeatureOre(
                 targets=[
                     TargetBlock(
-                        target=RuleTestAnyOf(
+                        target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+                        state='minecraft:stone',
+                    ),
+                    TargetBlock(
+                        target=RuleTestTagMatch(
+                            tag='minecraft:deepslate_ore_replaceables',
+                            predicate_type='minecraft:tag_match',
+                        ),
+                        state='minecraft:deepslate',
+                    ),
+                    TargetBlock(
+                        target=RuleTestAllOf(
                             rules=[
+                                RuleTestHeightMatch(
+                                    min_inclusive=0,
+                                    max_inclusive=2031,
+                                    predicate_type='minecraft:height_match',
+                                ),
                                 RuleTestAnyOf(
                                     rules=[
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:height_specific_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                                RuleTestHeightMatch(
-                                                    min_inclusive=0,
-                                                    max_inclusive=2031,
-                                                    predicate_type='minecraft:height_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestNot(
-                                                    rule=RuleTestTagMatch(
-                                                        tag='minecraft:height_specific_ore_replaceables',
-                                                        predicate_type='minecraft:tag_match',
-                                                    ),
-                                                    predicate_type='minecraft:not',
-                                                ),
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:stone_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:any_of',
-                                ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestHeightMatch(
-                                            min_inclusive=0,
-                                            max_inclusive=2031,
-                                            predicate_type='minecraft:height_match',
+                                        RuleTestTagMatch(
+                                            tag='minecraft:height_specific_ore_replaceables',
+                                            predicate_type='minecraft:tag_match',
                                         ),
                                         RuleTestTagMatch(
                                             tag='minecraft:ice_cave_ore_replaceables',
                                             predicate_type='minecraft:tag_match',
                                         ),
                                     ],
-                                    predicate_type='minecraft:all_of',
+                                    predicate_type='minecraft:any_of',
                                 ),
                             ],
-                            predicate_type='minecraft:any_of',
+                            predicate_type='minecraft:all_of',
                         ),
                         state='minecraft:stone',
                     ),
                     TargetBlock(
                         target=RuleTestAnyOf(
                             rules=[
-                                RuleTestAnyOf(
-                                    rules=[
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:height_specific_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                                RuleTestHeightMatch(
-                                                    min_inclusive=-2032,
-                                                    max_inclusive=8,
-                                                    predicate_type='minecraft:height_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                        RuleTestAllOf(
-                                            rules=[
-                                                RuleTestNot(
-                                                    rule=RuleTestTagMatch(
-                                                        tag='minecraft:height_specific_ore_replaceables',
-                                                        predicate_type='minecraft:tag_match',
-                                                    ),
-                                                    predicate_type='minecraft:not',
-                                                ),
-                                                RuleTestTagMatch(
-                                                    tag='minecraft:deepslate_ore_replaceables',
-                                                    predicate_type='minecraft:tag_match',
-                                                ),
-                                            ],
-                                            predicate_type='minecraft:all_of',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:any_of',
+                                RuleTestTagMatch(
+                                    tag='minecraft:height_specific_ore_replaceables',
+                                    predicate_type='minecraft:tag_match',
                                 ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestHeightMatch(
-                                            min_inclusive=-2032,
-                                            max_inclusive=8,
-                                            predicate_type='minecraft:height_match',
-                                        ),
-                                        RuleTestTagMatch(
-                                            tag='minecraft:ice_cave_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
+                                RuleTestTagMatch(
+                                    tag='minecraft:ice_cave_ore_replaceables',
+                                    predicate_type='minecraft:tag_match',
                                 ),
                             ],
                             predicate_type='minecraft:any_of',
@@ -5398,78 +4113,37 @@ ICE_CAVE_ORE_REDSTONE = ConfiguredFeatureSequence(
             feature=ConfiguredFeatureOre(
                 targets=[
                     TargetBlock(
-                        target=RuleTestAnyOf(
+                        target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+                        state='minecraft:redstone_ore',
+                    ),
+                    TargetBlock(
+                        target=RuleTestTagMatch(
+                            tag='minecraft:deepslate_ore_replaceables',
+                            predicate_type='minecraft:tag_match',
+                        ),
+                        state='minecraft:deepslate_redstone_ore',
+                    ),
+                    TargetBlock(
+                        target=RuleTestAllOf(
                             rules=[
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestTagMatch(
-                                            tag='minecraft:height_specific_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                        RuleTestHeightMatch(
-                                            min_inclusive=0,
-                                            max_inclusive=2031,
-                                            predicate_type='minecraft:height_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
+                                RuleTestHeightMatch(
+                                    min_inclusive=0,
+                                    max_inclusive=2031,
+                                    predicate_type='minecraft:height_match',
                                 ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestNot(
-                                            rule=RuleTestTagMatch(
-                                                tag='minecraft:height_specific_ore_replaceables',
-                                                predicate_type='minecraft:tag_match',
-                                            ),
-                                            predicate_type='minecraft:not',
-                                        ),
-                                        RuleTestTagMatch(
-                                            tag='minecraft:stone_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
+                                RuleTestTagMatch(
+                                    tag='minecraft:height_specific_ore_replaceables',
+                                    predicate_type='minecraft:tag_match',
                                 ),
                             ],
-                            predicate_type='minecraft:any_of',
+                            predicate_type='minecraft:all_of',
                         ),
                         state='minecraft:redstone_ore',
                     ),
                     TargetBlock(
-                        target=RuleTestAnyOf(
-                            rules=[
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestTagMatch(
-                                            tag='minecraft:height_specific_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                        RuleTestHeightMatch(
-                                            min_inclusive=-2032,
-                                            max_inclusive=8,
-                                            predicate_type='minecraft:height_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
-                                ),
-                                RuleTestAllOf(
-                                    rules=[
-                                        RuleTestNot(
-                                            rule=RuleTestTagMatch(
-                                                tag='minecraft:height_specific_ore_replaceables',
-                                                predicate_type='minecraft:tag_match',
-                                            ),
-                                            predicate_type='minecraft:not',
-                                        ),
-                                        RuleTestTagMatch(
-                                            tag='minecraft:deepslate_ore_replaceables',
-                                            predicate_type='minecraft:tag_match',
-                                        ),
-                                    ],
-                                    predicate_type='minecraft:all_of',
-                                ),
-                            ],
-                            predicate_type='minecraft:any_of',
+                        target=RuleTestTagMatch(
+                            tag='minecraft:height_specific_ore_replaceables',
+                            predicate_type='minecraft:tag_match',
                         ),
                         state='minecraft:deepslate_redstone_ore',
                     ),
@@ -7057,79 +5731,28 @@ ORE_CLAY = ConfiguredFeatureOre(
 ORE_COAL = ConfiguredFeatureOre(
     targets=[
         TargetBlock(
-            target=RuleTestAnyOf(
+            target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+            state='minecraft:coal_ore',
+        ),
+        TargetBlock(
+            target=RuleTestTagMatch(tag='minecraft:deepslate_ore_replaceables', predicate_type='minecraft:tag_match'),
+            state='minecraft:deepslate_coal_ore',
+        ),
+        TargetBlock(
+            target=RuleTestAllOf(
                 rules=[
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestTagMatch(
-                                tag='minecraft:height_specific_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                            RuleTestHeightMatch(
-                                min_inclusive=0,
-                                max_inclusive=2031,
-                                predicate_type='minecraft:height_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestNot(
-                                rule=RuleTestTagMatch(
-                                    tag='minecraft:height_specific_ore_replaceables',
-                                    predicate_type='minecraft:tag_match',
-                                ),
-                                predicate_type='minecraft:not',
-                            ),
-                            RuleTestTagMatch(
-                                tag='minecraft:stone_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
+                    RuleTestHeightMatch(min_inclusive=0, max_inclusive=2031, predicate_type='minecraft:height_match'),
+                    RuleTestTagMatch(
+                        tag='minecraft:height_specific_ore_replaceables',
+                        predicate_type='minecraft:tag_match',
                     ),
                 ],
-                predicate_type='minecraft:any_of',
+                predicate_type='minecraft:all_of',
             ),
             state='minecraft:coal_ore',
         ),
         TargetBlock(
-            target=RuleTestAnyOf(
-                rules=[
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestTagMatch(
-                                tag='minecraft:height_specific_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                            RuleTestHeightMatch(
-                                min_inclusive=-2032,
-                                max_inclusive=8,
-                                predicate_type='minecraft:height_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestNot(
-                                rule=RuleTestTagMatch(
-                                    tag='minecraft:height_specific_ore_replaceables',
-                                    predicate_type='minecraft:tag_match',
-                                ),
-                                predicate_type='minecraft:not',
-                            ),
-                            RuleTestTagMatch(
-                                tag='minecraft:deepslate_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                ],
-                predicate_type='minecraft:any_of',
-            ),
+            target=RuleTestTagMatch(tag='minecraft:height_specific_ore_replaceables', predicate_type='minecraft:tag_match'),
             state='minecraft:deepslate_coal_ore',
         ),
     ],
@@ -7141,79 +5764,28 @@ ORE_COAL = ConfiguredFeatureOre(
 ORE_COAL_BURIED = ConfiguredFeatureOre(
     targets=[
         TargetBlock(
-            target=RuleTestAnyOf(
+            target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+            state='minecraft:coal_ore',
+        ),
+        TargetBlock(
+            target=RuleTestTagMatch(tag='minecraft:deepslate_ore_replaceables', predicate_type='minecraft:tag_match'),
+            state='minecraft:deepslate_coal_ore',
+        ),
+        TargetBlock(
+            target=RuleTestAllOf(
                 rules=[
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestTagMatch(
-                                tag='minecraft:height_specific_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                            RuleTestHeightMatch(
-                                min_inclusive=0,
-                                max_inclusive=2031,
-                                predicate_type='minecraft:height_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestNot(
-                                rule=RuleTestTagMatch(
-                                    tag='minecraft:height_specific_ore_replaceables',
-                                    predicate_type='minecraft:tag_match',
-                                ),
-                                predicate_type='minecraft:not',
-                            ),
-                            RuleTestTagMatch(
-                                tag='minecraft:stone_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
+                    RuleTestHeightMatch(min_inclusive=0, max_inclusive=2031, predicate_type='minecraft:height_match'),
+                    RuleTestTagMatch(
+                        tag='minecraft:height_specific_ore_replaceables',
+                        predicate_type='minecraft:tag_match',
                     ),
                 ],
-                predicate_type='minecraft:any_of',
+                predicate_type='minecraft:all_of',
             ),
             state='minecraft:coal_ore',
         ),
         TargetBlock(
-            target=RuleTestAnyOf(
-                rules=[
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestTagMatch(
-                                tag='minecraft:height_specific_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                            RuleTestHeightMatch(
-                                min_inclusive=-2032,
-                                max_inclusive=8,
-                                predicate_type='minecraft:height_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestNot(
-                                rule=RuleTestTagMatch(
-                                    tag='minecraft:height_specific_ore_replaceables',
-                                    predicate_type='minecraft:tag_match',
-                                ),
-                                predicate_type='minecraft:not',
-                            ),
-                            RuleTestTagMatch(
-                                tag='minecraft:deepslate_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                ],
-                predicate_type='minecraft:any_of',
-            ),
+            target=RuleTestTagMatch(tag='minecraft:height_specific_ore_replaceables', predicate_type='minecraft:tag_match'),
             state='minecraft:deepslate_coal_ore',
         ),
     ],
@@ -7225,79 +5797,28 @@ ORE_COAL_BURIED = ConfiguredFeatureOre(
 ORE_COPPER_LARGE = ConfiguredFeatureOre(
     targets=[
         TargetBlock(
-            target=RuleTestAnyOf(
+            target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+            state='minecraft:copper_ore',
+        ),
+        TargetBlock(
+            target=RuleTestTagMatch(tag='minecraft:deepslate_ore_replaceables', predicate_type='minecraft:tag_match'),
+            state='minecraft:deepslate_copper_ore',
+        ),
+        TargetBlock(
+            target=RuleTestAllOf(
                 rules=[
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestTagMatch(
-                                tag='minecraft:height_specific_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                            RuleTestHeightMatch(
-                                min_inclusive=0,
-                                max_inclusive=2031,
-                                predicate_type='minecraft:height_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestNot(
-                                rule=RuleTestTagMatch(
-                                    tag='minecraft:height_specific_ore_replaceables',
-                                    predicate_type='minecraft:tag_match',
-                                ),
-                                predicate_type='minecraft:not',
-                            ),
-                            RuleTestTagMatch(
-                                tag='minecraft:stone_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
+                    RuleTestHeightMatch(min_inclusive=0, max_inclusive=2031, predicate_type='minecraft:height_match'),
+                    RuleTestTagMatch(
+                        tag='minecraft:height_specific_ore_replaceables',
+                        predicate_type='minecraft:tag_match',
                     ),
                 ],
-                predicate_type='minecraft:any_of',
+                predicate_type='minecraft:all_of',
             ),
             state='minecraft:copper_ore',
         ),
         TargetBlock(
-            target=RuleTestAnyOf(
-                rules=[
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestTagMatch(
-                                tag='minecraft:height_specific_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                            RuleTestHeightMatch(
-                                min_inclusive=-2032,
-                                max_inclusive=8,
-                                predicate_type='minecraft:height_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestNot(
-                                rule=RuleTestTagMatch(
-                                    tag='minecraft:height_specific_ore_replaceables',
-                                    predicate_type='minecraft:tag_match',
-                                ),
-                                predicate_type='minecraft:not',
-                            ),
-                            RuleTestTagMatch(
-                                tag='minecraft:deepslate_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                ],
-                predicate_type='minecraft:any_of',
-            ),
+            target=RuleTestTagMatch(tag='minecraft:height_specific_ore_replaceables', predicate_type='minecraft:tag_match'),
             state='minecraft:deepslate_copper_ore',
         ),
     ],
@@ -7309,79 +5830,28 @@ ORE_COPPER_LARGE = ConfiguredFeatureOre(
 ORE_COPPER_SMALL = ConfiguredFeatureOre(
     targets=[
         TargetBlock(
-            target=RuleTestAnyOf(
+            target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+            state='minecraft:copper_ore',
+        ),
+        TargetBlock(
+            target=RuleTestTagMatch(tag='minecraft:deepslate_ore_replaceables', predicate_type='minecraft:tag_match'),
+            state='minecraft:deepslate_copper_ore',
+        ),
+        TargetBlock(
+            target=RuleTestAllOf(
                 rules=[
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestTagMatch(
-                                tag='minecraft:height_specific_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                            RuleTestHeightMatch(
-                                min_inclusive=0,
-                                max_inclusive=2031,
-                                predicate_type='minecraft:height_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestNot(
-                                rule=RuleTestTagMatch(
-                                    tag='minecraft:height_specific_ore_replaceables',
-                                    predicate_type='minecraft:tag_match',
-                                ),
-                                predicate_type='minecraft:not',
-                            ),
-                            RuleTestTagMatch(
-                                tag='minecraft:stone_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
+                    RuleTestHeightMatch(min_inclusive=0, max_inclusive=2031, predicate_type='minecraft:height_match'),
+                    RuleTestTagMatch(
+                        tag='minecraft:height_specific_ore_replaceables',
+                        predicate_type='minecraft:tag_match',
                     ),
                 ],
-                predicate_type='minecraft:any_of',
+                predicate_type='minecraft:all_of',
             ),
             state='minecraft:copper_ore',
         ),
         TargetBlock(
-            target=RuleTestAnyOf(
-                rules=[
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestTagMatch(
-                                tag='minecraft:height_specific_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                            RuleTestHeightMatch(
-                                min_inclusive=-2032,
-                                max_inclusive=8,
-                                predicate_type='minecraft:height_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestNot(
-                                rule=RuleTestTagMatch(
-                                    tag='minecraft:height_specific_ore_replaceables',
-                                    predicate_type='minecraft:tag_match',
-                                ),
-                                predicate_type='minecraft:not',
-                            ),
-                            RuleTestTagMatch(
-                                tag='minecraft:deepslate_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                ],
-                predicate_type='minecraft:any_of',
-            ),
+            target=RuleTestTagMatch(tag='minecraft:height_specific_ore_replaceables', predicate_type='minecraft:tag_match'),
             state='minecraft:deepslate_copper_ore',
         ),
     ],
@@ -7393,79 +5863,28 @@ ORE_COPPER_SMALL = ConfiguredFeatureOre(
 ORE_DIAMOND_BURIED = ConfiguredFeatureOre(
     targets=[
         TargetBlock(
-            target=RuleTestAnyOf(
+            target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+            state='minecraft:diamond_ore',
+        ),
+        TargetBlock(
+            target=RuleTestTagMatch(tag='minecraft:deepslate_ore_replaceables', predicate_type='minecraft:tag_match'),
+            state='minecraft:deepslate_diamond_ore',
+        ),
+        TargetBlock(
+            target=RuleTestAllOf(
                 rules=[
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestTagMatch(
-                                tag='minecraft:height_specific_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                            RuleTestHeightMatch(
-                                min_inclusive=0,
-                                max_inclusive=2031,
-                                predicate_type='minecraft:height_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestNot(
-                                rule=RuleTestTagMatch(
-                                    tag='minecraft:height_specific_ore_replaceables',
-                                    predicate_type='minecraft:tag_match',
-                                ),
-                                predicate_type='minecraft:not',
-                            ),
-                            RuleTestTagMatch(
-                                tag='minecraft:stone_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
+                    RuleTestHeightMatch(min_inclusive=0, max_inclusive=2031, predicate_type='minecraft:height_match'),
+                    RuleTestTagMatch(
+                        tag='minecraft:height_specific_ore_replaceables',
+                        predicate_type='minecraft:tag_match',
                     ),
                 ],
-                predicate_type='minecraft:any_of',
+                predicate_type='minecraft:all_of',
             ),
             state='minecraft:diamond_ore',
         ),
         TargetBlock(
-            target=RuleTestAnyOf(
-                rules=[
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestTagMatch(
-                                tag='minecraft:height_specific_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                            RuleTestHeightMatch(
-                                min_inclusive=-2032,
-                                max_inclusive=8,
-                                predicate_type='minecraft:height_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestNot(
-                                rule=RuleTestTagMatch(
-                                    tag='minecraft:height_specific_ore_replaceables',
-                                    predicate_type='minecraft:tag_match',
-                                ),
-                                predicate_type='minecraft:not',
-                            ),
-                            RuleTestTagMatch(
-                                tag='minecraft:deepslate_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                ],
-                predicate_type='minecraft:any_of',
-            ),
+            target=RuleTestTagMatch(tag='minecraft:height_specific_ore_replaceables', predicate_type='minecraft:tag_match'),
             state='minecraft:deepslate_diamond_ore',
         ),
     ],
@@ -7477,79 +5896,28 @@ ORE_DIAMOND_BURIED = ConfiguredFeatureOre(
 ORE_DIAMOND_LARGE = ConfiguredFeatureOre(
     targets=[
         TargetBlock(
-            target=RuleTestAnyOf(
+            target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+            state='minecraft:diamond_ore',
+        ),
+        TargetBlock(
+            target=RuleTestTagMatch(tag='minecraft:deepslate_ore_replaceables', predicate_type='minecraft:tag_match'),
+            state='minecraft:deepslate_diamond_ore',
+        ),
+        TargetBlock(
+            target=RuleTestAllOf(
                 rules=[
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestTagMatch(
-                                tag='minecraft:height_specific_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                            RuleTestHeightMatch(
-                                min_inclusive=0,
-                                max_inclusive=2031,
-                                predicate_type='minecraft:height_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestNot(
-                                rule=RuleTestTagMatch(
-                                    tag='minecraft:height_specific_ore_replaceables',
-                                    predicate_type='minecraft:tag_match',
-                                ),
-                                predicate_type='minecraft:not',
-                            ),
-                            RuleTestTagMatch(
-                                tag='minecraft:stone_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
+                    RuleTestHeightMatch(min_inclusive=0, max_inclusive=2031, predicate_type='minecraft:height_match'),
+                    RuleTestTagMatch(
+                        tag='minecraft:height_specific_ore_replaceables',
+                        predicate_type='minecraft:tag_match',
                     ),
                 ],
-                predicate_type='minecraft:any_of',
+                predicate_type='minecraft:all_of',
             ),
             state='minecraft:diamond_ore',
         ),
         TargetBlock(
-            target=RuleTestAnyOf(
-                rules=[
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestTagMatch(
-                                tag='minecraft:height_specific_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                            RuleTestHeightMatch(
-                                min_inclusive=-2032,
-                                max_inclusive=8,
-                                predicate_type='minecraft:height_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestNot(
-                                rule=RuleTestTagMatch(
-                                    tag='minecraft:height_specific_ore_replaceables',
-                                    predicate_type='minecraft:tag_match',
-                                ),
-                                predicate_type='minecraft:not',
-                            ),
-                            RuleTestTagMatch(
-                                tag='minecraft:deepslate_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                ],
-                predicate_type='minecraft:any_of',
-            ),
+            target=RuleTestTagMatch(tag='minecraft:height_specific_ore_replaceables', predicate_type='minecraft:tag_match'),
             state='minecraft:deepslate_diamond_ore',
         ),
     ],
@@ -7561,79 +5929,28 @@ ORE_DIAMOND_LARGE = ConfiguredFeatureOre(
 ORE_DIAMOND_MEDIUM = ConfiguredFeatureOre(
     targets=[
         TargetBlock(
-            target=RuleTestAnyOf(
+            target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+            state='minecraft:diamond_ore',
+        ),
+        TargetBlock(
+            target=RuleTestTagMatch(tag='minecraft:deepslate_ore_replaceables', predicate_type='minecraft:tag_match'),
+            state='minecraft:deepslate_diamond_ore',
+        ),
+        TargetBlock(
+            target=RuleTestAllOf(
                 rules=[
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestTagMatch(
-                                tag='minecraft:height_specific_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                            RuleTestHeightMatch(
-                                min_inclusive=0,
-                                max_inclusive=2031,
-                                predicate_type='minecraft:height_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestNot(
-                                rule=RuleTestTagMatch(
-                                    tag='minecraft:height_specific_ore_replaceables',
-                                    predicate_type='minecraft:tag_match',
-                                ),
-                                predicate_type='minecraft:not',
-                            ),
-                            RuleTestTagMatch(
-                                tag='minecraft:stone_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
+                    RuleTestHeightMatch(min_inclusive=0, max_inclusive=2031, predicate_type='minecraft:height_match'),
+                    RuleTestTagMatch(
+                        tag='minecraft:height_specific_ore_replaceables',
+                        predicate_type='minecraft:tag_match',
                     ),
                 ],
-                predicate_type='minecraft:any_of',
+                predicate_type='minecraft:all_of',
             ),
             state='minecraft:diamond_ore',
         ),
         TargetBlock(
-            target=RuleTestAnyOf(
-                rules=[
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestTagMatch(
-                                tag='minecraft:height_specific_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                            RuleTestHeightMatch(
-                                min_inclusive=-2032,
-                                max_inclusive=8,
-                                predicate_type='minecraft:height_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestNot(
-                                rule=RuleTestTagMatch(
-                                    tag='minecraft:height_specific_ore_replaceables',
-                                    predicate_type='minecraft:tag_match',
-                                ),
-                                predicate_type='minecraft:not',
-                            ),
-                            RuleTestTagMatch(
-                                tag='minecraft:deepslate_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                ],
-                predicate_type='minecraft:any_of',
-            ),
+            target=RuleTestTagMatch(tag='minecraft:height_specific_ore_replaceables', predicate_type='minecraft:tag_match'),
             state='minecraft:deepslate_diamond_ore',
         ),
     ],
@@ -7645,79 +5962,28 @@ ORE_DIAMOND_MEDIUM = ConfiguredFeatureOre(
 ORE_DIAMOND_SMALL = ConfiguredFeatureOre(
     targets=[
         TargetBlock(
-            target=RuleTestAnyOf(
+            target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+            state='minecraft:diamond_ore',
+        ),
+        TargetBlock(
+            target=RuleTestTagMatch(tag='minecraft:deepslate_ore_replaceables', predicate_type='minecraft:tag_match'),
+            state='minecraft:deepslate_diamond_ore',
+        ),
+        TargetBlock(
+            target=RuleTestAllOf(
                 rules=[
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestTagMatch(
-                                tag='minecraft:height_specific_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                            RuleTestHeightMatch(
-                                min_inclusive=0,
-                                max_inclusive=2031,
-                                predicate_type='minecraft:height_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestNot(
-                                rule=RuleTestTagMatch(
-                                    tag='minecraft:height_specific_ore_replaceables',
-                                    predicate_type='minecraft:tag_match',
-                                ),
-                                predicate_type='minecraft:not',
-                            ),
-                            RuleTestTagMatch(
-                                tag='minecraft:stone_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
+                    RuleTestHeightMatch(min_inclusive=0, max_inclusive=2031, predicate_type='minecraft:height_match'),
+                    RuleTestTagMatch(
+                        tag='minecraft:height_specific_ore_replaceables',
+                        predicate_type='minecraft:tag_match',
                     ),
                 ],
-                predicate_type='minecraft:any_of',
+                predicate_type='minecraft:all_of',
             ),
             state='minecraft:diamond_ore',
         ),
         TargetBlock(
-            target=RuleTestAnyOf(
-                rules=[
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestTagMatch(
-                                tag='minecraft:height_specific_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                            RuleTestHeightMatch(
-                                min_inclusive=-2032,
-                                max_inclusive=8,
-                                predicate_type='minecraft:height_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestNot(
-                                rule=RuleTestTagMatch(
-                                    tag='minecraft:height_specific_ore_replaceables',
-                                    predicate_type='minecraft:tag_match',
-                                ),
-                                predicate_type='minecraft:not',
-                            ),
-                            RuleTestTagMatch(
-                                tag='minecraft:deepslate_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                ],
-                predicate_type='minecraft:any_of',
-            ),
+            target=RuleTestTagMatch(tag='minecraft:height_specific_ore_replaceables', predicate_type='minecraft:tag_match'),
             state='minecraft:deepslate_diamond_ore',
         ),
     ],
@@ -7753,79 +6019,28 @@ ORE_DIRT = ConfiguredFeatureOre(
 ORE_EMERALD = ConfiguredFeatureOre(
     targets=[
         TargetBlock(
-            target=RuleTestAnyOf(
+            target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+            state='minecraft:emerald_ore',
+        ),
+        TargetBlock(
+            target=RuleTestTagMatch(tag='minecraft:deepslate_ore_replaceables', predicate_type='minecraft:tag_match'),
+            state='minecraft:deepslate_emerald_ore',
+        ),
+        TargetBlock(
+            target=RuleTestAllOf(
                 rules=[
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestTagMatch(
-                                tag='minecraft:height_specific_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                            RuleTestHeightMatch(
-                                min_inclusive=0,
-                                max_inclusive=2031,
-                                predicate_type='minecraft:height_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestNot(
-                                rule=RuleTestTagMatch(
-                                    tag='minecraft:height_specific_ore_replaceables',
-                                    predicate_type='minecraft:tag_match',
-                                ),
-                                predicate_type='minecraft:not',
-                            ),
-                            RuleTestTagMatch(
-                                tag='minecraft:stone_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
+                    RuleTestHeightMatch(min_inclusive=0, max_inclusive=2031, predicate_type='minecraft:height_match'),
+                    RuleTestTagMatch(
+                        tag='minecraft:height_specific_ore_replaceables',
+                        predicate_type='minecraft:tag_match',
                     ),
                 ],
-                predicate_type='minecraft:any_of',
+                predicate_type='minecraft:all_of',
             ),
             state='minecraft:emerald_ore',
         ),
         TargetBlock(
-            target=RuleTestAnyOf(
-                rules=[
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestTagMatch(
-                                tag='minecraft:height_specific_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                            RuleTestHeightMatch(
-                                min_inclusive=-2032,
-                                max_inclusive=8,
-                                predicate_type='minecraft:height_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestNot(
-                                rule=RuleTestTagMatch(
-                                    tag='minecraft:height_specific_ore_replaceables',
-                                    predicate_type='minecraft:tag_match',
-                                ),
-                                predicate_type='minecraft:not',
-                            ),
-                            RuleTestTagMatch(
-                                tag='minecraft:deepslate_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                ],
-                predicate_type='minecraft:any_of',
-            ),
+            target=RuleTestTagMatch(tag='minecraft:height_specific_ore_replaceables', predicate_type='minecraft:tag_match'),
             state='minecraft:deepslate_emerald_ore',
         ),
     ],
@@ -7837,79 +6052,28 @@ ORE_EMERALD = ConfiguredFeatureOre(
 ORE_GOLD = ConfiguredFeatureOre(
     targets=[
         TargetBlock(
-            target=RuleTestAnyOf(
+            target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+            state='minecraft:gold_ore',
+        ),
+        TargetBlock(
+            target=RuleTestTagMatch(tag='minecraft:deepslate_ore_replaceables', predicate_type='minecraft:tag_match'),
+            state='minecraft:deepslate_gold_ore',
+        ),
+        TargetBlock(
+            target=RuleTestAllOf(
                 rules=[
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestTagMatch(
-                                tag='minecraft:height_specific_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                            RuleTestHeightMatch(
-                                min_inclusive=0,
-                                max_inclusive=2031,
-                                predicate_type='minecraft:height_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestNot(
-                                rule=RuleTestTagMatch(
-                                    tag='minecraft:height_specific_ore_replaceables',
-                                    predicate_type='minecraft:tag_match',
-                                ),
-                                predicate_type='minecraft:not',
-                            ),
-                            RuleTestTagMatch(
-                                tag='minecraft:stone_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
+                    RuleTestHeightMatch(min_inclusive=0, max_inclusive=2031, predicate_type='minecraft:height_match'),
+                    RuleTestTagMatch(
+                        tag='minecraft:height_specific_ore_replaceables',
+                        predicate_type='minecraft:tag_match',
                     ),
                 ],
-                predicate_type='minecraft:any_of',
+                predicate_type='minecraft:all_of',
             ),
             state='minecraft:gold_ore',
         ),
         TargetBlock(
-            target=RuleTestAnyOf(
-                rules=[
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestTagMatch(
-                                tag='minecraft:height_specific_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                            RuleTestHeightMatch(
-                                min_inclusive=-2032,
-                                max_inclusive=8,
-                                predicate_type='minecraft:height_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestNot(
-                                rule=RuleTestTagMatch(
-                                    tag='minecraft:height_specific_ore_replaceables',
-                                    predicate_type='minecraft:tag_match',
-                                ),
-                                predicate_type='minecraft:not',
-                            ),
-                            RuleTestTagMatch(
-                                tag='minecraft:deepslate_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                ],
-                predicate_type='minecraft:any_of',
-            ),
+            target=RuleTestTagMatch(tag='minecraft:height_specific_ore_replaceables', predicate_type='minecraft:tag_match'),
             state='minecraft:deepslate_gold_ore',
         ),
     ],
@@ -7921,79 +6085,28 @@ ORE_GOLD = ConfiguredFeatureOre(
 ORE_GOLD_BURIED = ConfiguredFeatureOre(
     targets=[
         TargetBlock(
-            target=RuleTestAnyOf(
+            target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+            state='minecraft:gold_ore',
+        ),
+        TargetBlock(
+            target=RuleTestTagMatch(tag='minecraft:deepslate_ore_replaceables', predicate_type='minecraft:tag_match'),
+            state='minecraft:deepslate_gold_ore',
+        ),
+        TargetBlock(
+            target=RuleTestAllOf(
                 rules=[
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestTagMatch(
-                                tag='minecraft:height_specific_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                            RuleTestHeightMatch(
-                                min_inclusive=0,
-                                max_inclusive=2031,
-                                predicate_type='minecraft:height_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestNot(
-                                rule=RuleTestTagMatch(
-                                    tag='minecraft:height_specific_ore_replaceables',
-                                    predicate_type='minecraft:tag_match',
-                                ),
-                                predicate_type='minecraft:not',
-                            ),
-                            RuleTestTagMatch(
-                                tag='minecraft:stone_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
+                    RuleTestHeightMatch(min_inclusive=0, max_inclusive=2031, predicate_type='minecraft:height_match'),
+                    RuleTestTagMatch(
+                        tag='minecraft:height_specific_ore_replaceables',
+                        predicate_type='minecraft:tag_match',
                     ),
                 ],
-                predicate_type='minecraft:any_of',
+                predicate_type='minecraft:all_of',
             ),
             state='minecraft:gold_ore',
         ),
         TargetBlock(
-            target=RuleTestAnyOf(
-                rules=[
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestTagMatch(
-                                tag='minecraft:height_specific_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                            RuleTestHeightMatch(
-                                min_inclusive=-2032,
-                                max_inclusive=8,
-                                predicate_type='minecraft:height_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestNot(
-                                rule=RuleTestTagMatch(
-                                    tag='minecraft:height_specific_ore_replaceables',
-                                    predicate_type='minecraft:tag_match',
-                                ),
-                                predicate_type='minecraft:not',
-                            ),
-                            RuleTestTagMatch(
-                                tag='minecraft:deepslate_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                ],
-                predicate_type='minecraft:any_of',
-            ),
+            target=RuleTestTagMatch(tag='minecraft:height_specific_ore_replaceables', predicate_type='minecraft:tag_match'),
             state='minecraft:deepslate_gold_ore',
         ),
     ],
@@ -8041,79 +6154,28 @@ ORE_GRAVEL_NETHER = ConfiguredFeatureOre(
 ORE_INFESTED = ConfiguredFeatureOre(
     targets=[
         TargetBlock(
-            target=RuleTestAnyOf(
+            target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+            state='minecraft:infested_stone',
+        ),
+        TargetBlock(
+            target=RuleTestTagMatch(tag='minecraft:deepslate_ore_replaceables', predicate_type='minecraft:tag_match'),
+            state='minecraft:infested_deepslate',
+        ),
+        TargetBlock(
+            target=RuleTestAllOf(
                 rules=[
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestTagMatch(
-                                tag='minecraft:height_specific_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                            RuleTestHeightMatch(
-                                min_inclusive=0,
-                                max_inclusive=2031,
-                                predicate_type='minecraft:height_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestNot(
-                                rule=RuleTestTagMatch(
-                                    tag='minecraft:height_specific_ore_replaceables',
-                                    predicate_type='minecraft:tag_match',
-                                ),
-                                predicate_type='minecraft:not',
-                            ),
-                            RuleTestTagMatch(
-                                tag='minecraft:stone_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
+                    RuleTestHeightMatch(min_inclusive=0, max_inclusive=2031, predicate_type='minecraft:height_match'),
+                    RuleTestTagMatch(
+                        tag='minecraft:height_specific_ore_replaceables',
+                        predicate_type='minecraft:tag_match',
                     ),
                 ],
-                predicate_type='minecraft:any_of',
+                predicate_type='minecraft:all_of',
             ),
             state='minecraft:infested_stone',
         ),
         TargetBlock(
-            target=RuleTestAnyOf(
-                rules=[
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestTagMatch(
-                                tag='minecraft:height_specific_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                            RuleTestHeightMatch(
-                                min_inclusive=-2032,
-                                max_inclusive=8,
-                                predicate_type='minecraft:height_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestNot(
-                                rule=RuleTestTagMatch(
-                                    tag='minecraft:height_specific_ore_replaceables',
-                                    predicate_type='minecraft:tag_match',
-                                ),
-                                predicate_type='minecraft:not',
-                            ),
-                            RuleTestTagMatch(
-                                tag='minecraft:deepslate_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                ],
-                predicate_type='minecraft:any_of',
-            ),
+            target=RuleTestTagMatch(tag='minecraft:height_specific_ore_replaceables', predicate_type='minecraft:tag_match'),
             state='minecraft:infested_deepslate',
         ),
     ],
@@ -8125,79 +6187,28 @@ ORE_INFESTED = ConfiguredFeatureOre(
 ORE_IRON = ConfiguredFeatureOre(
     targets=[
         TargetBlock(
-            target=RuleTestAnyOf(
+            target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+            state='minecraft:iron_ore',
+        ),
+        TargetBlock(
+            target=RuleTestTagMatch(tag='minecraft:deepslate_ore_replaceables', predicate_type='minecraft:tag_match'),
+            state='minecraft:deepslate_iron_ore',
+        ),
+        TargetBlock(
+            target=RuleTestAllOf(
                 rules=[
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestTagMatch(
-                                tag='minecraft:height_specific_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                            RuleTestHeightMatch(
-                                min_inclusive=0,
-                                max_inclusive=2031,
-                                predicate_type='minecraft:height_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestNot(
-                                rule=RuleTestTagMatch(
-                                    tag='minecraft:height_specific_ore_replaceables',
-                                    predicate_type='minecraft:tag_match',
-                                ),
-                                predicate_type='minecraft:not',
-                            ),
-                            RuleTestTagMatch(
-                                tag='minecraft:stone_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
+                    RuleTestHeightMatch(min_inclusive=0, max_inclusive=2031, predicate_type='minecraft:height_match'),
+                    RuleTestTagMatch(
+                        tag='minecraft:height_specific_ore_replaceables',
+                        predicate_type='minecraft:tag_match',
                     ),
                 ],
-                predicate_type='minecraft:any_of',
+                predicate_type='minecraft:all_of',
             ),
             state='minecraft:iron_ore',
         ),
         TargetBlock(
-            target=RuleTestAnyOf(
-                rules=[
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestTagMatch(
-                                tag='minecraft:height_specific_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                            RuleTestHeightMatch(
-                                min_inclusive=-2032,
-                                max_inclusive=8,
-                                predicate_type='minecraft:height_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestNot(
-                                rule=RuleTestTagMatch(
-                                    tag='minecraft:height_specific_ore_replaceables',
-                                    predicate_type='minecraft:tag_match',
-                                ),
-                                predicate_type='minecraft:not',
-                            ),
-                            RuleTestTagMatch(
-                                tag='minecraft:deepslate_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                ],
-                predicate_type='minecraft:any_of',
-            ),
+            target=RuleTestTagMatch(tag='minecraft:height_specific_ore_replaceables', predicate_type='minecraft:tag_match'),
             state='minecraft:deepslate_iron_ore',
         ),
     ],
@@ -8209,79 +6220,28 @@ ORE_IRON = ConfiguredFeatureOre(
 ORE_IRON_SMALL = ConfiguredFeatureOre(
     targets=[
         TargetBlock(
-            target=RuleTestAnyOf(
+            target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+            state='minecraft:iron_ore',
+        ),
+        TargetBlock(
+            target=RuleTestTagMatch(tag='minecraft:deepslate_ore_replaceables', predicate_type='minecraft:tag_match'),
+            state='minecraft:deepslate_iron_ore',
+        ),
+        TargetBlock(
+            target=RuleTestAllOf(
                 rules=[
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestTagMatch(
-                                tag='minecraft:height_specific_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                            RuleTestHeightMatch(
-                                min_inclusive=0,
-                                max_inclusive=2031,
-                                predicate_type='minecraft:height_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestNot(
-                                rule=RuleTestTagMatch(
-                                    tag='minecraft:height_specific_ore_replaceables',
-                                    predicate_type='minecraft:tag_match',
-                                ),
-                                predicate_type='minecraft:not',
-                            ),
-                            RuleTestTagMatch(
-                                tag='minecraft:stone_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
+                    RuleTestHeightMatch(min_inclusive=0, max_inclusive=2031, predicate_type='minecraft:height_match'),
+                    RuleTestTagMatch(
+                        tag='minecraft:height_specific_ore_replaceables',
+                        predicate_type='minecraft:tag_match',
                     ),
                 ],
-                predicate_type='minecraft:any_of',
+                predicate_type='minecraft:all_of',
             ),
             state='minecraft:iron_ore',
         ),
         TargetBlock(
-            target=RuleTestAnyOf(
-                rules=[
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestTagMatch(
-                                tag='minecraft:height_specific_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                            RuleTestHeightMatch(
-                                min_inclusive=-2032,
-                                max_inclusive=8,
-                                predicate_type='minecraft:height_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestNot(
-                                rule=RuleTestTagMatch(
-                                    tag='minecraft:height_specific_ore_replaceables',
-                                    predicate_type='minecraft:tag_match',
-                                ),
-                                predicate_type='minecraft:not',
-                            ),
-                            RuleTestTagMatch(
-                                tag='minecraft:deepslate_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                ],
-                predicate_type='minecraft:any_of',
-            ),
+            target=RuleTestTagMatch(tag='minecraft:height_specific_ore_replaceables', predicate_type='minecraft:tag_match'),
             state='minecraft:deepslate_iron_ore',
         ),
     ],
@@ -8293,79 +6253,28 @@ ORE_IRON_SMALL = ConfiguredFeatureOre(
 ORE_LAPIS = ConfiguredFeatureOre(
     targets=[
         TargetBlock(
-            target=RuleTestAnyOf(
+            target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+            state='minecraft:lapis_ore',
+        ),
+        TargetBlock(
+            target=RuleTestTagMatch(tag='minecraft:deepslate_ore_replaceables', predicate_type='minecraft:tag_match'),
+            state='minecraft:deepslate_lapis_ore',
+        ),
+        TargetBlock(
+            target=RuleTestAllOf(
                 rules=[
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestTagMatch(
-                                tag='minecraft:height_specific_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                            RuleTestHeightMatch(
-                                min_inclusive=0,
-                                max_inclusive=2031,
-                                predicate_type='minecraft:height_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestNot(
-                                rule=RuleTestTagMatch(
-                                    tag='minecraft:height_specific_ore_replaceables',
-                                    predicate_type='minecraft:tag_match',
-                                ),
-                                predicate_type='minecraft:not',
-                            ),
-                            RuleTestTagMatch(
-                                tag='minecraft:stone_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
+                    RuleTestHeightMatch(min_inclusive=0, max_inclusive=2031, predicate_type='minecraft:height_match'),
+                    RuleTestTagMatch(
+                        tag='minecraft:height_specific_ore_replaceables',
+                        predicate_type='minecraft:tag_match',
                     ),
                 ],
-                predicate_type='minecraft:any_of',
+                predicate_type='minecraft:all_of',
             ),
             state='minecraft:lapis_ore',
         ),
         TargetBlock(
-            target=RuleTestAnyOf(
-                rules=[
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestTagMatch(
-                                tag='minecraft:height_specific_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                            RuleTestHeightMatch(
-                                min_inclusive=-2032,
-                                max_inclusive=8,
-                                predicate_type='minecraft:height_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestNot(
-                                rule=RuleTestTagMatch(
-                                    tag='minecraft:height_specific_ore_replaceables',
-                                    predicate_type='minecraft:tag_match',
-                                ),
-                                predicate_type='minecraft:not',
-                            ),
-                            RuleTestTagMatch(
-                                tag='minecraft:deepslate_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                ],
-                predicate_type='minecraft:any_of',
-            ),
+            target=RuleTestTagMatch(tag='minecraft:height_specific_ore_replaceables', predicate_type='minecraft:tag_match'),
             state='minecraft:deepslate_lapis_ore',
         ),
     ],
@@ -8377,79 +6286,28 @@ ORE_LAPIS = ConfiguredFeatureOre(
 ORE_LAPIS_BURIED = ConfiguredFeatureOre(
     targets=[
         TargetBlock(
-            target=RuleTestAnyOf(
+            target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+            state='minecraft:lapis_ore',
+        ),
+        TargetBlock(
+            target=RuleTestTagMatch(tag='minecraft:deepslate_ore_replaceables', predicate_type='minecraft:tag_match'),
+            state='minecraft:deepslate_lapis_ore',
+        ),
+        TargetBlock(
+            target=RuleTestAllOf(
                 rules=[
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestTagMatch(
-                                tag='minecraft:height_specific_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                            RuleTestHeightMatch(
-                                min_inclusive=0,
-                                max_inclusive=2031,
-                                predicate_type='minecraft:height_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestNot(
-                                rule=RuleTestTagMatch(
-                                    tag='minecraft:height_specific_ore_replaceables',
-                                    predicate_type='minecraft:tag_match',
-                                ),
-                                predicate_type='minecraft:not',
-                            ),
-                            RuleTestTagMatch(
-                                tag='minecraft:stone_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
+                    RuleTestHeightMatch(min_inclusive=0, max_inclusive=2031, predicate_type='minecraft:height_match'),
+                    RuleTestTagMatch(
+                        tag='minecraft:height_specific_ore_replaceables',
+                        predicate_type='minecraft:tag_match',
                     ),
                 ],
-                predicate_type='minecraft:any_of',
+                predicate_type='minecraft:all_of',
             ),
             state='minecraft:lapis_ore',
         ),
         TargetBlock(
-            target=RuleTestAnyOf(
-                rules=[
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestTagMatch(
-                                tag='minecraft:height_specific_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                            RuleTestHeightMatch(
-                                min_inclusive=-2032,
-                                max_inclusive=8,
-                                predicate_type='minecraft:height_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestNot(
-                                rule=RuleTestTagMatch(
-                                    tag='minecraft:height_specific_ore_replaceables',
-                                    predicate_type='minecraft:tag_match',
-                                ),
-                                predicate_type='minecraft:not',
-                            ),
-                            RuleTestTagMatch(
-                                tag='minecraft:deepslate_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                ],
-                predicate_type='minecraft:any_of',
-            ),
+            target=RuleTestTagMatch(tag='minecraft:height_specific_ore_replaceables', predicate_type='minecraft:tag_match'),
             state='minecraft:deepslate_lapis_ore',
         ),
     ],
@@ -8497,79 +6355,28 @@ ORE_QUARTZ = ConfiguredFeatureOre(
 ORE_REDSTONE = ConfiguredFeatureOre(
     targets=[
         TargetBlock(
-            target=RuleTestAnyOf(
+            target=RuleTestTagMatch(tag='minecraft:stone_ore_replaceables', predicate_type='minecraft:tag_match'),
+            state='minecraft:redstone_ore',
+        ),
+        TargetBlock(
+            target=RuleTestTagMatch(tag='minecraft:deepslate_ore_replaceables', predicate_type='minecraft:tag_match'),
+            state='minecraft:deepslate_redstone_ore',
+        ),
+        TargetBlock(
+            target=RuleTestAllOf(
                 rules=[
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestTagMatch(
-                                tag='minecraft:height_specific_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                            RuleTestHeightMatch(
-                                min_inclusive=0,
-                                max_inclusive=2031,
-                                predicate_type='minecraft:height_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestNot(
-                                rule=RuleTestTagMatch(
-                                    tag='minecraft:height_specific_ore_replaceables',
-                                    predicate_type='minecraft:tag_match',
-                                ),
-                                predicate_type='minecraft:not',
-                            ),
-                            RuleTestTagMatch(
-                                tag='minecraft:stone_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
+                    RuleTestHeightMatch(min_inclusive=0, max_inclusive=2031, predicate_type='minecraft:height_match'),
+                    RuleTestTagMatch(
+                        tag='minecraft:height_specific_ore_replaceables',
+                        predicate_type='minecraft:tag_match',
                     ),
                 ],
-                predicate_type='minecraft:any_of',
+                predicate_type='minecraft:all_of',
             ),
             state='minecraft:redstone_ore',
         ),
         TargetBlock(
-            target=RuleTestAnyOf(
-                rules=[
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestTagMatch(
-                                tag='minecraft:height_specific_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                            RuleTestHeightMatch(
-                                min_inclusive=-2032,
-                                max_inclusive=8,
-                                predicate_type='minecraft:height_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                    RuleTestAllOf(
-                        rules=[
-                            RuleTestNot(
-                                rule=RuleTestTagMatch(
-                                    tag='minecraft:height_specific_ore_replaceables',
-                                    predicate_type='minecraft:tag_match',
-                                ),
-                                predicate_type='minecraft:not',
-                            ),
-                            RuleTestTagMatch(
-                                tag='minecraft:deepslate_ore_replaceables',
-                                predicate_type='minecraft:tag_match',
-                            ),
-                        ],
-                        predicate_type='minecraft:all_of',
-                    ),
-                ],
-                predicate_type='minecraft:any_of',
-            ),
+            target=RuleTestTagMatch(tag='minecraft:height_specific_ore_replaceables', predicate_type='minecraft:tag_match'),
             state='minecraft:deepslate_redstone_ore',
         ),
     ],

@@ -3233,6 +3233,18 @@ CHISELED_NETHER_BRICKS = LootTable(
     random_sequence='minecraft:blocks/chiseled_nether_bricks',
 )
 
+CHISELED_PACKED_ICE = LootTable(
+    type=LootContextParamSets.BLOCK,
+    pools=[
+        LootPool(
+            rolls=1,
+            entries=[LootPoolEntryItem(name='minecraft:chiseled_packed_ice', type='minecraft:item')],
+            condition=LootConditionSurvivesExplosion(type='minecraft:survives_explosion'),
+        ),
+    ],
+    random_sequence='minecraft:blocks/chiseled_packed_ice',
+)
+
 CHISELED_POLISHED_BLACKSTONE = LootTable(
     type=LootContextParamSets.BLOCK,
     pools=[
@@ -12054,6 +12066,70 @@ PACKED_ICE = LootTable(
     random_sequence='minecraft:blocks/packed_ice',
 )
 
+PACKED_ICE_BRICKS = LootTable(
+    type=LootContextParamSets.BLOCK,
+    pools=[
+        LootPool(
+            rolls=1,
+            entries=[LootPoolEntryItem(name='minecraft:packed_ice_bricks', type='minecraft:item')],
+            condition=LootConditionSurvivesExplosion(type='minecraft:survives_explosion'),
+        ),
+    ],
+    random_sequence='minecraft:blocks/packed_ice_bricks',
+)
+
+PACKED_ICE_BRICK_SLAB = LootTable(
+    type=LootContextParamSets.BLOCK,
+    pools=[
+        LootPool(
+            rolls=1,
+            entries=[
+                LootPoolEntryItem(
+                    modifier=[
+                        LootFunctionSetCount(
+                            condition=LootConditionMatchBlock(
+                                blocks='minecraft:packed_ice_brick_slab',
+                                state={'type': 'double'},
+                                type='minecraft:match_block',
+                            ),
+                            count=2,
+                            type='minecraft:set_count',
+                        ),
+                        LootFunctionExplosionDecay(type='minecraft:explosion_decay'),
+                    ],
+                    name='minecraft:packed_ice_brick_slab',
+                    type='minecraft:item',
+                ),
+            ],
+        ),
+    ],
+    random_sequence='minecraft:blocks/packed_ice_brick_slab',
+)
+
+PACKED_ICE_BRICK_STAIRS = LootTable(
+    type=LootContextParamSets.BLOCK,
+    pools=[
+        LootPool(
+            rolls=1,
+            entries=[LootPoolEntryItem(name='minecraft:packed_ice_brick_stairs', type='minecraft:item')],
+            condition=LootConditionSurvivesExplosion(type='minecraft:survives_explosion'),
+        ),
+    ],
+    random_sequence='minecraft:blocks/packed_ice_brick_stairs',
+)
+
+PACKED_ICE_BRICK_WALL = LootTable(
+    type=LootContextParamSets.BLOCK,
+    pools=[
+        LootPool(
+            rolls=1,
+            entries=[LootPoolEntryItem(name='minecraft:packed_ice_brick_wall', type='minecraft:item')],
+            condition=LootConditionSurvivesExplosion(type='minecraft:survives_explosion'),
+        ),
+    ],
+    random_sequence='minecraft:blocks/packed_ice_brick_wall',
+)
+
 PACKED_MUD = LootTable(
     type=LootContextParamSets.BLOCK,
     pools=[
@@ -17117,6 +17193,70 @@ SNOW_BLOCK = LootTable(
         ),
     ],
     random_sequence='minecraft:blocks/snow_block',
+)
+
+SNOW_BRICKS = LootTable(
+    type=LootContextParamSets.BLOCK,
+    pools=[
+        LootPool(
+            rolls=1,
+            entries=[LootPoolEntryItem(name='minecraft:snow_bricks', type='minecraft:item')],
+            condition=LootConditionSurvivesExplosion(type='minecraft:survives_explosion'),
+        ),
+    ],
+    random_sequence='minecraft:blocks/snow_bricks',
+)
+
+SNOW_BRICK_SLAB = LootTable(
+    type=LootContextParamSets.BLOCK,
+    pools=[
+        LootPool(
+            rolls=1,
+            entries=[
+                LootPoolEntryItem(
+                    modifier=[
+                        LootFunctionSetCount(
+                            condition=LootConditionMatchBlock(
+                                blocks='minecraft:snow_brick_slab',
+                                state={'type': 'double'},
+                                type='minecraft:match_block',
+                            ),
+                            count=2,
+                            type='minecraft:set_count',
+                        ),
+                        LootFunctionExplosionDecay(type='minecraft:explosion_decay'),
+                    ],
+                    name='minecraft:snow_brick_slab',
+                    type='minecraft:item',
+                ),
+            ],
+        ),
+    ],
+    random_sequence='minecraft:blocks/snow_brick_slab',
+)
+
+SNOW_BRICK_STAIRS = LootTable(
+    type=LootContextParamSets.BLOCK,
+    pools=[
+        LootPool(
+            rolls=1,
+            entries=[LootPoolEntryItem(name='minecraft:snow_brick_stairs', type='minecraft:item')],
+            condition=LootConditionSurvivesExplosion(type='minecraft:survives_explosion'),
+        ),
+    ],
+    random_sequence='minecraft:blocks/snow_brick_stairs',
+)
+
+SNOW_BRICK_WALL = LootTable(
+    type=LootContextParamSets.BLOCK,
+    pools=[
+        LootPool(
+            rolls=1,
+            entries=[LootPoolEntryItem(name='minecraft:snow_brick_wall', type='minecraft:item')],
+            condition=LootConditionSurvivesExplosion(type='minecraft:survives_explosion'),
+        ),
+    ],
+    random_sequence='minecraft:blocks/snow_brick_wall',
 )
 
 SOUL_CAMPFIRE = LootTable(

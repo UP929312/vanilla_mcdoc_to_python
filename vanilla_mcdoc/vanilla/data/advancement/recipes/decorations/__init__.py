@@ -4358,6 +4358,54 @@ ORANGE_STAINED_GLASS_PANE_FROM_GLASS_PANE = Advancement(
     rewards=AdvancementRewards(recipes=['minecraft:orange_stained_glass_pane_from_glass_pane']),
 )
 
+PACKED_ICE_BRICK_WALL = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_packed_ice_bricks': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:packed_ice_bricks')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(recipes='minecraft:packed_ice_brick_wall'),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_packed_ice_bricks']],
+    rewards=AdvancementRewards(recipes=['minecraft:packed_ice_brick_wall']),
+)
+
+PACKED_ICE_BRICK_WALL_FROM_PACKED_ICE_BRICKS_STONECUTTING = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_packed_ice_bricks': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:packed_ice_bricks')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(recipes='minecraft:packed_ice_brick_wall_from_packed_ice_bricks_stonecutting'),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_packed_ice_bricks']],
+    rewards=AdvancementRewards(recipes=['minecraft:packed_ice_brick_wall_from_packed_ice_bricks_stonecutting']),
+)
+
+PACKED_ICE_BRICK_WALL_FROM_PACKED_ICE_STONECUTTING = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_packed_ice': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:packed_ice')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(recipes='minecraft:packed_ice_brick_wall_from_packed_ice_stonecutting'),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_packed_ice']],
+    rewards=AdvancementRewards(recipes=['minecraft:packed_ice_brick_wall_from_packed_ice_stonecutting']),
+)
+
 PAINTING = Advancement(
     parent='minecraft:recipes/root',
     criteria={
@@ -5550,6 +5598,22 @@ SNOW = Advancement(
     },
     requirements=[['has_the_recipe', 'has_snowball']],
     rewards=AdvancementRewards(recipes=['minecraft:snow']),
+)
+
+SNOW_BRICK_WALL = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_snow_bricks': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:snow_bricks')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(recipes='minecraft:snow_brick_wall'),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_snow_bricks']],
+    rewards=AdvancementRewards(recipes=['minecraft:snow_brick_wall']),
 )
 
 SOUL_CAMPFIRE = Advancement(

@@ -1,5 +1,7 @@
 """Vanilla's data/worldgen/density_function/overworld/ore_vein/ files"""
-from vanilla_mcdoc.data.worldgen.density_function.DensityFunction import DensityFunctionStructAbs, DensityFunctionStructAdd, DensityFunctionStructCache, DensityFunctionStructClamp, DensityFunctionStructInterpolated, DensityFunctionStructMax, DensityFunctionStructMin, DensityFunctionStructMul, DensityFunctionStructNegate, DensityFunctionStructNoise, DensityFunctionStructRangeChoice, DensityFunctionStructSub
+from vanilla_mcdoc.data.worldgen.density_function.DensityFunction import DensityFunctionStructAbs, DensityFunctionStructAdd, DensityFunctionStructCache, DensityFunctionStructClamp, DensityFunctionStructMax, DensityFunctionStructMin, DensityFunctionStructMul, DensityFunctionStructNegate, DensityFunctionStructNoise, DensityFunctionStructRangeChoice, DensityFunctionStructSub, DensityFunctionStructUpscale
+from vanilla_mcdoc.data.worldgen.density_function.UpscaleAxis import UpscaleAxis
+from vanilla_mcdoc.data.worldgen.density_function.UpscaleMode import UpscaleMode
 
 COPPER_DENSITY = DensityFunctionStructRangeChoice(
     input='minecraft:y',
@@ -109,7 +111,7 @@ MASK = DensityFunctionStructCache(
             left=0.08,
             right=DensityFunctionStructMax(
                 left=DensityFunctionStructAbs(
-                    input=DensityFunctionStructInterpolated(
+                    input=DensityFunctionStructUpscale(
                         input=DensityFunctionStructRangeChoice(
                             input='minecraft:y',
                             min_inclusive=-64.0,
@@ -123,14 +125,15 @@ MASK = DensityFunctionStructCache(
                             when_out_of_range=1.0,
                             type='minecraft:range_choice',
                         ),
-                        cell_size_xz=4,
-                        cell_size_y=8,
-                        type='minecraft:interpolated',
+                        x=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=4),
+                        y=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=8),
+                        z=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=4),
+                        type='minecraft:upscale',
                     ),
                     type='minecraft:abs',
                 ),
                 right=DensityFunctionStructAbs(
-                    input=DensityFunctionStructInterpolated(
+                    input=DensityFunctionStructUpscale(
                         input=DensityFunctionStructRangeChoice(
                             input='minecraft:y',
                             min_inclusive=-64.0,
@@ -144,9 +147,10 @@ MASK = DensityFunctionStructCache(
                             when_out_of_range=1.0,
                             type='minecraft:range_choice',
                         ),
-                        cell_size_xz=4,
-                        cell_size_y=8,
-                        type='minecraft:interpolated',
+                        x=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=4),
+                        y=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=8),
+                        z=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=4),
+                        type='minecraft:upscale',
                     ),
                     type='minecraft:abs',
                 ),
@@ -175,7 +179,7 @@ RICHNESS = DensityFunctionStructAdd(
 )
 
 TOGGLE = DensityFunctionStructCache(
-    input=DensityFunctionStructInterpolated(
+    input=DensityFunctionStructUpscale(
         input=DensityFunctionStructRangeChoice(
             input='minecraft:y',
             min_inclusive=-64.0,
@@ -189,9 +193,10 @@ TOGGLE = DensityFunctionStructCache(
             when_out_of_range=0.0,
             type='minecraft:range_choice',
         ),
-        cell_size_xz=4,
-        cell_size_y=8,
-        type='minecraft:interpolated',
+        x=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=4),
+        y=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=8),
+        z=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=4),
+        type='minecraft:upscale',
     ),
     type='minecraft:cache',
 )

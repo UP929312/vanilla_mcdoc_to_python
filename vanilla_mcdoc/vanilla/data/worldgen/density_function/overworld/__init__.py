@@ -1,7 +1,9 @@
 """Vanilla's data/worldgen/density_function/overworld/ files"""
 from vanilla_mcdoc.data.worldgen.density_function.CubicSpline import CubicSplineStruct
-from vanilla_mcdoc.data.worldgen.density_function.DensityFunction import DensityFunctionStructAbs, DensityFunctionStructAdd, DensityFunctionStructBeardifier, DensityFunctionStructBlendAlpha, DensityFunctionStructBlendDensity, DensityFunctionStructBlendOffset, DensityFunctionStructCache, DensityFunctionStructClamp, DensityFunctionStructDiv, DensityFunctionStructFindTopSurface, DensityFunctionStructGradient, DensityFunctionStructHalfNegative, DensityFunctionStructInterpolated, DensityFunctionStructLerp, DensityFunctionStructMax, DensityFunctionStructMin, DensityFunctionStructMul, DensityFunctionStructNoise, DensityFunctionStructOldBlendedNoise, DensityFunctionStructQuarterNegative, DensityFunctionStructRangeChoice, DensityFunctionStructSpline, DensityFunctionStructSquare, DensityFunctionStructSqueeze, DensityFunctionStructSub
+from vanilla_mcdoc.data.worldgen.density_function.DensityFunction import DensityFunctionStructAbs, DensityFunctionStructAdd, DensityFunctionStructBeardifier, DensityFunctionStructBlendAlpha, DensityFunctionStructBlendDensity, DensityFunctionStructBlendOffset, DensityFunctionStructCache, DensityFunctionStructClamp, DensityFunctionStructDiv, DensityFunctionStructFindTopSurface, DensityFunctionStructGradient, DensityFunctionStructHalfNegative, DensityFunctionStructLerp, DensityFunctionStructMax, DensityFunctionStructMin, DensityFunctionStructMul, DensityFunctionStructNoise, DensityFunctionStructOldBlendedNoise, DensityFunctionStructQuarterNegative, DensityFunctionStructRangeChoice, DensityFunctionStructSpline, DensityFunctionStructSquare, DensityFunctionStructSqueeze, DensityFunctionStructSub, DensityFunctionStructUpscale
 from vanilla_mcdoc.data.worldgen.density_function.SplinePoint import SplinePoint
+from vanilla_mcdoc.data.worldgen.density_function.UpscaleAxis import UpscaleAxis
+from vanilla_mcdoc.data.worldgen.density_function.UpscaleMode import UpscaleMode
 from vanilla_mcdoc.util.direction.Axis import Axis
 
 BASE_3D_NOISE = DensityFunctionStructOldBlendedNoise(
@@ -13,11 +15,12 @@ BASE_3D_NOISE = DensityFunctionStructOldBlendedNoise(
     type='minecraft:old_blended_noise',
 )
 
-CHUNK_SURFACE_LEVEL = DensityFunctionStructInterpolated(
+CHUNK_SURFACE_LEVEL = DensityFunctionStructUpscale(
     input='minecraft:overworld/preliminary_surface_level',
-    cell_size_xz=16,
-    cell_size_y=1,
-    type='minecraft:interpolated',
+    x=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=16),
+    y=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=1),
+    z=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=16),
+    type='minecraft:upscale',
 )
 
 CONTINENTS = DensityFunctionStructCache(
@@ -595,7 +598,7 @@ FACTOR = DensityFunctionStructCache(
 FINAL_DENSITY = DensityFunctionStructAdd(
     left=DensityFunctionStructMin(
         left=DensityFunctionStructSqueeze(
-            input=DensityFunctionStructInterpolated(
+            input=DensityFunctionStructUpscale(
                 input=DensityFunctionStructMul(
                     left=DensityFunctionStructBlendDensity(
                         input=DensityFunctionStructLerp(
@@ -713,9 +716,10 @@ FINAL_DENSITY = DensityFunctionStructAdd(
                     right=0.64,
                     type='minecraft:mul',
                 ),
-                cell_size_xz=4,
-                cell_size_y=8,
-                type='minecraft:interpolated',
+                x=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=4),
+                y=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=8),
+                z=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=4),
+                type='minecraft:upscale',
             ),
             type='minecraft:squeeze',
         ),

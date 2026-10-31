@@ -6,7 +6,7 @@ from vanilla_mcdoc.data.villager_trade.VillagerTrade import VillagerTrade
 from vanilla_mcdoc.world.item.ItemStackOfComponent import ItemStackOfComponent
 
 EMERALD_CAKE = VillagerTrade(
-    wants=TradeCost(id='minecraft:emerald', count=3),
+    wants=TradeCost(id='minecraft:emerald'),
     gives=ItemStackOfComponent(id='minecraft:cake'),
     max_uses=12,
     reputation_discount=0.05,

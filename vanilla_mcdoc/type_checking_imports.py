@@ -447,6 +447,7 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
         'DespawnableProjectileBase': ('vanilla_mcdoc.world.entity.projectile.fireball.DespawnableProjectileBase', 'DespawnableProjectileBase'),
         'DistancePredicate': ('vanilla_mcdoc.data.advancement.predicate.DistancePredicate', 'DistancePredicate'),
         'Dolphin': ('vanilla_mcdoc.world.entity.mob.dolphin.Dolphin', 'Dolphin'),
+        'Drowned': ('vanilla_mcdoc.world.entity.mob.zombie.Drowned', 'Drowned'),
         'EndCrystal': ('vanilla_mcdoc.world.entity.end_crystal.EndCrystal', 'EndCrystal'),
         'EnderDragon': ('vanilla_mcdoc.world.entity.mob.ender_dragon.EnderDragon', 'EnderDragon'),
         'Enderman': ('vanilla_mcdoc.world.entity.mob.enderman.Enderman', 'Enderman'),
@@ -468,6 +469,7 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
         'FishingHookPredicate': ('vanilla_mcdoc.data.advancement.predicate.FishingHookPredicate', 'FishingHookPredicate'),
         'Fox': ('vanilla_mcdoc.world.entity.mob.breedable.fox.Fox', 'Fox'),
         'Frog': ('vanilla_mcdoc.world.entity.mob.breedable.frog.Frog', 'Frog'),
+        'Frostbite': ('vanilla_mcdoc.world.entity.mob.zombie.Frostbite', 'Frostbite'),
         'FurnaceMinecart': ('vanilla_mcdoc.world.entity.minecart.FurnaceMinecart', 'FurnaceMinecart'),
         'Ghast': ('vanilla_mcdoc.world.entity.mob.ghast.Ghast', 'Ghast'),
         'GlowSquid': ('vanilla_mcdoc.world.entity.mob.glow_squid.GlowSquid', 'GlowSquid'),
@@ -631,6 +633,7 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
         'DespawnableProjectileBase': ('vanilla_mcdoc.world.entity.projectile.fireball.DespawnableProjectileBase', 'DespawnableProjectileBase'),
         'DistancePredicate': ('vanilla_mcdoc.data.advancement.predicate.DistancePredicate', 'DistancePredicate'),
         'Dolphin': ('vanilla_mcdoc.world.entity.mob.dolphin.Dolphin', 'Dolphin'),
+        'Drowned': ('vanilla_mcdoc.world.entity.mob.zombie.Drowned', 'Drowned'),
         'EndCrystal': ('vanilla_mcdoc.world.entity.end_crystal.EndCrystal', 'EndCrystal'),
         'EnderDragon': ('vanilla_mcdoc.world.entity.mob.ender_dragon.EnderDragon', 'EnderDragon'),
         'Enderman': ('vanilla_mcdoc.world.entity.mob.enderman.Enderman', 'Enderman'),
@@ -651,6 +654,7 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
         'Fish': ('vanilla_mcdoc.world.entity.mob.fish.Fish', 'Fish'),
         'Fox': ('vanilla_mcdoc.world.entity.mob.breedable.fox.Fox', 'Fox'),
         'Frog': ('vanilla_mcdoc.world.entity.mob.breedable.frog.Frog', 'Frog'),
+        'Frostbite': ('vanilla_mcdoc.world.entity.mob.zombie.Frostbite', 'Frostbite'),
         'FurnaceMinecart': ('vanilla_mcdoc.world.entity.minecart.FurnaceMinecart', 'FurnaceMinecart'),
         'Ghast': ('vanilla_mcdoc.world.entity.mob.ghast.Ghast', 'Ghast'),
         'GlowSquid': ('vanilla_mcdoc.world.entity.mob.glow_squid.GlowSquid', 'GlowSquid'),
@@ -979,6 +983,9 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
     },
     'vanilla_mcdoc.data.enchantment.effect.MultiplyEffectValue': {
         'LevelBasedValue': ('vanilla_mcdoc.data.enchantment.LevelBasedValue', 'LevelBasedValue'),
+    },
+    'vanilla_mcdoc.data.enchantment.effect.ParticlePosition': {
+        'ParticlePositionType': ('vanilla_mcdoc.data.enchantment.effect.ParticlePositionType', 'ParticlePositionType'),
     },
     'vanilla_mcdoc.data.enchantment.effect.PlaySoundEntityEffect': {
         'FloatProvider': ('vanilla_mcdoc.data.worldgen.FloatProvider', 'FloatProvider'),
@@ -1759,6 +1766,7 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
         'ExplosionData': ('vanilla_mcdoc.data.sulfur_cube_archetype.ExplosionData', 'ExplosionData'),
         'KnockbackModifiers': ('vanilla_mcdoc.data.sulfur_cube_archetype.KnockbackModifiers', 'KnockbackModifiers'),
         'KnownItemId': ('vanilla_mcdoc.registry.KnownItemId', 'KnownItemId'),
+        'LocationChangedEnchantmentEffect': ('vanilla_mcdoc.data.enchantment.effect_component.LocationChangedEnchantmentEffect', 'LocationChangedEnchantmentEffect'),
         'SoundSettings': ('vanilla_mcdoc.data.sulfur_cube_archetype.SoundSettings', 'SoundSettings'),
     },
     'vanilla_mcdoc.data.tag.Tag': {
@@ -2103,6 +2111,9 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
     'vanilla_mcdoc.data.worldgen.density_function.DistanceToPoint': {
         'DistanceMetric': ('vanilla_mcdoc.data.worldgen.density_function.DistanceMetric', 'DistanceMetric'),
     },
+    'vanilla_mcdoc.data.worldgen.density_function.DomainWarp': {
+        'DensityFunctionRef': ('vanilla_mcdoc.data.worldgen.density_function.DensityFunctionRef', 'DensityFunctionRef'),
+    },
     'vanilla_mcdoc.data.worldgen.density_function.FindTopSurface': {
         'DensityFunctionRef': ('vanilla_mcdoc.data.worldgen.density_function.DensityFunctionRef', 'DensityFunctionRef'),
     },
@@ -2110,6 +2121,7 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
         'Axis': ('vanilla_mcdoc.util.direction.Axis', 'Axis'),
         'NoiseRange': ('vanilla_mcdoc.data.worldgen.density_function.NoiseRange', 'NoiseRange'),
         'TilingMode': ('vanilla_mcdoc.data.worldgen.density_function.TilingMode', 'TilingMode'),
+        'VerticalAnchor': ('vanilla_mcdoc.data.worldgen.VerticalAnchor', 'VerticalAnchor'),
     },
     'vanilla_mcdoc.data.worldgen.density_function.InvervalSelect': {
         'DensityFunctionRef': ('vanilla_mcdoc.data.worldgen.density_function.DensityFunctionRef', 'DensityFunctionRef'),
@@ -2161,6 +2173,13 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
     },
     'vanilla_mcdoc.data.worldgen.density_function.TwoArguments': {
         'DensityFunctionRef': ('vanilla_mcdoc.data.worldgen.density_function.DensityFunctionRef', 'DensityFunctionRef'),
+    },
+    'vanilla_mcdoc.data.worldgen.density_function.Upscale': {
+        'DensityFunctionRef': ('vanilla_mcdoc.data.worldgen.density_function.DensityFunctionRef', 'DensityFunctionRef'),
+        'UpscaleAxis': ('vanilla_mcdoc.data.worldgen.density_function.UpscaleAxis', 'UpscaleAxis'),
+    },
+    'vanilla_mcdoc.data.worldgen.density_function.UpscaleAxis': {
+        'UpscaleMode': ('vanilla_mcdoc.data.worldgen.density_function.UpscaleMode', 'UpscaleMode'),
     },
     'vanilla_mcdoc.data.worldgen.density_function.WeirdScaledSampler': {
         'DensityFunctionRef': ('vanilla_mcdoc.data.worldgen.density_function.DensityFunctionRef', 'DensityFunctionRef'),
@@ -2871,7 +2890,12 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
     'vanilla_mcdoc.data.worldgen.surface_builder.ConfiguredSurfaceBuilderRef': {
         'ConfiguredSurfaceBuilder': ('vanilla_mcdoc.data.worldgen.surface_builder.ConfiguredSurfaceBuilder', 'ConfiguredSurfaceBuilder'),
     },
+    'vanilla_mcdoc.data.worldgen.template_pool.DensityPredicate': {
+        'CornersToCheck': ('vanilla_mcdoc.data.worldgen.template_pool.CornersToCheck', 'CornersToCheck'),
+        'InclusiveRange': ('vanilla_mcdoc.util.InclusiveRange', 'InclusiveRange'),
+    },
     'vanilla_mcdoc.data.worldgen.template_pool.ElementBase': {
+        'DensityPredicate': ('vanilla_mcdoc.data.worldgen.template_pool.DensityPredicate', 'DensityPredicate'),
         'Projection': ('vanilla_mcdoc.data.worldgen.template_pool.Projection', 'Projection'),
     },
     'vanilla_mcdoc.data.worldgen.template_pool.FeatureElement': {

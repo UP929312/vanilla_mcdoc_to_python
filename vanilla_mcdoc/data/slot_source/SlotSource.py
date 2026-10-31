@@ -12,4 +12,4 @@ if TYPE_CHECKING:
     from vanilla_mcdoc.registry.KnownSlotSourceId import KnownSlotSourceId
 
 
-type SlotSource = TypedSlotSource | list[SlotSource] | Annotated[str, IdSpec(registry='slot_source', tags='allowed')] | KnownSlotSourceId
+type SlotSource = TypedSlotSource | Annotated[str, IdSpec(registry='slot_source', tags='allowed')] | KnownSlotSourceId | list[Annotated[str, IdSpec(registry='slot_source')] | KnownSlotSourceId | TypedSlotSource]

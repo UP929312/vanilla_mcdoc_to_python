@@ -11,9 +11,9 @@ from vanilla_mcdoc.base import GeneratedModel, tag_of
 from vanilla_mcdoc.data.worldgen.density_function.Clamp import Clamp
 from vanilla_mcdoc.data.worldgen.density_function.Constant import Constant
 from vanilla_mcdoc.data.worldgen.density_function.DistanceToPoint import DistanceToPoint
+from vanilla_mcdoc.data.worldgen.density_function.DomainWarp import DomainWarp
 from vanilla_mcdoc.data.worldgen.density_function.FindTopSurface import FindTopSurface
 from vanilla_mcdoc.data.worldgen.density_function.Gradient import Gradient
-from vanilla_mcdoc.data.worldgen.density_function.Interpolated import Interpolated
 from vanilla_mcdoc.data.worldgen.density_function.InvervalSelect import InvervalSelect
 from vanilla_mcdoc.data.worldgen.density_function.Lerp import Lerp
 from vanilla_mcdoc.data.worldgen.density_function.Noise import Noise
@@ -26,6 +26,7 @@ from vanilla_mcdoc.data.worldgen.density_function.Shift import Shift
 from vanilla_mcdoc.data.worldgen.density_function.Slice import Slice
 from vanilla_mcdoc.data.worldgen.density_function.Spline import Spline
 from vanilla_mcdoc.data.worldgen.density_function.TwoArguments import TwoArguments
+from vanilla_mcdoc.data.worldgen.density_function.Upscale import Upscale
 
 if TYPE_CHECKING:
     from vanilla_mcdoc.data.worldgen.density_function.NoiseRange import NoiseRange
@@ -91,6 +92,12 @@ class DensityFunctionStructDiv(TwoArguments):
     type: Literal['minecraft:div', 'div'] = 'minecraft:div'
 
 
+class DensityFunctionStructDomainWarp(DomainWarp):
+    __resource_dir__: ClassVar[str] = 'worldgen/density_function'
+
+    type: Literal['minecraft:domain_warp', 'domain_warp'] = 'minecraft:domain_warp'
+
+
 class DensityFunctionStructFindTopSurface(FindTopSurface):
     __resource_dir__: ClassVar[str] = 'worldgen/density_function'
 
@@ -113,12 +120,6 @@ class DensityFunctionStructHalfNegative(OneArgument):
     __resource_dir__: ClassVar[str] = 'worldgen/density_function'
 
     type: Literal['minecraft:half_negative', 'half_negative'] = 'minecraft:half_negative'
-
-
-class DensityFunctionStructInterpolated(Interpolated):
-    __resource_dir__: ClassVar[str] = 'worldgen/density_function'
-
-    type: Literal['minecraft:interpolated', 'interpolated'] = 'minecraft:interpolated'
 
 
 class DensityFunctionStructIntervalSelect(InvervalSelect):
@@ -277,6 +278,12 @@ class DensityFunctionStructTruncate(Round):
     type: Literal['minecraft:truncate', 'truncate'] = 'minecraft:truncate'
 
 
+class DensityFunctionStructUpscale(Upscale):
+    __resource_dir__: ClassVar[str] = 'worldgen/density_function'
+
+    type: Literal['minecraft:upscale', 'upscale'] = 'minecraft:upscale'
+
+
 class DensityFunctionStructBeardifier(GeneratedModel):
     __resource_dir__: ClassVar[str] = 'worldgen/density_function'
 
@@ -312,11 +319,11 @@ type DensityFunctionStruct = Annotated[
     | Annotated[DensityFunctionStructCube, Tag('minecraft:cube')]
     | Annotated[DensityFunctionStructDistanceToPoint, Tag('minecraft:distance_to_point')]
     | Annotated[DensityFunctionStructDiv, Tag('minecraft:div')]
+    | Annotated[DensityFunctionStructDomainWarp, Tag('minecraft:domain_warp')]
     | Annotated[DensityFunctionStructFindTopSurface, Tag('minecraft:find_top_surface')]
     | Annotated[DensityFunctionStructFloor, Tag('minecraft:floor')]
     | Annotated[DensityFunctionStructGradient, Tag('minecraft:gradient')]
     | Annotated[DensityFunctionStructHalfNegative, Tag('minecraft:half_negative')]
-    | Annotated[DensityFunctionStructInterpolated, Tag('minecraft:interpolated')]
     | Annotated[DensityFunctionStructIntervalSelect, Tag('minecraft:interval_select')]
     | Annotated[DensityFunctionStructLerp, Tag('minecraft:lerp')]
     | Annotated[DensityFunctionStructLog, Tag('minecraft:log')]
@@ -343,6 +350,7 @@ type DensityFunctionStruct = Annotated[
     | Annotated[DensityFunctionStructSqueeze, Tag('minecraft:squeeze')]
     | Annotated[DensityFunctionStructSub, Tag('minecraft:sub')]
     | Annotated[DensityFunctionStructTruncate, Tag('minecraft:truncate')]
+    | Annotated[DensityFunctionStructUpscale, Tag('minecraft:upscale')]
     | Annotated[DensityFunctionStructBeardifier, Tag('minecraft:beardifier')]
     | Annotated[DensityFunctionStructBlendAlpha, Tag('minecraft:blend_alpha')]
     | Annotated[DensityFunctionStructBlendOffset, Tag('minecraft:blend_offset')]

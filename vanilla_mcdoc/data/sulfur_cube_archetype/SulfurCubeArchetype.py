@@ -9,6 +9,7 @@ from vanilla_mcdoc.base import GeneratedModel
 from vanilla_mcdoc.minecraft_types import IdSpec
 
 if TYPE_CHECKING:
+    from vanilla_mcdoc.data.enchantment.effect_component.LocationChangedEnchantmentEffect import LocationChangedEnchantmentEffect
     from vanilla_mcdoc.data.sulfur_cube_archetype.AttributeEntry import AttributeEntry
     from vanilla_mcdoc.data.sulfur_cube_archetype.ContactDamage import ContactDamage
     from vanilla_mcdoc.data.sulfur_cube_archetype.ExplosionData import ExplosionData
@@ -26,4 +27,5 @@ class SulfurCubeArchetype(GeneratedModel):
     contact_damage: ContactDamage | None = None
     knockback_modifiers: KnockbackModifiers
     attribute_modifiers: list[AttributeEntry]
+    location_based_effects: list[LocationChangedEnchantmentEffect] | None = None  # Enchantment level is 1 in the effects.
     sound_settings: SoundSettings

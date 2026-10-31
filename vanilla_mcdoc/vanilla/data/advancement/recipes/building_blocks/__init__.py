@@ -1202,6 +1202,54 @@ CHISELED_NETHER_BRICKS_FROM_NETHER_BRICKS_STONECUTTING = Advancement(
     rewards=AdvancementRewards(recipes=['minecraft:chiseled_nether_bricks_from_nether_bricks_stonecutting']),
 )
 
+CHISELED_PACKED_ICE = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_slab': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:packed_ice_brick_slab')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(recipes='minecraft:chiseled_packed_ice'),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_slab']],
+    rewards=AdvancementRewards(recipes=['minecraft:chiseled_packed_ice']),
+)
+
+CHISELED_PACKED_ICE_FROM_PACKED_ICE_BRICKS_STONECUTTING = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_packed_ice_bricks': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:packed_ice_bricks')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(recipes='minecraft:chiseled_packed_ice_from_packed_ice_bricks_stonecutting'),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_packed_ice_bricks']],
+    rewards=AdvancementRewards(recipes=['minecraft:chiseled_packed_ice_from_packed_ice_bricks_stonecutting']),
+)
+
+CHISELED_PACKED_ICE_FROM_PACKED_ICE_STONECUTTING = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_packed_ice': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:packed_ice')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(recipes='minecraft:chiseled_packed_ice_from_packed_ice_stonecutting'),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_packed_ice']],
+    rewards=AdvancementRewards(recipes=['minecraft:chiseled_packed_ice_from_packed_ice_stonecutting']),
+)
+
 CHISELED_POLISHED_BLACKSTONE = Advancement(
     parent='minecraft:recipes/root',
     criteria={
@@ -6740,6 +6788,136 @@ PACKED_ICE = Advancement(
     rewards=AdvancementRewards(recipes=['minecraft:packed_ice']),
 )
 
+PACKED_ICE_BRICKS = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_packed_ice': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:packed_ice')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(recipes='minecraft:packed_ice_bricks'),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_packed_ice']],
+    rewards=AdvancementRewards(recipes=['minecraft:packed_ice_bricks']),
+)
+
+PACKED_ICE_BRICKS_FROM_PACKED_ICE_STONECUTTING = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_packed_ice': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:packed_ice')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(recipes='minecraft:packed_ice_bricks_from_packed_ice_stonecutting'),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_packed_ice']],
+    rewards=AdvancementRewards(recipes=['minecraft:packed_ice_bricks_from_packed_ice_stonecutting']),
+)
+
+PACKED_ICE_BRICK_SLAB = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_packed_ice_bricks': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:packed_ice_bricks')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(recipes='minecraft:packed_ice_brick_slab'),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_packed_ice_bricks']],
+    rewards=AdvancementRewards(recipes=['minecraft:packed_ice_brick_slab']),
+)
+
+PACKED_ICE_BRICK_SLAB_FROM_PACKED_ICE_BRICKS_STONECUTTING = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_packed_ice_bricks': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:packed_ice_bricks')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(recipes='minecraft:packed_ice_brick_slab_from_packed_ice_bricks_stonecutting'),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_packed_ice_bricks']],
+    rewards=AdvancementRewards(recipes=['minecraft:packed_ice_brick_slab_from_packed_ice_bricks_stonecutting']),
+)
+
+PACKED_ICE_BRICK_SLAB_FROM_PACKED_ICE_STONECUTTING = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_packed_ice': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:packed_ice')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(recipes='minecraft:packed_ice_brick_slab_from_packed_ice_stonecutting'),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_packed_ice']],
+    rewards=AdvancementRewards(recipes=['minecraft:packed_ice_brick_slab_from_packed_ice_stonecutting']),
+)
+
+PACKED_ICE_BRICK_STAIRS = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_packed_ice_bricks': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:packed_ice_bricks')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(recipes='minecraft:packed_ice_brick_stairs'),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_packed_ice_bricks']],
+    rewards=AdvancementRewards(recipes=['minecraft:packed_ice_brick_stairs']),
+)
+
+PACKED_ICE_BRICK_STAIRS_FROM_PACKED_ICE_BRICKS_STONECUTTING = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_packed_ice_bricks': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:packed_ice_bricks')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(
+                recipes='minecraft:packed_ice_brick_stairs_from_packed_ice_bricks_stonecutting',
+            ),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_packed_ice_bricks']],
+    rewards=AdvancementRewards(recipes=['minecraft:packed_ice_brick_stairs_from_packed_ice_bricks_stonecutting']),
+)
+
+PACKED_ICE_BRICK_STAIRS_FROM_PACKED_ICE_STONECUTTING = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_packed_ice': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:packed_ice')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(recipes='minecraft:packed_ice_brick_stairs_from_packed_ice_stonecutting'),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_packed_ice']],
+    rewards=AdvancementRewards(recipes=['minecraft:packed_ice_brick_stairs_from_packed_ice_stonecutting']),
+)
+
 PACKED_MUD = Advancement(
     parent='minecraft:recipes/root',
     criteria={
@@ -9848,6 +10026,54 @@ SNOW_BLOCK = Advancement(
     },
     requirements=[['has_the_recipe', 'has_snowball']],
     rewards=AdvancementRewards(recipes=['minecraft:snow_block']),
+)
+
+SNOW_BRICKS = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_snow_block': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:snow_block')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(recipes='minecraft:snow_bricks'),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_snow_block']],
+    rewards=AdvancementRewards(recipes=['minecraft:snow_bricks']),
+)
+
+SNOW_BRICK_SLAB = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_snow_bricks': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:snow_bricks')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(recipes='minecraft:snow_brick_slab'),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_snow_bricks']],
+    rewards=AdvancementRewards(recipes=['minecraft:snow_brick_slab']),
+)
+
+SNOW_BRICK_STAIRS = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_snow_bricks': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:snow_bricks')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(recipes='minecraft:snow_brick_stairs'),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_snow_bricks']],
+    rewards=AdvancementRewards(recipes=['minecraft:snow_brick_stairs']),
 )
 
 SPONGE = Advancement(

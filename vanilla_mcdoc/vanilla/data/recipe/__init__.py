@@ -1660,6 +1660,26 @@ CHISELED_NETHER_BRICKS_FROM_NETHER_BRICKS_STONECUTTING = RecipeStonecutting(
     type='minecraft:stonecutting',
 )
 
+CHISELED_PACKED_ICE = RecipeCraftingShaped(
+    category=CraftingBookCategory.BUILDING,
+    pattern=['#', '#'],
+    key={'#': 'minecraft:packed_ice_brick_slab'},
+    result=ItemStackOfComponent(id='minecraft:chiseled_packed_ice'),
+    type='minecraft:crafting_shaped',
+)
+
+CHISELED_PACKED_ICE_FROM_PACKED_ICE_BRICKS_STONECUTTING = RecipeStonecutting(
+    ingredient='minecraft:packed_ice_bricks',
+    result=ItemStackOfComponent(id='minecraft:chiseled_packed_ice'),
+    type='minecraft:stonecutting',
+)
+
+CHISELED_PACKED_ICE_FROM_PACKED_ICE_STONECUTTING = RecipeStonecutting(
+    ingredient='minecraft:packed_ice',
+    result=ItemStackOfComponent(id='minecraft:chiseled_packed_ice'),
+    type='minecraft:stonecutting',
+)
+
 CHISELED_POLISHED_BLACKSTONE = RecipeCraftingShaped(
     category=CraftingBookCategory.BUILDING,
     pattern=['#', '#'],
@@ -10623,6 +10643,79 @@ PACKED_ICE = RecipeCraftingShapeless(
     type='minecraft:crafting_shapeless',
 )
 
+PACKED_ICE_BRICKS = RecipeCraftingShaped(
+    category=CraftingBookCategory.BUILDING,
+    pattern=['##', '##'],
+    key={'#': 'minecraft:packed_ice'},
+    result=ItemStackOfComponent(id='minecraft:packed_ice_bricks', count=4),
+    type='minecraft:crafting_shaped',
+)
+
+PACKED_ICE_BRICKS_FROM_PACKED_ICE_STONECUTTING = RecipeStonecutting(
+    ingredient='minecraft:packed_ice',
+    result=ItemStackOfComponent(id='minecraft:packed_ice_bricks'),
+    type='minecraft:stonecutting',
+)
+
+PACKED_ICE_BRICK_SLAB = RecipeCraftingShaped(
+    category=CraftingBookCategory.BUILDING,
+    pattern=['###'],
+    key={'#': 'minecraft:packed_ice_bricks'},
+    result=ItemStackOfComponent(id='minecraft:packed_ice_brick_slab', count=6),
+    type='minecraft:crafting_shaped',
+)
+
+PACKED_ICE_BRICK_SLAB_FROM_PACKED_ICE_BRICKS_STONECUTTING = RecipeStonecutting(
+    ingredient='minecraft:packed_ice_bricks',
+    result=ItemStackOfComponent(id='minecraft:packed_ice_brick_slab', count=2),
+    type='minecraft:stonecutting',
+)
+
+PACKED_ICE_BRICK_SLAB_FROM_PACKED_ICE_STONECUTTING = RecipeStonecutting(
+    ingredient='minecraft:packed_ice',
+    result=ItemStackOfComponent(id='minecraft:packed_ice_brick_slab', count=2),
+    type='minecraft:stonecutting',
+)
+
+PACKED_ICE_BRICK_STAIRS = RecipeCraftingShaped(
+    category=CraftingBookCategory.BUILDING,
+    pattern=['#  ', '## ', '###'],
+    key={'#': 'minecraft:packed_ice_bricks'},
+    result=ItemStackOfComponent(id='minecraft:packed_ice_brick_stairs', count=4),
+    type='minecraft:crafting_shaped',
+)
+
+PACKED_ICE_BRICK_STAIRS_FROM_PACKED_ICE_BRICKS_STONECUTTING = RecipeStonecutting(
+    ingredient='minecraft:packed_ice_bricks',
+    result=ItemStackOfComponent(id='minecraft:packed_ice_brick_stairs'),
+    type='minecraft:stonecutting',
+)
+
+PACKED_ICE_BRICK_STAIRS_FROM_PACKED_ICE_STONECUTTING = RecipeStonecutting(
+    ingredient='minecraft:packed_ice',
+    result=ItemStackOfComponent(id='minecraft:packed_ice_brick_stairs'),
+    type='minecraft:stonecutting',
+)
+
+PACKED_ICE_BRICK_WALL = RecipeCraftingShaped(
+    pattern=['###', '###'],
+    key={'#': 'minecraft:packed_ice_bricks'},
+    result=ItemStackOfComponent(id='minecraft:packed_ice_brick_wall', count=6),
+    type='minecraft:crafting_shaped',
+)
+
+PACKED_ICE_BRICK_WALL_FROM_PACKED_ICE_BRICKS_STONECUTTING = RecipeStonecutting(
+    ingredient='minecraft:packed_ice_bricks',
+    result=ItemStackOfComponent(id='minecraft:packed_ice_brick_wall'),
+    type='minecraft:stonecutting',
+)
+
+PACKED_ICE_BRICK_WALL_FROM_PACKED_ICE_STONECUTTING = RecipeStonecutting(
+    ingredient='minecraft:packed_ice',
+    result=ItemStackOfComponent(id='minecraft:packed_ice_brick_wall'),
+    type='minecraft:stonecutting',
+)
+
 PACKED_MUD = RecipeCraftingShapeless(
     category=CraftingBookCategory.BUILDING,
     ingredients=['minecraft:mud', 'minecraft:wheat'],
@@ -13199,6 +13292,37 @@ SNOW_BLOCK = RecipeCraftingShaped(
     pattern=['##', '##'],
     key={'#': 'minecraft:snowball'},
     result=ItemStackOfComponent(id='minecraft:snow_block'),
+    type='minecraft:crafting_shaped',
+)
+
+SNOW_BRICKS = RecipeCraftingShaped(
+    category=CraftingBookCategory.BUILDING,
+    pattern=['##', '##'],
+    key={'#': 'minecraft:snow_block'},
+    result=ItemStackOfComponent(id='minecraft:snow_bricks', count=4),
+    type='minecraft:crafting_shaped',
+)
+
+SNOW_BRICK_SLAB = RecipeCraftingShaped(
+    category=CraftingBookCategory.BUILDING,
+    pattern=['###'],
+    key={'#': 'minecraft:snow_bricks'},
+    result=ItemStackOfComponent(id='minecraft:snow_brick_slab', count=6),
+    type='minecraft:crafting_shaped',
+)
+
+SNOW_BRICK_STAIRS = RecipeCraftingShaped(
+    category=CraftingBookCategory.BUILDING,
+    pattern=['#  ', '## ', '###'],
+    key={'#': 'minecraft:snow_bricks'},
+    result=ItemStackOfComponent(id='minecraft:snow_brick_stairs', count=4),
+    type='minecraft:crafting_shaped',
+)
+
+SNOW_BRICK_WALL = RecipeCraftingShaped(
+    pattern=['###', '###'],
+    key={'#': 'minecraft:snow_bricks'},
+    result=ItemStackOfComponent(id='minecraft:snow_brick_wall', count=6),
     type='minecraft:crafting_shaped',
 )
 

@@ -409,6 +409,7 @@ BLOCKS_MOTION_NO_LEAVES = Tag(
         'minecraft:farmland',
         'minecraft:furnace',
         'minecraft:snow_block',
+        'minecraft:snow_bricks',
         'minecraft:cactus',
         'minecraft:clay',
         'minecraft:jukebox',
@@ -952,6 +953,8 @@ DANGEROUS_FOR_TELEPORTATION = Tag(
         'minecraft:wither_rose',
         'minecraft:pointed_dripstone',
         'minecraft:powder_snow',
+        'minecraft:sulfur_spike',
+        'minecraft:icicle',
     ],
 )
 
@@ -1278,7 +1281,15 @@ HUGE_RED_MUSHROOM_CAN_PLACE_ON = Tag(
 )
 
 ICE = Tag(
-    values=['minecraft:ice', 'minecraft:packed_ice', 'minecraft:blue_ice', 'minecraft:brittle_ice', 'minecraft:frosted_ice'],
+    values=[
+        'minecraft:ice',
+        'minecraft:packed_ice',
+        'minecraft:packed_ice_bricks',
+        'minecraft:chiseled_packed_ice',
+        'minecraft:blue_ice',
+        'minecraft:brittle_ice',
+        'minecraft:frosted_ice',
+    ],
 )
 
 ICE_CAVE_ORE_REPLACEABLES = Tag(values=['minecraft:calcite', 'minecraft:packed_ice'])
@@ -2016,6 +2027,8 @@ SLABS = Tag(
         'minecraft:sulfur_slab',
         'minecraft:polished_sulfur_slab',
         'minecraft:sulfur_brick_slab',
+        'minecraft:packed_ice_brick_slab',
+        'minecraft:snow_brick_slab',
         '#minecraft:wool_slabs',
         '#minecraft:concrete_slabs',
     ],
@@ -2132,6 +2145,8 @@ STAIRS = Tag(
         'minecraft:sulfur_stairs',
         'minecraft:polished_sulfur_stairs',
         'minecraft:sulfur_brick_stairs',
+        'minecraft:packed_ice_brick_stairs',
+        'minecraft:snow_brick_stairs',
         '#minecraft:wool_stairs',
         '#minecraft:concrete_stairs',
     ],
@@ -2227,7 +2242,7 @@ SUPPORTS_FROGSPAWN = Tag(values=[])
 
 SUPPORTS_HANGING_MANGROVE_PROPAGULE = Tag(values=['minecraft:mangrove_leaves'])
 
-SUPPORTS_LILY_PAD = Tag(values=['minecraft:ice', 'minecraft:frosted_ice'])
+SUPPORTS_LILY_PAD = Tag(values=['minecraft:ice', 'minecraft:brittle_ice', 'minecraft:frosted_ice'])
 
 SUPPORTS_MANGROVE_PROPAGULE = Tag(values=['#minecraft:supports_vegetation', 'minecraft:clay'])
 
@@ -2392,6 +2407,8 @@ WALLS = Tag(
         'minecraft:sulfur_wall',
         'minecraft:polished_sulfur_wall',
         'minecraft:sulfur_brick_wall',
+        'minecraft:packed_ice_brick_wall',
+        'minecraft:snow_brick_wall',
     ],
 )
 
@@ -2434,6 +2451,8 @@ WALL_POST_OVERRIDE = Tag(
         '#minecraft:banners',
         '#minecraft:pressure_plates',
         'minecraft:cactus_flower',
+        'minecraft:brown_mushroom',
+        'minecraft:red_mushroom',
     ],
 )
 
