@@ -152,8 +152,11 @@ class LiteralSchema(BaseSchema):
     value: Annotated[StringSchema | IntSchema | BooleanSchema | FloatSchema | DoubleSchema, Field(discriminator="kind")]
 
     def to_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None = None) -> str:
-        ctx.required_imports.add(Import("typing", "Literal"))
         value = self.value.value
+        if isinstance(value, float):  # A float or double. Literal[1.0] isn't allowed (PEP 586), so a range of just that value
+            ctx.require_annotated()
+            return f"Annotated[float, {ValueRange(min=value, max=value).to_field(ctx)}]"
+        ctx.required_imports.add(Import("typing", "Literal"))
         if isinstance(value, str) and value.startswith("minecraft:"):  # Resource locations work with or without the namespace
             return f"Literal[{value!r}, {value.removeprefix('minecraft:')!r}]"
         return f"Literal[{value!r}]"
@@ -225,7 +228,7 @@ class LongSchema(NumericSchema):
 class FloatSchema(NumericSchema):
     """A 32-bit, single-precision floating-point number, ranging from -3.4E38 to +3.4E38."""
     kind: Literal["float"] = Field(repr=False)
-    value: float | None = None  # For literal floats (currently unused)
+    value: float | None = None  # For literal floats
 
     python_type = "float"
     min_value_internally = -3.4E38
@@ -737,19 +740,27 @@ class StructSchema(BaseSchema):
         return pairs
 
     def inherited_base_names(self, ctx: SingleSymbolContext) -> list[str]:
-        """The classes its class inherits from (the ones it spreads), e.g. class MyClass(`<x>`, `<y>`)"""
+        """The classes its class inherits from (the ones it spreads), e.g. class MyClass(`<x>`, `<y>`), apart from ones
+        another of them inherits already: Drowned spreads ZombieBase and DrowningTracker, which ZombieBase spreads too, so
+        it's just class Drowned(ZombieBase), as Python can't order the bases when one comes before a class that inherits it."""
         strict_ctx = ctx.copy()
         strict_ctx.allow_template_shortcuts = False  # Don't allow inherited | float, for example.
         strict_ctx.require_runtime_imports = True
-        base_names: set[str] = set()
+        bases = self._spread_classes(ctx)
+        inherited = {ancestor for _, path in bases for ancestor in ctx.schema_graph.ancestor_paths(path)}
+        # Keep concrete spread type arguments in inheritance, e.g. UniformIntProvider[T].
+        return sorted({base.to_annotation(strict_ctx) for base, path in bases if path not in inherited})
+
+    def _spread_classes(self, ctx: SingleSymbolContext) -> list[tuple[BaseSchema, str]]:
+        """Each class it (or an inline struct it spreads) spreads, and its path"""
+        classes: list[tuple[BaseSchema, str]] = []
         for spread in (field for field in self.fields if isinstance(field, SpreadFieldSchema)):
-            # Keep concrete spread type arguments in inheritance, e.g. UniformIntProvider[T].
             reference = spread.reference()
             if reference is not None and reference.path not in ctx.local_type_params:
-                base_names.add(spread.type.to_annotation(strict_ctx))
+                classes.append((spread.type, reference.path))
             if isinstance(spread.type, StructSchema):
-                base_names.update(spread.type.inherited_base_names(ctx))
-        return sorted(base_names)
+                classes.extend(spread.type._spread_classes(ctx))
+        return classes
 
     def to_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None = None) -> str:
         """Structs used inline (e.g. as a field's type) get generated as their own class, named `nested_struct_name`."""

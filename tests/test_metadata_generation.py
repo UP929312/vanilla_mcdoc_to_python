@@ -8,7 +8,7 @@ from context import SingleSymbolContext
 from minecraft_registry import make_registry_id_file_content, make_registry_id_files, make_root_resource_registry_content, used_registry_names
 from schema_resolution import SchemaGraph, get_schema_graph
 from static_symbols.minecraft_types import IdSpec
-from typed_models import ConcreteSchema, DispatcherSchema, IntSchema, ReferenceSchema, StructSchema, TemplateSchema, UnionSchema
+from typed_models import ConcreteSchema, DispatcherSchema, IntSchema, PairSchema, ReferenceSchema, StructSchema, TemplateSchema, UnionSchema
 from utils import LATEST_VERSION, SYMBOLS_MAP
 
 
@@ -138,6 +138,12 @@ class TestDispatcherSpreadGeneration:
 
         assert "class ButtonListDialogBaseClose(GeneratedModel):" in content
         assert "after_action: Literal['minecraft:close', 'close'] | None = 'minecraft:close'" in content
+
+    def test_a_float_literal_is_a_range_of_just_its_value(self) -> None:
+        # Like mcdoc:particle_position_scale's entity_position, as type checkers don't allow Literal[1.0]
+        pair = PairSchema.model_validate({"kind": "pair", "key": "scale", "optional": True, "type": {"kind": "literal", "value": {"kind": "float", "value": 1}}})
+
+        assert pair.to_field_line(SingleSymbolContext(schema_graph=get_schema_graph())) == "    scale: Annotated[float, Field(ge=1.0, le=1.0)] | None = 1.0"
 
     def test_dynamic_spread_generates_correlated_branch_classes(self) -> None:
         content = generated_body(
@@ -365,6 +371,20 @@ class TestRuntimeImportGeneration:
 
         assert "class FlatWeightedEntry(GeneratedModel, Generic[T]):" in content
         assert "type FlatWeightedEntry =" not in content
+
+    def test_a_spread_another_spread_inherits_is_not_a_base_too(self) -> None:
+        # Like Drowned, which spreads ZombieBase and DrowningTracker, which ZombieBase spreads too
+        def spread(name: str) -> dict[str, object]:
+            return {"kind": "spread", "type": {"kind": "reference", "path": f"::test::{name}"}}
+        graph = SchemaGraph.from_symbol_maps({"mcdoc": {
+            "::test::DrowningTracker": {"kind": "struct", "fields": [{"kind": "pair", "key": "InWaterTime", "type": {"kind": "int"}}]},
+            "::test::ZombieBase": {"kind": "struct", "fields": [spread("DrowningTracker")]},
+        }})
+        schema = StructSchema.model_validate({"kind": "struct", "fields": [spread("ZombieBase"), spread("DrowningTracker")]})
+        context = SingleSymbolContext(schema_graph=graph)
+
+        assert schema.to_python_code("Drowned", context)[0] == "class Drowned(ZombieBase):"
+        assert not any("DrowningTracker" in str(required_import) for required_import in context.required_imports)
 
     def test_alias_spread_is_distributed(self) -> None:
         path = "::java::data::loot::function::CustomModelDataFlags"

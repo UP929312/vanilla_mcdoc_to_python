@@ -74,6 +74,22 @@ class SchemaGraph:
             for field in schema.fields
         )
 
+    def ancestor_paths(self, path: str) -> set[str]:
+        """The paths of every class the one at `path` inherits, however far up, e.g. ZombieBase's MobBase and
+        DrowningTracker (and MobBase's own)"""
+        schema = self.symbols.get(path)
+        return self._spread_paths(schema.child if isinstance(schema, TemplateSchema) else schema)
+
+    def _spread_paths(self, schema: BaseSchema | None) -> set[str]:
+        if not isinstance(schema, StructSchema):
+            return set()
+        paths: set[str] = set()
+        for spread in (field for field in schema.fields if isinstance(field, SpreadFieldSchema)):
+            if (reference := spread.reference()) is not None:
+                paths |= {reference.path, *self.ancestor_paths(reference.path)}
+            paths |= self._spread_paths(spread.type)  # Inline structs' spreads
+        return paths
+
     def annotation_candidates(self, schema: DispatcherSchema | IndexedSchema) -> tuple[BaseSchema, ...]:
         """Return every schema that a dispatcher or index can select statically."""
         if isinstance(schema, DispatcherSchema):
