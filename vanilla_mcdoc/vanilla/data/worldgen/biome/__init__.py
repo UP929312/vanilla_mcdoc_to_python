@@ -1269,6 +1269,7 @@ DEEP_FROZEN_OCEAN = Biome(
                         {'type': 'minecraft:witch', 'count': 1, 'weight': 5},
                         {'type': 'minecraft:drowned', 'count': 1, 'weight': 5},
                         {'type': 'minecraft:frostbite', 'count': 4, 'weight': 25},
+                        {'type': 'minecraft:stray', 'count': 4, 'weight': 95},
                     ],
                     'underground_water_creature': [
                         {
@@ -2222,6 +2223,7 @@ FROZEN_OCEAN = Biome(
                         {'type': 'minecraft:witch', 'count': 1, 'weight': 5},
                         {'type': 'minecraft:drowned', 'count': 1, 'weight': 5},
                         {'type': 'minecraft:frostbite', 'count': 4, 'weight': 25},
+                        {'type': 'minecraft:stray', 'count': 4, 'weight': 95},
                     ],
                     'underground_water_creature': [
                         {
@@ -2330,6 +2332,7 @@ FROZEN_PEAKS = Biome(
                     ],
                     'monster': [
                         {'type': 'minecraft:frostbite', 'count': 4, 'weight': 25},
+                        {'type': 'minecraft:stray', 'count': 4, 'weight': 95},
                         {'type': 'minecraft:spider', 'count': 4, 'weight': 100},
                         {'type': 'minecraft:zombie', 'count': 4, 'weight': 95},
                         {'type': 'minecraft:zombie_villager', 'count': 1, 'weight': 5},
@@ -2434,6 +2437,7 @@ FROZEN_RIVER = Biome(
                         {'type': 'minecraft:witch', 'count': 1, 'weight': 5},
                         {'type': 'minecraft:drowned', 'count': 1, 'weight': 1},
                         {'type': 'minecraft:frostbite', 'count': 4, 'weight': 25},
+                        {'type': 'minecraft:stray', 'count': 4, 'weight': 95},
                     ],
                     'underground_water_creature': [
                         {
@@ -2834,6 +2838,7 @@ JAGGED_PEAKS = Biome(
                     ],
                     'monster': [
                         {'type': 'minecraft:frostbite', 'count': 4, 'weight': 10},
+                        {'type': 'minecraft:stray', 'count': 4, 'weight': 95},
                         {'type': 'minecraft:spider', 'count': 4, 'weight': 100},
                         {'type': 'minecraft:zombie', 'count': 4, 'weight': 95},
                         {'type': 'minecraft:zombie_villager', 'count': 1, 'weight': 5},
@@ -4911,6 +4916,7 @@ SNOWY_SLOPES = Biome(
                     ],
                     'monster': [
                         {'type': 'minecraft:frostbite', 'count': 4, 'weight': 10},
+                        {'type': 'minecraft:stray', 'count': 4, 'weight': 95},
                         {'type': 'minecraft:spider', 'count': 4, 'weight': 100},
                         {'type': 'minecraft:zombie', 'count': 4, 'weight': 95},
                         {'type': 'minecraft:zombie_villager', 'count': 1, 'weight': 5},

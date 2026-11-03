@@ -1970,6 +1970,56 @@ SOUNDS = {
         ],
         subtitle='subtitles.block.generic.footsteps',
     ),
+    'block.chiseled_soulshale.break': SoundEventRegistration(
+        sounds=[
+            'block/chiseled_soulshale/break1',
+            'block/chiseled_soulshale/break2',
+            'block/chiseled_soulshale/break3',
+            'block/chiseled_soulshale/break4',
+            'block/chiseled_soulshale/break5',
+        ],
+        subtitle='subtitles.block.generic.break',
+    ),
+    'block.chiseled_soulshale.fall': SoundEventRegistration(
+        sounds=[
+            'block/chiseled_soulshale/step1',
+            'block/chiseled_soulshale/step2',
+            'block/chiseled_soulshale/step3',
+            'block/chiseled_soulshale/step4',
+            'block/chiseled_soulshale/step5',
+        ],
+        subtitle='subtitles.block.generic.fall',
+    ),
+    'block.chiseled_soulshale.hit': SoundEventRegistration(
+        sounds=[
+            'block/chiseled_soulshale/hit1',
+            'block/chiseled_soulshale/hit2',
+            'block/chiseled_soulshale/hit3',
+            'block/chiseled_soulshale/hit4',
+            'block/chiseled_soulshale/hit5',
+        ],
+        subtitle='subtitles.block.generic.hit',
+    ),
+    'block.chiseled_soulshale.place': SoundEventRegistration(
+        sounds=[
+            'block/chiseled_soulshale/place1',
+            'block/chiseled_soulshale/place2',
+            'block/chiseled_soulshale/place3',
+            'block/chiseled_soulshale/place4',
+            'block/chiseled_soulshale/place5',
+        ],
+        subtitle='subtitles.block.generic.place',
+    ),
+    'block.chiseled_soulshale.step': SoundEventRegistration(
+        sounds=[
+            'block/chiseled_soulshale/step1',
+            'block/chiseled_soulshale/step2',
+            'block/chiseled_soulshale/step3',
+            'block/chiseled_soulshale/step4',
+            'block/chiseled_soulshale/step5',
+        ],
+        subtitle='subtitles.block.generic.footsteps',
+    ),
     'block.chorus_flower.death': SoundEventRegistration(
         sounds=['block/chorus_flower/death1', 'block/chorus_flower/death2', 'block/chorus_flower/death3'],
         subtitle='subtitles.block.chorus_flower.death',
@@ -10584,6 +10634,15 @@ SOUNDS = {
         sounds=[SoundDefault(type=SoundType.SOUNDEVENT, name='entity.evoker.cast_spell', volume=0.6, pitch=1.8)],
         subtitle='subtitles.entity.parrot.imitate.evoker',
     ),
+    'entity.parrot.imitate.frostbite': SoundEventRegistration(
+        sounds=[
+            SoundDefault(name='mob/frostbite/ambient1', volume=0.7, pitch=1.8),
+            SoundDefault(name='mob/frostbite/ambient2', volume=0.7, pitch=1.8),
+            SoundDefault(name='mob/frostbite/ambient3', volume=0.7, pitch=1.8),
+            SoundDefault(name='mob/frostbite/ambient4', volume=0.7, pitch=1.8),
+        ],
+        subtitle='subtitles.entity.parrot.imitate.frostbite',
+    ),
     'entity.parrot.imitate.ghast': SoundEventRegistration(
         sounds=[SoundDefault(type=SoundType.SOUNDEVENT, name='entity.ghast.ambient', volume=0.7, pitch=1.8)],
         subtitle='subtitles.entity.parrot.imitate.ghast',
@@ -14047,6 +14106,7 @@ SOUNDS = {
     'music_disc.creator': SoundEventRegistration(sounds=[SoundDefault(name='records/creator', stream=True)]),
     'music_disc.creator_music_box': SoundEventRegistration(sounds=[SoundDefault(name='records/creator_music_box', stream=True)]),
     'music_disc.far': SoundEventRegistration(sounds=[SoundDefault(name='records/far', stream=True)]),
+    'music_disc.flurry': SoundEventRegistration(sounds=[SoundDefault(name='records/flurry', stream=True)]),
     'music_disc.lava_chicken': SoundEventRegistration(sounds=[SoundDefault(name='records/lava_chicken', stream=True)]),
     'music_disc.mall': SoundEventRegistration(sounds=[SoundDefault(name='records/mall', stream=True)]),
     'music_disc.mellohi': SoundEventRegistration(sounds=[SoundDefault(name='records/mellohi', stream=True)]),

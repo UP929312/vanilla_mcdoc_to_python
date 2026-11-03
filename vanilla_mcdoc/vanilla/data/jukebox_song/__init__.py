@@ -51,6 +51,13 @@ FAR = JukeboxSong(
     sound_event='minecraft:music_disc.far',
 )
 
+FLURRY = JukeboxSong(
+    description=TextObjectStruct2(translate='jukebox_song.minecraft.flurry'),
+    comparator_output=7,
+    length_in_seconds=154.0,
+    sound_event='minecraft:music_disc.flurry',
+)
+
 LAVA_CHICKEN = JukeboxSong(
     description=TextObjectStruct2(translate='jukebox_song.minecraft.lava_chicken'),
     comparator_output=9,

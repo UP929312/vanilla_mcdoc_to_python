@@ -2660,7 +2660,7 @@ ICE_CAVE_ORE_COAL = ConfiguredFeatureSequence(
                         target=RuleTestAllOf(
                             rules=[
                                 RuleTestHeightMatch(
-                                    min_inclusive=0,
+                                    min_inclusive=4,
                                     max_inclusive=2031,
                                     predicate_type='minecraft:height_match',
                                 ),
@@ -2723,7 +2723,7 @@ ICE_CAVE_ORE_COAL = ConfiguredFeatureSequence(
                         target=RuleTestAllOf(
                             rules=[
                                 RuleTestHeightMatch(
-                                    min_inclusive=0,
+                                    min_inclusive=4,
                                     max_inclusive=2031,
                                     predicate_type='minecraft:height_match',
                                 ),
@@ -2774,7 +2774,7 @@ ICE_CAVE_ORE_COAL_BURIED = ConfiguredFeatureSequence(
                         target=RuleTestAllOf(
                             rules=[
                                 RuleTestHeightMatch(
-                                    min_inclusive=0,
+                                    min_inclusive=4,
                                     max_inclusive=2031,
                                     predicate_type='minecraft:height_match',
                                 ),
@@ -2837,7 +2837,7 @@ ICE_CAVE_ORE_COAL_BURIED = ConfiguredFeatureSequence(
                         target=RuleTestAllOf(
                             rules=[
                                 RuleTestHeightMatch(
-                                    min_inclusive=0,
+                                    min_inclusive=4,
                                     max_inclusive=2031,
                                     predicate_type='minecraft:height_match',
                                 ),
@@ -2888,7 +2888,7 @@ ICE_CAVE_ORE_COPPER_SMALL = ConfiguredFeatureSequence(
                         target=RuleTestAllOf(
                             rules=[
                                 RuleTestHeightMatch(
-                                    min_inclusive=0,
+                                    min_inclusive=4,
                                     max_inclusive=2031,
                                     predicate_type='minecraft:height_match',
                                 ),
@@ -2951,7 +2951,7 @@ ICE_CAVE_ORE_COPPER_SMALL = ConfiguredFeatureSequence(
                         target=RuleTestAllOf(
                             rules=[
                                 RuleTestHeightMatch(
-                                    min_inclusive=0,
+                                    min_inclusive=4,
                                     max_inclusive=2031,
                                     predicate_type='minecraft:height_match',
                                 ),
@@ -3002,7 +3002,7 @@ ICE_CAVE_ORE_DIAMOND_BURIED = ConfiguredFeatureSequence(
                         target=RuleTestAllOf(
                             rules=[
                                 RuleTestHeightMatch(
-                                    min_inclusive=0,
+                                    min_inclusive=4,
                                     max_inclusive=2031,
                                     predicate_type='minecraft:height_match',
                                 ),
@@ -3065,7 +3065,7 @@ ICE_CAVE_ORE_DIAMOND_BURIED = ConfiguredFeatureSequence(
                         target=RuleTestAllOf(
                             rules=[
                                 RuleTestHeightMatch(
-                                    min_inclusive=0,
+                                    min_inclusive=4,
                                     max_inclusive=2031,
                                     predicate_type='minecraft:height_match',
                                 ),
@@ -3116,7 +3116,7 @@ ICE_CAVE_ORE_DIAMOND_LARGE = ConfiguredFeatureSequence(
                         target=RuleTestAllOf(
                             rules=[
                                 RuleTestHeightMatch(
-                                    min_inclusive=0,
+                                    min_inclusive=4,
                                     max_inclusive=2031,
                                     predicate_type='minecraft:height_match',
                                 ),
@@ -3179,7 +3179,7 @@ ICE_CAVE_ORE_DIAMOND_LARGE = ConfiguredFeatureSequence(
                         target=RuleTestAllOf(
                             rules=[
                                 RuleTestHeightMatch(
-                                    min_inclusive=0,
+                                    min_inclusive=4,
                                     max_inclusive=2031,
                                     predicate_type='minecraft:height_match',
                                 ),
@@ -3230,7 +3230,7 @@ ICE_CAVE_ORE_DIAMOND_MEDIUM = ConfiguredFeatureSequence(
                         target=RuleTestAllOf(
                             rules=[
                                 RuleTestHeightMatch(
-                                    min_inclusive=0,
+                                    min_inclusive=4,
                                     max_inclusive=2031,
                                     predicate_type='minecraft:height_match',
                                 ),
@@ -3293,7 +3293,7 @@ ICE_CAVE_ORE_DIAMOND_MEDIUM = ConfiguredFeatureSequence(
                         target=RuleTestAllOf(
                             rules=[
                                 RuleTestHeightMatch(
-                                    min_inclusive=0,
+                                    min_inclusive=4,
                                     max_inclusive=2031,
                                     predicate_type='minecraft:height_match',
                                 ),
@@ -3344,7 +3344,7 @@ ICE_CAVE_ORE_DIAMOND_SMALL = ConfiguredFeatureSequence(
                         target=RuleTestAllOf(
                             rules=[
                                 RuleTestHeightMatch(
-                                    min_inclusive=0,
+                                    min_inclusive=4,
                                     max_inclusive=2031,
                                     predicate_type='minecraft:height_match',
                                 ),
@@ -3407,7 +3407,7 @@ ICE_CAVE_ORE_DIAMOND_SMALL = ConfiguredFeatureSequence(
                         target=RuleTestAllOf(
                             rules=[
                                 RuleTestHeightMatch(
-                                    min_inclusive=0,
+                                    min_inclusive=4,
                                     max_inclusive=2031,
                                     predicate_type='minecraft:height_match',
                                 ),
@@ -3476,7 +3476,7 @@ ICE_CAVE_ORE_GOLD_BURIED = ConfiguredFeatureSequence(
                         target=RuleTestAllOf(
                             rules=[
                                 RuleTestHeightMatch(
-                                    min_inclusive=0,
+                                    min_inclusive=4,
                                     max_inclusive=2031,
                                     predicate_type='minecraft:height_match',
                                 ),
@@ -3539,7 +3539,7 @@ ICE_CAVE_ORE_GOLD_BURIED = ConfiguredFeatureSequence(
                         target=RuleTestAllOf(
                             rules=[
                                 RuleTestHeightMatch(
-                                    min_inclusive=0,
+                                    min_inclusive=4,
                                     max_inclusive=2031,
                                     predicate_type='minecraft:height_match',
                                 ),
@@ -3608,7 +3608,7 @@ ICE_CAVE_ORE_IRON = ConfiguredFeatureSequence(
                         target=RuleTestAllOf(
                             rules=[
                                 RuleTestHeightMatch(
-                                    min_inclusive=0,
+                                    min_inclusive=4,
                                     max_inclusive=2031,
                                     predicate_type='minecraft:height_match',
                                 ),
@@ -3671,7 +3671,7 @@ ICE_CAVE_ORE_IRON = ConfiguredFeatureSequence(
                         target=RuleTestAllOf(
                             rules=[
                                 RuleTestHeightMatch(
-                                    min_inclusive=0,
+                                    min_inclusive=4,
                                     max_inclusive=2031,
                                     predicate_type='minecraft:height_match',
                                 ),
@@ -3722,7 +3722,7 @@ ICE_CAVE_ORE_IRON_SMALL = ConfiguredFeatureSequence(
                         target=RuleTestAllOf(
                             rules=[
                                 RuleTestHeightMatch(
-                                    min_inclusive=0,
+                                    min_inclusive=4,
                                     max_inclusive=2031,
                                     predicate_type='minecraft:height_match',
                                 ),
@@ -3785,7 +3785,7 @@ ICE_CAVE_ORE_IRON_SMALL = ConfiguredFeatureSequence(
                         target=RuleTestAllOf(
                             rules=[
                                 RuleTestHeightMatch(
-                                    min_inclusive=0,
+                                    min_inclusive=4,
                                     max_inclusive=2031,
                                     predicate_type='minecraft:height_match',
                                 ),
@@ -3836,7 +3836,7 @@ ICE_CAVE_ORE_LAPIS = ConfiguredFeatureSequence(
                         target=RuleTestAllOf(
                             rules=[
                                 RuleTestHeightMatch(
-                                    min_inclusive=0,
+                                    min_inclusive=4,
                                     max_inclusive=2031,
                                     predicate_type='minecraft:height_match',
                                 ),
@@ -3899,7 +3899,7 @@ ICE_CAVE_ORE_LAPIS = ConfiguredFeatureSequence(
                         target=RuleTestAllOf(
                             rules=[
                                 RuleTestHeightMatch(
-                                    min_inclusive=0,
+                                    min_inclusive=4,
                                     max_inclusive=2031,
                                     predicate_type='minecraft:height_match',
                                 ),
@@ -3950,7 +3950,7 @@ ICE_CAVE_ORE_LAPIS_BURIED = ConfiguredFeatureSequence(
                         target=RuleTestAllOf(
                             rules=[
                                 RuleTestHeightMatch(
-                                    min_inclusive=0,
+                                    min_inclusive=4,
                                     max_inclusive=2031,
                                     predicate_type='minecraft:height_match',
                                 ),
@@ -4013,7 +4013,7 @@ ICE_CAVE_ORE_LAPIS_BURIED = ConfiguredFeatureSequence(
                         target=RuleTestAllOf(
                             rules=[
                                 RuleTestHeightMatch(
-                                    min_inclusive=0,
+                                    min_inclusive=4,
                                     max_inclusive=2031,
                                     predicate_type='minecraft:height_match',
                                 ),
@@ -4064,7 +4064,7 @@ ICE_CAVE_ORE_REDSTONE = ConfiguredFeatureSequence(
                         target=RuleTestAllOf(
                             rules=[
                                 RuleTestHeightMatch(
-                                    min_inclusive=0,
+                                    min_inclusive=4,
                                     max_inclusive=2031,
                                     predicate_type='minecraft:height_match',
                                 ),
@@ -4127,7 +4127,7 @@ ICE_CAVE_ORE_REDSTONE = ConfiguredFeatureSequence(
                         target=RuleTestAllOf(
                             rules=[
                                 RuleTestHeightMatch(
-                                    min_inclusive=0,
+                                    min_inclusive=4,
                                     max_inclusive=2031,
                                     predicate_type='minecraft:height_match',
                                 ),
@@ -5741,7 +5741,7 @@ ORE_COAL = ConfiguredFeatureOre(
         TargetBlock(
             target=RuleTestAllOf(
                 rules=[
-                    RuleTestHeightMatch(min_inclusive=0, max_inclusive=2031, predicate_type='minecraft:height_match'),
+                    RuleTestHeightMatch(min_inclusive=4, max_inclusive=2031, predicate_type='minecraft:height_match'),
                     RuleTestTagMatch(
                         tag='minecraft:height_specific_ore_replaceables',
                         predicate_type='minecraft:tag_match',
@@ -5774,7 +5774,7 @@ ORE_COAL_BURIED = ConfiguredFeatureOre(
         TargetBlock(
             target=RuleTestAllOf(
                 rules=[
-                    RuleTestHeightMatch(min_inclusive=0, max_inclusive=2031, predicate_type='minecraft:height_match'),
+                    RuleTestHeightMatch(min_inclusive=4, max_inclusive=2031, predicate_type='minecraft:height_match'),
                     RuleTestTagMatch(
                         tag='minecraft:height_specific_ore_replaceables',
                         predicate_type='minecraft:tag_match',
@@ -5807,7 +5807,7 @@ ORE_COPPER_LARGE = ConfiguredFeatureOre(
         TargetBlock(
             target=RuleTestAllOf(
                 rules=[
-                    RuleTestHeightMatch(min_inclusive=0, max_inclusive=2031, predicate_type='minecraft:height_match'),
+                    RuleTestHeightMatch(min_inclusive=4, max_inclusive=2031, predicate_type='minecraft:height_match'),
                     RuleTestTagMatch(
                         tag='minecraft:height_specific_ore_replaceables',
                         predicate_type='minecraft:tag_match',
@@ -5840,7 +5840,7 @@ ORE_COPPER_SMALL = ConfiguredFeatureOre(
         TargetBlock(
             target=RuleTestAllOf(
                 rules=[
-                    RuleTestHeightMatch(min_inclusive=0, max_inclusive=2031, predicate_type='minecraft:height_match'),
+                    RuleTestHeightMatch(min_inclusive=4, max_inclusive=2031, predicate_type='minecraft:height_match'),
                     RuleTestTagMatch(
                         tag='minecraft:height_specific_ore_replaceables',
                         predicate_type='minecraft:tag_match',
@@ -5873,7 +5873,7 @@ ORE_DIAMOND_BURIED = ConfiguredFeatureOre(
         TargetBlock(
             target=RuleTestAllOf(
                 rules=[
-                    RuleTestHeightMatch(min_inclusive=0, max_inclusive=2031, predicate_type='minecraft:height_match'),
+                    RuleTestHeightMatch(min_inclusive=4, max_inclusive=2031, predicate_type='minecraft:height_match'),
                     RuleTestTagMatch(
                         tag='minecraft:height_specific_ore_replaceables',
                         predicate_type='minecraft:tag_match',
@@ -5906,7 +5906,7 @@ ORE_DIAMOND_LARGE = ConfiguredFeatureOre(
         TargetBlock(
             target=RuleTestAllOf(
                 rules=[
-                    RuleTestHeightMatch(min_inclusive=0, max_inclusive=2031, predicate_type='minecraft:height_match'),
+                    RuleTestHeightMatch(min_inclusive=4, max_inclusive=2031, predicate_type='minecraft:height_match'),
                     RuleTestTagMatch(
                         tag='minecraft:height_specific_ore_replaceables',
                         predicate_type='minecraft:tag_match',
@@ -5939,7 +5939,7 @@ ORE_DIAMOND_MEDIUM = ConfiguredFeatureOre(
         TargetBlock(
             target=RuleTestAllOf(
                 rules=[
-                    RuleTestHeightMatch(min_inclusive=0, max_inclusive=2031, predicate_type='minecraft:height_match'),
+                    RuleTestHeightMatch(min_inclusive=4, max_inclusive=2031, predicate_type='minecraft:height_match'),
                     RuleTestTagMatch(
                         tag='minecraft:height_specific_ore_replaceables',
                         predicate_type='minecraft:tag_match',
@@ -5972,7 +5972,7 @@ ORE_DIAMOND_SMALL = ConfiguredFeatureOre(
         TargetBlock(
             target=RuleTestAllOf(
                 rules=[
-                    RuleTestHeightMatch(min_inclusive=0, max_inclusive=2031, predicate_type='minecraft:height_match'),
+                    RuleTestHeightMatch(min_inclusive=4, max_inclusive=2031, predicate_type='minecraft:height_match'),
                     RuleTestTagMatch(
                         tag='minecraft:height_specific_ore_replaceables',
                         predicate_type='minecraft:tag_match',
@@ -6029,7 +6029,7 @@ ORE_EMERALD = ConfiguredFeatureOre(
         TargetBlock(
             target=RuleTestAllOf(
                 rules=[
-                    RuleTestHeightMatch(min_inclusive=0, max_inclusive=2031, predicate_type='minecraft:height_match'),
+                    RuleTestHeightMatch(min_inclusive=4, max_inclusive=2031, predicate_type='minecraft:height_match'),
                     RuleTestTagMatch(
                         tag='minecraft:height_specific_ore_replaceables',
                         predicate_type='minecraft:tag_match',
@@ -6062,7 +6062,7 @@ ORE_GOLD = ConfiguredFeatureOre(
         TargetBlock(
             target=RuleTestAllOf(
                 rules=[
-                    RuleTestHeightMatch(min_inclusive=0, max_inclusive=2031, predicate_type='minecraft:height_match'),
+                    RuleTestHeightMatch(min_inclusive=4, max_inclusive=2031, predicate_type='minecraft:height_match'),
                     RuleTestTagMatch(
                         tag='minecraft:height_specific_ore_replaceables',
                         predicate_type='minecraft:tag_match',
@@ -6095,7 +6095,7 @@ ORE_GOLD_BURIED = ConfiguredFeatureOre(
         TargetBlock(
             target=RuleTestAllOf(
                 rules=[
-                    RuleTestHeightMatch(min_inclusive=0, max_inclusive=2031, predicate_type='minecraft:height_match'),
+                    RuleTestHeightMatch(min_inclusive=4, max_inclusive=2031, predicate_type='minecraft:height_match'),
                     RuleTestTagMatch(
                         tag='minecraft:height_specific_ore_replaceables',
                         predicate_type='minecraft:tag_match',
@@ -6164,7 +6164,7 @@ ORE_INFESTED = ConfiguredFeatureOre(
         TargetBlock(
             target=RuleTestAllOf(
                 rules=[
-                    RuleTestHeightMatch(min_inclusive=0, max_inclusive=2031, predicate_type='minecraft:height_match'),
+                    RuleTestHeightMatch(min_inclusive=4, max_inclusive=2031, predicate_type='minecraft:height_match'),
                     RuleTestTagMatch(
                         tag='minecraft:height_specific_ore_replaceables',
                         predicate_type='minecraft:tag_match',
@@ -6197,7 +6197,7 @@ ORE_IRON = ConfiguredFeatureOre(
         TargetBlock(
             target=RuleTestAllOf(
                 rules=[
-                    RuleTestHeightMatch(min_inclusive=0, max_inclusive=2031, predicate_type='minecraft:height_match'),
+                    RuleTestHeightMatch(min_inclusive=4, max_inclusive=2031, predicate_type='minecraft:height_match'),
                     RuleTestTagMatch(
                         tag='minecraft:height_specific_ore_replaceables',
                         predicate_type='minecraft:tag_match',
@@ -6230,7 +6230,7 @@ ORE_IRON_SMALL = ConfiguredFeatureOre(
         TargetBlock(
             target=RuleTestAllOf(
                 rules=[
-                    RuleTestHeightMatch(min_inclusive=0, max_inclusive=2031, predicate_type='minecraft:height_match'),
+                    RuleTestHeightMatch(min_inclusive=4, max_inclusive=2031, predicate_type='minecraft:height_match'),
                     RuleTestTagMatch(
                         tag='minecraft:height_specific_ore_replaceables',
                         predicate_type='minecraft:tag_match',
@@ -6263,7 +6263,7 @@ ORE_LAPIS = ConfiguredFeatureOre(
         TargetBlock(
             target=RuleTestAllOf(
                 rules=[
-                    RuleTestHeightMatch(min_inclusive=0, max_inclusive=2031, predicate_type='minecraft:height_match'),
+                    RuleTestHeightMatch(min_inclusive=4, max_inclusive=2031, predicate_type='minecraft:height_match'),
                     RuleTestTagMatch(
                         tag='minecraft:height_specific_ore_replaceables',
                         predicate_type='minecraft:tag_match',
@@ -6296,7 +6296,7 @@ ORE_LAPIS_BURIED = ConfiguredFeatureOre(
         TargetBlock(
             target=RuleTestAllOf(
                 rules=[
-                    RuleTestHeightMatch(min_inclusive=0, max_inclusive=2031, predicate_type='minecraft:height_match'),
+                    RuleTestHeightMatch(min_inclusive=4, max_inclusive=2031, predicate_type='minecraft:height_match'),
                     RuleTestTagMatch(
                         tag='minecraft:height_specific_ore_replaceables',
                         predicate_type='minecraft:tag_match',
@@ -6365,7 +6365,7 @@ ORE_REDSTONE = ConfiguredFeatureOre(
         TargetBlock(
             target=RuleTestAllOf(
                 rules=[
-                    RuleTestHeightMatch(min_inclusive=0, max_inclusive=2031, predicate_type='minecraft:height_match'),
+                    RuleTestHeightMatch(min_inclusive=4, max_inclusive=2031, predicate_type='minecraft:height_match'),
                     RuleTestTagMatch(
                         tag='minecraft:height_specific_ore_replaceables',
                         predicate_type='minecraft:tag_match',

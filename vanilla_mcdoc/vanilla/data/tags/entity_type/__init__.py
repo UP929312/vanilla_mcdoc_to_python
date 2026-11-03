@@ -202,22 +202,6 @@ FALL_DAMAGE_IMMUNE = Tag(
     ],
 )
 
-FLYING = Tag(
-    values=[
-        'minecraft:allay',
-        'minecraft:bat',
-        'minecraft:bee',
-        'minecraft:blaze',
-        'minecraft:ender_dragon',
-        'minecraft:parrot',
-        'minecraft:phantom',
-        'minecraft:ghast',
-        'minecraft:happy_ghast',
-        'minecraft:vex',
-        'minecraft:wither',
-    ],
-)
-
 FOLLOWABLE_FRIENDLY_MOBS = Tag(
     values=[
         'minecraft:armadillo',
@@ -379,8 +363,6 @@ SKELETONS = Tag(
         'minecraft:parched',
     ],
 )
-
-SWIMMING = Tag(values=['#minecraft:aquatic', 'minecraft:frog'])
 
 UNDEAD = Tag(values=['#minecraft:skeletons', '#minecraft:zombies', 'minecraft:wither', 'minecraft:phantom'])
 

@@ -5,7 +5,7 @@ from vanilla_mcdoc.data.loot.LootContextParamSets import LootContextParamSets
 from vanilla_mcdoc.data.loot.LootPool import LootPool
 from vanilla_mcdoc.data.loot.LootPoolEntry import LootPoolEntryEmpty, LootPoolEntryItem
 from vanilla_mcdoc.data.loot.LootTable import LootTable
-from vanilla_mcdoc.data.loot.condition.LootCondition import LootConditionInverted, LootConditionLocationCheck
+from vanilla_mcdoc.data.loot.condition.LootCondition import LootConditionInverted, LootConditionLocationCheck, LootConditionRandomChance
 from vanilla_mcdoc.data.loot.function.LootFunction import LootFunctionDiscard, LootFunctionEnchantRandomly, LootFunctionEnchantWithLevels, LootFunctionExplorationMap, LootFunctionFiltered, LootFunctionSetCount, LootFunctionSetDamage, LootFunctionSetInstrument, LootFunctionSetName, LootFunctionSetPotion, LootFunctionSetStewEffect
 from vanilla_mcdoc.data.loot.function.SetNameTarget import SetNameTarget
 from vanilla_mcdoc.data.loot.function.StewEffect import StewEffect
@@ -970,6 +970,7 @@ ANCIENT_CITY = LootTable(
                     name='minecraft:iron_leggings',
                     type='minecraft:item',
                 ),
+                LootPoolEntryItem(weight=3, name='minecraft:chiseled_soulshale', type='minecraft:item'),
                 LootPoolEntryItem(
                     modifier=LootFunctionSetCount(
                         count=ContextIntProviderStructUniform(type='minecraft:uniform', min=1, max=3),
@@ -2653,6 +2654,11 @@ IGLOO_CHEST = LootTable(
             ],
         ),
         LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:golden_apple', type='minecraft:item')]),
+        LootPool(
+            rolls=1,
+            entries=[LootPoolEntryItem(name='minecraft:music_disc_flurry', type='minecraft:item')],
+            condition=LootConditionRandomChance(chance=0.3, type='minecraft:random_chance'),
+        ),
     ],
     random_sequence='minecraft:chests/igloo_chest',
 )

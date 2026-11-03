@@ -77,7 +77,6 @@ SLOW_BOUNCY = Tag(
         'minecraft:basalt',
         'minecraft:blackstone',
         'minecraft:bricks',
-        'minecraft:calcite',
         'minecraft:chiseled_cinnabar',
         'minecraft:chiseled_deepslate',
         'minecraft:chiseled_nether_bricks',
@@ -166,6 +165,11 @@ SLOW_BOUNCY = Tag(
         '#minecraft:emerald_ores',
         '#minecraft:terracotta',
         '#minecraft:glazed_terracotta',
+        'minecraft:calcite',
+        'minecraft:calcite_pillar',
+        'minecraft:polished_calcite',
+        'minecraft:polished_calcite_bricks',
+        'minecraft:chiseled_soulshale',
     ],
 )
 

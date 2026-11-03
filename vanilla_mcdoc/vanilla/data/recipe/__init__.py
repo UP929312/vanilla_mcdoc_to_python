@@ -1394,6 +1394,61 @@ CAKE = RecipeCraftingShaped(
     type='minecraft:crafting_shaped',
 )
 
+CALCITE_PILLAR = RecipeCraftingShaped(
+    category=CraftingBookCategory.BUILDING,
+    pattern=['#', '#'],
+    key={'#': 'minecraft:calcite'},
+    result=ItemStackOfComponent(id='minecraft:calcite_pillar', count=2),
+    type='minecraft:crafting_shaped',
+)
+
+CALCITE_PILLAR_FROM_CALCITE_STONECUTTING = RecipeStonecutting(
+    ingredient='minecraft:calcite',
+    result=ItemStackOfComponent(id='minecraft:calcite_pillar'),
+    type='minecraft:stonecutting',
+)
+
+CALCITE_SLAB = RecipeCraftingShaped(
+    category=CraftingBookCategory.BUILDING,
+    pattern=['###'],
+    key={'#': 'minecraft:calcite'},
+    result=ItemStackOfComponent(id='minecraft:calcite_slab', count=6),
+    type='minecraft:crafting_shaped',
+)
+
+CALCITE_SLAB_FROM_CALCITE_STONECUTTING = RecipeStonecutting(
+    ingredient='minecraft:calcite',
+    result=ItemStackOfComponent(id='minecraft:calcite_slab', count=2),
+    type='minecraft:stonecutting',
+)
+
+CALCITE_STAIRS = RecipeCraftingShaped(
+    category=CraftingBookCategory.BUILDING,
+    pattern=['#  ', '## ', '###'],
+    key={'#': 'minecraft:calcite'},
+    result=ItemStackOfComponent(id='minecraft:calcite_stairs', count=4),
+    type='minecraft:crafting_shaped',
+)
+
+CALCITE_STAIRS_FROM_CALCITE_STONECUTTING = RecipeStonecutting(
+    ingredient='minecraft:calcite',
+    result=ItemStackOfComponent(id='minecraft:calcite_stairs'),
+    type='minecraft:stonecutting',
+)
+
+CALCITE_WALL = RecipeCraftingShaped(
+    pattern=['###', '###'],
+    key={'#': 'minecraft:calcite'},
+    result=ItemStackOfComponent(id='minecraft:calcite_wall', count=6),
+    type='minecraft:crafting_shaped',
+)
+
+CALCITE_WALL_FROM_CALCITE_STONECUTTING = RecipeStonecutting(
+    ingredient='minecraft:calcite',
+    result=ItemStackOfComponent(id='minecraft:calcite_wall'),
+    type='minecraft:stonecutting',
+)
+
 CALIBRATED_SCULK_SENSOR = RecipeCraftingShaped(
     category=CraftingBookCategory.REDSTONE,
     pattern=[' # ', '#X#'],
@@ -11343,6 +11398,176 @@ POLISHED_BLACKSTONE_WALL_FROM_BLACKSTONE_STONECUTTING = RecipeStonecutting(
 POLISHED_BLACKSTONE_WALL_FROM_POLISHED_BLACKSTONE_STONECUTTING = RecipeStonecutting(
     ingredient='minecraft:polished_blackstone',
     result=ItemStackOfComponent(id='minecraft:polished_blackstone_wall'),
+    type='minecraft:stonecutting',
+)
+
+POLISHED_CALCITE = RecipeCraftingShaped(
+    category=CraftingBookCategory.BUILDING,
+    pattern=['SS', 'SS'],
+    key={'S': 'minecraft:calcite'},
+    result=ItemStackOfComponent(id='minecraft:polished_calcite', count=4),
+    type='minecraft:crafting_shaped',
+)
+
+POLISHED_CALCITE_BRICKS = RecipeCraftingShaped(
+    category=CraftingBookCategory.BUILDING,
+    pattern=['##', '##'],
+    key={'#': 'minecraft:polished_calcite'},
+    result=ItemStackOfComponent(id='minecraft:polished_calcite_bricks', count=4),
+    type='minecraft:crafting_shaped',
+)
+
+POLISHED_CALCITE_BRICKS_FROM_CALCITE_STONECUTTING = RecipeStonecutting(
+    ingredient='minecraft:calcite',
+    result=ItemStackOfComponent(id='minecraft:polished_calcite_bricks'),
+    type='minecraft:stonecutting',
+)
+
+POLISHED_CALCITE_BRICKS_FROM_POLISHED_CALCITE_STONECUTTING = RecipeStonecutting(
+    ingredient='minecraft:polished_calcite',
+    result=ItemStackOfComponent(id='minecraft:polished_calcite_bricks'),
+    type='minecraft:stonecutting',
+)
+
+POLISHED_CALCITE_BRICK_SLAB = RecipeCraftingShaped(
+    category=CraftingBookCategory.BUILDING,
+    pattern=['###'],
+    key={'#': 'minecraft:polished_calcite_bricks'},
+    result=ItemStackOfComponent(id='minecraft:polished_calcite_brick_slab', count=6),
+    type='minecraft:crafting_shaped',
+)
+
+POLISHED_CALCITE_BRICK_SLAB_FROM_CALCITE_STONECUTTING = RecipeStonecutting(
+    ingredient='minecraft:calcite',
+    result=ItemStackOfComponent(id='minecraft:polished_calcite_brick_slab', count=2),
+    type='minecraft:stonecutting',
+)
+
+POLISHED_CALCITE_BRICK_SLAB_FROM_POLISHED_CALCITE_BRICKS_STONECUTTING = RecipeStonecutting(
+    ingredient='minecraft:polished_calcite_bricks',
+    result=ItemStackOfComponent(id='minecraft:polished_calcite_brick_slab', count=2),
+    type='minecraft:stonecutting',
+)
+
+POLISHED_CALCITE_BRICK_SLAB_FROM_POLISHED_CALCITE_STONECUTTING = RecipeStonecutting(
+    ingredient='minecraft:polished_calcite',
+    result=ItemStackOfComponent(id='minecraft:polished_calcite_brick_slab', count=2),
+    type='minecraft:stonecutting',
+)
+
+POLISHED_CALCITE_BRICK_STAIRS = RecipeCraftingShaped(
+    category=CraftingBookCategory.BUILDING,
+    pattern=['#  ', '## ', '###'],
+    key={'#': 'minecraft:polished_calcite_bricks'},
+    result=ItemStackOfComponent(id='minecraft:polished_calcite_brick_stairs', count=4),
+    type='minecraft:crafting_shaped',
+)
+
+POLISHED_CALCITE_BRICK_STAIRS_FROM_CALCITE_STONECUTTING = RecipeStonecutting(
+    ingredient='minecraft:calcite',
+    result=ItemStackOfComponent(id='minecraft:polished_calcite_brick_stairs'),
+    type='minecraft:stonecutting',
+)
+
+POLISHED_CALCITE_BRICK_STAIRS_FROM_POLISHED_CALCITE_BRICKS_STONECUTTING = RecipeStonecutting(
+    ingredient='minecraft:polished_calcite_bricks',
+    result=ItemStackOfComponent(id='minecraft:polished_calcite_brick_stairs'),
+    type='minecraft:stonecutting',
+)
+
+POLISHED_CALCITE_BRICK_STAIRS_FROM_POLISHED_CALCITE_STONECUTTING = RecipeStonecutting(
+    ingredient='minecraft:polished_calcite',
+    result=ItemStackOfComponent(id='minecraft:polished_calcite_brick_stairs'),
+    type='minecraft:stonecutting',
+)
+
+POLISHED_CALCITE_BRICK_WALL = RecipeCraftingShaped(
+    pattern=['###', '###'],
+    key={'#': 'minecraft:polished_calcite_bricks'},
+    result=ItemStackOfComponent(id='minecraft:polished_calcite_brick_wall', count=6),
+    type='minecraft:crafting_shaped',
+)
+
+POLISHED_CALCITE_BRICK_WALL_FROM_CALCITE_STONECUTTING = RecipeStonecutting(
+    ingredient='minecraft:calcite',
+    result=ItemStackOfComponent(id='minecraft:polished_calcite_brick_wall'),
+    type='minecraft:stonecutting',
+)
+
+POLISHED_CALCITE_BRICK_WALL_FROM_POLISHED_CALCITE_BRICKS_STONECUTTING = RecipeStonecutting(
+    ingredient='minecraft:polished_calcite_bricks',
+    result=ItemStackOfComponent(id='minecraft:polished_calcite_brick_wall'),
+    type='minecraft:stonecutting',
+)
+
+POLISHED_CALCITE_BRICK_WALL_FROM_POLISHED_CALCITE_STONECUTTING = RecipeStonecutting(
+    ingredient='minecraft:polished_calcite',
+    result=ItemStackOfComponent(id='minecraft:polished_calcite_brick_wall'),
+    type='minecraft:stonecutting',
+)
+
+POLISHED_CALCITE_FROM_CALCITE_STONECUTTING = RecipeStonecutting(
+    ingredient='minecraft:calcite',
+    result=ItemStackOfComponent(id='minecraft:polished_calcite'),
+    type='minecraft:stonecutting',
+)
+
+POLISHED_CALCITE_SLAB = RecipeCraftingShaped(
+    category=CraftingBookCategory.BUILDING,
+    pattern=['###'],
+    key={'#': 'minecraft:polished_calcite'},
+    result=ItemStackOfComponent(id='minecraft:polished_calcite_slab', count=6),
+    type='minecraft:crafting_shaped',
+)
+
+POLISHED_CALCITE_SLAB_FROM_CALCITE_STONECUTTING = RecipeStonecutting(
+    ingredient='minecraft:calcite',
+    result=ItemStackOfComponent(id='minecraft:polished_calcite_slab', count=2),
+    type='minecraft:stonecutting',
+)
+
+POLISHED_CALCITE_SLAB_FROM_POLISHED_CALCITE_STONECUTTING = RecipeStonecutting(
+    ingredient='minecraft:polished_calcite',
+    result=ItemStackOfComponent(id='minecraft:polished_calcite_slab', count=2),
+    type='minecraft:stonecutting',
+)
+
+POLISHED_CALCITE_STAIRS = RecipeCraftingShaped(
+    category=CraftingBookCategory.BUILDING,
+    pattern=['#  ', '## ', '###'],
+    key={'#': 'minecraft:polished_calcite'},
+    result=ItemStackOfComponent(id='minecraft:polished_calcite_stairs', count=4),
+    type='minecraft:crafting_shaped',
+)
+
+POLISHED_CALCITE_STAIRS_FROM_CALCITE_STONECUTTING = RecipeStonecutting(
+    ingredient='minecraft:calcite',
+    result=ItemStackOfComponent(id='minecraft:polished_calcite_stairs'),
+    type='minecraft:stonecutting',
+)
+
+POLISHED_CALCITE_STAIRS_FROM_POLISHED_CALCITE_STONECUTTING = RecipeStonecutting(
+    ingredient='minecraft:polished_calcite',
+    result=ItemStackOfComponent(id='minecraft:polished_calcite_stairs'),
+    type='minecraft:stonecutting',
+)
+
+POLISHED_CALCITE_WALL = RecipeCraftingShaped(
+    pattern=['###', '###'],
+    key={'#': 'minecraft:polished_calcite'},
+    result=ItemStackOfComponent(id='minecraft:polished_calcite_wall', count=6),
+    type='minecraft:crafting_shaped',
+)
+
+POLISHED_CALCITE_WALL_FROM_CALCITE_STONECUTTING = RecipeStonecutting(
+    ingredient='minecraft:calcite',
+    result=ItemStackOfComponent(id='minecraft:polished_calcite_wall'),
+    type='minecraft:stonecutting',
+)
+
+POLISHED_CALCITE_WALL_FROM_POLISHED_CALCITE_STONECUTTING = RecipeStonecutting(
+    ingredient='minecraft:polished_calcite',
+    result=ItemStackOfComponent(id='minecraft:polished_calcite_wall'),
     type='minecraft:stonecutting',
 )
 

@@ -2680,6 +2680,70 @@ CALCITE = LootTable(
     random_sequence='minecraft:blocks/calcite',
 )
 
+CALCITE_PILLAR = LootTable(
+    type=LootContextParamSets.BLOCK,
+    pools=[
+        LootPool(
+            rolls=1,
+            entries=[LootPoolEntryItem(name='minecraft:calcite_pillar', type='minecraft:item')],
+            condition=LootConditionSurvivesExplosion(type='minecraft:survives_explosion'),
+        ),
+    ],
+    random_sequence='minecraft:blocks/calcite_pillar',
+)
+
+CALCITE_SLAB = LootTable(
+    type=LootContextParamSets.BLOCK,
+    pools=[
+        LootPool(
+            rolls=1,
+            entries=[
+                LootPoolEntryItem(
+                    modifier=[
+                        LootFunctionSetCount(
+                            condition=LootConditionMatchBlock(
+                                blocks='minecraft:calcite_slab',
+                                state={'type': 'double'},
+                                type='minecraft:match_block',
+                            ),
+                            count=2,
+                            type='minecraft:set_count',
+                        ),
+                        LootFunctionExplosionDecay(type='minecraft:explosion_decay'),
+                    ],
+                    name='minecraft:calcite_slab',
+                    type='minecraft:item',
+                ),
+            ],
+        ),
+    ],
+    random_sequence='minecraft:blocks/calcite_slab',
+)
+
+CALCITE_STAIRS = LootTable(
+    type=LootContextParamSets.BLOCK,
+    pools=[
+        LootPool(
+            rolls=1,
+            entries=[LootPoolEntryItem(name='minecraft:calcite_stairs', type='minecraft:item')],
+            condition=LootConditionSurvivesExplosion(type='minecraft:survives_explosion'),
+        ),
+    ],
+    random_sequence='minecraft:blocks/calcite_stairs',
+)
+
+CALCITE_WALL = LootTable(
+    type=LootContextParamSets.BLOCK,
+    pools=[
+        LootPool(
+            rolls=1,
+            entries=[LootPoolEntryItem(name='minecraft:calcite_wall', type='minecraft:item')],
+            condition=LootConditionSurvivesExplosion(type='minecraft:survives_explosion'),
+        ),
+    ],
+    random_sequence='minecraft:blocks/calcite_wall',
+)
+
 CALIBRATED_SCULK_SENSOR = LootTable(
     type=LootContextParamSets.BLOCK,
     pools=[
@@ -3303,6 +3367,18 @@ CHISELED_SANDSTONE = LootTable(
         ),
     ],
     random_sequence='minecraft:blocks/chiseled_sandstone',
+)
+
+CHISELED_SOULSHALE = LootTable(
+    type=LootContextParamSets.BLOCK,
+    pools=[
+        LootPool(
+            rolls=1,
+            entries=[LootPoolEntryItem(name='minecraft:chiseled_soulshale', type='minecraft:item')],
+            condition=LootConditionSurvivesExplosion(type='minecraft:survives_explosion'),
+        ),
+    ],
+    random_sequence='minecraft:blocks/chiseled_soulshale',
 )
 
 CHISELED_STONE_BRICKS = LootTable(
@@ -13340,6 +13416,134 @@ POLISHED_BLACKSTONE_WALL = LootTable(
         ),
     ],
     random_sequence='minecraft:blocks/polished_blackstone_wall',
+)
+
+POLISHED_CALCITE = LootTable(
+    type=LootContextParamSets.BLOCK,
+    pools=[
+        LootPool(
+            rolls=1,
+            entries=[LootPoolEntryItem(name='minecraft:polished_calcite', type='minecraft:item')],
+            condition=LootConditionSurvivesExplosion(type='minecraft:survives_explosion'),
+        ),
+    ],
+    random_sequence='minecraft:blocks/polished_calcite',
+)
+
+POLISHED_CALCITE_BRICKS = LootTable(
+    type=LootContextParamSets.BLOCK,
+    pools=[
+        LootPool(
+            rolls=1,
+            entries=[LootPoolEntryItem(name='minecraft:polished_calcite_bricks', type='minecraft:item')],
+            condition=LootConditionSurvivesExplosion(type='minecraft:survives_explosion'),
+        ),
+    ],
+    random_sequence='minecraft:blocks/polished_calcite_bricks',
+)
+
+POLISHED_CALCITE_BRICK_SLAB = LootTable(
+    type=LootContextParamSets.BLOCK,
+    pools=[
+        LootPool(
+            rolls=1,
+            entries=[
+                LootPoolEntryItem(
+                    modifier=[
+                        LootFunctionSetCount(
+                            condition=LootConditionMatchBlock(
+                                blocks='minecraft:polished_calcite_brick_slab',
+                                state={'type': 'double'},
+                                type='minecraft:match_block',
+                            ),
+                            count=2,
+                            type='minecraft:set_count',
+                        ),
+                        LootFunctionExplosionDecay(type='minecraft:explosion_decay'),
+                    ],
+                    name='minecraft:polished_calcite_brick_slab',
+                    type='minecraft:item',
+                ),
+            ],
+        ),
+    ],
+    random_sequence='minecraft:blocks/polished_calcite_brick_slab',
+)
+
+POLISHED_CALCITE_BRICK_STAIRS = LootTable(
+    type=LootContextParamSets.BLOCK,
+    pools=[
+        LootPool(
+            rolls=1,
+            entries=[LootPoolEntryItem(name='minecraft:polished_calcite_brick_stairs', type='minecraft:item')],
+            condition=LootConditionSurvivesExplosion(type='minecraft:survives_explosion'),
+        ),
+    ],
+    random_sequence='minecraft:blocks/polished_calcite_brick_stairs',
+)
+
+POLISHED_CALCITE_BRICK_WALL = LootTable(
+    type=LootContextParamSets.BLOCK,
+    pools=[
+        LootPool(
+            rolls=1,
+            entries=[LootPoolEntryItem(name='minecraft:polished_calcite_brick_wall', type='minecraft:item')],
+            condition=LootConditionSurvivesExplosion(type='minecraft:survives_explosion'),
+        ),
+    ],
+    random_sequence='minecraft:blocks/polished_calcite_brick_wall',
+)
+
+POLISHED_CALCITE_SLAB = LootTable(
+    type=LootContextParamSets.BLOCK,
+    pools=[
+        LootPool(
+            rolls=1,
+            entries=[
+                LootPoolEntryItem(
+                    modifier=[
+                        LootFunctionSetCount(
+                            condition=LootConditionMatchBlock(
+                                blocks='minecraft:polished_calcite_slab',
+                                state={'type': 'double'},
+                                type='minecraft:match_block',
+                            ),
+                            count=2,
+                            type='minecraft:set_count',
+                        ),
+                        LootFunctionExplosionDecay(type='minecraft:explosion_decay'),
+                    ],
+                    name='minecraft:polished_calcite_slab',
+                    type='minecraft:item',
+                ),
+            ],
+        ),
+    ],
+    random_sequence='minecraft:blocks/polished_calcite_slab',
+)
+
+POLISHED_CALCITE_STAIRS = LootTable(
+    type=LootContextParamSets.BLOCK,
+    pools=[
+        LootPool(
+            rolls=1,
+            entries=[LootPoolEntryItem(name='minecraft:polished_calcite_stairs', type='minecraft:item')],
+            condition=LootConditionSurvivesExplosion(type='minecraft:survives_explosion'),
+        ),
+    ],
+    random_sequence='minecraft:blocks/polished_calcite_stairs',
+)
+
+POLISHED_CALCITE_WALL = LootTable(
+    type=LootContextParamSets.BLOCK,
+    pools=[
+        LootPool(
+            rolls=1,
+            entries=[LootPoolEntryItem(name='minecraft:polished_calcite_wall', type='minecraft:item')],
+            condition=LootConditionSurvivesExplosion(type='minecraft:survives_explosion'),
+        ),
+    ],
+    random_sequence='minecraft:blocks/polished_calcite_wall',
 )
 
 POLISHED_CINNABAR = LootTable(

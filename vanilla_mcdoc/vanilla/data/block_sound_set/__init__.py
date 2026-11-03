@@ -196,6 +196,14 @@ CHISELED_BOOKSHELF = BlockSoundSet(
     fall_sound='minecraft:block.chiseled_bookshelf.fall',
 )
 
+CHISELED_SOULSHALE = BlockSoundSet(
+    break_sound='minecraft:block.chiseled_soulshale.break',
+    step_sound='minecraft:block.chiseled_soulshale.step',
+    place_sound='minecraft:block.chiseled_soulshale.place',
+    hit_sound='minecraft:block.chiseled_soulshale.hit',
+    fall_sound='minecraft:block.chiseled_soulshale.fall',
+)
+
 CINNABAR = BlockSoundSet(
     break_sound='minecraft:block.cinnabar.break',
     step_sound='minecraft:block.cinnabar.step',
@@ -1009,15 +1017,6 @@ TUFF_BRICKS = BlockSoundSet(
     place_sound='minecraft:block.tuff_bricks.place',
     hit_sound='minecraft:block.tuff_bricks.hit',
     fall_sound='minecraft:block.tuff_bricks.fall',
-)
-
-TWISTING_VINES = BlockSoundSet(
-    pitch=0.5,
-    break_sound='minecraft:block.weeping_vines.break',
-    step_sound='minecraft:block.weeping_vines.step',
-    place_sound='minecraft:block.weeping_vines.place',
-    hit_sound='minecraft:block.weeping_vines.hit',
-    fall_sound='minecraft:block.weeping_vines.fall',
 )
 
 VAULT = BlockSoundSet(

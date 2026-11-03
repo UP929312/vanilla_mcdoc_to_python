@@ -962,6 +962,102 @@ BROWN_WOOL_STAIRS = Advancement(
     rewards=AdvancementRewards(recipes=['minecraft:brown_wool_stairs']),
 )
 
+CALCITE_PILLAR = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_calcite': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:calcite')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(recipes='minecraft:calcite_pillar'),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_calcite']],
+    rewards=AdvancementRewards(recipes=['minecraft:calcite_pillar']),
+)
+
+CALCITE_PILLAR_FROM_CALCITE_STONECUTTING = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_calcite': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:calcite')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(recipes='minecraft:calcite_pillar_from_calcite_stonecutting'),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_calcite']],
+    rewards=AdvancementRewards(recipes=['minecraft:calcite_pillar_from_calcite_stonecutting']),
+)
+
+CALCITE_SLAB = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_calcite': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:calcite')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(recipes='minecraft:calcite_slab'),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_calcite']],
+    rewards=AdvancementRewards(recipes=['minecraft:calcite_slab']),
+)
+
+CALCITE_SLAB_FROM_CALCITE_STONECUTTING = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_calcite': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:calcite')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(recipes='minecraft:calcite_slab_from_calcite_stonecutting'),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_calcite']],
+    rewards=AdvancementRewards(recipes=['minecraft:calcite_slab_from_calcite_stonecutting']),
+)
+
+CALCITE_STAIRS = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_calcite': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:calcite')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(recipes='minecraft:calcite_stairs'),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_calcite']],
+    rewards=AdvancementRewards(recipes=['minecraft:calcite_stairs']),
+)
+
+CALCITE_STAIRS_FROM_CALCITE_STONECUTTING = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_calcite': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:calcite')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(recipes='minecraft:calcite_stairs_from_calcite_stonecutting'),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_calcite']],
+    rewards=AdvancementRewards(recipes=['minecraft:calcite_stairs_from_calcite_stonecutting']),
+)
+
 CHERRY_PLANKS = Advancement(
     parent='minecraft:recipes/root',
     criteria={
@@ -7632,6 +7728,318 @@ POLISHED_BLACKSTONE_STAIRS_FROM_POLISHED_BLACKSTONE_STONECUTTING = Advancement(
     },
     requirements=[['has_the_recipe', 'has_polished_blackstone']],
     rewards=AdvancementRewards(recipes=['minecraft:polished_blackstone_stairs_from_polished_blackstone_stonecutting']),
+)
+
+POLISHED_CALCITE = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_calcite': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:calcite')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(recipes='minecraft:polished_calcite'),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_calcite']],
+    rewards=AdvancementRewards(recipes=['minecraft:polished_calcite']),
+)
+
+POLISHED_CALCITE_BRICKS = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_polished_calcite': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:polished_calcite')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(recipes='minecraft:polished_calcite_bricks'),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_polished_calcite']],
+    rewards=AdvancementRewards(recipes=['minecraft:polished_calcite_bricks']),
+)
+
+POLISHED_CALCITE_BRICKS_FROM_CALCITE_STONECUTTING = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_calcite': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:calcite')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(recipes='minecraft:polished_calcite_bricks_from_calcite_stonecutting'),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_calcite']],
+    rewards=AdvancementRewards(recipes=['minecraft:polished_calcite_bricks_from_calcite_stonecutting']),
+)
+
+POLISHED_CALCITE_BRICKS_FROM_POLISHED_CALCITE_STONECUTTING = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_polished_calcite': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:polished_calcite')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(recipes='minecraft:polished_calcite_bricks_from_polished_calcite_stonecutting'),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_polished_calcite']],
+    rewards=AdvancementRewards(recipes=['minecraft:polished_calcite_bricks_from_polished_calcite_stonecutting']),
+)
+
+POLISHED_CALCITE_BRICK_SLAB = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_polished_calcite_bricks': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:polished_calcite_bricks')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(recipes='minecraft:polished_calcite_brick_slab'),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_polished_calcite_bricks']],
+    rewards=AdvancementRewards(recipes=['minecraft:polished_calcite_brick_slab']),
+)
+
+POLISHED_CALCITE_BRICK_SLAB_FROM_CALCITE_STONECUTTING = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_calcite': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:calcite')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(recipes='minecraft:polished_calcite_brick_slab_from_calcite_stonecutting'),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_calcite']],
+    rewards=AdvancementRewards(recipes=['minecraft:polished_calcite_brick_slab_from_calcite_stonecutting']),
+)
+
+POLISHED_CALCITE_BRICK_SLAB_FROM_POLISHED_CALCITE_BRICKS_STONECUTTING = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_polished_calcite_bricks': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:polished_calcite_bricks')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(
+                recipes='minecraft:polished_calcite_brick_slab_from_polished_calcite_bricks_stonecutting',
+            ),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_polished_calcite_bricks']],
+    rewards=AdvancementRewards(recipes=['minecraft:polished_calcite_brick_slab_from_polished_calcite_bricks_stonecutting']),
+)
+
+POLISHED_CALCITE_BRICK_SLAB_FROM_POLISHED_CALCITE_STONECUTTING = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_polished_calcite': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:polished_calcite')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(
+                recipes='minecraft:polished_calcite_brick_slab_from_polished_calcite_stonecutting',
+            ),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_polished_calcite']],
+    rewards=AdvancementRewards(recipes=['minecraft:polished_calcite_brick_slab_from_polished_calcite_stonecutting']),
+)
+
+POLISHED_CALCITE_BRICK_STAIRS = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_polished_calcite_bricks': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:polished_calcite_bricks')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(recipes='minecraft:polished_calcite_brick_stairs'),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_polished_calcite_bricks']],
+    rewards=AdvancementRewards(recipes=['minecraft:polished_calcite_brick_stairs']),
+)
+
+POLISHED_CALCITE_BRICK_STAIRS_FROM_CALCITE_STONECUTTING = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_calcite': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:calcite')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(recipes='minecraft:polished_calcite_brick_stairs_from_calcite_stonecutting'),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_calcite']],
+    rewards=AdvancementRewards(recipes=['minecraft:polished_calcite_brick_stairs_from_calcite_stonecutting']),
+)
+
+POLISHED_CALCITE_BRICK_STAIRS_FROM_POLISHED_CALCITE_BRICKS_STONECUTTING = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_polished_calcite_bricks': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:polished_calcite_bricks')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(
+                recipes='minecraft:polished_calcite_brick_stairs_from_polished_calcite_bricks_stonecutting',
+            ),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_polished_calcite_bricks']],
+    rewards=AdvancementRewards(recipes=['minecraft:polished_calcite_brick_stairs_from_polished_calcite_bricks_stonecutting']),
+)
+
+POLISHED_CALCITE_BRICK_STAIRS_FROM_POLISHED_CALCITE_STONECUTTING = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_polished_calcite': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:polished_calcite')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(
+                recipes='minecraft:polished_calcite_brick_stairs_from_polished_calcite_stonecutting',
+            ),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_polished_calcite']],
+    rewards=AdvancementRewards(recipes=['minecraft:polished_calcite_brick_stairs_from_polished_calcite_stonecutting']),
+)
+
+POLISHED_CALCITE_FROM_CALCITE_STONECUTTING = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_calcite': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:calcite')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(recipes='minecraft:polished_calcite_from_calcite_stonecutting'),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_calcite']],
+    rewards=AdvancementRewards(recipes=['minecraft:polished_calcite_from_calcite_stonecutting']),
+)
+
+POLISHED_CALCITE_SLAB = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_polished_calcite': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:polished_calcite')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(recipes='minecraft:polished_calcite_slab'),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_polished_calcite']],
+    rewards=AdvancementRewards(recipes=['minecraft:polished_calcite_slab']),
+)
+
+POLISHED_CALCITE_SLAB_FROM_CALCITE_STONECUTTING = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_calcite': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:calcite')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(recipes='minecraft:polished_calcite_slab_from_calcite_stonecutting'),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_calcite']],
+    rewards=AdvancementRewards(recipes=['minecraft:polished_calcite_slab_from_calcite_stonecutting']),
+)
+
+POLISHED_CALCITE_SLAB_FROM_POLISHED_CALCITE_STONECUTTING = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_polished_calcite': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:polished_calcite')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(recipes='minecraft:polished_calcite_slab_from_polished_calcite_stonecutting'),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_polished_calcite']],
+    rewards=AdvancementRewards(recipes=['minecraft:polished_calcite_slab_from_polished_calcite_stonecutting']),
+)
+
+POLISHED_CALCITE_STAIRS = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_polished_calcite': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:polished_calcite')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(recipes='minecraft:polished_calcite_stairs'),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_polished_calcite']],
+    rewards=AdvancementRewards(recipes=['minecraft:polished_calcite_stairs']),
+)
+
+POLISHED_CALCITE_STAIRS_FROM_CALCITE_STONECUTTING = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_calcite': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:calcite')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(recipes='minecraft:polished_calcite_stairs_from_calcite_stonecutting'),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_calcite']],
+    rewards=AdvancementRewards(recipes=['minecraft:polished_calcite_stairs_from_calcite_stonecutting']),
+)
+
+POLISHED_CALCITE_STAIRS_FROM_POLISHED_CALCITE_STONECUTTING = Advancement(
+    parent='minecraft:recipes/root',
+    criteria={
+        'has_polished_calcite': AdvancementCriterionInventoryChanged(
+            conditions=InventoryChangeTriggerTypeArg(items=[ItemPredicate(items='minecraft:polished_calcite')]),
+            trigger='minecraft:inventory_changed',
+        ),
+        'has_the_recipe': AdvancementCriterionRecipeUnlocked(
+            conditions=RecipeUnlockedTriggerTypeArg(recipes='minecraft:polished_calcite_stairs_from_polished_calcite_stonecutting'),
+            trigger='minecraft:recipe_unlocked',
+        ),
+    },
+    requirements=[['has_the_recipe', 'has_polished_calcite']],
+    rewards=AdvancementRewards(recipes=['minecraft:polished_calcite_stairs_from_polished_calcite_stonecutting']),
 )
 
 POLISHED_CINNABAR = Advancement(
