@@ -87,6 +87,7 @@ def zip_version(path: Path) -> str | None:
 
 def version_problem(version: str) -> str | None:
     """Why vanilla_mcdoc can't be generated for this Minecraft version (e.g. registries.json being another one's), or None if it can."""
+    # TODO: Now this is stable, can we remove it?
     if version not in VERSION_IDS:
         return f"Unknown Minecraft version {version!r}, see versions.json"
     try:

@@ -116,6 +116,13 @@ class ValueRange(BaseModel):
         less_than    = "le" if self.kind in {0, 2} else "lt"  # fmt: skip
         return f"Field({greater_than}={self.min}{'' if self.max is None else f', {less_than}={self.max}'})"
 
+    def clipped(self, lowest: float, highest: float) -> ValueRange:
+        """The range, but no wider than lowest..highest, e.g. for an int, 0.. is 0..2147483647. A bound that gets moved is inclusive."""
+        min_exclusive = self.kind in {2, 3} and self.min is not None and self.min >= lowest
+        max_exclusive = self.kind in {1, 3} and self.max is not None and self.max <= highest
+        kinds: dict[tuple[bool, bool], Literal[0, 1, 2, 3]] = {(False, False): 0, (False, True): 1, (True, False): 2, (True, True): 3}
+        return ValueRange(kind=kinds[min_exclusive, max_exclusive], min=max(self.min, lowest), max=highest if self.max is None else min(self.max, highest))
+
 
 class LengthRange(BaseModel):
     kind: Literal[0] = Field(default=0, repr=False)  # Not sure what other values this can be?
@@ -176,9 +183,9 @@ class NumericSchema(BaseSchema):
 
     def to_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None = None) -> str:
         value_range = self.value_range
-        # TODO: Clip this to JAVA MIN and MAX if it's enabled
-        if value_range is None and SAFE_GUARD_JAVA_NUMBERS:  # pragma: no cover
-            value_range = ValueRange(min=self.min_value_internally, max=self.max_value_internally)
+        if SAFE_GUARD_JAVA_NUMBERS:  # Its own range, but within what Java can store, e.g. int @ 0.. still can't go over 2147483647
+            value_range = ValueRange(min=self.min_value_internally) if value_range is None else value_range
+            value_range = value_range.clipped(self.min_value_internally, self.max_value_internally)
         if value_range is None:
             return self.python_type
         metadata = [value_range.to_field(ctx)]

@@ -3,6 +3,7 @@ from pathlib import Path
 from pytest import MonkeyPatch
 
 import minecraft_registry
+import typed_models
 from code_generation import make_init_content, make_python_file_content
 from context import SingleSymbolContext
 from minecraft_registry import make_registry_id_file_content, make_registry_id_files, make_root_resource_registry_content, used_registry_names
@@ -144,6 +145,20 @@ class TestDispatcherSpreadGeneration:
         pair = PairSchema.model_validate({"kind": "pair", "key": "scale", "optional": True, "type": {"kind": "literal", "value": {"kind": "float", "value": 1}}})
 
         assert pair.to_field_line(SingleSymbolContext(schema_graph=get_schema_graph())) == "    scale: Annotated[float, Field(ge=1.0, le=1.0)] | None = 1.0"
+
+    def test_java_number_bounds_clip_the_value_range(self, monkeypatch: MonkeyPatch) -> None:
+        monkeypatch.setattr(typed_models, "SAFE_GUARD_JAVA_NUMBERS", True)
+        ctx = SingleSymbolContext(schema_graph=get_schema_graph())
+
+        def annotation(schema: dict[str, object]) -> str:
+            return PairSchema.model_validate({"kind": "pair", "key": "value", "type": schema}).type.to_annotation(ctx)
+
+        assert annotation({"kind": "int"}) == "Annotated[int, Field(ge=-2147483648, le=2147483647)]"
+        assert annotation({"kind": "int", "valueRange": {"kind": 0, "min": 0}}) == "Annotated[int, Field(ge=0, le=2147483647)]"  # No max of its own
+        assert annotation({"kind": "int", "valueRange": {"kind": 2, "min": 0, "max": 10}}) == "Annotated[int, Field(gt=0, le=10)]"  # Already within
+        # A bound outside Java's is moved to Java's, which is inclusive
+        assert annotation({"kind": "byte", "valueRange": {"kind": 2, "min": -1000, "max": 5}}) == "Annotated[int, Field(ge=-128, le=5)]"
+        assert annotation({"kind": "float", "valueRange": {"kind": 0, "min": 0}}) == "Annotated[float, Field(ge=0, le=3.4e+38)]"
 
     def test_dynamic_spread_generates_correlated_branch_classes(self) -> None:
         content = generated_body(
