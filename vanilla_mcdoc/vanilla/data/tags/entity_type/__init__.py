@@ -240,18 +240,7 @@ ILLAGER = Tag(values=['minecraft:evoker', 'minecraft:illusioner', 'minecraft:pil
 
 ILLAGER_FRIENDS = Tag(values=['#minecraft:illager'])
 
-IMMUNE_TO_FREEZING = Tag(
-    values=[
-        'minecraft:stray',
-        'minecraft:polar_bear',
-        'minecraft:snow_golem',
-        'minecraft:wither',
-        'minecraft:frostbite',
-        'minecraft:zombie',
-        'minecraft:drowned',
-        'minecraft:husk',
-    ],
-)
+IMMUNE_TO_FREEZING = Tag(values=['minecraft:polar_bear', 'minecraft:snow_golem', '#minecraft:undead'])
 
 IMMUNE_TO_INFESTED = Tag(values=['minecraft:silverfish'])
 

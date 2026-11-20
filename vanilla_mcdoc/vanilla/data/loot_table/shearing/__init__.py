@@ -2,7 +2,6 @@
 from vanilla_mcdoc.data.advancement.predicate.EntitySubPredicateMap import EntitySubPredicateMap
 from vanilla_mcdoc.data.advancement.predicate.SheepPredicate import SheepPredicate
 from vanilla_mcdoc.data.loot.EntityTarget import EntityTarget
-from vanilla_mcdoc.data.loot.LootContextParamSets import LootContextParamSets
 from vanilla_mcdoc.data.loot.LootPool import LootPool
 from vanilla_mcdoc.data.loot.LootPoolEntry import LootPoolEntryAlternatives, LootPoolEntryItem, LootPoolEntryLootTable
 from vanilla_mcdoc.data.loot.LootTable import LootTable
@@ -13,7 +12,7 @@ from vanilla_mcdoc.world.component.DataComponentExactPredicate import DataCompon
 from vanilla_mcdoc.world.component.entity.MooshroomType import MooshroomType
 
 BOGGED = LootTable(
-    type=LootContextParamSets.SHEARING,
+    type='minecraft:shearing',
     pools=[
         LootPool(
             rolls=2,
@@ -35,7 +34,7 @@ BOGGED = LootTable(
 )
 
 MOOSHROOM = LootTable(
-    type=LootContextParamSets.SHEARING,
+    type='minecraft:shearing',
     pools=[
         LootPool(
             rolls=1,
@@ -74,7 +73,7 @@ MOOSHROOM = LootTable(
 )
 
 SHEEP = LootTable(
-    type=LootContextParamSets.SHEARING,
+    type='minecraft:shearing',
     pools=[
         LootPool(
             rolls=1,
@@ -283,7 +282,7 @@ SHEEP = LootTable(
 )
 
 SNOW_GOLEM = LootTable(
-    type=LootContextParamSets.SHEARING,
+    type='minecraft:shearing',
     pools=[LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:carved_pumpkin', type='minecraft:item')])],
     random_sequence='minecraft:shearing/snow_golem',
 )

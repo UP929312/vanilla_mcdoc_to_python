@@ -1,5 +1,4 @@
 """Vanilla's data/loot_table/gameplay/hero_of_the_village/ files"""
-from vanilla_mcdoc.data.loot.LootContextParamSets import LootContextParamSets
 from vanilla_mcdoc.data.loot.LootPool import LootPool
 from vanilla_mcdoc.data.loot.LootPoolEntry import LootPoolEntryItem
 from vanilla_mcdoc.data.loot.LootTable import LootTable
@@ -7,7 +6,7 @@ from vanilla_mcdoc.data.loot.function.LootFunction import LootFunctionSetCount, 
 from vanilla_mcdoc.data.number_provider.context_int.ContextIntProvider import ContextIntProviderStructUniform
 
 ARMORER_GIFT = LootTable(
-    type=LootContextParamSets.GIFT,
+    type='minecraft:gift',
     pools=[
         LootPool(
             rolls=1,
@@ -23,13 +22,13 @@ ARMORER_GIFT = LootTable(
 )
 
 BABY_GIFT = LootTable(
-    type=LootContextParamSets.GIFT,
+    type='minecraft:gift',
     pools=[LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:poppy', type='minecraft:item')])],
     random_sequence='minecraft:gameplay/hero_of_the_village/baby_gift',
 )
 
 BUTCHER_GIFT = LootTable(
-    type=LootContextParamSets.GIFT,
+    type='minecraft:gift',
     pools=[
         LootPool(
             rolls=1,
@@ -46,7 +45,7 @@ BUTCHER_GIFT = LootTable(
 )
 
 CARTOGRAPHER_GIFT = LootTable(
-    type=LootContextParamSets.GIFT,
+    type='minecraft:gift',
     pools=[
         LootPool(
             rolls=1,
@@ -60,7 +59,7 @@ CARTOGRAPHER_GIFT = LootTable(
 )
 
 CLERIC_GIFT = LootTable(
-    type=LootContextParamSets.GIFT,
+    type='minecraft:gift',
     pools=[
         LootPool(
             rolls=1,
@@ -74,7 +73,7 @@ CLERIC_GIFT = LootTable(
 )
 
 FARMER_GIFT = LootTable(
-    type=LootContextParamSets.GIFT,
+    type='minecraft:gift',
     pools=[
         LootPool(
             rolls=1,
@@ -89,7 +88,7 @@ FARMER_GIFT = LootTable(
 )
 
 FISHERMAN_GIFT = LootTable(
-    type=LootContextParamSets.GIFT,
+    type='minecraft:gift',
     pools=[
         LootPool(
             rolls=1,
@@ -103,7 +102,7 @@ FISHERMAN_GIFT = LootTable(
 )
 
 FLETCHER_GIFT = LootTable(
-    type=LootContextParamSets.GIFT,
+    type='minecraft:gift',
     pools=[
         LootPool(
             rolls=1,
@@ -259,25 +258,25 @@ FLETCHER_GIFT = LootTable(
 )
 
 LEATHERWORKER_GIFT = LootTable(
-    type=LootContextParamSets.GIFT,
+    type='minecraft:gift',
     pools=[LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:leather', type='minecraft:item')])],
     random_sequence='minecraft:gameplay/hero_of_the_village/leatherworker_gift',
 )
 
 LIBRARIAN_GIFT = LootTable(
-    type=LootContextParamSets.GIFT,
+    type='minecraft:gift',
     pools=[LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:book', type='minecraft:item')])],
     random_sequence='minecraft:gameplay/hero_of_the_village/librarian_gift',
 )
 
 MASON_GIFT = LootTable(
-    type=LootContextParamSets.GIFT,
+    type='minecraft:gift',
     pools=[LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:clay', type='minecraft:item')])],
     random_sequence='minecraft:gameplay/hero_of_the_village/mason_gift',
 )
 
 SHEPHERD_GIFT = LootTable(
-    type=LootContextParamSets.GIFT,
+    type='minecraft:gift',
     pools=[
         LootPool(
             rolls=1,
@@ -305,7 +304,7 @@ SHEPHERD_GIFT = LootTable(
 )
 
 TOOLSMITH_GIFT = LootTable(
-    type=LootContextParamSets.GIFT,
+    type='minecraft:gift',
     pools=[
         LootPool(
             rolls=1,
@@ -321,13 +320,13 @@ TOOLSMITH_GIFT = LootTable(
 )
 
 UNEMPLOYED_GIFT = LootTable(
-    type=LootContextParamSets.GIFT,
+    type='minecraft:gift',
     pools=[LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:wheat_seeds', type='minecraft:item')])],
     random_sequence='minecraft:gameplay/hero_of_the_village/unemployed_gift',
 )
 
 WEAPONSMITH_GIFT = LootTable(
-    type=LootContextParamSets.GIFT,
+    type='minecraft:gift',
     pools=[
         LootPool(
             rolls=1,

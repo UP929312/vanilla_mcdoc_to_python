@@ -1,5 +1,4 @@
 """Vanilla's data/loot_table/harvest/ files"""
-from vanilla_mcdoc.data.loot.LootContextParamSets import LootContextParamSets
 from vanilla_mcdoc.data.loot.LootPool import LootPool
 from vanilla_mcdoc.data.loot.LootPoolEntry import LootPoolEntryItem
 from vanilla_mcdoc.data.loot.LootTable import LootTable
@@ -8,7 +7,7 @@ from vanilla_mcdoc.data.loot.function.LootFunction import LootFunctionSetCount
 from vanilla_mcdoc.data.number_provider.context_int.ContextIntProvider import ContextIntProviderStructUniform
 
 BEEHIVE = LootTable(
-    type=LootContextParamSets.BLOCKINTERACT,
+    type='minecraft:block_interact',
     pools=[
         LootPool(
             rolls=1,
@@ -25,13 +24,13 @@ BEEHIVE = LootTable(
 )
 
 CAVE_VINE = LootTable(
-    type=LootContextParamSets.BLOCKINTERACT,
+    type='minecraft:block_interact',
     pools=[LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:glow_berries', type='minecraft:item')])],
     random_sequence='minecraft:harvest/cave_vine',
 )
 
 SWEET_BERRY_BUSH = LootTable(
-    type=LootContextParamSets.BLOCKINTERACT,
+    type='minecraft:block_interact',
     pools=[
         LootPool(
             rolls=1,

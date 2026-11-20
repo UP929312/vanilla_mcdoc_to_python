@@ -61,7 +61,6 @@ BOUNCY = SulfurCubeArchetype(
 
 COLD = SulfurCubeArchetype(
     items='#minecraft:sulfur_cube_archetype/cold',
-    buoyant=True,
     knockback_modifiers=KnockbackModifiers(horizontal_power=0.6625, vertical_power=0.09),
     attribute_modifiers=[
         AttributeEntry(
@@ -126,7 +125,11 @@ COLD = SulfurCubeArchetype(
                             type='minecraft:matching_block_tag',
                         ),
                         BlockPredicateMatchingBlocks(blocks='minecraft:water', type='minecraft:matching_blocks'),
-                        BlockPredicateMatchingFluids(fluids='minecraft:water', type='minecraft:matching_fluids'),
+                        BlockPredicateMatchingFluids(
+                            fluids='minecraft:water',
+                            state={'source': 'true'},
+                            type='minecraft:matching_fluids',
+                        ),
                         BlockPredicateUnobstructed(type='minecraft:unobstructed'),
                     ],
                     type='minecraft:all_of',

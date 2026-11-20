@@ -1,5 +1,4 @@
 """Vanilla's data/loot_table/dispensers/trial_chambers/ files"""
-from vanilla_mcdoc.data.loot.LootContextParamSets import LootContextParamSets
 from vanilla_mcdoc.data.loot.LootPool import LootPool
 from vanilla_mcdoc.data.loot.LootPoolEntry import LootPoolEntryItem
 from vanilla_mcdoc.data.loot.LootTable import LootTable
@@ -7,7 +6,7 @@ from vanilla_mcdoc.data.loot.function.LootFunction import LootFunctionSetCount, 
 from vanilla_mcdoc.data.number_provider.context_int.ContextIntProvider import ContextIntProviderStructUniform
 
 CHAMBER = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=1,
@@ -138,7 +137,7 @@ CHAMBER = LootTable(
 )
 
 CORRIDOR = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=1,
@@ -158,7 +157,7 @@ CORRIDOR = LootTable(
 )
 
 WATER = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=1,

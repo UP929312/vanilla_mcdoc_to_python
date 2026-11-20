@@ -11,7 +11,6 @@ from vanilla_mcdoc.data.advancement.predicate.SheepPredicate import SheepPredica
 from vanilla_mcdoc.data.advancement.predicate.SlimePredicate import SlimePredicate
 from vanilla_mcdoc.data.enchantment.level_based_value.LevelBasedValueMap import LevelBasedValueMapLinear
 from vanilla_mcdoc.data.loot.EntityTarget import EntityTarget
-from vanilla_mcdoc.data.loot.LootContextParamSets import LootContextParamSets
 from vanilla_mcdoc.data.loot.LootPool import LootPool
 from vanilla_mcdoc.data.loot.LootPoolEntry import LootPoolEntryAlternatives, LootPoolEntryEmpty, LootPoolEntryItem, LootPoolEntryLootTable, LootPoolEntryTag
 from vanilla_mcdoc.data.loot.LootTable import LootTable
@@ -23,20 +22,20 @@ from vanilla_mcdoc.data.util.MinMaxBounds import MinMaxBounds
 from vanilla_mcdoc.util.color.DyeColor import DyeColor
 from vanilla_mcdoc.world.component.DataComponentExactPredicate import DataComponentExactPredicate
 
-ALLAY = LootTable(type=LootContextParamSets.ENTITY, random_sequence='minecraft:entities/allay')
+ALLAY = LootTable(type='minecraft:entity', random_sequence='minecraft:entities/allay')
 
-ARMADILLO = LootTable(type=LootContextParamSets.ENTITY, random_sequence='minecraft:entities/armadillo')
+ARMADILLO = LootTable(type='minecraft:entity', random_sequence='minecraft:entities/armadillo')
 
-ARMOR_STAND = LootTable(type=LootContextParamSets.ENTITY, random_sequence='minecraft:entities/armor_stand')
+ARMOR_STAND = LootTable(type='minecraft:entity', random_sequence='minecraft:entities/armor_stand')
 
-AXOLOTL = LootTable(type=LootContextParamSets.ENTITY, random_sequence='minecraft:entities/axolotl')
+AXOLOTL = LootTable(type='minecraft:entity', random_sequence='minecraft:entities/axolotl')
 
-BAT = LootTable(type=LootContextParamSets.ENTITY, random_sequence='minecraft:entities/bat')
+BAT = LootTable(type='minecraft:entity', random_sequence='minecraft:entities/bat')
 
-BEE = LootTable(type=LootContextParamSets.ENTITY, random_sequence='minecraft:entities/bee')
+BEE = LootTable(type='minecraft:entity', random_sequence='minecraft:entities/bee')
 
 BLAZE = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -64,7 +63,7 @@ BLAZE = LootTable(
 )
 
 BOGGED = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -134,7 +133,7 @@ BOGGED = LootTable(
 )
 
 BREEZE = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -161,10 +160,10 @@ BREEZE = LootTable(
     random_sequence='minecraft:entities/breeze',
 )
 
-CAMEL = LootTable(type=LootContextParamSets.ENTITY, random_sequence='minecraft:entities/camel')
+CAMEL = LootTable(type='minecraft:entity', random_sequence='minecraft:entities/camel')
 
 CAMEL_HUSK = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -191,7 +190,7 @@ CAMEL_HUSK = LootTable(
 )
 
 CAT = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -211,7 +210,7 @@ CAT = LootTable(
 )
 
 CAVE_SPIDER = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -259,7 +258,7 @@ CAVE_SPIDER = LootTable(
 )
 
 CHICKEN = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -328,7 +327,7 @@ CHICKEN = LootTable(
 )
 
 COD = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -375,7 +374,7 @@ COD = LootTable(
 )
 
 COPPER_GOLEM = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -402,7 +401,7 @@ COPPER_GOLEM = LootTable(
 )
 
 COW = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -474,10 +473,10 @@ COW = LootTable(
     random_sequence='minecraft:entities/cow',
 )
 
-CREAKING = LootTable(type=LootContextParamSets.ENTITY, random_sequence='minecraft:entities/creaking')
+CREAKING = LootTable(type='minecraft:entity', random_sequence='minecraft:entities/creaking')
 
 CREEPER = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -513,7 +512,7 @@ CREEPER = LootTable(
 )
 
 DOLPHIN = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -566,7 +565,7 @@ DOLPHIN = LootTable(
 )
 
 DONKEY = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -593,7 +592,7 @@ DONKEY = LootTable(
 )
 
 DROWNED = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -636,7 +635,7 @@ DROWNED = LootTable(
 )
 
 ELDER_GUARDIAN = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -776,7 +775,7 @@ ELDER_GUARDIAN = LootTable(
 )
 
 ENDERMAN = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -802,12 +801,12 @@ ENDERMAN = LootTable(
     random_sequence='minecraft:entities/enderman',
 )
 
-ENDERMITE = LootTable(type=LootContextParamSets.ENTITY, random_sequence='minecraft:entities/endermite')
+ENDERMITE = LootTable(type='minecraft:entity', random_sequence='minecraft:entities/endermite')
 
-ENDER_DRAGON = LootTable(type=LootContextParamSets.ENTITY, random_sequence='minecraft:entities/ender_dragon')
+ENDER_DRAGON = LootTable(type='minecraft:entity', random_sequence='minecraft:entities/ender_dragon')
 
 EVOKER = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:totem_of_undying', type='minecraft:item')]),
         LootPool(
@@ -835,12 +834,12 @@ EVOKER = LootTable(
     random_sequence='minecraft:entities/evoker',
 )
 
-FOX = LootTable(type=LootContextParamSets.ENTITY, random_sequence='minecraft:entities/fox')
+FOX = LootTable(type='minecraft:entity', random_sequence='minecraft:entities/fox')
 
-FROG = LootTable(type=LootContextParamSets.ENTITY, random_sequence='minecraft:entities/frog')
+FROG = LootTable(type='minecraft:entity', random_sequence='minecraft:entities/frog')
 
 FROSTBITE = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -887,7 +886,7 @@ FROSTBITE = LootTable(
 )
 
 GHAST = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -951,10 +950,10 @@ GHAST = LootTable(
     random_sequence='minecraft:entities/ghast',
 )
 
-GIANT = LootTable(type=LootContextParamSets.ENTITY, random_sequence='minecraft:entities/giant')
+GIANT = LootTable(type='minecraft:entity', random_sequence='minecraft:entities/giant')
 
 GLOW_SQUID = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -980,10 +979,10 @@ GLOW_SQUID = LootTable(
     random_sequence='minecraft:entities/glow_squid',
 )
 
-GOAT = LootTable(type=LootContextParamSets.ENTITY, random_sequence='minecraft:entities/goat')
+GOAT = LootTable(type='minecraft:entity', random_sequence='minecraft:entities/goat')
 
 GUARDIAN = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -1110,10 +1109,10 @@ GUARDIAN = LootTable(
     random_sequence='minecraft:entities/guardian',
 )
 
-HAPPY_GHAST = LootTable(type=LootContextParamSets.ENTITY, random_sequence='minecraft:entities/happy_ghast')
+HAPPY_GHAST = LootTable(type='minecraft:entity', random_sequence='minecraft:entities/happy_ghast')
 
 HOGLIN = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -1186,7 +1185,7 @@ HOGLIN = LootTable(
 )
 
 HORSE = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -1213,7 +1212,7 @@ HORSE = LootTable(
 )
 
 HUSK = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -1313,10 +1312,10 @@ HUSK = LootTable(
     random_sequence='minecraft:entities/husk',
 )
 
-ILLUSIONER = LootTable(type=LootContextParamSets.ENTITY, random_sequence='minecraft:entities/illusioner')
+ILLUSIONER = LootTable(type='minecraft:entity', random_sequence='minecraft:entities/illusioner')
 
 IRON_GOLEM = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -1349,7 +1348,7 @@ IRON_GOLEM = LootTable(
 )
 
 LLAMA = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -1376,7 +1375,7 @@ LLAMA = LootTable(
 )
 
 MAGMA_CUBE = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -1463,10 +1462,10 @@ MAGMA_CUBE = LootTable(
     random_sequence='minecraft:entities/magma_cube',
 )
 
-MANNEQUIN = LootTable(type=LootContextParamSets.ENTITY, random_sequence='minecraft:entities/mannequin')
+MANNEQUIN = LootTable(type='minecraft:entity', random_sequence='minecraft:entities/mannequin')
 
 MOOSHROOM = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -1539,7 +1538,7 @@ MOOSHROOM = LootTable(
 )
 
 MULE = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -1566,7 +1565,7 @@ MULE = LootTable(
 )
 
 NAUTILUS = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -1588,10 +1587,10 @@ NAUTILUS = LootTable(
     random_sequence='minecraft:entities/nautilus',
 )
 
-OCELOT = LootTable(type=LootContextParamSets.ENTITY, random_sequence='minecraft:entities/ocelot')
+OCELOT = LootTable(type='minecraft:entity', random_sequence='minecraft:entities/ocelot')
 
 PANDA = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -1608,7 +1607,7 @@ PANDA = LootTable(
 )
 
 PARCHED = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -1678,7 +1677,7 @@ PARCHED = LootTable(
 )
 
 PARROT = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -1705,7 +1704,7 @@ PARROT = LootTable(
 )
 
 PHANTOM = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -1733,7 +1732,7 @@ PHANTOM = LootTable(
 )
 
 PIG = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -1785,12 +1784,12 @@ PIG = LootTable(
     random_sequence='minecraft:entities/pig',
 )
 
-PIGLIN = LootTable(type=LootContextParamSets.ENTITY, random_sequence='minecraft:entities/piglin')
+PIGLIN = LootTable(type='minecraft:entity', random_sequence='minecraft:entities/piglin')
 
-PIGLIN_BRUTE = LootTable(type=LootContextParamSets.ENTITY, random_sequence='minecraft:entities/piglin_brute')
+PIGLIN_BRUTE = LootTable(type='minecraft:entity', random_sequence='minecraft:entities/piglin_brute')
 
 PILLAGER = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -1817,10 +1816,10 @@ PILLAGER = LootTable(
     random_sequence='minecraft:entities/pillager',
 )
 
-PLAYER = LootTable(type=LootContextParamSets.ENTITY, random_sequence='minecraft:entities/player')
+PLAYER = LootTable(type='minecraft:entity', random_sequence='minecraft:entities/player')
 
 POLAR_BEAR = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -1915,7 +1914,7 @@ POLAR_BEAR = LootTable(
 )
 
 PUFFERFISH = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -1937,7 +1936,7 @@ PUFFERFISH = LootTable(
 )
 
 RABBIT = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -2023,7 +2022,7 @@ RABBIT = LootTable(
 )
 
 RAVAGER = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -2040,7 +2039,7 @@ RAVAGER = LootTable(
 )
 
 SALMON = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -2087,7 +2086,7 @@ SALMON = LootTable(
 )
 
 SHEEP = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -2342,7 +2341,7 @@ SHEEP = LootTable(
 )
 
 SHULKER = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -2358,10 +2357,10 @@ SHULKER = LootTable(
     random_sequence='minecraft:entities/shulker',
 )
 
-SILVERFISH = LootTable(type=LootContextParamSets.ENTITY, random_sequence='minecraft:entities/silverfish')
+SILVERFISH = LootTable(type='minecraft:entity', random_sequence='minecraft:entities/silverfish')
 
 SKELETON = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -2408,7 +2407,7 @@ SKELETON = LootTable(
 )
 
 SKELETON_HORSE = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -2435,7 +2434,7 @@ SKELETON_HORSE = LootTable(
 )
 
 SLIME = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -2482,10 +2481,10 @@ SLIME = LootTable(
     random_sequence='minecraft:entities/slime',
 )
 
-SNIFFER = LootTable(type=LootContextParamSets.ENTITY, random_sequence='minecraft:entities/sniffer')
+SNIFFER = LootTable(type='minecraft:entity', random_sequence='minecraft:entities/sniffer')
 
 SNOW_GOLEM = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -2505,7 +2504,7 @@ SNOW_GOLEM = LootTable(
 )
 
 SPIDER = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -2553,7 +2552,7 @@ SPIDER = LootTable(
 )
 
 SQUID = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -2580,7 +2579,7 @@ SQUID = LootTable(
 )
 
 STRAY = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -2650,7 +2649,7 @@ STRAY = LootTable(
 )
 
 STRIDER = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -2676,12 +2675,12 @@ STRIDER = LootTable(
     random_sequence='minecraft:entities/strider',
 )
 
-SULFUR_CUBE = LootTable(type=LootContextParamSets.ENTITY, random_sequence='minecraft:entities/sulfur_cube')
+SULFUR_CUBE = LootTable(type='minecraft:entity', random_sequence='minecraft:entities/sulfur_cube')
 
-TADPOLE = LootTable(type=LootContextParamSets.ENTITY, random_sequence='minecraft:entities/tadpole')
+TADPOLE = LootTable(type='minecraft:entity', random_sequence='minecraft:entities/tadpole')
 
 TRADER_LLAMA = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -2708,7 +2707,7 @@ TRADER_LLAMA = LootTable(
 )
 
 TROPICAL_FISH = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -2730,7 +2729,7 @@ TROPICAL_FISH = LootTable(
 )
 
 TURTLE = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -2765,12 +2764,12 @@ TURTLE = LootTable(
     random_sequence='minecraft:entities/turtle',
 )
 
-VEX = LootTable(type=LootContextParamSets.ENTITY, random_sequence='minecraft:entities/vex')
+VEX = LootTable(type='minecraft:entity', random_sequence='minecraft:entities/vex')
 
-VILLAGER = LootTable(type=LootContextParamSets.ENTITY, random_sequence='minecraft:entities/villager')
+VILLAGER = LootTable(type='minecraft:entity', random_sequence='minecraft:entities/villager')
 
 VINDICATOR = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -2797,16 +2796,16 @@ VINDICATOR = LootTable(
     random_sequence='minecraft:entities/vindicator',
 )
 
-WANDERING_TRADER = LootTable(type=LootContextParamSets.ENTITY, random_sequence='minecraft:entities/wandering_trader')
+WANDERING_TRADER = LootTable(type='minecraft:entity', random_sequence='minecraft:entities/wandering_trader')
 
 WARDEN = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:sculk_catalyst', type='minecraft:item')])],
     random_sequence='minecraft:entities/warden',
 )
 
 WITCH = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=1, max=3),
@@ -2928,10 +2927,10 @@ WITCH = LootTable(
     random_sequence='minecraft:entities/witch',
 )
 
-WITHER = LootTable(type=LootContextParamSets.ENTITY, random_sequence='minecraft:entities/wither')
+WITHER = LootTable(type='minecraft:entity', random_sequence='minecraft:entities/wither')
 
 WITHER_SKELETON = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -2993,10 +2992,10 @@ WITHER_SKELETON = LootTable(
     random_sequence='minecraft:entities/wither_skeleton',
 )
 
-WOLF = LootTable(type=LootContextParamSets.ENTITY, random_sequence='minecraft:entities/wolf')
+WOLF = LootTable(type='minecraft:entity', random_sequence='minecraft:entities/wolf')
 
 ZOGLIN = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -3023,7 +3022,7 @@ ZOGLIN = LootTable(
 )
 
 ZOMBIE = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -3142,7 +3141,7 @@ ZOMBIE = LootTable(
 )
 
 ZOMBIE_HORSE = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -3169,7 +3168,7 @@ ZOMBIE_HORSE = LootTable(
 )
 
 ZOMBIE_NAUTILUS = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -3197,7 +3196,7 @@ ZOMBIE_NAUTILUS = LootTable(
 )
 
 ZOMBIE_VILLAGER = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -3273,7 +3272,7 @@ ZOMBIE_VILLAGER = LootTable(
 )
 
 ZOMBIFIED_PIGLIN = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,

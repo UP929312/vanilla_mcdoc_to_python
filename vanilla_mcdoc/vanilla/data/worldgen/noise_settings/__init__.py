@@ -69,7 +69,7 @@ AMPLIFIED = NoiseGeneratorSettings(
     ],
     material_rule='minecraft:overworld',
     debug_functions=[
-        DebugFunctionEntry(label='Final density', function='minecraft:overworld_amplified/final_density'),
+        DebugFunctionEntry(label='Final Density', function='minecraft:overworld_amplified/final_density'),
         DebugFunctionEntry(label='Temperature', function='minecraft:overworld/temperature'),
         DebugFunctionEntry(label='Vegetation', function='minecraft:overworld/vegetation'),
         DebugFunctionEntry(label='Continents', function='minecraft:overworld/continents'),
@@ -163,7 +163,7 @@ CAVES = NoiseGeneratorSettings(
     material_rule='minecraft:overworld_caves',
     debug_functions=[
         DebugFunctionEntry(
-            label='N',
+            label='Final Density',
             function=DensityFunctionStructAdd(
                 left=DensityFunctionStructSqueeze(
                     input=DensityFunctionStructUpscale(
@@ -277,7 +277,7 @@ END = NoiseGeneratorSettings(
     material_rule='minecraft:end',
     debug_functions=[
         DebugFunctionEntry(
-            label='N',
+            label='Final Density',
             function=DensityFunctionStructAdd(
                 left=DensityFunctionStructSqueeze(
                     input=DensityFunctionStructUpscale(
@@ -324,7 +324,7 @@ END = NoiseGeneratorSettings(
                 type='minecraft:add',
             ),
         ),
-        DebugFunctionEntry(label='IS', function='minecraft:end/islands'),
+        DebugFunctionEntry(label='Erosion', function='minecraft:end/islands'),
     ],
 )
 
@@ -392,7 +392,7 @@ FLOATING_ISLANDS = NoiseGeneratorSettings(
     material_rule='minecraft:overworld_floating_islands',
     debug_functions=[
         DebugFunctionEntry(
-            label='N',
+            label='Final Density',
             function=DensityFunctionStructAdd(
                 left=DensityFunctionStructSqueeze(
                     input=DensityFunctionStructUpscale(
@@ -506,7 +506,7 @@ LARGE_BIOMES = NoiseGeneratorSettings(
     ],
     material_rule='minecraft:overworld',
     debug_functions=[
-        DebugFunctionEntry(label='Final density', function='minecraft:overworld_large_biomes/final_density'),
+        DebugFunctionEntry(label='Final Density', function='minecraft:overworld_large_biomes/final_density'),
         DebugFunctionEntry(label='Temperature', function='minecraft:overworld_large_biomes/temperature'),
         DebugFunctionEntry(label='Vegetation', function='minecraft:overworld_large_biomes/vegetation'),
         DebugFunctionEntry(label='Continents', function='minecraft:overworld_large_biomes/continents'),
@@ -613,7 +613,7 @@ NETHER = NoiseGeneratorSettings(
     material_rule='minecraft:nether',
     debug_functions=[
         DebugFunctionEntry(
-            label='N',
+            label='Final Density',
             function=DensityFunctionStructAdd(
                 left=DensityFunctionStructSqueeze(
                     input=DensityFunctionStructUpscale(
@@ -661,7 +661,7 @@ NETHER = NoiseGeneratorSettings(
             ),
         ),
         DebugFunctionEntry(
-            label='T',
+            label='Temperature',
             function=DensityFunctionStructNoise(
                 noise='minecraft:nether/temperature',
                 xz_scale=0.25,
@@ -670,7 +670,7 @@ NETHER = NoiseGeneratorSettings(
             ),
         ),
         DebugFunctionEntry(
-            label='V',
+            label='Vegetation',
             function=DensityFunctionStructNoise(
                 noise='minecraft:nether/vegetation',
                 xz_scale=0.25,
@@ -741,7 +741,7 @@ OVERWORLD = NoiseGeneratorSettings(
     ],
     material_rule='minecraft:overworld',
     debug_functions=[
-        DebugFunctionEntry(label='Final density', function='minecraft:overworld/final_density'),
+        DebugFunctionEntry(label='Final Density', function='minecraft:overworld/final_density'),
         DebugFunctionEntry(label='Temperature', function='minecraft:overworld/temperature'),
         DebugFunctionEntry(label='Vegetation', function='minecraft:overworld/vegetation'),
         DebugFunctionEntry(label='Continents', function='minecraft:overworld/continents'),

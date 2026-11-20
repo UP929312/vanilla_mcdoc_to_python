@@ -1,6 +1,5 @@
 """Vanilla's data/datapacks/trade_rebalance/data/loot_table/chests/ files"""
 from vanilla_mcdoc.data.advancement.predicate.LocationPredicate import LocationPredicate
-from vanilla_mcdoc.data.loot.LootContextParamSets import LootContextParamSets
 from vanilla_mcdoc.data.loot.LootPool import LootPool
 from vanilla_mcdoc.data.loot.LootPoolEntry import LootPoolEntryEmpty, LootPoolEntryItem
 from vanilla_mcdoc.data.loot.LootTable import LootTable
@@ -10,7 +9,7 @@ from vanilla_mcdoc.data.number_provider.context_float.ContextFloatProvider impor
 from vanilla_mcdoc.data.number_provider.context_int.ContextIntProvider import ContextIntProviderStructUniform
 
 ABANDONED_MINESHAFT = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=1,
@@ -207,7 +206,7 @@ ABANDONED_MINESHAFT = LootTable(
 )
 
 ANCIENT_CITY = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=5, max=10),
@@ -446,7 +445,7 @@ ANCIENT_CITY = LootTable(
 )
 
 DESERT_PYRAMID = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=2, max=4),
@@ -602,7 +601,7 @@ DESERT_PYRAMID = LootTable(
 )
 
 JUNGLE_TEMPLE = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=2, max=6),
@@ -713,7 +712,7 @@ JUNGLE_TEMPLE = LootTable(
 )
 
 PILLAGER_OUTPOST = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=0, max=1),

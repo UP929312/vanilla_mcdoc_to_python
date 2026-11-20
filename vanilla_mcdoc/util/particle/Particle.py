@@ -8,6 +8,8 @@ from typing import Annotated, Literal
 from vanilla_mcdoc.base import GeneratedModel
 from vanilla_mcdoc.minecraft_types import IdSpec
 from vanilla_mcdoc.util.particle.BlockParticle import BlockParticle
+from vanilla_mcdoc.util.particle.BubbleColumnUp import BubbleColumnUp
+from vanilla_mcdoc.util.particle.CurrentDown import CurrentDown
 from vanilla_mcdoc.util.particle.DragonBreathParticle import DragonBreathParticle
 from vanilla_mcdoc.util.particle.DustColorTransitionParticle import DustColorTransitionParticle
 from vanilla_mcdoc.util.particle.DustParticle import DustParticle
@@ -38,6 +40,14 @@ class ParticleBlockCrumble(BlockParticle):
 
 class ParticleBlockMarker(BlockParticle):
     type: Literal['minecraft:block_marker', 'block_marker'] = 'minecraft:block_marker'
+
+
+class ParticleBubbleColumnUp(BubbleColumnUp):
+    type: Literal['minecraft:bubble_column_up', 'bubble_column_up'] = 'minecraft:bubble_column_up'
+
+
+class ParticleCurrentDown(CurrentDown):
+    type: Literal['minecraft:current_down', 'current_down'] = 'minecraft:current_down'
 
 
 class ParticleDragonBreath(DragonBreathParticle):
@@ -128,10 +138,6 @@ class ParticleBubble(GeneratedModel):
     type: Literal['minecraft:bubble', 'bubble'] = 'minecraft:bubble'
 
 
-class ParticleBubbleColumnUp(GeneratedModel):
-    type: Literal['minecraft:bubble_column_up', 'bubble_column_up'] = 'minecraft:bubble_column_up'
-
-
 class ParticleBubblePop(GeneratedModel):
     type: Literal['minecraft:bubble_pop', 'bubble_pop'] = 'minecraft:bubble_pop'
 
@@ -166,10 +172,6 @@ class ParticleCrimsonSpore(GeneratedModel):
 
 class ParticleCrit(GeneratedModel):
     type: Literal['minecraft:crit', 'crit'] = 'minecraft:crit'
-
-
-class ParticleCurrentDown(GeneratedModel):
-    type: Literal['minecraft:current_down', 'current_down'] = 'minecraft:current_down'
 
 
 class ParticleDamageIndicator(GeneratedModel):
@@ -540,4 +542,4 @@ class ParticleYellowPoplarLeaves(GeneratedModel):
     type: Literal['minecraft:yellow_poplar_leaves', 'yellow_poplar_leaves'] = 'minecraft:yellow_poplar_leaves'
 
 
-type Particle = ParticleDefault | ParticleBlock | ParticleBlockCrumble | ParticleBlockMarker | ParticleDragonBreath | ParticleDust | ParticleDustColorTransition | ParticleDustPillar | ParticleEffect | ParticleEntityEffect | ParticleFallingDust | ParticleFlash | ParticleGeyser | ParticleGeyserBase | ParticleGeyserPlume | ParticleGeyserPoof | ParticleInstantEffect | ParticleItem | ParticleSculkCharge | ParticleShriek | ParticleTintedLeaves | ParticleTrail | ParticleVibration | ParticleAngryVillager | ParticleAsh | ParticleBubble | ParticleBubbleColumnUp | ParticleBubblePop | ParticleCampfireCosySmoke | ParticleCampfireSignalSmoke | ParticleCherryLeaves | ParticleCloud | ParticleComposter | ParticleCopperFireFlame | ParticleCrimsonSpore | ParticleCrit | ParticleCurrentDown | ParticleDamageIndicator | ParticleDolphin | ParticleDrippingDripstoneLava | ParticleDrippingDripstoneWater | ParticleDrippingHoney | ParticleDrippingLava | ParticleDrippingObsidianTear | ParticleDrippingWater | ParticleDustPlume | ParticleEggCrack | ParticleElderGuardian | ParticleElectricSpark | ParticleEnchant | ParticleEnchantedHit | ParticleEndRod | ParticleExplosion | ParticleExplosionEmitter | ParticleFallingDripstoneLava | ParticleFallingDripstoneWater | ParticleFallingHoney | ParticleFallingLava | ParticleFallingNectar | ParticleFallingObsidianTear | ParticleFallingSporeBlossom | ParticleFallingWater | ParticleFirefly | ParticleFirework | ParticleFishing | ParticleFlame | ParticleFreezing | ParticleGlow | ParticleGlowSquidInk | ParticleGust | ParticleGustEmitterLarge | ParticleGustEmitterSmall | ParticleHappyVillager | ParticleHeart | ParticleInfested | ParticleItemCobweb | ParticleItemSlime | ParticleLandingHoney | ParticleLandingLava | ParticleLandingObsidianTear | ParticleLargeSmoke | ParticleLava | ParticleMycelium | ParticleNautilus | ParticleNote | ParticleNoxiousGas | ParticleNoxiousGasCloud | ParticleOminousSpawning | ParticleOrangePoplarLeaves | ParticlePaleOakLeaves | ParticlePauseMobGrowth | ParticlePoof | ParticlePortal | ParticleRaidOmen | ParticleRain | ParticleRedPoplarLeaves | ParticleResetMobGrowth | ParticleReversePortal | ParticleScrape | ParticleSculkChargePop | ParticleSculkSoul | ParticleSmallFlame | ParticleSmallGust | ParticleSmoke | ParticleSneeze | ParticleSnowflake | ParticleSonicBoom | ParticleSoul | ParticleSoulFireFlame | ParticleSpit | ParticleSplash | ParticleSporeBlossomAir | ParticleSquidInk | ParticleSulfurBubbles | ParticleSulfurCubeGoo | ParticleSweepAttack | ParticleTotemOfUndying | ParticleTrialOmen | ParticleTrialSpawnerDetection | ParticleTrialSpawnerDetectionOminous | ParticleUnderwater | ParticleVaultConnection | ParticleWarpedSpore | ParticleWaxOff | ParticleWaxOn | ParticleWhiteAsh | ParticleWhiteSmoke | ParticleWitch | ParticleYellowPoplarLeaves
+type Particle = ParticleDefault | ParticleBlock | ParticleBlockCrumble | ParticleBlockMarker | ParticleBubbleColumnUp | ParticleCurrentDown | ParticleDragonBreath | ParticleDust | ParticleDustColorTransition | ParticleDustPillar | ParticleEffect | ParticleEntityEffect | ParticleFallingDust | ParticleFlash | ParticleGeyser | ParticleGeyserBase | ParticleGeyserPlume | ParticleGeyserPoof | ParticleInstantEffect | ParticleItem | ParticleSculkCharge | ParticleShriek | ParticleTintedLeaves | ParticleTrail | ParticleVibration | ParticleAngryVillager | ParticleAsh | ParticleBubble | ParticleBubblePop | ParticleCampfireCosySmoke | ParticleCampfireSignalSmoke | ParticleCherryLeaves | ParticleCloud | ParticleComposter | ParticleCopperFireFlame | ParticleCrimsonSpore | ParticleCrit | ParticleDamageIndicator | ParticleDolphin | ParticleDrippingDripstoneLava | ParticleDrippingDripstoneWater | ParticleDrippingHoney | ParticleDrippingLava | ParticleDrippingObsidianTear | ParticleDrippingWater | ParticleDustPlume | ParticleEggCrack | ParticleElderGuardian | ParticleElectricSpark | ParticleEnchant | ParticleEnchantedHit | ParticleEndRod | ParticleExplosion | ParticleExplosionEmitter | ParticleFallingDripstoneLava | ParticleFallingDripstoneWater | ParticleFallingHoney | ParticleFallingLava | ParticleFallingNectar | ParticleFallingObsidianTear | ParticleFallingSporeBlossom | ParticleFallingWater | ParticleFirefly | ParticleFirework | ParticleFishing | ParticleFlame | ParticleFreezing | ParticleGlow | ParticleGlowSquidInk | ParticleGust | ParticleGustEmitterLarge | ParticleGustEmitterSmall | ParticleHappyVillager | ParticleHeart | ParticleInfested | ParticleItemCobweb | ParticleItemSlime | ParticleLandingHoney | ParticleLandingLava | ParticleLandingObsidianTear | ParticleLargeSmoke | ParticleLava | ParticleMycelium | ParticleNautilus | ParticleNote | ParticleNoxiousGas | ParticleNoxiousGasCloud | ParticleOminousSpawning | ParticleOrangePoplarLeaves | ParticlePaleOakLeaves | ParticlePauseMobGrowth | ParticlePoof | ParticlePortal | ParticleRaidOmen | ParticleRain | ParticleRedPoplarLeaves | ParticleResetMobGrowth | ParticleReversePortal | ParticleScrape | ParticleSculkChargePop | ParticleSculkSoul | ParticleSmallFlame | ParticleSmallGust | ParticleSmoke | ParticleSneeze | ParticleSnowflake | ParticleSonicBoom | ParticleSoul | ParticleSoulFireFlame | ParticleSpit | ParticleSplash | ParticleSporeBlossomAir | ParticleSquidInk | ParticleSulfurBubbles | ParticleSulfurCubeGoo | ParticleSweepAttack | ParticleTotemOfUndying | ParticleTrialOmen | ParticleTrialSpawnerDetection | ParticleTrialSpawnerDetectionOminous | ParticleUnderwater | ParticleVaultConnection | ParticleWarpedSpore | ParticleWaxOff | ParticleWaxOn | ParticleWhiteAsh | ParticleWhiteSmoke | ParticleWitch | ParticleYellowPoplarLeaves

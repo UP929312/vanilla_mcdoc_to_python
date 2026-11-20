@@ -1,5 +1,4 @@
 """Vanilla's data/loot_table/spawners/trial_chamber/ files"""
-from vanilla_mcdoc.data.loot.LootContextParamSets import LootContextParamSets
 from vanilla_mcdoc.data.loot.LootPool import LootPool
 from vanilla_mcdoc.data.loot.LootPoolEntry import LootPoolEntryItem
 from vanilla_mcdoc.data.loot.LootTable import LootTable
@@ -7,7 +6,7 @@ from vanilla_mcdoc.data.loot.function.LootFunction import LootFunctionSetCount, 
 from vanilla_mcdoc.data.number_provider.context_int.ContextIntProvider import ContextIntProviderStructUniform
 
 CONSUMABLES = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=1,
@@ -59,7 +58,7 @@ CONSUMABLES = LootTable(
 )
 
 ITEMS_TO_DROP_WHEN_OMINOUS = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=1,
@@ -169,7 +168,7 @@ ITEMS_TO_DROP_WHEN_OMINOUS = LootTable(
 )
 
 KEY = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:trial_key', type='minecraft:item')])],
     random_sequence='minecraft:spawners/trial_chamber/key',
 )

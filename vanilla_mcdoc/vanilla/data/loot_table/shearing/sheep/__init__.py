@@ -1,12 +1,11 @@
 """Vanilla's data/loot_table/shearing/sheep/ files"""
-from vanilla_mcdoc.data.loot.LootContextParamSets import LootContextParamSets
 from vanilla_mcdoc.data.loot.LootPool import LootPool
 from vanilla_mcdoc.data.loot.LootPoolEntry import LootPoolEntryItem
 from vanilla_mcdoc.data.loot.LootTable import LootTable
 from vanilla_mcdoc.data.number_provider.context_int.ContextIntProvider import ContextIntProviderStructUniform
 
 BLACK = LootTable(
-    type=LootContextParamSets.SHEARING,
+    type='minecraft:shearing',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=1, max=3),
@@ -17,7 +16,7 @@ BLACK = LootTable(
 )
 
 BLUE = LootTable(
-    type=LootContextParamSets.SHEARING,
+    type='minecraft:shearing',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=1, max=3),
@@ -28,7 +27,7 @@ BLUE = LootTable(
 )
 
 BROWN = LootTable(
-    type=LootContextParamSets.SHEARING,
+    type='minecraft:shearing',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=1, max=3),
@@ -39,7 +38,7 @@ BROWN = LootTable(
 )
 
 CYAN = LootTable(
-    type=LootContextParamSets.SHEARING,
+    type='minecraft:shearing',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=1, max=3),
@@ -50,7 +49,7 @@ CYAN = LootTable(
 )
 
 GRAY = LootTable(
-    type=LootContextParamSets.SHEARING,
+    type='minecraft:shearing',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=1, max=3),
@@ -61,7 +60,7 @@ GRAY = LootTable(
 )
 
 GREEN = LootTable(
-    type=LootContextParamSets.SHEARING,
+    type='minecraft:shearing',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=1, max=3),
@@ -72,7 +71,7 @@ GREEN = LootTable(
 )
 
 LIGHT_BLUE = LootTable(
-    type=LootContextParamSets.SHEARING,
+    type='minecraft:shearing',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=1, max=3),
@@ -83,7 +82,7 @@ LIGHT_BLUE = LootTable(
 )
 
 LIGHT_GRAY = LootTable(
-    type=LootContextParamSets.SHEARING,
+    type='minecraft:shearing',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=1, max=3),
@@ -94,7 +93,7 @@ LIGHT_GRAY = LootTable(
 )
 
 LIME = LootTable(
-    type=LootContextParamSets.SHEARING,
+    type='minecraft:shearing',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=1, max=3),
@@ -105,7 +104,7 @@ LIME = LootTable(
 )
 
 MAGENTA = LootTable(
-    type=LootContextParamSets.SHEARING,
+    type='minecraft:shearing',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=1, max=3),
@@ -116,7 +115,7 @@ MAGENTA = LootTable(
 )
 
 ORANGE = LootTable(
-    type=LootContextParamSets.SHEARING,
+    type='minecraft:shearing',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=1, max=3),
@@ -127,7 +126,7 @@ ORANGE = LootTable(
 )
 
 PINK = LootTable(
-    type=LootContextParamSets.SHEARING,
+    type='minecraft:shearing',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=1, max=3),
@@ -138,7 +137,7 @@ PINK = LootTable(
 )
 
 PURPLE = LootTable(
-    type=LootContextParamSets.SHEARING,
+    type='minecraft:shearing',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=1, max=3),
@@ -149,7 +148,7 @@ PURPLE = LootTable(
 )
 
 RED = LootTable(
-    type=LootContextParamSets.SHEARING,
+    type='minecraft:shearing',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=1, max=3),
@@ -160,7 +159,7 @@ RED = LootTable(
 )
 
 WHITE = LootTable(
-    type=LootContextParamSets.SHEARING,
+    type='minecraft:shearing',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=1, max=3),
@@ -171,7 +170,7 @@ WHITE = LootTable(
 )
 
 YELLOW = LootTable(
-    type=LootContextParamSets.SHEARING,
+    type='minecraft:shearing',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=1, max=3),

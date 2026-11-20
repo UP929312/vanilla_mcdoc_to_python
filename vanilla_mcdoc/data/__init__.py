@@ -279,6 +279,10 @@ from vanilla_mcdoc.data.worldgen.structure.DirectPoolAlias import DirectPoolAlia
 from vanilla_mcdoc.data.worldgen.attribute.DiscreteAttribute import DiscreteAttribute
 from vanilla_mcdoc.data.worldgen.feature.DiskConfig import DiskConfig
 from vanilla_mcdoc.data.number_provider.DispatcherProvider import DispatcherProvider
+from vanilla_mcdoc.data.dispense_behavior.DispenseBehavior import DispenseBehavior
+from vanilla_mcdoc.data.dispense_behavior.DispenseBehaviorFile import DispenseBehaviorFile
+from vanilla_mcdoc.data.dispense_behavior.DispenseBehaviorsRef import DispenseBehaviorsRef
+from vanilla_mcdoc.data.dispense_behavior.DispenseSound import DispenseSound
 from vanilla_mcdoc.data.worldgen.density_function.DistanceMetric import DistanceMetric
 from vanilla_mcdoc.data.advancement.predicate.DistancePredicate import DistancePredicate
 from vanilla_mcdoc.data.worldgen.density_function.DistanceToPoint import DistanceToPoint
@@ -763,6 +767,7 @@ from vanilla_mcdoc.data.worldgen.feature.tree.ShelfMushroomTreeDecorator import 
 from vanilla_mcdoc.data.worldgen.density_function.Shift import Shift
 from vanilla_mcdoc.data.worldgen.density_function.ShiftedNoise import ShiftedNoise
 from vanilla_mcdoc.data.worldgen.structure.Shipwreck import Shipwreck
+from vanilla_mcdoc.data.dispense_behavior.ShootProjectile import ShootProjectile
 from vanilla_mcdoc.data.advancement.trigger.ShotCrossbowTrigger import ShotCrossbowTrigger
 from vanilla_mcdoc.data.worldgen.feature.SimpleBlockConfig import SimpleBlockConfig
 from vanilla_mcdoc.data.timeline.SimpleEasingType import SimpleEasingType
@@ -874,6 +879,7 @@ from vanilla_mcdoc.data.loot.function.ToggleableDataComponent import ToggleableD
 from vanilla_mcdoc.data.villager_trade.TradeCost import TradeCost
 from vanilla_mcdoc.data.trade_set.TradeSet import TradeSet
 from vanilla_mcdoc.data.advancement.trigger.TradeTrigger import TradeTrigger
+from vanilla_mcdoc.data.dispense_behavior.TransformBlock import TransformBlock
 from vanilla_mcdoc.data.worldgen.attribute.modifier.TranslucentColorAttributeModifier import TranslucentColorAttributeModifier
 from vanilla_mcdoc.data.recipe.TransmuteResult import TransmuteResult
 from vanilla_mcdoc.data.worldgen.TrapezoidHeightProvider import TrapezoidHeightProvider
@@ -1224,6 +1230,10 @@ __all__ = [
     "DiscreteAttribute",
     "DiskConfig",
     "DispatcherProvider",
+    "DispenseBehavior",
+    "DispenseBehaviorFile",
+    "DispenseBehaviorsRef",
+    "DispenseSound",
     "DistanceMetric",
     "DistancePredicate",
     "DistanceToPoint",
@@ -1708,6 +1718,7 @@ __all__ = [
     "Shift",
     "ShiftedNoise",
     "Shipwreck",
+    "ShootProjectile",
     "ShotCrossbowTrigger",
     "SimpleBlockConfig",
     "SimpleEasingType",
@@ -1819,6 +1830,7 @@ __all__ = [
     "TradeCost",
     "TradeSet",
     "TradeTrigger",
+    "TransformBlock",
     "TranslucentColorAttributeModifier",
     "TransmuteResult",
     "TrapezoidHeightProvider",

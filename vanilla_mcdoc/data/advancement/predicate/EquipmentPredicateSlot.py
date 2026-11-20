@@ -14,3 +14,4 @@ class EquipmentPredicateSlot(StrEnum):
     LEGS = "legs"
     FEET = "feet"
     BODY = "body"
+    SADDLE = "saddle"

@@ -2356,6 +2356,10 @@ TRIGGERS_AMBIENT_DESERT_SAND_BLOCK_SOUNDS = Tag(values=['minecraft:sand', 'minec
 
 TRIGGERS_AMBIENT_DRIED_GHAST_BLOCK_SOUNDS = Tag(values=['minecraft:soul_sand', 'minecraft:soul_soil'])
 
+TRIGGERS_AMBIENT_ICE_BLOCK_SOUNDS = Tag(values=['minecraft:ice'])
+
+TRIGGERS_AMBIENT_ICE_CRYSTAL_SOUNDS = Tag(values=['minecraft:packed_ice'])
+
 TURNS_INTO_DIRT_PATH = Tag(
     values=[
         'minecraft:grass_block',

@@ -1,5 +1,6 @@
 """Vanilla's data/block_sound_set/ files"""
 from vanilla_mcdoc.data.block_sound_set.BlockSoundSet import BlockSoundSet
+from vanilla_mcdoc.data.util.SoundEventRef import SoundEventRefStruct
 
 AMETHYST_BLOCK = BlockSoundSet(
     break_sound='minecraft:block.amethyst_block.break',
@@ -328,6 +329,14 @@ DRIPSTONE_BLOCK = BlockSoundSet(
     place_sound='minecraft:block.dripstone_block.place',
     hit_sound='minecraft:block.dripstone_block.hit',
     fall_sound='minecraft:block.dripstone_block.fall',
+)
+
+FIRE = BlockSoundSet(
+    break_sound=SoundEventRefStruct(sound_id='minecraft:block.fire.extinguish'),
+    step_sound='minecraft:block.wool.step',
+    place_sound='minecraft:block.wool.place',
+    hit_sound='minecraft:block.wool.hit',
+    fall_sound='minecraft:block.wool.fall',
 )
 
 FLOWERING_AZALEA = BlockSoundSet(

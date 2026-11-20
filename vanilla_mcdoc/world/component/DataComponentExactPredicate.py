@@ -13,6 +13,7 @@ from vanilla_mcdoc.minecraft_types import IdSpec
 if TYPE_CHECKING:
     from vanilla_mcdoc.data.advancement.predicate.ItemPredicate import ItemPredicate
     from vanilla_mcdoc.data.damage_type.DamageType import DamageType
+    from vanilla_mcdoc.data.dispense_behavior.DispenseBehaviorsRef import DispenseBehaviorsRef
     from vanilla_mcdoc.data.util.SoundEventRef import SoundEventRef
     from vanilla_mcdoc.data.variants.instrument.Instrument import Instrument
     from vanilla_mcdoc.util.avatar.Profile import Profile
@@ -141,6 +142,7 @@ class DataComponentExactPredicate(GeneratedModel):
     damage_type: Annotated[str, IdSpec(registry='damage_type')] | DamageType | None = Field(default=None, validation_alias='minecraft:damage_type', serialization_alias='minecraft:damage_type')
     death_protection: DeathProtection | None = Field(default=None, validation_alias='minecraft:death_protection', serialization_alias='minecraft:death_protection')
     debug_stick_state: DebugStickState | None = Field(default=None, validation_alias='minecraft:debug_stick_state', serialization_alias='minecraft:debug_stick_state')
+    dispense_behavior: DispenseBehaviorsRef | None = Field(default=None, validation_alias='minecraft:dispense_behavior', serialization_alias='minecraft:dispense_behavior')
     dye: DyeColor | None = Field(default=None, validation_alias='minecraft:dye', serialization_alias='minecraft:dye')
     dyed_color: RGB | None = Field(default=None, validation_alias='minecraft:dyed_color', serialization_alias='minecraft:dyed_color')
     enchantable: Enchantable | None = Field(default=None, validation_alias='minecraft:enchantable', serialization_alias='minecraft:enchantable')

@@ -922,6 +922,21 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
     'vanilla_mcdoc.data.dialog.input.TextInput': {
         'Text': ('vanilla_mcdoc.util.text.Text', 'Text'),
     },
+    'vanilla_mcdoc.data.dispense_behavior.DispenseBehaviorFile': {
+        'DispenseBehavior': ('vanilla_mcdoc.data.dispense_behavior.DispenseBehavior', 'DispenseBehavior'),
+    },
+    'vanilla_mcdoc.data.dispense_behavior.DispenseBehaviorsRef': {
+        'DispenseBehavior': ('vanilla_mcdoc.data.dispense_behavior.DispenseBehavior', 'DispenseBehavior'),
+        'KnownDispenseBehaviorId': ('vanilla_mcdoc.registry.KnownDispenseBehaviorId', 'KnownDispenseBehaviorId'),
+    },
+    'vanilla_mcdoc.data.dispense_behavior.DispenseSound': {
+        'FloatProvider': ('vanilla_mcdoc.data.worldgen.FloatProvider', 'FloatProvider'),
+        'SoundEventRef': ('vanilla_mcdoc.data.util.SoundEventRef', 'SoundEventRef'),
+    },
+    'vanilla_mcdoc.data.dispense_behavior.ShootProjectile': {
+        'FloatProvider': ('vanilla_mcdoc.data.worldgen.FloatProvider', 'FloatProvider'),
+        'SoundEventRef': ('vanilla_mcdoc.data.util.SoundEventRef', 'SoundEventRef'),
+    },
     'vanilla_mcdoc.data.enchantment.Enchantment': {
         'EnchantmentCost': ('vanilla_mcdoc.data.enchantment.EnchantmentCost', 'EnchantmentCost'),
         'EnchantmentEffectComponentMap': ('vanilla_mcdoc.data.enchantment.effect_component.EnchantmentEffectComponentMap', 'EnchantmentEffectComponentMap'),
@@ -1207,7 +1222,6 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
     },
     'vanilla_mcdoc.data.loot.LootTable': {
         'ItemModifier': ('vanilla_mcdoc.data.item_modifier.ItemModifier', 'ItemModifier'),
-        'LootContextParamSets': ('vanilla_mcdoc.data.loot.LootContextParamSets', 'LootContextParamSets'),
         'LootPool': ('vanilla_mcdoc.data.loot.LootPool', 'LootPool'),
     },
     'vanilla_mcdoc.data.loot.LootTableListRef': {
@@ -3338,6 +3352,7 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
         'DamageType': ('vanilla_mcdoc.data.damage_type.DamageType', 'DamageType'),
         'DeathProtection': ('vanilla_mcdoc.world.component.item.DeathProtection', 'DeathProtection'),
         'DebugStickState': ('vanilla_mcdoc.world.component.item.DebugStickState', 'DebugStickState'),
+        'DispenseBehaviorsRef': ('vanilla_mcdoc.data.dispense_behavior.DispenseBehaviorsRef', 'DispenseBehaviorsRef'),
         'DyeColor': ('vanilla_mcdoc.util.color.DyeColor', 'DyeColor'),
         'Enchantable': ('vanilla_mcdoc.world.component.item.Enchantable', 'Enchantable'),
         'EnchantmentLevels': ('vanilla_mcdoc.world.component.item.EnchantmentLevels', 'EnchantmentLevels'),
@@ -3406,6 +3421,7 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
         'DamageType': ('vanilla_mcdoc.data.damage_type.DamageType', 'DamageType'),
         'DeathProtection': ('vanilla_mcdoc.world.component.item.DeathProtection', 'DeathProtection'),
         'DebugStickState': ('vanilla_mcdoc.world.component.item.DebugStickState', 'DebugStickState'),
+        'DispenseBehaviorsRef': ('vanilla_mcdoc.data.dispense_behavior.DispenseBehaviorsRef', 'DispenseBehaviorsRef'),
         'DyeColor': ('vanilla_mcdoc.util.color.DyeColor', 'DyeColor'),
         'Enchantable': ('vanilla_mcdoc.world.component.item.Enchantable', 'Enchantable'),
         'EnchantmentLevels': ('vanilla_mcdoc.world.component.item.EnchantmentLevels', 'EnchantmentLevels'),
@@ -3772,6 +3788,9 @@ TYPE_CHECKING_IMPORTS: dict[str, dict[str, tuple[str, str]]] = {
     },
     'vanilla_mcdoc.world.entity.mob.breedable.rabbit.Rabbit': {
         'RabbitType': ('vanilla_mcdoc.world.entity.mob.breedable.rabbit.RabbitType', 'RabbitType'),
+    },
+    'vanilla_mcdoc.world.entity.mob.breedable.saddled.Saddled': {
+        'ItemBasedSteering': ('vanilla_mcdoc.world.entity.mob.breedable.saddled.ItemBasedSteering', 'ItemBasedSteering'),
     },
     'vanilla_mcdoc.world.entity.mob.breedable.sheep.Sheep': {
         'DyeColorByte': ('vanilla_mcdoc.util.DyeColorByte', 'DyeColorByte'),

@@ -2,7 +2,6 @@
 from vanilla_mcdoc.data.advancement.predicate.EntitySubPredicateMap import EntitySubPredicateMap
 from vanilla_mcdoc.data.advancement.predicate.FishingHookPredicate import FishingHookPredicate
 from vanilla_mcdoc.data.loot.EntityTarget import EntityTarget
-from vanilla_mcdoc.data.loot.LootContextParamSets import LootContextParamSets
 from vanilla_mcdoc.data.loot.LootPool import LootPool
 from vanilla_mcdoc.data.loot.LootPoolEntry import LootPoolEntryAlternatives, LootPoolEntryEmpty, LootPoolEntryItem, LootPoolEntryLootTable
 from vanilla_mcdoc.data.loot.LootTable import LootTable
@@ -12,13 +11,13 @@ from vanilla_mcdoc.data.number_provider.context_int.ContextIntProvider import Co
 from vanilla_mcdoc.world.component.DataComponentExactPredicate import DataComponentExactPredicate
 
 ARMADILLO_SHED = LootTable(
-    type=LootContextParamSets.GIFT,
+    type='minecraft:gift',
     pools=[LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:armadillo_scute', type='minecraft:item')])],
     random_sequence='minecraft:gameplay/armadillo_shed',
 )
 
 CAT_MORNING_GIFT = LootTable(
-    type=LootContextParamSets.GIFT,
+    type='minecraft:gift',
     pools=[
         LootPool(
             rolls=1,
@@ -37,7 +36,7 @@ CAT_MORNING_GIFT = LootTable(
 )
 
 CHICKEN_LAY = LootTable(
-    type=LootContextParamSets.GIFT,
+    type='minecraft:gift',
     pools=[
         LootPool(
             rolls=1,
@@ -87,7 +86,7 @@ CHICKEN_LAY = LootTable(
 )
 
 FISHING = LootTable(
-    type=LootContextParamSets.FISHING,
+    type='minecraft:fishing',
     pools=[
         LootPool(
             rolls=1,
@@ -122,7 +121,7 @@ FISHING = LootTable(
 )
 
 PANDA_SNEEZE = LootTable(
-    type=LootContextParamSets.GIFT,
+    type='minecraft:gift',
     pools=[
         LootPool(
             rolls=1,
@@ -136,7 +135,7 @@ PANDA_SNEEZE = LootTable(
 )
 
 PIGLIN_BARTERING = LootTable(
-    type=LootContextParamSets.BARTER,
+    type='minecraft:barter',
     pools=[
         LootPool(
             rolls=1,
@@ -285,7 +284,7 @@ PIGLIN_BARTERING = LootTable(
 )
 
 SNIFFER_DIGGING = LootTable(
-    type=LootContextParamSets.GIFT,
+    type='minecraft:gift',
     pools=[
         LootPool(
             rolls=1,
@@ -299,7 +298,7 @@ SNIFFER_DIGGING = LootTable(
 )
 
 TURTLE_GROW = LootTable(
-    type=LootContextParamSets.GIFT,
+    type='minecraft:gift',
     pools=[LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:turtle_scute', type='minecraft:item')])],
     random_sequence='minecraft:gameplay/turtle_grow',
 )

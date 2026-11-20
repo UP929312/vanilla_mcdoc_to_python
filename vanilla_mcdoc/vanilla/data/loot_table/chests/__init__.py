@@ -1,7 +1,6 @@
 """Vanilla's data/loot_table/chests/ files"""
 from vanilla_mcdoc.data.advancement.predicate.ItemPredicate import ItemPredicate
 from vanilla_mcdoc.data.advancement.predicate.LocationPredicate import LocationPredicate
-from vanilla_mcdoc.data.loot.LootContextParamSets import LootContextParamSets
 from vanilla_mcdoc.data.loot.LootPool import LootPool
 from vanilla_mcdoc.data.loot.LootPoolEntry import LootPoolEntryEmpty, LootPoolEntryItem
 from vanilla_mcdoc.data.loot.LootTable import LootTable
@@ -14,7 +13,7 @@ from vanilla_mcdoc.data.number_provider.context_int.ContextIntProvider import Co
 from vanilla_mcdoc.util.text.TextObject import TextObjectStruct2
 
 ABANDONED_CAMP_COMMON_CHEST = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=4, max=6),
@@ -414,7 +413,7 @@ ABANDONED_CAMP_COMMON_CHEST = LootTable(
 )
 
 ABANDONED_CAMP_SECRET_CHEST = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=2,
@@ -635,7 +634,7 @@ ABANDONED_CAMP_SECRET_CHEST = LootTable(
 )
 
 ABANDONED_MINESHAFT = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=1,
@@ -821,7 +820,7 @@ ABANDONED_MINESHAFT = LootTable(
 )
 
 ANCIENT_CITY = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=5, max=10),
@@ -1058,7 +1057,7 @@ ANCIENT_CITY = LootTable(
 )
 
 ANCIENT_CITY_ICE_BOX = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=4, max=10),
@@ -1127,7 +1126,7 @@ ANCIENT_CITY_ICE_BOX = LootTable(
 )
 
 BASTION_BRIDGE = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=1,
@@ -1327,7 +1326,7 @@ BASTION_BRIDGE = LootTable(
 )
 
 BASTION_HOGLIN_STABLE = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=1,
@@ -1552,7 +1551,7 @@ BASTION_HOGLIN_STABLE = LootTable(
 )
 
 BASTION_OTHER = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=1,
@@ -1859,7 +1858,7 @@ BASTION_OTHER = LootTable(
 )
 
 BASTION_TREASURE = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=3,
@@ -2094,7 +2093,7 @@ BASTION_TREASURE = LootTable(
 )
 
 BURIED_TREASURE = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:heart_of_the_sea', type='minecraft:item')]),
         LootPool(
@@ -2230,7 +2229,7 @@ BURIED_TREASURE = LootTable(
 )
 
 DESERT_PYRAMID = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=2, max=4),
@@ -2388,7 +2387,7 @@ DESERT_PYRAMID = LootTable(
 )
 
 END_CITY_TREASURE = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=2, max=6),
@@ -2607,7 +2606,7 @@ END_CITY_TREASURE = LootTable(
 )
 
 IGLOO_CHEST = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=2, max=8),
@@ -2664,7 +2663,7 @@ IGLOO_CHEST = LootTable(
 )
 
 JUNGLE_TEMPLE = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=2, max=6),
@@ -2772,7 +2771,7 @@ JUNGLE_TEMPLE = LootTable(
 )
 
 JUNGLE_TEMPLE_DISPENSER = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=1, max=2),
@@ -2793,7 +2792,7 @@ JUNGLE_TEMPLE_DISPENSER = LootTable(
 )
 
 NETHER_BRIDGE = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=2, max=4),
@@ -2865,7 +2864,7 @@ NETHER_BRIDGE = LootTable(
 )
 
 PILLAGER_OUTPOST = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=0, max=1),
@@ -2984,7 +2983,7 @@ PILLAGER_OUTPOST = LootTable(
 )
 
 RUINED_PORTAL = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=4, max=8),
@@ -3144,7 +3143,7 @@ RUINED_PORTAL = LootTable(
 )
 
 SHIPWRECK_MAP = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=1,
@@ -3250,7 +3249,7 @@ SHIPWRECK_MAP = LootTable(
 )
 
 SHIPWRECK_SUPPLY = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=3, max=10),
@@ -3468,7 +3467,7 @@ SHIPWRECK_SUPPLY = LootTable(
 )
 
 SHIPWRECK_TREASURE = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=3, max=6),
@@ -3582,7 +3581,7 @@ SHIPWRECK_TREASURE = LootTable(
 )
 
 SIMPLE_DUNGEON = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=1, max=3),
@@ -3739,7 +3738,7 @@ SIMPLE_DUNGEON = LootTable(
 )
 
 SPAWN_BONUS_CHEST = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=1,
@@ -3878,7 +3877,7 @@ SPAWN_BONUS_CHEST = LootTable(
 )
 
 STRONGHOLD_CORRIDOR = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=2, max=3),
@@ -3981,7 +3980,7 @@ STRONGHOLD_CORRIDOR = LootTable(
 )
 
 STRONGHOLD_CROSSING = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=1, max=4),
@@ -4057,7 +4056,7 @@ STRONGHOLD_CROSSING = LootTable(
 )
 
 STRONGHOLD_LIBRARY = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=2, max=10),
@@ -4103,7 +4102,7 @@ STRONGHOLD_LIBRARY = LootTable(
 )
 
 UNDERWATER_RUIN_BIG = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=2, max=8),
@@ -4213,7 +4212,7 @@ UNDERWATER_RUIN_BIG = LootTable(
 )
 
 UNDERWATER_RUIN_SMALL = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=2, max=8),
@@ -4309,7 +4308,7 @@ UNDERWATER_RUIN_SMALL = LootTable(
 )
 
 WOODLAND_MANSION = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=1, max=3),

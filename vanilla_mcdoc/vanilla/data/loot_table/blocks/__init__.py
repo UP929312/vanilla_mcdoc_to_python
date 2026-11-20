@@ -5,7 +5,6 @@ from vanilla_mcdoc.data.advancement.predicate.ItemPredicate import ItemPredicate
 from vanilla_mcdoc.data.advancement.predicate.LocationPredicate import LocationPredicate
 from vanilla_mcdoc.data.loot.DynamicDrops import DynamicDrops
 from vanilla_mcdoc.data.loot.EntityTarget import EntityTarget
-from vanilla_mcdoc.data.loot.LootContextParamSets import LootContextParamSets
 from vanilla_mcdoc.data.loot.LootPool import LootPool
 from vanilla_mcdoc.data.loot.LootPoolEntry import LootPoolEntryAlternatives, LootPoolEntryDynamic, LootPoolEntryItem
 from vanilla_mcdoc.data.loot.LootTable import LootTable
@@ -17,7 +16,7 @@ from vanilla_mcdoc.data.loot.function.UniformBonusFormula import ParametersStruc
 from vanilla_mcdoc.data.number_provider.context_int.ContextIntProvider import ContextIntProviderStructBinomial, ContextIntProviderStructUniform
 
 ACACIA_BUTTON = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -29,7 +28,7 @@ ACACIA_BUTTON = LootTable(
 )
 
 ACACIA_DOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -51,7 +50,7 @@ ACACIA_DOOR = LootTable(
 )
 
 ACACIA_FENCE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -63,7 +62,7 @@ ACACIA_FENCE = LootTable(
 )
 
 ACACIA_FENCE_GATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -75,7 +74,7 @@ ACACIA_FENCE_GATE = LootTable(
 )
 
 ACACIA_HANGING_SIGN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -87,7 +86,7 @@ ACACIA_HANGING_SIGN = LootTable(
 )
 
 ACACIA_LEAVES = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -155,7 +154,7 @@ ACACIA_LEAVES = LootTable(
 )
 
 ACACIA_LOG = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -167,7 +166,7 @@ ACACIA_LOG = LootTable(
 )
 
 ACACIA_PLANKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -179,7 +178,7 @@ ACACIA_PLANKS = LootTable(
 )
 
 ACACIA_PRESSURE_PLATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -191,7 +190,7 @@ ACACIA_PRESSURE_PLATE = LootTable(
 )
 
 ACACIA_SAPLING = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -203,7 +202,7 @@ ACACIA_SAPLING = LootTable(
 )
 
 ACACIA_SHELF = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -215,7 +214,7 @@ ACACIA_SHELF = LootTable(
 )
 
 ACACIA_SIGN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -227,7 +226,7 @@ ACACIA_SIGN = LootTable(
 )
 
 ACACIA_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -255,7 +254,7 @@ ACACIA_SLAB = LootTable(
 )
 
 ACACIA_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -267,7 +266,7 @@ ACACIA_STAIRS = LootTable(
 )
 
 ACACIA_TRAPDOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -279,7 +278,7 @@ ACACIA_TRAPDOOR = LootTable(
 )
 
 ACACIA_WOOD = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -291,7 +290,7 @@ ACACIA_WOOD = LootTable(
 )
 
 ACTIVATOR_RAIL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -303,7 +302,7 @@ ACTIVATOR_RAIL = LootTable(
 )
 
 ALLIUM = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -315,7 +314,7 @@ ALLIUM = LootTable(
 )
 
 AMETHYST_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -327,7 +326,7 @@ AMETHYST_BLOCK = LootTable(
 )
 
 AMETHYST_CLUSTER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -378,7 +377,7 @@ AMETHYST_CLUSTER = LootTable(
 )
 
 ANCIENT_DEBRIS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -390,7 +389,7 @@ ANCIENT_DEBRIS = LootTable(
 )
 
 ANDESITE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -402,7 +401,7 @@ ANDESITE = LootTable(
 )
 
 ANDESITE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -430,7 +429,7 @@ ANDESITE_SLAB = LootTable(
 )
 
 ANDESITE_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -442,7 +441,7 @@ ANDESITE_STAIRS = LootTable(
 )
 
 ANDESITE_WALL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -454,7 +453,7 @@ ANDESITE_WALL = LootTable(
 )
 
 ANVIL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -466,7 +465,7 @@ ANVIL = LootTable(
 )
 
 ATTACHED_MELON_STEM = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -487,7 +486,7 @@ ATTACHED_MELON_STEM = LootTable(
 )
 
 ATTACHED_PUMPKIN_STEM = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -508,7 +507,7 @@ ATTACHED_PUMPKIN_STEM = LootTable(
 )
 
 AZALEA = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -520,7 +519,7 @@ AZALEA = LootTable(
 )
 
 AZALEA_LEAVES = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -588,7 +587,7 @@ AZALEA_LEAVES = LootTable(
 )
 
 AZURE_BLUET = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -600,7 +599,7 @@ AZURE_BLUET = LootTable(
 )
 
 BAMBOO = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -612,7 +611,7 @@ BAMBOO = LootTable(
 )
 
 BAMBOO_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -624,7 +623,7 @@ BAMBOO_BLOCK = LootTable(
 )
 
 BAMBOO_BUTTON = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -636,7 +635,7 @@ BAMBOO_BUTTON = LootTable(
 )
 
 BAMBOO_DOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -658,7 +657,7 @@ BAMBOO_DOOR = LootTable(
 )
 
 BAMBOO_FENCE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -670,7 +669,7 @@ BAMBOO_FENCE = LootTable(
 )
 
 BAMBOO_FENCE_GATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -682,7 +681,7 @@ BAMBOO_FENCE_GATE = LootTable(
 )
 
 BAMBOO_HANGING_SIGN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -694,7 +693,7 @@ BAMBOO_HANGING_SIGN = LootTable(
 )
 
 BAMBOO_MOSAIC = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -706,7 +705,7 @@ BAMBOO_MOSAIC = LootTable(
 )
 
 BAMBOO_MOSAIC_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -734,7 +733,7 @@ BAMBOO_MOSAIC_SLAB = LootTable(
 )
 
 BAMBOO_MOSAIC_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -746,7 +745,7 @@ BAMBOO_MOSAIC_STAIRS = LootTable(
 )
 
 BAMBOO_PLANKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -758,7 +757,7 @@ BAMBOO_PLANKS = LootTable(
 )
 
 BAMBOO_PRESSURE_PLATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -770,7 +769,7 @@ BAMBOO_PRESSURE_PLATE = LootTable(
 )
 
 BAMBOO_SAPLING = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -782,7 +781,7 @@ BAMBOO_SAPLING = LootTable(
 )
 
 BAMBOO_SHELF = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -794,7 +793,7 @@ BAMBOO_SHELF = LootTable(
 )
 
 BAMBOO_SIGN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -806,7 +805,7 @@ BAMBOO_SIGN = LootTable(
 )
 
 BAMBOO_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -834,7 +833,7 @@ BAMBOO_SLAB = LootTable(
 )
 
 BAMBOO_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -846,7 +845,7 @@ BAMBOO_STAIRS = LootTable(
 )
 
 BAMBOO_TRAPDOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -858,7 +857,7 @@ BAMBOO_TRAPDOOR = LootTable(
 )
 
 BARREL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -880,7 +879,7 @@ BARREL = LootTable(
 )
 
 BASALT = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -892,7 +891,7 @@ BASALT = LootTable(
 )
 
 BEACON = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -913,7 +912,7 @@ BEACON = LootTable(
 )
 
 BEEHIVE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -948,7 +947,7 @@ BEEHIVE = LootTable(
 )
 
 BEETROOTS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -992,7 +991,7 @@ BEETROOTS = LootTable(
 )
 
 BEE_NEST = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1021,7 +1020,7 @@ BEE_NEST = LootTable(
 )
 
 BELL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1033,7 +1032,7 @@ BELL = LootTable(
 )
 
 BIG_DRIPLEAF = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1045,7 +1044,7 @@ BIG_DRIPLEAF = LootTable(
 )
 
 BIG_DRIPLEAF_STEM = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1057,7 +1056,7 @@ BIG_DRIPLEAF_STEM = LootTable(
 )
 
 BIRCH_BUTTON = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1069,7 +1068,7 @@ BIRCH_BUTTON = LootTable(
 )
 
 BIRCH_DOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1091,7 +1090,7 @@ BIRCH_DOOR = LootTable(
 )
 
 BIRCH_FENCE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1103,7 +1102,7 @@ BIRCH_FENCE = LootTable(
 )
 
 BIRCH_FENCE_GATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1115,7 +1114,7 @@ BIRCH_FENCE_GATE = LootTable(
 )
 
 BIRCH_HANGING_SIGN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1127,7 +1126,7 @@ BIRCH_HANGING_SIGN = LootTable(
 )
 
 BIRCH_LEAVES = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1195,7 +1194,7 @@ BIRCH_LEAVES = LootTable(
 )
 
 BIRCH_LOG = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1207,7 +1206,7 @@ BIRCH_LOG = LootTable(
 )
 
 BIRCH_PLANKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1219,7 +1218,7 @@ BIRCH_PLANKS = LootTable(
 )
 
 BIRCH_PRESSURE_PLATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1231,7 +1230,7 @@ BIRCH_PRESSURE_PLATE = LootTable(
 )
 
 BIRCH_SAPLING = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1243,7 +1242,7 @@ BIRCH_SAPLING = LootTable(
 )
 
 BIRCH_SHELF = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1255,7 +1254,7 @@ BIRCH_SHELF = LootTable(
 )
 
 BIRCH_SIGN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1267,7 +1266,7 @@ BIRCH_SIGN = LootTable(
 )
 
 BIRCH_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1295,7 +1294,7 @@ BIRCH_SLAB = LootTable(
 )
 
 BIRCH_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1307,7 +1306,7 @@ BIRCH_STAIRS = LootTable(
 )
 
 BIRCH_TRAPDOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1319,7 +1318,7 @@ BIRCH_TRAPDOOR = LootTable(
 )
 
 BIRCH_WOOD = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1331,7 +1330,7 @@ BIRCH_WOOD = LootTable(
 )
 
 BLACKSTONE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1343,7 +1342,7 @@ BLACKSTONE = LootTable(
 )
 
 BLACKSTONE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1371,7 +1370,7 @@ BLACKSTONE_SLAB = LootTable(
 )
 
 BLACKSTONE_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1383,7 +1382,7 @@ BLACKSTONE_STAIRS = LootTable(
 )
 
 BLACKSTONE_WALL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1395,7 +1394,7 @@ BLACKSTONE_WALL = LootTable(
 )
 
 BLACK_BANNER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1423,7 +1422,7 @@ BLACK_BANNER = LootTable(
 )
 
 BLACK_BED = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1445,7 +1444,7 @@ BLACK_BED = LootTable(
 )
 
 BLACK_CANDLE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1491,13 +1490,13 @@ BLACK_CANDLE = LootTable(
 )
 
 BLACK_CANDLE_CAKE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:black_candle', type='minecraft:item')])],
     random_sequence='minecraft:blocks/black_candle_cake',
 )
 
 BLACK_CARPET = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1509,7 +1508,7 @@ BLACK_CARPET = LootTable(
 )
 
 BLACK_CONCRETE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1521,7 +1520,7 @@ BLACK_CONCRETE = LootTable(
 )
 
 BLACK_CONCRETE_POWDER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1533,7 +1532,7 @@ BLACK_CONCRETE_POWDER = LootTable(
 )
 
 BLACK_CONCRETE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1561,7 +1560,7 @@ BLACK_CONCRETE_SLAB = LootTable(
 )
 
 BLACK_CONCRETE_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1573,7 +1572,7 @@ BLACK_CONCRETE_STAIRS = LootTable(
 )
 
 BLACK_GLAZED_TERRACOTTA = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1585,7 +1584,7 @@ BLACK_GLAZED_TERRACOTTA = LootTable(
 )
 
 BLACK_SHULKER_BOX = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1606,7 +1605,7 @@ BLACK_SHULKER_BOX = LootTable(
 )
 
 BLACK_STAINED_GLASS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1618,7 +1617,7 @@ BLACK_STAINED_GLASS = LootTable(
 )
 
 BLACK_STAINED_GLASS_PANE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1630,7 +1629,7 @@ BLACK_STAINED_GLASS_PANE = LootTable(
 )
 
 BLACK_TERRACOTTA = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1642,7 +1641,7 @@ BLACK_TERRACOTTA = LootTable(
 )
 
 BLACK_WOOL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1654,7 +1653,7 @@ BLACK_WOOL = LootTable(
 )
 
 BLACK_WOOL_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1682,7 +1681,7 @@ BLACK_WOOL_SLAB = LootTable(
 )
 
 BLACK_WOOL_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1694,7 +1693,7 @@ BLACK_WOOL_STAIRS = LootTable(
 )
 
 BLAST_FURNACE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1716,7 +1715,7 @@ BLAST_FURNACE = LootTable(
 )
 
 BLUE_BANNER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1744,7 +1743,7 @@ BLUE_BANNER = LootTable(
 )
 
 BLUE_BED = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1766,7 +1765,7 @@ BLUE_BED = LootTable(
 )
 
 BLUE_CANDLE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1812,13 +1811,13 @@ BLUE_CANDLE = LootTable(
 )
 
 BLUE_CANDLE_CAKE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:blue_candle', type='minecraft:item')])],
     random_sequence='minecraft:blocks/blue_candle_cake',
 )
 
 BLUE_CARPET = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1830,7 +1829,7 @@ BLUE_CARPET = LootTable(
 )
 
 BLUE_CONCRETE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1842,7 +1841,7 @@ BLUE_CONCRETE = LootTable(
 )
 
 BLUE_CONCRETE_POWDER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1854,7 +1853,7 @@ BLUE_CONCRETE_POWDER = LootTable(
 )
 
 BLUE_CONCRETE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1882,7 +1881,7 @@ BLUE_CONCRETE_SLAB = LootTable(
 )
 
 BLUE_CONCRETE_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1894,7 +1893,7 @@ BLUE_CONCRETE_STAIRS = LootTable(
 )
 
 BLUE_GLAZED_TERRACOTTA = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1906,7 +1905,7 @@ BLUE_GLAZED_TERRACOTTA = LootTable(
 )
 
 BLUE_ICE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1918,7 +1917,7 @@ BLUE_ICE = LootTable(
 )
 
 BLUE_ORCHID = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1930,7 +1929,7 @@ BLUE_ORCHID = LootTable(
 )
 
 BLUE_SHULKER_BOX = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1951,7 +1950,7 @@ BLUE_SHULKER_BOX = LootTable(
 )
 
 BLUE_STAINED_GLASS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1963,7 +1962,7 @@ BLUE_STAINED_GLASS = LootTable(
 )
 
 BLUE_STAINED_GLASS_PANE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1975,7 +1974,7 @@ BLUE_STAINED_GLASS_PANE = LootTable(
 )
 
 BLUE_TERRACOTTA = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1987,7 +1986,7 @@ BLUE_TERRACOTTA = LootTable(
 )
 
 BLUE_WOOL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -1999,7 +1998,7 @@ BLUE_WOOL = LootTable(
 )
 
 BLUE_WOOL_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2027,7 +2026,7 @@ BLUE_WOOL_SLAB = LootTable(
 )
 
 BLUE_WOOL_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2039,7 +2038,7 @@ BLUE_WOOL_STAIRS = LootTable(
 )
 
 BONE_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2051,7 +2050,7 @@ BONE_BLOCK = LootTable(
 )
 
 BOOKSHELF = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2081,7 +2080,7 @@ BOOKSHELF = LootTable(
 )
 
 BRAIN_CORAL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2093,7 +2092,7 @@ BRAIN_CORAL = LootTable(
 )
 
 BRAIN_CORAL_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2120,7 +2119,7 @@ BRAIN_CORAL_BLOCK = LootTable(
 )
 
 BRAIN_CORAL_FAN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2132,7 +2131,7 @@ BRAIN_CORAL_FAN = LootTable(
 )
 
 BREWING_STAND = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2154,7 +2153,7 @@ BREWING_STAND = LootTable(
 )
 
 BRICKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2166,7 +2165,7 @@ BRICKS = LootTable(
 )
 
 BRICK_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2194,7 +2193,7 @@ BRICK_SLAB = LootTable(
 )
 
 BRICK_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2206,7 +2205,7 @@ BRICK_STAIRS = LootTable(
 )
 
 BRICK_WALL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2218,7 +2217,7 @@ BRICK_WALL = LootTable(
 )
 
 BRITTLE_ICE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2230,7 +2229,7 @@ BRITTLE_ICE = LootTable(
 )
 
 BROWN_BANNER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2258,7 +2257,7 @@ BROWN_BANNER = LootTable(
 )
 
 BROWN_BED = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2280,7 +2279,7 @@ BROWN_BED = LootTable(
 )
 
 BROWN_CANDLE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2326,13 +2325,13 @@ BROWN_CANDLE = LootTable(
 )
 
 BROWN_CANDLE_CAKE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:brown_candle', type='minecraft:item')])],
     random_sequence='minecraft:blocks/brown_candle_cake',
 )
 
 BROWN_CARPET = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2344,7 +2343,7 @@ BROWN_CARPET = LootTable(
 )
 
 BROWN_CONCRETE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2356,7 +2355,7 @@ BROWN_CONCRETE = LootTable(
 )
 
 BROWN_CONCRETE_POWDER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2368,7 +2367,7 @@ BROWN_CONCRETE_POWDER = LootTable(
 )
 
 BROWN_CONCRETE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2396,7 +2395,7 @@ BROWN_CONCRETE_SLAB = LootTable(
 )
 
 BROWN_CONCRETE_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2408,7 +2407,7 @@ BROWN_CONCRETE_STAIRS = LootTable(
 )
 
 BROWN_GLAZED_TERRACOTTA = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2420,7 +2419,7 @@ BROWN_GLAZED_TERRACOTTA = LootTable(
 )
 
 BROWN_MUSHROOM = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2432,7 +2431,7 @@ BROWN_MUSHROOM = LootTable(
 )
 
 BROWN_MUSHROOM_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2466,7 +2465,7 @@ BROWN_MUSHROOM_BLOCK = LootTable(
 )
 
 BROWN_SHULKER_BOX = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2487,7 +2486,7 @@ BROWN_SHULKER_BOX = LootTable(
 )
 
 BROWN_STAINED_GLASS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2499,7 +2498,7 @@ BROWN_STAINED_GLASS = LootTable(
 )
 
 BROWN_STAINED_GLASS_PANE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2511,7 +2510,7 @@ BROWN_STAINED_GLASS_PANE = LootTable(
 )
 
 BROWN_TERRACOTTA = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2523,7 +2522,7 @@ BROWN_TERRACOTTA = LootTable(
 )
 
 BROWN_WOOL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2535,7 +2534,7 @@ BROWN_WOOL = LootTable(
 )
 
 BROWN_WOOL_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2563,7 +2562,7 @@ BROWN_WOOL_SLAB = LootTable(
 )
 
 BROWN_WOOL_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2575,7 +2574,7 @@ BROWN_WOOL_STAIRS = LootTable(
 )
 
 BUBBLE_CORAL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2587,7 +2586,7 @@ BUBBLE_CORAL = LootTable(
 )
 
 BUBBLE_CORAL_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2614,7 +2613,7 @@ BUBBLE_CORAL_BLOCK = LootTable(
 )
 
 BUBBLE_CORAL_FAN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2625,10 +2624,10 @@ BUBBLE_CORAL_FAN = LootTable(
     random_sequence='minecraft:blocks/bubble_coral_fan',
 )
 
-BUDDING_AMETHYST = LootTable(type=LootContextParamSets.BLOCK, random_sequence='minecraft:blocks/budding_amethyst')
+BUDDING_AMETHYST = LootTable(type='minecraft:block', random_sequence='minecraft:blocks/budding_amethyst')
 
 BUSH = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2643,7 +2642,7 @@ BUSH = LootTable(
 )
 
 CACTUS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2655,7 +2654,7 @@ CACTUS = LootTable(
 )
 
 CACTUS_FLOWER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2666,10 +2665,10 @@ CACTUS_FLOWER = LootTable(
     random_sequence='minecraft:blocks/cactus_flower',
 )
 
-CAKE = LootTable(type=LootContextParamSets.BLOCK, random_sequence='minecraft:blocks/cake')
+CAKE = LootTable(type='minecraft:block', random_sequence='minecraft:blocks/cake')
 
 CALCITE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2681,7 +2680,7 @@ CALCITE = LootTable(
 )
 
 CALCITE_PILLAR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2693,7 +2692,7 @@ CALCITE_PILLAR = LootTable(
 )
 
 CALCITE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2721,7 +2720,7 @@ CALCITE_SLAB = LootTable(
 )
 
 CALCITE_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2733,7 +2732,7 @@ CALCITE_STAIRS = LootTable(
 )
 
 CALCITE_WALL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2745,7 +2744,7 @@ CALCITE_WALL = LootTable(
 )
 
 CALIBRATED_SCULK_SENSOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2757,7 +2756,7 @@ CALIBRATED_SCULK_SENSOR = LootTable(
 )
 
 CAMPFIRE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2785,7 +2784,7 @@ CAMPFIRE = LootTable(
 )
 
 CANDLE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2831,13 +2830,13 @@ CANDLE = LootTable(
 )
 
 CANDLE_CAKE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:candle', type='minecraft:item')])],
     random_sequence='minecraft:blocks/candle_cake',
 )
 
 CARROTS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:carrot', type='minecraft:item')]),
         LootPool(
@@ -2862,7 +2861,7 @@ CARROTS = LootTable(
 )
 
 CARTOGRAPHY_TABLE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2874,7 +2873,7 @@ CARTOGRAPHY_TABLE = LootTable(
 )
 
 CARVED_PUMPKIN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2886,7 +2885,7 @@ CARVED_PUMPKIN = LootTable(
 )
 
 CAULDRON = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2898,7 +2897,7 @@ CAULDRON = LootTable(
 )
 
 CAVE_VINES = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2914,7 +2913,7 @@ CAVE_VINES = LootTable(
 )
 
 CAVE_VINES_PLANT = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2930,7 +2929,7 @@ CAVE_VINES_PLANT = LootTable(
 )
 
 CHERRY_BUTTON = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2942,7 +2941,7 @@ CHERRY_BUTTON = LootTable(
 )
 
 CHERRY_DOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2964,7 +2963,7 @@ CHERRY_DOOR = LootTable(
 )
 
 CHERRY_FENCE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2976,7 +2975,7 @@ CHERRY_FENCE = LootTable(
 )
 
 CHERRY_FENCE_GATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -2988,7 +2987,7 @@ CHERRY_FENCE_GATE = LootTable(
 )
 
 CHERRY_HANGING_SIGN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3000,7 +2999,7 @@ CHERRY_HANGING_SIGN = LootTable(
 )
 
 CHERRY_LEAVES = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3068,7 +3067,7 @@ CHERRY_LEAVES = LootTable(
 )
 
 CHERRY_LOG = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3080,7 +3079,7 @@ CHERRY_LOG = LootTable(
 )
 
 CHERRY_PLANKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3092,7 +3091,7 @@ CHERRY_PLANKS = LootTable(
 )
 
 CHERRY_PRESSURE_PLATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3104,7 +3103,7 @@ CHERRY_PRESSURE_PLATE = LootTable(
 )
 
 CHERRY_SAPLING = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3116,7 +3115,7 @@ CHERRY_SAPLING = LootTable(
 )
 
 CHERRY_SHELF = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3128,7 +3127,7 @@ CHERRY_SHELF = LootTable(
 )
 
 CHERRY_SIGN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3140,7 +3139,7 @@ CHERRY_SIGN = LootTable(
 )
 
 CHERRY_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3168,7 +3167,7 @@ CHERRY_SLAB = LootTable(
 )
 
 CHERRY_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3180,7 +3179,7 @@ CHERRY_STAIRS = LootTable(
 )
 
 CHERRY_TRAPDOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3192,7 +3191,7 @@ CHERRY_TRAPDOOR = LootTable(
 )
 
 CHERRY_WOOD = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3204,7 +3203,7 @@ CHERRY_WOOD = LootTable(
 )
 
 CHEST = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3226,7 +3225,7 @@ CHEST = LootTable(
 )
 
 CHIPPED_ANVIL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3238,7 +3237,7 @@ CHIPPED_ANVIL = LootTable(
 )
 
 CHISELED_BOOKSHELF = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3250,7 +3249,7 @@ CHISELED_BOOKSHELF = LootTable(
 )
 
 CHISELED_CINNABAR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3262,7 +3261,7 @@ CHISELED_CINNABAR = LootTable(
 )
 
 CHISELED_COPPER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3274,7 +3273,7 @@ CHISELED_COPPER = LootTable(
 )
 
 CHISELED_DEEPSLATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3286,7 +3285,7 @@ CHISELED_DEEPSLATE = LootTable(
 )
 
 CHISELED_NETHER_BRICKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3298,7 +3297,7 @@ CHISELED_NETHER_BRICKS = LootTable(
 )
 
 CHISELED_PACKED_ICE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3310,7 +3309,7 @@ CHISELED_PACKED_ICE = LootTable(
 )
 
 CHISELED_POLISHED_BLACKSTONE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3322,7 +3321,7 @@ CHISELED_POLISHED_BLACKSTONE = LootTable(
 )
 
 CHISELED_QUARTZ_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3334,7 +3333,7 @@ CHISELED_QUARTZ_BLOCK = LootTable(
 )
 
 CHISELED_RED_SANDSTONE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3346,7 +3345,7 @@ CHISELED_RED_SANDSTONE = LootTable(
 )
 
 CHISELED_RESIN_BRICKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3358,7 +3357,7 @@ CHISELED_RESIN_BRICKS = LootTable(
 )
 
 CHISELED_SANDSTONE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3370,7 +3369,7 @@ CHISELED_SANDSTONE = LootTable(
 )
 
 CHISELED_SOULSHALE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3382,7 +3381,7 @@ CHISELED_SOULSHALE = LootTable(
 )
 
 CHISELED_STONE_BRICKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3394,7 +3393,7 @@ CHISELED_STONE_BRICKS = LootTable(
 )
 
 CHISELED_SULFUR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3406,7 +3405,7 @@ CHISELED_SULFUR = LootTable(
 )
 
 CHISELED_TUFF = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3418,7 +3417,7 @@ CHISELED_TUFF = LootTable(
 )
 
 CHISELED_TUFF_BRICKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3430,7 +3429,7 @@ CHISELED_TUFF_BRICKS = LootTable(
 )
 
 CHORUS_FLOWER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3457,7 +3456,7 @@ CHORUS_FLOWER = LootTable(
 )
 
 CHORUS_PLANT = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3480,7 +3479,7 @@ CHORUS_PLANT = LootTable(
 )
 
 CINNABAR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3492,7 +3491,7 @@ CINNABAR = LootTable(
 )
 
 CINNABAR_BRICKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3504,7 +3503,7 @@ CINNABAR_BRICKS = LootTable(
 )
 
 CINNABAR_BRICK_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3532,7 +3531,7 @@ CINNABAR_BRICK_SLAB = LootTable(
 )
 
 CINNABAR_BRICK_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3544,7 +3543,7 @@ CINNABAR_BRICK_STAIRS = LootTable(
 )
 
 CINNABAR_BRICK_WALL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3556,7 +3555,7 @@ CINNABAR_BRICK_WALL = LootTable(
 )
 
 CINNABAR_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3584,7 +3583,7 @@ CINNABAR_SLAB = LootTable(
 )
 
 CINNABAR_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3596,7 +3595,7 @@ CINNABAR_STAIRS = LootTable(
 )
 
 CINNABAR_WALL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3608,7 +3607,7 @@ CINNABAR_WALL = LootTable(
 )
 
 CLAY = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3638,7 +3637,7 @@ CLAY = LootTable(
 )
 
 CLOSED_EYEBLOSSOM = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3650,7 +3649,7 @@ CLOSED_EYEBLOSSOM = LootTable(
 )
 
 COAL_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3662,7 +3661,7 @@ COAL_BLOCK = LootTable(
 )
 
 COAL_ORE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3696,7 +3695,7 @@ COAL_ORE = LootTable(
 )
 
 COARSE_DIRT = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3708,7 +3707,7 @@ COARSE_DIRT = LootTable(
 )
 
 COBBLED_DEEPSLATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3720,7 +3719,7 @@ COBBLED_DEEPSLATE = LootTable(
 )
 
 COBBLED_DEEPSLATE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3748,7 +3747,7 @@ COBBLED_DEEPSLATE_SLAB = LootTable(
 )
 
 COBBLED_DEEPSLATE_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3760,7 +3759,7 @@ COBBLED_DEEPSLATE_STAIRS = LootTable(
 )
 
 COBBLED_DEEPSLATE_WALL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3772,7 +3771,7 @@ COBBLED_DEEPSLATE_WALL = LootTable(
 )
 
 COBBLESTONE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3784,7 +3783,7 @@ COBBLESTONE = LootTable(
 )
 
 COBBLESTONE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3812,7 +3811,7 @@ COBBLESTONE_SLAB = LootTable(
 )
 
 COBBLESTONE_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3824,7 +3823,7 @@ COBBLESTONE_STAIRS = LootTable(
 )
 
 COBBLESTONE_WALL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3836,7 +3835,7 @@ COBBLESTONE_WALL = LootTable(
 )
 
 COBWEB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3866,7 +3865,7 @@ COBWEB = LootTable(
 )
 
 COCOA = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3894,7 +3893,7 @@ COCOA = LootTable(
 )
 
 COMPARATOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3906,7 +3905,7 @@ COMPARATOR = LootTable(
 )
 
 COMPOSTER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3928,13 +3927,13 @@ COMPOSTER = LootTable(
 )
 
 CONDUIT = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:conduit', type='minecraft:item')])],
     random_sequence='minecraft:blocks/conduit',
 )
 
 COPPER_BARS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3946,7 +3945,7 @@ COPPER_BARS = LootTable(
 )
 
 COPPER_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3958,7 +3957,7 @@ COPPER_BLOCK = LootTable(
 )
 
 COPPER_BULB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3970,7 +3969,7 @@ COPPER_BULB = LootTable(
 )
 
 COPPER_CHAIN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -3982,7 +3981,7 @@ COPPER_CHAIN = LootTable(
 )
 
 COPPER_CHEST = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4004,7 +4003,7 @@ COPPER_CHEST = LootTable(
 )
 
 COPPER_DOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4026,7 +4025,7 @@ COPPER_DOOR = LootTable(
 )
 
 COPPER_GOLEM_STATUE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4055,7 +4054,7 @@ COPPER_GOLEM_STATUE = LootTable(
 )
 
 COPPER_GRATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4067,7 +4066,7 @@ COPPER_GRATE = LootTable(
 )
 
 COPPER_LANTERN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4079,7 +4078,7 @@ COPPER_LANTERN = LootTable(
 )
 
 COPPER_ORE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4117,7 +4116,7 @@ COPPER_ORE = LootTable(
 )
 
 COPPER_TORCH = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4129,7 +4128,7 @@ COPPER_TORCH = LootTable(
 )
 
 COPPER_TRAPDOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4141,7 +4140,7 @@ COPPER_TRAPDOOR = LootTable(
 )
 
 CORNFLOWER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4153,7 +4152,7 @@ CORNFLOWER = LootTable(
 )
 
 CRACKED_DEEPSLATE_BRICKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4165,7 +4164,7 @@ CRACKED_DEEPSLATE_BRICKS = LootTable(
 )
 
 CRACKED_DEEPSLATE_TILES = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4177,7 +4176,7 @@ CRACKED_DEEPSLATE_TILES = LootTable(
 )
 
 CRACKED_NETHER_BRICKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4189,7 +4188,7 @@ CRACKED_NETHER_BRICKS = LootTable(
 )
 
 CRACKED_POLISHED_BLACKSTONE_BRICKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4201,7 +4200,7 @@ CRACKED_POLISHED_BLACKSTONE_BRICKS = LootTable(
 )
 
 CRACKED_STONE_BRICKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4213,7 +4212,7 @@ CRACKED_STONE_BRICKS = LootTable(
 )
 
 CRAFTER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4225,7 +4224,7 @@ CRAFTER = LootTable(
 )
 
 CRAFTING_TABLE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4237,7 +4236,7 @@ CRAFTING_TABLE = LootTable(
 )
 
 CREAKING_HEART = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4277,7 +4276,7 @@ CREAKING_HEART = LootTable(
 )
 
 CREEPER_HEAD = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4298,7 +4297,7 @@ CREEPER_HEAD = LootTable(
 )
 
 CRIMSON_BUTTON = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4310,7 +4309,7 @@ CRIMSON_BUTTON = LootTable(
 )
 
 CRIMSON_DOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4332,7 +4331,7 @@ CRIMSON_DOOR = LootTable(
 )
 
 CRIMSON_FENCE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4344,7 +4343,7 @@ CRIMSON_FENCE = LootTable(
 )
 
 CRIMSON_FENCE_GATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4356,7 +4355,7 @@ CRIMSON_FENCE_GATE = LootTable(
 )
 
 CRIMSON_FUNGUS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4368,7 +4367,7 @@ CRIMSON_FUNGUS = LootTable(
 )
 
 CRIMSON_HANGING_SIGN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4380,7 +4379,7 @@ CRIMSON_HANGING_SIGN = LootTable(
 )
 
 CRIMSON_HYPHAE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4392,7 +4391,7 @@ CRIMSON_HYPHAE = LootTable(
 )
 
 CRIMSON_NYLIUM = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4419,7 +4418,7 @@ CRIMSON_NYLIUM = LootTable(
 )
 
 CRIMSON_PLANKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4431,7 +4430,7 @@ CRIMSON_PLANKS = LootTable(
 )
 
 CRIMSON_PRESSURE_PLATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4443,7 +4442,7 @@ CRIMSON_PRESSURE_PLATE = LootTable(
 )
 
 CRIMSON_ROOTS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4455,7 +4454,7 @@ CRIMSON_ROOTS = LootTable(
 )
 
 CRIMSON_SHELF = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4467,7 +4466,7 @@ CRIMSON_SHELF = LootTable(
 )
 
 CRIMSON_SIGN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4479,7 +4478,7 @@ CRIMSON_SIGN = LootTable(
 )
 
 CRIMSON_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4507,7 +4506,7 @@ CRIMSON_SLAB = LootTable(
 )
 
 CRIMSON_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4519,7 +4518,7 @@ CRIMSON_STAIRS = LootTable(
 )
 
 CRIMSON_STEM = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4531,7 +4530,7 @@ CRIMSON_STEM = LootTable(
 )
 
 CRIMSON_TRAPDOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4543,7 +4542,7 @@ CRIMSON_TRAPDOOR = LootTable(
 )
 
 CRYING_OBSIDIAN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4555,7 +4554,7 @@ CRYING_OBSIDIAN = LootTable(
 )
 
 CUT_COPPER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4567,7 +4566,7 @@ CUT_COPPER = LootTable(
 )
 
 CUT_COPPER_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4595,7 +4594,7 @@ CUT_COPPER_SLAB = LootTable(
 )
 
 CUT_COPPER_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4607,7 +4606,7 @@ CUT_COPPER_STAIRS = LootTable(
 )
 
 CUT_RED_SANDSTONE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4619,7 +4618,7 @@ CUT_RED_SANDSTONE = LootTable(
 )
 
 CUT_RED_SANDSTONE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4647,7 +4646,7 @@ CUT_RED_SANDSTONE_SLAB = LootTable(
 )
 
 CUT_SANDSTONE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4659,7 +4658,7 @@ CUT_SANDSTONE = LootTable(
 )
 
 CUT_SANDSTONE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4687,7 +4686,7 @@ CUT_SANDSTONE_SLAB = LootTable(
 )
 
 CYAN_BANNER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4715,7 +4714,7 @@ CYAN_BANNER = LootTable(
 )
 
 CYAN_BED = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4737,7 +4736,7 @@ CYAN_BED = LootTable(
 )
 
 CYAN_CANDLE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4783,13 +4782,13 @@ CYAN_CANDLE = LootTable(
 )
 
 CYAN_CANDLE_CAKE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:cyan_candle', type='minecraft:item')])],
     random_sequence='minecraft:blocks/cyan_candle_cake',
 )
 
 CYAN_CARPET = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4801,7 +4800,7 @@ CYAN_CARPET = LootTable(
 )
 
 CYAN_CONCRETE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4813,7 +4812,7 @@ CYAN_CONCRETE = LootTable(
 )
 
 CYAN_CONCRETE_POWDER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4825,7 +4824,7 @@ CYAN_CONCRETE_POWDER = LootTable(
 )
 
 CYAN_CONCRETE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4853,7 +4852,7 @@ CYAN_CONCRETE_SLAB = LootTable(
 )
 
 CYAN_CONCRETE_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4865,7 +4864,7 @@ CYAN_CONCRETE_STAIRS = LootTable(
 )
 
 CYAN_GLAZED_TERRACOTTA = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4877,7 +4876,7 @@ CYAN_GLAZED_TERRACOTTA = LootTable(
 )
 
 CYAN_SHULKER_BOX = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4898,7 +4897,7 @@ CYAN_SHULKER_BOX = LootTable(
 )
 
 CYAN_STAINED_GLASS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4910,7 +4909,7 @@ CYAN_STAINED_GLASS = LootTable(
 )
 
 CYAN_STAINED_GLASS_PANE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4922,7 +4921,7 @@ CYAN_STAINED_GLASS_PANE = LootTable(
 )
 
 CYAN_TERRACOTTA = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4934,7 +4933,7 @@ CYAN_TERRACOTTA = LootTable(
 )
 
 CYAN_WOOL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4946,7 +4945,7 @@ CYAN_WOOL = LootTable(
 )
 
 CYAN_WOOL_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4974,7 +4973,7 @@ CYAN_WOOL_SLAB = LootTable(
 )
 
 CYAN_WOOL_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4986,7 +4985,7 @@ CYAN_WOOL_STAIRS = LootTable(
 )
 
 DAMAGED_ANVIL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -4998,7 +4997,7 @@ DAMAGED_ANVIL = LootTable(
 )
 
 DANDELION = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5010,7 +5009,7 @@ DANDELION = LootTable(
 )
 
 DARK_OAK_BUTTON = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5022,7 +5021,7 @@ DARK_OAK_BUTTON = LootTable(
 )
 
 DARK_OAK_DOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5044,7 +5043,7 @@ DARK_OAK_DOOR = LootTable(
 )
 
 DARK_OAK_FENCE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5056,7 +5055,7 @@ DARK_OAK_FENCE = LootTable(
 )
 
 DARK_OAK_FENCE_GATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5068,7 +5067,7 @@ DARK_OAK_FENCE_GATE = LootTable(
 )
 
 DARK_OAK_HANGING_SIGN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5080,7 +5079,7 @@ DARK_OAK_HANGING_SIGN = LootTable(
 )
 
 DARK_OAK_LEAVES = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5175,7 +5174,7 @@ DARK_OAK_LEAVES = LootTable(
 )
 
 DARK_OAK_LOG = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5187,7 +5186,7 @@ DARK_OAK_LOG = LootTable(
 )
 
 DARK_OAK_PLANKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5199,7 +5198,7 @@ DARK_OAK_PLANKS = LootTable(
 )
 
 DARK_OAK_PRESSURE_PLATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5211,7 +5210,7 @@ DARK_OAK_PRESSURE_PLATE = LootTable(
 )
 
 DARK_OAK_SAPLING = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5223,7 +5222,7 @@ DARK_OAK_SAPLING = LootTable(
 )
 
 DARK_OAK_SHELF = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5235,7 +5234,7 @@ DARK_OAK_SHELF = LootTable(
 )
 
 DARK_OAK_SIGN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5247,7 +5246,7 @@ DARK_OAK_SIGN = LootTable(
 )
 
 DARK_OAK_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5275,7 +5274,7 @@ DARK_OAK_SLAB = LootTable(
 )
 
 DARK_OAK_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5287,7 +5286,7 @@ DARK_OAK_STAIRS = LootTable(
 )
 
 DARK_OAK_TRAPDOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5299,7 +5298,7 @@ DARK_OAK_TRAPDOOR = LootTable(
 )
 
 DARK_OAK_WOOD = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5311,7 +5310,7 @@ DARK_OAK_WOOD = LootTable(
 )
 
 DARK_PRISMARINE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5323,7 +5322,7 @@ DARK_PRISMARINE = LootTable(
 )
 
 DARK_PRISMARINE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5351,7 +5350,7 @@ DARK_PRISMARINE_SLAB = LootTable(
 )
 
 DARK_PRISMARINE_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5363,7 +5362,7 @@ DARK_PRISMARINE_STAIRS = LootTable(
 )
 
 DAYLIGHT_DETECTOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5375,7 +5374,7 @@ DAYLIGHT_DETECTOR = LootTable(
 )
 
 DEAD_BRAIN_CORAL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5387,7 +5386,7 @@ DEAD_BRAIN_CORAL = LootTable(
 )
 
 DEAD_BRAIN_CORAL_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5399,7 +5398,7 @@ DEAD_BRAIN_CORAL_BLOCK = LootTable(
 )
 
 DEAD_BRAIN_CORAL_FAN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5411,7 +5410,7 @@ DEAD_BRAIN_CORAL_FAN = LootTable(
 )
 
 DEAD_BUBBLE_CORAL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5423,7 +5422,7 @@ DEAD_BUBBLE_CORAL = LootTable(
 )
 
 DEAD_BUBBLE_CORAL_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5435,7 +5434,7 @@ DEAD_BUBBLE_CORAL_BLOCK = LootTable(
 )
 
 DEAD_BUBBLE_CORAL_FAN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5447,7 +5446,7 @@ DEAD_BUBBLE_CORAL_FAN = LootTable(
 )
 
 DEAD_BUSH = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5480,7 +5479,7 @@ DEAD_BUSH = LootTable(
 )
 
 DEAD_FIRE_CORAL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5492,7 +5491,7 @@ DEAD_FIRE_CORAL = LootTable(
 )
 
 DEAD_FIRE_CORAL_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5504,7 +5503,7 @@ DEAD_FIRE_CORAL_BLOCK = LootTable(
 )
 
 DEAD_FIRE_CORAL_FAN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5516,7 +5515,7 @@ DEAD_FIRE_CORAL_FAN = LootTable(
 )
 
 DEAD_HORN_CORAL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5528,7 +5527,7 @@ DEAD_HORN_CORAL = LootTable(
 )
 
 DEAD_HORN_CORAL_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5540,7 +5539,7 @@ DEAD_HORN_CORAL_BLOCK = LootTable(
 )
 
 DEAD_HORN_CORAL_FAN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5552,7 +5551,7 @@ DEAD_HORN_CORAL_FAN = LootTable(
 )
 
 DEAD_TUBE_CORAL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5564,7 +5563,7 @@ DEAD_TUBE_CORAL = LootTable(
 )
 
 DEAD_TUBE_CORAL_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5576,7 +5575,7 @@ DEAD_TUBE_CORAL_BLOCK = LootTable(
 )
 
 DEAD_TUBE_CORAL_FAN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5588,7 +5587,7 @@ DEAD_TUBE_CORAL_FAN = LootTable(
 )
 
 DECORATED_POT = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5623,7 +5622,7 @@ DECORATED_POT = LootTable(
 )
 
 DEEPSLATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5650,7 +5649,7 @@ DEEPSLATE = LootTable(
 )
 
 DEEPSLATE_BRICKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5662,7 +5661,7 @@ DEEPSLATE_BRICKS = LootTable(
 )
 
 DEEPSLATE_BRICK_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5690,7 +5689,7 @@ DEEPSLATE_BRICK_SLAB = LootTable(
 )
 
 DEEPSLATE_BRICK_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5702,7 +5701,7 @@ DEEPSLATE_BRICK_STAIRS = LootTable(
 )
 
 DEEPSLATE_BRICK_WALL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5714,7 +5713,7 @@ DEEPSLATE_BRICK_WALL = LootTable(
 )
 
 DEEPSLATE_COAL_ORE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5748,7 +5747,7 @@ DEEPSLATE_COAL_ORE = LootTable(
 )
 
 DEEPSLATE_COPPER_ORE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5786,7 +5785,7 @@ DEEPSLATE_COPPER_ORE = LootTable(
 )
 
 DEEPSLATE_DIAMOND_ORE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5820,7 +5819,7 @@ DEEPSLATE_DIAMOND_ORE = LootTable(
 )
 
 DEEPSLATE_EMERALD_ORE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5854,7 +5853,7 @@ DEEPSLATE_EMERALD_ORE = LootTable(
 )
 
 DEEPSLATE_GOLD_ORE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5888,7 +5887,7 @@ DEEPSLATE_GOLD_ORE = LootTable(
 )
 
 DEEPSLATE_IRON_ORE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5922,7 +5921,7 @@ DEEPSLATE_IRON_ORE = LootTable(
 )
 
 DEEPSLATE_LAPIS_ORE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5960,7 +5959,7 @@ DEEPSLATE_LAPIS_ORE = LootTable(
 )
 
 DEEPSLATE_REDSTONE_ORE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -5999,7 +5998,7 @@ DEEPSLATE_REDSTONE_ORE = LootTable(
 )
 
 DEEPSLATE_TILES = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6011,7 +6010,7 @@ DEEPSLATE_TILES = LootTable(
 )
 
 DEEPSLATE_TILE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6039,7 +6038,7 @@ DEEPSLATE_TILE_SLAB = LootTable(
 )
 
 DEEPSLATE_TILE_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6051,7 +6050,7 @@ DEEPSLATE_TILE_STAIRS = LootTable(
 )
 
 DEEPSLATE_TILE_WALL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6063,7 +6062,7 @@ DEEPSLATE_TILE_WALL = LootTable(
 )
 
 DETECTOR_RAIL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6075,7 +6074,7 @@ DETECTOR_RAIL = LootTable(
 )
 
 DIAMOND_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6087,7 +6086,7 @@ DIAMOND_BLOCK = LootTable(
 )
 
 DIAMOND_ORE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6121,7 +6120,7 @@ DIAMOND_ORE = LootTable(
 )
 
 DIORITE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6133,7 +6132,7 @@ DIORITE = LootTable(
 )
 
 DIORITE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6161,7 +6160,7 @@ DIORITE_SLAB = LootTable(
 )
 
 DIORITE_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6173,7 +6172,7 @@ DIORITE_STAIRS = LootTable(
 )
 
 DIORITE_WALL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6185,7 +6184,7 @@ DIORITE_WALL = LootTable(
 )
 
 DIRT = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6197,7 +6196,7 @@ DIRT = LootTable(
 )
 
 DIRT_PATH = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6209,7 +6208,7 @@ DIRT_PATH = LootTable(
 )
 
 DISPENSER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6231,13 +6230,13 @@ DISPENSER = LootTable(
 )
 
 DRAGON_EGG = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:dragon_egg', type='minecraft:item')])],
     random_sequence='minecraft:blocks/dragon_egg',
 )
 
 DRAGON_HEAD = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6258,7 +6257,7 @@ DRAGON_HEAD = LootTable(
 )
 
 DRIED_GHAST = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6270,7 +6269,7 @@ DRIED_GHAST = LootTable(
 )
 
 DRIED_KELP_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6282,7 +6281,7 @@ DRIED_KELP_BLOCK = LootTable(
 )
 
 DRIPSTONE_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6294,7 +6293,7 @@ DRIPSTONE_BLOCK = LootTable(
 )
 
 DROPPER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6316,7 +6315,7 @@ DROPPER = LootTable(
 )
 
 EMERALD_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6328,7 +6327,7 @@ EMERALD_BLOCK = LootTable(
 )
 
 EMERALD_ORE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6362,7 +6361,7 @@ EMERALD_ORE = LootTable(
 )
 
 ENCHANTING_TABLE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6384,7 +6383,7 @@ ENCHANTING_TABLE = LootTable(
 )
 
 ENDER_CHEST = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6414,7 +6413,7 @@ ENDER_CHEST = LootTable(
 )
 
 END_ROD = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6426,7 +6425,7 @@ END_ROD = LootTable(
 )
 
 END_STONE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6438,7 +6437,7 @@ END_STONE = LootTable(
 )
 
 END_STONE_BRICKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6450,7 +6449,7 @@ END_STONE_BRICKS = LootTable(
 )
 
 END_STONE_BRICK_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6478,7 +6477,7 @@ END_STONE_BRICK_SLAB = LootTable(
 )
 
 END_STONE_BRICK_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6490,7 +6489,7 @@ END_STONE_BRICK_STAIRS = LootTable(
 )
 
 END_STONE_BRICK_WALL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6502,7 +6501,7 @@ END_STONE_BRICK_WALL = LootTable(
 )
 
 EXPOSED_CHISELED_COPPER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6514,7 +6513,7 @@ EXPOSED_CHISELED_COPPER = LootTable(
 )
 
 EXPOSED_COPPER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6526,7 +6525,7 @@ EXPOSED_COPPER = LootTable(
 )
 
 EXPOSED_COPPER_BARS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6538,7 +6537,7 @@ EXPOSED_COPPER_BARS = LootTable(
 )
 
 EXPOSED_COPPER_BULB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6550,7 +6549,7 @@ EXPOSED_COPPER_BULB = LootTable(
 )
 
 EXPOSED_COPPER_CHAIN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6562,7 +6561,7 @@ EXPOSED_COPPER_CHAIN = LootTable(
 )
 
 EXPOSED_COPPER_CHEST = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6584,7 +6583,7 @@ EXPOSED_COPPER_CHEST = LootTable(
 )
 
 EXPOSED_COPPER_DOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6606,7 +6605,7 @@ EXPOSED_COPPER_DOOR = LootTable(
 )
 
 EXPOSED_COPPER_GOLEM_STATUE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6635,7 +6634,7 @@ EXPOSED_COPPER_GOLEM_STATUE = LootTable(
 )
 
 EXPOSED_COPPER_GRATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6647,7 +6646,7 @@ EXPOSED_COPPER_GRATE = LootTable(
 )
 
 EXPOSED_COPPER_LANTERN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6659,7 +6658,7 @@ EXPOSED_COPPER_LANTERN = LootTable(
 )
 
 EXPOSED_COPPER_TRAPDOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6671,7 +6670,7 @@ EXPOSED_COPPER_TRAPDOOR = LootTable(
 )
 
 EXPOSED_CUT_COPPER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6683,7 +6682,7 @@ EXPOSED_CUT_COPPER = LootTable(
 )
 
 EXPOSED_CUT_COPPER_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6711,7 +6710,7 @@ EXPOSED_CUT_COPPER_SLAB = LootTable(
 )
 
 EXPOSED_CUT_COPPER_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6723,7 +6722,7 @@ EXPOSED_CUT_COPPER_STAIRS = LootTable(
 )
 
 EXPOSED_LIGHTNING_ROD = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6735,7 +6734,7 @@ EXPOSED_LIGHTNING_ROD = LootTable(
 )
 
 FARMLAND = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6747,7 +6746,7 @@ FARMLAND = LootTable(
 )
 
 FERN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6782,10 +6781,10 @@ FERN = LootTable(
     random_sequence='minecraft:blocks/fern',
 )
 
-FIRE = LootTable(type=LootContextParamSets.BLOCK, random_sequence='minecraft:blocks/fire')
+FIRE = LootTable(type='minecraft:block', random_sequence='minecraft:blocks/fire')
 
 FIREFLY_BUSH = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6797,7 +6796,7 @@ FIREFLY_BUSH = LootTable(
 )
 
 FIRE_CORAL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6809,7 +6808,7 @@ FIRE_CORAL = LootTable(
 )
 
 FIRE_CORAL_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6836,7 +6835,7 @@ FIRE_CORAL_BLOCK = LootTable(
 )
 
 FIRE_CORAL_FAN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6848,7 +6847,7 @@ FIRE_CORAL_FAN = LootTable(
 )
 
 FLETCHING_TABLE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6860,7 +6859,7 @@ FLETCHING_TABLE = LootTable(
 )
 
 FLOWERING_AZALEA = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6872,7 +6871,7 @@ FLOWERING_AZALEA = LootTable(
 )
 
 FLOWERING_AZALEA_LEAVES = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6940,7 +6939,7 @@ FLOWERING_AZALEA_LEAVES = LootTable(
 )
 
 FLOWER_POT = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6951,12 +6950,12 @@ FLOWER_POT = LootTable(
     random_sequence='minecraft:blocks/flower_pot',
 )
 
-FROGSPAWN = LootTable(type=LootContextParamSets.BLOCK, random_sequence='minecraft:blocks/frogspawn')
+FROGSPAWN = LootTable(type='minecraft:block', random_sequence='minecraft:blocks/frogspawn')
 
-FROSTED_ICE = LootTable(type=LootContextParamSets.BLOCK, random_sequence='minecraft:blocks/frosted_ice')
+FROSTED_ICE = LootTable(type='minecraft:block', random_sequence='minecraft:blocks/frosted_ice')
 
 FURNACE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -6978,7 +6977,7 @@ FURNACE = LootTable(
 )
 
 GILDED_BLACKSTONE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7020,7 +7019,7 @@ GILDED_BLACKSTONE = LootTable(
 )
 
 GLASS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7032,7 +7031,7 @@ GLASS = LootTable(
 )
 
 GLASS_PANE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7044,7 +7043,7 @@ GLASS_PANE = LootTable(
 )
 
 GLOWSTONE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7084,7 +7083,7 @@ GLOWSTONE = LootTable(
 )
 
 GLOW_LICHEN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7165,7 +7164,7 @@ GLOW_LICHEN = LootTable(
 )
 
 GOLDEN_DANDELION = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7177,7 +7176,7 @@ GOLDEN_DANDELION = LootTable(
 )
 
 GOLD_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7189,7 +7188,7 @@ GOLD_BLOCK = LootTable(
 )
 
 GOLD_ORE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7223,7 +7222,7 @@ GOLD_ORE = LootTable(
 )
 
 GRANITE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7235,7 +7234,7 @@ GRANITE = LootTable(
 )
 
 GRANITE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7263,7 +7262,7 @@ GRANITE_SLAB = LootTable(
 )
 
 GRANITE_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7275,7 +7274,7 @@ GRANITE_STAIRS = LootTable(
 )
 
 GRANITE_WALL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7287,7 +7286,7 @@ GRANITE_WALL = LootTable(
 )
 
 GRASS_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7314,7 +7313,7 @@ GRASS_BLOCK = LootTable(
 )
 
 GRAVEL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7352,7 +7351,7 @@ GRAVEL = LootTable(
 )
 
 GRAY_BANNER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7380,7 +7379,7 @@ GRAY_BANNER = LootTable(
 )
 
 GRAY_BED = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7402,7 +7401,7 @@ GRAY_BED = LootTable(
 )
 
 GRAY_CANDLE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7448,13 +7447,13 @@ GRAY_CANDLE = LootTable(
 )
 
 GRAY_CANDLE_CAKE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:gray_candle', type='minecraft:item')])],
     random_sequence='minecraft:blocks/gray_candle_cake',
 )
 
 GRAY_CARPET = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7466,7 +7465,7 @@ GRAY_CARPET = LootTable(
 )
 
 GRAY_CONCRETE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7478,7 +7477,7 @@ GRAY_CONCRETE = LootTable(
 )
 
 GRAY_CONCRETE_POWDER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7490,7 +7489,7 @@ GRAY_CONCRETE_POWDER = LootTable(
 )
 
 GRAY_CONCRETE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7518,7 +7517,7 @@ GRAY_CONCRETE_SLAB = LootTable(
 )
 
 GRAY_CONCRETE_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7530,7 +7529,7 @@ GRAY_CONCRETE_STAIRS = LootTable(
 )
 
 GRAY_GLAZED_TERRACOTTA = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7542,7 +7541,7 @@ GRAY_GLAZED_TERRACOTTA = LootTable(
 )
 
 GRAY_SHULKER_BOX = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7563,7 +7562,7 @@ GRAY_SHULKER_BOX = LootTable(
 )
 
 GRAY_STAINED_GLASS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7575,7 +7574,7 @@ GRAY_STAINED_GLASS = LootTable(
 )
 
 GRAY_STAINED_GLASS_PANE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7587,7 +7586,7 @@ GRAY_STAINED_GLASS_PANE = LootTable(
 )
 
 GRAY_TERRACOTTA = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7599,7 +7598,7 @@ GRAY_TERRACOTTA = LootTable(
 )
 
 GRAY_WOOL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7611,7 +7610,7 @@ GRAY_WOOL = LootTable(
 )
 
 GRAY_WOOL_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7639,7 +7638,7 @@ GRAY_WOOL_SLAB = LootTable(
 )
 
 GRAY_WOOL_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7651,7 +7650,7 @@ GRAY_WOOL_STAIRS = LootTable(
 )
 
 GREEN_BANNER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7679,7 +7678,7 @@ GREEN_BANNER = LootTable(
 )
 
 GREEN_BED = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7701,7 +7700,7 @@ GREEN_BED = LootTable(
 )
 
 GREEN_CANDLE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7747,13 +7746,13 @@ GREEN_CANDLE = LootTable(
 )
 
 GREEN_CANDLE_CAKE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:green_candle', type='minecraft:item')])],
     random_sequence='minecraft:blocks/green_candle_cake',
 )
 
 GREEN_CARPET = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7765,7 +7764,7 @@ GREEN_CARPET = LootTable(
 )
 
 GREEN_CONCRETE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7777,7 +7776,7 @@ GREEN_CONCRETE = LootTable(
 )
 
 GREEN_CONCRETE_POWDER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7789,7 +7788,7 @@ GREEN_CONCRETE_POWDER = LootTable(
 )
 
 GREEN_CONCRETE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7817,7 +7816,7 @@ GREEN_CONCRETE_SLAB = LootTable(
 )
 
 GREEN_CONCRETE_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7829,7 +7828,7 @@ GREEN_CONCRETE_STAIRS = LootTable(
 )
 
 GREEN_GLAZED_TERRACOTTA = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7841,7 +7840,7 @@ GREEN_GLAZED_TERRACOTTA = LootTable(
 )
 
 GREEN_SHULKER_BOX = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7862,7 +7861,7 @@ GREEN_SHULKER_BOX = LootTable(
 )
 
 GREEN_STAINED_GLASS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7874,7 +7873,7 @@ GREEN_STAINED_GLASS = LootTable(
 )
 
 GREEN_STAINED_GLASS_PANE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7886,7 +7885,7 @@ GREEN_STAINED_GLASS_PANE = LootTable(
 )
 
 GREEN_TERRACOTTA = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7898,7 +7897,7 @@ GREEN_TERRACOTTA = LootTable(
 )
 
 GREEN_WOOL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7910,7 +7909,7 @@ GREEN_WOOL = LootTable(
 )
 
 GREEN_WOOL_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7938,7 +7937,7 @@ GREEN_WOOL_SLAB = LootTable(
 )
 
 GREEN_WOOL_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7950,7 +7949,7 @@ GREEN_WOOL_STAIRS = LootTable(
 )
 
 GRINDSTONE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7962,7 +7961,7 @@ GRINDSTONE = LootTable(
 )
 
 HANGING_ROOTS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7974,7 +7973,7 @@ HANGING_ROOTS = LootTable(
 )
 
 HAY_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7986,7 +7985,7 @@ HAY_BLOCK = LootTable(
 )
 
 HEAVY_CORE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -7998,7 +7997,7 @@ HEAVY_CORE = LootTable(
 )
 
 HEAVY_WEIGHTED_PRESSURE_PLATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8010,7 +8009,7 @@ HEAVY_WEIGHTED_PRESSURE_PLATE = LootTable(
 )
 
 HONEYCOMB_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8022,7 +8021,7 @@ HONEYCOMB_BLOCK = LootTable(
 )
 
 HONEY_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8034,7 +8033,7 @@ HONEY_BLOCK = LootTable(
 )
 
 HOPPER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8056,7 +8055,7 @@ HOPPER = LootTable(
 )
 
 HORN_CORAL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8068,7 +8067,7 @@ HORN_CORAL = LootTable(
 )
 
 HORN_CORAL_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8095,7 +8094,7 @@ HORN_CORAL_BLOCK = LootTable(
 )
 
 HORN_CORAL_FAN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8107,7 +8106,7 @@ HORN_CORAL_FAN = LootTable(
 )
 
 ICE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8119,7 +8118,7 @@ ICE = LootTable(
 )
 
 ICE_CRYSTAL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8131,7 +8130,7 @@ ICE_CRYSTAL = LootTable(
 )
 
 ICICLE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8143,7 +8142,7 @@ ICICLE = LootTable(
 )
 
 INFESTED_CHISELED_STONE_BRICKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8155,7 +8154,7 @@ INFESTED_CHISELED_STONE_BRICKS = LootTable(
 )
 
 INFESTED_COBBLESTONE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8167,7 +8166,7 @@ INFESTED_COBBLESTONE = LootTable(
 )
 
 INFESTED_CRACKED_STONE_BRICKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8179,7 +8178,7 @@ INFESTED_CRACKED_STONE_BRICKS = LootTable(
 )
 
 INFESTED_DEEPSLATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8191,7 +8190,7 @@ INFESTED_DEEPSLATE = LootTable(
 )
 
 INFESTED_MOSSY_STONE_BRICKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8203,7 +8202,7 @@ INFESTED_MOSSY_STONE_BRICKS = LootTable(
 )
 
 INFESTED_STONE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8215,7 +8214,7 @@ INFESTED_STONE = LootTable(
 )
 
 INFESTED_STONE_BRICKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8227,7 +8226,7 @@ INFESTED_STONE_BRICKS = LootTable(
 )
 
 IRON_BARS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8239,7 +8238,7 @@ IRON_BARS = LootTable(
 )
 
 IRON_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8251,7 +8250,7 @@ IRON_BLOCK = LootTable(
 )
 
 IRON_CHAIN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8263,7 +8262,7 @@ IRON_CHAIN = LootTable(
 )
 
 IRON_DOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8285,7 +8284,7 @@ IRON_DOOR = LootTable(
 )
 
 IRON_ORE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8319,7 +8318,7 @@ IRON_ORE = LootTable(
 )
 
 IRON_TRAPDOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8331,7 +8330,7 @@ IRON_TRAPDOOR = LootTable(
 )
 
 JACK_O_LANTERN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8343,7 +8342,7 @@ JACK_O_LANTERN = LootTable(
 )
 
 JUKEBOX = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8355,7 +8354,7 @@ JUKEBOX = LootTable(
 )
 
 JUNGLE_BUTTON = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8367,7 +8366,7 @@ JUNGLE_BUTTON = LootTable(
 )
 
 JUNGLE_DOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8389,7 +8388,7 @@ JUNGLE_DOOR = LootTable(
 )
 
 JUNGLE_FENCE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8401,7 +8400,7 @@ JUNGLE_FENCE = LootTable(
 )
 
 JUNGLE_FENCE_GATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8413,7 +8412,7 @@ JUNGLE_FENCE_GATE = LootTable(
 )
 
 JUNGLE_HANGING_SIGN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8425,7 +8424,7 @@ JUNGLE_HANGING_SIGN = LootTable(
 )
 
 JUNGLE_LEAVES = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8493,7 +8492,7 @@ JUNGLE_LEAVES = LootTable(
 )
 
 JUNGLE_LOG = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8505,7 +8504,7 @@ JUNGLE_LOG = LootTable(
 )
 
 JUNGLE_PLANKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8517,7 +8516,7 @@ JUNGLE_PLANKS = LootTable(
 )
 
 JUNGLE_PRESSURE_PLATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8529,7 +8528,7 @@ JUNGLE_PRESSURE_PLATE = LootTable(
 )
 
 JUNGLE_SAPLING = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8541,7 +8540,7 @@ JUNGLE_SAPLING = LootTable(
 )
 
 JUNGLE_SHELF = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8553,7 +8552,7 @@ JUNGLE_SHELF = LootTable(
 )
 
 JUNGLE_SIGN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8565,7 +8564,7 @@ JUNGLE_SIGN = LootTable(
 )
 
 JUNGLE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8593,7 +8592,7 @@ JUNGLE_SLAB = LootTable(
 )
 
 JUNGLE_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8605,7 +8604,7 @@ JUNGLE_STAIRS = LootTable(
 )
 
 JUNGLE_TRAPDOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8617,7 +8616,7 @@ JUNGLE_TRAPDOOR = LootTable(
 )
 
 JUNGLE_WOOD = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8629,7 +8628,7 @@ JUNGLE_WOOD = LootTable(
 )
 
 KELP = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8641,7 +8640,7 @@ KELP = LootTable(
 )
 
 KELP_PLANT = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8653,7 +8652,7 @@ KELP_PLANT = LootTable(
 )
 
 LADDER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8665,7 +8664,7 @@ LADDER = LootTable(
 )
 
 LANTERN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8677,7 +8676,7 @@ LANTERN = LootTable(
 )
 
 LAPIS_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8689,7 +8688,7 @@ LAPIS_BLOCK = LootTable(
 )
 
 LAPIS_ORE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8727,7 +8726,7 @@ LAPIS_ORE = LootTable(
 )
 
 LARGE_AMETHYST_BUD = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8739,7 +8738,7 @@ LARGE_AMETHYST_BUD = LootTable(
 )
 
 LARGE_FERN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8830,7 +8829,7 @@ LARGE_FERN = LootTable(
 )
 
 LAVA_CAULDRON = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8842,7 +8841,7 @@ LAVA_CAULDRON = LootTable(
 )
 
 LEAF_LITTER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8897,7 +8896,7 @@ LEAF_LITTER = LootTable(
 )
 
 LECTERN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8909,7 +8908,7 @@ LECTERN = LootTable(
 )
 
 LEVER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8921,7 +8920,7 @@ LEVER = LootTable(
 )
 
 LIGHTNING_ROD = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8933,7 +8932,7 @@ LIGHTNING_ROD = LootTable(
 )
 
 LIGHT_BLUE_BANNER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8961,7 +8960,7 @@ LIGHT_BLUE_BANNER = LootTable(
 )
 
 LIGHT_BLUE_BED = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -8983,7 +8982,7 @@ LIGHT_BLUE_BED = LootTable(
 )
 
 LIGHT_BLUE_CANDLE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9029,13 +9028,13 @@ LIGHT_BLUE_CANDLE = LootTable(
 )
 
 LIGHT_BLUE_CANDLE_CAKE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:light_blue_candle', type='minecraft:item')])],
     random_sequence='minecraft:blocks/light_blue_candle_cake',
 )
 
 LIGHT_BLUE_CARPET = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9047,7 +9046,7 @@ LIGHT_BLUE_CARPET = LootTable(
 )
 
 LIGHT_BLUE_CONCRETE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9059,7 +9058,7 @@ LIGHT_BLUE_CONCRETE = LootTable(
 )
 
 LIGHT_BLUE_CONCRETE_POWDER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9071,7 +9070,7 @@ LIGHT_BLUE_CONCRETE_POWDER = LootTable(
 )
 
 LIGHT_BLUE_CONCRETE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9099,7 +9098,7 @@ LIGHT_BLUE_CONCRETE_SLAB = LootTable(
 )
 
 LIGHT_BLUE_CONCRETE_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9111,7 +9110,7 @@ LIGHT_BLUE_CONCRETE_STAIRS = LootTable(
 )
 
 LIGHT_BLUE_GLAZED_TERRACOTTA = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9123,7 +9122,7 @@ LIGHT_BLUE_GLAZED_TERRACOTTA = LootTable(
 )
 
 LIGHT_BLUE_SHULKER_BOX = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9144,7 +9143,7 @@ LIGHT_BLUE_SHULKER_BOX = LootTable(
 )
 
 LIGHT_BLUE_STAINED_GLASS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9156,7 +9155,7 @@ LIGHT_BLUE_STAINED_GLASS = LootTable(
 )
 
 LIGHT_BLUE_STAINED_GLASS_PANE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9168,7 +9167,7 @@ LIGHT_BLUE_STAINED_GLASS_PANE = LootTable(
 )
 
 LIGHT_BLUE_TERRACOTTA = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9180,7 +9179,7 @@ LIGHT_BLUE_TERRACOTTA = LootTable(
 )
 
 LIGHT_BLUE_WOOL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9192,7 +9191,7 @@ LIGHT_BLUE_WOOL = LootTable(
 )
 
 LIGHT_BLUE_WOOL_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9220,7 +9219,7 @@ LIGHT_BLUE_WOOL_SLAB = LootTable(
 )
 
 LIGHT_BLUE_WOOL_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9232,7 +9231,7 @@ LIGHT_BLUE_WOOL_STAIRS = LootTable(
 )
 
 LIGHT_GRAY_BANNER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9260,7 +9259,7 @@ LIGHT_GRAY_BANNER = LootTable(
 )
 
 LIGHT_GRAY_BED = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9282,7 +9281,7 @@ LIGHT_GRAY_BED = LootTable(
 )
 
 LIGHT_GRAY_CANDLE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9328,13 +9327,13 @@ LIGHT_GRAY_CANDLE = LootTable(
 )
 
 LIGHT_GRAY_CANDLE_CAKE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:light_gray_candle', type='minecraft:item')])],
     random_sequence='minecraft:blocks/light_gray_candle_cake',
 )
 
 LIGHT_GRAY_CARPET = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9346,7 +9345,7 @@ LIGHT_GRAY_CARPET = LootTable(
 )
 
 LIGHT_GRAY_CONCRETE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9358,7 +9357,7 @@ LIGHT_GRAY_CONCRETE = LootTable(
 )
 
 LIGHT_GRAY_CONCRETE_POWDER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9370,7 +9369,7 @@ LIGHT_GRAY_CONCRETE_POWDER = LootTable(
 )
 
 LIGHT_GRAY_CONCRETE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9398,7 +9397,7 @@ LIGHT_GRAY_CONCRETE_SLAB = LootTable(
 )
 
 LIGHT_GRAY_CONCRETE_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9410,7 +9409,7 @@ LIGHT_GRAY_CONCRETE_STAIRS = LootTable(
 )
 
 LIGHT_GRAY_GLAZED_TERRACOTTA = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9422,7 +9421,7 @@ LIGHT_GRAY_GLAZED_TERRACOTTA = LootTable(
 )
 
 LIGHT_GRAY_SHULKER_BOX = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9443,7 +9442,7 @@ LIGHT_GRAY_SHULKER_BOX = LootTable(
 )
 
 LIGHT_GRAY_STAINED_GLASS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9455,7 +9454,7 @@ LIGHT_GRAY_STAINED_GLASS = LootTable(
 )
 
 LIGHT_GRAY_STAINED_GLASS_PANE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9467,7 +9466,7 @@ LIGHT_GRAY_STAINED_GLASS_PANE = LootTable(
 )
 
 LIGHT_GRAY_TERRACOTTA = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9479,7 +9478,7 @@ LIGHT_GRAY_TERRACOTTA = LootTable(
 )
 
 LIGHT_GRAY_WOOL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9491,7 +9490,7 @@ LIGHT_GRAY_WOOL = LootTable(
 )
 
 LIGHT_GRAY_WOOL_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9519,7 +9518,7 @@ LIGHT_GRAY_WOOL_SLAB = LootTable(
 )
 
 LIGHT_GRAY_WOOL_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9531,7 +9530,7 @@ LIGHT_GRAY_WOOL_STAIRS = LootTable(
 )
 
 LIGHT_WEIGHTED_PRESSURE_PLATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9543,7 +9542,7 @@ LIGHT_WEIGHTED_PRESSURE_PLATE = LootTable(
 )
 
 LILAC = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9565,7 +9564,7 @@ LILAC = LootTable(
 )
 
 LILY_OF_THE_VALLEY = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9577,7 +9576,7 @@ LILY_OF_THE_VALLEY = LootTable(
 )
 
 LILY_PAD = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9589,7 +9588,7 @@ LILY_PAD = LootTable(
 )
 
 LIME_BANNER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9617,7 +9616,7 @@ LIME_BANNER = LootTable(
 )
 
 LIME_BED = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9639,7 +9638,7 @@ LIME_BED = LootTable(
 )
 
 LIME_CANDLE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9685,13 +9684,13 @@ LIME_CANDLE = LootTable(
 )
 
 LIME_CANDLE_CAKE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:lime_candle', type='minecraft:item')])],
     random_sequence='minecraft:blocks/lime_candle_cake',
 )
 
 LIME_CARPET = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9703,7 +9702,7 @@ LIME_CARPET = LootTable(
 )
 
 LIME_CONCRETE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9715,7 +9714,7 @@ LIME_CONCRETE = LootTable(
 )
 
 LIME_CONCRETE_POWDER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9727,7 +9726,7 @@ LIME_CONCRETE_POWDER = LootTable(
 )
 
 LIME_CONCRETE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9755,7 +9754,7 @@ LIME_CONCRETE_SLAB = LootTable(
 )
 
 LIME_CONCRETE_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9767,7 +9766,7 @@ LIME_CONCRETE_STAIRS = LootTable(
 )
 
 LIME_GLAZED_TERRACOTTA = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9779,7 +9778,7 @@ LIME_GLAZED_TERRACOTTA = LootTable(
 )
 
 LIME_SHULKER_BOX = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9800,7 +9799,7 @@ LIME_SHULKER_BOX = LootTable(
 )
 
 LIME_STAINED_GLASS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9812,7 +9811,7 @@ LIME_STAINED_GLASS = LootTable(
 )
 
 LIME_STAINED_GLASS_PANE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9824,7 +9823,7 @@ LIME_STAINED_GLASS_PANE = LootTable(
 )
 
 LIME_TERRACOTTA = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9836,7 +9835,7 @@ LIME_TERRACOTTA = LootTable(
 )
 
 LIME_WOOL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9848,7 +9847,7 @@ LIME_WOOL = LootTable(
 )
 
 LIME_WOOL_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9876,7 +9875,7 @@ LIME_WOOL_SLAB = LootTable(
 )
 
 LIME_WOOL_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9888,7 +9887,7 @@ LIME_WOOL_STAIRS = LootTable(
 )
 
 LODESTONE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9900,7 +9899,7 @@ LODESTONE = LootTable(
 )
 
 LOOM = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9912,7 +9911,7 @@ LOOM = LootTable(
 )
 
 MAGENTA_BANNER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9940,7 +9939,7 @@ MAGENTA_BANNER = LootTable(
 )
 
 MAGENTA_BED = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -9962,7 +9961,7 @@ MAGENTA_BED = LootTable(
 )
 
 MAGENTA_CANDLE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10008,13 +10007,13 @@ MAGENTA_CANDLE = LootTable(
 )
 
 MAGENTA_CANDLE_CAKE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:magenta_candle', type='minecraft:item')])],
     random_sequence='minecraft:blocks/magenta_candle_cake',
 )
 
 MAGENTA_CARPET = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10026,7 +10025,7 @@ MAGENTA_CARPET = LootTable(
 )
 
 MAGENTA_CONCRETE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10038,7 +10037,7 @@ MAGENTA_CONCRETE = LootTable(
 )
 
 MAGENTA_CONCRETE_POWDER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10050,7 +10049,7 @@ MAGENTA_CONCRETE_POWDER = LootTable(
 )
 
 MAGENTA_CONCRETE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10078,7 +10077,7 @@ MAGENTA_CONCRETE_SLAB = LootTable(
 )
 
 MAGENTA_CONCRETE_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10090,7 +10089,7 @@ MAGENTA_CONCRETE_STAIRS = LootTable(
 )
 
 MAGENTA_GLAZED_TERRACOTTA = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10102,7 +10101,7 @@ MAGENTA_GLAZED_TERRACOTTA = LootTable(
 )
 
 MAGENTA_SHULKER_BOX = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10123,7 +10122,7 @@ MAGENTA_SHULKER_BOX = LootTable(
 )
 
 MAGENTA_STAINED_GLASS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10135,7 +10134,7 @@ MAGENTA_STAINED_GLASS = LootTable(
 )
 
 MAGENTA_STAINED_GLASS_PANE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10147,7 +10146,7 @@ MAGENTA_STAINED_GLASS_PANE = LootTable(
 )
 
 MAGENTA_TERRACOTTA = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10159,7 +10158,7 @@ MAGENTA_TERRACOTTA = LootTable(
 )
 
 MAGENTA_WOOL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10171,7 +10170,7 @@ MAGENTA_WOOL = LootTable(
 )
 
 MAGENTA_WOOL_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10199,7 +10198,7 @@ MAGENTA_WOOL_SLAB = LootTable(
 )
 
 MAGENTA_WOOL_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10211,7 +10210,7 @@ MAGENTA_WOOL_STAIRS = LootTable(
 )
 
 MAGMA_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10223,7 +10222,7 @@ MAGMA_BLOCK = LootTable(
 )
 
 MANGROVE_BUTTON = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10235,7 +10234,7 @@ MANGROVE_BUTTON = LootTable(
 )
 
 MANGROVE_DOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10257,7 +10256,7 @@ MANGROVE_DOOR = LootTable(
 )
 
 MANGROVE_FENCE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10269,7 +10268,7 @@ MANGROVE_FENCE = LootTable(
 )
 
 MANGROVE_FENCE_GATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10281,7 +10280,7 @@ MANGROVE_FENCE_GATE = LootTable(
 )
 
 MANGROVE_HANGING_SIGN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10293,7 +10292,7 @@ MANGROVE_HANGING_SIGN = LootTable(
 )
 
 MANGROVE_LEAVES = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10334,7 +10333,7 @@ MANGROVE_LEAVES = LootTable(
 )
 
 MANGROVE_LOG = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10346,7 +10345,7 @@ MANGROVE_LOG = LootTable(
 )
 
 MANGROVE_PLANKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10358,7 +10357,7 @@ MANGROVE_PLANKS = LootTable(
 )
 
 MANGROVE_PRESSURE_PLATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10370,7 +10369,7 @@ MANGROVE_PRESSURE_PLATE = LootTable(
 )
 
 MANGROVE_PROPAGULE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10387,7 +10386,7 @@ MANGROVE_PROPAGULE = LootTable(
 )
 
 MANGROVE_ROOTS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10399,7 +10398,7 @@ MANGROVE_ROOTS = LootTable(
 )
 
 MANGROVE_SHELF = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10411,7 +10410,7 @@ MANGROVE_SHELF = LootTable(
 )
 
 MANGROVE_SIGN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10423,7 +10422,7 @@ MANGROVE_SIGN = LootTable(
 )
 
 MANGROVE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10451,7 +10450,7 @@ MANGROVE_SLAB = LootTable(
 )
 
 MANGROVE_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10463,7 +10462,7 @@ MANGROVE_STAIRS = LootTable(
 )
 
 MANGROVE_TRAPDOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10475,7 +10474,7 @@ MANGROVE_TRAPDOOR = LootTable(
 )
 
 MANGROVE_WOOD = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10487,7 +10486,7 @@ MANGROVE_WOOD = LootTable(
 )
 
 MEDIUM_AMETHYST_BUD = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10499,7 +10498,7 @@ MEDIUM_AMETHYST_BUD = LootTable(
 )
 
 MELON = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10539,7 +10538,7 @@ MELON = LootTable(
 )
 
 MELON_STEM = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10630,7 +10629,7 @@ MELON_STEM = LootTable(
 )
 
 MOSSY_COBBLESTONE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10642,7 +10641,7 @@ MOSSY_COBBLESTONE = LootTable(
 )
 
 MOSSY_COBBLESTONE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10670,7 +10669,7 @@ MOSSY_COBBLESTONE_SLAB = LootTable(
 )
 
 MOSSY_COBBLESTONE_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10682,7 +10681,7 @@ MOSSY_COBBLESTONE_STAIRS = LootTable(
 )
 
 MOSSY_COBBLESTONE_WALL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10694,7 +10693,7 @@ MOSSY_COBBLESTONE_WALL = LootTable(
 )
 
 MOSSY_STONE_BRICKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10706,7 +10705,7 @@ MOSSY_STONE_BRICKS = LootTable(
 )
 
 MOSSY_STONE_BRICK_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10734,7 +10733,7 @@ MOSSY_STONE_BRICK_SLAB = LootTable(
 )
 
 MOSSY_STONE_BRICK_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10746,7 +10745,7 @@ MOSSY_STONE_BRICK_STAIRS = LootTable(
 )
 
 MOSSY_STONE_BRICK_WALL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10758,7 +10757,7 @@ MOSSY_STONE_BRICK_WALL = LootTable(
 )
 
 MOSS_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10770,7 +10769,7 @@ MOSS_BLOCK = LootTable(
 )
 
 MOSS_CARPET = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10782,7 +10781,7 @@ MOSS_CARPET = LootTable(
 )
 
 MUD = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10794,7 +10793,7 @@ MUD = LootTable(
 )
 
 MUDDY_MANGROVE_ROOTS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10806,7 +10805,7 @@ MUDDY_MANGROVE_ROOTS = LootTable(
 )
 
 MUD_BRICKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10818,7 +10817,7 @@ MUD_BRICKS = LootTable(
 )
 
 MUD_BRICK_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10846,7 +10845,7 @@ MUD_BRICK_SLAB = LootTable(
 )
 
 MUD_BRICK_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10858,7 +10857,7 @@ MUD_BRICK_STAIRS = LootTable(
 )
 
 MUD_BRICK_WALL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10870,7 +10869,7 @@ MUD_BRICK_WALL = LootTable(
 )
 
 MUSHROOM_STEM = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10882,7 +10881,7 @@ MUSHROOM_STEM = LootTable(
 )
 
 MYCELIUM = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10909,7 +10908,7 @@ MYCELIUM = LootTable(
 )
 
 NETHERITE_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10921,7 +10920,7 @@ NETHERITE_BLOCK = LootTable(
 )
 
 NETHERRACK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10933,7 +10932,7 @@ NETHERRACK = LootTable(
 )
 
 NETHER_BRICKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10945,7 +10944,7 @@ NETHER_BRICKS = LootTable(
 )
 
 NETHER_BRICK_FENCE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10957,7 +10956,7 @@ NETHER_BRICK_FENCE = LootTable(
 )
 
 NETHER_BRICK_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10985,7 +10984,7 @@ NETHER_BRICK_SLAB = LootTable(
 )
 
 NETHER_BRICK_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -10997,7 +10996,7 @@ NETHER_BRICK_STAIRS = LootTable(
 )
 
 NETHER_BRICK_WALL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11009,7 +11008,7 @@ NETHER_BRICK_WALL = LootTable(
 )
 
 NETHER_GOLD_ORE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11046,10 +11045,10 @@ NETHER_GOLD_ORE = LootTable(
     random_sequence='minecraft:blocks/nether_gold_ore',
 )
 
-NETHER_PORTAL = LootTable(type=LootContextParamSets.BLOCK, random_sequence='minecraft:blocks/nether_portal')
+NETHER_PORTAL = LootTable(type='minecraft:block', random_sequence='minecraft:blocks/nether_portal')
 
 NETHER_QUARTZ_ORE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11083,7 +11082,7 @@ NETHER_QUARTZ_ORE = LootTable(
 )
 
 NETHER_SPROUTS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11095,7 +11094,7 @@ NETHER_SPROUTS = LootTable(
 )
 
 NETHER_WART = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11134,7 +11133,7 @@ NETHER_WART = LootTable(
 )
 
 NETHER_WART_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11146,7 +11145,7 @@ NETHER_WART_BLOCK = LootTable(
 )
 
 NOTE_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11158,7 +11157,7 @@ NOTE_BLOCK = LootTable(
 )
 
 OAK_BUTTON = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11170,7 +11169,7 @@ OAK_BUTTON = LootTable(
 )
 
 OAK_DOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11192,7 +11191,7 @@ OAK_DOOR = LootTable(
 )
 
 OAK_FENCE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11204,7 +11203,7 @@ OAK_FENCE = LootTable(
 )
 
 OAK_FENCE_GATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11216,7 +11215,7 @@ OAK_FENCE_GATE = LootTable(
 )
 
 OAK_HANGING_SIGN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11228,7 +11227,7 @@ OAK_HANGING_SIGN = LootTable(
 )
 
 OAK_LEAVES = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11323,7 +11322,7 @@ OAK_LEAVES = LootTable(
 )
 
 OAK_LOG = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11335,7 +11334,7 @@ OAK_LOG = LootTable(
 )
 
 OAK_PLANKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11347,7 +11346,7 @@ OAK_PLANKS = LootTable(
 )
 
 OAK_PRESSURE_PLATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11359,7 +11358,7 @@ OAK_PRESSURE_PLATE = LootTable(
 )
 
 OAK_SAPLING = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11371,7 +11370,7 @@ OAK_SAPLING = LootTable(
 )
 
 OAK_SHELF = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11383,7 +11382,7 @@ OAK_SHELF = LootTable(
 )
 
 OAK_SIGN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11395,7 +11394,7 @@ OAK_SIGN = LootTable(
 )
 
 OAK_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11423,7 +11422,7 @@ OAK_SLAB = LootTable(
 )
 
 OAK_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11435,7 +11434,7 @@ OAK_STAIRS = LootTable(
 )
 
 OAK_TRAPDOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11447,7 +11446,7 @@ OAK_TRAPDOOR = LootTable(
 )
 
 OAK_WOOD = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11459,7 +11458,7 @@ OAK_WOOD = LootTable(
 )
 
 OBSERVER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11471,7 +11470,7 @@ OBSERVER = LootTable(
 )
 
 OBSIDIAN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11483,7 +11482,7 @@ OBSIDIAN = LootTable(
 )
 
 OCHRE_FROGLIGHT = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11495,7 +11494,7 @@ OCHRE_FROGLIGHT = LootTable(
 )
 
 OPEN_EYEBLOSSOM = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11507,7 +11506,7 @@ OPEN_EYEBLOSSOM = LootTable(
 )
 
 ORANGE_BANNER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11535,7 +11534,7 @@ ORANGE_BANNER = LootTable(
 )
 
 ORANGE_BED = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11557,7 +11556,7 @@ ORANGE_BED = LootTable(
 )
 
 ORANGE_CANDLE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11603,13 +11602,13 @@ ORANGE_CANDLE = LootTable(
 )
 
 ORANGE_CANDLE_CAKE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:orange_candle', type='minecraft:item')])],
     random_sequence='minecraft:blocks/orange_candle_cake',
 )
 
 ORANGE_CARPET = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11621,7 +11620,7 @@ ORANGE_CARPET = LootTable(
 )
 
 ORANGE_CONCRETE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11633,7 +11632,7 @@ ORANGE_CONCRETE = LootTable(
 )
 
 ORANGE_CONCRETE_POWDER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11645,7 +11644,7 @@ ORANGE_CONCRETE_POWDER = LootTable(
 )
 
 ORANGE_CONCRETE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11673,7 +11672,7 @@ ORANGE_CONCRETE_SLAB = LootTable(
 )
 
 ORANGE_CONCRETE_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11685,7 +11684,7 @@ ORANGE_CONCRETE_STAIRS = LootTable(
 )
 
 ORANGE_GLAZED_TERRACOTTA = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11697,7 +11696,7 @@ ORANGE_GLAZED_TERRACOTTA = LootTable(
 )
 
 ORANGE_POPLAR_LEAVES = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11765,7 +11764,7 @@ ORANGE_POPLAR_LEAVES = LootTable(
 )
 
 ORANGE_SHULKER_BOX = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11786,7 +11785,7 @@ ORANGE_SHULKER_BOX = LootTable(
 )
 
 ORANGE_STAINED_GLASS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11798,7 +11797,7 @@ ORANGE_STAINED_GLASS = LootTable(
 )
 
 ORANGE_STAINED_GLASS_PANE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11810,7 +11809,7 @@ ORANGE_STAINED_GLASS_PANE = LootTable(
 )
 
 ORANGE_TERRACOTTA = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11822,7 +11821,7 @@ ORANGE_TERRACOTTA = LootTable(
 )
 
 ORANGE_TULIP = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11834,7 +11833,7 @@ ORANGE_TULIP = LootTable(
 )
 
 ORANGE_WOOL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11846,7 +11845,7 @@ ORANGE_WOOL = LootTable(
 )
 
 ORANGE_WOOL_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11874,7 +11873,7 @@ ORANGE_WOOL_SLAB = LootTable(
 )
 
 ORANGE_WOOL_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11886,7 +11885,7 @@ ORANGE_WOOL_STAIRS = LootTable(
 )
 
 OXEYE_DAISY = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11898,7 +11897,7 @@ OXEYE_DAISY = LootTable(
 )
 
 OXIDIZED_CHISELED_COPPER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11910,7 +11909,7 @@ OXIDIZED_CHISELED_COPPER = LootTable(
 )
 
 OXIDIZED_COPPER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11922,7 +11921,7 @@ OXIDIZED_COPPER = LootTable(
 )
 
 OXIDIZED_COPPER_BARS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11934,7 +11933,7 @@ OXIDIZED_COPPER_BARS = LootTable(
 )
 
 OXIDIZED_COPPER_BULB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11946,7 +11945,7 @@ OXIDIZED_COPPER_BULB = LootTable(
 )
 
 OXIDIZED_COPPER_CHAIN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11958,7 +11957,7 @@ OXIDIZED_COPPER_CHAIN = LootTable(
 )
 
 OXIDIZED_COPPER_CHEST = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -11980,7 +11979,7 @@ OXIDIZED_COPPER_CHEST = LootTable(
 )
 
 OXIDIZED_COPPER_DOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12002,7 +12001,7 @@ OXIDIZED_COPPER_DOOR = LootTable(
 )
 
 OXIDIZED_COPPER_GOLEM_STATUE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12031,7 +12030,7 @@ OXIDIZED_COPPER_GOLEM_STATUE = LootTable(
 )
 
 OXIDIZED_COPPER_GRATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12043,7 +12042,7 @@ OXIDIZED_COPPER_GRATE = LootTable(
 )
 
 OXIDIZED_COPPER_LANTERN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12055,7 +12054,7 @@ OXIDIZED_COPPER_LANTERN = LootTable(
 )
 
 OXIDIZED_COPPER_TRAPDOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12067,7 +12066,7 @@ OXIDIZED_COPPER_TRAPDOOR = LootTable(
 )
 
 OXIDIZED_CUT_COPPER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12079,7 +12078,7 @@ OXIDIZED_CUT_COPPER = LootTable(
 )
 
 OXIDIZED_CUT_COPPER_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12107,7 +12106,7 @@ OXIDIZED_CUT_COPPER_SLAB = LootTable(
 )
 
 OXIDIZED_CUT_COPPER_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12119,7 +12118,7 @@ OXIDIZED_CUT_COPPER_STAIRS = LootTable(
 )
 
 OXIDIZED_LIGHTNING_ROD = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12131,7 +12130,7 @@ OXIDIZED_LIGHTNING_ROD = LootTable(
 )
 
 PACKED_ICE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12143,7 +12142,7 @@ PACKED_ICE = LootTable(
 )
 
 PACKED_ICE_BRICKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12155,7 +12154,7 @@ PACKED_ICE_BRICKS = LootTable(
 )
 
 PACKED_ICE_BRICK_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12183,7 +12182,7 @@ PACKED_ICE_BRICK_SLAB = LootTable(
 )
 
 PACKED_ICE_BRICK_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12195,7 +12194,7 @@ PACKED_ICE_BRICK_STAIRS = LootTable(
 )
 
 PACKED_ICE_BRICK_WALL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12207,7 +12206,7 @@ PACKED_ICE_BRICK_WALL = LootTable(
 )
 
 PACKED_MUD = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12219,7 +12218,7 @@ PACKED_MUD = LootTable(
 )
 
 PALE_HANGING_MOSS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12234,7 +12233,7 @@ PALE_HANGING_MOSS = LootTable(
 )
 
 PALE_MOSS_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12246,7 +12245,7 @@ PALE_MOSS_BLOCK = LootTable(
 )
 
 PALE_MOSS_CARPET = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12268,7 +12267,7 @@ PALE_MOSS_CARPET = LootTable(
 )
 
 PALE_OAK_BUTTON = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12280,7 +12279,7 @@ PALE_OAK_BUTTON = LootTable(
 )
 
 PALE_OAK_DOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12302,7 +12301,7 @@ PALE_OAK_DOOR = LootTable(
 )
 
 PALE_OAK_FENCE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12314,7 +12313,7 @@ PALE_OAK_FENCE = LootTable(
 )
 
 PALE_OAK_FENCE_GATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12326,7 +12325,7 @@ PALE_OAK_FENCE_GATE = LootTable(
 )
 
 PALE_OAK_HANGING_SIGN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12338,7 +12337,7 @@ PALE_OAK_HANGING_SIGN = LootTable(
 )
 
 PALE_OAK_LEAVES = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12406,7 +12405,7 @@ PALE_OAK_LEAVES = LootTable(
 )
 
 PALE_OAK_LOG = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12418,7 +12417,7 @@ PALE_OAK_LOG = LootTable(
 )
 
 PALE_OAK_PLANKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12430,7 +12429,7 @@ PALE_OAK_PLANKS = LootTable(
 )
 
 PALE_OAK_PRESSURE_PLATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12442,7 +12441,7 @@ PALE_OAK_PRESSURE_PLATE = LootTable(
 )
 
 PALE_OAK_SAPLING = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12454,7 +12453,7 @@ PALE_OAK_SAPLING = LootTable(
 )
 
 PALE_OAK_SHELF = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12466,7 +12465,7 @@ PALE_OAK_SHELF = LootTable(
 )
 
 PALE_OAK_SIGN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12478,7 +12477,7 @@ PALE_OAK_SIGN = LootTable(
 )
 
 PALE_OAK_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12506,7 +12505,7 @@ PALE_OAK_SLAB = LootTable(
 )
 
 PALE_OAK_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12518,7 +12517,7 @@ PALE_OAK_STAIRS = LootTable(
 )
 
 PALE_OAK_TRAPDOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12530,7 +12529,7 @@ PALE_OAK_TRAPDOOR = LootTable(
 )
 
 PALE_OAK_WOOD = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12542,7 +12541,7 @@ PALE_OAK_WOOD = LootTable(
 )
 
 PEARLESCENT_FROGLIGHT = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12554,7 +12553,7 @@ PEARLESCENT_FROGLIGHT = LootTable(
 )
 
 PEONY = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12576,7 +12575,7 @@ PEONY = LootTable(
 )
 
 PETRIFIED_OAK_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12604,7 +12603,7 @@ PETRIFIED_OAK_SLAB = LootTable(
 )
 
 PIGLIN_HEAD = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12625,7 +12624,7 @@ PIGLIN_HEAD = LootTable(
 )
 
 PINK_BANNER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12653,7 +12652,7 @@ PINK_BANNER = LootTable(
 )
 
 PINK_BED = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12675,7 +12674,7 @@ PINK_BED = LootTable(
 )
 
 PINK_CANDLE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12721,13 +12720,13 @@ PINK_CANDLE = LootTable(
 )
 
 PINK_CANDLE_CAKE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:pink_candle', type='minecraft:item')])],
     random_sequence='minecraft:blocks/pink_candle_cake',
 )
 
 PINK_CARPET = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12739,7 +12738,7 @@ PINK_CARPET = LootTable(
 )
 
 PINK_CONCRETE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12751,7 +12750,7 @@ PINK_CONCRETE = LootTable(
 )
 
 PINK_CONCRETE_POWDER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12763,7 +12762,7 @@ PINK_CONCRETE_POWDER = LootTable(
 )
 
 PINK_CONCRETE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12791,7 +12790,7 @@ PINK_CONCRETE_SLAB = LootTable(
 )
 
 PINK_CONCRETE_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12803,7 +12802,7 @@ PINK_CONCRETE_STAIRS = LootTable(
 )
 
 PINK_GLAZED_TERRACOTTA = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12815,7 +12814,7 @@ PINK_GLAZED_TERRACOTTA = LootTable(
 )
 
 PINK_PETALS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12870,7 +12869,7 @@ PINK_PETALS = LootTable(
 )
 
 PINK_SHULKER_BOX = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12891,7 +12890,7 @@ PINK_SHULKER_BOX = LootTable(
 )
 
 PINK_STAINED_GLASS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12903,7 +12902,7 @@ PINK_STAINED_GLASS = LootTable(
 )
 
 PINK_STAINED_GLASS_PANE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12915,7 +12914,7 @@ PINK_STAINED_GLASS_PANE = LootTable(
 )
 
 PINK_TERRACOTTA = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12927,7 +12926,7 @@ PINK_TERRACOTTA = LootTable(
 )
 
 PINK_TULIP = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12939,7 +12938,7 @@ PINK_TULIP = LootTable(
 )
 
 PINK_WOOL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12951,7 +12950,7 @@ PINK_WOOL = LootTable(
 )
 
 PINK_WOOL_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12979,7 +12978,7 @@ PINK_WOOL_SLAB = LootTable(
 )
 
 PINK_WOOL_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -12991,7 +12990,7 @@ PINK_WOOL_STAIRS = LootTable(
 )
 
 PISTON = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13003,7 +13002,7 @@ PISTON = LootTable(
 )
 
 PITCHER_CROP = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13121,7 +13120,7 @@ PITCHER_CROP = LootTable(
 )
 
 PITCHER_PLANT = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13143,7 +13142,7 @@ PITCHER_PLANT = LootTable(
 )
 
 PLAYER_HEAD = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13164,7 +13163,7 @@ PLAYER_HEAD = LootTable(
 )
 
 PODZOL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13191,7 +13190,7 @@ PODZOL = LootTable(
 )
 
 POINTED_DRIPSTONE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13203,7 +13202,7 @@ POINTED_DRIPSTONE = LootTable(
 )
 
 POLISHED_ANDESITE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13215,7 +13214,7 @@ POLISHED_ANDESITE = LootTable(
 )
 
 POLISHED_ANDESITE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13243,7 +13242,7 @@ POLISHED_ANDESITE_SLAB = LootTable(
 )
 
 POLISHED_ANDESITE_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13255,7 +13254,7 @@ POLISHED_ANDESITE_STAIRS = LootTable(
 )
 
 POLISHED_BASALT = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13267,7 +13266,7 @@ POLISHED_BASALT = LootTable(
 )
 
 POLISHED_BLACKSTONE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13279,7 +13278,7 @@ POLISHED_BLACKSTONE = LootTable(
 )
 
 POLISHED_BLACKSTONE_BRICKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13291,7 +13290,7 @@ POLISHED_BLACKSTONE_BRICKS = LootTable(
 )
 
 POLISHED_BLACKSTONE_BRICK_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13319,7 +13318,7 @@ POLISHED_BLACKSTONE_BRICK_SLAB = LootTable(
 )
 
 POLISHED_BLACKSTONE_BRICK_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13331,7 +13330,7 @@ POLISHED_BLACKSTONE_BRICK_STAIRS = LootTable(
 )
 
 POLISHED_BLACKSTONE_BRICK_WALL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13343,7 +13342,7 @@ POLISHED_BLACKSTONE_BRICK_WALL = LootTable(
 )
 
 POLISHED_BLACKSTONE_BUTTON = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13355,7 +13354,7 @@ POLISHED_BLACKSTONE_BUTTON = LootTable(
 )
 
 POLISHED_BLACKSTONE_PRESSURE_PLATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13367,7 +13366,7 @@ POLISHED_BLACKSTONE_PRESSURE_PLATE = LootTable(
 )
 
 POLISHED_BLACKSTONE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13395,7 +13394,7 @@ POLISHED_BLACKSTONE_SLAB = LootTable(
 )
 
 POLISHED_BLACKSTONE_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13407,7 +13406,7 @@ POLISHED_BLACKSTONE_STAIRS = LootTable(
 )
 
 POLISHED_BLACKSTONE_WALL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13419,7 +13418,7 @@ POLISHED_BLACKSTONE_WALL = LootTable(
 )
 
 POLISHED_CALCITE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13431,7 +13430,7 @@ POLISHED_CALCITE = LootTable(
 )
 
 POLISHED_CALCITE_BRICKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13443,7 +13442,7 @@ POLISHED_CALCITE_BRICKS = LootTable(
 )
 
 POLISHED_CALCITE_BRICK_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13471,7 +13470,7 @@ POLISHED_CALCITE_BRICK_SLAB = LootTable(
 )
 
 POLISHED_CALCITE_BRICK_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13483,7 +13482,7 @@ POLISHED_CALCITE_BRICK_STAIRS = LootTable(
 )
 
 POLISHED_CALCITE_BRICK_WALL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13495,7 +13494,7 @@ POLISHED_CALCITE_BRICK_WALL = LootTable(
 )
 
 POLISHED_CALCITE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13523,7 +13522,7 @@ POLISHED_CALCITE_SLAB = LootTable(
 )
 
 POLISHED_CALCITE_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13535,7 +13534,7 @@ POLISHED_CALCITE_STAIRS = LootTable(
 )
 
 POLISHED_CALCITE_WALL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13547,7 +13546,7 @@ POLISHED_CALCITE_WALL = LootTable(
 )
 
 POLISHED_CINNABAR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13559,7 +13558,7 @@ POLISHED_CINNABAR = LootTable(
 )
 
 POLISHED_CINNABAR_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13587,7 +13586,7 @@ POLISHED_CINNABAR_SLAB = LootTable(
 )
 
 POLISHED_CINNABAR_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13599,7 +13598,7 @@ POLISHED_CINNABAR_STAIRS = LootTable(
 )
 
 POLISHED_CINNABAR_WALL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13611,7 +13610,7 @@ POLISHED_CINNABAR_WALL = LootTable(
 )
 
 POLISHED_DEEPSLATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13623,7 +13622,7 @@ POLISHED_DEEPSLATE = LootTable(
 )
 
 POLISHED_DEEPSLATE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13651,7 +13650,7 @@ POLISHED_DEEPSLATE_SLAB = LootTable(
 )
 
 POLISHED_DEEPSLATE_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13663,7 +13662,7 @@ POLISHED_DEEPSLATE_STAIRS = LootTable(
 )
 
 POLISHED_DEEPSLATE_WALL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13675,7 +13674,7 @@ POLISHED_DEEPSLATE_WALL = LootTable(
 )
 
 POLISHED_DIORITE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13687,7 +13686,7 @@ POLISHED_DIORITE = LootTable(
 )
 
 POLISHED_DIORITE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13715,7 +13714,7 @@ POLISHED_DIORITE_SLAB = LootTable(
 )
 
 POLISHED_DIORITE_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13727,7 +13726,7 @@ POLISHED_DIORITE_STAIRS = LootTable(
 )
 
 POLISHED_GRANITE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13739,7 +13738,7 @@ POLISHED_GRANITE = LootTable(
 )
 
 POLISHED_GRANITE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13767,7 +13766,7 @@ POLISHED_GRANITE_SLAB = LootTable(
 )
 
 POLISHED_GRANITE_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13779,7 +13778,7 @@ POLISHED_GRANITE_STAIRS = LootTable(
 )
 
 POLISHED_SULFUR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13791,7 +13790,7 @@ POLISHED_SULFUR = LootTable(
 )
 
 POLISHED_SULFUR_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13819,7 +13818,7 @@ POLISHED_SULFUR_SLAB = LootTable(
 )
 
 POLISHED_SULFUR_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13831,7 +13830,7 @@ POLISHED_SULFUR_STAIRS = LootTable(
 )
 
 POLISHED_SULFUR_WALL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13843,7 +13842,7 @@ POLISHED_SULFUR_WALL = LootTable(
 )
 
 POLISHED_TUFF = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13855,7 +13854,7 @@ POLISHED_TUFF = LootTable(
 )
 
 POLISHED_TUFF_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13883,7 +13882,7 @@ POLISHED_TUFF_SLAB = LootTable(
 )
 
 POLISHED_TUFF_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13895,7 +13894,7 @@ POLISHED_TUFF_STAIRS = LootTable(
 )
 
 POLISHED_TUFF_WALL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13907,7 +13906,7 @@ POLISHED_TUFF_WALL = LootTable(
 )
 
 POPLAR_BUTTON = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13919,7 +13918,7 @@ POPLAR_BUTTON = LootTable(
 )
 
 POPLAR_DOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13941,7 +13940,7 @@ POPLAR_DOOR = LootTable(
 )
 
 POPLAR_FENCE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13953,7 +13952,7 @@ POPLAR_FENCE = LootTable(
 )
 
 POPLAR_FENCE_GATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13965,7 +13964,7 @@ POPLAR_FENCE_GATE = LootTable(
 )
 
 POPLAR_HANGING_SIGN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13977,7 +13976,7 @@ POPLAR_HANGING_SIGN = LootTable(
 )
 
 POPLAR_LOG = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -13989,7 +13988,7 @@ POPLAR_LOG = LootTable(
 )
 
 POPLAR_PLANKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14001,7 +14000,7 @@ POPLAR_PLANKS = LootTable(
 )
 
 POPLAR_PRESSURE_PLATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14013,7 +14012,7 @@ POPLAR_PRESSURE_PLATE = LootTable(
 )
 
 POPLAR_SAPLING = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14025,7 +14024,7 @@ POPLAR_SAPLING = LootTable(
 )
 
 POPLAR_SHELF = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14037,7 +14036,7 @@ POPLAR_SHELF = LootTable(
 )
 
 POPLAR_SIGN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14049,7 +14048,7 @@ POPLAR_SIGN = LootTable(
 )
 
 POPLAR_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14077,7 +14076,7 @@ POPLAR_SLAB = LootTable(
 )
 
 POPLAR_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14089,7 +14088,7 @@ POPLAR_STAIRS = LootTable(
 )
 
 POPLAR_TRAPDOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14101,7 +14100,7 @@ POPLAR_TRAPDOOR = LootTable(
 )
 
 POPLAR_WOOD = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14113,7 +14112,7 @@ POPLAR_WOOD = LootTable(
 )
 
 POPPY = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14125,7 +14124,7 @@ POPPY = LootTable(
 )
 
 POTATOES = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:potato', type='minecraft:item')]),
         LootPool(
@@ -14161,7 +14160,7 @@ POTATOES = LootTable(
 )
 
 POTENT_SULFUR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14173,7 +14172,7 @@ POTENT_SULFUR = LootTable(
 )
 
 POTTED_ACACIA_SAPLING = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14190,7 +14189,7 @@ POTTED_ACACIA_SAPLING = LootTable(
 )
 
 POTTED_ALLIUM = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14207,7 +14206,7 @@ POTTED_ALLIUM = LootTable(
 )
 
 POTTED_AZALEA_BUSH = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14224,7 +14223,7 @@ POTTED_AZALEA_BUSH = LootTable(
 )
 
 POTTED_AZURE_BLUET = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14241,7 +14240,7 @@ POTTED_AZURE_BLUET = LootTable(
 )
 
 POTTED_BAMBOO = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14258,7 +14257,7 @@ POTTED_BAMBOO = LootTable(
 )
 
 POTTED_BIRCH_SAPLING = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14275,7 +14274,7 @@ POTTED_BIRCH_SAPLING = LootTable(
 )
 
 POTTED_BLUE_ORCHID = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14292,7 +14291,7 @@ POTTED_BLUE_ORCHID = LootTable(
 )
 
 POTTED_BROWN_MUSHROOM = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14309,7 +14308,7 @@ POTTED_BROWN_MUSHROOM = LootTable(
 )
 
 POTTED_CACTUS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14326,7 +14325,7 @@ POTTED_CACTUS = LootTable(
 )
 
 POTTED_CHERRY_SAPLING = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14343,7 +14342,7 @@ POTTED_CHERRY_SAPLING = LootTable(
 )
 
 POTTED_CLOSED_EYEBLOSSOM = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14360,7 +14359,7 @@ POTTED_CLOSED_EYEBLOSSOM = LootTable(
 )
 
 POTTED_CORNFLOWER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14377,7 +14376,7 @@ POTTED_CORNFLOWER = LootTable(
 )
 
 POTTED_CRIMSON_FUNGUS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14394,7 +14393,7 @@ POTTED_CRIMSON_FUNGUS = LootTable(
 )
 
 POTTED_CRIMSON_ROOTS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14411,7 +14410,7 @@ POTTED_CRIMSON_ROOTS = LootTable(
 )
 
 POTTED_DANDELION = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14428,7 +14427,7 @@ POTTED_DANDELION = LootTable(
 )
 
 POTTED_DARK_OAK_SAPLING = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14445,7 +14444,7 @@ POTTED_DARK_OAK_SAPLING = LootTable(
 )
 
 POTTED_DEAD_BUSH = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14462,7 +14461,7 @@ POTTED_DEAD_BUSH = LootTable(
 )
 
 POTTED_FERN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14479,7 +14478,7 @@ POTTED_FERN = LootTable(
 )
 
 POTTED_FLOWERING_AZALEA_BUSH = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14496,7 +14495,7 @@ POTTED_FLOWERING_AZALEA_BUSH = LootTable(
 )
 
 POTTED_GOLDEN_DANDELION = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14513,7 +14512,7 @@ POTTED_GOLDEN_DANDELION = LootTable(
 )
 
 POTTED_JUNGLE_SAPLING = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14530,7 +14529,7 @@ POTTED_JUNGLE_SAPLING = LootTable(
 )
 
 POTTED_LILY_OF_THE_VALLEY = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14547,7 +14546,7 @@ POTTED_LILY_OF_THE_VALLEY = LootTable(
 )
 
 POTTED_MANGROVE_PROPAGULE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14564,7 +14563,7 @@ POTTED_MANGROVE_PROPAGULE = LootTable(
 )
 
 POTTED_OAK_SAPLING = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14581,7 +14580,7 @@ POTTED_OAK_SAPLING = LootTable(
 )
 
 POTTED_OPEN_EYEBLOSSOM = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14598,7 +14597,7 @@ POTTED_OPEN_EYEBLOSSOM = LootTable(
 )
 
 POTTED_ORANGE_TULIP = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14615,7 +14614,7 @@ POTTED_ORANGE_TULIP = LootTable(
 )
 
 POTTED_OXEYE_DAISY = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14632,7 +14631,7 @@ POTTED_OXEYE_DAISY = LootTable(
 )
 
 POTTED_PALE_OAK_SAPLING = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14649,7 +14648,7 @@ POTTED_PALE_OAK_SAPLING = LootTable(
 )
 
 POTTED_PINK_TULIP = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14666,7 +14665,7 @@ POTTED_PINK_TULIP = LootTable(
 )
 
 POTTED_POPLAR_SAPLING = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14683,7 +14682,7 @@ POTTED_POPLAR_SAPLING = LootTable(
 )
 
 POTTED_POPPY = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14700,7 +14699,7 @@ POTTED_POPPY = LootTable(
 )
 
 POTTED_RED_MUSHROOM = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14717,7 +14716,7 @@ POTTED_RED_MUSHROOM = LootTable(
 )
 
 POTTED_RED_TULIP = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14734,7 +14733,7 @@ POTTED_RED_TULIP = LootTable(
 )
 
 POTTED_SPRUCE_SAPLING = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14751,7 +14750,7 @@ POTTED_SPRUCE_SAPLING = LootTable(
 )
 
 POTTED_TORCHFLOWER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14768,7 +14767,7 @@ POTTED_TORCHFLOWER = LootTable(
 )
 
 POTTED_WARPED_FUNGUS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14785,7 +14784,7 @@ POTTED_WARPED_FUNGUS = LootTable(
 )
 
 POTTED_WARPED_ROOTS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14802,7 +14801,7 @@ POTTED_WARPED_ROOTS = LootTable(
 )
 
 POTTED_WHITE_TULIP = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14819,7 +14818,7 @@ POTTED_WHITE_TULIP = LootTable(
 )
 
 POTTED_WITHER_ROSE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14835,10 +14834,10 @@ POTTED_WITHER_ROSE = LootTable(
     random_sequence='minecraft:blocks/potted_wither_rose',
 )
 
-POWDER_SNOW = LootTable(type=LootContextParamSets.BLOCK, random_sequence='minecraft:blocks/powder_snow')
+POWDER_SNOW = LootTable(type='minecraft:block', random_sequence='minecraft:blocks/powder_snow')
 
 POWDER_SNOW_CAULDRON = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14850,7 +14849,7 @@ POWDER_SNOW_CAULDRON = LootTable(
 )
 
 POWERED_RAIL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14862,7 +14861,7 @@ POWERED_RAIL = LootTable(
 )
 
 PRISMARINE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14874,7 +14873,7 @@ PRISMARINE = LootTable(
 )
 
 PRISMARINE_BRICKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14886,7 +14885,7 @@ PRISMARINE_BRICKS = LootTable(
 )
 
 PRISMARINE_BRICK_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14914,7 +14913,7 @@ PRISMARINE_BRICK_SLAB = LootTable(
 )
 
 PRISMARINE_BRICK_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14926,7 +14925,7 @@ PRISMARINE_BRICK_STAIRS = LootTable(
 )
 
 PRISMARINE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14954,7 +14953,7 @@ PRISMARINE_SLAB = LootTable(
 )
 
 PRISMARINE_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14966,7 +14965,7 @@ PRISMARINE_STAIRS = LootTable(
 )
 
 PRISMARINE_WALL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14978,7 +14977,7 @@ PRISMARINE_WALL = LootTable(
 )
 
 PUMPKIN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -14990,7 +14989,7 @@ PUMPKIN = LootTable(
 )
 
 PUMPKIN_STEM = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15081,7 +15080,7 @@ PUMPKIN_STEM = LootTable(
 )
 
 PURPLE_BANNER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15109,7 +15108,7 @@ PURPLE_BANNER = LootTable(
 )
 
 PURPLE_BED = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15131,7 +15130,7 @@ PURPLE_BED = LootTable(
 )
 
 PURPLE_CANDLE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15177,13 +15176,13 @@ PURPLE_CANDLE = LootTable(
 )
 
 PURPLE_CANDLE_CAKE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:purple_candle', type='minecraft:item')])],
     random_sequence='minecraft:blocks/purple_candle_cake',
 )
 
 PURPLE_CARPET = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15195,7 +15194,7 @@ PURPLE_CARPET = LootTable(
 )
 
 PURPLE_CONCRETE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15207,7 +15206,7 @@ PURPLE_CONCRETE = LootTable(
 )
 
 PURPLE_CONCRETE_POWDER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15219,7 +15218,7 @@ PURPLE_CONCRETE_POWDER = LootTable(
 )
 
 PURPLE_CONCRETE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15247,7 +15246,7 @@ PURPLE_CONCRETE_SLAB = LootTable(
 )
 
 PURPLE_CONCRETE_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15259,7 +15258,7 @@ PURPLE_CONCRETE_STAIRS = LootTable(
 )
 
 PURPLE_GLAZED_TERRACOTTA = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15271,7 +15270,7 @@ PURPLE_GLAZED_TERRACOTTA = LootTable(
 )
 
 PURPLE_SHULKER_BOX = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15292,7 +15291,7 @@ PURPLE_SHULKER_BOX = LootTable(
 )
 
 PURPLE_STAINED_GLASS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15304,7 +15303,7 @@ PURPLE_STAINED_GLASS = LootTable(
 )
 
 PURPLE_STAINED_GLASS_PANE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15316,7 +15315,7 @@ PURPLE_STAINED_GLASS_PANE = LootTable(
 )
 
 PURPLE_TERRACOTTA = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15328,7 +15327,7 @@ PURPLE_TERRACOTTA = LootTable(
 )
 
 PURPLE_WOOL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15340,7 +15339,7 @@ PURPLE_WOOL = LootTable(
 )
 
 PURPLE_WOOL_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15368,7 +15367,7 @@ PURPLE_WOOL_SLAB = LootTable(
 )
 
 PURPLE_WOOL_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15380,7 +15379,7 @@ PURPLE_WOOL_STAIRS = LootTable(
 )
 
 PURPUR_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15392,7 +15391,7 @@ PURPUR_BLOCK = LootTable(
 )
 
 PURPUR_PILLAR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15404,7 +15403,7 @@ PURPUR_PILLAR = LootTable(
 )
 
 PURPUR_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15432,7 +15431,7 @@ PURPUR_SLAB = LootTable(
 )
 
 PURPUR_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15444,7 +15443,7 @@ PURPUR_STAIRS = LootTable(
 )
 
 QUARTZ_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15456,7 +15455,7 @@ QUARTZ_BLOCK = LootTable(
 )
 
 QUARTZ_BRICKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15468,7 +15467,7 @@ QUARTZ_BRICKS = LootTable(
 )
 
 QUARTZ_PILLAR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15480,7 +15479,7 @@ QUARTZ_PILLAR = LootTable(
 )
 
 QUARTZ_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15508,7 +15507,7 @@ QUARTZ_SLAB = LootTable(
 )
 
 QUARTZ_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15520,7 +15519,7 @@ QUARTZ_STAIRS = LootTable(
 )
 
 RAIL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15532,7 +15531,7 @@ RAIL = LootTable(
 )
 
 RAW_COPPER_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15544,7 +15543,7 @@ RAW_COPPER_BLOCK = LootTable(
 )
 
 RAW_GOLD_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15556,7 +15555,7 @@ RAW_GOLD_BLOCK = LootTable(
 )
 
 RAW_IRON_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15568,7 +15567,7 @@ RAW_IRON_BLOCK = LootTable(
 )
 
 REDSTONE_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15580,7 +15579,7 @@ REDSTONE_BLOCK = LootTable(
 )
 
 REDSTONE_LAMP = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15592,7 +15591,7 @@ REDSTONE_LAMP = LootTable(
 )
 
 REDSTONE_ORE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15631,7 +15630,7 @@ REDSTONE_ORE = LootTable(
 )
 
 REDSTONE_TORCH = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15643,7 +15642,7 @@ REDSTONE_TORCH = LootTable(
 )
 
 REDSTONE_WIRE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15655,7 +15654,7 @@ REDSTONE_WIRE = LootTable(
 )
 
 RED_BANNER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15683,7 +15682,7 @@ RED_BANNER = LootTable(
 )
 
 RED_BED = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15705,7 +15704,7 @@ RED_BED = LootTable(
 )
 
 RED_CANDLE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15751,13 +15750,13 @@ RED_CANDLE = LootTable(
 )
 
 RED_CANDLE_CAKE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:red_candle', type='minecraft:item')])],
     random_sequence='minecraft:blocks/red_candle_cake',
 )
 
 RED_CARPET = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15769,7 +15768,7 @@ RED_CARPET = LootTable(
 )
 
 RED_CONCRETE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15781,7 +15780,7 @@ RED_CONCRETE = LootTable(
 )
 
 RED_CONCRETE_POWDER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15793,7 +15792,7 @@ RED_CONCRETE_POWDER = LootTable(
 )
 
 RED_CONCRETE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15821,7 +15820,7 @@ RED_CONCRETE_SLAB = LootTable(
 )
 
 RED_CONCRETE_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15833,7 +15832,7 @@ RED_CONCRETE_STAIRS = LootTable(
 )
 
 RED_GLAZED_TERRACOTTA = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15845,7 +15844,7 @@ RED_GLAZED_TERRACOTTA = LootTable(
 )
 
 RED_MUSHROOM = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15857,7 +15856,7 @@ RED_MUSHROOM = LootTable(
 )
 
 RED_MUSHROOM_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15891,7 +15890,7 @@ RED_MUSHROOM_BLOCK = LootTable(
 )
 
 RED_NETHER_BRICKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15903,7 +15902,7 @@ RED_NETHER_BRICKS = LootTable(
 )
 
 RED_NETHER_BRICK_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15931,7 +15930,7 @@ RED_NETHER_BRICK_SLAB = LootTable(
 )
 
 RED_NETHER_BRICK_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15943,7 +15942,7 @@ RED_NETHER_BRICK_STAIRS = LootTable(
 )
 
 RED_NETHER_BRICK_WALL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -15955,7 +15954,7 @@ RED_NETHER_BRICK_WALL = LootTable(
 )
 
 RED_POPLAR_LEAVES = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16023,7 +16022,7 @@ RED_POPLAR_LEAVES = LootTable(
 )
 
 RED_SAND = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16035,7 +16034,7 @@ RED_SAND = LootTable(
 )
 
 RED_SANDSTONE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16047,7 +16046,7 @@ RED_SANDSTONE = LootTable(
 )
 
 RED_SANDSTONE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16075,7 +16074,7 @@ RED_SANDSTONE_SLAB = LootTable(
 )
 
 RED_SANDSTONE_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16087,7 +16086,7 @@ RED_SANDSTONE_STAIRS = LootTable(
 )
 
 RED_SANDSTONE_WALL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16099,7 +16098,7 @@ RED_SANDSTONE_WALL = LootTable(
 )
 
 RED_SHRUB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16111,7 +16110,7 @@ RED_SHRUB = LootTable(
 )
 
 RED_SHULKER_BOX = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16132,7 +16131,7 @@ RED_SHULKER_BOX = LootTable(
 )
 
 RED_STAINED_GLASS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16144,7 +16143,7 @@ RED_STAINED_GLASS = LootTable(
 )
 
 RED_STAINED_GLASS_PANE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16156,7 +16155,7 @@ RED_STAINED_GLASS_PANE = LootTable(
 )
 
 RED_TERRACOTTA = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16168,7 +16167,7 @@ RED_TERRACOTTA = LootTable(
 )
 
 RED_TULIP = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16180,7 +16179,7 @@ RED_TULIP = LootTable(
 )
 
 RED_WOOL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16192,7 +16191,7 @@ RED_WOOL = LootTable(
 )
 
 RED_WOOL_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16220,7 +16219,7 @@ RED_WOOL_SLAB = LootTable(
 )
 
 RED_WOOL_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16231,10 +16230,10 @@ RED_WOOL_STAIRS = LootTable(
     random_sequence='minecraft:blocks/red_wool_stairs',
 )
 
-REINFORCED_DEEPSLATE = LootTable(type=LootContextParamSets.BLOCK, random_sequence='minecraft:blocks/reinforced_deepslate')
+REINFORCED_DEEPSLATE = LootTable(type='minecraft:block', random_sequence='minecraft:blocks/reinforced_deepslate')
 
 REPEATER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16246,7 +16245,7 @@ REPEATER = LootTable(
 )
 
 RESIN_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16258,7 +16257,7 @@ RESIN_BLOCK = LootTable(
 )
 
 RESIN_BRICKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16270,7 +16269,7 @@ RESIN_BRICKS = LootTable(
 )
 
 RESIN_BRICK_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16298,7 +16297,7 @@ RESIN_BRICK_SLAB = LootTable(
 )
 
 RESIN_BRICK_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16310,7 +16309,7 @@ RESIN_BRICK_STAIRS = LootTable(
 )
 
 RESIN_BRICK_WALL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16322,7 +16321,7 @@ RESIN_BRICK_WALL = LootTable(
 )
 
 RESIN_CLUMP = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16402,7 +16401,7 @@ RESIN_CLUMP = LootTable(
 )
 
 RESPAWN_ANCHOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16414,7 +16413,7 @@ RESPAWN_ANCHOR = LootTable(
 )
 
 ROOTED_DIRT = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16426,7 +16425,7 @@ ROOTED_DIRT = LootTable(
 )
 
 ROSE_BUSH = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16448,7 +16447,7 @@ ROSE_BUSH = LootTable(
 )
 
 SAND = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16460,7 +16459,7 @@ SAND = LootTable(
 )
 
 SANDSTONE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16472,7 +16471,7 @@ SANDSTONE = LootTable(
 )
 
 SANDSTONE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16500,7 +16499,7 @@ SANDSTONE_SLAB = LootTable(
 )
 
 SANDSTONE_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16512,7 +16511,7 @@ SANDSTONE_STAIRS = LootTable(
 )
 
 SANDSTONE_WALL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16524,7 +16523,7 @@ SANDSTONE_WALL = LootTable(
 )
 
 SCAFFOLDING = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16536,7 +16535,7 @@ SCAFFOLDING = LootTable(
 )
 
 SCULK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16548,7 +16547,7 @@ SCULK = LootTable(
 )
 
 SCULK_CATALYST = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16560,7 +16559,7 @@ SCULK_CATALYST = LootTable(
 )
 
 SCULK_SENSOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16572,7 +16571,7 @@ SCULK_SENSOR = LootTable(
 )
 
 SCULK_SHRIEKER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16584,7 +16583,7 @@ SCULK_SHRIEKER = LootTable(
 )
 
 SCULK_VEIN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16665,7 +16664,7 @@ SCULK_VEIN = LootTable(
 )
 
 SEAGRASS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16677,7 +16676,7 @@ SEAGRASS = LootTable(
 )
 
 SEA_LANTERN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16717,7 +16716,7 @@ SEA_LANTERN = LootTable(
 )
 
 SEA_PICKLE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16763,7 +16762,7 @@ SEA_PICKLE = LootTable(
 )
 
 SHELF_MUSHROOM = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16791,7 +16790,7 @@ SHELF_MUSHROOM = LootTable(
 )
 
 SHORT_DRY_GRASS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16806,7 +16805,7 @@ SHORT_DRY_GRASS = LootTable(
 )
 
 SHORT_GRASS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16842,7 +16841,7 @@ SHORT_GRASS = LootTable(
 )
 
 SHROOMLIGHT = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16854,7 +16853,7 @@ SHROOMLIGHT = LootTable(
 )
 
 SHULKER_BOX = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16875,7 +16874,7 @@ SHULKER_BOX = LootTable(
 )
 
 SKELETON_SKULL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16896,7 +16895,7 @@ SKELETON_SKULL = LootTable(
 )
 
 SLIME_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16908,7 +16907,7 @@ SLIME_BLOCK = LootTable(
 )
 
 SMALL_AMETHYST_BUD = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16920,7 +16919,7 @@ SMALL_AMETHYST_BUD = LootTable(
 )
 
 SMALL_DRIPLEAF = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16932,7 +16931,7 @@ SMALL_DRIPLEAF = LootTable(
 )
 
 SMITHING_TABLE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16944,7 +16943,7 @@ SMITHING_TABLE = LootTable(
 )
 
 SMOKER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16966,7 +16965,7 @@ SMOKER = LootTable(
 )
 
 SMOOTH_BASALT = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16978,7 +16977,7 @@ SMOOTH_BASALT = LootTable(
 )
 
 SMOOTH_QUARTZ = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -16990,7 +16989,7 @@ SMOOTH_QUARTZ = LootTable(
 )
 
 SMOOTH_QUARTZ_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17018,7 +17017,7 @@ SMOOTH_QUARTZ_SLAB = LootTable(
 )
 
 SMOOTH_QUARTZ_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17030,7 +17029,7 @@ SMOOTH_QUARTZ_STAIRS = LootTable(
 )
 
 SMOOTH_RED_SANDSTONE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17042,7 +17041,7 @@ SMOOTH_RED_SANDSTONE = LootTable(
 )
 
 SMOOTH_RED_SANDSTONE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17070,7 +17069,7 @@ SMOOTH_RED_SANDSTONE_SLAB = LootTable(
 )
 
 SMOOTH_RED_SANDSTONE_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17082,7 +17081,7 @@ SMOOTH_RED_SANDSTONE_STAIRS = LootTable(
 )
 
 SMOOTH_SANDSTONE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17094,7 +17093,7 @@ SMOOTH_SANDSTONE = LootTable(
 )
 
 SMOOTH_SANDSTONE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17122,7 +17121,7 @@ SMOOTH_SANDSTONE_SLAB = LootTable(
 )
 
 SMOOTH_SANDSTONE_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17134,7 +17133,7 @@ SMOOTH_SANDSTONE_STAIRS = LootTable(
 )
 
 SMOOTH_STONE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17146,7 +17145,7 @@ SMOOTH_STONE = LootTable(
 )
 
 SMOOTH_STONE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17174,7 +17173,7 @@ SMOOTH_STONE_SLAB = LootTable(
 )
 
 SNIFFER_EGG = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17186,7 +17185,7 @@ SNIFFER_EGG = LootTable(
 )
 
 SNOW = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17370,7 +17369,7 @@ SNOW = LootTable(
 )
 
 SNOW_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17400,7 +17399,7 @@ SNOW_BLOCK = LootTable(
 )
 
 SNOW_BRICKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17412,7 +17411,7 @@ SNOW_BRICKS = LootTable(
 )
 
 SNOW_BRICK_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17440,7 +17439,7 @@ SNOW_BRICK_SLAB = LootTable(
 )
 
 SNOW_BRICK_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17452,7 +17451,7 @@ SNOW_BRICK_STAIRS = LootTable(
 )
 
 SNOW_BRICK_WALL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17464,7 +17463,7 @@ SNOW_BRICK_WALL = LootTable(
 )
 
 SOUL_CAMPFIRE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17491,10 +17490,10 @@ SOUL_CAMPFIRE = LootTable(
     random_sequence='minecraft:blocks/soul_campfire',
 )
 
-SOUL_FIRE = LootTable(type=LootContextParamSets.BLOCK, random_sequence='minecraft:blocks/soul_fire')
+SOUL_FIRE = LootTable(type='minecraft:block', random_sequence='minecraft:blocks/soul_fire')
 
 SOUL_LANTERN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17506,7 +17505,7 @@ SOUL_LANTERN = LootTable(
 )
 
 SOUL_SAND = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17518,7 +17517,7 @@ SOUL_SAND = LootTable(
 )
 
 SOUL_SOIL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17530,7 +17529,7 @@ SOUL_SOIL = LootTable(
 )
 
 SOUL_TORCH = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17541,10 +17540,10 @@ SOUL_TORCH = LootTable(
     random_sequence='minecraft:blocks/soul_torch',
 )
 
-SPAWNER = LootTable(type=LootContextParamSets.BLOCK, random_sequence='minecraft:blocks/spawner')
+SPAWNER = LootTable(type='minecraft:block', random_sequence='minecraft:blocks/spawner')
 
 SPONGE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17556,7 +17555,7 @@ SPONGE = LootTable(
 )
 
 SPORE_BLOSSOM = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17568,7 +17567,7 @@ SPORE_BLOSSOM = LootTable(
 )
 
 SPRUCE_BUTTON = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17580,7 +17579,7 @@ SPRUCE_BUTTON = LootTable(
 )
 
 SPRUCE_DOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17602,7 +17601,7 @@ SPRUCE_DOOR = LootTable(
 )
 
 SPRUCE_FENCE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17614,7 +17613,7 @@ SPRUCE_FENCE = LootTable(
 )
 
 SPRUCE_FENCE_GATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17626,7 +17625,7 @@ SPRUCE_FENCE_GATE = LootTable(
 )
 
 SPRUCE_HANGING_SIGN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17638,7 +17637,7 @@ SPRUCE_HANGING_SIGN = LootTable(
 )
 
 SPRUCE_LEAVES = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17706,7 +17705,7 @@ SPRUCE_LEAVES = LootTable(
 )
 
 SPRUCE_LOG = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17718,7 +17717,7 @@ SPRUCE_LOG = LootTable(
 )
 
 SPRUCE_PLANKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17730,7 +17729,7 @@ SPRUCE_PLANKS = LootTable(
 )
 
 SPRUCE_PRESSURE_PLATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17742,7 +17741,7 @@ SPRUCE_PRESSURE_PLATE = LootTable(
 )
 
 SPRUCE_SAPLING = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17754,7 +17753,7 @@ SPRUCE_SAPLING = LootTable(
 )
 
 SPRUCE_SHELF = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17766,7 +17765,7 @@ SPRUCE_SHELF = LootTable(
 )
 
 SPRUCE_SIGN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17778,7 +17777,7 @@ SPRUCE_SIGN = LootTable(
 )
 
 SPRUCE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17806,7 +17805,7 @@ SPRUCE_SLAB = LootTable(
 )
 
 SPRUCE_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17818,7 +17817,7 @@ SPRUCE_STAIRS = LootTable(
 )
 
 SPRUCE_TRAPDOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17830,7 +17829,7 @@ SPRUCE_TRAPDOOR = LootTable(
 )
 
 SPRUCE_WOOD = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17842,7 +17841,7 @@ SPRUCE_WOOD = LootTable(
 )
 
 STICKY_PISTON = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17854,7 +17853,7 @@ STICKY_PISTON = LootTable(
 )
 
 STONE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17881,7 +17880,7 @@ STONE = LootTable(
 )
 
 STONECUTTER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17893,7 +17892,7 @@ STONECUTTER = LootTable(
 )
 
 STONE_BRICKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17905,7 +17904,7 @@ STONE_BRICKS = LootTable(
 )
 
 STONE_BRICK_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17933,7 +17932,7 @@ STONE_BRICK_SLAB = LootTable(
 )
 
 STONE_BRICK_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17945,7 +17944,7 @@ STONE_BRICK_STAIRS = LootTable(
 )
 
 STONE_BRICK_WALL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17957,7 +17956,7 @@ STONE_BRICK_WALL = LootTable(
 )
 
 STONE_BUTTON = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17969,7 +17968,7 @@ STONE_BUTTON = LootTable(
 )
 
 STONE_PRESSURE_PLATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -17981,7 +17980,7 @@ STONE_PRESSURE_PLATE = LootTable(
 )
 
 STONE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18009,7 +18008,7 @@ STONE_SLAB = LootTable(
 )
 
 STONE_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18021,7 +18020,7 @@ STONE_STAIRS = LootTable(
 )
 
 STRAW_BED = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18043,7 +18042,7 @@ STRAW_BED = LootTable(
 )
 
 STRIPPED_ACACIA_LOG = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18055,7 +18054,7 @@ STRIPPED_ACACIA_LOG = LootTable(
 )
 
 STRIPPED_ACACIA_WOOD = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18067,7 +18066,7 @@ STRIPPED_ACACIA_WOOD = LootTable(
 )
 
 STRIPPED_BAMBOO_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18079,7 +18078,7 @@ STRIPPED_BAMBOO_BLOCK = LootTable(
 )
 
 STRIPPED_BIRCH_LOG = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18091,7 +18090,7 @@ STRIPPED_BIRCH_LOG = LootTable(
 )
 
 STRIPPED_BIRCH_WOOD = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18103,7 +18102,7 @@ STRIPPED_BIRCH_WOOD = LootTable(
 )
 
 STRIPPED_CHERRY_LOG = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18115,7 +18114,7 @@ STRIPPED_CHERRY_LOG = LootTable(
 )
 
 STRIPPED_CHERRY_WOOD = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18127,7 +18126,7 @@ STRIPPED_CHERRY_WOOD = LootTable(
 )
 
 STRIPPED_CRIMSON_HYPHAE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18139,7 +18138,7 @@ STRIPPED_CRIMSON_HYPHAE = LootTable(
 )
 
 STRIPPED_CRIMSON_STEM = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18151,7 +18150,7 @@ STRIPPED_CRIMSON_STEM = LootTable(
 )
 
 STRIPPED_DARK_OAK_LOG = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18163,7 +18162,7 @@ STRIPPED_DARK_OAK_LOG = LootTable(
 )
 
 STRIPPED_DARK_OAK_WOOD = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18175,7 +18174,7 @@ STRIPPED_DARK_OAK_WOOD = LootTable(
 )
 
 STRIPPED_JUNGLE_LOG = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18187,7 +18186,7 @@ STRIPPED_JUNGLE_LOG = LootTable(
 )
 
 STRIPPED_JUNGLE_WOOD = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18199,7 +18198,7 @@ STRIPPED_JUNGLE_WOOD = LootTable(
 )
 
 STRIPPED_MANGROVE_LOG = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18211,7 +18210,7 @@ STRIPPED_MANGROVE_LOG = LootTable(
 )
 
 STRIPPED_MANGROVE_WOOD = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18223,7 +18222,7 @@ STRIPPED_MANGROVE_WOOD = LootTable(
 )
 
 STRIPPED_OAK_LOG = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18235,7 +18234,7 @@ STRIPPED_OAK_LOG = LootTable(
 )
 
 STRIPPED_OAK_WOOD = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18247,7 +18246,7 @@ STRIPPED_OAK_WOOD = LootTable(
 )
 
 STRIPPED_PALE_OAK_LOG = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18259,7 +18258,7 @@ STRIPPED_PALE_OAK_LOG = LootTable(
 )
 
 STRIPPED_PALE_OAK_WOOD = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18271,7 +18270,7 @@ STRIPPED_PALE_OAK_WOOD = LootTable(
 )
 
 STRIPPED_POPLAR_LOG = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18283,7 +18282,7 @@ STRIPPED_POPLAR_LOG = LootTable(
 )
 
 STRIPPED_POPLAR_WOOD = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18295,7 +18294,7 @@ STRIPPED_POPLAR_WOOD = LootTable(
 )
 
 STRIPPED_SPRUCE_LOG = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18307,7 +18306,7 @@ STRIPPED_SPRUCE_LOG = LootTable(
 )
 
 STRIPPED_SPRUCE_WOOD = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18319,7 +18318,7 @@ STRIPPED_SPRUCE_WOOD = LootTable(
 )
 
 STRIPPED_WARPED_HYPHAE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18331,7 +18330,7 @@ STRIPPED_WARPED_HYPHAE = LootTable(
 )
 
 STRIPPED_WARPED_STEM = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18343,7 +18342,7 @@ STRIPPED_WARPED_STEM = LootTable(
 )
 
 SUGAR_CANE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18355,7 +18354,7 @@ SUGAR_CANE = LootTable(
 )
 
 SULFUR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18367,7 +18366,7 @@ SULFUR = LootTable(
 )
 
 SULFUR_BRICKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18379,7 +18378,7 @@ SULFUR_BRICKS = LootTable(
 )
 
 SULFUR_BRICK_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18407,7 +18406,7 @@ SULFUR_BRICK_SLAB = LootTable(
 )
 
 SULFUR_BRICK_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18419,7 +18418,7 @@ SULFUR_BRICK_STAIRS = LootTable(
 )
 
 SULFUR_BRICK_WALL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18431,7 +18430,7 @@ SULFUR_BRICK_WALL = LootTable(
 )
 
 SULFUR_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18459,7 +18458,7 @@ SULFUR_SLAB = LootTable(
 )
 
 SULFUR_SPIKE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18471,7 +18470,7 @@ SULFUR_SPIKE = LootTable(
 )
 
 SULFUR_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18483,7 +18482,7 @@ SULFUR_STAIRS = LootTable(
 )
 
 SULFUR_WALL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18495,7 +18494,7 @@ SULFUR_WALL = LootTable(
 )
 
 SUNFLOWER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18516,12 +18515,12 @@ SUNFLOWER = LootTable(
     random_sequence='minecraft:blocks/sunflower',
 )
 
-SUSPICIOUS_GRAVEL = LootTable(type=LootContextParamSets.BLOCK, random_sequence='minecraft:blocks/suspicious_gravel')
+SUSPICIOUS_GRAVEL = LootTable(type='minecraft:block', random_sequence='minecraft:blocks/suspicious_gravel')
 
-SUSPICIOUS_SAND = LootTable(type=LootContextParamSets.BLOCK, random_sequence='minecraft:blocks/suspicious_sand')
+SUSPICIOUS_SAND = LootTable(type='minecraft:block', random_sequence='minecraft:blocks/suspicious_sand')
 
 SWEET_BERRY_BUSH = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18571,7 +18570,7 @@ SWEET_BERRY_BUSH = LootTable(
 )
 
 TALL_DRY_GRASS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18586,7 +18585,7 @@ TALL_DRY_GRASS = LootTable(
 )
 
 TALL_GRASS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18677,7 +18676,7 @@ TALL_GRASS = LootTable(
 )
 
 TALL_SEAGRASS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18695,7 +18694,7 @@ TALL_SEAGRASS = LootTable(
 )
 
 TARGET = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18707,7 +18706,7 @@ TARGET = LootTable(
 )
 
 TERRACOTTA = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18719,7 +18718,7 @@ TERRACOTTA = LootTable(
 )
 
 TINTED_GLASS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18731,7 +18730,7 @@ TINTED_GLASS = LootTable(
 )
 
 TNT = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18753,7 +18752,7 @@ TNT = LootTable(
 )
 
 TORCH = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18765,7 +18764,7 @@ TORCH = LootTable(
 )
 
 TORCHFLOWER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18777,14 +18776,14 @@ TORCHFLOWER = LootTable(
 )
 
 TORCHFLOWER_CROP = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:torchflower_seeds', type='minecraft:item')])],
     modifier=LootFunctionExplosionDecay(type='minecraft:explosion_decay'),
     random_sequence='minecraft:blocks/torchflower_crop',
 )
 
 TRAPPED_CHEST = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18805,10 +18804,10 @@ TRAPPED_CHEST = LootTable(
     random_sequence='minecraft:blocks/trapped_chest',
 )
 
-TRIAL_SPAWNER = LootTable(type=LootContextParamSets.BLOCK, random_sequence='minecraft:blocks/trial_spawner')
+TRIAL_SPAWNER = LootTable(type='minecraft:block', random_sequence='minecraft:blocks/trial_spawner')
 
 TRIPWIRE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18820,7 +18819,7 @@ TRIPWIRE = LootTable(
 )
 
 TRIPWIRE_HOOK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18832,7 +18831,7 @@ TRIPWIRE_HOOK = LootTable(
 )
 
 TUBE_CORAL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18844,7 +18843,7 @@ TUBE_CORAL = LootTable(
 )
 
 TUBE_CORAL_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18871,7 +18870,7 @@ TUBE_CORAL_BLOCK = LootTable(
 )
 
 TUBE_CORAL_FAN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18883,7 +18882,7 @@ TUBE_CORAL_FAN = LootTable(
 )
 
 TUFF = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18895,7 +18894,7 @@ TUFF = LootTable(
 )
 
 TUFF_BRICKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18907,7 +18906,7 @@ TUFF_BRICKS = LootTable(
 )
 
 TUFF_BRICK_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18935,7 +18934,7 @@ TUFF_BRICK_SLAB = LootTable(
 )
 
 TUFF_BRICK_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18947,7 +18946,7 @@ TUFF_BRICK_STAIRS = LootTable(
 )
 
 TUFF_BRICK_WALL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18959,7 +18958,7 @@ TUFF_BRICK_WALL = LootTable(
 )
 
 TUFF_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18987,7 +18986,7 @@ TUFF_SLAB = LootTable(
 )
 
 TUFF_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -18999,7 +18998,7 @@ TUFF_STAIRS = LootTable(
 )
 
 TUFF_WALL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19011,7 +19010,7 @@ TUFF_WALL = LootTable(
 )
 
 TURTLE_EGG = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19023,7 +19022,7 @@ TURTLE_EGG = LootTable(
 )
 
 TWISTING_VINES = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19057,7 +19056,7 @@ TWISTING_VINES = LootTable(
 )
 
 TWISTING_VINES_PLANT = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19090,10 +19089,10 @@ TWISTING_VINES_PLANT = LootTable(
     random_sequence='minecraft:blocks/twisting_vines_plant',
 )
 
-VAULT = LootTable(type=LootContextParamSets.BLOCK, random_sequence='minecraft:blocks/vault')
+VAULT = LootTable(type='minecraft:block', random_sequence='minecraft:blocks/vault')
 
 VERDANT_FROGLIGHT = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19105,7 +19104,7 @@ VERDANT_FROGLIGHT = LootTable(
 )
 
 VINE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19117,7 +19116,7 @@ VINE = LootTable(
 )
 
 WARPED_BUTTON = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19129,7 +19128,7 @@ WARPED_BUTTON = LootTable(
 )
 
 WARPED_DOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19151,7 +19150,7 @@ WARPED_DOOR = LootTable(
 )
 
 WARPED_FENCE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19163,7 +19162,7 @@ WARPED_FENCE = LootTable(
 )
 
 WARPED_FENCE_GATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19175,7 +19174,7 @@ WARPED_FENCE_GATE = LootTable(
 )
 
 WARPED_FUNGUS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19187,7 +19186,7 @@ WARPED_FUNGUS = LootTable(
 )
 
 WARPED_HANGING_SIGN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19199,7 +19198,7 @@ WARPED_HANGING_SIGN = LootTable(
 )
 
 WARPED_HYPHAE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19211,7 +19210,7 @@ WARPED_HYPHAE = LootTable(
 )
 
 WARPED_NYLIUM = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19238,7 +19237,7 @@ WARPED_NYLIUM = LootTable(
 )
 
 WARPED_PLANKS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19250,7 +19249,7 @@ WARPED_PLANKS = LootTable(
 )
 
 WARPED_PRESSURE_PLATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19262,7 +19261,7 @@ WARPED_PRESSURE_PLATE = LootTable(
 )
 
 WARPED_ROOTS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19274,7 +19273,7 @@ WARPED_ROOTS = LootTable(
 )
 
 WARPED_SHELF = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19286,7 +19285,7 @@ WARPED_SHELF = LootTable(
 )
 
 WARPED_SIGN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19298,7 +19297,7 @@ WARPED_SIGN = LootTable(
 )
 
 WARPED_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19326,7 +19325,7 @@ WARPED_SLAB = LootTable(
 )
 
 WARPED_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19338,7 +19337,7 @@ WARPED_STAIRS = LootTable(
 )
 
 WARPED_STEM = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19350,7 +19349,7 @@ WARPED_STEM = LootTable(
 )
 
 WARPED_TRAPDOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19362,7 +19361,7 @@ WARPED_TRAPDOOR = LootTable(
 )
 
 WARPED_WART_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19374,7 +19373,7 @@ WARPED_WART_BLOCK = LootTable(
 )
 
 WATER_CAULDRON = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19386,7 +19385,7 @@ WATER_CAULDRON = LootTable(
 )
 
 WAXED_CHISELED_COPPER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19398,7 +19397,7 @@ WAXED_CHISELED_COPPER = LootTable(
 )
 
 WAXED_COPPER_BARS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19410,7 +19409,7 @@ WAXED_COPPER_BARS = LootTable(
 )
 
 WAXED_COPPER_BLOCK = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19422,7 +19421,7 @@ WAXED_COPPER_BLOCK = LootTable(
 )
 
 WAXED_COPPER_BULB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19434,7 +19433,7 @@ WAXED_COPPER_BULB = LootTable(
 )
 
 WAXED_COPPER_CHAIN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19446,7 +19445,7 @@ WAXED_COPPER_CHAIN = LootTable(
 )
 
 WAXED_COPPER_CHEST = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19468,7 +19467,7 @@ WAXED_COPPER_CHEST = LootTable(
 )
 
 WAXED_COPPER_DOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19490,7 +19489,7 @@ WAXED_COPPER_DOOR = LootTable(
 )
 
 WAXED_COPPER_GOLEM_STATUE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19519,7 +19518,7 @@ WAXED_COPPER_GOLEM_STATUE = LootTable(
 )
 
 WAXED_COPPER_GRATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19531,7 +19530,7 @@ WAXED_COPPER_GRATE = LootTable(
 )
 
 WAXED_COPPER_LANTERN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19543,7 +19542,7 @@ WAXED_COPPER_LANTERN = LootTable(
 )
 
 WAXED_COPPER_TRAPDOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19555,7 +19554,7 @@ WAXED_COPPER_TRAPDOOR = LootTable(
 )
 
 WAXED_CUT_COPPER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19567,7 +19566,7 @@ WAXED_CUT_COPPER = LootTable(
 )
 
 WAXED_CUT_COPPER_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19595,7 +19594,7 @@ WAXED_CUT_COPPER_SLAB = LootTable(
 )
 
 WAXED_CUT_COPPER_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19607,7 +19606,7 @@ WAXED_CUT_COPPER_STAIRS = LootTable(
 )
 
 WAXED_EXPOSED_CHISELED_COPPER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19619,7 +19618,7 @@ WAXED_EXPOSED_CHISELED_COPPER = LootTable(
 )
 
 WAXED_EXPOSED_COPPER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19631,7 +19630,7 @@ WAXED_EXPOSED_COPPER = LootTable(
 )
 
 WAXED_EXPOSED_COPPER_BARS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19643,7 +19642,7 @@ WAXED_EXPOSED_COPPER_BARS = LootTable(
 )
 
 WAXED_EXPOSED_COPPER_BULB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19655,7 +19654,7 @@ WAXED_EXPOSED_COPPER_BULB = LootTable(
 )
 
 WAXED_EXPOSED_COPPER_CHAIN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19667,7 +19666,7 @@ WAXED_EXPOSED_COPPER_CHAIN = LootTable(
 )
 
 WAXED_EXPOSED_COPPER_CHEST = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19689,7 +19688,7 @@ WAXED_EXPOSED_COPPER_CHEST = LootTable(
 )
 
 WAXED_EXPOSED_COPPER_DOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19711,7 +19710,7 @@ WAXED_EXPOSED_COPPER_DOOR = LootTable(
 )
 
 WAXED_EXPOSED_COPPER_GOLEM_STATUE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19740,7 +19739,7 @@ WAXED_EXPOSED_COPPER_GOLEM_STATUE = LootTable(
 )
 
 WAXED_EXPOSED_COPPER_GRATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19752,7 +19751,7 @@ WAXED_EXPOSED_COPPER_GRATE = LootTable(
 )
 
 WAXED_EXPOSED_COPPER_LANTERN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19764,7 +19763,7 @@ WAXED_EXPOSED_COPPER_LANTERN = LootTable(
 )
 
 WAXED_EXPOSED_COPPER_TRAPDOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19776,7 +19775,7 @@ WAXED_EXPOSED_COPPER_TRAPDOOR = LootTable(
 )
 
 WAXED_EXPOSED_CUT_COPPER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19788,7 +19787,7 @@ WAXED_EXPOSED_CUT_COPPER = LootTable(
 )
 
 WAXED_EXPOSED_CUT_COPPER_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19816,7 +19815,7 @@ WAXED_EXPOSED_CUT_COPPER_SLAB = LootTable(
 )
 
 WAXED_EXPOSED_CUT_COPPER_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19828,7 +19827,7 @@ WAXED_EXPOSED_CUT_COPPER_STAIRS = LootTable(
 )
 
 WAXED_EXPOSED_LIGHTNING_ROD = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19840,7 +19839,7 @@ WAXED_EXPOSED_LIGHTNING_ROD = LootTable(
 )
 
 WAXED_LIGHTNING_ROD = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19852,7 +19851,7 @@ WAXED_LIGHTNING_ROD = LootTable(
 )
 
 WAXED_OXIDIZED_CHISELED_COPPER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19864,7 +19863,7 @@ WAXED_OXIDIZED_CHISELED_COPPER = LootTable(
 )
 
 WAXED_OXIDIZED_COPPER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19876,7 +19875,7 @@ WAXED_OXIDIZED_COPPER = LootTable(
 )
 
 WAXED_OXIDIZED_COPPER_BARS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19888,7 +19887,7 @@ WAXED_OXIDIZED_COPPER_BARS = LootTable(
 )
 
 WAXED_OXIDIZED_COPPER_BULB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19900,7 +19899,7 @@ WAXED_OXIDIZED_COPPER_BULB = LootTable(
 )
 
 WAXED_OXIDIZED_COPPER_CHAIN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19912,7 +19911,7 @@ WAXED_OXIDIZED_COPPER_CHAIN = LootTable(
 )
 
 WAXED_OXIDIZED_COPPER_CHEST = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19934,7 +19933,7 @@ WAXED_OXIDIZED_COPPER_CHEST = LootTable(
 )
 
 WAXED_OXIDIZED_COPPER_DOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19956,7 +19955,7 @@ WAXED_OXIDIZED_COPPER_DOOR = LootTable(
 )
 
 WAXED_OXIDIZED_COPPER_GOLEM_STATUE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19985,7 +19984,7 @@ WAXED_OXIDIZED_COPPER_GOLEM_STATUE = LootTable(
 )
 
 WAXED_OXIDIZED_COPPER_GRATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -19997,7 +19996,7 @@ WAXED_OXIDIZED_COPPER_GRATE = LootTable(
 )
 
 WAXED_OXIDIZED_COPPER_LANTERN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20009,7 +20008,7 @@ WAXED_OXIDIZED_COPPER_LANTERN = LootTable(
 )
 
 WAXED_OXIDIZED_COPPER_TRAPDOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20021,7 +20020,7 @@ WAXED_OXIDIZED_COPPER_TRAPDOOR = LootTable(
 )
 
 WAXED_OXIDIZED_CUT_COPPER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20033,7 +20032,7 @@ WAXED_OXIDIZED_CUT_COPPER = LootTable(
 )
 
 WAXED_OXIDIZED_CUT_COPPER_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20061,7 +20060,7 @@ WAXED_OXIDIZED_CUT_COPPER_SLAB = LootTable(
 )
 
 WAXED_OXIDIZED_CUT_COPPER_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20073,7 +20072,7 @@ WAXED_OXIDIZED_CUT_COPPER_STAIRS = LootTable(
 )
 
 WAXED_OXIDIZED_LIGHTNING_ROD = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20085,7 +20084,7 @@ WAXED_OXIDIZED_LIGHTNING_ROD = LootTable(
 )
 
 WAXED_WEATHERED_CHISELED_COPPER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20097,7 +20096,7 @@ WAXED_WEATHERED_CHISELED_COPPER = LootTable(
 )
 
 WAXED_WEATHERED_COPPER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20109,7 +20108,7 @@ WAXED_WEATHERED_COPPER = LootTable(
 )
 
 WAXED_WEATHERED_COPPER_BARS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20121,7 +20120,7 @@ WAXED_WEATHERED_COPPER_BARS = LootTable(
 )
 
 WAXED_WEATHERED_COPPER_BULB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20133,7 +20132,7 @@ WAXED_WEATHERED_COPPER_BULB = LootTable(
 )
 
 WAXED_WEATHERED_COPPER_CHAIN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20145,7 +20144,7 @@ WAXED_WEATHERED_COPPER_CHAIN = LootTable(
 )
 
 WAXED_WEATHERED_COPPER_CHEST = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20167,7 +20166,7 @@ WAXED_WEATHERED_COPPER_CHEST = LootTable(
 )
 
 WAXED_WEATHERED_COPPER_DOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20189,7 +20188,7 @@ WAXED_WEATHERED_COPPER_DOOR = LootTable(
 )
 
 WAXED_WEATHERED_COPPER_GOLEM_STATUE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20218,7 +20217,7 @@ WAXED_WEATHERED_COPPER_GOLEM_STATUE = LootTable(
 )
 
 WAXED_WEATHERED_COPPER_GRATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20230,7 +20229,7 @@ WAXED_WEATHERED_COPPER_GRATE = LootTable(
 )
 
 WAXED_WEATHERED_COPPER_LANTERN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20242,7 +20241,7 @@ WAXED_WEATHERED_COPPER_LANTERN = LootTable(
 )
 
 WAXED_WEATHERED_COPPER_TRAPDOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20254,7 +20253,7 @@ WAXED_WEATHERED_COPPER_TRAPDOOR = LootTable(
 )
 
 WAXED_WEATHERED_CUT_COPPER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20266,7 +20265,7 @@ WAXED_WEATHERED_CUT_COPPER = LootTable(
 )
 
 WAXED_WEATHERED_CUT_COPPER_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20294,7 +20293,7 @@ WAXED_WEATHERED_CUT_COPPER_SLAB = LootTable(
 )
 
 WAXED_WEATHERED_CUT_COPPER_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20306,7 +20305,7 @@ WAXED_WEATHERED_CUT_COPPER_STAIRS = LootTable(
 )
 
 WAXED_WEATHERED_LIGHTNING_ROD = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20318,7 +20317,7 @@ WAXED_WEATHERED_LIGHTNING_ROD = LootTable(
 )
 
 WEATHERED_CHISELED_COPPER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20330,7 +20329,7 @@ WEATHERED_CHISELED_COPPER = LootTable(
 )
 
 WEATHERED_COPPER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20342,7 +20341,7 @@ WEATHERED_COPPER = LootTable(
 )
 
 WEATHERED_COPPER_BARS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20354,7 +20353,7 @@ WEATHERED_COPPER_BARS = LootTable(
 )
 
 WEATHERED_COPPER_BULB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20366,7 +20365,7 @@ WEATHERED_COPPER_BULB = LootTable(
 )
 
 WEATHERED_COPPER_CHAIN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20378,7 +20377,7 @@ WEATHERED_COPPER_CHAIN = LootTable(
 )
 
 WEATHERED_COPPER_CHEST = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20400,7 +20399,7 @@ WEATHERED_COPPER_CHEST = LootTable(
 )
 
 WEATHERED_COPPER_DOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20422,7 +20421,7 @@ WEATHERED_COPPER_DOOR = LootTable(
 )
 
 WEATHERED_COPPER_GOLEM_STATUE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20451,7 +20450,7 @@ WEATHERED_COPPER_GOLEM_STATUE = LootTable(
 )
 
 WEATHERED_COPPER_GRATE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20463,7 +20462,7 @@ WEATHERED_COPPER_GRATE = LootTable(
 )
 
 WEATHERED_COPPER_LANTERN = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20475,7 +20474,7 @@ WEATHERED_COPPER_LANTERN = LootTable(
 )
 
 WEATHERED_COPPER_TRAPDOOR = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20487,7 +20486,7 @@ WEATHERED_COPPER_TRAPDOOR = LootTable(
 )
 
 WEATHERED_CUT_COPPER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20499,7 +20498,7 @@ WEATHERED_CUT_COPPER = LootTable(
 )
 
 WEATHERED_CUT_COPPER_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20527,7 +20526,7 @@ WEATHERED_CUT_COPPER_SLAB = LootTable(
 )
 
 WEATHERED_CUT_COPPER_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20539,7 +20538,7 @@ WEATHERED_CUT_COPPER_STAIRS = LootTable(
 )
 
 WEATHERED_LIGHTNING_ROD = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20551,7 +20550,7 @@ WEATHERED_LIGHTNING_ROD = LootTable(
 )
 
 WEEPING_VINES = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20585,7 +20584,7 @@ WEEPING_VINES = LootTable(
 )
 
 WEEPING_VINES_PLANT = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20619,7 +20618,7 @@ WEEPING_VINES_PLANT = LootTable(
 )
 
 WET_SPONGE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20631,7 +20630,7 @@ WET_SPONGE = LootTable(
 )
 
 WHEAT = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20675,7 +20674,7 @@ WHEAT = LootTable(
 )
 
 WHITE_BANNER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20703,7 +20702,7 @@ WHITE_BANNER = LootTable(
 )
 
 WHITE_BED = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20725,7 +20724,7 @@ WHITE_BED = LootTable(
 )
 
 WHITE_CANDLE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20771,13 +20770,13 @@ WHITE_CANDLE = LootTable(
 )
 
 WHITE_CANDLE_CAKE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:white_candle', type='minecraft:item')])],
     random_sequence='minecraft:blocks/white_candle_cake',
 )
 
 WHITE_CARPET = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20789,7 +20788,7 @@ WHITE_CARPET = LootTable(
 )
 
 WHITE_CONCRETE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20801,7 +20800,7 @@ WHITE_CONCRETE = LootTable(
 )
 
 WHITE_CONCRETE_POWDER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20813,7 +20812,7 @@ WHITE_CONCRETE_POWDER = LootTable(
 )
 
 WHITE_CONCRETE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20841,7 +20840,7 @@ WHITE_CONCRETE_SLAB = LootTable(
 )
 
 WHITE_CONCRETE_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20853,7 +20852,7 @@ WHITE_CONCRETE_STAIRS = LootTable(
 )
 
 WHITE_GLAZED_TERRACOTTA = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20865,7 +20864,7 @@ WHITE_GLAZED_TERRACOTTA = LootTable(
 )
 
 WHITE_SHULKER_BOX = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20886,7 +20885,7 @@ WHITE_SHULKER_BOX = LootTable(
 )
 
 WHITE_STAINED_GLASS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20898,7 +20897,7 @@ WHITE_STAINED_GLASS = LootTable(
 )
 
 WHITE_STAINED_GLASS_PANE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20910,7 +20909,7 @@ WHITE_STAINED_GLASS_PANE = LootTable(
 )
 
 WHITE_TERRACOTTA = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20922,7 +20921,7 @@ WHITE_TERRACOTTA = LootTable(
 )
 
 WHITE_TULIP = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20934,7 +20933,7 @@ WHITE_TULIP = LootTable(
 )
 
 WHITE_WOOL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20946,7 +20945,7 @@ WHITE_WOOL = LootTable(
 )
 
 WHITE_WOOL_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20974,7 +20973,7 @@ WHITE_WOOL_SLAB = LootTable(
 )
 
 WHITE_WOOL_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -20986,7 +20985,7 @@ WHITE_WOOL_STAIRS = LootTable(
 )
 
 WILDFLOWERS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -21041,7 +21040,7 @@ WILDFLOWERS = LootTable(
 )
 
 WITHER_ROSE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -21053,7 +21052,7 @@ WITHER_ROSE = LootTable(
 )
 
 WITHER_SKELETON_SKULL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -21074,7 +21073,7 @@ WITHER_SKELETON_SKULL = LootTable(
 )
 
 YELLOW_BANNER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -21102,7 +21101,7 @@ YELLOW_BANNER = LootTable(
 )
 
 YELLOW_BED = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -21124,7 +21123,7 @@ YELLOW_BED = LootTable(
 )
 
 YELLOW_CANDLE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -21170,13 +21169,13 @@ YELLOW_CANDLE = LootTable(
 )
 
 YELLOW_CANDLE_CAKE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:yellow_candle', type='minecraft:item')])],
     random_sequence='minecraft:blocks/yellow_candle_cake',
 )
 
 YELLOW_CARPET = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -21188,7 +21187,7 @@ YELLOW_CARPET = LootTable(
 )
 
 YELLOW_CONCRETE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -21200,7 +21199,7 @@ YELLOW_CONCRETE = LootTable(
 )
 
 YELLOW_CONCRETE_POWDER = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -21212,7 +21211,7 @@ YELLOW_CONCRETE_POWDER = LootTable(
 )
 
 YELLOW_CONCRETE_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -21240,7 +21239,7 @@ YELLOW_CONCRETE_SLAB = LootTable(
 )
 
 YELLOW_CONCRETE_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -21252,7 +21251,7 @@ YELLOW_CONCRETE_STAIRS = LootTable(
 )
 
 YELLOW_GLAZED_TERRACOTTA = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -21264,7 +21263,7 @@ YELLOW_GLAZED_TERRACOTTA = LootTable(
 )
 
 YELLOW_POPLAR_LEAVES = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -21332,7 +21331,7 @@ YELLOW_POPLAR_LEAVES = LootTable(
 )
 
 YELLOW_SHULKER_BOX = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -21353,7 +21352,7 @@ YELLOW_SHULKER_BOX = LootTable(
 )
 
 YELLOW_STAINED_GLASS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -21365,7 +21364,7 @@ YELLOW_STAINED_GLASS = LootTable(
 )
 
 YELLOW_STAINED_GLASS_PANE = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -21377,7 +21376,7 @@ YELLOW_STAINED_GLASS_PANE = LootTable(
 )
 
 YELLOW_TERRACOTTA = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -21389,7 +21388,7 @@ YELLOW_TERRACOTTA = LootTable(
 )
 
 YELLOW_WOOL = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -21401,7 +21400,7 @@ YELLOW_WOOL = LootTable(
 )
 
 YELLOW_WOOL_SLAB = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -21429,7 +21428,7 @@ YELLOW_WOOL_SLAB = LootTable(
 )
 
 YELLOW_WOOL_STAIRS = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,
@@ -21441,7 +21440,7 @@ YELLOW_WOOL_STAIRS = LootTable(
 )
 
 ZOMBIE_HEAD = LootTable(
-    type=LootContextParamSets.BLOCK,
+    type='minecraft:block',
     pools=[
         LootPool(
             rolls=1,

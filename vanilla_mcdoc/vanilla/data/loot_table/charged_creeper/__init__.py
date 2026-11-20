@@ -1,26 +1,25 @@
 """Vanilla's data/loot_table/charged_creeper/ files"""
 from vanilla_mcdoc.data.advancement.predicate.EntitySubPredicateMap import EntitySubPredicateMap
 from vanilla_mcdoc.data.loot.EntityTarget import EntityTarget
-from vanilla_mcdoc.data.loot.LootContextParamSets import LootContextParamSets
 from vanilla_mcdoc.data.loot.LootPool import LootPool
 from vanilla_mcdoc.data.loot.LootPoolEntry import LootPoolEntryAlternatives, LootPoolEntryItem, LootPoolEntryLootTable
 from vanilla_mcdoc.data.loot.LootTable import LootTable
 from vanilla_mcdoc.data.loot.condition.LootCondition import LootConditionEntityProperties
 
 CREEPER = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:creeper_head', type='minecraft:item')])],
     random_sequence='minecraft:charged_creeper/creeper',
 )
 
 PIGLIN = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:piglin_head', type='minecraft:item')])],
     random_sequence='minecraft:charged_creeper/piglin',
 )
 
 ROOT = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[
         LootPool(
             rolls=1,
@@ -82,19 +81,19 @@ ROOT = LootTable(
 )
 
 SKELETON = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:skeleton_skull', type='minecraft:item')])],
     random_sequence='minecraft:charged_creeper/skeleton',
 )
 
 WITHER_SKELETON = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:wither_skeleton_skull', type='minecraft:item')])],
     random_sequence='minecraft:charged_creeper/wither_skeleton',
 )
 
 ZOMBIE = LootTable(
-    type=LootContextParamSets.ENTITY,
+    type='minecraft:entity',
     pools=[LootPool(rolls=1, entries=[LootPoolEntryItem(name='minecraft:zombie_head', type='minecraft:item')])],
     random_sequence='minecraft:charged_creeper/zombie',
 )

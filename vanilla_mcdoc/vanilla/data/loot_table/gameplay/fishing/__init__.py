@@ -1,6 +1,5 @@
 """Vanilla's data/loot_table/gameplay/fishing/ files"""
 from vanilla_mcdoc.data.advancement.predicate.LocationPredicate import LocationPredicate
-from vanilla_mcdoc.data.loot.LootContextParamSets import LootContextParamSets
 from vanilla_mcdoc.data.loot.LootPool import LootPool
 from vanilla_mcdoc.data.loot.LootPoolEntry import LootPoolEntryItem
 from vanilla_mcdoc.data.loot.LootTable import LootTable
@@ -9,7 +8,7 @@ from vanilla_mcdoc.data.loot.function.LootFunction import LootFunctionEnchantWit
 from vanilla_mcdoc.data.number_provider.context_float.ContextFloatProvider import ContextFloatProviderStructUniform
 
 FISH = LootTable(
-    type=LootContextParamSets.FISHING,
+    type='minecraft:fishing',
     pools=[
         LootPool(
             rolls=1,
@@ -25,7 +24,7 @@ FISH = LootTable(
 )
 
 JUNK = LootTable(
-    type=LootContextParamSets.FISHING,
+    type='minecraft:fishing',
     pools=[
         LootPool(
             rolls=1,
@@ -85,7 +84,7 @@ JUNK = LootTable(
 )
 
 TREASURE = LootTable(
-    type=LootContextParamSets.FISHING,
+    type='minecraft:fishing',
     pools=[
         LootPool(
             rolls=1,

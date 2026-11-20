@@ -1,5 +1,4 @@
 """Vanilla's data/loot_table/chests/village/ files"""
-from vanilla_mcdoc.data.loot.LootContextParamSets import LootContextParamSets
 from vanilla_mcdoc.data.loot.LootPool import LootPool
 from vanilla_mcdoc.data.loot.LootPoolEntry import LootPoolEntryEmpty, LootPoolEntryItem
 from vanilla_mcdoc.data.loot.LootTable import LootTable
@@ -7,7 +6,7 @@ from vanilla_mcdoc.data.loot.function.LootFunction import LootFunctionSetCount
 from vanilla_mcdoc.data.number_provider.context_int.ContextIntProvider import ContextIntProviderStructUniform
 
 VILLAGE_ARMORER = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=1, max=5),
@@ -39,7 +38,7 @@ VILLAGE_ARMORER = LootTable(
 )
 
 VILLAGE_BUTCHER = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=1, max=5),
@@ -97,7 +96,7 @@ VILLAGE_BUTCHER = LootTable(
 )
 
 VILLAGE_CARTOGRAPHER = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=1, max=5),
@@ -157,7 +156,7 @@ VILLAGE_CARTOGRAPHER = LootTable(
 )
 
 VILLAGE_DESERT_HOUSE = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=3, max=8),
@@ -227,7 +226,7 @@ VILLAGE_DESERT_HOUSE = LootTable(
 )
 
 VILLAGE_FISHER = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=1, max=5),
@@ -291,7 +290,7 @@ VILLAGE_FISHER = LootTable(
 )
 
 VILLAGE_FLETCHER = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=1, max=5),
@@ -349,7 +348,7 @@ VILLAGE_FLETCHER = LootTable(
 )
 
 VILLAGE_MASON = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=1, max=5),
@@ -384,7 +383,7 @@ VILLAGE_MASON = LootTable(
 )
 
 VILLAGE_PLAINS_HOUSE = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=3, max=8),
@@ -464,7 +463,7 @@ VILLAGE_PLAINS_HOUSE = LootTable(
 )
 
 VILLAGE_SAVANNA_HOUSE = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=3, max=8),
@@ -543,7 +542,7 @@ VILLAGE_SAVANNA_HOUSE = LootTable(
 )
 
 VILLAGE_SHEPHERD = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=1, max=5),
@@ -611,7 +610,7 @@ VILLAGE_SHEPHERD = LootTable(
 )
 
 VILLAGE_SNOWY_HOUSE = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=3, max=8),
@@ -691,7 +690,7 @@ VILLAGE_SNOWY_HOUSE = LootTable(
 )
 
 VILLAGE_TAIGA_HOUSE = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=3, max=8),
@@ -789,7 +788,7 @@ VILLAGE_TAIGA_HOUSE = LootTable(
 )
 
 VILLAGE_TANNERY = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=1, max=5),
@@ -842,7 +841,7 @@ VILLAGE_TANNERY = LootTable(
 )
 
 VILLAGE_TEMPLE = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=3, max=8),
@@ -905,7 +904,7 @@ VILLAGE_TEMPLE = LootTable(
 )
 
 VILLAGE_TOOLSMITH = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=3, max=8),
@@ -970,7 +969,7 @@ VILLAGE_TOOLSMITH = LootTable(
 )
 
 VILLAGE_WEAPONSMITH = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=3, max=8),

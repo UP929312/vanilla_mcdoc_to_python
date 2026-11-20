@@ -1,5 +1,4 @@
 """Vanilla's data/loot_table/chests/trial_chambers/ files"""
-from vanilla_mcdoc.data.loot.LootContextParamSets import LootContextParamSets
 from vanilla_mcdoc.data.loot.LootPool import LootPool
 from vanilla_mcdoc.data.loot.LootPoolEntry import LootPoolEntryItem, LootPoolEntryLootTable
 from vanilla_mcdoc.data.loot.LootTable import LootTable
@@ -9,7 +8,7 @@ from vanilla_mcdoc.data.number_provider.context_float.ContextFloatProvider impor
 from vanilla_mcdoc.data.number_provider.context_int.ContextIntProvider import ContextIntProviderStructUniform
 
 CORRIDOR = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=1, max=3),
@@ -122,7 +121,7 @@ CORRIDOR = LootTable(
 )
 
 ENTRANCE = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=2, max=3),
@@ -172,7 +171,7 @@ ENTRANCE = LootTable(
 )
 
 INTERSECTION = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=1, max=3),
@@ -258,7 +257,7 @@ INTERSECTION = LootTable(
 )
 
 INTERSECTION_BARREL = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=1, max=3),
@@ -365,7 +364,7 @@ INTERSECTION_BARREL = LootTable(
 )
 
 REWARD = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=1,
@@ -406,7 +405,7 @@ REWARD = LootTable(
 )
 
 REWARD_COMMON = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=1,
@@ -503,7 +502,7 @@ REWARD_COMMON = LootTable(
 )
 
 REWARD_OMINOUS = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=1,
@@ -544,7 +543,7 @@ REWARD_OMINOUS = LootTable(
 )
 
 REWARD_OMINOUS_COMMON = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=1,
@@ -606,7 +605,7 @@ REWARD_OMINOUS_COMMON = LootTable(
 )
 
 REWARD_OMINOUS_RARE = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=1,
@@ -685,7 +684,7 @@ REWARD_OMINOUS_RARE = LootTable(
 )
 
 REWARD_OMINOUS_UNIQUE = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=1,
@@ -702,7 +701,7 @@ REWARD_OMINOUS_UNIQUE = LootTable(
 )
 
 REWARD_RARE = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=1,
@@ -830,7 +829,7 @@ REWARD_RARE = LootTable(
 )
 
 REWARD_UNIQUE = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=1,
@@ -847,7 +846,7 @@ REWARD_UNIQUE = LootTable(
 )
 
 SUPPLY = LootTable(
-    type=LootContextParamSets.CHEST,
+    type='minecraft:chest',
     pools=[
         LootPool(
             rolls=ContextIntProviderStructUniform(type='minecraft:uniform', min=3, max=5),

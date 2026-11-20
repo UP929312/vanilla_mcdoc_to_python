@@ -1,5 +1,4 @@
 """Vanilla's data/loot_table/archaeology/ files"""
-from vanilla_mcdoc.data.loot.LootContextParamSets import LootContextParamSets
 from vanilla_mcdoc.data.loot.LootPool import LootPool
 from vanilla_mcdoc.data.loot.LootPoolEntry import LootPoolEntryItem
 from vanilla_mcdoc.data.loot.LootTable import LootTable
@@ -8,7 +7,7 @@ from vanilla_mcdoc.data.loot.function.StewEffect import StewEffect
 from vanilla_mcdoc.data.number_provider.context_int.ContextIntProvider import ContextIntProviderStructUniform
 
 DESERT_PYRAMID = LootTable(
-    type=LootContextParamSets.ARCHAEOLOGY,
+    type='minecraft:archaeology',
     pools=[
         LootPool(
             rolls=1,
@@ -28,7 +27,7 @@ DESERT_PYRAMID = LootTable(
 )
 
 DESERT_WELL = LootTable(
-    type=LootContextParamSets.ARCHAEOLOGY,
+    type='minecraft:archaeology',
     pools=[
         LootPool(
             rolls=1,
@@ -78,7 +77,7 @@ DESERT_WELL = LootTable(
 )
 
 OCEAN_RUIN_COLD = LootTable(
-    type=LootContextParamSets.ARCHAEOLOGY,
+    type='minecraft:archaeology',
     pools=[
         LootPool(
             rolls=1,
@@ -100,7 +99,7 @@ OCEAN_RUIN_COLD = LootTable(
 )
 
 OCEAN_RUIN_WARM = LootTable(
-    type=LootContextParamSets.ARCHAEOLOGY,
+    type='minecraft:archaeology',
     pools=[
         LootPool(
             rolls=1,
@@ -122,7 +121,7 @@ OCEAN_RUIN_WARM = LootTable(
 )
 
 TRAIL_RUINS_COMMON = LootTable(
-    type=LootContextParamSets.ARCHAEOLOGY,
+    type='minecraft:archaeology',
     pools=[
         LootPool(
             rolls=1,
@@ -165,7 +164,7 @@ TRAIL_RUINS_COMMON = LootTable(
 )
 
 TRAIL_RUINS_RARE = LootTable(
-    type=LootContextParamSets.ARCHAEOLOGY,
+    type='minecraft:archaeology',
     pools=[
         LootPool(
             rolls=1,

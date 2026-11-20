@@ -1,5 +1,4 @@
 """Vanilla's data/loot_table/equipment/ files"""
-from vanilla_mcdoc.data.loot.LootContextParamSets import LootContextParamSets
 from vanilla_mcdoc.data.loot.LootPool import LootPool
 from vanilla_mcdoc.data.loot.LootPoolEntry import LootPoolEntryItem, LootPoolEntryLootTable
 from vanilla_mcdoc.data.loot.LootTable import LootTable
@@ -9,7 +8,7 @@ from vanilla_mcdoc.world.component.DataComponentPatch import DataComponentPatch
 from vanilla_mcdoc.world.component.item.Trim import Trim
 
 TRIAL_CHAMBER = LootTable(
-    type=LootContextParamSets.EQUIPMENT,
+    type='minecraft:equipment',
     pools=[
         LootPool(
             rolls=1,
@@ -200,7 +199,7 @@ TRIAL_CHAMBER = LootTable(
 )
 
 TRIAL_CHAMBER_MELEE = LootTable(
-    type=LootContextParamSets.EQUIPMENT,
+    type='minecraft:equipment',
     pools=[
         LootPool(
             rolls=1,
@@ -234,7 +233,7 @@ TRIAL_CHAMBER_MELEE = LootTable(
 )
 
 TRIAL_CHAMBER_RANGED = LootTable(
-    type=LootContextParamSets.EQUIPMENT,
+    type='minecraft:equipment',
     pools=[
         LootPool(
             rolls=1,

@@ -33,8 +33,3 @@ class LootContextParamSets(StrEnum):
     BLOCKINTERACT = "block_interact"
     ENTITYINTERACT = "entity_interact"
     VILLAGERTRADE = "villager_trade"
-    COMMANDSLOTSOURCE = "command_slot_source"
-    CONTAINERPROCESS = "container_process"
-    COMMANDCOMPUTEDEFAULT = "command_compute_default"
-    COMMANDCOMPUTEPOSITION = "command_compute_position"
-    COMMANDCOMPUTEENTITY = "command_compute_entity"

@@ -3000,7 +3000,14 @@ SOUNDS = {
         subtitle='subtitles.block.fence_gate.toggle',
     ),
     'block.fire.ambient': SoundEventRegistration(sounds=['fire/fire'], subtitle='subtitles.block.fire.ambient'),
-    'block.fire.extinguish': SoundEventRegistration(sounds=['random/fizz'], subtitle='subtitles.block.fire.extinguish'),
+    'block.fire.extinguish': SoundEventRegistration(
+        sounds=[
+            SoundDefault(name='random/fizz', volume=0.5, pitch=1.85),
+            SoundDefault(name='random/fizz', volume=0.5, pitch=1.95, weight=3),
+            SoundDefault(name='random/fizz', volume=0.5, pitch=2.0, weight=10),
+        ],
+        subtitle='subtitles.block.fire.extinguish',
+    ),
     'block.firefly_bush.idle': SoundEventRegistration(
         sounds=[
             SoundDefault(name='block/firefly_bush/firefly_bush1', volume=4.0),
@@ -9568,6 +9575,7 @@ SOUNDS = {
         ],
         subtitle='subtitles.block.generic.footsteps',
     ),
+    'entity.frostbite.throw': SoundEventRegistration(sounds=['random/bow'], subtitle='subtitles.entity.frostbite.throw'),
     'entity.generic.big_fall': SoundEventRegistration(sounds=['damage/fallbig'], subtitle='subtitles.entity.generic.big_fall'),
     'entity.generic.burn': SoundEventRegistration(sounds=['random/fizz'], subtitle='subtitles.entity.generic.burn'),
     'entity.generic.death': SoundEventRegistration(
@@ -11681,7 +11689,7 @@ SOUNDS = {
         subtitle='subtitles.entity.snow_golem.hurt',
     ),
     'entity.snow_golem.shear': SoundEventRegistration(sounds=['mob/sheep/shear'], subtitle='subtitles.item.shears.shear'),
-    'entity.snow_golem.shoot': SoundEventRegistration(sounds=['random/bow'], subtitle='subtitles.entity.snowball.throw'),
+    'entity.snow_golem.shoot': SoundEventRegistration(sounds=['random/bow'], subtitle='subtitles.entity.snow_golem.shoot'),
     'entity.snowball.throw': SoundEventRegistration(sounds=['random/bow'], subtitle='subtitles.entity.snowball.throw'),
     'entity.spider.ambient': SoundEventRegistration(
         sounds=['mob/spider/say1', 'mob/spider/say2', 'mob/spider/say3', 'mob/spider/say4'],

@@ -41,7 +41,7 @@ BYPASSES_ARMOR = Tag(
     ],
 )
 
-BYPASSES_COOLDOWN = Tag(values=[])
+BYPASSES_COOLDOWN = Tag(values=['minecraft:generic_kill'])
 
 BYPASSES_EFFECTS = Tag(values=['minecraft:starve'])
 
@@ -84,6 +84,8 @@ BYPASSES_WOLF_ARMOR = Tag(
         'minecraft:wither',
     ],
 )
+
+CANNOT_HURT_PERCHING_ENDER_DRAGON = Tag(values=['minecraft:arrow', 'minecraft:thrown', 'minecraft:trident', 'minecraft:wind_charge'])
 
 CAN_BREAK_ARMOR_STAND = Tag(values=['minecraft:player_explosion', '#minecraft:is_player_attack'])
 

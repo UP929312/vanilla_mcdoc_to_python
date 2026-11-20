@@ -694,6 +694,7 @@ AXE = [
         ),
         sound='minecraft:item.axe.scrape',
         particle=BlockTransformParticle.SCRAPE,
+        consume_on_use=False,
         item_damage_per_use=1,
     ),
     BlockTransformData(
@@ -745,6 +746,7 @@ AXE = [
         particle=BlockTransformParticle.SCRAPE,
         transform_type=BlockTransformType.COPPERCHEST,
         update_from_neighbors=False,
+        consume_on_use=False,
         item_damage_per_use=1,
     ),
     BlockTransformData(
@@ -795,6 +797,7 @@ AXE = [
         sound='minecraft:item.axe.scrape',
         particle=BlockTransformParticle.SCRAPE,
         update_from_neighbors=False,
+        consume_on_use=False,
         item_damage_per_use=1,
     ),
     BlockTransformData(
@@ -1466,6 +1469,7 @@ AXE = [
         ),
         sound='minecraft:item.axe.wax_off',
         particle=BlockTransformParticle.WAXOFF,
+        consume_on_use=False,
         item_damage_per_use=1,
     ),
     BlockTransformData(
@@ -1530,6 +1534,7 @@ AXE = [
         particle=BlockTransformParticle.WAXOFF,
         transform_type=BlockTransformType.COPPERCHEST,
         update_from_neighbors=False,
+        consume_on_use=False,
         item_damage_per_use=1,
     ),
     BlockTransformData(
@@ -1590,6 +1595,7 @@ AXE = [
         sound='minecraft:item.axe.wax_off',
         particle=BlockTransformParticle.WAXOFF,
         update_from_neighbors=False,
+        consume_on_use=False,
         item_damage_per_use=1,
     ),
 ]
@@ -1652,6 +1658,771 @@ HOE = [
         sound='minecraft:item.hoe.till',
         loot='minecraft:till/rooted_dirt',
         drop_strategy=BlockTransformDropStrategy.CLICKEDFACE,
+        item_damage_per_use=1,
+    ),
+]
+
+HONEYCOMB = [
+    BlockTransformData(
+        block_state_provider=TypedBlockStateProviderRuleBased(
+            rules=[
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(blocks='minecraft:copper_block', type='minecraft:matching_blocks'),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(id='minecraft:waxed_copper_block'),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(blocks='minecraft:exposed_copper', type='minecraft:matching_blocks'),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(id='minecraft:waxed_exposed_copper'),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(blocks='minecraft:weathered_copper', type='minecraft:matching_blocks'),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(id='minecraft:waxed_weathered_copper'),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(blocks='minecraft:oxidized_copper', type='minecraft:matching_blocks'),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(id='minecraft:waxed_oxidized_copper'),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(blocks='minecraft:cut_copper', type='minecraft:matching_blocks'),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(id='minecraft:waxed_cut_copper'),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:exposed_cut_copper',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(id='minecraft:waxed_exposed_cut_copper'),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:weathered_cut_copper',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(id='minecraft:waxed_weathered_cut_copper'),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:oxidized_cut_copper',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(id='minecraft:waxed_oxidized_cut_copper'),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(blocks='minecraft:cut_copper_slab', type='minecraft:matching_blocks'),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_cut_copper_slab',
+                            properties={'type': 'bottom', 'waterlogged': 'false'},
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:exposed_cut_copper_slab',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_exposed_cut_copper_slab',
+                            properties={'type': 'bottom', 'waterlogged': 'false'},
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:weathered_cut_copper_slab',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_weathered_cut_copper_slab',
+                            properties={'type': 'bottom', 'waterlogged': 'false'},
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:oxidized_cut_copper_slab',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_oxidized_cut_copper_slab',
+                            properties={'type': 'bottom', 'waterlogged': 'false'},
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(blocks='minecraft:cut_copper_stairs', type='minecraft:matching_blocks'),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_cut_copper_stairs',
+                            properties={'facing': 'north', 'half': 'bottom', 'shape': 'straight', 'waterlogged': 'false'},
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:exposed_cut_copper_stairs',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_exposed_cut_copper_stairs',
+                            properties={'facing': 'north', 'half': 'bottom', 'shape': 'straight', 'waterlogged': 'false'},
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:weathered_cut_copper_stairs',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_weathered_cut_copper_stairs',
+                            properties={'facing': 'north', 'half': 'bottom', 'shape': 'straight', 'waterlogged': 'false'},
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:oxidized_cut_copper_stairs',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_oxidized_cut_copper_stairs',
+                            properties={'facing': 'north', 'half': 'bottom', 'shape': 'straight', 'waterlogged': 'false'},
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(blocks='minecraft:chiseled_copper', type='minecraft:matching_blocks'),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(id='minecraft:waxed_chiseled_copper'),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:exposed_chiseled_copper',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(id='minecraft:waxed_exposed_chiseled_copper'),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:weathered_chiseled_copper',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(id='minecraft:waxed_weathered_chiseled_copper'),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:oxidized_chiseled_copper',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(id='minecraft:waxed_oxidized_chiseled_copper'),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(blocks='minecraft:copper_trapdoor', type='minecraft:matching_blocks'),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_copper_trapdoor',
+                            properties={
+                                'facing': 'north',
+                                'half': 'bottom',
+                                'open': 'false',
+                                'powered': 'false',
+                                'waterlogged': 'false',
+                            },
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:exposed_copper_trapdoor',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_exposed_copper_trapdoor',
+                            properties={
+                                'facing': 'north',
+                                'half': 'bottom',
+                                'open': 'false',
+                                'powered': 'false',
+                                'waterlogged': 'false',
+                            },
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:weathered_copper_trapdoor',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_weathered_copper_trapdoor',
+                            properties={
+                                'facing': 'north',
+                                'half': 'bottom',
+                                'open': 'false',
+                                'powered': 'false',
+                                'waterlogged': 'false',
+                            },
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:oxidized_copper_trapdoor',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_oxidized_copper_trapdoor',
+                            properties={
+                                'facing': 'north',
+                                'half': 'bottom',
+                                'open': 'false',
+                                'powered': 'false',
+                                'waterlogged': 'false',
+                            },
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(blocks='minecraft:copper_bars', type='minecraft:matching_blocks'),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_copper_bars',
+                            properties={
+                                'east': 'false',
+                                'north': 'false',
+                                'south': 'false',
+                                'waterlogged': 'false',
+                                'west': 'false',
+                            },
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:exposed_copper_bars',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_exposed_copper_bars',
+                            properties={
+                                'east': 'false',
+                                'north': 'false',
+                                'south': 'false',
+                                'waterlogged': 'false',
+                                'west': 'false',
+                            },
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:weathered_copper_bars',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_weathered_copper_bars',
+                            properties={
+                                'east': 'false',
+                                'north': 'false',
+                                'south': 'false',
+                                'waterlogged': 'false',
+                                'west': 'false',
+                            },
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:oxidized_copper_bars',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_oxidized_copper_bars',
+                            properties={
+                                'east': 'false',
+                                'north': 'false',
+                                'south': 'false',
+                                'waterlogged': 'false',
+                                'west': 'false',
+                            },
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(blocks='minecraft:copper_grate', type='minecraft:matching_blocks'),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(id='minecraft:waxed_copper_grate', properties={'waterlogged': 'false'}),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:exposed_copper_grate',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(id='minecraft:waxed_exposed_copper_grate', properties={'waterlogged': 'false'}),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:weathered_copper_grate',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(id='minecraft:waxed_weathered_copper_grate', properties={'waterlogged': 'false'}),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:oxidized_copper_grate',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(id='minecraft:waxed_oxidized_copper_grate', properties={'waterlogged': 'false'}),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(blocks='minecraft:copper_bulb', type='minecraft:matching_blocks'),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_copper_bulb',
+                            properties={'lit': 'false', 'powered': 'false'},
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:exposed_copper_bulb',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_exposed_copper_bulb',
+                            properties={'lit': 'false', 'powered': 'false'},
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:weathered_copper_bulb',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_weathered_copper_bulb',
+                            properties={'lit': 'false', 'powered': 'false'},
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:oxidized_copper_bulb',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_oxidized_copper_bulb',
+                            properties={'lit': 'false', 'powered': 'false'},
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:copper_golem_statue',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_copper_golem_statue',
+                            properties={'copper_golem_pose': 'standing', 'facing': 'north', 'waterlogged': 'false'},
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:exposed_copper_golem_statue',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_exposed_copper_golem_statue',
+                            properties={'copper_golem_pose': 'standing', 'facing': 'north', 'waterlogged': 'false'},
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:weathered_copper_golem_statue',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_weathered_copper_golem_statue',
+                            properties={'copper_golem_pose': 'standing', 'facing': 'north', 'waterlogged': 'false'},
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:oxidized_copper_golem_statue',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_oxidized_copper_golem_statue',
+                            properties={'copper_golem_pose': 'standing', 'facing': 'north', 'waterlogged': 'false'},
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(blocks='minecraft:lightning_rod', type='minecraft:matching_blocks'),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_lightning_rod',
+                            properties={'facing': 'up', 'powered': 'false', 'waterlogged': 'false'},
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:exposed_lightning_rod',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_exposed_lightning_rod',
+                            properties={'facing': 'up', 'powered': 'false', 'waterlogged': 'false'},
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:weathered_lightning_rod',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_weathered_lightning_rod',
+                            properties={'facing': 'up', 'powered': 'false', 'waterlogged': 'false'},
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:oxidized_lightning_rod',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_oxidized_lightning_rod',
+                            properties={'facing': 'up', 'powered': 'false', 'waterlogged': 'false'},
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(blocks='minecraft:copper_lantern', type='minecraft:matching_blocks'),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_copper_lantern',
+                            properties={'hanging': 'false', 'waterlogged': 'false'},
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:exposed_copper_lantern',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_exposed_copper_lantern',
+                            properties={'hanging': 'false', 'waterlogged': 'false'},
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:weathered_copper_lantern',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_weathered_copper_lantern',
+                            properties={'hanging': 'false', 'waterlogged': 'false'},
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:oxidized_copper_lantern',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_oxidized_copper_lantern',
+                            properties={'hanging': 'false', 'waterlogged': 'false'},
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(blocks='minecraft:copper_chain', type='minecraft:matching_blocks'),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_copper_chain',
+                            properties={'axis': 'y', 'waterlogged': 'false'},
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:exposed_copper_chain',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_exposed_copper_chain',
+                            properties={'axis': 'y', 'waterlogged': 'false'},
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:weathered_copper_chain',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_weathered_copper_chain',
+                            properties={'axis': 'y', 'waterlogged': 'false'},
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:oxidized_copper_chain',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_oxidized_copper_chain',
+                            properties={'axis': 'y', 'waterlogged': 'false'},
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+            ],
+            type='minecraft:rule_based',
+        ),
+        sound='minecraft:item.honeycomb.wax_on',
+        particle=BlockTransformParticle.WAXON,
+        item_damage_per_use=1,
+    ),
+    BlockTransformData(
+        block_state_provider=TypedBlockStateProviderRuleBased(
+            rules=[
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(blocks='minecraft:copper_chest', type='minecraft:matching_blocks'),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_copper_chest',
+                            properties={'type': 'single', 'facing': 'north', 'waterlogged': 'false'},
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:exposed_copper_chest',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_exposed_copper_chest',
+                            properties={'type': 'single', 'facing': 'north', 'waterlogged': 'false'},
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:weathered_copper_chest',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_weathered_copper_chest',
+                            properties={'type': 'single', 'facing': 'north', 'waterlogged': 'false'},
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:oxidized_copper_chest',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_oxidized_copper_chest',
+                            properties={'type': 'single', 'facing': 'north', 'waterlogged': 'false'},
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+            ],
+            type='minecraft:rule_based',
+        ),
+        sound='minecraft:item.honeycomb.wax_on',
+        particle=BlockTransformParticle.WAXON,
+        transform_type=BlockTransformType.COPPERCHEST,
+        update_from_neighbors=False,
+        item_damage_per_use=1,
+    ),
+    BlockTransformData(
+        block_state_provider=TypedBlockStateProviderRuleBased(
+            rules=[
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(blocks='minecraft:copper_door', type='minecraft:matching_blocks'),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_copper_door',
+                            properties={'facing': 'north', 'half': 'lower', 'hinge': 'left', 'open': 'false', 'powered': 'false'},
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:exposed_copper_door',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_exposed_copper_door',
+                            properties={'facing': 'north', 'half': 'lower', 'hinge': 'left', 'open': 'false', 'powered': 'false'},
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:weathered_copper_door',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_weathered_copper_door',
+                            properties={'facing': 'north', 'half': 'lower', 'hinge': 'left', 'open': 'false', 'powered': 'false'},
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+                RulesStruct(
+                    if_true=BlockPredicateMatchingBlocks(
+                        blocks='minecraft:oxidized_copper_door',
+                        type='minecraft:matching_blocks',
+                    ),
+                    then=TypedBlockStateProviderCopyProperties(
+                        source=FullBlockState(
+                            id='minecraft:waxed_oxidized_copper_door',
+                            properties={'facing': 'north', 'half': 'lower', 'hinge': 'left', 'open': 'false', 'powered': 'false'},
+                        ),
+                        type='minecraft:copy_properties',
+                    ),
+                ),
+            ],
+            type='minecraft:rule_based',
+        ),
+        sound='minecraft:item.honeycomb.wax_on',
+        particle=BlockTransformParticle.WAXON,
+        update_from_neighbors=False,
         item_damage_per_use=1,
     ),
 ]

@@ -14,6 +14,7 @@ from vanilla_mcdoc.data.dialog.MultiActionDialog import MultiActionDialog
 from vanilla_mcdoc.data.dialog.NoticeDialog import NoticeDialog
 from vanilla_mcdoc.data.dialog.RedirectDialog import RedirectDialog
 from vanilla_mcdoc.data.dialog.ServerLinksDialog import ServerLinksDialog
+from vanilla_mcdoc.data.dispense_behavior.DispenseBehaviorFile import DispenseBehaviorFile
 from vanilla_mcdoc.data.enchantment.Enchantment import Enchantment
 from vanilla_mcdoc.data.enchantment.provider.ByCostEnchantmentProvider import ByCostEnchantmentProvider
 from vanilla_mcdoc.data.enchantment.provider.ByCostWithDifficultyEnchantmentProvider import ByCostWithDifficultyEnchantmentProvider
@@ -201,6 +202,7 @@ ROOT_DATAPACK_CLASSES = (
     NoticeDialog,
     RedirectDialog,
     ServerLinksDialog,
+    DispenseBehaviorFile,
     Enchantment,
     ByCostEnchantmentProvider,
     ByCostWithDifficultyEnchantmentProvider,
