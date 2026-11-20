@@ -151,7 +151,7 @@ exclude = ["vanilla_mcdoc/", "htmlcov/", "tests/assertions/", "tests/test_exampl
 ignore_decorators = ["@model_validator", "@pytest.fixture"]  # Pydantic and pytest call these themselves
 ignore_names = [
     # static_symbols/ is copied into vanilla_mcdoc/, where generated code (and users) use these
-    "GeneratedModel", "model_config", "tag_of", "import_annotation_types", "NamespacedId", "MinecraftUUID", "MinecraftUUIDString", "MinecraftURL", "uuid_to_int_array",
+    "GeneratedModel", "model_config", "tag_of", "import_annotation_types", "NamespacedId", "MinecraftUUID", "MinecraftUUIDString", "MinecraftURL",
     "keyword",  # A field symbols.json has, which pydantic reads in
     "definition", "prefix", "empty",  # IdSpec's fields, which its to_annotation goes through with dataclasses.fields()
 ]
