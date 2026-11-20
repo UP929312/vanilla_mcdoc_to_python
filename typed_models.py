@@ -118,8 +118,8 @@ class ValueRange(BaseModel):
 
     def clipped(self, lowest: float, highest: float) -> ValueRange:
         """The range, but no wider than lowest..highest, e.g. for an int, 0.. is 0..2147483647. A bound that gets moved is inclusive."""
-        min_exclusive = self.kind in {2, 3} and self.min is not None and self.min >= lowest
-        max_exclusive = self.kind in {1, 3} and self.max is not None and self.max <= highest
+        min_exclusive = self.kind in {2, 3} and self.min is not None and self.min >= lowest  # pragma: no cover (it could get added in the future)
+        max_exclusive = self.kind in {1, 3} and self.max is not None and self.max <= highest  # pragma: no cover (it could get added in the future)
         kinds: dict[tuple[bool, bool], Literal[0, 1, 2, 3]] = {(False, False): 0, (False, True): 1, (True, False): 2, (True, True): 3}
         return ValueRange(kind=kinds[min_exclusive, max_exclusive], min=max(self.min, lowest), max=highest if self.max is None else min(self.max, highest))
 

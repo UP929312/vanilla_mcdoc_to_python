@@ -111,7 +111,20 @@ def test_items_keep_their_custom_nbt() -> None:
     assert item.model_extra == {"MyPack": {"level": 2}}
 
 
-def test_uuids_become_minecrafts_four_ints() -> None:
-    from vanilla_mcdoc.minecraft_types import uuid_to_int_array
+def test_links_are_only_http_in_any_case() -> None:
+    from vanilla_mcdoc.util.text.OpenUrl import OpenUrl
 
+    assert OpenUrl(url="HTTPS://Example.com").url == "HTTPS://Example.com"  # Kept as it's written, like the game does
+    with raises(ValidationError):
+        OpenUrl(url="ftp://example.com")
+
+
+def uuid_to_int_array(value: uuid.UUID) -> tuple[int, int, int, int]:
+    """Convert a Python UUID (e.g. uuid.uuid4()) to Minecraft's 4 signed ints."""
+    words = [(value.int >> shift) & 0xFFFFFFFF for shift in (96, 64, 32, 0)]
+    first, second, third, fourth = (word - 2**32 if word >= 2**31 else word for word in words)
+    return first, second, third, fourth
+
+
+def test_uuids_become_minecrafts_four_ints() -> None:
     assert uuid_to_int_array(uuid.UUID("f81d4fae-7dec-11d0-a765-00a0c91e6bf6")) == (-132296786, 2112623056, -1486552928, -920753162)

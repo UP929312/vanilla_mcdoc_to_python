@@ -1,5 +1,4 @@
 """Hand-written types that generated code uses for some mcdoc attributes, e.g. #[uuid], #[url] and #[id]."""
-import uuid
 from collections.abc import Mapping
 from dataclasses import dataclass, fields
 from enum import Enum
@@ -17,29 +16,16 @@ type MinecraftUUID = tuple[Int32, Int32, Int32, Int32]
 type MinecraftUUIDString = Annotated[str, Field(pattern=r"^[0-9a-fA-F]+-[0-9a-fA-F]+-[0-9a-fA-F]+-[0-9a-fA-F]+-[0-9a-fA-F]+$")]
 
 # Minecraft only opens http(s) links. Not pydantic's HttpUrl, because that normalises the URL (e.g. adds a trailing /).
-type MinecraftURL = Annotated[str, Field(pattern=r"^https?://")]  # Starts with http:// or https://
-
-
-def uuid_to_int_array(value: uuid.UUID) -> tuple[int, int, int, int]:
-    """Convert a Python UUID (e.g. uuid.uuid4()) to Minecraft's 4 signed ints."""
-    words = [(value.int >> shift) & 0xFFFFFFFF for shift in (96, 64, 32, 0)]
-    first, second, third, fourth = (word - 2**32 if word >= 2**31 else word for word in words)
-    return first, second, third, fourth
-
-
-def without_namespace(value: object) -> object:
-    """e.g. "minecraft:chest" -> "chest" (anything else is left alone)"""
-    return value.removeprefix("minecraft:") if isinstance(value, str) else value
-
-
-def with_namespace(member: Enum) -> str:
-    """e.g. "minecraft:chest" for LootContextParamSets.CHEST"""
-    return f"minecraft:{member.value}"
-
+# Any case, as the game lowercases the scheme before checking it (Util.parseAndValidateUntrustedUri), so HTTPS:// works too
+type MinecraftURL = Annotated[str, Field(pattern=r"^(?i:https?)://")]
 
 # An enum of ids, e.g. a loot table's type. Its values have no namespace (LootContextParamSets.CHEST is "chest"), but vanilla's
 # files do ("minecraft:chest"), and both mean the same, so this accepts both, and writes the namespace in JSON (like vanilla)
-type NamespacedId[E: Enum] = Annotated[E, BeforeValidator(without_namespace), PlainSerializer(with_namespace, when_used="json")]
+type NamespacedId[E: Enum] = Annotated[
+    E,
+    BeforeValidator(lambda value: value.removeprefix("minecraft:") if isinstance(value, str) else value),
+    PlainSerializer(lambda member: f"minecraft:{member.value}", when_used="json"),
+]
 
 
 @dataclass(frozen=True, slots=True)

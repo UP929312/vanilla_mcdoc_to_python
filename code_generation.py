@@ -100,7 +100,9 @@ def make_python_file_content(resource_type: str, resource_data: dict[str, Any], 
     class_type = KIND_TO_MODEL[resource_data["kind"]]
     current_model = class_type(**resource_data).remove_version_data()
 
-    ctx = SingleSymbolContext(current_symbol_path=resource_type, schema_graph=get_schema_graph(), resource_dir=get_resource_lookup_map().get(resource_type))
+    ctx = SingleSymbolContext(
+        get_schema_graph(), current_symbol_path=resource_type, resource_dir=get_resource_lookup_map().get(resource_type),
+    )
     body_lines = current_model.to_python_code(class_name, ctx)
     file_contents = "\n".join(file_header(resource_type) + ctx.to_python_code(body_lines)).rstrip() + "\n"
     if sources := ctx.type_checking_import_sources():
