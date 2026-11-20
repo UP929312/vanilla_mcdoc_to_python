@@ -153,7 +153,7 @@ class LiteralSchema(BaseSchema):
 
     def to_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None = None) -> str:
         value = self.value.value
-        if isinstance(value, float):  # A float or double. Literal[1.0] isn't allowed (PEP 586), so a range of just that value
+        if isinstance(value, float):  # A float or double. Literal[1.0] isn't allowed (PEP 586), so a range of *just* that value
             ctx.require_annotated()
             return f"Annotated[float, {ValueRange(min=value, max=value).to_field(ctx)}]"
         ctx.required_imports.add(Import("typing", "Literal"))
@@ -176,6 +176,7 @@ class NumericSchema(BaseSchema):
 
     def to_annotation(self, ctx: SingleSymbolContext, nested_struct_name: str | None = None) -> str:
         value_range = self.value_range
+        # TODO: Clip this to JAVA MIN and MAX if it's enabled
         if value_range is None and SAFE_GUARD_JAVA_NUMBERS:  # pragma: no cover
             value_range = ValueRange(min=self.min_value_internally, max=self.max_value_internally)
         if value_range is None:

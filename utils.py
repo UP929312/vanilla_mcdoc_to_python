@@ -35,13 +35,17 @@ LATEST_VERSION = VERSION_IDS[0]
 def name_inline_resources(symbols_map: dict[str, dict[str, Any]]) -> None:
     """Most of vanilla-mcdoc's resource types refer to a named type (e.g. recipe is ::java::data::recipe::Recipe), but a
     few are written inline, e.g. world_clock is just `struct {}`, so would have no class of their own. Give each a symbol
-    named after its directory, e.g. ::java::data::world_clock::WorldClock, which the resource refers to instead."""
+    named after its directory, e.g. ::java::data::world_clock::WorldClock, which the resource refers to instead. If that
+    name's taken, it gets File on the end, e.g. dispense_behavior is a list of DispenseBehavior, so it's DispenseBehaviorFile."""
     resources = symbols_map["mcdoc/dispatcher"]["minecraft:resource"]
     for directory, schema in resources.items():
         if schema["kind"] == "reference" or (schema["kind"] == "union" and all(member["kind"] == "reference" for member in schema["members"])):
             continue  # Already named (or one named type per version, e.g. chat_type is OldChatType until 1.19.1, then ChatType)
         name = "".join(part.capitalize() for part in directory.split("/")[-1].split("_"))  # e.g. world_clock -> WorldClock
         path = f"::java::data::{directory.replace('/', '::')}::{name}"
+        if path in symbols_map["mcdoc"]:  # Else it would replace that symbol, and DispenseBehavior would be list[DispenseBehavior]
+            path = f"{path}File"
+        assert path not in symbols_map["mcdoc"], f"{directory}'s resource has no free name, {path} is taken too"
         symbols_map["mcdoc"][path] = schema
         resources[directory] = {"kind": "reference", "path": path, "attributes": schema.get("attributes", [])}
 

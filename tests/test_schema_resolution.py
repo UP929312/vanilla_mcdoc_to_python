@@ -1,11 +1,11 @@
-from typing import cast
+from typing import Any, cast
 
 import pytest
 
 from context import SingleSymbolContext
 from schema_resolution import SchemaGraph
 from typed_models import DispatcherSchema, FloatSchema, IndexedSchema, LongSchema, PairSchema, ReferenceSchema, SpreadFieldSchema, StringSchema, StructSchema, UnionSchema
-from utils import SYMBOLS_MAP
+from utils import SYMBOLS_MAP, name_inline_resources
 
 
 @pytest.fixture(name="graph", scope="module")
@@ -24,6 +24,24 @@ def test_entries_of_another_registrys_missing_entry_are_dropped() -> None:
     }})
 
     assert list(graph.dispatchers["minecraft:block"]) == ["chest"]
+
+
+def test_inline_resources_dont_replace_a_symbol_with_their_name() -> None:
+    """dispense_behavior is [DispenseBehavior], which would be named DispenseBehavior, so would be list[itself]."""
+    item = {"kind": "struct", "fields": []}
+    symbols_map: dict[str, dict[str, Any]] = {
+        "mcdoc": {"::java::data::dispense_behavior::DispenseBehavior": item},
+        "mcdoc/dispatcher": {"minecraft:resource": {
+            "dispense_behavior": {"kind": "list", "item": {"kind": "reference", "path": "::java::data::dispense_behavior::DispenseBehavior"}},
+            "world_clock": {"kind": "struct", "fields": []},
+        }},
+    }
+    name_inline_resources(symbols_map)
+
+    resources = symbols_map["mcdoc/dispatcher"]["minecraft:resource"]
+    assert resources["dispense_behavior"]["path"] == "::java::data::dispense_behavior::DispenseBehaviorFile"
+    assert resources["world_clock"]["path"] == "::java::data::world_clock::WorldClock"  # Its name is free
+    assert symbols_map["mcdoc"]["::java::data::dispense_behavior::DispenseBehavior"] is item
 
 
 def test_union_accepts_long_schema() -> None:
