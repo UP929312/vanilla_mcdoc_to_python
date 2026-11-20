@@ -239,8 +239,8 @@ class FloatSchema(NumericSchema):
     value: float | None = None  # For literal floats
 
     python_type = "float"
-    min_value_internally = -3.4E38
-    max_value_internally = 3.4E38
+    min_value_internally = -3.4028235E38
+    max_value_internally = 3.4028235E38  # Float.MAX_VALUE, as Java writes it
 
 
 class DoubleSchema(NumericSchema):
@@ -249,8 +249,8 @@ class DoubleSchema(NumericSchema):
     value: float | None = None  # For literal doubles
 
     python_type = "float"
-    min_value_internally = -1.79E308
-    max_value_internally = 1.79E308
+    min_value_internally = -1.7976931348623157E308
+    max_value_internally = 1.7976931348623157E308  # Double.MAX_VALUE, which vanilla uses, e.g. as a noise threshold condition's max_threshold
 
 
 class StringSchema(BaseSchema):

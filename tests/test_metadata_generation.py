@@ -158,7 +158,7 @@ class TestDispatcherSpreadGeneration:
         assert annotation({"kind": "int", "valueRange": {"kind": 2, "min": 0, "max": 10}}) == "Annotated[int, Field(gt=0, le=10)]"  # Already within
         # A bound outside Java's is moved to Java's, which is inclusive
         assert annotation({"kind": "byte", "valueRange": {"kind": 2, "min": -1000, "max": 5}}) == "Annotated[int, Field(ge=-128, le=5)]"
-        assert annotation({"kind": "float", "valueRange": {"kind": 0, "min": 0}}) == "Annotated[float, Field(ge=0, le=3.4e+38)]"
+        assert annotation({"kind": "float", "valueRange": {"kind": 0, "min": 0}}) == "Annotated[float, Field(ge=0, le=3.4028235e+38)]"
 
     def test_dynamic_spread_generates_correlated_branch_classes(self) -> None:
         content = generated_body(
