@@ -9,8 +9,8 @@ from vanilla_mcdoc.util.direction.Axis import Axis
 CHUNK_SURFACE_LEVEL = DensityFunctionStructUpscale(
     input='minecraft:overworld_amplified/preliminary_surface_level',
     x=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=16),
-    y=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=1),
     z=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=16),
+    y=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=1),
     type='minecraft:upscale',
 )
 
@@ -684,8 +684,8 @@ FINAL_DENSITY = DensityFunctionStructAdd(
                     type='minecraft:mul',
                 ),
                 x=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=4),
-                y=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=8),
                 z=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=4),
+                y=UpscaleAxis(mode=UpscaleMode.INTERPOLATELINEAR, cell_size=8),
                 type='minecraft:upscale',
             ),
             type='minecraft:squeeze',

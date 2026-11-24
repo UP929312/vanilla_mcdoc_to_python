@@ -13,4 +13,4 @@ from vanilla_mcdoc.minecraft_types import IdSpec
 
 class SuspiciousStewEffect(GeneratedModel):
     id: Annotated[str, IdSpec(registry='mob_effect')]
-    duration: Annotated[int, Field(ge=1)] | None = None  # Duration of the effect in ticks. Defaults to `160`; 8 seconds.
+    duration: Annotated[int, Field(ge=1)] | None = None  # Duration of the effect in ticks.  Defaults to `160`; 8 seconds.

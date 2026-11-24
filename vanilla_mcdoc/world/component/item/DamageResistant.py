@@ -10,4 +10,4 @@ from vanilla_mcdoc.minecraft_types import IdSpec
 
 
 class DamageResistant(GeneratedModel):
-    types: Annotated[str, IdSpec(registry='damage_type', tags='allowed')] | list[Annotated[str, IdSpec(registry='damage_type')]]  # The damage types which the item is resistant to when in entity form. Additionally, this also affects whether the equipped item will be damaged when the wearer is hurt by a specified damage type.
+    types: Annotated[str, IdSpec(registry='damage_type', tags='allowed')] | list[Annotated[str, IdSpec(registry='damage_type')]]  # The damage types which the item is resistant to when in entity form.  Additionally, this also affects whether the equipped item will be damaged when the wearer is hurt by a specified damage type.

@@ -15,5 +15,5 @@ if TYPE_CHECKING:
 class PotionContents(GeneratedModel):
     potion: Annotated[str, IdSpec(registry='potion')] | None = None
     custom_color: int | None = None  # Calculated as `RED << 16 | GREEN << 8 | BLUE`. Each of these fields must be between 0 and 255, inclusive.
-    custom_name: str | None = None  # If present, is used to generate the item name using the translation key `item.minecraft.<potion_type>.effect.<custom_name>`.
+    custom_name: str | None = None  # Overrides item name of potion, splash potion, lingering potion and tipped arrow.  The first present value is used as `<name>` to generate the translation key `item.minecraft.<item_id>.effect.<name>`: 1. This field 2. The default name provided by the `potion` type. 3. Literal `empty`.
     custom_effects: list[MobEffectInstance] | None = None

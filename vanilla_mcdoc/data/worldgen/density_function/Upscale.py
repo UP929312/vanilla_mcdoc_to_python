@@ -15,5 +15,5 @@ if TYPE_CHECKING:
 class Upscale(GeneratedModel):
     input: DensityFunctionRef
     x: UpscaleAxis
-    y: UpscaleAxis
     z: UpscaleAxis
+    y: UpscaleAxis

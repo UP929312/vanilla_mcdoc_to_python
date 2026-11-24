@@ -14,5 +14,5 @@ if TYPE_CHECKING:
 
 
 class Trim(GeneratedModel):
-    material: Annotated[str, IdSpec(registry='trim_material')] | TrimMaterial  # The trim material of this item..
+    material: Annotated[str, IdSpec(registry='trim_material')] | TrimMaterial  # The trim material of this item.
     pattern: Annotated[str, IdSpec(registry='trim_pattern')] | TrimPattern  # The trim pattern of this item.

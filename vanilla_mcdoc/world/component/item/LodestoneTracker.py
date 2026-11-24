@@ -12,5 +12,5 @@ if TYPE_CHECKING:
 
 
 class LodestoneTracker(GeneratedModel):
-    target: GlobalPos | None = None  # Location of the lodestone. Optional. If not set, the compass will spin randomly.
-    tracked: bool | None = None  # When `true`, the component is removed when the lodestone is broken. When `false`, the component is kept. Defaults to true.
+    target: GlobalPos | None = None  # Location of the lodestone.  If not set, the compass will spin randomly.
+    tracked: bool | None = None  # When `true`, the component is removed when the lodestone is broken.  When `false`, the component is kept.  Defaults to `true`.

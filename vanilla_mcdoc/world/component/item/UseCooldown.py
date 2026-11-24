@@ -13,4 +13,4 @@ from vanilla_mcdoc.minecraft_types import IdSpec
 
 class UseCooldown(GeneratedModel):
     seconds: Annotated[float, Field(gt=0)]  # Time the cooldown will last.
-    cooldown_group: Annotated[str, IdSpec(registry='cooldown_group', definition=True)] | None = None  # If present, this item will be part of a cooldown group and no longer share cooldowns with its base item type. Instead, cooldowns applied to this item will only be shared with any other items that are part of the same cooldown group.
+    cooldown_group: Annotated[str, IdSpec(registry='cooldown_group', definition=True)] | None = None  # Cooldowns applied to this item will only be shared with any other items that are part of the same cooldown group.  Defaults to the ID of this item.

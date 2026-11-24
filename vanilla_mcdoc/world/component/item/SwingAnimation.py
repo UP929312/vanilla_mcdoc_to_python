@@ -14,5 +14,5 @@ if TYPE_CHECKING:
 
 
 class SwingAnimation(GeneratedModel):
-    type: SwingAnimationType | None = None  # The animation type to play when attacking or interacting using this item. Defaults to `whack`.
-    duration: Annotated[int, Field(ge=0)] | None = None  # The animation duration in ticks. Defaults to 6
+    type: SwingAnimationType | None = None  # The animation type to play when attacking or interacting using this item.  Defaults to `whack`.
+    duration: Annotated[int, Field(ge=0)] | None = None  # The animation duration in ticks.  Defaults to 6
