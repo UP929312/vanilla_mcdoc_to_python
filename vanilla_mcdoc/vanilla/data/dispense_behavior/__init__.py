@@ -14,6 +14,7 @@ BRUSH = [DispenseBehaviorBrushArmadillo(type='minecraft:brush_armadillo')]
 
 CARVED_PUMPKIN = [
     DispenseBehaviorSpawnGolemFromCarvedPumpkin(type='minecraft:spawn_golem_from_carved_pumpkin'),
+    DispenseBehaviorEquipSulfurCube(type='minecraft:equip_sulfur_cube'),
     DispenseBehaviorEquip(type='minecraft:equip'),
 ]
 
@@ -77,6 +78,7 @@ GLASS_BOTTLE = [DispenseBehaviorFillBottle(type='minecraft:fill_bottle'), Dispen
 
 GLOWSTONE = [
     DispenseBehaviorChargeRespawnAnchor(type='minecraft:charge_respawn_anchor'),
+    DispenseBehaviorEquipSulfurCube(type='minecraft:equip_sulfur_cube'),
     DispenseBehaviorDropItem(type='minecraft:drop_item'),
 ]
 
